@@ -51,6 +51,9 @@ class Config:
     data_dir: Path = field(
         default_factory=lambda: Path(os.environ.get("MONITOR_DATA_DIR", "./data"))
     )
+    html_dir: Path = field(
+        default_factory=lambda: Path(os.environ.get("MONITOR_HTML_DIR", "./docs"))
+    )
     workspace_dir: Path = field(
         default_factory=lambda: Path(os.environ.get("MONITOR_WORKSPACE_DIR", "./workspace"))
     )

@@ -25,12 +25,14 @@ class Page(BaseModel):
     index: int = 0
     title: str = ""
     content: str = ""
+    content_zh: str | None = None  # Claude 翻译的中文内容
 
 
 class Competition(BaseModel):
     id: int
     title: str
     description: str | None = None
+    description_zh: str | None = None  # Claude 翻译的中文描述
     created_by: str | None = None
     created_when: str | None = None
     logo: str | None = None

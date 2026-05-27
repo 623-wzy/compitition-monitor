@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MICCAI STSR 2026 Pre-Task: 2D Images Segmentation — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>MICCAI STSR 2026 Pre-Task: 2D Images Segmentation</h2>
+  <div class="detail-meta">
+    <span>ID: 16040</span>
+    <span>创建者: zhengxincan</span>
+    <span>创建时间: 2026-04-30</span>
+    <span>参与人数: 15</span>
+    <span>提交次数: 48</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16040/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">暂无描述</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-other'>其他</span> Validation</td><td>2026-04-29</td><td>2027-07-17</td><td>5</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'>## MICCAI STSR 2026 预赛2D图像分割
+
+该任务是STS26的前置任务。为防止数据滥用，完成后，你将有资格获得STS26主竞赛数据集的访问权限。请将模型在&#x27;data/test/imgs/&#x27;数据上的推理结果(&#x27;data/test/masks.zip&#x27;)提交到平台作为证明。(仅需约1小时)
+
+如有任何问题，请直接联系：SemiTeethSegChallenge@outlook.com
+
+
+
+## 📖 项目概述
+
+👌一个使用[U-Net](https://arxiv.org/abs/1505)的简单2D图像分割任务。
+
+&lt;font size=4&gt;
+
+- **步骤1：下载预赛数据和训练模型**&lt;br&gt;
+为了防止我们数据的滥用，你可以先完成这个简单(非常简单)的预赛任务，并首先填写《数据访问协议》来获得数据访问权限。
+数据网站：&lt;br&gt;
+		-[Huggingface](https://huggingface.co/datasets/Ricoooo/MICCAI-STS26-Challenge-Pre-Task)&lt;br&gt;
+		-[Modelscope](https://modelscope.cn/datasets/lizhii/MICCAI-STS26-Challenge-Pre-Task/summary)&lt;br&gt;
+		-[百度网盘(提取码 = bm2u)](https://pan.baidu.com/s/1U090bZnMGEJQaD3jwqaQuA)&lt;br&gt;
+		-[谷歌云盘](https://drive.google.com/drive/folders/1lER9eIavr99g28aTO0kuxIcos_k9FBSx?usp=sharing)&lt;br&gt;
+或者你可以使用[STS-Skill](https://github.com/ricoleehduu/sts-skill)，就像你使用Claude Code一样，例如：&lt;br&gt;
+&quot;使用STS-Skill https://github.com/ricoleehduu/sts-skill 帮我完成预赛。&quot;
+
+- **步骤2：**
+    向在线提交系统提交结果。
+
+- **步骤3：**
+填写注册表并将协议提交到WPS表单或谷歌表单：&lt;br&gt;
+        - [国内参赛者(WPS表单)](https://f.wps.cn/g/VV1UmM0O/)&lt;br&gt;
+        - [国际参赛者(谷歌表单)](https://docs.google.com/forms/d/e/1FAIpQLSf4hxOwxQdkIHkSICzlD2xnlAuPWr3EvUeB7oeuRKRPUimAKQ/viewform?usp=publish-editor)
+&lt;/font&gt;
+
+
+
+
+
+## 💻 数据结构
+
+```
+data/
+├── imgs/          # 训练图像
+├── masks/         # 训练掩码
+└── test/
+    ├── imgs/      # 测试图像(50个样本)
+    └── masks/      # 放置你的预测结果的位置(50个样本)
+
+```
+
+## ☑️ 快速开始
+
+代码可在[U-Net](https://arxiv.org/abs/1505)获取
+
+### 环境要求
+
+- Python 3.6+
+- PyTorch 1.13+
+- CUDA(推荐)
+
+### 安装依赖
+
+```bash
+pip install -r requirements.txt
+```
+
+### 训练模型
+
+```bash
+python train.py --amp
+```
+
+## 🛠️ 使用方法
+
+### 训练参数
+
+```console
+&gt; python train.py -h
+usage: train.py [-h] [--epochs E] [--batch-size B] [--learning-rate LR]
+                [--load LOAD] [--scale SCALE] [--validation VAL] [--amp]
+
+在图像和目标掩码上训练UNet
+
+可选参数：
+  -h, --help            显示此帮助信息并退出
+  --epochs E, -e E      训练轮数
+  --batch-size B, -b B  批处理大小
+  --learning-rate LR, -l LR
+                        学习率
+  --load LOAD, -f LOAD  从.pth文件加载模型
+  --scale SCALE, -s SCALE
+                        图像的缩放因子
+  --validation VAL, -v VAL
+                        用作验证的数据百分比(0-100)
+  --amp                 使用混合精度
+```
+
+### 预测
+
+#### 批处理
+
+```bash
+python predict.py -m checkpoints/checkpoint_epoch1.pth -i data/test/imgs
+
+python predict.py -m checkpoints/checkpoint_epoch1.pth -i data/test/imgs -o data/test/masks
+
+python predict.py -m checkpoints/checkpoint_epoch1.pth -i data/test/imgs -o data/test/masks -t 0.3
+```
+
+#### 单个文件
+
+```bash
+python predict.py -m checkpoints/checkpoint_epoch1.pth -i input.png -o output.png
+```
+
+#### 预测参数
+
+```console
+&gt; python predict.py -h
+usage: predict.py [-h] --model FILE --input INPUT [INPUT ...] [--output INPUT [INPUT ...]]
+                  [--viz] [--no-save] [--mask-threshold MASK_THRESHOLD] [--scale SCALE]
+                  [--bilinear] [--classes CLASSES]
+
+从输入图像预测掩码
+
+可选参数：
+  -h, --help            显示此帮助信息并退出
+  --model FILE, -m FILE 模型检查点</div></div>
+
+  <div class="section">
+    <h3>原始数据</h3>
+    <pre class="page-content" style="font-size:.8rem">{
+  &quot;id&quot;: 16040,
+  &quot;title&quot;: &quot;MICCAI STSR 2026 Pre-Task: 2D Images Segmentation&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;description_zh&quot;: null,
+  &quot;created_by&quot;: &quot;zhengxincan&quot;,
+  &quot;created_when&quot;: &quot;2026-04-30T05:30:13.082047Z&quot;,
+  &quot;logo&quot;: &quot;https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-30-1777527013/a60d1699ebe7/logo.jpg?AWSAccessKeyId=codabench-prod&amp;Signature=895I%2F5FtHWeUPi6L%2B59oo8wXn2I%3D&amp;Expires=1779872841&quot;,
+  &quot;participants_count&quot;: 15,
+  &quot;submissions_count&quot;: 48,
+  &quot;first_phase_start&quot;: null,
+  &quot;phases&quot;: [
+    {
+      &quot;id&quot;: 26447,
+      &quot;name&quot;: &quot;Validation&quot;,
+      &quot;start&quot;: &quot;2026-04-29T00:00:00Z&quot;,
+      &quot;end&quot;: &quot;2027-07-17T23:55:00Z&quot;,
+      &quot;max_submissions_per_day&quot;: 5
+    }
+  ],
+  &quot;pages&quot;: [
+    {
+      &quot;index&quot;: 0,
+      &quot;title&quot;: &quot;Overview&quot;,
+      &quot;content&quot;: &quot;## MICCAI STSR 2026 Pre-Task 2D Images Segmentation\n\nThis task is a prerequisite for STS26. To prevent dataset misuse, upon completion, you will be eligible to access the STS26 main competition dataset. Please submit the model&#x27;s inference results(&#x27;data/test/masks.zip&#x27;) on the &#x27;data/test/imgs/&#x27; data to the platform as a proof.(just takes about 1 hour)\n\nIf there&#x27;s any question, please contact directly at SemiTeethSegChallenge@outlook.com\n\n\n\n## 📖 Project Overview\n\n👌A simple 2D image segmentation task using [U-Net](https://arxiv.org/abs/1505).\n\n&lt;font size=4&gt;\n\n- **Step1: Download the Pre-Task data and training modal**&lt;br&gt;\nTo avoid the misuse of our data, you may just finish this simple (very simple) pre-task and fill out the Data Access Agreement at first to get access to the data.  \n Data site:&lt;br&gt;\n\t\t-[Huggingface](https://huggingface.co/datasets/Ricoooo/MICCAI-STS26-Challenge-Pre-Task)&lt;br&gt;\n\t\t-[Modelscope](https://modelscope.cn/datasets/lizhii/MICCAI-STS26-Challenge-Pre-Task/summary)&lt;br&gt;\n\t\t-[Baidu Netdisk(extracting code = bm2u)](https://pan.baidu.com/s/1U090bZnMGEJQaD3jwqaQuA)&lt;br&gt;\n\t\t-[Google Drive](https://drive.google.com/drive/folders/1lER9eIavr99g28aTO0kuxIcos_k9FBSx?usp=sharing)&lt;br&gt;\nOr you could use the [STS-Skill](https://github.com/ricoleehduu/sts-skill) as when you use Claude Code, like:&lt;br&gt;\n\&quot;Use STS-Skill https://github.com/ricoleehduu/sts-skill to help me finishing the Pre-Task.\&quot;\n\n- **Step2:**\n    Submit result to the online submission system.\n\n- **Step3:**\nFill out the registration form and submit the agreements to WPS Form or Google Form:&lt;br&gt;\n        - [For domestic participants (WPS Form)](https://f.wps.cn/g/VV1UmM0O/)&lt;br&gt;\n        - [For international participants (Google Form)](https://docs.google.com/forms/d/e/1FAIpQLSf4hxOwxQdkIHkSICzlD2xnlAuPWr3EvUeB7oeuRKRPUimAKQ/viewform?usp=publish-editor)\n&lt;/font&gt;\n\n\n\n\n\n## 💻 Data Structure\n\n```\ndata/\n├── imgs/          # Training images\n├── masks/         # Training masks\n└── test/\n    ├── imgs/      # Test images (50 samples)\n    └── masks/      # Where you put your references (50 samples)\n\n```\n\n## ☑️ Quick Start\n\nCode is available at [U-Net](https://arxiv.org/abs/1505)\n\n### Environment Requirements\n\n- Python 3.6+\n- PyTorch 1.13+\n- CUDA (recommended)\n\n### Install Dependencies\n\n```bash\npip install -r requirements.txt\n```\n\n### Train Model\n\n```bash\npython train.py --amp\n```\n\n## 🛠️ Usage\n\n### Training Parameters\n\n```console\n&gt; python train.py -h\nusage: train.py [-h] [--epochs E] [--batch-size B] [--learning-rate LR]\n                [--load LOAD] [--scale SCALE] [--validation VAL] [--amp]\n\nTrain the UNet on images and target masks\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --epochs E, -e E      Number of epochs\n  --batch-size B, -b B  Batch size\n  --learning-rate LR, -l LR\n                        Learning rate\n  --load LOAD, -f LOAD  Load model from a .pth file\n  --scale SCALE, -s SCALE\n                        Downscaling factor of the images\n  --validation VAL, -v VAL\n                        Percent of the data that is used as validation (0-100)\n  --amp                 Use mixed precision\n```\n\n### Prediction\n\n#### Batch Processing\n\n```bash\npython predict.py -m checkpoints/checkpoint_epoch1.pth -i data/test/imgs\n\npython predict.py -m checkpoints/checkpoint_epoch1.pth -i data/test/imgs -o data/test/masks\n\npython predict.py -m checkpoints/checkpoint_epoch1.pth -i data/test/imgs -o data/test/masks -t 0.3\n```\n\n#### Single File\n\n```bash\npython predict.py -m checkpoints/checkpoint_epoch1.pth -i input.png -o output.png\n```\n\n#### Prediction Parameters\n\n```console\n&gt; python predict.py -h\nusage: predict.py [-h] --model FILE --input INPUT [INPUT ...] [--output INPUT [INPUT ...]]\n                  [--viz] [--no-save] [--mask-threshold MASK_THRESHOLD] [--scale SCALE]\n                  [--bilinear] [--classes CLASSES]\n\nPredict masks from input images\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --model FILE, -m FILE Model checkpoint path\n  --input INPUT, -i INPUT Input image(s) or directory\n  --output INPUT, -o INPUT Output image(s) or directory\n  --viz, -v             Visualize results\n  --no-save, -n         Do not save output masks\n  --mask-threshold, -t  Threshold for mask binarization (default: 0.5)\n  --scale, -s           Image scale factor (default: 0.5)\n  --bilinear            Use bilinear upsampling\n  --classes, -c         Number of classes (default: 1)\n```\n\n## ‼️ Submission Format\n\nPlease make sure there&#x27;s no extra folder in your ZIP file and the size of the image you predict need to be the same as the original image!!\n\nPlease keep the pixel value in the range of (0, 255)\n```\n─mask.zip\n├──A-150.png\n├──...\n└──C-198.png\n```\n\n## ✅ Reference\n\nOriginal paper by Olaf Ronneberger, Philipp Fischer, Thomas Brox:\n\n[U-Net: Convolutional Networks for Biomedical Image Segmentation](https://arxiv.org/abs/1505.04597)\n\nOriginal code by milesial:\n\n[Pytorch-UNet](https://github.com/milesial/Pytorch-UNet?tab=readme-ov-file#with-docker)&quot;,
+      &quot;content_zh&quot;: &quot;## MICCAI STSR 2026 预赛2D图像分割\n\n该任务是STS26的前置任务。为防止数据滥用，完成后，你将有资格获得STS26主竞赛数据集的访问权限。请将模型在&#x27;data/test/imgs/&#x27;数据上的推理结果(&#x27;data/test/masks.zip&#x27;)提交到平台作为证明。(仅需约1小时)\n\n如有任何问题，请直接联系：SemiTeethSegChallenge@outlook.com\n\n\n\n## 📖 项目概述\n\n👌一个使用[U-Net](https://arxiv.org/abs/1505)的简单2D图像分割任务。\n\n&lt;font size=4&gt;\n\n- **步骤1：下载预赛数据和训练模型**&lt;br&gt;\n为了防止我们数据的滥用，你可以先完成这个简单(非常简单)的预赛任务，并首先填写《数据访问协议》来获得数据访问权限。\n数据网站：&lt;br&gt;\n\t\t-[Huggingface](https://huggingface.co/datasets/Ricoooo/MICCAI-STS26-Challenge-Pre-Task)&lt;br&gt;\n\t\t-[Modelscope](https://modelscope.cn/datasets/lizhii/MICCAI-STS26-Challenge-Pre-Task/summary)&lt;br&gt;\n\t\t-[百度网盘(提取码 = bm2u)](https://pan.baidu.com/s/1U090bZnMGEJQaD3jwqaQuA)&lt;br&gt;\n\t\t-[谷歌云盘](https://drive.google.com/drive/folders/1lER9eIavr99g28aTO0kuxIcos_k9FBSx?usp=sharing)&lt;br&gt;\n或者你可以使用[STS-Skill](https://github.com/ricoleehduu/sts-skill)，就像你使用Claude Code一样，例如：&lt;br&gt;\n\&quot;使用STS-Skill https://github.com/ricoleehduu/sts-skill 帮我完成预赛。\&quot;\n\n- **步骤2：**\n    向在线提交系统提交结果。\n\n- **步骤3：**\n填写注册表并将协议提交到WPS表单或谷歌表单：&lt;br&gt;\n        - [国内参赛者(WPS表单)](https://f.wps.cn/g/VV1UmM0O/)&lt;br&gt;\n        - [国际参赛者(谷歌表单)](https://docs.google.com/forms/d/e/1FAIpQLSf4hxOwxQdkIHkSICzlD2xnlAuPWr3EvUeB7oeuRKRPUimAKQ/viewform?usp=publish-editor)\n&lt;/font&gt;\n\n\n\n\n\n## 💻 数据结构\n\n```\ndata/\n├── imgs/          # 训练图像\n├── masks/         # 训练掩码\n└── test/\n    ├── imgs/      # 测试图像(50个样本)\n    └── masks/      # 放置你的预测结果的位置(50个样本)\n\n```\n\n## ☑️ 快速开始\n\n代码可在[U-Net](https://arxiv.org/abs/1505)获取\n\n### 环境要求\n\n- Python 3.6+\n- PyTorch 1.13+\n- CUDA(推荐)\n\n### 安装依赖\n\n```bash\npip install -r requirements.txt\n```\n\n### 训练模型\n\n```bash\npython train.py --amp\n```\n\n## 🛠️ 使用方法\n\n### 训练参数\n\n```console\n&gt; python train.py -h\nusage: train.py [-h] [--epochs E] [--batch-size B] [--learning-rate LR]\n                [--load LOAD] [--scale SCALE] [--validation VAL] [--amp]\n\n在图像和目标掩码上训练UNet\n\n可选参数：\n  -h, --help            显示此帮助信息并退出\n  --epochs E, -e E      训练轮数\n  --batch-size B, -b B  批处理大小\n  --learning-rate LR, -l LR\n                        学习率\n  --load LOAD, -f LOAD  从.pth文件加载模型\n  --scale SCALE, -s SCALE\n                        图像的缩放因子\n  --validation VAL, -v VAL\n                        用作验证的数据百分比(0-100)\n  --amp                 使用混合精度\n```\n\n### 预测\n\n#### 批处理\n\n```bash\npython predict.py -m checkpoints/checkpoint_epoch1.pth -i data/test/imgs\n\npython predict.py -m checkpoints/checkpoint_epoch1.pth -i data/test/imgs -o data/test/masks\n\npython predict.py -m checkpoints/checkpoint_epoch1.pth -i data/test/imgs -o data/test/masks -t 0.3\n```\n\n#### 单个文件\n\n```bash\npython predict.py -m checkpoints/checkpoint_epoch1.pth -i input.png -o output.png\n```\n\n#### 预测参数\n\n```console\n&gt; python predict.py -h\nusage: predict.py [-h] --model FILE --input INPUT [INPUT ...] [--output INPUT [INPUT ...]]\n                  [--viz] [--no-save] [--mask-threshold MASK_THRESHOLD] [--scale SCALE]\n                  [--bilinear] [--classes CLASSES]\n\n从输入图像预测掩码\n\n可选参数：\n  -h, --help            显示此帮助信息并退出\n  --model FILE, -m FILE 模型检查点&quot;
+    }
+  ]
+}</pre>
+  </div>
+</div>
+</body>
+</html>

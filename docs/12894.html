@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NTIRE 2026 3D Content Super-Resolution Challenge  - Track 2 Realistic Degradation — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>NTIRE 2026 3D Content Super-Resolution Challenge  - Track 2 Realistic Degradation</h2>
+  <div class="detail-meta">
+    <span>ID: 12894</span>
+    <span>创建者: yi_wang</span>
+    <span>创建时间: 2026-01-18</span>
+    <span>参与人数: 97</span>
+    <span>提交次数: 610</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/12894/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">暂无描述</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development</td><td>2026-01-15</td><td>2026-12-31</td><td>10</td></tr><tr><td><span class='badge badge-test'>测试</span> Testing</td><td>2027-01-01</td><td>2027-01-01</td><td>3</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'>&lt;h1 align=&quot;center&quot;&gt;&lt;b&gt;NTIRE 2026: 3D内容超分辨率挑战赛&lt;/b&gt;&lt;/h1&gt;
+
+&lt;h2&gt;重要时间节点&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;2026-01-15: 发布训练和验证数据；&lt;br&gt;&lt;/li&gt;
+    &lt;li&gt;2026-01-30: 验证服务器上线；&lt;br&gt;&lt;/li&gt;
+    &lt;li&gt;2026-03-10: 发布最终测试数据，验证服务器关闭；&lt;br&gt;&lt;/li&gt;
+    &lt;li&gt;2026-03-17: 测试结果提交截止时间；&lt;br&gt;&lt;/li&gt;
+    &lt;li&gt;2026-03-17: 信息表/代码/模型提交截止时间；&lt;br&gt;&lt;/li&gt;
+    &lt;li&gt;2026-03-19: 向参赛者发布测试初步成绩；&lt;br&gt;&lt;/li&gt;
+    &lt;li&gt;2026-03-22: 挑战赛论文提交截止时间；&lt;br&gt;&lt;/li&gt;
+    &lt;li&gt;2026-03-24: 论文审稿决议通知；&lt;br&gt;&lt;/li&gt;
+    &lt;li&gt;2026-04-08: 相机就绪版本；&lt;br&gt;&lt;/li&gt;
+    &lt;li&gt;2026-06-18 (待确认): 研讨会日期；&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;介绍&lt;/h2&gt;
+
+除了传统的图像和视频外，3D内容因其能提供场景的外观和几何信息而获得了广泛的欢迎。近年来，由于3D生成和重建技术的进步，3D内容呈现出指数级增长。然而，现有的3D生成模型仍然存在质量相对较低的问题。对于3D重建，由于现实世界中存在的多种约束，观察到的多视图图像通常分辨率较低，这最终会降低重建的3D内容的质量。在AR/VR等应用中，提高这些3D内容的分辨率是高度需要的，以提供沉浸式体验并帮助解析真实世界。&lt;br&gt;
+
+近年来，图像超分辨率(SR)在改进图像视觉质量方面取得了显著进展。为了增强3D内容的质量，一个直接的方法是使用现成的图像SR模型来超分辨渲染的图像。然而，这种方法忽略了几何和外观信息之间紧密耦合的关系，导致多视图不一致和闪烁伪影。&lt;br&gt;
+
+在此挑战赛中，我们旨在建立3D内容超分辨率的基准。我们希望突出3D内容超分辨率所面临的具体挑战和研究问题。我们期望此挑战能激励社区探索低级视觉和3D视觉的交叉领域，最终推动AR/VR等新兴应用中的技术进步。&lt;br&gt;&lt;br&gt;
+
+&lt;h2&gt;挑战赛描述&lt;/h2&gt;
+
+第8届NTIRE: 图像恢复与增强新趋势研讨会将于2026年6月与CVPR 2026一起举办。&lt;br&gt;
+
+本挑战赛的目标是从低分辨率(LR) 3D内容重建高分辨率(HR) 3D内容。在开发阶段，将发布验证集。参赛者可以通过将结果提交到验证服务器来评估其模型在验证集上的性能。具体而言，超分辨率图像在给定的相机内参和外参下渲染，然后提交到服务器进行在线评估。在测试阶段，将发布测试集，其中仅包含LR 3D内容。挑战赛参赛者应将其训练的模型应用于LR 3D内容以生成超分辨率结果。然后，这些结果提交到服务器并由组织者进行评估。&lt;br&gt;
+
+本挑战赛有两个赛道：
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href=&quot;https://www.codabench.org/competitions/12891/&quot;&gt;赛道1：双立方退化&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
+	该赛道的目标是在双立方退化(Matlab $imresize$双立方模式函数)下获得超分辨率3D内容。
+	&lt;li&gt;&lt;a href=&quot;https://www.codabench.org/competitions/12894/&quot;&gt;赛道2：真实退化&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
+	该赛道的目标是在真实退化下获得超分辨率3D内容。
+&lt;/ul&gt;
+
+&lt;h2&gt;组织者&lt;/h2&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href=&quot;https://longguangwang.github.io/&quot;&gt;王龙光&lt;/a&gt; (wanglg9@mail.sysu.edu.cn)，中山大学&lt;br&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://yulanguo.me/&quot;&gt;郭玉兰&lt;/a&gt; (guoyulan@sysu.edu.cn)，中山大学&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;</div></div><div class='section'><h3>Data</h3><div class='page-content'>&lt;h1 align=&quot;center&quot;&gt;&lt;b&gt;NTIRE 2026：3D内容超分辨率挑战赛&lt;/b&gt;&lt;/h1&gt;
+
+&lt;h2&gt;赛道1：双三次插值退化&lt;/h2&gt;
+
+&lt;b&gt;（1）训练集&lt;/b&gt;&lt;br&gt;
+
+本挑战赛不提供训练集，鼓励参与者使用多种外部数据集，包括但不限于图像SR数据集、深度图SR数据集、多视图数据集和3D重建数据集，以改进3D内容的质量。&lt;br&gt;&lt;br&gt;
+
+&lt;b&gt;（2）验证集&lt;/b&gt;&lt;br&gt;
+
+验证集包含LR 3D内容（使用分辨率为342x228的图像训练，&lt;a href=&quot;https://www.jianguoyun.com/p/DTTUxjwQ1Zb_DRiz9JoGIAA&quot;&gt;第1部分&lt;/a&gt;和&lt;a href=&quot;https://www.jianguoyun.com/p/DUH4tpMQ1Zb_DRi19JoGIAA&quot;&gt;第2部分&lt;/a&gt;）、HR图像/深度图（1368x912）及其对应的&lt;a href=&quot;https://www.jianguoyun.com/p/DVZDB1gQ1Zb_DRiU9JoGIAA&quot;&gt;相机姿态&lt;/a&gt;。参与者可下载验证集，通过将其超分辨率图像/深度图与HR图像/深度图进行比较来评估所开发模型的性能。鼓励参与者撰写论文来描述其方法，并使用发布的验证集进行性能评估。&lt;br&gt;&lt;br&gt;
+
+&lt;b&gt;（3）测试集&lt;/b&gt;&lt;br&gt;
+
+为了对提交的模型进行排名，提供了包含两个3D场景的测试集。与验证集不同，测试集仅发布&lt;a href=&quot;https://www.jianguoyun.com/p/DU4aPaYQ18WLDhjXg54GIAA&quot;&gt;LR 3D内容&lt;/a&gt;（使用分辨率为342x228的图像训练）和一组&lt;a href=&quot;https://www.jianguoyun.com/p/Daju7F0Q1Zb_DRiJ9JoGIAA&quot;&gt;相机姿态&lt;/a&gt;。参与者必须将其模型应用于发布的LR 3D内容，并将超分辨率图像/深度图（1368x912）在给定相机姿态处提交到服务器。&lt;br&gt;&lt;br&gt;
+
+&lt;h2&gt;赛道2：真实退化&lt;/h2&gt;
+
+&lt;b&gt;（1）训练集&lt;/b&gt;&lt;br&gt;
+
+本挑战赛不提供训练集，鼓励参与者使用多种外部数据集，包括但不限于图像SR数据集、深度图SR数据集、多视图数据集和3D重建数据集，以改进3D内容的质量。&lt;br&gt;&lt;br&gt;
+
+&lt;b&gt;（2）验证集&lt;/b&gt;&lt;br&gt;
+
+验证集包含&lt;a href=&quot;https://www.jianguoyun.com/p/DSNkhv0Q1Zb_DRih9JoGIAA&quot;&gt;LR 3D内容&lt;/a&gt;（使用分辨率为342x228的图像训练）、HR图像/深度图（1368x912）及其对应的&lt;a href=&quot;https://www.jianguoyun.com/p/DVZDB1gQ1Zb_DRiU9JoGIAA&quot;&gt;相机姿态&lt;/a&gt;。参与者可下载验证集，通过将其超分辨率图像/深度图与HR图像/深度图进行比较来评估所开发模型的性能。鼓励参与者撰写论文来描述其方法，并使用发布的验证集进行性能评估。&lt;br&gt;&lt;br&gt;
+
+&lt;b&gt;（3）测试集&lt;/b&gt;&lt;br&gt;
+
+为了对提交的模型进行排名，提供了包含两个3D场景的测试集。与验证集不同，测试集仅发布&lt;a href=&quot;https://www.jianguoyun.com/p/DaVm3REQ18WLDhjfg54GIAA&quot;&gt;LR 3D内容&lt;/a&gt;（使用分辨率为342x228的图像训练）和一组&lt;a href=&quot;https://www.jianguoyun.com/p/Daju7F0Q1Zb_DRiJ9JoGIAA&quot;&gt;相机姿态&lt;/a&gt;。参与者必须将其模型应用于发布的LR 3D内容，并将超分辨率图像/深度图（1368x912）在给定相机姿态处提交到服务器。&lt;br&gt;&lt;br&gt;</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'>&lt;h1 align=&quot;center&quot;&gt;&lt;b&gt;NTIRE 2026：3D内容超分辨率挑战赛&lt;/b&gt;&lt;/h1&gt;
+&lt;h2&gt;评估&lt;/h2&gt;
+
+本挑战赛的目标是从低分辨率（LR）的3D内容重建高分辨率（HR）的3D内容。在开发和测试阶段，挑战赛参与者需要提交超分辨率处理后的结果。计算评估指标的示例代码可以在&lt;a href=&quot;https://drive.google.com/file/d/1cYcP898xBpNWR-bGKKyFECymZkieN11a/view?usp=drive_link&quot;&gt;此处&lt;/a&gt;找到。&lt;br&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;b&gt;赛道1：双三次插值降质&lt;/b&gt;&lt;br&gt;&lt;/li&gt;
+    给定场景的多视图图像，使用双三次插值降质（Matlab中$imresize$函数的双三次模式）生成LR图像。&lt;/ul&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;b&gt;赛道2：真实降质&lt;/b&gt;&lt;br&gt;&lt;/li&gt;
+    给定场景的多视图图像，采用包含随机模糊、下采样、噪声和压缩的真实降质模型来合成LR图像。
+&lt;/ul&gt;
+
+对于定量评估，我们为每个测试3D内容选择M个相机位姿来渲染M张图像和对应的深度图。然后，使用PSNR评估视觉质量，而EPE用于评估几何精度。最终排名分数计算方式如下：
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;https://pic1.imgdb.cn/item/6958eed2da3df73ea1bca10e.png&quot;, width=&quot;50%&quot;&gt;&lt;/div&gt;
+
+&lt;h2&gt;提交&lt;/h2&gt;
+
+在开发阶段，参与者可以在验证集上提交结果以获得Codabench服务器的反馈。在测试阶段，参与者将提交测试集的全部结果。这应该与最后一次向Codabench的提交相匹配。&lt;br&gt;
+
+提交的结果应包含在给定的相机内参和外参下从超分辨率3D内容渲染的图像和深度图（1368x912）。注意，内参和外参文件可以在此处找到（&lt;a href=&quot;https://www.jianguoyun.com/p/DVZDB1gQ1Zb_DRiU9JoGIAA&quot;&gt;验证位姿&lt;/a&gt;和&lt;a href=&quot;https://www.jianguoyun.com/p/Daju7F0Q1Zb_DRiJ9JoGIAA&quot;&gt;测试位姿&lt;/a&gt;），以下示例代码中的相机索引应用于渲染。
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;https://i.imgs.ovh/2026/01/19/ybyjfa.png&quot;, width=&quot;100%&quot;&gt;&lt;/div&gt;
+&lt;br&gt;
+
+提交结果时，创建一个ZIP压缩包，包含所有生成的图像和深度图。渲染图像和深度图的命名应与验证集和测试集中的相机内参和外参命名相同。有效的虚拟提交示例文件可以在&lt;a href=&quot;https://www.jianguoyun.com/p/DS7pUnsQleb6DRiD4ZoGIAA&quot;&gt;此处&lt;/a&gt;找到。&lt;br&gt;
+
+&lt;div style=&quot;background-color: #DDD; border: 5pt&quot;&gt;
+
+测试阶段结束后，参与者需要1）填写&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLSdx7w348lLapHfupaHDwkSRXIhN8Lxzksat1nUIlNtK9v6cnQ/viewform&quot;&gt;在线表格&lt;/a&gt;，以及2）向官方提交账户（&lt;strong&gt;ntire.3dsr@outlook.com&lt;/strong&gt;）通过电子邮件提交一个ZIP压缩包（包含事实表、源代码和最终结果，事实表示例可以在&lt;a href=&quot;https://www.jianguoyun.com/p/DbxH8hgQleb6DRi_6pgGIAA&quot;&gt;此处&lt;/a&gt;找到）。最终提交应遵循以下规则：&lt;br&gt;
+&lt;ul&gt;
+	&lt;li&gt;提交的结果必须来自生成Codabench最后一次提交的同一方法。我们将检查一致性。否则提交无效。&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;
+	
+&lt;ul&gt;
+	&lt;li&gt;必须提交测试源代码（或可执行文件）和训练代码。可重现性是必要条件。&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;
+	
+&lt;ul&gt;
+    &lt;li&gt;应一起提交描述方法细节的事实表。事实表格式随数据提供。参与者必须提交已编译的PDF文件和TeX源文件。我们鼓励参与者提供详细信息并附带图像源文件。这有助于撰写挑战赛总结报告。&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+最终测试阶段的每个参与团队应使用提供的事实表模板来描述其解决方案。&lt;br&gt;
+
+&lt;h3&gt;电子邮件</div></div>
+
+  <div class="section">
+    <h3>原始数据</h3>
+    <pre class="page-content" style="font-size:.8rem">{
+  &quot;id&quot;: 12894,
+  &quot;title&quot;: &quot;NTIRE 2026 3D Content Super-Resolution Challenge  - Track 2 Realistic Degradation&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;description_zh&quot;: null,
+  &quot;created_by&quot;: &quot;yi_wang&quot;,
+  &quot;created_when&quot;: &quot;2026-01-18T12:37:00.098380Z&quot;,
+  &quot;logo&quot;: &quot;https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-01-18-1768739820/5c3c3fc18e26/logo.png?AWSAccessKeyId=codabench-prod&amp;Signature=xkn%2B9HLkgTOBfKDCY6O1BadB9i0%3D&amp;Expires=1779873009&quot;,
+  &quot;participants_count&quot;: 97,
+  &quot;submissions_count&quot;: 610,
+  &quot;first_phase_start&quot;: null,
+  &quot;phases&quot;: [
+    {
+      &quot;id&quot;: 21091,
+      &quot;name&quot;: &quot;Development&quot;,
+      &quot;start&quot;: &quot;2026-01-15T00:00:00Z&quot;,
+      &quot;end&quot;: &quot;2026-12-31T00:00:00Z&quot;,
+      &quot;max_submissions_per_day&quot;: 10
+    },
+    {
+      &quot;id&quot;: 21092,
+      &quot;name&quot;: &quot;Testing&quot;,
+      &quot;start&quot;: &quot;2027-01-01T00:00:00Z&quot;,
+      &quot;end&quot;: &quot;2027-01-01T23:00:00Z&quot;,
+      &quot;max_submissions_per_day&quot;: 3
+    }
+  ],
+  &quot;pages&quot;: [
+    {
+      &quot;index&quot;: 0,
+      &quot;title&quot;: &quot;Overview&quot;,
+      &quot;content&quot;: &quot;&lt;h1 align=\&quot;center\&quot;&gt;&lt;b&gt;NTIRE 2026: 3D Content Super-Resolution Challenge&lt;/b&gt;&lt;/h1&gt;\n\n&lt;h2&gt;Important Dates&lt;/h2&gt;\n&lt;ul&gt;\n    &lt;li&gt;2026-01-15: Release of training and validation data;&lt;br&gt;&lt;/li&gt;\n    &lt;li&gt;2026-01-30: Validation server online;&lt;br&gt;&lt;/li&gt;\n    &lt;li&gt;2026-03-10: Final test data release, validation server closed;&lt;br&gt;&lt;/li&gt;\n    &lt;li&gt;2026-03-17: Test result submission deadline;&lt;br&gt;&lt;/li&gt;\n    &lt;li&gt;2026-03-17: Fact sheet / code / model submission deadline;&lt;br&gt;&lt;/li&gt;\n    &lt;li&gt;2026-03-19: Test preliminary score release to the participants;&lt;br&gt;&lt;/li&gt;\n    &lt;li&gt;2026-03-22: Challenge paper submission deadline;&lt;br&gt;&lt;/li&gt;\n    &lt;li&gt;2026-03-24: Paper decision notification;&lt;br&gt;&lt;/li&gt;\n    &lt;li&gt;2026-04-08: Camera-ready;&lt;br&gt;&lt;/li&gt;\n    &lt;li&gt;2026-06-18 (TBU): Workshop day;&lt;br&gt;&lt;br&gt;&lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;h2&gt;Introduction&lt;/h2&gt;\n\nBeyond traditional images and videos, 3D content has gained immense popularity to provide both appearance and geometry information of the scene. Recent years have witnessed exponential surge of 3D contents due to the advances in 3D generation and reconstruction. Nevertheless, current 3D generation models still suffer relatively low quality. For 3D reconstruction, due to diverse constraints in the real world, the observed multi-view images are usually of low resolution, which ultimately degrades the quality of reconstructed 3D content. In applications like AR/VR, increasing the resolution of these 3D contents is highly demanded to provide immersive experience and help to parse the real world.&lt;br&gt;\n\nRecently, remarkable progress has been achieved in image super-resolution (SR) to improve the visual quality of images. To enhance the quality of a 3D content, a straightforward approach is to employ an off-the-shelf image SR model to super-resolve the rendered images. However, this approach ignores the tightly coupled relationship between geometry and appearance information, resulting in multi-view inconsistency and flicker artifacts. &lt;br&gt;\n \nIn this challenge, we aim at establishing a benchmark for 3D content SR. We aspire to highlight the specific challenges and research problems faced by 3D content SR. We hope that this challenge could inspire the community to explore the cross area of low-level vision and 3D vision, and ultimately drive technological advancement in emerging applications such as AR/VR.&lt;br&gt;&lt;br&gt;\n\n&lt;h2&gt;Challenge Description&lt;/h2&gt;\n\nThe &lt;a href=\&quot;https://www.cvlai.net/ntire/2026/\&quot;&gt;8th edition of NTIRE: New Trends in Image Restoration and Enhancement workshop&lt;/a&gt; will be held on June, 2026 in conjunction with CVPR 2026.&lt;br&gt;\n\nThe objective of this challenge is to reconstruct high-resolution (HR) 3D contents from their low-resolution (LR) counterparts. During the development phase, the validation set will be released. The participants can evaluate their models on the validation set by submitting their results to the validation server. Specifically, super-resolved images are rendered under given camera intrinsics and extrinsics and then submitted to the server for online evaluation.\nDuring the test phase, the test set will be released, which includes LR 3D content only. Challenge participants should apply their trained models to the LR 3D content to generate super-resolved results. Then, these results are submitted to the server and evaluated by the organizers.&lt;br&gt;\n\nThis challenge has two tracks:\n&lt;ul&gt;\n\t&lt;li&gt;&lt;a href=\&quot;https://www.codabench.org/competitions/12891/\&quot;&gt;Track 1: Bicubic Degradation&lt;/a&gt;&lt;br&gt;&lt;/li&gt;\n\tThe aim of this track is to obtain super-resolved 3D content under bicubic degradation (Matlab $imresize$ function in bicubic mode).\n\t&lt;li&gt;&lt;a href=\&quot;https://www.codabench.org/competitions/12894/\&quot;&gt;Track 2: Realistic Degradation&lt;/a&gt;&lt;br&gt;&lt;/li&gt;\n\tThe aim of this track is to obtain super-resolved 3D content under realistic degradation.\n&lt;/ul&gt;\n\n&lt;h2&gt;Organizers&lt;/h2&gt;\n&lt;ul&gt;\n\t&lt;li&gt;&lt;a href=\&quot;https://longguangwang.github.io/\&quot;&gt;Longguang Wang&lt;/a&gt; (wanglg9@mail.sysu.edu.cn), Sun Yat-sen University&lt;br&gt;&lt;/li&gt;\n\t&lt;li&gt;&lt;a href=\&quot;http://yulanguo.me/\&quot;&gt;Yulan Guo&lt;/a&gt; (guoyulan@sysu.edu.cn), Sun Yat-sen University&lt;br&gt;&lt;/li&gt;\n\t&lt;li&gt;&lt;a href=\&quot;https://yingqianwang.github.io/\&quot;&gt;Yingqian Wang&lt;/a&gt; (wangyingqian16@nudt.edu.cn), National University of Defense Technology&lt;br&gt;&lt;/li&gt;\n\t&lt;li&gt;&lt;a href=\&quot;https://junchenglee.com/\&quot;&gt;Juncheng Li&lt;/a&gt; (cvjunchengli@gmail.com), East China Normal University&lt;br&gt;&lt;/li&gt;\n\t&lt;li&gt;&lt;a href=\&quot;https://pengsida.net/\&quot;&gt;Sida Peng&lt;/a&gt; (pengsida@zju.edu.cn), Zhejiang University&lt;br&gt;&lt;/li&gt;\n\t&lt;li&gt;&lt;a href=\&quot;https://github.com/crocodilegogogo\&quot;&gt;Ye Zhang&lt;/a&gt; (zhangy2658@mail.sysu.edu.cn), Sun Yat-sen University&lt;br&gt;&lt;/li&gt;\n\t&lt;li&gt;&lt;a href=\&quot;https://people.ee.ethz.ch/~timofter/\&quot;&gt;Radu Timofte&lt;/a&gt; (radu.timofte@uni-wuerzburg.de), University of Würzburg&lt;br&gt;&lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;h2&gt;Official Repository&lt;/h2&gt;\n\n&lt;a href=\&quot;https://github.com/WhatIMean2/NTIRE-2026-3D-Content-Super-Resolution-Challenge\&quot;&gt;NTIRE 2026: 3D Content Super-Resolution Challenge&lt;/a&gt;&quot;,
+      &quot;content_zh&quot;: &quot;&lt;h1 align=\&quot;center\&quot;&gt;&lt;b&gt;NTIRE 2026: 3D内容超分辨率挑战赛&lt;/b&gt;&lt;/h1&gt;\n\n&lt;h2&gt;重要时间节点&lt;/h2&gt;\n&lt;ul&gt;\n    &lt;li&gt;2026-01-15: 发布训练和验证数据；&lt;br&gt;&lt;/li&gt;\n    &lt;li&gt;2026-01-30: 验证服务器上线；&lt;br&gt;&lt;/li&gt;\n    &lt;li&gt;2026-03-10: 发布最终测试数据，验证服务器关闭；&lt;br&gt;&lt;/li&gt;\n    &lt;li&gt;2026-03-17: 测试结果提交截止时间；&lt;br&gt;&lt;/li&gt;\n    &lt;li&gt;2026-03-17: 信息表/代码/模型提交截止时间；&lt;br&gt;&lt;/li&gt;\n    &lt;li&gt;2026-03-19: 向参赛者发布测试初步成绩；&lt;br&gt;&lt;/li&gt;\n    &lt;li&gt;2026-03-22: 挑战赛论文提交截止时间；&lt;br&gt;&lt;/li&gt;\n    &lt;li&gt;2026-03-24: 论文审稿决议通知；&lt;br&gt;&lt;/li&gt;\n    &lt;li&gt;2026-04-08: 相机就绪版本；&lt;br&gt;&lt;/li&gt;\n    &lt;li&gt;2026-06-18 (待确认): 研讨会日期；&lt;br&gt;&lt;br&gt;&lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;h2&gt;介绍&lt;/h2&gt;\n\n除了传统的图像和视频外，3D内容因其能提供场景的外观和几何信息而获得了广泛的欢迎。近年来，由于3D生成和重建技术的进步，3D内容呈现出指数级增长。然而，现有的3D生成模型仍然存在质量相对较低的问题。对于3D重建，由于现实世界中存在的多种约束，观察到的多视图图像通常分辨率较低，这最终会降低重建的3D内容的质量。在AR/VR等应用中，提高这些3D内容的分辨率是高度需要的，以提供沉浸式体验并帮助解析真实世界。&lt;br&gt;\n\n近年来，图像超分辨率(SR)在改进图像视觉质量方面取得了显著进展。为了增强3D内容的质量，一个直接的方法是使用现成的图像SR模型来超分辨渲染的图像。然而，这种方法忽略了几何和外观信息之间紧密耦合的关系，导致多视图不一致和闪烁伪影。&lt;br&gt;\n\n在此挑战赛中，我们旨在建立3D内容超分辨率的基准。我们希望突出3D内容超分辨率所面临的具体挑战和研究问题。我们期望此挑战能激励社区探索低级视觉和3D视觉的交叉领域，最终推动AR/VR等新兴应用中的技术进步。&lt;br&gt;&lt;br&gt;\n\n&lt;h2&gt;挑战赛描述&lt;/h2&gt;\n\n第8届NTIRE: 图像恢复与增强新趋势研讨会将于2026年6月与CVPR 2026一起举办。&lt;br&gt;\n\n本挑战赛的目标是从低分辨率(LR) 3D内容重建高分辨率(HR) 3D内容。在开发阶段，将发布验证集。参赛者可以通过将结果提交到验证服务器来评估其模型在验证集上的性能。具体而言，超分辨率图像在给定的相机内参和外参下渲染，然后提交到服务器进行在线评估。在测试阶段，将发布测试集，其中仅包含LR 3D内容。挑战赛参赛者应将其训练的模型应用于LR 3D内容以生成超分辨率结果。然后，这些结果提交到服务器并由组织者进行评估。&lt;br&gt;\n\n本挑战赛有两个赛道：\n&lt;ul&gt;\n\t&lt;li&gt;&lt;a href=\&quot;https://www.codabench.org/competitions/12891/\&quot;&gt;赛道1：双立方退化&lt;/a&gt;&lt;br&gt;&lt;/li&gt;\n\t该赛道的目标是在双立方退化(Matlab $imresize$双立方模式函数)下获得超分辨率3D内容。\n\t&lt;li&gt;&lt;a href=\&quot;https://www.codabench.org/competitions/12894/\&quot;&gt;赛道2：真实退化&lt;/a&gt;&lt;br&gt;&lt;/li&gt;\n\t该赛道的目标是在真实退化下获得超分辨率3D内容。\n&lt;/ul&gt;\n\n&lt;h2&gt;组织者&lt;/h2&gt;\n&lt;ul&gt;\n\t&lt;li&gt;&lt;a href=\&quot;https://longguangwang.github.io/\&quot;&gt;王龙光&lt;/a&gt; (wanglg9@mail.sysu.edu.cn)，中山大学&lt;br&gt;&lt;/li&gt;\n\t&lt;li&gt;&lt;a href=\&quot;http://yulanguo.me/\&quot;&gt;郭玉兰&lt;/a&gt; (guoyulan@sysu.edu.cn)，中山大学&lt;br&gt;&lt;/li&gt;\n&lt;/ul&gt;&quot;
+    },
+    {
+      &quot;index&quot;: 1,
+      &quot;title&quot;: &quot;Data&quot;,
+      &quot;content&quot;: &quot;&lt;h1 align=\&quot;center\&quot;&gt;&lt;b&gt;NTIRE 2026: 3D Content Super-Resolution Challenge&lt;/b&gt;&lt;/h1&gt;\n\n\n&lt;h2&gt;Track 1: Bicubic Degradation&lt;/h2&gt;\n\n&lt;b&gt;(1) Training Set&lt;/b&gt;&lt;br&gt;\n\nThis challenge does not provide a training set and encourages the participants to employ diverse external datasets, including but not limited to image SR datasets, depth map SR datasets, multi-view datasets, and 3D reconstruction datasets, to improve the quality of a 3D content.&lt;br&gt;&lt;br&gt;\n\n&lt;b&gt;(2) Validation Set&lt;/b&gt;&lt;br&gt;\n\t\nThe validation set consists of LR 3D contents (trained using images with a resolution of 342x228, &lt;a href=\&quot;https://www.jianguoyun.com/p/DTTUxjwQ1Zb_DRiz9JoGIAA\&quot;&gt;part 1&lt;/a&gt; and &lt;a href=\&quot;https://www.jianguoyun.com/p/DUH4tpMQ1Zb_DRi19JoGIAA\&quot;&gt;part 2&lt;/a&gt;) and HR images/depth maps (1368x912) with their corresponding &lt;a href=\&quot;https://www.jianguoyun.com/p/DVZDB1gQ1Zb_DRiU9JoGIAA\&quot;&gt;camera poses&lt;/a&gt;. The participants can download the validation set to evaluate the performance of their developed models by comparing their super-resolved images/depth maps with the HR images/depth maps. The participants are encouraged to write papers to describe their methods and use the released validation set for performance evaluation.&lt;br&gt;&lt;br&gt;\n\n&lt;b&gt;(3) Test Set&lt;/b&gt;&lt;br&gt;\n\nTo rank the submitted models, a test set consisting of two 3D scenes is provided. Unlike the validation sets, only &lt;a href=\&quot;https://www.jianguoyun.com/p/DU4aPaYQ18WLDhjXg54GIAA\&quot;&gt;LR 3D contents&lt;/a&gt; (trained using images with a resolution of 342x228) and a set of &lt;a href=\&quot;https://www.jianguoyun.com/p/Daju7F0Q1Zb_DRiJ9JoGIAA\&quot;&gt;camera poses&lt;/a&gt; will be released for the test set. The participants must apply their models to the released LR 3D contents and submit their super-resolved images/depth maps (1368x912) at given camera poses to the server.&lt;br&gt;&lt;br&gt;\n\n&lt;h2&gt;Track 2: Realistic Degradation&lt;/h2&gt;\n\n&lt;b&gt;(1) Training Set&lt;/b&gt;&lt;br&gt;\n\nThis challenge does not provide a training set and encourages the participants to employ diverse external datasets, including but not limited to image SR datasets, depth map SR datasets, multi-view datasets, and 3D reconstruction datasets, to improve the quality of a 3D content.&lt;br&gt;&lt;br&gt;\n\n&lt;b&gt;(2) Validation Set&lt;/b&gt;&lt;br&gt;\n\nThe validation set consists of &lt;a href=\&quot;https://www.jianguoyun.com/p/DSNkhv0Q1Zb_DRih9JoGIAA\&quot;&gt;LR 3D contents&lt;/a&gt; (trained using images with a resolution of 342x228) and HR images/depth maps (1368x912) with their corresponding &lt;a href=\&quot;https://www.jianguoyun.com/p/DVZDB1gQ1Zb_DRiU9JoGIAA\&quot;&gt;camera poses&lt;/a&gt;. The participants can download the validation set to evaluate the performance of their developed models by comparing their super-resolved images/depth maps with the HR images/depth maps. The participants are encouraged to write papers to describe their methods and use the released validation set for performance evaluation.&lt;br&gt;&lt;br&gt;\n\n&lt;b&gt;(3) Test Set&lt;/b&gt;&lt;br&gt;\n\nTo rank the submitted models, a test set consisting of two 3D scenes is provided. Unlike the validation sets, only &lt;a href=\&quot;https://www.jianguoyun.com/p/DaVm3REQ18WLDhjfg54GIAA\&quot;&gt;LR 3D contents&lt;/a&gt; (trained using images with a resolution of 342x228) and a set of &lt;a href=\&quot;https://www.jianguoyun.com/p/Daju7F0Q1Zb_DRiJ9JoGIAA\&quot;&gt;camera poses&lt;/a&gt; will be released for the test set. The participants must apply their models to the released LR 3D contents and submit their super-resolved images/depth maps (1368x912) at given camera poses to the server.&lt;br&gt;&lt;br&gt;&quot;,
+      &quot;content_zh&quot;: &quot;&lt;h1 align=\&quot;center\&quot;&gt;&lt;b&gt;NTIRE 2026：3D内容超分辨率挑战赛&lt;/b&gt;&lt;/h1&gt;\n\n&lt;h2&gt;赛道1：双三次插值退化&lt;/h2&gt;\n\n&lt;b&gt;（1）训练集&lt;/b&gt;&lt;br&gt;\n\n本挑战赛不提供训练集，鼓励参与者使用多种外部数据集，包括但不限于图像SR数据集、深度图SR数据集、多视图数据集和3D重建数据集，以改进3D内容的质量。&lt;br&gt;&lt;br&gt;\n\n&lt;b&gt;（2）验证集&lt;/b&gt;&lt;br&gt;\n\n验证集包含LR 3D内容（使用分辨率为342x228的图像训练，&lt;a href=\&quot;https://www.jianguoyun.com/p/DTTUxjwQ1Zb_DRiz9JoGIAA\&quot;&gt;第1部分&lt;/a&gt;和&lt;a href=\&quot;https://www.jianguoyun.com/p/DUH4tpMQ1Zb_DRi19JoGIAA\&quot;&gt;第2部分&lt;/a&gt;）、HR图像/深度图（1368x912）及其对应的&lt;a href=\&quot;https://www.jianguoyun.com/p/DVZDB1gQ1Zb_DRiU9JoGIAA\&quot;&gt;相机姿态&lt;/a&gt;。参与者可下载验证集，通过将其超分辨率图像/深度图与HR图像/深度图进行比较来评估所开发模型的性能。鼓励参与者撰写论文来描述其方法，并使用发布的验证集进行性能评估。&lt;br&gt;&lt;br&gt;\n\n&lt;b&gt;（3）测试集&lt;/b&gt;&lt;br&gt;\n\n为了对提交的模型进行排名，提供了包含两个3D场景的测试集。与验证集不同，测试集仅发布&lt;a href=\&quot;https://www.jianguoyun.com/p/DU4aPaYQ18WLDhjXg54GIAA\&quot;&gt;LR 3D内容&lt;/a&gt;（使用分辨率为342x228的图像训练）和一组&lt;a href=\&quot;https://www.jianguoyun.com/p/Daju7F0Q1Zb_DRiJ9JoGIAA\&quot;&gt;相机姿态&lt;/a&gt;。参与者必须将其模型应用于发布的LR 3D内容，并将超分辨率图像/深度图（1368x912）在给定相机姿态处提交到服务器。&lt;br&gt;&lt;br&gt;\n\n&lt;h2&gt;赛道2：真实退化&lt;/h2&gt;\n\n&lt;b&gt;（1）训练集&lt;/b&gt;&lt;br&gt;\n\n本挑战赛不提供训练集，鼓励参与者使用多种外部数据集，包括但不限于图像SR数据集、深度图SR数据集、多视图数据集和3D重建数据集，以改进3D内容的质量。&lt;br&gt;&lt;br&gt;\n\n&lt;b&gt;（2）验证集&lt;/b&gt;&lt;br&gt;\n\n验证集包含&lt;a href=\&quot;https://www.jianguoyun.com/p/DSNkhv0Q1Zb_DRih9JoGIAA\&quot;&gt;LR 3D内容&lt;/a&gt;（使用分辨率为342x228的图像训练）、HR图像/深度图（1368x912）及其对应的&lt;a href=\&quot;https://www.jianguoyun.com/p/DVZDB1gQ1Zb_DRiU9JoGIAA\&quot;&gt;相机姿态&lt;/a&gt;。参与者可下载验证集，通过将其超分辨率图像/深度图与HR图像/深度图进行比较来评估所开发模型的性能。鼓励参与者撰写论文来描述其方法，并使用发布的验证集进行性能评估。&lt;br&gt;&lt;br&gt;\n\n&lt;b&gt;（3）测试集&lt;/b&gt;&lt;br&gt;\n\n为了对提交的模型进行排名，提供了包含两个3D场景的测试集。与验证集不同，测试集仅发布&lt;a href=\&quot;https://www.jianguoyun.com/p/DaVm3REQ18WLDhjfg54GIAA\&quot;&gt;LR 3D内容&lt;/a&gt;（使用分辨率为342x228的图像训练）和一组&lt;a href=\&quot;https://www.jianguoyun.com/p/Daju7F0Q1Zb_DRiJ9JoGIAA\&quot;&gt;相机姿态&lt;/a&gt;。参与者必须将其模型应用于发布的LR 3D内容，并将超分辨率图像/深度图（1368x912）在给定相机姿态处提交到服务器。&lt;br&gt;&lt;br&gt;&quot;
+    },
+    {
+      &quot;index&quot;: 2,
+      &quot;title&quot;: &quot;Evaluation&quot;,
+      &quot;content&quot;: &quot;&lt;h1 align=\&quot;center\&quot;&gt;&lt;b&gt;NTIRE 2026: 3D Content Super-Resolution Challenge&lt;/b&gt;&lt;/h1&gt;\n&lt;h2&gt;Evaluation&lt;/h2&gt;\n\nThe objective of this challenge is to reconstruct high-resolution (HR) 3D contents from their low-resolution (LR) counterparts. During the development and testing phase, challenge participants will submit the super-resolved results. Example codes to calculate evaluation metrics can be found &lt;a href=\&quot;https://drive.google.com/file/d/1cYcP898xBpNWR-bGKKyFECymZkieN11a/view?usp=drive_link\&quot;&gt;here&lt;/a&gt;. &lt;br&gt;\n&lt;ul&gt;\n\t&lt;li&gt;&lt;b&gt;Track 1: Bicubic Degradation&lt;/b&gt;&lt;br&gt;&lt;/li&gt;\n    Given multi-view images of a scene, bicubic degradation (Matlab $imresize$ function in bicubic mode) is used to generate LR images.&lt;/ul&gt;\n\n&lt;ul&gt;\n\t&lt;li&gt;&lt;b&gt;Track 2: Realistic Degradation&lt;/b&gt;&lt;br&gt;&lt;/li&gt;\n    Given multi-view images of a scene, a realistic degradation model consisting of random blur, downsampling, noise, and compression is adopted to synthesize LR images.\n&lt;/ul&gt;\nFor quantitative evaluation, we select M camera poses for each test 3D content to render M images and corresponding depth maps. Then, PSNR is used to evaluate the visual quality, while EPE is employed to assess geometry accuracy. The final score for ranking is calculated as:\n&lt;div align=\&quot;center\&quot;&gt;&lt;img src=\&quot;https://pic1.imgdb.cn/item/6958eed2da3df73ea1bca10e.png\&quot;, width=\&quot;50%\&quot;&gt;&lt;/div&gt;\n\n&lt;h2&gt;Submission&lt;/h2&gt;\n\nDuring the development phase, participants can submit their results on the validation set to get feedback from the Codabench server. During the test phase, participants will submit the whole results of the test set. This should match the last submission to Codabench.&lt;br&gt;\n\nThe submitted results should contain images and depth maps (1368x912) rendered from the super-resolved 3D content under given camera intrinsics and extrinsics. Note that, the intrinsics and extrinsics file can be found here (&lt;a href=\&quot;https://www.jianguoyun.com/p/DVZDB1gQ1Zb_DRiU9JoGIAA\&quot;&gt;validation poses&lt;/a&gt; and &lt;a href=\&quot;https://www.jianguoyun.com/p/Daju7F0Q1Zb_DRiJ9JoGIAA\&quot;&gt;test poses&lt;/a&gt;), and the camera indices in the following example code should be used for rendering.\n&lt;div align=\&quot;center\&quot;&gt;&lt;img src=\&quot;https://i.imgs.ovh/2026/01/19/ybyjfa.png\&quot;, width=\&quot;100%\&quot;&gt;&lt;/div&gt;\n&lt;br&gt;\n\nWhen submitting the results, create a ZIP archive containing all the resulting images and depth maps. The terminology of the rendered images and depth maps should be identical to that of the camera intrinsics and extrinsics in the validation and test sets. A valid example dummy submission file can be found &lt;a href=\&quot;https://www.jianguoyun.com/p/DS7pUnsQleb6DRiD4ZoGIAA\&quot;&gt;here.&lt;/a&gt;&lt;br&gt;\n\n&lt;div style=\&quot;background-color: #DDD; border: 5pt\&quot;&gt;\n\nAfter the test phase, the participants will 1) fill in an &lt;a href=\&quot;https://docs.google.com/forms/d/e/1FAIpQLSdx7w348lLapHfupaHDwkSRXIhN8Lxzksat1nUIlNtK9v6cnQ/viewform\&quot;&gt;online form&lt;/a&gt; and 2) submit a zip file (containing fact sheet, source code, and final results, an example of fact sheet can be found &lt;a href=\&quot;https://www.jianguoyun.com/p/DbxH8hgQleb6DRi_6pgGIAA\&quot;&gt;here&lt;/a&gt;) to the official submission account (&lt;strong&gt;ntire.3dsr@outlook.com&lt;/strong&gt;) by email. The final submission should be made by the following rules:&lt;br&gt;\n&lt;ul&gt;\n\t&lt;li&gt;The submitted results must be from the same method that generated the last submission to the Codabench. We will check the consistency. Otherwise, the submission is invalid.&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;\n\t\n&lt;ul&gt;\n\t&lt;li&gt;Both the testing source code (or executable) and the training code must be submitted. Reproducibility is a necessary condition.&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;\n\t\n&lt;ul&gt;\n    &lt;li&gt;Factsheet describing the method details should be submitted together. The factsheet format is provided with data. Participants must submit a compiled pdf file and the tex source. We encourage participants to provide details and enclose figure image sources together. This helps writing the challenge summary report.&lt;br&gt;&lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;/div&gt;\n\n\nEach participating team in the final testing phase should use the provided factsheet template to describe their solution(s). &lt;br&gt;\n\n&lt;h3&gt;Email submission format&lt;/h3&gt;\n\nPlease use the following format to submit your final results, fact sheet, code, and model (with trained parameters). We will run the test code to reproduce the results. The code and the model will be posted on the NTIRE 2026 website. &lt;br&gt;&lt;br&gt;\n\nto: ntire.3dsr@outlook.com;  &lt;br&gt;\ncc: your_team_members  &lt;br&gt;\ntitle: [NTIRE 2026 3D Content Super-Resolution Challenge (Track *)] - [Team_name]&lt;br&gt;\nbody should include: &lt;br&gt;\n 1) the challenge name (including track id) &lt;br&gt;\n 2) team name  &lt;br&gt;\n 3) team leader&#x27;s name, affiliation, and email address  &lt;br&gt;\n 4) team members&#x27; names, affiliations, and email addresses  &lt;br&gt;\n 5) user name on the NTIRE 2026 Codabench leaderboard (if any)    &lt;br&gt;\n 6) executable/source code attached or download links.    &lt;br&gt;\n 7) fact sheet attached    &lt;br&gt;\n 8) download link to the results   &lt;br&gt;&lt;br&gt;   \n\nIt should be noted that, the top ranking participants should publicly release their code (or executables) under a license of their choice, taken among popular OSI-approved licenses (http://opensource.org/licenses) and make their code (or executables) online accessible for not less than one year following the end of the challenge (applies only for top three ranked participants of the competition).\n\n&lt;h3&gt;Group number policy&lt;/h3&gt;\n\nEach group cannot have more than six group members (i.e., 1 to 6 group members is OK), and each paricipant can only join one group. Each group can only submit one algorithm for final ranking.&lt;br&gt;&quot;,
+      &quot;content_zh&quot;: &quot;&lt;h1 align=\&quot;center\&quot;&gt;&lt;b&gt;NTIRE 2026：3D内容超分辨率挑战赛&lt;/b&gt;&lt;/h1&gt;\n&lt;h2&gt;评估&lt;/h2&gt;\n\n本挑战赛的目标是从低分辨率（LR）的3D内容重建高分辨率（HR）的3D内容。在开发和测试阶段，挑战赛参与者需要提交超分辨率处理后的结果。计算评估指标的示例代码可以在&lt;a href=\&quot;https://drive.google.com/file/d/1cYcP898xBpNWR-bGKKyFECymZkieN11a/view?usp=drive_link\&quot;&gt;此处&lt;/a&gt;找到。&lt;br&gt;\n&lt;ul&gt;\n\t&lt;li&gt;&lt;b&gt;赛道1：双三次插值降质&lt;/b&gt;&lt;br&gt;&lt;/li&gt;\n    给定场景的多视图图像，使用双三次插值降质（Matlab中$imresize$函数的双三次模式）生成LR图像。&lt;/ul&gt;\n\n&lt;ul&gt;\n\t&lt;li&gt;&lt;b&gt;赛道2：真实降质&lt;/b&gt;&lt;br&gt;&lt;/li&gt;\n    给定场景的多视图图像，采用包含随机模糊、下采样、噪声和压缩的真实降质模型来合成LR图像。\n&lt;/ul&gt;\n\n对于定量评估，我们为每个测试3D内容选择M个相机位姿来渲染M张图像和对应的深度图。然后，使用PSNR评估视觉质量，而EPE用于评估几何精度。最终排名分数计算方式如下：\n&lt;div align=\&quot;center\&quot;&gt;&lt;img src=\&quot;https://pic1.imgdb.cn/item/6958eed2da3df73ea1bca10e.png\&quot;, width=\&quot;50%\&quot;&gt;&lt;/div&gt;\n\n&lt;h2&gt;提交&lt;/h2&gt;\n\n在开发阶段，参与者可以在验证集上提交结果以获得Codabench服务器的反馈。在测试阶段，参与者将提交测试集的全部结果。这应该与最后一次向Codabench的提交相匹配。&lt;br&gt;\n\n提交的结果应包含在给定的相机内参和外参下从超分辨率3D内容渲染的图像和深度图（1368x912）。注意，内参和外参文件可以在此处找到（&lt;a href=\&quot;https://www.jianguoyun.com/p/DVZDB1gQ1Zb_DRiU9JoGIAA\&quot;&gt;验证位姿&lt;/a&gt;和&lt;a href=\&quot;https://www.jianguoyun.com/p/Daju7F0Q1Zb_DRiJ9JoGIAA\&quot;&gt;测试位姿&lt;/a&gt;），以下示例代码中的相机索引应用于渲染。\n&lt;div align=\&quot;center\&quot;&gt;&lt;img src=\&quot;https://i.imgs.ovh/2026/01/19/ybyjfa.png\&quot;, width=\&quot;100%\&quot;&gt;&lt;/div&gt;\n&lt;br&gt;\n\n提交结果时，创建一个ZIP压缩包，包含所有生成的图像和深度图。渲染图像和深度图的命名应与验证集和测试集中的相机内参和外参命名相同。有效的虚拟提交示例文件可以在&lt;a href=\&quot;https://www.jianguoyun.com/p/DS7pUnsQleb6DRiD4ZoGIAA\&quot;&gt;此处&lt;/a&gt;找到。&lt;br&gt;\n\n&lt;div style=\&quot;background-color: #DDD; border: 5pt\&quot;&gt;\n\n测试阶段结束后，参与者需要1）填写&lt;a href=\&quot;https://docs.google.com/forms/d/e/1FAIpQLSdx7w348lLapHfupaHDwkSRXIhN8Lxzksat1nUIlNtK9v6cnQ/viewform\&quot;&gt;在线表格&lt;/a&gt;，以及2）向官方提交账户（&lt;strong&gt;ntire.3dsr@outlook.com&lt;/strong&gt;）通过电子邮件提交一个ZIP压缩包（包含事实表、源代码和最终结果，事实表示例可以在&lt;a href=\&quot;https://www.jianguoyun.com/p/DbxH8hgQleb6DRi_6pgGIAA\&quot;&gt;此处&lt;/a&gt;找到）。最终提交应遵循以下规则：&lt;br&gt;\n&lt;ul&gt;\n\t&lt;li&gt;提交的结果必须来自生成Codabench最后一次提交的同一方法。我们将检查一致性。否则提交无效。&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;\n\t\n&lt;ul&gt;\n\t&lt;li&gt;必须提交测试源代码（或可执行文件）和训练代码。可重现性是必要条件。&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;\n\t\n&lt;ul&gt;\n    &lt;li&gt;应一起提交描述方法细节的事实表。事实表格式随数据提供。参与者必须提交已编译的PDF文件和TeX源文件。我们鼓励参与者提供详细信息并附带图像源文件。这有助于撰写挑战赛总结报告。&lt;br&gt;&lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;/div&gt;\n\n最终测试阶段的每个参与团队应使用提供的事实表模板来描述其解决方案。&lt;br&gt;\n\n&lt;h3&gt;电子邮件&quot;
+    }
+  ]
+}</pre>
+  </div>
+</div>
+</body>
+</html>

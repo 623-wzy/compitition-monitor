@@ -65,7 +65,7 @@ def start(run_now: bool, interval: int | None):
 
     if run_now:
         with console.status("[bold green]立即执行首次监测...", spinner="dots"):
-            n = scheduler.run_once()
+            n, summary = scheduler.run_once()
         console.print(f"[bold green]✓[/bold green] 首次监测完成，检测到 {n} 条变更")
 
     scheduler.start()
@@ -104,13 +104,20 @@ def fetch(query: str):
         rate=config.rate_limit_rps,
     )
     from .store import StateStore
+    from .agents.translate_agent import TranslateAgent
     agent = FetchAgent(client=ai, codabench=codabench, config=config)
+    translator = TranslateAgent(client=ai, model=config.haiku_model)
     store = StateStore(config.state_file)
     try:
         with console.status("[bold green]拉取中...", spinner="dots"):
             existing = store.load()
-            _, result = agent.run(existing=existing)
-        console.print(f"[bold green]✓[/bold green] {result}")
+            new_snapshot, result = agent.run(existing=existing)
+        with console.status("[bold green]翻译中...", spinner="dots"):
+            translator.translate(new_snapshot)
+        store.save(new_snapshot)
+        store.update_timestamp()
+        store.git_push(len(new_snapshot))
+        console.print(f"[bold green]✓[/bold green] {result}（已保存 {len(new_snapshot)} 条竞赛）")
         for err in result.errors:
             console.print(f"  [yellow]⚠[/yellow] {err}")
     finally:
@@ -156,3 +163,38 @@ def status():
         if len(snapshot) > 20:
             table.add_row("...", f"还有 {len(snapshot) - 20} 条", "")
         console.print(table)
+
+
+# ---------------------------------------------------------------------------
+# html — 从当前快照生成 HTML 页面
+# ---------------------------------------------------------------------------
+
+
+@main.command()
+@click.option("--output", default=None, help="输出目录（默认 data/html/）")
+def html(output: str | None):
+    """从本地快照生成 HTML 竞赛目录页和详情页。"""
+    from pathlib import Path
+    from .html_generator import HtmlGenerator
+
+    try:
+        config = load_config()
+    except RuntimeError as e:
+        console.print(f"[bold red]配置错误：[/bold red] {e}")
+        raise SystemExit(1) from e
+
+    store = StateStore(config.state_file)
+    snapshot = store.load()
+
+    if not snapshot:
+        console.print("[yellow]快照为空，请先运行 fetch 或 start --run-now。[/yellow]")
+        raise SystemExit(1)
+
+    out_dir = Path(output) if output else config.html_dir
+    gen = HtmlGenerator(out_dir)
+
+    with console.status("[bold green]生成 HTML...", spinner="dots"):
+        gen.generate(snapshot)
+
+    index_path = out_dir / "index.html"
+    console.print(f"[bold green]✓[/bold green] HTML 已生成：{index_path}（{len(snapshot)} 个竞赛）")

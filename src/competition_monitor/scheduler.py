@@ -16,7 +16,9 @@ import anthropic
 from .agents.fetch_agent import FetchAgent
 from .agents.monitor_agent import MonitorAgent
 from .agents.notify_agent import NotifyAgent
+from .agents.translate_agent import TranslateAgent
 from .config import Config
+from .html_generator import HtmlGenerator
 from .platforms.codabench import CodabenchClient
 from .store import StateStore
 
@@ -45,7 +47,12 @@ class MonitorScheduler:
         )
         self._monitor_agent = MonitorAgent()
         self._notify_agent = NotifyAgent()
+        self._translate_agent = TranslateAgent(
+            client=self._ai,
+            model=config.haiku_model,
+        )
         self._store = StateStore(config.state_file)
+        self._html = HtmlGenerator(config.html_dir)
 
     # ------------------------------------------------------------------
 
@@ -66,15 +73,24 @@ class MonitorScheduler:
         new_snapshot, fetch_result = self._fetch_agent.run(existing=previous)
         logger.info("%s", fetch_result)
 
-        # 3. Diff
+        # 3. 翻译描述和页面内容（只翻译尚无中文的字段）
+        self._translate_agent.translate(new_snapshot)
+
+        # 4. Diff
         events = self._monitor_agent.diff(previous, new_snapshot)
 
-        # 4. 通知
+        # 5. 通知
         self._notify_agent.notify(events)
 
-        # 5. 保存
+        # 6. 保存快照（含每个竞赛的 JSON）
         self._store.save(new_snapshot)
         self._store.update_timestamp()
+
+        # 7. 生成 HTML 页面
+        self._html.generate(new_snapshot)
+
+        # 8. git push data/
+        self._store.git_push(len(new_snapshot))
 
         logger.info("监测循环完成，变更事件 %d 条", len(events))
         return len(events), str(fetch_result)
