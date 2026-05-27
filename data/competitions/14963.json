@@ -5,9 +5,9 @@
   "description_zh": "DeepPhenoTree - 苹果版数据集（1 438张苹果树RGB图像，2025年采集自瑞士、比利时、西班牙和意大利）包含22 500个手工标注的边界框，用于三个物候学阶段：开花期、果实初期和果实成熟期。\n\n开发并基准测试目标检测模型，自动定位图像中的三个物候学阶段。投稿评估采用平均精度均值（mAP@0.5），这是目标检测竞赛的标准指标。\n\n竞赛结果将在2026年9月8-13日于瑞典马尔默举行的ECCV会议的CVPPA工作坊（9月8-9日）期间发布。",
   "created_by": "clothode",
   "created_when": "2026-03-17T15:56:27.833010Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-03-20-1774019283/659710f0a7bb/unnamed.jpg?AWSAccessKeyId=codabench-prod&Signature=CqZURfy6kjf1R4MIn9JXQANOIhA%3D&Expires=1779872879",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-03-20-1774019283/659710f0a7bb/unnamed.jpg?AWSAccessKeyId=codabench-prod&Signature=8%2BVDTHlJiW%2Fc3rcu64uSuXwq0ao%3D&Expires=1779889024",
   "participants_count": 26,
-  "submissions_count": 170,
+  "submissions_count": 174,
   "first_phase_start": null,
   "phases": [
     {

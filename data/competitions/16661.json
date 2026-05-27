@@ -5,7 +5,7 @@
   "description_zh": "阿拉伯语多模态仇恨梗图分类。给定一个梗图（图像加上OCR提取的阿拉伯文本），预测其是否为仇恨性或非仇恨性。官方指标：宏观F1。",
   "created_by": "mohamedbayan",
   "created_when": "2026-05-25T13:30:58.534544Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-25-1779715858/886e2d9c0b58/logo.png?AWSAccessKeyId=codabench-prod&Signature=jcvmLaw%2BZeQCoCR5GwMTttlKR4A%3D&Expires=1779872814",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-25-1779715858/886e2d9c0b58/logo.png?AWSAccessKeyId=codabench-prod&Signature=TH2v1TcrC80TdvBxk9MG8ukO%2F8g%3D&Expires=1779888953",
   "participants_count": 1,
   "submissions_count": 0,
   "first_phase_start": null,

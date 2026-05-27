@@ -1,0 +1,57 @@
+{
+  "id": 9467,
+  "title": "FAME'26 Grand Challenge",
+  "description": "The Face-voice Association in Multilingual Environments (FAME) Challenge 2026 focuses on exploring face-voice association under a unique condition of multilingual scenario. This condition is inspired from the fact that half of the world's population is bilingual and most often people communicate under multilingual scenario. The challenge uses a dataset namely, Multilingual Audio-Visual (MAV-Celeb) for exploring face-voice association in multilingual environments.",
+  "description_zh": "多语言环境下的面孔-声音关联（FAME）挑战赛 2026 致力于探索在多语言情景的独特条件下的面孔-声音关联。这一条件的灵感来自于全球人口中有一半是双语使用者这一事实，而且人们通常在多语言情景下进行交流。该挑战赛采用了一个名为多语言视听（MAV-Celeb）的数据集来探索多语言环境中的面孔-声音关联。",
+  "created_by": "mmosc",
+  "created_when": "2025-07-04T10:43:10.455458Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-07-06-1751809862/55c5abecc267/fame_2026.jpg?AWSAccessKeyId=codabench-prod&Signature=0b9jIcB%2F2Vvl25MjLgkjmKGuEGM%3D&Expires=1779889287",
+  "participants_count": 55,
+  "submissions_count": 450,
+  "first_phase_start": null,
+  "phases": [
+    {
+      "id": 15290,
+      "name": "Registration",
+      "start": "2025-04-12T22:00:00Z",
+      "end": "2025-09-01T12:00:00Z",
+      "max_submissions_per_day": 0
+    },
+    {
+      "id": 15291,
+      "name": "Registration and Progress",
+      "start": "2025-09-01T12:00:00Z",
+      "end": "2025-11-05T12:00:00Z",
+      "max_submissions_per_day": 10
+    },
+    {
+      "id": 15292,
+      "name": "Evaluation",
+      "start": "2025-11-05T11:00:00Z",
+      "end": "2025-11-20T11:00:00Z",
+      "max_submissions_per_day": 10
+    },
+    {
+      "id": 15293,
+      "name": "Locked",
+      "start": "2025-11-20T12:00:00Z",
+      "end": "2025-11-25T12:00:00Z",
+      "max_submissions_per_day": 0
+    },
+    {
+      "id": 15294,
+      "name": "Posteval",
+      "start": "2025-11-25T12:00:00Z",
+      "end": "2027-03-31T12:00:00Z",
+      "max_submissions_per_day": 0
+    }
+  ],
+  "pages": [
+    {
+      "index": 0,
+      "title": "Overview",
+      "content": "<h3><strong>Challenge Objectives</strong></h3>\n<p>The FAME Challenge 2026 is planned with the primary objective to provide a common platform to academic and industrial researchers to develop and explore the impact of languages in face-voice association, which can be useful for various downstream tasks. The research conducted under this challenge is expected to spearhead the face-voice association task in one unique direction from the perspective of real-world scenarios. The challenge focuses on exploring the following, but not limited to:</p>\n<ul>\n<li>To study the influence of language information in face-voice association</li>\n<li>To explore language specific knowledge in face-voice association</li>\n<li>To explore language independent face-voice association models</li>\n<li>Any other related information with respect to language mismatch in face-voice association</li>\n</ul>\n<h3><strong>Task</strong></h3>\n<p>(Left) Standard Face-voice association is established with a cross-modal verification task. (Right) The FAME challenge 2026 extends the verification task to analyze the impact of multiple of languages.</p>\n<p><img src=\"https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-07-06-1751809862/55c5abecc267/fame_2026.jpg\" alt=\"\" width=\"720\" height=\"256\" /></p>\n<p>&nbsp;</p>\n<h3><strong>Challenge Setup&nbsp;&nbsp;</strong></h3>\n<p>The MAV-Celeb dataset is divided into train and test splits consisting of disjoint identities from the same language typically known as unseen-unheard configuration.&nbsp;</p>\n<p>At test time, the network is evaluated on a heard and completely unheard language on cross-modal verification task. The dataset splits V1-EU, V2-EH contains&nbsp;64&ndash;6,&nbsp;78&ndash;6&nbsp;identities for train and test respectively. V2-EH split will be use in the progress phase. While, the final evaluation will be carried out in on test set of V1-EU. Each line from test file in V1&nbsp;and V2&nbsp;has the following format.</p>\n<pre>ysuvkz41 voices/English/00000.wav faces/English/00000.jpg<br />tog3zj45 voices/English/00001.wav faces/English/00001.jpg<br />ky5xfj1d voices/English/00002.wav faces/English/00002.jpg<br />yx4nfa35 voices/English/01062.wav faces/English/01062.jpg&nbsp;<br />bowsaf5e voices/English/01063.wav faces/English/01063.jpg</pre>\n<p>MAV-Celeb dataset is publicly available. We provided features from state-of-the-art methods representing<a href=\"https://drive.google.com/drive/folders/1LfCxZiAqmsD9sgEMRrJgN5QBr_CL-hzD\"> faces and voices.</a>&nbsp;</p>\n<h3><strong>Baseline</strong></h3>\n<p>The baseline method employ a two-stream pipeline to obtain the respective embeddings of both face and voice inputs. The first stream corresponds to a pre-trained convolutional neural network (CNN) on face modality. We take the penultimate layer&rsquo;s output of this CNN as the feature embeddings for an input face image. Likewise, the second stream is a pre-trained audio encoding network that outputs a feature embedding for an input audio signal (typically a short-term spectrogram). The baseline method exploits complementary cues from both modality embeddings to form enriched fused embeddings and imposes orthogonal constraints on them for learning discriminative joint face-voice embeddings. More information is available in our <a href=\"https://ieeexplore.ieee.org/abstract/document/9747704\">prior work</a> and <a href=\"https://github.com/mavceleb/mavceleb_baseline/tree/FAME-2025---Ahmed-A\">GitHub repository</a>.</p>\n<p>&nbsp;</p>\n<h3><strong>Evaluation Metric</strong></h3>\n<p>We are considering equal error rate (<strong>EER</strong>) as the metric for evaluating the challenge performance. We expect the challenge participants to submit a output score file for every test pairs to indicate how confident the system believes to have a match between the face and voice or in other words, the face and voice belongs to the same person.</p>\n<p>&nbsp;</p>\n<h2><strong>Submission of Results</strong></h2>\n<p>Within the directory containing the submission files, use zip archive.zip *.txt and do not zip the folder. Files should be named as:</p>\n<pre>sub_score_English_heard.txt<br />sub_score_English_unheard.txt<br />sub_score_Urdu_heard.txt<br />sub_score_Urdu_unheard.txt<br /><br /><br /></pre>\n<p>For each file, we have kept the ground truth for fair evaluation during FAME challenge. Participants are expected to compute and submit text files including the id and L2 scores in the following format:</p>\n<pre class=\"notranslate\"><code>ysuvkz41 0.9988\ntog3zj45 0.1146\nky5xfj1d 0.6514\nyx4nfa35 1.5321\nbowsaf5e 1.6578<br /><br /></code></pre>\n<p>In the progress phase, each team will have 100&nbsp;submissions with maximum 10&nbsp;per day. While, we will overall 5&nbsp;submission in the evaluation phase. The overall score will be computed as:</p>\n<p>&nbsp;</p>\n<pre>Overall Score =&nbsp;&nbsp;(Sum of all EERs)&nbsp;/&nbsp;4</pre>\n<hr />\n<p class=\"notranslate\"><code><br /><br />For more information, please follow the <a href=\"https://arxiv.org/pdf/2508.04592\">evaluation plan</a></code></p>",
+      "content_zh": "# 挑战目标\n\nFAME 挑战赛2026计划的主要目标是为学术和工业研究人员提供一个共同平台，以开发和探索语言在人脸-声音关联中的影响，这对各种下游任务都很有用。在本挑战赛下开展的研究有望从真实场景的角度推进人脸-声音关联任务的发展。该挑战赛重点探索以下内容，但不限于：\n\n- 研究语言信息在人脸-声音关联中的影响\n- 探索人脸-声音关联中特定于语言的知识\n- 探索与语言无关的人脸-声音关联模型\n- 与人脸-声音关联中语言不匹配相关的任何其他信息\n\n# 任务\n\n（左）标准人脸-声音关联通过跨模态验证任务建立。（右）FAME挑战赛2026将验证任务扩展到分析多种语言的影响。\n\n# 挑战赛设置\n\nMAV-Celeb数据集分为训练集和测试集，包含来自同一语言的不相交身份，通常称为未见-未闻配置。\n\n在测试时，网络在听过和完全未听过的语言上进行跨模态验证任务的评估。数据集划分V1-EU、V2-EH分别包含64-6、78-6个身份用于训练和测试。V2-EH划分将用于进展阶段。最终评估将在V1-EU的测试集上进行。V1和V2中测试文件的每一行格式如下：\n\n```\nysuvkz41 voices/English/00000.wav faces/English/00000.jpg\ntog3zj45 voices/English/00001.wav faces/English/00001.jpg\nky5xfj1d voices/English/00002.wav faces/English/00002.jpg\nyx4nfa35 voices/English/01062.wav faces/English/01062.jpg\nbowsaf5e voices/English/01063.wav faces/English/01063.jpg\n```\n\nMAV-Celeb数据集是公开可用的。我们提供了来自代表人脸和声音的最先进方法的特征。\n\n# 基准方法\n\n基准方法采用双流管道来获取人脸和声音输入的各自嵌入。第一条流对应于在人脸模态上预训练的卷积神经网络（CNN）。我们将此CNN的倒数第二层的输出作为输入人脸图像的特征嵌入。同样，第二条流是一个预训练的音频编码网络，为输入音频信号（通常是短时谱图）输出特征嵌入。基准方法利用两种模态嵌入的互补线索形成丰富的融合嵌入，并对其施加正交约束以学习判别性的联合人脸-声音嵌入。更多信息可在我们的先前工作和GitHub存储库中获得。\n\n# 评估指标\n\n我们考虑使用等错误率（**EER**）作为评估挑战赛性能的指标。我们期望挑战赛参与者为每个测试对提交输出分数文件，以表示系统对人脸和声音匹配的置信度，或换句话说，人脸和声音属于同一个人的置信度。\n\n# 结果提交\n\n在目录中..."
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "id": 16372,
+  "title": "homework-2026-05-16",
+  "published": true,
+  "created_by": "6243112025",
+  "owner_display_name": "6243112025",
+  "created_when": "2026-05-16T08:16:13.352053Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778919373/75c554419a76/%E5%A4%B4%E5%83%8F2.jpg?AWSAccessKeyId=codabench-prod&Signature=myKVz%2BvCRtntpL03eao5ITvKZ8o%3D&Expires=1779888965",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778919373/75c554419a76/%E5%A4%B4%E5%83%8F2_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=C0vxeghEEJzStulAJBazJhnxW%2Fg%3D&Expires=1779888965",
+  "terms": "no",
+  "pages": [
+    {
+      "id": 78064,
+      "title": "Homework",
+      "content": "Homework",
+      "index": 0
+    }
+  ],
+  "phases": [
+    {
+      "id": 26884,
+      "index": 0,
+      "start": "2026-05-14T16:00:00Z",
+      "end": "2026-06-29T16:00:00Z",
+      "name": "test",
+      "description": "",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "35a52e73-aa76-4bbf-9d66-d2388550a38e",
+          "order_index": 0,
+          "phase": 26884,
+          "id": 32909,
+          "value": "35a52e73-aa76-4bbf-9d66-d2388550a38e",
+          "key": "35a52e73-aa76-4bbf-9d66-d2388550a38e",
+          "created_when": "2026-05-16T13:16:44.957531Z",
+          "name": "Video Classification",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 763816,
+              "created_by": "6243112025",
+              "owner_display_name": "6243112025",
+              "created_when": "2026-05-16T13:16:44.862525Z",
+              "name": "scoring-program.zip",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "cdb9b6b5-c594-4d2c-b1b3-c67672533caa",
+              "value": "cdb9b6b5-c594-4d2c-b1b3-c67672533caa",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 16372,
+                  "title": "homework-2026-05-16"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 2615.0
+            },
+            {
+              "id": 763817,
+              "created_by": "6243112025",
+              "owner_display_name": "6243112025",
+              "created_when": "2026-05-16T13:16:44.918814Z",
+              "name": "reference-data.zip",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "90c2b4a9-7544-41c8-be2d-3b0af5969fea",
+              "value": "90c2b4a9-7544-41c8-be2d-3b0af5969fea",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 16372,
+                  "title": "homework-2026-05-16"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 667.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 500,
+      "max_submissions_per_person": 1000,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 18136,
+      "primary_index": 0,
+      "title": "Macro_F1",
+      "key": "Macro_F1",
+      "columns": [
+        {
+          "id": 78247,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Macro_F1",
+          "key": "Macro_F1",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 5
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Force_Best"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": true,
+  "description": "homework for video classification",
+  "participants_count": 20,
+  "submissions_count": 75,
+  "queue": null,
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": false,
+  "show_detailed_results_in_leaderboard": false,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": true,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "codalab/codalab-legacy:py37",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 16118,
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "forum_enabled": true
+}

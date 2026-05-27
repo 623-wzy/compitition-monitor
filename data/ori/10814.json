@@ -1,0 +1,189 @@
+{
+  "id": 10814,
+  "title": "Enigma Benchmark",
+  "published": true,
+  "created_by": "enigmaproject",
+  "owner_display_name": "enigmaproject",
+  "created_when": "2025-10-01T21:54:19.478294Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-10-01-1759355659/daf178edb72b/enigma_project_logo.jpeg?AWSAccessKeyId=codabench-prod&Signature=w8HlCZYTyFWhju%2FnybXx3b452wA%3D&Expires=1779889250",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-10-01-1759355659/daf178edb72b/enigma_project_logo_icon.jpeg?AWSAccessKeyId=codabench-prod&Signature=XMZ7VOS5XFCRzcOPNoBJVeVlXDg%3D&Expires=1779889250",
+  "terms": "<p>\nTODO\n</p>",
+  "pages": [
+    {
+      "id": 73556,
+      "title": "Overview",
+      "content": "<h1>Enigma Codabench Competition</h1>\n\n<p>\nThis competition is for internal evaluation of models on acquired datasets.\n</p>\n\n<p>\nThe goal for this competition phase is to predict actual neural responses given video and gaze data from each of four Macaque fixed-gaze recording sessions.\n</p>\n\n<p>\nTo participate:\n\t\n1. Sign up for a free Codabench account.\n2. Join our competition <a href=\"https://www.codabench.org/competitions/10814/?secret_key=372c2844-5403-41e6-ad2c-\n\t2d6b755f2d3f\" target=\"_blank\" rel=\"noopener noreferrer\">here</a>.\n3. Submit predictions and add to leaderboard.\n</p>\n\n<p>\n  <a href=\"\thttps://github.com/enigma-brain/monkey-baselines/tree/jb_update_for_codabench/codabench\" target=\"_blank\" rel=\"noopener noreferrer\">\n  Starter notebooks in the \"jb-update-for-codabench\" branch of the <code>monkey-baselines</code> repo\n  </a> provide a walkthrough of toy examples of model training and model inference on the Codabench datasets, as well as submitting model predictions to the Codabench site. To view these, please request access to the repository from Konstantin or Federico.\n</p>",
+      "index": 0
+    }
+  ],
+  "phases": [
+    {
+      "id": 17776,
+      "index": 0,
+      "start": "2025-10-10T07:00:00Z",
+      "end": "2027-12-31T08:00:00Z",
+      "name": "Competition",
+      "description": "Predict neural data from stimuli (images and videos)",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "a3899c7b-d9af-4e60-94a2-bfc49fb14d9b",
+          "order_index": 0,
+          "phase": 17776,
+          "id": 31278,
+          "value": "a3899c7b-d9af-4e60-94a2-bfc49fb14d9b",
+          "key": "a3899c7b-d9af-4e60-94a2-bfc49fb14d9b",
+          "created_when": "2026-04-04T08:08:33.530035Z",
+          "name": "tarzan_re_export_rebalanced_zarr",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 686372,
+              "created_by": "enigmaproject",
+              "owner_display_name": "enigmaproject",
+              "created_when": "2026-04-05T01:52:00.601910Z",
+              "name": "comp_scoring_program",
+              "type": "scoring_program",
+              "description": "",
+              "is_public": false,
+              "key": "3f616056-6530-4f86-b747-37b41b6b9e90",
+              "value": "3f616056-6530-4f86-b747-37b41b6b9e90",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 10814,
+                  "title": "Enigma Benchmark"
+                }
+              ],
+              "competition": null,
+              "file_name": "scoring_program.zip",
+              "file_size": 4418.0
+            },
+            {
+              "id": 686373,
+              "created_by": "enigmaproject",
+              "owner_display_name": "enigmaproject",
+              "created_when": "2026-04-05T01:52:59.670524Z",
+              "name": "tarzan_re_export_rebalanced_zarrs",
+              "type": "reference_data",
+              "description": "",
+              "is_public": false,
+              "key": "f01ceab9-710d-4b48-8223-4d3fa17d42ff",
+              "value": "f01ceab9-710d-4b48-8223-4d3fa17d42ff",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 10814,
+                  "title": "Enigma Benchmark"
+                }
+              ],
+              "competition": null,
+              "file_name": "all_test_set_responses_zarr.zip",
+              "file_size": 12598634.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 0,
+      "max_submissions_per_person": 0,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 11947,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "Results",
+      "columns": [
+        {
+          "id": 52340,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Overall Correlation",
+          "key": "overall_correlation",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 5
+        },
+        {
+          "id": 52341,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Fixation Imgs",
+          "key": "fixation_imgs_correlation",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 5
+        },
+        {
+          "id": 52342,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Fixation Vids",
+          "key": "fixation_vids_correlation",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 5
+        },
+        {
+          "id": 52343,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Freeviewing Vids",
+          "key": "freeviewing_vids_correlation",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": false,
+          "precision": 5
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Add_And_Delete_Multiple"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": true,
+  "description": "Internal leaderboard for the Enigma Project to compare different neural prediction approaches.\n\nOg codabench docker image: codalab/codalab-legacy:py39\nMy codabench docker image with zarr support: jkbhagatio/codabench:py39-zarr",
+  "participants_count": 4,
+  "submissions_count": 16,
+  "queue": null,
+  "enable_detailed_results": true,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": true,
+  "make_programs_available": true,
+  "make_input_data_available": true,
+  "docker_image": "jkbhagatio/codabench:py39-zarr",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": {
+    "method_name": {
+      "key": "method_name",
+      "type": "text",
+      "title": "Method Name",
+      "selection": "",
+      "is_required": "true",
+      "is_on_leaderboard": "true"
+    }
+  },
+  "forum": 10654,
+  "reward": "Eternal fame and glory",
+  "contact_email": "",
+  "report": "",
+  "forum_enabled": true
+}

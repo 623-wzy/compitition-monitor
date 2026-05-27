@@ -1,0 +1,29 @@
+{
+  "id": 11338,
+  "title": "IACV 25 - Exercise 3",
+  "description": "Evaluation server for the exercise 3 from image analysis and computer vision course.",
+  "description_zh": "图像分析与计算机视觉课程第3次练习的评估服务器。",
+  "created_by": "iacvbaseline",
+  "created_when": "2025-10-30T13:11:05.611512Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-10-30-1761829865/2e90cbc7073c/logo.png?AWSAccessKeyId=codabench-prod&Signature=seUFReKt7DcWGeoyx%2B5gjMkPzgk%3D&Expires=1779889239",
+  "participants_count": 262,
+  "submissions_count": 1126,
+  "first_phase_start": null,
+  "phases": [
+    {
+      "id": 18611,
+      "name": "Exercise Solving Phase",
+      "start": "2025-10-01T00:00:00Z",
+      "end": "2026-07-01T00:00:00Z",
+      "max_submissions_per_day": 999
+    }
+  ],
+  "pages": [
+    {
+      "index": 0,
+      "title": "Overview",
+      "content": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n  <meta http-equiv=\"Content-Style-Type\" content=\"text/css\">\n  <title></title>\n  <meta name=\"Generator\" content=\"Cocoa HTML Writer\">\n  <meta name=\"CocoaVersion\" content=\"2113.6\">\n  <style type=\"text/css\">\n    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #535353; -webkit-text-stroke: #535353}\n    span.s1 {font-kerning: none; background-color: #ffffff}\n  </style>\n</head>\n<body>\n<p class=\"p1\"><span class=\"s1\">This is the evaluation server for Exercise 3 from the Image Analysis and Computer Vision course. Please check the handouts provided in Moodle for detailed instructions for each exercise, and the evaluation criteria.</span></p>\n</body>\n</html>",
+      "content_zh": "这是《图像分析与计算机视觉》课程第3次练习的评估服务器。请查看Moodle中提供的讲义，了解每次练习的详细说明和评估标准。"
+    }
+  ]
+}

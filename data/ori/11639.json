@@ -1,0 +1,147 @@
+{
+  "id": 11639,
+  "title": "IACV 25 - Exercise 4",
+  "published": true,
+  "created_by": "iacvbaseline",
+  "owner_display_name": "iacvbaseline",
+  "created_when": "2025-11-13T13:04:13.018951Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-11-13-1763039053/321320b04318/logo.png?AWSAccessKeyId=codabench-prod&Signature=clwrnWJlmAJVKpcd6YwpoyoU1pQ%3D&Expires=1779889231",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-11-13-1763039053/321320b04318/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=QpGC2iFG%2FPh54d7oG6LlucYSFHU%3D&Expires=1779889231",
+  "terms": "<H3>Terms and Conditions</H3>\n\n<p>\n\tPlease check the handouts provided in Moodle.\n</p>",
+  "pages": [
+    {
+      "id": 53192,
+      "title": "Overview",
+      "content": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n  <meta http-equiv=\"Content-Style-Type\" content=\"text/css\">\n  <title></title>\n  <meta name=\"Generator\" content=\"Cocoa HTML Writer\">\n  <meta name=\"CocoaVersion\" content=\"2113.6\">\n  <style type=\"text/css\">\n    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #535353; -webkit-text-stroke: #535353}\n    span.s1 {font-kerning: none; background-color: #ffffff}\n  </style>\n</head>\n<body>\n<p class=\"p1\"><span class=\"s1\">This is the evaluation server for Exercise 4 from the Image Analysis and Computer Vision course. Please check the handouts provided in Moodle for detailed instructions for each exercise, and the evaluation criteria.</span></p>\n</body>\n</html>",
+      "index": 0
+    }
+  ],
+  "phases": [
+    {
+      "id": 19031,
+      "index": 0,
+      "start": "2025-10-01T00:00:00Z",
+      "end": "2026-07-01T00:00:00Z",
+      "name": "Exercise Solving Phase",
+      "description": "Solve the exercise by beating the score of iacvbaseline",
+      "status": "Current",
+      "execution_time_limit": 900,
+      "tasks": [
+        {
+          "task": "6f42f1a9-05b8-4f89-83db-62c00ef7803f",
+          "order_index": 0,
+          "phase": 19031,
+          "id": 23852,
+          "value": "6f42f1a9-05b8-4f89-83db-62c00ef7803f",
+          "key": "6f42f1a9-05b8-4f89-83db-62c00ef7803f",
+          "created_when": "2025-11-13T13:04:12.983234Z",
+          "name": "Image classification task",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 416656,
+              "created_by": "iacvbaseline",
+              "owner_display_name": "iacvbaseline",
+              "created_when": "2025-11-13T13:04:12.239809Z",
+              "name": "scoring_program @ '11-13-2025 13:04'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "ba29add8-6106-4501-af1b-93da12361e17",
+              "value": "ba29add8-6106-4501-af1b-93da12361e17",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 11639,
+                  "title": "IACV 25 - Exercise 4"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 2622.0
+            },
+            {
+              "id": 416657,
+              "created_by": "iacvbaseline",
+              "owner_display_name": "iacvbaseline",
+              "created_when": "2025-11-13T13:04:12.735513Z",
+              "name": "reference_data @ '11-13-2025 13:04'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "d784cab5-64a8-4d98-8ad4-af174a403fcc",
+              "value": "d784cab5-64a8-4d98-8ad4-af174a403fcc",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 11639,
+                  "title": "IACV 25 - Exercise 4"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 1331700.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 999,
+      "max_submissions_per_person": 999,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 12836,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "main",
+      "columns": [
+        {
+          "id": 55868,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Score",
+          "key": "EvaluationScore",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 4
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Add_And_Delete"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": true,
+  "description": "Evaluation server for the exercise 4 from Image analysis and computer vision course.",
+  "participants_count": 252,
+  "submissions_count": 642,
+  "queue": null,
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": false,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "jerzy97/iacv_codabench:latest",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 11462,
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "forum_enabled": true
+}

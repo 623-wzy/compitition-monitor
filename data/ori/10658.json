@@ -1,0 +1,451 @@
+{
+  "id": 10658,
+  "title": "Image Recognition Assignment 2025-2026",
+  "published": true,
+  "created_by": "bobetocalo",
+  "owner_display_name": "bobetocalo",
+  "created_when": "2025-09-22T09:36:38.909262Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-09-22-1758533798/e734f87fa2a5/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=b9THK5gt9jy%2BFNV4fdwVDrD%2B4qE%3D&Expires=1779889250",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-09-22-1758533798/e734f87fa2a5/logo_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=iY%2B69MmBEwZi0ro65TrocxvnS68%3D&Expires=1779889250",
+  "terms": "# How to participate\n\nThe challenges must be done in groups of 3 students maximum. It is essential to use your UPM institutional email (@alumnos.upm.es) for sign-up.\n\nYou can start your work from the sample notebook provided below, and improve its performance (see [ffNN_example.ipynb](https://drive.upm.es/s/z7c9kPTC56wEAni)). You must submit to the competition a zip file containing the test results generated in the json file termed 'prediction.json'.",
+  "pages": [
+    {
+      "id": 49304,
+      "title": "Timeline",
+      "content": "# Timeline\n\n## The ffNN challenge\nPut into practice acquired knowledge to design the architecture of a feed-forward Neural Net (ffNN), in the context of an image classification problem.\n\n## The CNN challenge\nImprove the previous model by incorporating Convolutional Neural Networks (CNNs) to better capture spatial features in images.\n\n## The TL challenge\nLeverage transfer learning by utilizing popular pre-trained architectures (e.g., GoogLeNet, VGG, ResNet, ...).\n\n## Image classification assignment\nConduct all previously planned experiments and tests that could not be completed in earlier phases, refining and validating the final model.",
+      "index": 0
+    },
+    {
+      "id": 49305,
+      "title": "Database",
+      "content": "## Database\n\nxView (http://xviewdataset.org/) is a large publicly available object detection data set, with approximately 1 million objects across 60 categories. It contains manually annotated images from different scenes around the world, acquired using the WorldView-3 satellite at 0.3m ground sample distance. There are 846 annotated images in total. For this assignment, we divide these annotations into 761 and 85 images for training and testing respectively.\n\nFor image recognition, we crop previous images using their annotated bounding boxes to extract a subset of objects of interest. In this way, we collected 18746 and 2365 objects for training and testing respectively. The resulting images are resized to 224x224. Follow the link below to download the classification benchmark “xview_recognition”: https://drive.upm.es/s/2DDPE2zHw5dbM3G",
+      "index": 1
+    }
+  ],
+  "phases": [
+    {
+      "id": 17529,
+      "index": 0,
+      "start": "2025-09-22T09:00:00Z",
+      "end": "2025-10-12T21:55:00Z",
+      "name": "The ffNN challenge 2025-2026",
+      "description": "Put into practice acquired knowledge to design the architecture of a feed-forward Neural Net (ffNN), in the context of an image classification problem.",
+      "status": "Previous",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "aeaa72aa-29e3-492a-bf96-a45348624feb",
+          "order_index": 0,
+          "phase": 17529,
+          "id": 21969,
+          "value": "aeaa72aa-29e3-492a-bf96-a45348624feb",
+          "key": "aeaa72aa-29e3-492a-bf96-a45348624feb",
+          "created_when": "2025-09-22T09:27:05.754113Z",
+          "name": "Recognition Task",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 361747,
+              "created_by": "bobetocalo",
+              "owner_display_name": "bobetocalo",
+              "created_when": "2025-09-22T09:29:28.375087Z",
+              "name": "Recognition Scoring",
+              "type": "scoring_program",
+              "description": "Recognition Scoring",
+              "is_public": false,
+              "key": "3b62cdde-567f-4301-b373-affe82f7e32c",
+              "value": "3b62cdde-567f-4301-b373-affe82f7e32c",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 10658,
+                  "title": "Image Recognition Assignment 2025-2026"
+                },
+                {
+                  "pk": 13701,
+                  "title": "[DL] Image Recognition Competition 2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "scoring_program.zip",
+              "file_size": 1122.0
+            },
+            {
+              "id": 361767,
+              "created_by": "bobetocalo",
+              "owner_display_name": "bobetocalo",
+              "created_when": "2025-09-22T09:57:45.866585Z",
+              "name": "Recognition Test Annotations",
+              "type": "reference_data",
+              "description": "Recognition Test Annotations",
+              "is_public": false,
+              "key": "a2e662ab-f2cb-4cbb-8f9e-63402e5d7506",
+              "value": "a2e662ab-f2cb-4cbb-8f9e-63402e5d7506",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 10658,
+                  "title": "Image Recognition Assignment 2025-2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "xview_ann_test.zip",
+              "file_size": 142746.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 1,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    },
+    {
+      "id": 17530,
+      "index": 1,
+      "start": "2025-10-14T10:00:00Z",
+      "end": "2025-11-02T21:55:00Z",
+      "name": "The CNN challenge 2025-2026",
+      "description": "Improve the previous model by incorporating Convolutional Neural Networks (CNNs) to better capture spatial features in images.",
+      "status": "Previous",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "aeaa72aa-29e3-492a-bf96-a45348624feb",
+          "order_index": 0,
+          "phase": 17530,
+          "id": 21969,
+          "value": "aeaa72aa-29e3-492a-bf96-a45348624feb",
+          "key": "aeaa72aa-29e3-492a-bf96-a45348624feb",
+          "created_when": "2025-09-22T09:27:05.754113Z",
+          "name": "Recognition Task",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 361747,
+              "created_by": "bobetocalo",
+              "owner_display_name": "bobetocalo",
+              "created_when": "2025-09-22T09:29:28.375087Z",
+              "name": "Recognition Scoring",
+              "type": "scoring_program",
+              "description": "Recognition Scoring",
+              "is_public": false,
+              "key": "3b62cdde-567f-4301-b373-affe82f7e32c",
+              "value": "3b62cdde-567f-4301-b373-affe82f7e32c",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 10658,
+                  "title": "Image Recognition Assignment 2025-2026"
+                },
+                {
+                  "pk": 13701,
+                  "title": "[DL] Image Recognition Competition 2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "scoring_program.zip",
+              "file_size": 1122.0
+            },
+            {
+              "id": 361767,
+              "created_by": "bobetocalo",
+              "owner_display_name": "bobetocalo",
+              "created_when": "2025-09-22T09:57:45.866585Z",
+              "name": "Recognition Test Annotations",
+              "type": "reference_data",
+              "description": "Recognition Test Annotations",
+              "is_public": false,
+              "key": "a2e662ab-f2cb-4cbb-8f9e-63402e5d7506",
+              "value": "a2e662ab-f2cb-4cbb-8f9e-63402e5d7506",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 10658,
+                  "title": "Image Recognition Assignment 2025-2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "xview_ann_test.zip",
+              "file_size": 142746.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 1,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    },
+    {
+      "id": 17531,
+      "index": 2,
+      "start": "2025-11-04T10:00:00Z",
+      "end": "2025-11-23T21:55:00Z",
+      "name": "The TL challenge 2025-2026",
+      "description": "Leverage transfer learning by utilizing popular pre-trained architectures (e.g., GoogLeNet, VGG, ResNet, ...).",
+      "status": "Previous",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "aeaa72aa-29e3-492a-bf96-a45348624feb",
+          "order_index": 0,
+          "phase": 17531,
+          "id": 21969,
+          "value": "aeaa72aa-29e3-492a-bf96-a45348624feb",
+          "key": "aeaa72aa-29e3-492a-bf96-a45348624feb",
+          "created_when": "2025-09-22T09:27:05.754113Z",
+          "name": "Recognition Task",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 361747,
+              "created_by": "bobetocalo",
+              "owner_display_name": "bobetocalo",
+              "created_when": "2025-09-22T09:29:28.375087Z",
+              "name": "Recognition Scoring",
+              "type": "scoring_program",
+              "description": "Recognition Scoring",
+              "is_public": false,
+              "key": "3b62cdde-567f-4301-b373-affe82f7e32c",
+              "value": "3b62cdde-567f-4301-b373-affe82f7e32c",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 10658,
+                  "title": "Image Recognition Assignment 2025-2026"
+                },
+                {
+                  "pk": 13701,
+                  "title": "[DL] Image Recognition Competition 2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "scoring_program.zip",
+              "file_size": 1122.0
+            },
+            {
+              "id": 361767,
+              "created_by": "bobetocalo",
+              "owner_display_name": "bobetocalo",
+              "created_when": "2025-09-22T09:57:45.866585Z",
+              "name": "Recognition Test Annotations",
+              "type": "reference_data",
+              "description": "Recognition Test Annotations",
+              "is_public": false,
+              "key": "a2e662ab-f2cb-4cbb-8f9e-63402e5d7506",
+              "value": "a2e662ab-f2cb-4cbb-8f9e-63402e5d7506",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 10658,
+                  "title": "Image Recognition Assignment 2025-2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "xview_ann_test.zip",
+              "file_size": 142746.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 1,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    },
+    {
+      "id": 17532,
+      "index": 3,
+      "start": "2025-11-25T10:00:00Z",
+      "end": "2026-07-07T21:55:00Z",
+      "name": "Image classification assignment 2025-2026",
+      "description": "Conduct all previously planned experiments and tests that could not be completed in earlier phases, refining and validating the final model.",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "aeaa72aa-29e3-492a-bf96-a45348624feb",
+          "order_index": 0,
+          "phase": 17532,
+          "id": 21969,
+          "value": "aeaa72aa-29e3-492a-bf96-a45348624feb",
+          "key": "aeaa72aa-29e3-492a-bf96-a45348624feb",
+          "created_when": "2025-09-22T09:27:05.754113Z",
+          "name": "Recognition Task",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 361747,
+              "created_by": "bobetocalo",
+              "owner_display_name": "bobetocalo",
+              "created_when": "2025-09-22T09:29:28.375087Z",
+              "name": "Recognition Scoring",
+              "type": "scoring_program",
+              "description": "Recognition Scoring",
+              "is_public": false,
+              "key": "3b62cdde-567f-4301-b373-affe82f7e32c",
+              "value": "3b62cdde-567f-4301-b373-affe82f7e32c",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 10658,
+                  "title": "Image Recognition Assignment 2025-2026"
+                },
+                {
+                  "pk": 13701,
+                  "title": "[DL] Image Recognition Competition 2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "scoring_program.zip",
+              "file_size": 1122.0
+            },
+            {
+              "id": 361767,
+              "created_by": "bobetocalo",
+              "owner_display_name": "bobetocalo",
+              "created_when": "2025-09-22T09:57:45.866585Z",
+              "name": "Recognition Test Annotations",
+              "type": "reference_data",
+              "description": "Recognition Test Annotations",
+              "is_public": false,
+              "key": "a2e662ab-f2cb-4cbb-8f9e-63402e5d7506",
+              "value": "a2e662ab-f2cb-4cbb-8f9e-63402e5d7506",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 10658,
+                  "title": "Image Recognition Assignment 2025-2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "xview_ann_test.zip",
+              "file_size": 142746.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 1,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 11764,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "main",
+      "columns": [
+        {
+          "id": 51064,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Mean Accuracy",
+          "key": "accuracy",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 51065,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Mean Precision",
+          "key": "precision",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 51066,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Mean Recall",
+          "key": "recall",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 2
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Add"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": true,
+  "description": "In the final assignment of this course, you will solve different problems using deep models.",
+  "participants_count": 52,
+  "submissions_count": 307,
+  "queue": null,
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": false,
+  "show_detailed_results_in_leaderboard": false,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": true,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "codalab/codalab-legacy:py39",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": {
+    "authors": {
+      "key": "authors",
+      "type": "text",
+      "title": "Authors",
+      "selection": "",
+      "is_required": "true",
+      "is_on_leaderboard": "true"
+    },
+    "resources": {
+      "key": "resources",
+      "type": "text",
+      "title": "Resources (PC/Colab/Kaggel/Cesvima) + GPU model",
+      "selection": "",
+      "is_required": "true",
+      "is_on_leaderboard": "true"
+    }
+  },
+  "forum": 10498,
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "forum_enabled": false
+}

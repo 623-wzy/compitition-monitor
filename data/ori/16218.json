@@ -1,0 +1,223 @@
+{
+  "id": 16218,
+  "title": "Event-Based Multimodal Perception Challenge: Monocular Depth Estimation Track @ ECCV 2026",
+  "published": true,
+  "created_by": "blang",
+  "owner_display_name": "blang",
+  "created_when": "2026-05-10T06:53:10.869702Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-11-1778487124/9e519a3a990b/logo.png?AWSAccessKeyId=codabench-prod&Signature=KTnvoOviDn7P302q9S4b568agzg%3D&Expires=1779888972",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-11-1778487124/9e519a3a990b/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=Ra7ULbFjhH4F3C3lz437iXv5djE%3D&Expires=1779888972",
+  "terms": "# Terms and Conditions\n\nBy registering for the CoSEC Depth Challenge, downloading the dataset, or submitting predictions to the evaluation server, participants agree to the following terms.\n\n## 1. Academic and Research Use\n\n* The CoSEC dataset, including event data, frame data, depth annotations, calibration files, metadata, and benchmark tools, is provided for academic research and challenge participation purposes only. \n* Commercial use, redistribution, sublicensing, or monetization of the dataset is prohibited without prior written permission from the organizers.\n\n## 2. Data Usage\n\n* Participants may use the official CoSEC training data for model development. \n* External datasets, pretrained models, synthetic data, and additional training resources are allowed only if they are publicly available or legally accessible, and must be disclosed upon request.\n* The test set must only be used for official evaluation. Participants must not attempt to access, reconstruct, manually annotate, reverse-engineer, or infer the hidden ground-truth depth data.\n\n## 3. Submission Rules\n\n* Each submission must follow the official submission format, including filenames, data format, and folder structure. \n* Invalid, corrupted, incomplete, or incorrectly formatted submissions may be rejected by the organizers.\n\n## 4. Fair Use and Anti-Cheating Policy\n\n* Participants must not probe or exploit the evaluation server, manually tune predictions on the test set, use hidden test-set ground truth, submit hard-coded predictions, or use multiple accounts or teams to gain an unfair advantage. \n* Any form of cheating, data leakage, or violation of the challenge rules may result in disqualification and removal from the leaderboard.\n\n## 5. Technical Report and Verification\n\n* Top-ranked teams may be required to submit a short technical report describing their method, training data, model architecture, loss functions, post-processing steps, and external resources. \n* The organizers may request code, logs, model outputs, or additional information for result verification.\n\n## 6. Liability and Disclaimer\n\n* The dataset, benchmark tools, and evaluation server are provided \"as is\" without warranty of any kind. \n* The organizers are not liable for any damages arising from the use of the dataset or participation in this challenge. \n* The organizers reserve the right to modify the challenge rules, evaluation protocol, metrics, timeline, or participation terms when necessary.\n\n## 7. Publication and Citation\n\n* The organizers may publish the final leaderboard, aggregated results, and analyses of submitted methods. \n* Participants who use the CoSEC dataset or report challenge results in publications are expected to cite the official CoSEC paper or challenge reference provided by the organizers.",
+  "pages": [
+    {
+      "id": 77710,
+      "title": "Overview",
+      "content": "# Event-Based Multimodal Perception Challenge: Monocular Depth Estimation Track @ ECCV 2026\n\nWelcome to the **Monocular Depth Estimation Track** of the **Event-Based Multimodal Perception Challenge**, officially hosted at **ECCV 2026**!\n\n## 🎯 Overview & Objective\n\nThis challenge aims to advance **monocular depth estimation** using **event-based vision and frame data**. Unlike conventional RGB cameras, event cameras asynchronously capture brightness changes with high temporal resolution, low latency, and high dynamic range, making them particularly suitable for challenging scenarios such as high-speed motion, low-light environments, and scenes with strong illumination changes.\n\nThe objective of this track is to benchmark and promote robust depth estimation methods that can effectively leverage complementary information from **event streams and intensity frames**. Participants are expected to develop models that predict accurate depth maps from monocular multimodal inputs, with a particular focus on generalization, robustness, and metric depth estimation.\n\n## 📝 Task Description\n\nParticipants are required to submit predicted depth maps for the test set. Each prediction should follow the official submission format and correspond to the provided event and frame input data.\n\nThe task focuses on:\n\n- **Monocular Depth Estimation**: Predicting depth maps from a single viewpoint using event and frame data.\n- **Multimodal Fusion**: Effectively combining asynchronous event streams with image frames for depth perception.\n- **Absolute Depth Prediction**: Estimating metric depth values rather than only relative depth.\n- **Robust Perception**: Handling challenging visual conditions such as low illumination, high dynamic range.\n\n## 📅 Important Dates\n\nAll deadlines are at **11:59 PM UTC**, unless otherwise specified.\n\n- **May 13, 2026**: Challenge Website Opens.\n- **May 15, 2026**: Training Set Release.\n- **June 20, 2026**: Test Set & Evaluation Server Online.\n- **June 30, 2026**: Challenge Submission Deadline.\n- **July 5, 2026**: Challenge Results Announcement.\n- **July 10, 2026**: Technical Report Deadline.\n\n## 📊 Dataset\n\nThis track uses a subset of the [**CoSEC dataset**](https://cosec.org.cn/). The dataset provides multimodal sensory data, including image frames, event streams, and depth annotations.\n\nThe released data for this track includes:\n\n- **Image Frames**: RGB frames captured from a monocular camera.\n- **Event Streams**: Asynchronous event data recorded by an event camera.\n- **Depth Labels**: Ground-truth depth maps provided for supervised training and validation.\n\nThe training sets are released for model development and performance validation. The test set will be used for official evaluation, and its ground-truth depth labels will remain hidden.\n\nThe dataset statistics for this track are summarized below:\n\n| Split | Number of Sequences | Number of Samples |\n|---|---:|---:|\n| Training | 102 | 11782 |\n| Test | 26 | 2951 |\n\n## ⚠️ Challenge Rules\n\nTo maintain fairness and scientific integrity, all participants must strictly follow the challenge rules:\n\n- **No Test-Set Training**: The test set must not be used for training, validation, model selection, or manual tuning.\n- **No Ground-Truth Probing**: Participants must not attempt to infer, reconstruct, or extract hidden ground-truth depth data from the evaluation server.\n- **No Manual Annotation**: Submitted predictions must be generated by an automated method. Manually created, manually corrected, or manually tuned predictions are not allowed.\n- **No Evaluation Server Exploitation**: Any attempt to exploit the evaluation system, submission feedback, or leaderboard behavior to gain an unfair advantage is strictly prohibited.\n- **External Resources Disclosure**: Any external datasets, pretrained models, synthetic data, or additional training resources used by participants must be disclosed in the final technical report if requested.\n- **Verification Requirement**: Top-ranked teams may be required to submit a short technical report, code, logs, or additional information for result verification.\n\n## 📩 Contact\n\nFor questions about the challenge, please contact the organizers through the official competition page or by email.",
+      "index": 0
+    },
+    {
+      "id": 77712,
+      "title": "Data Preparation",
+      "content": "# Data Preparation Guide\n\nTo participate in the **Event-Based Multimodal Perception Challenge: Monocular Depth Estimation Track**, participants need to prepare the training data, understand the data format, and generate depth predictions for the test set once it is released.\n\nThis track uses a curated subset of the [**CoSEC dataset**](https://cosec.org.cn/) for event-based monocular depth estimation. Each sequence contains multimodal data, including image frames, event streams, camera intrinsics, timestamps, and depth annotations.\n\n## Training Set Download\n\nThe training set contains image frames, event streams, camera intrinsics, timestamps, and ground-truth depth maps. Participants may use the training set to develop, train, and validate their monocular depth estimation models.\n\nThe training split includes:\n\n- Image frames from the left camera.\n- Event streams from the left event camera.\n- Camera intrinsic parameters.\n- Timestamps for samples.\n- Ground-truth depth maps.\n\nPlease download the official training set from the following links:\n\n👉 **Download CoSEC Depth Training Set**\n\n- **Baidu Netdisk**: [train.zip](https://pan.baidu.com/s/1MhphyA-iaNJ7HbdpqqNtJA?pwd=HUST)\n\n- **Google Drive**: [train.zip](https://drive.google.com/file/d/1R8q_h6jVUA27Q7QC2qUHxySMYqFGwH2P/view?usp=drive_link)\n\n## Test Set Download\n\nThe official test set has **not been released yet**.\n\nThe test set will be released according to the challenge schedule. Once released, the download links will be updated on this page.\n\nThe test split will contain image frames, event streams, camera intrinsics, and timestamps. The ground-truth depth maps for the test set will remain hidden and will be used only by the Codabench evaluation server.\n\nPlease download the official test set from the following links once it is released:\n\n👉 **Download CoSEC Depth Test Set**\n\n- **Baidu Netdisk**: To be released\n\n- **Google Drive**: To be released\n\n## Dataset Structure and Format\n\nThe expected dataset structure is:\n\n```text\ndepth_challenge\n├── train\n│   ├── Day_Campus_000\n│   │   ├── img_co_left\n│   │   ├── depth_co\n│   │   ├── events_co_left.h5\n│   │   ├── intrinsics.json\n│   │   └── timestamps.txt\n│   ├── Day_Campus_001\n│   │   ├── img_co_left\n│   │   ├── depth_co\n│   │   ├── events_co_left.h5\n│   │   ├── intrinsics.json\n│   │   └── timestamps.txt\n│   └── ...\n└── test\n    ├── Day_Campus_012\n    │   ├── img_co_left\n    │   ├── events_co_left.h5\n    │   ├── intrinsics.json\n    │   └── timestamps.txt\n    ├── Day_Campus_013\n    │   ├── img_co_left\n    │   ├── events_co_left.h5\n    │   ├── intrinsics.json\n    │   └── timestamps.txt\n    └── ...\n```\n\nEach sample is identified by its sequence name and frame file name. The image frame and depth map with the same file name correspond to the same sample.\n\nFor a training sample:\n\n```text\ndepth/train/Day_Campus_000/img_co_left/000000.png\ndepth/train/Day_Campus_000/depth_co/000000.png\n```\n\nThe corresponding event data is stored in the sequence-level HDF5 file:\n\n```text\ndepth/train/Day_Campus_000/events_co_left.h5\n```\n\nThe camera intrinsics and timestamps are stored as:\n\n```text\ndepth/train/Day_Campus_000/intrinsics.json\ndepth/train/Day_Campus_000/timestamps.txt\n```\n\nFor a test sample after the test set is released:\n\n```text\ndepth/test/Day_Campus_012/img_co_left/000000.png\n```\n\nthe expected submitted prediction should be:\n\n```text\nDay_Campus_012/depth_co/000000.npz\n```\n\n### Image Frame Format\n\nImage frames are stored as `.png` files under the `img_co_left` folder, with a resolution of `1200 x 624`. They have been aligned with the event streams and can be used together with the event data for multimodal depth estimation.\n\n### Event Stream Format\n\nEach sequence contains one `events_co_left.h5` file. The event stream has already been aligned with the image frames.\n\nA typical event file contains the following fields:\n\n```text\nx          # event x coordinates\ny          # event y coordinates\np          # event polarities\nt          # event timestamps\nms_to_idx  # mapping from millisecond timestamp to event index\n```\n\nThe event timestamps `t` are stored in microseconds. The `ms_to_idx` array provides a convenient way to quickly locate event indices by millisecond-level timestamps.\n\nFor a given image frame, participants may use the corresponding timestamp in `timestamps.txt` to extract a temporal window of events. For example, one can take the events within `50 ms` before the image exposure end timestamp and use them together with the image frame for multimodal depth estimation.\n\nExample code:\n\n```python\nimport os\nimport cv2\nimport h5py\nimport numpy as np\n\nseq_dir = \"path/to/sequence\"\n\nframe_id = 0\nevent_window_ms = 50\n\n# Load image timestamp.\ntimestamps = np.loadtxt(os.path.join(seq_dir, \"timestamps.txt\"), dtype=np.int64)\nimg_ts_us = timestamps[frame_id]  # exposure end timestamp of this image, in microseconds\n\n# Load image frame.\nimg_path = os.path.join(seq_dir, \"img_co_left\", f\"{frame_id:06d}.png\")\nimg = cv2.imread(img_path, cv2.IMREAD_UNCHANGED)\n\n# Load event file.\nevent_path = os.path.join(seq_dir, \"events_co_left.h5\")\nwith h5py.File(event_path, \"r\") as events:\n    ms_to_idx = events[\"ms_to_idx\"][:]\n\n    # Select events within [img_ts_us - 50 ms, img_ts_us].\n    start_us = img_ts_us - event_window_ms * 1000\n    end_us = img_ts_us\n\n    start_ms = int(round(start_us / 1000.0))\n    end_ms = int(round(end_us / 1000.0))\n\n    start_idx = ms_to_idx[start_ms]\n    end_idx = ms_to_idx[end_ms]\n\n    xs = events[\"x\"][start_idx:end_idx]\n    ys = events[\"y\"][start_idx:end_idx]\n    ps = events[\"p\"][start_idx:end_idx]\n    ts = events[\"t\"][start_idx:end_idx]\n\n# img and the selected event segment can then be used together.\n```\n\n### Timestamp Format\n\nEach sequence provides a `timestamps.txt` file. Each line stores the timestamp of one image frame, and the order is consistent with the frame order in `img_co_left`.\n\nThe timestamp can be regarded as the exposure end timestamp of the corresponding image frame.\n\nFor example:\n\n```text\nimg_co_left/000000.png  ->  first line in timestamps.txt\nimg_co_left/000001.png  ->  second line in timestamps.txt\nimg_co_left/000002.png  ->  third line in timestamps.txt\n```\n\nFor the training set, the depth maps in `depth_co` share the same timestamps as the corresponding image frames.\n\nThe timestamps are stored as integer values in microseconds. They can be used to associate each image/depth sample with a corresponding segment of the event stream.\n\n### Camera Intrinsics\n\nCamera intrinsic parameters are provided in the `intrinsics.json` file of each sequence.\n\nSince the image frames and event streams have already been aligned, both the image camera and the event camera use the `Co_Rect_L` intrinsic parameters. The format is shown below:\n\n```json\n\"Co_Rect_L\":\n{\n    \"K\":\n    [\n        [ fx,  0,   cx ],\n        [ 0,   fy,  cy ],\n        [ 0,   0,   1  ]\n    ],\n\n    \"resolution\": [ height, width ]\n}\n```\n\nHere, `K` is the camera intrinsic matrix, where `fx` and `fy` are the focal lengths, and `cx` and `cy` are the principal point coordinates. The `resolution` field is given in `[height, width]` order, which is `[624, 1200]` for the provided image frames and event streams.\n\n### Depth Map Format\n\nGround-truth depth maps in the training set are stored as `.png` files under the `depth_co` folder.\n\nThe depth values are stored as **uint16 scaled depth**.\n\nSpecifically, if the metric depth is represented in meters, the stored value follows:\n\n```text\nstored_depth = metric_depth_in_meters * 256\n```\n\nTo recover the metric depth in meters:\n\n```text\nmetric_depth_in_meters = stored_depth / 256.0\n```",
+      "index": 1
+    },
+    {
+      "id": 77637,
+      "title": "Evaluation Details",
+      "content": "# Evaluation Metrics & Submission Guidelines\n\n## Submission Format\n\nParticipants are required to submit depth predictions for all samples in the test set. Each prediction should be saved as a `.npz` file containing a single depth array.\n\nThe submission must be a single `.zip` archive. The archive should contain all predicted depth files while preserving the required sequence-level directory structure.\n\nEach `.npz` prediction file must satisfy the following requirements:\n\n- The file extension must be `.npz`.\n- Each `.npz` file must contain a depth array with the key `depth`.\n- The `depth` array must be a 2D array.\n- The shape of the predicted depth array must match the corresponding ground-truth depth map.\n- The file name must be identical to the corresponding test sample name.\n- The depth values must be saved in the same format as the ground-truth depth labels.\n- Invalid values such as `NaN`, `Inf`, or negative depth values are not allowed.\n\n### Depth Value Format\n\nThe submitted depth map should be stored as **uint16 scaled depth**.\n\nSpecifically, if the predicted metric depth is `depth_m` in meters, the submitted value should be:\n\n```text\ndepth_uint16 = depth_m * 256\n```\n\nThe resulting depth map should be saved as a `uint16` array in the `.npz` file.\n\nDuring evaluation, the server will recover the metric depth by:\n\n```text\ndepth_m = depth_uint16 / 256.0\n```\n\nTherefore, participants should not directly save floating-point depth values in meters. Please first convert the prediction to the required scaled `uint16` format.\n\nEach `.npz` file must contain exactly one depth array with the key:\n\n```text\ndepth\n```\n\nWe recommend saving the prediction using `np.savez_compressed`, with the scaled `uint16` depth map stored under the key `depth`.\n\n### Submission Structure\n\nAn example submission structure is shown below:\n\n```text\nsubmission.zip\n├── Day_Campus_000\n│   └── depth_co\n│       ├── 000000.npz\n│       ├── 000001.npz\n│       ├── 000002.npz\n│       └── ...\n├── Day_Campus_001\n│   └── depth_co\n│       ├── 000000.npz\n│       ├── 000001.npz\n│       └── ...\n└── ...\n```\n\nA dummy submission file is provided to help participants verify the required file structure and submission format.\n\n👉 **Download Dummy Submission**\n\n- **Baidu Netdisk**: [dummy_submission.zip](https://pan.baidu.com/s/1lPezWP_CpMIiEEORrsGExA?pwd=HUST)  \n\n- **Google Drive**: [dummy_submission.zip](https://drive.google.com/file/d/1w4BouQGbzcXs4rrG-BQl9xqxWWMuGyCo/view?usp=drive_link)\n\nParticipants may use the dummy submission as a reference when preparing their own prediction files. \n\nFor each test image frame, for example:\n\n```text\ntest/Day_Campus_000/img_co_left/000000.png\n```\n\nthe submitted prediction should be:\n\n```text\nDay_Campus_000/depth_co/000000.npz\n```\n\nPlease make sure that the submitted `.zip` file directly contains the sequence folders. Do not include unnecessary parent directories.\n\n## How to Submit\n\n1. **Prepare your predictions**: Generate depth predictions for all test samples.\n2. **Convert depth format**: Convert metric depth in meters to scaled `uint16` format using `depth_uint16 = depth_m * 256`.\n3. **Save as `.npz`**: Save each prediction as a `.npz` file with the key `depth`.\n4. **Check your file structure**: Make sure the directory structure matches the required format. Each test sample should have exactly one corresponding `.npz` prediction file.\n5. **Compress your results**: Zip the prediction folders into a single `.zip` archive.\n6. **Upload**: Navigate to the **My Submissions** tab on the challenge page, select the active phase, and upload your `.zip` file.\n7. **Evaluation**: The evaluation server will automatically process your submission and update the leaderboard.\n\n## Metrics\n\nThe challenge evaluates monocular depth estimation performance on the test set. The evaluation server compares the submitted depth predictions with the ground-truth depth maps using standard depth estimation metrics.\n\nThe following metrics are reported on the leaderboard:\n\n- **RMSE**: Root Mean Squared Error.\n- **AbsRel**: Absolute Relative Error.\n- **δ < 1.25**: Percentage of valid pixels whose prediction is within a threshold of 1.25.\n- **δ < 1.25²**: Percentage of valid pixels whose prediction is within a threshold of 1.25².\n- **δ < 1.25³**: Percentage of valid pixels whose prediction is within a threshold of 1.25³.\n\nThe main leaderboard ranking metric is **RMSE**, where lower is better.\n\n## Final Scoring\n\nThe final leaderboard ranking is determined by **RMSE** on the test set.\n\nLower **RMSE** indicates better depth estimation performance. Other metrics, including **AbsRel**, **δ < 1.25**, **δ < 1.25²**, and **δ < 1.25³**, are also reported for comprehensive comparison, but they are not used as the primary ranking criterion.",
+      "index": 2
+    },
+    {
+      "id": 77620,
+      "title": "Organizers & Citation",
+      "content": "# Organizers & Citation\n\n## Organizing Committee\n\nWe would like to thank the organizing committee for their efforts in creating and maintaining the **Event-Based Multimodal Perception Challenge: Monocular Depth Estimation Track**.\n\n**Shihan Peng** (Huazhong University of Science and Technology) · pengshihan@hust.edu.cn\n\n**Yuyang Xiong** (Huazhong University of Science and Technology) · xiongyuyang@hust.edu.cn\n\n**Hanyu Zhou** (National University of Singapore) · hy.zhou@nus.edu.sg\n\n**Yunfan Lu** (HKUST (Guangzhou)) · ylu066@connect.hkust-gz.edu.cn\n\n**Shaoyu Liu** (Xidian University) · liusy@stu.xidian.edu.cn\n\n**Haoyue Liu** (Huazhong University of Science and Technology) · liuhy@hust.edu.cn\n\n**Peiqi Duan** (Peking University) · duanqi0001@pku.edu.cn\n\n**Yinqiang Zheng** (The University of Tokyo) · yqzheng@ai.u-tokyo.ac.jp\n\n**Boxin Shi** (Peking University) · shiboxin@pku.edu.cn\n\n**Kuk-Jin Yoon** (KAIST) · kjyoon@kaist.ac.kr\n\n**Hui Xiong** (HKUST (Guangzhou)) · xionghui@ust.hk\n\n**Gim Hee Lee** (National University of Singapore) · gimhee.lee@nus.edu.sg\n\n**Davide Scaramuzza** (University of Zurich) · sdavide@ifi.uzh.ch\n\n## Citation\n\nIf you participate in this challenge, use the provided dataset, or find this benchmark useful for your research, please kindly cite our paper:\n\n```bibtex\n@article{peng2024cosec,\n  title={Cosec: A coaxial stereo event camera dataset for autonomous driving},\n  author={Peng, Shihan and Zhou, Hanyu and Dong, Hao and Shi, Zhiwei and Liu, Haoyue and Duan, Yuxing and Chang, Yi and Yan, Luxin},\n  journal={arXiv preprint arXiv:2408.08500},\n  year={2024}\n}\n```",
+      "index": 3
+    }
+  ],
+  "phases": [
+    {
+      "id": 26705,
+      "index": 0,
+      "start": "2026-06-20T08:00:00Z",
+      "end": "2026-06-30T23:59:00Z",
+      "name": "Test Phase",
+      "description": "This phase evaluates submitted depth predictions on the test set for the official leaderboard.",
+      "status": "Next",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "4bbeec0d-e5fa-4070-97aa-89cdc913dbc6",
+          "order_index": 0,
+          "phase": 26705,
+          "id": 32707,
+          "value": "4bbeec0d-e5fa-4070-97aa-89cdc913dbc6",
+          "key": "4bbeec0d-e5fa-4070-97aa-89cdc913dbc6",
+          "created_when": "2026-05-10T17:22:46.411348Z",
+          "name": "CoSEC_Depth_Challenge_Test",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 749574,
+              "created_by": "blang",
+              "owner_display_name": "blang",
+              "created_when": "2026-05-10T17:15:22.315589Z",
+              "name": "CoSEC_Depth_Challenge_Test_GT",
+              "type": "reference_data",
+              "description": "",
+              "is_public": false,
+              "key": "38927b2e-a698-4b10-8091-b694e32581f1",
+              "value": "38927b2e-a698-4b10-8091-b694e32581f1",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 16218,
+                  "title": "Event-Based Multimodal Perception Challenge: Monocular Depth Estimation Track @ ECCV 2026"
+                },
+                {
+                  "pk": 16307,
+                  "title": "depth test"
+                }
+              ],
+              "competition": null,
+              "file_name": "reference_data.zip",
+              "file_size": 935254906.0
+            },
+            {
+              "id": 749577,
+              "created_by": "blang",
+              "owner_display_name": "blang",
+              "created_when": "2026-05-10T17:19:52.389914Z",
+              "name": "CoSEC_Depth_Challenge_Scoring_Program",
+              "type": "scoring_program",
+              "description": "",
+              "is_public": false,
+              "key": "564b94fc-ab27-4c49-945e-62293c6ae6e4",
+              "value": "564b94fc-ab27-4c49-945e-62293c6ae6e4",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 16218,
+                  "title": "Event-Based Multimodal Perception Challenge: Monocular Depth Estimation Track @ ECCV 2026"
+                },
+                {
+                  "pk": 16307,
+                  "title": "depth test"
+                }
+              ],
+              "competition": null,
+              "file_name": "scoring_program.zip",
+              "file_size": 1645.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 17888,
+      "primary_index": 0,
+      "title": "Main Leaderboard",
+      "key": "main_leaderboard",
+      "columns": [
+        {
+          "id": 77041,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "RMSE",
+          "key": "rmse",
+          "sorting": "asc",
+          "index": 0,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 77046,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "AbsRel",
+          "key": "absrel",
+          "sorting": "asc",
+          "index": 1,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 77047,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "δ < 1.25",
+          "key": "delta1",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 77048,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "δ < 1.25²",
+          "key": "delta2",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 77049,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "δ < 1.25³",
+          "key": "delta3",
+          "sorting": "desc",
+          "index": 4,
+          "hidden": false,
+          "precision": 4
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Force_Best"
+    }
+  ],
+  "collaborators": [
+    {
+      "id": 53567,
+      "name": null,
+      "username": "xiongyuyang"
+    }
+  ],
+  "registration_auto_approve": true,
+  "description": "This is the monocular depth estimation track of the Event-Based Multimodal Perception Challenge.",
+  "participants_count": 30,
+  "submissions_count": 1,
+  "queue": null,
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": false,
+  "show_detailed_results_in_leaderboard": false,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": false,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "codalab/codalab-legacy:py312",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 15964,
+  "reward": "",
+  "contact_email": "blang233@foxmail.com",
+  "report": "",
+  "forum_enabled": true
+}

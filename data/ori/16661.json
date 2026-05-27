@@ -1,0 +1,295 @@
+{
+  "id": 16661,
+  "title": "ArGuard 2026 — Subtask A1 (Binary Hateful Meme Detection)",
+  "published": true,
+  "created_by": "mohamedbayan",
+  "owner_display_name": "mohamedbayan",
+  "created_when": "2026-05-25T13:30:58.534544Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-25-1779715858/886e2d9c0b58/logo.png?AWSAccessKeyId=codabench-prod&Signature=TH2v1TcrC80TdvBxk9MG8ukO%2F8g%3D&Expires=1779888953",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-25-1779715858/886e2d9c0b58/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=05T3%2BO1s4dmazM8IxT1GRvzKhHQ%3D&Expires=1779888953",
+  "terms": "# Terms\n\n## Submission format\n\nSubmit your predictions as a **single zip** named `prediction.zip` containing one **UTF-8-encoded TSV** file named `prediction.tsv`.\n\nThe TSV must have an exact header line and exactly three tab-separated columns:\n\n```\nid\tlabel\trun_id\nabc123.jpg\tHateful\tmy_team_run1\ndef456.jpg\tNot Hateful\tmy_team_run1\n…\n```\n\n- **`id`** — the original meme filename, exactly as it appears in the dataset.\n- **`label`** — one of `Hateful`, `Not Hateful` (exact case, no extra whitespace).\n- **`run_id`** — a single non-empty string repeated on every row. Use it to label different submissions (e.g. `team_x_v2`).\n\n## Rules\n1. The set of `id`s in your submission must exactly match the set of `id`s in the gold file for the active phase (`dev_test` during development, `test` during the final phase). Missing or extra rows result in an automatic rejection.\n2. `id`s must be unique within a submission.\n3. `run_id` must be the same on every row.\n4. Labels outside `{Hateful, Not Hateful}` (including different case or extra whitespace) are rejected.\n\nYou can validate your submission locally using the format checker in the starter kit before uploading:\n\n```bash\npython format_checker/format_checker.py --subtask a1 --predictions prediction.tsv\n```\n\n## Metric\nThe official metric is **macro-F1**. Accuracy, macro precision / recall, weighted F1, and per-class F1 are reported as diagnostics.\n\n## Data usage and ethics\n- The dataset is licensed under **CC BY-NC 4.0** — non-commercial research use only.\n- The data contains text and imagery that is offensive or harmful by design; handle responsibly.\n- You may use any pretrained model, any external dataset, and any compute budget. Document your setup in the system paper.\n\n## Contact\narguard2026-organizers@googlegroups.com",
+  "pages": [
+    {
+      "id": 79250,
+      "title": "Participation",
+      "content": "# How to participate\n\nArGuard 2026 — Task 1 / Track A · **Subtask A1: Binary Hateful Meme Detection**.\n\n## Who can join\nYou can take part as an individual or as a team. A person can participate in multiple shared tasks within ArGuard 2026 — see the full list at the [task website](https://araieval.gitlab.io/ArGuard2026/).\n\n## How to register\n1. Sign up on this CodaBench competition page.\n2. Read the [Terms](#) tab — pay particular attention to the submission file format and naming convention.\n3. Download the data from the Hugging Face Hub: [`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1).\n4. Clone the starter kit: [`araieval/ArGuard-2026-tasks`](https://github.com/araieval/ArGuard-2026-tasks).\n5. Train your model and generate predictions on the `dev_test` split during the development phase, and on the `test` split during the final-evaluation phase.\n\n## Submitting\n- One team member submits per phase via the **Submit** tab.\n- Upload your TSV prediction file as `prediction.zip` (see Terms).\n- The latest valid submission before the deadline counts as your team's final submission for that phase.\n\n## System description paper\nAll teams are encouraged to submit a system-description paper for the workshop. A single paper may cover multiple subtasks if you participated in more than one.\n\n## Contact\nQuestions: arguard2026-organizers@googlegroups.com",
+      "index": 0
+    },
+    {
+      "id": 79251,
+      "title": "Dataset",
+      "content": "# Dataset\n\nArGuard Task 1 — Track A is built around an Arabic multimodal meme dataset: each instance is an image with overlaid Arabic text (OCR-extracted). Memes are manually annotated for hatefulness.\n\nFor **Subtask A1**, every meme has a single binary label from {`Hateful`, `Not Hateful`}.\n\n## Get the data\nThe official splits live on the Hugging Face Hub at [`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1). Download them with the helper script from the starter kit:\n\n```bash\ngit clone https://github.com/araieval/ArGuard-2026-tasks.git\ncd ArGuard-2026-tasks/task1\npip install -r requirements.txt\npython data/download_data.py\n```\n\n## Splits\n\n| Split        | Records | Labels   | Phase                    | Purpose                                    |\n|--------------|--------:|----------|--------------------------|--------------------------------------------|\n| `train`      |   3,500 | full     | development              | model training                             |\n| `dev`        |     500 | full     | development              | hyperparameter selection, local evaluation |\n| `dev_test`   |     500 | **none** | development (leaderboard)| submission target for the dev-phase leaderboard |\n| `test`       |     500 | full     | final evaluation         | blind ranking (triple-annotated gold)      |\n\nThe `dev_test` split is released with labels stripped — that is the file you submit predictions for during the development phase.\n\n## Record schema (after `download_data.py`)\n```json\n{\n    \"id\": \"f9a8…b1.jpg\",\n    \"image_path\": \"img/f9a8…b1.jpg\",\n    \"text\": \"OCR-extracted Arabic text…\",\n    \"label\": \"Hateful\" | \"Not Hateful\" | null,\n    \"fine_grained_label\": [\"Mocking\", \"Incitement\"],\n    \"annotations\": []\n}\n```\n\n## Licence\nThe dataset is released under **CC BY-NC 4.0** (non-commercial research use only).\n\n## Resources\n- Starter kit: <https://github.com/araieval/ArGuard-2026-tasks>\n- Task website: <https://araieval.gitlab.io/ArGuard2026/>",
+      "index": 1
+    },
+    {
+      "id": 79252,
+      "title": "Timeline",
+      "content": "# Timeline\n\n## Development phase\nUse this phase to tune your models on `train.jsonl` / `dev.jsonl` and submit predictions on `dev_test.jsonl` for the leaderboard.\n\n**Window:** `2026-05-14 → 2026-07-19`\n**Submissions:** up to 5 per day, 100 total.\n\n## Testing phase\nThe final blind test split is released. Train on `train.jsonl` + `dev.jsonl`, submit predictions on `test.jsonl` — your best valid submission counts toward the official ranking.\n\n**Window:** `2026-07-20 → 2026-07-29`\n**Submissions:** up to 20 per day, 100 total.\n\n> Adjust the dates inside `competition.yaml` (the `phases.start` / `phases.end` fields) if your task schedule shifts.\n\n## Workshop\nPaper submissions and notification dates will be announced on the [task website](https://araieval.gitlab.io/ArGuard2026/).",
+      "index": 2
+    }
+  ],
+  "phases": [
+    {
+      "id": 27295,
+      "index": 0,
+      "start": "2026-05-14T00:00:00Z",
+      "end": "2026-07-19T00:00:00Z",
+      "name": "Development Phase",
+      "description": "Tune on train + dev; submit predictions on dev_test for the leaderboard.",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "fe85bde8-a2f0-45a6-b0a5-8f829ff7e3fb",
+          "order_index": 0,
+          "phase": 27295,
+          "id": 33351,
+          "value": "fe85bde8-a2f0-45a6-b0a5-8f829ff7e3fb",
+          "key": "fe85bde8-a2f0-45a6-b0a5-8f829ff7e3fb",
+          "created_when": "2026-05-25T13:30:58.053877Z",
+          "name": "subtask-A1-binary-dev",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 785342,
+              "created_by": "mohamedbayan",
+              "owner_display_name": "mohamedbayan",
+              "created_when": "2026-05-25T13:30:56.831887Z",
+              "name": "scoring_program @ '05-25-2026 13:30'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "19b872c8-a855-4049-870a-d661e3fbe2ed",
+              "value": "19b872c8-a855-4049-870a-d661e3fbe2ed",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16661,
+                  "title": "ArGuard 2026 — Subtask A1 (Binary Hateful Meme Detection)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 4115.0
+            },
+            {
+              "id": 785343,
+              "created_by": "mohamedbayan",
+              "owner_display_name": "mohamedbayan",
+              "created_when": "2026-05-25T13:30:57.368297Z",
+              "name": "reference_data @ '05-25-2026 13:30'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "60d4095a-5957-4fb3-b187-36e5a60e0040",
+              "value": "60d4095a-5957-4fb3-b187-36e5a60e0040",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16661,
+                  "title": "ArGuard 2026 — Subtask A1 (Binary Hateful Meme Detection)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 9399.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    },
+    {
+      "id": 27296,
+      "index": 1,
+      "start": "2026-07-20T00:00:00Z",
+      "end": "2026-07-29T00:00:00Z",
+      "name": "Testing Phase",
+      "description": "Final blind evaluation on the held-out test split.",
+      "status": "Next",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "c651783a-3e24-41c0-8194-774388ad159b",
+          "order_index": 0,
+          "phase": 27296,
+          "id": 33352,
+          "value": "c651783a-3e24-41c0-8194-774388ad159b",
+          "key": "c651783a-3e24-41c0-8194-774388ad159b",
+          "created_when": "2026-05-25T13:30:58.192020Z",
+          "name": "subtask-A1-binary-test",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 785344,
+              "created_by": "mohamedbayan",
+              "owner_display_name": "mohamedbayan",
+              "created_when": "2026-05-25T13:30:58.067576Z",
+              "name": "scoring_program @ '05-25-2026 13:30'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "f4ab5253-65e3-4d32-b7e1-c74b00ec3e4b",
+              "value": "f4ab5253-65e3-4d32-b7e1-c74b00ec3e4b",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16661,
+                  "title": "ArGuard 2026 — Subtask A1 (Binary Hateful Meme Detection)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 4115.0
+            },
+            {
+              "id": 785345,
+              "created_by": "mohamedbayan",
+              "owner_display_name": "mohamedbayan",
+              "created_when": "2026-05-25T13:30:58.124396Z",
+              "name": "reference_data @ '05-25-2026 13:30'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "709bb925-2bbc-46ae-9a74-7570a4bfdb03",
+              "value": "709bb925-2bbc-46ae-9a74-7570a4bfdb03",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16661,
+                  "title": "ArGuard 2026 — Subtask A1 (Binary Hateful Meme Detection)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 9752.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 20,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 18450,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "main",
+      "columns": [
+        {
+          "id": 80061,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Macro-F1",
+          "key": "f1_macro",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 80062,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Accuracy",
+          "key": "accuracy",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 80063,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Macro-Precision",
+          "key": "precision_macro",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": true,
+          "precision": 4
+        },
+        {
+          "id": 80064,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Macro-Recall",
+          "key": "recall_macro",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": true,
+          "precision": 4
+        },
+        {
+          "id": 80065,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "F1 (Hateful)",
+          "key": "f1__Hateful",
+          "sorting": "desc",
+          "index": 4,
+          "hidden": true,
+          "precision": 4
+        },
+        {
+          "id": 80066,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Duration (s)",
+          "key": "duration",
+          "sorting": "asc",
+          "index": 5,
+          "hidden": false,
+          "precision": 1
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Force_Last"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": true,
+  "description": "Arabic multimodal hateful-meme classification. Given a meme (image plus OCR-extracted Arabic text), predict whether it is Hateful or Not Hateful. Official metric: macro-F1.",
+  "participants_count": 1,
+  "submissions_count": 0,
+  "queue": null,
+  "enable_detailed_results": true,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": false,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": true,
+  "make_programs_available": true,
+  "make_input_data_available": true,
+  "docker_image": "codalab/codalab-legacy:py37",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 16400,
+  "reward": "",
+  "contact_email": "arguard2026-organizers@googlegroups.com",
+  "report": "",
+  "forum_enabled": true
+}

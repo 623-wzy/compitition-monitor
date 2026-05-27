@@ -1,0 +1,35 @@
+{
+  "id": 7634,
+  "title": "VisAidMath",
+  "description": "VisAidMath is the first benchmark manually collected and annotated for evaluating Math Problem Solving process with visual information on reasoning side.",
+  "description_zh": "VisAidMath是首个为评估具有视觉信息的数学问题求解过程（推理端）而手动收集和标注的基准。",
+  "created_by": "andrewlight7",
+  "created_when": "2025-04-21T18:01:05.283340Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-04-21-1745258465/8326aaab144b/logo.png?AWSAccessKeyId=codabench-prod&Signature=CFJLfHDmfGS010vaGi%2FwUKY%2B4sQ%3D&Expires=1779889336",
+  "participants_count": 7,
+  "submissions_count": 1,
+  "first_phase_start": null,
+  "phases": [
+    {
+      "id": 12474,
+      "name": "Testing Phase",
+      "start": "2025-04-21T00:00:00Z",
+      "end": "2027-12-31T00:00:00Z",
+      "max_submissions_per_day": 5
+    }
+  ],
+  "pages": [
+    {
+      "index": 0,
+      "title": "Participation",
+      "content": "# How to participate\n\nYou should submit a json file of your prediction on the testing data provided in \"public data\". It should be formatted\nas follows: \n\n```\n{\n    \"1\": {\n        \"answer\": \"A\",\n        \"visual-aids\": \"connect $AB$\"\n    },\n    \"2\": {\n        \"answer\": \"0\",\n        \"visual-aids\": \"connect $BD$\"\n    },\n    ...\n}\n``` \n\nSee the \"Timeline\" page for additional information about the phases of this competition\n\n---\n\n# Contact\n\n- **Paper:** [VisAidMath: Benchmarking Visual-Aided Mathematical Reasoning](https://arxiv.org/abs/2410.22995)\n- **Visit our website:** [https://andrewlightning7.github.io/VisAidMath.github.io/](https://andrewlightning7.github.io/VisAidMath.github.io/)  \n- **Email:** [nlp2ct.jingkun@gmail.com](nlp2ct.jingkun@gmail.com)",
+      "content_zh": "# 如何参赛\n\n你应该提交一个json文件，包含你在\"公共数据\"中提供的测试数据上的预测结果。格式应如下所示：\n\n```\n{\n    \"1\": {\n        \"answer\": \"A\",\n        \"visual-aids\": \"connect $AB$\"\n    },\n    \"2\": {\n        \"answer\": \"0\",\n        \"visual-aids\": \"connect $BD$\"\n    },\n    ...\n}\n```\n\n请访问\"时间表\"页面了解有关本次竞赛各阶段的更多信息。\n\n---\n\n# 联系方式\n\n- **论文：** [VisAidMath: Benchmarking Visual-Aided Mathematical Reasoning](https://arxiv.org/abs/2410.22995)\n- **访问我们的网站：** [https://andrewlightning7.github.io/VisAidMath.github.io/](https://andrewlightning7.github.io/VisAidMath.github.io/)  \n- **电子邮箱：** [nlp2ct.jingkun@gmail.com](nlp2ct.jingkun@gmail.com)"
+    },
+    {
+      "index": 1,
+      "title": "Timeline",
+      "content": "# Timeline\n## Final phase\nSubmit your preferred result with visual-aids and answer. Your answer will be verified against\nthe reference data. You may only make one submission to this phase, so choose wisely.",
+      "content_zh": "# 时间表\n## 最终阶段\n提交您的首选结果，附带视觉辅助材料和答案。您的答案将与参考数据进行验证。您在此阶段只能提交一次，请谨慎选择。"
+    }
+  ]
+}

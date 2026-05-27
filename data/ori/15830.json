@@ -1,0 +1,219 @@
+{
+  "id": 15830,
+  "title": "Neural encoding with deep neural networks (v9 - 2026-04-20)",
+  "published": true,
+  "created_by": "psulewski",
+  "owner_display_name": "Philip Sulewski",
+  "created_when": "2026-04-20T14:42:51.242593Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-20-1776696171/148af8ac1426/logo.png?AWSAccessKeyId=codabench-prod&Signature=A19jggHATILyRAxuyTKUZQipbzU%3D&Expires=1779888983",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-20-1776696171/148af8ac1426/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=qyj%2BHETOothddCvfXCMkNQUI%2B8E%3D&Expires=1779888983",
+  "terms": "# Terms and Conditions\n\nBy participating in this challenge you agree to the following:\n\n1. **Academic use only.** The AVS dataset and all derived materials are provided exclusively for academic research and educational purposes within the course \"Neural encoding with deep neural networks\" (SoSe 2026) at Osnabrück University.\n\n2. **No redistribution.** You may not share, publish, or redistribute the dataset, ground truth labels, or any derivatives outside the course.\n\n3. **Honest participation.** Submissions must reflect your own work. Manual inspection of the ground truth or leaderboard manipulation is not permitted.\n\n4. **Attribution.** Any publications or reports arising from work developed in this challenge must appropriately cite the AVS dataset and acknowledge the course. \n\nSulewski, P., Amme, C., Hebart, M., König, P., & Kietzmann, T. (2025). Why we linger: Memory encoding, rather than visual processing demand, drives fixation timing on natural scenes-evidence from a large-scale MEG dataset.",
+  "pages": [
+    {
+      "id": 75343,
+      "title": "Overview",
+      "content": "# MEG Brain Encoding Challenge\n\n## Goal\n\nBuild a model that predicts how the human brain responds to visual scenes during natural free viewing. Specifically, you will predict **fixation-aligned MEG activity** — the pattern of neural responses measured across 204 MEG gradiometer channels at 110 ms after each eye fixation onset.\n\n## Background\n\nThe data come from the **Active Vision Semantics (AVS)** dataset, in which participants freely explored natural scene photographs while their eye movements and whole-head MEG were simultaneously recorded.\n\nYou are given data from five training subjects (subjects 1–5) and asked to generalise to a **held-out subject (subject 60)**, whose scene-viewing behaviour and associated MEG responses form the evaluation set.\n\n## Task\n\n**Challenge 1 — Snapshot encoding at 110 ms**\n\nGiven the fixation metadata (scene ID, gaze coordinates, duration, sequence position, etc.) and the corresponding scene images, predict the vector of 204 MEG gradiometer amplitudes at 110 ms post-fixation onset.\n\n**Submission shape:** `(7750, 204)` — one row per fixation in the development set, 204 channels.\n\n## Timeline\n\n| Date | Event |\n|------|-------|\n| April 2026 | Challenge opens |\n| July 2026 | Challenge closes |\n\n## Limits\n\n- 5 submissions per day\n- 50 submissions total",
+      "index": 0
+    },
+    {
+      "id": 75344,
+      "title": "Data",
+      "content": "# Data\n\n## What You Receive\n\nAll data are distributed through the course repository. You do **not** upload data to Codabench — only your predictions.\n\n### Training data (subjects 1–5)\n\n| File | Description |\n|------|-------------|\n| `training/meg_110ms.npy` | MEG at 110 ms, shape `(n_fixations, 204)` |\n| `training/metadata.csv` | Per-fixation metadata (see columns below) |\n| `training/channel_names.txt` | Ordered list of 204 gradiometer channel names |\n| `avs_scenes/` | Full scene images (shared across subjects) |\n\n### Development set (subject 60)\n\n| File | Description |\n|------|-------------|\n| `subject60/challenge1_dev/metadata.csv` | 7750 fixations for which you submit predictions |\n\nThe ground truth MEG for subject 60 is **withheld** and used only for scoring.\n\n## Metadata Columns\n\nKey columns in `metadata.csv`:\n\n| Column | Description |\n|--------|-------------|\n| `sceneID` | Integer scene identifier — links to image file |\n| `mean_gx`, `mean_gy` | Mean gaze position in screen-centred pixels (origin = centre, y-axis up) |\n| `duration` | Fixation duration [ms] |\n| `fix_sequence` | Fixation index within the trial (1 = first fixation) |\n| `time_in_trial` | Time since trial onset [ms] |\n| `subject` | Subject identifier |\n\n## Scene Images\n\nScene images are JPEGs named `{sceneID:012d}_MEG_size.jpg`, scaled to the presentation resolution (1024 × 768 px). Fixation patches (112 × 112 px, centred on gaze) can be extracted using `megcourselib.data.stim.extract_crop()`.",
+      "index": 1
+    },
+    {
+      "id": 75345,
+      "title": "Evaluation",
+      "content": "# Evaluation\n\n## Metric\n\nSubmissions are evaluated using **Pearson correlation (r)** between predicted and actual MEG amplitudes, computed **independently for each of the 204 channels** across all 7750 fixations in the development set.\n\nThis gives a vector **r** ∈ ℝ^204, from which four leaderboard scores are derived:\n\n| Column | Definition |\n|--------|-----------|\n| **Mean r** *(primary)* | `mean(r)` — average encoding across all channels |\n| **Median r** | `median(r)` — robust central tendency |\n| **Max r** | `max(r)` — best single-channel encoding |\n| **Worst-10 Channels** | `mean(r[argsort(r)[:10]])` — average of the 10 worst channels |\n\nRankings are determined by **Mean r** (higher is better). All other columns are shown for diagnostic purposes.\n\n## Submission Format\n\n1. Create a NumPy array of predictions with shape `(7750, 204)` and dtype `float64`.\n   - Row order must match `subject60/challenge1_dev/metadata.csv` exactly.\n   - Column order must match `channel_names.txt` exactly (MEG0001 … MEG0204).\n\n2. Save it as `predictions.npy`:\n   ```python\n   import numpy as np\n   np.save(\"predictions.npy\", pred)   # shape (7750, 204)\n   ```\n\n3. Zip it (the file must be at the root of the zip, not in a subfolder):\n   ```bash\n   zip submission.zip predictions.npy\n   ```\n\n4. Upload `submission.zip` via the Submit button.\n\n## Validity Checks\n\nThe scoring program rejects submissions that:\n- Have the wrong shape (anything other than 7750 × 204)\n- Contain NaN or Inf values\n\nInvalid submissions receive a score of 0.0 on all columns.",
+      "index": 2
+    }
+  ],
+  "phases": [
+    {
+      "id": 26100,
+      "index": 0,
+      "start": "2026-04-20T00:00:00Z",
+      "end": "2026-07-31T00:00:00Z",
+      "name": "Challenge 1",
+      "description": "Submit your predictions evaluated against the development-set ground truth. Upload a .zip containing predictions.npy (shape 7750 x 204, float64).",
+      "status": "Current",
+      "execution_time_limit": 36000,
+      "tasks": [
+        {
+          "task": "d3674a0c-07ba-4481-ba6a-189a97ee174c",
+          "order_index": 0,
+          "phase": 26100,
+          "id": 32028,
+          "value": "d3674a0c-07ba-4481-ba6a-189a97ee174c",
+          "key": "d3674a0c-07ba-4481-ba6a-189a97ee174c",
+          "created_when": "2026-04-20T14:42:50.721581Z",
+          "name": "Challenge 1 - MEG at 110 ms",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 713654,
+              "created_by": "psulewski",
+              "owner_display_name": "Philip Sulewski",
+              "created_when": "2026-04-20T14:42:49.228750Z",
+              "name": "scoring_program @ '04-20-2026 14:42'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "4979117f-b5a9-450b-bc10-8ca04cda5cb2",
+              "value": "4979117f-b5a9-450b-bc10-8ca04cda5cb2",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 15830,
+                  "title": "Neural encoding with deep neural networks (v9 - 2026-04-20)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 1194.0
+            },
+            {
+              "id": 713655,
+              "created_by": "psulewski",
+              "owner_display_name": "Philip Sulewski",
+              "created_when": "2026-04-20T14:42:49.328274Z",
+              "name": "reference_data @ '04-20-2026 14:42'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "7037228b-6212-42cf-bc02-7c477324ccfd",
+              "value": "7037228b-6212-42cf-bc02-7c477324ccfd",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 15830,
+                  "title": "Neural encoding with deep neural networks (v9 - 2026-04-20)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 12119948.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 25,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": {
+        "id": 713656,
+        "created_by": "psulewski",
+        "owner_display_name": "Philip Sulewski",
+        "created_when": "2026-04-20T14:42:50.785744Z",
+        "name": "starting_kit @ '04-20-2026 14:42'",
+        "type": "starting_kit",
+        "description": null,
+        "is_public": false,
+        "key": "02ed2f8f-a96a-463e-b7bc-81a5fbea6404",
+        "value": "02ed2f8f-a96a-463e-b7bc-81a5fbea6404",
+        "was_created_by_competition": true,
+        "in_use": [
+          {
+            "pk": 15830,
+            "title": "Neural encoding with deep neural networks (v9 - 2026-04-20)"
+          }
+        ],
+        "competition": null,
+        "file_name": "",
+        "file_size": 2369.0
+      },
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 17454,
+      "primary_index": 0,
+      "title": "Challenge 1 Results",
+      "key": "Results",
+      "columns": [
+        {
+          "id": 74967,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Mean r",
+          "key": "mean_r",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 74969,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Max r",
+          "key": "max_r",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 74970,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Worst-10 Channels",
+          "key": "worst10_mean",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 74968,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Median r",
+          "key": "median_r",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": false,
+          "precision": 2
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Force_Latest_Multiple"
+    }
+  ],
+  "collaborators": [
+    {
+      "id": 63056,
+      "name": null,
+      "username": "danthes"
+    }
+  ],
+  "registration_auto_approve": false,
+  "description": "Predict fixation-aligned MEG activity (204 gradiometer channels, 110 ms post-fixation) for a held-out subject, given natural scene images and eye movement metadata from the Active Vision Semantics (AVS) dataset.\n\nSulewski, P., Amme, C., Hebart, M., König, P., & Kietzmann, T. (2025). Why we linger: Memory encoding, rather than visual processing demand, drives fixation timing on natural scenes-evidence from a large-scale MEG dataset.\n\nAcademic use only. The AVS dataset and all derived materials are provided exclusively for academic research and educational purposes within the course \"Neural encoding with deep neural networks\" (SoSe 2026) at Osnabrück University.",
+  "participants_count": 24,
+  "submissions_count": 37,
+  "queue": null,
+  "enable_detailed_results": true,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": true,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "codalab/codalab-legacy:py312",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 15592,
+  "reward": "",
+  "contact_email": "phsulewski@gmail.com",
+  "report": "",
+  "forum_enabled": true
+}

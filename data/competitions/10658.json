@@ -1,0 +1,56 @@
+{
+  "id": 10658,
+  "title": "Image Recognition Assignment 2025-2026",
+  "description": "In the final assignment of this course, you will solve different problems using deep models.",
+  "description_zh": "在这门课程的最终作业中，你将使用深度模型解决不同的问题。",
+  "created_by": "bobetocalo",
+  "created_when": "2025-09-22T09:36:38.909262Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-09-22-1758533798/e734f87fa2a5/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=b9THK5gt9jy%2BFNV4fdwVDrD%2B4qE%3D&Expires=1779889250",
+  "participants_count": 52,
+  "submissions_count": 307,
+  "first_phase_start": null,
+  "phases": [
+    {
+      "id": 17529,
+      "name": "The ffNN challenge 2025-2026",
+      "start": "2025-09-22T09:00:00Z",
+      "end": "2025-10-12T21:55:00Z",
+      "max_submissions_per_day": 1
+    },
+    {
+      "id": 17530,
+      "name": "The CNN challenge 2025-2026",
+      "start": "2025-10-14T10:00:00Z",
+      "end": "2025-11-02T21:55:00Z",
+      "max_submissions_per_day": 1
+    },
+    {
+      "id": 17531,
+      "name": "The TL challenge 2025-2026",
+      "start": "2025-11-04T10:00:00Z",
+      "end": "2025-11-23T21:55:00Z",
+      "max_submissions_per_day": 1
+    },
+    {
+      "id": 17532,
+      "name": "Image classification assignment 2025-2026",
+      "start": "2025-11-25T10:00:00Z",
+      "end": "2026-07-07T21:55:00Z",
+      "max_submissions_per_day": 1
+    }
+  ],
+  "pages": [
+    {
+      "index": 0,
+      "title": "Timeline",
+      "content": "# Timeline\n\n## The ffNN challenge\nPut into practice acquired knowledge to design the architecture of a feed-forward Neural Net (ffNN), in the context of an image classification problem.\n\n## The CNN challenge\nImprove the previous model by incorporating Convolutional Neural Networks (CNNs) to better capture spatial features in images.\n\n## The TL challenge\nLeverage transfer learning by utilizing popular pre-trained architectures (e.g., GoogLeNet, VGG, ResNet, ...).\n\n## Image classification assignment\nConduct all previously planned experiments and tests that could not be completed in earlier phases, refining and validating the final model.",
+      "content_zh": "# 时间表\n\n## ffNN 挑战\n在图像分类问题的背景下，将所获知识付诸实践，设计前馈神经网络（ffNN）的架构。\n\n## CNN 挑战\n通过融入卷积神经网络（CNN）来改进之前的模型，以更好地捕捉图像中的空间特征。\n\n## TL 挑战\n利用迁移学习，使用流行的预训练架构（例如 GoogLeNet、VGG、ResNet 等）。\n\n## 图像分类任务\n进行所有之前计划但无法在早期阶段完成的实验和测试，细化并验证最终模型。"
+    },
+    {
+      "index": 1,
+      "title": "Database",
+      "content": "## Database\n\nxView (http://xviewdataset.org/) is a large publicly available object detection data set, with approximately 1 million objects across 60 categories. It contains manually annotated images from different scenes around the world, acquired using the WorldView-3 satellite at 0.3m ground sample distance. There are 846 annotated images in total. For this assignment, we divide these annotations into 761 and 85 images for training and testing respectively.\n\nFor image recognition, we crop previous images using their annotated bounding boxes to extract a subset of objects of interest. In this way, we collected 18746 and 2365 objects for training and testing respectively. The resulting images are resized to 224x224. Follow the link below to download the classification benchmark “xview_recognition”: https://drive.upm.es/s/2DDPE2zHw5dbM3G",
+      "content_zh": "## 数据库\n\nxView (http://xviewdataset.org/) 是一个大规模公开可用的目标检测数据集，包含约100万个物体，涵盖60个类别。它包含来自世界各地不同场景的手工标注图像，由WorldView-3卫星以0.3米地面采样距离获取。总共有846张标注图像。对于本作业，我们将这些标注分别划分为761张和85张图像用于训练和测试。\n\n对于图像识别，我们使用标注的边界框对前述图像进行裁剪，以提取感兴趣的物体子集。通过这种方式，我们分别收集了18746和2365个物体用于训练和测试。所得图像均调整为224x224分辨率。请通过以下链接下载分类基准数据集\"xview_recognition\"：https://drive.upm.es/s/2DDPE2zHw5dbM3G"
+    }
+  ]
+}

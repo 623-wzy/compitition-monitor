@@ -1,0 +1,427 @@
+{
+  "id": 16281,
+  "title": "EBMV 2026 LOW-LEVEL IMAGING CHALLENGE: EVENT-GUIDED LOW-LIGHT VIDEO DEPTH ESTIMATION ON SDE DATASET",
+  "published": true,
+  "created_by": "ethanliang99",
+  "owner_display_name": "ethanliang99",
+  "created_when": "2026-05-13T06:27:08.548287Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-13-1778653628/08a70c7d08bb/ChatGPT_Image_May_13_2026_02_02_4.png?AWSAccessKeyId=codabench-prod&Signature=jZVdYxOzJQSzumtXKGdPJtzarMU%3D&Expires=1779888968",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-13-1778653628/08a70c7d08bb/ChatGPT_Image_May_13_2026_02_02_4_icon.png?AWSAccessKeyId=codabench-prod&Signature=EJAadxFwkqpd7qD0mh7j85UDVso%3D&Expires=1779888968",
+  "terms": "By registering for this challenge, participants agree to follow the rules below.\n\nEligibility\n\nThis challenge is open to students, researchers, engineers, and teams from academia and industry. Each participant may join only one team.\n\nData Usage\n\nParticipants may use the official SDE training and validation data for model development. External training data, pretrained models, or synthetic data are allowed, but they must be clearly disclosed in the final technical report.\n\nThe hidden test set must only be used for official evaluation. Participants must not attempt to access, reconstruct, manually annotate, or reverse-engineer the hidden ground-truth data.\n\nSubmission Rules\n\nEach submission must follow the official submission format. The output filenames, image size, and folder structure must match the provided instructions.\n\nParticipants are responsible for ensuring that their submissions can be correctly evaluated by the server. Invalid submissions may be rejected by the organizers.\n\nFair Use\n\nParticipants must not manually tune results on the hidden test set, use test-set ground truth, or exploit evaluation server behavior. Any form of cheating, data leakage, or unfair advantage may lead to disqualification.\n\nExternal Resources\n\nExternal datasets, pretrained models, and additional training resources are allowed only if they are publicly available or legally accessible to the team. All such resources must be reported in the final technical report.\n\nTechnical Report\n\nTop-ranked teams may be required to submit a short technical report describing their method, training data, model architecture, loss functions, and external resources. The organizers may request code or additional information for result verification.\n\nResult Announcement\n\nThe official ranking will be based on the test-set evaluation results. The organizers reserve the right to perform additional checks before confirming the final ranking and awards.\n\nContact\n\nFor questions about the challenge, please contact the organizers through the official competition page or by email.",
+  "pages": [
+    {
+      "id": 77740,
+      "title": "Overview",
+      "content": "<h2>EBMV 2026 Low-Level Imaging Challenge</h2>\n\n<h3>Event-Guided Low-Light Video Depth Estimation on the SDE Dataset</h3>\n\n<p>\nThis challenge focuses on event-guided video depth estimation in low-light scenes.\nParticipants are asked to use low-light RGB frames together with event streams to predict dense depth maps for each scene.\n</p>\n\n<p>\nThe benchmark is organized at the scene/video level so that temporal consistency is preserved across frames.\n</p>\n\n<h3>Task</h3>\n\n<p>\nGiven a low-light video sequence and the corresponding event camera data, participants should estimate an aligned dense depth sequence for each target scene.\n</p>\n\n<h3>Keywords</h3>\n\n<ul>\n  <li>Event camera</li>\n  <li>Low-light video</li>\n  <li>Video depth estimation</li>\n  <li>Depth estimation</li>\n  <li>Low-level imaging</li>\n</ul>",
+      "index": 0
+    },
+    {
+      "id": 77745,
+      "title": "Data",
+      "content": "<h2>Dataset</h2>\n\n<p>\nThe competition dataset is a workshop-aligned version of the DVD event-guided video depth estimation data.\nIt packages each scene into a canonical folder tree that aligns low-light RGB frames, event slices, scene-level event streams, and depth supervision.\n</p>\n\n<h3>Dataset Download</h3>\n\n<p>\nThe dataset is hosted on Hugging Face:\n</p>\n\n<p>\n<a href=\"https://huggingface.co/datasets/Ethanliang99/ECCV_Event_Video_Depth_Estimation/tree/main\" target=\"_blank\">\nhttps://huggingface.co/datasets/Ethanliang99/ECCV_Event_Video_Depth_Estimation/tree/main\n</a>\n</p>\n\n<h3>Dataset Structure</h3>\n\n<p>\nThe official split is encoded directly in the top-level directory structure:\n</p>\n\n<pre><code>train/\n  &lt;scene_name&gt;/\n    low/\n    normal/\nval/\n  &lt;scene_name&gt;/\n    low/\n    normal/\ntest/\n  &lt;scene_name&gt;/\n    low/\n    normal/\n</code></pre>\n\n<p>\nEach scene directory contains aligned low-light inputs and depth targets. A <code>manifest.json</code> file is also provided with release and split metadata.\n</p>\n\n<h3>Scene Layout</h3>\n\n<pre><code>&lt;scene_name&gt;/\n  low/\n    &lt;timestamp&gt;.png\n    &lt;timestamp&gt;.npz\n    lowlight_event.npz\n  normal/\n    &lt;timestamp&gt;.png\n    depth.npz\n    manifest.json\n</code></pre>\n\n<h3>Input</h3>\n\n<ul>\n  <li>Low-light RGB frames under <code>low/</code></li>\n  <li>Per-frame event slices under <code>low/</code></li>\n  <li>Scene-level event stream stored as <code>lowlight_event.npz</code></li>\n</ul>\n\n<h3>Output / Supervision</h3>\n\n<ul>\n  <li>Aligned depth sequence stored as <code>normal/depth.npz</code></li>\n</ul>\n\n<h3>Important Notes</h3>\n\n<ul>\n  <li>The dataset is split by scene/video count, not by frame count.</li>\n  <li>The folder name itself indicates the split assignment.</li>\n  <li>The event slices in the workshop version are trimmed to avoid double-counting overlapping events.</li>\n  <li>Please keep the scene-level temporal ordering intact when training or evaluating temporal models.</li>\n</ul>",
+      "index": 1
+    },
+    {
+      "id": 77742,
+      "title": "Submission",
+      "content": "<h2>Submission Format</h2>\n\n<p>\nParticipants should submit one predicted depth sequence for each test scene.\nThe predicted depth should be aligned with the frame order of the corresponding scene.\n</p>\n\n<h3>Recommended Layout</h3>\n\n<pre><code>submission/\n  &lt;scene_name&gt;/\n    normal/\n      depth.npz\n</code></pre>\n\n<h3>Depth File Format</h3>\n\n<p>\nEach <code>depth.npz</code> file should contain the predicted depth array for the corresponding scene.\nA 4D tensor with shape <code>[T, H, W, 1]</code> is preferred for compatibility with the existing DVD-style tooling.\nA 3D tensor with shape <code>[T, H, W]</code> may also be supported by the evaluation script.\n</p>\n\n<h3>Submission Requirements</h3>\n\n<ul>\n  <li>Submit predictions for all required test scenes.</li>\n  <li>Preserve the original scene names.</li>\n  <li>Preserve the temporal frame order within each scene.</li>\n  <li>Do not include ground-truth files in the submission.</li>\n  <li>Compress the <code>submission/</code> folder into a zip file before uploading.</li>\n</ul>",
+      "index": 2
+    },
+    {
+      "id": 77743,
+      "title": "Evaluation",
+      "content": "<h2>Evaluation</h2>\n\n<p>\nSubmissions will be evaluated by comparing the predicted depth sequences with the hidden ground-truth depth annotations.\n</p>\n\n<h3>Metrics</h3>\n\n<p>\nThe following metrics will be reported:\n</p>\n\n<ul>\n  <li>AbsRel / <code>abs_relative_difference</code></li>\n  <li>RMSE / <code>rmse_linear</code></li>\n  <li>delta1 / <code>delta1_acc</code></li>\n  <li>delta2 / <code>delta2_acc</code></li>\n  <li>delta3 / <code>delta3_acc</code></li>\n  <li>SILog / <code>silog_rmse</code></li>\n</ul>\n\n<h3>Ranking Metric</h3>\n\n<p>\nThe final ranking metric will be announced before the official evaluation phase.\nFor launch, we recommend using <strong>AbsRel</strong> as the primary ranking metric and reporting the remaining metrics as diagnostics.\n</p>\n\n<h3>Evaluation Protocol</h3>\n\n<ul>\n  <li>Predictions are evaluated scene by scene.</li>\n  <li>Each predicted depth sequence should be temporally aligned with the corresponding input sequence.</li>\n  <li>Invalid or missing predictions may lead to evaluation failure or a penalty.</li>\n</ul>",
+      "index": 3
+    },
+    {
+      "id": 77744,
+      "title": "Rules",
+      "content": "<h2>Rules and Terms</h2>\n\n<h3>General Rules</h3>\n\n<ul>\n  <li>Participants should use the official training data and any additional resources explicitly allowed by the organizers.</li>\n  <li>Participants must not inspect, annotate, or reverse-engineer hidden test labels.</li>\n  <li>Participants should preserve scene-level temporal ordering when producing predictions.</li>\n  <li>Each team should submit only valid prediction files following the required submission format.</li>\n</ul>\n\n<h3>External Data</h3>\n\n<p>\nThe policy for external data and pretrained models will be announced before the official challenge launch.\n</p>\n\n<h3>Submission Quota</h3>\n\n<p>\nSubmission quota: TBD.\n</p>\n\n<h3>Timeline</h3>\n\n<ul>\n  <li>Development phase: TBD</li>\n  <li>Validation phase: TBD</li>\n  <li>Final test phase: TBD</li>\n  <li>Winner announcement: TBD</li>\n</ul>\n\n<h3>License and Terms</h3>\n\n<ul>\n  <li>Dataset license: TBD</li>\n  <li>Code and baseline license: TBD</li>\n  <li>By participating, teams agree to the competition rules and the platform terms.</li>\n  <li>The organizers may update the submission format or evaluation script with prior notice.</li>\n</ul>",
+      "index": 4
+    }
+  ],
+  "phases": [
+    {
+      "id": 26777,
+      "index": 0,
+      "start": "2026-05-15T12:00:00Z",
+      "end": "2026-06-24T00:00:00Z",
+      "name": "EVAL PHASE",
+      "description": "",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "0a796bc7-e7d7-4990-851b-e27b00b81111",
+          "order_index": 0,
+          "phase": 26777,
+          "id": 30385,
+          "value": "0a796bc7-e7d7-4990-851b-e27b00b81111",
+          "key": "0a796bc7-e7d7-4990-851b-e27b00b81111",
+          "created_when": "2026-03-16T16:49:10.549490Z",
+          "name": "Test",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 647373,
+              "created_by": "wangalyssa121",
+              "owner_display_name": "wangalyssa121",
+              "created_when": "2026-03-16T16:48:18.247607Z",
+              "name": "Scoring Program (test)",
+              "type": "scoring_program",
+              "description": "Scoring Program (test)",
+              "is_public": false,
+              "key": "d0e6a16d-e447-4af8-9f36-07369bd273f3",
+              "value": "d0e6a16d-e447-4af8-9f36-07369bd273f3",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 13821,
+                  "title": "Sea Winds Predictions"
+                },
+                {
+                  "pk": 14290,
+                  "title": "AMPLIFAI CHALLENGE"
+                },
+                {
+                  "pk": 14902,
+                  "title": "Test (4nl3)"
+                },
+                {
+                  "pk": 15134,
+                  "title": "BRIGHT Challenge"
+                },
+                {
+                  "pk": 15245,
+                  "title": "test challenge"
+                },
+                {
+                  "pk": 15246,
+                  "title": "test challenge"
+                },
+                {
+                  "pk": 15247,
+                  "title": "test challenge"
+                },
+                {
+                  "pk": 15272,
+                  "title": "ICML 2026 AI for Math Workshop"
+                },
+                {
+                  "pk": 15504,
+                  "title": "India's 1st Boldest AI Challenge."
+                },
+                {
+                  "pk": 15505,
+                  "title": "India's 1st Boldest AI Challenge."
+                },
+                {
+                  "pk": 15569,
+                  "title": "Fashion-MNIST Challenge: Efficient Image Classification for Scientific Computing"
+                },
+                {
+                  "pk": 15635,
+                  "title": "BITDeepLearningExp1"
+                },
+                {
+                  "pk": 16021,
+                  "title": "test1"
+                },
+                {
+                  "pk": 16180,
+                  "title": "AIMO Interpretability Challenge"
+                },
+                {
+                  "pk": 16281,
+                  "title": "EBMV 2026 LOW-LEVEL IMAGING CHALLENGE: EVENT-GUIDED LOW-LIGHT VIDEO DEPTH ESTIMATION ON SDE DATASET"
+                },
+                {
+                  "pk": 16703,
+                  "title": "RTE7K Challenge"
+                }
+              ],
+              "competition": null,
+              "file_name": "scoring_program (1).zip",
+              "file_size": 3075.0
+            },
+            {
+              "id": 647376,
+              "created_by": "wangalyssa121",
+              "owner_display_name": "wangalyssa121",
+              "created_when": "2026-03-16T16:48:44.520103Z",
+              "name": "Reference Data (test)",
+              "type": "reference_data",
+              "description": "Reference Data (test)",
+              "is_public": false,
+              "key": "48e01c3b-a832-4f59-abae-926907e53257",
+              "value": "48e01c3b-a832-4f59-abae-926907e53257",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 13821,
+                  "title": "Sea Winds Predictions"
+                },
+                {
+                  "pk": 14290,
+                  "title": "AMPLIFAI CHALLENGE"
+                },
+                {
+                  "pk": 14902,
+                  "title": "Test (4nl3)"
+                },
+                {
+                  "pk": 15134,
+                  "title": "BRIGHT Challenge"
+                },
+                {
+                  "pk": 15245,
+                  "title": "test challenge"
+                },
+                {
+                  "pk": 15246,
+                  "title": "test challenge"
+                },
+                {
+                  "pk": 15247,
+                  "title": "test challenge"
+                },
+                {
+                  "pk": 15272,
+                  "title": "ICML 2026 AI for Math Workshop"
+                },
+                {
+                  "pk": 15504,
+                  "title": "India's 1st Boldest AI Challenge."
+                },
+                {
+                  "pk": 15505,
+                  "title": "India's 1st Boldest AI Challenge."
+                },
+                {
+                  "pk": 15569,
+                  "title": "Fashion-MNIST Challenge: Efficient Image Classification for Scientific Computing"
+                },
+                {
+                  "pk": 15635,
+                  "title": "BITDeepLearningExp1"
+                },
+                {
+                  "pk": 16021,
+                  "title": "test1"
+                },
+                {
+                  "pk": 16180,
+                  "title": "AIMO Interpretability Challenge"
+                },
+                {
+                  "pk": 16281,
+                  "title": "EBMV 2026 LOW-LEVEL IMAGING CHALLENGE: EVENT-GUIDED LOW-LIGHT VIDEO DEPTH ESTIMATION ON SDE DATASET"
+                },
+                {
+                  "pk": 16703,
+                  "title": "RTE7K Challenge"
+                }
+              ],
+              "competition": null,
+              "file_name": "reference_data (1).zip",
+              "file_size": 11581.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    },
+    {
+      "id": 26778,
+      "index": 1,
+      "start": "2026-06-25T12:00:00Z",
+      "end": "2026-07-03T00:00:00Z",
+      "name": "TEST PHASE",
+      "description": "",
+      "status": "Next",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "7f6cadcc-bfc2-4e28-a8d6-6959779e7fe6",
+          "order_index": 0,
+          "phase": 26778,
+          "id": 32987,
+          "value": "7f6cadcc-bfc2-4e28-a8d6-6959779e7fe6",
+          "key": "7f6cadcc-bfc2-4e28-a8d6-6959779e7fe6",
+          "created_when": "2026-05-19T01:31:30.608375Z",
+          "name": "Depth_ Challenge Test",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 768150,
+              "created_by": "ethanliang99",
+              "owner_display_name": "ethanliang99",
+              "created_when": "2026-05-18T17:01:23.721463Z",
+              "name": "Challenge Scoring Program",
+              "type": "scoring_program",
+              "description": "",
+              "is_public": false,
+              "key": "2fd2d30e-af52-4eb7-bd85-1eed59aa20be",
+              "value": "2fd2d30e-af52-4eb7-bd85-1eed59aa20be",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 16281,
+                  "title": "EBMV 2026 LOW-LEVEL IMAGING CHALLENGE: EVENT-GUIDED LOW-LIGHT VIDEO DEPTH ESTIMATION ON SDE DATASET"
+                }
+              ],
+              "competition": null,
+              "file_name": "Depth_Challenge_Scoring_Program.zip",
+              "file_size": 8435.0
+            },
+            {
+              "id": 768152,
+              "created_by": "ethanliang99",
+              "owner_display_name": "ethanliang99",
+              "created_when": "2026-05-18T17:01:51.439808Z",
+              "name": "Challenge Test GT",
+              "type": "reference_data",
+              "description": "",
+              "is_public": false,
+              "key": "85b8306f-fcb8-445b-a890-9cfe684cef41",
+              "value": "85b8306f-fcb8-445b-a890-9cfe684cef41",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 16281,
+                  "title": "EBMV 2026 LOW-LEVEL IMAGING CHALLENGE: EVENT-GUIDED LOW-LIGHT VIDEO DEPTH ESTIMATION ON SDE DATASET"
+                }
+              ],
+              "competition": null,
+              "file_name": "Depth_Challenge_Test_GT.zip",
+              "file_size": 1808278984.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 17953,
+      "primary_index": 0,
+      "title": "Main Leaderboard",
+      "key": "main",
+      "columns": [
+        {
+          "id": 77386,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "AbsRel",
+          "key": "abs_relative_difference",
+          "sorting": "asc",
+          "index": 0,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 77387,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "RMSE",
+          "key": "rmse_linear",
+          "sorting": "asc",
+          "index": 1,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 77388,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "SILog",
+          "key": "silog_rmse",
+          "sorting": "asc",
+          "index": 2,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 77389,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "δ1",
+          "key": "delta1_acc",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 77390,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "δ2",
+          "key": "delta2_acc",
+          "sorting": "desc",
+          "index": 4,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 77391,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "δ3",
+          "key": "delta3_acc",
+          "sorting": "desc",
+          "index": 5,
+          "hidden": false,
+          "precision": 4
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Add"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": false,
+  "description": "This challenge focuses on event-guided low-light video depth estimation on the SDE dataset. Participants are asked to develop algorithms that estimate accurate depth maps from low-light video sequences with the assistance of event-camera signals.\n\nThe goal is to promote robust depth estimation under challenging illumination conditions, where conventional frame-based methods often suffer from motion blur, low signal-to-noise ratio, and poor texture visibility. Submissions will be evaluated using quantitative depth-estimation metrics on a hidden test set.\n\nThe challenge is organized as part of EBMV 2026 and is intended for researchers working on low-level vision, event-based vision, video enhancement, and monocular or multi-modal depth estimation.",
+  "participants_count": 8,
+  "submissions_count": 0,
+  "queue": null,
+  "enable_detailed_results": true,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": false,
+  "auto_run_submissions": false,
+  "can_participants_make_submissions_public": false,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "codalab/codalab-legacy:py37",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 16027,
+  "reward": "",
+  "contact_email": "guoqiang.liang@u.nus.edu",
+  "report": "",
+  "forum_enabled": true
+}

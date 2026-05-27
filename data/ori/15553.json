@@ -1,0 +1,206 @@
+{
+  "id": 15553,
+  "title": "MICCAI FLARE 2026 Task 2: AutoMSC: Automated Medical Image Segmentation and Classification",
+  "published": true,
+  "created_by": "junma",
+  "owner_display_name": "Jun Ma",
+  "created_when": "2026-04-09T21:08:06.808342Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-09-1775769761/960f641105b9/logo-task2.png?AWSAccessKeyId=codabench-prod&Signature=VFFNwfZqmG7WjjvmIHao7wP1wOU%3D&Expires=1779888998",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-09-1775769761/960f641105b9/logo-task2_icon.png?AWSAccessKeyId=codabench-prod&Signature=AbNbZJaWdm0beOLNpPXtWe8r3gA%3D&Expires=1779888998",
+  "terms": "## Rules\n\n1. All participants should register for this challenge with their real names, affiliations (including department, full name of university/institute/company, country), and affiliation E-mails. Incomplete and redundant registrations will be removed without notice. Each team can have at most six people.\n2. All participants must submit a complete solution to this challenge during the validation and testing phase. A complete solution includes a Docker container (tar file) and a qualified methodology paper (at least 8 pages, LNCS format).\n3. All participants should agree that the submitted short papers can be publicly available to the community on the challenge website, and organizers can use the information provided by the participants, including scores, predicted labels, and papers.\n4. If registered participants do not make submissions (Docker container and methodology paper), they will be listed in the dishonest list.\n5. Participants are not allowed to register multiple teams and accounts. Participants from the same research group are also not allowed to register multiple teams. FLARE Organizers keep the right to disqualify such participants.\n6. Redistribution or transfer of data or data links is not allowed. Participants should use the data only by themselves. The challenge data will be free to use after the submission of a challenge summary paper (Jan. 31, 2027).\n7. Participants should develop fully automatic methods and any manual interventions (e.g., manually annotating the cases) are not allowed.",
+  "pages": [
+    {
+      "id": 77017,
+      "title": "Overview",
+      "content": "## <center>[MICCAI FLARE26](https://flare-medfm.github.io/) Task 2: AutoMSC: Automated Medical image Segmentation and Classification </center>\n\nDeep learning models for 3D medical imaging have traditionally been handcrafted for individual tasks, either\nsegmentation or classification, requiring extensive manual tuning of architectures, hyperparameters, and\npreprocessing pipelines. As clinical datasets grow in scale and complexity, this manual design process becomes\nincreasingly inefficient and limits the deployment of adaptable, general-purpose models. Motivated by the\nsuccess of the Medical Segmentation Decathlon challenge and nnU-Net (the winning solution), Task 2 focuses on\nbuilding self-configured models capable of automatically adapting to diverse 3D medical imaging datasets while\nsimultaneously performing both segmentation and classification.\n\nThis task aims to advance the next generation of autonomous modeldesign systems for 3D medical imaging.\nParticipants are required to design models that can automatically infer optimal configurations (e.g., architecture,\nresolution, patch size, normalization strategy, and loss balancing) and jointly learn highquality segmentation\nmasks and clinically meaningful classification labels. These models should generalize across imaging modality,\ntumor types without taskspecific manual engineering, including prostate cancer recurrence prediction in MRI\nscans, lung nodule diagnosis in CT scans, and liver metastasis origin prediction in PET/CT scans.\n\nKey Features:\n\n- **Multi-task Learning**: Models must perform both 3D segmentation and classification from the same input volume,\noptimizing for accuracy in both outputs while maintaining computational efficiency.\n- **Self-configuration**: Solutions should include automated configuration mechanisms capable of adapting to\ndataset properties, such as voxel spacing, image size, contrast variability, and class imbalance, without\nhuman-designed heuristics.\n- **Dataset Diversity**: The benchmark includes heterogeneous 3D medical imaging scans with varying modalities (CT,\nMRI, and PET-CT) and classification targets, encouraging the development of truly generalizable 3D models.\n- **Robustness and Efficiency**: Models will be evaluated on segmentation accuracy (DSC and NSD), classification\nperformance (balanced accuracy and AUROC), and resource efficiency (runtime), highlighting their potential for\nreal-world clinical adoption.\n\nParticipants are also encouraged to explore other challenge tracks at https://flare-medfm.github.io/, including: pan-cancer segmentation, and multimodal models. \n\n---\n\n## 🚀 Join the challenge (Open on 2026.04.01)\n\n\n\n* Register an account on this website and join the challenge\n* Fill out the [registration form](https://forms.gle/my1MimQ758oDyhWb9)   Note: To change team information, please simply re-submit the form.\n* Request Dataset [FLARE-AutoMSC](https://huggingface.co/datasets/FLARE-MedFM/FLARE-AutoMSC). We will approve your request in 1-2 working days after reviewing your application.\n\nRemarks:\n* This challenge has two tracks: 1) Unified models for joint segmentation and classification (e.g., [JSC](https://github.com/bowang-lab/JSC)). 2) Independent models for segmentation (e.g., [nnUNet](https://github.com/MIC-DKFZ/nnUNet)) or classification ([nnClass](https://github.com/bowang-lab/nnClass)). Participants can join one track or both tracks.  \n* For both tracks, solutions should include automated configuration mechanisms capable of adapting to different datasets. \n* If you have any questions that are not listed on the QA page, please reach out to chingyuanyu.iec@gmail.com\n\n---\n\n\n## 🏊‍ Validation submission (2026.4.15-8.05)\n\n* All teams can directly submit the validation results on the challenge page to get the metrics.  \n* All the ground truth files have been released for validation tasks. participants should report validation performance in the manuscript. \n\n\n\n---\n\n## 🏹 Testing submission (2026.8.05-8.20)\n\nThe submitted Docker container will be evaluated with the following commands. If the Docker container does not work or the paper does not include all the necessary information to reproduce the method, we will return back the error information and review comments to participants.\n\n<code>docker load -i teamname.tar.gz</code>    \n<code>docker container run --gpus \"device=1\" -m 28G --name teamname --rm -v \\$PWD/FLARE_Test/:/workspace/inputs/ -v \n\t\\$PWD/teamname_outputs/:/workspace/outputs/ teamname:latest /bin/bash -c \"sh predict.sh\"</code>\n\n## Paper submission(Due on 8.31)\n\nPlease parepare the paper with this [template-tbd]() and submit it on [openreview](https://openreview.net/group) by Aug. 31, 2026. Please carefully read the template and the common issue before writing the manuscript. The evaluation process mainly focuses on the paper's completeness. Don't worry about the low performance. Since this task is very challenging, all attempts are worth sharing with readers. We will not reject papers because of Iow performance.\n\n---\n\t\n## 🏆 Awards\n\n- If there are more than 20 testing docker submissions, we will provide cash prizes for the top 5 teams (Amazon gift cards with 300/200/150/100/100 CAD, respectively) and souvenirs for the top 6-10 teams. Otherwise, only the winning team will be provided with the cash prize. \n- The top 5 teams will be invited to give oral presentations during MICCAI 2026.\n- The first author of the top 5 teams will be invited to contribute to a challenge summary paper.\n- A certificate will be awarded to the top 10 teams. (Top teams should make their code publicly available on GitHub for reproducibility.)\n- All teams have the opportunity to publish their methods in the challenge proceeding (Tentative LNCS, EI Index). [Here](https://link.springer.com/conference/flare) is an example of our previous FLARE Challenge.\n\n\nThe challenge summary paper will be submitted to top-tired journals. Here are some of our previous summaries:\n\n* \"Fast and low-GPU-memory abdomen CT organ segmentation: the flare challenge.\" Medical Image Analysis 82 (2022): 102616.\n* \"Unleashing the strengths of unlabeled data in pan-cancer abdominal organ quantification: the flare22 challenge.\" Lancet Digital Health (2024). \n* \"The multimodality cell segmentation challenge: toward universal solutions.\" Nature Methods (2024): 21, 1103–1113.",
+      "index": 0
+    },
+    {
+      "id": 74025,
+      "title": "Organizers",
+      "content": "# Organizers\n\n## Leads\n[Jun Ma](https://scholar.google.com.hk/citations?hl=en&user=bW1UV4IAAAAJ&view_op=list_works&sortby=pubdate) (University Health Network)\n\nChing-yuan Yu (University Health Network)\n\n[Bo Wang](https://wanglab.ai/) (University of Toronto; University Health Network; Vector Institute)\n\n## Coordinators\n\n\n\n## Baseline Contributors\n\n\n\n## Data Contributors",
+      "index": 1
+    },
+    {
+      "id": 74113,
+      "title": "Dataset",
+      "content": "## Dataset\n\n                                                                                      \n                                                                                                   \n  ### Dataset 001 — PETWB_Lung                                                                      \n  A subset of the **PETWB-REP** whole-body FDG PET/CT collection, paired with \n  TotalSegmentator-derived **lung masks** and a **lung-cancer vs. other** label. 490 cases drawn   \n  from 4 cohorts, 2 channels (CT, PET). Tasks: binary lung segmentation + binary cancer-type \n  classification. Licence: CC BY 4.0.                                                              \n  **Source:** Xue L, Feng G, Wenbo Z, et al. *PETWB-REP: A Multi-Cancer Whole-Body FDG PET/CT \n  Dataset with Corresponding Radiology Reports.* **Scientific Data**, 2026.                        \n   \n  ### Dataset 002 — BMLMPS_FLAIR                                                                    \n  The FLAIR arm of the **Brain-Mets-Lung-MRI-Path-Segs** cohort: brain metastases from lung cancer\n  imaged on FLAIR MRI, with **whole-tumor** masks and **EGFR mutation status** as the              \n  classification target. 104 scans / 103 patients, single channel.\n  **Source:** Chadha S, Sritharan DV, Dolezal D, et al. *Matched MRI, Segmentations, and           \n  Histopathologic Images of Brain Metastases from Primary Lung Cancer.* **Scientific Data**, 10 Jan\n   2026.\n                                                                                                   \n  ### Dataset 003 — BMLMPS_T1CE\n  The T1 contrast-enhanced arm of the **same BMLMPS cohort** as Dataset 002, but targeting the \n  **enhancing core tumor** instead of whole tumor. 107 scans / 103 patients, single channel, also  \n  paired with **EGFR mutation status**. Datasets 002 and 003 share patients but differ in MRI \n  sequence and segmentation target.                                                                \n  **Source:** Chadha S, Sritharan DV, Dolezal D, et al. *Matched MRI, Segmentations, and \n  Histopathologic Images of Brain Metastases from Primary Lung Cancer.* **Scientific Data**, 10 Jan\n   2026.\n                                                                                                   \n  ### Dataset 004 — BrainMets (PROTEAS)                                                             \n  A **longitudinal multi-modal brain metastasis** dataset with 6 co-registered channels (T1, T1c, \n  T2, FLAIR, CT, RTP). Provides **3-class tumor segmentation** (necrotic core, enhancing tumor,    \n  edema) and **NSCLC vs. Breast Carcinoma** primary-origin classification. 166 timepoints across 40\n   patients. Licence: CC BY 4.0.                                                                   \n  **Source:** Flouri D, Papanikas CP, Manikis GC, et al. *A longitudinal MRI dataset of brain \n  metastases with tumor segmentations, clinical & radiomic data.* **Scientific Data**, 19 Nov 2025;\n   12:1828.\n                                                                                                   \n  ### Dataset 005 — MU_Glioma_Post                                                                  \n  **Post-treatment glioma** multi-sequence MRI (t1c, t1n, t2f, t2w) with **4-class tumor \n  segmentation** (NCR, ED, ET, NET_RC) and a **3-class primary diagnosis** label (GBM / Astrocytoma\n   / Other). 591 timepoints from 203 patients (longitudinal).\n  **Source:** Mahmoud E, Gass J, Dhemesh Y, et al. *MU-Glioma Post: A comprehensive dataset of     \n  automated MR multi-sequence segmentation and clinical features.* **Scientific Data**, 20 Nov     \n  2025; 12(1):1847.\n                                                                                                   \n  ### Dataset 006 — JSC_UCSD_PTGB\n  The **UCSD post-treatment glioblastoma** cohort imaged with T1post, FLAIR, and ADC. Provides\n  **total cellular tumor** masks and **IDH mutation status** (wild-type vs. mutant). 184 cases, 3  \n  channels.\n  **Source:** Gagnon L, Gupta D, Nguyen U, et al. *The University of California San Diego          \n  Post-Treatment Glioblastoma (UCSD-PTGBM) annotated multimodal MRI Dataset.* **Scientific Data**, \n  6 Jan 2026.\n                                                                                                   \n ### Dataset 007 — PI-CAI                                                                          \n  The largest dataset in the benchmark: **prostate MRI** (T2W, ADC, HBV) for **clinically \n  significant prostate cancer (csPCa) segmentation** and **6-class ISUP grade** classification     \n  (Benign/Indolent + ISUP 1–5). 1,500 cases from 1,476 patients across 11 sites.\n  **Source:** Saha A, Bosma JS, Twilt JJ, et al. *Artificial intelligence and radiologists in      \n  prostate cancer detection on MRI (PI-CAI): an international, paired, non-inferiority,            \n  confirmatory study.* **Lancet Oncology**, 2024; 25:879–887.\n                                                                                                   \n  ### Dataset 008 — PETWB_Liver\n  Companion to Dataset 001 from the **same PETWB-REP source**, but targeting the **liver**: \n  TotalSegmentator-derived liver masks paired with a **liver-cancer vs. other** label. 490 cases, 2\n   channels (CT, PET). Licence: CC BY 4.0.\n  **Source:** Xue L, Feng G, Wenbo Z, et al. *PETWB-REP: A Multi-Cancer Whole-Body FDG PET/CT      \n  Dataset with Corresponding Radiology Reports.* **Scientific Data**, 2026.                        \n   \n  ### Dataset 009 — LUNA25                                                                          \n  Cropped **low-dose chest CT patches** from the **LUNA25 challenge** for lung cancer screening. \n  Each patch contains a nodule with a **segmentation mask** and a **benign vs. malignant** risk    \n  label. 6,141 nodule crops, single CT channel. Licence: CC BY 4.0.\n  **Source:** Peeters D, Obreja B, Antonissen N, Jacobs C. *Benchmarking of Artificial Intelligence\n   and Radiologists for Lung Cancer Screening in CT: The LUNA25 Challenge.* **MICCAI 2025**        \n  (Zenodo: [10.5281/zenodo.15094631](https://doi.org/10.5281/zenodo.15094631)).",
+      "index": 2
+    },
+    {
+      "id": 77018,
+      "title": "Evaluation",
+      "content": "## Evaluation\n\n\n\n**Segmentation accuracy metrics:**\n\n* Dice Similarity Coefficient (DSC)\n* Normalized Surface Distance (NSD)\n\n**Binary classification accuracy metrics:**\n\n* Balanced Accuracy\n* Area Under the Receiver Operating Characteristic Curve (AUROC)\n\n\n**Accuracy Evaluation Scripts:**\n* https://github.com/medfm-flare/AutoMSC_Baseline\n\n**Segmentation efficiency metrics:**\n\n* Running time (s). We give running time a tolerance of 45s (including the docker starting time). Moreover, the inference time for each case should be within 60s. Otherwise, the corresponding case will be regarded as a failed case (DSC=0, NSD=0).\n\n![running time](https://s2.loli.net/2024/04/06/Fvt1nmPYqZLWxsU.jpg)\n* GPU memory consumption (area under GPU memory-time curve).\n\n![gpu memory](https://s2.loli.net/2024/03/14/XlnhM3qB27yVZtS.png)\n\n\nAll metrics will be used to compute the ranking. We give GPU memory consumption a 4GB tolerance, GPU Memory = max(0, Real GPU Memory-4096MB) because all the previous top teams (i.e., FLARE21-23) can achieve state-of-the-art segmentation accuracy within this tolerance. We also give running time a tolerance (the running time of the winning solution in FLARE 2023) because it satisfies the typical clinical requirements and the code has been publicly available.\n\nEvaluation code has been publicly available at: https://github.com/JunMa11/FLARE\n\n<code>docker load -i teamname.tar.gz</code>    \n<code>docker container run --gpus \"device=1\" -m 28G --name teamname --rm -v \\$PWD/FLARE_Test/:/workspace/inputs/ -v \n\t\\$PWD/teamname_outputs/:/workspace/outputs/ teamname:latest /bin/bash -c \"sh predict.sh\"</code>\n\n---\n## Evaluation Platform\n\nThe submitted docker containers will be evaluated on a Ubuntu 20.04 desktop. Detailed information is listed as follows:\n\n* CPU: Intel® Xeon(R) W-2133 CPU @ 3.60GHz × 12\n* GPU: NVIDIA QUADRO RTX5000 (16G)\n* RAM: 28G\n* CUDA Version: 13.0\n* Docker version 29.4.2\n\n---\n\n## Ranking Scheme\n\nFollowing the recommendation in ChallengeR [1], we eomply a rank-then-aggregate ranking scheme with the following three steps:\n\nStep 1. For each testing case, we compute the four metrics;\n\nStep 2. Rank participants for each of the N testing cases and each metric; \n\nStep 3. Average all these rankings.\n\n[1] Wiesenfarth, M., Reinke, A., Landman, B.A. et al. Methods and open-source toolkit for analyzing and visualizing challenge results. Sci Rep 11, 2369 (2021).",
+      "index": 3
+    },
+    {
+      "id": 77702,
+      "title": "Baseline",
+      "content": "## Baseline\n\nJoint segmentation and classification based on nnU-Net\n- code: https://github.com/medfm-flare/AutoMSC-Baseline\n- model and results: https://huggingface.co/cyyu96/AutoMSC-Baselines",
+      "index": 4
+    },
+    {
+      "id": 74026,
+      "title": "MICCAI Program",
+      "content": "TBD",
+      "index": 5
+    },
+    {
+      "id": 74027,
+      "title": "Award",
+      "content": "TBD",
+      "index": 6
+    },
+    {
+      "id": 74023,
+      "title": "Q&A",
+      "content": "## Common Questions\n\nPlease send emails to chingyuanyu.iec@gmail.com if you have any other questions. \n\n**Q:  How long can the participation request be approved after sending the signed challenge rule?**\n\nA:  The request will be approved within 2-4 working days if the signed challenge rule document is filled out correctly.\n\n**Q: I'm only interested in the challenge dataset but I do not want to join the challenge. Can I download the dataset without joining the challenge?**\n\nA: Thanks for your interest. To ensure enough submissions, the dataset is only available to participants during the challenge. \n\n**Q: How many people can form a team？**\n\nA: Each team can have at most 6 people. The authors in your paper should be the same as the team member list.\n\n**Q: I have joined the challenge and downloaded the dataset. Can I quit the challenge?**\n\nA: No! Please respect the signed agreement. If registered participants do not make successful submissions, all the team members will be listed in the dishonest list.\n\nAlgorithm-related issues\n\n**Q: Can we use other datasets or pre-trained models to develop the segmentation algorithms?**\n\nA: Yes, but you need to post them in the forum first. \n\n**Q: Can we manually annotate the unlabeled images to enlarge the training set?**\n\nA: No. Any manual interventions are not allowed. \n\n**Q: Can we manually select the high-quality pseudo labels for the unlabeled images?**\n\nA: No. Any manual interventions are not allowed. \n\n**Q: Does the validation submission affects the final ranking?**\n\nA: No.\n\n**Q: During the testing phase, can I modify the methods and the paper?**\n\nA: Yes, you can make modifications before the testing submission. After making the testing submission, you cannot make modifications.\n\n\n**Q: Can I use validation set for model pre-training?**\nA: No!\n\n**Q: Can I use other public datasets for model pre-training?** \nA: Yes, but you should post the dataset link on forum and also need to submit an algorithm that is trained only with the challenge dataset. \n\n**Q: When can I access the testing set?**\nA: The testing set will not be released during the challenge to avoid data leakage.",
+      "index": 7
+    }
+  ],
+  "phases": [
+    {
+      "id": 25616,
+      "index": 0,
+      "start": "2026-04-01T00:00:00Z",
+      "end": "2026-08-31T00:00:00Z",
+      "name": "Development Phase",
+      "description": "Development phase: tune your models.",
+      "status": "Current",
+      "execution_time_limit": 6000,
+      "tasks": [
+        {
+          "task": "9b7a72e2-f38e-4c6c-b10b-6ace2580696c",
+          "order_index": 0,
+          "phase": 25616,
+          "id": 31489,
+          "value": "9b7a72e2-f38e-4c6c-b10b-6ace2580696c",
+          "key": "9b7a72e2-f38e-4c6c-b10b-6ace2580696c",
+          "created_when": "2026-04-09T21:08:06.127485Z",
+          "name": "FLARE24 Task 1 Evaluation",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 695116,
+              "created_by": "junma",
+              "owner_display_name": "Jun Ma",
+              "created_when": "2026-04-09T21:08:05.680962Z",
+              "name": "scoring_program @ '04-09-2026 21:08'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "29ec5879-8361-488f-9a57-7d79512fdf08",
+              "value": "29ec5879-8361-488f-9a57-7d79512fdf08",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 15553,
+                  "title": "MICCAI FLARE 2026 Task 2: AutoMSC: Automated Medical Image Segmentation and Classification"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 29678.0
+            },
+            {
+              "id": 695117,
+              "created_by": "junma",
+              "owner_display_name": "Jun Ma",
+              "created_when": "2026-04-09T21:08:05.825423Z",
+              "name": "reference_data @ '04-09-2026 21:08'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "c037a8ae-2e6a-484f-9b8d-87f916375ab5",
+              "value": "c037a8ae-2e6a-484f-9b8d-87f916375ab5",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 15553,
+                  "title": "MICCAI FLARE 2026 Task 2: AutoMSC: Automated Medical Image Segmentation and Classification"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 3451360.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 1000,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 17159,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "main",
+      "columns": [
+        {
+          "id": 73532,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Lesion DSC",
+          "key": "Lesion_DSC",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 73533,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Lesion NSD",
+          "key": "Lesion_NSD",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 2
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Add"
+    }
+  ],
+  "collaborators": [
+    {
+      "id": 13723,
+      "name": null,
+      "username": "ken96"
+    }
+  ],
+  "registration_auto_approve": true,
+  "description": "MICCAI FLARE 2026 Task 2: AutoMSC: Automated Medical image Segmentation and Classification",
+  "participants_count": 39,
+  "submissions_count": 1,
+  "queue": null,
+  "enable_detailed_results": true,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": true,
+  "make_programs_available": false,
+  "make_input_data_available": true,
+  "docker_image": "mrigroupopbg/mri-python3",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 15332,
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "forum_enabled": true
+}

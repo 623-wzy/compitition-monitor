@@ -1,0 +1,186 @@
+{
+  "id": 16306,
+  "title": "ACM MM 2026 PCBA Standard-to-Real Grand Challenge",
+  "published": true,
+  "created_by": "aimm_ifm",
+  "owner_display_name": "aimm_ifm",
+  "created_when": "2026-05-14T11:31:23.555043Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-14-1778758283/c7faeaffa1d6/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=ZsmVypGfAiP%2Fnc%2B8zri%2FKrIljNs%3D&Expires=1779888965",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-14-1778758283/c7faeaffa1d6/logo_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=v3sW4WzxSH7YV3DNI1QgJ0UVS5E%3D&Expires=1779888965",
+  "terms": "**PCBA Standard-to-Real Grand Challenge Participation Terms**\n\n1. Overview\n\nThe PCBA Standard-to-Real Grand Challenge is an academic benchmark for cross-domain Visual Question Answering in real-world PCBA manufacturing inspection. These terms govern participation in the challenge, access to the dataset and benchmark materials, and submission to the official Codabench evaluation server.\n\nBy registering for the challenge or submitting results, each participant agrees to follow these terms, the official challenge rules, and any additional instructions released by the organizers.\n\n2. Eligibility and Registration\n\nParticipation is open to academic and research teams worldwide, subject to organizer approval.\n\nAll participating teams are required to register through both official registration channels: the Hugging Face dataset access page and the Codabench competition page. The Hugging Face dataset registration page is available at:\nhttps://huggingface.co/datasets/aimmifm/PCBA_Standard-to-Real_Challenge\n\nEach team must register with a valid team name, institutional affiliation, and contact email. The team should designate one responsible team leader who will act as the primary contact and will be responsible for the team’s compliance with the challenge rules.\n\nEach participant may join only one team unless explicitly approved by the organizers. Teams must receive organizer approval through the official registration channels before accessing restricted challenge resources or submitting final results.\n\n3. Permitted Use\n\nThe dataset, annotations, benchmark splits, evaluation materials, starter kit, and related challenge resources are provided only for academic research, non-commercial use, and participation in the PCBA Standard-to-Real Grand Challenge.\n\nParticipants may use the released data to develop, train, validate, and evaluate models for this challenge or for related non-commercial research. Participants may publish academic papers or technical reports based on their results, provided that they properly acknowledge the challenge and do not redistribute restricted dataset materials.\n\n4. Dataset Access and Redistribution\n\nThe dataset is licensed for approved challenge participation and academic research use. Participants may not sell, license, rent, redistribute, republish, or otherwise make the dataset, annotations, benchmark materials, private links, access credentials, hidden labels, or restricted evaluation files available to any third party.\n\nParticipants may share the dataset internally only with members of their registered team who are working on the challenge and who agree to follow these terms.\n\nPublic links to the official challenge website, official dataset page, and official starter kit are permitted.\n\n5. Submission Rules\n\nAll official submissions must be made through the Codabench competition page. Participants must follow the official submission format exactly.\n\nOnly submissions that pass automatic format validation will be evaluated. Invalid submissions may be rejected by the platform and may still count toward the submission limit.\n\nEach team may submit up to the number of submissions allowed by the current Codabench phase. The organizers may set different submission limits for development and final phases.\n\nAfter the public evaluation phase, the organizers will invite the top 6 teams on the official leaderboard to provide their method code for verification. The final 3 winning teams will then be determined according to the official ranking on the hidden test set, based on the metrics defined by the organizers.\n\n6. External Data, Models, and Tools\n\nParticipants may use publicly available pretrained models, foundation models, large language models, multimodal large language models, external datasets, retrieval systems, and other public resources.\n\nAll external data, pretrained models, APIs, tools, and non-released resources used by the team must be clearly disclosed in the submission fact sheet or method description.\n\nPrivate test labels, hidden annotations, leaked answers, manually inferred hidden ground truth, and resources obtained through unauthorized access are strictly prohibited.\n\n7. Prohibited Practices\n\nParticipants must not:\n\n- attempt to access, infer, reconstruct, or use private test labels or hidden annotations;\n- exploit data leakage, duplicate samples, metadata leakage, filename leakage, or other hidden-test shortcuts;\n- share private dataset access links, credentials, benchmark files, or restricted materials with unauthorized users;\n- submit manipulated, fraudulent, or misleading results;\n- submit predictions generated through manual labeling of the hidden test set;\n- collude with other teams to bypass submission limits or leaderboard rules;\n- interfere with the Codabench evaluation system, scoring program, access control, or official leaderboard;\n- use the dataset or benchmark materials for commercial products, services, or deployment without prior written permission from the organizers.\n\n8. Leaderboard and Final Ranking\n\nA public leaderboard may be maintained on Codabench during the submission period. The leaderboard will be updated automatically after validated submissions.\n\nAfter the submission deadline, the organizers will request method code from the top 6 teams on the public leaderboard for verification. Among these verified teams, the final 3 winners will be determined by the official hidden test set ranking. The organizers reserve the right to verify the submitted code, model outputs, and inference procedure before confirming the final winners.\n\nIf a participant believes there is an evaluation error, they should contact the organizers before the final results are announced.\n\n9. Method Report and Reproducibility\n\nThe organizers may request a short method description, abstract, or technical report from participating teams, especially from top-ranked teams.\n\nThe top 6 teams on the public leaderboard will be asked to provide method code and may also be asked to provide additional information, model outputs, or inference details for verification. Participants should retain their code, model checkpoints, prompts, scripts, and prediction files for at least 30 days after the final results are announced.\n\n10. Disqualification\n\nThe organizers reserve the right to reject submissions, remove leaderboard entries, revoke dataset access, or disqualify any team that violates these terms, the official challenge rules, or the integrity of the evaluation process.\n\nDisqualified teams will not be eligible for awards, recognition, or official ranking.\n\n11. Disclaimer\n\nThe dataset and benchmark materials are provided as-is for academic research and challenge participation. The organizers make no warranty regarding completeness, availability, accuracy, or fitness for a particular purpose.\n\nParticipants are responsible for ensuring that their use of the dataset, models, external resources, and submitted results complies with applicable laws, institutional policies, and third-party rights.\n\n12. Contact\n\nFor questions about registration, dataset access, submission format, evaluation, or these terms, please contact the PCBA Standard-to-Real Grand Challenge organizers at [aimmifm@gmail.com](mailto:aimmifm@gmail.com).",
+  "pages": [
+    {
+      "id": 77904,
+      "title": "Overview",
+      "content": "## Overview\n\nThe **PCBA Standard-to-Real Grand Challenge** focuses on **cross-domain Visual Question Answering (VQA) for real-world manufacturing inspection**.\n\nPrinted Circuit Board Assembly (PCBA) inspection requires more than visual recognition. Practical factory decision-making depends on both **industrial standards** and **real production-line imagery**. A reliable inspection model must understand manufacturing rules, identify context-dependent defects, reason about possible causes, and provide actionable answers.\n\nThis challenge evaluates multimodal models on their ability to generalize from **standards-derived knowledge** to **dense, heterogeneous real-world PCBA images**. Participants are invited to develop VQA systems that can interpret standard documents, recognize components and defects, perform counting tasks, and reason under realistic visual variation.\n\nParticipants can register for the challenge on [HuggingFace](https://huggingface.co/datasets/aimmifm/PCBA_Standard-to-Real_Challenge) by applying for a Dataset and submit their prediction files through the official competition platform.\n\n## Task\n\nParticipants are given PCBA-related visual questions and must submit predicted answers for each test sample. The benchmark covers four major VQA families:\n\n1. **Standard-based Knowledge QA**\n   Questions derived from industrial standards, covering standard interpretation, defect-cause analysis, and handling decisions.\n\n2. **Factuality**\n   Perception-centric questions, including component type recognition, mount-side identification, defect existence detection, and defect type recognition.\n\n3. **Quantitative Reasoning**\n   Numeric short-answer questions, including component counting and pin/lead counting.\n\n4. **Attribute Reasoning**\n   Questions about visual attributes such as the shape of main components.\n\n## Dataset\n\nThe released dataset https://huggingface.co/datasets/aimmifm/PCBA_Standard-to-Real_Challenge\nis built from two complementary sources:\n\n* **Standards-derived VQA**\n  Constructed from industrial packaging standards and converted into VQA items. This subset focuses on standards knowledge, defect-cause analysis, and decision-making.\n\n* **Real-world VQA**\n  Built from factory production-line data. This subset focuses on real manufacturing imagery and inspection-oriented reasoning under practical visual variation.\n\nThe public split contains:\n\n| Split | Number of Questions |\n| ----- | ------------------: |\n| Train |               8,200 |\n| Test  |               8,200 |\n| Total |              16,400 |",
+      "index": 0
+    },
+    {
+      "id": 77903,
+      "title": "Evaluation",
+      "content": "## Evaluation\n\nAll submissions are evaluated automatically on the official Codabench server. Participants must submit one prediction file for the released public test questions. The public leaderboard reports a single **Overall Score**.\n\n## Submission Format\n\nFor Codabench submission, participants must upload a single `.zip` file. The `.zip` archive must contain one CSV file named `submission.csv` at the root level:\n\n```text\nyour_submission.zip\n└── submission.csv\n```\n\nThe `submission.csv` file must contain exactly two columns:\n\n```csv\nqid,answer\n1,B\n2,12\n3,E\n```\n\nSubmission rules:\n\n* `qid` must exactly match the question identifier in `vqa_test_public.json`\n* `answer` must contain only the final prediction\n* For multiple-choice questions, submit the option key exactly as shown in the question, e.g. `A`, `B`, `C`, `D`, `E`, or `F`\n* For counting questions, submit an integer as a plain string, e.g. `12`\n* The file must contain one row for every test question\n* Missing rows, duplicated `qid` values, or unknown `qid` values will result in an invalid submission\n* Do not place `submission.csv` inside an extra subfolder in the submission archive\n\nThe public test JSON does not expose task-type annotations. Task grouping is handled internally by the official evaluation server.\n\n## Official Metrics\n\nEach test question belongs internally to one of the following task groups:\n\n* `standard_knowledge`\n* `component_type`\n* `mount_side`\n* `defect_existence`\n* `defect_type`\n* `count_component`\n* `count_pin_lead`\n* `attribute_reasoning`\n\nTask-level metrics:\n\n* **Accuracy** for `standard_knowledge`, `component_type`, `mount_side`, `defect_type`, and `attribute_reasoning`\n* **F1-score** for `defect_existence`\n* **Normalized MAE** for `count_component` and `count_pin_lead`\n\nFor `defect_existence`, the official score uses binary F1 on the anomaly-positive class.\n\nFor counting tasks, the official normalized score is:\n\n```text\ncount_score_t = max(0, 1 - MAE_t / C_t)\n```\n\nwhere the fixed normalization constants are:\n\n* `C_count_component = 138`\n* `C_count_pin_lead = 260`\n\n## Overall Score\n\nEach task-level metric is first converted to the same `0-1` range. The final public leaderboard score is then computed as the weighted average across task groups, using the task proportions in the evaluation set:\n\n```text\nOverall Score = 100 * sum_t (w_t * s_t)\n```\n\nwhere:\n\n* `s_t` is the task-level score for task `t`\n* `w_t = n_t / N`\n* `n_t` is the number of evaluation questions in task `t`\n* `N` is the total number of evaluation questions\n\nThe leaderboard displays the final **Overall Score** on a `0-100` scale.\n\n## Evaluation Notes\n\n* The official Codabench server is the only valid source of scores\n* Organizer-side task annotations are hidden from participants\n* Invalid option labels for multiple-choice questions are counted as incorrect answers\n* Non-integer answers for counting questions are treated as invalid counting predictions\n* Organizers may additionally run the same scoring protocol on private evaluation data for verification or post-competition analysis",
+      "index": 1
+    }
+  ],
+  "phases": [
+    {
+      "id": 26805,
+      "index": 0,
+      "start": "2026-05-14T00:00:00Z",
+      "end": "2026-06-04T00:00:00Z",
+      "name": "Public Evaluation",
+      "description": "Submit a single prediction CSV for the released public test questions.",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "aeaeea50-ae82-4754-b0ff-d6ecd0744192",
+          "order_index": 0,
+          "phase": 26805,
+          "id": 32819,
+          "value": "aeaeea50-ae82-4754-b0ff-d6ecd0744192",
+          "key": "aeaeea50-ae82-4754-b0ff-d6ecd0744192",
+          "created_when": "2026-05-14T11:31:23.327970Z",
+          "name": "Public Test Scoring",
+          "solutions": [
+            {
+              "name": "solution @ 05-14-2026 11:31",
+              "description": null,
+              "key": "fe7be97f-918f-4b55-a386-7bb75c169ebf",
+              "tasks": [
+                "aeaeea50-ae82-4754-b0ff-d6ecd0744192"
+              ],
+              "data": "a5b10b1b-9479-46bf-bc76-907b08eb3f74",
+              "md5": "0af15f3194a125cd40fe18db69cddce7",
+              "size": 23176.0
+            }
+          ],
+          "public_datasets": [
+            {
+              "id": 758982,
+              "created_by": "aimm_ifm",
+              "owner_display_name": "aimm_ifm",
+              "created_when": "2026-05-14T11:31:22.646780Z",
+              "name": "scoring_program @ '05-14-2026 11:31'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "f761c79b-103e-4732-9126-03c0950e9987",
+              "value": "f761c79b-103e-4732-9126-03c0950e9987",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16306,
+                  "title": "ACM MM 2026 PCBA Standard-to-Real Grand Challenge"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 16784.0
+            },
+            {
+              "id": 758983,
+              "created_by": "aimm_ifm",
+              "owner_display_name": "aimm_ifm",
+              "created_when": "2026-05-14T11:31:22.748481Z",
+              "name": "reference_data @ '05-14-2026 11:31'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "8fcf5bf8-634c-4be5-8df2-82953e5478c9",
+              "value": "8fcf5bf8-634c-4be5-8df2-82953e5478c9",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16306,
+                  "title": "ACM MM 2026 PCBA Standard-to-Real Grand Challenge"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 586701.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": {
+        "id": 758985,
+        "created_by": "aimm_ifm",
+        "owner_display_name": "aimm_ifm",
+        "created_when": "2026-05-14T11:31:23.464200Z",
+        "name": "starting_kit @ '05-14-2026 11:31'",
+        "type": "starting_kit",
+        "description": null,
+        "is_public": false,
+        "key": "f14cdf15-d157-4787-b424-bd6454f4e983",
+        "value": "f14cdf15-d157-4787-b424-bd6454f4e983",
+        "was_created_by_competition": true,
+        "in_use": [
+          {
+            "pk": 16306,
+            "title": "ACM MM 2026 PCBA Standard-to-Real Grand Challenge"
+          }
+        ],
+        "competition": null,
+        "file_name": "",
+        "file_size": 23176.0
+      },
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 18000,
+      "primary_index": 0,
+      "title": "Public Leaderboard",
+      "key": "public",
+      "columns": [
+        {
+          "id": 77586,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Overall Score",
+          "key": "score",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 6
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Force_Best"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": true,
+  "description": "ACM MM 2026 Grand Challenge on Cross-domain visual question answering for real-world PCBA manufacturing inspection.",
+  "participants_count": 21,
+  "submissions_count": 65,
+  "queue": null,
+  "enable_detailed_results": true,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": false,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": false,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "codalab/codalab-legacy:py37",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 16052,
+  "reward": "",
+  "contact_email": "aimmifm@gmail.com",
+  "report": "https://sites.google.com/cmlab.csie.ntu.edu.tw/asus-ntu-pcba-vqa-challenge/home",
+  "forum_enabled": true
+}

@@ -1,0 +1,228 @@
+{
+  "id": 7634,
+  "title": "VisAidMath",
+  "published": true,
+  "created_by": "andrewlight7",
+  "owner_display_name": "andrewlight7",
+  "created_when": "2025-04-21T18:01:05.283340Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-04-21-1745258465/8326aaab144b/logo.png?AWSAccessKeyId=codabench-prod&Signature=CFJLfHDmfGS010vaGi%2FwUKY%2B4sQ%3D&Expires=1779889336",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-04-21-1745258465/8326aaab144b/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=s4NMAOhnJjuBRFv9589BJxiXSOc%3D&Expires=1779889336",
+  "terms": "# Rules\n\n- **General Terms:** This benchmark is governed by the [https://github.com/codalab/codalab-competitions/wiki/Privacy](CodaLab Terms and Conditions), and the specific rules set forth.\n- **Registration:** The participants must register to Codabench and provide a valid email address. Teams must register only once and provide a group email, which is forwarded to all team members. Teams or solo participants registering multiple times to gain an advantage in the competition may be disqualified.\n- **Anonymity:** The participants who do not present their results at the workshop can elect to remain anonymous by using a pseudonym. Their results will be published on the leaderboard under that pseudonym, and their real name will remain confidential.\n- **Submission method:** The results must be submitted through this Codabench site. The number of submissions per day and maximum total computational time are restrained and subject to change, according to the number of participants. Using multiple accounts to increase the number of submissions in NOT permitted.\n- **Reproducibility:** The participant should make efforts to guarantee the reproducibility of their method, which in particular implies that they should use everywhere in their code the same random seed, as exemplified in the starting kit. In the Final Phase, all submissions will be run three times with various random seeds, and the worst performance will be used for final ranking. The participants will be given 2 weeks when results are released to scrutinize the evaluation procedure and the code of the winners.",
+  "pages": [
+    {
+      "id": 35450,
+      "title": "Participation",
+      "content": "# How to participate\n\nYou should submit a json file of your prediction on the testing data provided in \"public data\". It should be formatted\nas follows: \n\n```\n{\n    \"1\": {\n        \"answer\": \"A\",\n        \"visual-aids\": \"connect $AB$\"\n    },\n    \"2\": {\n        \"answer\": \"0\",\n        \"visual-aids\": \"connect $BD$\"\n    },\n    ...\n}\n``` \n\nSee the \"Timeline\" page for additional information about the phases of this competition\n\n---\n\n# Contact\n\n- **Paper:** [VisAidMath: Benchmarking Visual-Aided Mathematical Reasoning](https://arxiv.org/abs/2410.22995)\n- **Visit our website:** [https://andrewlightning7.github.io/VisAidMath.github.io/](https://andrewlightning7.github.io/VisAidMath.github.io/)  \n- **Email:** [nlp2ct.jingkun@gmail.com](nlp2ct.jingkun@gmail.com)",
+      "index": 0
+    },
+    {
+      "id": 35448,
+      "title": "Timeline",
+      "content": "# Timeline\n## Final phase\nSubmit your preferred result with visual-aids and answer. Your answer will be verified against\nthe reference data. You may only make one submission to this phase, so choose wisely.",
+      "index": 1
+    }
+  ],
+  "phases": [
+    {
+      "id": 12474,
+      "index": 0,
+      "start": "2025-04-21T00:00:00Z",
+      "end": "2027-12-31T00:00:00Z",
+      "name": "Testing Phase",
+      "description": "Final Phase: test against complete VisAidMath dataset.",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "e222a1ab-f484-4e0b-a5b5-6b5402a6d33b",
+          "order_index": 0,
+          "phase": 12474,
+          "id": 16317,
+          "value": "e222a1ab-f484-4e0b-a5b5-6b5402a6d33b",
+          "key": "e222a1ab-f484-4e0b-a5b5-6b5402a6d33b",
+          "created_when": "2025-04-21T18:01:05.043900Z",
+          "name": "VisAidMath Final Task",
+          "solutions": [
+            {
+              "name": "solution @ 04-21-2025 18:01",
+              "description": null,
+              "key": "a196d313-d10f-4686-88f0-b37ebaca7b27",
+              "tasks": [
+                "e222a1ab-f484-4e0b-a5b5-6b5402a6d33b"
+              ],
+              "data": "752f5978-957b-462e-893f-f71405cad7c9",
+              "md5": "3c60fd22d7713dd02fcb425ed0cd72b9",
+              "size": 558.0
+            }
+          ],
+          "public_datasets": [
+            {
+              "id": 234957,
+              "created_by": "andrewlight7",
+              "owner_display_name": "andrewlight7",
+              "created_when": "2025-04-21T18:01:04.678220Z",
+              "name": "input_data @ '04-21-2025 18:01'",
+              "type": "input_data",
+              "description": null,
+              "is_public": false,
+              "key": "43b1638a-33ad-4a0d-bbc3-b9454093022c",
+              "value": "43b1638a-33ad-4a0d-bbc3-b9454093022c",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 7634,
+                  "title": "VisAidMath"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 123080.0
+            },
+            {
+              "id": 234958,
+              "created_by": "andrewlight7",
+              "owner_display_name": "andrewlight7",
+              "created_when": "2025-04-21T18:01:04.861342Z",
+              "name": "scoring_program @ '04-21-2025 18:01'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "47d055fb-d416-4279-9d48-deebc3558c64",
+              "value": "47d055fb-d416-4279-9d48-deebc3558c64",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 7634,
+                  "title": "VisAidMath"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 1468.0
+            },
+            {
+              "id": 234959,
+              "created_by": "andrewlight7",
+              "owner_display_name": "andrewlight7",
+              "created_when": "2025-04-21T18:01:04.913078Z",
+              "name": "reference_data @ '04-21-2025 18:01'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "438c5b8f-a4ae-475a-971c-5f4823c2a935",
+              "value": "438c5b8f-a4ae-475a-971c-5f4823c2a935",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 7634,
+                  "title": "VisAidMath"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 65314.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 1,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": {
+        "id": 234961,
+        "created_by": "andrewlight7",
+        "owner_display_name": "andrewlight7",
+        "created_when": "2025-04-21T18:01:05.144415Z",
+        "name": "public_data @ '04-21-2025 18:01'",
+        "type": "public_data",
+        "description": null,
+        "is_public": false,
+        "key": "90cb7054-77df-4768-9f8c-8f77bdf6c92f",
+        "value": "90cb7054-77df-4768-9f8c-8f77bdf6c92f",
+        "was_created_by_competition": true,
+        "in_use": [
+          {
+            "pk": 7634,
+            "title": "VisAidMath"
+          }
+        ],
+        "competition": null,
+        "file_name": "",
+        "file_size": 123080.0
+      },
+      "starting_kit": null,
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 8182,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "main",
+      "columns": [
+        {
+          "id": 31105,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Accuracy",
+          "key": "result_accuracy",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 31106,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Visual-Aids Similarity",
+          "key": "visual_aids_similarity",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 2
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Add"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": true,
+  "description": "VisAidMath is the first benchmark manually collected and annotated for evaluating Math Problem Solving process with visual information on reasoning side.",
+  "participants_count": 7,
+  "submissions_count": 1,
+  "queue": null,
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": false,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": true,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "codalab/codalab-legacy:py37",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": {
+    "Model": {
+      "key": "Model",
+      "type": "text",
+      "title": "Model",
+      "selection": "",
+      "is_required": "true",
+      "is_on_leaderboard": "true"
+    }
+  },
+  "forum": 7511,
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "forum_enabled": true
+}

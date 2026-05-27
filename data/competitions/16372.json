@@ -5,9 +5,9 @@
   "description_zh": "视频分类作业",
   "created_by": "6243112025",
   "created_when": "2026-05-16T08:16:13.352053Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778919373/75c554419a76/%E5%A4%B4%E5%83%8F2.jpg?AWSAccessKeyId=codabench-prod&Signature=eO9xRvmvD0LbPGM2vyHSKr3EcVM%3D&Expires=1779872826",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778919373/75c554419a76/%E5%A4%B4%E5%83%8F2.jpg?AWSAccessKeyId=codabench-prod&Signature=myKVz%2BvCRtntpL03eao5ITvKZ8o%3D&Expires=1779888965",
   "participants_count": 20,
-  "submissions_count": 74,
+  "submissions_count": 75,
   "first_phase_start": null,
   "phases": [
     {
@@ -15,7 +15,7 @@
       "name": "test",
       "start": "2026-05-14T16:00:00Z",
       "end": "2026-06-29T16:00:00Z",
-      "max_submissions_per_day": 5
+      "max_submissions_per_day": 500
     }
   ],
   "pages": [

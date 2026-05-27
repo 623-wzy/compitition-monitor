@@ -1,0 +1,237 @@
+{
+  "id": 16299,
+  "title": "ACM MM AffectiveArt 2026 - Track 1 Generation",
+  "published": true,
+  "created_by": "lizihan",
+  "owner_display_name": "lizihan",
+  "created_when": "2026-05-13T18:36:28.409606Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-13-1778697388/6c40215c3bc9/logo.png?AWSAccessKeyId=codabench-prod&Signature=ado7mOlPE71xP5GlDJN497vCfAc%3D&Expires=1779888967",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-13-1778697388/6c40215c3bc9/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=rnmnb90lWtH62ngTAXP0PGSvefU%3D&Expires=1779888967",
+  "terms": "# Terms and Conditions\n\nBy participating in AffectiveArt 2026, participants agree to follow the challenge rules and use the provided data only for permitted research and evaluation purposes.\n\nParticipants are responsible for ensuring that their submissions comply with the required format, do not contain invalid or manipulative content, and do not violate the rights of third parties.\n\nThe organizers reserve the right to inspect submissions, remove invalid entries, adjust scores when necessary, and disqualify submissions that violate the challenge rules or evaluation policy.",
+  "pages": [
+    {
+      "id": 77888,
+      "title": "Overview",
+      "content": "# Track 1: Emotion-Aware Artistic Image Generation\n\n## Overview\n\nGiven a multimodal prompt describing semantic content, artistic movement, and desired emotional state, the goal of Track 1 is to generate an image that fulfills all three conditions.\n\nThis track evaluates whether generative models can preserve the requested visual content while aligning with both the specified artistic movement and the target emotional state.\n\n## Problem Statement\n\nParticipants are provided with a set of captions.\n\nFor each caption, participants must generate one artistic image that simultaneously satisfies the described semantic content, artistic style, and emotional condition.\n\n## Scientific Challenge\n\nParticipants must develop models that can disentangle style from emotion. Successful models should learn to subtly manipulate visual attributes to achieve a hybrid state, such as a calm Expressionist painting.\n\nThis requires models to reason about both artistic style and emotional expression through visual attributes including composition, brushwork, color, line, and lighting.\n\n## Evaluation Metrics\n\nTrack 1 submissions will be evaluated using:\n\n- Frechet Inception Distance (FID), which evaluates image quality and distribution-level similarity to reference artwork images.\n- Attribute Alignment Score (AAS), which evaluates prompt-image alignment in terms of content, style, and artistic attributes.\n\nThe final Track 1 score combines FID and AAS with equal weights.",
+      "index": 0
+    },
+    {
+      "id": 77841,
+      "title": "Data",
+      "content": "# Data\n\n## Test Set\n\nThe official test set has been distributed to registered participants by email.\n\nParticipants should use the emailed test set to prepare their final submissions. Please make sure that every submitted result corresponds to the official `sample_id` values provided in the test set.\n\n\n\n## Data Use\n\nThe test set is intended only for participation in this challenge. Participants should not redistribute the test set or use it for purposes outside the competition without permission from the organizers.",
+      "index": 1
+    },
+    {
+      "id": 77842,
+      "title": "Submission",
+      "content": "# Submission Instructions\n\nParticipants must upload a `submission.zip` file following the required Track 1 format.\n\nDo not include an extra parent directory inside the zip file. The required files should appear directly at the top level of `submission.zip`.\n\nParticipants must submit a `submission.zip` file containing:\n\n```text\nsubmission.zip\n+-- submission.json\n`-- images/\n    +-- track1_0001.jpg\n    +-- track1_0002.jpg\n    `-- ...\n```\n\nThe `submission.json` file must follow the format below:\n\n```json\n[\n  {\n    \"sample_id\": \"track1_0001\",\n    \"path\": \"images/track1_0001.jpg\"\n  },\n  {\n    \"sample_id\": \"track1_0002\",\n    \"path\": \"images/track1_0002.jpg\"\n  }\n]\n```\n\nEach generated image filename must exactly match its corresponding `sample_id`.\n\n## Upload Rules\n\n- Upload only the required `submission.zip` file.\n- Do not upload the full project folder or source code unless explicitly requested.\n- Ensure that all `sample_id` values match the official test set.\n- Ensure that all paths in `submission.json` match the files inside the zip archive.\n- Invalid JSON, missing samples, missing files, or mismatched filenames may cause the submission to fail validation.",
+      "index": 2
+    },
+    {
+      "id": 77843,
+      "title": "Evaluation",
+      "content": "# Evaluation\n\n## Track 1: Emotion-Aware Artistic Image Generation\n\nFor Track 1, submissions will be evaluated using Frechet Inception Distance (FID) and Attribute Alignment Score (AAS).\n\n## FID\n\nFID measures the distribution-level similarity between the generated image set and the reference artistic image set.\n\nLower FID indicates better performance.\n\n## AAS\n\nAAS evaluates the prompt-level alignment between each generated image and its corresponding caption. It consists of three aspects:\n\n- Content Alignment: whether the generated image correctly reflects the main visual content described in the prompt.\n- Style Alignment: whether the generated image reflects the required artistic style.\n- Attribute Alignment: whether the generated image aligns with the artistic attributes specified in the caption, such as composition, brushwork, color, line, or lighting when applicable.\n\nAAS will be assessed using a standardized LLM-assisted multimodal evaluation protocol. Each generated image will be evaluated together with its corresponding prompt under fixed evaluation prompts, predefined scoring rubrics, and consistent inference settings. The final AAS will be computed by aggregating the scores across the three alignment aspects and all test samples.\n\nThe final Track 1 score will be computed by combining FID and AAS with equal weights: 50% FID and 50% AAS. Since lower FID indicates better performance, FID will be normalized or converted into a score before being combined with AAS.\n\n## Invalid Content\n\nAny attempt to manipulate the evaluator, such as including instructions directed at the evaluator rather than valid task responses, will be treated as invalid content and may lead to score deduction or disqualification.",
+      "index": 3
+    },
+    {
+      "id": 77844,
+      "title": "Rules",
+      "content": "# Rules\n\nParticipants may use their own models and methods to complete the challenge tasks, provided that all submissions follow the official submission format and are based on the official test set distributed by the organizers.\n\n## General Rules\n\n- Each submitted result must correspond to a valid official `sample_id`.\n- Submissions must follow the required JSON schema for the selected track.\n- Participants are responsible for ensuring that submitted files are complete, readable, and correctly packaged.\n- The test set distributed by the organizers must not be redistributed without permission.\n- Participants should not submit content that is unrelated to the task or intended to interfere with the evaluation process.\n\n## Invalid Submissions\n\nA submission may be rejected, penalized, or disqualified if it:\n\n- contains missing, duplicated, or invalid `sample_id` values,\n- contains unreadable files or invalid JSON,\n- does not follow the required zip structure,\n- includes instructions directed at the evaluator instead of valid task responses,\n- attempts to manipulate the scoring system or evaluation protocol.",
+      "index": 4
+    }
+  ],
+  "phases": [
+    {
+      "id": 26798,
+      "index": 0,
+      "start": "2026-05-12T00:00:00Z",
+      "end": "2026-06-11T12:00:00Z",
+      "name": "Track 1 - Generation",
+      "description": "Emotion-aware artistic image generation.",
+      "status": "Current",
+      "execution_time_limit": 86400,
+      "tasks": [
+        {
+          "task": "8b37ad34-362d-4567-a600-e4ed0ebbf4f1",
+          "order_index": 0,
+          "phase": 26798,
+          "id": 32809,
+          "value": "8b37ad34-362d-4567-a600-e4ed0ebbf4f1",
+          "key": "8b37ad34-362d-4567-a600-e4ed0ebbf4f1",
+          "created_when": "2026-05-13T18:36:28.319325Z",
+          "name": "Track 1 - Emotion-Aware Artistic Image Generation",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 757319,
+              "created_by": "lizihan",
+              "owner_display_name": "lizihan",
+              "created_when": "2026-05-13T18:36:26.395154Z",
+              "name": "reference_data @ '05-13-2026 18:36'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "2fe02a92-e6a2-4295-91ef-40d17503db5d",
+              "value": "2fe02a92-e6a2-4295-91ef-40d17503db5d",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16299,
+                  "title": "ACM MM AffectiveArt 2026 - Track 1 Generation"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 32204482.0
+            },
+            {
+              "id": 767330,
+              "created_by": "lizihan",
+              "owner_display_name": "lizihan",
+              "created_when": "2026-05-18T10:17:32.864625Z",
+              "name": "track1_score_5_18",
+              "type": "scoring_program",
+              "description": "去除debug",
+              "is_public": false,
+              "key": "15bcbbed-15dd-4bc8-aca6-6872795323db",
+              "value": "15bcbbed-15dd-4bc8-aca6-6872795323db",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 16299,
+                  "title": "ACM MM AffectiveArt 2026 - Track 1 Generation"
+                }
+              ],
+              "competition": null,
+              "file_name": "track1_scoring_program.zip",
+              "file_size": 22405.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 1,
+      "max_submissions_per_person": 5,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": true,
+      "hide_prediction_output": true,
+      "hide_score_output": true,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 17991,
+      "primary_index": 0,
+      "title": "Track 1 Results",
+      "key": "track1",
+      "columns": [
+        {
+          "id": 77495,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Overall Score",
+          "key": "track1_overall",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 77496,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "FID",
+          "key": "fid",
+          "sorting": "asc",
+          "index": 1,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 77497,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "FID Score",
+          "key": "fid_score",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 77498,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "AAS",
+          "key": "aas",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 77499,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Content Alignment",
+          "key": "content_alignment",
+          "sorting": "desc",
+          "index": 4,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 77500,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Style Alignment",
+          "key": "style_alignment",
+          "sorting": "desc",
+          "index": 5,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 77501,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Attribute Alignment",
+          "key": "attribute_alignment",
+          "sorting": "desc",
+          "index": 6,
+          "hidden": false,
+          "precision": 2
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Force_Last"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": true,
+  "description": "Emotion-Aware Artistic Image Generation",
+  "participants_count": 19,
+  "submissions_count": 18,
+  "queue": null,
+  "enable_detailed_results": true,
+  "show_detailed_results_in_submission_panel": false,
+  "show_detailed_results_in_leaderboard": false,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": true,
+  "make_programs_available": false,
+  "make_input_data_available": true,
+  "docker_image": "lliioo363/affectiveart-track1:latest",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 16045,
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "forum_enabled": false
+}

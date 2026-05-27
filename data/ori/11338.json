@@ -1,0 +1,180 @@
+{
+  "id": 11338,
+  "title": "IACV 25 - Exercise 3",
+  "published": true,
+  "created_by": "iacvbaseline",
+  "owner_display_name": "iacvbaseline",
+  "created_when": "2025-10-30T13:11:05.611512Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-10-30-1761829865/2e90cbc7073c/logo.png?AWSAccessKeyId=codabench-prod&Signature=seUFReKt7DcWGeoyx%2B5gjMkPzgk%3D&Expires=1779889239",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-10-30-1761829865/2e90cbc7073c/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=gQmbT202yGAVC4vF9bVT6FU%2BFP0%3D&Expires=1779889239",
+  "terms": "<H3>Terms and Conditions</H3>\n\n<p>\n\tPlease check the handouts provided in Moodle.\n</p>",
+  "pages": [
+    {
+      "id": 52257,
+      "title": "Overview",
+      "content": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n  <meta http-equiv=\"Content-Style-Type\" content=\"text/css\">\n  <title></title>\n  <meta name=\"Generator\" content=\"Cocoa HTML Writer\">\n  <meta name=\"CocoaVersion\" content=\"2113.6\">\n  <style type=\"text/css\">\n    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #535353; -webkit-text-stroke: #535353}\n    span.s1 {font-kerning: none; background-color: #ffffff}\n  </style>\n</head>\n<body>\n<p class=\"p1\"><span class=\"s1\">This is the evaluation server for Exercise 3 from the Image Analysis and Computer Vision course. Please check the handouts provided in Moodle for detailed instructions for each exercise, and the evaluation criteria.</span></p>\n</body>\n</html>",
+      "index": 0
+    }
+  ],
+  "phases": [
+    {
+      "id": 18611,
+      "index": 0,
+      "start": "2025-10-01T00:00:00Z",
+      "end": "2026-07-01T00:00:00Z",
+      "name": "Exercise Solving Phase",
+      "description": "Solve the exercise by beating the score of iacvbaseline",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "cb130dd0-eb69-4d6a-84fc-0631fd562a6c",
+          "order_index": 0,
+          "phase": 18611,
+          "id": 23363,
+          "value": "cb130dd0-eb69-4d6a-84fc-0631fd562a6c",
+          "key": "cb130dd0-eb69-4d6a-84fc-0631fd562a6c",
+          "created_when": "2025-10-30T13:11:05.568506Z",
+          "name": "3D reconstruction task",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 398993,
+              "created_by": "iacvbaseline",
+              "owner_display_name": "iacvbaseline",
+              "created_when": "2025-10-30T13:11:05.273675Z",
+              "name": "scoring_program @ '10-30-2025 13:11'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "3b215c2f-4c23-444b-9040-f87f6a8e4eea",
+              "value": "3b215c2f-4c23-444b-9040-f87f6a8e4eea",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 11338,
+                  "title": "IACV 25 - Exercise 3"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 2602.0
+            },
+            {
+              "id": 398994,
+              "created_by": "iacvbaseline",
+              "owner_display_name": "iacvbaseline",
+              "created_when": "2025-10-30T13:11:05.359245Z",
+              "name": "reference_data @ '10-30-2025 13:11'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "df8be652-698e-428c-a3b9-f04edc990786",
+              "value": "df8be652-698e-428c-a3b9-f04edc990786",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 11338,
+                  "title": "IACV 25 - Exercise 3"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 946930.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 999,
+      "max_submissions_per_person": 999,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 12502,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "main",
+      "columns": [
+        {
+          "id": 54732,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Score",
+          "key": "EvaluationScore",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 54733,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Unweighted R2",
+          "key": "UnweightedR2",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 54734,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Weighted R2",
+          "key": "WeightedR2",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 54735,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Processing Time",
+          "key": "ProcessingTime",
+          "sorting": "asc",
+          "index": 3,
+          "hidden": false,
+          "precision": 4
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Add_And_Delete"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": true,
+  "description": "Evaluation server for the exercise 3 from image analysis and computer vision course.",
+  "participants_count": 262,
+  "submissions_count": 1126,
+  "queue": null,
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": false,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "jerzy97/iacv_codabench:latest",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 11165,
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "forum_enabled": true
+}

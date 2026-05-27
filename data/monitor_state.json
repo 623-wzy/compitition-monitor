@@ -6,7 +6,7 @@
     "description_zh": "YouTube视频标题和描述分类到12个类别。",
     "created_by": "thaafei13",
     "created_when": "2026-03-09T18:00:16.515235Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-03-09-1773079389/08be443c561e/category-management-stages-1.webp?AWSAccessKeyId=codabench-prod&Signature=4oN1tXXYRSSklQtU2ffVQatpSKo%3D&Expires=1779872889",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-03-09-1773079389/08be443c561e/category-management-stages-1.webp?AWSAccessKeyId=codabench-prod&Signature=%2FGgKy7%2Fs7CiIOQKFgowqo%2FVfPc4%3D&Expires=1779889029",
     "participants_count": 10,
     "submissions_count": 15,
     "first_phase_start": null,
@@ -47,7 +47,7 @@
     "description_zh": "视网膜图像的多标签分类，分为5个严重程度等级。",
     "created_by": "maxencedbe",
     "created_when": "2026-03-08T14:37:32.323238Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-03-08-1772980652/bf49e2e24015/logo.png?AWSAccessKeyId=codabench-prod&Signature=0%2FFTrA3eQOIKUqutMfuac3efnS4%3D&Expires=1779872892",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-03-08-1772980652/bf49e2e24015/logo.png?AWSAccessKeyId=codabench-prod&Signature=hKjltC2r9Sxmj4nNNyN%2FarOjI6A%3D&Expires=1779889031",
     "participants_count": 14,
     "submissions_count": 40,
     "first_phase_start": null,
@@ -76,9 +76,9 @@
     "description_zh": "ACM MM 2026 跨域视觉问答大挑战赛 - 真实世界PCBA制造检测",
     "created_by": "aimm_ifm",
     "created_when": "2026-05-14T11:31:23.555043Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-14-1778758283/c7faeaffa1d6/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=nt%2BzHYMXbBqgJjlnNGiONseGspo%3D&Expires=1779872827",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-14-1778758283/c7faeaffa1d6/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=ZsmVypGfAiP%2Fnc%2B8zri%2FKrIljNs%3D&Expires=1779888965",
     "participants_count": 21,
-    "submissions_count": 61,
+    "submissions_count": 65,
     "first_phase_start": null,
     "phases": [
       {
@@ -111,8 +111,8 @@
     "description_zh": "情感感知艺术图像生成",
     "created_by": "lizihan",
     "created_when": "2026-05-13T18:36:28.409606Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-13-1778697388/6c40215c3bc9/logo.png?AWSAccessKeyId=codabench-prod&Signature=0uEWJL3mb5gqK%2F8PnZRElHzYBOc%3D&Expires=1779872829",
-    "participants_count": 18,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-13-1778697388/6c40215c3bc9/logo.png?AWSAccessKeyId=codabench-prod&Signature=ado7mOlPE71xP5GlDJN497vCfAc%3D&Expires=1779888967",
+    "participants_count": 19,
     "submissions_count": 18,
     "first_phase_start": null,
     "phases": [
@@ -164,9 +164,9 @@
     "description_zh": "AIGC音视频深度伪造分类挑战赛（采用MVAD数据集）",
     "created_by": "lixiang",
     "created_when": "2026-04-18T05:03:43.885782Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-21-1776751074/2acec80a7ccb/1d053422-872b-412a-be59-e3742425ce5.jfif?AWSAccessKeyId=codabench-prod&Signature=Q8RQQAtlUU6ZOW%2FCOkXvx7wUdaA%3D&Expires=1779872850",
-    "participants_count": 51,
-    "submissions_count": 42,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-21-1776751074/2acec80a7ccb/1d053422-872b-412a-be59-e3742425ce5.jfif?AWSAccessKeyId=codabench-prod&Signature=YS5zuBKoCeS1rw6mAIlvxP%2Ff24M%3D&Expires=1779888987",
+    "participants_count": 56,
+    "submissions_count": 48,
     "first_phase_start": null,
     "phases": [
       {
@@ -193,9 +193,9 @@
     "description_zh": "多模态物理推理基准，包含图表、表达式、仅图像问题和基于OpenAI API的答案判断。",
     "created_by": "ai4math",
     "created_when": "2026-04-29T10:27:07.290697Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-29-1777474374/6953426e1b09/logo_big.png?AWSAccessKeyId=codabench-prod&Signature=rtUs8QH%2BlBsM4XiMuZfbeTKhJ2s%3D&Expires=1779872844",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-29-1777474374/6953426e1b09/logo_big.png?AWSAccessKeyId=codabench-prod&Signature=%2F9yuu5ky2C5xn0tGHXziwfsQL1k%3D&Expires=1779888980",
     "participants_count": 95,
-    "submissions_count": 351,
+    "submissions_count": 354,
     "first_phase_start": null,
     "phases": [
       {
@@ -252,9 +252,9 @@
     "description_zh": "我们的目标是为实际应用中的全能型图像恢复算法的开发引入一个新的基准。",
     "created_by": "holflee",
     "created_when": "2026-05-16T12:42:20.469268Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778935340/0aeca58b7892/logo.png?AWSAccessKeyId=codabench-prod&Signature=PIm%2FQd2uUS3vE5PieR7HSPyl%2B7c%3D&Expires=1779872824",
-    "participants_count": 64,
-    "submissions_count": 110,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778935340/0aeca58b7892/logo.png?AWSAccessKeyId=codabench-prod&Signature=uYulT8a2ElH2E86SUP3VK4R7Xg8%3D&Expires=1779888962",
+    "participants_count": 65,
+    "submissions_count": 113,
     "first_phase_start": null,
     "phases": [
       {
@@ -299,7 +299,7 @@
     "description_zh": "该挑战重点关注现实语音处理场景中的音视频文本多模态关键词识别任务。",
     "created_by": "misp_qeks_bl",
     "created_when": "2026-05-04T05:52:24.137332Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-04-1777873944/1c7a31d17f08/logo_misp2026.png?AWSAccessKeyId=codabench-prod&Signature=dvnpSX1SNxrrGdPoZsOuf1OOMnA%3D&Expires=1779872838",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-04-1777873944/1c7a31d17f08/logo_misp2026.png?AWSAccessKeyId=codabench-prod&Signature=NCU0fqRm8RQenfpi9IL9ghr5Bqk%3D&Expires=1779888974",
     "participants_count": 6,
     "submissions_count": 3,
     "first_phase_start": null,
@@ -334,9 +334,9 @@
     "description_zh": "视频分类作业",
     "created_by": "6243112025",
     "created_when": "2026-05-16T08:16:13.352053Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778919373/75c554419a76/%E5%A4%B4%E5%83%8F2.jpg?AWSAccessKeyId=codabench-prod&Signature=eO9xRvmvD0LbPGM2vyHSKr3EcVM%3D&Expires=1779872826",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778919373/75c554419a76/%E5%A4%B4%E5%83%8F2.jpg?AWSAccessKeyId=codabench-prod&Signature=myKVz%2BvCRtntpL03eao5ITvKZ8o%3D&Expires=1779888965",
     "participants_count": 20,
-    "submissions_count": 74,
+    "submissions_count": 75,
     "first_phase_start": null,
     "phases": [
       {
@@ -344,7 +344,7 @@
         "name": "test",
         "start": "2026-05-14T16:00:00Z",
         "end": "2026-06-29T16:00:00Z",
-        "max_submissions_per_day": 5
+        "max_submissions_per_day": 500
       }
     ],
     "pages": [
@@ -363,7 +363,7 @@
     "description_zh": "基于EventAid基准的事件驱动RGB帧插值，包含1、3、7和15帧跳跃设置。EventAid挑战赛是ECCV 2026事件驱动多模态视觉（EBMV）研讨会的一个赛道（事件驱动多模态视觉：成像、感知和理解）！",
     "created_by": "hylz-2019",
     "created_when": "2026-05-16T10:25:07.473846Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778927107/6ed2ebb989bd/evaid_challenge_logo.png?AWSAccessKeyId=codabench-prod&Signature=pUYrvb%2BHnw2yYCu7gy8dK2NpvMA%3D&Expires=1779872825",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778927107/6ed2ebb989bd/evaid_challenge_logo.png?AWSAccessKeyId=codabench-prod&Signature=t6w39ZArdsWO77O1gJ9HekxIRuA%3D&Expires=1779888964",
     "participants_count": 33,
     "submissions_count": 3,
     "first_phase_start": null,
@@ -405,7 +405,7 @@
     "description_zh": null,
     "created_by": "blang",
     "created_when": "2026-05-12T06:00:03.454595Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-12-1778565603/eb281506591a/logo.png?AWSAccessKeyId=codabench-prod&Signature=O3%2BJYjO2kabfG9sL8lSQhVaW9mM%3D&Expires=1779872833",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-12-1778565603/eb281506591a/logo.png?AWSAccessKeyId=codabench-prod&Signature=RDRfCD4BwutrRzWDU5y9CuGW%2BUE%3D&Expires=1779888969",
     "participants_count": 29,
     "submissions_count": 3,
     "first_phase_start": null,
@@ -452,8 +452,8 @@
     "description_zh": "这是基于事件的多模态感知挑战赛的单目深度估计赛道。",
     "created_by": "blang",
     "created_when": "2026-05-10T06:53:10.869702Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-11-1778487124/9e519a3a990b/logo.png?AWSAccessKeyId=codabench-prod&Signature=YCvC%2ByamODjw2R%2BzfqzJQOubkK4%3D&Expires=1779872836",
-    "participants_count": 29,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-11-1778487124/9e519a3a990b/logo.png?AWSAccessKeyId=codabench-prod&Signature=KTnvoOviDn7P302q9S4b568agzg%3D&Expires=1779888972",
+    "participants_count": 30,
     "submissions_count": 1,
     "first_phase_start": null,
     "phases": [
@@ -499,8 +499,8 @@
     "description_zh": "MVAA 2026 在三个临床相关的分割任务中评估用于二尖瓣解剖分析的多模态AI方法：(1) CT分割，(2) 三维TEE分割，和(3) 手术视频分割。\n\n最终排名基于在各任务中均匀聚合的归一化任务级分数。",
     "created_by": "db0725",
     "created_when": "2026-04-14T13:38:37.626348Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-15-1776224307/a53b1e60e5cb/icon.png?AWSAccessKeyId=codabench-prod&Signature=oQseYAYAkIVsq701rm86zyMICzs%3D&Expires=1779872854",
-    "participants_count": 91,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-15-1776224307/a53b1e60e5cb/icon.png?AWSAccessKeyId=codabench-prod&Signature=FVk9NRQp1czhdInLGX0TSAM4fnw%3D&Expires=1779888995",
+    "participants_count": 92,
     "submissions_count": 2,
     "first_phase_start": null,
     "phases": [
@@ -581,6 +581,151 @@
       }
     ]
   },
+  "11709": {
+    "id": 11709,
+    "title": "IACV 25 - Exercise 5",
+    "description": "Evaluation server for the exercise 5 from Image analysis and computer vision course.",
+    "description_zh": "图像分析与计算机视觉课程第5章练习的评估服务器。",
+    "created_by": "iacvbaseline",
+    "created_when": "2025-11-20T09:18:08.380568Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-11-20-1763630288/837e101ddb1e/logo.png?AWSAccessKeyId=codabench-prod&Signature=IGk5cw7VbHeulfIKV0BFvqy5M9I%3D&Expires=1779889229",
+    "participants_count": 244,
+    "submissions_count": 1561,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 19144,
+        "name": "Exercise Solving Phase",
+        "start": "2025-10-01T00:00:00Z",
+        "end": "2026-07-01T00:00:00Z",
+        "max_submissions_per_day": 999
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Overview",
+        "content": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n  <meta http-equiv=\"Content-Style-Type\" content=\"text/css\">\n  <title></title>\n  <meta name=\"Generator\" content=\"Cocoa HTML Writer\">\n  <meta name=\"CocoaVersion\" content=\"2113.6\">\n  <style type=\"text/css\">\n    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #535353; -webkit-text-stroke: #535353}\n    span.s1 {font-kerning: none; background-color: #ffffff}\n  </style>\n</head>\n<body>\n<p class=\"p1\"><span class=\"s1\">This is the evaluation server for Exercise 5 from the Image Analysis and Computer Vision course. Please check the handouts provided in Moodle for detailed instructions for each exercise, and the evaluation criteria.</span></p>\n</body>\n</html>",
+        "content_zh": "这是图像分析和计算机视觉课程第5次练习的评估服务器。请检查Moodle中提供的讲义，了解每个练习的详细说明和评估标准。"
+      }
+    ]
+  },
+  "11639": {
+    "id": 11639,
+    "title": "IACV 25 - Exercise 4",
+    "description": "Evaluation server for the exercise 4 from Image analysis and computer vision course.",
+    "description_zh": "图像分析与计算机视觉课程第4次练习的评估服务器。",
+    "created_by": "iacvbaseline",
+    "created_when": "2025-11-13T13:04:13.018951Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-11-13-1763039053/321320b04318/logo.png?AWSAccessKeyId=codabench-prod&Signature=clwrnWJlmAJVKpcd6YwpoyoU1pQ%3D&Expires=1779889231",
+    "participants_count": 252,
+    "submissions_count": 642,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 19031,
+        "name": "Exercise Solving Phase",
+        "start": "2025-10-01T00:00:00Z",
+        "end": "2026-07-01T00:00:00Z",
+        "max_submissions_per_day": 999
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Overview",
+        "content": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n  <meta http-equiv=\"Content-Style-Type\" content=\"text/css\">\n  <title></title>\n  <meta name=\"Generator\" content=\"Cocoa HTML Writer\">\n  <meta name=\"CocoaVersion\" content=\"2113.6\">\n  <style type=\"text/css\">\n    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #535353; -webkit-text-stroke: #535353}\n    span.s1 {font-kerning: none; background-color: #ffffff}\n  </style>\n</head>\n<body>\n<p class=\"p1\"><span class=\"s1\">This is the evaluation server for Exercise 4 from the Image Analysis and Computer Vision course. Please check the handouts provided in Moodle for detailed instructions for each exercise, and the evaluation criteria.</span></p>\n</body>\n</html>",
+        "content_zh": "这是图像分析和计算机视觉课程第4次练习的评估服务器。请查看Moodle中提供的讲义以了解每次练习的详细说明和评估标准。"
+      }
+    ]
+  },
+  "11338": {
+    "id": 11338,
+    "title": "IACV 25 - Exercise 3",
+    "description": "Evaluation server for the exercise 3 from image analysis and computer vision course.",
+    "description_zh": "图像分析与计算机视觉课程第3次练习的评估服务器。",
+    "created_by": "iacvbaseline",
+    "created_when": "2025-10-30T13:11:05.611512Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-10-30-1761829865/2e90cbc7073c/logo.png?AWSAccessKeyId=codabench-prod&Signature=seUFReKt7DcWGeoyx%2B5gjMkPzgk%3D&Expires=1779889239",
+    "participants_count": 262,
+    "submissions_count": 1126,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 18611,
+        "name": "Exercise Solving Phase",
+        "start": "2025-10-01T00:00:00Z",
+        "end": "2026-07-01T00:00:00Z",
+        "max_submissions_per_day": 999
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Overview",
+        "content": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n  <meta http-equiv=\"Content-Style-Type\" content=\"text/css\">\n  <title></title>\n  <meta name=\"Generator\" content=\"Cocoa HTML Writer\">\n  <meta name=\"CocoaVersion\" content=\"2113.6\">\n  <style type=\"text/css\">\n    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #535353; -webkit-text-stroke: #535353}\n    span.s1 {font-kerning: none; background-color: #ffffff}\n  </style>\n</head>\n<body>\n<p class=\"p1\"><span class=\"s1\">This is the evaluation server for Exercise 3 from the Image Analysis and Computer Vision course. Please check the handouts provided in Moodle for detailed instructions for each exercise, and the evaluation criteria.</span></p>\n</body>\n</html>",
+        "content_zh": "这是《图像分析与计算机视觉》课程第3次练习的评估服务器。请查看Moodle中提供的讲义，了解每次练习的详细说明和评估标准。"
+      }
+    ]
+  },
+  "11107": {
+    "id": 11107,
+    "title": "IACV 25 - Exercise 2",
+    "description": "Evaluation server for the exercise 2 from image analysis and computer vision course.",
+    "description_zh": "图像分析和计算机视觉课程第2次练习的评估服务器。",
+    "created_by": "iacvbaseline",
+    "created_when": "2025-10-16T07:59:43.606897Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-10-16-1760601583/2eda68a6b594/logo.png?AWSAccessKeyId=codabench-prod&Signature=h5RQKg0uuVgcZGxIbNtQKRYxovU%3D&Expires=1779889245",
+    "participants_count": 271,
+    "submissions_count": 806,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 18290,
+        "name": "Exercise Solving Phase",
+        "start": "2025-10-01T00:00:00Z",
+        "end": "2026-07-01T00:00:00Z",
+        "max_submissions_per_day": 999
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Overview",
+        "content": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n  <meta http-equiv=\"Content-Style-Type\" content=\"text/css\">\n  <title></title>\n  <meta name=\"Generator\" content=\"Cocoa HTML Writer\">\n  <meta name=\"CocoaVersion\" content=\"2113.6\">\n  <style type=\"text/css\">\n    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #535353; -webkit-text-stroke: #535353}\n    span.s1 {font-kerning: none; background-color: #ffffff}\n  </style>\n</head>\n<body>\n<p class=\"p1\"><span class=\"s1\">This is the evaluation server for Exercise 2 from the Image Analysis and Computer Vision course. Please check the handouts provided in Moodle for detailed instructions for each exercise, and the evaluation criteria.</span></p>\n</body>\n</html>",
+        "content_zh": "这是《图像分析与计算机视觉》课程第2次练习的评估服务器。请查看Moodle中提供的讲义获取每次练习的详细说明和评估标准。"
+      }
+    ]
+  },
+  "10546": {
+    "id": 10546,
+    "title": "IACV 25 - Exercise 1",
+    "description": "Evaluation server for the exercise 1 from Image analysis and computer vision course.",
+    "description_zh": "图像分析与计算机视觉课程第1次练习的评估服务器。",
+    "created_by": "iacvbaseline",
+    "created_when": "2025-09-18T09:55:43.707389Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-09-18-1758189343/5198ac0d89d8/logo.png?AWSAccessKeyId=codabench-prod&Signature=IX0L8cwBIeShPPUw2wxdNbiNO4M%3D&Expires=1779889254",
+    "participants_count": 290,
+    "submissions_count": 1013,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 17308,
+        "name": "Exercise Solving Phase",
+        "start": "2025-10-01T00:00:00Z",
+        "end": "2026-07-01T00:00:00Z",
+        "max_submissions_per_day": 999
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Overview",
+        "content": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n  <meta http-equiv=\"Content-Style-Type\" content=\"text/css\">\n  <title></title>\n  <meta name=\"Generator\" content=\"Cocoa HTML Writer\">\n  <meta name=\"CocoaVersion\" content=\"2113.6\">\n  <style type=\"text/css\">\n    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #535353; -webkit-text-stroke: #535353}\n    span.s1 {font-kerning: none; background-color: #ffffff}\n  </style>\n</head>\n<body>\n<p class=\"p1\"><span class=\"s1\">This is the evaluation server for Exercise 1 from the Image Analysis and Computer Vision course. Please check the handouts provided in Moodle for detailed instructions for each exercise, and the evaluation criteria.</span></p>\n</body>\n</html>",
+        "content_zh": "这是图像分析和计算机视觉课程第1次作业的评估服务器。请查看Moodle中提供的讲义，了解每次作业的详细说明和评估标准。"
+      }
+    ]
+  },
   "16281": {
     "id": 16281,
     "title": "EBMV 2026 LOW-LEVEL IMAGING CHALLENGE: EVENT-GUIDED LOW-LIGHT VIDEO DEPTH ESTIMATION ON SDE DATASET",
@@ -588,7 +733,7 @@
     "description_zh": "该挑战赛专注于SDE数据集上的事件引导低光视频深度估计。参与者需要开发算法，在事件相机信号的辅助下，从低光视频序列中估计精确的深度图。\n\n该竞赛的目标是在具有挑战性的照明条件下推进鲁棒深度估计，因为传统的基于帧的方法通常会受到运动模糊、低信噪比和纹理可见性差的困扰。提交的方案将使用隐藏测试集上的定量深度估计指标进行评估。\n\n该挑战赛作为EBMV 2026的一部分进行组织，面向从事低级视觉、事件视觉、视频增强以及单目或多模态深度估计研究的学者。",
     "created_by": "ethanliang99",
     "created_when": "2026-05-13T06:27:08.548287Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-13-1778653628/08a70c7d08bb/ChatGPT_Image_May_13_2026_02_02_4.png?AWSAccessKeyId=codabench-prod&Signature=tkBIO805q%2FgG4HAgaWr45%2Bt5fcQ%3D&Expires=1779872831",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-13-1778653628/08a70c7d08bb/ChatGPT_Image_May_13_2026_02_02_4.png?AWSAccessKeyId=codabench-prod&Signature=jZVdYxOzJQSzumtXKGdPJtzarMU%3D&Expires=1779888968",
     "participants_count": 8,
     "submissions_count": 0,
     "first_phase_start": null,
@@ -648,7 +793,7 @@
     "description_zh": "# EBMV 2026 低级图像处理挑战：SEE-600K事件引导亮度调整\n\n## 概述\n\n真实世界图像常常受到不同光照退化的影响，包括低光、过度曝光、混合照明和高对比度场景。本挑战旨在研究在广泛光照条件下低级图像增强的统一事件引导解决方案。\n\n参赛者需要使用RGB帧和事件数据来恢复清晰、曝光良好且结构保真的图像。本挑战与ECCV 2026事件多模态视觉研讨会相关：成像、感知与理解。\n\n## 数据集\n\n本挑战基于SEE-600K，出自论文：\n\n\"SEE: See Everything Every Time - Adaptive Brightness Adjustment for Broad Light Range Images via Events\"\n\nSEE-600K是在多种光照条件和真实场景下收集的大规模RGB-事件数据集。它提供成对的RGB图像和事件数据用于事件引导亮度调整和低级图像复原。\n\n数据集：\nhttps://huggingface.co/datasets/yunfanlu/SEE-600K\n\n基准代码：\nhttps://github.com/yunfanLu/SEE\n\n研讨会网站：\nhttps://eventbasemultimodalvision.github.io\n\n## 任务\n\n参赛者需要开发一个事件引导的低级图像处理模型。\n\n输入：\n1. 在具有挑战性光照条件下捕获的RGB图像。\n2. 对应的事件流或事件表示。\n3. 可选的元数据或曝光提示（如提供）。\n\n输出：\n1. 亮度调整后的RGB图像。\n2. 输出应保留场景结构、恢复有用细节，避免不现实的幻觉。\n\n本任务侧重于事件引导的亮度调整和图像增强，而非通用图像生成。\n\n## 挑战赛道\n\n### 宽光谱自适应亮度调整\n\n鼓励参赛者在SEE-600K上训练模型。允许使用额外的训练数据，但所有外部数据集、收集设置和预训练模型应在最终技术报告中明确说明。\n\n## 提交格式\n\n每份提交应上传为压缩ZIP文件。\n\n推荐的结构：\n\nsubmission.zip\n├── scene_000001.png\n├── scene_000002.png\n├── scene_000003.png\n└── ...\n\n要求：\n1. 输出文件名必须与输入样本ID匹配。\n2. 图像应保存为PNG文件。\n3. 输出图像应为RGB图像。\n4. 输出分辨率必须与输入/参考分辨率相同。\n5. 不要更改文件名或文件夹结构。\n6. 除非明确要求，否则不要包含额外文件。\n\n## 评估\n\n官方评估将在测试集上进行。\n\n指标：\n1. PSNR：像素级重建精度。\n2. SSIM：结构相似性。\n3. LPIPS：感知相似性。\n\n排名：\n1. PSNR是主要排名指标。\n2. SSIM和LPIPS将作为次要指标使用。\n3. 最终排行榜将基于官方测试集。\n\n验证服务器主要用于开发和提交格式检查。",
     "created_by": "yunfan_lu",
     "created_when": "2026-05-07T16:25:48.971115Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-14-1778767621/54b97befc59e/SEE-logo.jpg?AWSAccessKeyId=codabench-prod&Signature=BCpjIAXgGHMzXpBNpwO3ZUQ0alA%3D&Expires=1779872837",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-14-1778767621/54b97befc59e/SEE-logo.jpg?AWSAccessKeyId=codabench-prod&Signature=hx0rzlHAoDACgJfRtAwIwANgL3U%3D&Expires=1779888973",
     "participants_count": 44,
     "submissions_count": 11,
     "first_phase_start": null,
@@ -690,9 +835,9 @@
     "description_zh": "DeepPhenoTree - 苹果版数据集（1 438张苹果树RGB图像，2025年采集自瑞士、比利时、西班牙和意大利）包含22 500个手工标注的边界框，用于三个物候学阶段：开花期、果实初期和果实成熟期。\n\n开发并基准测试目标检测模型，自动定位图像中的三个物候学阶段。投稿评估采用平均精度均值（mAP@0.5），这是目标检测竞赛的标准指标。\n\n竞赛结果将在2026年9月8-13日于瑞典马尔默举行的ECCV会议的CVPPA工作坊（9月8-9日）期间发布。",
     "created_by": "clothode",
     "created_when": "2026-03-17T15:56:27.833010Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-03-20-1774019283/659710f0a7bb/unnamed.jpg?AWSAccessKeyId=codabench-prod&Signature=CqZURfy6kjf1R4MIn9JXQANOIhA%3D&Expires=1779872879",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-03-20-1774019283/659710f0a7bb/unnamed.jpg?AWSAccessKeyId=codabench-prod&Signature=8%2BVDTHlJiW%2Fc3rcu64uSuXwq0ao%3D&Expires=1779889024",
     "participants_count": 26,
-    "submissions_count": 170,
+    "submissions_count": 174,
     "first_phase_start": null,
     "phases": [
       {
@@ -743,6 +888,115 @@
       }
     ]
   },
+  "10658": {
+    "id": 10658,
+    "title": "Image Recognition Assignment 2025-2026",
+    "description": "In the final assignment of this course, you will solve different problems using deep models.",
+    "description_zh": "在这门课程的最终作业中，你将使用深度模型解决不同的问题。",
+    "created_by": "bobetocalo",
+    "created_when": "2025-09-22T09:36:38.909262Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-09-22-1758533798/e734f87fa2a5/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=b9THK5gt9jy%2BFNV4fdwVDrD%2B4qE%3D&Expires=1779889250",
+    "participants_count": 52,
+    "submissions_count": 307,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 17529,
+        "name": "The ffNN challenge 2025-2026",
+        "start": "2025-09-22T09:00:00Z",
+        "end": "2025-10-12T21:55:00Z",
+        "max_submissions_per_day": 1
+      },
+      {
+        "id": 17530,
+        "name": "The CNN challenge 2025-2026",
+        "start": "2025-10-14T10:00:00Z",
+        "end": "2025-11-02T21:55:00Z",
+        "max_submissions_per_day": 1
+      },
+      {
+        "id": 17531,
+        "name": "The TL challenge 2025-2026",
+        "start": "2025-11-04T10:00:00Z",
+        "end": "2025-11-23T21:55:00Z",
+        "max_submissions_per_day": 1
+      },
+      {
+        "id": 17532,
+        "name": "Image classification assignment 2025-2026",
+        "start": "2025-11-25T10:00:00Z",
+        "end": "2026-07-07T21:55:00Z",
+        "max_submissions_per_day": 1
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Timeline",
+        "content": "# Timeline\n\n## The ffNN challenge\nPut into practice acquired knowledge to design the architecture of a feed-forward Neural Net (ffNN), in the context of an image classification problem.\n\n## The CNN challenge\nImprove the previous model by incorporating Convolutional Neural Networks (CNNs) to better capture spatial features in images.\n\n## The TL challenge\nLeverage transfer learning by utilizing popular pre-trained architectures (e.g., GoogLeNet, VGG, ResNet, ...).\n\n## Image classification assignment\nConduct all previously planned experiments and tests that could not be completed in earlier phases, refining and validating the final model.",
+        "content_zh": "# 时间表\n\n## ffNN 挑战\n在图像分类问题的背景下，将所获知识付诸实践，设计前馈神经网络（ffNN）的架构。\n\n## CNN 挑战\n通过融入卷积神经网络（CNN）来改进之前的模型，以更好地捕捉图像中的空间特征。\n\n## TL 挑战\n利用迁移学习，使用流行的预训练架构（例如 GoogLeNet、VGG、ResNet 等）。\n\n## 图像分类任务\n进行所有之前计划但无法在早期阶段完成的实验和测试，细化并验证最终模型。"
+      },
+      {
+        "index": 1,
+        "title": "Database",
+        "content": "## Database\n\nxView (http://xviewdataset.org/) is a large publicly available object detection data set, with approximately 1 million objects across 60 categories. It contains manually annotated images from different scenes around the world, acquired using the WorldView-3 satellite at 0.3m ground sample distance. There are 846 annotated images in total. For this assignment, we divide these annotations into 761 and 85 images for training and testing respectively.\n\nFor image recognition, we crop previous images using their annotated bounding boxes to extract a subset of objects of interest. In this way, we collected 18746 and 2365 objects for training and testing respectively. The resulting images are resized to 224x224. Follow the link below to download the classification benchmark “xview_recognition”: https://drive.upm.es/s/2DDPE2zHw5dbM3G",
+        "content_zh": "## 数据库\n\nxView (http://xviewdataset.org/) 是一个大规模公开可用的目标检测数据集，包含约100万个物体，涵盖60个类别。它包含来自世界各地不同场景的手工标注图像，由WorldView-3卫星以0.3米地面采样距离获取。总共有846张标注图像。对于本作业，我们将这些标注分别划分为761张和85张图像用于训练和测试。\n\n对于图像识别，我们使用标注的边界框对前述图像进行裁剪，以提取感兴趣的物体子集。通过这种方式，我们分别收集了18746和2365个物体用于训练和测试。所得图像均调整为224x224分辨率。请通过以下链接下载分类基准数据集\"xview_recognition\"：https://drive.upm.es/s/2DDPE2zHw5dbM3G"
+      }
+    ]
+  },
+  "16656": {
+    "id": 16656,
+    "title": "LoViF 2026 The Challenge on Ultra-Low Bitrate Image Compression @ ECCV 2026",
+    "description": "Our goal is to introduce a new benchmark for ultra-low bitrate image compression under extreme bitrate constraints.",
+    "description_zh": "我们的目标是在极端比特率约束下为超低比特率图像压缩引入一个新的基准。",
+    "created_by": "xyling",
+    "created_when": "2026-05-25T06:20:45.321967Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-25-1779690045/e8aa9fc7e755/logo.png?AWSAccessKeyId=codabench-prod&Signature=7eMb7uF1uezTtLCqEaW5j0Gbb%2B8%3D&Expires=1779888954",
+    "participants_count": 3,
+    "submissions_count": 4,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 27289,
+        "name": "Development",
+        "start": "2026-05-27T00:00:00Z",
+        "end": "2026-07-08T00:00:00Z",
+        "max_submissions_per_day": 10
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "overview",
+        "content": "<div align=\"center\">\n<h1><strong>The 2nd Workshop on Low-level Vision Frontiers (LoViF) @ ECCV 2026</strong></h1>\n</div>\n<h2>&nbsp;</h2>\n<h1>Challenge on Ultra-Low Bitrate Image Compression</h1>\n<h2>&nbsp;</h2>\n\n<h2>Important Dates</h2>\n\n<ul>\n    <li>2026.05.27 — Release of the train data</li>\n    <li>2026.05.27 — Release of the validation data</li>\n    <li>2026.05.27 — Validation server online</li>\n</ul>\n<ul>\n    <li><strong>2026.07.11 — Deadline for code and checkpoint submission</strong></li>\n    <li><strong>2026.07.12 — Release of the final test data</strong></li>\n    <li><strong>2026.07.15 — Deadline for test result submission</strong></li>\n    <li><strong>2026.07.15 — Deadline for factsheet submission</strong></li>\n    <li><strong>2026.07.20 — Preliminary test results released to participants</strong></li>\n    <li><strong>2026.07.20 — Deadline for workshop paper submission</strong></li>\n    <li>2026.09.xx — LoViF workshop and challenges, results and award ceremony (ECCV 2026)</li>\n</ul>\n<p> </p>\n<h2>Challenge Overview</h2>\n\n<p align=\"justify\">\nThe <a href=\"https://lovif-eccv2026-workshop.github.io/\">2nd Workshop on Low-level Vision Frontiers with Generative AI, Preference Optimization and Agentic Systems (LoViF)</a> will be held in September 2026 in conjunction with ECCV 2026.\n</p>\n\n<p align=\"justify\">\nImage compression is undergoing rapid evolution toward more perceptually oriented visual coding paradigms. Traditional codecs mainly focus on pixel-wise fidelity, which often leads to severe blurring, blocking artifacts, and loss of fine textures at ultra-low bitrates. Recently, advanced learning-based approaches, especially those leveraging powerful generative priors, have demonstrated strong potential in synthesizing perceptually realistic details and improving visual quality under extremely limited bitrate budgets.\n</p>\n\n<p align=\"justify\">\nThis challenge focuses on ultra-low bitrate image compression, aiming to push the boundaries of perceptual reconstruction, visual quality, and compact visual representations under extreme bitrate constraints. Participants are encouraged to explore innovative compression frameworks, including approaches that incorporate advanced generative priors (e.g., diffusion models, GANs, autoregressive models, etc.), as well as other advanced learning-based techniques. We welcome researchers and practitioners from both academia and industry to benchmark their latest algorithms and contribute to the development of next-generation image compression systems.\n</p>\n\n<p> </p>\n<h2>Motivation for This Competition</h2>\n\n<p align=\"justify\">\nWhile classic image compression has achieved high coding efficiency, traditional methods often suffer from severe blurring, blocking, and texture degradation at ultra-low bitrates. This is largely because standard optimization metrics (such as PSNR and MS-SSIM) prioritize pixel-wise fidelity over perceptual realism, which may not fully align with human visual preferences.\n</p>\n\n<p align=\"justify\">\nRecent advances in learning-based image generation have opened new opportunities for ultra-low bitrate compression. In particular, generative priors and perceptually driven reconstruction strategies have shown strong capability in restoring realistic textures and improving visual quality from highly compact representations. Nevertheless, balancing perceptual quality, semantic consistency, and coding efficiency under extremely low bitrate constraints remains a challenging problem.\n</p>\n\n<p align=\"justify\">\nTo promote research in this area, the LoViF Challenge introduces a specialized benchmark focused on <strong>ultra-low bitrate image compression</strong>. We encourage participants to explore advanced perceptual reconstruction techniques and innovative coding strategies that improve human visual experience while maintaining competitive compression performance. Ultimately, this competition aims to establish a practical and forward-looking benchmark for next-generation visual coding systems.\n</p>\n\n\n<p>\nTop-ranked participants will be awarded and invited to submit workshop papers describing their methods and solutions to the associated LoViF workshop at ECCV 2026.\n</p>\n\n<p align=\"justify\">\nMore details are available in the data, submission and evaluation pages.\n</p>\n\n<!-- <h2 align=\"justify\">Competition</h2>\n\n<p>\n<strong>\nThe validation data will be made available to the registered participants according to the challenge timeline.\n</strong>\n</p> -->\n<p> </p>\n<h2>Awards</h2>\n\n<p>\nThe following awards will be provided to the top-performing teams:\n</p>\n\n<ul>\n<li>\n<strong>One First-Class Award (Champion):</strong> USD $1,000\n</li>\n\n<li>\n<strong>One Second-Class Award:</strong> USD $600\n</li>\n\n<li>\n<strong>One Third-Class Award:</strong> USD $400\n</li>\n</ul>\n<p> </p>\n<h2>Provided Resources</h2>\n\n<ul>\n<li>\n<strong>Scripts:</strong>\nThe organizers will provide standard evaluation scripts to facilitate the reproducibility of the images and performance evaluation results.\n</li>\n\n<li>\n<strong>Contact:</strong>\nPlease use the forum on the challenge page for technical discussions, or directly contact the challenge organizers by email.\n</li>\n</ul>",
+        "content_zh": "<div align=\"center\">\n<h1><strong>第2届低阶视觉前沿研讨会 (LoViF) @ ECCV 2026</strong></h1>\n</div>\n<h2>&nbsp;</h2>\n<h1>超低比特率图像压缩挑战赛</h1>\n<h2>&nbsp;</h2>\n\n<h2>重要日期</h2>\n\n<ul>\n    <li>2026.05.27 — 训练数据发布</li>\n    <li>2026.05.27 — 验证数据发布</li>\n    <li>2026.05.27 — 验证服务器上线</li>\n</ul>\n<ul>\n    <li><strong>2026.07.11 — 代码和检查点提交截止日期</strong></li>\n    <li><strong>2026.07.12 — 最终测试数据发布</strong></li>\n    <li><strong>2026.07.15 — 测试结果提交截止日期</strong></li>\n    <li><strong>2026.07.15 — 事实说明书提交截止日期</strong></li>\n    <li><strong>2026.07.20 — 向参赛者发布初步测试结果</strong></li>\n    <li><strong>2026.07.20 — 研讨会论文提交截止日期</strong></li>\n    <li>2026.09.xx — LoViF研讨会和挑战赛、结果发布及颁奖仪式 (ECCV 2026)</li>\n</ul>\n<p> </p>\n<h2>挑战赛概述</h2>\n\n<p align=\"justify\">\n<a href=\"https://lovif-eccv2026-workshop.github.io/\">第2届低阶视觉前沿研讨会（融合生成式AI、偏好优化和智能体系统）(LoViF)</a>将于2026年9月与ECCV 2026联合举办。\n</p>\n\n<p align=\"justify\">\n图像压缩正在快速演进，朝向更具感知导向的视觉编码范式发展。传统编码器主要关注逐像素保真度，这常常导致超低比特率下严重的模糊、分块伪影和细节纹理丧失。最近，先进的基于学习的方法，特别是利用强大生成式先验的方法，已展示出在极限比特率预算下合成感知逼真细节和改善视觉质量的强大潜力。\n</p>\n\n<p align=\"justify\">\n本挑战赛聚焦超低比特率图像压缩，旨在推动极端比特率约束下感知重建、视觉质量和紧凑视觉表示的边界。鼓励参赛者探索创新压缩框架，包括融合先进生成式先验（例如扩散模型、生成对抗网络、自回归模型等）的方法，以及其他先进的基于学习的技术。我们欢迎来自学术界和工业界的研究人员和实践者基准测试其最新算法并为下一代图像压缩系统的发展做出贡献。\n</p>\n\n<p> </p>\n<h2>竞赛动机</h2>\n\n<p align=\"justify\">\n虽然经典图像压缩已取得高编码效率，但传统方法在超低比特率下常因严重模糊、分块伪影和纹理退化而受限。这主要是因为标准优化指标（如PSNR和MS-SSIM）优先考虑逐像素保真度而非感知真实性，这可能不完全符合人类视觉偏好。\n</p>\n\n<p align=\"justify\">\n基于学习的图像生成的最近进展为超低比特率压缩开辟了新机遇。特别是，生成式先验和感知驱动的重建策略已展现出从高度紧凑表示中恢复逼真纹理和改善视觉质量的强大能力。然而，在极端低比特率约束下平衡感知质量、语义一致性和编码效率仍是具有挑战的问题。\n</p>\n\n<p align=\"justify\">\n为促进该领域的研究，LoViF挑战赛推出了专门针对<strong>超低比特率图像压缩</strong>的基准。我们鼓励参赛者探索先进的感知重建技术和创新编码策略，在改善人类视觉体验的同时保持竞争力强的压缩性能。最终，本竞赛旨在为下一代视觉编码建立一个实用且富有前瞻性的基准。\n</p>"
+      },
+      {
+        "index": 1,
+        "title": "data",
+        "content": "<div align=\"center\">\n<h1><strong>The 2nd Workshop on Low-level Vision Frontiers (LoViF) @ ECCV 2026</strong></h1>\n</div>\n\n<h2>&nbsp;</h2>\n<h1>Challenge on Ultra-Low Bitrate Image Compression</h1>\n<h2>&nbsp;</h2>\n\n\n<h2>Data Overview</h2>\n\n<p align=\"justify\">\nThe dataset for this challenge is constructed from selected samples of open-source high-resolution image datasets and high-quality images collected from the Internet. It is specifically curated to benchmark the frontiers of ultra-low bitrate image compression, featuring diverse real-world scenes with high-quality visual content. In this competition, the dataset is composed of:\n</p>\n\n<ul>\n  <li>\n    <strong>train data:</strong>\n    A total of 14,136 high-quality images are provided for training image compression models. Participants are encouraged to use this dataset. Additional public datasets are permitted, but all external data sources must be clearly disclosed in the factsheet.\n  </li>\n\n  <li>\n    <strong>validation data:</strong>\n    A total of 100 high-quality images are provided for performance tuning during the Development Phase.\n  </li>\n\n  <li>\n    <strong>test data:</strong>\n    A total of 100 high-quality images are additionally provided for the final evaluation during the Testing Phase.\n  </li>\n</ul>\n\n<h2>Data Access</h2>\n\n<p align=\"justify\">\n<strong>\nBy accessing the data, the participants implicitly agree with the terms and conditions of the challenge.\n</strong>\n</p>\n\n<ul>\n\n  <li>\n    <strong>Training Data:</strong>\n    <ul>\n      <li>\n        <a href=\"https://huggingface.co/datasets/happyk/image_data/resolve/main/dataset_train.zip\">\n        Training Dataset\n        </a>\n        (14,136 high-quality images from Flickr2K training set [1], DIV2K training set [2], CLIC2020 training and validation set [3], CLIC2021 test set [4], LSDIR [5]) \n      </li>\n    </ul>\n  </li>\n\n  <li>\n    <strong>Development Phase:</strong>\n    <ul>\n      <li>\n        <a href=\"https://huggingface.co/datasets/happyk/image_data/resolve/main/dataset_val.zip\">\n        Validation Data\n        </a>\n        (100 high-quality images from DIV2K test set [2], CLIC2020 test set [3], Kodak [6])\n      </li> \n    </ul>\n  </li>\n\n  <li>\n    <strong>Testing Phase:</strong>\n    <ul>\n      <li>\n        Test Data:\n        To be released when the Testing Phase begins.\n      </li>\n    </ul>\n  </li>\n\t</ul>\n\t<strong>References</strong>\n\t<ol>\n  <li>\n    Agustsson, E., &amp; Timofte, R.\n    <i>NTIRE 2017 Challenge on Single Image Super-Resolution: Dataset and Study.</i>\n    In CVPRW 2017.\n  </li>\n\n  <li>\n    Timofte, R., Agustsson, E., ... &amp; Zhang, L.\n    <i>NTIRE 2017 Challenge on Single Image Super-Resolution: Methods and Results.</i>\n    In CVPRW 2017.\n  </li>\n\n  <li>\n    Toderici, G., Theis, L., ... &amp; Timofte, R.\n    <i>CLIC 2020: Challenge on Learned Image Compression.</i>\n    2020.\n  </li>\n\n  <li>\n    Toderici, G., Theis, L., ... &amp; Timofte, R.\n    <i>CLIC 2021: Challenge on Learned Image Compression.</i>\n    2021.\n  </li>\n\n  <li>\n    Li, Y., Zhang, K., ... &amp; Van Gool, L.\n    <i>LSDIR: A Large Scale Dataset for Image Restoration.</i>\n    In CVPR 2023.\n  </li>\n\n  <li>\n    Eastman Kodak Company.\n    <i>Kodak Image Database.</i>\n    1993.\n  </li>\n</ol>",
+        "content_zh": "<div align=\"center\">\n<h1><strong>第2届低层次视觉前沿研讨会(LoViF) @ ECCV 2026</strong></h1>\n</div>\n\n<h2>&nbsp;</h2>\n<h1>超低比特率图像压缩挑战赛</h1>\n<h2>&nbsp;</h2>\n\n\n<h2>数据概览</h2>\n\n<p align=\"justify\">\n该挑战赛的数据集由开源高分辨率图像数据集的精选样本和从互联网收集的高质量图像组成。它专门精心策划以对标超低比特率图像压缩的前沿技术，展现具有高质量视觉内容的多样化真实场景。在本次竞赛中，数据集包括：\n</p>\n\n<ul>\n  <li>\n    <strong>训练数据：</strong>\n    共提供14,136张高质量图像用于训练图像压缩模型。鼓励参赛者使用该数据集。允许使用其他公开数据集，但所有外部数据源必须在说明书中清楚披露。\n  </li>\n\n  <li>\n    <strong>验证数据：</strong>\n    共提供100张高质量图像，用于开发阶段的性能调优。\n  </li>\n\n  <li>\n    <strong>测试数据：</strong>\n    额外提供100张高质量图像，用于测试阶段的最终评估。\n  </li>\n</ul>\n\n<h2>数据获取</h2>\n\n<p align=\"justify\">\n<strong>\n访问数据即表示参赛者隐含同意本挑战赛的条款和条件。\n</strong>\n</p>\n\n<ul>\n\n  <li>\n    <strong>训练数据：</strong>\n    <ul>\n      <li>\n        <a href=\"https://huggingface.co/datasets/happyk/image_data/resolve/main/dataset_train.zip\">\n        训练数据集\n        </a>\n        (14,136张高质量图像来自Flickr2K训练集[1]、DIV2K训练集[2]、CLIC2020训练和验证集[3]、CLIC2021测试集[4]、LSDIR[5])\n      </li>\n    </ul>\n  </li>\n\n  <li>\n    <strong>开发阶段：</strong>\n    <ul>\n      <li>\n        <a href=\"https://huggingface.co/datasets/happyk/image_data/resolve/main/dataset_val.zip\">\n        验证数据\n        </a>\n        (100张高质量图像来自DIV2K测试集[2]、CLIC2020测试集[3]、Kodak[6])\n      </li> \n    </ul>\n  </li>\n\n  <li>\n    <strong>测试阶段：</strong>\n    <ul>\n      <li>\n        测试数据：\n        将在测试阶段开始时发布。\n      </li>\n    </ul>\n  </li>\n\t</ul>\n\t<strong>参考文献</strong>\n\t<ol>\n  <li>\n    Agustsson, E., &amp; Timofte, R.\n    <i>NTIRE 2017单图像超分辨率挑战：数据集和研究。</i>\n    在CVPRW 2017。\n  </li>\n\n  <li>\n    Timofte, R., Agustsson, E., ... &amp; Zhang, L.\n    <i>NTIRE 2017单图像超分辨率挑战：方法和结果。</i>\n    在CVPRW 2017。\n  </li>\n\n  <li>\n    Toderici, G., Theis, L., ... &amp; Timofte, R.\n    <i>CLIC 2020：学习型图像压缩挑战赛。</i>\n    2020。\n  </li>\n\n  <li>\n    Toderici, G., Theis, L., ... &amp; Timofte, R.\n    <i>CLIC 2021：学习型图像压缩挑战赛。</i>\n    2021。\n  </li>\n\n  <li>\n    Li, Y., Zhang, K., ... &amp; Van Gool, L.\n    <i>LSDIR：大规模图像复原数据集。</i>\n    在CVPR 2023。\n  </li>\n\n  <li>\n    Eastman Kodak Company.\n    <i>Kodak图像数据库。</i>\n    1993。\n  </li>\n</ol>"
+      },
+      {
+        "index": 2,
+        "title": "evaluation",
+        "content": "<div align=\"center\">\n<h1><strong>The 2nd Workshop on Low-level Vision Frontiers (LoViF) @ ECCV 2026</strong></h1>\n</div>\n\n<h2>&nbsp;</h2>\n<h1>Challenge on Ultra-Low Bitrate Image Compression</h1>\n<h2>&nbsp;</h2>\n\n\n<h2>Development Phase</h2>\n\n<p align=\"justify\">\nDuring the development phase, submissions will be evaluated using both fidelity-oriented and perception-oriented metrics under ultra-low bitrate constraints. The evaluation metrics include PSNR, MS-SSIM, LPIPS, DISTS, and bitrate (BPP). Both PSNR and MS-SSIM are computed in the RGB domain.\n</p>\n\n<p align=\"justify\">\nThis challenge requires participants to submit results at <strong>one single bitrate operating point</strong>. The average bitrate constraint over the entire dataset is:\n</p>\n\n<p align=\"center\">\n<code>average_bpp &le; 0.008</code>\n</p>\n\n<p align=\"justify\">\nSubmissions violating the bitrate constraint will be considered invalid and will not appear on the leaderboard.\n</p>\n\n<p align=\"justify\">\nThe leaderboard ranking during the development phase will be determined by the following weighted score:\n</p>\n\n<p align=\"center\">\n<code>\nFinal_Score = PSNR + 10 × MS_SSIM + 20 × (1 - LPIPS) + 25 × (1 - DISTS)\n</code>\n</p>\n\n<h2>Test Phase</h2>\n\n<p align=\"justify\">\nPlease note that participants are <strong>only allowed to use the code and pretrained model checkpoints submitted before the test phase for the final evaluation</strong>.\n</p>\n\n<p align=\"justify\">\nThe final ranking will be determined primarily through <strong>subjective evaluation</strong>. Submitted methods will be assessed from both reconstruction fidelity and perceptual quality perspectives to better reflect human visual preferences under ultra-low bitrate constraints.\n</p>\n\n<p align=\"justify\">\nPlease refer to the Submission page for detailed submission instructions and required file formats.\n</p>\n\n<h2>Final Test Phase - Preliminary Results [TBA]</h2>\n\n<p align=\"justify\">\nPreliminary results will be posted here once the evaluation is complete.\n</p>",
+        "content_zh": "<div align=\"center\">\n<h1><strong>第二届低层视觉前沿研讨会（LoViF）@ ECCV 2026</strong></h1>\n</div>\n\n<h2>&nbsp;</h2>\n<h1>超低比特率图像压缩挑战赛</h1>\n<h2>&nbsp;</h2>\n\n\n<h2>开发阶段</h2>\n\n<p align=\"justify\">\n在开发阶段，提交的结果将使用保真度导向和感知导向的指标在超低比特率约束下进行评估。评估指标包括PSNR、MS-SSIM、LPIPS、DISTS和比特率（BPP）。PSNR和MS-SSIM均在RGB域中计算。\n</p>\n\n<p align=\"justify\">\n本挑战赛要求参赛者在<strong>单一比特率操作点</strong>提交结果。整个数据集上的平均比特率约束为：\n</p>\n\n<p align=\"center\">\n<code>average_bpp ≤ 0.008</code>\n</p>\n\n<p align=\"justify\">\n违反比特率约束的提交将被视为无效，不会出现在排行榜上。\n</p>\n\n<p align=\"justify\">\n开发阶段的排行榜排名由以下加权分数决定：\n</p>\n\n<p align=\"center\">\n<code>\nFinal_Score = PSNR + 10 × MS_SSIM + 20 × (1 - LPIPS) + 25 × (1 - DISTS)\n</code>\n</p>\n\n<h2>测试阶段</h2>\n\n<p align=\"justify\">\n请注意，参赛者<strong>仅允许使用在测试阶段前提交的代码和预训练模型检查点进行最终评估</strong>。\n</p>\n\n<p align=\"justify\">\n最终排名将主要通过<strong>主观评估</strong>确定。提交的方法将从重建保真度和感知质量两个角度进行评估，以更好地反映在超低比特率约束下的人类视觉偏好。\n</p>\n\n<p align=\"justify\">\n有关详细的提交说明和所需文件格式，请参阅提交页面。\n</p>\n\n<h2>最终测试阶段 - 初步结果 [待公布]</h2>\n\n<p align=\"justify\">\n评估完成后，初步结果将在此处发布。\n</p>"
+      },
+      {
+        "index": 3,
+        "title": "submission",
+        "content": "<div align=\"center\">\n<h1><strong>The 2nd Workshop on Low-level Vision Frontiers (LoViF) @ ECCV 2026</strong></h1>\n</div>\n\n<h2>&nbsp;</h2>\n<h1>Challenge on Ultra-Low Bitrate Image Compression</h1>\n<h2>&nbsp;</h2>\n\n<h2>Submission Workflow</h2>\n\n<p align=\"justify\">\nThe challenge submission process consists of three stages:\n</p>\n\n<ol>\n<li>\n<strong>Development Phase  (due: 2026.07.08): </strong>\nParticipants submit a ZIP archive following the required Results Submission Format through the Codabench <strong>“My Submissions”</strong> page. The evaluation server automatically computes the metrics and updates the public leaderboard.\n</li>\n \n<li>\n<strong>Code Submission Phase (2026.07.08-2026.07.11):</strong>\nTeams intending to participate in the final test phase must submit their executable/source code and pretrained model checkpoints to the organizers via email.\n</li>\n\n<li>\n<strong>Final Test Phase (2026.07.12-2026.07.15):</strong>\nParticipants must run inference on the released test set using only the previously submitted code and pretrained model checkpoints, and submit the final ZIP archive following the required Results Submission Format via email for evaluation.\n</li>\n</ol>\n<br>\n<h2>Results Submission Format</h2>\n\n<p align=\"justify\">\nThe following submission format must be followed for both the Development Phase and the Final Test Phase submissions.\n</p>\n\n<ol type=\"1\">\n\n<li>\nPlease ensure that the reconstructed output images have exactly the same filenames as the corresponding input images (e.g., for an input image named <code>0001.png</code>, the reconstructed output image must also be named <code>0001.png</code>). The reconstructed images must preserve the original spatial resolution.\n</li>\n\n<li>\nCreate a <strong>ZIP</strong> archive following the structure below:\n<br><br>\n\n<pre><code>submission.zip\n│\n├── reconstructed/\n│    ├── 0001.png\n│    ├── 0002.png\n│\n├── bitstream/\n│    ├── 0001.bin\n│    ├── 0002.bin\n│\n└── readme.txt</code></pre>\n\nThe <code>readme.txt</code> file should contain the runtime per image (in seconds), whether CPU or GPU is used during inference, whether extra training data is used, and a brief description of the submitted method.\n\n<pre><code>runtime per image [s] : 10.43\nCPU[1] / GPU[0] : 1\nExtra Data [1] / No Extra Data [0] : 1\nOther description: Briefly describe the submitted solution, including dependencies, code links, scripts, training data, or any other relevant information.</code></pre>\n\n</li>\n\n</ol>\n<br>\n<h2>\nDevelopment Phase Submission Guidelines\n</h2>\n\n<p align=\"justify\">\nDuring the development phase, participants are only required to submit a ZIP archive following the Results Submission Format through the Codabench “My Submissions” page. The evaluation server will automatically compute the metrics and update the public leaderboard. Executable/source code and pretrained model checkpoints are NOT required during the development phase.\n</p>\n\n<br>\n\n<h2>\nCode Submission Phase Guidelines\n</h2>\n\n<p align=\"justify\">\nAfter the development phase ends, teams intending to participate in the final test phase must submit their executable/source code and pretrained model checkpoints via email to the challenge organizers at:\n<a href=\"mailto:xiaoyue_ling@sjtu.edu.cn\">xiaoyue_ling@sjtu.edu.cn</a>\nor\n<a href=\"mailto:zhouchuqin@sjtu.edu.cn\">zhouchuqin@sjtu.edu.cn</a>.\n</p>\n\n<p align=\"justify\">\nOnly the code and pretrained model checkpoints submitted during this phase are allowed to be used for the final test phase evaluation.\n</p>\n\n<p>\nThe email subject should follow the format:\n</p>\n\n<p>\n<strong>\n[LoViF2026] - [Ultra-Low Bitrate Image Compression] - [YOUR_TEAM_NAME]\n</strong>\n</p>\n\n<p>\nThe email body must include the following information:\n</p>\n\n<ol>\n  <li>\n    Full challenge name:\n    LoViF 2026 - Challenge on Ultra-Low Bitrate Image Compression\n  </li>\n\n  <li>\n    Team name\n  </li>\n\n  <li>\n    Team leader’s name and email address\n  </li>\n\n  <li>\n    Team name and usernames registered on the LoViF 2026 Codabench server\n  </li>\n\n  <li>\n    Attached executable/source code and pretrained models, or corresponding download links\n  </li>\n</ol>\n\n<p align=\"justify\">\nThe executable/source code package must include all trained models and necessary parameters to ensure reproducibility. A README file describing how to run the code is mandatory.\n</p>\n\n<br>\n\n<h2>\nFinal Test Phase Submission Guidelines\n(<span style=\"text-decoration: underline;\">\nThe Factsheet template can be found\n<a href=\"https://www.overleaf.com/read/drqpvtdrhkwt#f9d2f1\">here</a>\n</span>)\n</h2>\n\n<p align=\"justify\">\nDuring the final test phase, participants are required to generate and submit a final ZIP archive following the Results Submission Format using only the previously submitted code and pretrained model checkpoints. Final test phase submissions should be emailed to the challenge organizers at:\n<a href=\"mailto:xiaoyue_ling@sjtu.edu.cn\">xiaoyue_ling@sjtu.edu.cn</a>\nor\n<a href=\"mailto:zhouchuqin@sjtu.edu.cn\">zhouchuqin@sjtu.edu.cn</a>.\n</p>\n\n<p align=\"justify\">\n<strong>No additional model updates, retraining, or code modifications are allowed after the Code Submission Phase</strong>.\n</p>\n\n\n<p>\nThe email subject should follow the format:\n</p>\n\n<p>\n<strong>\n[LoViF2026] - [Ultra-Low Bitrate Image Compression] - [YOUR_TEAM_NAME]\n</strong>\n</p>\n\n<p>\nThe email body must include the following information:\n</p>\n\n<ol>\n  <li>\n    Full challenge name:\n    LoViF 2026 - Challenge on Ultra-Low Bitrate Image Compression\n  </li>\n\n  <li>\n    Team name\n  </li>\n\n  <li>\n    Team leader’s name and email address\n  </li>\n\n  <li>\n    Names, email addresses, and affiliations/institutions of all team members\n  </li>\n\n  <li>\n    Team name and usernames registered on the LoViF 2026 Codabench server\n  </li>\n\n  <li>\n    Attached Factsheet (Please use the provided LoViF template. In addition, the Factsheet submission must include both the compiled PDF version and the corresponding LaTeX source files.)\n  </li>\n\n  <li>\n    Download links to the FULL final submission ZIP archive following the required Results Submission Format\n  </li>\n</ol>\n\n<br>\n\n<p align=\"justify\">\nTop-ranked participants will be invited to co-author the challenge report and are encouraged to submit papers describing their methods to the LoViF 2026 workshop. All workshop papers will undergo the standard peer-review process. For more information, please visit the\n<a href=\"https://lovif-eccv2026-workshop.github.io/\">\nLoViF 2026 Official Website\n</a>.\n</p>",
+        "content_zh": "<div align=\"center\">\n<h1><strong>第二届低级视觉前沿研讨会（LoViF）@ ECCV 2026</strong></h1>\n</div>\n\n<h2>&nbsp;</h2>\n<h1>超低比特率图像压缩挑战赛</h1>\n<h2>&nbsp;</h2>\n\n<h2>提交工作流程</h2>\n\n<p align=\"justify\">\n挑战赛提交过程分为三个阶段：\n</p>\n\n<ol>\n<li>\n<strong>开发阶段（截止时间：2026.07.08）：</strong>\n参赛者通过Codabench的<strong>\"我的提交\"</strong>页面提交遵循所需结果提交格式的ZIP压缩包。评估服务器自动计算指标并更新公开排行榜。\n</li>\n \n<li>\n<strong>代码提交阶段（2026.07.08-2026.07.11）：</strong>\n计划参加最终测试阶段的团队必须通过电子邮件向组织者提交其可执行/源代码和预训练模型检查点。\n</li>\n\n<li>\n<strong>最终测试阶段（2026.07.12-2026.07.15）：</strong>\n参赛者必须仅使用之前提交的代码和预训练模型检查点对发布的测试集进行推理，并通过电子邮件提交遵循所需结果提交格式的最终ZIP压缩包以进行评估。\n</li>\n</ol>\n<br>\n<h2>结果提交格式</h2>\n\n<p align=\"justify\">\n开发阶段和最终测试阶段的提交都必须遵循以下提交格式。\n</p>\n\n<ol type=\"1\">\n\n<li>\n请确保重建的输出图像与对应输入图像的文件名完全相同（例如，输入图像名为<code>0001.png</code>，重建的输出图像也必须命名为<code>0001.png</code>）。重建的图像必须保持原始空间分辨率。\n</li>\n\n<li>\n创建遵循以下结构的<strong>ZIP</strong>压缩包：\n<br><br>\n\n<pre><code>submission.zip\n│\n├── reconstructed/\n│    ├── 0001.png\n│    ├── 0002.png\n│\n├── bitstream/\n│    ├── 0001.bin\n│    ├── 0002.bin\n│\n└── readme.txt</code></pre>\n\n<code>readme.txt</code>文件应包含每张图像的运行时间（单位为秒）、推理过程中是否使用CPU或GPU、是否使用了额外训练数据，以及提交方法的简要描述。\n\n<pre><code>runtime per image [s] : 10.43\nCPU[1] / GPU[0] : 1\nExtra Data [1] / No Extra Data [0] : 1\nOther description: 简要描述提交的方案，包括依赖项、代码链接、脚本、训练数据或任何其他相关信息。</code></pre>\n\n</li>\n\n</ol>\n<br>\n<h2>\n开发阶段提交指南\n</h2>\n\n<p align=\"justify\">\n在开发阶段，参赛者只需通过Codabench的\"我的提交\"页面提交遵循结果提交格式的ZIP压缩包。评估服务器将自动计算指标并更新公开排行榜。开发阶段不需要可执行/源代码和预训练模型检查点。\n</p>\n\n<br>\n\n<h2>\n代码提交阶段指南\n</h2>\n\n<p align=\"justify\">\n开发阶段结束后，计划参加最终测试阶段的团队必须通过电子邮件向挑战赛组织者提交其可执行/源代码和预训练模型检查点，邮箱地址为：\n<a href=\"mailto:xiaoyue_ling@sjtu.edu.cn\">xiaoyue_ling@sjtu.edu.cn</a>\n或\n<a href=\"mailto:zhouchuqin@sjtu.edu.cn\">zhouchuqin@sjtu.edu.cn</a>。\n</p>\n\n<p align=\"justify\">\n仅有在该阶段提交的代码和预训练模型检查点被允许用于最终测试阶段的评估。\n</p>\n\n<p>\n电子邮件主题应遵循以下格式：\n</p>\n\n<p>\n<strong>\n[LoViF2026] - [超低比特率图像压缩] - [YOUR_TEAM_NAME]\n</strong>\n</p>\n\n<p>\n电子邮件正文必须包含以下信息：\n</p>\n\n<ol>\n  <li>\n    完整挑战赛名称：\n    LoViF 2026 - 超低比特率图像压缩挑战赛\n  </li>\n\n  <li>\n    团队名称\n  </li>\n\n  <li>\n    团队负责人姓名和电子邮件地址\n  </li>\n\n  <li>\n    团队名称和在LoViF 2026 Codabench上注册的用户名"
+      },
+      {
+        "index": 4,
+        "title": "organizers",
+        "content": "<div align=\"center\">\n<h1><strong>The 2nd Workshop on Low-level Vision Frontiers (LoViF) @ ECCV 2026</strong></h1>\n</div>\n<h2>&nbsp;</h2>\n<h1>Organizers</h1>\n<h3>&nbsp;</h3>\n<p align=\"justify\">The LoViF Challenge on Ultra-Low Bitrate Image Compression is organized as part of the <strong>2nd Workshop on Low-level Vision Frontiers with Generative AI, Preference Optimization and Agentic Systems (LoViF)</strong> and <a href=\"https://lovif-eccv2026-workshop.github.io/\">the LoViF 2026 workshop</a>. The challenge results will be presented during the LoViF 2026 workshop and included in the associated ECCV 2026 workshop proceedings.</p>\n\n<p align=\"justify\">\nFor any questions regarding the challenge, please contact the organizers of the LoViF Ultra-Low Bitrate Image Compression challenge:\n</p>\n\n<ul>\n<li>\nXiaoyue Ling:\n<a href=\"mailto:xiaoyue_ling@sjtu.edu.cn\">\nxiaoyue_ling@sjtu.edu.cn\n</a>\n</li>\n\n<li>\nChuqin Zhou:\n<a href=\"mailto:zhouchuqin@sjtu.edu.cn\">\nzhouchuqin@sjtu.edu.cn\n</a>\n</li>\n\n<li>\nXin Li:\n<a href=\"[mailto:xin.li@ustc.edu.cn\">\nxin.li@ustc.edu.cn\n</a>\n</li>\n\n<li>\nGuo Lu:\n<a href=\"[mailto:luguo2014@sjtu.edu.cn\">\nluguo2014@sjtu.edu.cn\n</a>\n</li>\n\n</ul>\n\n<p align=\"justify\">\nFor more information about the LoViF workshop and organizers, please visit:\n<a href=\"https://lovif-eccv2026-workshop.github.io/\">\nhttps://lovif-eccv2026-workshop.github.io/\n</a>\n</p>\n\n<ul>\n<!-- <li><a href=\"https://scholar.google.com/citations?user=sbiY97gAAAAJ&amp;hl=zh-CN\">Xin Li</a>&nbsp;(xin.li@ustc.edu.cn)&nbsp;</li>\n<li><a href=\"https://scholar.google.com/citations?user=Z8PYhA4AAAAJ&amp;hl=en\">Yeying Jin</a> (jinyeying@u.nus.edu)</li>\n<li><a href=\"https://scholar.google.com/citations?user=byaSC-kAAAAJ&amp;hl=zh-CN\">Xin Jin</a> (jinxin@eitech.edu.cn)&nbsp;</li>\n<li><a href=\"https://scholar.google.com/citations?user=qHeWjNwAAAAJ&amp;hl=en&amp;authuser=1\">Zongwei Wu</a> (zongwei.wu@uni-wuerzburg.de)&nbsp;</li>\n<li><a href=\"https://scholar.google.com/citations?user=qHeWjNwAAAAJ&amp;hl=en&amp;authuser=1\">Bingchen Li</a> (lbc31415926@mail.ustc.edu.cn)</li>\n<li><a href=\"https://scholar.google.com/citations?user=jLd1l_sAAAAJ\">Yufei Wang</a> (ywang25@snap.com)</li>\n<li><a href=\"https://scholar.google.com/citations?user=S8nAnakAAAAJ&amp;hl=zh-CN\">Wenhan Yang</a> (yangwh@pcl.ac.cn)</li>\n<li><a href=\"https://scholar.google.com/citations?user=j9lwU7kAAAAJ&amp;hl=en\">Yu Li</a> (liyu@idea.edu.cn)</li>\n<li><a href=\"https://scholar.google.com/citations?user=1ayDJfsAAAAJ&amp;hl=en\">Zhibo Chen</a>(chenzhibo@ustc.edu.cn)</li>\n<li><a href=\"https://scholar.google.com/citations?user=ypkClpwAAAAJ&amp;hl=en\">Bihan Wen</a> (bihan.wen@ntu.edu.sg)</li>\n<li><a href=\"https://scholar.google.com/citations?user=MOD0gv4AAAAJ&amp;hl=en\">Robby T. Tan</a>&nbsp;(robby.tan@nus.edu.sg)</li>\n<li><a href=\"https://scholar.google.be/citations?user=u3MwH5kAAAAJ&amp;hl=en\">Radu Timofte</a> (Radu.Timofte@uni-wuerzburg.de)&nbsp;&nbsp;</li> -->\n</ul>\n<!-- <p>The above organizers are the contact persons and direct managers of the NTIRE Day and Night Raindrop Removal for Dual-Focused Images Challenge. If you have any questions, please contact&nbsp;<a href=\"https://scholar.google.com/citations?user=sbiY97gAAAAJ&amp;hl=zh-CN\">Xin Li</a>&nbsp;(xin.li [at] ustc.edu.cn),&nbsp;<a href=\"https://scholar.google.com/citations?user=Z8PYhA4AAAAJ&amp;hl=en\">Yeying Jin</a>&nbsp;(jinyeying [at] u.nus.edu),&nbsp;<a href=\"https://scholar.google.com/citations?user=byaSC-kAAAAJ&amp;hl=zh-CN\">Xin Jin</a>&nbsp;(jinxin [at] eitech.edu.cn),&nbsp;<a href=\"https://scholar.google.fr/citations?user=3QSALjX498QC&amp;hl=fr\">Zongwei Wu</a>&nbsp;(zongwei.wu [at] uni-wuerzburg.de) and&nbsp;<a href=\"https://codalab.lisn.upsaclay.fr/competitions/edit_competition/\">Bingchen Li</a>&nbsp;(lbc31415926 [at] mail.ustc.edu.cn), and&nbsp;<a href=\"https://scholar.google.be/citations?user=u3MwH5kAAAAJ&amp;hl=en\">Radu Timofte</a>&nbsp;(Radu.Timofte [at] uni-wuerzburg.de).</p>\n<p>&nbsp;</p> -->\n<!-- <p align=\"justify\">More information about the NTIRE workshop and challenge organizers is available here:&nbsp;<a href=\"https://cvlai.net/ntire/2026/\">https://cvlai.net/ntire/2026/</a></p> -->",
+        "content_zh": "<div align=\"center\">\n<h1><strong>第2届低层视觉前沿研讨会 (LoViF) @ ECCV 2026</strong></h1>\n</div>\n<h2>&nbsp;</h2>\n<h1>组织者</h1>\n<h3>&nbsp;</h3>\n<p align=\"justify\">LoViF超低比特率图像压缩挑战赛作为<strong>第2届低层视觉前沿研讨会（结合生成式AI、偏好优化和智能体系统）(LoViF)</strong>的一部分而举办，并与<a href=\"https://lovif-eccv2026-workshop.github.io/\">LoViF 2026研讨会</a>相关联。挑战赛结果将在LoViF 2026研讨会期间发布，并收录在ECCV 2026研讨会论文集中。</p>\n\n<p align=\"justify\">\n如对挑战赛有任何疑问，请联系LoViF超低比特率图像压缩挑战赛的组织者：\n</p>\n\n<ul>\n<li>\n凌晓月：\n<a href=\"mailto:xiaoyue_ling@sjtu.edu.cn\">\nxiaoyue_ling@sjtu.edu.cn\n</a>\n</li>\n\n<li>\n周楚琴：\n<a href=\"mailto:zhouchuqin@sjtu.edu.cn\">\nzhouchuqin@sjtu.edu.cn\n</a>\n</li>\n\n<li>\n李鑫：\n<a href=\"[mailto:xin.li@ustc.edu.cn\">\nxin.li@ustc.edu.cn\n</a>\n</li>\n\n<li>\n陆果：\n<a href=\"[mailto:luguo2014@sjtu.edu.cn\">\nluguo2014@sjtu.edu.cn\n</a>\n</li>\n\n</ul>\n\n<p align=\"justify\">\n有关LoViF研讨会和组织者的更多信息，请访问：\n<a href=\"https://lovif-eccv2026-workshop.github.io/\">\nhttps://lovif-eccv2026-workshop.github.io/\n</a>\n</p>\n\n<ul>\n<!-- <li><a href=\"https://scholar.google.com/citations?user=sbiY97gAAAAJ&amp;hl=zh-CN\">Xin Li</a>&nbsp;(xin.li@ustc.edu.cn)&nbsp;</li>\n<li><a href=\"https://scholar.google.com/citations?user=Z8PYhA4AAAAJ&amp;hl=en\">Yeying Jin</a> (jinyeying@u.nus.edu)</li>\n<li><a href=\"https://scholar.google.com/citations?user=byaSC-kAAAAJ&amp;hl=zh-CN\">Xin Jin</a> (jinxin@eitech.edu.cn)&nbsp;</li>\n<li><a href=\"https://scholar.google.com/citations?user=qHeWjNwAAAAJ&amp;hl=en&amp;authuser=1\">Zongwei Wu</a> (zongwei.wu@uni-wuerzburg.de)&nbsp;</li>\n<li><a href=\"https://scholar.google.com/citations?user=qHeWjNwAAAAJ&amp;hl=en&amp;authuser=1\">Bingchen Li</a> (lbc31415926@mail.ustc.edu.cn)</li>\n<li><a href=\"https://scholar.google.com/citations?user=jLd1l_sAAAAJ\">Yufei Wang</a> (ywang25@snap.com)</li>\n<li><a href=\"https://scholar.google.com/citations?user=S8nAnakAAAAJ&amp;hl=zh-CN\">Wenhan Yang</a> (yangwh@pcl.ac.cn)</li>\n<li><a href=\"https://scholar.google.com/citations?user=j9lwU7kAAAAJ&amp;hl=en\">Yu Li</a> (liyu@idea.edu.cn)</li>\n<li><a href=\"https://scholar.google.com/citations?user=1ayDJfsAAAAJ&amp;hl=en\">Zhibo Chen</a>(chenzhibo@ustc.edu.cn)</li>\n<li><a href=\"https://scholar.google.com/citations?user=ypkClpwAAAAJ&amp;hl=en\">Bihan Wen</a> (bihan.wen@ntu.edu.sg)</li>\n<li><a href=\"https://scholar.google.com/citations?user=MOD0gv4AAAAJ&amp;hl=en\">Robby T. Tan</a>&nbsp;(robby.tan@nus.edu.sg)</li>\n<li><a href=\"https://scholar.google.be/citations?user=u3MwH5kAAAAJ&amp;hl=en\">Radu Timofte</a> (Radu.Timofte@uni-wuerzburg.de)&nbsp;&nbsp;</li> -->\n</ul>\n<!-- <p>The above organizers are the contact persons and direct managers of the NTIRE Day and Night Raindrop Removal for Dual-Focused Images Challenge. If you have any questions, please contact&nbsp;<a href=\"https://scholar.google.com/citations?user=sbiY97gAAAAJ&amp;hl=zh-CN\">Xin Li</a>&nbsp;(xin.li [at] ustc.edu.cn),&nbsp;<a href=\"https://scholar.google.com/citations?user=Z8PYhA4AAAAJ&amp;hl=en\">Yeying Jin</a>&nbsp;(jinyeying [at] u.nus.edu),&nbsp;<a href=\"https://scholar.google.com/citations?user=byaSC-kAAAAJ&amp;hl=zh-CN\">Xin Jin</a>&nbsp;(jinxin [at] eitech.edu.cn),&nbsp;<a href=\"https://scholar.google.fr/citations?user=3QSALjX498QC&amp;hl=fr\">Zongwei Wu</a>&nbsp;(zongwei.wu [at] uni-wuerzburg.de) and&nbsp;<a href=\"https://codalab.lisn.upsaclay.fr/competitions/edit_competition/\">Bingchen Li</a>&nbsp;(lbc31415926 [at] mail.ustc.edu.cn), and&nbsp;<a href=\"https://scholar.google.be/citations?user=u3MwH5kAAAAJ&amp;hl=en\">Radu Timofte</a>&nbsp;(Radu.Timofte [at] uni-wuerzburg.de).</p>\n<p>&nbsp;</p> -->\n<!-- <p align=\"justify\">More information about the NTIR"
+      }
+    ]
+  },
   "16614": {
     "id": 16614,
     "title": "LoViF 2026 The Third Challenge on Day and Night Raindrop Removal for Dual-Focused Images@ECCV2026",
@@ -750,8 +1004,8 @@
     "description_zh": "我们的目标是为双焦点图像的昼夜雨滴去除引入一个新的基准。",
     "created_by": "yaosh",
     "created_when": "2026-05-22T05:58:22.308480Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-22-1779429502/2e70ce6bec17/LoViF.png?AWSAccessKeyId=codabench-prod&Signature=eKgYgK%2BKgK387YIBA3A15gvMeiI%3D&Expires=1779872818",
-    "participants_count": 5,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-22-1779429502/2e70ce6bec17/LoViF.png?AWSAccessKeyId=codabench-prod&Signature=e%2Bsl4lKGwYqmigWjSQB9lqsEeIs%3D&Expires=1779888957",
+    "participants_count": 7,
     "submissions_count": 0,
     "first_phase_start": null,
     "phases": [
@@ -797,7 +1051,7 @@
     "description_zh": "这项挑战基准测试多模态大型语言模型（MLLMs）在基于事件的视觉上的空间推理能力，重点关注物体计数、绝对距离估计和空间关系推理。",
     "created_by": "liusy",
     "created_when": "2026-05-14T01:12:48.802883Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-14-1778721168/24208541bb36/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=v6ARAMTtXroR4tKR8UtsCVUyNsg%3D&Expires=1779872828",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-14-1778721168/24208541bb36/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=rekvjyiCn%2FiUGP0fKTak9af3UhE%3D&Expires=1779888967",
     "participants_count": 30,
     "submissions_count": 6,
     "first_phase_start": null,
@@ -844,7 +1098,7 @@
     "description_zh": "评估事件流中的一般动态场景理解能力，涵盖详细理解、因果推理、行动识别、手势识别和事件光学字符识别。",
     "created_by": "liusy",
     "created_when": "2026-05-01T07:20:57.568282Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-01-1777620057/31dabf650506/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=CRqWHGZWbGCH7bnLinqEM07u36E%3D&Expires=1779872840",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-01-1777620057/31dabf650506/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=3PfLGB5lKZjaoocvbu9k3MS6lEg%3D&Expires=1779888977",
     "participants_count": 45,
     "submissions_count": 3,
     "first_phase_start": null,
@@ -884,71 +1138,6 @@
       }
     ]
   },
-  "16027": {
-    "id": 16027,
-    "title": "MICCAI STSR 2026 Task1: Semi-supervised Teeth and Root Plup Canal Segmentation and Metal Artifact Removal in CBCT Scans",
-    "description": "",
-    "description_zh": null,
-    "created_by": "zhengxincan",
-    "created_when": "2026-04-29T16:18:28.164661Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-29-1777479508/d0e2f68c65d4/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=kbFZweAxSTNqcuIKMdBthIHSCg4%3D&Expires=1779872843",
-    "participants_count": 12,
-    "submissions_count": 15,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 26429,
-        "name": "Validation",
-        "start": "2026-04-29T00:00:00Z",
-        "end": "2026-07-17T00:00:00Z",
-        "max_submissions_per_day": 5
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Overview",
-        "content": "## MICCAI STSR 2026 Challenge Task 1: Semi-supervised Teeth and Pulp Segmentation and Metal Artifact Removal in 3D CBCT Scans\n\nAccurate segmentation of teeth and dental pulp in 3D CBCT scans is critical for precise endodontic treatment planning, digital dental modeling, and personalized clinical decision-making. However, manual delineation of complex dental structures across volumetric data is inherently labor-intensive and expertise-dependent, while metallic restorations frequently induce severe streaking artifacts that degrade image fidelity and hinder reliable segmentation. Semi-supervised learning, integrated with metal artifact removal, offers a practical pathway to alleviate the annotation bottleneck by leveraging limited labeled data alongside abundant unlabeled clinical scans, while simultaneously restoring diagnostic image quality.\n\n- **STSR 2025**: Teeth and Pulp Root Canal Segmentation in CBCT Scans and Crown and Root Registration for IOS Scans and CBCT Scans:\n    - [Task 1](https://www.codabench.org/competitions/6468/): Teeth and pulp root canal segmentation in CBCT scans\n    - [Task 2](https://www.codabench.org/competitions/6470/): Crown and root registration for IOS scans and CBCT scans\n\n- **STSR 2026**: Based on STSR 2025, we add a novel metal artifact removal and a multi-modal analysis tasks into STSR 2026 Challenge\n    - [Task 1](https://www.codabench.org/competitions/16027/): Teeth and Pulp Segmentation and Metal Artifact Removal in 3D CBCT Scans\n    - [Task 2](https://www.codabench.org/competitions/16042/): Crown and root registration for IOS scans and CBCT scans\n    - [Task 3](https://www.codabench.org/competitions/16117/): MMDental Multi-modal Analysis\n\nIn MICCAI STSR 2026 Challenge Task 1, we scale up the dataset and provide more fine-grained annotations for different teeth, including teeth and corresponding root pulp canal. The segmentation algorithm is expected to accurately segment permanent teeth (including wisdom teeth) and corresponding root pulp canal. This task has three main features:\n\n(1) Task: teeth and root pulp canal segmentation and metal artifact removal\n\n(2) Dataset: Training set: 30 labeled CBCT images, 299 unlabeled CBCT images；Validation set: 20 labeled CBCT images\n\n(3) Evaluation: segmentation accuracy (Dice, NSD, mIoU, IA) and segmentation efficiency (GPU consumption, running time)\n\n![task1](https://nixy495.github.io/miccai2026/images/1776948850806.jpg)\n\n---\n\n### 📣 News\n\n- . . .\n\n### 🚀 How to participate\n\n- **Step1: Get the qualification**<br>\n    a. To avoid the misuse of our data, you may just finish a simple (very simple) task and fill out the Data Access Agreement at first to get access to the data. [Pre-Task](https://www.codabench.org/competitions/16040/)<br>\n\t\tData and agreement site:<br>\n\t\t-[Huggingface](https://huggingface.co/datasets/Ricoooo/MICCAI-STS26-Challenge-Pre-Task)<br>\n\t\t-[Modelscope](https://modelscope.cn/datasets/lizhii/MICCAI-STS26-Challenge-Pre-Task/summary)<br>\n\t\t-[Baidu Netdisk(extracting code = bm2u)](https://pan.baidu.com/s/1U090bZnMGEJQaD3jwqaQuA)<br>\n\t\t-[Google Drive](https://drive.google.com/drive/folders/1lER9eIavr99g28aTO0kuxIcos_k9FBSx?usp=sharing)<br>\n\t\tOr you could use the [STS-Skill](https://github.com/ricoleehduu/sts-skill) as when you use Claude Code, like:<br>\n\"Use STS-Skill https://github.com/ricoleehduu/sts-skill to help me finishing the Pre-Task.\"\n    b. Fill out the registration form and upload the Agreement:<br>\n        - [For domestic participants (WPS Form)](https://f.wps.cn/g/VV1UmM0O/)<br>\n        - [For international participants (Google Form)](https://docs.google.com/forms/d/e/1FAIpQLSf4hxOwxQdkIHkSICzlD2xnlAuPWr3EvUeB7oeuRKRPUimAKQ/viewform?usp=publish-editor)\n\n- **Step2: Join the challenge and download the data**\n    You should register an account on this website and join the challenge. We will send you the data downloading link in 2-4 working days after reviewing your email.\n\n- **Step3: Submit result to the online submission system**\n\n### 💡 Baseline\n\nOn the way. . .\n\n### Validation submission\n\n- All teams can directly **submit the segmentation results** on codabench to get the segmentation accuracy metrics.\n- All teams can also **make docker submissions**. Update on May 1st: To avoid submission jams, each team can make one docker submission per 15 days. Here are the pre-defined deadlines: 5.15, 5.30, 6.15, 6.30, 7.15, 7.30 (12am EST).\n- To make docker submissions, please send us ([SemiTeethSegChallenge@outlook.com](mailto:SemiTeethSegChallenge@outlook.com)): (Email subject: YourTeamName-TeamLeaderName-Validation Submission)\n- **(1)** a download link to your Docker container (teamname.tar.gz file size < 5Gb).\n- **(2)** a sanity test video (example). Please test your docker on the demo cases and record the prediction process.\n- When the evaluation is finished, we will return the metrics via email.\n\n### 🏆 Awards\n\n- The top two teams will receive cash prizes (900USD for 1st place, 300USD for 2nd place).\n- Following the conclusion of STS 2026, the first authors of the top 5 teams on the test leaderboard will be invited to contribute to a collaborative review paper summarizing the challenge outcomes (intended for submission to a top-tier medical imaging journal).\n- All participating teams are eligible to submit technical papers. Submissions passing the peer-review process organized by the committee will be published in the Lecture Notes in Computer Science (LNCS) series by Springer, which is indexed by EI Compendex.\n\n### 📧 Contact\n\nFor any inquiries, please feel free to reach out via email at [SemiTeethSegChallenge@outlook.com](mailto:SemiTeethSegChallenge@outlook.com) or [zhi.li@hdu.edu.cn](mailto:zhi.li@hdu.edu.cn). We welcome any questions, feedback, or requests for further information regarding the STSR 2026 Challenge. We look forward to meeting each one of you this year, face to face if possible. See you at Daejeon, Republic of Korea!\n\n<br />\n\n#### References:\n\n[1] Wang Y, Zhang Y, Chen X, et al. STS MICCAI 2023 Challenge: Grand challenge on 2D and 3D semi-supervised tooth segmentation[J]. arXiv preprint arXiv:2407.13246, 2024.\n\n[2] Semi-supervised Tooth Segmentation: First MICCAI Challenge, SemiToothSeg 2023, Held in Conjunction with MICCAI 2023, Vancouver, BC, Canada, October 8, 2023, Proceedings[M]. Springer Nature, 2025.\n\n[3] Wang Y, Zhang Y, Chen X, et al. MICCAI 2023 STS Challenge: A retrospective study of semi-supervised approaches for teeth segmentation[J]. Pattern Recognition, 2025: 112049.\n\n[4] Wang Y, Li Z, Wu C, et al. MICCAI STS 2024 Challenge: Semi-Supervised Instance-Level Tooth Segmentation in Panoramic X-ray and CBCT Images[J]. arXiv preprint arXiv:2511.22911, 2025.",
-        "content_zh": "## MICCAI STSR 2026挑战赛任务1：3D CBCT扫描中的半监督牙齿和牙髓分割及金属伪影去除\n\n在3D CBCT扫描中准确分割牙齿和牙髓对于精确的根管治疗计划制定、数字化牙科建模和个性化临床决策至关重要。然而，在体积数据中手动描绘复杂牙科结构本质上是劳动密集且依赖专业知识的，而金属修复体经常引起严重的条纹伪影，导致图像保真度下降，阻碍可靠的分割。半监督学习与金属伪影去除相结合，提供了一条实用途径来缓解标注瓶颈——通过利用有限的标注数据和大量未标注的临床扫描，同时恢复诊断图像质量。\n\n- **STSR 2025**：CBCT扫描中的牙齿和牙髓根管分割以及IOS扫描和CBCT扫描的牙冠和牙根配准：\n    - [任务1](https://www.codabench.org/competitions/6468/)：CBCT扫描中的牙齿和牙髓根管分割\n    - [任务2](https://www.codabench.org/competitions/6470/)：IOS扫描和CBCT扫描的牙冠和牙根配准\n\n- **STSR 2026**：基于STSR 2025，我们在STSR 2026挑战赛中增加了新的金属伪影去除和多模态分析任务\n    - [任务1](https://www.codabench.org/competitions/16027/)：3D CBCT扫描中的牙齿和牙髓分割及金属伪影去除\n    - [任务2](https://www.codabench.org/competitions/16042/)：IOS扫描和CBCT扫描的牙冠和牙根配准\n    - [任务3](https://www.codabench.org/competitions/16117/)：MMDental多模态分析\n\n在MICCAI STSR 2026挑战赛任务1中，我们扩展了数据集，为不同的牙齿提供了更精细的标注，包括牙齿和相应的牙根髓腔。分割算法应准确分割永久齿（包括智齿）和相应的牙根髓腔。该任务具有三个主要特点：\n\n（1）任务：牙齿和牙根髓腔分割及金属伪影去除\n\n（2）数据集：训练集：30张标注CBCT图像，299张未标注CBCT图像；验证集：20张标注CBCT图像\n\n（3）评估：分割精度（Dice、NSD、mIoU、IA）和分割效率（GPU消耗、运行时间）\n\n![task1](https://nixy495.github.io/miccai2026/images/1776948850806.jpg)\n\n---\n\n### 📣 新闻\n\n- . . .\n\n### 🚀 参赛方式\n\n- **步骤1：获得资格认证**<br>\n    a. 为了避免滥用我们的数据，您首先需要完成一个简单（非常简单）的任务并填写数据访问协议以获得数据访问权限。[预备任务](https://www.codabench.org/competitions/16040/)<br>\n\t\t数据和协议网址：<br>\n\t\t-[Huggingface](https://huggingface.co/datasets/Ricoooo/MICCAI-STS26-Challenge-Pre-Task)<br>\n\t\t-[Modelscope](https://modelscope.cn/datasets/lizhii/MICCAI-STS26-Challenge-Pre-Task/summary)<br>\n\t\t-[百度网盘(提取码 = bm2u)](https://pan.baidu.com/s/1U090bZnMGEJQaD3jwqaQuA)<br>\n\t\t-[Google Drive](https://drive.google.com/drive/folders/1lER9eIavr99g28aTO0kuxIcos_k9FBSx?usp=sharing)<br>\n\t\t或者您可以使用[STS-Skill](https://github.com/ricoleehduu/sts-skill)，就像使用Claude Code一样：<br>\n\"使用STS-Skill https://github.com/ricoleehduu/sts-skill帮助我完成预备任务。\"\n    b. 填写注册表并上传协议：<br>\n        - [国内参赛者(WPS表单)](https://f.wps.cn/g/VV1UmM0O/)<br>\n        - [国际参赛者(Google表单)](https://docs.google.com/forms/d/e/1FAIpQLSf4hxOwxQdkIHkSICzlD2xnlAuPWr3EvUeB7oeuRKRPUimAKQ/viewform?usp=publish-editor)\n\n- **步骤2：加入挑战赛并下载数据**\n    您应在本网站注册账户并加入挑战赛。我们将在审核您的邮件后的2-4个工作日内向您发送数据下载链接。\n\n- **步骤3：向在线提交系统提交结果**"
-      },
-      {
-        "index": 1,
-        "title": "Timeline",
-        "content": "## 📅 Important Dates\n\n- 🕐 Open Registration : May 11 – Jul 31, 2026\n- 🕑 Training Data Release : May 11, 2026\n- 🕑 Validation Set Release : May 15, 2026\n- 🕓 Submission Opens (Docker Submission) : Jun 1, 2026\n- 🕕 Validation Set Submission Deadline : Jul 17, 2026\n- 🕖 Final Rankings Release (Test Set B Results) : Jul 18, 2026\n- 🕓 Award Verification Materials Submission (Mandatory for Prize Eligibility) : Jul 18 – Jul 31, 2026\n- 🕗 Paper Review & Acceptance Notification : Jul 31 – Aug 31, 2026\n- 🕗 Release of the challenge results: August 31, 2026\n- 🕗 MICCAI Challenge 2026 : Sept 27 – Oct 1, 2026",
-        "content_zh": "## 📅 重要日期\n\n- 🕐 报名开放：2026年5月11日–7月31日\n- 🕑 训练数据发布：2026年5月11日\n- 🕑 验证集发布：2026年5月15日\n- 🕓 提交开放（Docker提交）：2026年6月1日\n- 🕕 验证集提交截止：2026年7月17日\n- 🕖 最终排名发布（测试集B结果）：2026年7月18日\n- 🕓 奖项验证材料提交（获奖资格必须）：2026年7月18日–7月31日\n- 🕗 论文审查与录用通知：2026年7月31日–8月31日\n- 🕗 竞赛结果发布：2026年8月31日\n- 🕗 MICCAI竞赛2026：2026年9月27日–10月1日"
-      },
-      {
-        "index": 2,
-        "title": "Dataset",
-        "content": "## 🗂️ Dataset\n\nThe data download link will be sent to approved teams via email. Please make sure that you can download large files from Google Drive or Baidu Netdisk and have enough space and computing resources to process them.\n\n- **Training set:** 30 labeled CBCT images, 299 unlabeled CBCT images\n- **Validation set:** 20 labeled CBCT images\n\nFolder structure (download link will be sent to registered qualified participants):\n\n- **Train-Labeled:** Tooth images with segmentation masks for teeth, wisdom teeth, and multiple types of root canal structures.\n- **Train-Unlabel:** only images are provided and the corresponding annotation files are not available\n- **Validation-Public:** The labels of hidden validation set will not be released. Please submit the segmentation results on codabench to get the metrics.\n\n**Label Information:** The dataset contains precise segmentation of 65 classes (including background) with the following label mapping:\n\n- Label_0: Background\n- Label_1: Upper Right Central Incisor\n- Label_2: Upper Right Lateral Incisor\n- Label_3: Upper Right Canine\n- Label_4: Upper Right First Premolar\n- . . .\n- Label_61: Lower Right Second Premolar Pulp\n- Label_62: Lower Right First Molar Pulp\n- Label_63: Lower Right Second Molar Pulp\n- Label_64: Lower Right Third Molar (Wisdom Tooth) Pulp\n\nNote:\n\n- Competitors should submit validation set results in strict accordance with the format required in the Submission Guidelines.\n- This data is only used for scientific research purposes, secondary distribution of data and other commercial purposes are not allowed. The organizer of this challenge reserves the right to pursue the legal responsibility of those who violate the relevant regulations.",
-        "content_zh": "## 🗂️ 数据集\n\n数据下载链接将通过电子邮件发送给获批的参赛队伍。请确保您能够从谷歌云盘或百度网盘下载大文件，并具有足够的存储空间和计算资源来处理这些文件。\n\n- **训练集：** 30张标注的CBCT图像，299张未标注的CBCT图像\n- **验证集：** 20张标注的CBCT图像\n\n文件夹结构（下载链接将发送给注册合格的参赛者）：\n\n- **Train-Labeled：** 包含牙齿分割掩码、智齿和多种根管结构的牙齿图像。\n- **Train-Unlabel：** 仅提供图像，对应的标注文件不可用\n- **Validation-Public：** 隐藏验证集的标签将不予发布。请将分割结果提交至codabench平台以获取评估指标。\n\n**标签信息：** 数据集包含65个类别（包括背景）的精确分割，标签映射如下：\n\n- Label_0：背景\n- Label_1：上右中切牙\n- Label_2：上右侧切牙\n- Label_3：上右犬牙\n- Label_4：上右第一前磨牙\n- . . .\n- Label_61：下右第二前磨牙牙髓\n- Label_62：下右第一磨牙牙髓\n- Label_63：下右第二磨牙牙髓\n- Label_64：下右第三磨牙（智齿）牙髓\n\n注意事项：\n\n- 参赛者应按照《提交指南》中要求的格式严格提交验证集结果。\n- 该数据仅用于科学研究目的，不允许二次分发数据及其他商业用途。本竞赛主办方保留追究违反相关规定者法律责任的权利。"
-      },
-      {
-        "index": 3,
-        "title": "Evaluation",
-        "content": "## 👑 Evaluation Metrics\n\nIn STSR 2026, the challenge evaluation criteria are not limited to segmentation accuracy, but also include runtime and GPU memory consumption, providing a comprehensive assessment of segmentation algorithms.\n\n**Segmentation accuracy metrics:**\n\n- Dice Similarity Coefficient (DSC): instance-level and image-level\n- Normalized Surface Distance (NSD): instance-level and image-level\n- mean Intersection-over-Union (mIoU): instance-level and image-level\n- Identification Accuracy (IA)\n\n**Segmentation efficiency metrics:**\n\n- Running time: We give running time a tolerance of 45s (including the docker starting time). Moreover, the inference time for each case should be within 60s. Otherwise, the corresponding case will be regarded as a failed case.\n- GPU memory consumption: area under GPU memory-time curve\n\n**❗NOTICE❗**\nSince the GPU consumption and running time of the algorithm cannot be verified in the validation stage, the player needs to take into account both the performance of the algorithm and the time and space complexity in beginning of algorithm design.\n\n🔔 We have updated and released the evaluation code and submission instructions. If you encounter a bug or have questions about the evaluation metrics, you can check out our Github link: [https://github.com/ricoleehduu/STSR-Challenge/tree/main](https://github.com/ricoleehduu/STSR-Challenge/tree/main).\n\n---\n\n## 🛣️ Evaluation Platform for Docker\n\nThe submitted docker containers will be evaluated on a Ubuntu 20.04 desktop. Detailed information is listed as follows:\n\n- CPU: Intel(R) Xeon(R) Gold 6248R CPU @ 3.00GHz × 12\n- GPU: GeForce RTX 3090 (24G)\n- RAM: 28G\n- Driver Version: 550.78\n- CUDA Version: 11.3\n- Docker version 26.1.1\n\n---\n\n## 🔝 Ranking Scheme\n\nFollowing the recommendation in ChallengeR [1], the ranking scheme includes the following steps:\n\n**Step 1.** In order to maintain consistency with our previous challenge and assess the algorithm's performance at the image level, our evaluation framework will first initially compute two metrics, Dice and NSD, on a per-image basis to derive the algorithm's Dice (image_Dice) and NSD (image_NSD) scores at image-level.\n\n**Step 2.** Next, given the challenge's focus on instance-level analysis, we also will employ a greedy algorithm to match the corresponding prediction results with the ground truth, allowing for the calculation of Dice (instance_Dice), NSD (instance_NSD), and IA (instance_IA) scores at the instance level.\n\n**Step 3.** Then, the evaluation will include measurements of running time (RT) and GPU consumption (GPU_area) for each algorithm.\n\n**Step 4.** Take the mean of the eight metrics over the test cases, and rank separately among the teams.\n\n**Step 5.** A final overall rank is given by taking the average of the four ranks. In the case of equal average rankings for two teams, they are considered tied.\n\n[1] Wiesenfarth, M., Reinke, A., Landman, B.A. et al. Methods and open-source toolkit for analyzing and visualizing challenge results. Sci Rep 11, 2369 (2021).",
-        "content_zh": "## 👑 评估指标\n\n在STSR 2026中，挑战的评估标准不仅限于分割准确性，还包括运行时间和GPU内存消耗，为分割算法提供全面评估。\n\n**分割准确性指标：**\n\n- 骰子相似系数（DSC）：实例级和图像级\n- 归一化表面距离（NSD）：实例级和图像级\n- 平均交并比（mIoU）：实例级和图像级\n- 识别准确率（IA）\n\n**分割效率指标：**\n\n- 运行时间：容限为45秒（包含Docker启动时间）。此外，每个病例的推理时间应在60秒内。否则，相应病例将被视为失败病例。\n- GPU内存消耗：GPU内存-时间曲线下面积\n\n**❗注意❗**\n由于算法的GPU消耗和运行时间无法在验证阶段验证，参赛者需要在算法设计初期同时考虑算法性能以及时间和空间复杂度。\n\n🔔 我们已更新并发布了评估代码和提交说明。如果您遇到Bug或对评估指标有疑问，可以查看我们的Github链接：[https://github.com/ricoleehduu/STSR-Challenge/tree/main](https://github.com/ricoleehduu/STSR-Challenge/tree/main)。\n\n---\n\n## 🛣️ Docker评估平台\n\n提交的Docker容器将在Ubuntu 20.04桌面上进行评估。详细信息如下：\n\n- CPU：Intel(R) Xeon(R) Gold 6248R CPU @ 3.00GHz × 12核\n- GPU：GeForce RTX 3090（24G）\n- RAM：28G\n- 驱动程序版本：550.78\n- CUDA版本：11.3\n- Docker版本：26.1.1\n\n---\n\n## 🔝 排名方案\n\n按照ChallengeR [1]的建议，排名方案包括以下步骤：\n\n**第1步：** 为了与我们之前的挑战保持一致并在图像级别评估算法性能，评估框架将首先在逐图像的基础上计算骰子和NSD两个指标，以得出算法在图像级别的骰子（image_Dice）和NSD（image_NSD）评分。\n\n**第2步：** 接下来，考虑到挑战对实例级分析的重点，我们将采用贪心算法将相应的预测结果与真实标注进行匹配，从而计算实例级的骰子（instance_Dice）、NSD（instance_NSD）和IA（instance_IA）评分。\n\n**第3步：** 随后，评估将包括每个算法的运行时间（RT）和GPU消耗（GPU_area）的测量。\n\n**第4步：** 计算八个指标在测试病例上的均值，并在各队之间分别排名。\n\n**第5步：** 通过对四个排名的平均值进行平均计算，给出最终综合排名。在两个队伍的平均排名相等的情况下，它们被视为并列。\n\n[1] Wiesenfarth, M., Reinke, A., Landman, B.A. et al. Methods and open-source toolkit for analyzing and visualizing challenge results. Sci Rep 11, 2369 (2021)."
-      },
-      {
-        "index": 4,
-        "title": "Submission Instructions",
-        "content": "## 🚩 Instructions\n\nFor 3D CBCT Semi-supervised Segmentation task, there are some rules to be followed when submitting prediction results for validation set.\n\n- To get a score for the validation set, competitors should submit a .zip file to the system, which contains 20 nii.gz files, each corresponding to the instance segmentation prediction result of a CBCT image in the validation set.\n- All nii.gz files for the predicted results must be named in the following format:  \n  **Validation_xxxx_Mask.nii.gz**, where **xxxx** stands for the id of the validation image. The id between submitted predicted nii.gz file and original validation image must be consistent.\n\n**❗NOTICE❗**  \nThe output prediction nii.gz files must be directly packaged into a zip file, no subfolder should be included.",
-        "content_zh": "## 🚩 说明\n\n对于3D CBCT半监督分割任务，提交验证集预测结果进行评分时需要遵循以下规则：\n\n- 为了获得验证集的分数，竞赛者应向系统提交一个.zip文件，其中包含20个nii.gz文件，每个文件对应验证集中一个CBCT图像的实例分割预测结果。\n- 所有预测结果的nii.gz文件必须按照以下格式命名：  \n  **Validation_xxxx_Mask.nii.gz**，其中**xxxx**代表验证图像的ID。提交的预测nii.gz文件与原始验证图像之间的ID必须一致。\n\n**❗注意❗**  \n输出的预测nii.gz文件必须直接打包到zip文件中，不应包含任何子文件夹。"
-      },
-      {
-        "index": 5,
-        "title": "Baseline",
-        "content": "⭐Official Docker is on the way.\n\nParticipants can refer to other baseline model code below:\n\n- 💡nnUNet: [https://github.com/MIC-DKFZ/nnUNet](https://github.com/MIC-DKFZ/nnUNet)\n- 💡LASeg: [https://github.com/icerain-alt/LASeg](https://github.com/icerain-alt/LASeg)\n- 🎁 MedSAM: [https://github.com/bowang-lab/MedSAM](https://github.com/bowang-lab/MedSAM)\n- 👑 SSL4MIS: [https://github.com/HiLab-git/SSL4MIS](https://github.com/HiLab-git/SSL4MIS)",
-        "content_zh": "⭐官方Docker即将推出。\n\n参赛者可以参考以下基础模型代码：\n\n- 💡nnUNet: [https://github.com/MIC-DKFZ/nnUNet](https://github.com/MIC-DKFZ/nnUNet)\n- 💡LASeg: [https://github.com/icerain-alt/LASeg](https://github.com/icerain-alt/LASeg)\n- 🎁 MedSAM: [https://github.com/bowang-lab/MedSAM](https://github.com/bowang-lab/MedSAM)\n- 👑 SSL4MIS: [https://github.com/HiLab-git/SSL4MIS](https://github.com/HiLab-git/SSL4MIS)"
-      },
-      {
-        "index": 6,
-        "title": "Organizers & Sponsers",
-        "content": "## 🎬 Lead Organizer\n\n[Yaqi Wang](https://scholar.google.com.hk/citations?user=ExJ16joAAAAJ&hl=en): Communication University of Zhejiang, Hangzhou, China. ([wangyaqi@cuz.edu.cn](mailto:wangyaqi@cuz.edu.cn))\n\n[Dahong Qian](https://scholar.google.com/citations?hl=zh-CN&user=oymfXUIAAAAJ&view_op=list_works&sortby=pubdate): School of Biomedical Engineering, Institute of Medical Robotics, Shanghai Jiao Tong University, Shanghai, China. ([dahong.qian@sjtu.edu.cn](mailto:dahong.qian@sjtu.edu.cn))\n\n## 🚜 Coordinators\n\n- Yaqi Wang, College of Media Engineering, Communication University of Zhejiang, China.\n- Dahong Qian, School of Biomedical Engineering, Shanghai JiaoTong University, China.\n- Shuai Wang, School of Cyberspace Security, Hangzhou Dianzi University, China.\n- Jun Liu, School of Electronics and Information Engineering, Hangzhou Dianzi University, China.\n- Yifan Zhang, Hangzhou Geriatric Stomatology Hospital, Hangzhou Dental Hospital Group, Division of Advanced Prosthetic Dentistry, Tohoku University Graduate School of Dentistry, State Key Laboratory of Oral Diseases, National Clinical Research Center for Oral Diseases, West China Hospital of Stomatology, Sichuan University, China.\n- Lan Feng, Sir Run Run Shaw Hospital, Zhejiang University, China.\n- Yufeng Xie, Department of Periodontology Shanghai Stomatological Hospital, Fudan University, China.\n- Hongbo Yu, Department of Oral and Craniomaxillofacial Surgery, Shanghai Ninth People's Hospital, Shanghai Jiao Tong University School of Medicine, China.\n- Chengyu Wu, Department of Mechanical, Electrical and Information Engineering, Shandong University, China.\n- Zhi Li, School of Cyberspace Security, Hangzhou Dianzi University, China.\n- Jiaxue Ni, School of Cyberspace Security, Hangzhou Dianzi University, China.\n- Jialuo Chen, School of Cyberspace Security, Hangzhou Dianzi University, China.\n- Xincan Zheng, School of Cyberspace Security, Hangzhou Dianzi University, China.<br>\n<img src=\"https://github.com/zxccc-bot/sts-images/blob/main/sponsors.png?raw=true\" alt=\"Image 1\" style=\"width: 800px; height: 300px;\">",
-        "content_zh": "## 🎬 主办方\n\n[王雅琪](https://scholar.google.com.hk/citations?user=ExJ16joAAAAJ&hl=en)：浙江传媒学院通信工程学院，中国杭州。([wangyaqi@cuz.edu.cn](mailto:wangyaqi@cuz.edu.cn))\n\n[钱大红](https://scholar.google.com/citations?hl=zh-CN&user=oymfXUIAAAAJ&view_op=list_works&sortby=pubdate)：上海交通大学生物医学工程学院，医疗机器人研究所，中国上海。([dahong.qian@sjtu.edu.cn](mailto:dahong.qian@sjtu.edu.cn))\n\n## 🚜 协调员\n\n- 王雅琪，浙江传媒学院媒体工程学院，中国\n- 钱大红，上海交通大学生物医学工程学院，中国\n- 王帅，杭州电子科技大学网络空间安全学院，中国\n- 刘军，杭州电子科技大学电子与信息工程学院，中国\n- 张一凡，杭州老年口腔医院、杭州口腔医院集团、东北大学齿学研究生院高级义齿学部、国家口腔疾病临床医学研究中心、四川大学华西口腔医学院口腔颌面外科系，中国\n- 冯兰，浙江大学邵逸夫医院，中国\n- 谢宇峰，复旦大学附属上海口腔医院牙周科，中国\n- 俞鸿博，上海交通大学医学院上海第九人民医院口腔颌面外科系，中国\n- 吴成宇，山东大学机械、电气与信息工程系，中国\n- 李智，杭州电子科技大学网络空间安全学院，中国\n- 倪嘉雪，杭州电子科技大学网络空间安全学院，中国\n- 陈家洛，杭州电子科技大学网络空间安全学院，中国\n- 郑鑫灿，杭州电子科技大学网络空间安全学院，中国<br>\n<img src=\"https://github.com/zxccc-bot/sts-images/blob/main/sponsors.png?raw=true\" alt=\"Image 1\" style=\"width: 800px; height: 300px;\">"
-      }
-    ]
-  },
   "16661": {
     "id": 16661,
     "title": "ArGuard 2026 — Subtask A1 (Binary Hateful Meme Detection)",
@@ -956,7 +1145,7 @@
     "description_zh": "阿拉伯语多模态仇恨梗图分类。给定一个梗图（图像加上OCR提取的阿拉伯文本），预测其是否为仇恨性或非仇恨性。官方指标：宏观F1。",
     "created_by": "mohamedbayan",
     "created_when": "2026-05-25T13:30:58.534544Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-25-1779715858/886e2d9c0b58/logo.png?AWSAccessKeyId=codabench-prod&Signature=jcvmLaw%2BZeQCoCR5GwMTttlKR4A%3D&Expires=1779872814",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-25-1779715858/886e2d9c0b58/logo.png?AWSAccessKeyId=codabench-prod&Signature=TH2v1TcrC80TdvBxk9MG8ukO%2F8g%3D&Expires=1779888953",
     "participants_count": 1,
     "submissions_count": 0,
     "first_phase_start": null,
@@ -1004,7 +1193,7 @@
     "description_zh": "预测注视对齐MEG活动（204个梯度计通道，注视后110毫秒），基于自然场景图像和来自主动视觉语义（AVS）数据集的眼动元数据，针对留存受试者进行预测。\n\nSulewski, P., Amme, C., Hebart, M., König, P., & Kietzmann, T. (2025). 为什么我们停留：记忆编码而非视觉处理需求驱动自然场景上的注视时间——来自大规模MEG数据集的证据。\n\n仅限学术使用。AVS数据集和所有衍生材料专门为学术研究和教育目的提供，用于奥斯那布鲁克大学\"深度神经网络神经编码\"课程（2026年夏季学期）。",
     "created_by": "psulewski",
     "created_when": "2026-04-20T14:42:51.242593Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-20-1776696171/148af8ac1426/logo.png?AWSAccessKeyId=codabench-prod&Signature=oqagFvcyOsYW6yEsAzrXAmnt0Vc%3D&Expires=1779872848",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-20-1776696171/148af8ac1426/logo.png?AWSAccessKeyId=codabench-prod&Signature=A19jggHATILyRAxuyTKUZQipbzU%3D&Expires=1779888983",
     "participants_count": 24,
     "submissions_count": 37,
     "first_phase_start": null,
@@ -1045,7 +1234,7 @@
     "description_zh": "该竞赛在超声图像回归任务上评估基础模型。参赛者预测解剖学标志坐标。评估指标为平均径向误差（MRE）和平均绝对误差（MAE），数值越低越好。",
     "created_by": "jared2408",
     "created_when": "2026-04-12T05:59:27.070072Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-13-1776048868/504537dff745/logo.png?AWSAccessKeyId=codabench-prod&Signature=lM%2BaQIoEI5%2B1gWhYR88s5WLxqTA%3D&Expires=1779872855",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-13-1776048868/504537dff745/logo.png?AWSAccessKeyId=codabench-prod&Signature=XMKybthhQYyT%2FdxMRQgNLkWbEj8%3D&Expires=1779888997",
     "participants_count": 95,
     "submissions_count": 25,
     "first_phase_start": null,
@@ -1128,7 +1317,7 @@
     "description_zh": "MICCAI FLARE 2026 任务2：AutoMSC：自动医学影像分割与分类",
     "created_by": "junma",
     "created_when": "2026-04-09T21:08:06.808342Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-09-1775769761/960f641105b9/logo-task2.png?AWSAccessKeyId=codabench-prod&Signature=QJ9UZ5lcZVFXTdHCalps%2FXbVbos%3D&Expires=1779872858",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-09-1775769761/960f641105b9/logo-task2.png?AWSAccessKeyId=codabench-prod&Signature=VFFNwfZqmG7WjjvmIHao7wP1wOU%3D&Expires=1779888998",
     "participants_count": 39,
     "submissions_count": 1,
     "first_phase_start": null,
@@ -1192,72 +1381,6 @@
       }
     ]
   },
-  "14290": {
-    "id": 14290,
-    "title": "AMPLIFAI CHALLENGE",
-    "description": "Annotated Multi-Phase Liver Imaging For Artificial Intelligence.\nThe AMPLIFAI challenge focuses on automated characterization of hepatocellular carcinoma (HCC) lesions in multi-phase abdominal CT using standardized, clinical imaging-based LI-RADS categories.",
-    "description_zh": "人工智能用多期肝脏成像注释数据\n\nAMPLIFAI挑战赛聚焦于使用标准化的、基于临床成像的LI-RADS分类，对多期腹部CT中肝细胞癌(HCC)病灶进行自动表征。",
-    "created_by": "nshah99",
-    "created_when": "2026-03-03T23:46:40.823322Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-22-1776866816/c49083deb8a3/Screenshot_2026-04-22_at_10.05.27A.png?AWSAccessKeyId=codabench-prod&Signature=jkL5jcIP%2BECLLuMAK0QlKilWXTE%3D&Expires=1779872895",
-    "participants_count": 13,
-    "submissions_count": 0,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 26376,
-        "name": "Registration",
-        "start": "2026-04-01T09:00:00Z",
-        "end": "2026-05-31T09:00:00Z",
-        "max_submissions_per_day": 5
-      },
-      {
-        "id": 26377,
-        "name": "Training",
-        "start": "2026-06-01T09:00:00Z",
-        "end": "2026-09-30T09:00:00Z",
-        "max_submissions_per_day": 5
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Overview",
-        "content": "![](https://ihc.umd.edu/wp-content/uploads/2022/05/IHC-Horizontal-Logo-for-header.svg) \n![](https:(https://upload.wikimedia.org/wikipedia/en/thumb/7/7c/University_of_Maryland_Medical_Center_logo.svg/960px-University_of_Maryland_Medical_Center_logo.svg.png) \n## Welcome\nWelcome to the **Annotated Multi-Phase Liver Imaging For Artificial Intelligence  (AMPLIFAI)** challenge. AMPLIFAI is a MICCAI 2026 challenge focused on automated characterization of hepatocellular carcinoma (HCC) lesions in multi-phase abdominal CT. Participants are tasked with classifying liver lesions according to the LI-RADS scoring system: a standardized, imaging-based framework used clinically to stratify the probability of HCC without requiring tissue biopsy.\n\n\n## What is HCC?\nHepatocellular carcinoma is the most common primary liver cancer and a leading cause of cancer-related mortality worldwide. It arises predominantly in patients with chronic liver disease or cirrhosis, a population that undergoes routine surveillance imaging, making CT a natural screening tool. Crucially, HCC is one of the few malignancies where diagnosis can be established entirely from imaging, no biopsy required. This is codified in the LI-RADS (Liver Imaging Reporting and Data System) framework, which assigns lesions a category from LR-1 (\"definitely benign\") to LR-5 (\"definitely HCC\") based on morphology and dynamic contrast enhancement patterns across multiple CT phases. An LR-5 designation alone is sufficient for clinical diagnosis and treatment planning.\n\n## LI-RADS Framework\n<img src=\"https://radiologyassistant.nl/assets/tab-1b-overview.png\" width=\"600\"> \n\nThe [LI-RADS](https://radiologyassistant.nl/abdomen/liver/li-rads) framework follows a strict clinical logic consisting of temporal analysis in multi-phase CT, where multiple contrast phases are acquired: before contrast injection (non-contrast) and at successive time points after injection (arterial, portal venous, and delayed) to capture dynamic enhancement patterns in the lesion. The primary gating feature is arterial phase hyperenhancement (APHE), where the lesion appears brighter than the surrounding healthy liver tissue in the early arterial phase. It is considered “non-rim” if the enhancement spreads internally and is not limited to the outer edge of the lesion. Only lesions exhibiting unequivocal non-rim APHE are considered for the highest probability categories (LR-3 to LR-5). \n\nIf non-rim APHE is present, the LI-RADS category is determined by a combination of the lesion’s size and how non-rim APHE interacts with two major features: First, non-peripheral washout, where the lesion becomes darker than the liver in the portal venous or delayed phases. Second, enhancing capsule, where a thin, peripheral rim remains enhanced in the portal venous or delayed phases due to contrast retention. The lesion size and presence of one or both features increases the probability for HCC. For example, a lesion with non-rim APHE that is 2.3 cm and has one additional feature (washout or capsule) is categorized as LR-5 (“definitely HCC”) while a lesion without non-rim APHE can only reach a maximum of LR-4 (“probable HCC”), even if it is large and shows washout.\n\n## Challenge Aim\nBy benchmarking models against this clinically validated, multi-class diagnostic framework, AMPLIFAI aims to accelerate the development of trustworthy and interpretable AI systems for liver cancer diagnosis, helping bridge the gap between algorithmic performance and real-world clinical deployment.\n\nParticipants will be provided with training data consisting of multi-phase CT volumes, lesion-level LI-RADS category labels, and voxel-level segmentations. Models will be evaluated solely on their ability to predict the correct LI-RADS category, enabling a focus on robust and clinically relevant classification performance.",
-        "content_zh": "# 欢迎\n\n欢迎来到**标注型多阶段肝脏影像用于人工智能(AMPLIFAI)**挑战赛。AMPLIFAI是一项MICCAI 2026挑战赛，专注于多阶段腹部CT中肝细胞癌(HCC)病灶的自动表征。参赛者的任务是根据LI-RADS评分系统对肝脏病灶进行分类：这是一套临床应用的标准化影像框架，用于评估HCC的概率，无需组织活检。\n\n## 什么是HCC?\n\n肝细胞癌是最常见的原发性肝癌，也是全球癌症相关死亡的主要原因。它主要发生在慢性肝病或肝硬化患者中，这类患者需要定期进行监测影像检查，使CT成为一种天然的筛查工具。至关重要的是，HCC是少数几种可以完全通过影像学确诊的恶性肿瘤之一，无需活检。这在LI-RADS(肝脏影像报告和数据系统)框架中有明确规定，该框架根据病灶形态和多个CT阶段的动态对比增强模式，将病灶分为LR-1(\"明确良性\")到LR-5(\"明确HCC\")等级。单独的LR-5等级足以用于临床诊断和治疗规划。\n\n## LI-RADS框架\n\nLI-RADS框架遵循严格的临床逻辑，包括多阶段CT的时间序列分析，其中采集多个对比阶段：注射对比剂前(非对比)和注射后的连续时间点(动脉期、门脉期和延迟期)，以捕捉病灶的动态增强模式。主要评判特征是动脉期高增强(APHE)，病灶在早期动脉期显示比周围健康肝组织更亮。如果增强在内部扩散且不局限于病灶外边缘，则称为\"非边缘型\"。只有表现出明确非边缘型APHE的病灶才能被考虑用于最高概率等级(LR-3至LR-5)。\n\n如果存在非边缘型APHE，LI-RADS等级由病灶大小与非边缘型APHE与两个主要特征的相互作用的组合决定：第一，非周边廓清，病灶在门脉期或延迟期变暗，比肝脏暗。第二，增强型包膜，薄的周边缘由于对比剂滞留在门脉期或延迟期保持增强。病灶大小和一个或两个特征的存在增加了HCC的概率。例如，一个2.3厘米、具有非边缘型APHE且有一个额外特征(廓清或包膜)的病灶被分类为LR-5(\"明确HCC\")，而没有非边缘型APHE的病灶最多只能达到LR-4(\"可能HCC\")，即使它很大且表现出廓清。\n\n## 挑战赛目标\n\n通过根据这个经过临床验证的多分类诊断框架对模型进行基准测试，AMPLIFAI旨在加速开发可信且可解释的肝癌诊断AI系统，帮助缩小算法性能与真实临床应用之间的差距。\n\n参赛者将获得由多阶段CT体积数据、病灶级LI-RADS分类标签和体素级分割组成的训练数据。模型将仅根据其预测正确LI-RADS等级的能力进行评估，有利于专注于稳健且临床相关的分类性能。"
-      },
-      {
-        "index": 1,
-        "title": "Participation",
-        "content": "## Eligibility and Registration\nPariticpiating Teams must register [here](https://forms.office.com/Pages/ResponsePage.aspx?id=pglwcd4gGkaIlAMSo5XKyWO--qpY16BHkqFYmo-jrRdURDM5R0c0VkZRMTM4S1lDQlo2MVZDT1VXTy4u), agree to the AMPLIFAI [Terms](https://github.com/UM2ii/amplifai-challenge/blob/main/terms-and-conditions.pdf) section, and apply for registration on the Codabench platform.\nApproval will be communicated in the form of an email to the primary contact of the team.",
-        "content_zh": "## 资格和注册\n\n参赛团队必须在[这里](https://forms.office.com/Pages/ResponsePage.aspx?id=pglwcd4gGkaIlAMSo5XKyWO--qpY16BHkqFYmo-jrRdURDM5R0c0VkZRMTM4S1lDQlo2MVZDT1VXTy4u)进行注册，同意AMPLIFAI[条款](https://github.com/UM2ii/amplifai-challenge/blob/main/terms-and-conditions.pdf)部分，并在Codabench平台上申请注册。\n批准信息将以电子邮件的形式发送至团队主要联系人。"
-      },
-      {
-        "index": 2,
-        "title": "Challenge Data",
-        "content": "## Challenge Data\nThe training and test datasets consist of multi-phase contrast-enhanced CT scans. All cases are annotated by three board-certified abdominal subspecialty radiologists, providing lesion-level LI-RADS category assignments and voxel-level segmentations for non-rim APHE, non-peripheral washout, and enhancing capsule. A case refers to a single patient containing all four contrast phases: non-contrast, arterial, portal venous, and delayed. All CT volumes and segmentations are provided in NIfTI format.\n\n## Dataset Summary\n#### Split - Cases\n* Training Set - 601Cases\n* Validation Set - 67 Cases\n* Test Set (Private) - 257 Cases\n\nThe validation set comprises approximately 10% of the public data and is constructed to ensure equitable representation across all contributing datasets.\n\n## Training and Validation Data\nThe public training and validation dataset was curated from four publicly accessible datasets and re-annotated for this challenge. The contributing datasets and their source institutions are listed below.\n\n#### Dataset - Institution\n* WAW-TACE - Medical University of Warsaw\n* HCC-TACE-SEG - The University of Texas MD Anderson Cancer Center\n* TCGA-LIHC - Mayo Clinic, Rochester; University of North Carolina, Chapel Hill; Alberta Health Services; Lahey Hospital & Medical Center\n* PLC-CECT - Chongqing Yubei District People's Hospital\n\nCases from contributing datasets that included existing annotations were partially pre-annotated; however, all training and validation cases were fully re-annotated by three board-certified radiologists following the challenge protocol.\n\n## Test Data\nThe held-out test set was curated within the University of Maryland Medical System and consists of 257 cases acquired between February 2023 and December 2025, drawn from three different imaging centers within the system. It was annotated following the same protocol as the training data. The test set is private and will not be released publicly; no additional information is provided to ensure the integrity of the challenge.\n\n## Annotation Protocol\nAll studies were randomly shuffled and pre-loaded into a custom 3D Slicer module prior to annotation. Board-certified abdominal subspecialty radiologists used this module to manually segment liver lesions and record LI-RADS category assignments and feature-level annotations using standard Slicer tools integrated into the custom interface. A brief onboarding session demonstrated the workflow and annotation fields, after which the same protocol was applied uniformly across all dataset splits. Radiologists were blinded to dataset splits, and the same annotation protocol was applied uniformly across training, validation, and test cases.\n\nRather than algorithmically merging annotations, a structured cross-validation review was performed among the three radiologists: each radiologist's annotations were independently reviewed and corrected by the other two. Segmentations and labels were revised as needed during this process, and the consensus-validated result was treated as the final reference standard. This review procedure was applied consistently across training, validation, and test cases.",
-        "content_zh": "## 挑战数据\n训练和测试数据集由多期增强CT扫描组成。所有病例均由三名经过认证的腹部亚专科放射科医师标注，提供病灶级的LI-RADS分类和体素级的分割，包括非边缘动脉期肝特异性增强（non-rim APHE）、非周边延迟期廓清（non-peripheral washout）和增强包膜（enhancing capsule）。一个病例指单个患者的全部四个对比增强相位：非增强相、动脉相、门静脉相和延迟相。所有CT体积数据和分割结果以NIfTI格式提供。\n\n## 数据集概况\n#### 分割 - 病例数\n* 训练集 - 601个病例\n* 验证集 - 67个病例\n* 测试集（私有） - 257个病例\n\n验证集约占公开数据的10%，经过设计以确保所有贡献数据集的公平表示。\n\n## 训练和验证数据\n公开的训练和验证数据集由四个公开可获得的数据集合并而成，并针对本挑战进行了重新标注。贡献数据集及其来源机构如下列表所示。\n\n#### 数据集 - 机构\n* WAW-TACE - 华沙医科大学\n* HCC-TACE-SEG - 德州大学MD安德森癌症中心\n* TCGA-LIHC - 梅奥诊所罗切斯特分院；北卡罗来纳大学教堂山分校；艾伯塔卫生服务局；拉海医院与医疗中心\n* PLC-CECT - 重庆渝北区人民医院\n\n来自贡献数据集且包含现有标注的病例经过部分预标注；但所有训练和验证病例均由三名经过认证的放射科医师按照挑战协议完整重新标注。\n\n## 测试数据\n保留的测试集由马里兰大学医学系统内部策划，包含257个病例，采集时间为2023年2月至2025年12月，来自该系统内三个不同的成像中心。测试集按照与训练数据相同的协议进行了标注。测试集为私有数据，不会公开发布；为了确保挑战的完整性，不提供额外信息。\n\n## 标注协议\n所有研究均被随机打乱并预加载到自定义的3D Slicer模块中供标注使用。经过认证的腹部亚专科放射科医师使用此模块手动分割肝脏病灶，并使用集成到自定义界面中的标准Slicer工具记录LI-RADS分类、病灶级标注和特征级标注。放射科医师被隐瞒数据集分割信息，训练、验证和测试病例应用统一的标注协议。\n\n而非采用算法方式合并标注，采用了结构化的交叉验证审查流程：三名放射科医师中的每一位的标注均由其他两位独立审查和修正。在此过程中根据需要修订分割结果和标签，共识验证的结果被视为最终参考标准。此审查程序在训练、验证和测试病例中一致应用。"
-      },
-      {
-        "index": 3,
-        "title": "Submission",
-        "content": "To be posted.",
-        "content_zh": "待发布。"
-      },
-      {
-        "index": 4,
-        "title": "Evaluation",
-        "content": "## How will submissions be evaluated?\nSubmissions will be ranked using Quadratic Weighted Kappa (QWK), a metric designed for ordinal classification that measures agreement between predicted and ground truth LI-RADS categories while penalizing larger disagreements more heavily. This is clinically appropriate: predicting LR-4 for a true LR-5 lesion is a less severe error than predicting LR-2.\n\nThe five ordinal categories considered are LR-1 (\"definitely benign\"), LR-2 (\"probably benign\"), LR-3 (\"intermediate probability\"), LR-4 (\"probably HCC\"), and LR-5 (\"definitely HCC\"). Lesions classified as LR-M are excluded from this task to preserve the ordinal structure of the classification problem.\n\nQWK is the primary ranking metric; additional metrics will be reported for diagnostic purposes only and will not affect leaderboard standings. All submitted algorithms must produce a LI-RADS prediction for the single pre-defined target lesion in every test case. If a valid prediction is not generated for a given case, that case is excluded from the QWK calculation and a completion rate - defined as the percentage of test cases with valid predictions - is reported separately. Algorithms falling below 95% completion may be deemed non-compliant and excluded from final rankings and awards.",
-        "content_zh": "## 提交内容如何评估？\n\n提交的内容将使用二次加权卡帕系数（QWK）进行排名，这是一种为有序分类设计的指标，用于衡量预测的LI-RADS类别与真实标签之间的一致性，并对较大的偏差进行更严重的惩罚。这在临床上是合适的：将真实的LR-5病变预测为LR-4的错误比预测为LR-2的错误更为轻微。\n\n考虑的五个有序类别为LR-1（\"明确良性\"）、LR-2（\"可能良性\"）、LR-3（\"中等概率\"）、LR-4（\"可能HCC\"）和LR-5（\"明确HCC\"）。分类为LR-M的病变被排除在本任务之外，以保持分类问题的有序结构。\n\nQWK是主要排名指标；其他指标仅用于诊断目的，不影响排行榜排名。所有提交的算法必须为每个测试用例中预先定义的单个目标病变生成LI-RADS预测。如果某个用例未生成有效预测，该用例将被排除在QWK计算之外，并单独报告完成率（定义为具有有效预测的测试用例的百分比）。完成率低于95%的算法可能被认定为不符合要求，并被排除在最终排名和奖项之外。"
-      },
-      {
-        "index": 5,
-        "title": "Challenge Dates and Deadlines",
-        "content": "**Challenge website and registration opens** – April 1, 2026\n\n**Training dataset release** – June 1, 2026\n\n**Team registration closes**  – September 1, 2026\n\n**Submission deadline**  – September 15, 2026\n\n**Challenge day** – October 1, 2026\n\n<img src=\"https://raw.githubusercontent.com/UM2ii/amplifai-challenge/refs/heads/main/miccai_amplifai_timeline.png\" width=\"500\">",
-        "content_zh": "**挑战赛网站和注册开放** – 2026年4月1日\n\n**训练数据集发布** – 2026年6月1日\n\n**团队注册截止** – 2026年9月1日\n\n**提交截止日期** – 2026年9月15日\n\n**挑战赛日** – 2026年10月1日\n\n<img src=\"https://raw.githubusercontent.com/UM2ii/amplifai-challenge/refs/heads/main/miccai_amplifai_timeline.png\" width=\"500\">"
-      }
-    ]
-  },
   "14248": {
     "id": 14248,
     "title": "OncoSegment - Breast Tumor Mapping",
@@ -1265,7 +1388,7 @@
     "description_zh": "在乳腺超声图像中分割良性和恶性肿瘤。",
     "created_by": "thomas_dnil",
     "created_when": "2026-03-02T15:45:26.167445Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-03-02-1772466527/bd1a4506a767/sample_00000.png?AWSAccessKeyId=codabench-prod&Signature=7Xth3RDkVqpBqZNEPCtqo4PXx%2FI%3D&Expires=1779872899",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-03-02-1772466527/bd1a4506a767/sample_00000.png?AWSAccessKeyId=codabench-prod&Signature=TZgHbdpjCBXEiAt7b1GBkIgmgYo%3D&Expires=1779889038",
     "participants_count": 14,
     "submissions_count": 3,
     "first_phase_start": null,
@@ -1306,7 +1429,7 @@
     "description_zh": null,
     "created_by": "yi_wang",
     "created_when": "2026-01-18T12:37:00.098380Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-01-18-1768739820/5c3c3fc18e26/logo.png?AWSAccessKeyId=codabench-prod&Signature=xkn%2B9HLkgTOBfKDCY6O1BadB9i0%3D&Expires=1779873009",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-01-18-1768739820/5c3c3fc18e26/logo.png?AWSAccessKeyId=codabench-prod&Signature=ok%2FCLJnFmRCEdFgImEIRhBBzm9c%3D&Expires=1779889159",
     "participants_count": 97,
     "submissions_count": 610,
     "first_phase_start": null,
@@ -1354,7 +1477,7 @@
     "description_zh": null,
     "created_by": "yi_wang",
     "created_when": "2026-01-18T11:54:22.128818Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-01-18-1768737262/c0eaaa3d0732/logo.png?AWSAccessKeyId=codabench-prod&Signature=xVZioe3eHq%2FBzn%2BJC1SEIhDxS0U%3D&Expires=1779873010",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-01-18-1768737262/c0eaaa3d0732/logo.png?AWSAccessKeyId=codabench-prod&Signature=NnnnbGBH4tzvp3%2BilirBcEZDM0I%3D&Expires=1779889161",
     "participants_count": 101,
     "submissions_count": 278,
     "first_phase_start": null,
@@ -1395,6 +1518,63 @@
       }
     ]
   },
+  "9467": {
+    "id": 9467,
+    "title": "FAME'26 Grand Challenge",
+    "description": "The Face-voice Association in Multilingual Environments (FAME) Challenge 2026 focuses on exploring face-voice association under a unique condition of multilingual scenario. This condition is inspired from the fact that half of the world's population is bilingual and most often people communicate under multilingual scenario. The challenge uses a dataset namely, Multilingual Audio-Visual (MAV-Celeb) for exploring face-voice association in multilingual environments.",
+    "description_zh": "多语言环境下的面孔-声音关联（FAME）挑战赛 2026 致力于探索在多语言情景的独特条件下的面孔-声音关联。这一条件的灵感来自于全球人口中有一半是双语使用者这一事实，而且人们通常在多语言情景下进行交流。该挑战赛采用了一个名为多语言视听（MAV-Celeb）的数据集来探索多语言环境中的面孔-声音关联。",
+    "created_by": "mmosc",
+    "created_when": "2025-07-04T10:43:10.455458Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-07-06-1751809862/55c5abecc267/fame_2026.jpg?AWSAccessKeyId=codabench-prod&Signature=0b9jIcB%2F2Vvl25MjLgkjmKGuEGM%3D&Expires=1779889287",
+    "participants_count": 55,
+    "submissions_count": 450,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 15290,
+        "name": "Registration",
+        "start": "2025-04-12T22:00:00Z",
+        "end": "2025-09-01T12:00:00Z",
+        "max_submissions_per_day": 0
+      },
+      {
+        "id": 15291,
+        "name": "Registration and Progress",
+        "start": "2025-09-01T12:00:00Z",
+        "end": "2025-11-05T12:00:00Z",
+        "max_submissions_per_day": 10
+      },
+      {
+        "id": 15292,
+        "name": "Evaluation",
+        "start": "2025-11-05T11:00:00Z",
+        "end": "2025-11-20T11:00:00Z",
+        "max_submissions_per_day": 10
+      },
+      {
+        "id": 15293,
+        "name": "Locked",
+        "start": "2025-11-20T12:00:00Z",
+        "end": "2025-11-25T12:00:00Z",
+        "max_submissions_per_day": 0
+      },
+      {
+        "id": 15294,
+        "name": "Posteval",
+        "start": "2025-11-25T12:00:00Z",
+        "end": "2027-03-31T12:00:00Z",
+        "max_submissions_per_day": 0
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Overview",
+        "content": "<h3><strong>Challenge Objectives</strong></h3>\n<p>The FAME Challenge 2026 is planned with the primary objective to provide a common platform to academic and industrial researchers to develop and explore the impact of languages in face-voice association, which can be useful for various downstream tasks. The research conducted under this challenge is expected to spearhead the face-voice association task in one unique direction from the perspective of real-world scenarios. The challenge focuses on exploring the following, but not limited to:</p>\n<ul>\n<li>To study the influence of language information in face-voice association</li>\n<li>To explore language specific knowledge in face-voice association</li>\n<li>To explore language independent face-voice association models</li>\n<li>Any other related information with respect to language mismatch in face-voice association</li>\n</ul>\n<h3><strong>Task</strong></h3>\n<p>(Left) Standard Face-voice association is established with a cross-modal verification task. (Right) The FAME challenge 2026 extends the verification task to analyze the impact of multiple of languages.</p>\n<p><img src=\"https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-07-06-1751809862/55c5abecc267/fame_2026.jpg\" alt=\"\" width=\"720\" height=\"256\" /></p>\n<p>&nbsp;</p>\n<h3><strong>Challenge Setup&nbsp;&nbsp;</strong></h3>\n<p>The MAV-Celeb dataset is divided into train and test splits consisting of disjoint identities from the same language typically known as unseen-unheard configuration.&nbsp;</p>\n<p>At test time, the network is evaluated on a heard and completely unheard language on cross-modal verification task. The dataset splits V1-EU, V2-EH contains&nbsp;64&ndash;6,&nbsp;78&ndash;6&nbsp;identities for train and test respectively. V2-EH split will be use in the progress phase. While, the final evaluation will be carried out in on test set of V1-EU. Each line from test file in V1&nbsp;and V2&nbsp;has the following format.</p>\n<pre>ysuvkz41 voices/English/00000.wav faces/English/00000.jpg<br />tog3zj45 voices/English/00001.wav faces/English/00001.jpg<br />ky5xfj1d voices/English/00002.wav faces/English/00002.jpg<br />yx4nfa35 voices/English/01062.wav faces/English/01062.jpg&nbsp;<br />bowsaf5e voices/English/01063.wav faces/English/01063.jpg</pre>\n<p>MAV-Celeb dataset is publicly available. We provided features from state-of-the-art methods representing<a href=\"https://drive.google.com/drive/folders/1LfCxZiAqmsD9sgEMRrJgN5QBr_CL-hzD\"> faces and voices.</a>&nbsp;</p>\n<h3><strong>Baseline</strong></h3>\n<p>The baseline method employ a two-stream pipeline to obtain the respective embeddings of both face and voice inputs. The first stream corresponds to a pre-trained convolutional neural network (CNN) on face modality. We take the penultimate layer&rsquo;s output of this CNN as the feature embeddings for an input face image. Likewise, the second stream is a pre-trained audio encoding network that outputs a feature embedding for an input audio signal (typically a short-term spectrogram). The baseline method exploits complementary cues from both modality embeddings to form enriched fused embeddings and imposes orthogonal constraints on them for learning discriminative joint face-voice embeddings. More information is available in our <a href=\"https://ieeexplore.ieee.org/abstract/document/9747704\">prior work</a> and <a href=\"https://github.com/mavceleb/mavceleb_baseline/tree/FAME-2025---Ahmed-A\">GitHub repository</a>.</p>\n<p>&nbsp;</p>\n<h3><strong>Evaluation Metric</strong></h3>\n<p>We are considering equal error rate (<strong>EER</strong>) as the metric for evaluating the challenge performance. We expect the challenge participants to submit a output score file for every test pairs to indicate how confident the system believes to have a match between the face and voice or in other words, the face and voice belongs to the same person.</p>\n<p>&nbsp;</p>\n<h2><strong>Submission of Results</strong></h2>\n<p>Within the directory containing the submission files, use zip archive.zip *.txt and do not zip the folder. Files should be named as:</p>\n<pre>sub_score_English_heard.txt<br />sub_score_English_unheard.txt<br />sub_score_Urdu_heard.txt<br />sub_score_Urdu_unheard.txt<br /><br /><br /></pre>\n<p>For each file, we have kept the ground truth for fair evaluation during FAME challenge. Participants are expected to compute and submit text files including the id and L2 scores in the following format:</p>\n<pre class=\"notranslate\"><code>ysuvkz41 0.9988\ntog3zj45 0.1146\nky5xfj1d 0.6514\nyx4nfa35 1.5321\nbowsaf5e 1.6578<br /><br /></code></pre>\n<p>In the progress phase, each team will have 100&nbsp;submissions with maximum 10&nbsp;per day. While, we will overall 5&nbsp;submission in the evaluation phase. The overall score will be computed as:</p>\n<p>&nbsp;</p>\n<pre>Overall Score =&nbsp;&nbsp;(Sum of all EERs)&nbsp;/&nbsp;4</pre>\n<hr />\n<p class=\"notranslate\"><code><br /><br />For more information, please follow the <a href=\"https://arxiv.org/pdf/2508.04592\">evaluation plan</a></code></p>",
+        "content_zh": "# 挑战目标\n\nFAME 挑战赛2026计划的主要目标是为学术和工业研究人员提供一个共同平台，以开发和探索语言在人脸-声音关联中的影响，这对各种下游任务都很有用。在本挑战赛下开展的研究有望从真实场景的角度推进人脸-声音关联任务的发展。该挑战赛重点探索以下内容，但不限于：\n\n- 研究语言信息在人脸-声音关联中的影响\n- 探索人脸-声音关联中特定于语言的知识\n- 探索与语言无关的人脸-声音关联模型\n- 与人脸-声音关联中语言不匹配相关的任何其他信息\n\n# 任务\n\n（左）标准人脸-声音关联通过跨模态验证任务建立。（右）FAME挑战赛2026将验证任务扩展到分析多种语言的影响。\n\n# 挑战赛设置\n\nMAV-Celeb数据集分为训练集和测试集，包含来自同一语言的不相交身份，通常称为未见-未闻配置。\n\n在测试时，网络在听过和完全未听过的语言上进行跨模态验证任务的评估。数据集划分V1-EU、V2-EH分别包含64-6、78-6个身份用于训练和测试。V2-EH划分将用于进展阶段。最终评估将在V1-EU的测试集上进行。V1和V2中测试文件的每一行格式如下：\n\n```\nysuvkz41 voices/English/00000.wav faces/English/00000.jpg\ntog3zj45 voices/English/00001.wav faces/English/00001.jpg\nky5xfj1d voices/English/00002.wav faces/English/00002.jpg\nyx4nfa35 voices/English/01062.wav faces/English/01062.jpg\nbowsaf5e voices/English/01063.wav faces/English/01063.jpg\n```\n\nMAV-Celeb数据集是公开可用的。我们提供了来自代表人脸和声音的最先进方法的特征。\n\n# 基准方法\n\n基准方法采用双流管道来获取人脸和声音输入的各自嵌入。第一条流对应于在人脸模态上预训练的卷积神经网络（CNN）。我们将此CNN的倒数第二层的输出作为输入人脸图像的特征嵌入。同样，第二条流是一个预训练的音频编码网络，为输入音频信号（通常是短时谱图）输出特征嵌入。基准方法利用两种模态嵌入的互补线索形成丰富的融合嵌入，并对其施加正交约束以学习判别性的联合人脸-声音嵌入。更多信息可在我们的先前工作和GitHub存储库中获得。\n\n# 评估指标\n\n我们考虑使用等错误率（**EER**）作为评估挑战赛性能的指标。我们期望挑战赛参与者为每个测试对提交输出分数文件，以表示系统对人脸和声音匹配的置信度，或换句话说，人脸和声音属于同一个人的置信度。\n\n# 结果提交\n\n在目录中..."
+      }
+    ]
+  },
   "16040": {
     "id": 16040,
     "title": "MICCAI STSR 2026 Pre-Task: 2D Images Segmentation",
@@ -1402,7 +1582,7 @@
     "description_zh": null,
     "created_by": "zhengxincan",
     "created_when": "2026-04-30T05:30:13.082047Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-30-1777527013/a60d1699ebe7/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=895I%2F5FtHWeUPi6L%2B59oo8wXn2I%3D&Expires=1779872841",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-30-1777527013/a60d1699ebe7/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=Nw6EMyNkDyYVX4NBSuyTwBaBzQA%3D&Expires=1779888978",
     "participants_count": 15,
     "submissions_count": 48,
     "first_phase_start": null,
@@ -1421,6 +1601,70 @@
         "title": "Overview",
         "content": "## MICCAI STSR 2026 Pre-Task 2D Images Segmentation\n\nThis task is a prerequisite for STS26. To prevent dataset misuse, upon completion, you will be eligible to access the STS26 main competition dataset. Please submit the model's inference results('data/test/masks.zip') on the 'data/test/imgs/' data to the platform as a proof.(just takes about 1 hour)\n\nIf there's any question, please contact directly at SemiTeethSegChallenge@outlook.com\n\n\n\n## 📖 Project Overview\n\n👌A simple 2D image segmentation task using [U-Net](https://arxiv.org/abs/1505).\n\n<font size=4>\n\n- **Step1: Download the Pre-Task data and training modal**<br>\nTo avoid the misuse of our data, you may just finish this simple (very simple) pre-task and fill out the Data Access Agreement at first to get access to the data.  \n Data site:<br>\n\t\t-[Huggingface](https://huggingface.co/datasets/Ricoooo/MICCAI-STS26-Challenge-Pre-Task)<br>\n\t\t-[Modelscope](https://modelscope.cn/datasets/lizhii/MICCAI-STS26-Challenge-Pre-Task/summary)<br>\n\t\t-[Baidu Netdisk(extracting code = bm2u)](https://pan.baidu.com/s/1U090bZnMGEJQaD3jwqaQuA)<br>\n\t\t-[Google Drive](https://drive.google.com/drive/folders/1lER9eIavr99g28aTO0kuxIcos_k9FBSx?usp=sharing)<br>\nOr you could use the [STS-Skill](https://github.com/ricoleehduu/sts-skill) as when you use Claude Code, like:<br>\n\"Use STS-Skill https://github.com/ricoleehduu/sts-skill to help me finishing the Pre-Task.\"\n\n- **Step2:**\n    Submit result to the online submission system.\n\n- **Step3:**\nFill out the registration form and submit the agreements to WPS Form or Google Form:<br>\n        - [For domestic participants (WPS Form)](https://f.wps.cn/g/VV1UmM0O/)<br>\n        - [For international participants (Google Form)](https://docs.google.com/forms/d/e/1FAIpQLSf4hxOwxQdkIHkSICzlD2xnlAuPWr3EvUeB7oeuRKRPUimAKQ/viewform?usp=publish-editor)\n</font>\n\n\n\n\n\n## 💻 Data Structure\n\n```\ndata/\n├── imgs/          # Training images\n├── masks/         # Training masks\n└── test/\n    ├── imgs/      # Test images (50 samples)\n    └── masks/      # Where you put your references (50 samples)\n\n```\n\n## ☑️ Quick Start\n\nCode is available at [U-Net](https://arxiv.org/abs/1505)\n\n### Environment Requirements\n\n- Python 3.6+\n- PyTorch 1.13+\n- CUDA (recommended)\n\n### Install Dependencies\n\n```bash\npip install -r requirements.txt\n```\n\n### Train Model\n\n```bash\npython train.py --amp\n```\n\n## 🛠️ Usage\n\n### Training Parameters\n\n```console\n> python train.py -h\nusage: train.py [-h] [--epochs E] [--batch-size B] [--learning-rate LR]\n                [--load LOAD] [--scale SCALE] [--validation VAL] [--amp]\n\nTrain the UNet on images and target masks\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --epochs E, -e E      Number of epochs\n  --batch-size B, -b B  Batch size\n  --learning-rate LR, -l LR\n                        Learning rate\n  --load LOAD, -f LOAD  Load model from a .pth file\n  --scale SCALE, -s SCALE\n                        Downscaling factor of the images\n  --validation VAL, -v VAL\n                        Percent of the data that is used as validation (0-100)\n  --amp                 Use mixed precision\n```\n\n### Prediction\n\n#### Batch Processing\n\n```bash\npython predict.py -m checkpoints/checkpoint_epoch1.pth -i data/test/imgs\n\npython predict.py -m checkpoints/checkpoint_epoch1.pth -i data/test/imgs -o data/test/masks\n\npython predict.py -m checkpoints/checkpoint_epoch1.pth -i data/test/imgs -o data/test/masks -t 0.3\n```\n\n#### Single File\n\n```bash\npython predict.py -m checkpoints/checkpoint_epoch1.pth -i input.png -o output.png\n```\n\n#### Prediction Parameters\n\n```console\n> python predict.py -h\nusage: predict.py [-h] --model FILE --input INPUT [INPUT ...] [--output INPUT [INPUT ...]]\n                  [--viz] [--no-save] [--mask-threshold MASK_THRESHOLD] [--scale SCALE]\n                  [--bilinear] [--classes CLASSES]\n\nPredict masks from input images\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --model FILE, -m FILE Model checkpoint path\n  --input INPUT, -i INPUT Input image(s) or directory\n  --output INPUT, -o INPUT Output image(s) or directory\n  --viz, -v             Visualize results\n  --no-save, -n         Do not save output masks\n  --mask-threshold, -t  Threshold for mask binarization (default: 0.5)\n  --scale, -s           Image scale factor (default: 0.5)\n  --bilinear            Use bilinear upsampling\n  --classes, -c         Number of classes (default: 1)\n```\n\n## ‼️ Submission Format\n\nPlease make sure there's no extra folder in your ZIP file and the size of the image you predict need to be the same as the original image!!\n\nPlease keep the pixel value in the range of (0, 255)\n```\n─mask.zip\n├──A-150.png\n├──...\n└──C-198.png\n```\n\n## ✅ Reference\n\nOriginal paper by Olaf Ronneberger, Philipp Fischer, Thomas Brox:\n\n[U-Net: Convolutional Networks for Biomedical Image Segmentation](https://arxiv.org/abs/1505.04597)\n\nOriginal code by milesial:\n\n[Pytorch-UNet](https://github.com/milesial/Pytorch-UNet?tab=readme-ov-file#with-docker)",
         "content_zh": "## MICCAI STSR 2026 预赛2D图像分割\n\n该任务是STS26的前置任务。为防止数据滥用，完成后，你将有资格获得STS26主竞赛数据集的访问权限。请将模型在'data/test/imgs/'数据上的推理结果('data/test/masks.zip')提交到平台作为证明。(仅需约1小时)\n\n如有任何问题，请直接联系：SemiTeethSegChallenge@outlook.com\n\n\n\n## 📖 项目概述\n\n👌一个使用[U-Net](https://arxiv.org/abs/1505)的简单2D图像分割任务。\n\n<font size=4>\n\n- **步骤1：下载预赛数据和训练模型**<br>\n为了防止我们数据的滥用，你可以先完成这个简单(非常简单)的预赛任务，并首先填写《数据访问协议》来获得数据访问权限。\n数据网站：<br>\n\t\t-[Huggingface](https://huggingface.co/datasets/Ricoooo/MICCAI-STS26-Challenge-Pre-Task)<br>\n\t\t-[Modelscope](https://modelscope.cn/datasets/lizhii/MICCAI-STS26-Challenge-Pre-Task/summary)<br>\n\t\t-[百度网盘(提取码 = bm2u)](https://pan.baidu.com/s/1U090bZnMGEJQaD3jwqaQuA)<br>\n\t\t-[谷歌云盘](https://drive.google.com/drive/folders/1lER9eIavr99g28aTO0kuxIcos_k9FBSx?usp=sharing)<br>\n或者你可以使用[STS-Skill](https://github.com/ricoleehduu/sts-skill)，就像你使用Claude Code一样，例如：<br>\n\"使用STS-Skill https://github.com/ricoleehduu/sts-skill 帮我完成预赛。\"\n\n- **步骤2：**\n    向在线提交系统提交结果。\n\n- **步骤3：**\n填写注册表并将协议提交到WPS表单或谷歌表单：<br>\n        - [国内参赛者(WPS表单)](https://f.wps.cn/g/VV1UmM0O/)<br>\n        - [国际参赛者(谷歌表单)](https://docs.google.com/forms/d/e/1FAIpQLSf4hxOwxQdkIHkSICzlD2xnlAuPWr3EvUeB7oeuRKRPUimAKQ/viewform?usp=publish-editor)\n</font>\n\n\n\n\n\n## 💻 数据结构\n\n```\ndata/\n├── imgs/          # 训练图像\n├── masks/         # 训练掩码\n└── test/\n    ├── imgs/      # 测试图像(50个样本)\n    └── masks/      # 放置你的预测结果的位置(50个样本)\n\n```\n\n## ☑️ 快速开始\n\n代码可在[U-Net](https://arxiv.org/abs/1505)获取\n\n### 环境要求\n\n- Python 3.6+\n- PyTorch 1.13+\n- CUDA(推荐)\n\n### 安装依赖\n\n```bash\npip install -r requirements.txt\n```\n\n### 训练模型\n\n```bash\npython train.py --amp\n```\n\n## 🛠️ 使用方法\n\n### 训练参数\n\n```console\n> python train.py -h\nusage: train.py [-h] [--epochs E] [--batch-size B] [--learning-rate LR]\n                [--load LOAD] [--scale SCALE] [--validation VAL] [--amp]\n\n在图像和目标掩码上训练UNet\n\n可选参数：\n  -h, --help            显示此帮助信息并退出\n  --epochs E, -e E      训练轮数\n  --batch-size B, -b B  批处理大小\n  --learning-rate LR, -l LR\n                        学习率\n  --load LOAD, -f LOAD  从.pth文件加载模型\n  --scale SCALE, -s SCALE\n                        图像的缩放因子\n  --validation VAL, -v VAL\n                        用作验证的数据百分比(0-100)\n  --amp                 使用混合精度\n```\n\n### 预测\n\n#### 批处理\n\n```bash\npython predict.py -m checkpoints/checkpoint_epoch1.pth -i data/test/imgs\n\npython predict.py -m checkpoints/checkpoint_epoch1.pth -i data/test/imgs -o data/test/masks\n\npython predict.py -m checkpoints/checkpoint_epoch1.pth -i data/test/imgs -o data/test/masks -t 0.3\n```\n\n#### 单个文件\n\n```bash\npython predict.py -m checkpoints/checkpoint_epoch1.pth -i input.png -o output.png\n```\n\n#### 预测参数\n\n```console\n> python predict.py -h\nusage: predict.py [-h] --model FILE --input INPUT [INPUT ...] [--output INPUT [INPUT ...]]\n                  [--viz] [--no-save] [--mask-threshold MASK_THRESHOLD] [--scale SCALE]\n                  [--bilinear] [--classes CLASSES]\n\n从输入图像预测掩码\n\n可选参数：\n  -h, --help            显示此帮助信息并退出\n  --model FILE, -m FILE 模型检查点"
+      }
+    ]
+  },
+  "10814": {
+    "id": 10814,
+    "title": "Enigma Benchmark",
+    "description": "Internal leaderboard for the Enigma Project to compare different neural prediction approaches.\n\nOg codabench docker image: codalab/codalab-legacy:py39\nMy codabench docker image with zarr support: jkbhagatio/codabench:py39-zarr",
+    "description_zh": "谜题项目内部排行榜，用于比较不同的神经预测方法。\n\n原始codabench docker镜像：codalab/codalab-legacy:py39\n我的具有zarr支持的codabench docker镜像：jkbhagatio/codabench:py39-zarr",
+    "created_by": "enigmaproject",
+    "created_when": "2025-10-01T21:54:19.478294Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-10-01-1759355659/daf178edb72b/enigma_project_logo.jpeg?AWSAccessKeyId=codabench-prod&Signature=w8HlCZYTyFWhju%2FnybXx3b452wA%3D&Expires=1779889250",
+    "participants_count": 4,
+    "submissions_count": 16,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 17776,
+        "name": "Competition",
+        "start": "2025-10-10T07:00:00Z",
+        "end": "2027-12-31T08:00:00Z",
+        "max_submissions_per_day": 0
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Overview",
+        "content": "<h1>Enigma Codabench Competition</h1>\n\n<p>\nThis competition is for internal evaluation of models on acquired datasets.\n</p>\n\n<p>\nThe goal for this competition phase is to predict actual neural responses given video and gaze data from each of four Macaque fixed-gaze recording sessions.\n</p>\n\n<p>\nTo participate:\n\t\n1. Sign up for a free Codabench account.\n2. Join our competition <a href=\"https://www.codabench.org/competitions/10814/?secret_key=372c2844-5403-41e6-ad2c-\n\t2d6b755f2d3f\" target=\"_blank\" rel=\"noopener noreferrer\">here</a>.\n3. Submit predictions and add to leaderboard.\n</p>\n\n<p>\n  <a href=\"\thttps://github.com/enigma-brain/monkey-baselines/tree/jb_update_for_codabench/codabench\" target=\"_blank\" rel=\"noopener noreferrer\">\n  Starter notebooks in the \"jb-update-for-codabench\" branch of the <code>monkey-baselines</code> repo\n  </a> provide a walkthrough of toy examples of model training and model inference on the Codabench datasets, as well as submitting model predictions to the Codabench site. To view these, please request access to the repository from Konstantin or Federico.\n</p>",
+        "content_zh": "<h1>Enigma Codabench竞赛</h1>\n\n<p>\n本竞赛用于在获得的数据集上对模型进行内部评估。\n</p>\n\n<p>\n本竞赛阶段的目标是在给定来自四个猕猴固定注视记录会话的视频和眼动数据的条件下，预测实际的神经反应。\n</p>\n\n<p>\n参与步骤：\n\t\n1. 注册免费的Codabench账户。\n2. 从<a href=\"https://www.codabench.org/competitions/10814/?secret_key=372c2844-5403-41e6-ad2c-\n\t2d6b755f2d3f\" target=\"_blank\" rel=\"noopener noreferrer\">此处</a>加入我们的竞赛。\n3. 提交预测结果并添加到排行榜。\n</p>\n\n<p>\n  <a href=\"\thttps://github.com/enigma-brain/monkey-baselines/tree/jb_update_for_codabench/codabench\" target=\"_blank\" rel=\"noopener noreferrer\">\n  <code>monkey-baselines</code>仓库\"jb-update-for-codabench\"分支中的入门笔记本\n  </a>提供了模型训练和在Codabench数据集上进行模型推理的玩具示例演练，以及向Codabench网站提交模型预测的相关内容。如需查看这些内容，请向Konstantin或Federico请求仓库访问权限。\n</p>"
+      }
+    ]
+  },
+  "7634": {
+    "id": 7634,
+    "title": "VisAidMath",
+    "description": "VisAidMath is the first benchmark manually collected and annotated for evaluating Math Problem Solving process with visual information on reasoning side.",
+    "description_zh": "VisAidMath是首个为评估具有视觉信息的数学问题求解过程（推理端）而手动收集和标注的基准。",
+    "created_by": "andrewlight7",
+    "created_when": "2025-04-21T18:01:05.283340Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-04-21-1745258465/8326aaab144b/logo.png?AWSAccessKeyId=codabench-prod&Signature=CFJLfHDmfGS010vaGi%2FwUKY%2B4sQ%3D&Expires=1779889336",
+    "participants_count": 7,
+    "submissions_count": 1,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 12474,
+        "name": "Testing Phase",
+        "start": "2025-04-21T00:00:00Z",
+        "end": "2027-12-31T00:00:00Z",
+        "max_submissions_per_day": 5
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Participation",
+        "content": "# How to participate\n\nYou should submit a json file of your prediction on the testing data provided in \"public data\". It should be formatted\nas follows: \n\n```\n{\n    \"1\": {\n        \"answer\": \"A\",\n        \"visual-aids\": \"connect $AB$\"\n    },\n    \"2\": {\n        \"answer\": \"0\",\n        \"visual-aids\": \"connect $BD$\"\n    },\n    ...\n}\n``` \n\nSee the \"Timeline\" page for additional information about the phases of this competition\n\n---\n\n# Contact\n\n- **Paper:** [VisAidMath: Benchmarking Visual-Aided Mathematical Reasoning](https://arxiv.org/abs/2410.22995)\n- **Visit our website:** [https://andrewlightning7.github.io/VisAidMath.github.io/](https://andrewlightning7.github.io/VisAidMath.github.io/)  \n- **Email:** [nlp2ct.jingkun@gmail.com](nlp2ct.jingkun@gmail.com)",
+        "content_zh": "# 如何参赛\n\n你应该提交一个json文件，包含你在\"公共数据\"中提供的测试数据上的预测结果。格式应如下所示：\n\n```\n{\n    \"1\": {\n        \"answer\": \"A\",\n        \"visual-aids\": \"connect $AB$\"\n    },\n    \"2\": {\n        \"answer\": \"0\",\n        \"visual-aids\": \"connect $BD$\"\n    },\n    ...\n}\n```\n\n请访问\"时间表\"页面了解有关本次竞赛各阶段的更多信息。\n\n---\n\n# 联系方式\n\n- **论文：** [VisAidMath: Benchmarking Visual-Aided Mathematical Reasoning](https://arxiv.org/abs/2410.22995)\n- **访问我们的网站：** [https://andrewlightning7.github.io/VisAidMath.github.io/](https://andrewlightning7.github.io/VisAidMath.github.io/)  \n- **电子邮箱：** [nlp2ct.jingkun@gmail.com](nlp2ct.jingkun@gmail.com)"
+      },
+      {
+        "index": 1,
+        "title": "Timeline",
+        "content": "# Timeline\n## Final phase\nSubmit your preferred result with visual-aids and answer. Your answer will be verified against\nthe reference data. You may only make one submission to this phase, so choose wisely.",
+        "content_zh": "# 时间表\n## 最终阶段\n提交您的首选结果，附带视觉辅助材料和答案。您的答案将与参考数据进行验证。您在此阶段只能提交一次，请谨慎选择。"
       }
     ]
   }
