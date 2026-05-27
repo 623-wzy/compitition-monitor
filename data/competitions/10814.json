@@ -5,7 +5,7 @@
   "description_zh": "谜题项目内部排行榜，用于比较不同的神经预测方法。\n\n原始codabench docker镜像：codalab/codalab-legacy:py39\n我的具有zarr支持的codabench docker镜像：jkbhagatio/codabench:py39-zarr",
   "created_by": "enigmaproject",
   "created_when": "2025-10-01T21:54:19.478294Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-10-01-1759355659/daf178edb72b/enigma_project_logo.jpeg?AWSAccessKeyId=codabench-prod&Signature=w8HlCZYTyFWhju%2FnybXx3b452wA%3D&Expires=1779889250",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-10-01-1759355659/daf178edb72b/enigma_project_logo.jpeg?AWSAccessKeyId=codabench-prod&Signature=W59vk0mJ4K7lrZYT477jzJOHZ1Q%3D&Expires=1779890136",
   "participants_count": 4,
   "submissions_count": 16,
   "first_phase_start": null,

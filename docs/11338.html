@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IACV 25 - Exercise 3 — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>IACV 25 - Exercise 3</h2>
+  <div class="detail-meta">
+    <span>ID: 11338</span>
+    <span>创建者: iacvbaseline</span>
+    <span>创建时间: 2025-10-30</span>
+    <span>参与人数: 262</span>
+    <span>提交次数: 1126</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/11338/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">图像分析与计算机视觉课程第3次练习的评估服务器。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-other'>其他</span> Exercise Solving Phase</td><td>2025-10-01</td><td>2026-07-01</td><td>999</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'>这是《图像分析与计算机视觉》课程第3次练习的评估服务器。请查看Moodle中提供的讲义，了解每次练习的详细说明和评估标准。</div></div>
+
+  <div class="section">
+    <h3>原始数据</h3>
+    <pre class="page-content" style="font-size:.8rem">{
+  &quot;id&quot;: 11338,
+  &quot;title&quot;: &quot;IACV 25 - Exercise 3&quot;,
+  &quot;description&quot;: &quot;Evaluation server for the exercise 3 from image analysis and computer vision course.&quot;,
+  &quot;description_zh&quot;: &quot;图像分析与计算机视觉课程第3次练习的评估服务器。&quot;,
+  &quot;created_by&quot;: &quot;iacvbaseline&quot;,
+  &quot;created_when&quot;: &quot;2025-10-30T13:11:05.611512Z&quot;,
+  &quot;logo&quot;: &quot;https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-10-30-1761829865/2e90cbc7073c/logo.png?AWSAccessKeyId=codabench-prod&amp;Signature=QDduyv8O4o0xcE3VAAdvqrfFUww%3D&amp;Expires=1779890131&quot;,
+  &quot;participants_count&quot;: 262,
+  &quot;submissions_count&quot;: 1126,
+  &quot;first_phase_start&quot;: null,
+  &quot;phases&quot;: [
+    {
+      &quot;id&quot;: 18611,
+      &quot;name&quot;: &quot;Exercise Solving Phase&quot;,
+      &quot;start&quot;: &quot;2025-10-01T00:00:00Z&quot;,
+      &quot;end&quot;: &quot;2026-07-01T00:00:00Z&quot;,
+      &quot;max_submissions_per_day&quot;: 999
+    }
+  ],
+  &quot;pages&quot;: [
+    {
+      &quot;index&quot;: 0,
+      &quot;title&quot;: &quot;Overview&quot;,
+      &quot;content&quot;: &quot;&lt;!DOCTYPE html PUBLIC \&quot;-//W3C//DTD HTML 4.01//EN\&quot; \&quot;http://www.w3.org/TR/html4/strict.dtd\&quot;&gt;\n&lt;html&gt;\n&lt;head&gt;\n  &lt;meta http-equiv=\&quot;Content-Type\&quot; content=\&quot;text/html; charset=utf-8\&quot;&gt;\n  &lt;meta http-equiv=\&quot;Content-Style-Type\&quot; content=\&quot;text/css\&quot;&gt;\n  &lt;title&gt;&lt;/title&gt;\n  &lt;meta name=\&quot;Generator\&quot; content=\&quot;Cocoa HTML Writer\&quot;&gt;\n  &lt;meta name=\&quot;CocoaVersion\&quot; content=\&quot;2113.6\&quot;&gt;\n  &lt;style type=\&quot;text/css\&quot;&gt;\n    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px &#x27;Helvetica Neue&#x27;; color: #535353; -webkit-text-stroke: #535353}\n    span.s1 {font-kerning: none; background-color: #ffffff}\n  &lt;/style&gt;\n&lt;/head&gt;\n&lt;body&gt;\n&lt;p class=\&quot;p1\&quot;&gt;&lt;span class=\&quot;s1\&quot;&gt;This is the evaluation server for Exercise 3 from the Image Analysis and Computer Vision course. Please check the handouts provided in Moodle for detailed instructions for each exercise, and the evaluation criteria.&lt;/span&gt;&lt;/p&gt;\n&lt;/body&gt;\n&lt;/html&gt;&quot;,
+      &quot;content_zh&quot;: &quot;这是《图像分析与计算机视觉》课程第3次练习的评估服务器。请查看Moodle中提供的讲义，了解每次练习的详细说明和评估标准。&quot;
+    }
+  ]
+}</pre>
+  </div>
+</div>
+</body>
+</html>

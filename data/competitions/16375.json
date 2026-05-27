@@ -5,7 +5,7 @@
   "description_zh": "基于EventAid基准的事件驱动RGB帧插值，包含1、3、7和15帧跳跃设置。EventAid挑战赛是ECCV 2026事件驱动多模态视觉（EBMV）研讨会的一个赛道（事件驱动多模态视觉：成像、感知和理解）！",
   "created_by": "hylz-2019",
   "created_when": "2026-05-16T10:25:07.473846Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778927107/6ed2ebb989bd/evaid_challenge_logo.png?AWSAccessKeyId=codabench-prod&Signature=t6w39ZArdsWO77O1gJ9HekxIRuA%3D&Expires=1779888964",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778927107/6ed2ebb989bd/evaid_challenge_logo.png?AWSAccessKeyId=codabench-prod&Signature=MSADCffyw8tKNNXBl5lBv3%2FJ9b0%3D&Expires=1779889907",
   "participants_count": 33,
   "submissions_count": 3,
   "first_phase_start": null,

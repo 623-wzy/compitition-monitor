@@ -5,8 +5,8 @@
   "created_by": "bobetocalo",
   "owner_display_name": "bobetocalo",
   "created_when": "2025-09-22T09:36:38.909262Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-09-22-1758533798/e734f87fa2a5/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=b9THK5gt9jy%2BFNV4fdwVDrD%2B4qE%3D&Expires=1779889250",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-09-22-1758533798/e734f87fa2a5/logo_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=iY%2B69MmBEwZi0ro65TrocxvnS68%3D&Expires=1779889250",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-09-22-1758533798/e734f87fa2a5/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=WegpGHTXvQiUPLu%2BTl27rD0GCiI%3D&Expires=1779890137",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-09-22-1758533798/e734f87fa2a5/logo_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=6MAxC0Qz65BEVkfHdnr%2F2YLAaw8%3D&Expires=1779890137",
   "terms": "# How to participate\n\nThe challenges must be done in groups of 3 students maximum. It is essential to use your UPM institutional email (@alumnos.upm.es) for sign-up.\n\nYou can start your work from the sample notebook provided below, and improve its performance (see [ffNN_example.ipynb](https://drive.upm.es/s/z7c9kPTC56wEAni)). You must submit to the competition a zip file containing the test results generated in the json file termed 'prediction.json'.",
   "pages": [
     {
