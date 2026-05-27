@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MICCAI STSR 2026 Task1: Semi-supervised Teeth and Root Plup Canal Segmentation and Metal Artifact Removal in CBCT Scans — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>MICCAI STSR 2026 Task1: Semi-supervised Teeth and Root Plup Canal Segmentation and Metal Artifact Removal in CBCT Scans</h2>
+  <div class="detail-meta">
+    <span>ID: 16027</span>
+    <span>创建者: zhengxincan</span>
+    <span>创建时间: 2026-04-29</span>
+    <span>参与人数: 12</span>
+    <span>提交次数: 15</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16027/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">暂无描述</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-other'>其他</span> Validation</td><td>2026-04-29</td><td>2026-07-17</td><td>5</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'>## MICCAI STSR 2026挑战赛任务1：3D CBCT扫描中的半监督牙齿和牙髓分割及金属伪影去除
+
+在3D CBCT扫描中准确分割牙齿和牙髓对于精确的根管治疗计划制定、数字化牙科建模和个性化临床决策至关重要。然而，在体积数据中手动描绘复杂牙科结构本质上是劳动密集且依赖专业知识的，而金属修复体经常引起严重的条纹伪影，导致图像保真度下降，阻碍可靠的分割。半监督学习与金属伪影去除相结合，提供了一条实用途径来缓解标注瓶颈——通过利用有限的标注数据和大量未标注的临床扫描，同时恢复诊断图像质量。
+
+- **STSR 2025**：CBCT扫描中的牙齿和牙髓根管分割以及IOS扫描和CBCT扫描的牙冠和牙根配准：
+    - [任务1](https://www.codabench.org/competitions/6468/)：CBCT扫描中的牙齿和牙髓根管分割
+    - [任务2](https://www.codabench.org/competitions/6470/)：IOS扫描和CBCT扫描的牙冠和牙根配准
+
+- **STSR 2026**：基于STSR 2025，我们在STSR 2026挑战赛中增加了新的金属伪影去除和多模态分析任务
+    - [任务1](https://www.codabench.org/competitions/16027/)：3D CBCT扫描中的牙齿和牙髓分割及金属伪影去除
+    - [任务2](https://www.codabench.org/competitions/16042/)：IOS扫描和CBCT扫描的牙冠和牙根配准
+    - [任务3](https://www.codabench.org/competitions/16117/)：MMDental多模态分析
+
+在MICCAI STSR 2026挑战赛任务1中，我们扩展了数据集，为不同的牙齿提供了更精细的标注，包括牙齿和相应的牙根髓腔。分割算法应准确分割永久齿（包括智齿）和相应的牙根髓腔。该任务具有三个主要特点：
+
+（1）任务：牙齿和牙根髓腔分割及金属伪影去除
+
+（2）数据集：训练集：30张标注CBCT图像，299张未标注CBCT图像；验证集：20张标注CBCT图像
+
+（3）评估：分割精度（Dice、NSD、mIoU、IA）和分割效率（GPU消耗、运行时间）
+
+![task1](https://nixy495.github.io/miccai2026/images/1776948850806.jpg)
+
+---
+
+### 📣 新闻
+
+- . . .
+
+### 🚀 参赛方式
+
+- **步骤1：获得资格认证**&lt;br&gt;
+    a. 为了避免滥用我们的数据，您首先需要完成一个简单（非常简单）的任务并填写数据访问协议以获得数据访问权限。[预备任务](https://www.codabench.org/competitions/16040/)&lt;br&gt;
+		数据和协议网址：&lt;br&gt;
+		-[Huggingface](https://huggingface.co/datasets/Ricoooo/MICCAI-STS26-Challenge-Pre-Task)&lt;br&gt;
+		-[Modelscope](https://modelscope.cn/datasets/lizhii/MICCAI-STS26-Challenge-Pre-Task/summary)&lt;br&gt;
+		-[百度网盘(提取码 = bm2u)](https://pan.baidu.com/s/1U090bZnMGEJQaD3jwqaQuA)&lt;br&gt;
+		-[Google Drive](https://drive.google.com/drive/folders/1lER9eIavr99g28aTO0kuxIcos_k9FBSx?usp=sharing)&lt;br&gt;
+		或者您可以使用[STS-Skill](https://github.com/ricoleehduu/sts-skill)，就像使用Claude Code一样：&lt;br&gt;
+&quot;使用STS-Skill https://github.com/ricoleehduu/sts-skill帮助我完成预备任务。&quot;
+    b. 填写注册表并上传协议：&lt;br&gt;
+        - [国内参赛者(WPS表单)](https://f.wps.cn/g/VV1UmM0O/)&lt;br&gt;
+        - [国际参赛者(Google表单)](https://docs.google.com/forms/d/e/1FAIpQLSf4hxOwxQdkIHkSICzlD2xnlAuPWr3EvUeB7oeuRKRPUimAKQ/viewform?usp=publish-editor)
+
+- **步骤2：加入挑战赛并下载数据**
+    您应在本网站注册账户并加入挑战赛。我们将在审核您的邮件后的2-4个工作日内向您发送数据下载链接。
+
+- **步骤3：向在线提交系统提交结果**</div></div><div class='section'><h3>Timeline</h3><div class='page-content'>## 📅 重要日期
+
+- 🕐 报名开放：2026年5月11日–7月31日
+- 🕑 训练数据发布：2026年5月11日
+- 🕑 验证集发布：2026年5月15日
+- 🕓 提交开放（Docker提交）：2026年6月1日
+- 🕕 验证集提交截止：2026年7月17日
+- 🕖 最终排名发布（测试集B结果）：2026年7月18日
+- 🕓 奖项验证材料提交（获奖资格必须）：2026年7月18日–7月31日
+- 🕗 论文审查与录用通知：2026年7月31日–8月31日
+- 🕗 竞赛结果发布：2026年8月31日
+- 🕗 MICCAI竞赛2026：2026年9月27日–10月1日</div></div><div class='section'><h3>Dataset</h3><div class='page-content'>## 🗂️ 数据集
+
+数据下载链接将通过电子邮件发送给获批的参赛队伍。请确保您能够从谷歌云盘或百度网盘下载大文件，并具有足够的存储空间和计算资源来处理这些文件。
+
+- **训练集：** 30张标注的CBCT图像，299张未标注的CBCT图像
+- **验证集：** 20张标注的CBCT图像
+
+文件夹结构（下载链接将发送给注册合格的参赛者）：
+
+- **Train-Labeled：** 包含牙齿分割掩码、智齿和多种根管结构的牙齿图像。
+- **Train-Unlabel：** 仅提供图像，对应的标注文件不可用
+- **Validation-Public：** 隐藏验证集的标签将不予发布。请将分割结果提交至codabench平台以获取评估指标。
+
+**标签信息：** 数据集包含65个类别（包括背景）的精确分割，标签映射如下：
+
+- Label_0：背景
+- Label_1：上右中切牙
+- Label_2：上右侧切牙
+- Label_3：上右犬牙
+- Label_4：上右第一前磨牙
+- . . .
+- Label_61：下右第二前磨牙牙髓
+- Label_62：下右第一磨牙牙髓
+- Label_63：下右第二磨牙牙髓
+- Label_64：下右第三磨牙（智齿）牙髓
+
+注意事项：
+
+- 参赛者应按照《提交指南》中要求的格式严格提交验证集结果。
+- 该数据仅用于科学研究目的，不允许二次分发数据及其他商业用途。本竞赛主办方保留追究违反相关规定者法律责任的权利。</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'>## 👑 评估指标
+
+在STSR 2026中，挑战的评估标准不仅限于分割准确性，还包括运行时间和GPU内存消耗，为分割算法提供全面评估。
+
+**分割准确性指标：**
+
+- 骰子相似系数（DSC）：实例级和图像级
+- 归一化表面距离（NSD）：实例级和图像级
+- 平均交并比（mIoU）：实例级和图像级
+- 识别准确率（IA）
+
+**分割效率指标：**
+
+- 运行时间：容限为45秒（包含Docker启动时间）。此外，每个病例的推理时间应在60秒内。否则，相应病例将被视为失败病例。
+- GPU内存消耗：GPU内存-时间曲线下面积
+
+**❗注意❗**
+由于算法的GPU消耗和运行时间无法在验证阶段验证，参赛者需要在算法设计初期同时考虑算法性能以及时间和空间复杂度。
+
+🔔 我们已更新并发布了评估代码和提交说明。如果您遇到Bug或对评估指标有疑问，可以查看我们的Github链接：[https://github.com/ricoleehduu/STSR-Challenge/tree/main](https://github.com/ricoleehduu/STSR-Challenge/tree/main)。
+
+---
+
+## 🛣️ Docker评估平台
+
+提交的Docker容器将在Ubuntu 20.04桌面上进行评估。详细信息如下：
+
+- CPU：Intel(R) Xeon(R) Gold 6248R CPU @ 3.00GHz × 12核
+- GPU：GeForce RTX 3090（24G）
+- RAM：28G
+- 驱动程序版本：550.78
+- CUDA版本：11.3
+- Docker版本：26.1.1
+
+---
+
+## 🔝 排名方案
+
+按照ChallengeR [1]的建议，排名方案包括以下步骤：
+
+**第1步：** 为了与我们之前的挑战保持一致并在图像级别评估算法性能，评估框架将首先在逐图像的基础上计算骰子和NSD两个指标，以得出算法在图像级别的骰子（image_Dice）和NSD（image_NSD）评分。
+
+**第2步：** 接下来，考虑到挑战对实例级分析的重点，我们将采用贪心算法将相应的预测结果与真实标注进行匹配，从而计算实例级的骰子（instance_Dice）、NSD（instance_NSD）和IA（instance_IA）评分。
+
+**第3步：** 随后，评估将包括每个算法的运行时间（RT）和GPU消耗（GPU_area）的测量。
+
+**第4步：** 计算八个指标在测试病例上的均值，并在各队之间分别排名。
+
+**第5步：** 通过对四个排名的平均值进行平均计算，给出最终综合排名。在两个队伍的平均排名相等的情况下，它们被视为并列。
+
+[1] Wiesenfarth, M., Reinke, A., Landman, B.A. et al. Methods and open-source toolkit for analyzing and visualizing challenge results. Sci Rep 11, 2369 (2021).</div></div><div class='section'><h3>Submission Instructions</h3><div class='page-content'>## 🚩 说明
+
+对于3D CBCT半监督分割任务，提交验证集预测结果进行评分时需要遵循以下规则：
+
+- 为了获得验证集的分数，竞赛者应向系统提交一个.zip文件，其中包含20个nii.gz文件，每个文件对应验证集中一个CBCT图像的实例分割预测结果。
+- 所有预测结果的nii.gz文件必须按照以下格式命名：  
+  **Validation_xxxx_Mask.nii.gz**，其中**xxxx**代表验证图像的ID。提交的预测nii.gz文件与原始验证图像之间的ID必须一致。
+
+**❗注意❗**  
+输出的预测nii.gz文件必须直接打包到zip文件中，不应包含任何子文件夹。</div></div><div class='section'><h3>Baseline</h3><div class='page-content'>⭐官方Docker即将推出。
+
+参赛者可以参考以下基础模型代码：
+
+- 💡nnUNet: [https://github.com/MIC-DKFZ/nnUNet](https://github.com/MIC-DKFZ/nnUNet)
+- 💡LASeg: [https://github.com/icerain-alt/LASeg](https://github.com/icerain-alt/LASeg)
+- 🎁 MedSAM: [https://github.com/bowang-lab/MedSAM](https://github.com/bowang-lab/MedSAM)
+- 👑 SSL4MIS: [https://github.com/HiLab-git/SSL4MIS](https://github.com/HiLab-git/SSL4MIS)</div></div><div class='section'><h3>Organizers &amp; Sponsers</h3><div class='page-content'>## 🎬 主办方
+
+[王雅琪](https://scholar.google.com.hk/citations?user=ExJ16joAAAAJ&amp;hl=en)：浙江传媒学院通信工程学院，中国杭州。([wangyaqi@cuz.edu.cn](mailto:wangyaqi@cuz.edu.cn))
+
+[钱大红](https://scholar.google.com/citations?hl=zh-CN&amp;user=oymfXUIAAAAJ&amp;view_op=list_works&amp;sortby=pubdate)：上海交通大学生物医学工程学院，医疗机器人研究所，中国上海。([dahong.qian@sjtu.edu.cn](mailto:dahong.qian@sjtu.edu.cn))
+
+## 🚜 协调员
+
+- 王雅琪，浙江传媒学院媒体工程学院，中国
+- 钱大红，上海交通大学生物医学工程学院，中国
+- 王帅，杭州电子科技大学网络空间安全学院，中国
+- 刘军，杭州电子科技大学电子与信息工程学院，中国
+- 张一凡，杭州老年口腔医院、杭州口腔医院集团、东北大学齿学研究生院高级义齿学部、国家口腔疾病临床医学研究中心、四川大学华西口腔医学院口腔颌面外科系，中国
+- 冯兰，浙江大学邵逸夫医院，中国
+- 谢宇峰，复旦大学附属上海口腔医院牙周科，中国
+- 俞鸿博，上海交通大学医学院上海第九人民医院口腔颌面外科系，中国
+- 吴成宇，山东大学机械、电气与信息工程系，中国
+- 李智，杭州电子科技大学网络空间安全学院，中国
+- 倪嘉雪，杭州电子科技大学网络空间安全学院，中国
+- 陈家洛，杭州电子科技大学网络空间安全学院，中国
+- 郑鑫灿，杭州电子科技大学网络空间安全学院，中国&lt;br&gt;
+&lt;img src=&quot;https://github.com/zxccc-bot/sts-images/blob/main/sponsors.png?raw=true&quot; alt=&quot;Image 1&quot; style=&quot;width: 800px; height: 300px;&quot;&gt;</div></div>
+
+  <div class="section">
+    <h3>原始数据</h3>
+    <pre class="page-content" style="font-size:.8rem">{
+  &quot;id&quot;: 16027,
+  &quot;title&quot;: &quot;MICCAI STSR 2026 Task1: Semi-supervised Teeth and Root Plup Canal Segmentation and Metal Artifact Removal in CBCT Scans&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;description_zh&quot;: null,
+  &quot;created_by&quot;: &quot;zhengxincan&quot;,
+  &quot;created_when&quot;: &quot;2026-04-29T16:18:28.164661Z&quot;,
+  &quot;logo&quot;: &quot;https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-29-1777479508/d0e2f68c65d4/logo.jpg?AWSAccessKeyId=codabench-prod&amp;Signature=kbFZweAxSTNqcuIKMdBthIHSCg4%3D&amp;Expires=1779872843&quot;,
+  &quot;participants_count&quot;: 12,
+  &quot;submissions_count&quot;: 15,
+  &quot;first_phase_start&quot;: null,
+  &quot;phases&quot;: [
+    {
+      &quot;id&quot;: 26429,
+      &quot;name&quot;: &quot;Validation&quot;,
+      &quot;start&quot;: &quot;2026-04-29T00:00:00Z&quot;,
+      &quot;end&quot;: &quot;2026-07-17T00:00:00Z&quot;,
+      &quot;max_submissions_per_day&quot;: 5
+    }
+  ],
+  &quot;pages&quot;: [
+    {
+      &quot;index&quot;: 0,
+      &quot;title&quot;: &quot;Overview&quot;,
+      &quot;content&quot;: &quot;## MICCAI STSR 2026 Challenge Task 1: Semi-supervised Teeth and Pulp Segmentation and Metal Artifact Removal in 3D CBCT Scans\n\nAccurate segmentation of teeth and dental pulp in 3D CBCT scans is critical for precise endodontic treatment planning, digital dental modeling, and personalized clinical decision-making. However, manual delineation of complex dental structures across volumetric data is inherently labor-intensive and expertise-dependent, while metallic restorations frequently induce severe streaking artifacts that degrade image fidelity and hinder reliable segmentation. Semi-supervised learning, integrated with metal artifact removal, offers a practical pathway to alleviate the annotation bottleneck by leveraging limited labeled data alongside abundant unlabeled clinical scans, while simultaneously restoring diagnostic image quality.\n\n- **STSR 2025**: Teeth and Pulp Root Canal Segmentation in CBCT Scans and Crown and Root Registration for IOS Scans and CBCT Scans:\n    - [Task 1](https://www.codabench.org/competitions/6468/): Teeth and pulp root canal segmentation in CBCT scans\n    - [Task 2](https://www.codabench.org/competitions/6470/): Crown and root registration for IOS scans and CBCT scans\n\n- **STSR 2026**: Based on STSR 2025, we add a novel metal artifact removal and a multi-modal analysis tasks into STSR 2026 Challenge\n    - [Task 1](https://www.codabench.org/competitions/16027/): Teeth and Pulp Segmentation and Metal Artifact Removal in 3D CBCT Scans\n    - [Task 2](https://www.codabench.org/competitions/16042/): Crown and root registration for IOS scans and CBCT scans\n    - [Task 3](https://www.codabench.org/competitions/16117/): MMDental Multi-modal Analysis\n\nIn MICCAI STSR 2026 Challenge Task 1, we scale up the dataset and provide more fine-grained annotations for different teeth, including teeth and corresponding root pulp canal. The segmentation algorithm is expected to accurately segment permanent teeth (including wisdom teeth) and corresponding root pulp canal. This task has three main features:\n\n(1) Task: teeth and root pulp canal segmentation and metal artifact removal\n\n(2) Dataset: Training set: 30 labeled CBCT images, 299 unlabeled CBCT images；Validation set: 20 labeled CBCT images\n\n(3) Evaluation: segmentation accuracy (Dice, NSD, mIoU, IA) and segmentation efficiency (GPU consumption, running time)\n\n![task1](https://nixy495.github.io/miccai2026/images/1776948850806.jpg)\n\n---\n\n### 📣 News\n\n- . . .\n\n### 🚀 How to participate\n\n- **Step1: Get the qualification**&lt;br&gt;\n    a. To avoid the misuse of our data, you may just finish a simple (very simple) task and fill out the Data Access Agreement at first to get access to the data. [Pre-Task](https://www.codabench.org/competitions/16040/)&lt;br&gt;\n\t\tData and agreement site:&lt;br&gt;\n\t\t-[Huggingface](https://huggingface.co/datasets/Ricoooo/MICCAI-STS26-Challenge-Pre-Task)&lt;br&gt;\n\t\t-[Modelscope](https://modelscope.cn/datasets/lizhii/MICCAI-STS26-Challenge-Pre-Task/summary)&lt;br&gt;\n\t\t-[Baidu Netdisk(extracting code = bm2u)](https://pan.baidu.com/s/1U090bZnMGEJQaD3jwqaQuA)&lt;br&gt;\n\t\t-[Google Drive](https://drive.google.com/drive/folders/1lER9eIavr99g28aTO0kuxIcos_k9FBSx?usp=sharing)&lt;br&gt;\n\t\tOr you could use the [STS-Skill](https://github.com/ricoleehduu/sts-skill) as when you use Claude Code, like:&lt;br&gt;\n\&quot;Use STS-Skill https://github.com/ricoleehduu/sts-skill to help me finishing the Pre-Task.\&quot;\n    b. Fill out the registration form and upload the Agreement:&lt;br&gt;\n        - [For domestic participants (WPS Form)](https://f.wps.cn/g/VV1UmM0O/)&lt;br&gt;\n        - [For international participants (Google Form)](https://docs.google.com/forms/d/e/1FAIpQLSf4hxOwxQdkIHkSICzlD2xnlAuPWr3EvUeB7oeuRKRPUimAKQ/viewform?usp=publish-editor)\n\n- **Step2: Join the challenge and download the data**\n    You should register an account on this website and join the challenge. We will send you the data downloading link in 2-4 working days after reviewing your email.\n\n- **Step3: Submit result to the online submission system**\n\n### 💡 Baseline\n\nOn the way. . .\n\n### Validation submission\n\n- All teams can directly **submit the segmentation results** on codabench to get the segmentation accuracy metrics.\n- All teams can also **make docker submissions**. Update on May 1st: To avoid submission jams, each team can make one docker submission per 15 days. Here are the pre-defined deadlines: 5.15, 5.30, 6.15, 6.30, 7.15, 7.30 (12am EST).\n- To make docker submissions, please send us ([SemiTeethSegChallenge@outlook.com](mailto:SemiTeethSegChallenge@outlook.com)): (Email subject: YourTeamName-TeamLeaderName-Validation Submission)\n- **(1)** a download link to your Docker container (teamname.tar.gz file size &lt; 5Gb).\n- **(2)** a sanity test video (example). Please test your docker on the demo cases and record the prediction process.\n- When the evaluation is finished, we will return the metrics via email.\n\n### 🏆 Awards\n\n- The top two teams will receive cash prizes (900USD for 1st place, 300USD for 2nd place).\n- Following the conclusion of STS 2026, the first authors of the top 5 teams on the test leaderboard will be invited to contribute to a collaborative review paper summarizing the challenge outcomes (intended for submission to a top-tier medical imaging journal).\n- All participating teams are eligible to submit technical papers. Submissions passing the peer-review process organized by the committee will be published in the Lecture Notes in Computer Science (LNCS) series by Springer, which is indexed by EI Compendex.\n\n### 📧 Contact\n\nFor any inquiries, please feel free to reach out via email at [SemiTeethSegChallenge@outlook.com](mailto:SemiTeethSegChallenge@outlook.com) or [zhi.li@hdu.edu.cn](mailto:zhi.li@hdu.edu.cn). We welcome any questions, feedback, or requests for further information regarding the STSR 2026 Challenge. We look forward to meeting each one of you this year, face to face if possible. See you at Daejeon, Republic of Korea!\n\n&lt;br /&gt;\n\n#### References:\n\n[1] Wang Y, Zhang Y, Chen X, et al. STS MICCAI 2023 Challenge: Grand challenge on 2D and 3D semi-supervised tooth segmentation[J]. arXiv preprint arXiv:2407.13246, 2024.\n\n[2] Semi-supervised Tooth Segmentation: First MICCAI Challenge, SemiToothSeg 2023, Held in Conjunction with MICCAI 2023, Vancouver, BC, Canada, October 8, 2023, Proceedings[M]. Springer Nature, 2025.\n\n[3] Wang Y, Zhang Y, Chen X, et al. MICCAI 2023 STS Challenge: A retrospective study of semi-supervised approaches for teeth segmentation[J]. Pattern Recognition, 2025: 112049.\n\n[4] Wang Y, Li Z, Wu C, et al. MICCAI STS 2024 Challenge: Semi-Supervised Instance-Level Tooth Segmentation in Panoramic X-ray and CBCT Images[J]. arXiv preprint arXiv:2511.22911, 2025.&quot;,
+      &quot;content_zh&quot;: &quot;## MICCAI STSR 2026挑战赛任务1：3D CBCT扫描中的半监督牙齿和牙髓分割及金属伪影去除\n\n在3D CBCT扫描中准确分割牙齿和牙髓对于精确的根管治疗计划制定、数字化牙科建模和个性化临床决策至关重要。然而，在体积数据中手动描绘复杂牙科结构本质上是劳动密集且依赖专业知识的，而金属修复体经常引起严重的条纹伪影，导致图像保真度下降，阻碍可靠的分割。半监督学习与金属伪影去除相结合，提供了一条实用途径来缓解标注瓶颈——通过利用有限的标注数据和大量未标注的临床扫描，同时恢复诊断图像质量。\n\n- **STSR 2025**：CBCT扫描中的牙齿和牙髓根管分割以及IOS扫描和CBCT扫描的牙冠和牙根配准：\n    - [任务1](https://www.codabench.org/competitions/6468/)：CBCT扫描中的牙齿和牙髓根管分割\n    - [任务2](https://www.codabench.org/competitions/6470/)：IOS扫描和CBCT扫描的牙冠和牙根配准\n\n- **STSR 2026**：基于STSR 2025，我们在STSR 2026挑战赛中增加了新的金属伪影去除和多模态分析任务\n    - [任务1](https://www.codabench.org/competitions/16027/)：3D CBCT扫描中的牙齿和牙髓分割及金属伪影去除\n    - [任务2](https://www.codabench.org/competitions/16042/)：IOS扫描和CBCT扫描的牙冠和牙根配准\n    - [任务3](https://www.codabench.org/competitions/16117/)：MMDental多模态分析\n\n在MICCAI STSR 2026挑战赛任务1中，我们扩展了数据集，为不同的牙齿提供了更精细的标注，包括牙齿和相应的牙根髓腔。分割算法应准确分割永久齿（包括智齿）和相应的牙根髓腔。该任务具有三个主要特点：\n\n（1）任务：牙齿和牙根髓腔分割及金属伪影去除\n\n（2）数据集：训练集：30张标注CBCT图像，299张未标注CBCT图像；验证集：20张标注CBCT图像\n\n（3）评估：分割精度（Dice、NSD、mIoU、IA）和分割效率（GPU消耗、运行时间）\n\n![task1](https://nixy495.github.io/miccai2026/images/1776948850806.jpg)\n\n---\n\n### 📣 新闻\n\n- . . .\n\n### 🚀 参赛方式\n\n- **步骤1：获得资格认证**&lt;br&gt;\n    a. 为了避免滥用我们的数据，您首先需要完成一个简单（非常简单）的任务并填写数据访问协议以获得数据访问权限。[预备任务](https://www.codabench.org/competitions/16040/)&lt;br&gt;\n\t\t数据和协议网址：&lt;br&gt;\n\t\t-[Huggingface](https://huggingface.co/datasets/Ricoooo/MICCAI-STS26-Challenge-Pre-Task)&lt;br&gt;\n\t\t-[Modelscope](https://modelscope.cn/datasets/lizhii/MICCAI-STS26-Challenge-Pre-Task/summary)&lt;br&gt;\n\t\t-[百度网盘(提取码 = bm2u)](https://pan.baidu.com/s/1U090bZnMGEJQaD3jwqaQuA)&lt;br&gt;\n\t\t-[Google Drive](https://drive.google.com/drive/folders/1lER9eIavr99g28aTO0kuxIcos_k9FBSx?usp=sharing)&lt;br&gt;\n\t\t或者您可以使用[STS-Skill](https://github.com/ricoleehduu/sts-skill)，就像使用Claude Code一样：&lt;br&gt;\n\&quot;使用STS-Skill https://github.com/ricoleehduu/sts-skill帮助我完成预备任务。\&quot;\n    b. 填写注册表并上传协议：&lt;br&gt;\n        - [国内参赛者(WPS表单)](https://f.wps.cn/g/VV1UmM0O/)&lt;br&gt;\n        - [国际参赛者(Google表单)](https://docs.google.com/forms/d/e/1FAIpQLSf4hxOwxQdkIHkSICzlD2xnlAuPWr3EvUeB7oeuRKRPUimAKQ/viewform?usp=publish-editor)\n\n- **步骤2：加入挑战赛并下载数据**\n    您应在本网站注册账户并加入挑战赛。我们将在审核您的邮件后的2-4个工作日内向您发送数据下载链接。\n\n- **步骤3：向在线提交系统提交结果**&quot;
+    },
+    {
+      &quot;index&quot;: 1,
+      &quot;title&quot;: &quot;Timeline&quot;,
+      &quot;content&quot;: &quot;## 📅 Important Dates\n\n- 🕐 Open Registration : May 11 – Jul 31, 2026\n- 🕑 Training Data Release : May 11, 2026\n- 🕑 Validation Set Release : May 15, 2026\n- 🕓 Submission Opens (Docker Submission) : Jun 1, 2026\n- 🕕 Validation Set Submission Deadline : Jul 17, 2026\n- 🕖 Final Rankings Release (Test Set B Results) : Jul 18, 2026\n- 🕓 Award Verification Materials Submission (Mandatory for Prize Eligibility) : Jul 18 – Jul 31, 2026\n- 🕗 Paper Review &amp; Acceptance Notification : Jul 31 – Aug 31, 2026\n- 🕗 Release of the challenge results: August 31, 2026\n- 🕗 MICCAI Challenge 2026 : Sept 27 – Oct 1, 2026&quot;,
+      &quot;content_zh&quot;: &quot;## 📅 重要日期\n\n- 🕐 报名开放：2026年5月11日–7月31日\n- 🕑 训练数据发布：2026年5月11日\n- 🕑 验证集发布：2026年5月15日\n- 🕓 提交开放（Docker提交）：2026年6月1日\n- 🕕 验证集提交截止：2026年7月17日\n- 🕖 最终排名发布（测试集B结果）：2026年7月18日\n- 🕓 奖项验证材料提交（获奖资格必须）：2026年7月18日–7月31日\n- 🕗 论文审查与录用通知：2026年7月31日–8月31日\n- 🕗 竞赛结果发布：2026年8月31日\n- 🕗 MICCAI竞赛2026：2026年9月27日–10月1日&quot;
+    },
+    {
+      &quot;index&quot;: 2,
+      &quot;title&quot;: &quot;Dataset&quot;,
+      &quot;content&quot;: &quot;## 🗂️ Dataset\n\nThe data download link will be sent to approved teams via email. Please make sure that you can download large files from Google Drive or Baidu Netdisk and have enough space and computing resources to process them.\n\n- **Training set:** 30 labeled CBCT images, 299 unlabeled CBCT images\n- **Validation set:** 20 labeled CBCT images\n\nFolder structure (download link will be sent to registered qualified participants):\n\n- **Train-Labeled:** Tooth images with segmentation masks for teeth, wisdom teeth, and multiple types of root canal structures.\n- **Train-Unlabel:** only images are provided and the corresponding annotation files are not available\n- **Validation-Public:** The labels of hidden validation set will not be released. Please submit the segmentation results on codabench to get the metrics.\n\n**Label Information:** The dataset contains precise segmentation of 65 classes (including background) with the following label mapping:\n\n- Label_0: Background\n- Label_1: Upper Right Central Incisor\n- Label_2: Upper Right Lateral Incisor\n- Label_3: Upper Right Canine\n- Label_4: Upper Right First Premolar\n- . . .\n- Label_61: Lower Right Second Premolar Pulp\n- Label_62: Lower Right First Molar Pulp\n- Label_63: Lower Right Second Molar Pulp\n- Label_64: Lower Right Third Molar (Wisdom Tooth) Pulp\n\nNote:\n\n- Competitors should submit validation set results in strict accordance with the format required in the Submission Guidelines.\n- This data is only used for scientific research purposes, secondary distribution of data and other commercial purposes are not allowed. The organizer of this challenge reserves the right to pursue the legal responsibility of those who violate the relevant regulations.&quot;,
+      &quot;content_zh&quot;: &quot;## 🗂️ 数据集\n\n数据下载链接将通过电子邮件发送给获批的参赛队伍。请确保您能够从谷歌云盘或百度网盘下载大文件，并具有足够的存储空间和计算资源来处理这些文件。\n\n- **训练集：** 30张标注的CBCT图像，299张未标注的CBCT图像\n- **验证集：** 20张标注的CBCT图像\n\n文件夹结构（下载链接将发送给注册合格的参赛者）：\n\n- **Train-Labeled：** 包含牙齿分割掩码、智齿和多种根管结构的牙齿图像。\n- **Train-Unlabel：** 仅提供图像，对应的标注文件不可用\n- **Validation-Public：** 隐藏验证集的标签将不予发布。请将分割结果提交至codabench平台以获取评估指标。\n\n**标签信息：** 数据集包含65个类别（包括背景）的精确分割，标签映射如下：\n\n- Label_0：背景\n- Label_1：上右中切牙\n- Label_2：上右侧切牙\n- Label_3：上右犬牙\n- Label_4：上右第一前磨牙\n- . . .\n- Label_61：下右第二前磨牙牙髓\n- Label_62：下右第一磨牙牙髓\n- Label_63：下右第二磨牙牙髓\n- Label_64：下右第三磨牙（智齿）牙髓\n\n注意事项：\n\n- 参赛者应按照《提交指南》中要求的格式严格提交验证集结果。\n- 该数据仅用于科学研究目的，不允许二次分发数据及其他商业用途。本竞赛主办方保留追究违反相关规定者法律责任的权利。&quot;
+    },
+    {
+      &quot;index&quot;: 3,
+      &quot;title&quot;: &quot;Evaluation&quot;,
+      &quot;content&quot;: &quot;## 👑 Evaluation Metrics\n\nIn STSR 2026, the challenge evaluation criteria are not limited to segmentation accuracy, but also include runtime and GPU memory consumption, providing a comprehensive assessment of segmentation algorithms.\n\n**Segmentation accuracy metrics:**\n\n- Dice Similarity Coefficient (DSC): instance-level and image-level\n- Normalized Surface Distance (NSD): instance-level and image-level\n- mean Intersection-over-Union (mIoU): instance-level and image-level\n- Identification Accuracy (IA)\n\n**Segmentation efficiency metrics:**\n\n- Running time: We give running time a tolerance of 45s (including the docker starting time). Moreover, the inference time for each case should be within 60s. Otherwise, the corresponding case will be regarded as a failed case.\n- GPU memory consumption: area under GPU memory-time curve\n\n**❗NOTICE❗**\nSince the GPU consumption and running time of the algorithm cannot be verified in the validation stage, the player needs to take into account both the performance of the algorithm and the time and space complexity in beginning of algorithm design.\n\n🔔 We have updated and released the evaluation code and submission instructions. If you encounter a bug or have questions about the evaluation metrics, you can check out our Github link: [https://github.com/ricoleehduu/STSR-Challenge/tree/main](https://github.com/ricoleehduu/STSR-Challenge/tree/main).\n\n---\n\n## 🛣️ Evaluation Platform for Docker\n\nThe submitted docker containers will be evaluated on a Ubuntu 20.04 desktop. Detailed information is listed as follows:\n\n- CPU: Intel(R) Xeon(R) Gold 6248R CPU @ 3.00GHz × 12\n- GPU: GeForce RTX 3090 (24G)\n- RAM: 28G\n- Driver Version: 550.78\n- CUDA Version: 11.3\n- Docker version 26.1.1\n\n---\n\n## 🔝 Ranking Scheme\n\nFollowing the recommendation in ChallengeR [1], the ranking scheme includes the following steps:\n\n**Step 1.** In order to maintain consistency with our previous challenge and assess the algorithm&#x27;s performance at the image level, our evaluation framework will first initially compute two metrics, Dice and NSD, on a per-image basis to derive the algorithm&#x27;s Dice (image_Dice) and NSD (image_NSD) scores at image-level.\n\n**Step 2.** Next, given the challenge&#x27;s focus on instance-level analysis, we also will employ a greedy algorithm to match the corresponding prediction results with the ground truth, allowing for the calculation of Dice (instance_Dice), NSD (instance_NSD), and IA (instance_IA) scores at the instance level.\n\n**Step 3.** Then, the evaluation will include measurements of running time (RT) and GPU consumption (GPU_area) for each algorithm.\n\n**Step 4.** Take the mean of the eight metrics over the test cases, and rank separately among the teams.\n\n**Step 5.** A final overall rank is given by taking the average of the four ranks. In the case of equal average rankings for two teams, they are considered tied.\n\n[1] Wiesenfarth, M., Reinke, A., Landman, B.A. et al. Methods and open-source toolkit for analyzing and visualizing challenge results. Sci Rep 11, 2369 (2021).&quot;,
+      &quot;content_zh&quot;: &quot;## 👑 评估指标\n\n在STSR 2026中，挑战的评估标准不仅限于分割准确性，还包括运行时间和GPU内存消耗，为分割算法提供全面评估。\n\n**分割准确性指标：**\n\n- 骰子相似系数（DSC）：实例级和图像级\n- 归一化表面距离（NSD）：实例级和图像级\n- 平均交并比（mIoU）：实例级和图像级\n- 识别准确率（IA）\n\n**分割效率指标：**\n\n- 运行时间：容限为45秒（包含Docker启动时间）。此外，每个病例的推理时间应在60秒内。否则，相应病例将被视为失败病例。\n- GPU内存消耗：GPU内存-时间曲线下面积\n\n**❗注意❗**\n由于算法的GPU消耗和运行时间无法在验证阶段验证，参赛者需要在算法设计初期同时考虑算法性能以及时间和空间复杂度。\n\n🔔 我们已更新并发布了评估代码和提交说明。如果您遇到Bug或对评估指标有疑问，可以查看我们的Github链接：[https://github.com/ricoleehduu/STSR-Challenge/tree/main](https://github.com/ricoleehduu/STSR-Challenge/tree/main)。\n\n---\n\n## 🛣️ Docker评估平台\n\n提交的Docker容器将在Ubuntu 20.04桌面上进行评估。详细信息如下：\n\n- CPU：Intel(R) Xeon(R) Gold 6248R CPU @ 3.00GHz × 12核\n- GPU：GeForce RTX 3090（24G）\n- RAM：28G\n- 驱动程序版本：550.78\n- CUDA版本：11.3\n- Docker版本：26.1.1\n\n---\n\n## 🔝 排名方案\n\n按照ChallengeR [1]的建议，排名方案包括以下步骤：\n\n**第1步：** 为了与我们之前的挑战保持一致并在图像级别评估算法性能，评估框架将首先在逐图像的基础上计算骰子和NSD两个指标，以得出算法在图像级别的骰子（image_Dice）和NSD（image_NSD）评分。\n\n**第2步：** 接下来，考虑到挑战对实例级分析的重点，我们将采用贪心算法将相应的预测结果与真实标注进行匹配，从而计算实例级的骰子（instance_Dice）、NSD（instance_NSD）和IA（instance_IA）评分。\n\n**第3步：** 随后，评估将包括每个算法的运行时间（RT）和GPU消耗（GPU_area）的测量。\n\n**第4步：** 计算八个指标在测试病例上的均值，并在各队之间分别排名。\n\n**第5步：** 通过对四个排名的平均值进行平均计算，给出最终综合排名。在两个队伍的平均排名相等的情况下，它们被视为并列。\n\n[1] Wiesenfarth, M., Reinke, A., Landman, B.A. et al. Methods and open-source toolkit for analyzing and visualizing challenge results. Sci Rep 11, 2369 (2021).&quot;
+    },
+    {
+      &quot;index&quot;: 4,
+      &quot;title&quot;: &quot;Submission Instructions&quot;,
+      &quot;content&quot;: &quot;## 🚩 Instructions\n\nFor 3D CBCT Semi-supervised Segmentation task, there are some rules to be followed when submitting prediction results for validation set.\n\n- To get a score for the validation set, competitors should submit a .zip file to the system, which contains 20 nii.gz files, each corresponding to the instance segmentation prediction result of a CBCT image in the validation set.\n- All nii.gz files for the predicted results must be named in the following format:  \n  **Validation_xxxx_Mask.nii.gz**, where **xxxx** stands for the id of the validation image. The id between submitted predicted nii.gz file and original validation image must be consistent.\n\n**❗NOTICE❗**  \nThe output prediction nii.gz files must be directly packaged into a zip file, no subfolder should be included.&quot;,
+      &quot;content_zh&quot;: &quot;## 🚩 说明\n\n对于3D CBCT半监督分割任务，提交验证集预测结果进行评分时需要遵循以下规则：\n\n- 为了获得验证集的分数，竞赛者应向系统提交一个.zip文件，其中包含20个nii.gz文件，每个文件对应验证集中一个CBCT图像的实例分割预测结果。\n- 所有预测结果的nii.gz文件必须按照以下格式命名：  \n  **Validation_xxxx_Mask.nii.gz**，其中**xxxx**代表验证图像的ID。提交的预测nii.gz文件与原始验证图像之间的ID必须一致。\n\n**❗注意❗**  \n输出的预测nii.gz文件必须直接打包到zip文件中，不应包含任何子文件夹。&quot;
+    },
+    {
+      &quot;index&quot;: 5,
+      &quot;title&quot;: &quot;Baseline&quot;,
+      &quot;content&quot;: &quot;⭐Official Docker is on the way.\n\nParticipants can refer to other baseline model code below:\n\n- 💡nnUNet: [https://github.com/MIC-DKFZ/nnUNet](https://github.com/MIC-DKFZ/nnUNet)\n- 💡LASeg: [https://github.com/icerain-alt/LASeg](https://github.com/icerain-alt/LASeg)\n- 🎁 MedSAM: [https://github.com/bowang-lab/MedSAM](https://github.com/bowang-lab/MedSAM)\n- 👑 SSL4MIS: [https://github.com/HiLab-git/SSL4MIS](https://github.com/HiLab-git/SSL4MIS)&quot;,
+      &quot;content_zh&quot;: &quot;⭐官方Docker即将推出。\n\n参赛者可以参考以下基础模型代码：\n\n- 💡nnUNet: [https://github.com/MIC-DKFZ/nnUNet](https://github.com/MIC-DKFZ/nnUNet)\n- 💡LASeg: [https://github.com/icerain-alt/LASeg](https://github.com/icerain-alt/LASeg)\n- 🎁 MedSAM: [https://github.com/bowang-lab/MedSAM](https://github.com/bowang-lab/MedSAM)\n- 👑 SSL4MIS: [https://github.com/HiLab-git/SSL4MIS](https://github.com/HiLab-git/SSL4MIS)&quot;
+    },
+    {
+      &quot;index&quot;: 6,
+      &quot;title&quot;: &quot;Organizers &amp; Sponsers&quot;,
+      &quot;content&quot;: &quot;## 🎬 Lead Organizer\n\n[Yaqi Wang](https://scholar.google.com.hk/citations?user=ExJ16joAAAAJ&amp;hl=en): Communication University of Zhejiang, Hangzhou, China. ([wangyaqi@cuz.edu.cn](mailto:wangyaqi@cuz.edu.cn))\n\n[Dahong Qian](https://scholar.google.com/citations?hl=zh-CN&amp;user=oymfXUIAAAAJ&amp;view_op=list_works&amp;sortby=pubdate): School of Biomedical Engineering, Institute of Medical Robotics, Shanghai Jiao Tong University, Shanghai, China. ([dahong.qian@sjtu.edu.cn](mailto:dahong.qian@sjtu.edu.cn))\n\n## 🚜 Coordinators\n\n- Yaqi Wang, College of Media Engineering, Communication University of Zhejiang, China.\n- Dahong Qian, School of Biomedical Engineering, Shanghai JiaoTong University, China.\n- Shuai Wang, School of Cyberspace Security, Hangzhou Dianzi University, China.\n- Jun Liu, School of Electronics and Information Engineering, Hangzhou Dianzi University, China.\n- Yifan Zhang, Hangzhou Geriatric Stomatology Hospital, Hangzhou Dental Hospital Group, Division of Advanced Prosthetic Dentistry, Tohoku University Graduate School of Dentistry, State Key Laboratory of Oral Diseases, National Clinical Research Center for Oral Diseases, West China Hospital of Stomatology, Sichuan University, China.\n- Lan Feng, Sir Run Run Shaw Hospital, Zhejiang University, China.\n- Yufeng Xie, Department of Periodontology Shanghai Stomatological Hospital, Fudan University, China.\n- Hongbo Yu, Department of Oral and Craniomaxillofacial Surgery, Shanghai Ninth People&#x27;s Hospital, Shanghai Jiao Tong University School of Medicine, China.\n- Chengyu Wu, Department of Mechanical, Electrical and Information Engineering, Shandong University, China.\n- Zhi Li, School of Cyberspace Security, Hangzhou Dianzi University, China.\n- Jiaxue Ni, School of Cyberspace Security, Hangzhou Dianzi University, China.\n- Jialuo Chen, School of Cyberspace Security, Hangzhou Dianzi University, China.\n- Xincan Zheng, School of Cyberspace Security, Hangzhou Dianzi University, China.&lt;br&gt;\n&lt;img src=\&quot;https://github.com/zxccc-bot/sts-images/blob/main/sponsors.png?raw=true\&quot; alt=\&quot;Image 1\&quot; style=\&quot;width: 800px; height: 300px;\&quot;&gt;&quot;,
+      &quot;content_zh&quot;: &quot;## 🎬 主办方\n\n[王雅琪](https://scholar.google.com.hk/citations?user=ExJ16joAAAAJ&amp;hl=en)：浙江传媒学院通信工程学院，中国杭州。([wangyaqi@cuz.edu.cn](mailto:wangyaqi@cuz.edu.cn))\n\n[钱大红](https://scholar.google.com/citations?hl=zh-CN&amp;user=oymfXUIAAAAJ&amp;view_op=list_works&amp;sortby=pubdate)：上海交通大学生物医学工程学院，医疗机器人研究所，中国上海。([dahong.qian@sjtu.edu.cn](mailto:dahong.qian@sjtu.edu.cn))\n\n## 🚜 协调员\n\n- 王雅琪，浙江传媒学院媒体工程学院，中国\n- 钱大红，上海交通大学生物医学工程学院，中国\n- 王帅，杭州电子科技大学网络空间安全学院，中国\n- 刘军，杭州电子科技大学电子与信息工程学院，中国\n- 张一凡，杭州老年口腔医院、杭州口腔医院集团、东北大学齿学研究生院高级义齿学部、国家口腔疾病临床医学研究中心、四川大学华西口腔医学院口腔颌面外科系，中国\n- 冯兰，浙江大学邵逸夫医院，中国\n- 谢宇峰，复旦大学附属上海口腔医院牙周科，中国\n- 俞鸿博，上海交通大学医学院上海第九人民医院口腔颌面外科系，中国\n- 吴成宇，山东大学机械、电气与信息工程系，中国\n- 李智，杭州电子科技大学网络空间安全学院，中国\n- 倪嘉雪，杭州电子科技大学网络空间安全学院，中国\n- 陈家洛，杭州电子科技大学网络空间安全学院，中国\n- 郑鑫灿，杭州电子科技大学网络空间安全学院，中国&lt;br&gt;\n&lt;img src=\&quot;https://github.com/zxccc-bot/sts-images/blob/main/sponsors.png?raw=true\&quot; alt=\&quot;Image 1\&quot; style=\&quot;width: 800px; height: 300px;\&quot;&gt;&quot;
+    }
+  ]
+}</pre>
+  </div>
+</div>
+</body>
+</html>

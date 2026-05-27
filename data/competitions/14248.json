@@ -1,0 +1,41 @@
+{
+  "id": 14248,
+  "title": "OncoSegment - Breast Tumor Mapping",
+  "description": "Segment benign and malignant tumors in breast ultrasound images.",
+  "description_zh": "在乳腺超声图像中分割良性和恶性肿瘤。",
+  "created_by": "thomas_dnil",
+  "created_when": "2026-03-02T15:45:26.167445Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-03-02-1772466527/bd1a4506a767/sample_00000.png?AWSAccessKeyId=codabench-prod&Signature=7Xth3RDkVqpBqZNEPCtqo4PXx%2FI%3D&Expires=1779872899",
+  "participants_count": 14,
+  "submissions_count": 3,
+  "first_phase_start": null,
+  "phases": [
+    {
+      "id": 23743,
+      "name": "Development Phase",
+      "start": "2026-03-02T00:00:00Z",
+      "end": "2026-12-01T00:00:00Z",
+      "max_submissions_per_day": 5
+    }
+  ],
+  "pages": [
+    {
+      "index": 0,
+      "title": "Description",
+      "content": "# 🩺 \n# **OncoSegment: Breast Tumor Mapping Challenge**\n\n# 💡 \n## **Why this Problem is Interesting**\n\nBreast cancer remains one of the leading causes of death among women worldwide. Early and accurate detection through ultrasound is critical, but interpreting these images is notoriously difficult.Ultrasound images suffer from \"speckle noise\" and low contrast. Much like the \"blobs\" in plasma physics simulations, tumors in ultrasound are intermittent, have irregular boundaries, and can be easily confused with healthy tissue. This challenge asks you to develop an AI that can precisely outline tumor boundaries, a task that directly assists radiologists in biopsy planning and treatment.\n\n# 📊 \n## **The Data**\n\nThe dataset is derived from the Breast Ultrasound Images (BUSI) collection, featuring women aged 25–75. It consists of high-quality PNG scans with a standard resolution (approx. 500x500 px).\n\nDataset Breakdown:\n\nBenign: Tumors that are typically oval or round with smooth edges.\n\nMalignant: Cancerous tumors, often characterized by \"spiky\" (spiculated) or irregular borders that invade surrounding tissue.\n\nNormal: Scans with no tumors (used to test your model's ability to avoid False Positives).\n\nWhat you receive in the Starting Kit:\ntrain_images: A list of PIL images (Grayscale) showing the breast \ntissue.\ntrain_masks: Binary masks where 1 represents the tumor and 0 represents the background.\ntrain_labels: Metadata identifying the tumor as benign or malignant.\ntest_images: Images where you must predict the mask.\n\n # 📏 \n## **Metrics: Measuring Precision**\n\nIn medical imaging, a \"box\" is not enough. We need to know exactly which pixels are cancerous. We use two complementary overlap metrics:\n1. Primary Metric: Dice Coefficient (F1-Score)The Dice coefficient is the gold standard for medical segmentation. It is twice the area of overlap divided by the total number of pixels in both the prediction and the ground truth.\n$$Dice = \\frac{2 \\times |P \\cap G|}{|P| + |G|}$$\nWhy? It is highly sensitive to the internal \"fullness\" of the mask and rewards models that get the shape exactly right.\n2. Secondary Metric: Jaccard Index (IoU)\nThe Jaccard index is the area of intersection divided by the area of union.\n$$Jaccard = \\frac{|P \\cap G|}{|P \\cup G|}$$\nWhy? \nIt is more \"punishing\" than Dice for small errors.\nIt helps break ties on the leaderboard by highlighting models with the fewest stray False Positive pixels.",
+      "content_zh": "# 🩺 \n# **OncoSegment：乳腺肿瘤分割挑战赛**\n\n# 💡 \n## **为什么这个问题很有趣**\n\n乳腺癌仍然是全球女性主要死亡原因之一。通过超声波进行早期准确检测至关重要，但解读这些图像出了名地困难。超声图像受到\"斑点噪声\"和低对比度的影响。就像等离子体物理模拟中的\"斑点\"一样，超声中的肿瘤间歇性出现、边界不规则，容易与健康组织混淆。本挑战要求你开发一个能够精确勾勒肿瘤边界的人工智能，这项任务可以直接协助放射科医生进行活检规划和治疗。\n\n# 📊 \n## **数据集**\n\n该数据集来自乳腺超声图像（BUSI）集合，包括25-75岁女性的数据。它由标准分辨率（约500x500像素）的高质量PNG扫描图像组成。\n\n数据集分类：\n\n良性肿瘤：通常为卵圆形或圆形，边界光滑的肿瘤。\n\n恶性肿瘤：癌性肿瘤，通常以\"尖刺\"（分叶状）或不规则边界为特征，会侵入周围组织。\n\n正常扫描：无肿瘤的扫描（用于测试模型避免假阳性的能力）。\n\n启动工具包中包含的内容：\ntrain_images：显示乳腺组织的PIL图像列表（灰度图）。\ntrain_masks：二值掩膜，其中1代表肿瘤，0代表背景。\ntrain_labels：识别肿瘤为良性或恶性的元数据。\ntest_images：需要预测掩膜的图像。\n\n # 📏 \n## **评估指标：测量精度**\n\n在医学成像中，\"框\"是不够的。我们需要准确了解哪些像素是癌变的。我们使用两个互补的重叠指标：\n\n1. 主要指标：Dice系数（F1分数）\n\nDice系数是医学分割的黄金标准。它是重叠区域面积的两倍除以预测和真实标签中的像素总数。\n\n$$Dice = \\frac{2 \\times |P \\cap G|}{|P| + |G|}$$\n\n原因？它对掩膜内部的\"完整性\"高度敏感，奖励那些形状完全正确的模型。\n\n2. 次要指标：Jaccard指数（IoU）\n\nJaccard指数是交集面积除以并集面积。\n\n$$Jaccard = \\frac{|P \\cap G|}{|P \\cup G|}$$\n\n原因？\n\n它比Dice对小错误的\"惩罚\"更严厉。\n\n它通过突出像素误差最少的模型来帮助打破排行榜并列。"
+    },
+    {
+      "index": 1,
+      "title": "Seed",
+      "content": "# Seed\n\nStarter `submission.py` shape:\n\n```python\nimport cv2\nimport numpy as np\n\n\nclass Model:\n    def fit(self, train_images, train_masks, train_labels=None):\n        return self\n\n    def predict(self, test_images, sample_ids=None):\n        preds = []\n        for image in test_images:\n            img = np.array(image.convert(\"L\"))\n            blurred = cv2.GaussianBlur(img, (5, 5), 0)\n            _, mask = cv2.threshold(\n                blurred, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU\n            )\n            preds.append(mask)\n        return preds\n\n\ndef get_model():\n    return Model()\n```",
+      "content_zh": "# 种子\n\n启动器 `submission.py` 框架：\n\n```python\nimport cv2\nimport numpy as np\n\n\nclass Model:\n    def fit(self, train_images, train_masks, train_labels=None):\n        return self\n\n    def predict(self, test_images, sample_ids=None):\n        preds = []\n        for image in test_images:\n            img = np.array(image.convert(\"L\"))\n            blurred = cv2.GaussianBlur(img, (5, 5), 0)\n            _, mask = cv2.threshold(\n                blurred, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU\n            )\n            preds.append(mask)\n        return preds\n\n\ndef get_model():\n    return Model()\n```"
+    },
+    {
+      "index": 2,
+      "title": "Timeline",
+      "content": "# Timeline\n\n## Development phase\nUse this phase to iterate on segmentation models for breast ultrasound\nimages and optimize public Dice/Jaccard metrics.\n\nPrivate scores remain hidden until the phase closes.",
+      "content_zh": "# 时间表\n\n## 开发阶段\n使用此阶段迭代乳腺超声图像分割模型，并优化公开的Dice/Jaccard指标。\n\n私有成绩在该阶段结束前保持隐藏状态。"
+    }
+  ]
+}

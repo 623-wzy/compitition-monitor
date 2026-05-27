@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ICML 2026 AI for Math Workshop &amp; Challenge 3: Seephys Pro — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>ICML 2026 AI for Math Workshop &amp; Challenge 3: Seephys Pro</h2>
+  <div class="detail-meta">
+    <span>ID: 16010</span>
+    <span>创建者: ai4math</span>
+    <span>创建时间: 2026-04-29</span>
+    <span>参与人数: 95</span>
+    <span>提交次数: 351</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16010/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">多模态物理推理基准，包含图表、表达式、仅图像问题和基于OpenAI API的答案判断。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-other'>其他</span> Public/Private Leaderboard</td><td>2026-05-01</td><td>2026-06-16</td><td>5</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'># 赛道 3：Seephys Pro - 视觉物理推理
+
+&lt;div style=&quot;padding:18px 22px;border:1px solid #d8e2ef;border-radius:10px;background:#f7fbff;margin:12px 0 22px 0;&quot;&gt;
+  &lt;h2 style=&quot;margin:0 0 8px 0;&quot;&gt;一项包含图表、表达式和解释的多模态物理推理挑战赛&lt;/h2&gt;
+  &lt;p style=&quot;margin:0;font-size:15px;line-height:1.55;&quot;&gt;
+    Seephys Pro 评估人工智能系统是否能够解决需要视觉感知、数学推理和忠实解释的物理问题。该基准结合了结构化物理问题、基于图表的问题和精选的仅图像扩展。为了严格评估系统在未见环境中的泛化能力，该基准纳入了通过摄影捕获的专门分布外（OOD）测试集，由第 5 级数据集表示。第 5 级数据集由传音控股提供，传音控股是一家专注于新兴市场的领先智能设备和移动互联网公司。它由传音的基于 AI 的照片问题解决服务的匿名服务数据组成。该级别在现实教育场景中评估模型，包括多种问题格式和自然图像质量变化。参与者提交最终答案和推理过程；提交内容由基于 OpenAI 的评判员根据参考答案进行评分。
+  &lt;/p&gt;
+&lt;/div&gt;
+
+物理推理是一项核心科学能力。它要求系统识别物理量、解释图表、将视觉证据与方程联系起来，并得出可防守的结论。最近的多模态模型取得了快速进展，但包含图表和形式表达式的物理问题仍然暴露了观看、阅读和推理之间的一个困难差距。
+
+Seephys Pro 的核心问题是：
+
+&gt; **我们如何构建能够可靠地整合视觉信息、物理定律和数学推导来解决真实物理问题的人工智能系统？**
+
+本挑战赛被设计为针对这一问题的紧凑但具有挑战性的公开基准。
+
+## 挑战赛概览
+
+| 项目 | 详情 |
+|---|---:|
+| 挑战赛名称 | Seephys Pro |
+| 公开排行榜问题数 | 830 |
+| 私密排行榜问题数 | 3320 |
+| 必需提交字段 | `question_id`、`prediction`、`reasoning` |
+| 评分方式 | OpenAI API 语义评判员 |
+| 总体得分 | 问题计数加权准确率 |
+
+
+## 数据集
+
+数据集托管在 Hugging Face：
+https://huggingface.co/datasets/Kun-Xiang/SeePhysPro
+
+
+
+## 提交内容
+
+参与者必须提交包含以下两项内容的 `.zip` 文件：
+
+- `prediction.csv`
+- `prediction_private.csv`
+
+每个文件必须包含 `question_id`、`prediction` 和 `reasoning`。
+
+`prediction.csv` 用于 Codabench 公开排行榜。`prediction_private.csv` 用于截止日期后的离线私密排行榜。不包含 `prediction_private.csv` 的提交将没有资格获得奖项。
+
+
+## 注意事项
+
+公开排行榜旨在进行快速迭代。私密评估不会由此 Codabench 捆绑包自动运行。
+
+## 引用
+&lt;pre style=&quot;background-color: #f6f8fa; padding: 16px; border-radius: 6px; line-height: 1.45;&quot;&gt;
+@article{xiang2026seephyspro,
+  title={SeePhys Pro: Diagnosing Modality Transfer and Blind-Training Effects in Multimodal RLVR for Physics Reasoning},
+  author={Xiang, Kun and Zhang, Terry Jingchen and Liu, Zirong and Zhou, Bokai and Tang, Yueling and Yu, Junjie and Lu, Jiacong and Huang, Shangrui and Li, Heng and Zhang, Likui and Liu, Kunkun and Zhang, Changzheng and Fang, Yangle and Guo, Boqiang and Zhen, Hui-Ling and Tu, Dandan and Huang, Yinya and Liang, Xiaodan},
+  journal={arXiv preprint arXiv:2605.09266},
+  year={2026}
+}
+&lt;/pre&gt;</div></div><div class='section'><h3>Data</h3><div class='page-content'># Seephys Pro 数据
+
+&lt;div style=&quot;padding:16px 20px;border-left:5px solid #2f80ed;background:#f5f9ff;margin:12px 0 20px 0;&quot;&gt;
+	  &lt;strong&gt;基准数据：&lt;/strong&gt;
+  &lt;br&gt;
+  &lt;a href=&quot;https://huggingface.co/datasets/Kun-Xiang/SeePhysPro&quot;&gt;https://huggingface.co/datasets/Kun-Xiang/SeePhysPro&lt;/a&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;strong&gt;项目主页：&lt;/strong&gt;
+  &lt;br&gt;
+  &lt;a href=&quot;https://seephyspro.github.io/&quot;&gt;https://seephyspro.github.io/&lt;/a&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;strong&gt;论文：&lt;/strong&gt;
+  &lt;br&gt;
+  &lt;a href=&quot;https://arxiv.org/pdf/2605.09266&quot;&gt;https://arxiv.org/pdf/2605.09266&lt;/a&gt;
+&lt;/div&gt;
+
+
+## 公开排行榜数据集
+
+使用以下数据集用于公开排行榜提交：
+
+| 数据集 | 问题数 | 公开排行榜 |
+|---|---|---|
+| `level1_testmini` | 200 | 是 |
+| `level2_testmini` | 200 | 是 |
+| `level3_testmini` | 200 | 是 |
+| `level4_testmini` | 200 | 是 |
+| `level5_testmini` | 30 | 是 |
+
+
+公开排行榜总规模：**830道问题**。
+
+## 私有排行榜数据集
+
+Hugging Face 仓库还包含私有数据：
+
+| 数据集 | 问题数 | 私有排行榜 |
+|---|---|---|
+| `level1` | 800 | 是 |
+| `level2` | 800 | 是 |
+| `level3` | 800 | 是 |
+| `level4` | 800 | 是 |
+| `level5` | 120 | 是 |
+
+私有排行榜总规模：**3320道问题**。
+
+最终排名由**私有排行榜**上的总体准确率决定。
+
+
+## 数据结构
+
+每一行都包含用于提交对齐的稳定 `question_id`。
+
+通用列：
+
+| 列 | 描述 |
+|---|---|
+| `question_id` | 提交中使用的稳定ID |
+| `row_id` | 数据集中的行索引 |
+| `idx` | 原始来源索引 |
+| `problem` | 问题文本（如果可用） |
+| `images` | Hugging Face 图像格式的图像列表 |
+
+## 无答案发布
+
+这可以防止答案泄露。参考答案仅保存在评分程序使用的 Codabench 参考包中。
+
+## 加载示例
+
+加载 Testmini 数据集：
+
+```python
+from datasets import load_dataset
+
+testmini = load_dataset(&quot;Kun-Xiang/Track3-SeePhysPro-Testmini&quot;)
+testmini_level1 = load_dataset(&quot;Kun-Xiang/Track3-SeePhysPro-Testmini&quot;, split=&quot;level1_testmini&quot;)
+```
+
+加载 Test 数据集：
+
+```python
+from datasets import load_dataset
+
+level1_test = load_dataset(&quot;Kun-Xiang/SeePhysPro&quot;, &quot;level1&quot;, split=&quot;test&quot;)
+level1_testmini = load_dataset(&quot;Kun-Xiang/SeePhysPro&quot;, &quot;level1&quot;, split=&quot;testmini&quot;)
+```
+
+如果仓库是私有的，在加载数据集之前使用 Hugging Face token 进行身份验证。</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'># SeePhys Pro 评估
+
+&lt;div style=&quot;padding:16px 20px;border:1px solid #eadfb8;border-radius:8px;background:#fffaf0;margin:12px 0 20px 0;&quot;&gt;
+  &lt;strong&gt;重要提示：&lt;/strong&gt;每份提交必须提供最终答案和支持说明。仅包含最终答案而没有推理过程的响应将不被认为是完整的。
+&lt;/div&gt;
+
+## 提交格式
+
+请在存档根目录提交包含公开和私有预测文件的 `.zip` 文件。
+
+您的提交应包含：
+
+```text
+submission.zip
+├── prediction.csv
+└── prediction_private.csv
+```
+
+### 必需文件
+
+#### 1. `prediction.csv`
+
+此文件用于 Codabench 公开排行榜。
+
+#### 2. `prediction_private.csv`
+
+此文件保留用于私有排行榜。
+
+私有排行榜**不会**在 Codabench 上自动评估。在竞赛截止日期后，组织者将下载最终提交并使用私有参考答案离线评估 `prediction_private.csv`。
+
+### 必需字段
+
+`prediction.csv` 和 `prediction_private.csv` 都必须包含以下字段：
+
+```text
+question_id
+prediction
+reasoning
+```
+
+### 重要说明
+
+Codabench 上显示的公开排行榜分数仅从 `prediction.csv` 计算得出。
+
+私有排行榜分数仅从 `prediction_private.csv` 离线计算得出。
+
+如果缺少 `prediction_private.csv`，提交将无法获得有效的私有排行榜分数。
+
+## CSV 示例
+
+```csv
+question_id,prediction,reasoning
+level1_testmini_000000,BD,&quot;两个电路分支给出所述的加速度和电荷关系，因此 B 和 D 是正确的。&quot;
+level1_testmini_000001,1.44,&quot;使用斯涅尔定律和测量的几何关系，折射率约为 1.44。&quot;
+```
+
+## JSONL 示例
+
+```jsonl
+{&quot;question_id&quot;:&quot;level1_testmini_000000&quot;,&quot;prediction&quot;:&quot;BD&quot;,&quot;reasoning&quot;:&quot;感应电流关系使 B 和 D 正确。&quot;}
+{&quot;question_id&quot;:&quot;level5_testmini_000000&quot;,&quot;prediction&quot;:&quot;A&quot;,&quot;reasoning&quot;:&quot;比较标记的量后，图表与选项 A 相匹配。&quot;}
+```
+
+## 评估规则
+
+提交针对隐藏的参考答案进行评估。对于每个问题，评估系统检查是否：
+
+1. 提供了最终答案。
+2. 提供了推理字段。
+3. 推理与问题相关。
+4. 提交的最终答案等价于参考答案。
+5. 推理支持提交的最终答案。
+6. 在适用时尊重所需的单位。
+
+如果响应包含以下任何问题，可能无法获得分数：
+
+- 缺少最终答案；
+- 缺少推理；
+- 格式错误或提交格式不可读；
+- 无关或空白推理；
+- 与提交答案矛盾的推理；
+- 最终答案不正确；
+- 在需要单位时缺少或单位不正确。
+
+## 排行榜指标
+
+公开排行榜报告已发布公开评估分割上的性能。
+
+| 指标 | 问题数 | 总体权重 |
+|---|---:|---:|
+| 第 1 级 | 200 | 200 / 830 |
+| 第 2 级 | 200 | 200 / 830 |
+| 第 3 级 | 200 | 200 / 830 |
+| 第 4 级 | 200 | 200 / 830 |
+| Solve150 Testmini | 30 | 30 / 830 |
+
+总体分数计算如下：
+
+```text
+overall = total_correct_questions / 830
+```
+
+排行榜还报告：
+
+- `Judged`：成功评估的行数；
+- `Missing`：缺少预测或推理的行数；
+- `Invalid`：格式错误或缺少必需字段的行数。
+
+## 数据集发布
+
+Hugging Face 数据集作为无答案公开版本发布供参与者使用。它故意不包括以下真值字段：
+
+- `answer`
+- `unit`
+- `error_range`
+
+这些字段预留用于私有评估，不分发给参与者。
+
+## 说明
+
+参与者有责任确保所有 `question_id` 值与发布的数据集完全匹配。同一 `question_id` 的重复预测不被允许，可能被视为无效。</div></div><div class='section'><h3>Awards</h3><div class='page-content'># 奖项
+
+**AI4Math @ ICML 2026** 竞赛的总奖金池为 **8,000 美元**，分配给所有四个赛道。
+
+### 每个赛道的奖金
+
+| 名次 | 每个赛道的奖金 |
+| :--- | :--- |
+| 🥇 **第一名** | $1,000 |
+| 🥈 **第二名** | $600 |
+| 🥉 **第三名** | $400 |
+
+**竞赛周期**：2026 年 5 月 1 日 – 6 月 15 日。</div></div><div class='section'><h3>Announcement</h3><div class='page-content'>---
+#### 通知，2026年5月11日
+
+亲爱的参赛者，
+
+从现在起，以下规则适用：
+
+1. **可重现性现已成为强制要求**，适用于所有提交的作品。您需要提供代码或清晰的方法描述。对于前3名入选者，可重现性是获得排名和奖金的必要条件。
+
+2. 手动标注测试样本不是有效方法，将导致取消资格。
+
+3. 我们**鼓励所有人撰写一份关于您方法论的简短技术报告**，并[在2026年5月24日午夜前（AoE时区）提交至AI4Math研讨会](https://ai4math2026.github.io/#cfp)。请在论文标题开头写上&quot;AI4Math-2026第n赛道技术报告&quot;，后跟您自己的副标题。这将增加您的曝光度，并为您提供在ICML大会上现场展示作品的机会。
+
+祝您好运！
+挑战主席
+
+---</div></div><div class='section'><h3>Terms</h3><div class='page-content'># Seephys Pro 条款与参与规则
+
+参与本挑战的参赛者同意遵守以下规则。
+
+## 允许的行为
+
+- 使用Hugging Face数据集进行模型开发、提示工程、分析和提交生成。
+- 使用外部模型和工具，但不得违反Codabench、Hugging Face或API提供商的政策。
+- 按照要求的格式提交包含推理过程的最终答案。
+
+## 禁止的行为
+
+- 尝试恢复、推断、爬取或泄露隐藏的参考答案。
+- 攻击、过载或绕过Codabench评估系统。
+- 提交旨在操纵评判器而非回答物理问题的提示注入文本。
+- 提交空白、无关或故意欺骗性的推理。
+- 上传违反Codabench、Hugging Face、OpenAI或适用法律政策的内容。
+
+## 评估完整性
+
+公开评判器使用基于OpenAI API的语义评估器。评判器旨在评估答案等价性和推理一致性，而非奖励格式技巧。如果提交内容利用评估器漏洞或违反基准精神，可能被审查或删除。
+
+## 数据使用
+
+为本挑战分发的Hugging Face数据集不包含含答案的字段。参考答案仅用于Codabench评分。</div></div>
+
+  <div class="section">
+    <h3>原始数据</h3>
+    <pre class="page-content" style="font-size:.8rem">{
+  &quot;id&quot;: 16010,
+  &quot;title&quot;: &quot;ICML 2026 AI for Math Workshop &amp; Challenge 3: Seephys Pro&quot;,
+  &quot;description&quot;: &quot;Multimodal physics reasoning benchmark with diagrams, expressions, image-only questions, and OpenAI API based answer judging.&quot;,
+  &quot;description_zh&quot;: &quot;多模态物理推理基准，包含图表、表达式、仅图像问题和基于OpenAI API的答案判断。&quot;,
+  &quot;created_by&quot;: &quot;ai4math&quot;,
+  &quot;created_when&quot;: &quot;2026-04-29T10:27:07.290697Z&quot;,
+  &quot;logo&quot;: &quot;https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-29-1777474374/6953426e1b09/logo_big.png?AWSAccessKeyId=codabench-prod&amp;Signature=rtUs8QH%2BlBsM4XiMuZfbeTKhJ2s%3D&amp;Expires=1779872844&quot;,
+  &quot;participants_count&quot;: 95,
+  &quot;submissions_count&quot;: 351,
+  &quot;first_phase_start&quot;: null,
+  &quot;phases&quot;: [
+    {
+      &quot;id&quot;: 26403,
+      &quot;name&quot;: &quot;Public/Private Leaderboard&quot;,
+      &quot;start&quot;: &quot;2026-05-01T04:00:00Z&quot;,
+      &quot;end&quot;: &quot;2026-06-16T04:00:00Z&quot;,
+      &quot;max_submissions_per_day&quot;: 5
+    }
+  ],
+  &quot;pages&quot;: [
+    {
+      &quot;index&quot;: 0,
+      &quot;title&quot;: &quot;Overview&quot;,
+      &quot;content&quot;: &quot;# Track 3: Seephys Pro - Visual Physics Reasoning\n\n&lt;div style=\&quot;padding:18px 22px;border:1px solid #d8e2ef;border-radius:10px;background:#f7fbff;margin:12px 0 22px 0;\&quot;&gt;\n  &lt;h2 style=\&quot;margin:0 0 8px 0;\&quot;&gt;A Multimodal Physics Reasoning Challenge with Diagrams, Expressions, and Explanations&lt;/h2&gt;\n  &lt;p style=\&quot;margin:0;font-size:15px;line-height:1.55;\&quot;&gt;\n    Seephys Pro evaluates whether AI systems can solve physics problems that require visual perception, mathematical reasoning, and faithful explanation. The benchmark combines structured physics problems, diagram-grounded questions, and a curated image-only extension. To rigorously evaluate the systems&#x27; generalization capabilities across unseen environments, the benchmark incorporates a specialized Out-of-Distribution (OOD) test set captured via photography, which is represented by the Level 5 dataset. The Level 5 dataset is provided by Transsion, a leading smart device and mobile internet company focused on emerging markets. It consists of anonymized service data from Transsion’s AI photo-based problem-solving service. This level evaluates models in realistic education scenarios, including diverse question formats and natural image quality variations. Participants submit both final answers and reasoning; submissions are scored by an OpenAI-based judge against held reference answers.\n  &lt;/p&gt;\n&lt;/div&gt;\n\nPhysics reasoning is a core scientific capability. It requires a system to identify quantities, interpret diagrams, connect visual evidence with equations, and produce a defensible conclusion. Recent multimodal models have made rapid progress, but physics questions with diagrams and formal expressions still expose a difficult gap between seeing, reading, and reasoning.\n\nThe central question of Seephys Pro is:\n\n&gt; **How can we build AI systems that reliably integrate visual information, physical laws, and mathematical derivations to solve real physics problems?**\n\nThis challenge is designed as a compact but demanding public benchmark for that question.\n\n## Challenge at a Glance\n\n| Item | Details |\n|---|---:|\n| Challenge name | Seephys Pro |\n| Public leaderboard questions | 830 |\n| Private leaderboard questions | 3320 |\n| Required submission fields | `question_id`, `prediction`, `reasoning` |\n| Scoring | OpenAI API semantic judge |\n| Overall score | Question-count weighted accuracy |\n\n\n## Dataset\n\nThe datasets are hosted on Hugging Face:\nhttps://huggingface.co/datasets/Kun-Xiang/SeePhysPro\n\n\n\n## What to Submit\n\nParticipants must submit a `.zip` file containing both:\n\n- `prediction.csv`\n- `prediction_private.csv`\n\nEach file must include `question_id`, `prediction`, and `reasoning`.\n\n`prediction.csv` is used for the Codabench public leaderboard. `prediction_private.csv` is used for the offline private leaderboard after the deadline. Submissions without `prediction_private.csv` will not be eligible for prizes.\n\n\n## Notes\n\nThe public leaderboard is intended for fast iteration. Private evaluation is not automatically run by this Codabench bundle.\n\n## Citation\n&lt;pre style=\&quot;background-color: #f6f8fa; padding: 16px; border-radius: 6px; line-height: 1.45;\&quot;&gt;\n@article{xiang2026seephyspro,\n  title={SeePhys Pro: Diagnosing Modality Transfer and Blind-Training Effects in Multimodal RLVR for Physics Reasoning},\n  author={Xiang, Kun and Zhang, Terry Jingchen and Liu, Zirong and Zhou, Bokai and Tang, Yueling and Yu, Junjie and Lu, Jiacong and Huang, Shangrui and Li, Heng and Zhang, Likui and Liu, Kunkun and Zhang, Changzheng and Fang, Yangle and Guo, Boqiang and Zhen, Hui-Ling and Tu, Dandan and Huang, Yinya and Liang, Xiaodan},\n  journal={arXiv preprint arXiv:2605.09266},\n  year={2026}\n}\n&lt;/pre&gt;&quot;,
+      &quot;content_zh&quot;: &quot;# 赛道 3：Seephys Pro - 视觉物理推理\n\n&lt;div style=\&quot;padding:18px 22px;border:1px solid #d8e2ef;border-radius:10px;background:#f7fbff;margin:12px 0 22px 0;\&quot;&gt;\n  &lt;h2 style=\&quot;margin:0 0 8px 0;\&quot;&gt;一项包含图表、表达式和解释的多模态物理推理挑战赛&lt;/h2&gt;\n  &lt;p style=\&quot;margin:0;font-size:15px;line-height:1.55;\&quot;&gt;\n    Seephys Pro 评估人工智能系统是否能够解决需要视觉感知、数学推理和忠实解释的物理问题。该基准结合了结构化物理问题、基于图表的问题和精选的仅图像扩展。为了严格评估系统在未见环境中的泛化能力，该基准纳入了通过摄影捕获的专门分布外（OOD）测试集，由第 5 级数据集表示。第 5 级数据集由传音控股提供，传音控股是一家专注于新兴市场的领先智能设备和移动互联网公司。它由传音的基于 AI 的照片问题解决服务的匿名服务数据组成。该级别在现实教育场景中评估模型，包括多种问题格式和自然图像质量变化。参与者提交最终答案和推理过程；提交内容由基于 OpenAI 的评判员根据参考答案进行评分。\n  &lt;/p&gt;\n&lt;/div&gt;\n\n物理推理是一项核心科学能力。它要求系统识别物理量、解释图表、将视觉证据与方程联系起来，并得出可防守的结论。最近的多模态模型取得了快速进展，但包含图表和形式表达式的物理问题仍然暴露了观看、阅读和推理之间的一个困难差距。\n\nSeephys Pro 的核心问题是：\n\n&gt; **我们如何构建能够可靠地整合视觉信息、物理定律和数学推导来解决真实物理问题的人工智能系统？**\n\n本挑战赛被设计为针对这一问题的紧凑但具有挑战性的公开基准。\n\n## 挑战赛概览\n\n| 项目 | 详情 |\n|---|---:|\n| 挑战赛名称 | Seephys Pro |\n| 公开排行榜问题数 | 830 |\n| 私密排行榜问题数 | 3320 |\n| 必需提交字段 | `question_id`、`prediction`、`reasoning` |\n| 评分方式 | OpenAI API 语义评判员 |\n| 总体得分 | 问题计数加权准确率 |\n\n\n## 数据集\n\n数据集托管在 Hugging Face：\nhttps://huggingface.co/datasets/Kun-Xiang/SeePhysPro\n\n\n\n## 提交内容\n\n参与者必须提交包含以下两项内容的 `.zip` 文件：\n\n- `prediction.csv`\n- `prediction_private.csv`\n\n每个文件必须包含 `question_id`、`prediction` 和 `reasoning`。\n\n`prediction.csv` 用于 Codabench 公开排行榜。`prediction_private.csv` 用于截止日期后的离线私密排行榜。不包含 `prediction_private.csv` 的提交将没有资格获得奖项。\n\n\n## 注意事项\n\n公开排行榜旨在进行快速迭代。私密评估不会由此 Codabench 捆绑包自动运行。\n\n## 引用\n&lt;pre style=\&quot;background-color: #f6f8fa; padding: 16px; border-radius: 6px; line-height: 1.45;\&quot;&gt;\n@article{xiang2026seephyspro,\n  title={SeePhys Pro: Diagnosing Modality Transfer and Blind-Training Effects in Multimodal RLVR for Physics Reasoning},\n  author={Xiang, Kun and Zhang, Terry Jingchen and Liu, Zirong and Zhou, Bokai and Tang, Yueling and Yu, Junjie and Lu, Jiacong and Huang, Shangrui and Li, Heng and Zhang, Likui and Liu, Kunkun and Zhang, Changzheng and Fang, Yangle and Guo, Boqiang and Zhen, Hui-Ling and Tu, Dandan and Huang, Yinya and Liang, Xiaodan},\n  journal={arXiv preprint arXiv:2605.09266},\n  year={2026}\n}\n&lt;/pre&gt;&quot;
+    },
+    {
+      &quot;index&quot;: 1,
+      &quot;title&quot;: &quot;Data&quot;,
+      &quot;content&quot;: &quot;# Seephys Pro Data\n\n&lt;div style=\&quot;padding:16px 20px;border-left:5px solid #2f80ed;background:#f5f9ff;margin:12px 0 20px 0;\&quot;&gt;\n\t  &lt;strong&gt;Benchmark Data:&lt;/strong&gt;\n  &lt;br&gt;\n  &lt;a href=\&quot;https://huggingface.co/datasets/Kun-Xiang/SeePhysPro\&quot;&gt;https://huggingface.co/datasets/Kun-Xiang/SeePhysPro&lt;/a&gt;\n  &lt;br&gt;&lt;br&gt;\n  &lt;strong&gt;Project Page:&lt;/strong&gt;\n  &lt;br&gt;\n  &lt;a href=\&quot;https://seephyspro.github.io/\&quot;&gt;https://seephyspro.github.io/&lt;/a&gt;\n  &lt;br&gt;&lt;br&gt;\n  &lt;strong&gt;Paper:&lt;/strong&gt;\n  &lt;br&gt;\n  &lt;a href=\&quot;https://arxiv.org/pdf/2605.09266\&quot;&gt;https://arxiv.org/pdf/2605.09266&lt;/a&gt;\n&lt;/div&gt;\n\n\n## Public Leaderboard Splits\n\nUse the following splits for public leaderboard submissions:\n\n| Split | Questions | Public leaderboard |\n|---|---|---|\n| `level1_testmini` | 200 | Yes |\n| `level2_testmini` | 200 | Yes |\n| `level3_testmini` | 200 | Yes |\n| `level4_testmini` | 200 | Yes |\n| `level5_testmini` | 30 | Yes |\n\n\nTotal public leaderboard size: **830 questions**.\n\n## Private Leaderboard Splits\n\nThe Hugging Face repository also contains private data:\n\n| Split | Questions | Private leaderboard |\n|---|---|---|\n| `level1` | 800 | Yes |\n| `level2` | 800 | Yes |\n| `level3` | 800 | Yes |\n| `level4` | 800 | Yes |\n| `level5` | 120 | Yes |\n\nTotal private leaderboard size: **3320 questions**.\n\nThe final rankings are determined by the Overall Accuracy on the **private leaderboard.**\n\n\n## Schema\n\nEach row includes a stable `question_id` used for submission alignment.\n\nCommon columns:\n\n| Column | Description |\n|---|---|\n| `question_id` | Stable ID used in submissions |\n| `row_id` | Row index within the split |\n| `idx` | Original source index |\n| `problem` | Problem text, when available |\n| `images` | Image list in Hugging Face image format |\n\n## No-Answer Release\n\nThis prevents answer leakage. Reference answers are kept only in the Codabench reference bundle used by the scoring program.\n\n## Loading Example\n\nLoad the Testmini dataset:\n\n```python\nfrom datasets import load_dataset\n\ntestmini = load_dataset(\&quot;Kun-Xiang/Track3-SeePhysPro-Testmini\&quot;)\ntestmini_level1 = load_dataset(\&quot;Kun-Xiang/Track3-SeePhysPro-Testmini\&quot;, split=\&quot;level1_testmini\&quot;)\n```\n\nLoad the Test dataset:\n\n```python\nfrom datasets import load_dataset\n\nlevel1_test = load_dataset(\&quot;Kun-Xiang/SeePhysPro\&quot;, \&quot;level1\&quot;, split=\&quot;test\&quot;)\nlevel1_testmini = load_dataset(\&quot;Kun-Xiang/SeePhysPro\&quot;, \&quot;level1\&quot;, split=\&quot;testmini\&quot;)\n```\n\nIf the repository is private, authenticate with a Hugging Face token before loading the dataset.&quot;,
+      &quot;content_zh&quot;: &quot;# Seephys Pro 数据\n\n&lt;div style=\&quot;padding:16px 20px;border-left:5px solid #2f80ed;background:#f5f9ff;margin:12px 0 20px 0;\&quot;&gt;\n\t  &lt;strong&gt;基准数据：&lt;/strong&gt;\n  &lt;br&gt;\n  &lt;a href=\&quot;https://huggingface.co/datasets/Kun-Xiang/SeePhysPro\&quot;&gt;https://huggingface.co/datasets/Kun-Xiang/SeePhysPro&lt;/a&gt;\n  &lt;br&gt;&lt;br&gt;\n  &lt;strong&gt;项目主页：&lt;/strong&gt;\n  &lt;br&gt;\n  &lt;a href=\&quot;https://seephyspro.github.io/\&quot;&gt;https://seephyspro.github.io/&lt;/a&gt;\n  &lt;br&gt;&lt;br&gt;\n  &lt;strong&gt;论文：&lt;/strong&gt;\n  &lt;br&gt;\n  &lt;a href=\&quot;https://arxiv.org/pdf/2605.09266\&quot;&gt;https://arxiv.org/pdf/2605.09266&lt;/a&gt;\n&lt;/div&gt;\n\n\n## 公开排行榜数据集\n\n使用以下数据集用于公开排行榜提交：\n\n| 数据集 | 问题数 | 公开排行榜 |\n|---|---|---|\n| `level1_testmini` | 200 | 是 |\n| `level2_testmini` | 200 | 是 |\n| `level3_testmini` | 200 | 是 |\n| `level4_testmini` | 200 | 是 |\n| `level5_testmini` | 30 | 是 |\n\n\n公开排行榜总规模：**830道问题**。\n\n## 私有排行榜数据集\n\nHugging Face 仓库还包含私有数据：\n\n| 数据集 | 问题数 | 私有排行榜 |\n|---|---|---|\n| `level1` | 800 | 是 |\n| `level2` | 800 | 是 |\n| `level3` | 800 | 是 |\n| `level4` | 800 | 是 |\n| `level5` | 120 | 是 |\n\n私有排行榜总规模：**3320道问题**。\n\n最终排名由**私有排行榜**上的总体准确率决定。\n\n\n## 数据结构\n\n每一行都包含用于提交对齐的稳定 `question_id`。\n\n通用列：\n\n| 列 | 描述 |\n|---|---|\n| `question_id` | 提交中使用的稳定ID |\n| `row_id` | 数据集中的行索引 |\n| `idx` | 原始来源索引 |\n| `problem` | 问题文本（如果可用） |\n| `images` | Hugging Face 图像格式的图像列表 |\n\n## 无答案发布\n\n这可以防止答案泄露。参考答案仅保存在评分程序使用的 Codabench 参考包中。\n\n## 加载示例\n\n加载 Testmini 数据集：\n\n```python\nfrom datasets import load_dataset\n\ntestmini = load_dataset(\&quot;Kun-Xiang/Track3-SeePhysPro-Testmini\&quot;)\ntestmini_level1 = load_dataset(\&quot;Kun-Xiang/Track3-SeePhysPro-Testmini\&quot;, split=\&quot;level1_testmini\&quot;)\n```\n\n加载 Test 数据集：\n\n```python\nfrom datasets import load_dataset\n\nlevel1_test = load_dataset(\&quot;Kun-Xiang/SeePhysPro\&quot;, \&quot;level1\&quot;, split=\&quot;test\&quot;)\nlevel1_testmini = load_dataset(\&quot;Kun-Xiang/SeePhysPro\&quot;, \&quot;level1\&quot;, split=\&quot;testmini\&quot;)\n```\n\n如果仓库是私有的，在加载数据集之前使用 Hugging Face token 进行身份验证。&quot;
+    },
+    {
+      &quot;index&quot;: 2,
+      &quot;title&quot;: &quot;Evaluation&quot;,
+      &quot;content&quot;: &quot;# SeePhys Pro Evaluation\n\n&lt;div style=\&quot;padding:16px 20px;border:1px solid #eadfb8;border-radius:8px;background:#fffaf0;margin:12px 0 20px 0;\&quot;&gt;\n  &lt;strong&gt;Important:&lt;/strong&gt; each submission must provide both a final answer and a supporting explanation. Responses that contain only a final answer without reasoning will not be considered complete.\n&lt;/div&gt;\n\n## Submission Format\n\nPlease submit a `.zip` file containing both public and private prediction files at the root of the archive.\n\nYour submission should contain:\n\n```text\nsubmission.zip\n├── prediction.csv\n└── prediction_private.csv\n```\n\n### Required Files\n\n#### 1. `prediction.csv`\n\nThis file is used for the Codabench public leaderboard.\n\n#### 2. `prediction_private.csv`\n\nThis file is reserved for the private leaderboard.\n\nThe private leaderboard will **not** be evaluated automatically on Codabench. After the competition deadline, the organizers will download the final submissions and evaluate `prediction_private.csv` offline using the private reference answers.\n\n### Required Fields\n\nBoth `prediction.csv` and `prediction_private.csv` must contain the following fields:\n\n```text\nquestion_id\nprediction\nreasoning\n```\n\n### Important Notes\n\nThe public leaderboard score shown on Codabench is computed only from `prediction.csv`.\n\nThe private leaderboard score is computed offline only from `prediction_private.csv`.\n\nIf `prediction_private.csv` is missing, the submission will not receive a valid private leaderboard score.\n\n## CSV Example\n\n```csv\nquestion_id,prediction,reasoning\nlevel1_testmini_000000,BD,\&quot;The two circuit branches give the stated acceleration and charge relations, so B and D are correct.\&quot;\nlevel1_testmini_000001,1.44,\&quot;Using Snell&#x27;s law and the measured geometry, the refractive index is approximately 1.44.\&quot;\n```\n\n## JSONL Example\n\n```jsonl\n{\&quot;question_id\&quot;:\&quot;level1_testmini_000000\&quot;,\&quot;prediction\&quot;:\&quot;BD\&quot;,\&quot;reasoning\&quot;:\&quot;The induced-current relations make B and D correct.\&quot;}\n{\&quot;question_id\&quot;:\&quot;level5_testmini_000000\&quot;,\&quot;prediction\&quot;:\&quot;A\&quot;,\&quot;reasoning\&quot;:\&quot;The diagram matches option A after comparing the labeled quantities.\&quot;}\n```\n\n## Evaluation Rules\n\nSubmissions are evaluated against hidden reference answers. For each question, the evaluation system checks whether:\n\n1. A final answer is provided.\n2. A reasoning field is provided.\n3. The reasoning is relevant to the problem.\n4. The submitted final answer is equivalent to the reference answer.\n5. The reasoning supports the submitted final answer.\n6. Required units are respected when applicable.\n\nA response may receive no credit if it contains any of the following issues:\n\n- missing final answer;\n- missing reasoning;\n- malformed or unreadable submission format;\n- unrelated or empty reasoning;\n- reasoning that contradicts the submitted answer;\n- incorrect final answer;\n- missing or incorrect units when units are required.\n\n## Leaderboard Metrics\n\nThe public leaderboard reports performance on the released public evaluation split.\n\n| Metric | Questions | Weight in Overall |\n|---|---:|---:|\n| Level 1 | 200 | 200 / 830 |\n| Level 2 | 200 | 200 / 830 |\n| Level 3 | 200 | 200 / 830 |\n| Level 4 | 200 | 200 / 830 |\n| Solve150 Testmini | 30 | 30 / 830 |\n\nThe overall score is computed as:\n\n```text\noverall = total_correct_questions / 830\n```\n\nThe leaderboard also reports:\n\n- `Judged`: number of rows successfully evaluated;\n- `Missing`: number of rows missing either a prediction or reasoning;\n- `Invalid`: number of malformed rows or rows missing required fields.\n\n## Dataset Release\n\nThe Hugging Face dataset is released as a public no-answer version for participant use. It intentionally excludes the following ground-truth fields:\n\n- `answer`\n- `unit`\n- `error_range`\n\nThese fields are reserved for private evaluation and are not distributed to participants.\n\n## Notes\n\nParticipants are responsible for ensuring that all `question_id` values match the released dataset exactly. Duplicate predictions for the same `question_id` are not allowed and may be treated as invalid.&quot;,
+      &quot;content_zh&quot;: &quot;# SeePhys Pro 评估\n\n&lt;div style=\&quot;padding:16px 20px;border:1px solid #eadfb8;border-radius:8px;background:#fffaf0;margin:12px 0 20px 0;\&quot;&gt;\n  &lt;strong&gt;重要提示：&lt;/strong&gt;每份提交必须提供最终答案和支持说明。仅包含最终答案而没有推理过程的响应将不被认为是完整的。\n&lt;/div&gt;\n\n## 提交格式\n\n请在存档根目录提交包含公开和私有预测文件的 `.zip` 文件。\n\n您的提交应包含：\n\n```text\nsubmission.zip\n├── prediction.csv\n└── prediction_private.csv\n```\n\n### 必需文件\n\n#### 1. `prediction.csv`\n\n此文件用于 Codabench 公开排行榜。\n\n#### 2. `prediction_private.csv`\n\n此文件保留用于私有排行榜。\n\n私有排行榜**不会**在 Codabench 上自动评估。在竞赛截止日期后，组织者将下载最终提交并使用私有参考答案离线评估 `prediction_private.csv`。\n\n### 必需字段\n\n`prediction.csv` 和 `prediction_private.csv` 都必须包含以下字段：\n\n```text\nquestion_id\nprediction\nreasoning\n```\n\n### 重要说明\n\nCodabench 上显示的公开排行榜分数仅从 `prediction.csv` 计算得出。\n\n私有排行榜分数仅从 `prediction_private.csv` 离线计算得出。\n\n如果缺少 `prediction_private.csv`，提交将无法获得有效的私有排行榜分数。\n\n## CSV 示例\n\n```csv\nquestion_id,prediction,reasoning\nlevel1_testmini_000000,BD,\&quot;两个电路分支给出所述的加速度和电荷关系，因此 B 和 D 是正确的。\&quot;\nlevel1_testmini_000001,1.44,\&quot;使用斯涅尔定律和测量的几何关系，折射率约为 1.44。\&quot;\n```\n\n## JSONL 示例\n\n```jsonl\n{\&quot;question_id\&quot;:\&quot;level1_testmini_000000\&quot;,\&quot;prediction\&quot;:\&quot;BD\&quot;,\&quot;reasoning\&quot;:\&quot;感应电流关系使 B 和 D 正确。\&quot;}\n{\&quot;question_id\&quot;:\&quot;level5_testmini_000000\&quot;,\&quot;prediction\&quot;:\&quot;A\&quot;,\&quot;reasoning\&quot;:\&quot;比较标记的量后，图表与选项 A 相匹配。\&quot;}\n```\n\n## 评估规则\n\n提交针对隐藏的参考答案进行评估。对于每个问题，评估系统检查是否：\n\n1. 提供了最终答案。\n2. 提供了推理字段。\n3. 推理与问题相关。\n4. 提交的最终答案等价于参考答案。\n5. 推理支持提交的最终答案。\n6. 在适用时尊重所需的单位。\n\n如果响应包含以下任何问题，可能无法获得分数：\n\n- 缺少最终答案；\n- 缺少推理；\n- 格式错误或提交格式不可读；\n- 无关或空白推理；\n- 与提交答案矛盾的推理；\n- 最终答案不正确；\n- 在需要单位时缺少或单位不正确。\n\n## 排行榜指标\n\n公开排行榜报告已发布公开评估分割上的性能。\n\n| 指标 | 问题数 | 总体权重 |\n|---|---:|---:|\n| 第 1 级 | 200 | 200 / 830 |\n| 第 2 级 | 200 | 200 / 830 |\n| 第 3 级 | 200 | 200 / 830 |\n| 第 4 级 | 200 | 200 / 830 |\n| Solve150 Testmini | 30 | 30 / 830 |\n\n总体分数计算如下：\n\n```text\noverall = total_correct_questions / 830\n```\n\n排行榜还报告：\n\n- `Judged`：成功评估的行数；\n- `Missing`：缺少预测或推理的行数；\n- `Invalid`：格式错误或缺少必需字段的行数。\n\n## 数据集发布\n\nHugging Face 数据集作为无答案公开版本发布供参与者使用。它故意不包括以下真值字段：\n\n- `answer`\n- `unit`\n- `error_range`\n\n这些字段预留用于私有评估，不分发给参与者。\n\n## 说明\n\n参与者有责任确保所有 `question_id` 值与发布的数据集完全匹配。同一 `question_id` 的重复预测不被允许，可能被视为无效。&quot;
+    },
+    {
+      &quot;index&quot;: 3,
+      &quot;title&quot;: &quot;Awards&quot;,
+      &quot;content&quot;: &quot;# Awards\n\nThe total prize pool for the **AI4Math @ ICML 2026** challenge is **$8,000**, distributed across all four tracks.\n\n### Prize per Track\n\n| Place | Prize per Track |\n| :--- | :--- |\n| 🥇 **1st** | $1,000 |\n| 🥈 **2nd** | $600 |\n| 🥉 **3rd** | $400 |\n\n**Challenge Period:** May 1 – June 15, 2026.&quot;,
+      &quot;content_zh&quot;: &quot;# 奖项\n\n**AI4Math @ ICML 2026** 竞赛的总奖金池为 **8,000 美元**，分配给所有四个赛道。\n\n### 每个赛道的奖金\n\n| 名次 | 每个赛道的奖金 |\n| :--- | :--- |\n| 🥇 **第一名** | $1,000 |\n| 🥈 **第二名** | $600 |\n| 🥉 **第三名** | $400 |\n\n**竞赛周期**：2026 年 5 月 1 日 – 6 月 15 日。&quot;
+    },
+    {
+      &quot;index&quot;: 4,
+      &quot;title&quot;: &quot;Announcement&quot;,
+      &quot;content&quot;: &quot;---\n#### Notice, May 11, 2026\n\nDear participants,\n\nGoing forward, the following rules apply:\n\n1. **Reproducibility is now required** for all submissions. You need to provide code or a clear description of your method. For the top 3 finalists, reproducibility is a condition for receiving your ranking and prize money.\n\n2. Manual annotation of test samples is not a valid approach and will lead to disqualification.\n\n3. We also **encourage everyone to write a short technical report** on your methodology and [submit it to the AI4Math Workshop](https://ai4math2026.github.io/#cfp) by May 24, 2026 AoE. Please start your paper title with \&quot;Technical Report for AI4Math-2026 Track n\&quot; followed by your own subtitle. It gives you more visibility and a chance to present your work in person at ICML.\n\nGood luck!\nChallenge Chairs\n\n---&quot;,
+      &quot;content_zh&quot;: &quot;---\n#### 通知，2026年5月11日\n\n亲爱的参赛者，\n\n从现在起，以下规则适用：\n\n1. **可重现性现已成为强制要求**，适用于所有提交的作品。您需要提供代码或清晰的方法描述。对于前3名入选者，可重现性是获得排名和奖金的必要条件。\n\n2. 手动标注测试样本不是有效方法，将导致取消资格。\n\n3. 我们**鼓励所有人撰写一份关于您方法论的简短技术报告**，并[在2026年5月24日午夜前（AoE时区）提交至AI4Math研讨会](https://ai4math2026.github.io/#cfp)。请在论文标题开头写上\&quot;AI4Math-2026第n赛道技术报告\&quot;，后跟您自己的副标题。这将增加您的曝光度，并为您提供在ICML大会上现场展示作品的机会。\n\n祝您好运！\n挑战主席\n\n---&quot;
+    },
+    {
+      &quot;index&quot;: 5,
+      &quot;title&quot;: &quot;Terms&quot;,
+      &quot;content&quot;: &quot;# Seephys Pro Terms and Participation Rules\n\nBy participating in this challenge, participants agree to follow the rules below.\n\n## Allowed\n\n- Use the Hugging Face dataset for model development, prompting, analysis, and submission generation.\n- Use external models and tools, unless they violate Codabench, Hugging Face, or API provider policies.\n- Submit final answers with reasoning in the required format.\n\n## Not Allowed\n\n- Attempt to recover, infer, scrape, or leak hidden reference answers.\n- Attack, overload, or bypass the Codabench evaluation system.\n- Submit prompt-injection text intended to manipulate the judge rather than answer the physics problem.\n- Submit empty, unrelated, or intentionally deceptive reasoning.\n- Upload content that violates the policies of Codabench, Hugging Face, OpenAI, or applicable law.\n\n## Evaluation Integrity\n\nThe public judge uses an OpenAI API based semantic evaluator. The judge is intended to evaluate answer equivalence and reasoning consistency, not to reward formatting tricks. Submissions may be reviewed or removed if they exploit the evaluator or violate the spirit of the benchmark.\n\n## Data Use\n\nThe Hugging Face dataset distributed for this challenge excludes answer-bearing fields. Reference answers are used only for Codabench scoring.&quot;,
+      &quot;content_zh&quot;: &quot;# Seephys Pro 条款与参与规则\n\n参与本挑战的参赛者同意遵守以下规则。\n\n## 允许的行为\n\n- 使用Hugging Face数据集进行模型开发、提示工程、分析和提交生成。\n- 使用外部模型和工具，但不得违反Codabench、Hugging Face或API提供商的政策。\n- 按照要求的格式提交包含推理过程的最终答案。\n\n## 禁止的行为\n\n- 尝试恢复、推断、爬取或泄露隐藏的参考答案。\n- 攻击、过载或绕过Codabench评估系统。\n- 提交旨在操纵评判器而非回答物理问题的提示注入文本。\n- 提交空白、无关或故意欺骗性的推理。\n- 上传违反Codabench、Hugging Face、OpenAI或适用法律政策的内容。\n\n## 评估完整性\n\n公开评判器使用基于OpenAI API的语义评估器。评判器旨在评估答案等价性和推理一致性，而非奖励格式技巧。如果提交内容利用评估器漏洞或违反基准精神，可能被审查或删除。\n\n## 数据使用\n\n为本挑战分发的Hugging Face数据集不包含含答案的字段。参考答案仅用于Codabench评分。&quot;
+    }
+  ]
+}</pre>
+  </div>
+</div>
+</body>
+</html>

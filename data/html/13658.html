@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ACM MM 2026 Grand Challenge: Machine-oriented Visual Media Quality Assessment — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>ACM MM 2026 Grand Challenge: Machine-oriented Visual Media Quality Assessment</h2>
+  <div class="detail-meta">
+    <span>ID: 13658</span>
+    <span>创建者: hanyufei</span>
+    <span>创建时间: 2026-02-05</span>
+    <span>参与人数: 116</span>
+    <span>提交次数: 970</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/13658/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">这项竞赛评估视觉语言模型(VLMs)在具身场景中的视觉鲁棒性。在初赛阶段，参赛者需要对12,400张失真图像(IQA)的性能下降进行预测。决赛阶段将升级为真实机器人数据。加入我们，为具身智能体构建更可靠的视觉系统！</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> Preliminary - Phase 1: Development</td><td>2026-02-22</td><td>2026-05-15</td><td>14</td></tr><tr><td><span class='badge badge-other'>其他</span> Preliminary - Phase 2: Challenge</td><td>2026-05-15</td><td>2026-05-28</td><td>4</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'># 面向机器的视觉媒体质量评估
+
+&lt;div style=&quot;max-width: 1000px; margin: 0 auto;&quot;&gt;
+&lt;a href=&quot;https://ibb.co/6RnL4dk8&quot; target=&quot;_blank&quot;&gt;
+&lt;img src=&quot;https://i.ibb.co/HDF3rJjC/output-grid-4x14-all-from-first80-20260206-144534.jpg&quot; 
+     alt=&quot;output grid 4x14 all from first80 20260206 144534&quot; 
+     style=&quot;width: 100%; height: auto; border: 1px solid #ddd; box-shadow: 0 2px 8px rgba(0,0,0,0.1);&quot;&gt;
+&lt;/a&gt;
+&lt;/div&gt;  
+
+欢迎来到**面向机器的视觉媒体质量评估**竞赛！本竞赛致力于探索和增强视觉语言模型（VLMs）在复杂真实物理环境中的视觉鲁棒性。
+
+## 背景
+
+随着具身人工智能的发展，机器已取代人类成为视觉媒体的主要消费者，然而现有的图像质量评估（IQA）指标仍然专注于人类视觉，忽视了机器任务效用。为了弥补这一空白，我们推出了面向机器的图像质量评估（MoIQA）挑战赛，强调仿真理解和真实世界执行。本竞赛旨在推进机器偏好的可靠图像理解，支持强大的具身人工智能应用。
+
+---
+
+##  相关研讨会与挑战赛
+
+本竞赛是**ACM MM 2026大奖赛**的核心赛道。我们邀请研究人员和从业者应对具身人工智能中视觉语言模型的鲁棒性挑战。
+
+* **官方大奖赛网站**: [ACM MM 2026 Grand Challenges](https://2026.acmmm.org/site/grand-challenges.html)
+* **挑战赛主页**: [M-VQA Challenge](https://m-vqa-challenge.github.io/M-VQA/)
+
+***
+
+## 竞赛结构与核心任务
+
+竞赛分为三个不同的赛道，涵盖从合成鲁棒性评估到真实机器人部署的全过程。
+
+### 赛道1：绝对性能预测（计算机模拟）
+参赛者需要预测视觉语言模型在包含12,400张受控噪声图像的大规模数据集上的绝对准确度（0.0到1.0）。目标是准确估计模型在各种失真条件下的任务求解能力。
+
+### 赛道2：相对性能衰减评估（计算机模拟）
+参赛者需要预测视觉语言模型与原始清晰图像基线相比的相对性能下降。本赛道重点关注指标对图像降质增加水平的敏感性。
+
+### 赛道3：真实机器人部署（实体机器人）
+自2026年5月1日起，表现最佳的模型将在物理机器人平台上接受严格评估。具体而言，我们将对在标准化实验设置中运行的100个机械臂收集的数据进行系统评估。
+* **参赛资格**: 仅限赛道1和赛道2综合排名前10的团队参与。
+* **评估协议**: 直接在实验室机器人平台收集的真实世界传感器数据上进行测试，无先前训练阶段。性能将通过评估预测质量分数与从任务执行结果衍生的二元成功/失败标签（0/1）之间的一致性来衡量。
+
+---
+
+## 阶段详情
+
+### 初赛：开发与挑战
+* **状态**: 开放。
+* **目标**: 基于发布的训练和验证数据集，对赛道1和赛道2进行评估。参赛者必须向CodaBench平台提交其预测结果以获得排名。
+
+### 决赛：仿真到真实
+* **状态**: 邀请制。
+* **目标**: 赛道3的评估。合格团队将在私有真实机器人数据上部署其算法，以测试在物理环境中的泛化能力。
+
+---
+
+## 奖项与论文发表
+
+* **奖项**: 每个独立赛道（赛道1、赛道2和赛道3）的前3名获胜者将获得奖励。
+* **论文发表**: 论文接收的最终评估和官方竞赛报告将基于**所有三个赛道的综合性能**。
+
+---
+
+## 评估指标
+
+对于th</div></div><div class='section'><h3>Dataset</h3><div class='page-content'>## 1. 下载数据
+
+### **A部分：训练数据集**
+
+* **内容**：`public_train.tsv`
+* **链接**：[主链接](https://drive.google.com/file/d/111D1HAxacArbDAxjaJ56bPza4V9j2_T1/view?usp=drive_link)或[备用链接](https://www.codabench.org/datasets/575587/)
+
+### **B部分：验证数据集**
+* **内容**：`public_val.tsv`
+* **链接**：[主链接](https://drive.google.com/file/d/1StOa9abHPD1a8FMPBP4-aYNeJ-szlhKg/view?usp=drive_link)或[备用链接](https://www.codabench.org/datasets/575724/)
+
+### **C部分：测试数据集**
+* **内容**：`public_test.tsv`
+* **链接**：[公开测试数据链接](https://drive.google.com/file/d/1N_zGyzVpKG97XHtcZzJw1WXI8pXFsVSh/view?usp=sharing)
+&gt;
+&gt;  **测试阶段提交格式示例**
+&gt;  
+&gt; 下载**[测试提交模板](https://www.codabench.org/datasets/download/49e7804e-26da-46d9-b940-a4ea91452d28/)**以查看**测试阶段**提交结构的工作示例和随机分数生成器。
+
+---
+
+## 2. 数据集统计
+
+数据集总共包含**12,400张图像**，分为三个部分。每个原始图像关联30个失真变体。
+
+&lt;table style=&quot;width: 100%; border-collapse: collapse; text-align: center; font-family: Arial, sans-serif;&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&quot;background-color: #f2f2f2;&quot;&gt;
+      &lt;th style=&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 80px;&quot;&gt;部分&lt;/th&gt;
+      &lt;th style=&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 160px;&quot;&gt;原始图像&lt;/th&gt;
+      &lt;th style=&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 160px;&quot;&gt;失真图像&lt;/th&gt;
+      &lt;th style=&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 80px;&quot;&gt;合计&lt;/th&gt;
+      &lt;th style=&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 200px;&quot;&gt;用途&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;&lt;strong&gt;训练&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;
+        280&lt;br&gt;
+        &lt;span style=&quot;font-size: 0.85em; color: #666;&quot;&gt;(img_000 - img_279)&lt;/span&gt;
+      &lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;
+        8,400&lt;br&gt;
+        &lt;span style=&quot;font-size: 0.85em; color: #666;&quot;&gt;(img_000_noise01 - img_279_noise30)&lt;/span&gt;
+      &lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;8,680&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;模型训练和微调&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr style=&quot;background-color: #f9f9f9;&quot;&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;&lt;strong&gt;验证&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;
+        40&lt;br&gt;
+        &lt;span style=&quot;font-size: 0.85em; color: #666;&quot;&gt;(img_280 - img_319)&lt;/span&gt;
+      &lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;
+        1,200&lt;br&gt;
+        &lt;span style=&quot;font-size: 0.85em; color: #666;&quot;&gt;(img_280_noise01 - img_319_noise30)&lt;/span&gt;
+      &lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;1,240&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;模型选择和调试&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;&lt;strong&gt;测试&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;
+        80&lt;br&gt;
+        &lt;span style=&quot;font-size: 0.85em; color: #666;&quot;&gt;(img_320 - img_399)&lt;/span&gt;
+      &lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;
+        2,400&lt;br&gt;
+        &lt;span style=&quot;font-size: 0.85em; color: #666;&quot;&gt;(img_320_noise01 - img_399_noise30)&lt;/span&gt;
+      &lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;2,480&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;&lt;strong&gt;竞赛评估&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr style=&quot;background-color: #e8f4f8; border-top: 2px solid #333;&quot;&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;&lt;strong&gt;总计&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;&lt;strong&gt;400&lt;/strong&gt;&lt;/td&gt;</div></div><div class='section'><h3>Evaluation &amp; Submission</h3><div class='page-content'>## 1. 提交格式
+
+要参加初赛，您必须提交一个**ZIP文件**，其中包含一个名为**`submission.tsv`**的TSV文件。该文件必须遵循特定的格式和列要求。
+
+**文件结构：**
+
+* **压缩包**: `submission.zip`
+* **内容**: `submission.tsv` 
+
+**TSV文件头要求：**
+TSV文件必须包含以下三列：
+
+1. **index**: 每张图像的唯一标识符。
+2. **abs_score**: 您预测的绝对分数（浮点数值）。
+3. **rel_score**: 您预测的相对分数（浮点数值）。
+
+**TSV文件内容示例：**
+
+&lt;table style=&quot;width: 100%; border-collapse: collapse; text-align: center; font-family: Arial, sans-serif;&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&quot;background-color: #f2f2f2;&quot;&gt;
+      &lt;th style=&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 120px;&quot;&gt;index&lt;/th&gt;
+      &lt;th style=&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 120px;&quot;&gt;abs_score&lt;/th&gt;
+      &lt;th style=&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 120px;&quot;&gt;rel_score&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;img_320&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;0.9850&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;1.0000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr style=&quot;background-color: #f9f9f9;&quot;&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;img_320_noise01&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;0.7520&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;0.8264&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;img_320_noise02&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;0.4510&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;0.7612&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr style=&quot;background-color: #f9f9f9;&quot;&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;...&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;...&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&gt; **测试阶段提交格式示例**
+&gt;
+&gt; 下载**[测试提交模板](https://www.codabench.org/datasets/download/49e7804e-26da-46d9-b940-a4ea91452d28/)**以查看**测试阶段**提交结构的工作示例和随机分数生成器。
+
+---
+
+## 2. 评估指标
+
+提交内容根据与真实值(GT)分数的相关性进行评估。我们使用两个主要统计指标来评估您预测的准确性：
+
+* **皮尔逊线性相关系数(PLCC)**: 衡量预测分数与真实值之间的线性关系。
+* **斯皮尔曼秩相关系数(SRCC)**: 衡量预测分数与真实值之间的单调关系（排序一致性）。
+
+---
+
+## 3. 排行榜排名
+
+竞赛包含两个平行赛道。
+
+* **赛道1：绝对分数（鲁棒性等级）**
+* 使用绝对分数预测的PLCC和SRCC的平均值进行评估。
+
+* **赛道2：相对分数（性能下降）**
+* 使用相对分数预测的PLCC和SRCC的平均值进行评估。
+
+---
+
+## 4. 重要提示
+
+* **一致性**: 确保`index`列与测试集完全匹配。任何缺失的行或不匹配的索引都将导致提交错误。
+* **编码**: 不要在您的提交中包含Base64图像数据；仅需提供预测的分数。
+* **精度**: 我们建议提供至少4位小数的分数，以获得更好的排名精确度。</div></div><div class='section'><h3>Important Dates</h3><div class='page-content'>### 竞赛时间表
+
+* **2026年2月22日** | 训练和验证数据集发布
+* **2026年5月15日** | 测试数据集发布
+* **2026年5月30日** | 真实机器人竞赛开始
+* **2026年6月10日** | 最终竞赛结果公布
+* **2026年6月25日** | 论文提交截止日期
+* **2026年7月16日** | 论文录用通知
+* **2026年8月6日** | 最终版论文提交截止日期
+
+### 时间表将根据ACM MM会议的进展进行相应调整。</div></div>
+
+  <div class="section">
+    <h3>原始数据</h3>
+    <pre class="page-content" style="font-size:.8rem">{
+  &quot;id&quot;: 13658,
+  &quot;title&quot;: &quot;ACM MM 2026 Grand Challenge: Machine-oriented Visual Media Quality Assessment&quot;,
+  &quot;description&quot;: &quot;This competition evaluates the visual robustness of Vision-Language Models (VLMs) in embodied scenarios. In the Preliminary Phase, participants predict performance degradation on 12,400 distorted images (IQA). The Final Phase will escalate to real-world robot data. Join us to build more reliable eyes for embodied agents!&quot;,
+  &quot;description_zh&quot;: &quot;这项竞赛评估视觉语言模型(VLMs)在具身场景中的视觉鲁棒性。在初赛阶段，参赛者需要对12,400张失真图像(IQA)的性能下降进行预测。决赛阶段将升级为真实机器人数据。加入我们，为具身智能体构建更可靠的视觉系统！&quot;,
+  &quot;created_by&quot;: &quot;hanyufei&quot;,
+  &quot;created_when&quot;: &quot;2026-02-05T14:22:31.774603Z&quot;,
+  &quot;logo&quot;: &quot;https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-02-05-1770302111/7e796622379e/logo_140percent.png?AWSAccessKeyId=codabench-prod&amp;Signature=4g6aDKb21ORuND5mz3MTLaRV1IE%3D&amp;Expires=1779872945&quot;,
+  &quot;participants_count&quot;: 116,
+  &quot;submissions_count&quot;: 970,
+  &quot;first_phase_start&quot;: null,
+  &quot;phases&quot;: [
+    {
+      &quot;id&quot;: 22527,
+      &quot;name&quot;: &quot;Preliminary - Phase 1: Development&quot;,
+      &quot;start&quot;: &quot;2026-02-22T00:00:00Z&quot;,
+      &quot;end&quot;: &quot;2026-05-15T00:00:00Z&quot;,
+      &quot;max_submissions_per_day&quot;: 14
+    },
+    {
+      &quot;id&quot;: 22528,
+      &quot;name&quot;: &quot;Preliminary - Phase 2: Challenge&quot;,
+      &quot;start&quot;: &quot;2026-05-15T00:00:00Z&quot;,
+      &quot;end&quot;: &quot;2026-05-28T00:00:00Z&quot;,
+      &quot;max_submissions_per_day&quot;: 4
+    }
+  ],
+  &quot;pages&quot;: [
+    {
+      &quot;index&quot;: 0,
+      &quot;title&quot;: &quot;Overview&quot;,
+      &quot;content&quot;: &quot;# Machine-oriented Visual Media Quality Assessment\n&lt;div style=\&quot;max-width: 1000px; margin: 0 auto;\&quot;&gt;\n&lt;a href=\&quot;https://ibb.co/6RnL4dk8\&quot; target=\&quot;_blank\&quot;&gt;\n&lt;img src=\&quot;https://i.ibb.co/HDF3rJjC/output-grid-4x14-all-from-first80-20260206-144534.jpg\&quot; \n     alt=\&quot;output grid 4x14 all from first80 20260206 144534\&quot; \n     style=\&quot;width: 100%; height: auto; border: 1px solid #ddd; box-shadow: 0 2px 8px rgba(0,0,0,0.1);\&quot;&gt;\n&lt;/a&gt;\n&lt;/div&gt;  \n\nWelcome to the **Machine-oriented Visual Media Quality Assessment**！ This competition is dedicated to exploring and enhancing the visual robustness of Vision-Language Models (VLMs) within complex, real-world physical environments.\n\n## Background\n\nWith the development of Embodied AI, machines have replaced humans as the main consumers of visual media, yet existing Image Quality Assessment (IQA) metrics remain focused on human and overlooked machine task utility. To address this gap, we introduce the Machine-oriented Image Quality Assessment (MoIQA) Challenge, emphasizing simulation comprehension and Real-world exectution. This challenge aims to advance reliable image understanding for machine preference and support robust Embodied AI applications.\n\n---\n\n##  Associated Workshop &amp; Challenge\n\nThis competition is a core track of the **ACM MM 2026 Grand Challenge**. We invite researchers and practitioners to tackle the robustness challenges of Vision-Language Models in embodied AI.\n\n* **Official Grand Challenge Site**: [ACM MM 2026 Grand Challenges](https://2026.acmmm.org/site/grand-challenges.html)\n* **Challenge Homepage**: [M-VQA Challenge](https://m-vqa-challenge.github.io/M-VQA/)\n\n\n\n***\n## Competition Structure &amp; Core Tasks\n\nThe competition is organized into three distinct tracks, spanning from synthetic robustness evaluation to real-world robotic deployment. \n\n### Track 1: Absolute Performance Prediction (In-Silico)\nParticipants must predict the absolute accuracy (0.0 to 1.0) of VLM models on a large-scale dataset containing 12,400 images with controlled noise. The goal is to accurately estimate the model&#x27;s task-solving capability under various distortions.\n\n### Track 2: Relative Degradation Assessment (In-Silico)\nParticipants are tasked with predicting the relative performance drop of VLM models compared to their baseline on original, clean images. This track focuses on the sensitivity of metrics to increasing levels of image degradation.\n\n### Track 3: Real-World Robot Deployment (Real-Robot)\nStarting May 1, 2026, top-performing models will undergo rigorous evaluation on physical robot platforms. Specifically, we will conduct systematic assessments on data collected from 100 robotic arms operating within a standardized experimental setup.\n* **Eligibility**: Only the top 10 teams from the combined rankings of Track 1 and Track 2 are eligible to participate.\n* **Evaluation Protocol**: Direct testing on real-world sensor data collected from laboratory robot platforms, with no prior training phase. Performance will be measured by assessing the consistency between predicted quality scores and binary success/failure labels (0/1) derived from task execution outcomes.\n\n---\n\n## Phase Details\n\n### Preliminary Round: Development &amp; Challenge\n* **Status**: Open.\n* **Objective**: Evaluation for Track 1 and Track 2 based on the released Training and Validation datasets. Participants must submit their predictions to the CodaBench platform for ranking.\n\n### Final Round: Sim-to-Real\n* **Status**: Invitation Only.\n* **Objective**: Evaluation for Track 3. Qualified teams will deploy their algorithms on private, real-world robotic data to test generalization in physical environments.\n\n---\n\n## Awards &amp; Publications\n\n* **Awards**: Prizes will be awarded to the Top 3 winners of each individual track (Track 1, Track 2, and Track 3).\n* **Publications**: The final evaluation for paper acceptance and official competition reports will be based on the **comprehensive performance across all three tracks**.\n\n---\n\n## Evaluation Metrics\n\nFor the **Preliminary Round**, submissions are evaluated based on their correlation with Ground Truth scores derived from 11 state-of-the-art VLMs.\n\n* **Absolute Score**: Predicting the mean performance level (Mean Opinion Score) of models on a specific distorted image.\n* **Relative Score**: Measuring the ratio of performance on a distorted image compared to its original, clean counterpart (Ratio of Means).\n\nThe final ranking depends on the consistency (PLCC and SRCC) between the predicted scores and the ground truth.\n\n---\n\n## Contact\n\nFor any inquiries, please reach out to:\n\n* **Email**: lcysyzxdxc@sjtu.edu.cn&quot;,
+      &quot;content_zh&quot;: &quot;# 面向机器的视觉媒体质量评估\n\n&lt;div style=\&quot;max-width: 1000px; margin: 0 auto;\&quot;&gt;\n&lt;a href=\&quot;https://ibb.co/6RnL4dk8\&quot; target=\&quot;_blank\&quot;&gt;\n&lt;img src=\&quot;https://i.ibb.co/HDF3rJjC/output-grid-4x14-all-from-first80-20260206-144534.jpg\&quot; \n     alt=\&quot;output grid 4x14 all from first80 20260206 144534\&quot; \n     style=\&quot;width: 100%; height: auto; border: 1px solid #ddd; box-shadow: 0 2px 8px rgba(0,0,0,0.1);\&quot;&gt;\n&lt;/a&gt;\n&lt;/div&gt;  \n\n欢迎来到**面向机器的视觉媒体质量评估**竞赛！本竞赛致力于探索和增强视觉语言模型（VLMs）在复杂真实物理环境中的视觉鲁棒性。\n\n## 背景\n\n随着具身人工智能的发展，机器已取代人类成为视觉媒体的主要消费者，然而现有的图像质量评估（IQA）指标仍然专注于人类视觉，忽视了机器任务效用。为了弥补这一空白，我们推出了面向机器的图像质量评估（MoIQA）挑战赛，强调仿真理解和真实世界执行。本竞赛旨在推进机器偏好的可靠图像理解，支持强大的具身人工智能应用。\n\n---\n\n##  相关研讨会与挑战赛\n\n本竞赛是**ACM MM 2026大奖赛**的核心赛道。我们邀请研究人员和从业者应对具身人工智能中视觉语言模型的鲁棒性挑战。\n\n* **官方大奖赛网站**: [ACM MM 2026 Grand Challenges](https://2026.acmmm.org/site/grand-challenges.html)\n* **挑战赛主页**: [M-VQA Challenge](https://m-vqa-challenge.github.io/M-VQA/)\n\n***\n\n## 竞赛结构与核心任务\n\n竞赛分为三个不同的赛道，涵盖从合成鲁棒性评估到真实机器人部署的全过程。\n\n### 赛道1：绝对性能预测（计算机模拟）\n参赛者需要预测视觉语言模型在包含12,400张受控噪声图像的大规模数据集上的绝对准确度（0.0到1.0）。目标是准确估计模型在各种失真条件下的任务求解能力。\n\n### 赛道2：相对性能衰减评估（计算机模拟）\n参赛者需要预测视觉语言模型与原始清晰图像基线相比的相对性能下降。本赛道重点关注指标对图像降质增加水平的敏感性。\n\n### 赛道3：真实机器人部署（实体机器人）\n自2026年5月1日起，表现最佳的模型将在物理机器人平台上接受严格评估。具体而言，我们将对在标准化实验设置中运行的100个机械臂收集的数据进行系统评估。\n* **参赛资格**: 仅限赛道1和赛道2综合排名前10的团队参与。\n* **评估协议**: 直接在实验室机器人平台收集的真实世界传感器数据上进行测试，无先前训练阶段。性能将通过评估预测质量分数与从任务执行结果衍生的二元成功/失败标签（0/1）之间的一致性来衡量。\n\n---\n\n## 阶段详情\n\n### 初赛：开发与挑战\n* **状态**: 开放。\n* **目标**: 基于发布的训练和验证数据集，对赛道1和赛道2进行评估。参赛者必须向CodaBench平台提交其预测结果以获得排名。\n\n### 决赛：仿真到真实\n* **状态**: 邀请制。\n* **目标**: 赛道3的评估。合格团队将在私有真实机器人数据上部署其算法，以测试在物理环境中的泛化能力。\n\n---\n\n## 奖项与论文发表\n\n* **奖项**: 每个独立赛道（赛道1、赛道2和赛道3）的前3名获胜者将获得奖励。\n* **论文发表**: 论文接收的最终评估和官方竞赛报告将基于**所有三个赛道的综合性能**。\n\n---\n\n## 评估指标\n\n对于th&quot;
+    },
+    {
+      &quot;index&quot;: 1,
+      &quot;title&quot;: &quot;Dataset&quot;,
+      &quot;content&quot;: &quot;##  1. Download Data\n\n### **Part A: Training Dataset**\n\n* **Content**: `public_train.tsv`\n* **Link**: [Primary Link](https://drive.google.com/file/d/111D1HAxacArbDAxjaJ56bPza4V9j2_T1/view?usp=drive_link) or [Backup Link](https://www.codabench.org/datasets/575587/)\n\n### **Part B: Validation Dataset**\n* **Content**: `public_val.tsv`\n* **Link**: [Primary Link](https://drive.google.com/file/d/1StOa9abHPD1a8FMPBP4-aYNeJ-szlhKg/view?usp=drive_link) or [Backup Link](https://www.codabench.org/datasets/575724/)\n\n### **Part C: Test Dataset**\n* **Content**: `public_test.tsv`\n* **Link**: [Link for Public Test Data](https://drive.google.com/file/d/1N_zGyzVpKG97XHtcZzJw1WXI8pXFsVSh/view?usp=sharing)\n&gt;\n&gt;  **Test Phase Submission Format Example**\n&gt;  \n&gt; Download the **[Test Submission Template](https://www.codabench.org/datasets/download/49e7804e-26da-46d9-b940-a4ea91452d28/)** to see a working example of the **test phase** submission structure and a random score generator.\n---\n\n##  2. Dataset Statistics\n\nThe dataset consists of **12,400 images** in total, divided into three splits. Each original image is associated with 30 distorted variations.\n\n&lt;table style=\&quot;width: 100%; border-collapse: collapse; text-align: center; font-family: Arial, sans-serif;\&quot;&gt;\n  &lt;thead&gt;\n    &lt;tr style=\&quot;background-color: #f2f2f2;\&quot;&gt;\n      &lt;th style=\&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 80px;\&quot;&gt;Split&lt;/th&gt;\n      &lt;th style=\&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 160px;\&quot;&gt;Original Images&lt;/th&gt;\n      &lt;th style=\&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 160px;\&quot;&gt;Distorted Images&lt;/th&gt;\n      &lt;th style=\&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 80px;\&quot;&gt;Total&lt;/th&gt;\n      &lt;th style=\&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 200px;\&quot;&gt;Role&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;&lt;strong&gt;Train&lt;/strong&gt;&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;\n        280&lt;br&gt;\n        &lt;span style=\&quot;font-size: 0.85em; color: #666;\&quot;&gt;(img_000 - img_279)&lt;/span&gt;\n      &lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;\n        8,400&lt;br&gt;\n        &lt;span style=\&quot;font-size: 0.85em; color: #666;\&quot;&gt;(img_000_noise01 - img_279_noise30)&lt;/span&gt;\n      &lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;8,680&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;Model Training &amp; Fine-tuning&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr style=\&quot;background-color: #f9f9f9;\&quot;&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;&lt;strong&gt;Val&lt;/strong&gt;&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;\n        40&lt;br&gt;\n        &lt;span style=\&quot;font-size: 0.85em; color: #666;\&quot;&gt;(img_280 - img_319)&lt;/span&gt;\n      &lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;\n        1,200&lt;br&gt;\n        &lt;span style=\&quot;font-size: 0.85em; color: #666;\&quot;&gt;(img_280_noise01 - img_319_noise30)&lt;/span&gt;\n      &lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;1,240&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;Model Selection &amp; Debugging&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;&lt;strong&gt;Test&lt;/strong&gt;&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;\n        80&lt;br&gt;\n        &lt;span style=\&quot;font-size: 0.85em; color: #666;\&quot;&gt;(img_320 - img_399)&lt;/span&gt;\n      &lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;\n        2,400&lt;br&gt;\n        &lt;span style=\&quot;font-size: 0.85em; color: #666;\&quot;&gt;(img_320_noise01 - img_399_noise30)&lt;/span&gt;\n      &lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;2,480&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;&lt;strong&gt;Competition Evaluation&lt;/strong&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr style=\&quot;background-color: #e8f4f8; border-top: 2px solid #333;\&quot;&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;&lt;strong&gt;400&lt;/strong&gt;&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;&lt;strong&gt;12,000&lt;/strong&gt;&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;&lt;strong&gt;12,400&lt;/strong&gt;&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;-&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;\n\n \n\n&amp;emsp;&amp;emsp;  \n**Distortion Types**: 30 distinct types.  \n**Severity Levels**: 5 levels (Level 4 to Level 8).\n\n\n\n---\n\n\n##  3. Data Format\n\nAll data files are provided in **TSV** format.\n\n* **Encoding**: Images are encoded as **Base64 strings**.\n\n* **Naming Convention**:  \n   Original Image Index: `img_000` to `img_399`.  \n   Distorted Image Index: `img_XXX_noiseYY` (e.g., `img_320_noise01`).\n\n\n\n\n\n### Field Definitions\n\n1. Common Fields (Present in All Files) \n\n* `index`: Unique identifier for the image (String).\n* `image`: Base64 encoded image string.\n* `question`: The visual question associated with the image.\n\n2. Training Fields (Available in `train`) \n* `answer`: Ground truth text answer to the visual question.\n* `noise_type`: Integer ID (01-30) representing the distortion type.\n* `noise_level`: Integer (4-8) representing the distortion severity.\n\n* **`absolute_score_gt`**: **[Target]** The ground truth Absolute Score.\n\t* **Definition**: Represents the overall performance or accuracy of Vision-Language Models (VLMs) on a specific image (whether clean or distorted). It reflects the absolute semantic understandability of the visual content.\n\t* **Range**: **[0.0, 1.0]**. A score of `1.0` indicates perfect performance, while `0.0` indicates complete failure.  \n\n* **`relative_score_gt`**: **[Target]** The ground truth Relative Score.\n\t* **Definition**: Represents the performance degradation ratio caused by image distortions.\n\t* **Range**: **[0.0, 1.0]**. A score of `1.0` indicates **zero performance degradation** . Lower scores indicate more severe performance drops due to the distortion. \n\n\n3. Test Fields (Available in `val`/`test`)\n\n* Only `index`, `image`, and `question` are provided.\n* Participants must predict the `absolute_score` and `relative_score`.\n\n## 4. Additional Training Data\n\n* **Simulation Track:** [MPD Dataset](https://github.com/lcysyzxdxc/MPD)\n* **Real-Robot Track:** [EmbodiedIQA Dataset](https://github.com/aiben-ch/EmbodiedIQA)\n\n*If you use these datasets, please adhere to the following citation formats:*\n\n **Simulation Data Citation:**\n ```bibtex\n @inproceedings{simdata,\n     author    = {Li, Chunyi and Tian, Yuan and Ling, Xiaoyue and Zhang, Zicheng and Duan, Haodong and Wu, Haoning and Jia, Ziheng and Liu, Xiaohong and Min, Xiongkuo and Lu, Guo and Lin, Weisi and Zhai, Guangtao},\n     title     = {Image Quality Assessment: From Human to Machine Preference},\n     booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},\n     month     = {June},\n     year      = {2025},\n     pages     = {7570-7581}\n }\n ```\n\n **Real-Robot Data Citation:**\n ```bibtex\n @inproceedings{realdata,\n     title={Image Quality Assessment for Embodied {AI}},\n     author={Chunyi Li and Jiahao Xiao and Jianbo Zhang and Farong Wen and Zicheng Zhang and Yuan Tian and Xiangyang Zhu and Xiaohong Liu and Zhengxue Cheng and Weisi Lin and Guangtao Zhai},\n     booktitle={The Fourteenth International Conference on Learning Representations},\n     year={2026},\n     url={https://openreview.net/forum?id=azj53PLJRL}\n }\n ```&quot;,
+      &quot;content_zh&quot;: &quot;## 1. 下载数据\n\n### **A部分：训练数据集**\n\n* **内容**：`public_train.tsv`\n* **链接**：[主链接](https://drive.google.com/file/d/111D1HAxacArbDAxjaJ56bPza4V9j2_T1/view?usp=drive_link)或[备用链接](https://www.codabench.org/datasets/575587/)\n\n### **B部分：验证数据集**\n* **内容**：`public_val.tsv`\n* **链接**：[主链接](https://drive.google.com/file/d/1StOa9abHPD1a8FMPBP4-aYNeJ-szlhKg/view?usp=drive_link)或[备用链接](https://www.codabench.org/datasets/575724/)\n\n### **C部分：测试数据集**\n* **内容**：`public_test.tsv`\n* **链接**：[公开测试数据链接](https://drive.google.com/file/d/1N_zGyzVpKG97XHtcZzJw1WXI8pXFsVSh/view?usp=sharing)\n&gt;\n&gt;  **测试阶段提交格式示例**\n&gt;  \n&gt; 下载**[测试提交模板](https://www.codabench.org/datasets/download/49e7804e-26da-46d9-b940-a4ea91452d28/)**以查看**测试阶段**提交结构的工作示例和随机分数生成器。\n\n---\n\n## 2. 数据集统计\n\n数据集总共包含**12,400张图像**，分为三个部分。每个原始图像关联30个失真变体。\n\n&lt;table style=\&quot;width: 100%; border-collapse: collapse; text-align: center; font-family: Arial, sans-serif;\&quot;&gt;\n  &lt;thead&gt;\n    &lt;tr style=\&quot;background-color: #f2f2f2;\&quot;&gt;\n      &lt;th style=\&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 80px;\&quot;&gt;部分&lt;/th&gt;\n      &lt;th style=\&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 160px;\&quot;&gt;原始图像&lt;/th&gt;\n      &lt;th style=\&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 160px;\&quot;&gt;失真图像&lt;/th&gt;\n      &lt;th style=\&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 80px;\&quot;&gt;合计&lt;/th&gt;\n      &lt;th style=\&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 200px;\&quot;&gt;用途&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;&lt;strong&gt;训练&lt;/strong&gt;&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;\n        280&lt;br&gt;\n        &lt;span style=\&quot;font-size: 0.85em; color: #666;\&quot;&gt;(img_000 - img_279)&lt;/span&gt;\n      &lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;\n        8,400&lt;br&gt;\n        &lt;span style=\&quot;font-size: 0.85em; color: #666;\&quot;&gt;(img_000_noise01 - img_279_noise30)&lt;/span&gt;\n      &lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;8,680&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;模型训练和微调&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr style=\&quot;background-color: #f9f9f9;\&quot;&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;&lt;strong&gt;验证&lt;/strong&gt;&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;\n        40&lt;br&gt;\n        &lt;span style=\&quot;font-size: 0.85em; color: #666;\&quot;&gt;(img_280 - img_319)&lt;/span&gt;\n      &lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;\n        1,200&lt;br&gt;\n        &lt;span style=\&quot;font-size: 0.85em; color: #666;\&quot;&gt;(img_280_noise01 - img_319_noise30)&lt;/span&gt;\n      &lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;1,240&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;模型选择和调试&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;&lt;strong&gt;测试&lt;/strong&gt;&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;\n        80&lt;br&gt;\n        &lt;span style=\&quot;font-size: 0.85em; color: #666;\&quot;&gt;(img_320 - img_399)&lt;/span&gt;\n      &lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;\n        2,400&lt;br&gt;\n        &lt;span style=\&quot;font-size: 0.85em; color: #666;\&quot;&gt;(img_320_noise01 - img_399_noise30)&lt;/span&gt;\n      &lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;2,480&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;&lt;strong&gt;竞赛评估&lt;/strong&gt;&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr style=\&quot;background-color: #e8f4f8; border-top: 2px solid #333;\&quot;&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;&lt;strong&gt;总计&lt;/strong&gt;&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;&lt;strong&gt;400&lt;/strong&gt;&lt;/td&gt;&quot;
+    },
+    {
+      &quot;index&quot;: 2,
+      &quot;title&quot;: &quot;Evaluation &amp; Submission&quot;,
+      &quot;content&quot;: &quot;## 1. Submission Format\n\nTo participate in the Preliminary Round, you must submit a **ZIP file** containing a single TSV file named **`submission.tsv`**. The file must follow the specific formatting and column requirements.\n\n**File Structure:**\n\n* **Archive**: `submission.zip`\n* **Content**: `submission.tsv` \n\n**TSV Header Requirements:**\nThe TSV file must include the following three columns:\n\n1. **index**: The unique identifier for each image.\n2. **abs_score**: Your predicted Absolute Score (floating-point value).\n3. **rel_score**: Your predicted Relative Score (floating-point value).\n\n**Example TSV Content:**\n\n&lt;table style=\&quot;width: 100%; border-collapse: collapse; text-align: center; font-family: Arial, sans-serif;\&quot;&gt;\n  &lt;thead&gt;\n    &lt;tr style=\&quot;background-color: #f2f2f2;\&quot;&gt;\n      &lt;th style=\&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 120px;\&quot;&gt;index&lt;/th&gt;\n      &lt;th style=\&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 120px;\&quot;&gt;abs_score&lt;/th&gt;\n      &lt;th style=\&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 120px;\&quot;&gt;rel_score&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;img_320&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;0.9850&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;1.0000&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr style=\&quot;background-color: #f9f9f9;\&quot;&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;img_320_noise01&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;0.7520&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;0.8264&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;img_320_noise02&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;0.4510&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;0.7612&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr style=\&quot;background-color: #f9f9f9;\&quot;&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;...&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;...&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;...&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;\n \n&gt;  **Test Phase Submission Format Example**\n&gt;  \n&gt; Download the **[Test Submission Template](https://www.codabench.org/datasets/download/49e7804e-26da-46d9-b940-a4ea91452d28/)** to see a working example of the **test phase** submission structure and a random score generator.\n---\n\n## 2. Evaluation Metrics\n\nSubmissions are evaluated based on their correlation with the Ground Truth (GT) scores. We use two primary statistical metrics to assess the accuracy of your predictions:\n\n* **Pearson Linear Correlation Coefficient (PLCC)**: Measures the linear relationship between the predicted scores and the ground truth.\n* **Spearman Rank-Order Correlation Coefficient (SRCC)**: Measures the monotonic relationship (ranking consistency) between the predicted scores and the ground truth.\n\n---\n\n## 3. Leaderboard Ranking\n\nThe competition features two parallel tracks. \n\n* **Track 1: Absolute Score (Robustness Level)**\n* Evaluated using the mean of PLCC and SRCC on the absolute score predictions.\n\n\n* **Track 2: Relative Score (Performance Degradation)**\n* Evaluated using the mean of PLCC and SRCC on the relative score predictions.\n\n\n\n---\n\n## 4. Important Notes\n\n* **Consistency**: Ensure the `index` column matches the Test Set exactly. Any missing rows or mismatched indices will result in a submission error.\n* **Encoding**: Do not include Base64 image data in your submission; only the predicted scores are required.\n* **Precision**: We recommend providing scores with at least 4 decimal places for better ranking granularity.&quot;,
+      &quot;content_zh&quot;: &quot;## 1. 提交格式\n\n要参加初赛，您必须提交一个**ZIP文件**，其中包含一个名为**`submission.tsv`**的TSV文件。该文件必须遵循特定的格式和列要求。\n\n**文件结构：**\n\n* **压缩包**: `submission.zip`\n* **内容**: `submission.tsv` \n\n**TSV文件头要求：**\nTSV文件必须包含以下三列：\n\n1. **index**: 每张图像的唯一标识符。\n2. **abs_score**: 您预测的绝对分数（浮点数值）。\n3. **rel_score**: 您预测的相对分数（浮点数值）。\n\n**TSV文件内容示例：**\n\n&lt;table style=\&quot;width: 100%; border-collapse: collapse; text-align: center; font-family: Arial, sans-serif;\&quot;&gt;\n  &lt;thead&gt;\n    &lt;tr style=\&quot;background-color: #f2f2f2;\&quot;&gt;\n      &lt;th style=\&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 120px;\&quot;&gt;index&lt;/th&gt;\n      &lt;th style=\&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 120px;\&quot;&gt;abs_score&lt;/th&gt;\n      &lt;th style=\&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 120px;\&quot;&gt;rel_score&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;img_320&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;0.9850&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;1.0000&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr style=\&quot;background-color: #f9f9f9;\&quot;&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;img_320_noise01&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;0.7520&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;0.8264&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;img_320_noise02&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;0.4510&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;0.7612&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr style=\&quot;background-color: #f9f9f9;\&quot;&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;...&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;...&lt;/td&gt;\n      &lt;td style=\&quot;padding: 10px 8px; border: 1px solid #ddd;\&quot;&gt;...&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;\n\n&gt; **测试阶段提交格式示例**\n&gt;\n&gt; 下载**[测试提交模板](https://www.codabench.org/datasets/download/49e7804e-26da-46d9-b940-a4ea91452d28/)**以查看**测试阶段**提交结构的工作示例和随机分数生成器。\n\n---\n\n## 2. 评估指标\n\n提交内容根据与真实值(GT)分数的相关性进行评估。我们使用两个主要统计指标来评估您预测的准确性：\n\n* **皮尔逊线性相关系数(PLCC)**: 衡量预测分数与真实值之间的线性关系。\n* **斯皮尔曼秩相关系数(SRCC)**: 衡量预测分数与真实值之间的单调关系（排序一致性）。\n\n---\n\n## 3. 排行榜排名\n\n竞赛包含两个平行赛道。\n\n* **赛道1：绝对分数（鲁棒性等级）**\n* 使用绝对分数预测的PLCC和SRCC的平均值进行评估。\n\n* **赛道2：相对分数（性能下降）**\n* 使用相对分数预测的PLCC和SRCC的平均值进行评估。\n\n---\n\n## 4. 重要提示\n\n* **一致性**: 确保`index`列与测试集完全匹配。任何缺失的行或不匹配的索引都将导致提交错误。\n* **编码**: 不要在您的提交中包含Base64图像数据；仅需提供预测的分数。\n* **精度**: 我们建议提供至少4位小数的分数，以获得更好的排名精确度。&quot;
+    },
+    {
+      &quot;index&quot;: 3,
+      &quot;title&quot;: &quot;Important Dates&quot;,
+      &quot;content&quot;: &quot;### Competition Timeline\n\n* **February 22, 2026** | Training &amp; Validation Datasets Release\n* **May 15, 2026** | Test Dataset Release\n* **May 30, 2026** | Real-Robot Competition Starts\n* **June 10, 2026** | Final Competition Results Announced\n* **June 25, 2026** | Deadline for Paper Submission\n* **July 16, 2026** | Paper Acceptance Notification\n* **August 6, 2026** | Deadline for Camera-Ready Papers\n\n### The timeline will be adjusted in accordance with the progress of the ACMMM conference.&quot;,
+      &quot;content_zh&quot;: &quot;### 竞赛时间表\n\n* **2026年2月22日** | 训练和验证数据集发布\n* **2026年5月15日** | 测试数据集发布\n* **2026年5月30日** | 真实机器人竞赛开始\n* **2026年6月10日** | 最终竞赛结果公布\n* **2026年6月25日** | 论文提交截止日期\n* **2026年7月16日** | 论文录用通知\n* **2026年8月6日** | 最终版论文提交截止日期\n\n### 时间表将根据ACM MM会议的进展进行相应调整。&quot;
+    }
+  ]
+}</pre>
+  </div>
+</div>
+</body>
+</html>

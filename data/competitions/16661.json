@@ -1,0 +1,48 @@
+{
+  "id": 16661,
+  "title": "ArGuard 2026 — Subtask A1 (Binary Hateful Meme Detection)",
+  "description": "Arabic multimodal hateful-meme classification. Given a meme (image plus OCR-extracted Arabic text), predict whether it is Hateful or Not Hateful. Official metric: macro-F1.",
+  "description_zh": "阿拉伯语多模态仇恨梗图分类。给定一个梗图（图像加上OCR提取的阿拉伯文本），预测其是否为仇恨性或非仇恨性。官方指标：宏观F1。",
+  "created_by": "mohamedbayan",
+  "created_when": "2026-05-25T13:30:58.534544Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-25-1779715858/886e2d9c0b58/logo.png?AWSAccessKeyId=codabench-prod&Signature=jcvmLaw%2BZeQCoCR5GwMTttlKR4A%3D&Expires=1779872814",
+  "participants_count": 1,
+  "submissions_count": 0,
+  "first_phase_start": null,
+  "phases": [
+    {
+      "id": 27295,
+      "name": "Development Phase",
+      "start": "2026-05-14T00:00:00Z",
+      "end": "2026-07-19T00:00:00Z",
+      "max_submissions_per_day": 5
+    },
+    {
+      "id": 27296,
+      "name": "Testing Phase",
+      "start": "2026-07-20T00:00:00Z",
+      "end": "2026-07-29T00:00:00Z",
+      "max_submissions_per_day": 20
+    }
+  ],
+  "pages": [
+    {
+      "index": 0,
+      "title": "Participation",
+      "content": "# How to participate\n\nArGuard 2026 — Task 1 / Track A · **Subtask A1: Binary Hateful Meme Detection**.\n\n## Who can join\nYou can take part as an individual or as a team. A person can participate in multiple shared tasks within ArGuard 2026 — see the full list at the [task website](https://araieval.gitlab.io/ArGuard2026/).\n\n## How to register\n1. Sign up on this CodaBench competition page.\n2. Read the [Terms](#) tab — pay particular attention to the submission file format and naming convention.\n3. Download the data from the Hugging Face Hub: [`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1).\n4. Clone the starter kit: [`araieval/ArGuard-2026-tasks`](https://github.com/araieval/ArGuard-2026-tasks).\n5. Train your model and generate predictions on the `dev_test` split during the development phase, and on the `test` split during the final-evaluation phase.\n\n## Submitting\n- One team member submits per phase via the **Submit** tab.\n- Upload your TSV prediction file as `prediction.zip` (see Terms).\n- The latest valid submission before the deadline counts as your team's final submission for that phase.\n\n## System description paper\nAll teams are encouraged to submit a system-description paper for the workshop. A single paper may cover multiple subtasks if you participated in more than one.\n\n## Contact\nQuestions: arguard2026-organizers@googlegroups.com",
+      "content_zh": "# 参加方式\n\nArGuard 2026 — 任务 1 / 赛道 A · **子任务 A1：二元仇恨梗图检测**。\n\n## 谁可以参加\n您可以以个人或团队身份参加。一个人可以参加 ArGuard 2026 内的多个共享任务——查看[任务网站](https://araieval.gitlab.io/ArGuard2026/)上的完整列表。\n\n## 如何注册\n1. 在此 CodaBench 竞赛页面上注册。\n2. 阅读[条款](#)选项卡——特别注意提交文件格式和命名约定。\n3. 从 Hugging Face Hub 下载数据：[`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1)。\n4. 克隆启动工具包：[`araieval/ArGuard-2026-tasks`](https://github.com/araieval/ArGuard-2026-tasks)。\n5. 在开发阶段在 `dev_test` 拆分上训练您的模型并生成预测，在最终评估阶段在 `test` 拆分上生成预测。\n\n## 提交\n- 每个阶段由一名团队成员通过**提交**选项卡提交。\n- 将您的 TSV 预测文件上传为 `prediction.zip`（见条款）。\n- 截止日期前的最新有效提交将计为您团队在该阶段的最终提交。\n\n## 系统描述论文\n所有团队都被鼓励为研讨会提交系统描述论文。如果您参加了多个子任务，单篇论文可以涵盖多个子任务。\n\n## 联系方式\n问题咨询：arguard2026-organizers@googlegroups.com"
+    },
+    {
+      "index": 1,
+      "title": "Dataset",
+      "content": "# Dataset\n\nArGuard Task 1 — Track A is built around an Arabic multimodal meme dataset: each instance is an image with overlaid Arabic text (OCR-extracted). Memes are manually annotated for hatefulness.\n\nFor **Subtask A1**, every meme has a single binary label from {`Hateful`, `Not Hateful`}.\n\n## Get the data\nThe official splits live on the Hugging Face Hub at [`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1). Download them with the helper script from the starter kit:\n\n```bash\ngit clone https://github.com/araieval/ArGuard-2026-tasks.git\ncd ArGuard-2026-tasks/task1\npip install -r requirements.txt\npython data/download_data.py\n```\n\n## Splits\n\n| Split        | Records | Labels   | Phase                    | Purpose                                    |\n|--------------|--------:|----------|--------------------------|--------------------------------------------|\n| `train`      |   3,500 | full     | development              | model training                             |\n| `dev`        |     500 | full     | development              | hyperparameter selection, local evaluation |\n| `dev_test`   |     500 | **none** | development (leaderboard)| submission target for the dev-phase leaderboard |\n| `test`       |     500 | full     | final evaluation         | blind ranking (triple-annotated gold)      |\n\nThe `dev_test` split is released with labels stripped — that is the file you submit predictions for during the development phase.\n\n## Record schema (after `download_data.py`)\n```json\n{\n    \"id\": \"f9a8…b1.jpg\",\n    \"image_path\": \"img/f9a8…b1.jpg\",\n    \"text\": \"OCR-extracted Arabic text…\",\n    \"label\": \"Hateful\" | \"Not Hateful\" | null,\n    \"fine_grained_label\": [\"Mocking\", \"Incitement\"],\n    \"annotations\": []\n}\n```\n\n## Licence\nThe dataset is released under **CC BY-NC 4.0** (non-commercial research use only).\n\n## Resources\n- Starter kit: <https://github.com/araieval/ArGuard-2026-tasks>\n- Task website: <https://araieval.gitlab.io/ArGuard2026/>",
+      "content_zh": "# 数据集\n\nArGuard Task 1 — Track A 围绕阿拉伯语多模态表情包数据集构建：每个实例包含一张图像和叠加的阿拉伯文本（OCR 提取）。表情包经人工标注仇恨属性。\n\n对于**子任务 A1**，每个表情包都有一个二元标签：{`Hateful`（仇恨）、`Not Hateful`（非仇恨）}。\n\n## 获取数据\n官方数据集存放在 Hugging Face Hub 上：[`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1)。使用启动工具包中的辅助脚本下载：\n\n```bash\ngit clone https://github.com/araieval/ArGuard-2026-tasks.git\ncd ArGuard-2026-tasks/task1\npip install -r requirements.txt\npython data/download_data.py\n```\n\n## 数据划分\n\n| 数据集        | 记录数 | 标签   | 阶段                    | 用途                                    |\n|--------------|------:|--------|------------------------|------------------------------------------|\n| `train`      | 3,500 | 完整   | 开发阶段                | 模型训练                             |\n| `dev`        |   500 | 完整   | 开发阶段                | 超参数选择、本地评估 |\n| `dev_test`   |   500 | **无** | 开发阶段（排行榜）      | 开发阶段排行榜的提交目标 |\n| `test`       |   500 | 完整   | 最终评估                | 盲目排序（三重标注黄金标准）      |\n\n`dev_test` 数据集发布时已移除标签——这是开发阶段提交预测结果的文件。\n\n## 记录架构（运行 `download_data.py` 后）\n```json\n{\n    \"id\": \"f9a8…b1.jpg\",\n    \"image_path\": \"img/f9a8…b1.jpg\",\n    \"text\": \"OCR 提取的阿拉伯文本…\",\n    \"label\": \"Hateful\" | \"Not Hateful\" | null,\n    \"fine_grained_label\": [\"Mocking\", \"Incitement\"],\n    \"annotations\": []\n}\n```\n\n## 许可证\n数据集采用 **CC BY-NC 4.0** 许可证发布（仅限非商业研究使用）。\n\n## 资源\n- 启动工具包：<https://github.com/araieval/ArGuard-2026-tasks>\n- 任务网站：<https://araieval.gitlab.io/ArGuard2026/>"
+    },
+    {
+      "index": 2,
+      "title": "Timeline",
+      "content": "# Timeline\n\n## Development phase\nUse this phase to tune your models on `train.jsonl` / `dev.jsonl` and submit predictions on `dev_test.jsonl` for the leaderboard.\n\n**Window:** `2026-05-14 → 2026-07-19`\n**Submissions:** up to 5 per day, 100 total.\n\n## Testing phase\nThe final blind test split is released. Train on `train.jsonl` + `dev.jsonl`, submit predictions on `test.jsonl` — your best valid submission counts toward the official ranking.\n\n**Window:** `2026-07-20 → 2026-07-29`\n**Submissions:** up to 20 per day, 100 total.\n\n> Adjust the dates inside `competition.yaml` (the `phases.start` / `phases.end` fields) if your task schedule shifts.\n\n## Workshop\nPaper submissions and notification dates will be announced on the [task website](https://araieval.gitlab.io/ArGuard2026/).",
+      "content_zh": "# 时间表\n\n## 开发阶段\n使用此阶段在 `train.jsonl` / `dev.jsonl` 上调试模型，并在 `dev_test.jsonl` 上提交预测以参与排行榜竞争。\n\n**时间窗口：** `2026-05-14 → 2026-07-19`\n**提交次数：** 每天最多 5 次，总计 100 次。\n\n## 测试阶段\n发布最终的盲测数据集。基于 `train.jsonl` + `dev.jsonl` 进行训练，在 `test.jsonl` 上提交预测——您最好的有效提交将被计入官方排名。\n\n**时间窗口：** `2026-07-20 → 2026-07-29`\n**提交次数：** 每天最多 20 次，总计 100 次。\n\n> 如果任务日程有变更，请调整 `competition.yaml` 中的日期（`phases.start` / `phases.end` 字段）。\n\n## 研讨会\n论文提交和通知日期将在 [任务网站](https://araieval.gitlab.io/ArGuard2026/) 上发布。"
+    }
+  ]
+}

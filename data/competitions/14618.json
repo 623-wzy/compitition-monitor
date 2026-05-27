@@ -1,0 +1,41 @@
+{
+  "id": 14618,
+  "title": "Classify Youtube Video's Text and Title - Group 42",
+  "description": "Classification of YouTube video's title and description into 12 classes.",
+  "description_zh": "YouTube视频标题和描述分类到12个类别。",
+  "created_by": "thaafei13",
+  "created_when": "2026-03-09T18:00:16.515235Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-03-09-1773079389/08be443c561e/category-management-stages-1.webp?AWSAccessKeyId=codabench-prod&Signature=4oN1tXXYRSSklQtU2ffVQatpSKo%3D&Expires=1779872889",
+  "participants_count": 10,
+  "submissions_count": 15,
+  "first_phase_start": null,
+  "phases": [
+    {
+      "id": 24260,
+      "name": "Development Phase",
+      "start": "2026-03-01T00:00:00Z",
+      "end": "2026-05-31T00:00:00Z",
+      "max_submissions_per_day": 100
+    }
+  ],
+  "pages": [
+    {
+      "index": 0,
+      "title": "Participation",
+      "content": "# How to participate\n\nYou should submit an untrained model in a python file `model.py` which contains\nyour `class Model`, which will be imported, trained, and tested on Codalab.\n\nThe overall dataset is divided into training/validation/test as a 80/5/15 split.\n\nYou can download the input_data, which contains both the training and validation dataset. Although the competition will only run training and test dataset's, the validation dataset is provided for competitors to finetune their models on their end.\n\nSee the \"Seed\" page for the outline of a `Model` class, with the expected\nfunction names.\n\nSee the \"Timeline\" page for additional information about the phases of this\ncompetition",
+      "content_zh": "# 如何参与\n\n您应该在Python文件 `model.py` 中提交一个未训练的模型，该文件包含您的 `class Model`，将在Codalab上导入、训练和测试。\n\n整体数据集按80/5/15的比例分为训练集/验证集/测试集。\n\n您可以下载input_data，其中包含训练数据集和验证数据集。虽然竞赛仅在训练和测试数据集上运行，但验证数据集是为参赛者在本地微调模型而提供的。\n\n有关 `Model` 类的概述和预期的函数名称，请查看\"Seed\"页面。\n\n有关竞赛各个阶段的更多信息，请查看\"Timeline\"页面。"
+    },
+    {
+      "index": 1,
+      "title": "Data",
+      "content": "# Dataset and Ground Truth\nOur dataset consists of YouTube video titles and descriptions.\nThe task is a supervised multinomial classification problem: given a title and description, the model predicts\nthe video’s primary category from 12 total categories.\n* Food & Cooking\n* Education\n* News\n* Video Games\n* Shopping\n* Health & Fitness\n* Sports & Games\n* Vehicles\n* Business\n* Music\n* Lifestyle\n* Digital Media\n\nAltogether, the dataset consists of 1851 manually annotated data points, with the **ground truth** being the majority vote across the three annotators.\n\n![Count of Each Category](https://raw.githubusercontent.com/thaafei/YouTubeCategories-4NL3/master/Count%20of%20Each%20Category.png)\n\nTo summarize, **Education** is the most common category, with 25.3% of all data being labeled as it in our dataset. The classes are not balanced, with two categories, Education and Lifestyle, accounting for 46% of the total dataset.\n\nThis makes sense, as they are one of the biggest genres on YouTube itself, and the original, unlabeled dataset we based our annotated one off of consists of videos sourced from only 50 channels.\n\nTo see more details about the dataset, how our team labeled the data, and some sample data points, [see the progress report](https://github.com/thaafei/YouTubeCategories-4NL3/blob/master/Step1/step_1.pdf) .",
+      "content_zh": "# 数据集和基准真值\n\n我们的数据集由YouTube视频标题和描述组成。\n该任务是一个监督多项分类问题：给定标题和描述，模型从总共12个类别中预测视频的主要类别。\n* 食品与烹饪\n* 教育\n* 新闻\n* 视频游戏\n* 购物\n* 健康与健身\n* 运动与游戏\n* 车辆\n* 商业\n* 音乐\n* 生活方式\n* 数字媒体\n\n总共，该数据集包含1851个手工标注的数据点，**基准真值**为三位标注员的多数投票。\n\n![各类别计数](https://raw.githubusercontent.com/thaafei/YouTubeCategories-4NL3/master/Count%20of%20Each%20Category.png)\n\n总结一下，**教育**是最常见的类别，占我们数据集中所有数据的25.3%。各类别分布不均衡，教育和生活方式两个类别占数据集总量的46%。\n\n这是合理的，因为这两个类别是YouTube上最大的类型之一，而我们基于的原始未标注数据集仅由来自50个频道的视频组成。\n\n有关数据集的更多详情、我们团队的标注方法和一些样本数据点，请[查看进度报告](https://github.com/thaafei/YouTubeCategories-4NL3/blob/master/Step1/step_1.pdf)。"
+    },
+    {
+      "index": 2,
+      "title": "Seed",
+      "content": "# Seed:\n\n```\nclass Model:\n    def fit(self, X_train, y_train):\n        \"\"\"\n        This should handle the logic of training your model\n        :param X_train: dataframe containing columns \"video_title\" and \"video_description\"\n        :param y_train:  dataframe with column \"category\". Contains classifications of X_train\n        \"\"\"\n        pass\n\n    def predict(self, X_test):\n        \"\"\"\n        This should handle making predictions with a trained model\n        :param X_test: dataframe containing columns \"video_title\" and \"video_description\"\n        :return: 1 dimensional np.array of the same length as X_test containing predictions to each point in X_test\n        \"\"\"\n        pass\n\n```",
+      "content_zh": "# 种子代码：\n\n```\nclass Model:\n    def fit(self, X_train, y_train):\n        \"\"\"\n        这应该处理训练模型的逻辑\n        :param X_train: 包含\"video_title\"和\"video_description\"列的数据框\n        :param y_train: 包含\"category\"列的数据框。包含X_train的分类\n        \"\"\"\n        pass\n\n    def predict(self, X_test):\n        \"\"\"\n        这应该处理使用训练好的模型进行预测\n        :param X_test: 包含\"video_title\"和\"video_description\"列的数据框\n        :return: 与X_test长度相同的一维np.array，包含对X_test中每个点的预测\n        \"\"\"\n        pass\n```"
+    }
+  ]
+}

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EBMV 2026 @ ECCV - Event-Guided Brightness Adjustment on SEE-600K — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>EBMV 2026 @ ECCV - Event-Guided Brightness Adjustment on SEE-600K</h2>
+  <div class="detail-meta">
+    <span>ID: 16195</span>
+    <span>创建者: yunfan_lu</span>
+    <span>创建时间: 2026-05-07</span>
+    <span>参与人数: 44</span>
+    <span>提交次数: 11</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16195/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content"># EBMV 2026 低级图像处理挑战：SEE-600K事件引导亮度调整
+
+## 概述
+
+真实世界图像常常受到不同光照退化的影响，包括低光、过度曝光、混合照明和高对比度场景。本挑战旨在研究在广泛光照条件下低级图像增强的统一事件引导解决方案。
+
+参赛者需要使用RGB帧和事件数据来恢复清晰、曝光良好且结构保真的图像。本挑战与ECCV 2026事件多模态视觉研讨会相关：成像、感知与理解。
+
+## 数据集
+
+本挑战基于SEE-600K，出自论文：
+
+&quot;SEE: See Everything Every Time - Adaptive Brightness Adjustment for Broad Light Range Images via Events&quot;
+
+SEE-600K是在多种光照条件和真实场景下收集的大规模RGB-事件数据集。它提供成对的RGB图像和事件数据用于事件引导亮度调整和低级图像复原。
+
+数据集：
+https://huggingface.co/datasets/yunfanlu/SEE-600K
+
+基准代码：
+https://github.com/yunfanLu/SEE
+
+研讨会网站：
+https://eventbasemultimodalvision.github.io
+
+## 任务
+
+参赛者需要开发一个事件引导的低级图像处理模型。
+
+输入：
+1. 在具有挑战性光照条件下捕获的RGB图像。
+2. 对应的事件流或事件表示。
+3. 可选的元数据或曝光提示（如提供）。
+
+输出：
+1. 亮度调整后的RGB图像。
+2. 输出应保留场景结构、恢复有用细节，避免不现实的幻觉。
+
+本任务侧重于事件引导的亮度调整和图像增强，而非通用图像生成。
+
+## 挑战赛道
+
+### 宽光谱自适应亮度调整
+
+鼓励参赛者在SEE-600K上训练模型。允许使用额外的训练数据，但所有外部数据集、收集设置和预训练模型应在最终技术报告中明确说明。
+
+## 提交格式
+
+每份提交应上传为压缩ZIP文件。
+
+推荐的结构：
+
+submission.zip
+├── scene_000001.png
+├── scene_000002.png
+├── scene_000003.png
+└── ...
+
+要求：
+1. 输出文件名必须与输入样本ID匹配。
+2. 图像应保存为PNG文件。
+3. 输出图像应为RGB图像。
+4. 输出分辨率必须与输入/参考分辨率相同。
+5. 不要更改文件名或文件夹结构。
+6. 除非明确要求，否则不要包含额外文件。
+
+## 评估
+
+官方评估将在测试集上进行。
+
+指标：
+1. PSNR：像素级重建精度。
+2. SSIM：结构相似性。
+3. LPIPS：感知相似性。
+
+排名：
+1. PSNR是主要排名指标。
+2. SSIM和LPIPS将作为次要指标使用。
+3. 最终排行榜将基于官方测试集。
+
+验证服务器主要用于开发和提交格式检查。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-test'>测试</span> Test Phase</td><td>2026-05-14</td><td>2026-06-24</td><td>5</td></tr><tr><td><span class='badge badge-test'>测试</span> Eval Phase</td><td>2026-06-25</td><td>2026-07-03</td><td>5</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'># SEE Challenge 2026: 事件引导亮度调整竞赛（SEE-600K数据集）
+
+欢迎参加**SEE Challenge 2026**，由**EBMV @ ECCV 2026**主办。本竞赛研究**广泛光照条件下的事件引导亮度调整**。
+
+目标是从具有挑战性的RGB输入图像和相应的事件相机信号恢复一张曝光良好的RGB图像。参赛者可使用官方基准代码、SEE-600K数据集、外部数据和预训练模型，但必须在最终技术报告中明确标注所有外部资源。
+
+## 快速开始
+
+| 需求 | 链接 |
+| --- | --- |
+| 代码、基准、数据集链接、预训练模型 | [GitHub: yunfanLu/SEE](https://github.com/yunfanLu/SEE) |
+| 完整的设置、训练、推理和评估教程 | [docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md) |
+| CodaBench打包和上传说明 | [docs/CODABENCH_SUBMISSION_GUIDE.md](https://github.com/yunfanLu/SEE/blob/main/docs/CODABENCH_SUBMISSION_GUIDE.md) |
+| 中文竞赛指南 | [docs/COMPETITION_GUIDE_ZH.md](https://github.com/yunfanLu/SEE/blob/main/docs/COMPETITION_GUIDE_ZH.md) |
+| 基准结果 | [docs/TEST_RESULTS.md](https://github.com/yunfanLu/SEE/blob/main/docs/TEST_RESULTS.md) |
+| 数据集 | [Hugging Face上的SEE-600K](https://huggingface.co/datasets/yunfanlu/SEE-600K) |
+
+推荐工作流程：
+
+1. 克隆仓库并安装依赖。
+2. 下载SEE-600K。
+3. 使用官方训练集训练或改进模型。
+4. 在原始图像尺寸`346 x 260`上进行推理。
+5. 使用提供的CodaBench脚本收集预测图像。
+6. 将收集的文件夹压缩并上传到CodaBench。
+
+## 任务
+
+给定：
+
+- 在困难照明条件下捕获的RGB图像；
+- 相应的事件流或事件表示；
+- 在可用时提供的可选亮度或曝光元数据；
+
+参赛者应输出**亮度调整后的RGB图像**。
+
+输出应：
+
+- 保留场景结构和图像细节；
+- 产生自然的色彩和曝光；
+- 避免不真实的幻觉内容；
+- 与提交的原始SEE图像分辨率相匹配。
+
+## 数据集：SEE-600K
+
+本竞赛采用**SEE-600K**，这是一个用于宽光程范围图像增强的大规模RGB-事件数据集。
+
+| 属性 | 数值 |
+| --- | --- |
+| 图像数量 | 610,126 |
+| 真实场景 | 202 |
+| 数据模态 | RGB帧 + 事件数据 |
+| 光照条件 | 低光、正常光、高光、混合光照 |
+| 图像分辨率 | `346 x 260` |
+
+下载：
+
+- Hugging Face: [yunfanlu/SEE-600K](https://huggingface.co/datasets/yunfanlu/SEE-600K)
+- 其他镜像和说明: [GitHub README](https://github.com/yunfanLu/SEE#dataset-download)
+
+预期的数据集结构和设置说明记录在[docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#2-prepare-the-dataset)中。
+
+## 训练/测试划分
+
+以下场景组保留用于官方测试，**禁止用于训练**：
+
+| 类型 | 保留组 |
+| --- | --- |
+| 室内 | 000, 001, 002, 006, 012, 018, 030, 042, 048, 054, 060, 065, 070, 074, 075 |
+| 室外 | 100, 106, 112, 118, 124, 130, 136, 142, 148, 154, 160, 166, 173, 184, 189, 194, 200, 206, 212, 217, 222, 225 |
+
+所有其他组可用于训练。详见[docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#23-traintest-split)中的划分详情。
+
+## 基准：SEE-Net
+
+官方仓库提供**SEE-Net**，一个紧凑的基准模型，参数约为**190万**。它使用：
+
+- RGB帧；
+- 事件数据；
+- 亮度/曝光提示。
+
+基准支持通过提示值`B`进行可控亮度调整：
+
+- `B ~= 0.5`：正常曝光；
+- `B &gt; 0.5`：更亮的输出；
+- `B &lt; 0.5`：更暗的输出。
+
+基准的设置、训练、推理和评估文档见：
+
+- 设置: [docs/TUTORIAL.md#3-set-up-the-python-environment](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md)</div></div><div class='section'><h3>Rules &amp; Timeline</h3><div class='page-content'># 规则
+
+参赛者可以使用 SEE-600K 进行模型训练。
+
+允许使用外部训练数据、预训练模型和合成数据，但必须在最终技术报告中明确说明。
+
+参赛者不得使用隐藏的地面真值测试数据、手动调整测试集结果或利用评估服务器。
+
+排名靠前的团队可能被要求提交简短的技术报告以进行结果验证。
+
+# 重要日期
+
+2026 年 5 月 15 日：竞赛网站开放。
+
+2026 年 5 月 25 日：验证服务器上线。
+
+2026 年 6 月 25 日：发布测试数据和测试服务器上线。
+
+2026 年 7 月 3 日：测试提交截止日期和测试服务器关闭。
+
+2026 年 7 月 10 日：公布结果。暂定。</div></div>
+
+  <div class="section">
+    <h3>原始数据</h3>
+    <pre class="page-content" style="font-size:.8rem">{
+  &quot;id&quot;: 16195,
+  &quot;title&quot;: &quot;EBMV 2026 @ ECCV - Event-Guided Brightness Adjustment on SEE-600K&quot;,
+  &quot;description&quot;: &quot;# EBMV 2026 Low-Level Imaging Challenge: Event-Guided Brightness Adjustment on SEE-600K\n\n## Overview\n\nReal-world images often suffer from different lighting degradations, including low light, over-exposure, mixed illumination, and high-contrast scenes. This challenge aims to study a unified event-guided solution for low-level image enhancement under broad lighting conditions.\n\nParticipants are asked to use RGB frames and event data to recover clear, well-exposed, and structurally faithful images. The challenge is associated with the ECCV 2026 Workshop on Event-Based Multimodal Vision: Imaging, Perception, and Understanding.\n\n## Dataset\n\nThis challenge is based on SEE-600K, introduced in:\n\n“SEE: See Everything Every Time - Adaptive Brightness Adjustment for Broad Light Range Images via Events”\n\nSEE-600K is a large-scale RGB-event dataset collected under diverse lighting conditions and real-world scenarios. It provides paired RGB images and event data for event-guided brightness adjustment and low-level image restoration.\n\nDataset:\nhttps://huggingface.co/datasets/yunfanlu/SEE-600K\n\nBaseline code:\nhttps://github.com/yunfanLu/SEE\n\nWorkshop website:\nhttps://eventbasemultimodalvision.github.io\n\n## Task\n\nParticipants need to develop an event-guided low-level imaging model.\n\nInput:\n1. An RGB image captured under challenging illumination.\n2. The corresponding event stream or event representation.\n3. Optional metadata or exposure prompt, if provided.\n\nOutput:\n1. A brightness-adjusted RGB image.\n2. The output should preserve scene structure, recover useful details, and avoid unrealistic hallucination.\n\nThe task focuses on event-guided brightness adjustment and image enhancement, rather than general image generation.\n\n## Challenge Track\n\n### Broad-Light Adaptive Brightness Adjustment\n\nParticipants are encouraged to train models on SEE-600K. Extra training data is allowed, but all external datasets, collection settings, and pretrained models should be clearly reported in the final technical report.\n\n## Submission Format\n\nEach submission should be uploaded as a compressed ZIP file.\n\nRecommended structure:\n\nsubmission.zip\n├── scene_000001.png\n├── scene_000002.png\n├── scene_000003.png\n└── ...\n\nRequirements:\n1. The output filename must match the input sample ID.\n2. Images should be saved as PNG files.\n3. Output images should be RGB images.\n4. The output resolution must be the same as the input/reference resolution.\n5. Do not change the file names or folder structure.\n6. Do not include extra files unless explicitly required.\n\n## Evaluation\n\nThe official evaluation will be conducted on the test set.\n\nMetrics:\n1. PSNR: pixel-level reconstruction accuracy.\n2. SSIM: structural similarity.\n3. LPIPS: perceptual similarity.\n\nRanking:\n1. PSNR is the primary ranking metric.\n2. SSIM and LPIPS will be used as secondary metrics.\n3. The final leaderboard will be based on the official test set.\n\nThe validation server is mainly for development and submission-format checking.\n\n## Important Dates\n\nMay 15, 2026: Challenge website opens.\n\nMay 25, 2026: Validation server online.\n\nJune 25, 2026: Test data released and test server online.\n\nJuly 3, 2026: Test submission deadline and test server closes.\n\nJuly 10, 2026: Results announcement. Tentative.\n\n## Awards\n\nTop teams will be recognized at the ECCV 2026 Workshop on Event-Based Multimodal Vision.\n\n## Citation\n\nIf you use SEE-600K or the SEE baseline, please cite:\n\n“SEE: See Everything Every Time - Adaptive Brightness Adjustment for Broad Light Range Images via Events”\n\nMore information is available at:\nhttps://github.com/yunfanLu/SEE\n\n## Contact\n\nYunfan Lu  \nylu066@connect.hkust-gz.edu.cn&quot;,
+  &quot;description_zh&quot;: &quot;# EBMV 2026 低级图像处理挑战：SEE-600K事件引导亮度调整\n\n## 概述\n\n真实世界图像常常受到不同光照退化的影响，包括低光、过度曝光、混合照明和高对比度场景。本挑战旨在研究在广泛光照条件下低级图像增强的统一事件引导解决方案。\n\n参赛者需要使用RGB帧和事件数据来恢复清晰、曝光良好且结构保真的图像。本挑战与ECCV 2026事件多模态视觉研讨会相关：成像、感知与理解。\n\n## 数据集\n\n本挑战基于SEE-600K，出自论文：\n\n\&quot;SEE: See Everything Every Time - Adaptive Brightness Adjustment for Broad Light Range Images via Events\&quot;\n\nSEE-600K是在多种光照条件和真实场景下收集的大规模RGB-事件数据集。它提供成对的RGB图像和事件数据用于事件引导亮度调整和低级图像复原。\n\n数据集：\nhttps://huggingface.co/datasets/yunfanlu/SEE-600K\n\n基准代码：\nhttps://github.com/yunfanLu/SEE\n\n研讨会网站：\nhttps://eventbasemultimodalvision.github.io\n\n## 任务\n\n参赛者需要开发一个事件引导的低级图像处理模型。\n\n输入：\n1. 在具有挑战性光照条件下捕获的RGB图像。\n2. 对应的事件流或事件表示。\n3. 可选的元数据或曝光提示（如提供）。\n\n输出：\n1. 亮度调整后的RGB图像。\n2. 输出应保留场景结构、恢复有用细节，避免不现实的幻觉。\n\n本任务侧重于事件引导的亮度调整和图像增强，而非通用图像生成。\n\n## 挑战赛道\n\n### 宽光谱自适应亮度调整\n\n鼓励参赛者在SEE-600K上训练模型。允许使用额外的训练数据，但所有外部数据集、收集设置和预训练模型应在最终技术报告中明确说明。\n\n## 提交格式\n\n每份提交应上传为压缩ZIP文件。\n\n推荐的结构：\n\nsubmission.zip\n├── scene_000001.png\n├── scene_000002.png\n├── scene_000003.png\n└── ...\n\n要求：\n1. 输出文件名必须与输入样本ID匹配。\n2. 图像应保存为PNG文件。\n3. 输出图像应为RGB图像。\n4. 输出分辨率必须与输入/参考分辨率相同。\n5. 不要更改文件名或文件夹结构。\n6. 除非明确要求，否则不要包含额外文件。\n\n## 评估\n\n官方评估将在测试集上进行。\n\n指标：\n1. PSNR：像素级重建精度。\n2. SSIM：结构相似性。\n3. LPIPS：感知相似性。\n\n排名：\n1. PSNR是主要排名指标。\n2. SSIM和LPIPS将作为次要指标使用。\n3. 最终排行榜将基于官方测试集。\n\n验证服务器主要用于开发和提交格式检查。&quot;,
+  &quot;created_by&quot;: &quot;yunfan_lu&quot;,
+  &quot;created_when&quot;: &quot;2026-05-07T16:25:48.971115Z&quot;,
+  &quot;logo&quot;: &quot;https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-14-1778767621/54b97befc59e/SEE-logo.jpg?AWSAccessKeyId=codabench-prod&amp;Signature=BCpjIAXgGHMzXpBNpwO3ZUQ0alA%3D&amp;Expires=1779872837&quot;,
+  &quot;participants_count&quot;: 44,
+  &quot;submissions_count&quot;: 11,
+  &quot;first_phase_start&quot;: null,
+  &quot;phases&quot;: [
+    {
+      &quot;id&quot;: 26671,
+      &quot;name&quot;: &quot;Test Phase&quot;,
+      &quot;start&quot;: &quot;2026-05-14T16:00:00Z&quot;,
+      &quot;end&quot;: &quot;2026-06-24T15:55:00Z&quot;,
+      &quot;max_submissions_per_day&quot;: 5
+    },
+    {
+      &quot;id&quot;: 26672,
+      &quot;name&quot;: &quot;Eval Phase&quot;,
+      &quot;start&quot;: &quot;2026-06-25T08:00:00Z&quot;,
+      &quot;end&quot;: &quot;2026-07-03T07:55:00Z&quot;,
+      &quot;max_submissions_per_day&quot;: 5
+    }
+  ],
+  &quot;pages&quot;: [
+    {
+      &quot;index&quot;: 0,
+      &quot;title&quot;: &quot;Overview&quot;,
+      &quot;content&quot;: &quot;# SEE Challenge 2026: Event-Guided Brightness Adjustment on SEE-600K\n\nWelcome to the **SEE Challenge 2026**, held with **EBMV @ ECCV 2026**. This competition studies **event-guided brightness adjustment under broad lighting conditions**.\n\nThe goal is to recover a well-exposed RGB image from a challenging RGB input and its corresponding event-camera signal. Participants may use the official baseline code, the SEE-600K dataset, external data, and pretrained models, as long as external resources are clearly reported in the final technical report.\n\n## Start Here\n\n| Need | Link |\n| --- | --- |\n| Code, baseline, dataset links, pretrained models | [GitHub: yunfanLu/SEE](https://github.com/yunfanLu/SEE) |\n| Full setup, training, inference, and evaluation tutorial | [docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md) |\n| CodaBench packaging and upload instructions | [docs/CODABENCH_SUBMISSION_GUIDE.md](https://github.com/yunfanLu/SEE/blob/main/docs/CODABENCH_SUBMISSION_GUIDE.md) |\n| Chinese competition guide | [docs/COMPETITION_GUIDE_ZH.md](https://github.com/yunfanLu/SEE/blob/main/docs/COMPETITION_GUIDE_ZH.md) |\n| Baseline results | [docs/TEST_RESULTS.md](https://github.com/yunfanLu/SEE/blob/main/docs/TEST_RESULTS.md) |\n| Dataset | [SEE-600K on Hugging Face](https://huggingface.co/datasets/yunfanlu/SEE-600K) |\n\nRecommended workflow:\n\n1. Clone the repository and install dependencies.\n2. Download SEE-600K.\n3. Train or adapt a model using the official training split.\n4. Run inference at the original image size, `346 x 260`.\n5. Collect prediction images with the provided CodaBench script.\n6. Zip the collected folder and upload it to CodaBench.\n\n## Task\n\nGiven:\n\n- an RGB image captured under difficult illumination;\n- the corresponding event stream or event representation;\n- optional brightness or exposure metadata when available;\n\nparticipants should output a **brightness-adjusted RGB image**.\n\nThe output should:\n\n- preserve scene structure and image details;\n- produce natural color and exposure;\n- avoid unrealistic hallucinated content;\n- match the original SEE image resolution for submission.\n\n## Dataset: SEE-600K\n\nThe challenge uses **SEE-600K**, a large-scale RGB-event dataset for broad-light-range image enhancement.\n\n| Property | Value |\n| --- | --- |\n| Images | 610,126 |\n| Real-world scenarios | 202 |\n| Modalities | RGB frames + event data |\n| Lighting conditions | low light, normal light, high light, mixed illumination |\n| Image resolution | `346 x 260` |\n\nDownload:\n\n- Hugging Face: [yunfanlu/SEE-600K](https://huggingface.co/datasets/yunfanlu/SEE-600K)\n- Additional mirrors and notes: [GitHub README](https://github.com/yunfanLu/SEE#dataset-download)\n\nExpected dataset structure and setup instructions are documented in [docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#2-prepare-the-dataset).\n\n## Train/Test Split\n\nThe following scenario groups are reserved for official testing and **must not be used for training**:\n\n| Type | Reserved groups |\n| --- | --- |\n| Indoor | 000, 001, 002, 006, 012, 018, 030, 042, 048, 054, 060, 065, 070, 074, 075 |\n| Outdoor | 100, 106, 112, 118, 124, 130, 136, 142, 148, 154, 160, 166, 173, 184, 189, 194, 200, 206, 212, 217, 222, 225 |\n\nAll other groups are available for training. See the split details in [docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#23-traintest-split).\n\n## Baseline: SEE-Net\n\nThe official repository provides **SEE-Net**, a compact baseline with approximately **1.9M parameters**. It uses:\n\n- an RGB frame;\n- event data;\n- a brightness/exposure prompt.\n\nThe baseline supports controllable brightness adjustment through the prompt value `B`:\n\n- `B ~= 0.5`: normal exposure;\n- `B &gt; 0.5`: brighter output;\n- `B &lt; 0.5`: darker output.\n\nBaseline setup, training, inference, and evaluation are documented here:\n\n- Setup: [docs/TUTORIAL.md#3-set-up-the-python-environment](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#3-set-up-the-python-environment)\n- Training: [docs/TUTORIAL.md#5-train-see-net](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#5-train-see-net)\n- Inference and evaluation: [docs/TUTORIAL.md#6-evaluate-or-run-inference](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#6-evaluate-or-run-inference)\n- Pretrained checkpoints: [GitHub README: Pretrained Models](https://github.com/yunfanLu/SEE#pretrained-models)\n\n## Quick Commands\n\nClone and install:\n\n```bash\ngit clone https://github.com/yunfanLu/SEE.git\ncd SEE\n\nconda create -n see python=3.10 -y\nconda activate see\npip install -r requirements.txt\n```\n\nDownload SEE-600K with Hugging Face CLI:\n\n```bash\npip install huggingface_hub\nhf download yunfanlu/SEE-600K --local-dir ./SEE-600K\n```\n\nBefore inference for submission, make sure the YAML crop size is the original image size:\n\n```yaml\ncrop_w: 346\ncrop_h: 260\n```\n\nRun inference with a trained checkpoint:\n\n```bash\npython see/main.py \\\n  --yaml_file=\&quot;options/SEE/SEENet_SEE.yaml\&quot; \\\n  --log_dir=\&quot;./logs/SEE/SEENet_SEE/vis/\&quot; \\\n  --alsologtostderr=True \\\n  --RESUME_PATH=\&quot;./logs/SEE/SEENet_SEE/checkpoint.pth.tar\&quot; \\\n  --TEST_ONLY=True \\\n  --VISUALIZE=True \\\n  --VAL_BATCH_SIZE=4\n```\n\n## Submission Format\n\nAfter inference, the repository will produce a `vis` folder. Use the provided script to collect only the prediction images required by CodaBench:\n\n```bash\npython codabench/collect_codabench_pred.py ${prediction_vis_directory} ${output_directory}\n```\n\nExample:\n\n```bash\npython codabench/collect_codabench_pred.py /path/to/vis /path/to/output_dir\n```\n\nThen create the zip file:\n\n```bash\ncd /path/to/output_dir\nzip -r submission.zip ./*\n```\n\nUpload `submission.zip` on the CodaBench submission page.\n\nBefore uploading, check that:\n\n- prediction images are `.png` files;\n- prediction images are saved at `346 x 260`;\n- the zip contains the collected prediction folder structure, not an extra parent directory;\n- filenames and folders are preserved by the collection script;\n- the submitted images correspond to the main prediction output used for evaluation. If you use the official `vis` naming convention, the evaluator prioritizes prediction files containing `_p0_`.\n\nFull submission instructions: [docs/CODABENCH_SUBMISSION_GUIDE.md](https://github.com/yunfanLu/SEE/blob/main/docs/CODABENCH_SUBMISSION_GUIDE.md).\n\n## Evaluation\n\nRanking is based on reconstruction quality against the official reference images.\n\n| Metric | Role | Direction |\n| --- | --- | --- |\n| PSNR | Primary ranking metric | Higher is better |\n| SSIM | Secondary metric | Higher is better |\n\nThe scorer reports overall PSNR/SSIM and category-level scores for `high-normal`, `low-normal`, and `normal-normal` samples. Missing or invalid predictions receive zero-score penalties for the affected samples.\n\nThe validation server is intended for development and format checking. Final ranking is determined by the official test phase.\n\n## Important Dates\n\n| Date | Event |\n| --- | --- |\n| May 10, 2026 | Competition website opens |\n| May 25, 2026 | Validation server online |\n| June 25, 2026 | Test data released and test server online |\n| July 3, 2026 | Test submission deadline |\n| July 10, 2026 | Results announcement, tentative |\n\n## Rules\n\n- Official SEE-600K training and validation data may be used.\n- External training data, synthetic data, and pretrained models are allowed, but must be clearly described in the technical report.\n- Reserved test groups and hidden ground-truth images must not be used for training or manual tuning.\n- Do not exploit the evaluation server or submission system.\n- Top-ranked teams may be asked to submit a short technical report and provide reproducibility details.\n\n## FAQ\n\n**Which repository should I use?**  \nUse the official repository: [https://github.com/yunfanLu/SEE](https://github.com/yunfanLu/SEE).\n\n**Where are the training and inference commands?**  \nThey are in [docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md).\n\n**How do I prepare the CodaBench zip?**  \nFollow [docs/CODABENCH_SUBMISSION_GUIDE.md](https://github.com/yunfanLu/SEE/blob/main/docs/CODABENCH_SUBMISSION_GUIDE.md). The key steps are: generate `vis`, collect predictions with `codabench/collect_codabench_pred.py`, then zip the collected output folder.\n\n**Why must inference use `346 x 260`?**  \nThis is the original SEE image size. Submissions with a different output size may fail evaluation or produce invalid scores.\n\n**Can I use external data or pretrained models?**  \nYes, but all external resources must be reported in the final technical report.\n\n## Links\n\n- Competition page: [https://www.codabench.org/competitions/16195/](https://www.codabench.org/competitions/16195/)\n- Competition forum: [https://www.codabench.org/forums/15944/](https://www.codabench.org/forums/15944/)\n- GitHub repository: [https://github.com/yunfanLu/SEE](https://github.com/yunfanLu/SEE)\n- Dataset: [https://huggingface.co/datasets/yunfanlu/SEE-600K](https://huggingface.co/datasets/yunfanlu/SEE-600K)\n- Workshop website: [https://eventbasemultimodalvision.github.io](https://eventbasemultimodalvision.github.io)\n- Competition report: [https://arxiv.org/abs/2502.21120](https://arxiv.org/abs/2502.21120)\n\n## Citation\n\nIf you use SEE-600K, SEE-Net, or the official baseline code, please cite:\n\n```bibtex\n@article{lu2025SEE,\n  title={SEE: See Everything Every Time - Adaptive Brightness Adjustment for Broad Light Range Images via Events},\n  author={Yunfan Lu, Xiaogang Xu, Hao Lu, Yanlin Qian, Pengteng Li, Huizai Yao, Bin Yang, Junyi Li, Qianyi Cai, Weiyu Guo, Hui Xiong},\n  year={2025},\n}\n```\n\n## Contact\n\n- Yunfan Lu: &lt;ylu066@connect.hkust-gz.edu.cn&gt;\n- Mingchao Xu：&lt;mingchao.xu.casia@gmail.com&gt;&quot;,
+      &quot;content_zh&quot;: &quot;# SEE Challenge 2026: 事件引导亮度调整竞赛（SEE-600K数据集）\n\n欢迎参加**SEE Challenge 2026**，由**EBMV @ ECCV 2026**主办。本竞赛研究**广泛光照条件下的事件引导亮度调整**。\n\n目标是从具有挑战性的RGB输入图像和相应的事件相机信号恢复一张曝光良好的RGB图像。参赛者可使用官方基准代码、SEE-600K数据集、外部数据和预训练模型，但必须在最终技术报告中明确标注所有外部资源。\n\n## 快速开始\n\n| 需求 | 链接 |\n| --- | --- |\n| 代码、基准、数据集链接、预训练模型 | [GitHub: yunfanLu/SEE](https://github.com/yunfanLu/SEE) |\n| 完整的设置、训练、推理和评估教程 | [docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md) |\n| CodaBench打包和上传说明 | [docs/CODABENCH_SUBMISSION_GUIDE.md](https://github.com/yunfanLu/SEE/blob/main/docs/CODABENCH_SUBMISSION_GUIDE.md) |\n| 中文竞赛指南 | [docs/COMPETITION_GUIDE_ZH.md](https://github.com/yunfanLu/SEE/blob/main/docs/COMPETITION_GUIDE_ZH.md) |\n| 基准结果 | [docs/TEST_RESULTS.md](https://github.com/yunfanLu/SEE/blob/main/docs/TEST_RESULTS.md) |\n| 数据集 | [Hugging Face上的SEE-600K](https://huggingface.co/datasets/yunfanlu/SEE-600K) |\n\n推荐工作流程：\n\n1. 克隆仓库并安装依赖。\n2. 下载SEE-600K。\n3. 使用官方训练集训练或改进模型。\n4. 在原始图像尺寸`346 x 260`上进行推理。\n5. 使用提供的CodaBench脚本收集预测图像。\n6. 将收集的文件夹压缩并上传到CodaBench。\n\n## 任务\n\n给定：\n\n- 在困难照明条件下捕获的RGB图像；\n- 相应的事件流或事件表示；\n- 在可用时提供的可选亮度或曝光元数据；\n\n参赛者应输出**亮度调整后的RGB图像**。\n\n输出应：\n\n- 保留场景结构和图像细节；\n- 产生自然的色彩和曝光；\n- 避免不真实的幻觉内容；\n- 与提交的原始SEE图像分辨率相匹配。\n\n## 数据集：SEE-600K\n\n本竞赛采用**SEE-600K**，这是一个用于宽光程范围图像增强的大规模RGB-事件数据集。\n\n| 属性 | 数值 |\n| --- | --- |\n| 图像数量 | 610,126 |\n| 真实场景 | 202 |\n| 数据模态 | RGB帧 + 事件数据 |\n| 光照条件 | 低光、正常光、高光、混合光照 |\n| 图像分辨率 | `346 x 260` |\n\n下载：\n\n- Hugging Face: [yunfanlu/SEE-600K](https://huggingface.co/datasets/yunfanlu/SEE-600K)\n- 其他镜像和说明: [GitHub README](https://github.com/yunfanLu/SEE#dataset-download)\n\n预期的数据集结构和设置说明记录在[docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#2-prepare-the-dataset)中。\n\n## 训练/测试划分\n\n以下场景组保留用于官方测试，**禁止用于训练**：\n\n| 类型 | 保留组 |\n| --- | --- |\n| 室内 | 000, 001, 002, 006, 012, 018, 030, 042, 048, 054, 060, 065, 070, 074, 075 |\n| 室外 | 100, 106, 112, 118, 124, 130, 136, 142, 148, 154, 160, 166, 173, 184, 189, 194, 200, 206, 212, 217, 222, 225 |\n\n所有其他组可用于训练。详见[docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#23-traintest-split)中的划分详情。\n\n## 基准：SEE-Net\n\n官方仓库提供**SEE-Net**，一个紧凑的基准模型，参数约为**190万**。它使用：\n\n- RGB帧；\n- 事件数据；\n- 亮度/曝光提示。\n\n基准支持通过提示值`B`进行可控亮度调整：\n\n- `B ~= 0.5`：正常曝光；\n- `B &gt; 0.5`：更亮的输出；\n- `B &lt; 0.5`：更暗的输出。\n\n基准的设置、训练、推理和评估文档见：\n\n- 设置: [docs/TUTORIAL.md#3-set-up-the-python-environment](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md)&quot;
+    },
+    {
+      &quot;index&quot;: 1,
+      &quot;title&quot;: &quot;Rules &amp; Timeline&quot;,
+      &quot;content&quot;: &quot;# Rules\n\nParticipants may use SEE-600K for model training.\n\nExternal training data, pretrained models, and synthetic data are allowed, but they must be clearly reported in the final technical report.\n\nParticipants must not use hidden ground-truth test data, manually tune results on the test set, or exploit the evaluation server.\n\nTop teams may be asked to submit a short technical report for result verification.\n\n# Important Dates\n\nMay 15, 2026: Challenge website opens.\n\nMay 25, 2026: Validation server online.\n\nJune 25, 2026: Test data released and test server online.\n\nJuly 3, 2026: Test submission deadline and test server closes.\n\nJuly 10, 2026: Results announcement. Tentative.&quot;,
+      &quot;content_zh&quot;: &quot;# 规则\n\n参赛者可以使用 SEE-600K 进行模型训练。\n\n允许使用外部训练数据、预训练模型和合成数据，但必须在最终技术报告中明确说明。\n\n参赛者不得使用隐藏的地面真值测试数据、手动调整测试集结果或利用评估服务器。\n\n排名靠前的团队可能被要求提交简短的技术报告以进行结果验证。\n\n# 重要日期\n\n2026 年 5 月 15 日：竞赛网站开放。\n\n2026 年 5 月 25 日：验证服务器上线。\n\n2026 年 6 月 25 日：发布测试数据和测试服务器上线。\n\n2026 年 7 月 3 日：测试提交截止日期和测试服务器关闭。\n\n2026 年 7 月 10 日：公布结果。暂定。&quot;
+    }
+  ]
+}</pre>
+  </div>
+</div>
+</body>
+</html>

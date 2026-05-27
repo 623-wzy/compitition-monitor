@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OncoSegment - Breast Tumor Mapping — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>OncoSegment - Breast Tumor Mapping</h2>
+  <div class="detail-meta">
+    <span>ID: 14248</span>
+    <span>创建者: thomas_dnil</span>
+    <span>创建时间: 2026-03-02</span>
+    <span>参与人数: 14</span>
+    <span>提交次数: 3</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/14248/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">在乳腺超声图像中分割良性和恶性肿瘤。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development Phase</td><td>2026-03-02</td><td>2026-12-01</td><td>5</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Description</h3><div class='page-content'># 🩺 
+# **OncoSegment：乳腺肿瘤分割挑战赛**
+
+# 💡 
+## **为什么这个问题很有趣**
+
+乳腺癌仍然是全球女性主要死亡原因之一。通过超声波进行早期准确检测至关重要，但解读这些图像出了名地困难。超声图像受到&quot;斑点噪声&quot;和低对比度的影响。就像等离子体物理模拟中的&quot;斑点&quot;一样，超声中的肿瘤间歇性出现、边界不规则，容易与健康组织混淆。本挑战要求你开发一个能够精确勾勒肿瘤边界的人工智能，这项任务可以直接协助放射科医生进行活检规划和治疗。
+
+# 📊 
+## **数据集**
+
+该数据集来自乳腺超声图像（BUSI）集合，包括25-75岁女性的数据。它由标准分辨率（约500x500像素）的高质量PNG扫描图像组成。
+
+数据集分类：
+
+良性肿瘤：通常为卵圆形或圆形，边界光滑的肿瘤。
+
+恶性肿瘤：癌性肿瘤，通常以&quot;尖刺&quot;（分叶状）或不规则边界为特征，会侵入周围组织。
+
+正常扫描：无肿瘤的扫描（用于测试模型避免假阳性的能力）。
+
+启动工具包中包含的内容：
+train_images：显示乳腺组织的PIL图像列表（灰度图）。
+train_masks：二值掩膜，其中1代表肿瘤，0代表背景。
+train_labels：识别肿瘤为良性或恶性的元数据。
+test_images：需要预测掩膜的图像。
+
+ # 📏 
+## **评估指标：测量精度**
+
+在医学成像中，&quot;框&quot;是不够的。我们需要准确了解哪些像素是癌变的。我们使用两个互补的重叠指标：
+
+1. 主要指标：Dice系数（F1分数）
+
+Dice系数是医学分割的黄金标准。它是重叠区域面积的两倍除以预测和真实标签中的像素总数。
+
+$$Dice = \frac{2 \times |P \cap G|}{|P| + |G|}$$
+
+原因？它对掩膜内部的&quot;完整性&quot;高度敏感，奖励那些形状完全正确的模型。
+
+2. 次要指标：Jaccard指数（IoU）
+
+Jaccard指数是交集面积除以并集面积。
+
+$$Jaccard = \frac{|P \cap G|}{|P \cup G|}$$
+
+原因？
+
+它比Dice对小错误的&quot;惩罚&quot;更严厉。
+
+它通过突出像素误差最少的模型来帮助打破排行榜并列。</div></div><div class='section'><h3>Seed</h3><div class='page-content'># 种子
+
+启动器 `submission.py` 框架：
+
+```python
+import cv2
+import numpy as np
+
+
+class Model:
+    def fit(self, train_images, train_masks, train_labels=None):
+        return self
+
+    def predict(self, test_images, sample_ids=None):
+        preds = []
+        for image in test_images:
+            img = np.array(image.convert(&quot;L&quot;))
+            blurred = cv2.GaussianBlur(img, (5, 5), 0)
+            _, mask = cv2.threshold(
+                blurred, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU
+            )
+            preds.append(mask)
+        return preds
+
+
+def get_model():
+    return Model()
+```</div></div><div class='section'><h3>Timeline</h3><div class='page-content'># 时间表
+
+## 开发阶段
+使用此阶段迭代乳腺超声图像分割模型，并优化公开的Dice/Jaccard指标。
+
+私有成绩在该阶段结束前保持隐藏状态。</div></div>
+
+  <div class="section">
+    <h3>原始数据</h3>
+    <pre class="page-content" style="font-size:.8rem">{
+  &quot;id&quot;: 14248,
+  &quot;title&quot;: &quot;OncoSegment - Breast Tumor Mapping&quot;,
+  &quot;description&quot;: &quot;Segment benign and malignant tumors in breast ultrasound images.&quot;,
+  &quot;description_zh&quot;: &quot;在乳腺超声图像中分割良性和恶性肿瘤。&quot;,
+  &quot;created_by&quot;: &quot;thomas_dnil&quot;,
+  &quot;created_when&quot;: &quot;2026-03-02T15:45:26.167445Z&quot;,
+  &quot;logo&quot;: &quot;https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-03-02-1772466527/bd1a4506a767/sample_00000.png?AWSAccessKeyId=codabench-prod&amp;Signature=7Xth3RDkVqpBqZNEPCtqo4PXx%2FI%3D&amp;Expires=1779872899&quot;,
+  &quot;participants_count&quot;: 14,
+  &quot;submissions_count&quot;: 3,
+  &quot;first_phase_start&quot;: null,
+  &quot;phases&quot;: [
+    {
+      &quot;id&quot;: 23743,
+      &quot;name&quot;: &quot;Development Phase&quot;,
+      &quot;start&quot;: &quot;2026-03-02T00:00:00Z&quot;,
+      &quot;end&quot;: &quot;2026-12-01T00:00:00Z&quot;,
+      &quot;max_submissions_per_day&quot;: 5
+    }
+  ],
+  &quot;pages&quot;: [
+    {
+      &quot;index&quot;: 0,
+      &quot;title&quot;: &quot;Description&quot;,
+      &quot;content&quot;: &quot;# 🩺 \n# **OncoSegment: Breast Tumor Mapping Challenge**\n\n# 💡 \n## **Why this Problem is Interesting**\n\nBreast cancer remains one of the leading causes of death among women worldwide. Early and accurate detection through ultrasound is critical, but interpreting these images is notoriously difficult.Ultrasound images suffer from \&quot;speckle noise\&quot; and low contrast. Much like the \&quot;blobs\&quot; in plasma physics simulations, tumors in ultrasound are intermittent, have irregular boundaries, and can be easily confused with healthy tissue. This challenge asks you to develop an AI that can precisely outline tumor boundaries, a task that directly assists radiologists in biopsy planning and treatment.\n\n# 📊 \n## **The Data**\n\nThe dataset is derived from the Breast Ultrasound Images (BUSI) collection, featuring women aged 25–75. It consists of high-quality PNG scans with a standard resolution (approx. 500x500 px).\n\nDataset Breakdown:\n\nBenign: Tumors that are typically oval or round with smooth edges.\n\nMalignant: Cancerous tumors, often characterized by \&quot;spiky\&quot; (spiculated) or irregular borders that invade surrounding tissue.\n\nNormal: Scans with no tumors (used to test your model&#x27;s ability to avoid False Positives).\n\nWhat you receive in the Starting Kit:\ntrain_images: A list of PIL images (Grayscale) showing the breast \ntissue.\ntrain_masks: Binary masks where 1 represents the tumor and 0 represents the background.\ntrain_labels: Metadata identifying the tumor as benign or malignant.\ntest_images: Images where you must predict the mask.\n\n # 📏 \n## **Metrics: Measuring Precision**\n\nIn medical imaging, a \&quot;box\&quot; is not enough. We need to know exactly which pixels are cancerous. We use two complementary overlap metrics:\n1. Primary Metric: Dice Coefficient (F1-Score)The Dice coefficient is the gold standard for medical segmentation. It is twice the area of overlap divided by the total number of pixels in both the prediction and the ground truth.\n$$Dice = \\frac{2 \\times |P \\cap G|}{|P| + |G|}$$\nWhy? It is highly sensitive to the internal \&quot;fullness\&quot; of the mask and rewards models that get the shape exactly right.\n2. Secondary Metric: Jaccard Index (IoU)\nThe Jaccard index is the area of intersection divided by the area of union.\n$$Jaccard = \\frac{|P \\cap G|}{|P \\cup G|}$$\nWhy? \nIt is more \&quot;punishing\&quot; than Dice for small errors.\nIt helps break ties on the leaderboard by highlighting models with the fewest stray False Positive pixels.&quot;,
+      &quot;content_zh&quot;: &quot;# 🩺 \n# **OncoSegment：乳腺肿瘤分割挑战赛**\n\n# 💡 \n## **为什么这个问题很有趣**\n\n乳腺癌仍然是全球女性主要死亡原因之一。通过超声波进行早期准确检测至关重要，但解读这些图像出了名地困难。超声图像受到\&quot;斑点噪声\&quot;和低对比度的影响。就像等离子体物理模拟中的\&quot;斑点\&quot;一样，超声中的肿瘤间歇性出现、边界不规则，容易与健康组织混淆。本挑战要求你开发一个能够精确勾勒肿瘤边界的人工智能，这项任务可以直接协助放射科医生进行活检规划和治疗。\n\n# 📊 \n## **数据集**\n\n该数据集来自乳腺超声图像（BUSI）集合，包括25-75岁女性的数据。它由标准分辨率（约500x500像素）的高质量PNG扫描图像组成。\n\n数据集分类：\n\n良性肿瘤：通常为卵圆形或圆形，边界光滑的肿瘤。\n\n恶性肿瘤：癌性肿瘤，通常以\&quot;尖刺\&quot;（分叶状）或不规则边界为特征，会侵入周围组织。\n\n正常扫描：无肿瘤的扫描（用于测试模型避免假阳性的能力）。\n\n启动工具包中包含的内容：\ntrain_images：显示乳腺组织的PIL图像列表（灰度图）。\ntrain_masks：二值掩膜，其中1代表肿瘤，0代表背景。\ntrain_labels：识别肿瘤为良性或恶性的元数据。\ntest_images：需要预测掩膜的图像。\n\n # 📏 \n## **评估指标：测量精度**\n\n在医学成像中，\&quot;框\&quot;是不够的。我们需要准确了解哪些像素是癌变的。我们使用两个互补的重叠指标：\n\n1. 主要指标：Dice系数（F1分数）\n\nDice系数是医学分割的黄金标准。它是重叠区域面积的两倍除以预测和真实标签中的像素总数。\n\n$$Dice = \\frac{2 \\times |P \\cap G|}{|P| + |G|}$$\n\n原因？它对掩膜内部的\&quot;完整性\&quot;高度敏感，奖励那些形状完全正确的模型。\n\n2. 次要指标：Jaccard指数（IoU）\n\nJaccard指数是交集面积除以并集面积。\n\n$$Jaccard = \\frac{|P \\cap G|}{|P \\cup G|}$$\n\n原因？\n\n它比Dice对小错误的\&quot;惩罚\&quot;更严厉。\n\n它通过突出像素误差最少的模型来帮助打破排行榜并列。&quot;
+    },
+    {
+      &quot;index&quot;: 1,
+      &quot;title&quot;: &quot;Seed&quot;,
+      &quot;content&quot;: &quot;# Seed\n\nStarter `submission.py` shape:\n\n```python\nimport cv2\nimport numpy as np\n\n\nclass Model:\n    def fit(self, train_images, train_masks, train_labels=None):\n        return self\n\n    def predict(self, test_images, sample_ids=None):\n        preds = []\n        for image in test_images:\n            img = np.array(image.convert(\&quot;L\&quot;))\n            blurred = cv2.GaussianBlur(img, (5, 5), 0)\n            _, mask = cv2.threshold(\n                blurred, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU\n            )\n            preds.append(mask)\n        return preds\n\n\ndef get_model():\n    return Model()\n```&quot;,
+      &quot;content_zh&quot;: &quot;# 种子\n\n启动器 `submission.py` 框架：\n\n```python\nimport cv2\nimport numpy as np\n\n\nclass Model:\n    def fit(self, train_images, train_masks, train_labels=None):\n        return self\n\n    def predict(self, test_images, sample_ids=None):\n        preds = []\n        for image in test_images:\n            img = np.array(image.convert(\&quot;L\&quot;))\n            blurred = cv2.GaussianBlur(img, (5, 5), 0)\n            _, mask = cv2.threshold(\n                blurred, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU\n            )\n            preds.append(mask)\n        return preds\n\n\ndef get_model():\n    return Model()\n```&quot;
+    },
+    {
+      &quot;index&quot;: 2,
+      &quot;title&quot;: &quot;Timeline&quot;,
+      &quot;content&quot;: &quot;# Timeline\n\n## Development phase\nUse this phase to iterate on segmentation models for breast ultrasound\nimages and optimize public Dice/Jaccard metrics.\n\nPrivate scores remain hidden until the phase closes.&quot;,
+      &quot;content_zh&quot;: &quot;# 时间表\n\n## 开发阶段\n使用此阶段迭代乳腺超声图像分割模型，并优化公开的Dice/Jaccard指标。\n\n私有成绩在该阶段结束前保持隐藏状态。&quot;
+    }
+  ]
+}</pre>
+  </div>
+</div>
+</body>
+</html>

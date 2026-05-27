@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ACM MM 2026 PCBA Standard-to-Real Grand Challenge — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>ACM MM 2026 PCBA Standard-to-Real Grand Challenge</h2>
+  <div class="detail-meta">
+    <span>ID: 16306</span>
+    <span>创建者: aimm_ifm</span>
+    <span>创建时间: 2026-05-14</span>
+    <span>参与人数: 21</span>
+    <span>提交次数: 61</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16306/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">ACM MM 2026 跨域视觉问答大挑战赛 - 真实世界PCBA制造检测</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-test'>测试</span> Public Evaluation</td><td>2026-05-14</td><td>2026-06-04</td><td>5</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'>## 概述
+
+**PCBA标准到真实大挑战赛**关注**跨域视觉问答(VQA)在真实制造检测中的应用**。
+
+印制电路板组装(PCBA)检测不仅需要视觉识别。实际工厂决策取决于**工业标准**和**真实生产线图像**。可靠的检测模型必须理解制造规则、识别上下文相关的缺陷、推理可能的原因，并提供可操作的答案。
+
+本挑战赛评估多模态模型从**标准衍生知识**泛化到**密集、异构真实世界PCBA图像**的能力。邀请参赛者开发VQA系统，能够解读标准文件、识别元器件和缺陷、执行计数任务，并在现实视觉变化下进行推理。
+
+参赛者可在[HuggingFace](https://huggingface.co/datasets/aimmifm/PCBA_Standard-to-Real_Challenge)上申请数据集进行注册，并通过官方竞赛平台提交预测文件。
+
+## 任务
+
+参赛者获得PCBA相关视觉问题，必须为每个测试样本提交预测答案。基准测试涵盖四个主要VQA类别：
+
+1. **基于标准的知识问答**
+   源自工业标准的问题，涵盖标准解读、缺陷原因分析和处理决策。
+
+2. **真实性**
+   感知为中心的问题，包括元器件类型识别、贴装面识别、缺陷存在检测和缺陷类型识别。
+
+3. **定量推理**
+   数值短答案问题，包括元器件计数和引脚/导线计数。
+
+4. **属性推理**
+   关于主要元器件形状等视觉属性的问题。
+
+## 数据集
+
+发布的数据集 https://huggingface.co/datasets/aimmifm/PCBA_Standard-to-Real_Challenge 
+由两个互补数据源构建：
+
+* **标准衍生VQA**
+  由工业包装标准构建并转换为VQA项目。该子集重点关注标准知识、缺陷原因分析和决策制定。
+
+* **真实世界VQA**
+  由工厂生产线数据构建。该子集重点关注真实制造图像和实际视觉变化下的检测导向推理。
+
+公开分割包含：
+
+| 分割 | 问题数量 |
+| ---- | -------: |
+| 训练集 | 8,200 |
+| 测试集 | 8,200 |
+| 总计 | 16,400 |</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'>## 评估
+
+所有提交内容都在官方Codabench服务器上自动评估。参赛者必须为发布的公开测试题目提交一个预测文件。公开排行榜报告单一的**总体评分**。
+
+## 提交格式
+
+对于Codabench提交，参赛者必须上传单个`.zip`文件。`.zip`压缩包必须在根级别包含一个名为`submission.csv`的CSV文件：
+
+```text
+your_submission.zip
+└── submission.csv
+```
+
+`submission.csv`文件必须包含恰好两列：
+
+```csv
+qid,answer
+1,B
+2,12
+3,E
+```
+
+提交规则：
+
+* `qid`必须与`vqa_test_public.json`中的问题标识符完全匹配
+* `answer`必须仅包含最终预测
+* 对于多选题，按照问题中显示的选项键提交，例如`A`、`B`、`C`、`D`、`E`或`F`
+* 对于计数题，以纯字符串形式提交整数，例如`12`
+* 文件必须为每个测试题目包含一行
+* 缺少的行、重复的`qid`值或未知的`qid`值将导致提交无效
+* 不要将`submission.csv`放在提交压缩包中的额外子文件夹内
+
+公开测试JSON不公开任务类型注解。任务分组由官方评估服务器在内部处理。
+
+## 官方指标
+
+每个测试题目在内部属于以下任务组之一：
+
+* `standard_knowledge`（标准知识）
+* `component_type`（元件类型）
+* `mount_side`（安装侧）
+* `defect_existence`（缺陷存在性）
+* `defect_type`（缺陷类型）
+* `count_component`（元件计数）
+* `count_pin_lead`（引脚/引线计数）
+* `attribute_reasoning`（属性推理）
+
+任务级指标：
+
+* `standard_knowledge`、`component_type`、`mount_side`、`defect_type`和`attribute_reasoning`采用**准确率**
+* `defect_existence`采用**F1值**
+* `count_component`和`count_pin_lead`采用**规范化MAE**
+
+对于`defect_existence`，官方评分使用异常阳性类的二元F1。
+
+对于计数任务，官方规范化评分为：
+
+```text
+count_score_t = max(0, 1 - MAE_t / C_t)
+```
+
+其中固定的规范化常数为：
+
+* `C_count_component = 138`
+* `C_count_pin_lead = 260`
+
+## 总体评分
+
+每个任务级指标首先转换为相同的`0-1`范围。最终公开排行榜评分随后计算为跨任务组的加权平均值，使用评估集中的任务比例：
+
+```text
+Overall Score = 100 * sum_t (w_t * s_t)
+```
+
+其中：
+
+* `s_t`是任务`t`的任务级评分
+* `w_t = n_t / N`
+* `n_t`是任务`t`的评估题目数量
+* `N`是评估题目总数
+
+排行榜显示`0-100`范围内的最终**总体评分**。
+
+## 评估说明
+
+* 官方Codabench服务器是唯一有效的评分来源
+* 组织者侧的任务注解对参赛者隐藏
+* 多选题的无效选项标签被计为错误答案
+* 计数题的非整数答案被视为无效的计数预测
+* 组织者可能在私有评估数据上运行相同的评分协议以进行验证或赛后分析</div></div>
+
+  <div class="section">
+    <h3>原始数据</h3>
+    <pre class="page-content" style="font-size:.8rem">{
+  &quot;id&quot;: 16306,
+  &quot;title&quot;: &quot;ACM MM 2026 PCBA Standard-to-Real Grand Challenge&quot;,
+  &quot;description&quot;: &quot;ACM MM 2026 Grand Challenge on Cross-domain visual question answering for real-world PCBA manufacturing inspection.&quot;,
+  &quot;description_zh&quot;: &quot;ACM MM 2026 跨域视觉问答大挑战赛 - 真实世界PCBA制造检测&quot;,
+  &quot;created_by&quot;: &quot;aimm_ifm&quot;,
+  &quot;created_when&quot;: &quot;2026-05-14T11:31:23.555043Z&quot;,
+  &quot;logo&quot;: &quot;https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-14-1778758283/c7faeaffa1d6/logo.jpg?AWSAccessKeyId=codabench-prod&amp;Signature=nt%2BzHYMXbBqgJjlnNGiONseGspo%3D&amp;Expires=1779872827&quot;,
+  &quot;participants_count&quot;: 21,
+  &quot;submissions_count&quot;: 61,
+  &quot;first_phase_start&quot;: null,
+  &quot;phases&quot;: [
+    {
+      &quot;id&quot;: 26805,
+      &quot;name&quot;: &quot;Public Evaluation&quot;,
+      &quot;start&quot;: &quot;2026-05-14T00:00:00Z&quot;,
+      &quot;end&quot;: &quot;2026-06-04T00:00:00Z&quot;,
+      &quot;max_submissions_per_day&quot;: 5
+    }
+  ],
+  &quot;pages&quot;: [
+    {
+      &quot;index&quot;: 0,
+      &quot;title&quot;: &quot;Overview&quot;,
+      &quot;content&quot;: &quot;## Overview\n\nThe **PCBA Standard-to-Real Grand Challenge** focuses on **cross-domain Visual Question Answering (VQA) for real-world manufacturing inspection**.\n\nPrinted Circuit Board Assembly (PCBA) inspection requires more than visual recognition. Practical factory decision-making depends on both **industrial standards** and **real production-line imagery**. A reliable inspection model must understand manufacturing rules, identify context-dependent defects, reason about possible causes, and provide actionable answers.\n\nThis challenge evaluates multimodal models on their ability to generalize from **standards-derived knowledge** to **dense, heterogeneous real-world PCBA images**. Participants are invited to develop VQA systems that can interpret standard documents, recognize components and defects, perform counting tasks, and reason under realistic visual variation.\n\nParticipants can register for the challenge on [HuggingFace](https://huggingface.co/datasets/aimmifm/PCBA_Standard-to-Real_Challenge) by applying for a Dataset and submit their prediction files through the official competition platform.\n\n## Task\n\nParticipants are given PCBA-related visual questions and must submit predicted answers for each test sample. The benchmark covers four major VQA families:\n\n1. **Standard-based Knowledge QA**\n   Questions derived from industrial standards, covering standard interpretation, defect-cause analysis, and handling decisions.\n\n2. **Factuality**\n   Perception-centric questions, including component type recognition, mount-side identification, defect existence detection, and defect type recognition.\n\n3. **Quantitative Reasoning**\n   Numeric short-answer questions, including component counting and pin/lead counting.\n\n4. **Attribute Reasoning**\n   Questions about visual attributes such as the shape of main components.\n\n## Dataset\n\nThe released dataset https://huggingface.co/datasets/aimmifm/PCBA_Standard-to-Real_Challenge\nis built from two complementary sources:\n\n* **Standards-derived VQA**\n  Constructed from industrial packaging standards and converted into VQA items. This subset focuses on standards knowledge, defect-cause analysis, and decision-making.\n\n* **Real-world VQA**\n  Built from factory production-line data. This subset focuses on real manufacturing imagery and inspection-oriented reasoning under practical visual variation.\n\nThe public split contains:\n\n| Split | Number of Questions |\n| ----- | ------------------: |\n| Train |               8,200 |\n| Test  |               8,200 |\n| Total |              16,400 |&quot;,
+      &quot;content_zh&quot;: &quot;## 概述\n\n**PCBA标准到真实大挑战赛**关注**跨域视觉问答(VQA)在真实制造检测中的应用**。\n\n印制电路板组装(PCBA)检测不仅需要视觉识别。实际工厂决策取决于**工业标准**和**真实生产线图像**。可靠的检测模型必须理解制造规则、识别上下文相关的缺陷、推理可能的原因，并提供可操作的答案。\n\n本挑战赛评估多模态模型从**标准衍生知识**泛化到**密集、异构真实世界PCBA图像**的能力。邀请参赛者开发VQA系统，能够解读标准文件、识别元器件和缺陷、执行计数任务，并在现实视觉变化下进行推理。\n\n参赛者可在[HuggingFace](https://huggingface.co/datasets/aimmifm/PCBA_Standard-to-Real_Challenge)上申请数据集进行注册，并通过官方竞赛平台提交预测文件。\n\n## 任务\n\n参赛者获得PCBA相关视觉问题，必须为每个测试样本提交预测答案。基准测试涵盖四个主要VQA类别：\n\n1. **基于标准的知识问答**\n   源自工业标准的问题，涵盖标准解读、缺陷原因分析和处理决策。\n\n2. **真实性**\n   感知为中心的问题，包括元器件类型识别、贴装面识别、缺陷存在检测和缺陷类型识别。\n\n3. **定量推理**\n   数值短答案问题，包括元器件计数和引脚/导线计数。\n\n4. **属性推理**\n   关于主要元器件形状等视觉属性的问题。\n\n## 数据集\n\n发布的数据集 https://huggingface.co/datasets/aimmifm/PCBA_Standard-to-Real_Challenge \n由两个互补数据源构建：\n\n* **标准衍生VQA**\n  由工业包装标准构建并转换为VQA项目。该子集重点关注标准知识、缺陷原因分析和决策制定。\n\n* **真实世界VQA**\n  由工厂生产线数据构建。该子集重点关注真实制造图像和实际视觉变化下的检测导向推理。\n\n公开分割包含：\n\n| 分割 | 问题数量 |\n| ---- | -------: |\n| 训练集 | 8,200 |\n| 测试集 | 8,200 |\n| 总计 | 16,400 |&quot;
+    },
+    {
+      &quot;index&quot;: 1,
+      &quot;title&quot;: &quot;Evaluation&quot;,
+      &quot;content&quot;: &quot;## Evaluation\n\nAll submissions are evaluated automatically on the official Codabench server. Participants must submit one prediction file for the released public test questions. The public leaderboard reports a single **Overall Score**.\n\n## Submission Format\n\nFor Codabench submission, participants must upload a single `.zip` file. The `.zip` archive must contain one CSV file named `submission.csv` at the root level:\n\n```text\nyour_submission.zip\n└── submission.csv\n```\n\nThe `submission.csv` file must contain exactly two columns:\n\n```csv\nqid,answer\n1,B\n2,12\n3,E\n```\n\nSubmission rules:\n\n* `qid` must exactly match the question identifier in `vqa_test_public.json`\n* `answer` must contain only the final prediction\n* For multiple-choice questions, submit the option key exactly as shown in the question, e.g. `A`, `B`, `C`, `D`, `E`, or `F`\n* For counting questions, submit an integer as a plain string, e.g. `12`\n* The file must contain one row for every test question\n* Missing rows, duplicated `qid` values, or unknown `qid` values will result in an invalid submission\n* Do not place `submission.csv` inside an extra subfolder in the submission archive\n\nThe public test JSON does not expose task-type annotations. Task grouping is handled internally by the official evaluation server.\n\n## Official Metrics\n\nEach test question belongs internally to one of the following task groups:\n\n* `standard_knowledge`\n* `component_type`\n* `mount_side`\n* `defect_existence`\n* `defect_type`\n* `count_component`\n* `count_pin_lead`\n* `attribute_reasoning`\n\nTask-level metrics:\n\n* **Accuracy** for `standard_knowledge`, `component_type`, `mount_side`, `defect_type`, and `attribute_reasoning`\n* **F1-score** for `defect_existence`\n* **Normalized MAE** for `count_component` and `count_pin_lead`\n\nFor `defect_existence`, the official score uses binary F1 on the anomaly-positive class.\n\nFor counting tasks, the official normalized score is:\n\n```text\ncount_score_t = max(0, 1 - MAE_t / C_t)\n```\n\nwhere the fixed normalization constants are:\n\n* `C_count_component = 138`\n* `C_count_pin_lead = 260`\n\n## Overall Score\n\nEach task-level metric is first converted to the same `0-1` range. The final public leaderboard score is then computed as the weighted average across task groups, using the task proportions in the evaluation set:\n\n```text\nOverall Score = 100 * sum_t (w_t * s_t)\n```\n\nwhere:\n\n* `s_t` is the task-level score for task `t`\n* `w_t = n_t / N`\n* `n_t` is the number of evaluation questions in task `t`\n* `N` is the total number of evaluation questions\n\nThe leaderboard displays the final **Overall Score** on a `0-100` scale.\n\n## Evaluation Notes\n\n* The official Codabench server is the only valid source of scores\n* Organizer-side task annotations are hidden from participants\n* Invalid option labels for multiple-choice questions are counted as incorrect answers\n* Non-integer answers for counting questions are treated as invalid counting predictions\n* Organizers may additionally run the same scoring protocol on private evaluation data for verification or post-competition analysis&quot;,
+      &quot;content_zh&quot;: &quot;## 评估\n\n所有提交内容都在官方Codabench服务器上自动评估。参赛者必须为发布的公开测试题目提交一个预测文件。公开排行榜报告单一的**总体评分**。\n\n## 提交格式\n\n对于Codabench提交，参赛者必须上传单个`.zip`文件。`.zip`压缩包必须在根级别包含一个名为`submission.csv`的CSV文件：\n\n```text\nyour_submission.zip\n└── submission.csv\n```\n\n`submission.csv`文件必须包含恰好两列：\n\n```csv\nqid,answer\n1,B\n2,12\n3,E\n```\n\n提交规则：\n\n* `qid`必须与`vqa_test_public.json`中的问题标识符完全匹配\n* `answer`必须仅包含最终预测\n* 对于多选题，按照问题中显示的选项键提交，例如`A`、`B`、`C`、`D`、`E`或`F`\n* 对于计数题，以纯字符串形式提交整数，例如`12`\n* 文件必须为每个测试题目包含一行\n* 缺少的行、重复的`qid`值或未知的`qid`值将导致提交无效\n* 不要将`submission.csv`放在提交压缩包中的额外子文件夹内\n\n公开测试JSON不公开任务类型注解。任务分组由官方评估服务器在内部处理。\n\n## 官方指标\n\n每个测试题目在内部属于以下任务组之一：\n\n* `standard_knowledge`（标准知识）\n* `component_type`（元件类型）\n* `mount_side`（安装侧）\n* `defect_existence`（缺陷存在性）\n* `defect_type`（缺陷类型）\n* `count_component`（元件计数）\n* `count_pin_lead`（引脚/引线计数）\n* `attribute_reasoning`（属性推理）\n\n任务级指标：\n\n* `standard_knowledge`、`component_type`、`mount_side`、`defect_type`和`attribute_reasoning`采用**准确率**\n* `defect_existence`采用**F1值**\n* `count_component`和`count_pin_lead`采用**规范化MAE**\n\n对于`defect_existence`，官方评分使用异常阳性类的二元F1。\n\n对于计数任务，官方规范化评分为：\n\n```text\ncount_score_t = max(0, 1 - MAE_t / C_t)\n```\n\n其中固定的规范化常数为：\n\n* `C_count_component = 138`\n* `C_count_pin_lead = 260`\n\n## 总体评分\n\n每个任务级指标首先转换为相同的`0-1`范围。最终公开排行榜评分随后计算为跨任务组的加权平均值，使用评估集中的任务比例：\n\n```text\nOverall Score = 100 * sum_t (w_t * s_t)\n```\n\n其中：\n\n* `s_t`是任务`t`的任务级评分\n* `w_t = n_t / N`\n* `n_t`是任务`t`的评估题目数量\n* `N`是评估题目总数\n\n排行榜显示`0-100`范围内的最终**总体评分**。\n\n## 评估说明\n\n* 官方Codabench服务器是唯一有效的评分来源\n* 组织者侧的任务注解对参赛者隐藏\n* 多选题的无效选项标签被计为错误答案\n* 计数题的非整数答案被视为无效的计数预测\n* 组织者可能在私有评估数据上运行相同的评分协议以进行验证或赛后分析&quot;
+    }
+  ]
+}</pre>
+  </div>
+</div>
+</body>
+</html>
