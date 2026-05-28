@@ -5,9 +5,9 @@
   "description_zh": "多模态物理推理基准，包含图表、表达式、纯图像问题和基于OpenAI API的答案判断。",
   "created_by": "ai4math",
   "created_when": "2026-04-29T10:27:07.290697Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-29-1777474374/6953426e1b09/logo_big.png?AWSAccessKeyId=codabench-prod&Signature=ePXOsRBWyMt4yiH9%2FrwTE5lRHoU%3D&Expires=1779955256",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-29-1777474374/6953426e1b09/logo_big.png?AWSAccessKeyId=codabench-prod&Signature=W3Z87DO0jnUsTMtbp%2BXguRdS1LU%3D&Expires=1779956019",
   "participants_count": 96,
-  "submissions_count": 367,
+  "submissions_count": 368,
   "first_phase_start": null,
   "phases": [
     {
