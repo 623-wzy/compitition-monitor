@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EVENT-BASED MULTIMODAL UNDERSTANDING CHALLENGE: SPATIAL REASONING TRACK @ECCV 2026 — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>EVENT-BASED MULTIMODAL UNDERSTANDING CHALLENGE: SPATIAL REASONING TRACK @ECCV 2026</h2>
+  <div class="detail-meta">
+    <span>ID: 16303</span>
+    <span>创建者: liusy</span>
+    <span>创建时间: 2026-05-14</span>
+    <span>参与人数: 30</span>
+    <span>提交次数: 6</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16303/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">该挑战对事件型视觉上的多模态大型语言模型（MLLMs）的空间推理能力进行基准测试，重点关注目标计数、绝对距离估计和空间关系推理。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-other'>其他</span> Spatial Reasoning</td><td>2026-05-20</td><td>2026-07-10</td><td>5</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'># 基于事件的多模态理解挑战：空间推理赛道 @ECCV 2026
+
+欢迎参加事件理解多模态大语言模型（MLLMs）挑战赛，官方承办于ECCV 2026！
+
+## 🎯 概述与目标
+本挑战赛基准测试MLLMs在基于事件的视觉上的空间推理能力，重点关注物体计数、绝对距离估计和空间关系推理。
+
+## 📝 任务描述
+为全面基准测试模型能力，挑战赛跨3个不同的空间任务评估性能：
+
+* **物体计数**：准确枚举场景中存在的特定动态或静态物体的数量。
+* **绝对距离**：估计物体之间或从相机到目标物体的物理定量距离（例如，以米为单位）。
+* **空间关系**：确定多个物体的相对拓扑位置和结构方向。
+
+## 📅 重要日期
+*所有截止日期均为UTC时间晚上11:59。*
+
+* **2026年5月10日**：挑战赛网站开放。
+* **2026年5月12日**：训练和验证数据发布。
+* **2026年5月20日**：验证服务器上线。
+* **2026年6月25日**：测试数据发布与测试服务器上线。
+* **2026年7月3日**：测试提交截止与测试服务器关闭。
+* **2026年7月10日**：结果公布 *(暂定)*。
+* **待定**：技术报告提交。
+
+## 📊 数据统计（测试集）
+该基准涵盖严格标注的测试集，涵盖以下分布：
+
+| 任务类别 | 项目数量 |
+| :--- | :--- |
+| **绝对距离** | 1202 |
+| **物体计数** | 414 |
+| **空间关系** | 301 |
+
+## 🔗 提供的资源
+为帮助您快速入门和构建模型，请参考我们的官方资源：
+* **训练数据**：[通过ModelScope下载](https://modelscope.cn/datasets/XduSyL/EventMind/files)
+* **学术论文**：[在arXiv上阅读 (2511.18448)](https://arxiv.org/pdf/2511.18448)
+* **项目主页**：[访问EventBench网站](https://xdusyl.github.io/eventbench.github.io/)
+
+## ⚠️ 挑战赛规则
+为维护公平性和科学诚实，所有参赛者必须严格遵守以下规则：
+1. **禁止作弊或探测**：严格禁止任何探测测试服务器、操纵提交以提取测试集答案或使用测试数据进行模型训练的行为，违反者将被立即取消参赛资格。
+2. **模型规模限制**：为鼓励高效且易获取的模型设计，任何评估模型的总参数数必须 **&lt;= 10B**（100亿参数）。</div></div><div class='section'><h3>Data Preparation</h3><div class='page-content'># 数据准备指南
+
+要参与EventBench挑战赛，您需要获取训练数据和测试集数据（事件流和问题）。请按照以下步骤准备您的本地环境。
+
+## 第1步：下载训练集
+官方训练数据集**EventMind**托管在ModelScope上。您可以从以下链接下载完整的训练分集：
+
+👉 **[下载EventMind训练集 (ModelScope)](https://modelscope.cn/datasets/XduSyL/EventMind)**
+
+## 第2步：下载测试集（事件流和问题）
+EventBench挑战赛的测试集包含原始事件流文件（`.npz`）和相应的测试问题（`.json`）。由于文件大小限制，这些文件托管在Hugging Face上。
+
+您必须从官方仓库下载**EventBench**数据集：
+
+👉 **[下载EventBench测试集 (Hugging Face)](https://huggingface.co/datasets/XduSyL/EventBench)**
+
+*（注意：CodaBench上`input_data.zip`文件中直接提供的测试问题不包含较大的`.npz`事件文件。您必须从上方Hugging Face链接下载事件流。）*
+
+## 第3步：详细说明和配置
+有关数据结构、如何读取`.npz`文件以及如何为您的模型设置数据流水线的详细说明，请参阅官方EventBench项目主页。
+
+👉 **[访问官方EventBench项目主页](https://xdusyl.github.io/eventbench.github.io/)**
+
+项目页面包含全面的文档、代码片段和基线模型示例，帮助您将数据无缝集成到训练和评估工作流程中。</div></div><div class='section'><h3>Evaluation Details</h3><div class='page-content'># 评估指标和提交指南
+
+## 提交格式
+您的提交必须是一个JSON文件。该文件必须包含一个**平面字典**（键值对），其中键是测试问题`id`，值是您的模型预测的`answer`。
+
+*(注意：请确保您的提交是直接的JSON对象`{...}`，而不是包装在JSON数组`[{...}]`中，以确保与我们的评分引擎兼容。)*
+
+**`predictions.json`示例：**
+```json
+{
+  &quot;228350c5-4a8f-4976-abf9-fe52b86bddae&quot;: &quot;D&quot;,
+  &quot;a959e02d-7ef6-457b-9a16-9c85934ba980&quot;: &quot;5.3198&quot;,
+  &quot;e495b370-59ba-471b-8642-5ea239380f5a&quot;: &quot;4&quot;,
+  &quot;d42e3a21-2c72-48ef-9f33-522338dc1c44&quot;: &quot;left&quot;,
+  &quot;97258721-3d86-4bc2-82d1-481b59e1b7cd&quot;: &quot;spatial\ntemporal&quot;
+}
+```
+
+## 提交方式
+1. **准备文件：** 格式化您的模型预测结果，并严格将其保存为`predictions.json`。
+2. **压缩：** 直接将`predictions.json`文件压缩成`.zip`存档（例如`submission.zip`）。**不要**在存档中包含任何父文件夹。
+3. **上传：** 导航至挑战页面上的**&quot;我的提交&quot;**标签，选择活跃阶段，然后上传您的`.zip`文件。评估服务器将自动处理您的结果。
+
+## 评估指标
+该挑战在3个不同的任务上评估模型。评估服务器根据以下具体匹配规则为每个类别计算准确度：
+
+* **绝对距离**：直接距离值输出（例如`5.3198`）。**指标：** 如果预测值与基准值之间的相对误差≤30%，则正确。
+* **对象计数**：数值。对象计数的直接输出（例如`4`）。**指标：** 要求完全匹配。
+* **空间关系**：字符匹配（例如`left`）。**指标：** 要求完全匹配。
+
+## 最终评分
+评估脚本将独立计算所有3个任务的个别准确度分数。最终排行榜排名严格由**平均分数**决定，即所有任务类别分数的平均值。</div></div><div class='section'><h3>Organizers &amp; Citation</h3><div class='page-content'># 组织委员会和引用
+
+## 组织委员会
+我们感谢组织委员会为创建和维护EventBench挑战赛所做的努力：
+
+**刘绍宇**（西安电子科技大学）· liusy@stu.xidian.edu.cn  
+
+**周涵宇**（新加坡国立大学）· hy.zhou@nus.edu.sg  
+
+**陆云帆**（香港科技大学（广州））· ylu066@connect.hkust-gz.edu.cn  
+
+**刘浩岳**（华中科技大学）· liuhy@hust.edu.cn  
+
+**段佩琪**（北京大学）· duanqi0001@pku.edu.cn  
+
+**彭世翰**（华中科技大学）· pengshihan@hust.edu.cn  
+
+**郑印强**（东京大学）· yqzheng@ai.u-tokyo.ac.jp  
+
+**石博鑫**（北京大学）· shiboxin@pku.edu.cn  
+
+**尹国进**（韩国科学技术院）· kjyoon@kaist.ac.kr  
+
+**熊晖**（香港科技大学（广州））· xionghui@ust.hk  
+
+**李吉贺**（新加坡国立大学）· gimhee.lee@nus.edu.sg  
+
+**达维德·斯卡拉穆扎**（苏黎世大学）· sdavide@ifi.uzh.ch 
+
+## 联系我们
+如有任何技术问题、数据集相关疑问或关于挑战赛的一般咨询，请随时通过上面提供的邮箱地址与组织委员会成员联系。
+
+## 引用
+如果您参与此挑战赛或认为EventBench数据集对您的研究有帮助，请引用我们的论文：
+```bibtex
+@article{liu2025eventbench,
+  title={EventBench: Towards Comprehensive Benchmarking of Event-based MLLMs},
+  author={Liu, Shaoyu and Li, Jianing and Zhao, Guanghui and Zhang, Yunjian and Ji, Xiangyang},
+  journal={arXiv preprint arXiv:2511.18448},
+  year={2025}
+}
+```
+
+```bibtex
+@inproceedings{liu2025eventgpt,
+  title={Eventgpt: Event stream understanding with multimodal large language models},
+  author={Liu, Shaoyu and Li, Jianing and Zhao, Guanghui and Zhang, Yunjian and Meng, Xin and Yu, Fei Richard and Ji, Xiangyang and Li, Ming},
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={29139--29149},
+  year={2025}
+}
+```</div></div>
+
+  <div class="section">
+    <h3>原始数据</h3>
+    <pre class="page-content" style="font-size:.8rem">{
+  &quot;id&quot;: 16303,
+  &quot;title&quot;: &quot;EVENT-BASED MULTIMODAL UNDERSTANDING CHALLENGE: SPATIAL REASONING TRACK @ECCV 2026&quot;,
+  &quot;description&quot;: &quot;This challenge benchmarks MLLMs&#x27; spatial reasoning on event-based vision, focusing on object counting, absolute distance estimation, and spatial relationship reasoning.&quot;,
+  &quot;description_zh&quot;: &quot;该挑战对事件型视觉上的多模态大型语言模型（MLLMs）的空间推理能力进行基准测试，重点关注目标计数、绝对距离估计和空间关系推理。&quot;,
+  &quot;created_by&quot;: &quot;liusy&quot;,
+  &quot;created_when&quot;: &quot;2026-05-14T01:12:48.802883Z&quot;,
+  &quot;logo&quot;: &quot;https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-14-1778721168/24208541bb36/logo.jpg?AWSAccessKeyId=codabench-prod&amp;Signature=wT%2BzF1Diz6DB0bh2TlgiTDv4gw8%3D&amp;Expires=1779937160&quot;,
+  &quot;participants_count&quot;: 30,
+  &quot;submissions_count&quot;: 6,
+  &quot;first_phase_start&quot;: null,
+  &quot;phases&quot;: [
+    {
+      &quot;id&quot;: 26900,
+      &quot;name&quot;: &quot;Spatial Reasoning&quot;,
+      &quot;start&quot;: &quot;2026-05-20T00:00:00Z&quot;,
+      &quot;end&quot;: &quot;2026-07-10T00:00:00Z&quot;,
+      &quot;max_submissions_per_day&quot;: 5
+    }
+  ],
+  &quot;pages&quot;: [
+    {
+      &quot;index&quot;: 0,
+      &quot;title&quot;: &quot;Overview&quot;,
+      &quot;content&quot;: &quot;# EVENT-BASED MULTIMODAL UNDERSTANDING CHALLENGE: SPATIAL REASONING TRACK @ECCV 2026\n\nWelcome to the Event Understanding for Multimodal Large Language Models (MLLMs) Challenge, officially hosted at ECCV 2026! \n\n## 🎯 Overview &amp; Objective\nThis challenge benchmarks MLLMs&#x27; spatial reasoning on event-based vision, focusing on object counting, absolute distance estimation, and spatial relationship reasoning.\n\n## 📝 Task Description\nTo comprehensively benchmark model capabilities, the challenge evaluates performance across 3 distinct spatial tasks:\n\n* **Object Count**: Accurately enumerating the number of specific dynamic or static objects present in the scene.\n* **Absolute Distance**: Estimating the physical, quantitative distance (e.g., in meters) between objects or from the camera to the subject.\n* **Spatial Relationship**: Determining the relative topological positions and structural orientations of multiple objects.\n\n## 📅 Important Dates\n*All deadlines are at 11:59 PM UTC.*\n\n* **May 10, 2026**: Challenge Website Opens.\n* **May 12, 2026**: Training &amp; Validation Data Released.\n* **May 20, 2026**: Validation Server Online.\n* **June 25, 2026**: Test Data Released &amp; Test Server Online.\n* **July 3, 2026**: Test Submission Deadline &amp; Test Server Closes.\n* **July 10, 2026**: Results Announcement *(Tentative)*.\n* **TBD**: Technical Report Submission.\n\n## 📊 Data Statistics (Test Set)\nThe benchmark encompasses a rigorously annotated test set spanning the following distributions:\n\n| Task Category | Number of Items |\n| :--- | :--- |\n| **Absolute Distance** | 1202 |\n| **Object Count** | 414 |\n| **Spatial Relationship** | 301 |\n\n## 🔗 Provided Resources\nTo help you get started and build your models, please refer to our official resources:\n* **Training Data**: [Download via ModelScope](https://modelscope.cn/datasets/XduSyL/EventMind/files)\n* **Academic Paper**: [Read on arXiv (2511.18448)](https://arxiv.org/pdf/2511.18448)\n* **Project Homepage**: [Visit EventBench Website](https://xdusyl.github.io/eventbench.github.io/)\n\n## ⚠️ Challenge Rules\nTo maintain fairness and scientific integrity, all participants must strictly adhere to the following rules:\n1. **No Cheating or Probing**: Any attempt to probe the test server, manipulate submissions to extract test set answers, or use the test data for model training is strictly prohibited and will result in immediate disqualification.\n2. **Model Size Constraint**: To encourage efficient and accessible model designs, the total parameter count of any evaluated model must be **&lt;= 10B** (10 Billion parameters).&quot;,
+      &quot;content_zh&quot;: &quot;# 基于事件的多模态理解挑战：空间推理赛道 @ECCV 2026\n\n欢迎参加事件理解多模态大语言模型（MLLMs）挑战赛，官方承办于ECCV 2026！\n\n## 🎯 概述与目标\n本挑战赛基准测试MLLMs在基于事件的视觉上的空间推理能力，重点关注物体计数、绝对距离估计和空间关系推理。\n\n## 📝 任务描述\n为全面基准测试模型能力，挑战赛跨3个不同的空间任务评估性能：\n\n* **物体计数**：准确枚举场景中存在的特定动态或静态物体的数量。\n* **绝对距离**：估计物体之间或从相机到目标物体的物理定量距离（例如，以米为单位）。\n* **空间关系**：确定多个物体的相对拓扑位置和结构方向。\n\n## 📅 重要日期\n*所有截止日期均为UTC时间晚上11:59。*\n\n* **2026年5月10日**：挑战赛网站开放。\n* **2026年5月12日**：训练和验证数据发布。\n* **2026年5月20日**：验证服务器上线。\n* **2026年6月25日**：测试数据发布与测试服务器上线。\n* **2026年7月3日**：测试提交截止与测试服务器关闭。\n* **2026年7月10日**：结果公布 *(暂定)*。\n* **待定**：技术报告提交。\n\n## 📊 数据统计（测试集）\n该基准涵盖严格标注的测试集，涵盖以下分布：\n\n| 任务类别 | 项目数量 |\n| :--- | :--- |\n| **绝对距离** | 1202 |\n| **物体计数** | 414 |\n| **空间关系** | 301 |\n\n## 🔗 提供的资源\n为帮助您快速入门和构建模型，请参考我们的官方资源：\n* **训练数据**：[通过ModelScope下载](https://modelscope.cn/datasets/XduSyL/EventMind/files)\n* **学术论文**：[在arXiv上阅读 (2511.18448)](https://arxiv.org/pdf/2511.18448)\n* **项目主页**：[访问EventBench网站](https://xdusyl.github.io/eventbench.github.io/)\n\n## ⚠️ 挑战赛规则\n为维护公平性和科学诚实，所有参赛者必须严格遵守以下规则：\n1. **禁止作弊或探测**：严格禁止任何探测测试服务器、操纵提交以提取测试集答案或使用测试数据进行模型训练的行为，违反者将被立即取消参赛资格。\n2. **模型规模限制**：为鼓励高效且易获取的模型设计，任何评估模型的总参数数必须 **&lt;= 10B**（100亿参数）。&quot;
+    },
+    {
+      &quot;index&quot;: 1,
+      &quot;title&quot;: &quot;Data Preparation&quot;,
+      &quot;content&quot;: &quot;# Data Preparation Guide\n\nTo participate in the EventBench challenge, you will need to acquire both the training data and the test set data (event streams and questions). Please follow the steps below to prepare your local environment.\n\n## Step 1: Download the Training Set\nThe official training dataset, **EventMind**, is hosted on ModelScope. You can download the complete training split from the following link:\n\n👉 **[Download EventMind Training Set (ModelScope)](https://modelscope.cn/datasets/XduSyL/EventMind)**\n\n## Step 2: Download the Test Set (Event Streams &amp; Questions)\nThe test set for the EventBench challenge consists of raw event stream files (`.npz`) and the corresponding test questions (`.json`). Due to file size constraints, these are hosted on Hugging Face.\n\nYou must download the **EventBench** dataset from the official repository:\n\n👉 **[Download EventBench Test Set (Hugging Face)](https://huggingface.co/datasets/XduSyL/EventBench)**\n\n*(Note: The test questions provided in the `input_data.zip` file directly on CodaBench do not contain the large `.npz` event files. You must download the event streams from the Hugging Face link above.)*\n\n## Step 3: Detailed Instructions &amp; Setup\nFor detailed instructions on data structure, how to read the `.npz` files, and how to set up the data pipeline for your model, please refer to the official EventBench project homepage.\n\n👉 **[Visit the Official EventBench Project Homepage](https://xdusyl.github.io/eventbench.github.io/)**\n\nThe project page contains comprehensive documentation, code snippets, and baseline model examples to help you seamlessly integrate the data into your training and evaluation workflows.&quot;,
+      &quot;content_zh&quot;: &quot;# 数据准备指南\n\n要参与EventBench挑战赛，您需要获取训练数据和测试集数据（事件流和问题）。请按照以下步骤准备您的本地环境。\n\n## 第1步：下载训练集\n官方训练数据集**EventMind**托管在ModelScope上。您可以从以下链接下载完整的训练分集：\n\n👉 **[下载EventMind训练集 (ModelScope)](https://modelscope.cn/datasets/XduSyL/EventMind)**\n\n## 第2步：下载测试集（事件流和问题）\nEventBench挑战赛的测试集包含原始事件流文件（`.npz`）和相应的测试问题（`.json`）。由于文件大小限制，这些文件托管在Hugging Face上。\n\n您必须从官方仓库下载**EventBench**数据集：\n\n👉 **[下载EventBench测试集 (Hugging Face)](https://huggingface.co/datasets/XduSyL/EventBench)**\n\n*（注意：CodaBench上`input_data.zip`文件中直接提供的测试问题不包含较大的`.npz`事件文件。您必须从上方Hugging Face链接下载事件流。）*\n\n## 第3步：详细说明和配置\n有关数据结构、如何读取`.npz`文件以及如何为您的模型设置数据流水线的详细说明，请参阅官方EventBench项目主页。\n\n👉 **[访问官方EventBench项目主页](https://xdusyl.github.io/eventbench.github.io/)**\n\n项目页面包含全面的文档、代码片段和基线模型示例，帮助您将数据无缝集成到训练和评估工作流程中。&quot;
+    },
+    {
+      &quot;index&quot;: 2,
+      &quot;title&quot;: &quot;Evaluation Details&quot;,
+      &quot;content&quot;: &quot;# Evaluation Metrics &amp; Submission Guidelines\n\n## Submission Format\nYour submission must be a single JSON file. The file must contain a **flat dictionary** (key-value pairs), where the key is the test question `id` and the value is your model&#x27;s predicted `answer`. \n\n*(Note: Please ensure your submission is a direct JSON object `{...}` and NOT wrapped in a JSON array `[{...}]` to ensure compatibility with our scoring engine.)*\n\n**Example of `predictions.json`:**\n```json\n{\n  \&quot;228350c5-4a8f-4976-abf9-fe52b86bddae\&quot;: \&quot;D\&quot;,\n  \&quot;a959e02d-7ef6-457b-9a16-9c85934ba980\&quot;: \&quot;5.3198\&quot;,\n  \&quot;e495b370-59ba-471b-8642-5ea239380f5a\&quot;: \&quot;4\&quot;,\n  \&quot;d42e3a21-2c72-48ef-9f33-522338dc1c44\&quot;: \&quot;left\&quot;,\n  \&quot;97258721-3d86-4bc2-82d1-481b59e1b7cd\&quot;: \&quot;spatial\\ntemporal\&quot;\n}\n```\n\n## How to Submit\n1. **Prepare your file:** Format your model&#x27;s predictions and save them strictly as `predictions.json`.\n2. **Compress:** Zip the `predictions.json` file directly into a `.zip` archive (e.g., `submission.zip`). **Do not** include any parent folders in the archive.\n3. **Upload:** Navigate to the **\&quot;My Submissions\&quot;** tab on the challenge page, select the active phase, and upload your `.zip` file. The evaluation server will process your results automatically.\n\n## Metrics\nThe challenge evaluates models across 3 distinct tasks. The evaluation server calculates the accuracy for each category based on the following specific matching rules:\n\n* **Absolute Distance**: Direct distance value output (e.g., `5.3198`). **Metric:** Correct if the relative error between the prediction and the ground truth is ≤ 30%.\n* **Object Count**: Numerical value. Direct output of the object count (e.g., `4`). **Metric:** Exact match required.\n* **Spatial Relationship**: Character matching (e.g., `left`). **Metric:** Exact match required.\n\n## Final Scoring\nThe evaluation script will independently calculate the individual accuracy scores for all 3 tasks. The final leaderboard ranking is strictly determined by the **Average Score**, which is the mean of the scores across all task categories.&quot;,
+      &quot;content_zh&quot;: &quot;# 评估指标和提交指南\n\n## 提交格式\n您的提交必须是一个JSON文件。该文件必须包含一个**平面字典**（键值对），其中键是测试问题`id`，值是您的模型预测的`answer`。\n\n*(注意：请确保您的提交是直接的JSON对象`{...}`，而不是包装在JSON数组`[{...}]`中，以确保与我们的评分引擎兼容。)*\n\n**`predictions.json`示例：**\n```json\n{\n  \&quot;228350c5-4a8f-4976-abf9-fe52b86bddae\&quot;: \&quot;D\&quot;,\n  \&quot;a959e02d-7ef6-457b-9a16-9c85934ba980\&quot;: \&quot;5.3198\&quot;,\n  \&quot;e495b370-59ba-471b-8642-5ea239380f5a\&quot;: \&quot;4\&quot;,\n  \&quot;d42e3a21-2c72-48ef-9f33-522338dc1c44\&quot;: \&quot;left\&quot;,\n  \&quot;97258721-3d86-4bc2-82d1-481b59e1b7cd\&quot;: \&quot;spatial\\ntemporal\&quot;\n}\n```\n\n## 提交方式\n1. **准备文件：** 格式化您的模型预测结果，并严格将其保存为`predictions.json`。\n2. **压缩：** 直接将`predictions.json`文件压缩成`.zip`存档（例如`submission.zip`）。**不要**在存档中包含任何父文件夹。\n3. **上传：** 导航至挑战页面上的**\&quot;我的提交\&quot;**标签，选择活跃阶段，然后上传您的`.zip`文件。评估服务器将自动处理您的结果。\n\n## 评估指标\n该挑战在3个不同的任务上评估模型。评估服务器根据以下具体匹配规则为每个类别计算准确度：\n\n* **绝对距离**：直接距离值输出（例如`5.3198`）。**指标：** 如果预测值与基准值之间的相对误差≤30%，则正确。\n* **对象计数**：数值。对象计数的直接输出（例如`4`）。**指标：** 要求完全匹配。\n* **空间关系**：字符匹配（例如`left`）。**指标：** 要求完全匹配。\n\n## 最终评分\n评估脚本将独立计算所有3个任务的个别准确度分数。最终排行榜排名严格由**平均分数**决定，即所有任务类别分数的平均值。&quot;
+    },
+    {
+      &quot;index&quot;: 3,
+      &quot;title&quot;: &quot;Organizers &amp; Citation&quot;,
+      &quot;content&quot;: &quot;# Organizers &amp; Citation\n\n## Organizing Committee\nWe would like to thank the organizing committee for their efforts in creating and maintaining the EventBench challenge:\n\n**Shaoyu Liu** (Xidian University) · liusy@stu.xidian.edu.cn  \n\n**Hanyu Zhou** (National University of Singapore) · hy.zhou@nus.edu.sg  \n\n**Yunfan Lu** (HKUST (Guangzhou)) · ylu066@connect.hkust-gz.edu.cn  \n\n**Haoyue Liu** (Huazhong University of Science and Technology) · liuhy@hust.edu.cn  \n\n**Peiqi Duan** (Peking University) · duanqi0001@pku.edu.cn  \n\n**Shihan Peng** (Huazhong University of Science and Technology) · pengshihan@hust.edu.cn  \n\n**Yinqiang Zheng** (The University of Tokyo) · yqzheng@ai.u-tokyo.ac.jp  \n\n**Boxin Shi** (Peking University) · shiboxin@pku.edu.cn  \n\n**Kuk-Jin Yoon** (KAIST) · kjyoon@kaist.ac.kr  \n\n**Hui Xiong** (HKUST (Guangzhou)) · xionghui@ust.hk  \n\n**Gim Hee Lee** (National University of Singapore) · gimhee.lee@nus.edu.sg  \n\n**Davide Scaramuzza** (University of Zurich) · sdavide@ifi.uzh.ch \n\n## Contact Us\nFor any technical issues, questions about the dataset, or general inquiries regarding the challenge, please feel free to reach out to the organizers via the email addresses provided above.\n\n## Citation\nIf you participate in this challenge or find the EventBench dataset useful for your research, please kindly cite our paper:\n```bibtex\n@article{liu2025eventbench,\n  title={EventBench: Towards Comprehensive Benchmarking of Event-based MLLMs},\n  author={Liu, Shaoyu and Li, Jianing and Zhao, Guanghui and Zhang, Yunjian and Ji, Xiangyang},\n  journal={arXiv preprint arXiv:2511.18448},\n  year={2025}\n}\n```\n\n```bibtex\n@inproceedings{liu2025eventgpt,\n  title={Eventgpt: Event stream understanding with multimodal large language models},\n  author={Liu, Shaoyu and Li, Jianing and Zhao, Guanghui and Zhang, Yunjian and Meng, Xin and Yu, Fei Richard and Ji, Xiangyang and Li, Ming},\n  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},\n  pages={29139--29149},\n  year={2025}\n}\n```&quot;,
+      &quot;content_zh&quot;: &quot;# 组织委员会和引用\n\n## 组织委员会\n我们感谢组织委员会为创建和维护EventBench挑战赛所做的努力：\n\n**刘绍宇**（西安电子科技大学）· liusy@stu.xidian.edu.cn  \n\n**周涵宇**（新加坡国立大学）· hy.zhou@nus.edu.sg  \n\n**陆云帆**（香港科技大学（广州））· ylu066@connect.hkust-gz.edu.cn  \n\n**刘浩岳**（华中科技大学）· liuhy@hust.edu.cn  \n\n**段佩琪**（北京大学）· duanqi0001@pku.edu.cn  \n\n**彭世翰**（华中科技大学）· pengshihan@hust.edu.cn  \n\n**郑印强**（东京大学）· yqzheng@ai.u-tokyo.ac.jp  \n\n**石博鑫**（北京大学）· shiboxin@pku.edu.cn  \n\n**尹国进**（韩国科学技术院）· kjyoon@kaist.ac.kr  \n\n**熊晖**（香港科技大学（广州））· xionghui@ust.hk  \n\n**李吉贺**（新加坡国立大学）· gimhee.lee@nus.edu.sg  \n\n**达维德·斯卡拉穆扎**（苏黎世大学）· sdavide@ifi.uzh.ch \n\n## 联系我们\n如有任何技术问题、数据集相关疑问或关于挑战赛的一般咨询，请随时通过上面提供的邮箱地址与组织委员会成员联系。\n\n## 引用\n如果您参与此挑战赛或认为EventBench数据集对您的研究有帮助，请引用我们的论文：\n```bibtex\n@article{liu2025eventbench,\n  title={EventBench: Towards Comprehensive Benchmarking of Event-based MLLMs},\n  author={Liu, Shaoyu and Li, Jianing and Zhao, Guanghui and Zhang, Yunjian and Ji, Xiangyang},\n  journal={arXiv preprint arXiv:2511.18448},\n  year={2025}\n}\n```\n\n```bibtex\n@inproceedings{liu2025eventgpt,\n  title={Eventgpt: Event stream understanding with multimodal large language models},\n  author={Liu, Shaoyu and Li, Jianing and Zhao, Guanghui and Zhang, Yunjian and Meng, Xin and Yu, Fei Richard and Ji, Xiangyang and Li, Ming},\n  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},\n  pages={29139--29149},\n  year={2025}\n}\n```&quot;
+    }
+  ]
+}</pre>
+  </div>
+</div>
+</body>
+</html>

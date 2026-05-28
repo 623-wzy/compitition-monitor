@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LoViF 2026 The Second Challenge on Real-World All-in-One Image Restoration @ ECCV 2026 — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>LoViF 2026 The Second Challenge on Real-World All-in-One Image Restoration @ ECCV 2026</h2>
+  <div class="detail-meta">
+    <span>ID: 16376</span>
+    <span>创建者: holflee</span>
+    <span>创建时间: 2026-05-16</span>
+    <span>参与人数: 66</span>
+    <span>提交次数: 120</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16376/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">我们的目标是为真实场景的一体化图像复原算法的开发引入一个新的基准。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development</td><td>2026-05-20</td><td>2026-06-19</td><td>10</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>overview</h3><div class='page-content'>&lt;div align=&quot;center&quot;&gt;
+&lt;h1&gt;&lt;strong&gt;第2届低阶视觉前沿工作坊 (LoViF) @ ECCV 2026&lt;/strong&gt;&lt;/h1&gt;
+&lt;/div&gt;
+&lt;h2&gt;&amp;nbsp;&lt;/h2&gt;
+&lt;h1&gt;真实世界全能图像恢复挑战赛&lt;/h1&gt;
+&lt;h2&gt;重要日期&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;2026.05.20 训练数据发布（输入和输出）&lt;/li&gt;
+&lt;li&gt;2026.05.20 验证数据发布（仅输入）&lt;/li&gt;
+&lt;li&gt;2026.05.20 验证服务器上线&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;2026.07.01 最终测试数据发布（仅输入）&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2026.07.08 测试输出结果提交截止&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2026.07.08 事实表和代码/可执行文件提交截止&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;2026.07.15 向参赛者发布初步测试结果&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2026.07.15 论文提交截止（内部评审）&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;2026.09.x LoViF工作坊和挑战赛、结果发布及颁奖仪式 (ECCV 2026)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&amp;nbsp;&lt;/h2&gt;
+&lt;h2&gt;挑战赛概览&lt;/h2&gt;
+&lt;p align=&quot;justify&quot;&gt;&lt;a href=&quot;https://lovif-eccv2026-workshop.github.io/&quot;&gt;第2届低阶视觉前沿工作坊：生成式AI、偏好优化与智能体系统 (LoViF)&lt;/a&gt;将于2026年9月与ECCV 2026联合举办。&lt;/p&gt;
+&lt;p align=&quot;justify&quot;&gt;低阶视觉正在经历范式转变。传统恢复方法正在被&lt;strong&gt;生成式AI&lt;/strong&gt;、&lt;strong&gt;偏好优化&lt;/strong&gt;和&lt;strong&gt;智能体系统&lt;/strong&gt;所增强和重新定义。LoViF工作坊旨在探索这些前沿领域，重点关注生成式基础模型如何提供优越先验、人类反馈如何改进视觉质量，以及智能体如何自主处理复杂恢复任务。&lt;/p&gt;
+&lt;p align=&quot;justify&quot;&gt;近期的进展表明，低阶任务不再仅是像素级精度（如PSNR），而是关乎感知丰富度和与人类意图的对齐。这一演进为专业内容创作、自主系统和可穿戴设备等领域打开了新的大门，在这些领域中视觉信号完整性和美学质量至关重要。&lt;/p&gt;
+&lt;p align=&quot;justify&quot;&gt;作为LoViF工作坊的核心部分，此挑战赛为研究人员和从业者提供了一个基准测试平台，用于评估其最新算法并推进下一代图像和视频处理技术的边界。&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;h2&gt;竞赛动机&lt;/h2&gt;
+&lt;p align=&quot;justify&quot;&gt;虽然经典图像恢复取得了重大进展，但现实场景通常涉及复杂的非线性退化和主观质量要求，这些都是传统指标无法捕捉的。生成式AI的出现提供了&quot;重新想象&quot;丢失细节的强大工具，但保持高保真度并使这些输出与人类偏好对齐仍然是一个关键挑战。&lt;/p&gt;
+&lt;p align=&quot;justify&quot;&gt;为了弥补这一差距，LoViF挑战赛引入了一个专门的基准测试，专注于&lt;strong&gt;真实世界全能图像恢复&lt;/strong&gt;。我们的目标是鼓励那些不仅能获得高量化分数，而且能展示优越视觉质量和自适应能力的解决方案，可能会利用基于智能体的推理或基于偏好的改进。&lt;/p&gt;
+&lt;p align=&quot;justify&quot;&gt;此竞赛的目标是为社区建立一个新的、可应用的基准。最终排名将由标准指标（如PSNR、SSIM、LPIPS）和高级感知或对齐评估相结合来确定。&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;&lt;strong&gt;请参考&lt;a href=&#x27;https://openaccess.thecvf.com/content/CVPR2023/html/Chen_Learning_a_Sparse_Transformer_Network_for_Effective_Image_Deraining_CVPR_2023_paper.html&#x27;&gt;
+[1]&lt;/a&gt; &lt;a href=&#x27;https://dl.acm.org/doi/pdf/10.1145/3746027.3758196&#x27;&gt;[2]&lt;/a&gt;了解更多关于真实世界全能恢复数据的详情。&lt;/strong&gt;
+&lt;p&gt;[1] Hao Li, Xiang Chen, Jiangxin Dong, Jinhui Tang, Jinshan Pan. &quot;FoundIR: Unleashing Million-scale Training Data to Advance Foundation Models</div></div><div class='section'><h3>data</h3><div class='page-content'>&lt;div align=&quot;center&quot;&gt;
+&lt;h1&gt;&lt;strong&gt;第二届低层次视觉前沿研讨会 (LoViF) @ ECCV 2026&lt;/strong&gt;&lt;/h1&gt;
+&lt;/div&gt;
+&lt;h2&gt;&amp;nbsp;&lt;/h2&gt;
+&lt;h1&gt;真实世界全能图像复原挑战赛&lt;/h1&gt;
+&lt;h3&gt;&amp;nbsp;&lt;/h3&gt;
+&lt;h2&gt;数据概览&lt;/h2&gt;
+&lt;p align=&quot;justify&quot;&gt;本挑战赛的数据集由&lt;a href=&quot;https://github.com/House-Leo/FoundIR&quot;&gt;FoundIR&lt;/a&gt;和LoViF组织委员会提供。该数据集专门设计用于基准测试低层次视觉的前沿技术，涵盖五类常见真实世界退化图像：&lt;strong&gt;模糊、低光、雾霾、雨水和雪&lt;/strong&gt;。数据集包含用于训练、验证和测试的多样化场景。具体来说，每种退化包含4,900对配对的LQ–GT图像（512×512）用于训练，100张图像用于验证，100张图像用于测试。&lt;/p&gt;
+&lt;p align=&quot;justify&quot;&gt;在本竞赛中，数据集由以下部分组成：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;训练数据：&lt;/strong&gt;24,500对退化图像及其对应的真值参考。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;验证数据：&lt;/strong&gt;500张退化图像，用于开发阶段的性能调优。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;测试数据：&lt;/strong&gt;500张退化图像，用于最终性能评估。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p align=&quot;justify&quot;&gt;请注意，在验证集和测试集中，索引为&lt;strong&gt;0001-0100的图像对应模糊、0101-0200对应低光、0201-0300对应雾霾、0301-0400对应雨水、0401-0500对应雪&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3&gt;&amp;nbsp;&lt;/h3&gt;
+&lt;h2&gt;数据访问&lt;/h2&gt;
+&lt;p align=&quot;justify&quot;&gt;&lt;strong&gt;通过访问数据，参与者隐含同意LoViF挑战赛的条款和条件。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;&amp;nbsp;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;开发阶段/学习：&lt;/strong&gt;&lt;/li&gt;
+&lt;ul&gt;
+&lt;li&gt;训练数据：&lt;a href=&quot;https://drive.google.com/file/d/1DA28a64FEGRM2bd0RWSLsgZcDybcWWO2/view?usp=sharing&quot;&gt;[谷歌云盘]&lt;/a&gt;。参与者允许使用公开可用的外部数据集进行训练，但数据源必须在说明书中明确记录。有关训练数据的更多详情可在&lt;a href=&quot;https://github.com/House-Leo/FoundIR&quot;&gt;FoundIR&lt;/a&gt;中找到。&lt;/li&gt;
+&lt;li&gt;验证数据（仅输入图像）：&lt;a href=&quot;https://drive.google.com/file/d/1r488W9gwk-fy4BkwOGeqp71U0hk_s_um/view?usp=sharing&quot;&gt;[谷歌云盘]&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;测试数据（仅输入图像）：[待定]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&amp;nbsp;&lt;/h3&gt;
+&lt;h2&gt;最终测试阶段提交指南（&lt;span style=&quot;text-decoration: underline;&quot;&gt;说明书可在&lt;a href=&#x27;https://www.overleaf.com/read/zpgpfqfqrgrb#fb6d1d&#x27;&gt;[Overleaf]&lt;/a&gt;中找到&lt;/span&gt;）&lt;/h2&gt;
+&lt;p&gt;最终提交应通过电子邮件发送至组织者（详见&quot;组织者&quot;选项卡以获取联系方式）。&lt;/p&gt;
+&lt;p&gt;邮件标题应为：&lt;strong&gt;[LoViF2026] - [任务名称] - [团队名称]&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;邮件正文应包含以下内容：&lt;/p&gt;
+&lt;ul&gt;
+&lt;ul&gt;&lt;ol&gt;
+&lt;li&gt;挑战赛全名（LoViF 2026 - [任务名称]）&lt;/li&gt;
+&lt;li&gt;团队名称&lt;/li&gt;
+&lt;li&gt;团队负责人的名字和电子邮件地址&lt;/li&gt;
+&lt;li&gt;其他团队成员&lt;/li&gt;
+&lt;li&gt;团队成员的所属机构&lt;/li&gt;
+&lt;li&gt;LoViF 2026 Codabench服务器上的团队名称和用户名&lt;/li&gt;
+&lt;li&gt;可执行文件/源代码附件或下载链接&lt;/li&gt;
+&lt;li&gt;说明书附件（请使用提供的LoViF模板）&lt;/li&gt;
+&lt;li&gt;所有测试帧的完整结果的下载链接&lt;/li&gt;
+&lt;/ol&gt;&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;p&gt;可执行文件/源代码应包含训练模型或必要参数以确保可重复性。说明如何运行代码的README文件是必需的。说明书必须是编译后的PDF文件以及其LaTeX源文件。&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;h1&gt;最终测试阶段 - 初步结果 [待定]&lt;/h1&gt;
+&lt;p&gt;评估完成后，初步结果将发布在此处。&lt;/p&gt;
+&lt;p&gt;请注意，排名靠前的参与者将被邀请共同撰写挑战赛报告，并为LoViF 2026研讨会投稿论文。所有挑战赛论文都将经过同行评审过程。更多信息请查看&lt;a href=&quot;http&quot;&gt;&lt;/a&gt;&lt;/p&gt;</div></div><div class='section'><h3>evaluation</h3><div class='page-content'>&lt;div align=&quot;center&quot;&gt;
+&lt;h1&gt;&lt;strong&gt;第2届低级视觉前沿研讨会(LoViF) @ ECCV 2026&lt;/strong&gt;&lt;/h1&gt;
+&lt;/div&gt;
+&lt;h2&gt;&amp;nbsp;&lt;/h2&gt;
+&lt;h1&gt;真实世界全能图像复原挑战赛&lt;/h1&gt;
+&lt;h3&gt;&amp;nbsp;&lt;/h3&gt;
+&lt;h3&gt;评估&lt;/h3&gt;
+&lt;p&gt;&lt;span&gt;评估包括将复原/生成的图像与参考真实图像进行比较。&lt;span&gt;请确保所有图像使用统一的模型进行处理，以保持不同测试场景的一致性。&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;为了全面评估低级视觉前沿领域的性能，我们采用基于保真度和基于感知的指标，包括&lt;strong&gt;PSNR&lt;/strong&gt;、&lt;strong&gt;SSIM&lt;/strong&gt;和&lt;strong&gt;LPIPS&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;由于本挑战赛的目标是探索&lt;strong&gt;稳健且强大的全能图像复原模型&lt;/strong&gt;，参赛者需要使用一个复原网络来处理所有类型的图像退化并获得最终结果。
+
+具体来说，参赛者应确保最终提交仅包含&lt;strong&gt;一个训练好的图像复原模型参数文件（例如.pt、.pth）&lt;/strong&gt;，这有利于组织方对实验结果的可重复性验证。
+
+需要说明的是，允许使用现有的预训练网络（例如VAE、CLIP）进行特征提取，这些不计入上述模型参数文件。
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;最终排名将由平衡像素级精度和感知质量的综合得分决定。初始结果的加权公式为：&lt;br&gt;
+&lt;strong&gt;Final_Score = PSNR (Y) + 10 * SSIM (Y) - 5 * LPIPS&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;提交结果时，请遵循以下说明：&lt;/p&gt;
+
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;为确保评估的公平性，参赛者建议使用以下提供的代码将模型输出图像保存为JPG格式。
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
+from PIL import Image
+img = Image.open(img_path)
+img.load()
+if img.mode != &quot;RGB&quot;:
+    img = img.convert(&quot;RGB&quot;)
+save_kwargs = dict(format=&quot;JPEG&quot;, quality=96, subsampling=0, optimize=True)
+img.save(out_path, **save_kwargs)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;处理&lt;/strong&gt;输入图像，并为你的方法生成的输出图像结果保留相同的名称（示例：对于名为&quot;0001.jpg&quot;的输入文件，输出文件应为&quot;0001.jpg&quot;）。注意输出图像应具有与输入图像相同的尺寸。&lt;a href=&#x27;https://drive.google.com/file/d/1J_cHUcbalSlACQVA2JUQXrCglRhJqdYz/view?usp=sharing&#x27;&gt;[提交示例]&lt;/a&gt;。
+&lt;/li&gt;
+&lt;li&gt;确保你的提交包含方法的简短描述（事实说明书）。&lt;/li&gt;
+&lt;li&gt;在截止日期前将你的结果提交到Codabench服务器。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p align=&quot;justify&quot;&gt;有关研讨会主题的更多详情，如偏好优化或评估中的代理系统，请访问我们的官方网站：&lt;a href=&quot;https://lovif-eccv2026-workshop.github.io/&quot;&gt;https://lovif-eccv2026-workshop.github.io/&lt;/a&gt;&lt;/p&gt;</div></div><div class='section'><h3>organizers</h3><div class='page-content'>&lt;div align=&quot;center&quot;&gt;
+&lt;h1&gt;&lt;strong&gt;第二届低层次视觉前沿研讨会 (LoViF) @ ECCV 2026&lt;/strong&gt;&lt;/h1&gt;
+&lt;/div&gt;
+&lt;h2&gt;&amp;nbsp;&lt;/h2&gt;
+&lt;h1&gt;组织者&lt;/h1&gt;
+&lt;h3&gt;&amp;nbsp;&lt;/h3&gt;
+&lt;p align=&quot;justify&quot;&gt;LoViF挑战赛与&lt;strong&gt;第二届低层次视觉前沿研讨会——生成式人工智能、偏好优化和智能体系统 (LoViF)&lt;/strong&gt;以及&lt;a href=&quot;https://lovif-eccv2026-workshop.github.io/&quot;&gt;LoViF 2026研讨会&lt;/a&gt;联合组织。挑战赛的结果将在LoViF 2026研讨会和ECCV 2026研讨会论文集中发布。&lt;/p&gt;
+
+
+&lt;!-- &lt;p&gt;组织者是LoViF挑战赛的联系人和直接管理者。如有任何问题，请通过官方研讨会渠道联系组织委员会。&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt; --&gt;
+&lt;p&gt;
+如有任何问题，请联系LoViF真实世界全能图像恢复挑战赛的联系人和直接管理者：
+&lt;ul&gt;
+&lt;li&gt; &lt;strong&gt;陈翔&lt;/strong&gt;, chenxiang@njust.edu.cn&lt;/li&gt;
+&lt;li&gt; &lt;strong&gt;李浩&lt;/strong&gt;, haoli@njust.edu.cn&lt;/li&gt;
+&lt;li&gt; &lt;strong&gt;李欣&lt;/strong&gt;, xin.li@ustc.edu.cn &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;关于LoViF研讨会和挑战赛组织者的更多信息请参见：&lt;a href=&quot;https://lovif-eccv2026-workshop.github.io/&quot;&gt;https://lovif-eccv2026-workshop.github.io/&lt;/a&gt;&lt;/p&gt;</div></div>
+
+  <div class="section">
+    <h3>原始数据</h3>
+    <pre class="page-content" style="font-size:.8rem">{
+  &quot;id&quot;: 16376,
+  &quot;title&quot;: &quot;LoViF 2026 The Second Challenge on Real-World All-in-One Image Restoration @ ECCV 2026&quot;,
+  &quot;description&quot;: &quot;Our goal is to introduce a new benchmark for the development of real-world all-in-one image restoration algorithms.&quot;,
+  &quot;description_zh&quot;: &quot;我们的目标是为真实场景的一体化图像复原算法的开发引入一个新的基准。&quot;,
+  &quot;created_by&quot;: &quot;holflee&quot;,
+  &quot;created_when&quot;: &quot;2026-05-16T12:42:20.469268Z&quot;,
+  &quot;logo&quot;: &quot;https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778935340/0aeca58b7892/logo.png?AWSAccessKeyId=codabench-prod&amp;Signature=gNaoZn3Ne5nPoeYT5I30yGFlyNk%3D&amp;Expires=1779937159&quot;,
+  &quot;participants_count&quot;: 66,
+  &quot;submissions_count&quot;: 120,
+  &quot;first_phase_start&quot;: null,
+  &quot;phases&quot;: [
+    {
+      &quot;id&quot;: 26889,
+      &quot;name&quot;: &quot;Development&quot;,
+      &quot;start&quot;: &quot;2026-05-20T00:00:00Z&quot;,
+      &quot;end&quot;: &quot;2026-06-19T00:00:00Z&quot;,
+      &quot;max_submissions_per_day&quot;: 10
+    }
+  ],
+  &quot;pages&quot;: [
+    {
+      &quot;index&quot;: 0,
+      &quot;title&quot;: &quot;overview&quot;,
+      &quot;content&quot;: &quot;&lt;div align=\&quot;center\&quot;&gt;\n&lt;h1&gt;&lt;strong&gt;The 2nd Workshop on Low-level Vision Frontiers (LoViF) @ ECCV 2026&lt;/strong&gt;&lt;/h1&gt;\n&lt;/div&gt;\n&lt;h2&gt;&amp;nbsp;&lt;/h2&gt;\n&lt;h1&gt;Challenge on Real-World All-in-One Image Restoration&lt;/h1&gt;\n&lt;h2&gt;Important dates&lt;/h2&gt;\n&lt;ul&gt;\n&lt;li&gt;2026.05.20 Release of train data (input and output)&lt;/li&gt;\n&lt;li&gt;2026.05.20 Release of validation data (inputs only)&lt;/li&gt;\n&lt;li&gt;2026.05.20 Validation server online&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;strong&gt;2026.07.01 Final test data release (inputs only)&lt;/strong&gt;&lt;/li&gt;\n&lt;li&gt;&lt;strong&gt;2026.07.08 Test output results submission deadline&lt;/strong&gt;&lt;/li&gt;\n&lt;li&gt;&lt;strong&gt;2026.07.08 Fact sheets and code/executable submission deadline&lt;/strong&gt;&lt;/li&gt;\n&lt;li&gt;2026.07.15 Preliminary test results release to the participants&lt;/li&gt;\n&lt;li&gt;&lt;strong&gt;2026.07.15 Paper submission deadline for entries (Internal Review)&lt;/strong&gt;&lt;/li&gt;\n&lt;li&gt;2026.09.x LoViF workshop and challenges, results and award ceremony (ECCV 2026)&lt;/li&gt;\n&lt;/ul&gt;\n&lt;h2&gt;&amp;nbsp;&lt;/h2&gt;\n&lt;h2&gt;Challenge overview&lt;/h2&gt;\n&lt;p align=\&quot;justify\&quot;&gt;The &lt;a href=\&quot;https://lovif-eccv2026-workshop.github.io/\&quot;&gt;2nd Workshop on Low-level Vision Frontiers with Generative AI, Preference Optimization and Agentic Systems (LoViF)&lt;/a&gt; will be held in September 2026 in conjunction with ECCV 2026.&lt;/p&gt;\n&lt;p align=\&quot;justify\&quot;&gt;Low-level vision is undergoing a paradigm shift. Traditional restoration methods are being augmented and redefined by &lt;strong&gt;Generative AI&lt;/strong&gt;, &lt;strong&gt;Preference Optimization&lt;/strong&gt;, and &lt;strong&gt;Agentic Systems&lt;/strong&gt;. The LoViF workshop aims to explore these frontiers, focusing on how generative foundation models can provide superior priors, how human feedback can refine visual quality, and how intelligent agents can autonomously handle complex restoration tasks.&lt;/p&gt;\n&lt;p align=\&quot;justify\&quot;&gt;Recent advancements have shown that low-level tasks are no longer just about pixel-wise accuracy (like PSNR), but about perceptual richness and alignment with human intent. This evolution opens new doors in fields ranging from professional content creation to autonomous systems and wearable devices, where visual signal integrity and aesthetic quality are paramount.&lt;/p&gt;\n&lt;p align=\&quot;justify\&quot;&gt;This challenge, as a core part of the LoViF workshop, provides a platform for researchers and practitioners to benchmark their latest algorithms and push the boundaries of what is possible in next-generation image and video processing.&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;h2&gt;Motivation for this competition&lt;/h2&gt;\n&lt;p align=\&quot;justify\&quot;&gt;While classic image restoration has seen significant progress, real-world scenarios often involve complex, non-linear degradations and subjective quality requirements that traditional metrics fail to capture. The emergence of Generative AI offers powerful tools to \&quot;re-imagine\&quot; lost details, yet maintaining high fidelity and aligning these outputs with human preferences remains a critical challenge.&lt;/p&gt;\n&lt;p align=\&quot;justify\&quot;&gt;To bridge this gap, the LoViF Challenge introduces a specialized benchmark focused on &lt;strong&gt;real-world all-in-one image restoration&lt;/strong&gt;. We aim to encourage solutions that not only achieve high quantitative scores but also demonstrate superior visual quality and adaptability, potentially leveraging agent-based reasoning or preference-based refinement.&lt;/p&gt;\n&lt;p align=\&quot;justify\&quot;&gt;The goal of this competition is to establish a new and applicable benchmark for the community. The final ranking will be determined by a combination of standard metrics (e.g., PSNR, SSIM, LPIPS) and advanced perceptual or alignment-based evaluations.&lt;/p&gt;\n\n&lt;p align=\&quot;justify\&quot;&gt;&lt;strong&gt;Please refer to &lt;a href=&#x27;https://openaccess.thecvf.com/content/CVPR2023/html/Chen_Learning_a_Sparse_Transformer_Network_for_Effective_Image_Deraining_CVPR_2023_paper.html&#x27;&gt;\n[1]&lt;/a&gt; &lt;a href=&#x27;https://dl.acm.org/doi/pdf/10.1145/3746027.3758196&#x27;&gt;[2]&lt;/a&gt; for more details about real-world all-in-one restoration data.&lt;/strong&gt;\n&lt;p&gt;[1] Hao Li, Xiang Chen, Jiangxin Dong, Jinhui Tang, Jinshan Pan. \&quot;FoundIR: Unleashing Million-scale Training Data to Advance Foundation Models for Image Restoration\&quot;, In: ICCV, 2025. &lt;/p&gt;\n&lt;p&gt;[2] Qiyuan Guan, Qianfeng Yang, Xiang Chen, Tianyu Song, Guiyue Jin, Jiyu Jin. \&quot;WeatherBench: A Real-World Benchmark Dataset for All-in-One Adverse Weather Image Restoration\&quot;, In: ACM MM, 2025.\n&lt;/p&gt;\n&lt;/p&gt;\n\n&lt;p&gt;Top-ranked participants will be awarded and invited to submit their workshop papers to the ECCV 2026 Workshop proceedings, describing their winning solutions.&lt;/p&gt;\n&lt;p align=\&quot;justify\&quot;&gt;More details are found in the competition data section.&lt;/p&gt;\n\n\n&lt;h2 align=\&quot;justify\&quot;&gt;Competition&lt;/h2&gt;\n&lt;p&gt;&lt;strong&gt;The training data will be made available to the registered participants according to the timeline.&lt;/strong&gt;&lt;/p&gt;\n\n&lt;h2 align=\&quot;justify\&quot;&gt;Award&lt;/h2&gt;\nThe &lt;strong&gt;following awards&lt;/strong&gt; are provided:\n&lt;ul&gt;\n&lt;li&gt; One first-class award (i.e., the champion) with case prize US$1000; &lt;/li&gt;\n&lt;li&gt; One second-class award with case prize US$600; &lt;/li&gt;\n&lt;li&gt; One thrid-class award with case prize US$400; &lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;h2&gt;Provided Resources&lt;/h2&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;strong&gt;Scripts:&amp;nbsp;&lt;/strong&gt;The organizers will provide baseline models and evaluation scripts to ensure reproducibility and fair comparison. Check the \&quot;Data\&quot; page for more information.&lt;/li&gt;\n&lt;li&gt;&lt;strong&gt;Contact:&amp;nbsp;&lt;/strong&gt;Please use the forum on the challenge page for technical discussions, or contact the LoViF organizing committee via the official website: &lt;a href=\&quot;https://lovif-eccv2026-workshop.github.io/\&quot;&gt;https://lovif-eccv2026-workshop.github.io/&lt;/a&gt;, or directly contact the challenge organizers by email ( chenxiang [at] njust.edu.cn and haoli [at] njust.edu.cn) if you have doubts or any question.\n&lt;/li&gt;\n&lt;/ul&gt;&quot;,
+      &quot;content_zh&quot;: &quot;&lt;div align=\&quot;center\&quot;&gt;\n&lt;h1&gt;&lt;strong&gt;第2届低阶视觉前沿工作坊 (LoViF) @ ECCV 2026&lt;/strong&gt;&lt;/h1&gt;\n&lt;/div&gt;\n&lt;h2&gt;&amp;nbsp;&lt;/h2&gt;\n&lt;h1&gt;真实世界全能图像恢复挑战赛&lt;/h1&gt;\n&lt;h2&gt;重要日期&lt;/h2&gt;\n&lt;ul&gt;\n&lt;li&gt;2026.05.20 训练数据发布（输入和输出）&lt;/li&gt;\n&lt;li&gt;2026.05.20 验证数据发布（仅输入）&lt;/li&gt;\n&lt;li&gt;2026.05.20 验证服务器上线&lt;/li&gt;\n&lt;/ul&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;strong&gt;2026.07.01 最终测试数据发布（仅输入）&lt;/strong&gt;&lt;/li&gt;\n&lt;li&gt;&lt;strong&gt;2026.07.08 测试输出结果提交截止&lt;/strong&gt;&lt;/li&gt;\n&lt;li&gt;&lt;strong&gt;2026.07.08 事实表和代码/可执行文件提交截止&lt;/strong&gt;&lt;/li&gt;\n&lt;li&gt;2026.07.15 向参赛者发布初步测试结果&lt;/li&gt;\n&lt;li&gt;&lt;strong&gt;2026.07.15 论文提交截止（内部评审）&lt;/strong&gt;&lt;/li&gt;\n&lt;li&gt;2026.09.x LoViF工作坊和挑战赛、结果发布及颁奖仪式 (ECCV 2026)&lt;/li&gt;\n&lt;/ul&gt;\n&lt;h2&gt;&amp;nbsp;&lt;/h2&gt;\n&lt;h2&gt;挑战赛概览&lt;/h2&gt;\n&lt;p align=\&quot;justify\&quot;&gt;&lt;a href=\&quot;https://lovif-eccv2026-workshop.github.io/\&quot;&gt;第2届低阶视觉前沿工作坊：生成式AI、偏好优化与智能体系统 (LoViF)&lt;/a&gt;将于2026年9月与ECCV 2026联合举办。&lt;/p&gt;\n&lt;p align=\&quot;justify\&quot;&gt;低阶视觉正在经历范式转变。传统恢复方法正在被&lt;strong&gt;生成式AI&lt;/strong&gt;、&lt;strong&gt;偏好优化&lt;/strong&gt;和&lt;strong&gt;智能体系统&lt;/strong&gt;所增强和重新定义。LoViF工作坊旨在探索这些前沿领域，重点关注生成式基础模型如何提供优越先验、人类反馈如何改进视觉质量，以及智能体如何自主处理复杂恢复任务。&lt;/p&gt;\n&lt;p align=\&quot;justify\&quot;&gt;近期的进展表明，低阶任务不再仅是像素级精度（如PSNR），而是关乎感知丰富度和与人类意图的对齐。这一演进为专业内容创作、自主系统和可穿戴设备等领域打开了新的大门，在这些领域中视觉信号完整性和美学质量至关重要。&lt;/p&gt;\n&lt;p align=\&quot;justify\&quot;&gt;作为LoViF工作坊的核心部分，此挑战赛为研究人员和从业者提供了一个基准测试平台，用于评估其最新算法并推进下一代图像和视频处理技术的边界。&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;h2&gt;竞赛动机&lt;/h2&gt;\n&lt;p align=\&quot;justify\&quot;&gt;虽然经典图像恢复取得了重大进展，但现实场景通常涉及复杂的非线性退化和主观质量要求，这些都是传统指标无法捕捉的。生成式AI的出现提供了\&quot;重新想象\&quot;丢失细节的强大工具，但保持高保真度并使这些输出与人类偏好对齐仍然是一个关键挑战。&lt;/p&gt;\n&lt;p align=\&quot;justify\&quot;&gt;为了弥补这一差距，LoViF挑战赛引入了一个专门的基准测试，专注于&lt;strong&gt;真实世界全能图像恢复&lt;/strong&gt;。我们的目标是鼓励那些不仅能获得高量化分数，而且能展示优越视觉质量和自适应能力的解决方案，可能会利用基于智能体的推理或基于偏好的改进。&lt;/p&gt;\n&lt;p align=\&quot;justify\&quot;&gt;此竞赛的目标是为社区建立一个新的、可应用的基准。最终排名将由标准指标（如PSNR、SSIM、LPIPS）和高级感知或对齐评估相结合来确定。&lt;/p&gt;\n\n&lt;p align=\&quot;justify\&quot;&gt;&lt;strong&gt;请参考&lt;a href=&#x27;https://openaccess.thecvf.com/content/CVPR2023/html/Chen_Learning_a_Sparse_Transformer_Network_for_Effective_Image_Deraining_CVPR_2023_paper.html&#x27;&gt;\n[1]&lt;/a&gt; &lt;a href=&#x27;https://dl.acm.org/doi/pdf/10.1145/3746027.3758196&#x27;&gt;[2]&lt;/a&gt;了解更多关于真实世界全能恢复数据的详情。&lt;/strong&gt;\n&lt;p&gt;[1] Hao Li, Xiang Chen, Jiangxin Dong, Jinhui Tang, Jinshan Pan. \&quot;FoundIR: Unleashing Million-scale Training Data to Advance Foundation Models&quot;
+    },
+    {
+      &quot;index&quot;: 1,
+      &quot;title&quot;: &quot;data&quot;,
+      &quot;content&quot;: &quot;&lt;div align=\&quot;center\&quot;&gt;\n&lt;h1&gt;&lt;strong&gt;The 2nd Workshop on Low-level Vision Frontiers (LoViF) @ ECCV 2026&lt;/strong&gt;&lt;/h1&gt;\n&lt;/div&gt;\n&lt;h2&gt;&amp;nbsp;&lt;/h2&gt;\n&lt;h1&gt;Challenge on Real-World All-in-One Image Restoration&lt;/h1&gt;\n&lt;h3&gt;&amp;nbsp;&lt;/h3&gt;\n&lt;h2&gt;Data overview&lt;/h2&gt;\n&lt;p align=\&quot;justify\&quot;&gt;The dataset for this challenge is provided by &lt;a href=\&quot;https://github.com/House-Leo/FoundIR\&quot;&gt;FoundIR&lt;/a&gt; and the LoViF organizing committee. It is specifically designed to benchmark the frontiers of low-level vision, incorporating five categories of common real-world degraded images: &lt;strong&gt;blur, low-light, haze, rain, and snow&lt;/strong&gt;. The dataset includes diverse scenes for training, validation, and testing. Specifically, each degradation contains 4,900 paired LQ–GT image (512 X 512) pairs for training, 100 images for validation, and 100 images for testing.&lt;/p&gt;\n&lt;p align=\&quot;justify\&quot;&gt;In this competition, the dataset is composed of:&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;strong&gt;Train data:&lt;/strong&gt; 24,500 pairs of degraded images and their corresponding ground truth references.&lt;/li&gt;\n&lt;li&gt;&lt;strong&gt;Validation data:&lt;/strong&gt; 500 degraded images for performance tuning during the development phase.&lt;/li&gt;\n&lt;li&gt;&lt;strong&gt;Test data:&lt;/strong&gt; 500 degraded images reserved for final performance evaluation.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p align=\&quot;justify\&quot;&gt;Please note that in both the validation and test sets, images indexed from &lt;strong&gt;0001-0100 correspond to Blur, 0101-0200 to Low-light, 0201-0300 to Haze, 0301-0400 to Rain, and 0401-0500 to Snow.&lt;/strong&gt; &lt;/p&gt;\n&lt;h3&gt;&amp;nbsp;&lt;/h3&gt;\n&lt;h2&gt;Data access&lt;/h2&gt;\n&lt;p align=\&quot;justify\&quot;&gt;&lt;strong&gt;By accessing the data, participants implicitly agree with the terms and conditions of the LoViF challenge.&lt;/strong&gt;&lt;/p&gt;\n&lt;h3&gt;&amp;nbsp;&lt;/h3&gt;\n&lt;ul&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;strong&gt;Development phase / Learning:&lt;/strong&gt;&lt;/li&gt;\n&lt;ul&gt;\n&lt;li&gt;Train Data: &lt;a href=\&quot;https://drive.google.com/file/d/1DA28a64FEGRM2bd0RWSLsgZcDybcWWO2/view?usp=sharing\&quot;&gt;[Google Drive]&lt;/a&gt;. Participants are allowed to use publicly available external datasets for training, as long as the sources of the data are explicitly documented in the factsheet. More details about the training data can be found in &lt;a href=\&quot;https://github.com/House-Leo/FoundIR\&quot;&gt;FoundIR&lt;/a&gt;.&lt;/li&gt;\n&lt;li&gt;Validation Data (input images only): &lt;a href=\&quot;https://drive.google.com/file/d/1r488W9gwk-fy4BkwOGeqp71U0hk_s_um/view?usp=sharing\&quot;&gt;[Google Drive]&lt;/a&gt;. &lt;/li&gt;\n&lt;li&gt;Test Data (input images only): [TBA]&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/ul&gt;\n&lt;/ul&gt;\n&lt;h3&gt;&amp;nbsp;&lt;/h3&gt;\n&lt;h2&gt;Final test phase submission guidelines (&lt;span style=\&quot;text-decoration: underline;\&quot;&gt;Factsheet can be found in &lt;a href=&#x27;https://www.overleaf.com/read/zpgpfqfqrgrb#fb6d1d&#x27;&gt;[overleaf]&lt;/a&gt;&lt;/span&gt;)&lt;/h2&gt;\n&lt;p&gt;The final submission should be emailed to the organizers (see the \&quot;Organizers\&quot; tab for contact details).&lt;/p&gt;\n&lt;p&gt;The title of the mail should be: &lt;strong&gt;[LoViF2026] - [TASK_NAME] - [TEAM_NAME]&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;The body of the mail shall include the following:&lt;/p&gt;\n&lt;ul&gt;\n&lt;ul&gt;&lt;ol&gt;\n&lt;li&gt;Challenge full name (LoViF 2026 - [Task Name])&lt;/li&gt;\n&lt;li&gt;Team name&lt;/li&gt;\n&lt;li&gt;Team leader&#x27;s name and email address&lt;/li&gt;\n&lt;li&gt;Rest of the team members&lt;/li&gt;\n&lt;li&gt;Affiliations of the team members&lt;/li&gt;\n&lt;li&gt;Team name and user names on the LoViF 2026 Codabench server&lt;/li&gt;\n&lt;li&gt;Executable/source code attached or download links&lt;/li&gt;\n&lt;li&gt;Factsheet attached (please use the provided LoViF template)&lt;/li&gt;\n&lt;li&gt;Download link(s) to the FULL results of ALL test frames&lt;/li&gt;\n&lt;/ol&gt;&lt;/ul&gt;\n&lt;/ul&gt;\n&lt;p&gt;The executable/source code should include trained models or necessary parameters to ensure reproducibility. A README file explaining how to run the code is mandatory. The Factsheet must be a compiled PDF file along with its LaTeX source files.&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;h1&gt;Final test phase - preliminary results [TBA]&lt;/h1&gt;\n&lt;p&gt;Preliminary results will be posted here once the evaluation is complete.&lt;/p&gt;\n&lt;p&gt;Note that top-ranked participants will be invited to co-author the challenge report and contribute a paper to the LoViF 2026 workshop. All challenge papers will undergo a peer-review process. For more information, please check the &lt;a href=\&quot;https://lovif-eccv2026-workshop.github.io/\&quot;&gt;LoViF 2026 official website&lt;/a&gt;.&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;&quot;,
+      &quot;content_zh&quot;: &quot;&lt;div align=\&quot;center\&quot;&gt;\n&lt;h1&gt;&lt;strong&gt;第二届低层次视觉前沿研讨会 (LoViF) @ ECCV 2026&lt;/strong&gt;&lt;/h1&gt;\n&lt;/div&gt;\n&lt;h2&gt;&amp;nbsp;&lt;/h2&gt;\n&lt;h1&gt;真实世界全能图像复原挑战赛&lt;/h1&gt;\n&lt;h3&gt;&amp;nbsp;&lt;/h3&gt;\n&lt;h2&gt;数据概览&lt;/h2&gt;\n&lt;p align=\&quot;justify\&quot;&gt;本挑战赛的数据集由&lt;a href=\&quot;https://github.com/House-Leo/FoundIR\&quot;&gt;FoundIR&lt;/a&gt;和LoViF组织委员会提供。该数据集专门设计用于基准测试低层次视觉的前沿技术，涵盖五类常见真实世界退化图像：&lt;strong&gt;模糊、低光、雾霾、雨水和雪&lt;/strong&gt;。数据集包含用于训练、验证和测试的多样化场景。具体来说，每种退化包含4,900对配对的LQ–GT图像（512×512）用于训练，100张图像用于验证，100张图像用于测试。&lt;/p&gt;\n&lt;p align=\&quot;justify\&quot;&gt;在本竞赛中，数据集由以下部分组成：&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;strong&gt;训练数据：&lt;/strong&gt;24,500对退化图像及其对应的真值参考。&lt;/li&gt;\n&lt;li&gt;&lt;strong&gt;验证数据：&lt;/strong&gt;500张退化图像，用于开发阶段的性能调优。&lt;/li&gt;\n&lt;li&gt;&lt;strong&gt;测试数据：&lt;/strong&gt;500张退化图像，用于最终性能评估。&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p align=\&quot;justify\&quot;&gt;请注意，在验证集和测试集中，索引为&lt;strong&gt;0001-0100的图像对应模糊、0101-0200对应低光、0201-0300对应雾霾、0301-0400对应雨水、0401-0500对应雪&lt;/strong&gt;。&lt;/p&gt;\n&lt;h3&gt;&amp;nbsp;&lt;/h3&gt;\n&lt;h2&gt;数据访问&lt;/h2&gt;\n&lt;p align=\&quot;justify\&quot;&gt;&lt;strong&gt;通过访问数据，参与者隐含同意LoViF挑战赛的条款和条件。&lt;/strong&gt;&lt;/p&gt;\n&lt;h3&gt;&amp;nbsp;&lt;/h3&gt;\n&lt;ul&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;strong&gt;开发阶段/学习：&lt;/strong&gt;&lt;/li&gt;\n&lt;ul&gt;\n&lt;li&gt;训练数据：&lt;a href=\&quot;https://drive.google.com/file/d/1DA28a64FEGRM2bd0RWSLsgZcDybcWWO2/view?usp=sharing\&quot;&gt;[谷歌云盘]&lt;/a&gt;。参与者允许使用公开可用的外部数据集进行训练，但数据源必须在说明书中明确记录。有关训练数据的更多详情可在&lt;a href=\&quot;https://github.com/House-Leo/FoundIR\&quot;&gt;FoundIR&lt;/a&gt;中找到。&lt;/li&gt;\n&lt;li&gt;验证数据（仅输入图像）：&lt;a href=\&quot;https://drive.google.com/file/d/1r488W9gwk-fy4BkwOGeqp71U0hk_s_um/view?usp=sharing\&quot;&gt;[谷歌云盘]&lt;/a&gt;。&lt;/li&gt;\n&lt;li&gt;测试数据（仅输入图像）：[待定]&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/ul&gt;\n&lt;/ul&gt;\n&lt;h3&gt;&amp;nbsp;&lt;/h3&gt;\n&lt;h2&gt;最终测试阶段提交指南（&lt;span style=\&quot;text-decoration: underline;\&quot;&gt;说明书可在&lt;a href=&#x27;https://www.overleaf.com/read/zpgpfqfqrgrb#fb6d1d&#x27;&gt;[Overleaf]&lt;/a&gt;中找到&lt;/span&gt;）&lt;/h2&gt;\n&lt;p&gt;最终提交应通过电子邮件发送至组织者（详见\&quot;组织者\&quot;选项卡以获取联系方式）。&lt;/p&gt;\n&lt;p&gt;邮件标题应为：&lt;strong&gt;[LoViF2026] - [任务名称] - [团队名称]&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;邮件正文应包含以下内容：&lt;/p&gt;\n&lt;ul&gt;\n&lt;ul&gt;&lt;ol&gt;\n&lt;li&gt;挑战赛全名（LoViF 2026 - [任务名称]）&lt;/li&gt;\n&lt;li&gt;团队名称&lt;/li&gt;\n&lt;li&gt;团队负责人的名字和电子邮件地址&lt;/li&gt;\n&lt;li&gt;其他团队成员&lt;/li&gt;\n&lt;li&gt;团队成员的所属机构&lt;/li&gt;\n&lt;li&gt;LoViF 2026 Codabench服务器上的团队名称和用户名&lt;/li&gt;\n&lt;li&gt;可执行文件/源代码附件或下载链接&lt;/li&gt;\n&lt;li&gt;说明书附件（请使用提供的LoViF模板）&lt;/li&gt;\n&lt;li&gt;所有测试帧的完整结果的下载链接&lt;/li&gt;\n&lt;/ol&gt;&lt;/ul&gt;\n&lt;/ul&gt;\n&lt;p&gt;可执行文件/源代码应包含训练模型或必要参数以确保可重复性。说明如何运行代码的README文件是必需的。说明书必须是编译后的PDF文件以及其LaTeX源文件。&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;h1&gt;最终测试阶段 - 初步结果 [待定]&lt;/h1&gt;\n&lt;p&gt;评估完成后，初步结果将发布在此处。&lt;/p&gt;\n&lt;p&gt;请注意，排名靠前的参与者将被邀请共同撰写挑战赛报告，并为LoViF 2026研讨会投稿论文。所有挑战赛论文都将经过同行评审过程。更多信息请查看&lt;a href=\&quot;http\&quot;&gt;&lt;/a&gt;&lt;/p&gt;&quot;
+    },
+    {
+      &quot;index&quot;: 2,
+      &quot;title&quot;: &quot;evaluation&quot;,
+      &quot;content&quot;: &quot;&lt;div align=\&quot;center\&quot;&gt;\n&lt;h1&gt;&lt;strong&gt;The 2nd Workshop on Low-level Vision Frontiers (LoViF) @ ECCV 2026&lt;/strong&gt;&lt;/h1&gt;\n&lt;/div&gt;\n&lt;h2&gt;&amp;nbsp;&lt;/h2&gt;\n&lt;h1&gt;Challenge on Real-World All-in-One Image Restoration&lt;/h1&gt;\n&lt;h3&gt;&amp;nbsp;&lt;/h3&gt;\n&lt;h3&gt;Evaluation&lt;/h3&gt;\n&lt;p&gt;&lt;span&gt;The evaluation consists of the comparison of the restored/generated images with the reference ground truth images.&amp;nbsp;&lt;span&gt;Please ensure all images are processed using a unified model to maintain consistency across different test scenarios.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;\n\n&lt;p align=\&quot;justify\&quot;&gt;To comprehensively assess performance in the frontiers of low-level vision, we consider both fidelity-based and perception-based metrics, including &lt;strong&gt;PSNR&lt;/strong&gt;, &lt;strong&gt;SSIM&lt;/strong&gt;, and &lt;strong&gt;LPIPS&lt;/strong&gt;.&lt;/p&gt;\n\n&lt;p align=\&quot;justify\&quot;&gt;As the goal of this challenge is to explore&lt;strong&gt; a robust and powerful all-in-one image restoration model&lt;/strong&gt;, participants are required to use one restoration network to handle all types of degradations and obtain the final results.\n\nSpecifically, participants should ensure that their final submission contains &lt;strong&gt; only one trained image restoration model parameter file (e.g., .pt, .pth)&lt;/strong&gt;, which facilitates reproducibility of the experimental results by the organizers.\n\nIt should be noted that the use of existing pre-trained networks (e.g., VAE, CLIP) for feature extraction is allowed and will not be counted as the aforementioned model parameter file.\n&lt;/p&gt;\n\n&lt;p align=\&quot;justify\&quot;&gt;The final ranking will be determined by a composite score that balances pixel-wise accuracy and perceptual quality. The weighted formula for the initial results is: &lt;br&gt;\n&lt;strong&gt;Final_Score = PSNR (Y) + 10 * SSIM (Y) - 5 * LPIPS&lt;/strong&gt;.&lt;/p&gt;\n\n&lt;p&gt;For submitting the results, please follow the instructions below:&lt;/p&gt;\n\n&lt;ol type=\&quot;1\&quot;&gt;\n&lt;li&gt; To ensure fairness in evaluation, participants are recommended to &lt;strong&gt; save the model&#x27;s output images in JPG format &lt;/strong&gt; using the code provided below.\n&lt;pre&gt;&lt;code class=\&quot;language-python\&quot;&gt;\nfrom PIL import Image\nimg = Image.open(img_path)\nimg.load()\nif img.mode != \&quot;RGB\&quot;:\n    img = img.convert(\&quot;RGB\&quot;)\nsave_kwargs = dict(format=\&quot;JPEG\&quot;, quality=96, subsampling=0, optimize=True)\nimg.save(out_path, **save_kwargs)\n&lt;/code&gt;&lt;/pre&gt;\n&lt;/li&gt;\n&lt;li&gt; &lt;strong&gt;Process&lt;/strong&gt; the input images and keep the same name for the output image results as produced by your method (example: for an input file with the name \&quot;0001.jpg\&quot; the output file should be \&quot;0001.jpg\&quot;). Note that the output images should have the size of the input images. &lt;a href=&#x27;https://drive.google.com/file/d/1J_cHUcbalSlACQVA2JUQXrCglRhJqdYz/view?usp=sharing&#x27;&gt; [Submission example] &lt;/a&gt;.\n&lt;/li&gt;\n&lt;li&gt;Ensure your submission includes a short description of your method (Fact Sheet).&lt;/li&gt;\n&lt;li&gt;Submit your results to the Codabench server before the deadline.&lt;/li&gt;\n&lt;/ol&gt;\n\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p align=\&quot;justify\&quot;&gt;For more details regarding the workshop themes such as Preference Optimization or Agentic Systems in evaluation, please visit our official website: &lt;a href=\&quot;https://lovif-eccv2026-workshop.github.io/\&quot;&gt;https://lovif-eccv2026-workshop.github.io/&lt;/a&gt;&lt;/p&gt;&quot;,
+      &quot;content_zh&quot;: &quot;&lt;div align=\&quot;center\&quot;&gt;\n&lt;h1&gt;&lt;strong&gt;第2届低级视觉前沿研讨会(LoViF) @ ECCV 2026&lt;/strong&gt;&lt;/h1&gt;\n&lt;/div&gt;\n&lt;h2&gt;&amp;nbsp;&lt;/h2&gt;\n&lt;h1&gt;真实世界全能图像复原挑战赛&lt;/h1&gt;\n&lt;h3&gt;&amp;nbsp;&lt;/h3&gt;\n&lt;h3&gt;评估&lt;/h3&gt;\n&lt;p&gt;&lt;span&gt;评估包括将复原/生成的图像与参考真实图像进行比较。&lt;span&gt;请确保所有图像使用统一的模型进行处理，以保持不同测试场景的一致性。&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;\n\n&lt;p align=\&quot;justify\&quot;&gt;为了全面评估低级视觉前沿领域的性能，我们采用基于保真度和基于感知的指标，包括&lt;strong&gt;PSNR&lt;/strong&gt;、&lt;strong&gt;SSIM&lt;/strong&gt;和&lt;strong&gt;LPIPS&lt;/strong&gt;。&lt;/p&gt;\n\n&lt;p align=\&quot;justify\&quot;&gt;由于本挑战赛的目标是探索&lt;strong&gt;稳健且强大的全能图像复原模型&lt;/strong&gt;，参赛者需要使用一个复原网络来处理所有类型的图像退化并获得最终结果。\n\n具体来说，参赛者应确保最终提交仅包含&lt;strong&gt;一个训练好的图像复原模型参数文件（例如.pt、.pth）&lt;/strong&gt;，这有利于组织方对实验结果的可重复性验证。\n\n需要说明的是，允许使用现有的预训练网络（例如VAE、CLIP）进行特征提取，这些不计入上述模型参数文件。\n&lt;/p&gt;\n\n&lt;p align=\&quot;justify\&quot;&gt;最终排名将由平衡像素级精度和感知质量的综合得分决定。初始结果的加权公式为：&lt;br&gt;\n&lt;strong&gt;Final_Score = PSNR (Y) + 10 * SSIM (Y) - 5 * LPIPS&lt;/strong&gt;。&lt;/p&gt;\n\n&lt;p&gt;提交结果时，请遵循以下说明：&lt;/p&gt;\n\n&lt;ol type=\&quot;1\&quot;&gt;\n&lt;li&gt;为确保评估的公平性，参赛者建议使用以下提供的代码将模型输出图像保存为JPG格式。\n&lt;pre&gt;&lt;code class=\&quot;language-python\&quot;&gt;\nfrom PIL import Image\nimg = Image.open(img_path)\nimg.load()\nif img.mode != \&quot;RGB\&quot;:\n    img = img.convert(\&quot;RGB\&quot;)\nsave_kwargs = dict(format=\&quot;JPEG\&quot;, quality=96, subsampling=0, optimize=True)\nimg.save(out_path, **save_kwargs)\n&lt;/code&gt;&lt;/pre&gt;\n&lt;/li&gt;\n&lt;li&gt;&lt;strong&gt;处理&lt;/strong&gt;输入图像，并为你的方法生成的输出图像结果保留相同的名称（示例：对于名为\&quot;0001.jpg\&quot;的输入文件，输出文件应为\&quot;0001.jpg\&quot;）。注意输出图像应具有与输入图像相同的尺寸。&lt;a href=&#x27;https://drive.google.com/file/d/1J_cHUcbalSlACQVA2JUQXrCglRhJqdYz/view?usp=sharing&#x27;&gt;[提交示例]&lt;/a&gt;。\n&lt;/li&gt;\n&lt;li&gt;确保你的提交包含方法的简短描述（事实说明书）。&lt;/li&gt;\n&lt;li&gt;在截止日期前将你的结果提交到Codabench服务器。&lt;/li&gt;\n&lt;/ol&gt;\n\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p align=\&quot;justify\&quot;&gt;有关研讨会主题的更多详情，如偏好优化或评估中的代理系统，请访问我们的官方网站：&lt;a href=\&quot;https://lovif-eccv2026-workshop.github.io/\&quot;&gt;https://lovif-eccv2026-workshop.github.io/&lt;/a&gt;&lt;/p&gt;&quot;
+    },
+    {
+      &quot;index&quot;: 3,
+      &quot;title&quot;: &quot;organizers&quot;,
+      &quot;content&quot;: &quot;&lt;div align=\&quot;center\&quot;&gt;\n&lt;h1&gt;&lt;strong&gt;The 2nd Workshop on Low-level Vision Frontiers (LoViF) @ ECCV 2026&lt;/strong&gt;&lt;/h1&gt;\n&lt;/div&gt;\n&lt;h2&gt;&amp;nbsp;&lt;/h2&gt;\n&lt;h1&gt;Organizers&lt;/h1&gt;\n&lt;h3&gt;&amp;nbsp;&lt;/h3&gt;\n&lt;p align=\&quot;justify\&quot;&gt;The LoViF challenge is organized jointly with &lt;strong&gt;The 2nd Workshop on Low-level Vision Frontiers with Generative AI, Preference Optimization and Agentic Systems (LoViF)&lt;/strong&gt; and the &lt;a href=\&quot;https://lovif-eccv2026-workshop.github.io/\&quot;&gt;LoViF 2026 workshop&lt;/a&gt;. The results of the challenge will be published at the LoViF 2026 workshop and in the ECCV 2026 Workshop proceedings.&lt;/p&gt;\n\n\n&lt;!-- &lt;p&gt;The organizers are the contact persons and direct managers of the LoViF Challenge. If you have any questions, please contact the organizing committee through the official workshop channels.&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt; --&gt;\n&lt;p&gt;\nIf you have any questions, please contact persons and direct managers of the LoViF Real-World All-in-One Image Restoration challenge:\n&lt;ul&gt;\n&lt;li&gt; &lt;strong&gt;Xiang Chen&lt;/strong&gt;, chenxiang@njust.edu.cn&lt;/li&gt;\n&lt;li&gt; &lt;strong&gt;Hao Li&lt;/strong&gt;, haoli@njust.edu.cn&lt;/li&gt;\n&lt;li&gt; &lt;strong&gt;Xin Li&lt;/strong&gt;, xin.li@ustc.edu.cn &lt;/li&gt;\n&lt;/ul&gt;\n&lt;/p&gt;\n\n&lt;p align=\&quot;justify\&quot;&gt;More information about the LoViF workshop and challenge organizers is available here: &lt;a href=\&quot;https://lovif-eccv2026-workshop.github.io/\&quot;&gt;https://lovif-eccv2026-workshop.github.io/&lt;/a&gt;&lt;/p&gt;&quot;,
+      &quot;content_zh&quot;: &quot;&lt;div align=\&quot;center\&quot;&gt;\n&lt;h1&gt;&lt;strong&gt;第二届低层次视觉前沿研讨会 (LoViF) @ ECCV 2026&lt;/strong&gt;&lt;/h1&gt;\n&lt;/div&gt;\n&lt;h2&gt;&amp;nbsp;&lt;/h2&gt;\n&lt;h1&gt;组织者&lt;/h1&gt;\n&lt;h3&gt;&amp;nbsp;&lt;/h3&gt;\n&lt;p align=\&quot;justify\&quot;&gt;LoViF挑战赛与&lt;strong&gt;第二届低层次视觉前沿研讨会——生成式人工智能、偏好优化和智能体系统 (LoViF)&lt;/strong&gt;以及&lt;a href=\&quot;https://lovif-eccv2026-workshop.github.io/\&quot;&gt;LoViF 2026研讨会&lt;/a&gt;联合组织。挑战赛的结果将在LoViF 2026研讨会和ECCV 2026研讨会论文集中发布。&lt;/p&gt;\n\n\n&lt;!-- &lt;p&gt;组织者是LoViF挑战赛的联系人和直接管理者。如有任何问题，请通过官方研讨会渠道联系组织委员会。&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt; --&gt;\n&lt;p&gt;\n如有任何问题，请联系LoViF真实世界全能图像恢复挑战赛的联系人和直接管理者：\n&lt;ul&gt;\n&lt;li&gt; &lt;strong&gt;陈翔&lt;/strong&gt;, chenxiang@njust.edu.cn&lt;/li&gt;\n&lt;li&gt; &lt;strong&gt;李浩&lt;/strong&gt;, haoli@njust.edu.cn&lt;/li&gt;\n&lt;li&gt; &lt;strong&gt;李欣&lt;/strong&gt;, xin.li@ustc.edu.cn &lt;/li&gt;\n&lt;/ul&gt;\n&lt;/p&gt;\n\n&lt;p align=\&quot;justify\&quot;&gt;关于LoViF研讨会和挑战赛组织者的更多信息请参见：&lt;a href=\&quot;https://lovif-eccv2026-workshop.github.io/\&quot;&gt;https://lovif-eccv2026-workshop.github.io/&lt;/a&gt;&lt;/p&gt;&quot;
+    }
+  ]
+}</pre>
+  </div>
+</div>
+</body>
+</html>

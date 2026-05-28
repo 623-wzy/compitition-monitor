@@ -1,0 +1,201 @@
+{
+  "id": 16261,
+  "title": "Event-Based Multimodal Perception Challenge: Semantic Segmentation Track @ ECCV 2026",
+  "published": true,
+  "created_by": "blang",
+  "owner_display_name": "blang",
+  "created_when": "2026-05-12T06:00:03.454595Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-12-1778565603/eb281506591a/logo.png?AWSAccessKeyId=codabench-prod&Signature=Yl5B7nb04FxWeWtOGZziXTPDgl4%3D&Expires=1779937161",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-12-1778565603/eb281506591a/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=M%2BNpIJRx0LPBXoDMd46pU0wPkIs%3D&Expires=1779937161",
+  "terms": "# Terms and Conditions\n\nBy registering for the CoSEC Semantic Segmentation Challenge, downloading the dataset, or submitting predictions to the evaluation server, participants agree to the following terms.\n\n## 1. Academic and Research Use\n\n* The CoSEC dataset, including event data, frame data, semantic segmentation annotations, calibration files, metadata, and benchmark tools, is provided for academic research and challenge participation purposes only. \n* Commercial use, redistribution, sublicensing, or monetization of the dataset is prohibited without prior written permission from the organizers.\n\n## 2. Data Usage\n\n* Participants may use the official CoSEC training data for model development. \n* External datasets, pretrained models, synthetic data, and additional training resources are allowed only if they are publicly available or legally accessible, and must be disclosed upon request.\n* The test set must only be used for official evaluation. Participants must not attempt to access, reconstruct, manually annotate, reverse-engineer, or infer the hidden ground-truth semantic segmentation labels.\n\n## 3. Submission Rules\n\n* Each submission must follow the official submission format, including filenames, data format, and folder structure. \n* Invalid, corrupted, incomplete, or incorrectly formatted submissions may be rejected by the organizers.\n\n## 4. Fair Use and Anti-Cheating Policy\n\n* Participants must not probe or exploit the evaluation server, manually tune predictions on the test set, use hidden test-set ground truth, submit hard-coded predictions, or use multiple accounts or teams to gain an unfair advantage. \n* Any form of cheating, data leakage, or violation of the challenge rules may result in disqualification and removal from the leaderboard.\n\n## 5. Technical Report and Verification\n\n* Top-ranked teams may be required to submit a short technical report describing their method, training data, model architecture, loss functions, post-processing steps, and external resources. \n* The organizers may request code, logs, model outputs, or additional information for result verification.\n\n## 6. Liability and Disclaimer\n\n* The dataset, benchmark tools, and evaluation server are provided \"as is\" without warranty of any kind. \n* The organizers are not liable for any damages arising from the use of the dataset or participation in this challenge. \n* The organizers reserve the right to modify the challenge rules, evaluation protocol, metrics, timeline, or participation terms when necessary.\n\n## 7. Publication and Citation\n\n* The organizers may publish the final leaderboard, aggregated results, and analyses of submitted methods. \n* Participants who use the CoSEC dataset or report challenge results in publications are expected to cite the official CoSEC paper or challenge reference provided by the organizers.",
+  "pages": [
+    {
+      "id": 77898,
+      "title": "Overview",
+      "content": "# Event-Based Multimodal Perception Challenge: Semantic Segmentation Track @ ECCV 2026\n\nWelcome to the **Semantic Segmentation Track** of the **Event-Based Multimodal Perception Challenge**, officially hosted at **ECCV 2026**!\n\n## 🎯 Overview & Objective\n\nThis challenge aims to advance **semantic segmentation** using **event-based vision and frame data**. Unlike conventional RGB cameras, event cameras asynchronously capture brightness changes with high temporal resolution, low latency, and high dynamic range, making them particularly suitable for challenging scenarios such as high-speed motion, low-light environments, and scenes with strong illumination changes.\n\nThe objective of this track is to benchmark and promote robust semantic segmentation methods that can effectively leverage complementary information from **event streams and intensity frames**. Participants are expected to develop models that predict accurate pixel-level semantic labels from multimodal inputs, with a particular focus on generalization, robustness, and scene understanding under challenging visual conditions.\n\n## 📝 Task Description\n\nParticipants are required to submit predicted semantic segmentation maps for the test set. Each prediction should follow the official submission format and correspond to the provided event and frame input data.\n\nThe task focuses on:\n\n- **Semantic Segmentation**: Predicting pixel-level semantic labels from event and frame data.\n- **Multimodal Fusion**: Effectively combining asynchronous event streams with image frames for semantic perception.\n- **Pixel-Level Scene Understanding**: Assigning each valid pixel to a predefined semantic category.\n- **Robust Perception**: Handling challenging visual conditions such as low illumination, high dynamic range.\n\n## 📅 Important Dates\n\nAll deadlines are at **11:59 PM UTC**, unless otherwise specified.\n\n- **May 13, 2026**: Challenge Website Opens.\n- **May 15, 2026**: Training Set Release.\n- **June 20, 2026**: Test Set & Evaluation Server Online.\n- **June 30, 2026**: Challenge Submission Deadline.\n- **July 5, 2026**: Challenge Results Announcement.\n- **July 10, 2026**: Technical Report Deadline.\n\n## 📊 Dataset\n\nThis track uses subsets of the **[CoSEC dataset](https://cosec.org.cn/)** and the **[REAL dataset](https://github.com/jinghan-xu/NEC-Diff)**. The dataset provides multimodal sensory data, including image frames, event streams, and semantic segmentation annotations.\n\nThe released data for this track includes:\n\n- **Image Frames**: RGB frames captured from a monocular camera.\n- **Event Streams**: Asynchronous event data recorded by an event camera.\n- **Semantic Segmentation Labels**: Ground-truth pixel-level semantic labels provided for supervised training and validation.\n\nThe training sets are released for model development and performance validation. The test set will be used for official evaluation, and its ground-truth semantic segmentation labels will remain hidden.\n\nThe dataset statistics for this track are summarized below:\n\n| Split | Number of Samples | \n|---|---:|\n| Training | 2569 |\n| Test | To be released | \n\n## ⚠️ Challenge Rules\n\nTo maintain fairness and scientific integrity, all participants must strictly follow the challenge rules:\n\n- **No Test-Set Training**: The test set must not be used for training, validation, model selection, or manual tuning.\n- **No Ground-Truth Probing**: Participants must not attempt to infer, reconstruct, or extract hidden ground-truth semantic segmentation labels from the evaluation server.\n- **No Manual Annotation**: Submitted predictions must be generated by an automated method. Manually created, manually corrected, or manually tuned predictions are not allowed.\n- **No Evaluation Server Exploitation**: Any attempt to exploit the evaluation system, submission feedback, or leaderboard behavior to gain an unfair advantage is strictly prohibited.\n- **External Resources Disclosure**: Any external datasets, pretrained models, synthetic data, or additional training resources used by participants must be disclosed in the final technical report if requested.\n- **Verification Requirement**: Top-ranked teams may be required to submit a short technical report, code, logs, or additional information for result verification.\n\n## 📩 Contact\n\nFor questions about the challenge, please contact the organizers through the official competition page or by email.",
+      "index": 0
+    },
+    {
+      "id": 77871,
+      "title": "Data Preparation",
+      "content": "# Data Preparation Guide\n\nTo participate in the **Event-Based Multimodal Perception Challenge: Semantic Segmentation Track**, participants need to prepare the training data, understand the data format, and generate semantic segmentation predictions for the test set once it is released.\n\nThis track uses a curated subset of the **[CoSEC dataset](https://cosec.org.cn/)** for event-based semantic segmentation. Each sequence contains multimodal data, including image frames, event streams, timestamps, and semantic segmentation annotations for training.\n\n## Training Set Download\n\nThe training set contains image frames, event streams, timestamps, and ground-truth semantic segmentation labels. Participants may use the training set to develop, train, and validate their semantic segmentation models.\n\nThe training split includes:\n\n- Image frames from the left camera.\n- Event streams from the left event camera.\n- Timestamps for samples.\n- Ground-truth semantic segmentation labels.\n\nPlease download the official training set from the following links:\n\n👉 **Download CoSEC Segmentation Training Set**\n\n- **Baidu Netdisk**: [train.zip](https://pan.baidu.com/s/1TeXpiWIRDxGcbjubGB1bCA?pwd=HUST)\n\n- **Google Drive**: [train.zip](https://drive.google.com/file/d/1V29ahlLQTm2O__I-VI_qloR9JkzGYmex/view?usp=drive_link)\n\n## Test Set Download\n\nThe official test set has **not been released yet**.\n\nThe test set will be released according to the challenge schedule. Once released, the download links will be updated on this page.\n\nThe test split will contain image frames, event streams, and timestamps. The ground-truth semantic segmentation labels for the test set will remain hidden and will be used only by the Codabench evaluation server.\n\nPlease download the official test set from the following links once it is released:\n\n👉 **Download CoSEC Semantic Segmentation Test Set**\n\n- **Baidu Netdisk**: To be released\n\n- **Google Drive**: To be released\n\n## Dataset Structure and Format\n\nThe expected dataset structure is:\n\n```text\nsegmentation_challenge\n├── train\n│   ├── Day_Campus_000\n│   │   ├── img_co_left\n│   │   ├── segment_co\n│   │   ├── events_co_left.h5\n│   │   └── timestamps.txt\n│   ├── Day_Campus_001\n│   │   ├── img_co_left\n│   │   ├── segment_co\n│   │   ├── events_co_left.h5\n│   │   └── timestamps.txt\n│   └── ...\n└── test\n    ├── Day_Campus_012\n    │   ├── img_co_left\n    │   ├── events_co_left.h5\n    │   └── timestamps.txt\n    ├── Day_Campus_013\n    │   ├── img_co_left\n    │   ├── events_co_left.h5\n    │   └── timestamps.txt\n    └── ...\n```\n\nEach sample is identified by its sequence name and frame file name. The image frame and semantic segmentation label with the same file name correspond to the same sample.\n\nFor a training sample:\n\n```text\nsegmentation/train/Day_Campus_000/img_co_left/000000.png\nsegmentation/train/Day_Campus_000/segment_co/000000.png\n```\n\nThe corresponding event data is stored in the sequence-level HDF5 file:\n\n```text\nsegmentation/train/Day_Campus_000/events_co_left.h5\n```\n\nThe timestamps are stored as:\n\n```text\nsegmentation/train/Day_Campus_000/timestamps.txt\n```\n\nFor a test sample after the test set is released:\n\n```text\nsegmentation/test/Day_Campus_012/img_co_left/000000.png\n```\n\nthe expected submitted prediction should be:\n\n```text\nDay_Campus_012/segment_co/000000.\n```\n\n### Image Frame Format\n\nImage frames are stored as `.png` files under the `img_co_left` folder, with a resolution of `1200 x 624`. They have been aligned with the event streams and can be used together with the event data for multimodal semantic segmentation.\n\n### Event Stream Format\n\nEach sequence contains one `events_co_left.h5` file. The event stream has already been aligned with the image frames.\n\nA typical event file contains the following fields:\n\n```text\nx          # event x coordinates\ny          # event y coordinates\np          # event polarities\nt          # event timestamps\nms_to_idx  # mapping from millisecond timestamp to event index\n```\n\nThe event timestamps `t` are stored in microseconds. The `ms_to_idx` array provides a convenient way to quickly locate event indices by millisecond-level timestamps.\n\nFor a given image frame, participants may use the corresponding timestamp in `timestamps.txt` to extract a temporal window of events. For example, one can take the events within `50 ms` before the image exposure end timestamp and use them together with the image frame for multimodal semantic segmentation.\n\nExample code:\n\n```python\nimport os\nimport cv2\nimport h5py\nimport numpy as np\n\nseq_dir = \"path/to/sequence\"\n\nframe_id = 0\nevent_window_ms = 50\n\n# Load image timestamp.\ntimestamps = np.loadtxt(os.path.join(seq_dir, \"timestamps.txt\"), dtype=np.int64)\nimg_ts_us = timestamps[frame_id]  # exposure end timestamp of this image, in microseconds\n\n# Load image frame.\nimg_path = os.path.join(seq_dir, \"img_co_left\", f\"{frame_id:06d}.png\")\nimg = cv2.imread(img_path, cv2.IMREAD_UNCHANGED)\n\n# Load event file.\nevent_path = os.path.join(seq_dir, \"events_co_left.h5\")\nwith h5py.File(event_path, \"r\") as events:\n    ms_to_idx = events[\"ms_to_idx\"][:]\n\n    # Select events within [img_ts_us - 50 ms, img_ts_us].\n    start_us = img_ts_us - event_window_ms * 1000\n    end_us = img_ts_us\n\n    start_ms = int(round(start_us / 1000.0))\n    end_ms = int(round(end_us / 1000.0))\n\n    start_idx = ms_to_idx[start_ms]\n    end_idx = ms_to_idx[end_ms]\n\n    xs = events[\"x\"][start_idx:end_idx]\n    ys = events[\"y\"][start_idx:end_idx]\n    ps = events[\"p\"][start_idx:end_idx]\n    ts = events[\"t\"][start_idx:end_idx]\n\n# img and the selected event segment can then be used together.\n```\n\n### Timestamp Format\n\nEach sequence provides a `timestamps.txt` file. Each line stores the timestamp of one image frame, and the order is consistent with the frame order in `img_co_left`.\n\nThe timestamp can be regarded as the exposure end timestamp of the corresponding image frame.\n\nFor example:\n\n```text\nimg_co_left/000000.png  ->  first line in timestamps.txt\nimg_co_left/000001.png  ->  second line in timestamps.txt\nimg_co_left/000002.png  ->  third line in timestamps.txt\n```\n\nFor the training set, the semantic segmentation labels share the same timestamps as the corresponding image frames.\n\nThe timestamps are stored as integer values in microseconds. They can be used to associate each image/label sample with a corresponding segment of the event stream.\n\n### Semantic Segmentation Label Format\n\nFor the semantic segmentation task, each label is stored as a **single-channel PNG mask**. Each pixel value in the mask represents the semantic class ID of the corresponding pixel.\n\nThe valid class IDs range from `0` to `18`. Pixels with values outside this range are considered invalid during evaluation. The mask should be saved with an integer pixel data type. We recommend saving the mask as an **8-bit unsigned integer (`uint8`) PNG**, where each pixel stores the corresponding class ID directly.\n\n| Class ID | Class Name |\n| ---: | --- |\n| 0 | road |\n| 1 | sidewalk |\n| 2 | building |\n| 3 | wall |\n| 4 | fence |\n| 5 | pole |\n| 6 | traffic light |\n| 7 | traffic sign |\n| 8 | vegetation |\n| 9 | terrain |\n| 10 | sky |\n| 11 | person |\n| 12 | rider |\n| 13 | car |\n| 14 | truck |\n| 15 | bus |\n| 16 | train |\n| 17 | motorcycle |\n| 18 | bicycle |\n\nPlease note that the PNG mask should store the **class IDs as raw pixel values**, not visualization colors. For example, a pixel value of `13` represents the class `car`, and a pixel value of `0` represents the class `road`.",
+      "index": 1
+    },
+    {
+      "id": 77872,
+      "title": "Evaluation Details",
+      "content": "# Evaluation Metrics & Submission Guidelines\n\n## Submission Format\n\nParticipants are required to submit semantic segmentation predictions for all samples in the test set. Each prediction should be a pixel-level semantic label map corresponding to one test image frame.\n\nThe submission must be a single `.zip` archive. The archive should contain all predicted semantic segmentation masks while preserving the required sequence-level directory structure.\n\nEach prediction file must satisfy the following requirements:\n\n- The file extension must be `.png`.\n- Each prediction file must contain a semantic segmentation label map.\n- The predicted label map must be a **single-channel PNG mask**.\n- The predicted label map must be saved as integer pixel values. We recommend using `uint8`.\n- The shape of the predicted label map must match the corresponding ground-truth semantic segmentation label.\n- The file name must be identical to the corresponding test sample name.\n- The predicted label values must follow the official semantic class definitions.\n- Valid label values are integers from `0` to `18`.\n- Invalid label values outside the predefined class set will be treated as incorrect predictions.\n\n## Semantic Label Format\n\nThe submitted semantic segmentation map should store pixel-level semantic class IDs directly.\n\nEach pixel value represents its predicted semantic category according to the official class definition. For example, a pixel value of `13` represents the class `car`, while a pixel value of `0` represents the class `road`.\n\nThe prediction mask should store the **class IDs as raw pixel values**, not visualization colors. Participants should not submit colorized RGB visualization results as prediction masks.\n\nThe valid semantic classes are:\n\n| Class ID | Class Name |\n| ---: | --- |\n| 0 | road |\n| 1 | sidewalk |\n| 2 | building |\n| 3 | wall |\n| 4 | fence |\n| 5 | pole |\n| 6 | traffic light |\n| 7 | traffic sign |\n| 8 | vegetation |\n| 9 | terrain |\n| 10 | sky |\n| 11 | person |\n| 12 | rider |\n| 13 | car |\n| 14 | truck |\n| 15 | bus |\n| 16 | train |\n| 17 | motorcycle |\n| 18 | bicycle |\n\n## Submission Structure\n\nAn example submission structure is shown below:\n\n```text\nsubmission.zip\n├── Day_Campus_000/\n│   └── segment_co/\n│       ├── 000000.png\n│       ├── 000001.png\n│       ├── 000002.png\n│       └── ...\n├── Day_Campus_001/\n│   └── segment_co/\n│       ├── 000000.png\n│       ├── 000001.png\n│       └── ...\n└── ...\n```\n\nA dummy submission file is provided to help participants verify the required file structure and submission format.\n\n👉 **Download Dummy Submission**\n\n- **Baidu Netdisk**: [dummy_submission.zip](https://pan.baidu.com/s/1Q8BdgnOfex4XX3JUFgS-JA?pwd=HUST)\n- **Google Drive**: [dummy_submission.zip](https://drive.google.com/file/d/1-KTZAXIKoWlOQsBBnyNZHebq_WJ-Juqe/view?usp=drive_link)\n\nParticipants may use the dummy submission as a reference when preparing their own prediction files.\n\nFor each test image frame, for example:\n\n```text\ntest/Day_Campus_000/img_co_left/000000.png\n```\n\nthe submitted prediction should be:\n\n```text\nDay_Campus_000/segment_co/000000.png\n```\n\nPlease make sure that the submitted `.zip` file directly contains the sequence folders. Do not include unnecessary parent directories.\n\n## How to Submit\n\n1. **Prepare your predictions**: Generate semantic segmentation predictions for all test samples.\n2. **Convert label format**: Convert model outputs to the required semantic label format according to the official class ID mapping.\n3. **Save predictions**: Save each prediction as a single-channel `.png` mask with integer class IDs from `0` to `18`.\n4. **Check your file structure**: Make sure the directory structure matches the required format. Each test sample should have exactly one corresponding prediction file.\n5. **Compress your results**: Zip the sequence folders into a single `.zip` archive.\n6. **Upload**: Navigate to the **My Submissions** tab on the challenge page, select the active phase, and upload your `.zip` file.\n7. **Evaluation**: The evaluation server will automatically process your submission and update the leaderboard.\n\n## Metrics\n\nThe challenge evaluates semantic segmentation performance on the test set. The evaluation server compares the submitted semantic segmentation predictions with the ground-truth semantic segmentation labels using standard semantic segmentation metrics.\n\nThe following metrics are reported on the leaderboard:\n\n- **mIoU**: Mean Intersection over Union.\n- **mAcc**: Mean Class Accuracy.\n- **aAcc**: Overall Pixel Accuracy.\n\nThe main leaderboard ranking metric is **mIoU**, where higher is better.\n\n## Final Scoring\n\nThe final leaderboard ranking is determined by **mIoU** on the test set.\n\nHigher **mIoU** indicates better semantic segmentation performance. Other metrics, including **mAcc** and **aAcc**, are also reported for comprehensive comparison, but they are not used as the primary ranking criterion.",
+      "index": 2
+    },
+    {
+      "id": 77641,
+      "title": "Organizers & Citation",
+      "content": "# Organizers & Citation\n\n## Organizing Committee\n\nWe would like to thank the organizing committee for their efforts in creating and maintaining the **Event-Based Multimodal Perception Challenge: Semantic Segmentation Track**.\n\n**Shihan Peng** (Huazhong University of Science and Technology) · pengshihan@hust.edu.cn\n\n**Yuyang Xiong** (Huazhong University of Science and Technology) · xiongyuyang@hust.edu.cn\n\n**Hanyu Zhou** (National University of Singapore) · hy.zhou@nus.edu.sg\n\n**Yunfan Lu** (HKUST (Guangzhou)) · ylu066@connect.hkust-gz.edu.cn\n\n**Shaoyu Liu** (Xidian University) · liusy@stu.xidian.edu.cn\n\n**Haoyue Liu** (Huazhong University of Science and Technology) · liuhy@hust.edu.cn\n\n**Peiqi Duan** (Peking University) · duanqi0001@pku.edu.cn\n\n**Yinqiang Zheng** (The University of Tokyo) · yqzheng@ai.u-tokyo.ac.jp\n\n**Boxin Shi** (Peking University) · shiboxin@pku.edu.cn\n\n**Kuk-Jin Yoon** (KAIST) · kjyoon@kaist.ac.kr\n\n**Hui Xiong** (HKUST (Guangzhou)) · xionghui@ust.hk\n\n**Gim Hee Lee** (National University of Singapore) · gimhee.lee@nus.edu.sg\n\n**Davide Scaramuzza** (University of Zurich) · sdavide@ifi.uzh.ch\n\n## Citation\n\nIf you participate in this challenge, use the provided dataset, or find this benchmark useful for your research, please kindly cite our paper:\n\n```bibtex\n@article{peng2024cosec,\n  title={Cosec: A coaxial stereo event camera dataset for autonomous driving},\n  author={Peng, Shihan and Zhou, Hanyu and Dong, Hao and Shi, Zhiwei and Liu, Haoyue and Duan, Yuxing and Chang, Yi and Yan, Luxin},\n  journal={arXiv preprint arXiv:2408.08500},\n  year={2024}\n}\n```",
+      "index": 3
+    }
+  ],
+  "phases": [
+    {
+      "id": 26752,
+      "index": 0,
+      "start": "2026-06-20T08:00:00Z",
+      "end": "2026-06-30T23:59:00Z",
+      "name": "Test Phase",
+      "description": "This phase evaluates submitted semantic segmentation predictions on the test set for the official leaderboard.",
+      "status": "Next",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "c0b58115-8992-4ba3-a76a-46836b93bae6",
+          "order_index": 0,
+          "phase": 26752,
+          "id": 32805,
+          "value": "c0b58115-8992-4ba3-a76a-46836b93bae6",
+          "key": "c0b58115-8992-4ba3-a76a-46836b93bae6",
+          "created_when": "2026-05-13T15:44:13.646503Z",
+          "name": "CoSEC_Segmentation_Challenge_Test",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 757032,
+              "created_by": "blang",
+              "owner_display_name": "blang",
+              "created_when": "2026-05-13T15:41:43.515213Z",
+              "name": "CoSEC_Segmentation_Challenge_Test_GT",
+              "type": "reference_data",
+              "description": "",
+              "is_public": false,
+              "key": "8716a5d9-6a31-48fa-a81d-552e6fb0fdfd",
+              "value": "8716a5d9-6a31-48fa-a81d-552e6fb0fdfd",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 16261,
+                  "title": "Event-Based Multimodal Perception Challenge: Semantic Segmentation Track @ ECCV 2026"
+                },
+                {
+                  "pk": 16308,
+                  "title": "seg test"
+                }
+              ],
+              "competition": null,
+              "file_name": "reference_data.zip",
+              "file_size": 4021025.0
+            },
+            {
+              "id": 757036,
+              "created_by": "blang",
+              "owner_display_name": "blang",
+              "created_when": "2026-05-13T15:42:49.769157Z",
+              "name": "CoSEC_Segmentation_Challenge_Scoring_Program",
+              "type": "scoring_program",
+              "description": "",
+              "is_public": false,
+              "key": "7515ec8f-51c9-4158-89f6-26a652cbc746",
+              "value": "7515ec8f-51c9-4158-89f6-26a652cbc746",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 16261,
+                  "title": "Event-Based Multimodal Perception Challenge: Semantic Segmentation Track @ ECCV 2026"
+                },
+                {
+                  "pk": 16308,
+                  "title": "seg test"
+                }
+              ],
+              "competition": null,
+              "file_name": "scoring_program.zip",
+              "file_size": 1941.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 17932,
+      "primary_index": 0,
+      "title": "Main Leaderboard",
+      "key": "main_leaderboard",
+      "columns": [
+        {
+          "id": 77293,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "mIoU",
+          "key": "mIoU",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 77294,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "mAcc",
+          "key": "mAcc",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 77295,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "aAcc",
+          "key": "aAcc",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 4
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Force_Best"
+    }
+  ],
+  "collaborators": [
+    {
+      "id": 53567,
+      "name": null,
+      "username": "xiongyuyang"
+    }
+  ],
+  "registration_auto_approve": true,
+  "description": "",
+  "participants_count": 29,
+  "submissions_count": 3,
+  "queue": null,
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": false,
+  "show_detailed_results_in_leaderboard": false,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": false,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "codalab/codalab-legacy:py312",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 16007,
+  "reward": "",
+  "contact_email": "blang233@foxmail.com",
+  "report": "",
+  "forum_enabled": true
+}

@@ -1,0 +1,247 @@
+{
+  "id": 14569,
+  "title": "Diabetic Retinopathy Detection",
+  "published": true,
+  "created_by": "maxencedbe",
+  "owner_display_name": "maxencedbe",
+  "created_when": "2026-03-08T14:37:32.323238Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-03-08-1772980652/bf49e2e24015/logo.png?AWSAccessKeyId=codabench-prod&Signature=EZR8hlhipbzHErAvqCL52ntyWKA%3D&Expires=1779937172",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-03-08-1772980652/bf49e2e24015/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=PegJqUZFAcrXKc1hxBu7bffIpmI%3D&Expires=1779937172",
+  "terms": "<div style=\"font-family: 'Segoe UI', Roboto, sans-serif; max-width: 900px; margin: auto;\">\n\n<h1 style=\"text-align: center; color: #1a73e8;\">Diabetic retinopathy detection challenge</h1>\n\n<p style=\"text-align: center; font-size: 1.15em; color: #555;\">\n  Classify retinal fundus images into <strong>5 severity levels</strong> of diabetic retinopathy using machine learning.\n</p>\n\n<hr style=\"border: 1px solid #e0e0e0;\">\n\n<h2 style=\"color: #1a73e8;\">Objective</h2>\n\n<p>\n  <strong>Diabetic retinopathy (DR)</strong> is a diabetes complication that damages the blood vessels of the retina.\n  It is a leading cause of blindness worldwide, affecting over <strong>100 million people</strong>.\n  Early detection through automated screening of retinal images can drastically improve patient outcomes.\n</p>\n\n<p>\n  Your goal is to build a model that takes a <strong>retinal fundus photograph</strong> as input and predicts\n  which <strong>severity level</strong> of DR it corresponds to.\n</p>\n\n<h2 style=\"color: #1a73e8;\">Severity levels</h2>\n\n<table style=\"width: 100%; border-collapse: collapse; margin: 15px 0;\">\n  <thead>\n    <tr style=\"background: #1a73e8; color: white;\">\n      <th style=\"padding: 10px; text-align: center;\">Label</th>\n      <th style=\"padding: 10px; text-align: left;\">Severity</th>\n      <th style=\"padding: 10px; text-align: left;\">Description</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr style=\"background: #f8f9fa;\">\n      <td style=\"padding: 8px; text-align: center; font-weight: bold;\">0</td>\n      <td style=\"padding: 8px;\">No DR</td>\n      <td style=\"padding: 8px;\">Healthy retina, no signs of diabetic retinopathy</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; text-align: center; font-weight: bold;\">1</td>\n      <td style=\"padding: 8px;\">Mild</td>\n      <td style=\"padding: 8px;\">Microaneurysms only</td>\n    </tr>\n    <tr style=\"background: #f8f9fa;\">\n      <td style=\"padding: 8px; text-align: center; font-weight: bold;\">2</td>\n      <td style=\"padding: 8px;\">Moderate</td>\n      <td style=\"padding: 8px;\">More than just microaneurysms, but less than severe</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; text-align: center; font-weight: bold;\">3</td>\n      <td style=\"padding: 8px;\">Severe</td>\n      <td style=\"padding: 8px;\">Extensive intraretinal hemorrhages, venous beading</td>\n    </tr>\n    <tr style=\"background: #f8f9fa;\">\n      <td style=\"padding: 8px; text-align: center; font-weight: bold;\">4</td>\n      <td style=\"padding: 8px;\">Proliferative DR</td>\n      <td style=\"padding: 8px;\">Neovascularization and/or vitreous hemorrhage</td>\n    </tr>\n  </tbody>\n</table>\n\n<h2 style=\"color: #1a73e8;\">Dataset</h2>\n\n<p>\n  The dataset consists of <strong>510 retinal fundus images</strong> from the\n  <a href=\"https://universe.roboflow.com/officeworkspace/diabetic-retinopathy-dataset\" target=\"_blank\">IDRiD (Indian Diabetic Retinopathy Image Dataset)</a>,\n  available under the <strong>CC BY 4.0</strong> license.\n</p>\n\n<ul>\n  <li><strong>Training set</strong>: 407 images with labels</li>\n  <li><strong>Public test set</strong> (Development Phase): ~50 images</li>\n  <li><strong>Private test set</strong> (Final Phase): ~50 images</li>\n</ul>\n\n<p>\n  Labels are provided as <strong>one-hot encoded vectors</strong> of length 5 (columns <code>0</code> to <code>4</code>).\n  Each image belongs to exactly one severity class.\n</p>\n\n<h2 style=\"color: #1a73e8;\">Evaluation metrics</h2>\n\n<p>Submissions are evaluated on the following metrics:</p>\n\n<table style=\"width: 100%; border-collapse: collapse; margin: 15px 0;\">\n  <thead>\n    <tr style=\"background: #34a853; color: white;\">\n      <th style=\"padding: 10px; text-align: left;\">Metric</th>\n      <th style=\"padding: 10px; text-align: left;\">Description</th>\n      <th style=\"padding: 10px; text-align: center;\">Direction</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr style=\"background: #f8f9fa;\">\n      <td style=\"padding: 8px;\"><strong>F1 Macro</strong></td>\n      <td style=\"padding: 8px;\">Average F1 score across all classes (treats each class equally)</td>\n      <td style=\"padding: 8px; text-align: center;\">↑ Higher is better</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px;\"><strong>F1 Micro</strong></td>\n      <td style=\"padding: 8px;\">Global F1 computed from total TP, FP, FN (favors majority classes)</td>\n      <td style=\"padding: 8px; text-align: center;\">↑ Higher is better</td>\n    </tr>\n    <tr style=\"background: #f8f9fa;\">\n      <td style=\"padding: 8px;\"><strong>Hamming Loss</strong></td>\n      <td style=\"padding: 8px;\">Fraction of incorrectly predicted labels</td>\n      <td style=\"padding: 8px; text-align: center;\">↓ Lower is better</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px;\"><strong>Runtime (s)</strong></td>\n      <td style=\"padding: 8px;\">Total execution time (training + inference)</td>\n      <td style=\"padding: 8px; text-align: center;\">↓ Lower is better</td>\n    </tr>\n  </tbody>\n</table>\n\n<p>\n  Predictions are <strong>thresholded at 0.5</strong> to produce binary labels before computing F1 and Hamming Loss.\n</p>\n\n<h2 style=\"color: #1a73e8;\">How to participate</h2>\n\n<ol>\n  <li>Download the <strong>starting kit notebook</strong> (<code>starting_kit.ipynb</code>) from the GitHub repository : <a href=\"https://github.com/maxencedbe/datacamp_competition\" style=\"color: blue;\">here</a>.</li>\n  <li>Explore the data and understand the evaluation metrics.</li>\n  <li>Implement your model in a <code>submission.py</code> file following the required interface:\n    <ul>\n      <li>A <code>get_model()</code> function that returns a model object</li>\n      <li>The model must have <code>fit(X_train, y_train, train_img_dir)</code> and <code>predict(X_test, test_img_dir)</code> methods</li>\n      <li><code>predict</code> should return a numpy array of shape <code>(n_samples, 5)</code> with values in [0, 1]</li>\n    </ul>\n  </li>\n  <li>Zip your <code>submission.py</code> and upload it to CodaBench.</li>\n</ol>\n\n<h2 style=\"color: #1a73e8;\">Rules</h2>\n\n<div style=\"background: #fff3cd; border-left: 4px solid #ffc107; padding: 12px; margin: 15px 0; border-radius: 4px;\">\n  Up to <strong>100 submissions</strong> total (<strong>10 per day</strong>).\n</div>\n\n<h2 style=\"color: #1a73e8;\">References</h2>\n\n<ul>\n  <li><a href=\"https://universe.roboflow.com/officeworkspace/diabetic-retinopathy-dataset\" target=\"_blank\">IDRiD Dataset (Roboflow)</a></li>\n  <li><a href=\"https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html\" target=\"_blank\">Scikit-learn F1 Score Documentation</a></li>\n</ul>\n\n</div>",
+  "pages": [
+    {
+      "id": 68834,
+      "title": "Overview",
+      "content": "<div style=\"font-family: 'Segoe UI', Roboto, sans-serif; max-width: 900px; margin: auto;\">\n\n<h1 style=\"text-align: center; color: #1a73e8;\">Diabetic retinopathy detection challenge</h1>\n\n<p style=\"text-align: center; font-size: 1.15em; color: #555;\">\n  Classify retinal fundus images into <strong>5 severity levels</strong> of diabetic retinopathy using machine learning.\n</p>\n\n<hr style=\"border: 1px solid #e0e0e0;\">\n\n<h2 style=\"color: #1a73e8;\">Objective</h2>\n\n<p>\n  <strong>Diabetic retinopathy (DR)</strong> is a diabetes complication that damages the blood vessels of the retina.\n  It is a leading cause of blindness worldwide, affecting over <strong>100 million people</strong>.\n  Early detection through automated screening of retinal images can drastically improve patient outcomes.\n</p>\n\n<p>\n  Your goal is to build a model that takes a <strong>retinal fundus photograph</strong> as input and predicts\n  which <strong>severity level</strong> of DR it corresponds to.\n</p>\n\n<h2 style=\"color: #1a73e8;\">Severity levels</h2>\n\n<table style=\"width: 100%; border-collapse: collapse; margin: 15px 0;\">\n  <thead>\n    <tr style=\"background: #1a73e8; color: white;\">\n      <th style=\"padding: 10px; text-align: center;\">Label</th>\n      <th style=\"padding: 10px; text-align: left;\">Severity</th>\n      <th style=\"padding: 10px; text-align: left;\">Description</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr style=\"background: #f8f9fa;\">\n      <td style=\"padding: 8px; text-align: center; font-weight: bold;\">0</td>\n      <td style=\"padding: 8px;\">No DR</td>\n      <td style=\"padding: 8px;\">Healthy retina, no signs of diabetic retinopathy</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; text-align: center; font-weight: bold;\">1</td>\n      <td style=\"padding: 8px;\">Mild</td>\n      <td style=\"padding: 8px;\">Microaneurysms only</td>\n    </tr>\n    <tr style=\"background: #f8f9fa;\">\n      <td style=\"padding: 8px; text-align: center; font-weight: bold;\">2</td>\n      <td style=\"padding: 8px;\">Moderate</td>\n      <td style=\"padding: 8px;\">More than just microaneurysms, but less than severe</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px; text-align: center; font-weight: bold;\">3</td>\n      <td style=\"padding: 8px;\">Severe</td>\n      <td style=\"padding: 8px;\">Extensive intraretinal hemorrhages, venous beading</td>\n    </tr>\n    <tr style=\"background: #f8f9fa;\">\n      <td style=\"padding: 8px; text-align: center; font-weight: bold;\">4</td>\n      <td style=\"padding: 8px;\">Proliferative DR</td>\n      <td style=\"padding: 8px;\">Neovascularization and/or vitreous hemorrhage</td>\n    </tr>\n  </tbody>\n</table>\n\n<h2 style=\"color: #1a73e8;\">Dataset</h2>\n\n<p>\n  The dataset consists of <strong>510 retinal fundus images</strong> from the\n  <a href=\"https://universe.roboflow.com/officeworkspace/diabetic-retinopathy-dataset\" target=\"_blank\">IDRiD (Indian Diabetic Retinopathy Image Dataset)</a>,\n  available under the <strong>CC BY 4.0</strong> license.\n</p>\n\n<ul>\n  <li><strong>Training set</strong>: 407 images with labels</li>\n  <li><strong>Public test set</strong> (Development Phase): ~50 images</li>\n  <li><strong>Private test set</strong> (Final Phase): ~50 images</li>\n</ul>\n\n<p>\n  Labels are provided as <strong>one-hot encoded vectors</strong> of length 5 (columns <code>0</code> to <code>4</code>).\n  Each image belongs to exactly one severity class.\n</p>\n\n<h2 style=\"color: #1a73e8;\">Evaluation metrics</h2>\n\n<p>Submissions are evaluated on the following metrics:</p>\n\n<table style=\"width: 100%; border-collapse: collapse; margin: 15px 0;\">\n  <thead>\n    <tr style=\"background: #34a853; color: white;\">\n      <th style=\"padding: 10px; text-align: left;\">Metric</th>\n      <th style=\"padding: 10px; text-align: left;\">Description</th>\n      <th style=\"padding: 10px; text-align: center;\">Direction</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr style=\"background: #f8f9fa;\">\n      <td style=\"padding: 8px;\"><strong>F1 Macro</strong></td>\n      <td style=\"padding: 8px;\">Average F1 score across all classes (treats each class equally)</td>\n      <td style=\"padding: 8px; text-align: center;\">↑ Higher is better</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px;\"><strong>F1 Micro</strong></td>\n      <td style=\"padding: 8px;\">Global F1 computed from total TP, FP, FN (favors majority classes)</td>\n      <td style=\"padding: 8px; text-align: center;\">↑ Higher is better</td>\n    </tr>\n    <tr style=\"background: #f8f9fa;\">\n      <td style=\"padding: 8px;\"><strong>Hamming Loss</strong></td>\n      <td style=\"padding: 8px;\">Fraction of incorrectly predicted labels</td>\n      <td style=\"padding: 8px; text-align: center;\">↓ Lower is better</td>\n    </tr>\n    <tr>\n      <td style=\"padding: 8px;\"><strong>Runtime (s)</strong></td>\n      <td style=\"padding: 8px;\">Total execution time (training + inference)</td>\n      <td style=\"padding: 8px; text-align: center;\">↓ Lower is better</td>\n    </tr>\n  </tbody>\n</table>\n\n<p>\n  Predictions are <strong>thresholded at 0.5</strong> to produce binary labels before computing F1 and Hamming Loss.\n</p>\n\n<h2 style=\"color: #1a73e8;\">How to participate</h2>\n\n<ol>\n  <li>Download the <strong>starting kit notebook</strong> (<code>starting_kit.ipynb</code>) from the GitHub repository : <a href=\"https://github.com/maxencedbe/datacamp_competition\" style=\"color: blue;\">here</a>.</li>\n  <li>Explore the data and understand the evaluation metrics.</li>\n  <li>Implement your model in a <code>submission.py</code> file following the required interface:\n    <ul>\n      <li>A <code>get_model()</code> function that returns a model object</li>\n      <li>The model must have <code>fit(X_train, y_train, train_img_dir)</code> and <code>predict(X_test, test_img_dir)</code> methods</li>\n      <li><code>predict</code> should return a numpy array of shape <code>(n_samples, 5)</code> with values in [0, 1]</li>\n    </ul>\n  </li>\n  <li>Zip your <code>submission.py</code> and upload it to CodaBench.</li>\n</ol>\n\n<h2 style=\"color: #1a73e8;\">Rules</h2>\n\n<div style=\"background: #fff3cd; border-left: 4px solid #ffc107; padding: 12px; margin: 15px 0; border-radius: 4px;\">\n  Up to <strong>100 submissions</strong> total (<strong>10 per day</strong>).\n</div>\n\n<h2 style=\"color: #1a73e8;\">References</h2>\n\n<ul>\n  <li><a href=\"https://universe.roboflow.com/officeworkspace/diabetic-retinopathy-dataset\" target=\"_blank\">IDRiD Dataset (Roboflow)</a></li>\n  <li><a href=\"https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html\" target=\"_blank\">Scikit-learn F1 Score Documentation</a></li>\n</ul>\n\n</div>",
+      "index": 0
+    }
+  ],
+  "phases": [
+    {
+      "id": 24186,
+      "index": 0,
+      "start": "2026-03-01T00:00:00Z",
+      "end": "2026-05-31T00:00:00Z",
+      "name": "Development phase",
+      "description": "Development phase: tune your models and submit.",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "13376368-5734-4025-89c9-dba2e839a713",
+          "order_index": 0,
+          "phase": 24186,
+          "id": 29836,
+          "value": "13376368-5734-4025-89c9-dba2e839a713",
+          "key": "13376368-5734-4025-89c9-dba2e839a713",
+          "created_when": "2026-03-08T14:37:31.796863Z",
+          "name": "Development task",
+          "solutions": [
+            {
+              "name": "solution @ 03-08-2026 14:37",
+              "description": null,
+              "key": "0532b9cf-8a2d-4628-b9d4-0c8e980744c1",
+              "tasks": [
+                "13376368-5734-4025-89c9-dba2e839a713"
+              ],
+              "data": "8137d25a-4c04-4ee5-8ea2-94ca359a5203",
+              "md5": "421cae1b7f311c4ec81bf49583ccf056",
+              "size": 950.0
+            }
+          ],
+          "public_datasets": [
+            {
+              "id": 615170,
+              "created_by": "maxencedbe",
+              "owner_display_name": "maxencedbe",
+              "created_when": "2026-03-08T14:37:03.791091Z",
+              "name": "ingestion_program @ '03-08-2026 14:37'",
+              "type": "ingestion_program",
+              "description": null,
+              "is_public": false,
+              "key": "f2b60027-3cc0-4f53-930f-11a895a5a6e7",
+              "value": "f2b60027-3cc0-4f53-930f-11a895a5a6e7",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 14569,
+                  "title": "Diabetic Retinopathy Detection"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 1811.0
+            },
+            {
+              "id": 615174,
+              "created_by": "maxencedbe",
+              "owner_display_name": "maxencedbe",
+              "created_when": "2026-03-08T14:37:04.327903Z",
+              "name": "input_data @ '03-08-2026 14:37'",
+              "type": "input_data",
+              "description": null,
+              "is_public": false,
+              "key": "e6747510-d1d3-4f55-ad81-4a099afee942",
+              "value": "e6747510-d1d3-4f55-ad81-4a099afee942",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 14569,
+                  "title": "Diabetic Retinopathy Detection"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 240954061.0
+            },
+            {
+              "id": 615175,
+              "created_by": "maxencedbe",
+              "owner_display_name": "maxencedbe",
+              "created_when": "2026-03-08T14:37:31.358478Z",
+              "name": "scoring_program @ '03-08-2026 14:37'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "e5c1bd83-6637-4104-a046-49be3b5eb5d7",
+              "value": "e5c1bd83-6637-4104-a046-49be3b5eb5d7",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 14569,
+                  "title": "Diabetic Retinopathy Detection"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 916.0
+            },
+            {
+              "id": 615176,
+              "created_by": "maxencedbe",
+              "owner_display_name": "maxencedbe",
+              "created_when": "2026-03-08T14:37:31.461347Z",
+              "name": "reference_data @ '03-08-2026 14:37'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "1309d116-cb03-464b-b2d2-e2e6b767f130",
+              "value": "1309d116-cb03-464b-b2d2-e2e6b767f130",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 14569,
+                  "title": "Diabetic Retinopathy Detection"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 1384.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 10,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 16041,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "main",
+      "columns": [
+        {
+          "id": 69783,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "F1 Macro",
+          "key": "f1_macro",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 69784,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "F1 Micro",
+          "key": "f1_micro",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 69785,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Hamming Loss",
+          "key": "hamming_loss",
+          "sorting": "asc",
+          "index": 2,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 69786,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Runtime (s)",
+          "key": "runtime",
+          "sorting": "asc",
+          "index": 3,
+          "hidden": false,
+          "precision": 2
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Add"
+    }
+  ],
+  "collaborators": [
+    {
+      "id": 308,
+      "name": null,
+      "username": "tommoral"
+    },
+    {
+      "id": 24845,
+      "name": null,
+      "username": "plcrodrigues"
+    }
+  ],
+  "registration_auto_approve": true,
+  "description": "Multilabel classification of retinal images into 5 severity levels.",
+  "participants_count": 14,
+  "submissions_count": 40,
+  "queue": null,
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": true,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "codalab/codalab-legacy:py37",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 14373,
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "forum_enabled": true
+}

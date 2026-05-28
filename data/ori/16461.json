@@ -1,0 +1,315 @@
+{
+  "id": 16461,
+  "title": "Explainable Deepfake Detection Challenge @ ACM Multimedia 2026",
+  "published": true,
+  "created_by": "abhijeet8901",
+  "owner_display_name": "abhijeet8901",
+  "created_when": "2026-05-19T15:29:56.921370Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-19-1779204596/95cc77a6535d/images/logo.png?AWSAccessKeyId=codabench-prod&Signature=KhIjBtC51Q2HDF38ifx02%2FodlzY%3D&Expires=1779937160",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-19-1779204596/95cc77a6535d/images/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=3AcRW0sVdfvDmaZTDEwRTzWzHYo%3D&Expires=1779937160",
+  "terms": "# Terms and Registration Confirmation\n\nBy registering for this CodaBench competition or submitting results, participants confirm that they have read and agree to the **Explainable Deepfake Detection Challenge 2026 End User License Agreement** and the official challenge rules.\n\n## Permitted use\n\nThe dataset and challenge materials are provided strictly for academic, non-commercial, not-for-profit research and challenge participation. No ownership rights are transferred to participants.\n\n## Upstream licences\n\nParticipants are responsible for complying with all applicable upstream dataset licences, attribution requirements, permissions, and use restrictions. Where an upstream licence is more restrictive, the upstream licence controls.\n\n## Access and sharing\n\nAccess is limited to the registered team and approved researchers. Participants must not share login details, download links, copies of the dataset, restricted files, labels, annotations, metadata, explanations, baseline files, evaluation scripts, or other challenge materials with anyone outside the approved team.\n\nRedistribution, republication, sublicensing, posting to public repositories, or uploading the dataset or restricted challenge materials to shared drives or external services is prohibited without prior written approval from the organizers. Linking to the official challenge website is allowed.\n\n## Storage and security\n\nParticipants must use reasonable technical and organizational safeguards to protect the dataset and challenge materials from unauthorized access, copying, disclosure, or misuse. Any unauthorized access, leak, or misuse must be reported promptly to the organizers.\n\n## Publications and public disclosure\n\nPublications, reports, theses, posters, talks, demos, websites, social-media posts, or presentations arising from use of the dataset or challenge materials must cite the official challenge paper, dataset paper(s), original/source dataset paper(s), and documentation specified by the organizers.\n\nParticipants must not publish, reproduce, display, or distribute arbitrary images from the dataset in public-facing outputs. Only examples explicitly designated by the organizers for public display may be used.\n\n## Prohibited uses\n\nThe dataset and challenge materials must not be used for commercial purposes, surveillance, profiling, unlawful activity, harassment, defamation, or uses likely to cause harm, humiliation, embarrassment, or mental anguish to depicted persons or communities.\n\nParticipants must not use the dataset or challenge materials to create deceptive, misleading, or harmful synthetic media.\n\n## Evaluation integrity\n\nParticipants must not attempt to recover, infer, expose, or redistribute hidden test labels or hidden reference explanations. Participants must not try to access private files, paths, credentials, reference data, or worker-side resources outside the permitted CodaBench evaluation interface.\n\nSubmissions violating the rules may be removed from the leaderboard, and the team may be disqualified. Access to the dataset, challenge materials, or CodaBench competition may be modified, suspended, restricted, or revoked by the organizers.\n\n## Acceptance\n\nBy registering or submitting, participants confirm that they understand and agree to comply with these terms.\n\nRegistration is automatically approved on CodaBench after participants accept these terms. Participants do not need to email the organizers separately to join the CodaBench benchmark.\n\nOfficial challenge website:\n\nhttps://explainable-deepfake-detection.github.io/",
+  "pages": [
+    {
+      "id": 79503,
+      "title": "Overview",
+      "content": "# Overview\n\nWelcome to the **Explainable Deepfake Detection Challenge 2026**, an **ACM Multimedia 2026 Grand Challenge** on image-level deepfake detection and grounded explanation generation.\n\nDeepfake detection is increasingly moving beyond simple face swaps toward richer semantic manipulations. In practical settings, a prediction alone is not enough; systems should also indicate the visual evidence that supports a decision.\n\nThis challenge introduces **XPlainVerse**, a large-scale benchmark for evaluating both detection and explanation. Participants are asked not only to determine whether an image is real or fake, but also to provide two grounded natural-language explanations: a detailed complex explanation and a non-technical simple explanation.\n\n## Tasks\n\nThe challenge has two main tasks:\n\n1. **Deepfake Detection**: determine whether an input image is real or fake.\n2. **Deepfake Explanation**: generate explanations that support the authenticity decision using visible evidence from the image.\n\nFor the explanation task, each submission must include:\n\n- a **complex explanation**: detailed, evidence-rich, and specific, intended for technical or forensic review;\n- a **simple explanation**: shorter, clearer, and more accessible, while preserving the key reason behind the decision.\n\nBoth explanations should remain consistent with the submitted authenticity label.\n\n## CodaBench phase\n\nThis CodaBench platform is used for the official result-submission phase.\n\n- **Phase opens:** 28 May 2026\n- **Result submission deadline:** 15 June 2026\n- **Submissions per day:** 1\n- **Total submissions:** 10\n\nGeneral challenge information, announcements, registration links, and organizer updates are maintained on the official challenge website:\n\nhttps://explainable-deepfake-detection.github.io/",
+      "index": 0
+    },
+    {
+      "id": 79507,
+      "title": "Data",
+      "content": "# Data\n\nThe challenge uses **XPlainVerse**, the official benchmark for both detection and explanation tasks.\n\nThe public release provides training and validation data with paired explanation annotations and manifest metadata, plus test images for final evaluation. The XPlainVerse release for this challenge contains **760,000 images**, with **450,000 training images**, **110,000 validation images** and **200,000 test images**.\nThe test set is released for final evaluation. Test labels and reference explanations are not included in the participant release and are used only by the CodaBench evaluation system.\n\n## Dataset structure\n\nThe released package is organized as:\n\n```text\nXPlainVerse/\n├── train/\n│   ├── manifest.jsonl\n│   ├── images/\n│   │   ├── fake/\n│   │   └── real/\n│   ├── complex_explanations/\n│   │   ├── fake/\n│   │   └── real/\n│   └── simple_explanations/\n│       └── fake/\n├── val/\n│   ├── manifest.jsonl\n│   ├── images/\n│   │   ├── fake/\n│   │   └── real/\n│   ├── complex_explanations/\n│   │   ├── fake/\n│   │   └── real/\n│   └── simple_explanations/\n│       └── fake/\n└── test/\n    └── images/\n```\n\nThe training and validation splits include an `images` directory, paired `complex_explanations`, paired `simple_explanations`, and a `manifest.jsonl` file. Complex explanations are provided for fake and real images, while simple explanations are provided for fake images. The test split includes released images only; labels and reference explanations remain hidden for evaluation.\n\n## Manifest fields\n\nEach line in `manifest.jsonl` of the training and validation splits stores the label and relative paths needed to load an image together with its paired explanation file.\n\nFor the training and validation splits, important fields include:\n\n- `label`: binary image label, fake or real;\n- `image_path`: relative path to the image file;\n- `complex_explanation_path`: relative path to the paired complex explanation JSON;\n- `simple_explanation_path`: relative path to the paired simple explanation JSON.\n\n## Hidden test set\n\nThe CodaBench final phase uses the released test images with hidden ground-truth labels and reference explanations. These references are not included in the participant release and are used only by the CodaBench worker.\n\nFor each test image, the `id` field in the submission file must exactly match the image filename in the test set, including the file extension, for example `example.png`.",
+      "index": 1
+    },
+    {
+      "id": 79510,
+      "title": "Evaluation",
+      "content": "# Evaluation\n\nThe leaderboard reports detection performance and explanation quality. Higher scores are better for all displayed metrics.\n\n## Detection\n\nDetection is evaluated on the hidden final test set using binary image labels:\n\n- `0`: real/authentic image;\n- `1`: fake/generated or manipulated image.\n\nThe leaderboard reports:\n\n- **Detection Macro F1**: primary detection score;\n- **Detection Accuracy**;\n\nDetection is evaluated on the full official test set.\n\n## Complex explanations\n\nThe complex explanation track evaluates whether the submitted explanation captures the same important visual evidence as the reference explanation.\n\nIn this CodaBench scoring bundle, complex explanations are evaluated using **BERTScore F1** between the submitted complex explanation and the hidden reference complex explanation.\n\nThe BERTScore model is:\n\n```text\nmicrosoft/deberta-xlarge-mnli\n```\n\nBaseline rescaling is disabled.\n\nFor leaderboard scoring, complex explanation BERTScore is computed on a 10,000-sample subset of the test set. After the test phase closes, we will compute the remaining complex explanation metrics: **Complex Entity F1** and **Complex Evidence F1** for the **top 5 teams** for final reporting and analysis. The complete complex explanation score is:\n\n```text\ncomplex_overall_score =\n  0.3 * complex_bert_f1 +\n  0.4 * complex_entity_f1 +\n  0.3 * complex_evidence_f1\n```\n\n## Simple explanations\n\nThe simple explanation track is designed to reward two things at the same time: faithfulness and simplicity. A good simple explanation should preserve the core reason from the reference while expressing it in a shorter, easier form.\n\nIn this CodaBench scoring bundle, simple explanations are evaluated using:\n\n- **Simple BERTScore F1** against the hidden simple reference;\n- **SLE score** using the offline SLE checkpoint on the worker;\n- **Simple SLE Norm**, obtained by clipping raw SLE to `[-1, 4]` and mapping it to `[0, 1]`;\n- **Simple Overall Score**:\n\n```text\n0.7 * simple_bert_f1 + 0.3 * simple_sle_norm\n```\n\nFor leaderboard scoring, simple explanation metrics are computed on the same 10,000-sample subset of the test set.\n\n## Overall explanation score\n\nThe displayed explanation score combines the complex and simple tracks on the same 10,000-sample explanation-evaluation subset:\n\n```text\nexplanation_score =\n  (complex_bert_f1 + simple_overall_score) / 2\n```\n\n## Failed or incomplete submissions\n\nMissing files receive zero for the corresponding metric group. If a valid submission file is present but omits some required rows, those missing samples are scored as zero for the relevant metric. Malformed JSON, duplicate IDs, invalid labels, empty explanations, or unknown IDs may cause scoring to fail.",
+      "index": 2
+    },
+    {
+      "id": 79513,
+      "title": "Submission",
+      "content": "# Submission\n\nSubmit a single `.zip` file containing model outputs for the official test samples.\n\n```text\nsubmission.zip\n├── detection.jsonl\n├── complex.jsonl\n└── simple.jsonl\n```\n\nEach line must be one valid JSON object. **The `id` value must exactly match the released test image filename including extension**.\n\n## Detection file\n\n`detection.jsonl` should contain one row for every final-test image:\n\n```json\n{\"id\": \"sample1.png\", \"pred_label\": 1}\n```\n\n`pred_label` must be:\n\n- `0` for real;\n- `1` for fake.\n\n## Complex explanation file\n\n`complex.jsonl` should contain complex explanations for the explanation-evaluation subset:\n\n```json\n{\"id\": \"sample1.png\", \"complex_explanation\": \"A detailed explanation grounded in visible image evidence.\"}\n```\n\nA complex explanation should be a detailed explanation grounded in visible image evidence, such as artifacts, geometry issues, texture inconsistencies, text errors, lighting mismatches, or object interactions.\n\n## Simple explanation file\n\n`simple.jsonl` should contain simple explanations for the same explanation-evaluation subset:\n\n```json\n{\"id\": \"sample1.png\", \"simple_explanation\": \"A simple explanation for the image.\"}\n```\n\nA simple explanation should be a shorter and more accessible explanation that preserves the key reason behind the decision without carrying every low-level detail from the complex explanation.\n\n## Submission limits\n\nEach team may make at most:\n\n- **1 submissions per day**;\n- **10 submissions in total** during the final phase.\n\n## Leaderboard entry\n\nEach team can have only one public leaderboard entry. Teams may choose which of their submitted runs to display on the leaderboard using the submission controls in CodaBench.\n\n## Validate before uploading\n\nThe starting kit includes a format checker. Run it locally before submitting:\n\n```bash\npython validate_submission.py submission.zip\n```\n\nThe validator checks public format rules only.",
+      "index": 3
+    }
+  ],
+  "phases": [
+    {
+      "id": 27017,
+      "index": 0,
+      "start": "2026-05-28T00:00:00Z",
+      "end": "2026-06-15T23:59:00Z",
+      "name": "Final Test Phase",
+      "description": "Official result-submission phase for the Explainable Deepfake Detection Challenge 2026.",
+      "status": "Current",
+      "execution_time_limit": 1800,
+      "tasks": [
+        {
+          "task": "e94fba55-c38a-4ee3-973e-dc21c5675f22",
+          "order_index": 0,
+          "phase": 27017,
+          "id": 33053,
+          "value": "e94fba55-c38a-4ee3-973e-dc21c5675f22",
+          "key": "e94fba55-c38a-4ee3-973e-dc21c5675f22",
+          "created_when": "2026-05-19T15:29:56.331686Z",
+          "name": "Final Evaluation",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 770316,
+              "created_by": "abhijeet8901",
+              "owner_display_name": "abhijeet8901",
+              "created_when": "2026-05-19T15:29:56.147415Z",
+              "name": "reference_data @ '05-19-2026 15:29'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "e7a81acb-9080-4ef1-be26-02a966b0e2a0",
+              "value": "e7a81acb-9080-4ef1-be26-02a966b0e2a0",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16461,
+                  "title": "Explainable Deepfake Detection Challenge @ ACM Multimedia 2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 305.0
+            },
+            {
+              "id": 789763,
+              "created_by": "abhijeet8901",
+              "owner_display_name": "abhijeet8901",
+              "created_when": "2026-05-27T07:04:53.852556Z",
+              "name": "xdd-final-scoring-v5",
+              "type": "scoring_program",
+              "description": "",
+              "is_public": false,
+              "key": "f344d299-660c-4f05-8f98-cd861246c0a0",
+              "value": "f344d299-660c-4f05-8f98-cd861246c0a0",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 16461,
+                  "title": "Explainable Deepfake Detection Challenge @ ACM Multimedia 2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "scoring_program.zip",
+              "file_size": 13814.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 1,
+      "max_submissions_per_person": 10,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": true,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": {
+        "id": 770318,
+        "created_by": "abhijeet8901",
+        "owner_display_name": "abhijeet8901",
+        "created_when": "2026-05-19T15:29:56.537056Z",
+        "name": "starting_kit @ '05-19-2026 15:29'",
+        "type": "starting_kit",
+        "description": null,
+        "is_public": false,
+        "key": "d6ef938d-cb71-4dac-aef1-bb47a8d801e6",
+        "value": "d6ef938d-cb71-4dac-aef1-bb47a8d801e6",
+        "was_created_by_competition": true,
+        "in_use": [
+          {
+            "pk": 16461,
+            "title": "Explainable Deepfake Detection Challenge @ ACM Multimedia 2026"
+          }
+        ],
+        "competition": null,
+        "file_name": "",
+        "file_size": 3332.0
+      },
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 18231,
+      "primary_index": 0,
+      "title": "Final Results",
+      "key": "final_results",
+      "columns": [
+        {
+          "id": 78942,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Detection F1",
+          "key": "detection_macro_f1",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 6
+        },
+        {
+          "id": 78943,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Detection Accuracy",
+          "key": "detection_accuracy",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 6
+        },
+        {
+          "id": 78944,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Fake F1",
+          "key": "detection_fake_f1",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": true,
+          "precision": 6
+        },
+        {
+          "id": 78945,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Real F1",
+          "key": "detection_real_f1",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": true,
+          "precision": 6
+        },
+        {
+          "id": 78973,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Complex BERTScore",
+          "key": "complex_bert_f1",
+          "sorting": "desc",
+          "index": 4,
+          "hidden": false,
+          "precision": 6
+        },
+        {
+          "id": 78974,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Simple Overall",
+          "key": "simple_overall_score",
+          "sorting": "desc",
+          "index": 5,
+          "hidden": false,
+          "precision": 6
+        },
+        {
+          "id": 78975,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Simple BERTScore",
+          "key": "simple_bert_f1",
+          "sorting": "desc",
+          "index": 6,
+          "hidden": true,
+          "precision": 6
+        },
+        {
+          "id": 78976,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Simple SLE Norm",
+          "key": "simple_sle_norm",
+          "sorting": "desc",
+          "index": 7,
+          "hidden": true,
+          "precision": 6
+        },
+        {
+          "id": 78977,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Simple SLE Raw",
+          "key": "simple_sle_raw",
+          "sorting": "desc",
+          "index": 8,
+          "hidden": true,
+          "precision": 6
+        },
+        {
+          "id": 80339,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Explanation Score",
+          "key": "explanation_score",
+          "sorting": "desc",
+          "index": 9,
+          "hidden": false,
+          "precision": 6
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Add_And_Delete"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": true,
+  "description": "Hidden-test evaluation for the ACM MM 2026 Explainable Deepfake Detection Challenge on image-level deepfake detection and grounded explanation generation.",
+  "participants_count": 5,
+  "submissions_count": 5,
+  "queue": {
+    "name": "acm-mm-2026-xplainverse-challenge",
+    "vhost": "46b0ad1b-eafd-499d-949b-c3e9ae3904af",
+    "is_public": false,
+    "owner": "abhijeet8901",
+    "organizers": [],
+    "broker_url": "pyamqp://4273fb00-4594-42ed-947a-43821f5e1ade:abb9f2de-8391-4809-800b-5f4cd4c680d9@www.codabench.org:5672/46b0ad1b-eafd-499d-949b-c3e9ae3904af",
+    "created_when": "2026-05-19T03:33:37.258427Z",
+    "is_owner": false,
+    "id": 837
+  },
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": false,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "abhijeet1317/xdd-scorer:2026-v5",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": {
+    "team_name": {
+      "key": "team_name",
+      "type": "text",
+      "title": "Team name",
+      "selection": "",
+      "is_required": "true",
+      "is_on_leaderboard": "true"
+    },
+    "official_participant": {
+      "key": "official_participant",
+      "type": "checkbox",
+      "title": "I confirm that my team is participating in the Explainable Deepfake Detection Challenge 2026 and agrees to the challenge terms and data-use restrictions.",
+      "selection": [
+        true,
+        false
+      ],
+      "is_required": "true",
+      "is_on_leaderboard": "false"
+    }
+  },
+  "forum": 16204,
+  "reward": "",
+  "contact_email": "abhijeet.narang1@monash.edu",
+  "report": "https://explainable-deepfake-detection.github.io/",
+  "forum_enabled": true
+}

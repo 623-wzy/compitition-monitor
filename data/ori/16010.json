@@ -1,0 +1,286 @@
+{
+  "id": 16010,
+  "title": "ICML 2026 AI for Math Workshop & Challenge 3: Seephys Pro",
+  "published": true,
+  "created_by": "ai4math",
+  "owner_display_name": "ai4math",
+  "created_when": "2026-04-29T10:27:07.290697Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-29-1777474374/6953426e1b09/logo_big.png?AWSAccessKeyId=codabench-prod&Signature=sJhy1bi%2FCRJw3tU5Qyn2cat9C3k%3D&Expires=1779937164",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-29-1777474374/6953426e1b09/logo_big_icon.png?AWSAccessKeyId=codabench-prod&Signature=mKha0J7I02x%2BDXWeSi3hgZRKVEM%3D&Expires=1779937164",
+  "terms": "# Seephys Pro Terms and Participation Rules\n\nBy participating in this challenge, participants agree to follow the rules below.\n\n## Allowed\n\n- Use the Hugging Face dataset for model development, prompting, analysis, and submission generation.\n- Use external models and tools, unless they violate Codabench, Hugging Face, or API provider policies.\n- Submit final answers with reasoning in the required format.\n\n## Not Allowed\n\n- Attempt to recover, infer, scrape, or leak hidden reference answers.\n- Attack, overload, or bypass the Codabench evaluation system.\n- Submit prompt-injection text intended to manipulate the judge rather than answer the physics problem.\n- Submit empty, unrelated, or intentionally deceptive reasoning.\n- Upload content that violates the policies of Codabench, Hugging Face, OpenAI, or applicable law.\n\n## Evaluation Integrity\n\nThe public judge uses an OpenAI API based semantic evaluator. The judge is intended to evaluate answer equivalence and reasoning consistency, not to reward formatting tricks. Submissions may be reviewed or removed if they exploit the evaluator or violate the spirit of the benchmark.\n\n## Data Use\n\nThe Hugging Face dataset distributed for this challenge excludes answer-bearing fields. Reference answers are used only for Codabench scoring.",
+  "pages": [
+    {
+      "id": 79484,
+      "title": "Announcement",
+      "content": "---\n#### Notice, May 27, 2026\n\nDear participants,\n\nAs our benchmark has been publicly released for an extended period of time, We recognize that the current challenge description may not have been sufficiently clear on evaluation protocol. In particular, different levels of the same problem may contain overlapping information, which may potentially affect the intended comparison across evaluation settings.\n\nTo ensure fair and comparable evaluation across different levels, we require all participants to evaluate each level independently using **only the information provided within the current level.** Participants should **avoid** using information, predictions, captions, or annotations from other levels of the same problem during inference.\n\nIn addition, to maintain the integrity and transparency of the challenge, all top-3 winning teams will be required to submit:\n\n- Source code\n- Inference/evaluation protocol\n- A technical report describing their method and evaluation setup (should **explicitly disclose whether cross-level information was used**).\n\nThe organizing committee reserves the right to audit submitted materials. These requirements are intended to ensure that the benchmark more accurately reflects multimodal reasoning ability under different information settings, rather than improvements that may primarily arise from transferring textual information across levels. We appreciate the community’s understanding and cooperation in helping us maintain a fair and meaningful evaluation setting.\n\nGood luck!\nChallenge Chairs\n\n---\n#### Notice, May 11, 2026\n\nDear participants,\n\nGoing forward, the following rules apply:\n\n1. **Reproducibility is now required** for all submissions. You need to provide code or a clear description of your method. For the top 3 finalists, reproducibility is a condition for receiving your ranking and prize money.\n\n2. Manual annotation of test samples is not a valid approach and will lead to disqualification.\n\n3. We also **encourage everyone to write a short technical report** on your methodology and [submit it to the AI4Math Workshop](https://ai4math2026.github.io/#cfp) by May 24, 2026 AoE. Please start your paper title with \"Technical Report for AI4Math-2026 Track n\" followed by your own subtitle. It gives you more visibility and a chance to present your work in person at ICML.\n\nGood luck!\nChallenge Chairs\n\n---",
+      "index": 0
+    },
+    {
+      "id": 77709,
+      "title": "Overview",
+      "content": "# Track 3: Seephys Pro - Visual Physics Reasoning\n\n<div style=\"padding:18px 22px;border:1px solid #d8e2ef;border-radius:10px;background:#f7fbff;margin:12px 0 22px 0;\">\n  <h2 style=\"margin:0 0 8px 0;\">A Multimodal Physics Reasoning Challenge with Diagrams, Expressions, and Explanations</h2>\n  <p style=\"margin:0;font-size:15px;line-height:1.55;\">\n    Seephys Pro evaluates whether AI systems can solve physics problems that require visual perception, mathematical reasoning, and faithful explanation. The benchmark combines structured physics problems, diagram-grounded questions, and a curated image-only extension. To rigorously evaluate the systems' generalization capabilities across unseen environments, the benchmark incorporates a specialized Out-of-Distribution (OOD) test set captured via photography, which is represented by the Level 5 dataset. The Level 5 dataset is provided by Transsion, a leading smart device and mobile internet company focused on emerging markets. It consists of anonymized service data from Transsion’s AI photo-based problem-solving service. This level evaluates models in realistic education scenarios, including diverse question formats and natural image quality variations. Participants submit both final answers and reasoning; submissions are scored by an OpenAI-based judge against held reference answers.\n  </p>\n</div>\n\nPhysics reasoning is a core scientific capability. It requires a system to identify quantities, interpret diagrams, connect visual evidence with equations, and produce a defensible conclusion. Recent multimodal models have made rapid progress, but physics questions with diagrams and formal expressions still expose a difficult gap between seeing, reading, and reasoning.\n\nThe central question of Seephys Pro is:\n\n> **How can we build AI systems that reliably integrate visual information, physical laws, and mathematical derivations to solve real physics problems?**\n\nThis challenge is designed as a compact but demanding public benchmark for that question.\n\n## Challenge at a Glance\n\n| Item | Details |\n|---|---:|\n| Challenge name | Seephys Pro |\n| Public leaderboard questions | 830 |\n| Private leaderboard questions | 3320 |\n| Required submission fields | `question_id`, `prediction`, `reasoning` |\n| Scoring | OpenAI API semantic judge |\n| Overall score | Question-count weighted accuracy |\n\n\n## Dataset\n\nThe datasets are hosted on Hugging Face:\nhttps://huggingface.co/datasets/Kun-Xiang/SeePhysPro\n\n\n\n## What to Submit\n\nParticipants must submit a `.zip` file containing both:\n\n- `prediction.csv`\n- `prediction_private.csv`\n\nEach file must include `question_id`, `prediction`, and `reasoning`.\n\n`prediction.csv` is used for the Codabench public leaderboard. `prediction_private.csv` is used for the offline private leaderboard after the deadline. Submissions without `prediction_private.csv` will not be eligible for prizes.\n\n\n## Notes\n\nThe public leaderboard is intended for fast iteration. Private evaluation is not automatically run by this Codabench bundle.\n\n## Citation\n<pre style=\"background-color: #f6f8fa; padding: 16px; border-radius: 6px; line-height: 1.45;\">\n@article{xiang2026seephyspro,\n  title={SeePhys Pro: Diagnosing Modality Transfer and Blind-Training Effects in Multimodal RLVR for Physics Reasoning},\n  author={Xiang, Kun and Zhang, Terry Jingchen and Liu, Zirong and Zhou, Bokai and Tang, Yueling and Yu, Junjie and Lu, Jiacong and Huang, Shangrui and Li, Heng and Zhang, Likui and Liu, Kunkun and Zhang, Changzheng and Fang, Yangle and Guo, Boqiang and Zhen, Hui-Ling and Tu, Dandan and Huang, Yinya and Liang, Xiaodan},\n  journal={arXiv preprint arXiv:2605.09266},\n  year={2026}\n}\n</pre>",
+      "index": 1
+    },
+    {
+      "id": 77704,
+      "title": "Data",
+      "content": "# Seephys Pro Data\n\n<div style=\"padding:16px 20px;border-left:5px solid #2f80ed;background:#f5f9ff;margin:12px 0 20px 0;\">\n\t  <strong>Benchmark Data:</strong>\n  <br>\n  <a href=\"https://huggingface.co/datasets/Kun-Xiang/SeePhysPro\">https://huggingface.co/datasets/Kun-Xiang/SeePhysPro</a>\n  <br><br>\n  <strong>Project Page:</strong>\n  <br>\n  <a href=\"https://seephyspro.github.io/\">https://seephyspro.github.io/</a>\n  <br><br>\n  <strong>Paper:</strong>\n  <br>\n  <a href=\"https://arxiv.org/pdf/2605.09266\">https://arxiv.org/pdf/2605.09266</a>\n</div>\n\n\n## Public Leaderboard Splits\n\nUse the following splits for public leaderboard submissions:\n\n| Split | Questions | Public leaderboard |\n|---|---|---|\n| `level1_testmini` | 200 | Yes |\n| `level2_testmini` | 200 | Yes |\n| `level3_testmini` | 200 | Yes |\n| `level4_testmini` | 200 | Yes |\n| `level5_testmini` | 30 | Yes |\n\n\nTotal public leaderboard size: **830 questions**.\n\n## Private Leaderboard Splits\n\nThe Hugging Face repository also contains private data:\n\n| Split | Questions | Private leaderboard |\n|---|---|---|\n| `level1` | 800 | Yes |\n| `level2` | 800 | Yes |\n| `level3` | 800 | Yes |\n| `level4` | 800 | Yes |\n| `level5` | 120 | Yes |\n\nTotal private leaderboard size: **3320 questions**.\n\nThe final rankings are determined by the Overall Accuracy on the **private leaderboard.**\n\n\n## Schema\n\nEach row includes a stable `question_id` used for submission alignment.\n\nCommon columns:\n\n| Column | Description |\n|---|---|\n| `question_id` | Stable ID used in submissions |\n| `row_id` | Row index within the split |\n| `idx` | Original source index |\n| `problem` | Problem text, when available |\n| `images` | Image list in Hugging Face image format |\n\n## No-Answer Release\n\nThis prevents answer leakage. Reference answers are kept only in the Codabench reference bundle used by the scoring program.\n\n## Loading Example\n\nLoad the Testmini dataset:\n\n```python\nfrom datasets import load_dataset\n\ntestmini = load_dataset(\"Kun-Xiang/Track3-SeePhysPro-Testmini\")\ntestmini_level1 = load_dataset(\"Kun-Xiang/Track3-SeePhysPro-Testmini\", split=\"level1_testmini\")\n```\n\nLoad the Test dataset:\n\n```python\nfrom datasets import load_dataset\n\nlevel1_test = load_dataset(\"Kun-Xiang/SeePhysPro\", \"level1\", split=\"test\")\nlevel1_testmini = load_dataset(\"Kun-Xiang/SeePhysPro\", \"level1\", split=\"testmini\")\n```\n\nIf the repository is private, authenticate with a Hugging Face token before loading the dataset.",
+      "index": 2
+    },
+    {
+      "id": 77705,
+      "title": "Evaluation",
+      "content": "# SeePhys Pro Evaluation\n\n<div style=\"padding:16px 20px;border:1px solid #eadfb8;border-radius:8px;background:#fffaf0;margin:12px 0 20px 0;\">\n  <strong>Important:</strong> each submission must provide both a final answer and a supporting explanation. Responses that contain only a final answer without reasoning will not be considered complete.\n</div>\n\n## Submission Format\n\nPlease submit a `.zip` file containing both public and private prediction files at the root of the archive.\n\nYour submission should contain:\n\n```text\nsubmission.zip\n├── prediction.csv\n└── prediction_private.csv\n```\n\n### Required Files\n\n#### 1. `prediction.csv`\n\nThis file is used for the Codabench public leaderboard.\n\n#### 2. `prediction_private.csv`\n\nThis file is reserved for the private leaderboard.\n\nThe private leaderboard will **not** be evaluated automatically on Codabench. After the competition deadline, the organizers will download the final submissions and evaluate `prediction_private.csv` offline using the private reference answers.\n\n### Required Fields\n\nBoth `prediction.csv` and `prediction_private.csv` must contain the following fields:\n\n```text\nquestion_id\nprediction\nreasoning\n```\n\n### Important Notes\n\nThe public leaderboard score shown on Codabench is computed only from `prediction.csv`.\n\nThe private leaderboard score is computed offline only from `prediction_private.csv`.\n\nIf `prediction_private.csv` is missing, the submission will not receive a valid private leaderboard score.\n\n## CSV Example\n\n```csv\nquestion_id,prediction,reasoning\nlevel1_testmini_000000,BD,\"The two circuit branches give the stated acceleration and charge relations, so B and D are correct.\"\nlevel1_testmini_000001,1.44,\"Using Snell's law and the measured geometry, the refractive index is approximately 1.44.\"\n```\n\n## JSONL Example\n\n```jsonl\n{\"question_id\":\"level1_testmini_000000\",\"prediction\":\"BD\",\"reasoning\":\"The induced-current relations make B and D correct.\"}\n{\"question_id\":\"level5_testmini_000000\",\"prediction\":\"A\",\"reasoning\":\"The diagram matches option A after comparing the labeled quantities.\"}\n```\n\n## Evaluation Rules\n\nSubmissions are evaluated against hidden reference answers. For each question, the evaluation system checks whether:\n\n1. A final answer is provided.\n2. A reasoning field is provided.\n3. The reasoning is relevant to the problem.\n4. The submitted final answer is equivalent to the reference answer.\n5. The reasoning supports the submitted final answer.\n6. Required units are respected when applicable.\n\nA response may receive no credit if it contains any of the following issues:\n\n- missing final answer;\n- missing reasoning;\n- malformed or unreadable submission format;\n- unrelated or empty reasoning;\n- reasoning that contradicts the submitted answer;\n- incorrect final answer;\n- missing or incorrect units when units are required.\n\n## Leaderboard Metrics\n\nThe public leaderboard reports performance on the released public evaluation split.\n\n| Metric | Questions | Weight in Overall |\n|---|---:|---:|\n| Level 1 | 200 | 200 / 830 |\n| Level 2 | 200 | 200 / 830 |\n| Level 3 | 200 | 200 / 830 |\n| Level 4 | 200 | 200 / 830 |\n| Solve150 Testmini | 30 | 30 / 830 |\n\nThe overall score is computed as:\n\n```text\noverall = total_correct_questions / 830\n```\n\nThe leaderboard also reports:\n\n- `Judged`: number of rows successfully evaluated;\n- `Missing`: number of rows missing either a prediction or reasoning;\n- `Invalid`: number of malformed rows or rows missing required fields.\n\n## Dataset Release\n\nThe Hugging Face dataset is released as a public no-answer version for participant use. It intentionally excludes the following ground-truth fields:\n\n- `answer`\n- `unit`\n- `error_range`\n\nThese fields are reserved for private evaluation and are not distributed to participants.\n\n## Notes\n\nParticipants are responsible for ensuring that all `question_id` values match the released dataset exactly. Duplicate predictions for the same `question_id` are not allowed and may be treated as invalid.",
+      "index": 3
+    },
+    {
+      "id": 76242,
+      "title": "Awards",
+      "content": "# Awards\n\nThe total prize pool for the **AI4Math @ ICML 2026** challenge is **$8,000**, distributed across all four tracks.\n\n### Prize per Track\n\n| Place | Prize per Track |\n| :--- | :--- |\n| 🥇 **1st** | $1,000 |\n| 🥈 **2nd** | $600 |\n| 🥉 **3rd** | $400 |\n\n**Challenge Period:** May 1 – June 15, 2026.",
+      "index": 4
+    },
+    {
+      "id": 76184,
+      "title": "Terms",
+      "content": "# Seephys Pro Terms and Participation Rules\n\nBy participating in this challenge, participants agree to follow the rules below.\n\n## Allowed\n\n- Use the Hugging Face dataset for model development, prompting, analysis, and submission generation.\n- Use external models and tools, unless they violate Codabench, Hugging Face, or API provider policies.\n- Submit final answers with reasoning in the required format.\n\n## Not Allowed\n\n- Attempt to recover, infer, scrape, or leak hidden reference answers.\n- Attack, overload, or bypass the Codabench evaluation system.\n- Submit prompt-injection text intended to manipulate the judge rather than answer the physics problem.\n- Submit empty, unrelated, or intentionally deceptive reasoning.\n- Upload content that violates the policies of Codabench, Hugging Face, OpenAI, or applicable law.\n\n## Evaluation Integrity\n\nThe public judge uses an OpenAI API based semantic evaluator. The judge is intended to evaluate answer equivalence and reasoning consistency, not to reward formatting tricks. Submissions may be reviewed or removed if they exploit the evaluator or violate the spirit of the benchmark.\n\n## Data Use\n\nThe Hugging Face dataset distributed for this challenge excludes answer-bearing fields. Reference answers are used only for Codabench scoring.",
+      "index": 5
+    }
+  ],
+  "phases": [
+    {
+      "id": 26403,
+      "index": 0,
+      "start": "2026-05-01T04:00:00Z",
+      "end": "2026-06-16T04:00:00Z",
+      "name": "Public/Private Leaderboard",
+      "description": "The public leaderboard is intended for testing and development purposes only and will not be included in the final score.\n\nFinal ranking is based on the Overall Accuracy of the private leaderboard.",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "f0ac4b86-ce2f-4a56-b4a5-00669bb0d743",
+          "order_index": 0,
+          "phase": 26403,
+          "id": 32398,
+          "value": "f0ac4b86-ce2f-4a56-b4a5-00669bb0d743",
+          "key": "f0ac4b86-ce2f-4a56-b4a5-00669bb0d743",
+          "created_when": "2026-04-30T02:13:20.033375Z",
+          "name": "Public Judge",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 729230,
+              "created_by": "ai4math",
+              "owner_display_name": "ai4math",
+              "created_when": "2026-04-29T10:27:07.068197Z",
+              "name": "reference_data @ '04-29-2026 10:27'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "420a5ad5-7e93-48db-8b63-374ec0c09c2e",
+              "value": "420a5ad5-7e93-48db-8b63-374ec0c09c2e",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16010,
+                  "title": "ICML 2026 AI for Math Workshop & Challenge 3: Seephys Pro"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 15572.0
+            },
+            {
+              "id": 732024,
+              "created_by": "ai4math",
+              "owner_display_name": "ai4math",
+              "created_when": "2026-04-30T19:52:40.893537Z",
+              "name": "Input Data",
+              "type": "input_data",
+              "description": "",
+              "is_public": false,
+              "key": "30a4a251-6587-4228-82ee-193a9ed1bb6b",
+              "value": "30a4a251-6587-4228-82ee-193a9ed1bb6b",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 16010,
+                  "title": "ICML 2026 AI for Math Workshop & Challenge 3: Seephys Pro"
+                }
+              ],
+              "competition": null,
+              "file_name": "input_data.zip",
+              "file_size": 1342.0
+            },
+            {
+              "id": 737088,
+              "created_by": "ai4math",
+              "owner_display_name": "ai4math",
+              "created_when": "2026-05-04T08:23:10.146974Z",
+              "name": "Seephys Pro",
+              "type": "scoring_program",
+              "description": "",
+              "is_public": false,
+              "key": "492c69d2-7b61-448e-a18d-c705182660a6",
+              "value": "492c69d2-7b61-448e-a18d-c705182660a6",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 16010,
+                  "title": "ICML 2026 AI for Math Workshop & Challenge 3: Seephys Pro"
+                }
+              ],
+              "competition": null,
+              "file_name": "judge.zip",
+              "file_size": 7445.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": {
+        "id": 737100,
+        "created_by": "ai4math",
+        "owner_display_name": "ai4math",
+        "created_when": "2026-05-04T08:28:05.019811Z",
+        "name": "submission",
+        "type": "starting_kit",
+        "description": "",
+        "is_public": false,
+        "key": "eb922ddf-4ce2-4d25-9a0a-e20b41872660",
+        "value": "eb922ddf-4ce2-4d25-9a0a-e20b41872660",
+        "was_created_by_competition": false,
+        "in_use": [
+          {
+            "pk": 16010,
+            "title": "ICML 2026 AI for Math Workshop & Challenge 3: Seephys Pro"
+          }
+        ],
+        "competition": null,
+        "file_name": "sample_submission.zip",
+        "file_size": 9334.0
+      },
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 17658,
+      "primary_index": 0,
+      "title": "Public Results",
+      "key": "main",
+      "columns": [
+        {
+          "id": 75995,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Overall",
+          "key": "overall",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 75996,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Level 1",
+          "key": "level1",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 75997,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Level 2",
+          "key": "level2",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 75998,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Level 3",
+          "key": "level3",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 75999,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Level 4",
+          "key": "level4",
+          "sorting": "desc",
+          "index": 4,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 76000,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Level 5",
+          "key": "level5",
+          "sorting": "desc",
+          "index": 5,
+          "hidden": false,
+          "precision": 2
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Force_Best"
+    }
+  ],
+  "collaborators": [
+    {
+      "id": 60839,
+      "name": null,
+      "username": "babychem"
+    },
+    {
+      "id": 64522,
+      "name": null,
+      "username": "hcwang"
+    }
+  ],
+  "registration_auto_approve": true,
+  "description": "Multimodal physics reasoning benchmark with diagrams, expressions, image-only questions, and OpenAI API based answer judging.",
+  "participants_count": 96,
+  "submissions_count": 363,
+  "queue": null,
+  "enable_detailed_results": true,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": true,
+  "make_programs_available": false,
+  "make_input_data_available": true,
+  "docker_image": "codalab/codalab-legacy:py37",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 15762,
+  "reward": "",
+  "contact_email": "ai4mathICML@gmail.com",
+  "report": "",
+  "forum_enabled": true
+}

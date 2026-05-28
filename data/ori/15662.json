@@ -1,0 +1,347 @@
+{
+  "id": 15662,
+  "title": "MVAA 2026: Mitral Valve Anatomy Analysis Using Multimodal Imaging Data",
+  "published": true,
+  "created_by": "db0725",
+  "owner_display_name": "MVAA_baseline",
+  "created_when": "2026-04-14T13:38:37.626348Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-15-1776224307/a53b1e60e5cb/icon.png?AWSAccessKeyId=codabench-prod&Signature=2Dqpey1pLpk8lN6%2BAz6gZ5vPOao%3D&Expires=1779937166",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-15-1776224307/a53b1e60e5cb/icon_icon.png?AWSAccessKeyId=codabench-prod&Signature=kwOG3J8iai8yNsZmpsb6eS9ut7o%3D&Expires=1779937166",
+  "terms": "# MVAA 2026 References\n\n1. Bai J, et al. Beyond Benchmarks of IUGC: Rethinking Requirements of Deep Learning Method for Intrapartum Ultrasound Biometry from Fetal Ultrasound Videos. Medical Image Analysis, 2026.\n2. Bai J, et al. IUGC: A Benchmark of Landmark Detection in End-to-End Intrapartum Ultrasound Biometry. Medical Image Analysis, 2026: 103960.\n3. Bai J, Zhou Z, Ou Z, et al. PSFHS challenge report: Pubic symphysis and fetal head segmentation from intrapartum ultrasound images. Medical Image Analysis, 2025, 99:103353.\n4. Chen Z, Ou Z, Lu Y, et al. Direction-guided and multi-scale feature screening for fetal head–pubic symphysis segmentation and angle of progression calculation. Expert Systems with Applications, 2024, 245:123096.\n5. Lu Y, Zhi D, Zhou M, et al. Multitask deep neural network for the fully automatic measurement of the angle of progression. Computational and Mathematical Methods in Medicine, 2022.\n6. Lu Y, Zhou M, Zhi D, et al. The JNU-IFM dataset for segmenting pubic symphysis-fetal head. Data in Brief, 2022, 41:107904.\n7. Bai J, Sun Z, Yu S, et al. A framework for computing angle of progression from transperineal ultrasound images for evaluating fetal head descent using a novel double branch network. Frontiers in Physiology, 2022, 13:2565.\n8. Zhou Z, Lu Y, Bai J, et al. Segment Anything Model for fetal head–pubic symphysis segmentation in intrapartum ultrasound image analysis. Expert Systems with Applications, 2024:125699.\n9. Jiang J, Wang H, Bai J, et al. Intrapartum Ultrasound Image Segmentation of Pubic Symphysis and Fetal Head Using Dual Student-Teacher Framework with CNN-ViT Collaborative Learning. MICCAI. Springer, 2024:448–458.\n10. Ou Z, Bai J, Chen Z, et al. RTSeg-Net: a lightweight network for real-time segmentation of fetal head and pubic symphysis from intrapartum ultrasound images. Computers in Biology and Medicine, 2024, 175:108501.\n11. Qiu R, Zhou M, Bai J, et al. PSFHSP-Net: an efficient lightweight network for identifying pubic symphysis-fetal head standard plane from intrapartum ultrasound images. Medical & Biological Engineering & Computing, 2024.\n12. Chen G, Bai J, Ou Z, et al. PSFHS: intrapartum ultrasound image dataset for AI-based segmentation of pubic symphysis and fetal head. Scientific Data, 2024, 11(1):436.\n13. Chen Z, Lu Y, Long S, et al. Fetal head and pubic symphysis segmentation in intrapartum ultrasound image using a dual-path boundary-guided residual network. IEEE Journal of Biomedical and Health Informatics, 2024.\n14. Bai J, Lekadir K, Ni D, et al. Intrapartum Ultrasound Grand Challenge 2024. MICCAI 2024. Zenodo, 2024.\n15. Bai J, Ou Z, Lu Y, et al. Pubic Symphysis-Fetal Head Segmentation from Transperineal Ultrasound Images. MICCAI 2023. Zenodo, 2023.\n16. Bai J, Khobo I, Slimani S, et al. Landmark Detection Challenge for Intrapartum Ultrasound Measurement Meeting the Actual Clinical Assessment of Labor Progress. MICCAI 2025. Zenodo, 2025.\n17. Bai J, Yang Z, Hasan K, et al. Fetal Ultrasound Grand Challenge: Semi-Supervised Cervical Segmentation (FUGC25). ISBI 2025. Zenodo, 2024.\n18. Chen S, Wang H, Long S, Bai J, Jiang J. Ultrasound Video Segmentation of Pubic Symphysis and Fetal Head for Angle of Progression Measurement. ACM Multimedia Asia, 2024.\n19. Gan J, Liang Z, Fan J, et al. Accurate Fetal Head Descent Assessment During Labor Using Video Swin Transformer and Wavelet-Based Multitask Learning for 2024 MICCAI Challenge IUGC. Intrapartum Ultrasound. Springer, 2024:21–31.\n20. Gan J, Liang Z, Fan J, et al. Sequential Spatial-Temporal Network for Interpretable Automatic Ultrasonic Assessment of Fetal Head During Labor. ISBI 2025. IEEE, 2025.\n21. Chen Z, Ou Z, Lu Y, Campello VM, Bai J, Lekadir K. Uncertainty fetal head and pubic symphysis segmentation with enhanced multi-scale features and sparse visual graph attention. Expert Systems with Applications, 2026, 296:128998.\n22. Bai J, Kang X, Wang W, et al. A multimodal model in the prediction of the delivery mode using data from a digital twin-empowered labor monitoring system. Digital Health, 2024, 10:20552076241304934.\n23. Ramirez Zegarra R, Lizarraga Cepeda E, Ghi T. Intrapartum ultrasound. Best Practice & Research Clinical Obstetrics & Gynaecology, 2025, 101:102617.\n24. Zhou M, Yuan C, Chen Z, et al. Automatic angle of progress measurement of intrapartum transperineal ultrasound image with deep learning. MICCAI. Springer, 2020:406–414.\n25. Sherer DM. Intrapartum ultrasound. Ultrasound in Obstetrics & Gynecology, 2007, 30:123–139.\n26. Deng, Bo, et al. \"Baseline Method of the Foundation Model Challenge for Ultrasound Image Analysis.\" arXiv preprint arXiv:2602.01055 (2026).\n27. Luo Y, Long S, Wang H, et al. DSTCS: Dual-Student Teacher Framework with Segment Anything Model for Semi-Supervised Pubic Symphysis Fetal Head Segmentation[J]. arXiv preprint arXiv:2601.19446, 2026.\n28. Bai J, Tang Y, Zhou Z, et al. FUGC: Benchmarking Semi-Supervised Learning Methods for Cervical Segmentation[J]. arXiv preprint arXiv:2601.15572, 2026.\n29. Lin Z, Han L, Wang X, et al. Diagnostic Performance of Universal-Learning Ultrasound AI Across Multiple Organs and Tasks: the UUSIC25 Challenge[J]. arXiv preprint arXiv:2512.17279, 2025.\n30. Luo Y, Long S, Wang H, et al. Edge Awareness Network with Large Kernel Attention for Small Target Segmentation from Intrapartum Ultrasound Images[C]//2025 IEEE International Conference on Bioinformatics and Biomedicine (BIBM). IEEE, 2025: 5876-5883.\n31. Wiesenfarth, M., Reinke, A., Landman, B.A. et al. Methods and open-source toolkit for analyzing and visualizing challenge results. Sci Rep 11, 2369 (2021).\n32. Ghi, Tullio, et al. \"ISUOG Practice Guidelines: intrapartum ultrasound.\" Ultrasound Obstet Gynecol 52.1 (2018): 128-139.\n33. Salomon, L. J., et al. \"ISUOG Practice Guidelines: ultrasound assessment of fetal biometry and growth.\" Ultrasound Obstet Gynecol 53.6 (2019): 715-723.\n34. Coutinho, Conrado Milani, et al. \"ISUOG Practice Guidelines: role of ultrasound in the prediction of spontaneous preterm birth.\" Ultrasound Obstet Gynecol 60.3 (2022): 435-456.\n35. Carvalho, J. S., et al. \"ISUOG Practice Guidelines (updated): fetal cardiac screening.\" Ultrasound Obstet Gynecol 61.6 (2023): 788-803.",
+  "pages": [
+    {
+      "id": 75216,
+      "title": "Overview",
+      "content": "<div align=\"center\">\n\n# Mitral Valve Anatomy Analysis Using Multimodal Imaging Data\n\n## MICCAI 2026 Challenge - International Workshop on Medical World Models (MWM)\n\n</div>\n\nMitral valve assessment plays a central role in the diagnosis, treatment planning, and intraoperative guidance of structural heart disease. In clinical practice, physicians rely on multimodal imaging data with very different characteristics, including cardiac CT for pre-procedural geometry, 3D transesophageal echocardiography for intraoperative anatomical reference, and selected intraoperative frames for direct procedural observation. However, manual analysis across these modalities remains labor-intensive and subject to inter-observer variability.\n\nThe MVAA challenge aims to advance automated mitral valve analysis by providing a unified benchmark across multiple imaging modalities and surgical stages. Participants are encouraged to develop robust methods for segmentation and anatomy analysis that remain consistent across heterogeneous data sources and support clinically meaningful downstream use.\n\n## Aim of the Challenge\n\nTo develop automated methods for multimodal mitral valve anatomy analysis across CT, 3D TEE, and intraoperative image frames, with evaluation focused on segmentation quality, structural consistency, and clinical relevance.\n\n**Objectives:**\n\n- To establish a multimodal benchmark for mitral valve analysis spanning pre-operative, intraoperative, and procedural imaging data.\n- To evaluate algorithms for accurate segmentation and anatomy understanding under diverse image characteristics and clinical conditions.\n- To encourage models that generalize across modalities while preserving coherent structural representations of the mitral valve.\n- To promote collaboration between AI researchers, imaging scientists, and clinical experts in cardiac intervention.\n\n## Resources\n\n- **Challenge website:** https://mwm2026.github.io/mvaa\n- **Dataset (Training & Validation) - Link 1:** Full data for Task 1 and Task 2, plus the labeled data for Task 3: https://drive.google.com/file/d/14WneBUBZ1X4p69tRdRzximNb0IsWuh2B/view?usp=sharing\n- **Dataset (Training & Validation) - Link 2:** Unlabeled data for Task 3: https://drive.google.com/file/d/1K4vFo-4pdL1_xt-8msO-32bc2aEdJ7wS/view?usp=sharing\n- **Baseline code:** https://github.com/db0725/MVAA\n- **Contact:** dbd2002@foxmail.com",
+      "index": 0
+    },
+    {
+      "id": 79311,
+      "title": "Data Access Method",
+      "content": "# Data Access Method\n\nParticipants can choose **either** Baiduyunpan **or** GoogleDrive to download the dataset.\n\n### Option 1: Baiduyunpan (Single Link)\n* **Link:** [https://pan.baidu.com/s/1LYCH_MtTgqpiTUQsn0ToNQ?pwd=3ymi](https://pan.baidu.com/s/1LYCH_MtTgqpiTUQsn0ToNQ?pwd=3ymi)\n* **Password (提取码):** `3ymi`\n* **Note:** The folder contains a total of **6 compressed files**. If the page displays a violation warning or any compressed files are missing, please use the GoogleDrive links below instead.\n\n### Option 2: GoogleDrive (Must download BOTH links below)\nIf you choose to use GoogleDrive, you **must download both files** from the links below to get the complete dataset:\n* **Link 1:** [https://drive.google.com/file/d/14WneBUBZ1X4p69tRdRzximNb0IsWuh2B/view?usp=sharing](https://drive.google.com/file/d/14WneBUBZ1X4p69tRdRzximNb0IsWuh2B/view?usp=sharing)\n* **Link 2:** [https://drive.google.com/file/d/1K4vFo-4pdL1_xt-8msO-32bc2aEdJ7wS/view?usp=sharing](https://drive.google.com/file/d/1K4vFo-4pdL1_xt-8msO-32bc2aEdJ7wS/view?usp=sharing)\n\n### Task 3 Training Annotation Note\nPlease note that one Task 3 video training sample may contain an annotation issue:\n\n`t3_vid/train/REC_20250322_101917_746A/REC_20250322_101917_746A_000130.png`\n\nIn this sample, the label includes not only the mitral valve region but also part of the hollow cardiac chamber. Participants may choose to exclude this single training sample during model training or data cleaning. This issue is limited to the training set sample listed above; the validation set and test set annotations are not affected.\n\n### Official Baseline Model\nParticipants can access the official baseline and documentation via the following link (The model saving method of the baseline will not be used for final result evaluation; the final evaluation shall be subject to the official platform.):\n* **Link:** [https://github.com/db0725/MVAA](https://github.com/db0725/MVAA)",
+      "index": 1
+    },
+    {
+      "id": 76964,
+      "title": "Core Task",
+      "content": "# Core Task\n\nThe MVAA challenge is designed to reflect the real-world clinical workflow across multiple imaging modalities. The challenge is structured into three primary segmentation tasks.\n\n### Participation and Model Submission Requirements\n\nParticipants are required to complete and submit results for all three tasks. The final ranking will be determined based on the combined performance across the three tasks; therefore, submissions for only one or two tasks will not be sufficient for the final ranking.\n\nHowever, participants are not required to use a single unified multimodal model. Each task may be addressed independently, and participants may train and submit separate models for the CT, 3D TEE, and surgical video frame segmentation tasks.\n\n### Task 1: Mitral Valve Segmentation in Cardiac CT\nThis task focuses on the automated, multi-class anatomical segmentation of the mitral valve from 3D cardiac CT scans.\n*   **Target:** Participants are required to segment the mitral annulus and the anterior/posterior leaflets.\n*   **Clinical Significance:** High-resolution CT segmentation provides the precise spatial geometry necessary for pre-procedural planning, including device sizing and the selection of repair strategies for interventions like TEER or annuloplasty.\n\n### Task 2: Mitral Valve Segmentation in 3D Transesophageal Echocardiography (3D TEE)\nThis task addresses the segmentation of valve structures from volumetric 3D TEE (ultrasound) data, which serves as the key intraoperative reference for valve function.\n*   **Target:** Delineation of the valve leaflets from 3D ultrasound volumes.\n*   **Technical Focus:** Algorithms must be robust enough to handle ultrasound-specific artifacts, acoustic noise, signal dropout, and ambiguous boundaries between the leaflets and surrounding cardiac tissues.\n\n### Task 3: Mitral Valve Segmentation from Surgical Video Frames\nThis task focuses on extracting anatomical information from individual frames extracted from intraoperative surgical videos.\n*   **Target:** Pixel-level segmentation of the mitral valve structures as seen from the surgeon's direct viewpoint.\n*   **Methodology:** Although the data originates from video recordings, this task is defined as a frame-based segmentation problem. Participants should treat the provided frames as individual 2D images for training and inference.\n*   **Clinical Focus:** This task enables the verification of leaflet motion and structural continuity during the actual intervention, providing real-time feedback within the surgical environment.",
+      "index": 2
+    },
+    {
+      "id": 78182,
+      "title": "Dataset",
+      "content": "# MVAA Challenge - Dataset System\n\n## 1. Ethics Approval & Data License\n\n### 1.1 Ethics Approval\nAll data is anonymized, with approval from the Medical Ethics Committee (No. KY-N-2022-048-01).\n\n### 1.2 Data Usage Agreement & License\n* **License:** CC BY-NC (Attribution-NonCommercial)\n* No commercial use of the data is permitted; all usage must comply with the license terms.\n\n## 2. Data Source\n\n### 2.1 Acquisition Devices\n* **Cardiac CT:** Siemens Healthineers, GE Healthcare, Philips Healthcare, and Canon Medical Systems.\n* **3D TEE:** Philips Epiq cardiac ultrasound system.\n* **Surgical Video:** Standard endoscopic video recorder (720p, 30fps).\n\n### 2.2 Acquisition Centers\nThe dataset is collected from multiple clinical centers, including:\n* Guangdong Provincial People’s Hospital\n* The First Affiliated Hospital of Jinan University\n* Dongguan Eastern Central Hospital\n\n## 3. Dataset Scale & Partition\n\n### 3.1 Task 1: Cardiac CT Segmentation\n* **Training Set:** 1,067 images total (27 with ground-truth labels, 1,040 unlabeled for semi-supervised learning).\n* **Validation Set:** 30 images (without labels).\n\n### 3.2 Task 2: 3D TEE Segmentation\n* **Training Set:** 105 images with ground-truth labels.\n* **Validation Set:** 20 images (without labels).\n\n### 3.3 Task 3: Surgical Frame Segmentation\n\n* **Training Set:** 1,559 frames total.\n    * **Labeled Data:** 180 frames (118 frames contain the mitral valve).\n    * **Unlabeled Data:** 1,379 frames (for semi-supervised learning).\n* **Validation Set:** 48 images (without labels, all containing mitral valve structures for scoring).\n\n#### 3.3.1 Task 3 Label Note\n\nTask 3 labels may include annotations beyond the mitral valve. Only the mitral valve label is used for training and evaluation. In this task, the mitral valve is the only target segmentation class.\n\nParticipants should use the `*_Label.nii.gz` file within each `*_Label.tar` archive as the source of ground-truth annotations, and refer to the category mapping table in the corresponding `*_Label.json` file for confirmation. Specifically, category ID `10` corresponds to the mitral valve.\n\nThe `*_Label.json` file is intended only for reading category names, colors, and metadata, and should not be used as the primary label source for training.\n\nSome polygon annotations in the JSON files are incomplete or empty; therefore, generating training labels from `Polys.Shapes` is not recommended. Of the 180 labeled frames, 118 contain valid mitral valve annotations. Unlabeled frames may also include images without visible mitral valve structures.\n\n\n## 4. Data Novelty\n* **Multi-modal Data Resource:** The challenge includes cardiac CT, 3D TEE, and surgical video data collected from multiple clinical centers. In the current public release, these modalities are provided as independent datasets, and no formal CT-video pairing metadata or case mapping table is included.\n* **Unpublished Data:** More than 140 newly collected, unpublished ultrasound images have been provided for validation and testing to ensure fair evaluation of generalization.\n\n## 5. Inclusion & Exclusion Criteria\n\n### 5.1 Inclusion Criteria\n1. Standard clinical cardiac views suitable for mitral valve assessment.\n2. Sufficient image quality for expert annotation of leaflets and annulus.\n3. Availability of corresponding clinical measurement references.\n\n### 5.2 Exclusion Criteria\n1. Severe imaging artifacts or signal dropout hindering anatomical visibility.\n2. Duplicated or corrupted data.\n3. Cases with uncertain clinical reference measurements.\n\n## 6. Annotation Characteristics\n\n### 6.1 Annotation Method\n* **Two-Stage Process:** Initial annotations by two trained medical experts followed by review and refinement by a board-certified radiologist with over 10 years of experience.\n* **Semi-automated refinement:** For ultrasound data, an initial automatic segmentation was followed by manual review and modification by two annotators until agreement was reached.\n\n### 6.2 Annotation Quality Control (QC)\n* **Inter-observer Reliability:** Evaluated on a subset of 30 images using ICC and absolute error distributions.\n* **Adjudication:** Senior clinical specialists resolved discrepancies to ensure the reliability of reference annotations.\n\n## 7. Data Preprocessing\n1. **Anonymization:** Removal of all patient-related information from metadata.\n2. **Standardization:** CT and TEE data converted to NIfTI format; surgical video frames extracted as 2D images.\n3. **Resampling:** Data resampled to a consistent resolution to ensure uniform slice-level annotation.\n\n## 8. Main Annotation Error Sources\n1. **Inter-Annotator Variability:** Differences in identifying subtle mitral valve boundaries in low-contrast cases.\n2. **Annotation Ambiguity:** Inherent ambiguity of valve boundaries due to pathological alterations or imaging limitations.\n3. **Technical Limitations:** Errors introduced by the resolution constraints of the annotation tools.",
+      "index": 3
+    },
+    {
+      "id": 74886,
+      "title": "Evaluation",
+      "content": "# Evaluation Metrics\n\nAll tasks in this challenge are evaluated using three standard segmentation metrics: Dice Similarity Coefficient (DSC), Hausdorff Distance (HD), and Average Surface Distance (ASD). These metrics measure both region overlap and boundary accuracy between the submitted segmentation and the reference annotation.\n\nFor each case, the prediction is compared with the corresponding ground truth mask. Final task-level results are obtained by averaging case-level metric values across all evaluated cases.\n\n## 1. Metrics Definitions\n\n### Dice Similarity Coefficient (DSC)\nThe Dice score measures the overlap between the predicted segmentation and the ground truth.\n- **Range:** [0, 1], where 1 indicates perfect overlap.\n- **Definition:** DSC is computed as twice the intersection of the two masks divided by the sum of their volumes or areas.\n- **Interpretation:** A higher DSC indicates better segmentation overlap.\n\n### Hausdorff Distance (HD)\nThe Hausdorff Distance evaluates boundary accuracy by measuring the largest surface discrepancy between the prediction and the ground truth.\n- **Definition:** HD is computed as the maximum of the bidirectional surface-to-surface distances between the predicted mask and the reference mask.\n- **Implementation:** Surfaces are extracted from binary masks, and Euclidean distances are computed using image spacing when spacing metadata is available.\n- **Interpretation:** A lower HD indicates better boundary alignment.\n\n### Average Surface Distance (ASD)\nASD measures the average distance between the predicted surface and the ground truth surface.\n- **Definition:** ASD is computed as the symmetric mean of the distances from the predicted surface to the reference surface and from the reference surface to the predicted surface.\n- **Implementation:** As with HD, distance computation uses image spacing when available.\n- **Interpretation:** A lower ASD indicates better overall shape agreement.\n\n## 2. Task-Specific Computation\n\n### Task 1: CT Segmentation\nTask 1 is evaluated as a 3D segmentation task.\n- **Foreground definition:** label `1`\n- **Per-case computation:** DSC, HD, and ASD are computed on the binary foreground mask for each case.\n- **Final task result:** the mean of all case-level values.\n\n### Task 2: TEE Segmentation\nTask 2 is evaluated as a 3D multi-class segmentation task.\n- **Foreground definition:** labels `1` and `2`\n- **Per-case computation:** metrics are computed separately for each foreground class, and the class-wise metric values are averaged within each case.\n- **Final task result:** the mean of all case-level values.\n\n### Task 3: Video/Image Segmentation\nTask 3 is evaluated as a 2D segmentation task.\n- **Foreground definition:** the prediction is treated as a binary foreground mask, and it is compared against the case-specific `target_label` in the ground truth.\n- **Per-case computation:** DSC, HD, and ASD are computed for each case or frame.\n- **Final task result:** the mean of all case-level values.\n\n## 3. Important Evaluation Notes\n\n- **Spacing-aware distance metrics:** HD and ASD are computed with physical spacing when spacing metadata is available; otherwise, unit spacing is used.\n- **Symmetric surface distance:** Both HD and ASD are computed bidirectionally between prediction and reference surfaces.\n- **Missing or invalid predictions:** If a case is missing or cannot be evaluated, a penalty is assigned (`DSC = 0`, `HD = large penalty`, `ASD = large penalty`).\n- **Empty-mask handling:** If both prediction and ground truth are empty for an evaluated class, the case is treated as a perfect match for that class (`DSC = 1`, `HD = 0`, `ASD = 0`).\n\n## 4. Ranking Strategy\n\nThe official evaluation bundle reports the three metrics separately for each task:\n- `Task1_DSC`, `Task1_HD`, `Task1_ASD`\n- `Task2_DSC`, `Task2_HD`, `Task2_ASD`\n- `Task3_DSC`, `Task3_HD`, `Task3_ASD`\n\nNo additional normalized composite score is computed inside the current evaluation bundle. Participants should therefore interpret performance jointly across overlap accuracy (DSC) and boundary accuracy (HD and ASD), where higher DSC and lower HD/ASD indicate better performance.\n\n## 5. Submission Result Logs\n\nAfter submitting, participants can inspect the detailed evaluation output in the competition logs.\n- Open the `LOGS` tab of the submission.\n- Go to `Prediction Logs`.\n- Check `Ingestion stdout` to view the per-task evaluation results printed by the ingestion program.",
+      "index": 4
+    },
+    {
+      "id": 74725,
+      "title": "Participation Rules",
+      "content": "# MVAA Challenge - Participation Rules\n\n## 1. Challenge Life Cycle\n* **Open Call:** The challenge opens for new submissions after the initial conference submission deadline to encourage continuous improvement and long-term benchmarking.\n\n## 2. Participation Policies\n\n### 2.1 Algorithm Development\n* **Task-Specific Learning Strategies:**\n    * **Tasks 1 & 3 (Semi-supervised):** Participants are required to use the provided unlabeled data in Task 1 (CT) and Task 3 (Surgical Frames) to develop semi-supervised methods. \n    * **Task 2 (Supervised):** Since all datasets provided for Task 2 (3D TEE) are fully annotated, participants should focus on supervised learning methods for this track.\n* **External Data:** Participants are allowed to use only publicly available external datasets and publicly released pre-trained models. Additional private annotations of public data or the use of private datasets are strictly prohibited.\n\n### 2.2 Organizer Institute Participants\n* Members of the organizers' institutes may participate in the challenge but are **not eligible for awards** and will **not be listed in the official leaderboard**.\n\n## 3. Submission Rules\n\n### 3.1 Submission Method\n* **Validation Phase:** Participants submit their predicted segmentation masks for the validation set directly to the CodaBench platform to receive immediate feedback.\n* **Testing Phase:** For the final evaluation, participants must provide a **Docker container**. This ensures a transparent, reproducible, and fair benchmarking environment.\n\n### 3.2 Submission Limits\n* **Validation Phase:** Teams may submit up to **2 submissions per day** during the validation phase to prevent overfitting.\n* **Final Evaluation:** Only the final successful Docker submission will be used for the ranking on the hidden test set.\n\n## 4. Award Policy\n\n1. **Cash Awards:** A total prize pool of **10,000 RMB** will be awarded to the **top 10 teams** (distribution details to be announced).\n2. **Certificates:** Official certificates will be provided to the top-performing teams and the team with the most innovative method.\n3. **MICCAI 2026 Presentation:** The top 10 teams will be invited to give oral presentations at the MICCAI 2026 workshop.\n4. **Journal Invitation:** Outstanding teams will be encouraged to submit extended versions of their methods to a related journal special issue.\n5. **Challenge Compendium:** Co-authorship of the challenge summary paper, which will be submitted to a high-impact medical image analysis journal.\n\n## 5. Result Announcement\n* The top 10 performing methods will be publicly announced by the organizers.\n* The announcement will include team names and overall rankings based on the official evaluation metrics.\n\n## 6. Publication Policy\n* Members of the top-10 teams who make significant contributions to the research qualify as authors of the summary paper.\n* Participating teams are allowed to publish their own results separately, respecting the collective efforts of the challenge.\n\n## 7. Code Availability Requirement\n* Algorithm code release (via a GitHub repository) and the submission of a corresponding conference paper are **prerequisites for award eligibility**.",
+      "index": 5
+    },
+    {
+      "id": 74726,
+      "title": "Timeline",
+      "content": "# Timeline\n\nAll deadlines are at **23:59 (UTC+8)** on the dates listed below. Please note that these dates are subject to minor adjustments depending on the official MICCAI 2026 schedule.\n\n## Key Milestones\n\n* **April 15, 2026:** Training Data Release\n    - Participants can download the training datasets (labeled and unlabeled) to begin model development.\n\n* **June 01, 2026:** Validation Data Release\n    - The validation set (without labels) will be released. The CodaBench leaderboard will open for preliminary scoring.\n\n* **July 01, 2026:** Test Phase / Final Evaluation Start\n    - The hidden test set evaluation phase begins. Participants will be required to prepare their final models and Docker containers.\n\n* **August 01, 2026:** Final Submission Deadline\n    - Deadline for all algorithm and Docker container submissions for the official challenge ranking.\n\n* **September 01, 2026:** Winner Announcement & Invitations\n    - Announcement of the top-performing teams and invitation of speakers for the workshop.\n\n* **September 27 - October 01, 2026:** MICCAI 2026 Conference (France)\n    - The official challenge workshop, final results presentation, and award ceremony will take place during the MICCAI 2026 conference in **France**.\n\n## Note\nAny changes to the timeline will be announced via the competition website and through emails sent to registered participants.",
+      "index": 6
+    },
+    {
+      "id": 74706,
+      "title": "Organization",
+      "content": "# MVAA Challenge - Organization Team\n\n## 1. Organizers\n1. **Jieyun Bai** (The University of Auckland, New Zealand)\n2. **Mohamed Hammad** (Prince Sultan University, Saudi Arabia)\n3. **Tao Jia** (Chongqing Normal University, China)\n4. **Mohammad Yaqub** (Mohamed bin Zayed University of Artificial Intelligence, MBZUAI, UAE)\n5. **Karim Lekadir** (University of Barcelona, Spain)\n6. **Shuo Li** (Case Western Reserve University, USA)\n7. **Jichao Zhao** (The University of Auckland, New Zealand)\n8. **Jun Ma** (University of Toronto, Canada)\n9. **Kuanquan Wang** (Harbin Institute of Technology, China)\n10. **Wei Hu** (The University of Manchester, UK)\n11. **Henggui Zhang** (The University of Manchester, UK)\n12. **Haibo Ni** (Nanjing University, China)\n13. **Yitong Tang** (Jinan University, China)\n\n## 2. Advisors\n1. **Islem Rekik** (Imperial College London, UK)\n2. **Weidong Cai** (University of Sydney, Australia)\n3. **Dong Ni** (Shenzhen University, China)\n4. **Pan Zeng** (Chongqing Normal University, China)\n5. **Wenfeng Zhang** (Chongqing Normal University, China)\n\n## 3. Contributors\n1. **Xiaoshen Zhang** (The First Affiliated Hospital of Jinan University, China)\n2. **Hua Lu** (The First Affiliated Hospital of Jinan University, China)\n3. **Yufei Zhan** (The First Affiliated Hospital of Jinan University, China)\n4. **Qinyuan Zeng** (The First Affiliated Hospital of Jinan University, China)\n5. **Jingyi He** (The First Affiliated Hospital of Jinan University, China)\n6. **Yu Zhang** (The First Affiliated Hospital of Jinan University, China)\n7. **Li Wang** (Guangzhou Women and Children's Medical Center, China)\n8. **Yuxin Huang** (Zhujiang Hospital of Southern Medical University, China)\n9. **Bo Deng** (Jinan University, China)\n10. **Jiake Li** (Jinan University, China)\n11. **Patrick Carnahan** (Western University, Canada)\n12. **Jie Gan** (University of Sydney, Australia)\n\n## 4. Role of Clinical Experts\n* Provide real-world clinical data (CT, 3D TEE, and Surgical Video) acquired under routine diagnostic conditions across multiple institutions and patient populations.\n* Perform and supervise expert annotations, including pixel-level segmentation mask labeling in accordance with standardized clinical protocols.\n* Evaluate annotation quality and inter-rater consistency to ensure that the reference labels accurately reflect true clinical variability and meet established diagnostic standards.\n\n## 5. Primary Contact\n* **Name:** Jieyun Bai\n* **Affiliation:** The University of Auckland, New Zealand\n* **Email:** jbai996@aucklanduni.ac.cn",
+      "index": 7
+    },
+    {
+      "id": 74707,
+      "title": "Technical Support",
+      "content": "# MVAA Challenge - Technical Support\n\n## 1. Challenge Platform & Venue\n\n### 1.1 Official Operation Platform\n* **CodaBench:** [https://www.codabench.org/](https://www.codabench.org/)\n* Used for submission, evaluation, ranking, and result publication.\n* Standardized evaluation scripts, metrics, and execution settings are provided for a fair and reproducible benchmarking environment.\n* **Past Reference:** IUGC 2025 on CodaBench ([https://www.codabench.org/competitions/7108/](https://www.codabench.org/competitions/7108/))\n\n### 1.2 Challenge Venue\n* Integrated into the following MICCAI 2026 workshop:\n    * **The 1st MICCAI Workshop on Medical World Models (MWM)**\n\n### 1.3 Website\n* The official website is **not yet publicly available** at this stage; all major updates will be released on the CodaBench platform and workshop official pages.\n\n## 2. Computing Environment\n\n### 2.1 Participant Side\n* Participants develop and train algorithms using **their own computing infrastructure**, providing full flexibility in model design and optimization.\n* Solutions are expected to process one case within **10 seconds on a 12 GB GPU**.\n\n### 2.2 Evaluation Side\n* CodaBench platform uses **standardized computing settings** for test set evaluation (via Docker containers) to eliminate local hardware differences.\n* Evaluation scripts are pre-defined and will be publicly available on GitHub to ensure transparency.\n\n## 3. Open-Source Resources (Provided by Organizers)\n\n### 3.1 Evaluation Software\n* The evaluation software will be **publicly available** to all participants via an open repository (e.g., GitHub).\n* It includes comprehensive documentation, usage instructions, and platform requirements for local validation before final testing.\n\n### 3.2 Official Baseline Model\n* An official baseline model will be released to help participants calibrate their development.\n* This will include a reference implementation and a **pre-trained foundation-model checkpoint**.\n* Detailed instructions for fine-tuning and inference on the challenge dataset will be provided.\n\n## 4. Code & Data Access\n\n### 4.1 Participant Code Requirement\n* A GitHub repository URL containing the complete source code is a **prerequisite for award eligibility**.\n* Code must be reproducible and follow standard open-source guidelines.\n\n### 4.2 Test Set Label Access\n* **Only organizers** have access to the hidden test dataset labels during the challenge.\n* All test labels will be **publicly released 6 months after the challenge conclusion** for post-challenge research.\n\n## 5. Conflict of Interest\n* The organizers declare **no conflicts of interest**. No external commercial or institutional interests influence the challenge design, evaluation, or ranking.\n\n## 6. Technical Contact\nFor any technical issues regarding the platform, data integrity, or evaluation scripts, please contact:\n* **Technical Lead:** [tyt6xx@163.com](mailto:tyt6xx@163.com)",
+      "index": 8
+    },
+    {
+      "id": 74708,
+      "title": "Future Plans",
+      "content": "# MVAA Challenge - Publication & Future Plans\n\nThe MVAA challenge has a comprehensive publication framework, with a focus on clinical relevance, methodological novelty, and long-term multimodal benchmark development.\n\n## 1. Conference Proceedings Publication\n* **Springer LNCS:** We will coordinate post-conference proceedings, enabling participating teams to publish detailed method descriptions in the **Springer Lecture Notes in Computer Science (LNCS)** volumes linked to the 1st MICCAI Workshop on Medical World Models (MWM).\n* **Open Access:** This mechanism ensures that all successful technical contributions are publicly available and citeable within the MICCAI ecosystem.\n\n## 2. Journal Special Issue Submission\n* **Outstanding Contributions:** High-impact submissions will be invited to submit extended manuscripts to the **IEEE Transactions on Biomedical Engineering (TBME)** Special Issue entitled: *“Digital Twins, Simulation-Based AI and Medical World Models.”*\n* **Selection Criteria:** Evaluation goes beyond leaderboard ranking, focusing on methodological novelty, cross-modal generalization, and real-world clinical deployment potential for mitral valve analysis.\n\n## 3. Challenge Summary Manuscripts\n* **Journal-level Summary:** We will coordinate a comprehensive challenge summary manuscript to report and analyze MVAA outcomes.\n* **Analysis:** Content will include a meta-analysis of all participating methods, key findings in multimodal segmentation, and research trends in structural heart disease analysis.\n* **Purpose:** This paper serves as an authoritative reference for the community, informing future research directions in unified anatomical modeling.\n\n## 4. Long-Term Future Plans\n1. **Annual Repeated Event:** Maintain the challenge as an **annual event** with fixed MICCAI deadlines, continuously expanding the dataset with new multimodal clinical data.\n2. **Integration with World Models:** Further integrate the benchmark with **medical world models and digital twin frameworks**, extending mitral valve analysis to longitudinal and predictive surgical modeling.\n3. **Clinical Translation:** Promote the translation of top-performing algorithms into clinical tools for mitral valve repair, TEER, and annuloplasty, reducing operator dependence and improving intervention safety.\n4. **Global Collaboration:** Establish a sustainable consortium for multimodal heart research, fostering ongoing collaboration between clinicians, sonographers, and AI researchers.",
+      "index": 9
+    },
+    {
+      "id": 75931,
+      "title": "Q&A",
+      "content": "# Q&A\n\nIf you have any questions, you can contact the following four persons in charge. **Please contact Bo Deng first.**\n\n* **Bo Deng**, Jinan University, China  \n  Email: [dbd2002@foxmail.com](mailto:dbd2002@foxmail.com)\n\n* **Jieyun Bai**, The University of Auckland, New Zealand / Jinan University, China  \n  Email: [bai_jieyun@126.com](mailto:bai_jieyun@126.com)\n\n* **Yitong Tang**, Jinan University, China  \n  Email: [tyt6xx@163.com](mailto:tyt6xx@163.com)\n\n* **Jiake Li**, Jinan University, China  \n  Email: [ljk.me@qq.com](mailto:ljk.me@qq.com)",
+      "index": 10
+    }
+  ],
+  "phases": [
+    {
+      "id": 25792,
+      "index": 0,
+      "start": "2026-06-01T00:00:00Z",
+      "end": "2026-07-01T00:00:00Z",
+      "name": "Validation Phase",
+      "description": "Validation-only platform. Participants submit prediction files and receive\nimmediate feedback for format/completeness and metric sanity checks.\nDisplay sorting in this phase is by Task1_DSC only and is not official final ranking.",
+      "status": "Next",
+      "execution_time_limit": 7200,
+      "tasks": [
+        {
+          "task": "55ebd2b9-f1e2-48a1-9765-7b1f0d51d51d",
+          "order_index": 0,
+          "phase": 25792,
+          "id": 31718,
+          "value": "55ebd2b9-f1e2-48a1-9765-7b1f0d51d51d",
+          "key": "55ebd2b9-f1e2-48a1-9765-7b1f0d51d51d",
+          "created_when": "2026-04-14T13:38:37.566981Z",
+          "name": "MVAA Unified Segmentation Evaluation",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 703575,
+              "created_by": "db0725",
+              "owner_display_name": "MVAA_baseline",
+              "created_when": "2026-04-14T13:38:36.681754Z",
+              "name": "input_data @ '04-14-2026 13:38'",
+              "type": "input_data",
+              "description": null,
+              "is_public": false,
+              "key": "c9c75dda-e3d9-4e7c-85aa-d280c4e8983d",
+              "value": "c9c75dda-e3d9-4e7c-85aa-d280c4e8983d",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 15662,
+                  "title": "MVAA 2026: Mitral Valve Anatomy Analysis Using Multimodal Imaging Data"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 2687124.0
+            },
+            {
+              "id": 703577,
+              "created_by": "db0725",
+              "owner_display_name": "MVAA_baseline",
+              "created_when": "2026-04-14T13:38:37.099937Z",
+              "name": "reference_data @ '04-14-2026 13:38'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "2c3568ac-87e4-4f7b-95c6-9520ee396e2b",
+              "value": "2c3568ac-87e4-4f7b-95c6-9520ee396e2b",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 15662,
+                  "title": "MVAA 2026: Mitral Valve Anatomy Analysis Using Multimodal Imaging Data"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 2686192.0
+            },
+            {
+              "id": 705693,
+              "created_by": "db0725",
+              "owner_display_name": "MVAA_baseline",
+              "created_when": "2026-04-15T14:32:46.104067Z",
+              "name": "new ingest",
+              "type": "ingestion_program",
+              "description": "new ingest",
+              "is_public": false,
+              "key": "f6f06167-2dc7-45ff-bd52-fde40fa61c24",
+              "value": "f6f06167-2dc7-45ff-bd52-fde40fa61c24",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 15662,
+                  "title": "MVAA 2026: Mitral Valve Anatomy Analysis Using Multimodal Imaging Data"
+                },
+                {
+                  "pk": 15702,
+                  "title": "MVAA 2026: Mitral Valve Anatomy Analysis Using Multimodal Imaging Data"
+                }
+              ],
+              "competition": null,
+              "file_name": "ingestion_program_new.zip",
+              "file_size": 20779.0
+            },
+            {
+              "id": 705694,
+              "created_by": "db0725",
+              "owner_display_name": "MVAA_baseline",
+              "created_when": "2026-04-15T14:33:15.123693Z",
+              "name": "new score",
+              "type": "scoring_program",
+              "description": "new score",
+              "is_public": false,
+              "key": "2c451aca-6b06-40a5-93ee-5e13065cbe77",
+              "value": "2c451aca-6b06-40a5-93ee-5e13065cbe77",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 15662,
+                  "title": "MVAA 2026: Mitral Valve Anatomy Analysis Using Multimodal Imaging Data"
+                },
+                {
+                  "pk": 15702,
+                  "title": "MVAA 2026: Mitral Valve Anatomy Analysis Using Multimodal Imaging Data"
+                }
+              ],
+              "competition": null,
+              "file_name": "score_program_new.zip",
+              "file_size": 14710.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 2,
+      "max_submissions_per_person": 10,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 17280,
+      "primary_index": 0,
+      "title": "MVAA Validation Leaderboard",
+      "key": "mvaa",
+      "columns": [
+        {
+          "id": 74200,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task1 DSC",
+          "key": "Task1_DSC",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 74201,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task1 HD",
+          "key": "Task1_HD",
+          "sorting": "asc",
+          "index": 1,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 74202,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task1 ASD",
+          "key": "Task1_ASD",
+          "sorting": "asc",
+          "index": 2,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 74203,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task2 DSC",
+          "key": "Task2_DSC",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 74204,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task2 HD",
+          "key": "Task2_HD",
+          "sorting": "asc",
+          "index": 4,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 74205,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task2 ASD",
+          "key": "Task2_ASD",
+          "sorting": "asc",
+          "index": 5,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 74206,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task3 DSC",
+          "key": "Task3_DSC",
+          "sorting": "desc",
+          "index": 6,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 74207,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task3 HD",
+          "key": "Task3_HD",
+          "sorting": "asc",
+          "index": 7,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 74208,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task3 ASD",
+          "key": "Task3_ASD",
+          "sorting": "asc",
+          "index": 8,
+          "hidden": false,
+          "precision": 2
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Add"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": true,
+  "description": "MVAA 2026 evaluates multimodal AI methods for mitral valve anatomy analysis across\nthree clinically grounded segmentation tasks: (1) CT segmentation,\n(2) 3D TEE segmentation, and (3) surgical video segmentation.\n\nFinal ranking is based on normalized task-level scores aggregated equally across tasks.",
+  "participants_count": 92,
+  "submissions_count": 2,
+  "queue": null,
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": true,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "db0725/mvaa:latest",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 15437,
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "forum_enabled": true
+}

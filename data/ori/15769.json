@@ -1,0 +1,227 @@
+{
+  "id": 15769,
+  "title": "The Challenge on General AIGC Audio–Video Detection",
+  "published": true,
+  "created_by": "lixiang",
+  "owner_display_name": "lixiang",
+  "created_when": "2026-04-18T05:03:43.885782Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-21-1776751074/2acec80a7ccb/1d053422-872b-412a-be59-e3742425ce5.jfif?AWSAccessKeyId=codabench-prod&Signature=j%2FjGfW3f7DeV8I5gSsWIbxbs4vc%3D&Expires=1779937165",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-21-1776751074/2acec80a7ccb/1d053422-872b-412a-be59-e3742425ce5_icon.jfif?AWSAccessKeyId=codabench-prod&Signature=1LsUK8jCH%2BPr4fDqlKDRexEDf%2Fk%3D&Expires=1779937165",
+  "terms": "# Terms and Conditions\n***\nThis competition is for educational and research purposes, and it is governed by the [<ins>General ChaLearn Contest Rules</ins>](http://www.causality.inf.ethz.ch/GeneralChalearnContestRuleTerms.html).",
+  "pages": [
+    {
+      "id": 78821,
+      "title": "Overview",
+      "content": "# General AIGC Audio-Video Detection\n\nThis competition focuses on **General AIGC Audio-Video Detection**. To counter the growing threat of advanced AI-generated video forgery (e.g., Sora2, Veo3.1), we propose a large-scale multimodal detection challenge based on the **MVAD dataset** (released as DDL‑GAV), which contains more than **200,000 real‑forgery audio‑video samples**. It covers both realistic and anime visual styles, four content categories (humans, animals, objects, and scenes), three typical cross‑modal forgery patterns, and more than **23 AI generation techniques**, including text‑to‑video, image‑to‑video, video‑to‑video, and audio‑to‑video synthesis. The competition aims to promote the research and application of multimodal deepfake detection and support the sustainable development of **AI for Good**.\n\nCompetition link: https://www.codabench.org/competitions/15769/\n\nIf any participants have any questions, please send an email to: 17318508682@163.com\n\n#### Note: The Test Set has been officially released on the GitHub repository as of May 15, 2026.\n\n---\n\n## Evaluation Metrics\nThis challenge includes **two hierarchical detection tasks**: binary forgery detection and four‑class modality classification.\n### Task Definitions\n- Real‑Real (RR): Both audio and video are authentic.\n- Fake‑Real (FR): Video is forged, audio is real.\n- Real‑Fake (RF): Video is real, audio is forged.\n- Fake‑Fake (FF): Both audio and video are forged.\n\n### Evaluation Metrics\nDetection performance is evaluated using **AUC, ACC, F1, and AP**.\n\n### Final Score Calculation\n- Binary Classification Score = 0.2×AUC + 0.3×ACC + 0.3×AP + 0.2×F1\n- Four‑Class Classification Score = 0.2×AUC + 0.3×ACC + 0.3×AP + 0.2×F1\n- **Overall Final Score = 0.4 × Binary Classification Score + 0.6 × Four‑Class Classification Score**\n\n## Submission Format\n\nParticipants must submit **two prediction files** packaged together in **a single `.zip` archive**.\n\n### Packaging Rules\n\n- The zip archive can have **any name** (`submission.zip`, `result.zip`, etc.).\n- It must contain exactly two files, named **precisely** `binary.txt` and `four_class.txt` (case-sensitive — do not rename).\n- The two files may sit at the zip root or inside a subfolder — both are accepted.\n- Submit prediction results only — **do not** submit model code.\n\n### 1. `binary.txt` — Binary Classification (Real / Fake)\n\nEach line: `video_path  0_pred  1_pred`\n\n- `0_pred` = probability of **Real**\n- `1_pred` = probability of **Fake**\n- An optional header line `video_path,0_pred,1_pred` is allowed and will be skipped.\n\n```\nvideo_path,0_pred,1_pred\n000bfd940cf44f998b1b4803d48d7d05.mp4 0.5066 0.4934\n0016150625f846bf8feebc6e5c0831b8.mp4 0.5100 0.4900\n001eb668e3ba4ecd89417be16ca7b613.mp4 0.6434 0.3566\n```\n\n### 2. `four_class.txt` — Four-Class Classification\n\nEach line: `video_path  0_pred  1_pred  2_pred  3_pred`\n\n- Class indices: `0 = Real-Real (RR)`, `1 = Fake-Fake (FF)`, `2 = Fake-Real (FR)`, `3 = Real-Fake (RF)`\n- An optional header line is allowed and will be skipped.\n\n```\nvideo_path,0_pred,1_pred,2_pred,3_pred\n000bfd940cf44f998b1b4803d48d7d05.mp4 0.1292 0.0075 0.3836 0.4796\n0016150625f846bf8feebc6e5c0831b8.mp4 0.2880 0.0590 0.2999 0.3531\n001eb668e3ba4ecd89417be16ca7b613.mp4 0.3144 0.0230 0.3682 0.2944\n```\n\n### Important Notes\n\n- **`video_path` must exactly match the test-set filenames** (the hashed `.mp4` names in the released test data). Mismatched names are treated as missing and scored with a default uniform probability.\n- Within a line, use **either spaces or commas** as the separator consistently — do **not** mix `comma + space`.\n- Probabilities need not sum exactly to 1 — the scorer normalizes each row automatically.\n- **Every test-set sample should appear in both files.** Missing rows are filled with default probabilities and will lower your score.\n\n## Awards and Recognition\n- Outstanding solutions will be invited for presentation at IJCAI.\n- **Top 1–5 teams** will receive official Ranking Certificates.\n- **Top 6–10 teams** will receive Excellence Awards.\n- Submitted papers for **Track 2** will have the opportunity to be selected for the Best Paper Award.\n\n## Dataset\nThis competition is built on the **MVAD dataset** (released as DDL‑GAV), the first large‑scale benchmark for multimodal AI‑generated audio‑video detection. It contains more than **205,000 video‑audio samples**, covering two visual domains (realistic and anime), four content categories (humans, animals, objects, scenes), three cross‑modal forgery patterns, and over **23 AI generation methods**. The dataset provides comprehensive and diverse support for advancing research in generalizable AIGC audio‑video detection.\n\nGitHub repository: https://github.com/HuMengXue0104/MVAD\n\n## Competition Rules\n1. Model Submission Requirements\nEach track permits only one model submission to address the designated tasks.\nAll pre-trained backbone models used must be open-source. Teams that develop proprietary backbone models during the competition are required to publicly release their model specifications and training protocols under an open-source license (e.g., MIT, Apache 2.0) during the competition period.\nWinning solutions must open-source their complete implementation, including:\n    - Training pipelines and hyperparameter configurations\n    - Evaluation code and reproducibility documentation\n    - Final model weights in standard formats\n2. Dataset Usage Requirements\nOnly organizer-recommended, publicly released datasets are permitted for training and evaluation.\nParticipants may use extended samples generated from these recommended datasets via data augmentation or deepfake tools for training, but all generation tools used must be submitted to the organizers to ensure reproducibility.\nThe use of any additional external datasets is strictly prohibited.\n\n3. Violations and Sanctions\nViolations of the above rules will result in disqualification. The organizing committee reserves the final authority over all competition-related matters.",
+      "index": 0
+    }
+  ],
+  "phases": [
+    {
+      "id": 25978,
+      "index": 0,
+      "start": "2026-05-14T08:00:00Z",
+      "end": "2026-06-12T08:00:00Z",
+      "name": "Competition Phase",
+      "description": "Submit the prediction results according to the specified format, and perform multimodal true/false classification on the test set.",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "0d1d85ad-759e-438d-8668-d99f02b280ca",
+          "order_index": 0,
+          "phase": 25978,
+          "id": 33241,
+          "value": "0d1d85ad-759e-438d-8668-d99f02b280ca",
+          "key": "0d1d85ad-759e-438d-8668-d99f02b280ca",
+          "created_when": "2026-05-21T15:15:18.991712Z",
+          "name": "AIGC Multimodal Classification Task2",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 775803,
+              "created_by": "lixiang",
+              "owner_display_name": "lixiang",
+              "created_when": "2026-05-21T15:15:18.474439Z",
+              "name": "scoring_program @ '05-21-2026 15:15'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "93ba1870-28e9-438a-88b0-447e97b60041",
+              "value": "93ba1870-28e9-438a-88b0-447e97b60041",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 15769,
+                  "title": "The Challenge on General AIGC Audio–Video Detection"
+                },
+                {
+                  "pk": 16579,
+                  "title": "AIGC Audio-Video Deepfake Classification Challenge using the MVAD dataset."
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 11838.0
+            },
+            {
+              "id": 775804,
+              "created_by": "lixiang",
+              "owner_display_name": "lixiang",
+              "created_when": "2026-05-21T15:15:18.573895Z",
+              "name": "reference_data @ '05-21-2026 15:15'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "d751faaa-ddc7-4af7-a782-c500bf6d40dc",
+              "value": "d751faaa-ddc7-4af7-a782-c500bf6d40dc",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 15769,
+                  "title": "The Challenge on General AIGC Audio–Video Detection"
+                },
+                {
+                  "pk": 16579,
+                  "title": "AIGC Audio-Video Deepfake Classification Challenge using the MVAD dataset."
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 451793.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 1,
+      "max_submissions_per_person": 30,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 17390,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "main_leaderboard",
+      "columns": [
+        {
+          "id": 74717,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Final Score",
+          "key": "score",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 74718,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Binary Score",
+          "key": "binary_score",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 74719,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Four-Class Score",
+          "key": "four_class_score",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 74720,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Binary AUC",
+          "key": "binary_auc",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 74721,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Binary ACC",
+          "key": "binary_acc",
+          "sorting": "desc",
+          "index": 4,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 74722,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Four-Class F1",
+          "key": "four_class_f1",
+          "sorting": "desc",
+          "index": 5,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 74723,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Four-Class AP",
+          "key": "four_class_ap",
+          "sorting": "desc",
+          "index": 6,
+          "hidden": false,
+          "precision": 2
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Force_Latest_Multiple"
+    }
+  ],
+  "collaborators": [
+    {
+      "id": 60911,
+      "name": null,
+      "username": "yan_2233"
+    }
+  ],
+  "registration_auto_approve": true,
+  "description": "AIGC Audio-Video Deepfake Classification Challenge using the MVAD dataset.",
+  "participants_count": 56,
+  "submissions_count": 55,
+  "queue": null,
+  "enable_detailed_results": true,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": true,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "codalab/codalab-legacy:py312",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 15538,
+  "reward": "",
+  "contact_email": "17318508682@163.com",
+  "report": "",
+  "forum_enabled": false
+}
