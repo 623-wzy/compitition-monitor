@@ -33,8 +33,19 @@ class Config:
         default_factory=lambda: os.environ.get("CODABENCH_TOKEN")
     )
 
+    feishu_webhook: str | None = field(
+        default_factory=lambda: os.environ.get("FEISHU_WEBHOOK")
+    )
+
+    feishu_webhook: str = field(
+        default_factory=lambda: _get(
+            "FEISHU_WEBHOOK",
+            "https://open.feishu.cn/open-apis/bot/v2/hook/ef6a3b8e-266d-41cd-9ec1-7af54d37373e",
+        )
+    )
+
     fetch_interval_hours: int = field(
-        default_factory=lambda: int(_get("MONITOR_INTERVAL_HOURS", "6"))
+        default_factory=lambda: int(_get("MONITOR_INTERVAL_HOURS", "24"))
     )
     rate_limit_rps: float = 4.0
     fetch_workers: int = 8

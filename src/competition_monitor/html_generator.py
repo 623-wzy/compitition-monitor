@@ -1,9 +1,10 @@
-"""HtmlGenerator — 生成竞赛目录页 index.html 和各竞赛详情页 {id}.html。"""
+"""HtmlGenerator — 生成竞赛目录页 index.html、详情页 {id}.html 和更新页 update.html。"""
 import html
 import logging
 from datetime import date, datetime
 from pathlib import Path
 
+from .agents.monitor_agent import ChangeEvent, ChangeType
 from .platforms.codabench import Competition, Phase, classify_phase as _classify_phase_name
 
 logger = logging.getLogger(__name__)
@@ -168,6 +169,18 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
 .back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
 .back-link:hover { color: var(--accent); }
 .ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
 """
 
 _INDEX_TEMPLATE = """<!DOCTYPE html>
@@ -232,6 +245,76 @@ _DETAIL_TEMPLATE = """<!DOCTYPE html>
 </div>
 </body>
 </html>"""
+
+
+_UPDATE_TEMPLATE = """<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>本次更新 — Codabench 竞赛监测</title>
+<style>{css}</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="update-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <p style="color:var(--muted);font-size:.875rem;margin-bottom:24px">更新于 {updated}</p>
+{sections}
+</div>
+</body>
+</html>"""
+
+
+def _build_update(
+    events: list[ChangeEvent],
+    snapshot: dict[int, Competition],
+    expired: list[tuple[int, str]],
+    updated: str,
+) -> str:
+    sections = ""
+
+    # 新增
+    new_events = [e for e in events if e.change_type == ChangeType.NEW_COMPETITION]
+    sections += "<div class='update-section'>"
+    sections += "<h2 class='new'>🆕 新增竞赛</h2>"
+    if new_events:
+        for ev in new_events:
+            comp = snapshot.get(ev.competition_id)
+            phases_str = " &nbsp;·&nbsp; ".join(
+                f"{p.name}: {_fmt_date(p.start)} → {_fmt_date(p.end)}"
+                for p in (comp.phases if comp else [])
+            ) or "暂无阶段信息"
+            href = f"{ev.competition_id}.html"
+            sections += (
+                f"<div class='update-item'>"
+                f"<div class='item-title'><a href='{href}'>{html.escape(ev.title)}</a></div>"
+                f"<div class='item-detail'>{phases_str}</div>"
+                f"</div>"
+            )
+    else:
+        sections += "<p class='update-empty'>本次无新增竞赛</p>"
+    sections += "</div>"
+
+    # 过期清理
+    sections += "<div class='update-section'>"
+    sections += "<h2 class='expired'>🗑️ 过期清理</h2>"
+    if expired:
+        for cid, title in expired:
+            sections += (
+                f"<div class='update-item'>"
+                f"<div class='item-title'>{html.escape(title)}</div>"
+                f"<div class='item-detail'>ID: {cid}</div>"
+                f"</div>"
+            )
+    else:
+        sections += "<p class='update-empty'>本次无过期清理</p>"
+    sections += "</div>"
+
+    return _UPDATE_TEMPLATE.format(css=_CSS, updated=updated, sections=sections)
 
 
 def _build_card(comp: Competition, output_dir: Path) -> str:
@@ -333,3 +416,18 @@ class HtmlGenerator:
         )
         (self._dir / "index.html").write_text(index_html, encoding="utf-8")
         logger.info("HTML 已生成：%s（%d 个竞赛）", self._dir / "index.html", len(comps))
+
+    def generate_update(
+        self,
+        events: list[ChangeEvent],
+        snapshot: dict[int, Competition],
+        expired: list[tuple[int, str]],
+    ) -> bool:
+        """生成 update.html，返回是否有实质更新（有则应推送飞书）。"""
+        new_events = [e for e in events if e.change_type == ChangeType.NEW_COMPETITION]
+        has_update = bool(new_events) or bool(expired)
+        updated = datetime.now().strftime("%Y-%m-%d %H:%M")
+        update_html = _build_update(events, snapshot, expired, updated)
+        (self._dir / "update.html").write_text(update_html, encoding="utf-8")
+        logger.info("update.html 已生成（事件 %d 条，过期 %d 条）", len(events), len(expired))
+        return has_update

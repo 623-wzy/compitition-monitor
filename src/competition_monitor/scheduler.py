@@ -9,6 +9,7 @@ from .agents.monitor_agent import MonitorAgent
 from .agents.notify_agent import NotifyAgent
 from .agents.translate_agent import TranslateAgent
 from .config import Config
+from .feishu import push_updates
 from .html_generator import HtmlGenerator
 from .platforms.codabench import CodabenchClient
 from .store import StateStore
@@ -38,7 +39,7 @@ class MonitorScheduler:
         self._store = StateStore(config.state_file)
         self._html = HtmlGenerator(config.html_dir)
 
-    def run_once(self) -> tuple[int, str]:
+    def run_once(self, push_index: bool = False) -> tuple[int, str]:
         logger.info("开始监测循环 (%s)", datetime.now().strftime("%Y-%m-%d %H:%M"))
 
         previous = self._store.load()
@@ -52,9 +53,28 @@ class MonitorScheduler:
         events = self._monitor_agent.diff(previous, new_snapshot)
         self._notify_agent.notify(events)
 
-        self._store.save(new_snapshot)
+        expired = self._store.save(new_snapshot)
         self._store.update_timestamp()
         self._html.generate(new_snapshot)
+        has_update = self._html.generate_update(events, new_snapshot, expired)
+
+        if push_index:
+            from .feishu import push as feishu_push
+            comps = sorted(
+                new_snapshot.values(),
+                key=lambda c: c.phases[0].start if c.phases and c.phases[0].start else "",
+                reverse=True,
+            )
+            feishu_push(self._config.feishu_webhook, comps)
+        elif has_update:
+            push_updates(
+                self._config.feishu_webhook,
+                events,
+                new_snapshot,
+                expired,
+                [title for _, title in expired],
+            )
+
         self._store.git_push(len(new_snapshot))
 
         logger.info("监测循环完成，变更事件 %d 条", len(events))

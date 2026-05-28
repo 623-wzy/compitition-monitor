@@ -27,13 +27,14 @@ class StateStore:
             logger.warning("读取 state 文件失败: %s", e)
             return {}
 
-    def save(self, snapshot: dict[int, Competition]) -> None:
-        """覆盖写入当前快照，同时按竞赛 ID 存单独 JSON，清理过期文件。"""
+    def save(self, snapshot: dict[int, Competition]) -> list[tuple[int, str]]:
+        """覆盖写入当前快照，同时按竞赛 ID 存单独 JSON，清理过期文件。
+        返回被清理的 [(id, title), ...] 列表。"""
         data = {str(cid): comp.model_dump(by_alias=True) for cid, comp in snapshot.items()}
         self._path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
         logger.debug("state 已保存，共 %d 条竞赛", len(snapshot))
         self.save_competitions_json(snapshot)
-        self._cleanup(snapshot)
+        return self._cleanup(snapshot)
 
     def save_competitions_json(self, snapshot: dict[int, Competition]) -> None:
         """将每个竞赛保存为 data/competitions/<id>.json。"""
@@ -47,27 +48,42 @@ class StateStore:
             )
         logger.debug("已保存 %d 个竞赛的单独 JSON 文件到 %s", len(snapshot), comp_dir)
 
-    def _cleanup(self, snapshot: dict[int, Competition]) -> None:
-        """删除 competitions/、ori/、html/ 中不在当前快照的过期文件。"""
+    def _cleanup(self, snapshot: dict[int, Competition]) -> list[tuple[int, str]]:
+        """删除 competitions/、ori/、docs/ 中不在当前快照的过期文件。
+        返回被清理的 [(id, title), ...] 列表。"""
         active = {str(cid) for cid in snapshot}
         root = self._path.parent
-        removed = 0
-        for sub in ("competitions", "ori"):
+        expired: list[tuple[int, str]] = []
+
+        # 从 competitions/ 读取过期竞赛的 title
+        comp_dir = root / "competitions"
+        if comp_dir.exists():
+            for f in comp_dir.glob("*.json"):
+                if f.stem not in active:
+                    try:
+                        d = json.loads(f.read_text(encoding="utf-8"))
+                        expired.append((int(f.stem), d.get("title", f.stem)))
+                    except Exception:
+                        expired.append((int(f.stem), f.stem))
+                    f.unlink()
+
+        for sub in ("ori",):
             d = root / sub
             if not d.exists():
                 continue
             for f in d.glob("*.json"):
                 if f.stem not in active:
                     f.unlink()
-                    removed += 1
+
         html_dir = root.parent / "docs"
         if html_dir.exists():
             for f in html_dir.glob("*.html"):
-                if f.stem not in active and f.name != "index.html":
+                if f.stem not in active and f.name not in ("index.html", "update.html"):
                     f.unlink()
-                    removed += 1
-        if removed:
-            logger.info("已清理 %d 个过期竞赛文件", removed)
+
+        if expired:
+            logger.info("已清理 %d 个过期竞赛", len(expired))
+        return expired
 
     def update_timestamp(self) -> None:
         """在 state 文件旁写一个 last_run.txt，记录上次运行时间。"""

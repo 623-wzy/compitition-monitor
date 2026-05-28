@@ -65,7 +65,7 @@ def start(run_now: bool, interval: int | None):
 
     if run_now:
         with console.status("[bold green]立即执行首次监测...", spinner="dots"):
-            n, summary = scheduler.run_once()
+            n, summary = scheduler.run_once(push_index=True)
         console.print(f"[bold green]✓[/bold green] 首次监测完成，检测到 {n} 条变更")
 
     scheduler.start()
@@ -162,6 +162,50 @@ def status():
         if len(snapshot) > 20:
             table.add_row("...", f"还有 {len(snapshot) - 20} 条", "")
         console.print(table)
+
+
+# ---------------------------------------------------------------------------
+# notify — 手动推送竞赛列表到飞书
+# ---------------------------------------------------------------------------
+
+
+@main.command()
+@click.option("--webhook", default=None, help="飞书 Webhook URL（优先于环境变量）")
+def notify(webhook: str | None):
+    """将当前竞赛列表推送到飞书机器人。"""
+    from .feishu import push
+
+    try:
+        config = load_config()
+    except RuntimeError as e:
+        console.print(f"[bold red]配置错误：[/bold red] {e}")
+        raise SystemExit(1) from e
+
+    url = webhook or config.feishu_webhook
+    if not url:
+        console.print(
+            "[bold red]未配置 Webhook URL。[/bold red]\n"
+            "可通过以下任一方式提供：\n"
+            "  1. competition-monitor notify --webhook https://open.feishu.cn/...\n"
+            "  2. export FEISHU_WEBHOOK=https://open.feishu.cn/..."
+        )
+        raise SystemExit(1)
+
+    store = StateStore(config.state_file)
+    snapshot = store.load()
+    if not snapshot:
+        console.print("[yellow]快照为空，请先运行 fetch。[/yellow]")
+        raise SystemExit(1)
+
+    comps = sorted(
+        snapshot.values(),
+        key=lambda c: c.phases[0].start if c.phases and c.phases[0].start else "",
+        reverse=True,
+    )
+
+    with console.status("[bold green]推送中...", spinner="dots"):
+        push(url, comps)
+    console.print(f"[bold green]✓[/bold green] 已推送 {len(comps)} 条竞赛到飞书")
 
 
 # ---------------------------------------------------------------------------
