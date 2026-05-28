@@ -84,10 +84,11 @@ def start(run_now: bool, interval: int | None):
 
 
 @main.command()
-@click.option("--query", default="", help="搜索关键词")
-def fetch(query: str):
+def fetch():
     """从 Codabench 拉取竞赛列表（单次）。"""
     import anthropic
+    from .agents.fetch_agent import FetchAgent
+    from .agents.translate_agent import TranslateAgent
 
     try:
         config = load_config()
@@ -95,27 +96,25 @@ def fetch(query: str):
         console.print(f"[bold red]配置错误：[/bold red] {e}")
         raise SystemExit(1) from e
 
-    from .agents.fetch_agent import FetchAgent
-
     ai = anthropic.Anthropic(api_key=config.anthropic_api_key, base_url=config.anthropic_base_url)
     codabench = CodabenchClient(
         base_url=config.codabench_base_url,
         token=config.codabench_token,
         rate=config.rate_limit_rps,
     )
-    from .store import StateStore
-    from .agents.translate_agent import TranslateAgent
-    agent = FetchAgent(client=ai, codabench=codabench, config=config)
+    agent = FetchAgent(codabench=codabench, config=config)
     translator = TranslateAgent(client=ai, model=config.haiku_model)
     store = StateStore(config.state_file)
+    from .html_generator import HtmlGenerator
+    html_gen = HtmlGenerator(config.html_dir)
     try:
         with console.status("[bold green]拉取中...", spinner="dots"):
-            existing = store.load()
-            new_snapshot, result = agent.run(existing=existing)
+            new_snapshot, result = agent.run(existing=store.load())
         with console.status("[bold green]翻译中...", spinner="dots"):
             translator.translate(new_snapshot)
         store.save(new_snapshot)
         store.update_timestamp()
+        html_gen.generate(new_snapshot)
         store.git_push(len(new_snapshot))
         console.print(f"[bold green]✓[/bold green] {result}（已保存 {len(new_snapshot)} 条竞赛）")
         for err in result.errors:

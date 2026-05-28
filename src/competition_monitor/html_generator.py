@@ -5,25 +5,15 @@ import logging
 from datetime import date, datetime
 from pathlib import Path
 
-from .platforms.codabench import Competition, Phase
+from .platforms.codabench import Competition, Phase, classify_phase as _classify_phase_name
 
 logger = logging.getLogger(__name__)
 
 _CODABENCH_BASE = "https://www.codabench.org"
 
-# 判断阶段类型的关键词
-_DEV_KEYWORDS = ("development", "develop", "dev", "train", "练习", "开发", "训练")
-_TEST_KEYWORDS = ("test", "final", "eval", "submission", "测试", "最终", "评估", "提交")
-
 
 def _classify_phase(phase: Phase) -> str:
-    """返回 'dev' / 'test' / 'other'。"""
-    name = phase.name.lower()
-    if any(k in name for k in _DEV_KEYWORDS):
-        return "dev"
-    if any(k in name for k in _TEST_KEYWORDS):
-        return "test"
-    return "other"
+    return _classify_phase_name(phase.name)
 
 
 def _fmt_date(s: str | None) -> str:

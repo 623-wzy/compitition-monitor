@@ -1,31 +1,18 @@
-"""FetchScript — 纯 Python 两阶段过滤，无 AI 调用。
-
-Phase 1: 关键词相关性过滤
-  对 title + description 做子串匹配，只保留图像/视频处理类竞赛。
-
-Phase 2: 日期窗口过滤
-  已在索引中且有有效日期的竞赛直接复用 → 不额外调用详情 API。
-  新竞赛调用 detail API 拿 phases 日期 → 过期或太遥远的丢弃。
-  若详情 API 多次失败 → 以基础信息暂存，待下次重试。
-"""
+import json
 import logging
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass, field
-from datetime import date, timedelta
+from datetime import date
+from pathlib import Path
 
 from ..config import Config
-from ..platforms.codabench import CodabenchClient, Competition
+from ..platforms.codabench import CodabenchClient, Competition, CompetitionSummary, Phase, classify_phase
 
 logger = logging.getLogger(__name__)
 
-# ---------------------------------------------------------------------------
-# 相关性关键词表（任意一个命中 title+description 即视为相关）
-# ---------------------------------------------------------------------------
-
 _RELEVANCE_KW = [
-    # 核心视觉词
     "image", "video", "visual", "vision", "pixel",
-    # 视觉专属任务
     "image segmentation", "video segmentation",
     "semantic segmentation", "instance segmentation", "panoptic segmentation",
     "super resolution", "super-resolution",
@@ -39,75 +26,16 @@ _RELEVANCE_KW = [
     "video interpolation", "frame interpolation",
     "video quality", "video synthesis", "video generation",
     "video object", "video understanding",
-    # 三维视觉
     "point cloud", "lidar", "depth map", "disparity",
     "nerf", "novel view synthesis", "radiance field", "gaussian splatting",
     "stereo", "scene reconstruction",
-    # 事件相机与光照
     "event camera", "event-based", "event guided", "event-guided",
     "illumination", "exposure correction", "brightness",
-    # 特定视觉场景
     "crowd counting", "lane detection",
     "low light image", "haze removal", "rain removal",
-    # 医学影像
-    "medical image", "pathology", "histology", "radiology",
-    "ct scan", "mri", "ultrasound",
-    "cell segmentation", "nuclei", "lesion",
-    # 中文兜底
     "图像", "视频", "分割",
 ]
 
-
-def _is_relevant(comp: Competition) -> bool:
-    """title + description 有任意关键词命中则返回 True。"""
-    text = f"{comp.title} {comp.description or ''}".lower()
-    return any(kw in text for kw in _RELEVANCE_KW)
-
-
-# ---------------------------------------------------------------------------
-# 日期工具
-# ---------------------------------------------------------------------------
-
-def _latest_end(comp: Competition) -> date | None:
-    """取最后一个 phase 的结束日期。"""
-    ends = [p.end for p in comp.phases if p.end]
-    if not ends:
-        return None
-    try:
-        return date.fromisoformat(max(ends)[:10])
-    except ValueError:
-        return None
-
-
-def _earliest_start(comp: Competition) -> str | None:
-    """取最早一个 phase 的开始日期（ISO 字符串）。"""
-    starts = [p.start for p in comp.phases if p.start]
-    if starts:
-        return min(starts)[:10]
-    v = (comp.first_phase_start or "")[:10]
-    return v or None
-
-
-# ---------------------------------------------------------------------------
-# BasicCompetition — FetchScript 输出的轻量结构
-# ---------------------------------------------------------------------------
-
-@dataclass
-class BasicCompetition:
-    id: int
-    title: str
-    start: str | None
-    end: str | None
-    participant_count: int
-    url: str
-    description: str
-    # 若 detail 已成功拉取，保留完整 Competition 供 Snapshot 复用
-    detail: Competition | None = field(default=None, repr=False)
-
-
-# ---------------------------------------------------------------------------
-# FetchResult
-# ---------------------------------------------------------------------------
 
 @dataclass
 class FetchResult:
@@ -126,145 +54,182 @@ class FetchResult:
 
 
 # ---------------------------------------------------------------------------
+# 过滤谓词
+# ---------------------------------------------------------------------------
+
+_EXCLUDE_KW = [
+    # 课程作业
+    "exercise", "assignment", "homework", "coursework",
+    "course project", "class project",
+    # 课程标识
+    "- group ", "group project",
+    # 描述中明确是课程
+    "evaluation server for the exercise",
+    "from the course", "of this course", "in this course",
+    "for the course", "course assignment",
+    # 中文
+    "课程作业", "练习题", "作业",
+]
+
+
+def _is_relevant(comp: CompetitionSummary) -> bool:
+    text = f"{comp.title} {comp.description or ''}".lower()
+    if any(kw in text for kw in _EXCLUDE_KW):
+        return False
+    return any(kw in text for kw in _RELEVANCE_KW)
+
+
+def _parse_date(s: str | None) -> date | None:
+    if not s:
+        return None
+    try:
+        return date.fromisoformat(s[:10])
+    except ValueError:
+        return None
+
+
+@dataclass
+class PhaseInfo:
+    """单个阶段的日期摘要。"""
+    name: str
+    kind: str          # 'dev' / 'test' / 'other'
+    start: date | None
+    end: date | None
+
+
+def _extract_phases(comp: Competition) -> list[PhaseInfo]:
+    """提取每个阶段的分类与日期。"""
+    return [
+        PhaseInfo(
+            name=p.name,
+            kind=classify_phase(p.name),
+            start=_parse_date(p.start),
+            end=_parse_date(p.end),
+        )
+        for p in comp.phases
+    ]
+
+
+def _should_keep(comp: Competition, today: date) -> str | None:
+    """返回过滤原因（被过滤时），None 表示保留。"""
+    phases = _extract_phases(comp)
+
+    # 所有阶段均无截止日期
+    if not any(p.end for p in phases):
+        return "所有阶段均无截止日期"
+
+    for p in phases:
+        # 任意阶段截止日期小于当前日期
+        if p.end and p.end < today:
+            return f"阶段「{p.name}」已截止（{p.end}）"
+        # 任意阶段截止日期大于当前日期 60 天
+        if p.end and (p.end - today).days > 60:
+            return f"阶段「{p.name}」截止日期超过 60 天（{p.end}）"
+        # 开始日期与当前日期相差超过 30 天
+        if p.start and (p.start - today).days > 30:
+            return f"阶段「{p.name}」开始日期超过 30 天（{p.start}）"
+
+    return None
+
+
+# ---------------------------------------------------------------------------
 # FetchScript
 # ---------------------------------------------------------------------------
 
 class FetchScript:
-    """
-    纯 Python 竞赛抓取与过滤器，不调用 AI。
-
-    existing: dict[int, Competition] — 上次快照（来自 StateStore）。
-              有 phases 日期的条目直接复用，跳过详情 API 调用。
-    """
-
     def __init__(self, codabench: CodabenchClient, config: Config):
         self._codabench = codabench
         self._config = config
+        self._ori_dir = config.data_dir / "ori"
 
-    def run(self, existing: dict[int, Competition] | None = None) -> tuple[list[BasicCompetition], FetchResult]:
+    def run(self, existing: dict[int, Competition] | None = None) -> tuple[list[Competition], FetchResult]:
         existing = existing or {}
         result = FetchResult()
-
-        # ── Phase 1: 拉取全量 + 相关性过滤 ──────────────────────────────
-        all_comps = self._get_all()
-        result.total_fetched = len(all_comps)
-        logger.info("Codabench API 共返回 %d 个公开竞赛", len(all_comps))
-
-        relevant = [c for c in all_comps if _is_relevant(c)]
-        result.total_relevant = len(relevant)
-        logger.info("相关性过滤后保留 %d 个图像/视频相关竞赛", len(relevant))
-
-        # ── Phase 2: 日期窗口过滤 ─────────────────────────────────────────
         today = date.today()
-        cutoff = today + timedelta(days=self._config.max_days_ahead)
-        basics: list[BasicCompetition] = []
 
+        # ── Step 1: 拉取轻量列表（仅 id/title/description/first_phase_start）
+        summaries = self._get_all()
+        result.total_fetched = len(summaries)
+        logger.info("list API 共返回 %d 个公开竞赛", len(summaries))
+
+        # ── Step 2: 关键词过滤
+        relevant = [c for c in summaries if _is_relevant(c)]
+        result.total_relevant = len(relevant)
+        logger.info("关键词过滤后保留 %d 个相关竞赛", len(relevant))
+
+        kept: list[Competition] = []
+        to_fetch: list[CompetitionSummary] = []
+
+        # ── Step 3: 预检，跳过开放日期超两个月的 ─────────────────────────
         for comp in relevant:
-            ex = existing.get(comp.id)
-
-            if ex:
-                # 已在索引中 → 用已有 phases 数据判断日期，不再调 detail API
-                end_date = _latest_end(ex)
-                if end_date:
-                    if today <= end_date <= cutoff:
-                        basics.append(BasicCompetition(
-                            id=ex.id,
-                            title=ex.title,
-                            start=_earliest_start(ex),
-                            end=end_date.isoformat(),
-                            participant_count=ex.participant_count,
-                            url=f"{self._config.codabench_base_url}/competitions/{ex.id}/",
-                            description=(ex.description or "")[:500],
-                            detail=ex,
-                        ))
-                    else:
-                        logger.debug("竞赛 %d 已过期或超出窗口，移出快照", comp.id)
-                    result.skipped += 1
-                else:
-                    # phases 无日期 → 保守保留，待下次重试
-                    basics.append(BasicCompetition(
-                        id=ex.id,
-                        title=ex.title,
-                        start=_earliest_start(ex),
-                        end=None,
-                        participant_count=ex.participant_count,
-                        url=f"{self._config.codabench_base_url}/competitions/{ex.id}/",
-                        description=(ex.description or "")[:500],
-                        detail=ex,
-                    ))
-                    result.skipped += 1
+            pre_start = _parse_date(comp.first_phase_start)
+            if pre_start and (pre_start - today).days > 60:
+                logger.debug("竞赛 %d 预检：开放日期超过两个月，跳过", comp.id)
+                result.skipped += 1
                 continue
+            to_fetch.append(comp)
 
-            # 新竞赛 → 调 detail API 拿准确日期
-            detail = self._fetch_detail(comp.id)
+        logger.info("进入 detail 拉取队列：%d 条", len(to_fetch))
 
-            if detail is not None:
-                end_date = _latest_end(detail)
-                if not end_date:
-                    logger.debug("竞赛 %d 无截止日期，跳过", comp.id)
+        # ── Step 4: 并行拉取 detail ───────────────────────────────────────
+        with ThreadPoolExecutor(max_workers=self._config.fetch_workers) as pool:
+            futures = {pool.submit(self._fetch_detail, comp.id): comp for comp in to_fetch}
+            for future in as_completed(futures):
+                comp = futures[future]
+                detail, raw = future.result()
+
+                if detail is None:
+                    logger.warning("竞赛 %d 详情接口多次失败，跳过", comp.id)
+                    result.errors.append(f"[{comp.id}] {comp.title}: 详情获取失败")
                     result.skipped += 1
                     continue
-                if end_date < today:
-                    logger.debug("竞赛 %d 已截止 (%s)，跳过", comp.id, end_date)
-                    result.skipped += 1
-                    continue
-                if end_date > cutoff:
-                    logger.debug("竞赛 %d 截止超过 %d 天上限，跳过", comp.id, self._config.max_days_ahead)
-                    result.skipped += 1
-                    continue
-                result.added.append(detail.id)
-                basics.append(BasicCompetition(
-                    id=detail.id,
-                    title=detail.title,
-                    start=_earliest_start(detail),
-                    end=end_date.isoformat(),
-                    participant_count=detail.participant_count,
-                    url=f"{self._config.codabench_base_url}/competitions/{detail.id}/",
-                    description=(detail.description or "")[:500],
-                    detail=detail,
-                ))
-            else:
-                # 详情 API 多次失败 → 以基础信息暂存，跳过日期过滤
-                logger.warning("竞赛 %d 详情接口多次失败，以基础信息暂存", comp.id)
-                result.errors.append(f"[{comp.id}] {comp.title}: 详情获取失败，已暂存待重试")
-                basics.append(BasicCompetition(
-                    id=comp.id,
-                    title=comp.title,
-                    start=None,
-                    end=None,
-                    participant_count=comp.participant_count,
-                    url=f"{self._config.codabench_base_url}/competitions/{comp.id}/",
-                    description=(comp.description or "")[:500],
-                    detail=None,
-                ))
 
-        logger.info("日期过滤后保留 %d 个竞赛（新增 %d 条）", len(basics), len(result.added))
-        basics.sort(key=lambda x: x.end or "9999")
-        return basics, result
+                self._save_ori(comp.id, raw)
+
+                # ── Step 5: 完整日期过滤 ──────────────────────────────────
+                reason = _should_keep(detail, today)
+                if reason:
+                    logger.debug("竞赛 %d 跳过：%s", comp.id, reason)
+                    result.skipped += 1
+                    continue
+
+                if comp.id not in existing:
+                    result.added.append(detail.id)
+
+                kept.append(detail)
+
+        logger.info("过滤后保留 %d 个竞赛（新增 %d 条）", len(kept), len(result.added))
+        kept.sort(key=lambda c: max(
+            (p.end for p in _extract_phases(c) if p.end), default=date.max
+        ).isoformat())
+        return kept, result
 
     # ------------------------------------------------------------------
 
     def _fetch_detail(
         self, competition_id: int, retries: int = 3, backoff: float = 2.0
-    ) -> Competition | None:
+    ) -> tuple[Competition, dict] | tuple[None, None]:
         for attempt in range(retries):
             try:
                 return self._codabench.get_competition_detail(competition_id)
             except Exception as e:
                 if attempt < retries - 1:
                     wait = backoff * (2 ** attempt)
-                    logger.warning(
-                        "获取竞赛 %d 详情失败（第 %d/%d 次），%.0fs 后重试: %s",
-                        competition_id, attempt + 1, retries, wait, e,
-                    )
+                    logger.warning("获取竞赛 %d 详情失败（%d/%d），%.0fs 后重试: %s",
+                                   competition_id, attempt + 1, retries, wait, e)
                     time.sleep(wait)
                 else:
                     logger.error("获取竞赛 %d 详情失败，已重试 %d 次: %s", competition_id, retries, e)
-        return None
+        return None, None
 
-    def _get_all(self) -> list[Competition]:
+    def _save_ori(self, competition_id: int, raw: dict) -> None:
+        self._ori_dir.mkdir(parents=True, exist_ok=True)
+        path = self._ori_dir / f"{competition_id}.json"
+        path.write_text(json.dumps(raw, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    def _get_all(self) -> list[CompetitionSummary]:
         try:
-            return self._codabench.search_competitions("", limit=self._config.max_competitions)
+            return self._codabench.list_competitions(limit=self._config.max_competitions)
         except Exception as e:
             logger.error("获取全量竞赛列表失败: %s", e)
             return []

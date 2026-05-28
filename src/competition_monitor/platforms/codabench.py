@@ -12,6 +12,29 @@ logger = logging.getLogger(__name__)
 
 CODABENCH_BASE = "https://www.codabench.org"
 
+_DEV_KEYWORDS = ("development", "develop", "dev", "train", "练习", "开发", "训练")
+_TEST_KEYWORDS = ("test", "final", "eval", "submission", "测试", "最终", "评估", "提交")
+
+
+def classify_phase(phase_name: str) -> str:
+    """返回 'dev' / 'test' / 'other'。"""
+    name = phase_name.lower()
+    if any(k in name for k in _DEV_KEYWORDS):
+        return "dev"
+    if any(k in name for k in _TEST_KEYWORDS):
+        return "test"
+    return "other"
+
+
+class CompetitionSummary(BaseModel):
+    """list API 返回的轻量条目，仅含过滤所需字段。"""
+    id: int
+    title: str
+    description: str | None = None
+    first_phase_start: str | None = None
+
+    model_config = {"populate_by_name": True}
+
 
 class Phase(BaseModel):
     id: int = 0
@@ -93,19 +116,17 @@ class CodabenchClient:
         )
         self._bucket = _TokenBucket(rate)
 
-    def search_competitions(self, query: str = "", limit: int = 50) -> list[Competition]:
-        """GET /api/competitions/public/?search=<query>&limit=<limit>"""
-        params: dict[str, Any] = {"limit": min(limit, 200)}
-        if query:
-            params["search"] = query
-        return self._paginate("/api/competitions/public/", params, limit)
+    def list_competitions(self, limit: int = 5000) -> list[CompetitionSummary]:
+        """GET /api/competitions/public/ — 仅拉取 id/title/description/first_phase_start。"""
+        return self._paginate("/api/competitions/public/", {"limit": 200}, limit, CompetitionSummary)
 
-    def get_competition_detail(self, competition_id: int) -> Competition:
-        """GET /api/competitions/<id>/ — 含 phases 和 pages。"""
+    def get_competition_detail(self, competition_id: int) -> tuple[Competition, dict]:
+        """GET /api/competitions/<id>/ — 含 phases 和 pages。返回 (Competition, raw_json)。"""
         self._bucket.acquire()
         resp = self._http.get(f"/api/competitions/{competition_id}/")
         self._check(resp)
-        data = resp.json()
+        raw = resp.json()
+        data = dict(raw)
         phases_raw = data.pop("phases", [])
         pages_raw = data.pop("pages", [])
         comp = Competition.model_validate(data)
@@ -115,7 +136,10 @@ class CodabenchClient:
             for i, p in enumerate(pages_raw)
             if isinstance(p, dict)
         ]
-        return comp
+        # 把 phases/pages 放回 raw 供调用方保存原始数据
+        raw["phases"] = phases_raw
+        raw["pages"] = pages_raw
+        return comp, raw
 
     def close(self) -> None:
         self._http.close()
@@ -133,8 +157,10 @@ class CodabenchClient:
             url = urlunparse(parsed._replace(scheme=base.scheme, netloc=base.netloc))
         return url
 
-    def _paginate(self, path: str, params: dict, max_results: int) -> list[Competition]:
-        results: list[Competition] = []
+    def _paginate(self, path: str, params: dict, max_results: int, model=None) -> list:
+        if model is None:
+            model = Competition
+        results = []
         url: str | None = path
         while url and len(results) < max_results:
             self._bucket.acquire()
@@ -149,7 +175,7 @@ class CodabenchClient:
                 logger.warning("分页请求失败（已获 %d 条）: %s", len(results), e)
                 break
             for item in body.get("results", []):
-                results.append(Competition.model_validate(item))
+                results.append(model.model_validate(item))
             url = body.get("next")
         return results[:max_results]
 
