@@ -1,6 +1,5 @@
 """HtmlGenerator — 生成竞赛目录页 index.html 和各竞赛详情页 {id}.html。"""
 import html
-import json
 import logging
 from datetime import date, datetime
 from pathlib import Path
@@ -230,10 +229,6 @@ _DETAIL_TEMPLATE = """<!DOCTYPE html>
 
 {pages_section}
 
-  <div class="section">
-    <h3>原始数据</h3>
-    <pre class="page-content" style="font-size:.8rem">{raw_json}</pre>
-  </div>
 </div>
 </body>
 </html>"""
@@ -292,8 +287,6 @@ def _build_detail(comp: Competition) -> str:
                 f"</div>"
             )
 
-    raw = json.dumps(comp.model_dump(by_alias=True), ensure_ascii=False, indent=2)
-
     return _DETAIL_TEMPLATE.format(
         css=_CSS,
         title=html.escape(comp.title),
@@ -306,7 +299,6 @@ def _build_detail(comp: Competition) -> str:
         description=html.escape(comp.description_zh or comp.description or "暂无描述"),
         phase_rows=_phase_rows(comp.phases),
         pages_section=pages_html,
-        raw_json=html.escape(raw),
     )
 
 

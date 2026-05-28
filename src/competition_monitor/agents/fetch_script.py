@@ -125,9 +125,14 @@ def _should_keep(comp: Competition, today: date) -> str | None:
         # 任意阶段截止日期大于当前日期 60 天
         if p.end and (p.end - today).days > 60:
             return f"阶段「{p.name}」截止日期超过 60 天（{p.end}）"
-        # 开始日期与当前日期相差超过 30 天
-        if p.start and (p.start - today).days > 30:
-            return f"阶段「{p.name}」开始日期超过 30 天（{p.start}）"
+
+    # 只对最近一个尚未结束的阶段检查开始日期
+    upcoming = next(
+        (p for p in phases if p.end is None or p.end >= today),
+        None,
+    )
+    if upcoming and upcoming.start and (upcoming.start - today).days > 30:
+        return f"最近阶段「{upcoming.name}」开始日期超过 30 天（{upcoming.start}）"
 
     return None
 
