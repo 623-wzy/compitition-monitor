@@ -312,13 +312,10 @@ class HtmlGenerator:
     def generate(self, snapshot: dict[int, Competition]) -> None:
         updated = datetime.now().strftime("%Y-%m-%d %H:%M")
 
-        # 按截止日期排序
         comps = sorted(
             snapshot.values(),
-            key=lambda c: (
-                min((p.end for p in c.phases if p.end), default="9999"),
-                c.title,
-            ),
+            key=lambda c: c.phases[0].start if c.phases and c.phases[0].start else "",
+            reverse=True,
         )
 
         # 详情页
