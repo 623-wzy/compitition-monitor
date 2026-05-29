@@ -5,8 +5,8 @@
   "created_by": "ai4math",
   "owner_display_name": "ai4math",
   "created_when": "2026-04-29T10:27:07.290697Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-29-1777474374/6953426e1b09/logo_big.png?AWSAccessKeyId=codabench-prod&Signature=Bl07P4v9BNcTBajfGczw3jOH384%3D&Expires=1779956267",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-29-1777474374/6953426e1b09/logo_big_icon.png?AWSAccessKeyId=codabench-prod&Signature=OG%2B48jFzXlcT3r%2FD8%2FjNMQwF414%3D&Expires=1779956267",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-29-1777474374/6953426e1b09/logo_big.png?AWSAccessKeyId=codabench-prod&Signature=ynXGLWK1Uav%2BneFsTvYkooVqi0Y%3D&Expires=1780042927",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-29-1777474374/6953426e1b09/logo_big_icon.png?AWSAccessKeyId=codabench-prod&Signature=NRsGGQ512IwEqt9DFGHdscR7UHc%3D&Expires=1780042927",
   "terms": "# Seephys Pro Terms and Participation Rules\n\nBy participating in this challenge, participants agree to follow the rules below.\n\n## Allowed\n\n- Use the Hugging Face dataset for model development, prompting, analysis, and submission generation.\n- Use external models and tools, unless they violate Codabench, Hugging Face, or API provider policies.\n- Submit final answers with reasoning in the required format.\n\n## Not Allowed\n\n- Attempt to recover, infer, scrape, or leak hidden reference answers.\n- Attack, overload, or bypass the Codabench evaluation system.\n- Submit prompt-injection text intended to manipulate the judge rather than answer the physics problem.\n- Submit empty, unrelated, or intentionally deceptive reasoning.\n- Upload content that violates the policies of Codabench, Hugging Face, OpenAI, or applicable law.\n\n## Evaluation Integrity\n\nThe public judge uses an OpenAI API based semantic evaluator. The judge is intended to evaluate answer equivalence and reasoning consistency, not to reward formatting tricks. Submissions may be reviewed or removed if they exploit the evaluator or violate the spirit of the benchmark.\n\n## Data Use\n\nThe Hugging Face dataset distributed for this challenge excludes answer-bearing fields. Reference answers are used only for Codabench scoring.",
   "pages": [
     {
@@ -264,8 +264,8 @@
   ],
   "registration_auto_approve": true,
   "description": "Multimodal physics reasoning benchmark with diagrams, expressions, image-only questions, and OpenAI API based answer judging.",
-  "participants_count": 96,
-  "submissions_count": 368,
+  "participants_count": 100,
+  "submissions_count": 384,
   "queue": null,
   "enable_detailed_results": true,
   "show_detailed_results_in_submission_panel": true,

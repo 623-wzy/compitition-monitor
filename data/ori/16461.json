@@ -5,8 +5,8 @@
   "created_by": "abhijeet8901",
   "owner_display_name": "abhijeet8901",
   "created_when": "2026-05-19T15:29:56.921370Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-19-1779204596/95cc77a6535d/images/logo.png?AWSAccessKeyId=codabench-prod&Signature=YYAwB0f5wzPur8TXBdJJ2bGpfw0%3D&Expires=1779956261",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-19-1779204596/95cc77a6535d/images/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=9Fke9NV8SA%2BXzEwirUpDkguSc0w%3D&Expires=1779956261",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-19-1779204596/95cc77a6535d/images/logo.png?AWSAccessKeyId=codabench-prod&Signature=jcJ0MpOlCnpKZr%2Fnnwi5cCMdUlA%3D&Expires=1780042920",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-19-1779204596/95cc77a6535d/images/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=yw4i4p%2FksT8ZYS4lE6i6nge7rEQ%3D&Expires=1780042920",
   "terms": "# Terms and Registration Confirmation\n\nBy registering for this CodaBench competition or submitting results, participants confirm that they have read and agree to the **Explainable Deepfake Detection Challenge 2026 End User License Agreement** and the official challenge rules.\n\n## Permitted use\n\nThe dataset and challenge materials are provided strictly for academic, non-commercial, not-for-profit research and challenge participation. No ownership rights are transferred to participants.\n\n## Upstream licences\n\nParticipants are responsible for complying with all applicable upstream dataset licences, attribution requirements, permissions, and use restrictions. Where an upstream licence is more restrictive, the upstream licence controls.\n\n## Access and sharing\n\nAccess is limited to the registered team and approved researchers. Participants must not share login details, download links, copies of the dataset, restricted files, labels, annotations, metadata, explanations, baseline files, evaluation scripts, or other challenge materials with anyone outside the approved team.\n\nRedistribution, republication, sublicensing, posting to public repositories, or uploading the dataset or restricted challenge materials to shared drives or external services is prohibited without prior written approval from the organizers. Linking to the official challenge website is allowed.\n\n## Storage and security\n\nParticipants must use reasonable technical and organizational safeguards to protect the dataset and challenge materials from unauthorized access, copying, disclosure, or misuse. Any unauthorized access, leak, or misuse must be reported promptly to the organizers.\n\n## Publications and public disclosure\n\nPublications, reports, theses, posters, talks, demos, websites, social-media posts, or presentations arising from use of the dataset or challenge materials must cite the official challenge paper, dataset paper(s), original/source dataset paper(s), and documentation specified by the organizers.\n\nParticipants must not publish, reproduce, display, or distribute arbitrary images from the dataset in public-facing outputs. Only examples explicitly designated by the organizers for public display may be used.\n\n## Prohibited uses\n\nThe dataset and challenge materials must not be used for commercial purposes, surveillance, profiling, unlawful activity, harassment, defamation, or uses likely to cause harm, humiliation, embarrassment, or mental anguish to depicted persons or communities.\n\nParticipants must not use the dataset or challenge materials to create deceptive, misleading, or harmful synthetic media.\n\n## Evaluation integrity\n\nParticipants must not attempt to recover, infer, expose, or redistribute hidden test labels or hidden reference explanations. Participants must not try to access private files, paths, credentials, reference data, or worker-side resources outside the permitted CodaBench evaluation interface.\n\nSubmissions violating the rules may be removed from the leaderboard, and the team may be disqualified. Access to the dataset, challenge materials, or CodaBench competition may be modified, suspended, restricted, or revoked by the organizers.\n\n## Acceptance\n\nBy registering or submitting, participants confirm that they understand and agree to comply with these terms.\n\nRegistration is automatically approved on CodaBench after participants accept these terms. Participants do not need to email the organizers separately to join the CodaBench benchmark.\n\nOfficial challenge website:\n\nhttps://explainable-deepfake-detection.github.io/",
   "pages": [
     {
@@ -22,9 +22,9 @@
       "index": 1
     },
     {
-      "id": 79510,
+      "id": 79621,
       "title": "Evaluation",
-      "content": "# Evaluation\n\nThe leaderboard reports detection performance and explanation quality. Higher scores are better for all displayed metrics.\n\n## Detection\n\nDetection is evaluated on the hidden final test set using binary image labels:\n\n- `0`: real/authentic image;\n- `1`: fake/generated or manipulated image.\n\nThe leaderboard reports:\n\n- **Detection Macro F1**: primary detection score;\n- **Detection Accuracy**;\n\nDetection is evaluated on the full official test set.\n\n## Complex explanations\n\nThe complex explanation track evaluates whether the submitted explanation captures the same important visual evidence as the reference explanation.\n\nIn this CodaBench scoring bundle, complex explanations are evaluated using **BERTScore F1** between the submitted complex explanation and the hidden reference complex explanation.\n\nThe BERTScore model is:\n\n```text\nmicrosoft/deberta-xlarge-mnli\n```\n\nBaseline rescaling is disabled.\n\nFor leaderboard scoring, complex explanation BERTScore is computed on a 10,000-sample subset of the test set. After the test phase closes, we will compute the remaining complex explanation metrics: **Complex Entity F1** and **Complex Evidence F1** for the **top 5 teams** for final reporting and analysis. The complete complex explanation score is:\n\n```text\ncomplex_overall_score =\n  0.3 * complex_bert_f1 +\n  0.4 * complex_entity_f1 +\n  0.3 * complex_evidence_f1\n```\n\n## Simple explanations\n\nThe simple explanation track is designed to reward two things at the same time: faithfulness and simplicity. A good simple explanation should preserve the core reason from the reference while expressing it in a shorter, easier form.\n\nIn this CodaBench scoring bundle, simple explanations are evaluated using:\n\n- **Simple BERTScore F1** against the hidden simple reference;\n- **SLE score** using the offline SLE checkpoint on the worker;\n- **Simple SLE Norm**, obtained by clipping raw SLE to `[-1, 4]` and mapping it to `[0, 1]`;\n- **Simple Overall Score**:\n\n```text\n0.7 * simple_bert_f1 + 0.3 * simple_sle_norm\n```\n\nFor leaderboard scoring, simple explanation metrics are computed on the same 10,000-sample subset of the test set.\n\n## Overall explanation score\n\nThe displayed explanation score combines the complex and simple tracks on the same 10,000-sample explanation-evaluation subset:\n\n```text\nexplanation_score =\n  (complex_bert_f1 + simple_overall_score) / 2\n```\n\n## Failed or incomplete submissions\n\nMissing files receive zero for the corresponding metric group. If a valid submission file is present but omits some required rows, those missing samples are scored as zero for the relevant metric. Malformed JSON, duplicate IDs, invalid labels, empty explanations, or unknown IDs may cause scoring to fail.",
+      "content": "# Evaluation\n\nThe leaderboard reports detection performance, explanation quality, and an overall score combining both. Higher scores are better for all displayed metrics, and the leaderboard is sorted by the overall score.\n\n## Detection\n\nDetection is evaluated on the hidden final test set using binary image labels:\n\n- `0`: real/authentic image;\n- `1`: fake/generated or manipulated image.\n\nThe leaderboard reports:\n\n- **Detection Macro F1**: primary detection score;\n- **Detection Accuracy**;\n\nDetection is evaluated on the full official test set.\n\n## Complex explanations\n\nThe complex explanation track evaluates whether the submitted explanation captures the same important visual evidence as the reference explanation.\n\nIn this CodaBench scoring bundle, complex explanations are evaluated using **BERTScore F1** between the submitted complex explanation and the hidden reference complex explanation.\n\nThe BERTScore model is:\n\n```text\nmicrosoft/deberta-xlarge-mnli\n```\n\nBaseline rescaling is disabled.\n\nFor leaderboard scoring, complex explanation BERTScore is computed on a 10,000-sample subset of the test set. After the test phase closes, we will compute the remaining complex explanation metrics: **Complex Entity F1** and **Complex Evidence F1** for the **top 5 teams** for final reporting and analysis. The complete complex explanation score is:\n\n```text\ncomplex_overall_score =\n  0.3 * complex_bert_f1 +\n  0.4 * complex_entity_f1 +\n  0.3 * complex_evidence_f1\n```\n\n## Simple explanations\n\nThe simple explanation track is designed to reward two things at the same time: faithfulness and simplicity. A good simple explanation should preserve the core reason from the reference while expressing it in a shorter, easier form.\n\nIn this CodaBench scoring bundle, simple explanations are evaluated using:\n\n- **Simple BERTScore F1** against the hidden simple reference;\n- **SLE score** using the offline SLE checkpoint on the worker;\n- **Simple SLE Norm**, obtained by clipping raw SLE to `[-1, 4]` and mapping it to `[0, 1]`;\n- **Simple Overall Score**:\n\n```text\n0.7 * simple_bert_f1 + 0.3 * simple_sle_norm\n```\n\nFor leaderboard scoring, simple explanation metrics are computed on the same 10,000-sample subset of the test set.\n\n## Explanation score\n\nThe displayed explanation score combines the complex and simple tracks on the same 10,000-sample explanation-evaluation subset:\n\n```text\nexplanation_score =\n  (complex_bert_f1 + simple_overall_score) / 2\n```\n\n## Overall score\n\nThe overall score combines the primary detection metric with the explanation score:\n\n```text\noverall_score =\n  (detection_macro_f1 + explanation_score) / 2\n```\n\n## Failed or incomplete submissions\n\nMissing files receive zero for the corresponding metric group. If a valid submission file is present but omits some required rows, those missing samples are scored as zero for the relevant metric. Malformed JSON, duplicate IDs, invalid labels, empty explanations, or unknown IDs may cause scoring to fail.",
       "index": 2
     },
     {
@@ -79,16 +79,16 @@
               "file_size": 305.0
             },
             {
-              "id": 789763,
+              "id": 795186,
               "created_by": "abhijeet8901",
               "owner_display_name": "abhijeet8901",
-              "created_when": "2026-05-27T07:04:53.852556Z",
-              "name": "xdd-final-scoring-v5",
+              "created_when": "2026-05-28T22:24:50.347963Z",
+              "name": "xdd-final-scoring-v6",
               "type": "scoring_program",
               "description": "",
               "is_public": false,
-              "key": "f344d299-660c-4f05-8f98-cd861246c0a0",
-              "value": "f344d299-660c-4f05-8f98-cd861246c0a0",
+              "key": "c2907521-bf2b-4e29-9011-175ce708600a",
+              "value": "c2907521-bf2b-4e29-9011-175ce708600a",
               "was_created_by_competition": false,
               "in_use": [
                 {
@@ -98,7 +98,7 @@
               ],
               "competition": null,
               "file_name": "scoring_program.zip",
-              "file_size": 13814.0
+              "file_size": 13832.0
             }
           ]
         }
@@ -146,13 +146,24 @@
       "key": "final_results",
       "columns": [
         {
+          "id": 80502,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Overall Score",
+          "key": "overall_score",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 6
+        },
+        {
           "id": 78942,
           "computation": null,
           "computation_indexes": null,
           "title": "Detection F1",
           "key": "detection_macro_f1",
           "sorting": "desc",
-          "index": 0,
+          "index": 1,
           "hidden": false,
           "precision": 6
         },
@@ -163,7 +174,7 @@
           "title": "Detection Accuracy",
           "key": "detection_accuracy",
           "sorting": "desc",
-          "index": 1,
+          "index": 2,
           "hidden": false,
           "precision": 6
         },
@@ -174,7 +185,7 @@
           "title": "Fake F1",
           "key": "detection_fake_f1",
           "sorting": "desc",
-          "index": 2,
+          "index": 3,
           "hidden": true,
           "precision": 6
         },
@@ -185,7 +196,7 @@
           "title": "Real F1",
           "key": "detection_real_f1",
           "sorting": "desc",
-          "index": 3,
+          "index": 4,
           "hidden": true,
           "precision": 6
         },
@@ -196,7 +207,7 @@
           "title": "Complex BERTScore",
           "key": "complex_bert_f1",
           "sorting": "desc",
-          "index": 4,
+          "index": 5,
           "hidden": false,
           "precision": 6
         },
@@ -207,7 +218,7 @@
           "title": "Simple Overall",
           "key": "simple_overall_score",
           "sorting": "desc",
-          "index": 5,
+          "index": 6,
           "hidden": false,
           "precision": 6
         },
@@ -218,7 +229,7 @@
           "title": "Simple BERTScore",
           "key": "simple_bert_f1",
           "sorting": "desc",
-          "index": 6,
+          "index": 7,
           "hidden": true,
           "precision": 6
         },
@@ -229,7 +240,7 @@
           "title": "Simple SLE Norm",
           "key": "simple_sle_norm",
           "sorting": "desc",
-          "index": 7,
+          "index": 8,
           "hidden": true,
           "precision": 6
         },
@@ -240,7 +251,7 @@
           "title": "Simple SLE Raw",
           "key": "simple_sle_raw",
           "sorting": "desc",
-          "index": 8,
+          "index": 9,
           "hidden": true,
           "precision": 6
         },
@@ -251,20 +262,20 @@
           "title": "Explanation Score",
           "key": "explanation_score",
           "sorting": "desc",
-          "index": 9,
+          "index": 10,
           "hidden": false,
           "precision": 6
         }
       ],
       "hidden": false,
-      "submission_rule": "Add_And_Delete"
+      "submission_rule": "Force_Best"
     }
   ],
   "collaborators": [],
   "registration_auto_approve": true,
   "description": "Hidden-test evaluation for the ACM MM 2026 Explainable Deepfake Detection Challenge on image-level deepfake detection and grounded explanation generation.",
-  "participants_count": 14,
-  "submissions_count": 5,
+  "participants_count": 27,
+  "submissions_count": 20,
   "queue": {
     "name": "acm-mm-2026-xplainverse-challenge",
     "vhost": "46b0ad1b-eafd-499d-949b-c3e9ae3904af",
@@ -283,7 +294,7 @@
   "can_participants_make_submissions_public": false,
   "make_programs_available": false,
   "make_input_data_available": false,
-  "docker_image": "abhijeet1317/xdd-scorer:2026-v5",
+  "docker_image": "abhijeet1317/xdd-scorer:2026-v6",
   "allow_robot_submissions": false,
   "competition_type": "competition",
   "fact_sheet": {
