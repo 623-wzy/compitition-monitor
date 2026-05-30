@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ACM MM 2026 PCBA Standard-to-Real Grand Challenge — Codabench 竞赛监测</title>
+<title>ArGuard 2026 — Subtask A1 (Binary Hateful Meme Detection) — Codabench 竞赛监测</title>
 <style>
 :root {
     --bg: #0f1117;
@@ -99,161 +99,114 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
 </header>
 <div class="detail-wrap">
   <a class="back-link" href="index.html">← 返回竞赛目录</a>
-  <h2>ACM MM 2026 PCBA Standard-to-Real Grand Challenge</h2>
+  <h2>ArGuard 2026 — Subtask A1 (Binary Hateful Meme Detection)</h2>
   <div class="detail-meta">
-    <span>ID: 16306</span>
-    <span>创建者: aimm_ifm</span>
-    <span>创建时间: 2026-05-14</span>
-    <span>参与人数: 23</span>
-    <span>提交次数: 108</span>
-    <a class="ext-link" href="https://www.codabench.org/competitions/16306/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+    <span>ID: 16661</span>
+    <span>创建者: mohamedbayan</span>
+    <span>创建时间: 2026-05-25</span>
+    <span>参与人数: 2</span>
+    <span>提交次数: 0</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16661/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
   </div>
 
   <div class="section">
     <h3>竞赛描述</h3>
-    <div class="page-content">ACM MM 2026 跨域视觉问答大挑战赛 —— 真实PCBA制造检测应用</div>
+    <div class="page-content">阿拉伯语多模态仇恨表情包分类。给定一个表情包（图像加上OCR提取的阿拉伯语文本），预测它是否为仇恨或非仇恨。官方指标：宏F1。</div>
   </div>
 
   <div class="section">
     <h3>竞赛阶段</h3>
     <table class="phases-table">
       <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
-      <tbody><tr><td><span class='badge badge-test'>测试</span> Public Evaluation</td><td>2026-05-14</td><td>2026-06-04</td><td>5</td></tr></tbody>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development Phase</td><td>2026-05-14</td><td>2026-07-19</td><td>5</td></tr><tr><td><span class='badge badge-test'>测试</span> Testing Phase</td><td>2026-07-20</td><td>2026-07-29</td><td>20</td></tr></tbody>
     </table>
   </div>
 
-<div class='section'><h3>Overview</h3><div class='page-content'>## 概述
+<div class='section'><h3>Participation</h3><div class='page-content'># 如何参与
 
-**PCBA标准到真实场景大挑战**聚焦于**真实制造检验的跨域视觉问答（VQA）**。
+ArGuard 2026 — 任务1 / A赛道 · **子任务A1：仇恨表情包二分类检测**
 
-印刷电路板组装（PCBA）检验不仅需要视觉识别。实际工厂决策取决于**工业标准**和**真实生产线图像**。可靠的检验模型必须理解制造规则、识别与上下文相关的缺陷、推理可能的原因，并提供可执行的答案。
+## 谁可以参加
+您可以以个人或团队身份参加。一个人可以参加ArGuard 2026内的多个共享任务 — 查看[任务网站](https://araieval.gitlab.io/ArGuard2026/)获取完整列表。
 
-本挑战评估多模态模型从**标准衍生知识**泛化到**密集、异质真实PCBA图像**的能力。邀请参赛者开发VQA系统，能够解读标准文档、识别组件和缺陷、执行计数任务，并在现实视觉变化下进行推理。
+## 如何注册
+1. 在此CodaBench竞赛页面上注册。
+2. 阅读[条款](#)标签 — 特别注意提交文件格式和命名规范。
+3. 从Hugging Face Hub下载数据：[`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1)。
+4. 克隆初始工具包：[`araieval/ArGuard-2026-tasks`](https://github.com/araieval/ArGuard-2026-tasks)。
+5. 训练您的模型，在开发阶段生成`dev_test`分割上的预测，在最终评估阶段生成`test`分割上的预测。
 
-参赛者可在[HuggingFace](https://huggingface.co/datasets/aimmifm/PCBA_Standard-to-Real_Challenge)上通过申请数据集进行注册，并通过官方竞赛平台提交预测文件。
+## 提交
+- 每个阶段由一名团队成员通过**提交**标签进行提交。
+- 将您的TSV预测文件作为`prediction.zip`上传（见条款）。
+- 截止时间前的最新有效提交将被视为您团队在该阶段的最终提交。
 
-## 任务
+## 系统描述论文
+所有团队都可以为研讨会提交系统描述论文。如果您参加了多个子任务，一篇论文可以涵盖多个子任务。
 
-参赛者需回答PCBA相关视觉问题，并为每个测试样本提交预测答案。基准包含四大VQA类别：
+## 联系方式
+问题咨询：arguard2026-organizers@googlegroups.com</div></div><div class='section'><h3>Dataset</h3><div class='page-content'># 数据集
 
-1. **基于标准的知识问答**
-   源自工业标准的问题，涵盖标准解读、缺陷原因分析和处理决策。
+ArGuard 第1任务 — A赛道基于阿拉伯语多模态表情包数据集构建：每个实例包含一张图像和覆盖在其上的阿拉伯文本（通过OCR提取）。表情包已手动标注仇恨程度。
 
-2. **事实性**
-   感知为主的问题，包括组件类型识别、安装面识别、缺陷存在检测和缺陷类型识别。
+对于**子任务A1**，每个表情包都有一个来自{`Hateful`（仇恨）、`Not Hateful`（非仇恨）}的二分类标签。
 
-3. **定量推理**
-   数字短答题，包括组件计数和管脚/引线计数。
+## 获取数据
+官方数据集存放在Hugging Face Hub的[`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1)。使用初始工具包中的辅助脚本下载：
 
-4. **属性推理**
-   关于视觉属性的问题，如主要组件的形状。
-
-## 数据集
-
-已发布的数据集 https://huggingface.co/datasets/aimmifm/PCBA_Standard-to-Real_Challenge 由两个互补来源构建：
-
-* **标准衍生VQA**
-  由工业包装标准构建并转换为VQA项目。该子集聚焦于标准知识、缺陷原因分析和决策制定。
-
-* **真实场景VQA**
-  源自工厂生产线数据。该子集聚焦于真实制造图像和实际视觉变化下的检验推理。
-
-公开分割包含：
-
-| 分割 | 问题数量 |
-| ---- | -------: |
-| 训练 |    8,200 |
-| 测试 |    8,200 |
-| 合计 |   16,400 |</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'>## 评估
-
-所有提交都在官方Codabench服务器上自动评估。参与者必须为发布的公开测试问题提交一个预测文件。公开排行榜报告单一的**总体得分**。
-
-## 提交格式
-
-对于Codabench提交，参与者必须上传单个`.zip`文件。`.zip`压缩包必须在根级别包含一个名为`submission.csv`的CSV文件：
-
-```text
-your_submission.zip
-└── submission.csv
+```bash
+git clone https://github.com/araieval/ArGuard-2026-tasks.git
+cd ArGuard-2026-tasks/task1
+pip install -r requirements.txt
+python data/download_data.py
 ```
 
-`submission.csv`文件必须包含恰好两列：
+## 数据划分
 
-```csv
-qid,answer
-1,B
-2,12
-3,E
+| 划分        | 记录数 | 标签   | 阶段                    | 用途                                    |
+|--------------|--------:|----------|--------------------------|--------------------------------------------|
+| `train`      |   3,500 | 完整     | 开发阶段              | 模型训练                             |
+| `dev`        |     500 | 完整     | 开发阶段              | 超参数选择、本地评估 |
+| `dev_test`   |     500 | **无** | 开发阶段（排行榜）| 开发阶段排行榜提交目标 |
+| `test`       |     500 | 完整     | 最终评估         | 盲目排名（三重标注黄金标准）      |
+
+`dev_test`划分发布时已移除标签——这是开发阶段进行预测提交的文件。
+
+## 记录模式（`download_data.py`之后）
+```json
+{
+    &quot;id&quot;: &quot;f9a8…b1.jpg&quot;,
+    &quot;image_path&quot;: &quot;img/f9a8…b1.jpg&quot;,
+    &quot;text&quot;: &quot;OCR提取的阿拉伯文本…&quot;,
+    &quot;label&quot;: &quot;Hateful&quot; | &quot;Not Hateful&quot; | null,
+    &quot;fine_grained_label&quot;: [&quot;Mocking&quot;, &quot;Incitement&quot;],
+    &quot;annotations&quot;: []
+}
 ```
 
-提交规则：
+## 许可证
+数据集发布于**CC BY-NC 4.0**许可证（仅限非商业研究使用）。
 
-* `qid`必须完全匹配`vqa_test_public.json`中的问题标识符
-* `answer`必须仅包含最终预测
-* 对于多选题，按照问题中显示的选项键精确提交，例如`A`、`B`、`C`、`D`、`E`或`F`
-* 对于计数问题，以纯字符串形式提交整数，例如`12`
-* 文件必须为每个测试问题包含一行
-* 缺少行、重复的`qid`值或未知的`qid`值将导致提交无效
-* 不要在提交压缩包中将`submission.csv`放置在额外的子文件夹内
+## 资源
+- 初始工具包：&lt;https://github.com/araieval/ArGuard-2026-tasks&gt;
+- 任务网站：&lt;https://araieval.gitlab.io/ArGuard2026/&gt;</div></div><div class='section'><h3>Timeline</h3><div class='page-content'># 时间表
 
-公开测试JSON不公开任务类型注释。任务分组由官方评估服务器内部处理。
+## 开发阶段
+使用此阶段在 `train.jsonl` / `dev.jsonl` 上调整模型，并在 `dev_test.jsonl` 上提交预测以获得排行榜成绩。
 
-## 官方指标
+**时间窗口：** `2026-05-14 → 2026-07-19`
+**提交次数：** 每天最多5次，总计100次。
 
-每个测试问题在内部属于以下任务组之一：
+## 测试阶段
+发布最终的盲测集。在 `train.jsonl` + `dev.jsonl` 上训练，在 `test.jsonl` 上提交预测——你的最佳有效提交将计入官方排名。
 
-* `standard_knowledge`
-* `component_type`
-* `mount_side`
-* `defect_existence`
-* `defect_type`
-* `count_component`
-* `count_pin_lead`
-* `attribute_reasoning`
+**时间窗口：** `2026-07-20 → 2026-07-29`
+**提交次数：** 每天最多20次，总计100次。
 
-任务级指标：
+&gt; 如果任务计划发生变化，请调整 `competition.yaml` 中的日期（`phases.start` / `phases.end` 字段）。
 
-* **准确率**用于`standard_knowledge`、`component_type`、`mount_side`、`defect_type`和`attribute_reasoning`
-* **F1得分**用于`defect_existence`
-* **标准化MAE**用于`count_component`和`count_pin_lead`
-
-对于`defect_existence`，官方得分使用异常阳性类的二元F1。
-
-对于计数任务，官方标准化得分为：
-
-```text
-count_score_t = max(0, 1 - MAE_t / C_t)
-```
-
-其中固定的标准化常数为：
-
-* `C_count_component = 138`
-* `C_count_pin_lead = 260`
-
-## 总体得分
-
-每个任务级指标首先转换为相同的`0-1`范围。最终公开排行榜得分随后计算为跨任务组的加权平均，使用评估集中的任务比例：
-
-```text
-Overall Score = 100 * sum_t (w_t * s_t)
-```
-
-其中：
-
-* `s_t`是任务`t`的任务级得分
-* `w_t = n_t / N`
-* `n_t`是任务`t`的评估问题数
-* `N`是评估问题总数
-
-排行榜在`0-100`范围内显示最终**总体得分**。
-
-## 评估说明
-
-* 官方Codabench服务器是得分的唯一有效来源
-* 组织者方面的任务注释对参与者隐藏
-* 多选题的无效选项标签被计为错误答案
-* 计数问题的非整数答案被视为无效计数预测
-* 组织者可能会在私有评估数据上另外运行相同的评分协议以进行验证或赛后分析</div></div>
+## 研讨会
+论文提交和通知日期将在[任务网站](https://araieval.gitlab.io/ArGuard2026/)上公布。</div></div>
 
 </div>
 </body>
