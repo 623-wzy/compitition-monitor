@@ -5,7 +5,7 @@
   "description_zh": "本竞赛评估视觉语言模型（VLMs）在具身场景中的视觉鲁棒性。在初赛阶段，参赛者需要预测12,400张失真图像（IQA）上的性能下降情况。决赛阶段将升级到真实机器人数据。加入我们，为具身代理构建更可靠的视觉系统！",
   "created_by": "hanyufei",
   "created_when": "2026-05-29T17:21:53.969476Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-29-1780075847/e9b79f5722db/logo_140percent.png?AWSAccessKeyId=codabench-prod&Signature=%2FDB1yc8VvY0%2Bz21pXAT2h%2By0jqQ%3D&Expires=1780129571",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-29-1780075847/e9b79f5722db/logo_140percent.png?AWSAccessKeyId=codabench-prod&Signature=F7dtfhNhltu7B95Q7lC5IzeiAdE%3D&Expires=1780216261",
   "participants_count": 3,
   "submissions_count": 3,
   "first_phase_start": null,
