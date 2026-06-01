@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Diabetic Retinopathy Detection — Codabench 竞赛监测</title>
+<title>Fish Species Recognition Challenge — Codabench 竞赛监测</title>
 <style>
 :root {
     --bg: #0f1117;
@@ -99,70 +99,130 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
 </header>
 <div class="detail-wrap">
   <a class="back-link" href="index.html">← 返回竞赛目录</a>
-  <h2>Diabetic Retinopathy Detection</h2>
+  <h2>Fish Species Recognition Challenge</h2>
   <div class="detail-meta">
-    <span>ID: 14569</span>
-    <span>创建者: maxencedbe</span>
-    <span>创建时间: 2026-03-08</span>
-    <span>参与人数: 14</span>
-    <span>提交次数: 40</span>
-    <a class="ext-link" href="https://www.codabench.org/competitions/14569/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+    <span>ID: 16795</span>
+    <span>创建者: khanff</span>
+    <span>创建时间: 2026-05-31</span>
+    <span>参与人数: 2</span>
+    <span>提交次数: 4</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16795/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
   </div>
 
   <div class="section">
     <h3>竞赛描述</h3>
-    <div class="page-content">视网膜图像的5个严重程度等级的多标签分类。</div>
+    <div class="page-content">使用机器学习从图像中分类鱼类物种。参赛者获得标记的训练图像，必须预测未见过的测试图像的物种。</div>
   </div>
 
   <div class="section">
     <h3>竞赛阶段</h3>
     <table class="phases-table">
       <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
-      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development phase</td><td>2026-03-01</td><td>2026-05-31</td><td>10</td></tr></tbody>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development Phase</td><td>2026-01-01</td><td>2026-06-30</td><td>5</td></tr><tr><td><span class='badge badge-test'>测试</span> Final Evaluation Phase</td><td>2026-07-01</td><td>—</td><td>5</td></tr></tbody>
     </table>
   </div>
 
-<div class='section'><h3>Overview</h3><div class='page-content'># 糖尿病视网膜病变检测挑战
+<div class='section'><h3>Challenge Overview</h3><div class='page-content'># 鱼类物种识别挑战赛
 
-## 目标
+## 概述
 
-使用机器学习将视网膜眼底图像分类为糖尿病视网膜病变的 **5 个严重程度等级**。
+欢迎参加鱼类物种识别挑战赛！您的任务是构建一个分类器，从图像中识别鱼类物种。
 
----
+您将获得：
+- **训练集**：标注了物种名称的鱼类图像
+- **测试集**：未标注的鱼类图像，用于开发阶段和最终阶段
 
-## 目标
+从&quot;如何参赛&quot;页面提供的链接下载完整数据集。
 
-**糖尿病视网膜病变 (DR)** 是一种糖尿病并发症，会损伤视网膜血管。它是全球导致失明的主要原因，影响超过 **1 亿人**。通过对视网膜图像进行自动筛查进行早期检测可以大幅改善患者预后。
+## 任务
 
-您的目标是建立一个模型，该模型以 **视网膜眼底照片** 作为输入，预测其对应的 **DR 严重程度等级**。
+根据鱼类图像预测其物种标签。提交内容为JSON文件，映射图像文件名到预测的物种名称。
 
-## 严重程度等级
+## 评估方法
 
-| 标签 | 严重程度 | 描述 |
-|:----:|---------|------|
-| 0 | 无 DR | 健康视网膜，无糖尿病视网膜病变迹象 |
-| 1 | 轻度 | 仅有微动脉瘤 |
-| 2 | 中度 | 超过仅微动脉瘤，但不及严重程度 |
-| 3 | 严重 | 广泛的视网膜内出血、静脉串珠样改变 |
-| 4 | 增殖性 DR | 新生血管形成和/或玻璃体出血 |
+提交内容根据**分类准确率**进行评分——测试图像中预测物种与真实标签匹配的比例。预测结果通过**图像文件名键**与真实标签匹配，因此顺序无关。
 
-## 数据集
+## 数据格式
 
-数据集包含来自 [IDRiD（印度糖尿病视网膜病变图像数据集）](https://universe.roboflow.com/officeworkspace/diabetic-retinopathy-dataset) 的 **510 张视网膜眼底图像**，遵循 **CC BY 4.0** 许可证。
+**训练标签**（`train_labels.json`）：
+```json
+{
+  &quot;train/img_001.jpg&quot;: &quot;salmon&quot;,
+  &quot;train/img_002.jpg&quot;: &quot;tuna&quot;
+}
+```
 
-- **训练集**：407 张标注图像
-- **公开测试集**（开发阶段）：约 50 张图像
-- **私有测试集**（最终阶段）：约 50 张图像
+**提交文件**（`prediction.json`）——每个测试图像一条记录：
+```json
+{
+  &quot;img_001.jpg&quot;: &quot;salmon&quot;,
+  &quot;img_002.jpg&quot;: &quot;tuna&quot;,
+  &quot;img_003.jpg&quot;: &quot;bass&quot;
+}
+```
 
-标签以 **独热编码向量** 形式提供，长度为 5（列 `0` 至 `4`）。每张图像恰好属于一个严重程度类别。
+## 快速开始
 
-## 评估指标
+从开发阶段页面下载入门工具包，其中包括示例提交和基础代码。</div></div><div class='section'><h3>How to Participate</h3><div class='page-content'># 参与方式
 
-提交评估的指标如下：
+## 1. 下载数据集
 
-| 指标 | 描述 | 方向 |
-|------|------|:----:|
-| **F1 宏平均** | 平均 F1 分数 | ↑ |</div></div>
+从 Google Drive 下载鱼类图像数据集：**[TODO: 在此插入您的 Google Drive 链接]**
+
+压缩包包含：
+- `train/` — 训练图像，按物种分类到子文件夹
+- `train_labels.json` — 图像文件名到物种标签的映射
+- `test/` — 测试图像（无标签）
+
+## 2. 构建您的模型
+
+在训练数据上训练鱼类物种分类器。您可以自由使用任何框架（PyTorch、TensorFlow、scikit-learn 等）和任何预训练骨干网络。
+
+## 3. 格式化您的预测
+
+创建名为 `prediction.json` 的文件，将每个测试图像文件名映射到您预测的物种标签：
+
+```json
+{
+  &quot;img_001.jpg&quot;: &quot;salmon&quot;,
+  &quot;img_002.jpg&quot;: &quot;tuna&quot;,
+  &quot;img_003.jpg&quot;: &quot;bass&quot;,
+  &quot;img_004.jpg&quot;: &quot;herring&quot;
+}
+```
+
+基准真值中的每个键都必须出现在您的提交中 — 额外的键将被忽略，缺少的键将导致错误。
+
+## 4. 提交
+
+压缩您的预测文件并上传：
+
+```bash
+zip submission.zip prediction.json
+```
+
+然后在开发阶段页面上上传 `submission.zip`。
+
+## 5. 阶段
+
+- **开发阶段**：可多次提交以调整您的模型。
+- **最终评估阶段**：仅一次提交机会。请仔细选择您最好的模型。
+
+有关截止日期，请参阅**时间表**页面。</div></div><div class='section'><h3>Timeline</h3><div class='page-content'># 时间表
+
+## 开发阶段
+**开始：** TODO — 设置为您的工作坊开始日期
+
+**结束：** TODO — 设置为您的提交截止日期
+
+在此阶段，您可以提交任意次数。您的预测将针对公开开发测试集进行评分，结果立即显示在排行榜上。
+
+使用此阶段迭代您的模型，并在最终截止日期前检查您的分数。
+
+## 最终评估阶段
+**开始：** TODO — 开发阶段关闭后
+
+在此阶段，您只能提交**一次**。预测将针对开发期间未提供的隐藏测试集进行评分。您的最终排名由该分数决定。</div></div>
 
 </div>
 </body>

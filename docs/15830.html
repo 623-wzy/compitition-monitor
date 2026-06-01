@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ArGuard 2026 — Subtask A1 (Binary Hateful Meme Detection) — Codabench 竞赛监测</title>
+<title>Neural encoding with deep neural networks (v9 - 2026-04-20) — Codabench 竞赛监测</title>
 <style>
 :root {
     --bg: #0f1117;
@@ -99,114 +99,146 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
 </header>
 <div class="detail-wrap">
   <a class="back-link" href="index.html">← 返回竞赛目录</a>
-  <h2>ArGuard 2026 — Subtask A1 (Binary Hateful Meme Detection)</h2>
+  <h2>Neural encoding with deep neural networks (v9 - 2026-04-20)</h2>
   <div class="detail-meta">
-    <span>ID: 16661</span>
-    <span>创建者: mohamedbayan</span>
-    <span>创建时间: 2026-05-25</span>
-    <span>参与人数: 3</span>
-    <span>提交次数: 0</span>
-    <a class="ext-link" href="https://www.codabench.org/competitions/16661/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+    <span>ID: 15830</span>
+    <span>创建者: psulewski</span>
+    <span>创建时间: 2026-04-20</span>
+    <span>参与人数: 24</span>
+    <span>提交次数: 37</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/15830/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
   </div>
 
   <div class="section">
     <h3>竞赛描述</h3>
-    <div class="page-content">阿拉伯语多模态仇恨表情包分类。给定一个表情包（图像加上OCR提取的阿拉伯语文本），预测它是否为仇恨或非仇恨。官方指标：宏F1。</div>
+    <div class="page-content"># 翻译
+
+预测注视对齐的脑磁图(MEG)活动(204个梯度计通道,注视后110毫秒),基于自然场景图像和来自主动视觉语义(AVS)数据集的眼动元数据,为一个被保留的受试者。
+
+Sulewski, P., Amme, C., Hebart, M., König, P., &amp; Kietzmann, T. (2025). 我们为什么停留:记忆编码而非视觉处理需求驱动自然场景上的注视时间——来自大规模脑磁图数据集的证据。
+
+仅限学术用途。AVS数据集及所有衍生材料专门为学术研究和教育目的提供,用于奥斯纳布吕克大学(Osnabrück University)&quot;深度神经网络神经编码&quot;课程(SoSe 2026)。</div>
   </div>
 
   <div class="section">
     <h3>竞赛阶段</h3>
     <table class="phases-table">
       <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
-      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development Phase</td><td>2026-05-14</td><td>2026-07-19</td><td>5</td></tr><tr><td><span class='badge badge-test'>测试</span> Testing Phase</td><td>2026-07-20</td><td>2026-07-29</td><td>20</td></tr></tbody>
+      <tbody><tr><td><span class='badge badge-other'>其他</span> Challenge 1</td><td>2026-04-20</td><td>2026-07-31</td><td>25</td></tr></tbody>
     </table>
   </div>
 
-<div class='section'><h3>Participation</h3><div class='page-content'># 如何参与
+<div class='section'><h3>Overview</h3><div class='page-content'># MEG脑编码挑战
 
-ArGuard 2026 — 任务1 / A赛道 · **子任务A1：仇恨表情包二分类检测**
+## 目标
 
-## 谁可以参加
-您可以以个人或团队身份参加。一个人可以参加ArGuard 2026内的多个共享任务 — 查看[任务网站](https://araieval.gitlab.io/ArGuard2026/)获取完整列表。
+构建一个模型，预测人类大脑对自然自由观看视觉场景的反应。具体地说，您将预测**注视对齐的MEG活动**——在每次眼动注视开始后110毫秒时在204个MEG梯度计通道上测得的神经反应模式。
 
-## 如何注册
-1. 在此CodaBench竞赛页面上注册。
-2. 阅读[条款](#)标签 — 特别注意提交文件格式和命名规范。
-3. 从Hugging Face Hub下载数据：[`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1)。
-4. 克隆初始工具包：[`araieval/ArGuard-2026-tasks`](https://github.com/araieval/ArGuard-2026-tasks)。
-5. 训练您的模型，在开发阶段生成`dev_test`分割上的预测，在最终评估阶段生成`test`分割上的预测。
+## 背景
 
-## 提交
-- 每个阶段由一名团队成员通过**提交**标签进行提交。
-- 将您的TSV预测文件作为`prediction.zip`上传（见条款）。
-- 截止时间前的最新有效提交将被视为您团队在该阶段的最终提交。
+数据来自**主动视觉语义学（AVS）**数据集，其中参与者在同时记录眼动和全脑MEG的情况下自由探索自然场景照片。
 
-## 系统描述论文
-所有团队都可以为研讨会提交系统描述论文。如果您参加了多个子任务，一篇论文可以涵盖多个子任务。
+您获得来自五名训练受试者（受试者1-5）的数据，并被要求推广到**保留的受试者（受试者60）**，其场景观看行为和相关的MEG反应构成评估集。
 
-## 联系方式
-问题咨询：arguard2026-organizers@googlegroups.com</div></div><div class='section'><h3>Dataset</h3><div class='page-content'># 数据集
+## 任务
 
-ArGuard 第1任务 — A赛道基于阿拉伯语多模态表情包数据集构建：每个实例包含一张图像和覆盖在其上的阿拉伯文本（通过OCR提取）。表情包已手动标注仇恨程度。
+**挑战1——110毫秒处的快照编码**
 
-对于**子任务A1**，每个表情包都有一个来自{`Hateful`（仇恨）、`Not Hateful`（非仇恨）}的二分类标签。
+给定注视元数据（场景ID、凝视坐标、持续时间、序列位置等）和对应的场景图像，预测注视开始后110毫秒时204个MEG梯度计振幅的向量。
 
-## 获取数据
-官方数据集存放在Hugging Face Hub的[`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1)。使用初始工具包中的辅助脚本下载：
+**提交形状：** `(7750, 204)` ——开发集中每次注视一行，204个通道。
 
-```bash
-git clone https://github.com/araieval/ArGuard-2026-tasks.git
-cd ArGuard-2026-tasks/task1
-pip install -r requirements.txt
-python data/download_data.py
-```
+## 时间表
 
-## 数据划分
+| 日期 | 事件 |
+|------|------|
+| 2026年4月 | 挑战开放 |
+| 2026年7月 | 挑战关闭 |
 
-| 划分        | 记录数 | 标签   | 阶段                    | 用途                                    |
-|--------------|--------:|----------|--------------------------|--------------------------------------------|
-| `train`      |   3,500 | 完整     | 开发阶段              | 模型训练                             |
-| `dev`        |     500 | 完整     | 开发阶段              | 超参数选择、本地评估 |
-| `dev_test`   |     500 | **无** | 开发阶段（排行榜）| 开发阶段排行榜提交目标 |
-| `test`       |     500 | 完整     | 最终评估         | 盲目排名（三重标注黄金标准）      |
+## 限制
 
-`dev_test`划分发布时已移除标签——这是开发阶段进行预测提交的文件。
+- 每天5次提交
+- 总共50次提交</div></div><div class='section'><h3>Data</h3><div class='page-content'># 数据
 
-## 记录模式（`download_data.py`之后）
-```json
-{
-    &quot;id&quot;: &quot;f9a8…b1.jpg&quot;,
-    &quot;image_path&quot;: &quot;img/f9a8…b1.jpg&quot;,
-    &quot;text&quot;: &quot;OCR提取的阿拉伯文本…&quot;,
-    &quot;label&quot;: &quot;Hateful&quot; | &quot;Not Hateful&quot; | null,
-    &quot;fine_grained_label&quot;: [&quot;Mocking&quot;, &quot;Incitement&quot;],
-    &quot;annotations&quot;: []
-}
-```
+## 您将获得的数据
 
-## 许可证
-数据集发布于**CC BY-NC 4.0**许可证（仅限非商业研究使用）。
+所有数据通过课程资源库分发。您**不**将数据上传到 Codabench — 仅提交预测结果。
 
-## 资源
-- 初始工具包：&lt;https://github.com/araieval/ArGuard-2026-tasks&gt;
-- 任务网站：&lt;https://araieval.gitlab.io/ArGuard2026/&gt;</div></div><div class='section'><h3>Timeline</h3><div class='page-content'># 时间表
+### 训练数据（被试 1–5）
 
-## 开发阶段
-使用此阶段在 `train.jsonl` / `dev.jsonl` 上调整模型，并在 `dev_test.jsonl` 上提交预测以获得排行榜成绩。
+| 文件 | 描述 |
+|------|------|
+| `training/meg_110ms.npy` | 110 ms 时的脑磁图，形状为 `(n_fixations, 204)` |
+| `training/metadata.csv` | 每个注视点的元数据（见下表列名） |
+| `training/channel_names.txt` | 204 个梯度计通道名称的有序列表 |
+| `avs_scenes/` | 完整场景图像（各被试共用） |
 
-**时间窗口：** `2026-05-14 → 2026-07-19`
-**提交次数：** 每天最多5次，总计100次。
+### 开发集（被试 60）
 
-## 测试阶段
-发布最终的盲测集。在 `train.jsonl` + `dev.jsonl` 上训练，在 `test.jsonl` 上提交预测——你的最佳有效提交将计入官方排名。
+| 文件 | 描述 |
+|------|------|
+| `subject60/challenge1_dev/metadata.csv` | 7750 个注视点，需要提交预测 |
 
-**时间窗口：** `2026-07-20 → 2026-07-29`
-**提交次数：** 每天最多20次，总计100次。
+被试 60 的真实脑磁图数据**被隐藏**，仅用于评分。
 
-&gt; 如果任务计划发生变化，请调整 `competition.yaml` 中的日期（`phases.start` / `phases.end` 字段）。
+## 元数据列
 
-## 研讨会
-论文提交和通知日期将在[任务网站](https://araieval.gitlab.io/ArGuard2026/)上公布。</div></div>
+`metadata.csv` 中的关键列：
+
+| 列名 | 描述 |
+|------|------|
+| `sceneID` | 整数场景标识符 — 链接到图像文件 |
+| `mean_gx`, `mean_gy` | 屏幕中心坐标系中的平均凝视位置（像素）（原点 = 中心，y 轴向上） |
+| `duration` | 注视点持续时间 [ms] |
+| `fix_sequence` | 试次内的注视点索引（1 = 第一个注视点） |
+| `time_in_trial` | 试次开始后的时间 [ms] |
+| `subject` | 被试标识符 |
+
+## 场景图像
+
+场景图像为 JPEG 格式，命名为 `{sceneID:012d}_MEG_size.jpg`，缩放至呈现分辨率（1024 × 768 像素）。注视点补丁（112 × 112 像素，以凝视点为中心）可使用 `megcourselib.data.stim.extract_crop()` 提取。</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'># 评估
+
+## 指标
+
+提交的作品使用**皮尔逊相关系数（r）**进行评估，该系数在开发集的所有7750个注视点中**独立计算每个204个通道**的预测MEG振幅与实际MEG振幅之间的相关性。
+
+这产生一个向量 **r** ∈ ℝ^204，从中导出四个排行榜分数：
+
+| 列 | 定义 |
+|--------|-----------|
+| **平均 r** *（主要指标）* | `mean(r)` — 所有通道的平均编码 |
+| **中位数 r** | `median(r)` — 稳健的中心趋势 |
+| **最大 r** | `max(r)` — 最佳单通道编码 |
+| **最差10个通道** | `mean(r[argsort(r)[:10]])` — 最差10个通道的平均值 |
+
+排名由**平均 r** 决定（越高越好）。所有其他列仅用于诊断目的。
+
+## 提交格式
+
+1. 创建一个形状为 `(7750, 204)` 且数据类型为 `float64` 的NumPy数组。
+   - 行顺序必须与 `subject60/challenge1_dev/metadata.csv` 完全匹配。
+   - 列顺序必须与 `channel_names.txt` 完全匹配（MEG0001 … MEG0204）。
+
+2. 将其保存为 `predictions.npy`：
+   ```python
+   import numpy as np
+   np.save(&quot;predictions.npy&quot;, pred)   # 形状 (7750, 204)
+   ```
+
+3. 压缩它（文件必须在zip的根目录下，不能在子文件夹中）：
+   ```bash
+   zip submission.zip predictions.npy
+   ```
+
+4. 通过提交按钮上传 `submission.zip`。
+
+## 有效性检查
+
+评分程序会拒绝以下提交：
+- 形状错误（除7750 × 204外的任何形状）
+- 包含NaN或Inf值
+
+无效提交在所有列中得分为0.0。</div></div>
 
 </div>
 </body>

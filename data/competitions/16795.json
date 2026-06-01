@@ -1,0 +1,48 @@
+{
+  "id": 16795,
+  "title": "Fish Species Recognition Challenge",
+  "description": "Classify fish species from images using machine learning. Participants are given labelled training images and must predict the species of unseen test images.",
+  "description_zh": "使用机器学习从图像中分类鱼类物种。参赛者获得标记的训练图像，必须预测未见过的测试图像的物种。",
+  "created_by": "khanff",
+  "created_when": "2026-05-31T12:31:14.005307Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-31-1780230674/99290699ac10/fish.png?AWSAccessKeyId=codabench-prod&Signature=xOTTXYuwz1qZpwzAO%2FGZPkBE8ek%3D&Expires=1780302961",
+  "participants_count": 2,
+  "submissions_count": 4,
+  "first_phase_start": null,
+  "phases": [
+    {
+      "id": 27538,
+      "name": "Development Phase",
+      "start": "2026-01-01T00:00:00Z",
+      "end": "2026-06-30T00:00:00Z",
+      "max_submissions_per_day": 5
+    },
+    {
+      "id": 27539,
+      "name": "Final Evaluation Phase",
+      "start": "2026-07-01T00:00:00Z",
+      "end": null,
+      "max_submissions_per_day": 5
+    }
+  ],
+  "pages": [
+    {
+      "index": 0,
+      "title": "Challenge Overview",
+      "content": "# Fish Species Recognition Challenge\n\n## Overview\n\nWelcome to the Fish Species Recognition Challenge! Your task is to build a classifier that identifies fish species from images.\n\nYou will be provided with:\n- A **training set** of labelled fish images (species name for each image)\n- A **test set** of unlabelled fish images used in both the development and final phases\n\nDownload the full dataset from the link provided in the \"How to Participate\" page.\n\n## Task\n\nGiven a fish image, predict its species label. Submissions are JSON files mapping image filenames to predicted species names.\n\n## Evaluation\n\nSubmissions are scored by **classification accuracy** — the fraction of test images whose predicted species matches the ground truth label. Predictions are matched to ground truth **by image filename key**, so ordering does not matter.\n\n## Data Format\n\n**Training labels** (`train_labels.json`):\n```json\n{\n  \"train/img_001.jpg\": \"salmon\",\n  \"train/img_002.jpg\": \"tuna\"\n}\n```\n\n**Submission file** (`prediction.json`) — one entry per test image:\n```json\n{\n  \"img_001.jpg\": \"salmon\",\n  \"img_002.jpg\": \"tuna\",\n  \"img_003.jpg\": \"bass\"\n}\n```\n\n## Getting Started\n\nDownload the starting kit from the Development Phase page for an example submission and baseline code.",
+      "content_zh": "# 鱼类物种识别挑战赛\n\n## 概述\n\n欢迎参加鱼类物种识别挑战赛！您的任务是构建一个分类器，从图像中识别鱼类物种。\n\n您将获得：\n- **训练集**：标注了物种名称的鱼类图像\n- **测试集**：未标注的鱼类图像，用于开发阶段和最终阶段\n\n从\"如何参赛\"页面提供的链接下载完整数据集。\n\n## 任务\n\n根据鱼类图像预测其物种标签。提交内容为JSON文件，映射图像文件名到预测的物种名称。\n\n## 评估方法\n\n提交内容根据**分类准确率**进行评分——测试图像中预测物种与真实标签匹配的比例。预测结果通过**图像文件名键**与真实标签匹配，因此顺序无关。\n\n## 数据格式\n\n**训练标签**（`train_labels.json`）：\n```json\n{\n  \"train/img_001.jpg\": \"salmon\",\n  \"train/img_002.jpg\": \"tuna\"\n}\n```\n\n**提交文件**（`prediction.json`）——每个测试图像一条记录：\n```json\n{\n  \"img_001.jpg\": \"salmon\",\n  \"img_002.jpg\": \"tuna\",\n  \"img_003.jpg\": \"bass\"\n}\n```\n\n## 快速开始\n\n从开发阶段页面下载入门工具包，其中包括示例提交和基础代码。"
+    },
+    {
+      "index": 1,
+      "title": "How to Participate",
+      "content": "# How to Participate\n\n## 1. Download the Dataset\n\nDownload the fish image dataset from Google Drive: **[TODO: insert your Google Drive link here]**\n\nThe archive contains:\n- `train/` — training images organised into subfolders by species\n- `train_labels.json` — mapping of image filename → species label\n- `test/` — test images (no labels)\n\n## 2. Build Your Model\n\nTrain a fish species classifier on the training data. You are free to use any framework (PyTorch, TensorFlow, scikit-learn, etc.) and any pre-trained backbone.\n\n## 3. Format Your Predictions\n\nCreate a file named `prediction.json` mapping each test image filename to your predicted species label:\n\n```json\n{\n  \"img_001.jpg\": \"salmon\",\n  \"img_002.jpg\": \"tuna\",\n  \"img_003.jpg\": \"bass\",\n  \"img_004.jpg\": \"herring\"\n}\n```\n\nEvery key in the ground truth must appear in your submission — extra keys are ignored, missing keys cause an error.\n\n## 4. Submit\n\nZip your prediction file and upload it:\n\n```bash\nzip submission.zip prediction.json\n```\n\nThen upload `submission.zip` on the Development Phase page.\n\n## 5. Phases\n\n- **Development Phase**: submit as many times as you like to tune your model.\n- **Final Evaluation Phase**: one submission only. Choose your best model carefully.\n\nSee the **Timeline** page for deadlines.",
+      "content_zh": "# 参与方式\n\n## 1. 下载数据集\n\n从 Google Drive 下载鱼类图像数据集：**[TODO: 在此插入您的 Google Drive 链接]**\n\n压缩包包含：\n- `train/` — 训练图像，按物种分类到子文件夹\n- `train_labels.json` — 图像文件名到物种标签的映射\n- `test/` — 测试图像（无标签）\n\n## 2. 构建您的模型\n\n在训练数据上训练鱼类物种分类器。您可以自由使用任何框架（PyTorch、TensorFlow、scikit-learn 等）和任何预训练骨干网络。\n\n## 3. 格式化您的预测\n\n创建名为 `prediction.json` 的文件，将每个测试图像文件名映射到您预测的物种标签：\n\n```json\n{\n  \"img_001.jpg\": \"salmon\",\n  \"img_002.jpg\": \"tuna\",\n  \"img_003.jpg\": \"bass\",\n  \"img_004.jpg\": \"herring\"\n}\n```\n\n基准真值中的每个键都必须出现在您的提交中 — 额外的键将被忽略，缺少的键将导致错误。\n\n## 4. 提交\n\n压缩您的预测文件并上传：\n\n```bash\nzip submission.zip prediction.json\n```\n\n然后在开发阶段页面上上传 `submission.zip`。\n\n## 5. 阶段\n\n- **开发阶段**：可多次提交以调整您的模型。\n- **最终评估阶段**：仅一次提交机会。请仔细选择您最好的模型。\n\n有关截止日期，请参阅**时间表**页面。"
+    },
+    {
+      "index": 2,
+      "title": "Timeline",
+      "content": "# Timeline\n\n## Development Phase\n**Start:** TODO — set to your workshop start date\n\n**End:** TODO — set to your submission deadline\n\nDuring this phase you can submit as many times as you like. Your predictions are scored against a public development test set and results appear on the leaderboard immediately.\n\nUse this phase to iterate on your model and check your score before the final deadline.\n\n## Final Evaluation Phase\n**Start:** TODO — after the development phase closes\n\nDuring this phase you may submit **once**. Predictions are scored against a hidden test set that was not available during development. Your final rank is determined by this score.",
+      "content_zh": "# 时间表\n\n## 开发阶段\n**开始：** TODO — 设置为您的工作坊开始日期\n\n**结束：** TODO — 设置为您的提交截止日期\n\n在此阶段，您可以提交任意次数。您的预测将针对公开开发测试集进行评分，结果立即显示在排行榜上。\n\n使用此阶段迭代您的模型，并在最终截止日期前检查您的分数。\n\n## 最终评估阶段\n**开始：** TODO — 开发阶段关闭后\n\n在此阶段，您只能提交**一次**。预测将针对开发期间未提供的隐藏测试集进行评分。您的最终排名由该分数决定。"
+    }
+  ]
+}
