@@ -5,8 +5,8 @@
   "created_by": "hanyufei",
   "owner_display_name": "hanyufei",
   "created_when": "2026-05-29T17:21:53.969476Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-29-1780075847/e9b79f5722db/logo_140percent.png?AWSAccessKeyId=codabench-prod&Signature=NM2nN95al4ROqKhlD6sw1b6SK4k%3D&Expires=1780302959",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-29-1780075847/e9b79f5722db/logo_140percent_icon.png?AWSAccessKeyId=codabench-prod&Signature=J8X7BzYZwZuBxye0NR5FgFxYTxI%3D&Expires=1780302959",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-29-1780075847/e9b79f5722db/logo_140percent.png?AWSAccessKeyId=codabench-prod&Signature=5FXAeDSPK%2FYRMEQ9yfvNKSAzvOM%3D&Expires=1780389790",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-29-1780075847/e9b79f5722db/logo_140percent_icon.png?AWSAccessKeyId=codabench-prod&Signature=XYFTItutG3nif2fBzX4SupVJiWI%3D&Expires=1780389790",
   "terms": "<h3>1. General Rules</h3>\n<ul>\n    <li><b>Eligibility:</b> This competition is open to all researchers, students, and developers worldwide.</li>\n    <li><b>One Account Per Team:</b> Participants may not sign up for multiple accounts to bypass submission limits. Doing so will result in disqualification.</li>\n    <li><b>No Private Sharing:</b> Private sharing of code or data outside of teams is not permitted.</li>\n</ul>\n\n<h3>2. Data Usage</h3>\n<ul>\n    <li>The datasets provided (Images and Questions) are for <b>academic and research purposes only</b>.</li>\n    <li>Participants are not allowed to use the dataset for commercial products without permission.</li>\n</ul>\n\n<h3>3. Submission & Integrity</h3>\n<ul>\n    <li><b>Honor Code:</b> You agree not to attempt to reverse-engineer the ground truth labels or \"probe\" the leaderboard excessively.</li>\n    <li><b>Final Decision:</b> The organizers reserve the right to disqualify any team that violates these rules or the spirit of the competition.</li>\n</ul>",
   "pages": [
     {
@@ -165,8 +165,8 @@
   "collaborators": [],
   "registration_auto_approve": false,
   "description": "This competition evaluates the visual robustness of Vision-Language Models (VLMs) in embodied scenarios. In the Preliminary Phase, participants predict performance degradation on 12,400 distorted images (IQA). The Final Phase will escalate to real-world robot data. Join us to build more reliable eyes for embodied agents!",
-  "participants_count": 13,
-  "submissions_count": 10,
+  "participants_count": 17,
+  "submissions_count": 23,
   "queue": null,
   "enable_detailed_results": true,
   "show_detailed_results_in_submission_panel": false,

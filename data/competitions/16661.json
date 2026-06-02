@@ -5,7 +5,7 @@
   "description_zh": "阿拉伯语多模态仇恨表情包分类。给定一个表情包（图像加上OCR提取的阿拉伯语文本），预测它是否为仇恨或非仇恨。官方指标：宏F1。",
   "created_by": "mohamedbayan",
   "created_when": "2026-05-25T13:30:58.534544Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-25-1779715858/886e2d9c0b58/logo.png?AWSAccessKeyId=codabench-prod&Signature=rEz2MpF8vII1vvAhFxFffFf5M4o%3D&Expires=1780302968",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-25-1779715858/886e2d9c0b58/logo.png?AWSAccessKeyId=codabench-prod&Signature=vVEtQujptQ5h1Oogb6%2BDdEdcuDU%3D&Expires=1780389792",
   "participants_count": 3,
   "submissions_count": 0,
   "first_phase_start": null,
