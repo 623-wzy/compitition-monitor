@@ -6,9 +6,9 @@
     "description_zh": "ACM MM 2026 跨域视觉问答大挑战赛 —— 真实PCBA制造检测应用",
     "created_by": "aimm_ifm",
     "created_when": "2026-05-14T11:31:23.555043Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-14-1778758283/c7faeaffa1d6/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=A2nGY0Xr%2FcHEpq4AWsHwSOT9%2FJ0%3D&Expires=1780389794",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-14-1778758283/c7faeaffa1d6/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=0XwuLQT3SMC66FoK1GnOZbnunR0%3D&Expires=1780476523",
     "participants_count": 26,
-    "submissions_count": 164,
+    "submissions_count": 176,
     "first_phase_start": null,
     "phases": [
       {
@@ -41,9 +41,9 @@
     "description_zh": "本竞赛评估视觉语言模型（VLMs）在具身场景中的视觉鲁棒性。在初赛阶段，参赛者需要预测12,400张失真图像（IQA）上的性能下降情况。决赛阶段将升级到真实机器人数据。加入我们，为具身代理构建更可靠的视觉系统！",
     "created_by": "hanyufei",
     "created_when": "2026-05-29T17:21:53.969476Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-29-1780075847/e9b79f5722db/logo_140percent.png?AWSAccessKeyId=codabench-prod&Signature=5FXAeDSPK%2FYRMEQ9yfvNKSAzvOM%3D&Expires=1780389790",
-    "participants_count": 17,
-    "submissions_count": 23,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-29-1780075847/e9b79f5722db/logo_140percent.png?AWSAccessKeyId=codabench-prod&Signature=YiUvUvQMvYwdc6ZibEsyPGcLX9Q%3D&Expires=1780476517",
+    "participants_count": 18,
+    "submissions_count": 34,
     "first_phase_start": null,
     "phases": [
       {
@@ -88,9 +88,9 @@
     "description_zh": "情感感知艺术图像生成",
     "created_by": "lizihan",
     "created_when": "2026-05-13T18:36:28.409606Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-13-1778697388/6c40215c3bc9/logo.png?AWSAccessKeyId=codabench-prod&Signature=EfFtNCLL2YNATSsf59lM0jKyPYI%3D&Expires=1780389795",
-    "participants_count": 22,
-    "submissions_count": 26,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-13-1778697388/6c40215c3bc9/logo.png?AWSAccessKeyId=codabench-prod&Signature=gwzvbywih26q2QQcBwY2xH95e4A%3D&Expires=1780476521",
+    "participants_count": 24,
+    "submissions_count": 28,
     "first_phase_start": null,
     "phases": [
       {
@@ -141,9 +141,9 @@
     "description_zh": "AIGC音视频深度伪造分类挑战赛（基于MVAD数据集）",
     "created_by": "lixiang",
     "created_when": "2026-04-18T05:03:43.885782Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-21-1776751074/2acec80a7ccb/1d053422-872b-412a-be59-e3742425ce5.jfif?AWSAccessKeyId=codabench-prod&Signature=w2WKuYmN%2Femjvvymh%2FYjRjNQ4DQ%3D&Expires=1780389801",
-    "participants_count": 82,
-    "submissions_count": 167,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-21-1776751074/2acec80a7ccb/1d053422-872b-412a-be59-e3742425ce5.jfif?AWSAccessKeyId=codabench-prod&Signature=P3%2FzUoBknmh6AkRbRKqr5evu3Uw%3D&Expires=1780476526",
+    "participants_count": 84,
+    "submissions_count": 194,
     "first_phase_start": null,
     "phases": [
       {
@@ -158,7 +158,7 @@
       {
         "index": 0,
         "title": "Overview",
-        "content": "# General AIGC Audio-Video Detection\n\nThis competition focuses on **General AIGC Audio-Video Detection**. To counter the growing threat of advanced AI-generated video forgery (e.g., Sora2, Veo3.1), we propose a large-scale multimodal detection challenge based on the **MVAD dataset** (released as DDL‑GAV), which contains more than **200,000 real‑forgery audio‑video samples**. It covers both realistic and anime visual styles, four content categories (humans, animals, objects, and scenes), three typical cross‑modal forgery patterns, and more than **23 AI generation techniques**, including text‑to‑video, image‑to‑video, video‑to‑video, and audio‑to‑video synthesis. The competition aims to promote the research and application of multimodal deepfake detection and support the sustainable development of **AI for Good**.\n\nCompetition link: https://www.codabench.org/competitions/15769/\n\nIf any participants have any questions, please send an email to: 17318508682@163.com\n\n#### Note: The Test Set has been officially released on the GitHub repository as of May 15, 2026.\n\n---\n\n## Evaluation Metrics\nThis challenge includes **two hierarchical detection tasks**: binary forgery detection and four‑class modality classification.\n### Task Definitions\n- Real‑Real (RR): Both audio and video are authentic.\n- Fake‑Real (FR): Video is forged, audio is real.\n- Real‑Fake (RF): Video is real, audio is forged.\n- Fake‑Fake (FF): Both audio and video are forged.\n\n### Evaluation Metrics\nDetection performance is evaluated using **AUC, ACC, F1, and AP**.\n\n### Final Score Calculation\n- Binary Classification Score = 0.2×AUC + 0.3×ACC + 0.3×AP + 0.2×F1\n- Four‑Class Classification Score = 0.2×AUC + 0.3×ACC + 0.3×AP + 0.2×F1\n- **Overall Final Score = 0.4 × Binary Classification Score + 0.6 × Four‑Class Classification Score**\n\n## Submission Format\n\nParticipants must submit **two prediction files** packaged together in **a single `.zip` archive**.\n\n### Packaging Rules\n\n- The zip archive can have **any name** (`submission.zip`, `result.zip`, etc.).\n- It must contain exactly two files, named **precisely** `binary.txt` and `four_class.txt` (case-sensitive — do not rename).\n- The two files may sit at the zip root or inside a subfolder — both are accepted.\n- Submit prediction results only — **do not** submit model code.\n\n### 1. `binary.txt` — Binary Classification (Real / Fake)\n\nEach line: `video_path  0_pred  1_pred`\n\n- `0_pred` = probability of **Real**\n- `1_pred` = probability of **Fake**\n- An optional header line `video_path,0_pred,1_pred` is allowed and will be skipped.\n\n```\nvideo_path,0_pred,1_pred\n000bfd940cf44f998b1b4803d48d7d05.mp4 0.5066 0.4934\n0016150625f846bf8feebc6e5c0831b8.mp4 0.5100 0.4900\n001eb668e3ba4ecd89417be16ca7b613.mp4 0.6434 0.3566\n```\n\n### 2. `four_class.txt` — Four-Class Classification\n\nEach line: `video_path  0_pred  1_pred  2_pred  3_pred`\n\n- Class indices: `0 = Real-Real (RR)`, `1 = Fake-Fake (FF)`, `2 = Fake-Real (FR)`, `3 = Real-Fake (RF)`\n- An optional header line is allowed and will be skipped.\n\n```\nvideo_path,0_pred,1_pred,2_pred,3_pred\n000bfd940cf44f998b1b4803d48d7d05.mp4 0.1292 0.0075 0.3836 0.4796\n0016150625f846bf8feebc6e5c0831b8.mp4 0.2880 0.0590 0.2999 0.3531\n001eb668e3ba4ecd89417be16ca7b613.mp4 0.3144 0.0230 0.3682 0.2944\n```\n\n### Important Notes\n\n- **`video_path` must exactly match the test-set filenames** (the hashed `.mp4` names in the released test data). Mismatched names are treated as missing and scored with a default uniform probability.\n- Within a line, use **either spaces or commas** as the separator consistently — do **not** mix `comma + space`.\n- Probabilities need not sum exactly to 1 — the scorer normalizes each row automatically.\n- **Every test-set sample should appear in both files.** Missing rows are filled with default probabilities and will lower your score.\n\n## Awards and Recognition\n- Outstanding solutions will be invited for presentation at IJCAI.\n- **Top 1–5 teams** will receive official Ranking Certificates.\n- **Top 6–10 teams** will receive Excellence Awards.\n- Submitted papers for **Track 2** will have the opportunity to be selected for the Best Paper Award.\n\n## Dataset\nThis competition is built on the **MVAD dataset** (released as DDL‑GAV), the first large‑scale benchmark for multimodal AI‑generated audio‑video detection. It contains more than **205,000 video‑audio samples**, covering two visual domains (realistic and anime), four content categories (humans, animals, objects, scenes), three cross‑modal forgery patterns, and over **23 AI generation methods**. The dataset provides comprehensive and diverse support for advancing research in generalizable AIGC audio‑video detection.\n\nGitHub repository: https://github.com/HuMengXue0104/MVAD\n\n## Competition Rules\n1. Model Submission Requirements\nEach track permits only one model submission to address the designated tasks.\nAll pre-trained backbone models used must be open-source. Teams that develop proprietary backbone models during the competition are required to publicly release their model specifications and training protocols under an open-source license (e.g., MIT, Apache 2.0) during the competition period.\nWinning solutions must open-source their complete implementation, including:\n    - Training pipelines and hyperparameter configurations\n    - Evaluation code and reproducibility documentation\n    - Final model weights in standard formats\n2. Dataset Usage Requirements\nOnly organizer-recommended, publicly released datasets are permitted for training and evaluation.\nParticipants may use extended samples generated from these recommended datasets via data augmentation or deepfake tools for training, but all generation tools used must be submitted to the organizers to ensure reproducibility.\nThe use of any additional external datasets is strictly prohibited.\n\n3. Violations and Sanctions\nViolations of the above rules will result in disqualification. The organizing committee reserves the final authority over all competition-related matters.",
+        "content": "# General AIGC Audio-Video Detection\n\nThis competition focuses on **General AIGC Audio-Video Detection**. To counter the growing threat of advanced AI-generated video forgery (e.g., Sora2, Veo3.1), we propose a large-scale multimodal detection challenge based on the **MVAD dataset** (released as DDL‑GAV), which contains more than **200,000 real‑forgery audio‑video samples**. It covers both realistic and anime visual styles, four content categories (humans, animals, objects, and scenes), three typical cross‑modal forgery patterns, and more than **23 AI generation techniques**, including text‑to‑video, image‑to‑video, video‑to‑video, and audio‑to‑video synthesis. The competition aims to promote the research and application of multimodal deepfake detection and support the sustainable development of **AI for Good**.\n\nCompetition link: https://www.codabench.org/competitions/15769/\n\nIf any participants have any questions, please send an email to: 17318508682@163.com\n\n#### Note: The Test Set has been officially released on the GitHub repository as of May 15, 2026.\n\n---\n\n## Evaluation Metrics\nThis challenge includes **two hierarchical detection tasks**: binary forgery detection and four‑class modality classification.\n### Task Definitions\n- Real‑Real (RR): Both audio and video are authentic.\n- Fake‑Real (FR): Video is forged, audio is real.\n- Real‑Fake (RF): Video is real, audio is forged.\n- Fake‑Fake (FF): Both audio and video are forged.\n\n### Evaluation Metrics\nDetection performance is evaluated using **AUC, ACC, F1, and AP**.\n\n### Final Score Calculation\n- Binary Classification Score = 0.2×AUC + 0.3×ACC + 0.3×AP + 0.2×F1\n- Four‑Class Classification Score = 0.2×AUC + 0.3×ACC + 0.3×AP + 0.2×F1\n- **Overall Final Score = 0.4 × Binary Classification Score + 0.6 × Four‑Class Classification Score**\n\n## Submission Format\n\nParticipants must submit **two prediction files** packaged together in **a single `.zip` archive**.\n\n### Packaging Rules\n\n- The zip archive can have **any name** (`submission.zip`, `result.zip`, etc.).\n- It must contain exactly two files, named **precisely** `binary.txt` and `four_class.txt` (case-sensitive — do not rename).\n- The two files may sit at the zip root or inside a subfolder — both are accepted.\n- Submit prediction results only — **do not** submit model code.\n\n### 1. `binary.txt` — Binary Classification (Real / Fake)\n\nEach line: `video_path  0_pred  1_pred`\n\n- `0_pred` = probability of **Real**\n- `1_pred` = probability of **Fake**\n- An optional header line `video_path,0_pred,1_pred` is allowed and will be skipped.\n\n```\nvideo_path,0_pred,1_pred\n000bfd940cf44f998b1b4803d48d7d05.mp4 0.5066 0.4934\n0016150625f846bf8feebc6e5c0831b8.mp4 0.5100 0.4900\n001eb668e3ba4ecd89417be16ca7b613.mp4 0.6434 0.3566\n```\n\n### 2. `four_class.txt` — Four-Class Classification\n\nEach line: `video_path  0_pred  1_pred  2_pred  3_pred`\n\n- Class indices: `0 = Real-Real (RR)`, `1 = Fake-Fake (FF)`, `2 = Fake-Real (FR)`, `3 = Real-Fake (RF)`\n- An optional header line is allowed and will be skipped.\n\n```\nvideo_path,0_pred,1_pred,2_pred,3_pred\n000bfd940cf44f998b1b4803d48d7d05.mp4 0.1292 0.0075 0.3836 0.4796\n0016150625f846bf8feebc6e5c0831b8.mp4 0.2880 0.0590 0.2999 0.3531\n001eb668e3ba4ecd89417be16ca7b613.mp4 0.3144 0.0230 0.3682 0.2944\n```\n\n### Important Notes\n\n- **`video_path` must exactly match the test-set filenames** (the hashed `.mp4` names in the released test data). Mismatched names are treated as missing and scored with a default uniform probability.\n- Within a line, use **either spaces or commas** as the separator consistently — do **not** mix `comma + space`.\n- Probabilities need not sum exactly to 1 — the scorer normalizes each row automatically.\n- **Every test-set sample should appear in both files.** Missing rows are filled with default probabilities and will lower your score.\n\n## Awards and Recognition\n- Outstanding solutions will be invited for presentation at IJCAI.\n- **Top 1–5 teams** will receive official Ranking Certificates.\n- **Top 6–10 teams** will receive Excellence Awards.\n- Submitted papers for **Track 2** will have the opportunity to be selected for the Best Paper Award.\n\n## Dataset\nThis competition is built on the **MVAD dataset** (released as DDL‑GAV), the first large‑scale benchmark for multimodal AI‑generated audio‑video detection. It contains more than **205,000 video‑audio samples**, covering two visual domains (realistic and anime), four content categories (humans, animals, objects, scenes), three cross‑modal forgery patterns, and over **23 AI generation methods**. The dataset provides comprehensive and diverse support for advancing research in generalizable AIGC audio‑video detection.\n\nGitHub repository: https://github.com/HuMengXue0104/MVAD\n\n## Competition Rules\n1. Model Submission Requirements\nEach track permits only one model submission to address the designated tasks.\nAll pre-trained backbone models used must be open-source. Teams that develop proprietary backbone models during the competition are required to publicly release their model specifications and training protocols under an open-source license (e.g., MIT, Apache 2.0) during the competition period.\nWinning solutions must open-source their complete implementation, including:\n    - Training pipelines and hyperparameter configurations\n    - Evaluation code and reproducibility documentation\n    - Final model weights in standard formats\n2. Dataset Usage Requirements\nOnly organizer-recommended, publicly released datasets are permitted for training and evaluation.\nParticipants may use extended samples generated from these recommended datasets via data augmentation or deepfake tools for training, but all generation tools used must be submitted to the organizers to ensure reproducibility.\nThe use of any additional external datasets is strictly prohibited.\n\n3. Violations and Sanctions\nViolations of the above rules will result in disqualification. The organizing committee reserves the final authority over all competition-related matters.\n\n4. All teams receiving awards are obligated to submit a paper to the associated workshop. Non-submission will lead to automatic disqualification from certificate eligibility.",
         "content_zh": "# 通用AIGC音视频检测\n\n本竞赛聚焦于**通用AIGC音视频检测**。为应对高级AI生成视频伪造（如Sora2、Veo3.1）日益增长的威胁，我们基于**MVAD数据集**（发布为DDL-GAV）提出了一项大规模多模态检测挑战赛，包含超过**200,000个真实-伪造音视频样本**。数据集覆盖逼真和动画两种视觉风格、四个内容类别（人类、动物、物体和场景）、三种典型跨模态伪造模式，以及超过**23种AI生成技术**，包括文本生成视频、图像生成视频、视频生成视频和音频生成视频合成。本竞赛旨在推进多模态深度伪造检测的研究与应用，支持**AI向善**的可持续发展。\n\n竞赛链接：https://www.codabench.org/competitions/15769/\n\n如有任何疑问，请发送邮件至：17318508682@163.com\n\n#### 注：测试集已于2026年5月15日在GitHub库中正式发布。\n\n---\n\n## 评估指标\n本挑战赛包含**两个分层检测任务**：二元伪造检测和四类模态分类。\n### 任务定义\n- 真-真（RR）：音频和视频均真实。\n- 伪-真（FR）：视频伪造，音频真实。\n- 真-伪（RF）：视频真实，音频伪造。\n- 伪-伪（FF）：音频和视频均伪造。\n\n### 评估指标\n检测性能使用**AUC、ACC、F1和AP**进行评估。\n\n### 最终评分计算\n- 二元分类得分 = 0.2×AUC + 0.3×ACC + 0.3×AP + 0.2×F1\n- 四类分类得分 = 0.2×AUC + 0.3×ACC + 0.3×AP + 0.2×F1\n- **最终总得分 = 0.4×二元分类得分 + 0.6×四类分类得分**\n\n## 提交格式\n\n参赛者必须提交**两个预测文件**，打包在**单个`.zip`压缩包**中。\n\n### 打包规则\n\n- zip压缩包可以使用**任意名称**（`submission.zip`、`result.zip`等）。\n- 必须恰好包含两个文件，名称**必须**为`binary.txt`和`four_class.txt`（区分大小写——不要重命名）。\n- 两个文件可以位于zip根目录或子文件夹中——两种方式都可接受。\n- 仅提交预测结果——**不要**提交模型代码。\n\n### 1. `binary.txt` — 二元分类（真实/伪造）\n\n每行格式：`video_path  0_pred  1_pred`\n\n- `0_pred` = **真实**的概率\n- `1_pred` = **伪造**的概率\n- 可选的标题行`video_path,0_pred,1_pred`被允许且会被跳过。\n\n```\nvideo_path,0_pred,1_pred\n000bfd940cf44f998b1b4803d48d7d05.mp4 0.5066 0.4934\n0016150625f846bf8feebc6e5c0831b8.mp4 0.5100 0.4900\n001eb668e3ba4ecd89417be16ca7b613.mp4 0.6434 0.3566\n```\n\n### 2. `four_class.txt` — 四类分类\n\n每行格式：`video_path  0_pred  1_pred  2_pred  3_pred`\n\n- 类别索引：`0 = 真-真(RR)`、`1 = 伪-伪(FF)`、`2 = 伪-真(FR)`、`3 = 真-伪(RF)`\n- 可选的标题行被允许且会被跳过。\n\n```\nvideo_path,0_pred,1_pred,2_pred,3_pred\n000bfd940cf44f998b1b4803d48d7d05.mp4 0.1292 0.0075 0.3836 0.4796\n0016150625f846bf8feebc6e5c0831b8.mp4 0.2880 0.0590 0.2999 0.3531\n001eb668e3ba4ecd89417be16ca7b613.mp4 0.3144 0.0230 0.3682 0.2944\n```\n\n### 重要说明\n\n- **`video_path`必须与测试集文件名完全匹配**（发布测试数据中的哈希值`.mp4`文件名）。不匹配的文件名被视为缺失，评分时使用默认均匀概率。\n- 每行内，使用**空格或逗号**作为分隔符保持一致——**不要**混合使用`逗号+空格`。\n- 概率无需恰好求和为1——评分器会自动对每行进行归一化。\n- **测试集中的每个样本应同时出现在两个文件中。**缺失的行将用默认概率填充，会降低您的分数。\n\n## 奖励与认可\n- 优秀方案将被邀请在IJCAI进行展示。\n- **前1-5名团队**将获得官方排名证书。"
       }
     ]
@@ -170,9 +170,9 @@
     "description_zh": "ACM MM 2026 可解释深伪检测挑战赛隐测集评估：图像级深伪检测和基础解释生成",
     "created_by": "abhijeet8901",
     "created_when": "2026-05-19T15:29:56.921370Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-19-1779204596/95cc77a6535d/images/logo.png?AWSAccessKeyId=codabench-prod&Signature=pCD69XmbUzpiIwzd%2BcxhF9%2BQ900%3D&Expires=1780389792",
-    "participants_count": 59,
-    "submissions_count": 77,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-19-1779204596/95cc77a6535d/images/logo.png?AWSAccessKeyId=codabench-prod&Signature=9st8RXrfajxBIbMJY%2BA0uBfusig%3D&Expires=1780476517",
+    "participants_count": 66,
+    "submissions_count": 86,
     "first_phase_start": null,
     "phases": [
       {
@@ -217,9 +217,9 @@
     "description_zh": "多模态物理推理基准，包含图表、表达式、纯图像问题和基于OpenAI API的答案判断。",
     "created_by": "ai4math",
     "created_when": "2026-04-29T10:27:07.290697Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-29-1777474374/6953426e1b09/logo_big.png?AWSAccessKeyId=codabench-prod&Signature=rZm1snH3EgvB7ETGwXaaYpZkKWA%3D&Expires=1780389800",
-    "participants_count": 107,
-    "submissions_count": 475,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-29-1777474374/6953426e1b09/logo_big.png?AWSAccessKeyId=codabench-prod&Signature=imQNLiMibonEohiYnMm9yDnl%2BlU%3D&Expires=1780476525",
+    "participants_count": 110,
+    "submissions_count": 519,
     "first_phase_start": null,
     "phases": [
       {
@@ -276,9 +276,9 @@
     "description_zh": "我们的目标是为真实场景的一体化图像复原算法的开发引入一个新的基准。",
     "created_by": "holflee",
     "created_when": "2026-05-16T12:42:20.469268Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778935340/0aeca58b7892/logo.png?AWSAccessKeyId=codabench-prod&Signature=L57MwQWZKG4KRWY%2Fceljjlu%2FVCc%3D&Expires=1780389793",
-    "participants_count": 76,
-    "submissions_count": 233,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778935340/0aeca58b7892/logo.png?AWSAccessKeyId=codabench-prod&Signature=9lfczuus7XakqMpFgGDWhsjX%2FpA%3D&Expires=1780476519",
+    "participants_count": 79,
+    "submissions_count": 245,
     "first_phase_start": null,
     "phases": [
       {
@@ -323,9 +323,9 @@
     "description_zh": "该挑战聚焦于现实语音处理场景中的音频-视觉-文本多模态关键词识别任务。",
     "created_by": "misp_qeks_bl",
     "created_when": "2026-05-04T05:52:24.137332Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-04-1777873944/1c7a31d17f08/logo_misp2026.png?AWSAccessKeyId=codabench-prod&Signature=%2BE8WnS23UC%2BtW8Z4ZSOFw8vwCGI%3D&Expires=1780389797",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-04-1777873944/1c7a31d17f08/logo_misp2026.png?AWSAccessKeyId=codabench-prod&Signature=1njz71Twv%2BjynmdAcmBe6q8KS5c%3D&Expires=1780476522",
     "participants_count": 6,
-    "submissions_count": 5,
+    "submissions_count": 6,
     "first_phase_start": null,
     "phases": [
       {
@@ -358,7 +358,7 @@
     "description_zh": "使用机器学习从图像中分类鱼类物种。参赛者获得标记的训练图像，必须预测未见过的测试图像的物种。",
     "created_by": "khanff",
     "created_when": "2026-05-31T12:31:14.005307Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-31-1780230674/99290699ac10/fish.png?AWSAccessKeyId=codabench-prod&Signature=2zibQV%2BVJrgTik6IA94emwqalpc%3D&Expires=1780389790",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-31-1780230674/99290699ac10/fish.png?AWSAccessKeyId=codabench-prod&Signature=LKmSp9V1ThMcm7IoD27ryA4OA0k%3D&Expires=1780476516",
     "participants_count": 2,
     "submissions_count": 4,
     "first_phase_start": null,
@@ -406,7 +406,7 @@
     "description_zh": "基于EventAid基准的RGB帧插值，包含1、3、7和15跳帧设置。EventAid挑战赛是EBMV（事件驱动多模态视觉：成像、感知与理解）研讨会@ECCV 2026的一个赛道！",
     "created_by": "hylz-2019",
     "created_when": "2026-05-16T10:25:07.473846Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778927107/6ed2ebb989bd/evaid_challenge_logo.png?AWSAccessKeyId=codabench-prod&Signature=X0q9B7hqRzhP1cJwBFFM71u0w7w%3D&Expires=1780389794",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778927107/6ed2ebb989bd/evaid_challenge_logo.png?AWSAccessKeyId=codabench-prod&Signature=qBqxU5POd63kvuG5Oq0Pu%2Fs7hTA%3D&Expires=1780476520",
     "participants_count": 34,
     "submissions_count": 3,
     "first_phase_start": null,
@@ -448,7 +448,7 @@
     "description_zh": null,
     "created_by": "blang",
     "created_when": "2026-05-12T06:00:03.454595Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-12-1778565603/eb281506591a/logo.png?AWSAccessKeyId=codabench-prod&Signature=LaJ2jfTePirYpZnYXvT%2Bj%2B0oqDQ%3D&Expires=1780389796",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-12-1778565603/eb281506591a/logo.png?AWSAccessKeyId=codabench-prod&Signature=H4VbFDWYneB3pC%2BqK67PES%2FvywU%3D&Expires=1780476523",
     "participants_count": 32,
     "submissions_count": 3,
     "first_phase_start": null,
@@ -495,8 +495,8 @@
     "description_zh": "这是基于事件的多模态感知挑战赛的单目深度估计赛道。",
     "created_by": "blang",
     "created_when": "2026-05-10T06:53:10.869702Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-11-1778487124/9e519a3a990b/logo.png?AWSAccessKeyId=codabench-prod&Signature=aUZYbklLs4boIJ36SGl9NJVdtnw%3D&Expires=1780389796",
-    "participants_count": 36,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-11-1778487124/9e519a3a990b/logo.png?AWSAccessKeyId=codabench-prod&Signature=UHAo%2BehknQLdMiHAC%2BaIELRbGSA%3D&Expires=1780476524",
+    "participants_count": 37,
     "submissions_count": 1,
     "first_phase_start": null,
     "phases": [
@@ -542,9 +542,9 @@
     "description_zh": "MVAA 2026 评估跨越三个临床基础分割任务的二尖瓣解剖学多模态AI方法：（1）CT分割、（2）3D TEE分割和（3）手术视频分割。\n\n最终排名基于跨任务平均聚合的归一化任务级分数。",
     "created_by": "db0725",
     "created_when": "2026-04-14T13:38:37.626348Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-15-1776224307/a53b1e60e5cb/icon.png?AWSAccessKeyId=codabench-prod&Signature=sU6rZpxEl5teUPEp%2BMWg9d%2Fl5Cw%3D&Expires=1780389802",
-    "participants_count": 105,
-    "submissions_count": 24,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-15-1776224307/a53b1e60e5cb/icon.png?AWSAccessKeyId=codabench-prod&Signature=EoHwwky2AMFxneABXx1k%2BpDLovY%3D&Expires=1780476527",
+    "participants_count": 110,
+    "submissions_count": 35,
     "first_phase_start": null,
     "phases": [
       {
@@ -631,8 +631,8 @@
     "description_zh": "本挑战赛重点关注SDE数据集上的事件引导低光视频深度估计。参赛者需要开发算法，在事件相机信号的辅助下，从低光视频序列中估计准确的深度图。\n\n该挑战赛的目标是促进在具有挑战性的光照条件下的鲁棒深度估计，在这些条件下，传统的基于帧的方法通常会受到运动模糊、低信噪比和纹理可见性差的影响。提交的方案将使用隐藏测试集上的定量深度估计指标进行评估。\n\n本挑战赛作为EBMV 2026的一部分组织举办，面向从事低级视觉、基于事件的视觉、视频增强以及单目或多模态深度估计研究的科研人员。",
     "created_by": "ethanliang99",
     "created_when": "2026-05-13T06:27:08.548287Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-13-1778653628/08a70c7d08bb/ChatGPT_Image_May_13_2026_02_02_4.png?AWSAccessKeyId=codabench-prod&Signature=F99JcY%2Fe%2BWKSvwkSVk%2FRCzeAotA%3D&Expires=1780389795",
-    "participants_count": 9,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-13-1778653628/08a70c7d08bb/ChatGPT_Image_May_13_2026_02_02_4.png?AWSAccessKeyId=codabench-prod&Signature=4qYTKDG3k9ntCuH5vbqA8GXNe6I%3D&Expires=1780476523",
+    "participants_count": 10,
     "submissions_count": 0,
     "first_phase_start": null,
     "phases": [
@@ -691,9 +691,9 @@
     "description_zh": "# EBMV 2026 低级图像处理挑战赛：基于事件指导的亮度调整 (SEE-600K)\n\n## 概述\n\n真实世界图像经常受到各种光照退化的影响，包括低光、过曝光、混合光照和高对比度场景。本挑战赛旨在研究在广泛光照条件下基于事件指导的统一低级图像增强方案。\n\n参赛者需要利用RGB帧和事件数据来恢复清晰、曝光正确且结构保真的图像。本挑战赛与ECCV 2026事件多模态视觉研讨会相关联：成像、感知与理解。\n\n## 数据集\n\n本挑战赛基于SEE-600K数据集，详见：\n\n\"SEE: See Everything Every Time - Adaptive Brightness Adjustment for Broad Light Range Images via Events\"\n\nSEE-600K是在多样化光照条件和真实场景下收集的大规模RGB-事件数据集。它为事件指导的亮度调整和低级图像恢复提供配对的RGB图像和事件数据。\n\n数据集：\nhttps://huggingface.co/datasets/yunfanlu/SEE-600K\n\n基线代码：\nhttps://github.com/yunfanLu/SEE\n\n研讨会网址：\nhttps://eventbasemultimodalvision.github.io\n\n## 任务\n\n参赛者需要开发一个基于事件指导的低级图像处理模型。\n\n输入：\n1. 在具有挑战性光照条件下捕获的RGB图像。\n2. 对应的事件流或事件表示。\n3. 可选的元数据或曝光提示（如提供）。\n\n输出：\n1. 亮度调整后的RGB图像。\n2. 输出应保持场景结构、恢复有用细节，避免不真实的幻觉。\n\n该任务重点关注事件指导的亮度调整和图像增强，而非通用图像生成。\n\n## 挑战赛赛道\n\n### 广泛光照自适应亮度调整\n\n参赛者可在SEE-600K上训练模型。允许使用额外训练数据，但所有外部数据集、采集设置和预训练模型应在最终技术报告中明确说明。\n\n## 提交格式\n\n每份提交应上传为压缩ZIP文件。\n\n推荐结构：\n\nsubmission.zip\n├── scene_000001.png\n├── scene_000002.png\n├── scene_000003.png\n└── ...\n\n要求：\n1. 输出文件名必须与输入样本ID匹配。\n2. 图像应保存为PNG文件。\n3. 输出图像应为RGB图像。\n4. 输出分辨率必须与输入/参考分辨率相同。\n5. 不得更改文件名或文件夹结构。\n6. 除非明确要求，不包含额外文件。\n\n## 评估\n\n官方评估将在测试集上进行。\n\n指标：\n1. PSNR：像素级重建准确度。\n2. SSIM：结构相似性。\n3. LPIPS：感知相似性。\n\n排名：\n1. PSNR是主要排名指标。\n2. SSIM和LPIPS用作次要指标。\n3. 最终排行榜基于官方测试集。\n\n验证服务器主要用于开发和提交格式检查。",
     "created_by": "yunfan_lu",
     "created_when": "2026-05-07T16:25:48.971115Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-14-1778767621/54b97befc59e/SEE-logo.jpg?AWSAccessKeyId=codabench-prod&Signature=BkBdz2CVQaYjb%2BmWilGdZfypciU%3D&Expires=1780389797",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-14-1778767621/54b97befc59e/SEE-logo.jpg?AWSAccessKeyId=codabench-prod&Signature=Sd0aqC%2BpH8XZY6ABOesI5Moa7Ms%3D&Expires=1780476524",
     "participants_count": 48,
-    "submissions_count": 18,
+    "submissions_count": 19,
     "first_phase_start": null,
     "phases": [
       {
@@ -733,9 +733,9 @@
     "description_zh": "DeepPhenoTree - Apple Edition 数据集（包含 1,438 张苹果树 RGB 图像，采集自瑞士、比利时、西班牙和意大利，2025 年）包含 22,500 个手动标注的边界框，涵盖三个物候阶段：开花期、果实小球期和果实期。\n\n开发并基准测试目标检测模型，该模型能够自动定位图像中的三个物候阶段。提交的结果将使用平均精度均值（mAP@0.5）进行评估，这是检测挑战的标准指标。\n\n挑战赛的结果将在 ECCV 会议（2026 年 9 月 8-13 日）期间的 CVPPA 研讨会（9 月 8-9 日）中呈现，会议地点为瑞典马尔默。",
     "created_by": "clothode",
     "created_when": "2026-03-17T15:56:27.833010Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-03-20-1774019283/659710f0a7bb/unnamed.jpg?AWSAccessKeyId=codabench-prod&Signature=Bi2H%2BorqW30JxgQOiaKgXHXa2ts%3D&Expires=1780389814",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-03-20-1774019283/659710f0a7bb/unnamed.jpg?AWSAccessKeyId=codabench-prod&Signature=gsznoEoSZc8AlOS38%2FtEY1o4A9k%3D&Expires=1780476532",
     "participants_count": 26,
-    "submissions_count": 208,
+    "submissions_count": 219,
     "first_phase_start": null,
     "phases": [
       {
@@ -793,9 +793,9 @@
     "description_zh": "我们的目标是在极端比特率限制下引入一个超低比特率图像压缩的新基准。",
     "created_by": "xyling",
     "created_when": "2026-05-25T06:20:45.321967Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-25-1779690045/e8aa9fc7e755/logo.png?AWSAccessKeyId=codabench-prod&Signature=tFX9qWfBnQgYd7s5Ju36vENx750%3D&Expires=1780389790",
-    "participants_count": 34,
-    "submissions_count": 12,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-25-1779690045/e8aa9fc7e755/logo.png?AWSAccessKeyId=codabench-prod&Signature=kUaMelw7dn2iRytOKv4SzfIbZHM%3D&Expires=1780476520",
+    "participants_count": 40,
+    "submissions_count": 24,
     "first_phase_start": null,
     "phases": [
       {
@@ -846,9 +846,9 @@
     "description_zh": "我们的目标是为双焦点图像的日夜雨滴去除引入一个新的基准",
     "created_by": "yaosh",
     "created_when": "2026-05-22T05:58:22.308480Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-22-1779429502/2e70ce6bec17/LoViF.png?AWSAccessKeyId=codabench-prod&Signature=VRtS7qweUyyzzZYUWrX74l%2BYTsw%3D&Expires=1780389792",
-    "participants_count": 18,
-    "submissions_count": 0,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-22-1779429502/2e70ce6bec17/LoViF.png?AWSAccessKeyId=codabench-prod&Signature=of7gAXiu58vmCg%2F2XmCdAQNyC2Q%3D&Expires=1780476521",
+    "participants_count": 19,
+    "submissions_count": 3,
     "first_phase_start": null,
     "phases": [
       {
@@ -893,8 +893,8 @@
     "description_zh": "该挑战对事件型视觉上的多模态大型语言模型（MLLMs）的空间推理能力进行基准测试，重点关注目标计数、绝对距离估计和空间关系推理。",
     "created_by": "liusy",
     "created_when": "2026-05-14T01:12:48.802883Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-14-1778721168/24208541bb36/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=SvnM9NKHeOWgHU4VpYeAoejTjq0%3D&Expires=1780389794",
-    "participants_count": 34,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-14-1778721168/24208541bb36/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=An1al0Ty9UUlN4BfV5cS6KEd8JU%3D&Expires=1780476521",
+    "participants_count": 35,
     "submissions_count": 6,
     "first_phase_start": null,
     "phases": [
@@ -940,9 +940,9 @@
     "description_zh": "评估事件流的通用动态场景理解能力，涵盖详细理解、因果推理、动作识别、手势识别和事件光学字符识别。",
     "created_by": "liusy",
     "created_when": "2026-05-01T07:20:57.568282Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-01-1777620057/31dabf650506/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=K3f2wMCGVeXcMLj4uMFjVprHlNc%3D&Expires=1780389800",
-    "participants_count": 48,
-    "submissions_count": 6,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-01-1777620057/31dabf650506/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=TtlyVQMfQxs9vyiOXnVTsMlu7Mg%3D&Expires=1780476525",
+    "participants_count": 50,
+    "submissions_count": 9,
     "first_phase_start": null,
     "phases": [
       {
@@ -987,8 +987,8 @@
     "description_zh": "阿拉伯语多模态仇恨表情包分类。给定一个表情包（图像加上OCR提取的阿拉伯语文本），预测它是否为仇恨或非仇恨。官方指标：宏F1。",
     "created_by": "mohamedbayan",
     "created_when": "2026-05-25T13:30:58.534544Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-25-1779715858/886e2d9c0b58/logo.png?AWSAccessKeyId=codabench-prod&Signature=vVEtQujptQ5h1Oogb6%2BDdEdcuDU%3D&Expires=1780389792",
-    "participants_count": 3,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-25-1779715858/886e2d9c0b58/logo.png?AWSAccessKeyId=codabench-prod&Signature=a9Eq6d8gWD6LGjpVdzOC5SkQ%2BGo%3D&Expires=1780476517",
+    "participants_count": 4,
     "submissions_count": 0,
     "first_phase_start": null,
     "phases": [
@@ -1028,6 +1028,114 @@
       }
     ]
   },
+  "16660": {
+    "id": 16660,
+    "title": "ArGuard 2026 — Subtask A2 (Fine-grained Multi-label)",
+    "description": "Arabic multimodal hateful-meme fine-grained categorisation. Given a meme (image plus OCR-extracted Arabic text), predict zero or more fine-grained sub-types from a unified 10-class active vocabulary spanning hateful and non-hateful categories. Official metric: macro-F1.",
+    "description_zh": "阿拉伯语多模态仇恨表情包细粒度分类。给定一个表情包（图像加光学字符识别提取的阿拉伯文本），从跨越仇恨和非仇恨类别的统一10类活跃词汇表中预测零个或多个细粒度子类型。官方指标：宏平均F1值。",
+    "created_by": "alishahroor",
+    "created_when": "2026-05-25T13:16:23.054813Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-25-1779714983/73f482e31460/logo.png?AWSAccessKeyId=codabench-prod&Signature=BieVZ2TYdTL3LqcAXi%2F79T%2F6QJE%3D&Expires=1780476521",
+    "participants_count": 2,
+    "submissions_count": 1,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 27293,
+        "name": "Development Phase",
+        "start": "2026-05-14T00:00:00Z",
+        "end": "2026-07-19T00:00:00Z",
+        "max_submissions_per_day": 5
+      },
+      {
+        "id": 27294,
+        "name": "Testing Phase",
+        "start": "2026-07-20T00:00:00Z",
+        "end": "2026-07-29T00:00:00Z",
+        "max_submissions_per_day": 20
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Participation",
+        "content": "# How to participate\n\nArGuard 2026 — Task 1 / Track A · **Subtask A2: Fine-grained category prediction (multi-label)**.\n\n## Who can join\nYou can take part as an individual or as a team. A person can participate in multiple shared tasks within ArGuard 2026 — see the full list at the [task website](https://araieval.gitlab.io/ArGuard2026/).\n\n## How to register\n1. Sign up on this CodaBench competition page.\n2. Read the [Terms](#) tab — pay particular attention to the submission file format and naming convention.\n3. Download the data from the Hugging Face Hub: [`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1).\n4. Clone the starter kit: [`araieval/ArGuard-2026-tasks`](https://github.com/araieval/ArGuard-2026-tasks).\n5. Train your multi-label model and generate fine-grained predictions on the `dev_test` split during the development phase, and on the `test` split during the final-evaluation phase.\n\n## Submitting\n- One team member submits per phase via the **Submit** tab.\n- Upload your JSONL prediction file as `prediction.zip` (see Terms).\n- The latest valid submission before the deadline counts as your team's final submission for that phase.\n\n## System description paper\nAll teams are encouraged to submit a system-description paper for the workshop. A single paper may cover multiple subtasks if you participated in more than one.\n\n## Contact\nQuestions: arguard2026-organizers@googlegroups.com",
+        "content_zh": "# 如何参加\n\nArGuard 2026 — 任务 1 / 赛道 A · **子任务 A2：细粒度类别预测（多标签）**。\n\n## 谁可以参加\n您可以以个人或团队身份参与。一个人可以参加 ArGuard 2026 中的多个共享任务——请在[任务网站](https://araieval.gitlab.io/ArGuard2026/)查看完整列表。\n\n## 如何注册\n1. 在此 CodaBench 竞赛页面上注册。\n2. 阅读[条款](#)选项卡——特别注意提交文件格式和命名规范。\n3. 从 Hugging Face Hub 下载数据：[`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1)。\n4. 克隆入门套件：[`araieval/ArGuard-2026-tasks`](https://github.com/araieval/ArGuard-2026-tasks)。\n5. 训练多标签模型，在开发阶段对 `dev_test` 分割集生成细粒度预测，在最终评估阶段对 `test` 分割集生成预测。\n\n## 提交\n- 每个阶段由一名团队成员通过**提交**选项卡提交。\n- 将 JSONL 预测文件上传为 `prediction.zip`（见条款）。\n- 截止时间前最新的有效提交将被视为您团队在该阶段的最终提交。\n\n## 系统描述论文\n鼓励所有团队为研讨会提交系统描述论文。如果您参加了多个子任务，一篇论文可以涵盖多个子任务。\n\n## 联系方式\n问题咨询：arguard2026-organizers@googlegroups.com"
+      },
+      {
+        "index": 1,
+        "title": "Dataset",
+        "content": "# Dataset\n\nArGuard Task 1 — Track A is built around an Arabic multimodal meme dataset: each instance is an image with overlaid Arabic text (OCR-extracted). Memes are manually annotated with both a binary label and one or more **fine-grained** sub-types.\n\nFor **Subtask A2**, each meme is tagged with zero or more labels from a **unified 10-class active vocabulary**:\n\n- Hateful sub-types (7 active): `Contempt`, `Dehumanization`, `Exclusion`, `Incitement`, `Inferiority`, `Mocking`, `Slurs`\n- Non-hateful sub-types (2): `Humor`, `Sarcasm`\n- Shared (1): `Other`\n\nThe full annotation taxonomy also includes 5 zero-support hateful classes — `Extremism`, `Historical`, `Insults`, `Stereotyping`, `Threat` — which are accepted by the format checker but **not** scored (they have no positive support in the released data).\n\n## Get the data\nThe official splits live on the Hugging Face Hub at [`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1). Download them with the helper script from the starter kit:\n\n```bash\ngit clone https://github.com/araieval/ArGuard-2026-tasks.git\ncd ArGuard-2026-tasks/task1\npip install -r requirements.txt\npython data/download_data.py\n```\n\n## Splits\n\n| Split        | Records | Labels   | Phase                    | Purpose                                    |\n|--------------|--------:|----------|--------------------------|--------------------------------------------|\n| `train`      |   3,500 | full     | development              | model training                             |\n| `dev`        |     500 | full     | development              | hyperparameter selection, local evaluation |\n| `dev_test`   |     500 | **none** | development (leaderboard)| submission target for the dev-phase leaderboard |\n| `test`       |     500 | full     | final evaluation         | blind ranking (triple-annotated gold)      |\n\nThe `dev_test` split is released with labels stripped — that is the file you submit predictions for during the development phase.\n\n## Record schema (after `download_data.py`)\n```json\n{\n    \"id\": \"f9a8…b1.jpg\",\n    \"image_path\": \"img/f9a8…b1.jpg\",\n    \"text\": \"OCR-extracted Arabic text…\",\n    \"label\": \"Hateful\" | \"Not Hateful\" | null,\n    \"fine_grained_label\": [\"Mocking\", \"Incitement\"],\n    \"annotations\": []\n}\n```\n\n## Licence\nThe dataset is released under **CC BY-NC 4.0** (non-commercial research use only).\n\n## Resources\n- Starter kit: <https://github.com/araieval/ArGuard-2026-tasks>\n- Task website: <https://araieval.gitlab.io/ArGuard2026/>",
+        "content_zh": "# 数据集\n\nArGuard Task 1 — Track A 围绕阿拉伯语多模态梗图数据集构建：每个实例都是一张带有覆盖阿拉伯文字的图像（通过OCR提取）。梗图使用二元标签和一个或多个**细粒度**子类型进行手动标注。\n\n对于**子任务A2**，每张梗图都从**统一的10类活跃词汇**中标记零个或多个标签：\n\n- 仇恨性子类型（7个活跃）：`Contempt`（蔑视）、`Dehumanization`（非人化）、`Exclusion`（排斥）、`Incitement`（煽动）、`Inferiority`（低劣）、`Mocking`（嘲笑）、`Slurs`（辱骂）\n- 非仇恨性子类型（2个）：`Humor`（幽默）、`Sarcasm`（讽刺）\n- 共享类型（1个）：`Other`（其他）\n\n完整的标注分类法还包括5个零支撑仇恨类别——`Extremism`（极端主义）、`Historical`（历史性）、`Insults`（侮辱）、`Stereotyping`（刻板印象）、`Threat`（威胁）——格式检查器可以接受这些类别，但**不**计分（在发布的数据中无正样本支持）。\n\n## 获取数据\n官方数据集位于Hugging Face Hub的[`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1)。使用初始工具包中的辅助脚本下载：\n\n```bash\ngit clone https://github.com/araieval/ArGuard-2026-tasks.git\ncd ArGuard-2026-tasks/task1\npip install -r requirements.txt\npython data/download_data.py\n```\n\n## 数据集划分\n\n| 划分         | 记录数 | 标签   | 阶段                    | 用途                                    |\n|--------------|--------:|----------|--------------------------|--------------------------------------------|\n| `train`      |   3,500 | 完整     | 开发阶段              | 模型训练                             |\n| `dev`        |     500 | 完整     | 开发阶段              | 超参数选择、本地评估 |\n| `dev_test`   |     500 | **无** | 开发阶段（排行榜）| 开发阶段排行榜的提交目标 |\n| `test`       |     500 | 完整     | 最终评估         | 盲目排名（三重标注黄金数据）      |\n\n`dev_test`划分在发布时已删除标签——这是您在开发阶段向排行榜提交预测的文件。\n\n## 记录模式（`download_data.py`之后）\n```json\n{\n    \"id\": \"f9a8…b1.jpg\",\n    \"image_path\": \"img/f9a8…b1.jpg\",\n    \"text\": \"OCR提取的阿拉伯文字…\",\n    \"label\": \"Hateful\" | \"Not Hateful\" | null,\n    \"fine_grained_label\": [\"Mocking\", \"Incitement\"],\n    \"annotations\": []\n}\n```\n\n## 许可证\n该数据集在**CC BY-NC 4.0**许可证下发布（仅限非商业研究使用）。\n\n## 资源\n- 初始工具包：<https://github.com/araieval/ArGuard-2026-tasks>\n- 任务网站：<https://araieval.gitlab.io/ArGuard2026/>"
+      },
+      {
+        "index": 2,
+        "title": "Timeline",
+        "content": "# Timeline\n\n## Development phase\nUse this phase to tune your models on `train.jsonl` / `dev.jsonl` and submit fine-grained predictions on `dev_test.jsonl` for the leaderboard.\n\n**Window:** `2026-05-14 → 2026-07-19`\n**Submissions:** up to 5 per day, 100 total.\n\n## Testing phase\nThe final blind test split is released. Train on `train.jsonl` + `dev.jsonl`, submit predictions on `test.jsonl` — your best valid submission counts toward the official ranking.\n\n**Window:** `2026-07-20 → 2026-07-29`\n**Submissions:** up to 20 per day, 100 total.\n\n> Adjust the dates inside `competition.yaml` (the `phases.start` / `phases.end` fields) if your task schedule shifts.\n\n## Workshop\nPaper submissions and notification dates will be announced on the [task website](https://araieval.gitlab.io/ArGuard2026/).",
+        "content_zh": "# 时间表\n\n## 开发阶段\n使用此阶段在 `train.jsonl` / `dev.jsonl` 上调整您的模型，并在 `dev_test.jsonl` 上提交细粒度预测以参与排行榜竞争。\n\n**时间窗口：** `2026-05-14 → 2026-07-19`\n**提交次数：** 每天最多 5 次，总共 100 次。\n\n## 测试阶段\n发布最终盲测数据集。在 `train.jsonl` + `dev.jsonl` 上训练，在 `test.jsonl` 上提交预测——您的最佳有效提交将计入官方排名。\n\n**时间窗口：** `2026-07-20 → 2026-07-29`\n**提交次数：** 每天最多 20 次，总共 100 次。\n\n> 如果您的任务安排有变化，请调整 `competition.yaml` 中的日期（`phases.start` / `phases.end` 字段）。\n\n## 研讨会\n论文投稿和通知日期将在[任务网站](https://araieval.gitlab.io/ArGuard2026/)上公布。"
+      }
+    ]
+  },
+  "16817": {
+    "id": 16817,
+    "title": "LifeGenIP Challenge - Unlearnable Videos against Diffusion-based Customization @ ECCV 2026",
+    "description": "Design protections that perturb video clips so that diffusion-based video customization (I2V and LoRA tuning) fails to reproduce the target identity or follow the attacker prompt.",
+    "description_zh": "# 视频防护设计，用于阻止基于扩散的视频定制（I2V和LoRA调优）\n\n## 概述\n\n设计防护机制使扩散模型无法准确再现目标身份或跟随攻击者提示的视频定制方法失效。\n\n## 核心防护策略\n\n### 1. 身份特征扰动\n- **面部几何变形**：在视频帧中引入轻微但持续的面部特征偏移\n- **皮肤纹理干扰**：添加不可感知的高频纹理噪声，破坏身份特征学习\n- **眼睛和嘴部模糊**：针对性地模糊关键生物识别特征\n\n### 2. 时间一致性破坏\n- **帧间不一致性注入**：在连续帧中引入微小的视觉变异\n- **光流扰动**：改变物体运动模式的潜在表示\n- **闪烁伪影**：插入难以察觉的帧间视觉不一致\n\n### 3. 提示跟随阻止\n- **语义对抗扰动**：在视频嵌入空间中添加针对常见提示的对抗性噪声\n- **属性干扰**：随机改变可被提示引用的视觉属性（颜色、光照、背景）\n- **语言-视觉失对齐**：破坏视频内容与文本描述之间的对应关系\n\n### 4. LoRA适应阻止\n- **特征空间扰动**：在扩散模型的中间层特征中添加噪声\n- **权重梯度噪声**：在LoRA微调期间污染梯度信息\n- **秩空间干扰**：扰动低秩更新能够有效操作的特征子空间\n\n### 5. 图像到视频（I2V）防护\n- **参考图像扭曲**：对输入参考图像应用几何或光度变换\n- **多模态不匹配**：在参考图像和视频序列间创建风格/内容分歧\n- **特征提取器欺骗**：针对I2V模型的编码器添加对抗性扰动\n\n## 技术实现方法\n\n### 不可感知扰动\n```\n- 操作范围：ΔL < 1-2 ΔCIE LAB单位（人眼难以察觉）\n- 频率分析：集中在20-60 Hz范围（对视觉系统的屏蔽频率）\n- 自适应幅度：根据局部内容复杂度调整扰动强度\n```\n\n### 多层防护叠加\n- 将多种扰动类型组合应用\n- 动态调整干扰参数以对抗自适应攻击\n- 在不同视觉处理阶段引入冗余防护\n\n## 评估指标\n\n### 防护有效性\n- I2V/LoRA身份再现失败率\n- 提示跟随准确度下降\n- 攻击成功率相对于未保护视频的减少\n\n### 用户体验保持\n- 视频感知质量（VMAF、LPIPS）\n- 结构相似性（SSIM）保留率\n- 原始内容可识别性\n\n## 防护鲁棒性考虑\n\n- **对抗适应**：防护应抵抗对防护机制的反向工程\n- **多模型泛化**：在不同扩散架构上测试防护有效性\n- **计算效率**：确保防护处理开销最小化\n\n## 部署场景\n\n- 视频内容保护（防止未授权定制）\n- 深伪防御\n- 身份隐私保护\n- 媒体认证和完整性验证",
+    "created_by": "lifegenip_w",
+    "created_when": "2026-05-31T22:01:57.495846Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-31-1780264917/f2d06ba47a50/logo.png?AWSAccessKeyId=codabench-prod&Signature=a82T8HzIOE1Y%2BtH9v5yqWy1Npn8%3D&Expires=1780476515",
+    "participants_count": 5,
+    "submissions_count": 0,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 27582,
+        "name": "Phase 1 — Preliminary",
+        "start": "2026-06-20T12:00:00Z",
+        "end": "2026-07-16T11:59:59Z",
+        "max_submissions_per_day": 1
+      },
+      {
+        "id": 27583,
+        "name": "Phase 2 — Final",
+        "start": "2026-07-20T12:00:00Z",
+        "end": "2026-07-31T11:59:59Z",
+        "max_submissions_per_day": 1
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Overview",
+        "content": "# Overview\n\nOfficial competition page: <https://lifegenip.cc/competition>\n\n🔥 **Competition will begin on June 20th, and the starting kit and registration form will be released on June 15th.**\n\n## Background\n\nWith recent advances in diffusion-based video generation, anyone can now synthesize high-quality video content from minimal input. This creates serious threats to facial privacy: a malicious attacker can collect publicly available clips of a target person and generate misleading or harmful content about them, from fake news to violations of portrait rights. Protecting video content from such misuse has become a pressing concern.\n\nCurrent video customization tools follow two paradigms. **Tuning-based methods** fine-tune a video diffusion model (e.g., via LoRA) on a small set of clips of the target person and then generate diverse new videos from text prompts. **Reference-based methods**, such as image-to-video (I2V) models, take a single reference image plus a text prompt and synthesize a clip. Both pathways enable identity misuse. However, video-level protection has received much less attention than image protection. Defenses against tuning-based customization of video diffusion models remain largely unexplored, while existing work mostly targets image-domain editing or reference-based I2V threats.\n\n## Task\n\nParticipants design a protection method that perturbs face-centric video clips. Protection succeeds when the customized output either does not reproduce the target identity or does not follow the attacker's text prompt.\n\n## Threat Model\n\nTwo attack pathways:\n\n- **Reference-based (I2V).** The attacker samples a single random frame from a protected clip and feeds it together with a text prompt to an I2V model to synthesize a short video. The attack succeeds if the generated video reproduces the target identity and follows the prompt.\n- **Tuning-based.** The attacker uses the entire set of protected clips for one identity to fine-tune a video diffusion model via Low-Rank Adaptation (LoRA). The customized model is then prompted to generate new videos. The attack succeeds if the generated videos reproduce the target identity and follow the prompts.\n\n## Evaluation Tracks\n\n- **Effectiveness** measures how strongly the protection breaks customization on the known model. Each protected clip is fed directly into the customization pipeline against the known model.\n- **Robustness** measures whether the protection survives attacks that exploit inter-frame relationships. The protected video is first passed through a hidden temporal attack (e.g., temporal averaging) before being used for customization against the known model.\n- **Transferability** measures whether the protection generalizes beyond the known model. Submissions are evaluated against hidden video diffusion models.\n\n## Phases and Tracks\n\n**Phase 1 — Preliminary** (open to all registered teams)\n\n- Attack setting: reference-based (I2V).\n- Tracks: **Effectiveness** and **Robustness**.\n\n**Phase 2 — Final** (top teams from Phase 1)\n\n- Attack setting: reference-based (I2V) + tuning-based (LoRA).\n- Tracks: **Effectiveness**, **Robustness** and **Transferability**.\n\nThe final ranking is determined by Phase 2.",
+        "content_zh": "# 概览\n\n官方竞赛页面：<https://lifegenip.cc/competition>\n\n🔥 **竞赛将于6月20日开始，启动工具包和报名表将于6月15日发布。**\n\n## 背景\n\n随着基于扩散模型的视频生成技术的最近进展，任何人现在都可以从最少的输入合成高质量的视频内容。这对面部隐私造成了严重威胁：恶意攻击者可以收集目标人物公开可得的视频片段，并生成关于他们的误导性或有害内容，从假新闻到肖像权侵犯。保护视频内容免受此类滥用已成为一个紧迫的问题。\n\n当前的视频定制工具遵循两种范式。**微调方法**在目标人物的小规模视频片段集合上微调视频扩散模型（例如通过LoRA），然后从文本提示生成多样化的新视频。**基于参考的方法**，如图像到视频（I2V）模型，采用单个参考图像加上文本提示来合成视频片段。两种方式都可能导致身份滥用。然而，相比图像保护，视频级别的保护获得的关注要少得多。针对视频扩散模型微调定制的防御手段仍然鲜少被探索，而现有工作主要针对图像域编辑或基于参考的I2V威胁。\n\n## 任务\n\n参赛者设计一种保护方法，对以人脸为中心的视频片段进行扰动。当定制输出要么不能重现目标身份，要么不遵循攻击者的文本提示时，保护成功。\n\n## 威胁模型\n\n两种攻击途径：\n\n- **基于参考的（I2V）。** 攻击者从受保护的视频片段中随机采样单个帧，将其与文本提示一起输入I2V模型来合成短视频。如果生成的视频重现了目标身份且遵循了提示，则攻击成功。\n- **基于微调的。** 攻击者使用一个身份的全部受保护视频片段，通过低秩适配（LoRA）来微调视频扩散模型。定制后的模型随后用于生成新视频。如果生成的视频重现了目标身份且遵循了提示，则攻击成功。\n\n## 评估赛道\n\n- **有效性**衡量保护在已知模型上破坏定制的强度。每个受保护的视频片段直接输入到针对已知模型的定制流程中。\n- **鲁棒性**衡量保护是否能抵御利用帧间关系的攻击。受保护的视频首先通过隐藏的时间攻击（例如时间平均）处理，然后用于针对已知模型的定制。\n- **可转移性**衡量保护是否推广到已知模型之外。提交的方案将针对隐藏的视频扩散模型进行评估。\n\n## 阶段和赛道\n\n**第1阶段 — 初赛**（对所有注册团队开放）\n\n- 攻击设置：基于参考的（I2V）。\n- 赛道：**有效性**和**鲁棒性**。\n\n**第2阶段 — 决赛**（来自第1阶段的顶尖团队）\n\n- 攻击设置：基于参考的（I2V）+基于微调的（LoRA）。\n- 赛道：**有效性**、**鲁棒性**和**可转移性**。\n\n最终排名由第2阶段决定。"
+      },
+      {
+        "index": 1,
+        "title": "Participation",
+        "content": "# Participation\n\n## Teams\n\n- **Each team must create and use exactly one Codabench account** for registration and submission.\n- Teams may have up to **10 members**.\n- Participants may not use multiple accounts to evade submission limits, and may not be on more than one team.\n\n## Hardware\n\nA single NVIDIA GPU with **≥ 24 GB VRAM** is recommended (RTX 3090, RTX 4090, A5000, A6000). Tested on RTX 4090.",
+        "content_zh": "# 参与方式\n\n## 团队\n\n- **每个团队必须创建并使用一个Codabench账户**进行注册和提交。\n- 团队最多可有**10名成员**。\n- 参赛者不得使用多个账户来规避提交限制，且不得同时加入多个团队。\n\n## 硬件\n\n推荐配备单个NVIDIA GPU，**显存≥24GB**（RTX 3090、RTX 4090、A5000、A6000）。已在RTX 4090上测试。"
+      },
+      {
+        "index": 2,
+        "title": "Timeline",
+        "content": "# Timeline\n\nPhase 1 is open to all registered teams; Phase 2 is open only to top teams from Phase 1.\n\n## Phase 1\n\n- **Jun 15, 2026** — Phase 1 release\n- **Jun 20, 2026** — Phase 1 evaluation opens\n- **Jul 15, 2026** — Phase 1 evaluation closes\n\n## Phase 2\n\n- **Jul 15, 2026** — Phase 2 release\n- **Jul 20, 2026** — Phase 2 evaluation opens\n- **Jul 30, 2026** — Phase 2 evaluation closes\n\n## Results\n\n- **Aug 1, 2026** — Notification of final ranking\n- **ECCV 2026** — Results announced at the LifeGenIP Workshop, Malmö, Sweden\n\nAll deadlines are end-of-day **Anywhere on Earth (AoE)**.",
+        "content_zh": "# 时间表\n\n第一阶段对所有注册团队开放；第二阶段仅对第一阶段的顶级团队开放。\n\n## 第一阶段\n\n- **2026年6月15日** — 第一阶段发布\n- **2026年6月20日** — 第一阶段评估开始\n- **2026年7月15日** — 第一阶段评估截止\n\n## 第二阶段\n\n- **2026年7月15日** — 第二阶段发布\n- **2026年7月20日** — 第二阶段评估开始\n- **2026年7月30日** — 第二阶段评估截止\n\n## 结果\n\n- **2026年8月1日** — 最终排名通知\n- **ECCV 2026** — 在瑞典马尔默LifeGenIP研讨会公布结果\n\n所有截止时间为**地球上任意地点(AoE)** 的当天24:00。"
+      },
+      {
+        "index": 3,
+        "title": "Organizers",
+        "content": "# Organizers\n\nThis competition is part of the [LifeGenIP Workshop](https://lifegenip.cc/) at **ECCV 2026** (Malmö, Sweden).\n\n## Workshop Organizers\n\n- [Ziming Hong](https://sites.google.com/view/ziminghong/), Sydney AI Centre, The University of Sydney\n- [Runqi Lin](https://runqilin.github.io/), University of Oxford\n- [Yongli Xiang](https://yonglixiang.github.io/), Sydney AI Centre, The University of Sydney\n- [Jiaxin Huang](https://huangjiaxin.mystrikingly.com/), Mohamed bin Zayed University of Artificial Intelligence\n- [Nils Lukas](https://nilslukas.github.io/), Mohamed bin Zayed University of Artificial Intelligence\n- [Mingming Gong](https://mingming-gong.github.io/), The University of Melbourne; Mohamed bin Zayed University of Artificial Intelligence\n- [Adel Bibi](https://www.adelbibi.com/), University of Oxford\n- [Chris Russell](https://www.oii.ox.ac.uk/people/profiles/chris-russell/), University of Oxford\n- [Philip Torr](https://www.robots.ox.ac.uk/~phst/), University of Oxford\n- [Tongliang Liu](https://tongliang-liu.github.io/), Sydney AI Centre, The University of Sydney; Mohamed bin Zayed University of Artificial Intelligence\n\n## Competition Organizers\n\n- [Yuxin Huang](https://saythe17.github.io/), Sydney AI Centre, The University of Sydney\n- [Lixu Wang](https://conditionwang.github.io/), The Chinese University of Hong Kong (Shenzhen)\n- [Shanshan Ye](https://cassie133ye.github.io/), Mohamed bin Zayed University of Artificial Intelligence\n- [Gaoge Han](https://gaogehan.github.io/), Mohamed bin Zayed University of Artificial Intelligence\n\n## Contact\n\nFor all competition matters please contact: lifegenip_workshop@googlegroups.com",
+        "content_zh": "# 组织者\n\n本竞赛是**ECCV 2026**（瑞典马尔默）[LifeGenIP研讨会](https://lifegenip.cc/)的一部分。\n\n## 研讨会组织者\n\n- [Ziming Hong](https://sites.google.com/view/ziminghong/)，悉尼大学悉尼AI中心\n- [Runqi Lin](https://runqilin.github.io/)，牛津大学\n- [Yongli Xiang](https://yonglixiang.github.io/)，悉尼大学悉尼AI中心\n- [Jiaxin Huang](https://huangjiaxin.mystrikingly.com/)，阿联酋人工智能大学\n- [Nils Lukas](https://nilslukas.github.io/)，阿联酋人工智能大学\n- [Mingming Gong](https://mingming-gong.github.io/)，墨尔本大学；阿联酋人工智能大学\n- [Adel Bibi](https://www.adelbibi.com/)，牛津大学\n- [Chris Russell](https://www.oii.ox.ac.uk/people/profiles/chris-russell/)，牛津大学\n- [Philip Torr](https://www.robots.ox.ac.uk/~phst/)，牛津大学\n- [Tongliang Liu](https://tongliang-liu.github.io/)，悉尼大学悉尼AI中心；阿联酋人工智能大学\n\n## 竞赛组织者\n\n- [Yuxin Huang](https://saythe17.github.io/)，悉尼大学悉尼AI中心\n- [Lixu Wang](https://conditionwang.github.io/)，香港中文大学（深圳）\n- [Shanshan Ye](https://cassie133ye.github.io/)，阿联酋人工智能大学\n- [Gaoge Han](https://gaogehan.github.io/)，阿联酋人工智能大学\n\n## 联系方式\n\n如有竞赛相关问题，请联系：lifegenip_workshop@googlegroups.com"
+      },
+      {
+        "index": 4,
+        "title": "Resources",
+        "content": "# Resources\n\n## Competition\n\n- **Starting Kit** — will be released on Jun 15th.\n- **Workshop homepage** — https://lifegenip.cc/\n- **Competition page** — https://lifegenip.cc/competition\n\n## Reporting Issues\n\n- Platform or submission issues: lifegenip_workshop@googlegroups.com",
+        "content_zh": "# 资源\n\n## 竞赛\n\n- **初始工具包** — 将于6月15日发布。\n- **研讨会主页** — https://lifegenip.cc/\n- **竞赛页面** — https://lifegenip.cc/competition\n\n## 问题报告\n\n- 平台或提交问题：lifegenip_workshop@googlegroups.com"
+      }
+    ]
+  },
   "15830": {
     "id": 15830,
     "title": "Neural encoding with deep neural networks (v9 - 2026-04-20)",
@@ -1035,7 +1143,7 @@
     "description_zh": "# 翻译\n\n预测注视对齐的脑磁图(MEG)活动(204个梯度计通道,注视后110毫秒),基于自然场景图像和来自主动视觉语义(AVS)数据集的眼动元数据,为一个被保留的受试者。\n\nSulewski, P., Amme, C., Hebart, M., König, P., & Kietzmann, T. (2025). 我们为什么停留:记忆编码而非视觉处理需求驱动自然场景上的注视时间——来自大规模脑磁图数据集的证据。\n\n仅限学术用途。AVS数据集及所有衍生材料专门为学术研究和教育目的提供,用于奥斯纳布吕克大学(Osnabrück University)\"深度神经网络神经编码\"课程(SoSe 2026)。",
     "created_by": "psulewski",
     "created_when": "2026-04-20T14:42:51.242593Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-20-1776696171/148af8ac1426/logo.png?AWSAccessKeyId=codabench-prod&Signature=FU%2F76I1u3Y%2BtI6NdzcmfL739LFo%3D&Expires=1780389801",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-20-1776696171/148af8ac1426/logo.png?AWSAccessKeyId=codabench-prod&Signature=LncfRjO8iyw65bxbHOnCCitTt3A%3D&Expires=1780476524",
     "participants_count": 24,
     "submissions_count": 37,
     "first_phase_start": null,
@@ -1076,9 +1184,9 @@
     "description_zh": "该竞赛在超声图像回归任务上评估基础模型。参赛者预测解剖学标志点坐标。评估指标为平均径向误差（MRE）和平均绝对误差（MAE），数值越低越好。",
     "created_by": "jared2408",
     "created_when": "2026-04-12T05:59:27.070072Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-13-1776048868/504537dff745/logo.png?AWSAccessKeyId=codabench-prod&Signature=eNGOh0W%2BG2UT3zq9QYnza0tIvIY%3D&Expires=1780389801",
-    "participants_count": 105,
-    "submissions_count": 80,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-13-1776048868/504537dff745/logo.png?AWSAccessKeyId=codabench-prod&Signature=eir7Hui%2F4ttRKEDkt7kTIE6tBME%3D&Expires=1780476527",
+    "participants_count": 106,
+    "submissions_count": 104,
     "first_phase_start": null,
     "phases": [
       {
