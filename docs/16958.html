@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ACM MM 2026 PCBA Standard-to-Real Grand Challenge — Codabench 竞赛监测</title>
+<title>ImageEval 2026 — Ayn-VQA Task 1c: Hallucination Detection (MSA) — Codabench 竞赛监测</title>
 <style>
 :root {
     --bg: #0f1117;
@@ -99,161 +99,90 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
 </header>
 <div class="detail-wrap">
   <a class="back-link" href="index.html">← 返回竞赛目录</a>
-  <h2>ACM MM 2026 PCBA Standard-to-Real Grand Challenge</h2>
+  <h2>ImageEval 2026 — Ayn-VQA Task 1c: Hallucination Detection (MSA)</h2>
   <div class="detail-meta">
-    <span>ID: 16306</span>
-    <span>创建者: aimm_ifm</span>
-    <span>创建时间: 2026-05-14</span>
-    <span>参与人数: 28</span>
-    <span>提交次数: 183</span>
-    <a class="ext-link" href="https://www.codabench.org/competitions/16306/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+    <span>ID: 16958</span>
+    <span>创建者: hunzed</span>
+    <span>创建时间: 2026-06-04</span>
+    <span>参与人数: 2</span>
+    <span>提交次数: 4</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16958/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
   </div>
 
   <div class="section">
     <h3>竞赛描述</h3>
-    <div class="page-content">ACM MM 2026 跨域视觉问答大挑战赛 —— 真实PCBA制造检测应用</div>
+    <div class="page-content"># ImageEval 2026 任务描述翻译
+
+给定一张图像和3个陈述语句（MSA），请标记每个陈述为真（基于图像的事实）或假（幻觉内容）。恰好有一个陈述是基于事实的。这是ImageEval 2026 Ayn-VQA共享任务的一部分，该任务关于阿拉伯语多模态理解中的文化语境融合。数据集位于HuggingFace（QCRI/ImageEval2026-Task1-AynVQA）。请同时在以下链接注册：https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform</div>
   </div>
 
   <div class="section">
     <h3>竞赛阶段</h3>
     <table class="phases-table">
       <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
-      <tbody><tr><td><span class='badge badge-test'>测试</span> Public Evaluation</td><td>2026-05-14</td><td>2026-06-04</td><td>5</td></tr></tbody>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development Phase</td><td>2026-05-22</td><td>2026-07-19</td><td>5</td></tr><tr><td><span class='badge badge-test'>测试</span> Testing Phase</td><td>2026-07-20</td><td>2026-07-29</td><td>20</td></tr></tbody>
     </table>
   </div>
 
-<div class='section'><h3>Overview</h3><div class='page-content'>## 概述
+<div class='section'><h3>Participation</h3><div class='page-content'># 如何参与
 
-**PCBA标准到真实场景大挑战**聚焦于**真实制造检验的跨域视觉问答（VQA）**。
+**ImageEval 2026 — Ayn-VQA 任务1c：幻觉检测 (MSA)** — 任务1c（幻觉检测）的**MSA**赛道，是[ImageEval 2026](https://imageeval2026.github.io/)共享任务的一部分，该任务涉及阿拉伯语多模态生成和理解中的文化基础。
 
-印刷电路板组装（PCBA）检验不仅需要视觉识别。实际工厂决策取决于**工业标准**和**真实生产线图像**。可靠的检验模型必须理解制造规则、识别与上下文相关的缺陷、推理可能的原因，并提供可执行的答案。
+给定一张图像和3条声明(MSA)，为每条声明标注为真(以图像为基础)或假(幻觉)。恰好有一条声明以图像为基础。
 
-本挑战评估多模态模型从**标准衍生知识**泛化到**密集、异质真实PCBA图像**的能力。邀请参赛者开发VQA系统，能够解读标准文档、识别组件和缺陷、执行计数任务，并在现实视觉变化下进行推理。
+## 注册(请先做这步)
+填写**[注册表格](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)** — 这样组织者可以追踪参与者，并通知您有关数据、截止日期和任何更新。
 
-参赛者可在[HuggingFace](https://huggingface.co/datasets/aimmifm/PCBA_Standard-to-Real_Challenge)上通过申请数据集进行注册，并通过官方竞赛平台提交预测文件。
+## 参加资格
+个人或团队；由一名成员代表团队提交。您可以参加多个赛道。
 
-## 任务
+## 步骤
+1. 在此Codabench页面**和**[注册表格](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)上注册。
+2. 阅读**条款**标签 — 注意准确的预测格式。
+3. 从Hugging Face Hub获取数据：**[QCRI/ImageEval2026-Task1-AynVQA](https://huggingface.co/datasets/QCRI/ImageEval2026-Task1-AynVQA)**。
+4. 按照[任务仓库](https://github.com/ImageEval2026/ImageEval2026-tasks)中的任务描述进行。
+5. 在开发阶段对**开发测试集**进行预测，在最终评估阶段对**测试集**进行预测。
 
-参赛者需回答PCBA相关视觉问题，并为每个测试样本提交预测答案。基准包含四大VQA类别：
+## 系统描述论文
+鼓励所有团队为研讨会提交系统描述论文。
 
-1. **基于标准的知识问答**
-   源自工业标准的问题，涵盖标准解读、缺陷原因分析和处理决策。
+## 联系方式
+imageeval2026@gmail.com</div></div><div class='section'><h3>Dataset</h3><div class='page-content'># 数据集
 
-2. **事实性**
-   感知为主的问题，包括组件类型识别、安装面识别、缺陷存在检测和缺陷类型识别。
+所有分割均位于 Hugging Face Hub — **[QCRI/ImageEval2026-Task1-AynVQA](https://huggingface.co/datasets/QCRI/ImageEval2026-Task1-AynVQA)** — 作为配置 `task1c_msa`。本竞赛对 **devtest**（开发阶段）和 **test**（最终阶段）进行评分。
 
-3. **定量推理**
-   数字短答题，包括组件计数和管脚/引线计数。
-
-4. **属性推理**
-   关于视觉属性的问题，如主要组件的形状。
-
-## 数据集
-
-已发布的数据集 https://huggingface.co/datasets/aimmifm/PCBA_Standard-to-Real_Challenge 由两个互补来源构建：
-
-* **标准衍生VQA**
-  由工业包装标准构建并转换为VQA项目。该子集聚焦于标准知识、缺陷原因分析和决策制定。
-
-* **真实场景VQA**
-  源自工厂生产线数据。该子集聚焦于真实制造图像和实际视觉变化下的检验推理。
-
-公开分割包含：
-
-| 分割 | 问题数量 |
-| ---- | -------: |
-| 训练 |    8,200 |
-| 测试 |    8,200 |
-| 合计 |   16,400 |</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'>## 评估
-
-所有提交都在官方Codabench服务器上自动评估。参与者必须为发布的公开测试问题提交一个预测文件。公开排行榜报告单一的**总体得分**。
-
-## 提交格式
-
-对于Codabench提交，参与者必须上传单个`.zip`文件。`.zip`压缩包必须在根级别包含一个名为`submission.csv`的CSV文件：
-
-```text
-your_submission.zip
-└── submission.csv
+```python
+from datasets import load_dataset
+ds = load_dataset(&quot;QCRI/ImageEval2026-Task1-AynVQA&quot;, &quot;task1c_msa&quot;, split=&quot;devtest&quot;)
 ```
 
-`submission.csv`文件必须包含恰好两列：
+## 分割
 
-```csv
-qid,answer
-1,B
-2,12
-3,E
-```
+| 分割 | 标签 | 项数 | 阶段 | 用途 |
+|---|---|---:|---|---|
+| `train`   | 有 | 3000 | 开发 | 训练/微调 |
+| `dev`     | 有 | 500  | 开发 | 本地验证 |
+| `devtest` | 无 | 500  | 开发（排行榜） | 提交目标，开发阶段 |
+| `test`    | 无 | 1000 | 最终评估 | 盲测排名（人工录制音频） |
 
-提交规则：
+- **语言：** MSA（现代标准阿拉伯语）。
+- 媒体（图像/音频）通过 **相对路径** 按 `id` 键引用。
+- 任务 1c 仅包含图像和文本（无音频）：三个陈述语句，其中恰好一个有根据。
 
-* `qid`必须完全匹配`vqa_test_public.json`中的问题标识符
-* `answer`必须仅包含最终预测
-* 对于多选题，按照问题中显示的选项键精确提交，例如`A`、`B`、`C`、`D`、`E`或`F`
-* 对于计数问题，以纯字符串形式提交整数，例如`12`
-* 文件必须为每个测试问题包含一行
-* 缺少行、重复的`qid`值或未知的`qid`值将导致提交无效
-* 不要在提交压缩包中将`submission.csv`放置在额外的子文件夹内
+## 许可证
+CC BY-NC 4.0 — 仅限非商业研究使用。</div></div><div class='section'><h3>Timeline</h3><div class='page-content'># 时间表
 
-公开测试JSON不公开任务类型注释。任务分组由官方评估服务器内部处理。
+## 开发阶段
+在 `train` + `dev` 上进行调优；在 **devtest** 上提交预测结果用于排行榜。
 
-## 官方指标
+**时间窗口：** `2026-05-22 → 2026-07-19`  ·  每天最多 5 次提交，总计 100 次。
 
-每个测试问题在内部属于以下任务组之一：
+## 测试阶段
+盲测 **test** 集合在 [Hugging Face](https://huggingface.co/datasets/QCRI/ImageEval2026-Task1-AynVQA) 上发布；在 `test` 上提交预测结果用于官方排名。
 
-* `standard_knowledge`
-* `component_type`
-* `mount_side`
-* `defect_existence`
-* `defect_type`
-* `count_component`
-* `count_pin_lead`
-* `attribute_reasoning`
+**时间窗口：** `2026-07-20 → 2026-07-29`  ·  每天最多 20 次提交，总计 100 次。
 
-任务级指标：
-
-* **准确率**用于`standard_knowledge`、`component_type`、`mount_side`、`defect_type`和`attribute_reasoning`
-* **F1得分**用于`defect_existence`
-* **标准化MAE**用于`count_component`和`count_pin_lead`
-
-对于`defect_existence`，官方得分使用异常阳性类的二元F1。
-
-对于计数任务，官方标准化得分为：
-
-```text
-count_score_t = max(0, 1 - MAE_t / C_t)
-```
-
-其中固定的标准化常数为：
-
-* `C_count_component = 138`
-* `C_count_pin_lead = 260`
-
-## 总体得分
-
-每个任务级指标首先转换为相同的`0-1`范围。最终公开排行榜得分随后计算为跨任务组的加权平均，使用评估集中的任务比例：
-
-```text
-Overall Score = 100 * sum_t (w_t * s_t)
-```
-
-其中：
-
-* `s_t`是任务`t`的任务级得分
-* `w_t = n_t / N`
-* `n_t`是任务`t`的评估问题数
-* `N`是评估问题总数
-
-排行榜在`0-100`范围内显示最终**总体得分**。
-
-## 评估说明
-
-* 官方Codabench服务器是得分的唯一有效来源
-* 组织者方面的任务注释对参与者隐藏
-* 多选题的无效选项标签被计为错误答案
-* 计数问题的非整数答案被视为无效计数预测
-* 组织者可能会在私有评估数据上另外运行相同的评分协议以进行验证或赛后分析</div></div>
+&gt; 日期设置在 `competition.yaml` 中（`phases.start` / `phases.end`）— 如果时间安排有变，请相应调整。公告：[网站](https://imageeval2026.github.io/)。</div></div>
 
 </div>
 </body>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>EventAid Frame Interpolation Challenge @ EBMV Workshop, ECCV 2026 — Codabench 竞赛监测</title>
+<title>ImageEval 2026 — Ayn-VQA Task 1a: Spoken VQA (MSA) — Codabench 竞赛监测</title>
 <style>
 :root {
     --bg: #0f1117;
@@ -99,128 +99,90 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
 </header>
 <div class="detail-wrap">
   <a class="back-link" href="index.html">← 返回竞赛目录</a>
-  <h2>EventAid Frame Interpolation Challenge @ EBMV Workshop, ECCV 2026</h2>
+  <h2>ImageEval 2026 — Ayn-VQA Task 1a: Spoken VQA (MSA)</h2>
   <div class="detail-meta">
-    <span>ID: 16375</span>
-    <span>创建者: hylz-2019</span>
-    <span>创建时间: 2026-05-16</span>
-    <span>参与人数: 41</span>
-    <span>提交次数: 8</span>
-    <a class="ext-link" href="https://www.codabench.org/competitions/16375/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+    <span>ID: 16956</span>
+    <span>创建者: hunzed</span>
+    <span>创建时间: 2026-06-04</span>
+    <span>参与人数: 2</span>
+    <span>提交次数: 1</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16956/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
   </div>
 
   <div class="section">
     <h3>竞赛描述</h3>
-    <div class="page-content">基于EventAid基准的RGB帧插值，包含1、3、7和15跳帧设置。EventAid挑战赛是EBMV（事件驱动多模态视觉：成像、感知与理解）研讨会@ECCV 2026的一个赛道！</div>
+    <div class="page-content">给定一张图像和口头问题/选项（MSA音频），选择正确的选项索引（0-2）。这是ImageEval 2026 Ayn-VQA共享任务的一部分，该任务关于阿拉伯语多模态理解中的文化基础。数据位于HuggingFace（QCRI/ImageEval2026-Task1-AynVQA）。请同时在https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform注册</div>
   </div>
 
   <div class="section">
     <h3>竞赛阶段</h3>
     <table class="phases-table">
       <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
-      <tbody><tr><td><span class='badge badge-other'>其他</span> Validation Phase</td><td>2026-05-16</td><td>2026-06-30</td><td>5</td></tr><tr><td><span class='badge badge-test'>测试</span> Final Test Phase</td><td>2026-07-01</td><td>—</td><td>5</td></tr></tbody>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development Phase</td><td>2026-05-22</td><td>2026-07-19</td><td>5</td></tr><tr><td><span class='badge badge-test'>测试</span> Testing Phase</td><td>2026-07-20</td><td>2026-07-29</td><td>20</td></tr></tbody>
     </table>
   </div>
 
-<div class='section'><h3>Participation</h3><div class='page-content'># EventAid帧插值挑战赛
+<div class='section'><h3>Participation</h3><div class='page-content'># 参赛方式
 
-本挑战赛是ECCV 2026 EBMV（基于事件的多模态视觉：成像、感知和理解）研讨会的一个分赛道！研讨会主页：https://eventbasemultimodalvision.github.io/
+**ImageEval 2026 — Ayn-VQA 任务1a: 语音VQA (MSA)** — 任务1a (语音VQA) 的 **MSA** 赛道
+[ImageEval 2026](https://imageeval2026.github.io/) 共享任务的一部分，该共享任务聚焦于阿拉伯语多模态生成和理解中的文化基础。
 
-如遇到任何问题，请联系组织者：段佩琪 (duanqi0001@pku.edu.cn)、李博宇 (liboyu@pku.edu.cn) 或娄寒月 (hylz@pku.edu.cn)。
+给定一张图像和语音问题/选项 (MSA音频)，选择正确的选项索引 (0-2)。
 
-## 任务
+## 注册 (请首先完成此步骤)
+填写 **[注册表单](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)** — 这有助于组织者跟踪
+参赛者并通知您关于数据、截止日期和任何更新的信息。
 
-本挑战赛是一项基于事件的帧插值任务。对于每个序列，参赛者将获得：
+## 谁可以参加
+个人或团队；由团队的一名成员代表提交。您可以参加多个赛道。
 
-- 一组稀疏的RGB输入帧，
-- 帧之间的事件流，
-- 时间戳和帧元数据。
+## 步骤
+1. 在此Codabench页面 **以及** [注册表单](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform) 上注册。
+2. 阅读 **条款** 选项卡 — 注意精确的预测格式。
+3. 从Hugging Face Hub获取数据: **[QCRI/ImageEval2026-Task1-AynVQA](https://huggingface.co/datasets/QCRI/ImageEval2026-Task1-AynVQA)**。
+4. 按照 [任务仓库](https://github.com/ImageEval2026/ImageEval2026-tasks) 中的任务描述进行操作。
+5. 在开发阶段对 **devtest** 进行预测，在最终评估阶段对 **test** 进行预测。
 
-目标是重建`frame_info.txt`中所有标记为`[TODO]`的帧。
+## 系统描述论文
+鼓励所有团队为研讨会提交系统描述论文。
 
-数据分为四种插值设置：
+## 联系方式
+imageeval2026@gmail.com</div></div><div class='section'><h3>Dataset</h3><div class='page-content'># 数据集
 
-- `1skip`：在相邻输入帧之间重建1个缺失帧。
-- `3skip`：在相邻输入帧之间重建3个缺失帧。
-- `7skip`：在相邻输入帧之间重建7个缺失帧。
-- `15skip`：在相邻输入帧之间重建15个缺失帧。
+所有数据集分割都位于 Hugging Face Hub — **[QCRI/ImageEval2026-Task1-AynVQA](https://huggingface.co/datasets/QCRI/ImageEval2026-Task1-AynVQA)** — 配置为 `task1a_msa`。本竞赛评分针对 **devtest**（开发阶段）和 **test**（最终阶段）。
 
-较大的跳过设置具有更宽的时间间隙，难度更大。
-
-## 数据使用
-
-本挑战赛使用了公开发布的EventAid数据集的一个子集。完整的公开EventAid数据集包含与本挑战赛重叠的场景的真值数据，使用该数据容易导致过拟合或数据泄漏，即使不直接检查真值也是如此。因此，参赛者**不得**使用公开发布的EventAid数据集或任何源自该数据集的数据进行训练、验证、模型选择、超参数调整、预训练或方法开发的任何其他部分。
-
-参赛者可以使用本挑战赛正式提供的数据，包括发布的输入数据和验证序列真值，用于方法开发和验证。验证序列仅提供用于帮助参赛者验证数据格式和评估流程；它不属于最终计分的测试集。
-
-参赛者可以使用任何其他真实或合成数据集、预训练模型或外部资源，前提是这些资源在法律上可访问且不基于公开EventAid数据集。所有外部数据集和预训练资源必须在最终技术报告中清楚地披露。示例训练数据源包括：基于视频数据集（如[GOPRO](https://github.com/SeungjunNah/DeepDeblur_release)、[REDS](https://seungjunnah.github.io/Datasets/reds)和[Adobe240FPS](https://www.cs.ubc.ca/labs/imager/tr/2017/DeepVideoDeblurring/)）的合成EVFI数据，以及事件模拟器（如[ESIM](https://github.com/uzh-rpg/rpg_esim)、[V2E](https://github.com/SensorsINI/v2e)和[V2V](https://github.com/HYLZ-2019/V2V)）；真实EVFI数据集，如[HQ-EVFI](https://openimaginglab.github.io/TimeLens-XL/)和[ERF-X170FPS](https://github.com/intelpro/CBMNet)。
-
-隐藏测试集仅用于官方评估。参赛者不得尝试访问、重构、手动标注或反向工程隐藏的真值数据。
-
-## 公共数据
-
-从公共数据选项卡下载`challenge_data.zip`并解压：
-
-```bash
-unzip challenge_data.zip
+```python
+from datasets import load_dataset
+ds = load_dataset(&quot;QCRI/ImageEval2026-Task1-AynVQA&quot;, &quot;task1a_msa&quot;, split=&quot;devtest&quot;)
 ```
 
-解压后的目录包含：
+## 数据集分割
 
-```text
-challenge_data/
-  validation/
-    {1skip,3skip,7skip,15skip}/{sequence}/
-      input/
-      event/
-      gt/
-      event_info.txt
-      frame_info.txt
-      shape.txt
-  test/
-    {1skip,3skip,7skip,15skip}/{sequence}/
-      input/
-      event/
-      event_info.txt
-      frame_info.txt
-      shape.txt
-  run_baseline_method.py
-  evaluate_results.py
-  terms.md
-```
+| 分割 | 标签 | 数量 | 阶段 | 用途 |
+|---|---|---:|---|---|
+| `train`   | 有 | 3000 | 开发 | 训练/微调 |
+| `dev`     | 有 | 500  | 开发 | 本地验证 |
+| `devtest` | 无  | 500  | 开发（排行榜） | 提交目标，开发阶段 |
+| `test`    | 无  | 1000 | 最终评估 | 盲测排名（人工录制音频） |
 
-验证集在`gt/`下包含真值帧，以便参赛者在本地验证其流程。测试集不包含真值，用于官方排名。
+- **语言：** 现代标准阿拉伯语（MSA）。
+- 媒体（图像/音频）通过相对路径引用，以 `id` 作为键。
+- 🔊 开发阶段音频为合成生成（声音克隆）；最终 **test** 音频为人工录制 — 预期存在录音条件偏移。
 
-## 提交格式
+## 许可证
+CC BY-NC 4.0 — 仅限非商业研究使用。</div></div><div class='section'><h3>Timeline</h3><div class='page-content'># 时间表
 
-仅提交重建的`[TODO]`帧。所需的布局为：
+## 开发阶段
+在 `train` + `dev` 上进行调优；在 **devtest** 上提交预测结果用于排行榜。
 
-```text
-results/
-  {skip}/
-    {sequence}/
-      {frame_index:06d}.png
-```
+**时间窗口：** `2026-05-22 → 2026-07-19`  ·  每天最多 5 次提交，总计 100 次。
 
-例如：
+## 测试阶段
+盲测 **test** 集合在 [Hugging Face](https://huggingface.co/datasets/QCRI/ImageEval2026-Task1-AynVQA) 上发布；在 `test` 上提交预测结果以获得官方排名。
 
-```text
-results/1skip/ball
-```</div></div><div class='section'><h3>Timeline</h3><div class='page-content'># 时间表
+**时间窗口：** `2026-07-20 → 2026-07-29`  ·  每天最多 20 次提交，总计 100 次。
 
-## 验证阶段
-
-验证阶段开放至 **2026年6月30日**。参与者可以提交重建帧并获得验证PSNR/SSIM反馈。
-
-## 最终评估
-
-验证阶段结束后，组织方在隐藏测试集上评估每个团队在验证阶段的最后一次有效提交。
-
-最终结果将于 **2026年7月5日** 公布。
-
-## 技术报告
-
-技术报告提交截止日期为 **2026年7月10日**。报告应描述所用方法、训练数据、预训练模型以及任何外部资源。</div></div>
+&gt; 日期设置在 `competition.yaml` 中（`phases.start` / `phases.end`）— 如果时间安排有变更请调整。公告：[网站](https://imageeval2026.github.io/)。</div></div>
 
 </div>
 </body>
