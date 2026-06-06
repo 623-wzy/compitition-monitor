@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Challenge on General AIGC Audio–Video Detection — Codabench 竞赛监测</title>
+<title>Waste Sorting Detection Challenge — Codabench 竞赛监测</title>
 <style>
 :root {
     --bg: #0f1117;
@@ -99,107 +99,87 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
 </header>
 <div class="detail-wrap">
   <a class="back-link" href="index.html">← 返回竞赛目录</a>
-  <h2>The Challenge on General AIGC Audio–Video Detection</h2>
+  <h2>Waste Sorting Detection Challenge</h2>
   <div class="detail-meta">
-    <span>ID: 15769</span>
-    <span>创建者: lixiang</span>
-    <span>创建时间: 2026-04-18</span>
-    <span>参与人数: 91</span>
-    <span>提交次数: 264</span>
-    <a class="ext-link" href="https://www.codabench.org/competitions/15769/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+    <span>ID: 16982</span>
+    <span>创建者: avartan_labs</span>
+    <span>创建时间: 2026-06-05</span>
+    <span>参与人数: 3</span>
+    <span>提交次数: 13</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16982/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
   </div>
 
   <div class="section">
     <h3>竞赛描述</h3>
-    <div class="page-content">AIGC音视频深度伪造分类挑战赛（基于MVAD数据集）</div>
+    <div class="page-content">从传送带图像中检测和分类19类废弃物体。训练您的模型并在隐藏测试集上提交预测。</div>
   </div>
 
   <div class="section">
     <h3>竞赛阶段</h3>
     <table class="phases-table">
       <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
-      <tbody><tr><td><span class='badge badge-other'>其他</span> Competition Phase</td><td>2026-05-14</td><td>2026-06-12</td><td>1</td></tr></tbody>
+      <tbody><tr><td><span class='badge badge-test'>测试</span> submission</td><td>2026-06-05</td><td>2026-06-20</td><td>40</td></tr></tbody>
     </table>
   </div>
 
-<div class='section'><h3>Overview</h3><div class='page-content'># 通用AIGC音视频检测
+<div class='section'><h3>Overview</h3><div class='page-content'># 垃圾分类检测挑战赛
 
-本竞赛聚焦于**通用AIGC音视频检测**。为应对高级AI生成视频伪造（如Sora2、Veo3.1）日益增长的威胁，我们基于**MVAD数据集**（发布为DDL-GAV）提出了一项大规模多模态检测挑战赛，包含超过**200,000个真实-伪造音视频样本**。数据集覆盖逼真和动画两种视觉风格、四个内容类别（人类、动物、物体和场景）、三种典型跨模态伪造模式，以及超过**23种AI生成技术**，包括文本生成视频、图像生成视频、视频生成视频和音频生成视频合成。本竞赛旨在推进多模态深度伪造检测的研究与应用，支持**AI向善**的可持续发展。
+## 关于本赛事
+从真实传送带图像中检测和分类垃圾物体。在19个垃圾类别中构建最佳目标检测模型。
 
-竞赛链接：https://www.codabench.org/competitions/15769/
+## 数据集
+- 训练集：5,238张图像，YOLO格式标签
+- 测试集：1,312张图像
 
-如有任何疑问，请发送邮件至：17318508682@163.com
+## 类别（共19类）
+| ID | 类别 | ID | 类别 |
+|----|-------|----|-------|
+| 0 | 透明宠物瓶 | 10 | 小包装袋 |
+| 1 | 绿色宠物瓶 | 11 | 利乐包 |
+| 2 | 透明LDPE | 12 | 褐色纸板 |
+| 3 | LDPE-HM | 13 | 纸盒 |
+| 4 | 黑色LDPE | 14 | 椰壳 |
+| 5 | HDPE瓶 | 15 | 鞋类 |
+| 6 | 金属罐 | 16 | 有色IDPE |
+| 7 | 牛奶包 | 17 | 硬塑料 |
+| 8 | PP袋 | 18 | 其他 |
+| 9 | MLP包装 | | |
 
-#### 注：测试集已于2026年5月15日在GitHub库中正式发布。
-
----
-
-## 评估指标
-本挑战赛包含**两个分层检测任务**：二元伪造检测和四类模态分类。
-### 任务定义
-- 真-真（RR）：音频和视频均真实。
-- 伪-真（FR）：视频伪造，音频真实。
-- 真-伪（RF）：视频真实，音频伪造。
-- 伪-伪（FF）：音频和视频均伪造。
-
-### 评估指标
-检测性能使用**AUC、ACC、F1和AP**进行评估。
-
-### 最终评分计算
-- 二元分类得分 = 0.2×AUC + 0.3×ACC + 0.3×AP + 0.2×F1
-- 四类分类得分 = 0.2×AUC + 0.3×ACC + 0.3×AP + 0.2×F1
-- **最终总得分 = 0.4×二元分类得分 + 0.6×四类分类得分**
+## 参赛方式
+1. 通过SSH访问工作站（凭证单独提供）
+2. 在提供的数据集上训练模型
+3. 在工作站上生成predictions.json
+4. 在Codabench上提交predictions.json
 
 ## 提交格式
+提交单个predictions.json文件，采用COCO检测格式：
 
-参赛者必须提交**两个预测文件**，打包在**单个`.zip`压缩包**中。
+[
+  {
+    &quot;image_id&quot;: 0,
+    &quot;category_id&quot;: 3,
+    &quot;bbox&quot;: [x_min, y_min, width, height],
+    &quot;score&quot;: 0.91
+  },
+  ...
+]
 
-### 打包规则
+- image_id：0基础索引（图像按字母顺序排序）
+- category_id：整数0-18
+- bbox：绝对像素坐标 [x_min, y_min, width, height]
+- score：置信度0-1之间
 
-- zip压缩包可以使用**任意名称**（`submission.zip`、`result.zip`等）。
-- 必须恰好包含两个文件，名称**必须**为`binary.txt`和`four_class.txt`（区分大小写——不要重命名）。
-- 两个文件可以位于zip根目录或子文件夹中——两种方式都可接受。
-- 仅提交预测结果——**不要**提交模型代码。
+## 评估指标
+- 主要排名：mAP50
+- 破平指标：mAP50-95
+- 其他显示项：精确率、召回率、F1分数、全部19类的单类AP
 
-### 1. `binary.txt` — 二元分类（真实/伪造）
-
-每行格式：`video_path  0_pred  1_pred`
-
-- `0_pred` = **真实**的概率
-- `1_pred` = **伪造**的概率
-- 可选的标题行`video_path,0_pred,1_pred`被允许且会被跳过。
-
-```
-video_path,0_pred,1_pred
-000bfd940cf44f998b1b4803d48d7d05.mp4 0.5066 0.4934
-0016150625f846bf8feebc6e5c0831b8.mp4 0.5100 0.4900
-001eb668e3ba4ecd89417be16ca7b613.mp4 0.6434 0.3566
-```
-
-### 2. `four_class.txt` — 四类分类
-
-每行格式：`video_path  0_pred  1_pred  2_pred  3_pred`
-
-- 类别索引：`0 = 真-真(RR)`、`1 = 伪-伪(FF)`、`2 = 伪-真(FR)`、`3 = 真-伪(RF)`
-- 可选的标题行被允许且会被跳过。
-
-```
-video_path,0_pred,1_pred,2_pred,3_pred
-000bfd940cf44f998b1b4803d48d7d05.mp4 0.1292 0.0075 0.3836 0.4796
-0016150625f846bf8feebc6e5c0831b8.mp4 0.2880 0.0590 0.2999 0.3531
-001eb668e3ba4ecd89417be16ca7b613.mp4 0.3144 0.0230 0.3682 0.2944
-```
-
-### 重要说明
-
-- **`video_path`必须与测试集文件名完全匹配**（发布测试数据中的哈希值`.mp4`文件名）。不匹配的文件名被视为缺失，评分时使用默认均匀概率。
-- 每行内，使用**空格或逗号**作为分隔符保持一致——**不要**混合使用`逗号+空格`。
-- 概率无需恰好求和为1——评分器会自动对每行进行归一化。
-- **测试集中的每个样本应同时出现在两个文件中。**缺失的行将用默认概率填充，会降低您的分数。
-
-## 奖励与认可
-- 优秀方案将被邀请在IJCAI进行展示。
-- **前1-5名团队**将获得官方排名证书。</div></div>
+## 规则
+- 每天最多3次官方提交
+- 允许任何框架（YOLO、RT-DETR、Detectron2等）
+- 允许使用预训练骨干网络（COCO预训练可用）
+- 不得共享凭证或工作站访问权限
+- 数据集不得复制或下载</div></div>
 
 </div>
 </body>

@@ -5,7 +5,7 @@
   "description_zh": "# ImageEval 2026 任务描述翻译\n\n给定一张图像和3个陈述语句（MSA），请标记每个陈述为真（基于图像的事实）或假（幻觉内容）。恰好有一个陈述是基于事实的。这是ImageEval 2026 Ayn-VQA共享任务的一部分，该任务关于阿拉伯语多模态理解中的文化语境融合。数据集位于HuggingFace（QCRI/ImageEval2026-Task1-AynVQA）。请同时在以下链接注册：https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform",
   "created_by": "hunzed",
   "created_when": "2026-06-04T08:55:36.852813Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-04-1780563336/4121e83ffe00/logo.png?AWSAccessKeyId=codabench-prod&Signature=qoJQP6zUQHHNbKnQ5WZPG2mFXPA%3D&Expires=1780650091",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-04-1780563336/4121e83ffe00/logo.png?AWSAccessKeyId=codabench-prod&Signature=V6DaGrdeTayS0tyaqOhoJRSyZA4%3D&Expires=1780736865",
   "participants_count": 2,
   "submissions_count": 4,
   "first_phase_start": null,

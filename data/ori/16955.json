@@ -5,8 +5,8 @@
   "created_by": "hunzed",
   "owner_display_name": "hunzed",
   "created_when": "2026-06-04T08:54:54.246212Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-04-1780563294/fd58c45c2676/logo.png?AWSAccessKeyId=codabench-prod&Signature=whwLk16qwMs36D2yVDOpZkLGyvY%3D&Expires=1780650094",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-04-1780563294/fd58c45c2676/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=TzqYjLgeDHkA3XE94luixVVBv98%3D&Expires=1780650094",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-04-1780563294/fd58c45c2676/logo.png?AWSAccessKeyId=codabench-prod&Signature=C1Bc%2BseVtIKVQcmcuph%2BjmwQPcs%3D&Expires=1780736867",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-04-1780563294/fd58c45c2676/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=22mRx1qBQ735BkAgi%2FKHl7OH%2B3A%3D&Expires=1780736867",
   "terms": "# Terms\n\n## Submission format\nSubmit a **UTF-8 CSV** named `prediction.csv`, zipped as `prediction.zip`.\nOne row per item.\n\n**Required columns**\n- `id` — the item id (do not reorder/rename).\n- `prediction` — a single integer `0`, `1` or `2`: the index of the correct\n  option (inferred from the spoken audio).\n\n```\nid,prediction\n1dcdf6da...,0\n803ca9b8...,2\n```\n\n## Rules\n1. Your `id`s must exactly match the gold set for the active phase (`devtest`,\n   then `test`); missing/extra rows are rejected.\n2. `prediction` must be a single integer 0, 1 or 2.\n\n## Metric\nOfficial metric: **accuracy**.\n\n## Registration, data usage, ethics\n- Please register at the **[participation form](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)**.\n- Data is **CC BY-NC 4.0** (non-commercial research use only).\n- Any pretrained model / external data / compute is allowed; document it in your paper.\n\n## Contact\nimageeval2026@gmail.com",
   "pages": [
     {
