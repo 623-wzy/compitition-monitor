@@ -101,85 +101,79 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
   <a class="back-link" href="index.html">← 返回竞赛目录</a>
   <h2>Waste Sorting Detection Challenge</h2>
   <div class="detail-meta">
-    <span>ID: 16982</span>
+    <span>ID: 16986</span>
     <span>创建者: avartan_labs</span>
-    <span>创建时间: 2026-06-05</span>
-    <span>参与人数: 3</span>
-    <span>提交次数: 13</span>
-    <a class="ext-link" href="https://www.codabench.org/competitions/16982/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+    <span>创建时间: 2026-06-06</span>
+    <span>参与人数: 2</span>
+    <span>提交次数: 4</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16986/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
   </div>
 
   <div class="section">
     <h3>竞赛描述</h3>
-    <div class="page-content">从传送带图像中检测和分类19类废弃物体。训练您的模型并在隐藏测试集上提交预测。</div>
+    <div class="page-content">从真实传送带图像中检测和分类废弃物体。
+在19种废物类别中构建最佳物体检测模型。
+由Avartan Labs组织。</div>
   </div>
 
   <div class="section">
     <h3>竞赛阶段</h3>
     <table class="phases-table">
       <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
-      <tbody><tr><td><span class='badge badge-test'>测试</span> submission</td><td>2026-06-05</td><td>2026-06-20</td><td>40</td></tr></tbody>
+      <tbody><tr><td><span class='badge badge-test'>测试</span> submission</td><td>2026-06-06</td><td>2026-06-20</td><td>3</td></tr></tbody>
     </table>
   </div>
 
-<div class='section'><h3>Overview</h3><div class='page-content'># 垃圾分类检测挑战赛
+<div class='section'><h3>Overview</h3><div class='page-content'># 废弃物分类检测挑战赛
 
-## 关于本赛事
-从真实传送带图像中检测和分类垃圾物体。在19个垃圾类别中构建最佳目标检测模型。
+## 关于
+构建最佳目标检测模型，从废弃物分类设施的真实传送带图像中检测和分类废弃物。在19个废弃物类别中竞争。
 
 ## 数据集
 - 训练集：5,238张图像，YOLO格式标签
 - 测试集：1,312张图像
+- 格式：YOLO（class x_center y_center width height）
 
 ## 类别（共19类）
 | ID | 类别 | ID | 类别 |
 |----|-------|----|-------|
-| 0 | 透明宠物瓶 | 10 | 小包装袋 |
-| 1 | 绿色宠物瓶 | 11 | 利乐包 |
-| 2 | 透明LDPE | 12 | 褐色纸板 |
-| 3 | LDPE-HM | 13 | 纸盒 |
-| 4 | 黑色LDPE | 14 | 椰壳 |
-| 5 | HDPE瓶 | 15 | 鞋类 |
-| 6 | 金属罐 | 16 | 有色IDPE |
-| 7 | 牛奶包 | 17 | 硬塑料 |
-| 8 | PP袋 | 18 | 其他 |
-| 9 | MLP包装 | | |
+| 0 | pet-bottle-clear | 10 | sachet |
+| 1 | pet-bottle-green | 11 | tetrapack |
+| 2 | ldpe-clear | 12 | cardboard-brown |
+| 3 | ldpe-hm | 13 | paper-box |
+| 4 | ldpe-black | 14 | coconut-shell |
+| 5 | hdpe-bottle | 15 | footwear |
+| 6 | metal-can | 16 | idpe-colored |
+| 7 | milk-packet | 17 | hard-plastic |
+| 8 | pp-bag | 18 | other |
+| 9 | mlp-packet | | |
+
+## 评估指标
+主要指标：**mAP50**（COCO风格的平均精度均值，IoU=0.50）
 
 ## 参赛方式
-1. 通过SSH访问工作站（凭证单独提供）
-2. 在提供的数据集上训练模型
-3. 在工作站上生成predictions.json
-4. 在Codabench上提交predictions.json
+1. SSH连接到分配的工作站（凭据另行共享）
+2. 在提供的数据集上训练模型，数据集位置：`/home/user/hackathon/Waste_sorting_dataset/`
+3. 在测试集上生成预测结果
+4. 使用提供的`submit.py`脚本提交
 
 ## 提交格式
-提交单个predictions.json文件，采用COCO检测格式：
-
+提交包含`predictions.json`的ZIP文件，格式为COCO检测格式：
+```json
 [
   {
     &quot;image_id&quot;: 0,
-    &quot;category_id&quot;: 3,
-    &quot;bbox&quot;: [x_min, y_min, width, height],
-    &quot;score&quot;: 0.91
-  },
-  ...
+    &quot;category_id&quot;: 0,
+    &quot;bbox&quot;: [x, y, width, height],
+    &quot;score&quot;: 0.95
+  }
 ]
-
-- image_id：0基础索引（图像按字母顺序排序）
-- category_id：整数0-18
-- bbox：绝对像素坐标 [x_min, y_min, width, height]
-- score：置信度0-1之间
-
-## 评估指标
-- 主要排名：mAP50
-- 破平指标：mAP50-95
-- 其他显示项：精确率、召回率、F1分数、全部19类的单类AP
+```
 
 ## 规则
 - 每天最多3次官方提交
-- 允许任何框架（YOLO、RT-DETR、Detectron2等）
-- 允许使用预训练骨干网络（COCO预训练可用）
-- 不得共享凭证或工作站访问权限
-- 数据集不得复制或下载</div></div>
+- 仅在提供的数据集上训练
+- 禁止团队间共享模型权重</div></div>
 
 </div>
 </body>

@@ -1,0 +1,191 @@
+{
+  "id": 16986,
+  "title": "Waste Sorting Detection Challenge",
+  "published": true,
+  "created_by": "avartan_labs",
+  "owner_display_name": "avartan_labs",
+  "created_when": "2026-06-06T17:41:37.581384Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-06-1780767697/343e119605f8/logo.png?AWSAccessKeyId=codabench-prod&Signature=3ODkSH3thQZug9b%2BVdnl%2BcLO5EM%3D&Expires=1780823757",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-06-1780767697/343e119605f8/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=Xhefb7plfZItzgpUPU8G9yofUIE%3D&Expires=1780823757",
+  "terms": "By participating in this challenge you agree to:\n1. Not share your credentials with anyone\n2. Not attempt to access other teams' files or workspaces\n3. Submit only your own original work\n4. Maximum 3 official submissions per day\n5. Results are final as shown on the leaderboard",
+  "pages": [
+    {
+      "id": 80857,
+      "title": "Overview",
+      "content": "# Waste Sorting Detection Challenge\n\n## About\nBuild the best object detection model to detect and classify waste objects from real conveyor belt images captured at a waste sorting facility. Compete across 19 waste categories.\n\n## Dataset\n- Train: 5,238 images with YOLO format labels\n- Test: 1,312 images\n- Format: YOLO (class x_center y_center width height)\n\n## Classes (19 total)\n| ID | Class | ID | Class |\n|----|-------|----|-------|\n| 0 | pet-bottle-clear | 10 | sachet |\n| 1 | pet-bottle-green | 11 | tetrapack |\n| 2 | ldpe-clear | 12 | cardboard-brown |\n| 3 | ldpe-hm | 13 | paper-box |\n| 4 | ldpe-black | 14 | coconut-shell |\n| 5 | hdpe-bottle | 15 | footwear |\n| 6 | metal-can | 16 | idpe-colored |\n| 7 | milk-packet | 17 | hard-plastic |\n| 8 | pp-bag | 18 | other |\n| 9 | mlp-packet | | |\n\n## Evaluation Metric\nPrimary metric: **mAP50** (COCO-style mean Average Precision at IoU=0.50)\n\n## How to Participate\n1. SSH into your assigned workstation (credentials shared separately)\n2. Train your model on the provided dataset at `/home/user/hackathon/Waste_sorting_dataset/`\n3. Generate predictions on the test set\n4. Submit using the provided `submit.py` script\n\n## Submission Format\nSubmit a ZIP file containing `predictions.json` in COCO detection format:\n```json\n[\n  {\n    \"image_id\": 0,\n    \"category_id\": 0,\n    \"bbox\": [x, y, width, height],\n    \"score\": 0.95\n  }\n]\n```\n\n## Rules\n- Max 3 official submissions per day\n- Training only on provided dataset\n- No sharing of model weights between teams",
+      "index": 0
+    }
+  ],
+  "phases": [
+    {
+      "id": 28389,
+      "index": 0,
+      "start": "2026-06-06T09:00:00Z",
+      "end": "2026-06-20T00:00:00Z",
+      "name": "submission",
+      "description": "Submit your predictions.json file to get your score. Maximum 3 submissions per day.\n\nTo submit:\n1. Generate predictions.json on the workstation\n2. Run: python3 /tmp/team_X/submit.py\n3. Check leaderboard for your score (takes 5-10 minutes)",
+      "status": "Current",
+      "execution_time_limit": 1200,
+      "tasks": [
+        {
+          "task": "76ad9cff-8ac7-49bb-bd45-6096749f6fde",
+          "order_index": 0,
+          "phase": 28389,
+          "id": 34013,
+          "value": "76ad9cff-8ac7-49bb-bd45-6096749f6fde",
+          "key": "76ad9cff-8ac7-49bb-bd45-6096749f6fde",
+          "created_when": "2026-06-06T17:36:04.071338Z",
+          "name": "Waste_sorting",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 818014,
+              "created_by": "avartan_labs",
+              "owner_display_name": "avartan_labs",
+              "created_when": "2026-06-06T17:34:59.708700Z",
+              "name": "reference",
+              "type": "reference_data",
+              "description": "gt",
+              "is_public": false,
+              "key": "a0485390-8715-4bb0-8d25-433ef1782e56",
+              "value": "a0485390-8715-4bb0-8d25-433ef1782e56",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 16986,
+                  "title": "Waste Sorting Detection Challenge"
+                }
+              ],
+              "competition": null,
+              "file_name": "reference_data.zip",
+              "file_size": 362044.0
+            },
+            {
+              "id": 818016,
+              "created_by": "avartan_labs",
+              "owner_display_name": "avartan_labs",
+              "created_when": "2026-06-06T17:35:30.717310Z",
+              "name": "scoring",
+              "type": "scoring_program",
+              "description": "eval",
+              "is_public": false,
+              "key": "55dd83a5-78e1-44e7-acc7-fc2d0e386a6e",
+              "value": "55dd83a5-78e1-44e7-acc7-fc2d0e386a6e",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 16986,
+                  "title": "Waste Sorting Detection Challenge"
+                }
+              ],
+              "competition": null,
+              "file_name": "scoring_program_v2.zip",
+              "file_size": 3156.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 3,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 18804,
+      "primary_index": 0,
+      "title": "Waste Sorting Leaderboard",
+      "key": "mAP50",
+      "columns": [
+        {
+          "id": 82197,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "mAP50",
+          "key": "mAP50",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 82198,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "mAP50-95",
+          "key": "mAP50-95",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 82199,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "F1",
+          "key": "F1",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 82200,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Precision",
+          "key": "Precision",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 82201,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Recall",
+          "key": "Recall",
+          "sorting": "desc",
+          "index": 4,
+          "hidden": false,
+          "precision": 4
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Add"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": false,
+  "description": "Detect and classify waste objects from real conveyor belt images. \nBuild the best object detection model across 19 waste categories.\nOrganized by Avartan Labs.",
+  "participants_count": 2,
+  "submissions_count": 4,
+  "queue": null,
+  "enable_detailed_results": true,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": false,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "codalab/codalab-legacy:py39",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 16696,
+  "reward": "",
+  "contact_email": "srividya@avartanlabs.com",
+  "report": "",
+  "forum_enabled": true
+}
