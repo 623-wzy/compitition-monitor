@@ -1,28 +1,28 @@
 {
-  "id": 16957,
+  "id": 17000,
   "title": "ImageEval 2026 — Ayn-VQA Task 1c: Hallucination Detection (English)",
   "published": true,
   "created_by": "hunzed",
   "owner_display_name": "hunzed",
-  "created_when": "2026-06-04T08:55:23.346129Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-04-1780563323/e3d6941833cf/logo.png?AWSAccessKeyId=codabench-prod&Signature=Ku%2BZlkaUQYnagl1cvnRXqPgIOOY%3D&Expires=1780823759",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-04-1780563323/e3d6941833cf/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=3poKlTavloOf7ssp543uIVmHy%2Bk%3D&Expires=1780823759",
-  "terms": "# Terms\n\n## Submission format\nSubmit a **UTF-8 CSV** named `prediction.csv`, zipped as `prediction.zip`.\nFor every item, submit **three rows** — one per statement.\n\n**Required columns**\n- `id` — the item id (do not reorder/rename).\n- `statement_index` — `0`, `1` or `2`, matching the position in `statements`.\n- `prediction` — `true` if that statement is grounded in the image, else `false`.\n\n```\nid,statement_index,prediction\n1dcdf6da...,0,false\n1dcdf6da...,1,true\n1dcdf6da...,2,false\n```\n\n## Rules\n1. Your `id`s must exactly match the gold set for the active phase (`devtest`,\n   then `test`); missing/extra rows are rejected.\n2. Exactly one statement per item is grounded; predict `true`/`false` for all three.\n\n## Metric\nOfficial metric: **combined accuracy** (all three statements correct). The scorer\nalso reports the hallucination rate and True/False (Q+/Q−) accuracies.\n\n## Registration, data usage, ethics\n- Please register at the **[participation form](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)**.\n- Data is **CC BY-NC 4.0** (non-commercial research use only).\n- Any pretrained model / external data / compute is allowed; document it in your paper.\n\n## Contact\nimageeval2026@gmail.com",
+  "created_when": "2026-06-07T13:08:01.461769Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-07-1780837681/c86a5d712a08/logo.png?AWSAccessKeyId=codabench-prod&Signature=x%2Fv8Z4KJBlF7FYi83Cn5oRmW1H8%3D&Expires=1780910684",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-07-1780837681/c86a5d712a08/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=i3oad0lB7mWyT3ymQcItWmELD5Y%3D&Expires=1780910684",
+  "terms": "# Terms\n\n## Submission format\nSubmit a **UTF-8 CSV** named `prediction.csv`, zipped as `prediction.zip`.\nFor every item, submit **three rows** — one per statement.\n\n**Required columns**\n- `id` — the item id (do not reorder/rename).\n- `statement_index` — `0`, `1` or `2`, matching the position in `statements`.\n- `prediction` — `true` if that statement is grounded in the image, else `false`.\n\n```\nid,statement_index,prediction\n1dcdf6da...,0,false\n1dcdf6da...,1,true\n1dcdf6da...,2,false\n```\n\n## Rules\n1. Your `id`s must exactly match the gold set for the active phase (`devtest`,\n   then `test`); missing/extra rows are rejected.\n2. Exactly one statement per item is grounded; predict `true`/`false` for all three.\n\n## Metric\nRanking metric: **combined accuracy** — fraction of items where all three labels\nare correct (the one grounded statement marked true, both hallucinated ones false).\nThe scorer also reports the hallucination rate and the True/False (Q+/Q−)\naccuracies as secondary columns.\n\n## Registration, data usage, ethics\n- Please register at the **[participation form](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)**.\n- Data is **CC BY-NC 4.0** (non-commercial research use only).\n- Any pretrained model / external data / compute is allowed; document it in your paper.\n\n## Contact\nimageeval2026@gmail.com",
   "pages": [
     {
-      "id": 80652,
+      "id": 80881,
       "title": "Participation",
       "content": "# How to participate\n\n**ImageEval 2026 — Ayn-VQA Task 1c: Hallucination Detection (English)** — the **English** track of Task 1c\n(Hallucination Detection), part of the [ImageEval 2026](https://imageeval2026.github.io/) shared task on cultural\ngrounding in Arabic multimodal generation and understanding.\n\nGiven an image and 3 statements (English), label EACH statement True (grounded in the image) or False (hallucinated). Exactly one statement is grounded.\n\n## Register (please do this first)\nFill in the **[registration form](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)** — it lets the organisers track\nparticipants and notify you about data, deadlines, and any updates.\n\n## Who can join\nIndividuals or teams; one member submits on the team's behalf. You may enter more\nthan one track.\n\n## Steps\n1. Sign up on this Codabench page **and** the [registration form](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform).\n2. Read the **Terms** tab — note the exact prediction format.\n3. Get the data from the Hugging Face Hub: **[QCRI/ImageEval2026-Task1-AynVQA](https://huggingface.co/datasets/QCRI/ImageEval2026-Task1-AynVQA)**.\n4. Follow the task description in the [tasks repo](https://github.com/ImageEval2026/ImageEval2026-tasks).\n5. Predict on **devtest** during the development phase, and on **test** during the\n   final-evaluation phase.\n\n## System description paper\nAll teams are encouraged to submit a system-description paper for the workshop.\n\n## Contact\nimageeval2026@gmail.com",
       "index": 0
     },
     {
-      "id": 80653,
+      "id": 80882,
       "title": "Dataset",
       "content": "# Dataset\n\nAll splits live on the Hugging Face Hub — **[QCRI/ImageEval2026-Task1-AynVQA](https://huggingface.co/datasets/QCRI/ImageEval2026-Task1-AynVQA)** — as config\n`task1c_en`. This competition scores **devtest** (development phase) and **test**\n(final phase).\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/ImageEval2026-Task1-AynVQA\", \"task1c_en\", split=\"devtest\")\n```\n\n## Splits\n\n| split | labels | items | phase | purpose |\n|---|---|---:|---|---|\n| `train`   | yes | 3000 | development | training / fine-tuning |\n| `dev`     | yes | 500  | development | local validation |\n| `devtest` | no  | 500  | development (leaderboard) | submission target, dev phase |\n| `test`    | no  | 1000 | final evaluation | blind ranking (human-recorded audio) |\n\n- **Language:** English.\n- Media (images / audio) are referenced by **relative path** keyed on `id`.\n- Task 1c is image + text only (no audio): three statements, exactly one grounded.\n\n## Licence\nCC BY-NC 4.0 — non-commercial research use only.",
       "index": 1
     },
     {
-      "id": 80654,
+      "id": 80883,
       "title": "Timeline",
       "content": "# Timeline\n\n## Development phase\nTune on `train` + `dev`; submit predictions on **devtest** for the leaderboard.\n\n**Window:** `2026-05-22 → 2026-07-19`  ·  up to 5 submissions/day, 100 total.\n\n## Testing phase\nThe blind **test** set is released on [Hugging Face](https://huggingface.co/datasets/QCRI/ImageEval2026-Task1-AynVQA); submit predictions\non `test` for the official ranking.\n\n**Window:** `2026-07-20 → 2026-07-29`  ·  up to 20 submissions/day, 100 total.\n\n> Dates are set in `competition.yaml` (`phases.start` / `phases.end`) — adjust if\n> the schedule shifts. Announcements: [website](https://imageeval2026.github.io/).",
       "index": 2
@@ -30,7 +30,7 @@
   ],
   "phases": [
     {
-      "id": 28316,
+      "id": 28403,
       "index": 0,
       "start": "2026-05-22T00:00:00Z",
       "end": "2026-07-19T00:00:00Z",
@@ -40,53 +40,53 @@
       "execution_time_limit": 600,
       "tasks": [
         {
-          "task": "508ad566-d2c7-42d2-a008-566ce1e921ed",
+          "task": "9bbbd98f-e0db-48dc-92b9-f2c311688a2b",
           "order_index": 0,
-          "phase": 28316,
-          "id": 33955,
-          "value": "508ad566-d2c7-42d2-a008-566ce1e921ed",
-          "key": "508ad566-d2c7-42d2-a008-566ce1e921ed",
-          "created_when": "2026-06-04T08:55:23.105532Z",
+          "phase": 28403,
+          "id": 34028,
+          "value": "9bbbd98f-e0db-48dc-92b9-f2c311688a2b",
+          "key": "9bbbd98f-e0db-48dc-92b9-f2c311688a2b",
+          "created_when": "2026-06-07T13:08:01.057073Z",
           "name": "task1c_en-devtest",
           "solutions": [],
           "public_datasets": [
             {
-              "id": 812688,
+              "id": 819303,
               "created_by": "hunzed",
               "owner_display_name": "hunzed",
-              "created_when": "2026-06-04T08:55:22.929109Z",
-              "name": "scoring_program @ '06-04-2026 08:55'",
+              "created_when": "2026-06-07T13:08:00.914543Z",
+              "name": "scoring_program @ '06-07-2026 13:08'",
               "type": "scoring_program",
               "description": null,
               "is_public": false,
-              "key": "25f5ec07-6c2b-4699-a192-020ef1969f02",
-              "value": "25f5ec07-6c2b-4699-a192-020ef1969f02",
+              "key": "ba2ef1f5-d8dd-4184-8d37-3990225b7ce4",
+              "value": "ba2ef1f5-d8dd-4184-8d37-3990225b7ce4",
               "was_created_by_competition": true,
               "in_use": [
                 {
-                  "pk": 16957,
+                  "pk": 17000,
                   "title": "ImageEval 2026 — Ayn-VQA Task 1c: Hallucination Detection (English)"
                 }
               ],
               "competition": null,
               "file_name": "",
-              "file_size": 8359.0
+              "file_size": 8753.0
             },
             {
-              "id": 812689,
+              "id": 819304,
               "created_by": "hunzed",
               "owner_display_name": "hunzed",
-              "created_when": "2026-06-04T08:55:23.031793Z",
-              "name": "reference_data @ '06-04-2026 08:55'",
+              "created_when": "2026-06-07T13:08:00.978596Z",
+              "name": "reference_data @ '06-07-2026 13:08'",
               "type": "reference_data",
               "description": null,
               "is_public": false,
-              "key": "8fb1e572-6ec2-4521-9a48-3bde105d5f1b",
-              "value": "8fb1e572-6ec2-4521-9a48-3bde105d5f1b",
+              "key": "b9c51945-289a-40c7-983c-f643c1802ef0",
+              "value": "b9c51945-289a-40c7-983c-f643c1802ef0",
               "was_created_by_competition": true,
               "in_use": [
                 {
-                  "pk": 16957,
+                  "pk": 17000,
                   "title": "ImageEval 2026 — Ayn-VQA Task 1c: Hallucination Detection (English)"
                 }
               ],
@@ -111,7 +111,7 @@
       "used_submissions_per_person": 0
     },
     {
-      "id": 28317,
+      "id": 28404,
       "index": 1,
       "start": "2026-07-20T00:00:00Z",
       "end": "2026-07-29T00:00:00Z",
@@ -121,53 +121,53 @@
       "execution_time_limit": 600,
       "tasks": [
         {
-          "task": "71e40d2b-64f7-4570-90b0-3460c9f792cd",
+          "task": "736122ab-b95f-4694-9bc2-6694cf588acf",
           "order_index": 0,
-          "phase": 28317,
-          "id": 33956,
-          "value": "71e40d2b-64f7-4570-90b0-3460c9f792cd",
-          "key": "71e40d2b-64f7-4570-90b0-3460c9f792cd",
-          "created_when": "2026-06-04T08:55:23.287028Z",
+          "phase": 28404,
+          "id": 34029,
+          "value": "736122ab-b95f-4694-9bc2-6694cf588acf",
+          "key": "736122ab-b95f-4694-9bc2-6694cf588acf",
+          "created_when": "2026-06-07T13:08:01.387264Z",
           "name": "task1c_en-test",
           "solutions": [],
           "public_datasets": [
             {
-              "id": 812690,
+              "id": 819305,
               "created_by": "hunzed",
               "owner_display_name": "hunzed",
-              "created_when": "2026-06-04T08:55:23.113620Z",
-              "name": "scoring_program @ '06-04-2026 08:55'",
+              "created_when": "2026-06-07T13:08:01.066111Z",
+              "name": "scoring_program @ '06-07-2026 13:08'",
               "type": "scoring_program",
               "description": null,
               "is_public": false,
-              "key": "d656c7c9-8840-4822-bb78-98fc3be99933",
-              "value": "d656c7c9-8840-4822-bb78-98fc3be99933",
+              "key": "eded3259-4b80-4a96-907f-5027e1a6f25d",
+              "value": "eded3259-4b80-4a96-907f-5027e1a6f25d",
               "was_created_by_competition": true,
               "in_use": [
                 {
-                  "pk": 16957,
+                  "pk": 17000,
                   "title": "ImageEval 2026 — Ayn-VQA Task 1c: Hallucination Detection (English)"
                 }
               ],
               "competition": null,
               "file_name": "",
-              "file_size": 8359.0
+              "file_size": 8753.0
             },
             {
-              "id": 812691,
+              "id": 819306,
               "created_by": "hunzed",
               "owner_display_name": "hunzed",
-              "created_when": "2026-06-04T08:55:23.163931Z",
-              "name": "reference_data @ '06-04-2026 08:55'",
+              "created_when": "2026-06-07T13:08:01.156068Z",
+              "name": "reference_data @ '06-07-2026 13:08'",
               "type": "reference_data",
               "description": null,
               "is_public": false,
-              "key": "40a77376-207a-4c75-9152-28e50569f0c6",
-              "value": "40a77376-207a-4c75-9152-28e50569f0c6",
+              "key": "2f4c9d6e-6f4d-4b0a-9a40-53f0ab03106d",
+              "value": "2f4c9d6e-6f4d-4b0a-9a40-53f0ab03106d",
               "was_created_by_competition": true,
               "in_use": [
                 {
-                  "pk": 16957,
+                  "pk": 17000,
                   "title": "ImageEval 2026 — Ayn-VQA Task 1c: Hallucination Detection (English)"
                 }
               ],
@@ -194,13 +194,13 @@
   ],
   "leaderboards": [
     {
-      "id": 18775,
+      "id": 18818,
       "primary_index": 0,
       "title": "Results",
       "key": "main",
       "columns": [
         {
-          "id": 81916,
+          "id": 82229,
           "computation": null,
           "computation_indexes": null,
           "title": "Combined Acc",
@@ -211,7 +211,7 @@
           "precision": 4
         },
         {
-          "id": 81917,
+          "id": 82230,
           "computation": null,
           "computation_indexes": null,
           "title": "Hallucination Rate",
@@ -222,35 +222,68 @@
           "precision": 4
         },
         {
-          "id": 81918,
+          "id": 82231,
           "computation": null,
           "computation_indexes": null,
-          "title": "Q+ Acc",
-          "key": "q_plus_accuracy",
-          "sorting": "desc",
+          "title": "CFHR-2",
+          "key": "cfhr_2_rate",
+          "sorting": "asc",
           "index": 2,
           "hidden": false,
           "precision": 4
         },
         {
-          "id": 81919,
+          "id": 82232,
           "computation": null,
           "computation_indexes": null,
-          "title": "Q- Acc",
-          "key": "q_minus_accuracy",
-          "sorting": "desc",
+          "title": "CFHR-3",
+          "key": "cfhr_3_rate",
+          "sorting": "asc",
           "index": 3,
           "hidden": false,
           "precision": 4
         },
         {
-          "id": 81920,
+          "id": 82233,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Q+ Acc",
+          "key": "q_plus_accuracy",
+          "sorting": "desc",
+          "index": 4,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 82234,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Q- Acc",
+          "key": "q_minus_accuracy",
+          "sorting": "desc",
+          "index": 5,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 82235,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Q- Both Acc",
+          "key": "q_minus_both_accuracy",
+          "sorting": "desc",
+          "index": 6,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 82236,
           "computation": null,
           "computation_indexes": null,
           "title": "Duration",
           "key": "duration",
           "sorting": "asc",
-          "index": 4,
+          "index": 7,
           "hidden": false,
           "precision": 2
         }
@@ -282,7 +315,7 @@
   "allow_robot_submissions": false,
   "competition_type": "competition",
   "fact_sheet": null,
-  "forum": 16667,
+  "forum": 16709,
   "reward": "",
   "contact_email": "imageeval2026@gmail.com",
   "report": "",
