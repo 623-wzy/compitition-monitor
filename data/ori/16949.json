@@ -5,8 +5,8 @@
   "created_by": "florianc",
   "owner_display_name": "florianc",
   "created_when": "2026-06-04T05:29:34.521106Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-04-1780550974/1b2b03cac167/logo.png?AWSAccessKeyId=codabench-prod&Signature=UE7dHCW%2BhDbN5Xbl7xbl3%2Bsd06k%3D&Expires=1780910689",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-04-1780550974/1b2b03cac167/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=Kor6N5uF6ccmRmstBNQnnTGF9aU%3D&Expires=1780910689",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-04-1780550974/1b2b03cac167/logo.png?AWSAccessKeyId=codabench-prod&Signature=v9P2kGj4GVMZLj4t8s5tRlxmNRg%3D&Expires=1780997405",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-04-1780550974/1b2b03cac167/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=HwvZacaOLDw%2B0SJ4NE7cw6RMB%2F0%3D&Expires=1780997405",
   "terms": "# Allgemeine Abgabebedingungen\n\nJeder Studierende ist verpflichtet, eine eigene individuelle Lösung einzureichen.\n\nDie Bewertung der aktuellen Aufgabe (0 bis 100 Punkte) erfolgt auf Grundlage des Evaluationsergebnisses gemäß der angegebenen Methode und Metrik.\n\nZusätzlich müssen die Studierenden ihren Quellcode als GitLab-Projekt einreichen, um die Reproduzierbarkeit der Abgabe sicherzustellen. Bitte fügen Sie meinen GitLab-Account als Mitglied Ihres Projekts hinzu und vergeben Sie mindestens die Rolle `Reporter`.\n\nJeder Studierende muss in der Lage sein, seine Lösung auf Anfrage nachvollziehbar zu erklären. Jegliche Form akademischen Fehlverhaltens, wie beispielsweise Plagiate oder betrügerische Abgaben, führt zur Vergabe von 0 Punkten.",
   "pages": [
     {

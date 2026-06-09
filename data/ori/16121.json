@@ -5,8 +5,8 @@
   "created_by": "misp_qeks_bl",
   "owner_display_name": "misp_qeks_bl",
   "created_when": "2026-05-04T05:52:24.137332Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-04-1777873944/1c7a31d17f08/logo_misp2026.png?AWSAccessKeyId=codabench-prod&Signature=5F2vkOVd2esKtCMOPj61A5CkNbg%3D&Expires=1780910696",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-04-1777873944/1c7a31d17f08/logo_misp2026_icon.png?AWSAccessKeyId=codabench-prod&Signature=%2BflxEYPeaHEPhAq97Ty4NnbkapI%3D&Expires=1780910696",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-04-1777873944/1c7a31d17f08/logo_misp2026.png?AWSAccessKeyId=codabench-prod&Signature=Y4%2FeEV0UfvXdH8iM4ofO55NGadQ%3D&Expires=1780997417",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-04-1777873944/1c7a31d17f08/logo_misp2026_icon.png?AWSAccessKeyId=codabench-prod&Signature=XtAkNG30omic0P2eiA7DPnKizsE%3D&Expires=1780997417",
   "terms": "<!--\n * @Author: Zhewang18\n * @Date: 2023-01-03 \n * @Description: \n-->\n<h1>Registration</h1>\n\n<p>More details: https://coalboss.github.io/misp2026/data.html</p>",
   "pages": [
     {
@@ -208,7 +208,7 @@
   "collaborators": [],
   "registration_auto_approve": true,
   "description": "The challenge focuses on audio-visual-text multimodal keyword spotting task in realistic speech processing scenarios.",
-  "participants_count": 7,
+  "participants_count": 8,
   "submissions_count": 12,
   "queue": null,
   "enable_detailed_results": false,
