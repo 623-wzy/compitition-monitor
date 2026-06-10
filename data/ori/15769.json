@@ -5,8 +5,8 @@
   "created_by": "lixiang",
   "owner_display_name": "lixiang",
   "created_when": "2026-04-18T05:03:43.885782Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-21-1776751074/2acec80a7ccb/1d053422-872b-412a-be59-e3742425ce5.jfif?AWSAccessKeyId=codabench-prod&Signature=4ftik393RwjUs4VLsBLZk%2BkXHmk%3D&Expires=1780997418",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-21-1776751074/2acec80a7ccb/1d053422-872b-412a-be59-e3742425ce5_icon.jfif?AWSAccessKeyId=codabench-prod&Signature=lJ4hkpINn4DirfBgMWF%2FjqxFaDA%3D&Expires=1780997418",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-21-1776751074/2acec80a7ccb/1d053422-872b-412a-be59-e3742425ce5.jfif?AWSAccessKeyId=codabench-prod&Signature=A0ep8whpwTtEUSpWR4grlp5DqaY%3D&Expires=1781084141",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-21-1776751074/2acec80a7ccb/1d053422-872b-412a-be59-e3742425ce5_icon.jfif?AWSAccessKeyId=codabench-prod&Signature=NpY7vhfvRtlgDy0QK274cPU8CN0%3D&Expires=1781084141",
   "terms": "# Terms and Conditions\n***\nThis competition is for educational and research purposes, and it is governed by the [<ins>General ChaLearn Contest Rules</ins>](http://www.causality.inf.ethz.ch/GeneralChalearnContestRuleTerms.html).",
   "pages": [
     {
@@ -205,8 +205,8 @@
   ],
   "registration_auto_approve": true,
   "description": "AIGC Audio-Video Deepfake Classification Challenge using the MVAD dataset.",
-  "participants_count": 92,
-  "submissions_count": 313,
+  "participants_count": 95,
+  "submissions_count": 344,
   "queue": null,
   "enable_detailed_results": true,
   "show_detailed_results_in_submission_panel": true,
