@@ -1,0 +1,48 @@
+{
+  "id": 17051,
+  "title": "ImageEval 2026 — Ayn-VQA Task 1b: Hallucination Detection (English)",
+  "description": "Given an image and 3 statements (English), label EACH statement True (grounded in the image) or False (hallucinated). Exactly one statement is grounded. Part of the ImageEval 2026 Ayn-VQA shared task on cultural grounding in Arabic multimodal understanding. Data on HuggingFace (QCRI/AynVQA-ArabicNLP26). Please also register at https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform",
+  "description_zh": "我是科技竞赛信息翻译助手。您提供的文本已是英文竞赛内容说明，我将其翻译成简体中文：\n\n---\n\n给定一张图像和3个陈述句（英文），请为每个陈述句标记为真（有图像依据）或假（幻想内容）。恰好有一个陈述句有依据。这是ImageEval 2026 Ayn-VQA共享任务的一部分，该任务聚焦阿拉伯语多模态理解中的文化扎根。数据可在HuggingFace获取（QCRI/AynVQA-ArabicNLP26）。请同时在以下链接注册：https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform",
+  "created_by": "hunzed",
+  "created_when": "2026-06-10T09:40:02.195020Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084402/15c7bcf31878/logo.png?AWSAccessKeyId=codabench-prod&Signature=6x0Aeeu4OXrfsI8zVgWYGx%2B2M8I%3D&Expires=1781170830",
+  "participants_count": 2,
+  "submissions_count": 1,
+  "first_phase_start": null,
+  "phases": [
+    {
+      "id": 28479,
+      "name": "Development Phase",
+      "start": "2026-05-22T00:00:00Z",
+      "end": "2026-07-19T00:00:00Z",
+      "max_submissions_per_day": 5
+    },
+    {
+      "id": 28480,
+      "name": "Testing Phase",
+      "start": "2026-07-20T00:00:00Z",
+      "end": "2026-07-29T00:00:00Z",
+      "max_submissions_per_day": 20
+    }
+  ],
+  "pages": [
+    {
+      "index": 0,
+      "title": "Participation",
+      "content": "# How to participate\n\n**ImageEval 2026 — Ayn-VQA Task 1b: Hallucination Detection (English)** — the **English** track of Task 1b\n(Hallucination Detection), part of the [ImageEval 2026](https://imageeval2026.github.io/) shared task on cultural\ngrounding in Arabic multimodal generation and understanding.\n\nGiven an image and 3 statements (English), label EACH statement True (grounded in the image) or False (hallucinated). Exactly one statement is grounded.\n\n## Register (please do this first)\nFill in the **[registration form](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)** — it lets the organisers track\nparticipants and notify you about data, deadlines, and any updates.\n\n## Who can join\nIndividuals or teams; one member submits on the team's behalf. You may enter more\nthan one track.\n\n## Steps\n1. Sign up on this Codabench page **and** the [registration form](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform).\n2. Read the **Terms** tab — note the exact prediction format.\n3. Get the data from the Hugging Face Hub: **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**.\n4. Follow the task description in the [tasks repo](https://github.com/ImageEval2026/ImageEval2026-tasks).\n5. Predict on **devtest** during the development phase, and on **test** during the\n   final-evaluation phase.\n\n## System description paper\nAll teams are encouraged to submit a system-description paper for the workshop.\n\n## Contact\nimageeval2026@gmail.com",
+      "content_zh": "# 如何参与\n\n**ImageEval 2026 — Ayn-VQA 任务1b：幻觉检测（英文）** — 任务1b（幻觉检测）的**英文**赛道，是[ImageEval 2026](https://imageeval2026.github.io/)共享任务的一部分，该任务涉及阿拉伯多模态生成和理解中的文化基础。\n\n给定一张图像和3条陈述句（英文），为每条陈述句标记为真（基于图像）或假（幻觉）。恰好有一条陈述句是有根据的。\n\n## 注册（请先完成此步骤）\n填写**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)** — 这样组织者可以追踪参与者，并通知您有关数据、截止日期和任何更新的信息。\n\n## 谁可以参加\n个人或团队；由一名成员代表团队提交。您可以参加多个赛道。\n\n## 步骤\n1. 在此Codabench页面**和**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)上注册。\n2. 阅读**条款**选项卡 — 注意确切的预测格式。\n3. 从Hugging Face Hub获取数据：**[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**。\n4. 按照[任务仓库](https://github.com/ImageEval2026/ImageEval2026-tasks)中的任务描述进行操作。\n5. 在开发阶段对**开发测试集**进行预测，在最终评估阶段对**测试集**进行预测。\n\n## 系统描述论文\n鼓励所有团队为研讨会提交系统描述论文。\n\n## 联系方式\nimageeval2026@gmail.com"
+    },
+    {
+      "index": 1,
+      "title": "Dataset",
+      "content": "# Dataset\n\nAll splits live on the Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — as config\n`task1b_en`. This competition scores **devtest** (development phase) and **test**\n(final phase).\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1b_en\", split=\"devtest\")\n```\n\n## Splits\n\n| split | labels | items | phase | purpose |\n|---|---|---:|---|---|\n| `train`   | yes | 3000 | development | training / fine-tuning |\n| `dev`     | yes | 500  | development | local validation |\n| `devtest` | no  | 500  | development (leaderboard) | submission target, dev phase |\n| `test`    | no  | 1000 | final evaluation | blind ranking (human-recorded audio) |\n\n- **Language:** English.\n- Media (images / audio) are referenced by **relative path** keyed on `id`.\n- Task 1b is image + text only (no audio): three statements, exactly one grounded.\n\n## Licence\nCC BY-NC 4.0 — non-commercial research use only.",
+      "content_zh": "# 数据集\n\n所有数据集都托管在 Hugging Face Hub 上 — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — 配置为 `task1b_en`。本竞赛评分对象包括 **devtest**（开发阶段）和 **test**（最终阶段）。\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1b_en\", split=\"devtest\")\n```\n\n## 数据划分\n\n| 数据集 | 标签 | 项目数 | 阶段 | 用途 |\n|---|---|---:|---|---|\n| `train`   | 有 | 3000 | 开发阶段 | 训练/微调 |\n| `dev`     | 有 | 500  | 开发阶段 | 本地验证 |\n| `devtest` | 无  | 500  | 开发阶段（排行榜） | 提交目标，开发阶段 |\n| `test`    | 无  | 1000 | 最终评估 | 盲测排名（人工录制音频） |\n\n- **语言：** 英文。\n- 媒体（图像/音频）通过 **相对路径** 按 `id` 键引用。\n- 任务 1b 仅包含图像和文本（无音频）：三个陈述句，恰好一个是有根据的。\n\n## 许可证\nCC BY-NC 4.0 — 仅限非商业研究使用。"
+    },
+    {
+      "index": 2,
+      "title": "Timeline",
+      "content": "# Timeline\n\n## Development phase\nTune on `train` + `dev`; submit predictions on **devtest** for the leaderboard.\n\n**Window:** `2026-05-22 → 2026-07-19`  ·  up to 5 submissions/day, 100 total.\n\n## Testing phase\nThe blind **test** set is released on [Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26); submit predictions\non `test` for the official ranking.\n\n**Window:** `2026-07-20 → 2026-07-29`  ·  up to 20 submissions/day, 100 total.\n\n> Dates are set in `competition.yaml` (`phases.start` / `phases.end`) — adjust if\n> the schedule shifts. Announcements: [website](https://imageeval2026.github.io/).",
+      "content_zh": "# 时间表\n\n## 开发阶段\n在 `train` + `dev` 上进行调整；在 **devtest** 上提交预测结果参与排行榜竞争。\n\n**时间窗口：** `2026-05-22 → 2026-07-19`  ·  每天最多 5 次提交，总共 100 次。\n\n## 测试阶段\n盲测 **test** 集合发布于 [Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)；在 `test` 上提交预测结果以获得官方排名。\n\n**时间窗口：** `2026-07-20 → 2026-07-29`  ·  每天最多 20 次提交，总共 100 次。\n\n> 日期设置在 `competition.yaml`（`phases.start` / `phases.end`）中——如果时间表变更，请进行调整。公告：[网站](https://imageeval2026.github.io/)。"
+    }
+  ]
+}

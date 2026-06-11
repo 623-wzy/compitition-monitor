@@ -1,0 +1,262 @@
+{
+  "id": 16884,
+  "title": "WSLP@EMNLP-2026 Shared Task Sign Language Translation (SLT)",
+  "published": true,
+  "created_by": "wslp_workshop",
+  "owner_display_name": "Exploration-lab-IITK",
+  "created_when": "2026-06-01T18:10:35.480917Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780337435/69dcff319769/logo.png?AWSAccessKeyId=codabench-prod&Signature=I7iYfSLJR%2FecAbqvrcHn%2FZVKwC4%3D&Expires=1781170835",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780337435/69dcff319769/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=gmnlCrALJyhTXdjTa27DuEiCTPI%3D&Expires=1781170835",
+  "terms": "<h3>Terms and Conditions</h3>\n\n<p>\n<em>\nParticipants are required to register using a valid institutional or personal email address. Once registered, the organizers will review and approve your request to participate.\n</em>\n</p>\n\n<p>\nPlease ensure that your <strong>team name</strong> is clearly mentioned during registration and used consistently for all submissions. This helps in managing team entries and leaderboard rankings accurately.\n</p>\n\n<p>\nDuring <strong>Phase 1 (Training Phase)</strong>, each team may submit a maximum of <strong>20 submissions per day</strong>, and a total of <strong>500 submissions</strong> throughout the phase.\n</p>\n\n<p>\nDuring <strong>Phase 2 (Testing Phase)</strong>, each team may submit up to <strong>10 submissions per day</strong>, and a total of <strong>100 submissions</strong> throughout the phase.\n\n</p>\n\n<p>\nSubmissions must follow the format specified in the <strong>Submission Guidelines</strong>. Any deviation from the expected file structure or content may result in disqualification or errors during evaluation.\n</p>\n\n<p>\nBy participating, you agree to abide by the rules, evaluation criteria, and ethical research practices outlined by the organizers of the WSLP 2026 Shared Task.\n</p>",
+  "pages": [
+    {
+      "id": 81153,
+      "title": "overview",
+      "content": "<h1 dir=\"ltr\">Welcome to the WSLP@EMNLP-2026 Shared Task: Sign Language Translation (SLT)</h1>\n\n<h4 dir=\"ltr\">Pushing the Boundaries of Indian Sign Language Understanding through Machine Translation</h4>\n\n<h2 dir=\"ltr\">Registration</h2>\n<p dir=\"ltr\">\nTo participate in this shared task, please visit the <a href=\"https://www.codabench.org/competitions/16884/#/participate-tab\">\"Participate\"</a> tab and create an account on Codabench using a valid institutional or personal email address.\nParticipation is open to both individuals and teams.\n</p>\n\n<p dir=\"ltr\">\nOnce registered, navigate to your <strong>Settings</strong> tab and ensure all required details are correctly filled out.\nPlease use a consistent and identifiable <strong>team name or individual name</strong> across all submissions.\n</p>\n\n<h2>Overview</h2>\n<p>\nSign languages like Indian Sign Language (ISL) are rich, expressive, and visual languages that require sophisticated modeling for understanding and translation. \nThe goal of this shared task is to develop systems capable of translating ISL video or pose-based input into coherent, grammatically correct English sentences.\n</p>\n\n<p>\nTo support this, we provide a large-scale dataset — <strong>iSign</strong> — which contains over 118,000 video-sentence pairs in Indian Sign Language. \nParticipants are required to train models that accurately translate ISL inputs into fluent English output.\n</p>\n\n<h2>Phases</h2>\n<p>\nThe competition will proceed in two distinct phases:\n</p>\n\n<ul>\n  <li><strong>Phase 1: Training & Validation</strong> – Participants will use the provided training and validation datasets to develop and fine-tune their models.</li>\n  <li><strong>Phase 2: Testing</strong> – A held-out test set will be released. Participants will submit predictions to evaluate model performance on unseen data.</li>\n</ul>\n\n<h3>Task Description</h3>\n<ul>\n  <li><strong>Input:</strong> ISL video or extracted pose sequence</li>\n  <li><strong>Output:</strong> English sentence translation</li>\n  <li><strong>Dataset:</strong> <a href=\"https://huggingface.co/datasets/Exploration-Lab/iSign\" target=\"_blank\">iSign</a></li>\n  <li><strong>Evaluation Metrics:</strong> BLEU-4, ROUGE-L, and chrF++</li>\n</ul>\n\n<h2>Submission Guidelines</h2>\n<p>\nEach submission must be a ZIP archive named <code>submission.zip</code> and should contain the following file:\n</p>\n\n<ol>\n  <li>\n    <code>answer.csv</code> – A CSV file with two columns:\n    <ul>\n      <li><strong>Column 1:</strong> Unique ID (as provided in the test/validation data)(uid)</li>\n      <li><strong>Column 2:</strong> English sentence predicted by your model (text)</li>\n    </ul>\n    <strong>Important:</strong> Ensure the order and IDs and column name (uid, text) exactly match those in the reference files. Any mismatch may lead to errors in scoring or disqualification.\n  </li>\n</ol>\n\n<p>\nSample submission files can be downloaded from \n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/blob/main/Shared_task_MT/sample_submission.csv\" target=\"_blank\">this link</a>.\n</p>\n\n<p>\nTo upload your submission, go to the <a href=\"https://www.codabench.org/competitions/16884/#/participate-tab\">\"Submit / View Results\"</a> tab and upload your <code>submission.zip</code> file.\nParticipants are allowed multiple submissions per day, subject to platform limits.\n</p>\n\n<h2>Results and Leaderboard</h2>\n<p>\nEvaluation results will be displayed on the <a href=\"https://www.codabench.org/competitions/16884/#/results-tab\">\"Results\"</a> tab. Teams will be ranked based on a combination of BLEU-4, ROUGE-L, and chrF++ scores.\nTop-performing systems will be highlighted and recognized at the WSLP 2025 Workshop.\n</p>\n\n<h2>Acknowledgements</h2>\n<p>\nThis shared task is part of the <strong>Workshop on Sign Language Processing (WSLP 2026)</strong>, co-located with <strong>EMNLP 2026</strong>, hosted at <strong>October 29th Budapest, Hungary</strong>.\n</p>\n\n<p>\nWe sincerely thank all participants, organizers, dataset contributors, and the broader research community for their continued support in advancing sign language technologies.\n</p>\n<p>\nTo stay updated and connect with other participants, join our Discord server \n<ul>\n\t<li> <a href=\"https://discord.gg/ty7dqTHC2v\">  Shared Task </a> </li>\n\t<li> <a href=\"https://discord.gg/x6tHXEFyW7\"> Workshop </a> </li>\n\t<li><a href=\"https://exploration-lab.github.io/WSLP-2026/task/\"> Shared Task Webpage </a> </li>\n\t</ul>\n</p>",
+      "index": 0
+    },
+    {
+      "id": 81154,
+      "title": "data",
+      "content": "<h3>🧠 Sign Language Translation (SLT) Task</h3>\n\n<p>\nParticipants are required to develop models that can translate sign language videos into English text.\n</p>\n\n<p>\nFor training, participants may use any publicly available dataset. A large corpus of Indian Sign Language videos with corresponding English translations is available for download from:\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/iSign\" target=\"_blank\">\nhttps://huggingface.co/datasets/Exploration-Lab/iSign\n</a>.\n</p>\n\n<p>\nThe validation set for this task can be accessed from \n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_MT/Validation-Dataset\" target=\"_blank\">\nthis link\n</a>.\n</p>\n\n<p>\nThe test set for this task can be be accessed from \n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_MT/Test-dataset\" target=\"_blank\">\nhere\n</a>.\n</p>\n\n<p>\n📌 <strong>Note:</strong> Please ensure your models do not use any external private data. Only publicly available resources are permitted.\n</p>",
+      "index": 1
+    },
+    {
+      "id": 81155,
+      "title": "evaluation",
+      "content": "<p><strong>Evaluation Criteria</strong></p>\n<p>Your submissions will be evaluated based on corpus-level BLEU-4 score, ROUGE-L score and chrF++ score.</p>\n<p>Read more about BLEU and ROUGE in <a href=\"https://clementbm.github.io/theory/2021/12/23/rouge-bleu-scores.html\">here</a> and you can read about chrF++ score in Page 51 in <a href=\"https://arxiv.org/ftp/arxiv/papers/2305/2305.16307.pdf\">here</a>.</p>",
+      "index": 2
+    }
+  ],
+  "phases": [
+    {
+      "id": 28073,
+      "index": 0,
+      "start": "2026-06-08T00:00:00Z",
+      "end": "2026-07-31T00:00:00Z",
+      "name": "Training Phase",
+      "description": "(Timing in UTC) **Training Phase** for ISL to English Translation: Participants will train their models using ISL video/pose data provided in the training set. Submissions must contain a CSV file named `answer.csv` with English predictions for validation samples (e.g., `val_data.json`). Ensure the order of text-ids matches exactly with the validation file. On unzipping, the `answer.csv` must appear at the root of the zip archive.",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "77552e70-a887-4a0f-b7b9-d4bf5a54362e",
+          "order_index": 0,
+          "phase": 28073,
+          "id": 33819,
+          "value": "77552e70-a887-4a0f-b7b9-d4bf5a54362e",
+          "key": "77552e70-a887-4a0f-b7b9-d4bf5a54362e",
+          "created_when": "2026-06-01T18:10:34.965493Z",
+          "name": "Training Phase Task",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 807463,
+              "created_by": "wslp_workshop",
+              "owner_display_name": "Exploration-lab-IITK",
+              "created_when": "2026-06-01T18:10:34.691614Z",
+              "name": "scoring_program @ '06-01-2026 18:10'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "8617ef5b-63cf-460f-a240-a959d2b10a99",
+              "value": "8617ef5b-63cf-460f-a240-a959d2b10a99",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16884,
+                  "title": "WSLP@EMNLP-2026 Shared Task Sign Language Translation (SLT)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 4970.0
+            },
+            {
+              "id": 807464,
+              "created_by": "wslp_workshop",
+              "owner_display_name": "Exploration-lab-IITK",
+              "created_when": "2026-06-01T18:10:34.831676Z",
+              "name": "reference_data @ '06-01-2026 18:10'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "130abbb0-cb5d-47b4-a8ef-1cfe1830b722",
+              "value": "130abbb0-cb5d-47b4-a8ef-1cfe1830b722",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16884,
+                  "title": "WSLP@EMNLP-2026 Shared Task Sign Language Translation (SLT)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 175535.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 20,
+      "max_submissions_per_person": 50,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    },
+    {
+      "id": 28074,
+      "index": 1,
+      "start": "2026-07-31T00:01:00Z",
+      "end": "2026-08-10T00:00:00Z",
+      "name": "Testing Phase",
+      "description": "(Timing in UTC) **Testing Phase** for ISL to English Translation: Participants will submit predictions on the test set (e.g., `test_data.json`) using models trained in Phase 1. Submissions should contain `answer.csv` with English translations, strictly matching the order of text-ids in the test file. The zip file should contain only the CSV at its root.",
+      "status": "Next",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "af4686a7-f55c-4f9f-9ec6-747b64c7b118",
+          "order_index": 0,
+          "phase": 28074,
+          "id": 33820,
+          "value": "af4686a7-f55c-4f9f-9ec6-747b64c7b118",
+          "key": "af4686a7-f55c-4f9f-9ec6-747b64c7b118",
+          "created_when": "2026-06-01T18:10:35.236634Z",
+          "name": "Testing Phase Task",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 807465,
+              "created_by": "wslp_workshop",
+              "owner_display_name": "Exploration-lab-IITK",
+              "created_when": "2026-06-01T18:10:34.975994Z",
+              "name": "scoring_program @ '06-01-2026 18:10'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "5679b26d-765b-4393-a09c-351d62fbbf3a",
+              "value": "5679b26d-765b-4393-a09c-351d62fbbf3a",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16884,
+                  "title": "WSLP@EMNLP-2026 Shared Task Sign Language Translation (SLT)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 4970.0
+            },
+            {
+              "id": 807466,
+              "created_by": "wslp_workshop",
+              "owner_display_name": "Exploration-lab-IITK",
+              "created_when": "2026-06-01T18:10:35.079719Z",
+              "name": "reference_data @ '06-01-2026 18:10'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "42523276-90db-4dd0-979c-5826297aadce",
+              "value": "42523276-90db-4dd0-979c-5826297aadce",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16884,
+                  "title": "WSLP@EMNLP-2026 Shared Task Sign Language Translation (SLT)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 176947.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 20,
+      "max_submissions_per_person": 40,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 18701,
+      "primary_index": 0,
+      "title": "ISL-English Translation Results",
+      "key": "ISL-English Translation Results",
+      "columns": [
+        {
+          "id": 81452,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "chrF Score",
+          "key": "chrf_score",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 81453,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "ROUGE Score",
+          "key": "rouge_score",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 81454,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "BLEU Score",
+          "key": "bleu_score",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 2
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Add"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": true,
+  "description": "Sentence-level translation from Indian Sign Language (ISL) videos/pose data to English text using the iSign dataset.",
+  "participants_count": 4,
+  "submissions_count": 2,
+  "queue": null,
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": true,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "codalab/codalab-legacy:py37",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 16600,
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "forum_enabled": true
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WSLP@EMNLP 2026 Shared Task - Isolated Sign Language Recognition (ISLR) — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>WSLP@EMNLP 2026 Shared Task - Isolated Sign Language Recognition (ISLR)</h2>
+  <div class="detail-meta">
+    <span>ID: 16890</span>
+    <span>创建者: wslp_workshop</span>
+    <span>创建时间: 2026-06-01</span>
+    <span>参与人数: 3</span>
+    <span>提交次数: 2</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16890/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">印度手语（ISL）视频数据中的孤立手势识别到其对应的词标签（词汇标注）</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> Training Phase</td><td>2026-06-08</td><td>2026-07-31</td><td>20</td></tr><tr><td><span class='badge badge-test'>测试</span> Testing Phase</td><td>2026-07-31</td><td>2026-08-10</td><td>20</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'># 欢迎来到WSLP@EMNLP 2026共享任务：孤立手语识别(ISLR)
+
+#### 通过孤立手语识别推进印度手语理解
+
+## 注册
+
+参与本共享任务，请导航至&lt;a href=&quot;https://www.codabench.org/competitions/16890/#/participate-tab&quot;&gt;&quot;参与&quot;&lt;/a&gt;标签，并使用有效的机构邮箱或个人邮箱创建Codabench账户。
+
+请确保您的**团队名称/用户名**清晰易辨，并在所有提交中保持一致。
+
+## 概述
+
+手语（如印度手语(ISL)）是丰富而复杂的视觉语言。本共享任务邀请参与者从短视频片段中识别孤立ISL手语（词汇或手语符号）。目标是构建能够准确识别单个手语的系统，这对字典构建、查询工具和注释等应用至关重要。
+
+参与者需要构建能够将输入视频片段分类到对应词汇标签的模型。
+
+## 阶段
+
+本竞赛包含两个不同阶段：
+
+- **阶段1：训练与验证** – 参与者将使用训练集和对应的验证集开发并验证其模型。
+- **阶段2：测试** – 将发布保留测试集。参与者提交预测以评估其模型的泛化能力。
+
+### 任务详情：
+
+- **输入：** ISL视频片段或姿态序列
+- **输出：** 词汇标签（手语符号）
+- **指标：** Top-1、Top-5、Top-10准确率
+
+## 提交指南
+
+每次提交必须是包含以下文件的ZIP存档：
+
+1. `answer.csv` – 一个逗号分隔文件，包含以下列：
+   - 第1列：`uid`（在验证/测试文件中提供，代表唯一视频标识符）
+   - 第2列：`pred1`（对应`uid`的预测词汇标签/手语符号）
+   - 第3列：`pred2`（对应`uid`的预测词汇标签/手语符号）
+   - 第4列：`pred3`（对应`uid`的预测词汇标签/手语符号）
+   - 第5列：`pred4`（对应`uid`的预测词汇标签/手语符号）
+   - ....
+   - ....
+   - ....
+   - 第11列：`pred10`（对应`uid`的预测词汇标签/手语符号）
+
+   **注意：** 确保uid及其顺序与原始参考文件完全匹配。不匹配可能导致评分错误或取消资格。对于Top-1以外的Top-K准确率，您的提交文件需要为每个`uid`包含多个预测。
+
+参考示例提交文件已提供。&lt;a href=&quot;https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/blob/main/Shared_task_WR/sample_submission.csv&quot;&gt;&quot;样本提交文件&quot;&lt;/a&gt;
+
+要提交您的结果，请转至&lt;a href=&quot;https://www.codabench.org/competitions/16890/#/participate-tab&quot;&gt;&quot;提交结果&quot;&lt;/a&gt;标签并上传您的`submission.zip`文件。在竞赛阶段期间，您可以每天进行多次提交，受限制条件约束。
+
+## 结果和排行榜
+
+结果将显示在&lt;a href=&quot;https://www.codabench.org/competitions/16890/#/results-tab&quot;&gt;&quot;结果&quot;&lt;/a&gt;标签上。团队将主要根据准确率排名，Top-K准确率（K = 1、5、10）作为次要指标。表现最好的团队将在WSLP 2025活动中获得突出和认可。
+
+## 致谢</div></div><div class='section'><h3>Data</h3><div class='page-content'>&lt;p&gt;&lt;strong&gt;📂 数据集&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;🔹 &lt;strong&gt;训练&lt;/strong&gt;数据集可从以下链接下载：👉 &lt;a href=&quot;https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WR/Train-Dataset&quot;&gt;下载训练数据集&lt;/a&gt;&lt;/p&gt; &lt;p&gt;🔹 &lt;strong&gt;验证&lt;/strong&gt;数据集可从以下链接下载：👉 &lt;a href=&quot;https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WR/Validation-Dataset&quot;&gt;下载验证数据集&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;🔹 &lt;strong&gt;测试&lt;/strong&gt;数据集可从以下链接下载：👉 &lt;a href=&quot;https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WR/Test-Dataset&quot;&gt;下载测试数据集&lt;/a&gt;&lt;/p&gt;
+ &lt;p&gt;🌍 除了提供的数据集外，鼓励参赛者探索并利用其他&lt;strong&gt;公开可用资源&lt;/strong&gt;来增强其模型。其中一个这样的数据集是&lt;strong&gt;&lt;a href=&quot;https://huggingface.co/datasets/Exploration-Lab/CISLR&quot;&gt;CISLR&lt;/a&gt;&lt;/strong&gt; 👐，一个用于&lt;em&gt;印度手语识别和翻译&lt;/em&gt;的大规模基准。利用CISLR等外部数据集可以帮助提高模型的&lt;strong&gt;泛化能力&lt;/strong&gt; ✨ 和&lt;strong&gt;鲁棒性&lt;/strong&gt; 💪。&lt;/p&gt;</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'>&lt;p&gt;&lt;strong&gt;评估标准&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;您的提交将基于&lt;strong&gt;Top-1 准确率&lt;/strong&gt;、&lt;strong&gt;Top-5 准确率&lt;/strong&gt;和&lt;strong&gt;Top-10 准确率&lt;/strong&gt;进行评估。&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;strong&gt;Top-1 准确率&lt;/strong&gt;：衡量正确词标签是排名最高预测的测试样本百分比。&lt;/li&gt; &lt;li&gt;&lt;strong&gt;Top-5 准确率&lt;/strong&gt;：衡量正确词标签出现在前5个排名预测中的测试样本百分比。&lt;/li&gt; &lt;li&gt;&lt;strong&gt;Top-10 准确率&lt;/strong&gt;：衡量正确词标签出现在前10个排名预测中的测试样本百分比。&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;这些指标既能捕捉严格的识别性能（Top-1），也能评估更灵活的设置（Top-5、Top-10），其中系统可以返回多个可能的候选项。&lt;/p&gt;</div></div>
+
+</div>
+</body>
+</html>

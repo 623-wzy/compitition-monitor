@@ -1,0 +1,36 @@
+{
+  "id": 16704,
+  "title": "CLEF 2026 JOKER Task 3: Onomastic Wordplay Translation from English to French",
+  "description": "The objective of the task is to translate onomastic (i.e., name-related) wordplay from English to French.\nSuch wordplay is widely used as a rhetorical device in novels, poetry, and plays. It is widespread in classic literature, such as in Shakespeare’s characters’ names, but also in names found in modern-day works such as Pokémon, Harry Potter, Asterix, and video games. Meaningful proper names in fictional universes are often neologisms. Neologisms – that is, newly coined words – are among the most common forms of linguistic creativity. Due to their highly idiosyncratic nature, neologisms – particularly humorous ones – are challenging for both humans and machines to translate.\n\n\nSubmission guidelines: [https://docs.google.com/document/d/1u6xzlStni8XNrj1JpAYuFmK8KaT9I3psE5931QRCBuI/edit?usp=sharing](https://docs.google.com/document/d/1u6xzlStni8XNrj1JpAYuFmK8KaT9I3psE5931QRCBuI/edit?usp=sharing)",
+  "description_zh": "该任务的目标是将英文中的名字相关文字游戏（即字义双关）翻译成法文。\n\n这种文字游戏在小说、诗歌和戏剧中被广泛用作修辞手法。它在经典文学中随处可见，如莎士比亚人物的名字，也出现在现代作品中，如《宝可梦》、《哈利·波特》、《阿斯特里克斯》和电子游戏中的名字。虚构世界中有意义的专有名词通常是新造词。新造词——即新创词汇——是语言创意中最常见的形式之一。由于其高度特异性，新造词——尤其是幽默类新造词——对人类和机器翻译人员来说都是极具挑战性的翻译任务。\n\n提交指南：[https://docs.google.com/document/d/1u6xzlStni8XNrj1JpAYuFmK8KaT9I3psE5931QRCBuI/edit?usp=sharing](https://docs.google.com/document/d/1u6xzlStni8XNrj1JpAYuFmK8KaT9I3psE5931QRCBuI/edit?usp=sharing)",
+  "created_by": "liana87",
+  "created_when": "2026-05-27T12:31:08.496397Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-27-1779885068/7139b27c0a65/joker.png?AWSAccessKeyId=codabench-prod&Signature=FUzUo6otz4bUHlqCef46JdVJD9o%3D&Expires=1781170836",
+  "participants_count": 4,
+  "submissions_count": 14,
+  "first_phase_start": null,
+  "phases": [
+    {
+      "id": 27357,
+      "name": "Test",
+      "start": "2026-04-29T17:00:00Z",
+      "end": "2026-06-15T16:59:00Z",
+      "max_submissions_per_day": 5
+    },
+    {
+      "id": 27358,
+      "name": "Post-Competition",
+      "start": "2026-06-15T22:00:00Z",
+      "end": null,
+      "max_submissions_per_day": 5
+    }
+  ],
+  "pages": [
+    {
+      "index": 0,
+      "title": "JOKER 2026",
+      "content": "<br>\n  <h1 align=\"center\">CLEF 2026 JOKER Track:</h1>\n  <h2 align=\"center\">Automatic Humor Analysis</h2> \n\n### How to participate\n\nAll team members should join the JOKER mailing list:\n[https://groups.google.com/u/4/g/joker-project](https://groups.google.com/u/4/g/joker-project). \n\nThe submission should be a ZIP file with the file prediction.json in the root directory.\n\nThe detailed guidelines are available at: \n[https://docs.google.com/document/d/1KodC4zoqposVC52ELr1DZCsIXknjYZv8nz_5tGmhV1U/edit?usp=sharing](https://docs.google.com/document/d/1KodC4zoqposVC52ELr1DZCsIXknjYZv8nz_5tGmhV1U/edit?usp=sharing)\n\nThe data will be made available to all registered participants.\n\n### Tasks \n<!--, evaluation setup, and metrics-->\n\n* **Task 1: Humor-aware information retrieval** Retrieving short humorous texts from a document collection based on a given query. The retrieved texts should fulfill the dual criteria of being relevant to the query and being instances of wordplay.\n  * English: [https://www.codabench.org/competitions/10550/](https://www.codabench.org/competitions/10550/)\n  * Hinglish: [ https://www.codabench.org/competitions/10551/]( https://www.codabench.org/competitions/10551/)\n* **Task 2: Wordplay Translation** Translating English punning jokes into French. Translations should aim to preserve, to the extent possible, both the form and meaning of the original wordplay. [https://www.codabench.org/competitions/16309/](https://www.codabench.org/competitions/16309/)\n* **Task 3: Onomastic Wordplay Translation** The objective of the task is to translate onomastic wordplay from English to French. Such wordplay is widely used as a rhetorical device in novels, poetry, and plays. [https://www.codabench.org/competitions/16704/](https://www.codabench.org/competitions/16704/)\n* **JOKER 2022-2025 revisited** Previous tasks by popular requests (pun detection EN/FR/ES, pun location EN/FR/ES\n \n# Important dates\n\n---\n\n* **November 17, 2025**: CLEF tracks registration opens\n* **April 23, 2026**: CLEF tracks registration closes\n* **June 1, 2026**: End of Evaluation Cycle [submission of runs]\n* **June 8, 2026**: Submission of Participant Papers [CEUR-WS]\n* **June 30, 2026:** Notification of Acceptance for Participant Papers [CEUR-WS]\n* **July 6, 2026**: Camera Ready Copy of Participant Papers\n* **21-24 September 2026**: CLEF 2026 Conference\n\n<p>\n<em>This project has received a government grant managed by the National Research Agency under the program \"Investissements d'avenir\" integrated into France 2030, with the Reference ANR-19-GURE-0001.</em>\n</p>",
+      "content_zh": "# CLEF 2026 JOKER 赛道：\n## 自动幽默分析\n\n### 参赛方式\n\n所有团队成员应加入 JOKER 邮件列表：\n[https://groups.google.com/u/4/g/joker-project](https://groups.google.com/u/4/g/joker-project)\n\n提交文件应为 ZIP 格式，根目录下包含 prediction.json 文件。\n\n详细指南可在以下链接查阅：\n[https://docs.google.com/document/d/1KodC4zoqposVC52ELr1DZCsIXknjYZv8nz_5tGmhV1U/edit?usp=sharing](https://docs.google.com/document/d/1KodC4zoqposVC52ELr1DZCsIXknjYZv8nz_5tGmhV1U/edit?usp=sharing)\n\n数据将提供给所有注册参赛者。\n\n### 任务\n\n* **任务 1：幽默感知信息检索** 基于给定查询从文档集合中检索短幽默文本。检索的文本应满足两个标准：与查询相关且是文字游戏的实例。\n  * 英文：[https://www.codabench.org/competitions/10550/](https://www.codabench.org/competitions/10550/)\n  * 印地-英混合语：[https://www.codabench.org/competitions/10551/](https://www.codabench.org/competitions/10551/)\n* **任务 2：文字游戏翻译** 将英文双关笑话翻译成法文。翻译应尽可能保留原始文字游戏的形式和含义。[https://www.codabench.org/competitions/16309/](https://www.codabench.org/competitions/16309/)\n* **任务 3：人名文字游戏翻译** 该任务的目标是将英文人名文字游戏翻译成法文。这类文字游戏广泛用作小说、诗歌和戏剧中的修辞手法。[https://www.codabench.org/competitions/16704/](https://www.codabench.org/competitions/16704/)\n* **JOKER 2022-2025 重新推出** 应热烈要求的前年度任务（双关检测 EN/FR/ES，双关定位 EN/FR/ES）\n\n# 重要日期\n\n---\n\n* **2025 年 11 月 17 日**：CLEF 赛道注册开放\n* **2026 年 4 月 23 日**：CLEF 赛道注册截止\n* **2026 年 6 月 1 日**：评估周期结束 [运行提交]\n* **2026 年 6 月 8 日**：参赛者论文提交 [CEUR-WS]\n* **2026 年 6 月 30 日**：参赛者论文接收通知 [CEUR-WS]\n* **2026 年 7 月 6 日**：参赛者论文最终版本\n* **2026 年 9 月 21-24 日**：CLEF 2026 会议\n\n<p>\n<em>本项目获得由法国国家研究署在\"未来投资\"计划框架下管理的政府资助，并纳入法国 2030 计划，资助编号 ANR-19-GURE-0001。</em>\n</p>"
+    }
+  ]
+}

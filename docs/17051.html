@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ImageEval 2026 — Ayn-VQA Task 1b: Hallucination Detection (English) — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>ImageEval 2026 — Ayn-VQA Task 1b: Hallucination Detection (English)</h2>
+  <div class="detail-meta">
+    <span>ID: 17051</span>
+    <span>创建者: hunzed</span>
+    <span>创建时间: 2026-06-10</span>
+    <span>参与人数: 2</span>
+    <span>提交次数: 1</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/17051/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">我是科技竞赛信息翻译助手。您提供的文本已是英文竞赛内容说明，我将其翻译成简体中文：
+
+---
+
+给定一张图像和3个陈述句（英文），请为每个陈述句标记为真（有图像依据）或假（幻想内容）。恰好有一个陈述句有依据。这是ImageEval 2026 Ayn-VQA共享任务的一部分，该任务聚焦阿拉伯语多模态理解中的文化扎根。数据可在HuggingFace获取（QCRI/AynVQA-ArabicNLP26）。请同时在以下链接注册：https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development Phase</td><td>2026-05-22</td><td>2026-07-19</td><td>5</td></tr><tr><td><span class='badge badge-test'>测试</span> Testing Phase</td><td>2026-07-20</td><td>2026-07-29</td><td>20</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Participation</h3><div class='page-content'># 如何参与
+
+**ImageEval 2026 — Ayn-VQA 任务1b：幻觉检测（英文）** — 任务1b（幻觉检测）的**英文**赛道，是[ImageEval 2026](https://imageeval2026.github.io/)共享任务的一部分，该任务涉及阿拉伯多模态生成和理解中的文化基础。
+
+给定一张图像和3条陈述句（英文），为每条陈述句标记为真（基于图像）或假（幻觉）。恰好有一条陈述句是有根据的。
+
+## 注册（请先完成此步骤）
+填写**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)** — 这样组织者可以追踪参与者，并通知您有关数据、截止日期和任何更新的信息。
+
+## 谁可以参加
+个人或团队；由一名成员代表团队提交。您可以参加多个赛道。
+
+## 步骤
+1. 在此Codabench页面**和**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)上注册。
+2. 阅读**条款**选项卡 — 注意确切的预测格式。
+3. 从Hugging Face Hub获取数据：**[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**。
+4. 按照[任务仓库](https://github.com/ImageEval2026/ImageEval2026-tasks)中的任务描述进行操作。
+5. 在开发阶段对**开发测试集**进行预测，在最终评估阶段对**测试集**进行预测。
+
+## 系统描述论文
+鼓励所有团队为研讨会提交系统描述论文。
+
+## 联系方式
+imageeval2026@gmail.com</div></div><div class='section'><h3>Dataset</h3><div class='page-content'># 数据集
+
+所有数据集都托管在 Hugging Face Hub 上 — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — 配置为 `task1b_en`。本竞赛评分对象包括 **devtest**（开发阶段）和 **test**（最终阶段）。
+
+```python
+from datasets import load_dataset
+ds = load_dataset(&quot;QCRI/AynVQA-ArabicNLP26&quot;, &quot;task1b_en&quot;, split=&quot;devtest&quot;)
+```
+
+## 数据划分
+
+| 数据集 | 标签 | 项目数 | 阶段 | 用途 |
+|---|---|---:|---|---|
+| `train`   | 有 | 3000 | 开发阶段 | 训练/微调 |
+| `dev`     | 有 | 500  | 开发阶段 | 本地验证 |
+| `devtest` | 无  | 500  | 开发阶段（排行榜） | 提交目标，开发阶段 |
+| `test`    | 无  | 1000 | 最终评估 | 盲测排名（人工录制音频） |
+
+- **语言：** 英文。
+- 媒体（图像/音频）通过 **相对路径** 按 `id` 键引用。
+- 任务 1b 仅包含图像和文本（无音频）：三个陈述句，恰好一个是有根据的。
+
+## 许可证
+CC BY-NC 4.0 — 仅限非商业研究使用。</div></div><div class='section'><h3>Timeline</h3><div class='page-content'># 时间表
+
+## 开发阶段
+在 `train` + `dev` 上进行调整；在 **devtest** 上提交预测结果参与排行榜竞争。
+
+**时间窗口：** `2026-05-22 → 2026-07-19`  ·  每天最多 5 次提交，总共 100 次。
+
+## 测试阶段
+盲测 **test** 集合发布于 [Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)；在 `test` 上提交预测结果以获得官方排名。
+
+**时间窗口：** `2026-07-20 → 2026-07-29`  ·  每天最多 20 次提交，总共 100 次。
+
+&gt; 日期设置在 `competition.yaml`（`phases.start` / `phases.end`）中——如果时间表变更，请进行调整。公告：[网站](https://imageeval2026.github.io/)。</div></div>
+
+</div>
+</body>
+</html>

@@ -5,8 +5,8 @@
   "description_zh": "使用机器学习从图像中分类鱼类物种。参赛者获得标记的训练图像，必须预测未见过的测试图像的物种。",
   "created_by": "khanff",
   "created_when": "2026-05-31T12:31:14.005307Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-31-1780230674/99290699ac10/fish.png?AWSAccessKeyId=codabench-prod&Signature=JWAzdcdHMPFq7MJpRwffmdD2LXI%3D&Expires=1781084125",
-  "participants_count": 2,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-31-1780230674/99290699ac10/fish.png?AWSAccessKeyId=codabench-prod&Signature=B64WyopqkzopdLSOlgbzsryqhRw%3D&Expires=1781170837",
+  "participants_count": 3,
   "submissions_count": 4,
   "first_phase_start": null,
   "phases": [
