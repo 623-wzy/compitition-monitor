@@ -1,0 +1,306 @@
+{
+  "id": 16944,
+  "title": "ImageEval 2026 Task 2 - CRAI-Bench - Cultural Accuracy Evaluation for Arabic Text-to-Image Generation",
+  "published": true,
+  "created_by": "sabdaljalil",
+  "owner_display_name": "sabdaljalil",
+  "created_when": "2026-06-03T19:07:43.639396Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780513663/396055ccba31/logo.png?AWSAccessKeyId=codabench-prod&Signature=ePbqbFj8MEsOf0RMOB9bWBiXPv0%3D&Expires=1781257646",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780513663/396055ccba31/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=B2c9yqSj%2BMiSMepSOjpqQkh%2BAoM%3D&Expires=1781257646",
+  "terms": "<h2>Terms and Conditions</h2>\n<ul>\n  <li>Data is released for research purposes under CC BY 4.0.</li>\n  <li>Teams may use any external data or pre-trained models.</li>\n  <li>Manual annotation of test instances is not permitted.</li>\n  <li>Each participating team must submit a system description paper to be included in the final rankings.</li>\n  <li>Test set gold labels must not be shared before the results announcement.</li>\n  <li>By participating, teams agree to allow their results to be published in the shared task overview paper.</li>\n</ul>",
+  "pages": [
+    {
+      "id": 80565,
+      "title": "overview",
+      "content": "<h2>ImageEval2026 Subtask 2: CRAI-Bench: Cultural Accuracy Evaluation for Arabic Text-to-Image Generation</h2>\n<p>CRAI-Bench evaluates whether AI-generated images faithfully represent Qatari and Arab cultural scenes. Given a reference image, a caption, and an AI-generated image produced from that caption, participants predict CRAI scores across five cultural accuracy dimensions.</p>\n<h3>CRAI Formula</h3>\n<pre>CRAI = 0.30 × CEA + 0.20 × CC + 0.20 × CS + 0.20 × CI − 0.10 × HP</pre>\n<h3>Score Interpretation</h3>\n<ul>\n  <li>0.85 – 1.00: Highly accurate</li>\n  <li>0.70 – 0.84: Mostly accurate</li>\n  <li>0.50 – 0.69: Moderately accurate</li>\n  <li>0.30 – 0.49: Weak</li>\n  <li>Below 0.30: Poor or misleading</li>\n</ul>\n<h3>Contact</h3>\n<p> <a href=\"mailto:imageeval2026@gmail.com\">imageeval2026@gmail.com</a></p>",
+      "index": 0
+    },
+    {
+      "id": 80573,
+      "title": "evaluation",
+      "content": "<h2>Evaluation</h2>\n<p><strong>Primary metric:</strong> Spearman correlation between predicted and gold CRAI_composite scores. Higher is better.</p>\n<p><strong>Secondary metric:</strong> MAE on CRAI_composite. Lower is better. Used as tiebreaker.</p>\n<p>Per-dimension scores (CEA, CC, CS, CI, HP) are reported on the leaderboard for diagnostic purposes but do not affect ranking.</p>\n<h3>Organizer Baselines</h3>\n<table border=\"1\" cellpadding=\"5\">\n  <tr><th>System</th><th>Spearman</th><th>MAE</th></tr>\n  <tr><td>Mean baseline</td><td>N/A</td><td>0.3450</td></tr>\n  <tr><td>GPT-4 via OpenRouter</td><td>0.6250</td><td>0.2248</td></tr>\n</table>\n<h3>Submission Format</h3>\n<p>⚠️ Important:  Submit a zip file only containing <code>predictions.tsv</code> with these tab-separated columns:</p>\n<pre>id    CRAI_CEA    CRAI_CC    CRAI_CS    CRAI_CI    CRAI_HP    CRAI_composite</pre>\n<p>Rules:</p>\n<ul>\n  <li>All scores must be floats in [0.0, 1.0]</li>\n  <li>Header row is required</li>\n  <li>All instances must be present</li>\n  <li>CRAI_composite must equal 0.30×CEA + 0.20×CC + 0.20×CS + 0.20×CI − 0.10×HP</li>\n</ul>",
+      "index": 1
+    },
+    {
+      "id": 80567,
+      "title": "data",
+      "content": "<h2>Data</h2>\n<p>The dataset consists of (reference image, caption, generated image) triples grounded in Qatari culture. Each of 40 reference images has 5 caption versions varying in cultural specificity from fully Qatari-specific (v1) to entirely generic (v5).</p>\n<table border=\"1\" cellpadding=\"5\">\n  <tr><th>Split</th><th>Images</th><th>Instances</th><th>Gold Labels</th></tr>\n  <tr><td>Train</td><td>24</td><td>120</td><td>Released</td></tr>\n  <tr><td>Dev</td><td>8</td><td>40</td><td>Released</td></tr>\n  <tr><td>Test</td><td>8</td><td>40</td><td>Hidden</td></tr>\n</table>\n<p>Download data and scripts from GitHub under Task 2: <a href=\"https://github.com/ImageEval2026/ImageEval2026-tasks\">https://github.com/ImageEval2026/ImageEval2026-tasks</a></p>",
+      "index": 2
+    }
+  ],
+  "phases": [
+    {
+      "id": 28291,
+      "index": 0,
+      "start": "2026-05-22T00:00:00Z",
+      "end": "2026-07-19T00:00:00Z",
+      "name": "Development Phase",
+      "description": "Practice phase. Use training and dev sets to build your system.",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "67a55df5-a86d-4d32-8774-c7f73fe6172a",
+          "order_index": 0,
+          "phase": 28291,
+          "id": 33922,
+          "value": "67a55df5-a86d-4d32-8774-c7f73fe6172a",
+          "key": "67a55df5-a86d-4d32-8774-c7f73fe6172a",
+          "created_when": "2026-06-03T19:07:43.278161Z",
+          "name": "Development Phase Task",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 811605,
+              "created_by": "sabdaljalil",
+              "owner_display_name": "sabdaljalil",
+              "created_when": "2026-06-03T19:07:43.111309Z",
+              "name": "scoring_program @ '06-03-2026 19:07'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "55048758-9a8a-4d9c-ac0a-3976d35ab817",
+              "value": "55048758-9a8a-4d9c-ac0a-3976d35ab817",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16944,
+                  "title": "ImageEval 2026 Task 2 - CRAI-Bench - Cultural Accuracy Evaluation for Arabic Text-to-Image Generation"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 1024.0
+            },
+            {
+              "id": 811606,
+              "created_by": "sabdaljalil",
+              "owner_display_name": "sabdaljalil",
+              "created_when": "2026-06-03T19:07:43.185056Z",
+              "name": "reference_data @ '06-03-2026 19:07'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "b53d1718-cd49-438b-a9cb-ab51561f6115",
+              "value": "b53d1718-cd49-438b-a9cb-ab51561f6115",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16944,
+                  "title": "ImageEval 2026 Task 2 - CRAI-Bench - Cultural Accuracy Evaluation for Arabic Text-to-Image Generation"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 616.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 10,
+      "max_submissions_per_person": 999,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    },
+    {
+      "id": 28292,
+      "index": 1,
+      "start": "2026-07-20T00:00:00Z",
+      "end": null,
+      "name": "Test Phase",
+      "description": "Official evaluation phase on the hidden test set.",
+      "status": "Next",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "d05235bd-a972-4321-b73f-399bc4aaad90",
+          "order_index": 0,
+          "phase": 28292,
+          "id": 33923,
+          "value": "d05235bd-a972-4321-b73f-399bc4aaad90",
+          "key": "d05235bd-a972-4321-b73f-399bc4aaad90",
+          "created_when": "2026-06-03T19:07:43.467164Z",
+          "name": "Test Phase Task",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 811607,
+              "created_by": "sabdaljalil",
+              "owner_display_name": "sabdaljalil",
+              "created_when": "2026-06-03T19:07:43.288096Z",
+              "name": "scoring_program @ '06-03-2026 19:07'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "024f952d-3729-422b-8980-d0a98f724be7",
+              "value": "024f952d-3729-422b-8980-d0a98f724be7",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16944,
+                  "title": "ImageEval 2026 Task 2 - CRAI-Bench - Cultural Accuracy Evaluation for Arabic Text-to-Image Generation"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 1024.0
+            },
+            {
+              "id": 811608,
+              "created_by": "sabdaljalil",
+              "owner_display_name": "sabdaljalil",
+              "created_when": "2026-06-03T19:07:43.379707Z",
+              "name": "reference_data @ '06-03-2026 19:07'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "fb6045b1-f69d-4440-ac12-1f6e2bb34c3d",
+              "value": "fb6045b1-f69d-4440-ac12-1f6e2bb34c3d",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16944,
+                  "title": "ImageEval 2026 Task 2 - CRAI-Bench - Cultural Accuracy Evaluation for Arabic Text-to-Image Generation"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 681.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 2,
+      "max_submissions_per_person": 5,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 18762,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "Results",
+      "columns": [
+        {
+          "id": 81863,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Spearman (composite)",
+          "key": "Spearman",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 81864,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "MAE (composite)",
+          "key": "MAE",
+          "sorting": "asc",
+          "index": 1,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 81865,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Spearman CEA",
+          "key": "CEA_Spearman",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": true,
+          "precision": 4
+        },
+        {
+          "id": 81866,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Spearman CC",
+          "key": "CC_Spearman",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": true,
+          "precision": 4
+        },
+        {
+          "id": 81867,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Spearman CS",
+          "key": "CS_Spearman",
+          "sorting": "desc",
+          "index": 4,
+          "hidden": true,
+          "precision": 4
+        },
+        {
+          "id": 81868,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Spearman CI",
+          "key": "CI_Spearman",
+          "sorting": "desc",
+          "index": 5,
+          "hidden": true,
+          "precision": 4
+        },
+        {
+          "id": 81869,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Spearman HP",
+          "key": "HP_Spearman",
+          "sorting": "desc",
+          "index": 6,
+          "hidden": true,
+          "precision": 4
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Add"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": false,
+  "description": "Evaluate whether AI-generated images faithfully represent Qatari and Arab cultural scenes using the CRAI framework.",
+  "participants_count": 1,
+  "submissions_count": 1,
+  "queue": null,
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": true,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "codalab/codalab-legacy:py37",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 16655,
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "forum_enabled": true
+}

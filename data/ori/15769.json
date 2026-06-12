@@ -5,8 +5,8 @@
   "created_by": "lixiang",
   "owner_display_name": "lixiang",
   "created_when": "2026-04-18T05:03:43.885782Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-21-1776751074/2acec80a7ccb/1d053422-872b-412a-be59-e3742425ce5.jfif?AWSAccessKeyId=codabench-prod&Signature=wulzw3MJWDnic2%2FOp42QQRxWO3M%3D&Expires=1781170851",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-21-1776751074/2acec80a7ccb/1d053422-872b-412a-be59-e3742425ce5_icon.jfif?AWSAccessKeyId=codabench-prod&Signature=mmFnAtnTdwZl9DjdCdnP9LqQ0Tw%3D&Expires=1781170851",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-21-1776751074/2acec80a7ccb/1d053422-872b-412a-be59-e3742425ce5.jfif?AWSAccessKeyId=codabench-prod&Signature=3g1470U%2BaMkpXUf6imnBfphvo9A%3D&Expires=1781257656",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-21-1776751074/2acec80a7ccb/1d053422-872b-412a-be59-e3742425ce5_icon.jfif?AWSAccessKeyId=codabench-prod&Signature=%2FmVyN%2B1hvoqHuDZ5h4gftWPbmg4%3D&Expires=1781257656",
   "terms": "# Terms and Conditions\n***\nThis competition is for educational and research purposes, and it is governed by the [<ins>General ChaLearn Contest Rules</ins>](http://www.causality.inf.ethz.ch/GeneralChalearnContestRuleTerms.html).",
   "pages": [
     {
@@ -24,7 +24,7 @@
       "end": "2026-06-12T08:00:00Z",
       "name": "Competition Phase",
       "description": "Submit the prediction results according to the specified format, and perform multimodal true/false classification on the test set.",
-      "status": "Current",
+      "status": "Previous",
       "execution_time_limit": 600,
       "tasks": [
         {
@@ -205,8 +205,8 @@
   ],
   "registration_auto_approve": true,
   "description": "AIGC Audio-Video Deepfake Classification Challenge using the MVAD dataset.",
-  "participants_count": 96,
-  "submissions_count": 356,
+  "participants_count": 100,
+  "submissions_count": 379,
   "queue": null,
   "enable_detailed_results": true,
   "show_detailed_results_in_submission_panel": true,

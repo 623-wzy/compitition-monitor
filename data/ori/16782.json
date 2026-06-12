@@ -5,8 +5,8 @@
   "created_by": "dravidian",
   "owner_display_name": "dravidian",
   "created_when": "2026-05-30T08:48:21.614394Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-02-1780380380/3d180381fa35/ChatGPT_Image_Jun_2_2026_at_11_35_.png?AWSAccessKeyId=codabench-prod&Signature=S35LJRvLLL9XG4OUpWYCr6sG7fU%3D&Expires=1781170838",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-02-1780380380/3d180381fa35/ChatGPT_Image_Jun_2_2026_at_11_35__icon.png?AWSAccessKeyId=codabench-prod&Signature=r4QCvASIijAC%2FhRePuIPv%2BBu8oQ%3D&Expires=1781170838",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-02-1780380380/3d180381fa35/ChatGPT_Image_Jun_2_2026_at_11_35_.png?AWSAccessKeyId=codabench-prod&Signature=zsC%2Fe0Jbmv83xcOJ238KA1IzRVQ%3D&Expires=1781257647",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-02-1780380380/3d180381fa35/ChatGPT_Image_Jun_2_2026_at_11_35__icon.png?AWSAccessKeyId=codabench-prod&Signature=6u2XrLSQpc6lL4hi6U2yn4DJlBc%3D&Expires=1781257647",
   "terms": "<h1 style=\"text-align: center;\"><span data-preserver-spaces=\"true\">Terms and Conditions</span></h1>\n<p style=\"text-align: justify;\"><span data-preserver-spaces=\"true\">By downloading the data or by accessing it in any manner, you agree not to redistribute the data except for non-commercial and academic research purposes. The data must not be used for providing surveillance, analyses, or research that isolates a group of individuals or any single individual for any unlawful or discriminatory purpose.</span></p>\n\n<p><span style=\"text-decoration: underline;\"><strong>Reference:</strong></span> <span style=\"font-weight: 400; color: #ff0000;\">Cite the below reference</span></p>\n\n<p style=\"text-align: justify;\">\n<pre>\n\n</pre>\n</p>\n\n<hr style=\"border-top: 1px dashed black; margin-top: 20px; margin-bottom: 20px;\" />\n<div style=\"text-align: center;\"><span data-preserver-spaces=\"true\"><strong>For more information or any doubts,</strong></span></div>\n<div>&nbsp;</div>\n<div style=\"text-align: center;\"><span data-preserver-spaces=\"true\"><strong>Contact Us:</strong></span></div>\n<div>&nbsp;</div>\n<div style=\"text-align: center;\"><span data-preserver-spaces=\"true\"><strong>Email:&nbsp;</strong>&nbsp;<p style=\"text-align: center;\"><a href=\"mailto:b_premjith@cb.amrtia.edu\"><strong>b_premjith@cb.amrita.edu</strong></a><strong>, </strong><a href=\"mailto:g_jyothishlal@cb.amrita.edu\"><strong>g_jyothishlal@cb.amrita.edu</strong></a>, and </strong><a href=\"mailto:bharathiraja.akr@gmail.com\"><strong>bharathiraja.akr@gmail.com</strong></a></p></span></div>\n<hr style=\"border-top: 1px dashed black; margin-top: 20px; margin-bottom: 20px;\" />\n<div style=\"display: none;\">&nbsp;</div>",
   "pages": [
     {
@@ -170,9 +170,9 @@
   ],
   "collaborators": [
     {
-      "id": 3934,
+      "id": 38758,
       "name": null,
-      "username": "prasanna"
+      "username": "shunmugapriyamc"
     },
     {
       "id": 17382,
@@ -185,9 +185,9 @@
       "username": "rahul_ponnusamy"
     },
     {
-      "id": 38758,
+      "id": 3934,
       "name": null,
-      "username": "shunmugapriyamc"
+      "username": "prasanna"
     }
   ],
   "registration_auto_approve": false,

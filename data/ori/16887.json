@@ -5,8 +5,8 @@
   "created_by": "wslp_workshop",
   "owner_display_name": "Exploration-lab-IITK",
   "created_when": "2026-06-01T18:23:44.041000Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780338224/034be48cb6b4/logo.png?AWSAccessKeyId=codabench-prod&Signature=OWZQ1pibY%2FjAi2AhpRj1fnlhyGw%3D&Expires=1781170836",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780338224/034be48cb6b4/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=Mdx99zqmDHYvQZN3j4cCZryoD20%3D&Expires=1781170836",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780338224/034be48cb6b4/logo.png?AWSAccessKeyId=codabench-prod&Signature=%2BCVEc4Ndr8I70GqcNySHp4yikQc%3D&Expires=1781257647",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780338224/034be48cb6b4/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=Fk0ov7XioA2WB3FWpXolivtAg98%3D&Expires=1781257647",
   "terms": "<h3>Terms and Conditions</h3>\n\n<p>\n<em>\nParticipants are required to register using a valid institutional or personal email address. Once registered, the organizers will review and approve your request to participate.\n</em>\n</p>\n\n<p>\nPlease ensure that your <strong>team name</strong> is clearly mentioned during registration and used consistently for all submissions. This helps in managing team entries and leaderboard rankings accurately.\n</p>\n\n<p>\nDuring <strong>Phase 1 (Training Phase)</strong>, each team may submit a maximum of <strong>20 submissions per day</strong>, and a total of <strong>500 submissions</strong> throughout the phase.\n</p>\n\n<p>\nDuring <strong>Phase 2 (Testing Phase)</strong>, each team may submit up to <strong>10 submissions per day</strong>, and a total of <strong>100 submissions</strong> throughout the phase.\n\n</p>\n\n<p>\nSubmissions must follow the format specified in the <strong>Submission Guidelines</strong>. Any deviation from the expected file structure or content may result in disqualification or errors during evaluation.\n</p>\n\n<p>\nBy participating, you agree to abide by the rules, evaluation criteria, and ethical research practices outlined by the organizers of the WSLP@EMNLP 2026 Shared Task.\n</p>",
   "pages": [
     {
@@ -252,7 +252,7 @@
   "registration_auto_approve": true,
   "description": "Predict if a given word\\Sign (gloss) is present in a full Indian Sign Language (ISL) sentence video, addressing sign spotting and context alignment challenges.",
   "participants_count": 4,
-  "submissions_count": 2,
+  "submissions_count": 3,
   "queue": null,
   "enable_detailed_results": false,
   "show_detailed_results_in_submission_panel": true,

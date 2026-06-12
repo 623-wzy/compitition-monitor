@@ -5,9 +5,9 @@
   "description_zh": "给定一个单词\\符号（手语词汇），预测其是否出现在完整的印度手语（ISL）句子视频中，解决手语识别和上下文对齐的挑战。",
   "created_by": "wslp_workshop",
   "created_when": "2026-06-01T18:23:44.041000Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780338224/034be48cb6b4/logo.png?AWSAccessKeyId=codabench-prod&Signature=OWZQ1pibY%2FjAi2AhpRj1fnlhyGw%3D&Expires=1781170836",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780338224/034be48cb6b4/logo.png?AWSAccessKeyId=codabench-prod&Signature=%2BCVEc4Ndr8I70GqcNySHp4yikQc%3D&Expires=1781257647",
   "participants_count": 4,
-  "submissions_count": 2,
+  "submissions_count": 3,
   "first_phase_start": null,
   "phases": [
     {

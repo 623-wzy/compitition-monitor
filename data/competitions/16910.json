@@ -5,7 +5,7 @@
   "description_zh": "阿拉伯语多模态仇恨表情包细粒度分类。给定一张表情包（图像加光学字符识别提取的阿拉伯语文本），从涵盖仇恨和非仇恨类别的统一10类活跃词汇中预测零个或多个细粒度子类型。官方指标：宏F1（macro-F1）。",
   "created_by": "alishahroor",
   "created_when": "2026-06-03T11:45:25.550972Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780487125/68e3a857bebe/logo.png?AWSAccessKeyId=codabench-prod&Signature=x9%2F%2BG27eOLFC1NgUCWsd%2BawX6T4%3D&Expires=1781170833",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780487125/68e3a857bebe/logo.png?AWSAccessKeyId=codabench-prod&Signature=Ut8ytMqHTvPj7F5jtngYy036pgg%3D&Expires=1781257646",
   "participants_count": 2,
   "submissions_count": 3,
   "first_phase_start": null,

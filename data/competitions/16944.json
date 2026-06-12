@@ -1,0 +1,48 @@
+{
+  "id": 16944,
+  "title": "ImageEval 2026 Task 2 - CRAI-Bench - Cultural Accuracy Evaluation for Arabic Text-to-Image Generation",
+  "description": "Evaluate whether AI-generated images faithfully represent Qatari and Arab cultural scenes using the CRAI framework.",
+  "description_zh": "# 使用CRAI框架评估AI生成图像对卡塔尔和阿拉伯文化场景的真实性表现\n\n## 文化准确性（Cultural Accuracy）\n- **服饰表现**：评估传统服装（如阿拜亚、古特拉、阿拉伯头巾）的细节准确性\n- **建筑风格**：验证伊斯兰建筑元素（如拱形、穹顶、书法装饰）是否正确呈现\n- **宗教仪式**：检查礼拜场景、斋月相关元素的真实性\n- **社会场景**：评估家庭聚会、市集、传统活动的文化真实性\n\n## 代表性（Representation）\n- **多样性**：确保呈现卡塔尔和阿拉伯世界的多元性，避免单一刻板印象\n- **地理差异**：区分不同地区的文化特征（城市、沙漠、海滨）\n- **代际表现**：反映传统与现代元素的融合\n- **性别与身份**：公平准确地呈现不同群体\n\n## 人工制品与物质文化（Artifacts）\n- **传统手工艺**：阿拉伯书法、陶艺、纺织品的准确性\n- **日常用品**：咖啡器具、香炉等文化象征物\n- **装饰元素**：几何纹样、穆斯林花纹设计的准确性\n- **食文化**：传统美食呈现的真实性\n\n## 背景与语境（Context）\n- **历史准确性**：时代背景的正确性\n- **社会背景**：活动场景的合理性与适切性\n- **语言符号**：阿拉伯书写的准确性\n- **文化敏感性**：尊重宗教和社会禁忌",
+  "created_by": "sabdaljalil",
+  "created_when": "2026-06-03T19:07:43.639396Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780513663/396055ccba31/logo.png?AWSAccessKeyId=codabench-prod&Signature=ePbqbFj8MEsOf0RMOB9bWBiXPv0%3D&Expires=1781257646",
+  "participants_count": 1,
+  "submissions_count": 1,
+  "first_phase_start": null,
+  "phases": [
+    {
+      "id": 28291,
+      "name": "Development Phase",
+      "start": "2026-05-22T00:00:00Z",
+      "end": "2026-07-19T00:00:00Z",
+      "max_submissions_per_day": 10
+    },
+    {
+      "id": 28292,
+      "name": "Test Phase",
+      "start": "2026-07-20T00:00:00Z",
+      "end": null,
+      "max_submissions_per_day": 2
+    }
+  ],
+  "pages": [
+    {
+      "index": 0,
+      "title": "overview",
+      "content": "<h2>ImageEval2026 Subtask 2: CRAI-Bench: Cultural Accuracy Evaluation for Arabic Text-to-Image Generation</h2>\n<p>CRAI-Bench evaluates whether AI-generated images faithfully represent Qatari and Arab cultural scenes. Given a reference image, a caption, and an AI-generated image produced from that caption, participants predict CRAI scores across five cultural accuracy dimensions.</p>\n<h3>CRAI Formula</h3>\n<pre>CRAI = 0.30 × CEA + 0.20 × CC + 0.20 × CS + 0.20 × CI − 0.10 × HP</pre>\n<h3>Score Interpretation</h3>\n<ul>\n  <li>0.85 – 1.00: Highly accurate</li>\n  <li>0.70 – 0.84: Mostly accurate</li>\n  <li>0.50 – 0.69: Moderately accurate</li>\n  <li>0.30 – 0.49: Weak</li>\n  <li>Below 0.30: Poor or misleading</li>\n</ul>\n<h3>Contact</h3>\n<p> <a href=\"mailto:imageeval2026@gmail.com\">imageeval2026@gmail.com</a></p>",
+      "content_zh": "<h2>ImageEval2026 子任务2：CRAI-Bench：阿拉伯文本转图像生成的文化准确性评估</h2>\n<p>CRAI-Bench评估AI生成的图像是否真实代表卡塔尔和阿拉伯文化场景。给定参考图像、标题和从该标题生成的AI生成图像，参与者需预测五个文化准确性维度的CRAI分数。</p>\n<h3>CRAI公式</h3>\n<pre>CRAI = 0.30 × CEA + 0.20 × CC + 0.20 × CS + 0.20 × CI − 0.10 × HP</pre>\n<h3>分数解释</h3>\n<ul>\n  <li>0.85 – 1.00：高度准确</li>\n  <li>0.70 – 0.84：基本准确</li>\n  <li>0.50 – 0.69：中等准确</li>\n  <li>0.30 – 0.49：较弱</li>\n  <li>低于0.30：较差或误导性</li>\n</ul>\n<h3>联系方式</h3>\n<p><a href=\"mailto:imageeval2026@gmail.com\">imageeval2026@gmail.com</a></p>"
+    },
+    {
+      "index": 1,
+      "title": "evaluation",
+      "content": "<h2>Evaluation</h2>\n<p><strong>Primary metric:</strong> Spearman correlation between predicted and gold CRAI_composite scores. Higher is better.</p>\n<p><strong>Secondary metric:</strong> MAE on CRAI_composite. Lower is better. Used as tiebreaker.</p>\n<p>Per-dimension scores (CEA, CC, CS, CI, HP) are reported on the leaderboard for diagnostic purposes but do not affect ranking.</p>\n<h3>Organizer Baselines</h3>\n<table border=\"1\" cellpadding=\"5\">\n  <tr><th>System</th><th>Spearman</th><th>MAE</th></tr>\n  <tr><td>Mean baseline</td><td>N/A</td><td>0.3450</td></tr>\n  <tr><td>GPT-4 via OpenRouter</td><td>0.6250</td><td>0.2248</td></tr>\n</table>\n<h3>Submission Format</h3>\n<p>⚠️ Important:  Submit a zip file only containing <code>predictions.tsv</code> with these tab-separated columns:</p>\n<pre>id    CRAI_CEA    CRAI_CC    CRAI_CS    CRAI_CI    CRAI_HP    CRAI_composite</pre>\n<p>Rules:</p>\n<ul>\n  <li>All scores must be floats in [0.0, 1.0]</li>\n  <li>Header row is required</li>\n  <li>All instances must be present</li>\n  <li>CRAI_composite must equal 0.30×CEA + 0.20×CC + 0.20×CS + 0.20×CI − 0.10×HP</li>\n</ul>",
+      "content_zh": "<h2>评估</h2>\n<p><strong>主要指标：</strong>预测和黄金标准 CRAI_composite 分数之间的斯皮尔曼相关系数。越高越好。</p>\n<p><strong>次要指标：</strong>CRAI_composite 的平均绝对误差 (MAE)。越低越好。用作平局打破器。</p>\n<p>各维度分数（CEA、CC、CS、CI、HP）在排行榜上报告，用于诊断目的，但不影响排名。</p>\n<h3>组织者基准</h3>\n<table border=\"1\" cellpadding=\"5\">\n  <tr><th>系统</th><th>斯皮尔曼</th><th>平均绝对误差</th></tr>\n  <tr><td>均值基准</td><td>N/A</td><td>0.3450</td></tr>\n  <tr><td>GPT-4（通过 OpenRouter）</td><td>0.6250</td><td>0.2248</td></tr>\n</table>\n<h3>提交格式</h3>\n<p>⚠️ 重要提示：仅提交包含 <code>predictions.tsv</code> 的 zip 文件，包含以下制表符分隔的列：</p>\n<pre>id    CRAI_CEA    CRAI_CC    CRAI_CS    CRAI_CI    CRAI_HP    CRAI_composite</pre>\n<p>规则：</p>\n<ul>\n  <li>所有分数必须是 [0.0, 1.0] 范围内的浮点数</li>\n  <li>需要包含表头行</li>\n  <li>必须包含所有实例</li>\n  <li>CRAI_composite 必须等于 0.30×CEA + 0.20×CC + 0.20×CS + 0.20×CI − 0.10×HP</li>\n</ul>"
+    },
+    {
+      "index": 2,
+      "title": "data",
+      "content": "<h2>Data</h2>\n<p>The dataset consists of (reference image, caption, generated image) triples grounded in Qatari culture. Each of 40 reference images has 5 caption versions varying in cultural specificity from fully Qatari-specific (v1) to entirely generic (v5).</p>\n<table border=\"1\" cellpadding=\"5\">\n  <tr><th>Split</th><th>Images</th><th>Instances</th><th>Gold Labels</th></tr>\n  <tr><td>Train</td><td>24</td><td>120</td><td>Released</td></tr>\n  <tr><td>Dev</td><td>8</td><td>40</td><td>Released</td></tr>\n  <tr><td>Test</td><td>8</td><td>40</td><td>Hidden</td></tr>\n</table>\n<p>Download data and scripts from GitHub under Task 2: <a href=\"https://github.com/ImageEval2026/ImageEval2026-tasks\">https://github.com/ImageEval2026/ImageEval2026-tasks</a></p>",
+      "content_zh": "<h2>数据</h2>\n<p>该数据集由根植于卡塔尔文化的（参考图像、标题、生成图像）三元组组成。40张参考图像中的每一张都有5个标题版本，文化特异性从完全卡塔尔特定（v1）到完全通用（v5）不等。</p>\n<table border=\"1\" cellpadding=\"5\">\n  <tr><th>分割</th><th>图像数</th><th>实例数</th><th>金标签</th></tr>\n  <tr><td>训练集</td><td>24</td><td>120</td><td>已发布</td></tr>\n  <tr><td>开发集</td><td>8</td><td>40</td><td>已发布</td></tr>\n  <tr><td>测试集</td><td>8</td><td>40</td><td>隐藏</td></tr>\n</table>\n<p>从GitHub上的任务2下载数据和脚本：<a href=\"https://github.com/ImageEval2026/ImageEval2026-tasks\">https://github.com/ImageEval2026/ImageEval2026-tasks</a></p>"
+    }
+  ]
+}
