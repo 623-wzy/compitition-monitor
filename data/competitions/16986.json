@@ -5,8 +5,8 @@
   "description_zh": "从真实传送带图像中检测和分类废弃物体。\n在19种废物类别中构建最佳物体检测模型。\n由Avartan Labs组织。",
   "created_by": "avartan_labs",
   "created_when": "2026-06-06T17:41:37.581384Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-06-1780767697/343e119605f8/logo.png?AWSAccessKeyId=codabench-prod&Signature=gYQ7vtccM9o16vRuPtyU1GO4HKs%3D&Expires=1781257646",
-  "participants_count": 2,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-06-1780767697/343e119605f8/logo.png?AWSAccessKeyId=codabench-prod&Signature=3S%2BcMS9XJdEbzGmUz%2FttxCPo7W8%3D&Expires=1781344339",
+  "participants_count": 3,
   "submissions_count": 7,
   "first_phase_start": null,
   "phases": [

@@ -5,7 +5,7 @@
   "description_zh": "阿拉伯语多模态仇恨迷因分类。给定一个迷因（图像加光学字符识别提取的阿拉伯语文本），预测其是否为仇恨性或非仇恨性。官方指标：宏平均F1分数。",
   "created_by": "mohamedbayan",
   "created_when": "2026-06-03T11:38:35.423737Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780486715/5b6f981490c6/logo.png?AWSAccessKeyId=codabench-prod&Signature=sjfg9IzchPdzleEk4mslQow6WyU%3D&Expires=1781257647",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780486715/5b6f981490c6/logo.png?AWSAccessKeyId=codabench-prod&Signature=JM0hSEGGYXiM0oGT2tYeX3oqu4I%3D&Expires=1781344339",
   "participants_count": 3,
   "submissions_count": 2,
   "first_phase_start": null,
