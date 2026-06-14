@@ -5,8 +5,8 @@
   "created_by": "liana87",
   "owner_display_name": "liana87",
   "created_when": "2026-05-27T12:31:08.496397Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-27-1779885068/7139b27c0a65/joker.png?AWSAccessKeyId=codabench-prod&Signature=yvATmOZuR3i5scD54ZKNBhGfAIE%3D&Expires=1781344344",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-27-1779885068/7139b27c0a65/joker_icon.png?AWSAccessKeyId=codabench-prod&Signature=4rqORPKQKFiNofU3WIkIVF2o8So%3D&Expires=1781344344",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-27-1779885068/7139b27c0a65/joker.png?AWSAccessKeyId=codabench-prod&Signature=Ien9RSXO2mgEeo0QHKkHZTRVe8s%3D&Expires=1781431070",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-27-1779885068/7139b27c0a65/joker_icon.png?AWSAccessKeyId=codabench-prod&Signature=LbG0AFvkFj2l%2BC2Pjl3RitU9%2Fdc%3D&Expires=1781431070",
   "terms": "<h1>JOKER Task 3 2026</h1>\nSubmission guidelines: [https://docs.google.com/document/d/1u6xzlStni8XNrj1JpAYuFmK8KaT9I3psE5931QRCBuI/edit?usp=sharing](https://docs.google.com/document/d/1u6xzlStni8XNrj1JpAYuFmK8KaT9I3psE5931QRCBuI/edit?usp=sharing)",
   "pages": [
     {
@@ -218,7 +218,7 @@
   "registration_auto_approve": true,
   "description": "The objective of the task is to translate onomastic (i.e., name-related) wordplay from English to French.\nSuch wordplay is widely used as a rhetorical device in novels, poetry, and plays. It is widespread in classic literature, such as in Shakespeare’s characters’ names, but also in names found in modern-day works such as Pokémon, Harry Potter, Asterix, and video games. Meaningful proper names in fictional universes are often neologisms. Neologisms – that is, newly coined words – are among the most common forms of linguistic creativity. Due to their highly idiosyncratic nature, neologisms – particularly humorous ones – are challenging for both humans and machines to translate.\n\n\nSubmission guidelines: [https://docs.google.com/document/d/1u6xzlStni8XNrj1JpAYuFmK8KaT9I3psE5931QRCBuI/edit?usp=sharing](https://docs.google.com/document/d/1u6xzlStni8XNrj1JpAYuFmK8KaT9I3psE5931QRCBuI/edit?usp=sharing)",
   "participants_count": 4,
-  "submissions_count": 46,
+  "submissions_count": 51,
   "queue": null,
   "enable_detailed_results": false,
   "show_detailed_results_in_submission_panel": false,
