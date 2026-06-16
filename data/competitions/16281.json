@@ -5,7 +5,7 @@
   "description_zh": "本挑战赛重点关注SDE数据集上的事件引导低光视频深度估计。参赛者需要开发算法，在事件相机信号的辅助下，从低光视频序列中估计准确的深度图。\n\n该挑战赛的目标是促进在具有挑战性的光照条件下的鲁棒深度估计，在这些条件下，传统的基于帧的方法通常会受到运动模糊、低信噪比和纹理可见性差的影响。提交的方案将使用隐藏测试集上的定量深度估计指标进行评估。\n\n本挑战赛作为EBMV 2026的一部分组织举办，面向从事低级视觉、基于事件的视觉、视频增强以及单目或多模态深度估计研究的科研人员。",
   "created_by": "ethanliang99",
   "created_when": "2026-05-13T06:27:08.548287Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-13-1778653628/08a70c7d08bb/ChatGPT_Image_May_13_2026_02_02_4.png?AWSAccessKeyId=codabench-prod&Signature=xc71vK20u4kE0Ef9P2PqffBnpts%3D&Expires=1781517770",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-13-1778653628/08a70c7d08bb/ChatGPT_Image_May_13_2026_02_02_4.png?AWSAccessKeyId=codabench-prod&Signature=eHHCUexGEODBcz%2B6RlE8Kw4oVpc%3D&Expires=1781604482",
   "participants_count": 14,
   "submissions_count": 2,
   "first_phase_start": null,
