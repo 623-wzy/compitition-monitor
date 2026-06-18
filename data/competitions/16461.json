@@ -5,16 +5,16 @@
   "description_zh": "ACM MM 2026 可解释深伪检测挑战赛隐测集评估：图像级深伪检测和基础解释生成",
   "created_by": "abhijeet8901",
   "created_when": "2026-05-19T15:29:56.921370Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-19-1779204596/95cc77a6535d/images/logo.png?AWSAccessKeyId=codabench-prod&Signature=bBNSDrAcN6IFrAWauG5zV6iR2o0%3D&Expires=1781691120",
-  "participants_count": 119,
-  "submissions_count": 329,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-19-1779204596/95cc77a6535d/images/logo.png?AWSAccessKeyId=codabench-prod&Signature=kTdTFfZLc6TN6LnzR4DPp23iRLo%3D&Expires=1781777836",
+  "participants_count": 130,
+  "submissions_count": 377,
   "first_phase_start": null,
   "phases": [
     {
       "id": 27017,
       "name": "Final Test Phase",
       "start": "2026-05-28T00:00:00Z",
-      "end": "2026-06-17T23:59:00Z",
+      "end": "2026-06-18T23:59:00Z",
       "max_submissions_per_day": 1
     }
   ],
@@ -22,7 +22,7 @@
     {
       "index": 0,
       "title": "Overview",
-      "content": "# Overview\n\nWelcome to the **Explainable Deepfake Detection Challenge 2026**, an **ACM Multimedia 2026 Grand Challenge** on image-level deepfake detection and grounded explanation generation.\n\nDeepfake detection is increasingly moving beyond simple face swaps toward richer semantic manipulations. In practical settings, a prediction alone is not enough; systems should also indicate the visual evidence that supports a decision.\n\nThis challenge introduces **XPlainVerse**, a large-scale benchmark for evaluating both detection and explanation. Participants are asked not only to determine whether an image is real or fake, but also to provide two grounded natural-language explanations: a detailed complex explanation and a non-technical simple explanation.\n\n## Tasks\n\nThe challenge has two main tasks:\n\n1. **Deepfake Detection**: determine whether an input image is real or fake.\n2. **Deepfake Explanation**: generate explanations that support the authenticity decision using visible evidence from the image.\n\nFor the explanation task, each submission must include:\n\n- a **complex explanation**: detailed, evidence-rich, and specific, intended for technical or forensic review;\n- a **simple explanation**: shorter, clearer, and more accessible, while preserving the key reason behind the decision.\n\nBoth explanations should remain consistent with the submitted authenticity label.\n\n## CodaBench phase\n\nThis CodaBench platform is used for the official result-submission phase.\n\n- **Phase opens:** 28 May 2026\n- **Result submission deadline:** 17 June 2026\n- **Submissions per day:** 1\n- **Total submissions:** 11\n\nGeneral challenge information, announcements, registration links, and organizer updates are maintained on the official challenge website:\n\nhttps://explainable-deepfake-detection.github.io/",
+      "content": "# Overview\n\nWelcome to the **Explainable Deepfake Detection Challenge 2026**, an **ACM Multimedia 2026 Grand Challenge** on image-level deepfake detection and grounded explanation generation.\n\nDeepfake detection is increasingly moving beyond simple face swaps toward richer semantic manipulations. In practical settings, a prediction alone is not enough; systems should also indicate the visual evidence that supports a decision.\n\nThis challenge introduces **XPlainVerse**, a large-scale benchmark for evaluating both detection and explanation. Participants are asked not only to determine whether an image is real or fake, but also to provide two grounded natural-language explanations: a detailed complex explanation and a non-technical simple explanation.\n\n## Tasks\n\nThe challenge has two main tasks:\n\n1. **Deepfake Detection**: determine whether an input image is real or fake.\n2. **Deepfake Explanation**: generate explanations that support the authenticity decision using visible evidence from the image.\n\nFor the explanation task, each submission must include:\n\n- a **complex explanation**: detailed, evidence-rich, and specific, intended for technical or forensic review;\n- a **simple explanation**: shorter, clearer, and more accessible, while preserving the key reason behind the decision.\n\nBoth explanations should remain consistent with the submitted authenticity label.\n\n## CodaBench phase\n\nThis CodaBench platform is used for the official result-submission phase.\n\n- **Phase opens:** 28 May 2026\n- **Result submission deadline:** 17 June 2026\n- **Submissions per day:** 1\n- **Total submissions:** 12\n\nGeneral challenge information, announcements, registration links, and organizer updates are maintained on the official challenge website:\n\nhttps://explainable-deepfake-detection.github.io/",
       "content_zh": "# 概述\n\n欢迎参加**可解释深度伪造检测挑战2026**，这是**ACM Multimedia 2026大赛**中关于图像级深度伪造检测和接地式解释生成的竞赛。\n\n深度伪造检测正在超越简单的人脸交换，转向更丰富的语义操纵。在实际应用中，仅有预测结果是不够的；系统还应该指出支持该决策的视觉证据。\n\n本挑战引入**XPlainVerse**，这是一个大规模基准数据集，用于评估检测和解释的质量。参赛者不仅需要判断图像是否为真实或伪造，还需要提供两个接地式自然语言解释：一个详细的复杂解释和一个非技术性的简单解释。\n\n## 竞赛任务\n\n本挑战包含两个主要任务：\n\n1. **深度伪造检测**：判断输入图像是真实还是伪造。\n2. **深度伪造解释**：使用图像中的可见证据生成支持真伪判断的解释。\n\n对于解释任务，每份提交必须包括：\n\n- **复杂解释**：详细、证据充分且具体，旨在供技术或法医审查；\n- **简单解释**：更短、更清晰、更易理解，同时保持决策的关键原因。\n\n两个解释都应与提交的真伪标签保持一致。\n\n## CodaBench阶段\n\n本CodaBench平台用于官方结果提交阶段。\n\n- **阶段开启**：2026年5月28日\n- **结果提交截止**：2026年6月15日\n- **每天提交次数**：1次\n- **总提交次数**：10次\n\n一般性挑战信息、公告、注册链接和组织方更新发布在官方挑战网站上：\n\nhttps://explainable-deepfake-detection.github.io/"
     },
     {

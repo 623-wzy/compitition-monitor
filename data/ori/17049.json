@@ -5,8 +5,8 @@
   "created_by": "hunzed",
   "owner_display_name": "hunzed",
   "created_when": "2026-06-10T09:38:36.786130Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084316/073f73e0eefc/logo.png?AWSAccessKeyId=codabench-prod&Signature=T3O76SpCjTFp68NfX2968YIGJdc%3D&Expires=1781691113",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084316/073f73e0eefc/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=0meaqe238cgKM7bFOwQ8Z9kH3Ck%3D&Expires=1781691113",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084316/073f73e0eefc/logo.png?AWSAccessKeyId=codabench-prod&Signature=IztyzCEllz28wYcZ4ccj5rw1Xdo%3D&Expires=1781777833",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084316/073f73e0eefc/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=hxPZvIH2kWpb71fhUOpe%2FOGxCSM%3D&Expires=1781777833",
   "terms": "# Terms\n\n## Submission format\nSubmit a **UTF-8 CSV** named `prediction.csv`, zipped as `prediction.zip`.\nOne row per item.\n\n**Required columns**\n- `id` — the item id (do not reorder/rename).\n- `prediction` — a single integer `0`, `1` or `2`: the index of the correct\n  option (inferred from the spoken audio).\n\n```\nid,prediction\n1dcdf6da...,0\n803ca9b8...,2\n```\n\n## Rules\n1. Your `id`s must exactly match the gold set for the active phase (`devtest`,\n   then `test`); missing/extra rows are rejected.\n2. `prediction` must be a single integer 0, 1 or 2.\n\n## Metric\nRanking metric: **accuracy**. **Balanced accuracy** (mean per-class recall) and **macro-F1** are also\nreported on the leaderboard as robustness diagnostics.\n\n## Registration, data usage, ethics\n- Please register at the **[participation form](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)**.\n- Data is **CC BY-NC 4.0** (non-commercial research use only).\n- Any pretrained model / external data / compute is allowed; document it in your paper.\n\n## Contact\nimageeval2026@gmail.com",
   "pages": [
     {
@@ -257,7 +257,7 @@
   ],
   "registration_auto_approve": true,
   "description": "Given an image and the spoken question/options (English audio), pick the correct option index (0-2). Part of the ImageEval 2026 Ayn-VQA shared task on cultural grounding in Arabic multimodal understanding. Data on HuggingFace (QCRI/AynVQA-ArabicNLP26). Please also register at https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform",
-  "participants_count": 3,
+  "participants_count": 4,
   "submissions_count": 1,
   "queue": null,
   "enable_detailed_results": true,

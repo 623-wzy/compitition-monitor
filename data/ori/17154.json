@@ -1,0 +1,159 @@
+{
+  "id": 17154,
+  "title": "NeuroMM-2026 Challenge — Track 2 NMM-Context-IED Post Evaluation",
+  "published": true,
+  "created_by": "neuromm",
+  "owner_display_name": "neuromm",
+  "created_when": "2026-06-17T07:11:57.172929Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-17-1781680317/d8785d438d44/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=hs%2B%2BZHwQuMDTs9oS5VXyEsi9kUw%3D&Expires=1781777832",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-17-1781680317/d8785d438d44/logo_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=TXU2qccQ7yBUhZZNy1ee8Kiq2mI%3D&Expires=1781777832",
+  "terms": "# Terms and Conditions\n\nBy participating in the NeuroMM-2026 Challenge (Track 2: NMM-Context-IED) you agree to:\n\n- Use the provided data **only** for research and participation in this\n  challenge. Redistribution of the data, or any commercial / unauthorized use,\n  is prohibited.\n- Make predictions with automated machine-learning methods. Manual labeling of\n  samples by human inspection of the physiological signals is **not** an\n  acceptable methodology and violates the spirit of the challenge.\n- Not attempt to de-anonymize samples, identify which candidate ids are the\n  scored official samples, or otherwise reverse-engineer the hidden labels.\n- Make a reasonable number of submissions (a daily cap is enforced). Abusing\n  the evaluation service to probe hidden labels is prohibited.\n\nThe organizers may update these rules and the competition schedule when\nnecessary, and reserve the right to disqualify submissions that violate these\nterms.\n\nThe dataset is provided under the NeuroMM-2026 data usage policy\n(academic research and challenge participation only).",
+  "pages": [
+    {
+      "id": 81646,
+      "title": "Overview",
+      "content": "# NeuroMM-2026 Challenge — Track 2: NMM-Context-IED Post Evaluation\n\nWelcome to **Track 2 (NMM-Context-IED)** of the NeuroMM-2026 multimodal\nneurophysiological intelligence challenge.\n\nThe competitive phase has concluded. This platform is open for a limited time strictly for ablation studies; these subsequent results will not be included in the official leaderboard rankings.\n\n\n### NMM-Context-IED\n- Primary metric: AUPRC\n- Focus: artifact suppression with synchronized visual context features\n\nVision-enhanced detection with synchronized contextual features.\n\n## Task\n\nBinary classification: for each sample, predict the probability that it\ncontains an epileptic **spike** (positive, label `1`) versus **non-spike**\n(negative, label `0`). Track 2 **encourages teams to combine the\npre-extracted synchronized visual context features with the physiological\nsignals (EEG/EMG/ECG)** to suppress artifacts and improve robustness over\nsignal-only detection.\n\n## Data\n\nApply for access and download the dataset from:\n\n> <https://huggingface.co/datasets/NeuroMM/NeuroMM-2026>\n\nThe dataset contains the **training set**, the **validation set**, and the\n**candidate set** (which contains the Track-2 test samples mixed with\ndistractors). The candidate set is intentionally larger than the official\nTrack-2 set and **you are not told which samples are scored** — predict for\n*every* id in the released candidate set and submit all of them; the scorer\nautomatically keeps only the official hidden Track-2 samples and ignores the\nrest.\n\n## Registration Rules\n\n- One person may participate in **only one team**.\n- A team may enter multiple tracks, but for **each track only one team\n  member's account** may make submissions.\n- The email used to register on **Codabench must match the email** filled in\n  the HuggingFace dataset-access request form; otherwise the registration\n  **will not be approved**. All registrations are manually reviewed by the\n  organizers.\n\n## Submission\n\nThis competition accepts **prediction results only**. You upload a single\nprediction file (packaged in a ZIP) — no code or model submission is\nrequired. See the **Evaluation** page for the exact format.\n\n## Ranking\n\nSubmissions are ranked by **AUPRC** (area under the precision–recall curve).\nThis is the **only** metric — no other metric is computed, reported, or\nshown.",
+      "index": 0
+    },
+    {
+      "id": 81644,
+      "title": "Evaluation",
+      "content": "# Evaluation\n\n## Metric\n\n**AUPRC** — area under the precision–recall curve (a.k.a. average precision),\ncomputed with `label = 1` (spike) as the positive class. This is the **only**\nmetric; no other metric is produced, reported, or shown. Higher is better.\n\n## Submission format\n\nSubmit a **ZIP** file containing exactly one file named **`submission.csv`**:\n\n```\nsample_submission.zip\n└── submission.csv\n```\n\n> Only the file name `submission.csv` is accepted. Any other name\n> (e.g. `prediction.csv`) will cause the submission to fail.\n\n`submission.csv` has two columns:\n\n```csv\nsample_id,prediction\nNMM26-XXXXXXXX,0.0123\nNMM26-YYYYYYYY,0.9871\nNMM26-ZZZZZZZZ,0.5040\n```\n\n- `sample_id` — the id exactly as given in the released candidate set.\n- `prediction` — a real-valued **probability/score that the sample is a\n  spike** (positive class). Any monotone score works for AUPRC; values are\n  not required to be calibrated (`[0, 1]` is recommended).\n\n### Important\n\n- Predict for **every** id in the released candidate set and include them all.\n  You are **not** told which ids are the official Track-2 samples.\n- The scorer keeps only the hidden official Track-2 ids and **silently\n  ignores every other row** (distractors / other tracks). Extra rows are\n  fine.\n- A submission **fails** if any official Track-2 sample has no prediction, if\n  predictions are non-numeric, if `sample_id` is duplicated, or if the file\n  is not named `submission.csv`.",
+      "index": 1
+    },
+    {
+      "id": 81645,
+      "title": "Terms",
+      "content": "# Terms and Conditions\n\nBy participating in the NeuroMM-2026 Challenge (Track 2: NMM-Context-IED) you agree to:\n\n- Use the provided data **only** for research and participation in this\n  challenge. Redistribution of the data, or any commercial / unauthorized use,\n  is prohibited.\n- Make predictions with automated machine-learning methods. Manual labeling of\n  samples by human inspection of the physiological signals is **not** an\n  acceptable methodology and violates the spirit of the challenge.\n- Not attempt to de-anonymize samples, identify which candidate ids are the\n  scored official samples, or otherwise reverse-engineer the hidden labels.\n- Make a reasonable number of submissions (a daily cap is enforced). Abusing\n  the evaluation service to probe hidden labels is prohibited.\n\nThe organizers may update these rules and the competition schedule when\nnecessary, and reserve the right to disqualify submissions that violate these\nterms.\n\nThe dataset is provided under the NeuroMM-2026 data usage policy\n(academic research and challenge participation only).",
+      "index": 2
+    }
+  ],
+  "phases": [
+    {
+      "id": 28657,
+      "index": 0,
+      "start": "2026-06-16T00:00:00Z",
+      "end": "2026-06-25T00:00:00Z",
+      "name": "Dev Phase",
+      "description": "",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "510c075a-d369-4e37-9a9f-ec802338493b",
+          "order_index": 0,
+          "phase": 28657,
+          "id": 34305,
+          "value": "510c075a-d369-4e37-9a9f-ec802338493b",
+          "key": "510c075a-d369-4e37-9a9f-ec802338493b",
+          "created_when": "2026-06-17T07:11:57.087346Z",
+          "name": "Track 2 — NMM-Context-IED",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 837334,
+              "created_by": "neuromm",
+              "owner_display_name": "neuromm",
+              "created_when": "2026-06-17T07:11:56.923797Z",
+              "name": "scoring_program @ '06-17-2026 07:11'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "2d34f47a-2e47-49e4-96f5-24c4882a7386",
+              "value": "2d34f47a-2e47-49e4-96f5-24c4882a7386",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 17154,
+                  "title": "NeuroMM-2026 Challenge — Track 2 NMM-Context-IED Post Evaluation"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 2562.0
+            },
+            {
+              "id": 837335,
+              "created_by": "neuromm",
+              "owner_display_name": "neuromm",
+              "created_when": "2026-06-17T07:11:56.997171Z",
+              "name": "reference_data @ '06-17-2026 07:11'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "838f9cfb-9619-4937-935b-ef9567630ecc",
+              "value": "838f9cfb-9619-4937-935b-ef9567630ecc",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 17154,
+                  "title": "NeuroMM-2026 Challenge — Track 2 NMM-Context-IED Post Evaluation"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 10730.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 20,
+      "max_submissions_per_person": 200,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": true,
+      "hide_prediction_output": true,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 19027,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "main",
+      "columns": [
+        {
+          "id": 83277,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "AUPRC",
+          "key": "auprc",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 4
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Force_Last"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": false,
+  "description": "Track 2 (NMM-Context-IED): vision-enhanced binary IED (spike vs. non-spike) detection — combine pre-extracted synchronized visual context features with physiological signals to suppress artifacts. Result-only submission: upload predictions over the released candidate set; only the hidden official Track-2 samples are scored. Primary metric: AUPRC.\n\nThe competitive phase has concluded. This platform is open for a limited time strictly for ablation studies; these subsequent results will not be included in the official leaderboard rankings.",
+  "participants_count": 5,
+  "submissions_count": 2,
+  "queue": null,
+  "enable_detailed_results": true,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": false,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": false,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "codalab/codalab-legacy:py37",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 16860,
+  "reward": "",
+  "contact_email": "contact@neuromm.org",
+  "report": "",
+  "forum_enabled": true
+}
