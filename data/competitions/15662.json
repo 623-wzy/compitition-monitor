@@ -5,9 +5,9 @@
   "description_zh": "MVAA 2026 评估跨越三个临床基础分割任务的二尖瓣解剖学多模态AI方法：（1）CT分割、（2）3D TEE分割和（3）手术视频分割。\n\n最终排名基于跨任务平均聚合的归一化任务级分数。",
   "created_by": "db0725",
   "created_when": "2026-04-14T13:38:37.626348Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-15-1776224307/a53b1e60e5cb/icon.png?AWSAccessKeyId=codabench-prod&Signature=B0ru%2F5gg85mQueu40hqLVrDEjRQ%3D&Expires=1781777843",
-  "participants_count": 134,
-  "submissions_count": 401,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-15-1776224307/a53b1e60e5cb/icon.png?AWSAccessKeyId=codabench-prod&Signature=yt3OvEf1eVlcESNfo0Q3%2Fhrk0%2BU%3D&Expires=1781864543",
+  "participants_count": 135,
+  "submissions_count": 431,
   "first_phase_start": null,
   "phases": [
     {
