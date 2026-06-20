@@ -5,7 +5,7 @@
   "description_zh": "# 使用CRAI框架评估AI生成图像对卡塔尔和阿拉伯文化场景的真实性表现\n\n## 文化准确性（Cultural Accuracy）\n- **服饰表现**：评估传统服装（如阿拜亚、古特拉、阿拉伯头巾）的细节准确性\n- **建筑风格**：验证伊斯兰建筑元素（如拱形、穹顶、书法装饰）是否正确呈现\n- **宗教仪式**：检查礼拜场景、斋月相关元素的真实性\n- **社会场景**：评估家庭聚会、市集、传统活动的文化真实性\n\n## 代表性（Representation）\n- **多样性**：确保呈现卡塔尔和阿拉伯世界的多元性，避免单一刻板印象\n- **地理差异**：区分不同地区的文化特征（城市、沙漠、海滨）\n- **代际表现**：反映传统与现代元素的融合\n- **性别与身份**：公平准确地呈现不同群体\n\n## 人工制品与物质文化（Artifacts）\n- **传统手工艺**：阿拉伯书法、陶艺、纺织品的准确性\n- **日常用品**：咖啡器具、香炉等文化象征物\n- **装饰元素**：几何纹样、穆斯林花纹设计的准确性\n- **食文化**：传统美食呈现的真实性\n\n## 背景与语境（Context）\n- **历史准确性**：时代背景的正确性\n- **社会背景**：活动场景的合理性与适切性\n- **语言符号**：阿拉伯书写的准确性\n- **文化敏感性**：尊重宗教和社会禁忌",
   "created_by": "sabdaljalil",
   "created_when": "2026-06-03T19:07:43.639396Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780513663/396055ccba31/logo.png?AWSAccessKeyId=codabench-prod&Signature=8ZdU0IA1gLxjKfG%2FZ1zeNmyaVuA%3D&Expires=1781864529",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780513663/396055ccba31/logo.png?AWSAccessKeyId=codabench-prod&Signature=iboYNexffCYWZ25Uh719Z%2B4VuI8%3D&Expires=1781951155",
   "participants_count": 1,
   "submissions_count": 1,
   "first_phase_start": null,

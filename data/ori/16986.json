@@ -5,8 +5,8 @@
   "created_by": "avartan_labs",
   "owner_display_name": "avartan_labs",
   "created_when": "2026-06-06T17:41:37.581384Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-06-1780767697/343e119605f8/logo.png?AWSAccessKeyId=codabench-prod&Signature=MZzWxb47IW%2BAsMI6Hi17eUG%2BWHw%3D&Expires=1781864529",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-06-1780767697/343e119605f8/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=wo7CE%2BDQJgRv2mwJfln9NbbKZGI%3D&Expires=1781864529",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-06-1780767697/343e119605f8/logo.png?AWSAccessKeyId=codabench-prod&Signature=XncA4GMOPHr4ZQmlBB%2Bw%2BBmgbYU%3D&Expires=1781951155",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-06-1780767697/343e119605f8/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=MTP%2FqXN%2BtHSpVBL2TubrF9v2QRQ%3D&Expires=1781951155",
   "terms": "By participating in this challenge you agree to:\n1. Not share your credentials with anyone\n2. Not attempt to access other teams' files or workspaces\n3. Submit only your own original work\n4. Maximum 3 official submissions per day\n5. Results are final as shown on the leaderboard",
   "pages": [
     {
@@ -24,7 +24,7 @@
       "end": "2026-06-30T18:30:00Z",
       "name": "submission",
       "description": "Submit your predictions.json file to get your score. Maximum 10 submissions per day.\n\nTo submit:\n1. Generate predictions.json on the workstation\n2. Run: python3 /home/team_X/submit.py\n3. Check leaderboard for your score (takes 5-10 minutes)",
-      "status": "Next",
+      "status": "Current",
       "execution_time_limit": 1200,
       "tasks": [
         {
@@ -38,28 +38,6 @@
           "name": "Waste_sorting",
           "solutions": [],
           "public_datasets": [
-            {
-              "id": 818014,
-              "created_by": "avartan_labs",
-              "owner_display_name": "avartan_labs",
-              "created_when": "2026-06-06T17:34:59.708700Z",
-              "name": "reference",
-              "type": "reference_data",
-              "description": "gt",
-              "is_public": false,
-              "key": "a0485390-8715-4bb0-8d25-433ef1782e56",
-              "value": "a0485390-8715-4bb0-8d25-433ef1782e56",
-              "was_created_by_competition": false,
-              "in_use": [
-                {
-                  "pk": 16986,
-                  "title": "Waste Sorting Detection Challenge"
-                }
-              ],
-              "competition": null,
-              "file_name": "reference_data.zip",
-              "file_size": 362044.0
-            },
             {
               "id": 818016,
               "created_by": "avartan_labs",
@@ -81,6 +59,28 @@
               "competition": null,
               "file_name": "scoring_program_v2.zip",
               "file_size": 3156.0
+            },
+            {
+              "id": 840494,
+              "created_by": "avartan_labs",
+              "owner_display_name": "avartan_labs",
+              "created_when": "2026-06-19T09:35:53.505196Z",
+              "name": "reference",
+              "type": "reference_data",
+              "description": "ground_truth",
+              "is_public": false,
+              "key": "c5b651dd-876d-4e79-9b17-e326f4785bbd",
+              "value": "c5b651dd-876d-4e79-9b17-e326f4785bbd",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 16986,
+                  "title": "Waste Sorting Detection Challenge"
+                }
+              ],
+              "competition": null,
+              "file_name": "reference_data.zip",
+              "file_size": 410997.0
             }
           ]
         }
@@ -191,7 +191,7 @@
   "registration_auto_approve": false,
   "description": "Detect and classify waste objects from real conveyor belt images. \nBuild the best object detection model across 19 waste categories.\nOrganized by Avartan Labs pvt ltd.",
   "participants_count": 3,
-  "submissions_count": 7,
+  "submissions_count": 6,
   "queue": null,
   "enable_detailed_results": true,
   "show_detailed_results_in_submission_panel": true,

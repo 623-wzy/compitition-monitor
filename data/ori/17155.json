@@ -5,8 +5,8 @@
   "created_by": "neuromm",
   "owner_display_name": "neuromm",
   "created_when": "2026-06-17T07:22:35.874297Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-17-1781680955/ef2da8b209ca/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=cYFW6ltitcCPuX1qWw3somLdirA%3D&Expires=1781864525",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-17-1781680955/ef2da8b209ca/logo_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=xpU4yxUPDd7ujlJEWI3%2FEsdIi2E%3D&Expires=1781864525",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-17-1781680955/ef2da8b209ca/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=E%2BLHsitxiODiMRbXYYTOkIg%2BJqw%3D&Expires=1781951152",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-17-1781680955/ef2da8b209ca/logo_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=kGACB7u0qabBpOWg631aVLRWI9A%3D&Expires=1781951152",
   "terms": "# Terms and Conditions\n\nBy participating in the NeuroMM-2026 Challenge (Track 3: NMM-Source-IED) you agree to:\n\n- Use the provided data **only** for research and participation in this\n  challenge. Redistribution of the data, or any commercial / unauthorized use,\n  is prohibited.\n- Make predictions with automated machine-learning methods. Manual labeling of\n  samples by human inspection of the physiological signals is **not** an\n  acceptable methodology and violates the spirit of the challenge.\n- Not attempt to de-anonymize samples, identify which candidate ids are the\n  scored official samples, or otherwise reverse-engineer the hidden labels.\n- Make a reasonable number of submissions (a daily cap is enforced). Abusing\n  the evaluation service to probe hidden labels is prohibited.\n\nThe organizers may update these rules and the competition schedule when\nnecessary, and reserve the right to disqualify submissions that violate these\nterms.\n\nThe dataset is provided under the NeuroMM-2026 data usage policy\n(academic research and challenge participation only).",
   "pages": [
     {
@@ -137,8 +137,8 @@
   "collaborators": [],
   "registration_auto_approve": false,
   "description": "Track 3 (NMM-Source-IED): 5-class localization of the epileptogenic region — combine pre-extracted synchronized visual context features with physiological signals to localize the seizure focus. Result-only submission: upload predictions over the released candidate set; only the hidden official Track-3 samples are scored. Primary metric: Weighted-F1.\n\nThe competitive phase has concluded. This platform is open for a limited time strictly for ablation studies; these subsequent results will not be included in the official leaderboard rankings.",
-  "participants_count": 5,
-  "submissions_count": 2,
+  "participants_count": 6,
+  "submissions_count": 35,
   "queue": null,
   "enable_detailed_results": true,
   "show_detailed_results_in_submission_panel": true,

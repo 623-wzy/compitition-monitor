@@ -5,9 +5,9 @@
   "description_zh": "EgoLink（自中心语言-视觉交互网络知识挑战赛）旨在推进复杂、真实自中心场景中的具身AI发展。超越传统导航或静态物体感知，该挑战赛全面评估模型在社交推理和交互式任务执行中的能力。它要求智能AI不仅能够感知情感线索、理解因果关系、预测人类交互中的行为意图，还能通过多模态对话、动态工具使用和自主规划积极解决日常生活任务。EgoLink致力于培养集成智能，使感知、推理和决策在非结构化社交环境中紧密耦合。",
   "created_by": "mingbao",
   "created_when": "2026-06-16T02:50:41.179159Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-16-1781578241/1bb687606ca1/logo.png?AWSAccessKeyId=codabench-prod&Signature=JzVd0s1Kn7XfOiqqsPtufKH%2BvWc%3D&Expires=1781864527",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-16-1781578241/1bb687606ca1/logo.png?AWSAccessKeyId=codabench-prod&Signature=MH5bKIax8T0obXrNk2cRbU49VCw%3D&Expires=1781951155",
   "participants_count": 10,
-  "submissions_count": 55,
+  "submissions_count": 73,
   "first_phase_start": null,
   "phases": [
     {
