@@ -5,7 +5,7 @@
   "description_zh": "我理解你的请求。这是ImageEval 2026的一部分——一个关于阿拉伯多模态理解中文化基础的AynVQA共享任务。\n\n请注意，作为一个翻译助手，我需要说明：\n\n**我无法完成此任务，因为：**\n\n1. **缺少图像** - 你没有提供需要分析的图像\n2. **缺少语句** - 你没有提供3条需要标注为\"真\"或\"假\"的语句(MSA)\n3. **任务性质** - 这是一个多模态视觉问答任务，而非翻译任务\n\n**要完成此任务，你需要：**\n\n1. 上传相关图像\n2. 提供3条阿拉伯标准语(MSA)或英文语句\n3. 我可以帮助翻译这些语句，但标注\"真/假\"判断需要你自己基于图像内容进行\n\n**相关资源：**\n- HuggingFace数据集: QCRI/AynVQA-ArabicNLP26\n- 注册表单: https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform\n\n请提供图像和语句，我可以帮助翻译相关文本。",
   "created_by": "hunzed",
   "created_when": "2026-06-10T09:39:37.693956Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084377/5517d0a96f0a/logo.png?AWSAccessKeyId=codabench-prod&Signature=CGuMoW%2Fuu%2FAYNpJB4NDsOJLSUlo%3D&Expires=1781951153",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084377/5517d0a96f0a/logo.png?AWSAccessKeyId=codabench-prod&Signature=A%2B7Xt1sQAsYEyFg5CmUb66AcNCM%3D&Expires=1782037899",
   "participants_count": 5,
   "submissions_count": 3,
   "first_phase_start": null,
