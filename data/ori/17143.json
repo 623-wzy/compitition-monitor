@@ -5,8 +5,8 @@
   "created_by": "mingbao",
   "owner_display_name": "mingbao",
   "created_when": "2026-06-16T02:50:41.179159Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-16-1781578241/1bb687606ca1/logo.png?AWSAccessKeyId=codabench-prod&Signature=S74YTmUHyCZyjDqBJMOvRmKj0y0%3D&Expires=1782037897",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-16-1781578241/1bb687606ca1/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=zxcoyV3ZXpEpn5Z4nl7x%2F3kdV6E%3D&Expires=1782037897",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-16-1781578241/1bb687606ca1/logo.png?AWSAccessKeyId=codabench-prod&Signature=l%2FDqytmnxE2Kw9GjV%2FaID%2FWmJsc%3D&Expires=1782128196",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-16-1781578241/1bb687606ca1/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=GSTPT8ak5FLv5L07mx0n6cJfvok%3D&Expires=1782128196",
   "terms": "Multimodal Large Model Policy: Only open-source multimodal large models are permitted for the system submitted for evaluation. Closed-source/API-only models are prohibited. This restriction applies exclusively to the final inference and submission system; there are no restrictions on the models or tools used for data preprocessing and dataset refinement.\nNo Manual Labeling: Participants are not allowed to perform manual annotations or subjective judgments on the evaluation set.",
   "pages": [
     {
@@ -125,8 +125,8 @@
   "collaborators": [],
   "registration_auto_approve": false,
   "description": "EgoLink (Egocentric Language-Vision Interactive Network Knowledge Challenge) is designed to advance embodied AI within complex, real-world egocentric scenarios. Moving beyond traditional navigation or static object perception, the challenge holistically evaluates a model's capacity for social reasoning and interactive task execution. It challenges intelligent AI to not only perceive emotional cues, understand causal relationships, and predict behavioral intents in human interactions but also to actively solve daily life tasks through multimodal dialogue, dynamic tool use, and autonomous planning. EgoLink aims to foster integrated intelligence where perception, reasoning, and decision-making are tightly coupled in unstructured social environments.",
-  "participants_count": 12,
-  "submissions_count": 100,
+  "participants_count": 22,
+  "submissions_count": 148,
   "queue": null,
   "enable_detailed_results": false,
   "show_detailed_results_in_submission_panel": false,

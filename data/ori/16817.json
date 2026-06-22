@@ -5,14 +5,14 @@
   "created_by": "lifegenip_w",
   "owner_display_name": "lifegenip_workshop",
   "created_when": "2026-05-31T22:01:57.495846Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-31-1780264917/f2d06ba47a50/logo.png?AWSAccessKeyId=codabench-prod&Signature=rNf3jfPBbiUrfpk4xjxxzlpDaqA%3D&Expires=1782037900",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-31-1780264917/f2d06ba47a50/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=tpEYXA7%2FzspXTYxcXwkzpIfqL88%3D&Expires=1782037900",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-31-1780264917/f2d06ba47a50/logo.png?AWSAccessKeyId=codabench-prod&Signature=vHz24CxzeXKhbAk2gXVq6YSNEyI%3D&Expires=1782128199",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-31-1780264917/f2d06ba47a50/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=82RTMYEhoiQ4EaL%2FuVQ3nz7HQu4%3D&Expires=1782128199",
   "terms": "# Terms and Conditions\n\nBy registering for this competition you confirm that you have read, understood and will comply with the terms below.\n\n## 1. Dataset Use\n\nThe competition uses the **[MEAD dataset](https://wywu.github.io/projects/MEAD/MEAD.html)** (Wang et al., ECCV 2020) with the permission of the MEAD authors. MEAD is released for **non-commercial, non-profit academic research only**. By registering for this competition you agree to:\n\n- Comply with the **[MEAD Terms of Use](https://wywu.github.io/projects/MEAD/MEAD.html)**.\n- Cite MEAD in any report, publication, presentation, or other material derived from your participation.\n- **Not distribute, copy, reproduce, disclose, assign, sublicense, embed, host, transfer, sell, trade, or resell** any portion of MEAD to any third party for any purpose.\n- **Not use MEAD, or any content derived from MEAD, in a defamatory, pornographic, or otherwise unlawful manner, or in violation of any applicable regulations or laws.** In particular, do not use any generative model to produce harmful, misleading, or identity-impersonating content of the individuals depicted in MEAD.\n\n## 2. Prohibited Generative Use\n\nYou must not use the data, derived data, or any model trained on them to:\n\n- Generate, publish, or disseminate content that **impersonates** any individual appearing in the dataset, or that misrepresents, defames, sexualizes, harasses, or otherwise harms them.\n- Train or evaluate systems intended to **bypass privacy protection**, defeat anonymization, recover identity, perform face recognition or re-identification, or otherwise infer the real identity of any participant.\n- Build commercial products, deploy commercial services, or perform identity-impersonation, surveillance, profiling, or any decision-making about individuals.\n\n## 3. Submissions and Derived Data\n\n- Submissions are used **solely for evaluation, leaderboard ranking and competition reporting**, including aggregate statistics and qualitative comparisons in the workshop write-up.\n- You must not publicly release model weights, datasets, or other derived artifacts that could be used to reconstruct, identify, or impersonate any individual in MEAD.\n\n## 4. Eligibility and Fair Play\n\n- Open to academic and industry research teams. Each participant must register with their **real identity and institutional email**.\n- One account per person; teams must declare members during registration.\n- Do not probe the hidden test set beyond ordinary submissions, share accounts, or exploit infrastructure.\n\n## 5. Liability\n\nThe data and evaluation infrastructure are provided **\"as is\"**, without warranty of any kind. Participants are responsible for the legality, ethics, and security of their own research activities, and shall defend and indemnify the organizers, the MEAD authors, and their affiliated institutions against any claims arising from their use of MEAD or competition data. The organizers reserve the right to revoke any participant's access to the data, or to disqualify any participant or submission at any time, including for violations of data privacy, submission rules, or Codabench platform rules.\n\n## 6. Contact\n\nQuestions, requests for clarification, or reports of misuse: **lifegenip_workshop@googlegroups.com**",
   "pages": [
     {
-      "id": 81624,
+      "id": 81895,
       "title": "Overview",
-      "content": "# Overview\n\nOfficial competition page: <https://lifegenip.cc/competition>\n\n🔥 **Submissions for evaluation will open on on June 20th (AoE time).**\n\n🔥 **Starting kit of Phase 1 is released on https://github.com/tmllab/ECCV26_LifeGenIP_starting_kit**\n\n👉 **Each team must also submit a [Google form](https://forms.gle/UkgYXdFbPGrSafoP7) for registration. Once we receive your form, we will complete the review within one day, and your team members' Codabench accounts will be approved. If your team needs to update any information, please contact us by email (lifegenip_workshop@googlegroups.com).**\n\n## Background\n\nWith recent advances in diffusion-based video generation, anyone can now synthesize high-quality video content from minimal input. This creates serious threats to facial privacy: a malicious attacker can collect publicly available clips of a target person and generate misleading or harmful content about them, from fake news to violations of portrait rights. Protecting video content from such misuse has become a pressing concern.\n\nCurrent video customization tools follow two paradigms. **Tuning-based methods** fine-tune a video diffusion model (e.g., via LoRA) on a small set of clips of the target person and then generate diverse new videos from text prompts. **Reference-based methods**, such as image-to-video (I2V) models, take a single reference image plus a text prompt and synthesize a clip. Both pathways enable identity misuse. However, video-level protection has received much less attention than image protection. Defenses against tuning-based customization of video diffusion models remain largely unexplored, while existing work mostly targets image-domain editing or reference-based I2V threats.\n\n## Task\n\nParticipants design a protection method that perturbs face-centric video clips. Protection succeeds when the customized output either does not reproduce the target identity or does not follow the attacker's text prompt.\n\n## Threat Model\n\nTwo attack pathways:\n\n- **Reference-based (I2V).** The attacker samples a single random frame from a protected clip and feeds it together with a text prompt to an I2V model to synthesize a short video. The attack succeeds if the generated video reproduces the target identity and follows the prompt.\n- **Tuning-based.** The attacker uses the entire set of protected clips for one identity to fine-tune a video diffusion model via Low-Rank Adaptation (LoRA). The customized model is then prompted to generate new videos. The attack succeeds if the generated videos reproduce the target identity and follow the prompts.\n\n## Evaluation Tracks\n\n- **Effectiveness** measures how strongly the protection breaks customization on the known model. Each protected clip is fed directly into the customization pipeline against the known model.\n- **Robustness** measures whether the protection survives attacks that exploit inter-frame relationships. The protected video is first passed through a hidden temporal attack (e.g., temporal averaging) before being used for customization against the known model.\n- **Transferability** measures whether the protection generalizes beyond the known model. Submissions are evaluated against hidden video diffusion models.\n\n## Phases and Tracks\n\n**Phase 1 — Preliminary** (open to all registered teams)\n\n- Attack setting: reference-based (I2V).\n- Tracks: **Effectiveness** and **Robustness**.\n\n**Phase 2 — Final** (top teams from Phase 1)\n\n- Attack setting: reference-based (I2V) + tuning-based (LoRA).\n- Tracks: **Effectiveness**, **Robustness** and **Transferability**.\n\nThe final ranking is determined by Phase 2.",
+      "content": "# Overview\n\nOfficial competition page: <https://lifegenip.cc/competition>\n\n🔥 **Phase 1 submission is now open and will remain open until July 15, 2026 (AoE time).**\n\n🔥 **Starting kit of Phase 1 is released on https://github.com/tmllab/ECCV26_LifeGenIP_starting_kit**\n\n👉 **Each team must also submit a [Google form](https://forms.gle/UkgYXdFbPGrSafoP7) for registration. Once we receive your form, we will complete the review within one day, and your team members' Codabench accounts will be approved. If your team needs to update any information, please contact us by email (lifegenip_workshop@googlegroups.com).**\n\n## Background\n\nWith recent advances in diffusion-based video generation, anyone can now synthesize high-quality video content from minimal input. This creates serious threats to facial privacy: a malicious attacker can collect publicly available clips of a target person and generate misleading or harmful content about them, from fake news to violations of portrait rights. Protecting video content from such misuse has become a pressing concern.\n\nCurrent video customization tools follow two paradigms. **Tuning-based methods** fine-tune a video diffusion model (e.g., via LoRA) on a small set of clips of the target person and then generate diverse new videos from text prompts. **Reference-based methods**, such as image-to-video (I2V) models, take a single reference image plus a text prompt and synthesize a clip. Both pathways enable identity misuse. However, video-level protection has received much less attention than image protection. Defenses against tuning-based customization of video diffusion models remain largely unexplored, while existing work mostly targets image-domain editing or reference-based I2V threats.\n\n## Task\n\nParticipants design a protection method that perturbs face-centric video clips. Protection succeeds when the customized output either does not reproduce the target identity or does not follow the attacker's text prompt.\n\n## Threat Model\n\nTwo attack pathways:\n\n- **Reference-based (I2V).** The attacker samples a single random frame from a protected clip and feeds it together with a text prompt to an I2V model to synthesize a short video. The attack succeeds if the generated video reproduces the target identity and follows the prompt.\n- **Tuning-based.** The attacker uses the entire set of protected clips for one identity to fine-tune a video diffusion model via Low-Rank Adaptation (LoRA). The customized model is then prompted to generate new videos. The attack succeeds if the generated videos reproduce the target identity and follow the prompts.\n\n## Evaluation Tracks\n\n- **Effectiveness** measures how strongly the protection breaks customization on the known model. Each protected clip is fed directly into the customization pipeline against the known model.\n- **Robustness** measures whether the protection survives attacks that exploit inter-frame relationships. The protected video is first passed through a hidden temporal attack (e.g., temporal averaging) before being used for customization against the known model.\n- **Transferability** measures whether the protection generalizes beyond the known model. Submissions are evaluated against hidden video diffusion models.\n\n## Phases and Tracks\n\n**Phase 1 — Preliminary** (open to all registered teams)\n\n- Attack setting: reference-based (I2V).\n- Tracks: **Effectiveness** and **Robustness**.\n\n**Phase 2 — Final** (top teams from Phase 1)\n\n- Attack setting: reference-based (I2V) + tuning-based (LoRA).\n- Tracks: **Effectiveness**, **Robustness** and **Transferability**.\n\nThe final ranking is determined by Phase 2.",
       "index": 0
     },
     {
@@ -44,36 +44,36 @@
     {
       "id": 27582,
       "index": 0,
-      "start": "2026-06-22T12:00:00Z",
-      "end": "2026-07-17T11:59:00Z",
+      "start": "2026-06-21T12:00:00Z",
+      "end": "2026-07-16T11:59:00Z",
       "name": "Phase 1 — Preliminary",
       "description": "Open to all teams. Submissions evaluated on Effectiveness and Robustness.",
-      "status": "Next",
+      "status": "Current",
       "execution_time_limit": 7200,
       "tasks": [
         {
-          "task": "98b321f1-131a-4f39-8d98-8a9826fb98c2",
+          "task": "5e5fa13b-6a54-4bd9-830b-af15c7d9191b",
           "order_index": 0,
           "phase": 27582,
-          "id": 33655,
-          "value": "98b321f1-131a-4f39-8d98-8a9826fb98c2",
-          "key": "98b321f1-131a-4f39-8d98-8a9826fb98c2",
-          "created_when": "2026-05-31T22:01:57.285146Z",
-          "name": "Evaluation",
+          "id": 34387,
+          "value": "5e5fa13b-6a54-4bd9-830b-af15c7d9191b",
+          "key": "5e5fa13b-6a54-4bd9-830b-af15c7d9191b",
+          "created_when": "2026-06-21T17:46:54.707472Z",
+          "name": "Evaluate_Phase1_public",
           "solutions": [],
           "public_datasets": [
             {
-              "id": 804674,
-              "created_by": "lifegenip_w",
-              "owner_display_name": "lifegenip_workshop",
-              "created_when": "2026-05-31T22:01:57.190674Z",
-              "name": "scoring_program @ '05-31-2026 22:01'",
+              "id": 845075,
+              "created_by": "yuxinhuang",
+              "owner_display_name": "yuxinhuang",
+              "created_when": "2026-06-22T08:04:59.802807Z",
+              "name": "lifegenip-scoring-program-new",
               "type": "scoring_program",
-              "description": null,
+              "description": "",
               "is_public": false,
-              "key": "960a8698-af02-4f9a-aa27-ae20cce801d5",
-              "value": "960a8698-af02-4f9a-aa27-ae20cce801d5",
-              "was_created_by_competition": true,
+              "key": "b3784b6e-c21d-4be3-876c-1a2a97aa212b",
+              "value": "b3784b6e-c21d-4be3-876c-1a2a97aa212b",
+              "was_created_by_competition": false,
               "in_use": [
                 {
                   "pk": 16817,
@@ -81,8 +81,8 @@
                 }
               ],
               "competition": null,
-              "file_name": "",
-              "file_size": 26206.0
+              "file_name": "scoring_program_ssim.zip",
+              "file_size": 12711.0
             }
           ]
         }
@@ -91,9 +91,9 @@
       "max_submissions_per_day": 1,
       "max_submissions_per_person": 26,
       "auto_migrate_to_this_phase": false,
-      "hide_output": true,
+      "hide_output": false,
       "hide_prediction_output": true,
-      "hide_score_output": true,
+      "hide_score_output": false,
       "public_data": null,
       "starting_kit": null,
       "is_final_phase": false,
@@ -111,28 +111,28 @@
       "execution_time_limit": 7200,
       "tasks": [
         {
-          "task": "6bd31fb0-68da-4abc-b1db-ed939ce17676",
+          "task": "5e5fa13b-6a54-4bd9-830b-af15c7d9191b",
           "order_index": 0,
           "phase": 27583,
-          "id": 33656,
-          "value": "6bd31fb0-68da-4abc-b1db-ed939ce17676",
-          "key": "6bd31fb0-68da-4abc-b1db-ed939ce17676",
-          "created_when": "2026-05-31T22:01:57.388198Z",
-          "name": "Evaluation",
+          "id": 34387,
+          "value": "5e5fa13b-6a54-4bd9-830b-af15c7d9191b",
+          "key": "5e5fa13b-6a54-4bd9-830b-af15c7d9191b",
+          "created_when": "2026-06-21T17:46:54.707472Z",
+          "name": "Evaluate_Phase1_public",
           "solutions": [],
           "public_datasets": [
             {
-              "id": 804675,
-              "created_by": "lifegenip_w",
-              "owner_display_name": "lifegenip_workshop",
-              "created_when": "2026-05-31T22:01:57.293089Z",
-              "name": "scoring_program @ '05-31-2026 22:01'",
+              "id": 845075,
+              "created_by": "yuxinhuang",
+              "owner_display_name": "yuxinhuang",
+              "created_when": "2026-06-22T08:04:59.802807Z",
+              "name": "lifegenip-scoring-program-new",
               "type": "scoring_program",
-              "description": null,
+              "description": "",
               "is_public": false,
-              "key": "5b879672-c84f-4421-be44-16ab4a440526",
-              "value": "5b879672-c84f-4421-be44-16ab4a440526",
-              "was_created_by_competition": true,
+              "key": "b3784b6e-c21d-4be3-876c-1a2a97aa212b",
+              "value": "b3784b6e-c21d-4be3-876c-1a2a97aa212b",
+              "was_created_by_competition": false,
               "in_use": [
                 {
                   "pk": 16817,
@@ -140,8 +140,8 @@
                 }
               ],
               "competition": null,
-              "file_name": "",
-              "file_size": 26206.0
+              "file_name": "scoring_program_ssim.zip",
+              "file_size": 12711.0
             }
           ]
         }
@@ -152,7 +152,7 @@
       "auto_migrate_to_this_phase": false,
       "hide_output": true,
       "hide_prediction_output": true,
-      "hide_score_output": true,
+      "hide_score_output": false,
       "public_data": null,
       "starting_kit": null,
       "is_final_phase": false,
@@ -163,7 +163,7 @@
   "leaderboards": [
     {
       "id": 18634,
-      "primary_index": 0,
+      "primary_index": 5,
       "title": "Results",
       "key": "main",
       "columns": [
@@ -171,7 +171,7 @@
           "id": 80968,
           "computation": null,
           "computation_indexes": null,
-          "title": "Invisibility",
+          "title": "Invisibility ⬆️",
           "key": "invisibility",
           "sorting": "desc",
           "index": 0,
@@ -182,7 +182,7 @@
           "id": 80969,
           "computation": null,
           "computation_indexes": null,
-          "title": "Ref · Effectiveness",
+          "title": "Ref · Effectiveness ⬆️",
           "key": "ref_effectiveness",
           "sorting": "desc",
           "index": 1,
@@ -193,8 +193,8 @@
           "id": 80970,
           "computation": null,
           "computation_indexes": null,
-          "title": "Ref · Robustness",
-          "key": "ref_robustness",
+          "title": "Ref · Robustness_1 ⬆️",
+          "key": "ref_robustness_1",
           "sorting": "desc",
           "index": 2,
           "hidden": false,
@@ -204,8 +204,8 @@
           "id": 80971,
           "computation": null,
           "computation_indexes": null,
-          "title": "Ref · Transferability",
-          "key": "ref_transferability",
+          "title": "Ref · Robustness_2 ⬆️",
+          "key": "ref_robustness_2",
           "sorting": "desc",
           "index": 3,
           "hidden": false,
@@ -215,32 +215,10 @@
           "id": 80972,
           "computation": null,
           "computation_indexes": null,
-          "title": "Tune · Effectiveness",
-          "key": "tune_effectiveness",
+          "title": "Ref · Robustness_3 ⬆️",
+          "key": "ref_robustness_3",
           "sorting": "desc",
           "index": 4,
-          "hidden": false,
-          "precision": 2
-        },
-        {
-          "id": 80973,
-          "computation": null,
-          "computation_indexes": null,
-          "title": "Tune · Robustness",
-          "key": "tune_robustness",
-          "sorting": "desc",
-          "index": 5,
-          "hidden": false,
-          "precision": 2
-        },
-        {
-          "id": 80974,
-          "computation": null,
-          "computation_indexes": null,
-          "title": "Tune · Transferability",
-          "key": "tune_transferability",
-          "sorting": "desc",
-          "index": 6,
           "hidden": false,
           "precision": 2
         },
@@ -248,10 +226,10 @@
           "id": 80975,
           "computation": null,
           "computation_indexes": null,
-          "title": "Final Score",
-          "key": "main_score",
+          "title": "Final Score ⬆️",
+          "key": "final_score",
           "sorting": "desc",
-          "index": 7,
+          "index": 5,
           "hidden": false,
           "precision": 2
         }
@@ -274,20 +252,56 @@
   ],
   "registration_auto_approve": false,
   "description": "Design protections that perturb video clips so that diffusion-based video customization (I2V and LoRA tuning) fails to reproduce the target identity or follow the attacker prompt.",
-  "participants_count": 37,
-  "submissions_count": 0,
-  "queue": null,
+  "participants_count": 41,
+  "submissions_count": 13,
+  "queue": {
+    "name": "lifegenip-gpu-4090D",
+    "vhost": "3b68821e-2146-4f7e-8e5b-f0e69cbda3db",
+    "is_public": false,
+    "owner": "yuxinhuang",
+    "organizers": [
+      {
+        "username": "orzorz",
+        "id": 72338
+      },
+      {
+        "username": "mmmmmzh",
+        "id": 49268
+      }
+    ],
+    "broker_url": "pyamqp://b161dfbc-38b5-4e07-94f8-44d9004bf329:c2dad90a-7b75-4047-b53c-1abdba797cf4@www.codabench.org:5672/3b68821e-2146-4f7e-8e5b-f0e69cbda3db",
+    "created_when": "2026-06-21T17:39:18.259931Z",
+    "is_owner": false,
+    "id": 872
+  },
   "enable_detailed_results": false,
-  "show_detailed_results_in_submission_panel": true,
-  "show_detailed_results_in_leaderboard": true,
+  "show_detailed_results_in_submission_panel": false,
+  "show_detailed_results_in_leaderboard": false,
   "auto_run_submissions": true,
-  "can_participants_make_submissions_public": true,
+  "can_participants_make_submissions_public": false,
   "make_programs_available": false,
   "make_input_data_available": false,
   "docker_image": "codalab/codalab-legacy:py312",
   "allow_robot_submissions": false,
   "competition_type": "competition",
-  "fact_sheet": null,
+  "fact_sheet": {
+    "Team_name": {
+      "key": "Team_name",
+      "type": "text",
+      "title": "Team name",
+      "selection": "",
+      "is_required": "true",
+      "is_on_leaderboard": "true"
+    },
+    "Method_name": {
+      "key": "Method_name",
+      "type": "text",
+      "title": "Method name",
+      "selection": "",
+      "is_required": "false",
+      "is_on_leaderboard": "true"
+    }
+  },
   "forum": 16538,
   "reward": "🥇 $1000 🥈 $500 🥉 $200",
   "contact_email": "lifegenip_workshop@googlegroups.com",
