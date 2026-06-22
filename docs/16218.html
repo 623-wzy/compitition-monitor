@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Event-Based Multimodal Perception Challenge: Monocular Depth Estimation Track @ ECCV 2026 — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>Event-Based Multimodal Perception Challenge: Monocular Depth Estimation Track @ ECCV 2026</h2>
+  <div class="detail-meta">
+    <span>ID: 16218</span>
+    <span>创建者: blang</span>
+    <span>创建时间: 2026-05-10</span>
+    <span>参与人数: 47</span>
+    <span>提交次数: 42</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16218/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">这是基于事件的多模态感知挑战赛的单目深度估计赛道。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-test'>测试</span> Test Phase</td><td>2026-06-14</td><td>2026-06-30</td><td>5</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'># 基于事件的多模态感知挑战赛：单目深度估计赛道 @ ECCV 2026
+
+欢迎参加**基于事件的多模态感知挑战赛**的**单目深度估计赛道**，该赛事官方举办于**ECCV 2026**！
+
+## 🎯 概述与目标
+
+本挑战赛旨在利用**事件相机视觉和帧数据**推进**单目深度估计**技术。与传统RGB相机不同，事件相机可以异步捕捉亮度变化，具有高时间分辨率、低延迟和高动态范围等特点，特别适合处理高速运动、低光环境和强照明变化等复杂场景。
+
+本赛道的目标是对能够有效利用**事件流和强度帧**互补信息的鲁棒深度估计方法进行基准测试和推广。参赛者需要开发模型，能从单目多模态输入预测精准的深度图，特别关注泛化性、鲁棒性和绝对深度估计。
+
+## 📝 任务描述
+
+参赛者需要提交测试集的深度图预测结果。每个预测应遵循官方提交格式，并对应提供的事件和帧输入数据。
+
+任务重点包括：
+
+- **单目深度估计**：使用事件和帧数据从单个视角预测深度图。
+- **多模态融合**：有效结合异步事件流与图像帧用于深度感知。
+- **绝对深度预测**：估计度量深度值而非仅相对深度。
+- **鲁棒感知**：处理低照度、高动态范围等复杂视觉条件。
+
+## 📅 重要日期
+
+所有截止时间为**世界协调时(UTC)晚上11:59**，另有说明除外。
+
+- **2026年5月13日**：挑战赛网站开放。
+- **2026年5月15日**：训练集发布。
+- **2026年6月20日**：测试集与评估服务器上线。
+- **2026年6月30日**：挑战赛提交截止。
+- **2026年7月5日**：挑战赛结果公布。
+- **2026年7月10日**：技术报告截止。
+
+## 📊 数据集
+
+本赛道采用[**CoSEC数据集**](https://cosec.org.cn/)的子集。该数据集提供多模态传感数据，包括图像帧、事件流和深度标注。
+
+本赛道发布的数据包括：
+
+- **图像帧**：来自单目相机的RGB帧。
+- **事件流**：事件相机记录的异步事件数据。
+- **深度标签**：用于监督训练和验证的真实深度图。
+
+发布的训练集用于模型开发和性能验证。测试集用于官方评估，其真实深度标签将保持隐藏。
+
+本赛道的数据集统计信息如下表所示：
+
+| 划分 | 序列数 | 样本数 |
+|---|---:|---:|
+| 训练集 | 102 | 11782 |
+| 测试集 | 26 | 2951 |
+
+## ⚠️ 挑战赛规则
+
+为维护公平性和科学诚信，所有参赛者必须严格遵守挑战赛规则：
+
+- **禁止用测试集训练**：测试集不得用于训练、验证、模型选择或手动调参。
+- **禁止探测真实标签**：参赛者不得尝试从评估服务器推断、重构或提取隐藏的真实深度数据。
+- **禁止手动标注**：提交的预测必须由自动化方法生成。禁止手动创建、手动修正或手动调优的预测。
+- **禁止利用评估服务器**：严禁任何利用评估系统、提交反馈或排行榜行为获得不公平优势的尝试。
+- **外部资源披露**：参赛者使用的任何外部数据集、预训练模型、合成数据或其他额外训练资源必须在最终技术报告中披露（如要求）。
+- **验证要求**：排名靠前的团队可能需要</div></div><div class='section'><h3>Data Preparation</h3><div class='page-content'># 数据准备指南
+
+要参与**基于事件的多模态感知挑战赛：单目深度估计赛道**，参赛者需要准备训练数据、理解数据格式，并在测试集发布后为其生成深度预测。
+
+本赛道使用**CoSEC数据集**的精选子集进行基于事件的单目深度估计。每个序列包含多模态数据，包括图像帧、事件流、相机内参、时间戳和深度标注。
+
+## 训练集下载
+
+训练集包含图像帧、事件流、相机内参、时间戳和真实深度图。参赛者可使用训练集开发、训练和验证单目深度估计模型。
+
+训练集包括：
+
+- 左侧相机的图像帧
+- 左侧事件相机的事件流
+- 相机内参
+- 样本时间戳
+- 真实深度图
+
+请从以下链接下载官方训练集：
+
+👉 **下载CoSEC深度估计训练集**
+
+- **百度网盘**：[train.zip](https://pan.baidu.com/s/1MhphyA-iaNJ7HbdpqqNtJA?pwd=HUST)
+
+- **Google Drive**：[train.zip](https://drive.google.com/file/d/1R8q_h6jVUA27Q7QC2qUHxySMYqFGwH2P/view?usp=drive_link)
+
+## 测试集下载
+
+官方测试集**尚未发布**。
+
+测试集将根据挑战赛日程发布。发布后，下载链接将在本页面更新。
+
+测试集将包含图像帧、事件流、相机内参和时间戳。测试集的真实深度图将保密，仅由Codabench评估服务器使用。
+
+测试集发布后，请从以下链接下载官方测试集：
+
+👉 **下载CoSEC深度估计测试集**
+
+- **百度网盘**：待发布
+
+- **Google Drive**：待发布
+
+## 数据集结构与格式
+
+预期的数据集结构如下：
+
+```text
+depth_challenge
+├── train
+│   ├── Day_Campus_000
+│   │   ├── img_co_left
+│   │   ├── depth_co
+│   │   ├── events_co_left.h5
+│   │   ├── intrinsics.json
+│   │   └── timestamps.txt
+│   ├── Day_Campus_001
+│   │   ├── img_co_left
+│   │   ├── depth_co
+│   │   ├── events_co_left.h5
+│   │   ├── intrinsics.json
+│   │   └── timestamps.txt
+│   └── ...
+└── test
+    ├── Day_Campus_012
+    │   ├── img_co_left
+    │   ├── events_co_left.h5
+    │   ├── intrinsics.json
+    │   └── timestamps.txt
+    ├── Day_Campus_013
+    │   ├── img_co_left
+    │   ├── events_co_left.h5
+    │   ├── intrinsics.json
+    │   └── timestamps.txt
+    └── ...
+```
+
+每个样本由其序列名和帧文件名标识。具有相同文件名的图像帧和深度图对应同一样本。
+
+对于训练样本：
+
+```text
+depth/train/Day_Campus_000/img_co_left/000000.png
+depth/train/Day_Campus_000/depth_co/000000.png
+```
+
+相应的事件数据存储在序列级HDF5文件中：
+
+```text
+depth/train/Day_Campus_000/events_co_left.h5
+```
+
+相机内参和时间戳存储为：
+
+```text
+depth/train/Day_Campus_000/intrinsics.json
+depth/train/Day_Campus_000/timestamps.txt
+```
+
+对于测试集发布后的测试样本：
+
+```text
+depth/test/Day_Campus_012/img_co_left/000000.png
+```
+
+预期的提交预测应为：
+
+```text
+Day_Campus_012/depth_co/000000.npz
+```
+
+### 图像帧格式
+
+图像帧以`.png`文件格式存储在`img_co_left`文件夹中，分辨率为`1200 x 624`。它们已与事件流对齐，可与事件数据一起用于多模态深度估计。
+
+### 事件流格式
+
+每个序列包含一个`events_co_left.h5`文件。事件流已与图像帧对齐。
+
+典型的事件文件包含以下字段：
+
+```text
+x          # 事件x坐标
+y          # 事件y坐标
+p          # 事件极性
+t          # 事件时间戳
+```</div></div><div class='section'><h3>Evaluation Details</h3><div class='page-content'># 评估指标与提交指南
+
+## 提交格式
+
+参赛者需要为测试集中的所有样本提交深度预测。每个预测应保存为包含单个深度数组的 `.npz` 文件。
+
+提交物必须是单个 `.zip` 压缩包。压缩包应包含所有预测的深度文件，同时保留所需的序列级目录结构。
+
+每个 `.npz` 预测文件必须满足以下要求：
+
+- 文件扩展名必须为 `.npz`。
+- 每个 `.npz` 文件必须包含一个键为 `depth` 的深度数组。
+- `depth` 数组必须是二维数组。
+- 预测深度数组的形状必须与对应的地面真值深度图匹配。
+- 文件名必须与对应的测试样本名称完全相同。
+- 深度值必须以与地面真值深度标签相同的格式保存。
+- 不允许包含 `NaN`、`Inf` 或负深度值等无效值。
+
+### 深度值格式
+
+提交的深度图应存储为 **uint16 缩放深度**。
+
+具体而言，如果预测的公制深度为 `depth_m`（单位：米），提交的值应为：
+
+```text
+depth_uint16 = depth_m * 256
+```
+
+生成的深度图应在 `.npz` 文件中保存为 `uint16` 数组。
+
+评估期间，服务器将通过以下方式恢复公制深度：
+
+```text
+depth_m = depth_uint16 / 256.0
+```
+
+因此，参赛者不应直接保存浮点格式的米制深度值。请先将预测转换为所需的缩放 `uint16` 格式。
+
+每个 `.npz` 文件必须恰好包含一个键为以下值的深度数组：
+
+```text
+depth
+```
+
+建议使用 `np.savez_compressed` 保存预测，将缩放后的 `uint16` 深度图存储在键 `depth` 下。
+
+### 提交结构
+
+提交结构示例如下：
+
+```text
+submission.zip
+├── Day_Campus_000
+│   └── depth_co
+│       ├── 000000.npz
+│       ├── 000001.npz
+│       ├── 000002.npz
+│       └── ...
+├── Day_Campus_001
+│   └── depth_co
+│       ├── 000000.npz
+│       ├── 000001.npz
+│       └── ...
+└── ...
+```
+
+提供了虚拟提交文件，以帮助参赛者验证所需的文件结构和提交格式。
+
+👉 **下载虚拟提交文件**
+
+- **百度网盘**：[dummy_submission.zip](https://pan.baidu.com/s/1lPezWP_CpMIiEEORrsGExA?pwd=HUST)
+
+- **谷歌云盘**：[dummy_submission.zip](https://drive.google.com/file/d/1w4BouQGbzcXs4rrG-BQl9xqxWWMuGyCo/view?usp=drive_link)
+
+参赛者可参考虚拟提交文件准备自己的预测文件。
+
+对于每个测试图像帧，例如：
+
+```text
+test/Day_Campus_000/img_co_left/000000.png
+```
+
+提交的预测应为：
+
+```text
+Day_Campus_000/depth_co/000000.npz
+```
+
+请确保提交的 `.zip` 文件直接包含序列文件夹，不包含不必要的父目录。
+
+## 如何提交
+
+1. **准备预测**：为所有测试样本生成深度预测。
+2. **转换深度格式**：使用 `depth_uint16 = depth_m * 256` 将米制深度转换为缩放的 `uint16` 格式。
+3. **保存为 `.npz`**：将每个预测保存为 `.npz` 文件，键为 `depth`。
+4. **检查文件结构**：确保目录结构符合所需格式。每个测试样本应恰好对应一个 `.npz` 预测文件。
+5. **压缩结果**：将预测文件夹压缩为单个 `.zip` 压缩包。
+6. **上传**：在挑战页面导航至**我的提交**选项卡，选择活跃阶段，并上传 `.zip` 文件。
+7. **评估**：评估服务器将自动处理您的提交并更新排行榜。
+
+## 评估指标
+
+本挑战在测试集上评估单目深度估计性能。评估服务器使用标准深度估计指标将提交的深度预测与地面真值深度图进行比较。
+
+排行榜上报告了以下指标：</div></div><div class='section'><h3>Organizers &amp; Citation</h3><div class='page-content'># 组织委员会与引用
+
+## 组织委员会
+
+我们感谢组织委员会为创建和维护**事件驱动多模态感知挑战赛：单目深度估计赛道**所做的努力。
+
+**彭世翰**（华中科技大学）· pengshihan@hust.edu.cn
+
+**熊宇阳**（华中科技大学）· xiongyuyang@hust.edu.cn
+
+**周涵宇**（新加坡国立大学）· hy.zhou@nus.edu.sg
+
+**陆云帆**（香港科技大学（广州））· ylu066@connect.hkust-gz.edu.cn
+
+**刘绍宇**（西安电子科技大学）· liusy@stu.xidian.edu.cn
+
+**刘浩岳**（华中科技大学）· liuhy@hust.edu.cn
+
+**段沛琪**（北京大学）· duanqi0001@pku.edu.cn
+
+**郑印强**（东京大学）· yqzheng@ai.u-tokyo.ac.jp
+
+**石博鑫**（北京大学）· shiboxin@pku.edu.cn
+
+**Kuk-Jin Yoon**（韩国科学技术院）· kjyoon@kaist.ac.kr
+
+**熊辉**（香港科技大学（广州））· xionghui@ust.hk
+
+**Gim Hee Lee**（新加坡国立大学）· gimhee.lee@nus.edu.sg
+
+**Davide Scaramuzza**（苏黎世大学）· sdavide@ifi.uzh.ch
+
+## 引用
+
+如果您参与本挑战赛、使用所提供的数据集，或发现此基准对您的研究有所帮助，请引用我们的论文：
+
+```bibtex
+@article{peng2024cosec,
+  title={Cosec: A coaxial stereo event camera dataset for autonomous driving},
+  author={Peng, Shihan and Zhou, Hanyu and Dong, Hao and Shi, Zhiwei and Liu, Haoyue and Duan, Yuxing and Chang, Yi and Yan, Luxin},
+  journal={arXiv preprint arXiv:2408.08500},
+  year={2024}
+}
+```</div></div>
+
+</div>
+</body>
+</html>

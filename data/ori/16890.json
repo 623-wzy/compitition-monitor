@@ -1,0 +1,262 @@
+{
+  "id": 16890,
+  "title": "WSLP@EMNLP 2026 Shared Task - Isolated Sign Language Recognition (ISLR)",
+  "published": true,
+  "created_by": "wslp_workshop",
+  "owner_display_name": "Exploration-lab-IITK",
+  "created_when": "2026-06-01T19:06:53.463848Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780340813/3af0ccccd8c8/logo.png?AWSAccessKeyId=codabench-prod&Signature=yu9h4Xj0Wz%2BqY5oaAI%2FFiLbkXp8%3D&Expires=1782037900",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780340813/3af0ccccd8c8/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=P7x85VdmiZ%2FV5Gw2Nb7PHMjJ2JM%3D&Expires=1782037900",
+  "terms": "<h3>Terms and Conditions</h3>\n\n<p>\n<em>\nParticipants are required to register using a valid institutional or personal email address. Once registered, the organizers will review and approve your request to participate.\n</em>\n</p>\n\n<p>\nPlease ensure that your <strong>team name</strong> is clearly mentioned during registration and used consistently for all submissions. This helps in managing team entries and leaderboard rankings accurately.\n</p>\n\n<p>\nDuring <strong>Phase 1 (Training Phase)</strong>, each team may submit a maximum of <strong>20 submissions per day</strong>, and a total of <strong>500 submissions</strong> throughout the phase.\n</p>\n\n<p>\nDuring <strong>Phase 2 (Testing Phase)</strong>, each team may submit up to <strong>10 submissions per day</strong>, and a total of <strong>100 submissions</strong> throughout the phase.\n\n</p>\n\n<p>\nSubmissions must follow the format specified in the <strong>Submission Guidelines</strong>. Any deviation from the expected file structure or content may result in disqualification or errors during evaluation.\n</p>\n\n<p>\nBy participating, you agree to abide by the rules, evaluation criteria, and ethical research practices outlined by the organizers of the WSLP 2026 Shared Task.\n</p>",
+  "pages": [
+    {
+      "id": 81156,
+      "title": "Overview",
+      "content": "<h1 dir=\"ltr\">Welcome to the WSLP@EMNLP 2026 Shared Task: Isolated Sign Language Recognition (ISLR)</h1>\n\n<h4 dir=\"ltr\">Advancing Indian Sign Language Understanding through Isolated Sign Recognition</h4>\n\n<h2 dir=\"ltr\">Registration</h2>\n<p dir=\"ltr\">\nTo participate in this shared task, please navigate to the <a href=\"https://www.codabench.org/competitions/16890/#/participate-tab\">\"Participate\"</a> tab and create a Codabench account using a valid institutional email address or personal email id.\n<br><br>\nPlease ensure that your <strong>team name/user name</strong> is clearly identifiable and used consistently throughout your submissions.\n</p>\n\n<h2>Overview</h2>\n<p>\nSign languages, such as Indian Sign Language (ISL), are rich and complex visual languages. This shared task invites participants to tackle the challenge of recognizing isolated ISL signs (words or glosses) from short video clips. The goal is to build systems that can accurately identify individual signs, which is crucial for applications like dictionary building, lookup tools, and annotation.\n</p>\n\n<p>\nParticipants are required to build models that can classify an input video clip to its corresponding word label.\n</p>\n\n<h2>Phases</h2>\n<p>\nThis competition consists of two distinct phases:\n</p>\n<ul>\n  <li><strong>Phase 1: Training & Validation</strong> – Participants will develop and validate their models using a training set and a corresponding validation set.</li>\n  <li><strong>Phase 2: Testing</strong> – A held-out test set will be released. Participants will submit predictions to evaluate their models' generalization capabilities.</li>\n</ul>\n\n<h3>Task Details:</h3>\n<ul>\n  <li><strong>Input:</strong> ISL video clip or pose sequence</li>\n  <li><strong>Output:</strong> Word label (gloss)</li>\n  <li><strong>Metrics:</strong> Top-1, Top-5, Top-10 Accuracy</li>\n</ul>\n\n<h2>Submission Guidelines</h2>\n<p>\nEach submission must be a ZIP archive containing the following file:\n</p>\n<ol>\n  <li><code>answer.csv</code> – A comma-separated file with columns:\n    <ul>\n      <li>Column 1: <code>uid</code> (as provided in the validation/test files, representing the unique video identifier)</li>\n\t\t\t<li>Column 2: <code>pred1</code> (the predicted word label/gloss for the corresponding <code>uid</code>)</li>\n\t\t\t<li>Column 3: <code>pred2</code> (the predicted word label/gloss for the corresponding <code>uid</code>)</li>\n\t\t\t<li>Column 4: <code>pred3</code> (the predicted word label/gloss for the corresponding <code>uid</code>)</li>\n\t\t\t<li>Column 5: <code>pred4</code> (the predicted word label/gloss for the corresponding <code>uid</code>)</li>\n\t\t\t<li>....</li>\n\t\t\t<li>....</li>\n\t\t\t<li>....</li>\n\t\t\t<li>Column 11: <code>pred10</code> (the predicted word label/gloss for the corresponding <code>uid</code>)</li>\n    </ul>\n    <strong>Note:</strong> Ensure that the uid and their order exactly match those in the original reference file. Mismatches may result in incorrect scoring or disqualification. For Top-K accuracy beyond Top-1, your submission file would need to include multiple predictions per <code>uid</code>.\n  </li>\n</ol>\n\n<p>\nFor reference, sample submission files is provided. <a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/blob/main/Shared_task_WR/sample_submission.csv\">\"Sample submission file\"</a>\n</p>\n\n<p>\nTo submit your results, go to the <a href=\"https://www.codabench.org/competitions/16890/#/participate-tab\">\"Submit Results\"</a> tab and upload your <code>submission.zip</code> file. You may make multiple submissions per day during the competition phases, subject to limits.\n</p>\n\n<h2>Results and Leaderboard</h2>\n<p>\nResults will be displayed on the <a href=\"https://www.codabench.org/competitions/16890/#/results-tab\">\"Results\"</a> tab. Teams will be ranked primarily based on Accuracy, with Top-K Accuracy (where K = 1, 5, 10) as a secondary metric. The top-performing teams will be highlighted and recognized at the WSLP 2025 event.\n</p>\n\n<h2>Acknowledgements</h2>\n<p>\nThis shared task is part of the <strong>Workshop on Sign Language Processing (WSLP 2025)</strong>, co-located with <strong>EMNLP 2026</strong> at Budapest, Hungary. We thank all participants, contributors, and the broader research community for supporting this initiative.\n</p>\n<p>\nTo stay updated and connect with other participants, join our Discord server \n<ul>\n\t<li> <a href=\"https://discord.gg/ty7dqTHC2v\"> Discord : Shared Task </a> </li>\n\t<li> <a href=\"https://discord.gg/x6tHXEFyW7\"> Discord : Workshop </a> </li>\n\t<li><a href=\"https://exploration-lab.github.io/WSLP-2026/task/\"> Shared Task Webpage </a> </li>\n\t</ul>\n</p>",
+      "index": 0
+    },
+    {
+      "id": 81829,
+      "title": "Data",
+      "content": "<p><strong>📂 Datasets</strong></p> <p>🔹 The <strong>training</strong>  datasets can be downloaded from the following link: 👉 <a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WR/Train-Dataset\">Download Training Dataset </a></p> <p>🔹 The <strong>Validation</strong>  datasets can be downloaded from the following link: 👉 <a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WR/Validation-Dataset\">Download Validation Dataset </a></p>\n<p>🔹 The <strong>Test</strong>  datasets can be downloaded from the following link: 👉 <a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WR/Test-Dataset\">Download Test Dataset </a></p>\n <p>🌍 In addition to the provided datasets, participants are encouraged to explore and utilize other <strong>publicly available resources</strong> to strengthen their models. One such dataset is <strong><a href=\"https://huggingface.co/datasets/Exploration-Lab/CISLR\">CISLR</a></strong> 👐, a large-scale benchmark for <em>Indian Sign Language Recognition and Translation</em>. Leveraging external datasets like CISLR can help improve <strong>generalization</strong> ✨ and <strong>robustness</strong> 💪 of the models.</p>\n <p> <a href=\"https://github.com/zeleznyt/T5_for_SLT/blob/WSLP2026/WSLP2026_BASELINE.md\" target=\"_blank\">\nStarting kit\n</a>\n</p>",
+      "index": 1
+    },
+    {
+      "id": 81158,
+      "title": "Evaluation",
+      "content": "<p><strong>Evaluation Criteria</strong></p> <p>Your submissions will be evaluated based on <strong>Top-1 Accuracy</strong>, <strong>Top-5 Accuracy</strong>, and <strong>Top-10 Accuracy</strong>.</p> <ul> <li><strong>Top-1 Accuracy</strong>: Measures the percentage of test samples where the correct word label is the highest-ranked prediction.</li> <li><strong>Top-5 Accuracy</strong>: Measures the percentage of test samples where the correct word label appears within the top 5 ranked predictions.</li> <li><strong>Top-10 Accuracy</strong>: Measures the percentage of test samples where the correct word label appears within the top 10 ranked predictions.</li> </ul> <p>These metrics capture both strict recognition performance (Top-1) and more flexible settings (Top-5, Top-10) where the system can return multiple likely candidates.</p>",
+      "index": 2
+    }
+  ],
+  "phases": [
+    {
+      "id": 28121,
+      "index": 0,
+      "start": "2026-06-08T00:00:00Z",
+      "end": "2026-07-31T00:00:00Z",
+      "name": "Training Phase",
+      "description": "(Timing in UTC) **Training Phase** for ISL Word/Gloss Recognition: Participants will develop and validate their models using the training set and a corresponding validation set. Submissions are evaluated on the validation set.",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "d2a62ed6-8d21-4029-8591-cd6fe995f1e5",
+          "order_index": 0,
+          "phase": 28121,
+          "id": 33835,
+          "value": "d2a62ed6-8d21-4029-8591-cd6fe995f1e5",
+          "key": "d2a62ed6-8d21-4029-8591-cd6fe995f1e5",
+          "created_when": "2026-06-01T19:06:52.981014Z",
+          "name": "Training Phase Task - Word/Gloss Recognition",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 807563,
+              "created_by": "wslp_workshop",
+              "owner_display_name": "Exploration-lab-IITK",
+              "created_when": "2026-06-01T19:06:52.799513Z",
+              "name": "scoring_program @ '06-01-2026 19:06'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "8871fa36-6efb-44d2-9312-91c6e4f65147",
+              "value": "8871fa36-6efb-44d2-9312-91c6e4f65147",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16890,
+                  "title": "WSLP@EMNLP 2026 Shared Task - Isolated Sign Language Recognition (ISLR)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 3510.0
+            },
+            {
+              "id": 807564,
+              "created_by": "wslp_workshop",
+              "owner_display_name": "Exploration-lab-IITK",
+              "created_when": "2026-06-01T19:06:52.873992Z",
+              "name": "reference_data @ '06-01-2026 19:06'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "95e60bf3-2b07-4331-bba5-d9dc1e7112c0",
+              "value": "95e60bf3-2b07-4331-bba5-d9dc1e7112c0",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16890,
+                  "title": "WSLP@EMNLP 2026 Shared Task - Isolated Sign Language Recognition (ISLR)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 1662.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 20,
+      "max_submissions_per_person": 50,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    },
+    {
+      "id": 28122,
+      "index": 1,
+      "start": "2026-07-31T00:01:00Z",
+      "end": "2026-08-10T00:00:00Z",
+      "name": "Testing Phase",
+      "description": "(Timing in UTC) **Testing Phase** for ISL Word/Gloss Recognition: A held-out test set will be released. Participants will submit predictions to evaluate their models' generalization capabilities on unseen data.",
+      "status": "Next",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "af4b92f8-c5c1-454f-a8c0-91fccf63ca19",
+          "order_index": 0,
+          "phase": 28122,
+          "id": 33836,
+          "value": "af4b92f8-c5c1-454f-a8c0-91fccf63ca19",
+          "key": "af4b92f8-c5c1-454f-a8c0-91fccf63ca19",
+          "created_when": "2026-06-01T19:06:53.425935Z",
+          "name": "Testing Phase Task - Word/Gloss Recognition",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 807565,
+              "created_by": "wslp_workshop",
+              "owner_display_name": "Exploration-lab-IITK",
+              "created_when": "2026-06-01T19:06:52.990970Z",
+              "name": "scoring_program @ '06-01-2026 19:06'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "d4c1c82c-467f-410e-9143-8e9f7dc50730",
+              "value": "d4c1c82c-467f-410e-9143-8e9f7dc50730",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16890,
+                  "title": "WSLP@EMNLP 2026 Shared Task - Isolated Sign Language Recognition (ISLR)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 4908.0
+            },
+            {
+              "id": 807566,
+              "created_by": "wslp_workshop",
+              "owner_display_name": "Exploration-lab-IITK",
+              "created_when": "2026-06-01T19:06:53.356726Z",
+              "name": "reference_data @ '06-01-2026 19:06'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "7d11b13a-0ca9-4de6-8aa5-d1ac13bc52d4",
+              "value": "7d11b13a-0ca9-4de6-8aa5-d1ac13bc52d4",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16890,
+                  "title": "WSLP@EMNLP 2026 Shared Task - Isolated Sign Language Recognition (ISLR)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 7097.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 20,
+      "max_submissions_per_person": 40,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 18707,
+      "primary_index": 0,
+      "title": "ISL Word/Gloss Recognition Results",
+      "key": "ISL-Word-Gloss-Recognition-Results",
+      "columns": [
+        {
+          "id": 81489,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Top-1 Accuracy",
+          "key": "top1_accuracy",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 81490,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Top-5 Accuracy",
+          "key": "top5_accuracy",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 81491,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Top-10 Accuracy",
+          "key": "top10_accuracy",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 4
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Add"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": true,
+  "description": "Isolated sign recognition from Indian Sign Language (ISL) videos data to their corresponding word labels (glosses)",
+  "participants_count": 5,
+  "submissions_count": 3,
+  "queue": null,
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": true,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "codalab/codalab-legacy:py37",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 16606,
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "forum_enabled": true
+}

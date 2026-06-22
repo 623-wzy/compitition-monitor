@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>本次更新 — Codabench 竞赛监测</title>
+<title>Fish Species Recognition Challenge — Codabench 竞赛监测</title>
 <style>
 :root {
     --bg: #0f1117;
@@ -97,10 +97,133 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
   <h1>Codabench 竞赛监测</h1>
   <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
 </header>
-<div class="update-wrap">
+<div class="detail-wrap">
   <a class="back-link" href="index.html">← 返回竞赛目录</a>
-  <p style="color:var(--muted);font-size:.875rem;margin-bottom:24px">更新于 2026-06-21 17:34</p>
-<div class='update-section'><h2 class='new'>🆕 新增竞赛</h2><p class='update-empty'>本次无新增竞赛</p></div><div class='update-section'><h2 class='expired'>🗑️ 过期清理</h2><p class='update-empty'>本次无过期清理</p></div>
+  <h2>Fish Species Recognition Challenge</h2>
+  <div class="detail-meta">
+    <span>ID: 16795</span>
+    <span>创建者: khanff</span>
+    <span>创建时间: 2026-05-31</span>
+    <span>参与人数: 3</span>
+    <span>提交次数: 4</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16795/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">使用机器学习从图像中分类鱼类物种。参赛者获得标记的训练图像，必须预测未见过的测试图像的物种。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development Phase</td><td>2026-01-01</td><td>2026-06-30</td><td>5</td></tr><tr><td><span class='badge badge-test'>测试</span> Final Evaluation Phase</td><td>2026-07-01</td><td>—</td><td>5</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Challenge Overview</h3><div class='page-content'># 鱼类物种识别挑战赛
+
+## 概述
+
+欢迎参加鱼类物种识别挑战赛！您的任务是构建一个分类器，从图像中识别鱼类物种。
+
+您将获得：
+- **训练集**：标注了物种名称的鱼类图像
+- **测试集**：未标注的鱼类图像，用于开发阶段和最终阶段
+
+从&quot;如何参赛&quot;页面提供的链接下载完整数据集。
+
+## 任务
+
+根据鱼类图像预测其物种标签。提交内容为JSON文件，映射图像文件名到预测的物种名称。
+
+## 评估方法
+
+提交内容根据**分类准确率**进行评分——测试图像中预测物种与真实标签匹配的比例。预测结果通过**图像文件名键**与真实标签匹配，因此顺序无关。
+
+## 数据格式
+
+**训练标签**（`train_labels.json`）：
+```json
+{
+  &quot;train/img_001.jpg&quot;: &quot;salmon&quot;,
+  &quot;train/img_002.jpg&quot;: &quot;tuna&quot;
+}
+```
+
+**提交文件**（`prediction.json`）——每个测试图像一条记录：
+```json
+{
+  &quot;img_001.jpg&quot;: &quot;salmon&quot;,
+  &quot;img_002.jpg&quot;: &quot;tuna&quot;,
+  &quot;img_003.jpg&quot;: &quot;bass&quot;
+}
+```
+
+## 快速开始
+
+从开发阶段页面下载入门工具包，其中包括示例提交和基础代码。</div></div><div class='section'><h3>How to Participate</h3><div class='page-content'># 参与方式
+
+## 1. 下载数据集
+
+从 Google Drive 下载鱼类图像数据集：**[TODO: 在此插入您的 Google Drive 链接]**
+
+压缩包包含：
+- `train/` — 训练图像，按物种分类到子文件夹
+- `train_labels.json` — 图像文件名到物种标签的映射
+- `test/` — 测试图像（无标签）
+
+## 2. 构建您的模型
+
+在训练数据上训练鱼类物种分类器。您可以自由使用任何框架（PyTorch、TensorFlow、scikit-learn 等）和任何预训练骨干网络。
+
+## 3. 格式化您的预测
+
+创建名为 `prediction.json` 的文件，将每个测试图像文件名映射到您预测的物种标签：
+
+```json
+{
+  &quot;img_001.jpg&quot;: &quot;salmon&quot;,
+  &quot;img_002.jpg&quot;: &quot;tuna&quot;,
+  &quot;img_003.jpg&quot;: &quot;bass&quot;,
+  &quot;img_004.jpg&quot;: &quot;herring&quot;
+}
+```
+
+基准真值中的每个键都必须出现在您的提交中 — 额外的键将被忽略，缺少的键将导致错误。
+
+## 4. 提交
+
+压缩您的预测文件并上传：
+
+```bash
+zip submission.zip prediction.json
+```
+
+然后在开发阶段页面上上传 `submission.zip`。
+
+## 5. 阶段
+
+- **开发阶段**：可多次提交以调整您的模型。
+- **最终评估阶段**：仅一次提交机会。请仔细选择您最好的模型。
+
+有关截止日期，请参阅**时间表**页面。</div></div><div class='section'><h3>Timeline</h3><div class='page-content'># 时间表
+
+## 开发阶段
+**开始：** TODO — 设置为您的工作坊开始日期
+
+**结束：** TODO — 设置为您的提交截止日期
+
+在此阶段，您可以提交任意次数。您的预测将针对公开开发测试集进行评分，结果立即显示在排行榜上。
+
+使用此阶段迭代您的模型，并在最终截止日期前检查您的分数。
+
+## 最终评估阶段
+**开始：** TODO — 开发阶段关闭后
+
+在此阶段，您只能提交**一次**。预测将针对开发期间未提供的隐藏测试集进行评分。您的最终排名由该分数决定。</div></div>
+
 </div>
 </body>
 </html>

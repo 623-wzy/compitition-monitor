@@ -1,0 +1,301 @@
+{
+  "id": 17050,
+  "title": "ImageEval 2026 — Ayn-VQA Task 1b: Hallucination Detection (MSA)",
+  "published": true,
+  "created_by": "hunzed",
+  "owner_display_name": "hunzed",
+  "created_when": "2026-06-10T09:39:37.693956Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084377/5517d0a96f0a/logo.png?AWSAccessKeyId=codabench-prod&Signature=A%2B7Xt1sQAsYEyFg5CmUb66AcNCM%3D&Expires=1782037899",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084377/5517d0a96f0a/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=P2aeBxhLpEwcEuxTjc3ubRlzn94%3D&Expires=1782037899",
+  "terms": "# Terms\n\n## Submission format\nSubmit a **UTF-8 CSV** named `prediction.csv`, zipped as `prediction.zip`.\nFor every item, submit **three rows** — one per statement.\n\n**Required columns**\n- `id` — the item id (do not reorder/rename).\n- `statement_index` — `0`, `1` or `2`, matching the position in `statements`.\n- `prediction` — `true` if that statement is grounded in the image, else `false`.\n\n```\nid,statement_index,prediction\n1dcdf6da...,0,false\n1dcdf6da...,1,true\n1dcdf6da...,2,false\n```\n\n## Rules\n1. Your `id`s must exactly match the gold set for the active phase (`devtest`,\n   then `test`); missing/extra rows are rejected.\n2. Exactly one statement per item is grounded; predict `true`/`false` for all three.\n\n## Metric\nRanking metric: **Contrastive Instability (CI)**, lower is better. Of the items\nwhere at least one of the three statements is correct, CI is the fraction that are\nnot fully correct (all three right). A model that labels every statement false to\ndrive its hallucination rate to zero still scores poorly on CI.\n\nAlso reported as diagnostics: **combined accuracy** (all three labels correct),\n**CFHR** (of the items where Q+ was correct, the share that still affirmed a\nhallucinated statement), and **Q+ / Q- accuracy**.\n\n## Registration, data usage, ethics\n- Please register at the **[participation form](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)**.\n- Data is **CC BY-NC 4.0** (non-commercial research use only).\n- Any pretrained model / external data / compute is allowed; document it in your paper.\n\n## Contact\nimageeval2026@gmail.com",
+  "pages": [
+    {
+      "id": 81078,
+      "title": "Participation",
+      "content": "# How to participate\n\n**ImageEval 2026 — Ayn-VQA Task 1b: Hallucination Detection (MSA)** — the **MSA** track of Task 1b\n(Hallucination Detection), part of the [ImageEval 2026](https://imageeval2026.github.io/) shared task on cultural\ngrounding in Arabic multimodal generation and understanding.\n\nGiven an image and 3 statements (MSA), label EACH statement True (grounded in the image) or False (hallucinated). Exactly one statement is grounded.\n\n## Register (please do this first)\nFill in the **[registration form](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)** — it lets the organisers track\nparticipants and notify you about data, deadlines, and any updates.\n\n## Who can join\nIndividuals or teams; one member submits on the team's behalf. You may enter more\nthan one track.\n\n## Steps\n1. Sign up on this Codabench page **and** the [registration form](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform).\n2. Read the **Terms** tab — note the exact prediction format.\n3. Get the data from the Hugging Face Hub: **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**.\n4. Follow the task description in the [tasks repo](https://github.com/ImageEval2026/ImageEval2026-tasks).\n5. Predict on **devtest** during the development phase, and on **test** during the\n   final-evaluation phase.\n\n## System description paper\nAll teams are encouraged to submit a system-description paper for the workshop.\n\n## Contact\nimageeval2026@gmail.com",
+      "index": 0
+    },
+    {
+      "id": 81079,
+      "title": "Dataset",
+      "content": "# Dataset\n\nAll splits live on the Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — as config\n`task1b_msa`. This competition scores **devtest** (development phase) and **test**\n(final phase).\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1b_msa\", split=\"devtest\")\n```\n\n## Splits\n\n| split | labels | items | phase | purpose |\n|---|---|---:|---|---|\n| `train`   | yes | 3000 | development | training / fine-tuning |\n| `dev`     | yes | 500  | development | local validation |\n| `devtest` | no  | 500  | development (leaderboard) | submission target, dev phase |\n| `test`    | no  | 1000 | final evaluation | blind ranking (human-recorded audio) |\n\n- **Language:** MSA.\n- Media (images / audio) are referenced by **relative path** keyed on `id`.\n- Task 1b is image + text only (no audio): three statements, exactly one grounded.\n\n## Licence\nCC BY-NC 4.0 — non-commercial research use only.",
+      "index": 1
+    },
+    {
+      "id": 81080,
+      "title": "Timeline",
+      "content": "# Timeline\n\n## Development phase\nTune on `train` + `dev`; submit predictions on **devtest** for the leaderboard.\n\n**Window:** `2026-05-22 → 2026-07-19`  ·  up to 5 submissions/day, 100 total.\n\n## Testing phase\nThe blind **test** set is released on [Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26); submit predictions\non `test` for the official ranking.\n\n**Window:** `2026-07-20 → 2026-07-29`  ·  up to 20 submissions/day, 100 total.\n\n> Dates are set in `competition.yaml` (`phases.start` / `phases.end`) — adjust if\n> the schedule shifts. Announcements: [website](https://imageeval2026.github.io/).",
+      "index": 2
+    }
+  ],
+  "phases": [
+    {
+      "id": 28477,
+      "index": 0,
+      "start": "2026-05-22T00:00:00Z",
+      "end": "2026-07-19T00:00:00Z",
+      "name": "Development Phase",
+      "description": "Tune on train + dev; submit predictions on devtest for the leaderboard.",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "f7c8a892-656c-4682-8e18-a449c3d90c4b",
+          "order_index": 0,
+          "phase": 28477,
+          "id": 34112,
+          "value": "f7c8a892-656c-4682-8e18-a449c3d90c4b",
+          "key": "f7c8a892-656c-4682-8e18-a449c3d90c4b",
+          "created_when": "2026-06-10T09:39:37.462620Z",
+          "name": "task1b_msa-devtest",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 825014,
+              "created_by": "hunzed",
+              "owner_display_name": "hunzed",
+              "created_when": "2026-06-10T09:39:37.340051Z",
+              "name": "scoring_program @ '06-10-2026 09:39'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "b5606c8c-b88f-4c88-a311-4bac3298030b",
+              "value": "b5606c8c-b88f-4c88-a311-4bac3298030b",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 17050,
+                  "title": "ImageEval 2026 — Ayn-VQA Task 1b: Hallucination Detection (MSA)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 8753.0
+            },
+            {
+              "id": 825015,
+              "created_by": "hunzed",
+              "owner_display_name": "hunzed",
+              "created_when": "2026-06-10T09:39:37.400493Z",
+              "name": "reference_data @ '06-10-2026 09:39'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "a1d8d7d7-41a1-420d-b266-e702defd38ae",
+              "value": "a1d8d7d7-41a1-420d-b266-e702defd38ae",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 17050,
+                  "title": "ImageEval 2026 — Ayn-VQA Task 1b: Hallucination Detection (MSA)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 19722.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    },
+    {
+      "id": 28478,
+      "index": 1,
+      "start": "2026-07-20T00:00:00Z",
+      "end": "2026-07-29T00:00:00Z",
+      "name": "Testing Phase",
+      "description": "Final blind evaluation on the held-out test split.",
+      "status": "Next",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "41ec5f53-51d4-4da2-a645-51c571a0f8de",
+          "order_index": 0,
+          "phase": 28478,
+          "id": 34113,
+          "value": "41ec5f53-51d4-4da2-a645-51c571a0f8de",
+          "key": "41ec5f53-51d4-4da2-a645-51c571a0f8de",
+          "created_when": "2026-06-10T09:39:37.646126Z",
+          "name": "task1b_msa-test",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 825016,
+              "created_by": "hunzed",
+              "owner_display_name": "hunzed",
+              "created_when": "2026-06-10T09:39:37.468565Z",
+              "name": "scoring_program @ '06-10-2026 09:39'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "5711b06a-244d-4e72-94fb-28b10dea6bf6",
+              "value": "5711b06a-244d-4e72-94fb-28b10dea6bf6",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 17050,
+                  "title": "ImageEval 2026 — Ayn-VQA Task 1b: Hallucination Detection (MSA)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 8753.0
+            },
+            {
+              "id": 825017,
+              "created_by": "hunzed",
+              "owner_display_name": "hunzed",
+              "created_when": "2026-06-10T09:39:37.543738Z",
+              "name": "reference_data @ '06-10-2026 09:39'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "b901347f-74ca-46ee-aeee-7521f98d7681",
+              "value": "b901347f-74ca-46ee-aeee-7521f98d7681",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 17050,
+                  "title": "ImageEval 2026 — Ayn-VQA Task 1b: Hallucination Detection (MSA)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 39015.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 20,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 18868,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "main",
+      "columns": [
+        {
+          "id": 82744,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Contrastive Instability",
+          "key": "cfhr_3_rate",
+          "sorting": "asc",
+          "index": 0,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 82745,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Combined Acc",
+          "key": "combined_accuracy",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 82746,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "CFHR",
+          "key": "cfhr_2_rate",
+          "sorting": "asc",
+          "index": 2,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 82747,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Q+ Acc",
+          "key": "q_plus_accuracy",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 82748,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Q- Acc",
+          "key": "q_minus_accuracy",
+          "sorting": "desc",
+          "index": 4,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 82749,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Duration",
+          "key": "duration",
+          "sorting": "asc",
+          "index": 5,
+          "hidden": false,
+          "precision": 2
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Force_Last"
+    }
+  ],
+  "collaborators": [
+    {
+      "id": 144,
+      "name": null,
+      "username": "firojalam"
+    }
+  ],
+  "registration_auto_approve": true,
+  "description": "Given an image and 3 statements (MSA), label EACH statement True (grounded in the image) or False (hallucinated). Exactly one statement is grounded. Part of the ImageEval 2026 Ayn-VQA shared task on cultural grounding in Arabic multimodal understanding. Data on HuggingFace (QCRI/AynVQA-ArabicNLP26). Please also register at https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform",
+  "participants_count": 5,
+  "submissions_count": 3,
+  "queue": null,
+  "enable_detailed_results": true,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": false,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": true,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "codalab/codalab-legacy:py37",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 16759,
+  "reward": "",
+  "contact_email": "imageeval2026@gmail.com",
+  "report": "",
+  "forum_enabled": true
+}

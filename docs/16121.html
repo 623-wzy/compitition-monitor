@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MISP Challenge 2026 — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>MISP Challenge 2026</h2>
+  <div class="detail-meta">
+    <span>ID: 16121</span>
+    <span>创建者: misp_qeks_bl</span>
+    <span>创建时间: 2026-05-04</span>
+    <span>参与人数: 11</span>
+    <span>提交次数: 26</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16121/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">该挑战聚焦于现实语音处理场景中的音频-视觉-文本多模态关键词识别任务。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-test'>测试</span> Evaluation Set Phase</td><td>2026-04-01</td><td>2026-06-25</td><td>10</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>overview</h3><div class='page-content'># 🏆 MISP Challenge 2026
+
+音频-视觉-文本多模态关键词识别挑战
+
+## 📋 概述
+
+本竞赛专注于现实语音处理场景中的音频-视觉-文本多模态关键词识别任务。
+
+### 任务描述
+
+您的模型需要判断给定的音频-视频对是否来自同一说话者和同一关键词。
+
+### 内集合 vs 外集合
+
+| 术语 | 描述 |
+|------|------|
+| **inset（内集合）** | 训练过程中看到的关键词 |
+| **outset（外集合）** | 训练过程中未见过的新关键词 |
+
+### 评估指标
+
+- **AUC_INSET**
+  内集合关键词上的AUC
+  越高越好
+
+- **EER_INSET**
+  内集合上的EER (%)
+  越低越好
+
+- **AUC_OUTSET**
+  外集合关键词上的AUC
+  越高越好
+
+- **EER_OUTSET**
+  外集合上的EER (%)
+  越低越好
+
+## 🚀 快速开始 - 提交的5个步骤
+
+1. **生成预测**
+   在测试集上运行您的模型并收集预测结果
+
+2. **准备CSV**
+   以所需的CSV格式保存预测结果
+
+3. **压缩CSV**</div></div><div class='section'><h3>data</h3><div class='page-content'># 📊 数据与提交指南
+&lt;p&gt;数据格式和提交要求完整指南&lt;/p&gt;
+
+&lt;h2&gt;📁 提交要求&lt;/h2&gt;
+
+&lt;div style=&quot;background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 0 5px 5px 0;&quot;&gt;
+    &lt;strong&gt;⚠️ 重要提示：&lt;/strong&gt;
+    &lt;p&gt;您只需提交一个包含一个CSV文件的zip文件。无需提交代码或模型文件！&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;table style=&quot;width: 100%; border-collapse: collapse; margin: 15px 0;&quot;&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th style=&quot;background: #11998e; color: white; border: 1px solid #ddd; padding: 12px; text-align: left;&quot;&gt;文件&lt;/th&gt;
+            &lt;th style=&quot;background: #11998e; color: white; border: 1px solid #ddd; padding: 12px; text-align: left;&quot;&gt;是否必需&lt;/th&gt;
+            &lt;th style=&quot;background: #11998e; color: white; border: 1px solid #ddd; padding: 12px; text-align: left;&quot;&gt;描述&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td style=&quot;border: 1px solid #ddd; padding: 12px; text-align: left;&quot;&gt;&lt;code&gt;predictions.csv&lt;/code&gt;&lt;/td&gt;
+            &lt;td style=&quot;border: 1px solid #ddd; padding: 12px; text-align: left;&quot;&gt;✅ 必需&lt;/td&gt;
+            &lt;td style=&quot;border: 1px solid #ddd; padding: 12px; text-align: left;&quot;&gt;您的预测结果（任何以.csv结尾的文件名都可以）&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td style=&quot;border: 1px solid #ddd; padding: 12px; text-align: left;&quot;&gt;&lt;code&gt;submission.zip&lt;/code&gt;&lt;/td&gt;
+            &lt;td style=&quot;border: 1px solid #ddd; padding: 12px; text-align: left;&quot;&gt;✅ 必需&lt;/td&gt;
+            &lt;td style=&quot;border: 1px solid #ddd; padding: 12px; text-align: left;&quot;&gt;仅包含CSV文件的zip压缩包&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2&gt;📝 CSV格式规范&lt;/h2&gt;
+
+&lt;h3&gt;必需列&lt;/h3&gt;
+&lt;table style=&quot;width: 100%; border-collapse: collapse; margin: 15px 0;&quot;&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th style=&quot;background: #11998e; color: white; border: 1px solid #ddd; padding: 12px; text-align: left;&quot;&gt;列名&lt;/th&gt;
+            &lt;th style=&quot;background: #11998e; color: white; border: 1px solid #ddd; padding: 12px; text-align: left;&quot;&gt;类型&lt;/th&gt;
+            &lt;th style=&quot;background: #11998e; color: white; border: 1px solid #ddd; padding: 12px; text-align: left;&quot;&gt;描述&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td style=&quot;border: 1px solid #ddd; padding: 12px; text-align: left;&quot;&gt;&lt;code&gt;id&lt;/code&gt;&lt;/td&gt;
+            &lt;td style=&quot;border: 1px solid #ddd; padding: 12px; text-align: left;&quot;&gt;整数&lt;/td&gt;
+            &lt;td style=&quot;border: 1px solid #ddd; padding: 12px; text-align: left;&quot;&gt;样本索引，从0开始&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td style=&quot;border: 1px solid #ddd; padding: 12px; text-align: left;&quot;&gt;&lt;code&gt;type&lt;/code&gt;&lt;/td&gt;
+            &lt;td style=&quot;border: 1px solid #ddd; padding: 12px; text-align: left;&quot;&gt;字符串&lt;/td&gt;
+            &lt;td style=&quot;border: 1px solid #ddd; padding: 12px; text-align: left;&quot;&gt;必须为&lt;code&gt;&quot;inset&quot;&lt;/code&gt;或&lt;code&gt;&quot;outset&quot;&lt;/code&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td style=&quot;border: 1px solid #ddd; padding: 12px; text-align: left;&quot;&gt;&lt;code&gt;prediction&lt;/code&gt;&lt;/td&gt;
+            &lt;td style=&quot;border: 1px solid #ddd; padding: 12px; text-align: left;&quot;&gt;浮点数&lt;/td&gt;
+            &lt;td style=&quot;border: 1px solid #ddd; padding: 12px; text-align: left;&quot;&gt;预测分数，范围在0.0到1.0之间&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3&gt;重要规则&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;id编号：&lt;/strong&gt; inset和outset都必须从0开始并分别编号&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;预测分数：&lt;/strong&gt; 必须为0.0到1.0之间的浮点数，表示匹配概率
+        &lt;ul&gt;
+            &lt;li&gt;接近1表示更可能是匹配&lt;/li&gt;
+            &lt;li&gt;接近0表示不太可能是匹配&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;样本顺序：&lt;/strong&gt; 预测顺序必须严格与测试集顺序一致&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;完整性：&lt;/strong&gt; 必须包含所有测试样本的预测&lt;/li&gt;
+&lt;/ul&gt;</div></div>
+
+</div>
+</body>
+</html>

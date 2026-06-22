@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>本次更新 — Codabench 竞赛监测</title>
+<title>EventAid Frame Interpolation Challenge @ EBMV Workshop, ECCV 2026 — Codabench 竞赛监测</title>
 <style>
 :root {
     --bg: #0f1117;
@@ -97,10 +97,131 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
   <h1>Codabench 竞赛监测</h1>
   <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
 </header>
-<div class="update-wrap">
+<div class="detail-wrap">
   <a class="back-link" href="index.html">← 返回竞赛目录</a>
-  <p style="color:var(--muted);font-size:.875rem;margin-bottom:24px">更新于 2026-06-21 17:34</p>
-<div class='update-section'><h2 class='new'>🆕 新增竞赛</h2><p class='update-empty'>本次无新增竞赛</p></div><div class='update-section'><h2 class='expired'>🗑️ 过期清理</h2><p class='update-empty'>本次无过期清理</p></div>
+  <h2>EventAid Frame Interpolation Challenge @ EBMV Workshop, ECCV 2026</h2>
+  <div class="detail-meta">
+    <span>ID: 16375</span>
+    <span>创建者: hylz-2019</span>
+    <span>创建时间: 2026-05-16</span>
+    <span>参与人数: 52</span>
+    <span>提交次数: 30</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16375/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">基于EventAid基准的RGB帧插值，包含1、3、7和15跳帧设置。EventAid挑战赛是EBMV（事件驱动多模态视觉：成像、感知与理解）研讨会@ECCV 2026的一个赛道！</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-other'>其他</span> Validation Phase</td><td>2026-05-16</td><td>2026-06-30</td><td>5</td></tr><tr><td><span class='badge badge-test'>测试</span> Final Test Phase</td><td>2026-07-01</td><td>—</td><td>5</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Participation</h3><div class='page-content'># EventAid帧插值挑战赛
+
+本挑战赛是ECCV 2026 EBMV（基于事件的多模态视觉：成像、感知和理解）研讨会的一个分赛道！研讨会主页：https://eventbasemultimodalvision.github.io/
+
+如遇到任何问题，请联系组织者：段佩琪 (duanqi0001@pku.edu.cn)、李博宇 (liboyu@pku.edu.cn) 或娄寒月 (hylz@pku.edu.cn)。
+
+## 任务
+
+本挑战赛是一项基于事件的帧插值任务。对于每个序列，参赛者将获得：
+
+- 一组稀疏的RGB输入帧，
+- 帧之间的事件流，
+- 时间戳和帧元数据。
+
+目标是重建`frame_info.txt`中所有标记为`[TODO]`的帧。
+
+数据分为四种插值设置：
+
+- `1skip`：在相邻输入帧之间重建1个缺失帧。
+- `3skip`：在相邻输入帧之间重建3个缺失帧。
+- `7skip`：在相邻输入帧之间重建7个缺失帧。
+- `15skip`：在相邻输入帧之间重建15个缺失帧。
+
+较大的跳过设置具有更宽的时间间隙，难度更大。
+
+## 数据使用
+
+本挑战赛使用了公开发布的EventAid数据集的一个子集。完整的公开EventAid数据集包含与本挑战赛重叠的场景的真值数据，使用该数据容易导致过拟合或数据泄漏，即使不直接检查真值也是如此。因此，参赛者**不得**使用公开发布的EventAid数据集或任何源自该数据集的数据进行训练、验证、模型选择、超参数调整、预训练或方法开发的任何其他部分。
+
+参赛者可以使用本挑战赛正式提供的数据，包括发布的输入数据和验证序列真值，用于方法开发和验证。验证序列仅提供用于帮助参赛者验证数据格式和评估流程；它不属于最终计分的测试集。
+
+参赛者可以使用任何其他真实或合成数据集、预训练模型或外部资源，前提是这些资源在法律上可访问且不基于公开EventAid数据集。所有外部数据集和预训练资源必须在最终技术报告中清楚地披露。示例训练数据源包括：基于视频数据集（如[GOPRO](https://github.com/SeungjunNah/DeepDeblur_release)、[REDS](https://seungjunnah.github.io/Datasets/reds)和[Adobe240FPS](https://www.cs.ubc.ca/labs/imager/tr/2017/DeepVideoDeblurring/)）的合成EVFI数据，以及事件模拟器（如[ESIM](https://github.com/uzh-rpg/rpg_esim)、[V2E](https://github.com/SensorsINI/v2e)和[V2V](https://github.com/HYLZ-2019/V2V)）；真实EVFI数据集，如[HQ-EVFI](https://openimaginglab.github.io/TimeLens-XL/)和[ERF-X170FPS](https://github.com/intelpro/CBMNet)。
+
+隐藏测试集仅用于官方评估。参赛者不得尝试访问、重构、手动标注或反向工程隐藏的真值数据。
+
+## 公共数据
+
+从公共数据选项卡下载`challenge_data.zip`并解压：
+
+```bash
+unzip challenge_data.zip
+```
+
+解压后的目录包含：
+
+```text
+challenge_data/
+  validation/
+    {1skip,3skip,7skip,15skip}/{sequence}/
+      input/
+      event/
+      gt/
+      event_info.txt
+      frame_info.txt
+      shape.txt
+  test/
+    {1skip,3skip,7skip,15skip}/{sequence}/
+      input/
+      event/
+      event_info.txt
+      frame_info.txt
+      shape.txt
+  run_baseline_method.py
+  evaluate_results.py
+  terms.md
+```
+
+验证集在`gt/`下包含真值帧，以便参赛者在本地验证其流程。测试集不包含真值，用于官方排名。
+
+## 提交格式
+
+仅提交重建的`[TODO]`帧。所需的布局为：
+
+```text
+results/
+  {skip}/
+    {sequence}/
+      {frame_index:06d}.png
+```
+
+例如：
+
+```text
+results/1skip/ball
+```</div></div><div class='section'><h3>Timeline</h3><div class='page-content'># 时间表
+
+## 验证阶段
+
+验证阶段开放至 **2026年6月30日**。参与者可以提交重建帧并获得验证PSNR/SSIM反馈。
+
+## 最终评估
+
+验证阶段结束后，组织方在隐藏测试集上评估每个团队在验证阶段的最后一次有效提交。
+
+最终结果将于 **2026年7月5日** 公布。
+
+## 技术报告
+
+技术报告提交截止日期为 **2026年7月10日**。报告应描述所用方法、训练数据、预训练模型以及任何外部资源。</div></div>
+
 </div>
 </body>
 </html>

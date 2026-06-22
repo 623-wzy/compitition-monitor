@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EBMV 2026 @ ECCV - Event-Guided Brightness Adjustment on SEE-600K — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>EBMV 2026 @ ECCV - Event-Guided Brightness Adjustment on SEE-600K</h2>
+  <div class="detail-meta">
+    <span>ID: 16195</span>
+    <span>创建者: yunfan_lu</span>
+    <span>创建时间: 2026-05-07</span>
+    <span>参与人数: 64</span>
+    <span>提交次数: 134</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16195/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content"># EBMV 2026 低级图像处理挑战赛：基于事件指导的亮度调整 (SEE-600K)
+
+## 概述
+
+真实世界图像经常受到各种光照退化的影响，包括低光、过曝光、混合光照和高对比度场景。本挑战赛旨在研究在广泛光照条件下基于事件指导的统一低级图像增强方案。
+
+参赛者需要利用RGB帧和事件数据来恢复清晰、曝光正确且结构保真的图像。本挑战赛与ECCV 2026事件多模态视觉研讨会相关联：成像、感知与理解。
+
+## 数据集
+
+本挑战赛基于SEE-600K数据集，详见：
+
+&quot;SEE: See Everything Every Time - Adaptive Brightness Adjustment for Broad Light Range Images via Events&quot;
+
+SEE-600K是在多样化光照条件和真实场景下收集的大规模RGB-事件数据集。它为事件指导的亮度调整和低级图像恢复提供配对的RGB图像和事件数据。
+
+数据集：
+https://huggingface.co/datasets/yunfanlu/SEE-600K
+
+基线代码：
+https://github.com/yunfanLu/SEE
+
+研讨会网址：
+https://eventbasemultimodalvision.github.io
+
+## 任务
+
+参赛者需要开发一个基于事件指导的低级图像处理模型。
+
+输入：
+1. 在具有挑战性光照条件下捕获的RGB图像。
+2. 对应的事件流或事件表示。
+3. 可选的元数据或曝光提示（如提供）。
+
+输出：
+1. 亮度调整后的RGB图像。
+2. 输出应保持场景结构、恢复有用细节，避免不真实的幻觉。
+
+该任务重点关注事件指导的亮度调整和图像增强，而非通用图像生成。
+
+## 挑战赛赛道
+
+### 广泛光照自适应亮度调整
+
+参赛者可在SEE-600K上训练模型。允许使用额外训练数据，但所有外部数据集、采集设置和预训练模型应在最终技术报告中明确说明。
+
+## 提交格式
+
+每份提交应上传为压缩ZIP文件。
+
+推荐结构：
+
+submission.zip
+├── scene_000001.png
+├── scene_000002.png
+├── scene_000003.png
+└── ...
+
+要求：
+1. 输出文件名必须与输入样本ID匹配。
+2. 图像应保存为PNG文件。
+3. 输出图像应为RGB图像。
+4. 输出分辨率必须与输入/参考分辨率相同。
+5. 不得更改文件名或文件夹结构。
+6. 除非明确要求，不包含额外文件。
+
+## 评估
+
+官方评估将在测试集上进行。
+
+指标：
+1. PSNR：像素级重建准确度。
+2. SSIM：结构相似性。
+3. LPIPS：感知相似性。
+
+排名：
+1. PSNR是主要排名指标。
+2. SSIM和LPIPS用作次要指标。
+3. 最终排行榜基于官方测试集。
+
+验证服务器主要用于开发和提交格式检查。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-test'>测试</span> Test Phase</td><td>2026-05-14</td><td>2026-06-24</td><td>5</td></tr><tr><td><span class='badge badge-test'>测试</span> Eval Phase</td><td>2026-06-25</td><td>2026-07-03</td><td>5</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'># SEE挑战赛2026：SEE-600K上的事件引导亮度调整
+
+欢迎参加**SEE挑战赛2026**，由**EBMV @ ECCV 2026**主办。本竞赛研究**在广泛光照条件下基于事件相机引导的亮度调整**。
+
+目标是从具有挑战性的RGB输入图像及其对应的事件相机信号中恢复一张曝光良好的RGB图像。参赛者可使用官方基准代码、SEE-600K数据集、外部数据和预训练模型，但需在最终技术报告中明确说明所用外部资源。
+
+## 快速开始
+
+| 需求 | 链接 |
+| --- | --- |
+| 代码、基准、数据集链接、预训练模型 | [GitHub: yunfanLu/SEE](https://github.com/yunfanLu/SEE) |
+| 完整设置、训练、推理及评估教程 | [docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md) |
+| CodaBench打包和上传说明 | [docs/CODABENCH_SUBMISSION_GUIDE.md](https://github.com/yunfanLu/SEE/blob/main/docs/CODABENCH_SUBMISSION_GUIDE.md) |
+| 中文竞赛指南 | [docs/COMPETITION_GUIDE_ZH.md](https://github.com/yunfanLu/SEE/blob/main/docs/COMPETITION_GUIDE_ZH.md) |
+| 基准结果 | [docs/TEST_RESULTS.md](https://github.com/yunfanLu/SEE/blob/main/docs/TEST_RESULTS.md) |
+| 数据集 | [SEE-600K on Hugging Face](https://huggingface.co/datasets/yunfanlu/SEE-600K) |
+
+推荐工作流程：
+
+1. 克隆仓库并安装依赖。
+2. 下载SEE-600K。
+3. 使用官方训练集训练或改进模型。
+4. 在原始图像尺寸`346 x 260`下运行推理。
+5. 使用提供的CodaBench脚本收集预测图像。
+6. 压缩收集的文件夹并上传至CodaBench。
+
+## 任务
+
+给定：
+
+- 在困难光照条件下拍摄的RGB图像；
+- 对应的事件流或事件表示；
+- 可选的亮度或曝光元数据（如可用）；
+
+参赛者应输出**亮度调整后的RGB图像**。
+
+输出应满足：
+
+- 保留场景结构和图像细节；
+- 产生自然的色彩和曝光效果；
+- 避免不切实际的幻觉内容；
+- 匹配原始SEE图像分辨率以供提交。
+
+## 数据集：SEE-600K
+
+本挑战赛采用**SEE-600K**，这是一个用于宽光度范围图像增强的大规模RGB-事件数据集。
+
+| 属性 | 数值 |
+| --- | --- |
+| 图像数量 | 610,126 |
+| 真实场景 | 202 |
+| 数据模态 | RGB帧 + 事件数据 |
+| 光照条件 | 低光、正常光、高光、混合光照 |
+| 图像分辨率 | `346 x 260` |
+
+下载：
+
+- Hugging Face: [yunfanlu/SEE-600K](https://huggingface.co/datasets/yunfanlu/SEE-600K)
+- 其他镜像和说明：[GitHub README](https://github.com/yunfanLu/SEE#dataset-download)
+
+预期数据集结构和设置说明见[docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#2-prepare-the-dataset)。
+
+## 训练/测试划分
+
+以下场景组保留用于官方测试，**不能用于训练**：
+
+| 类型 | 保留组 |
+| --- | --- |
+| 室内 | 000, 001, 002, 006, 012, 018, 030, 042, 048, 054, 060, 065, 070, 074, 075 |
+| 室外 | 100, 106, 112, 118, 124, 130, 136, 142, 148, 154, 160, 166, 173, 184, 189, 194, 200, 206, 212, 217, 222, 225 |
+
+所有其他组可用于训练。详细的划分信息见[docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#23-traintest-split)。
+
+## 基准：SEE-Net
+
+官方仓库提供**SEE-Net**，一个参数量约为**190万**的紧凑基准模型。它使用：
+
+- RGB帧；
+- 事件数据；
+- 亮度/曝光提示。
+
+基准支持通过提示值`B`进行可控亮度调整：
+
+- `B ~= 0.5`：正常曝光；
+- `B &gt; 0.5`：更亮的输出；
+- `B &lt; 0.5`：更暗的输出。
+
+基准的设置、训练、推理和评估文档详见：
+
+- 设置：[docs/TUTORIAL.md#3-set-up-the-python-environment](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md)</div></div><div class='section'><h3>Rules &amp; Timeline</h3><div class='page-content'># 规则
+
+参赛者可以使用 SEE-600K 进行模型训练。
+
+允许使用外部训练数据、预训练模型和合成数据，但必须在最终技术报告中清楚地报告。
+
+参赛者不得使用隐藏的测试集真实标签、手动调整测试集结果或滥用评估服务器。
+
+排名靠前的团队可能被要求提交简短技术报告以进行结果验证。
+
+# 重要日期
+
+2026年5月15日：竞赛网站开放。
+
+2026年5月25日：验证服务器上线。
+
+2026年6月25日：发布测试数据并启动测试服务器。
+
+2026年7月3日：测试提交截止日期和测试服务器关闭。
+
+2026年7月10日：结果公布。暂定。</div></div>
+
+</div>
+</body>
+</html>

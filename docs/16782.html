@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shared Task on Identifying misogynistic videos in Dravidian languages @ MMLow 2026 — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>Shared Task on Identifying misogynistic videos in Dravidian languages @ MMLow 2026</h2>
+  <div class="detail-meta">
+    <span>ID: 16782</span>
+    <span>创建者: dravidian</span>
+    <span>创建时间: 2026-05-30</span>
+    <span>参与人数: 8</span>
+    <span>提交次数: 0</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16782/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">我是一个科技竞赛信息翻译助手。
+
+**功能描述：**
+
+将用户提供的英文竞赛文本翻译成简体中文，保持专业术语准确，输出纯翻译结果。
+
+**特点：**
+- ✓ 专业术语翻译准确
+- ✓ 保持原文意思不变
+- ✓ 输出纯翻译内容
+- ✓ 支持科技竞赛相关领域
+
+**使用方式：**
+直接粘贴英文竞赛文本，我会给出中文翻译。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-other'>其他</span> Phase 1</td><td>2025-11-16</td><td>2026-07-31</td><td>5</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'># 拖雨林语言中厌女视频识别共享任务
+
+## 共享任务介绍
+
+德拉威语言厌女视频识别共享任务旨在通过开发能够检测视频数据中厌女内容的自动化系统，推进多模态内容分析和在线安全研究。厌女主义通过对女性的仇恨、偏见、歧视、物化或贬损态度表现出来，已在社交媒体和视频分享平台上日益普遍。早期检测此类有害内容对于创建更安全、更包容的数字空间至关重要。
+
+在本共享任务中，参赛者将获得两种主要德拉威语言的精心策展视频集合：马拉雅拉姆语和泰米尔语。每个视频可能包含语音内容、视觉线索、文本覆盖或这些模态的组合。主要目标是构建能够分析视频并判断其是否包含厌女内容或非厌女内容的计算模型。
+
+鼓励参赛者探索利用音频、文本、视觉和语境信息进行有效分类的多模态方法。该任务旨在促进自然语言处理、计算机视觉、语音处理和低资源语言多模态机器学习的创新。
+
+共享任务将提供基准数据集、评估协议和性能指标，以便参赛系统之间进行公平比较。该任务的成果预计将有助于开发强大的内容审核工具，并为德拉威语言社区中应对在线性别仇恨和歧视推广负责任的人工智能解决方案。
+
+**目标：** 识别德拉威语言中包含厌女内容的视频
+
+**语言：** 马拉雅拉姆语和泰米尔语
+
+**详情：** 参赛者将获得马拉雅拉姆语和泰米尔语的视频，需要将这些内容分类为厌女和非厌女。本任务需要更深层次的多模态理解和精确度。
+
+| 语言 | 集合 | 厌女 | 非厌女 | 总计 |
+|------|------|------|---------|------|
+| **马拉雅拉姆语** | 训练集 |  |  |  |
+| | 测试集 |  |  |  |
+| **泰米尔语** | 训练集 |  |  |  |
+| | 测试集 |  |  |  |
+
+## 参赛者入门工具包
+
+### 输出格式（重要）
+
+最终提交必须是包含名为 **`prediction`** 的列的CSV文件</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'>&lt;h1 style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;评估标准&lt;/span&gt;&lt;/h1&gt;
+&lt;div style=&quot;font-family: Arial, sans-serif; font-size: 14px; text-align: center; border: 2px solid red; padding: 15px; border-radius: 8px; background-color: #fff5f5;&quot;&gt;
+  &lt;strong&gt;我们仅接受通过Google表单提交的测试预测结果&lt;/strong&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;div style=&quot;display: inline-block; padding: 12px 20px; border: 2px dashed #ff4d4d; border-radius: 10px; background-color: #ffecec; margin-bottom: 10px;&quot;&gt;
+    &lt;strong&gt;&lt;/strong&gt; &lt;span style=&quot;color: blue; font-weight: bold;&quot;&gt;&lt;a href = &quot;&quot;&gt;Google表单链接&lt;/a&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;br&gt;
+  
+&lt;/div&gt;
+&lt;div style=&quot;text-align: justify; line-height: 1.6; font-size: 1.1em;&quot;&gt;
+  &lt;h3 style=&quot;margin-bottom: 0.4em;&quot;&gt;评估方法&lt;/h3&gt;
+  &lt;ul style=&quot;margin-top: 0.4em;&quot;&gt;
+     
+&lt;li&gt;
+    &lt;p style=&quot;margin: 0.4em 0 0 0;&quot;&gt;
+        本任务的提交内容将使用以下指标在视频级别进行评估：准确度、宏平均精确度、宏平均召回率、宏平均F1分数、加权精确度、加权召回率和加权F1分数。
+    &lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+    &lt;p style=&quot;margin: 0.4em 0 0 0;&quot;&gt;
+        &lt;strong&gt;官方排名标准：&lt;/strong&gt;参赛者将根据宏平均F1分数进行排名。
+    &lt;/p&gt;
+&lt;/li&gt;
+      
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;p&gt;参赛者需要以逗号分隔值（CSV）文件格式提交预测数据。&lt;/p&gt;
+&lt;div style=&quot;border: 2px solid red; padding: 10px; text-align: center;&quot;&gt;&lt;strong&gt;&lt;strong&gt;论文提交应采用以下格式。&lt;/strong&gt;&lt;br /&gt;Overleaf模板：&lt;/strong&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span&gt;&lt;a href=&quot;&quot;&gt;即将更新&lt;/a&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;strong&gt;论文提交链接：&lt;/strong&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot; &quot;&gt;即将更新&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;p&gt;分类系统的性能将根据所有类别的宏平均精确度、宏平均召回率和宏平均F1分数来衡量。建议参赛者使用sklearn分类报告检查其系统性能&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html&quot;&gt;https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;📧&amp;nbsp;&lt;strong&gt;如有任何疑问，请联系我们 📧&amp;nbsp;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;a href=&quot;mailto:b_premjith@cb.amrtia.edu&quot;&gt;&lt;strong&gt;b_premjith@cb.amrita.edu&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;、&lt;/strong&gt;&lt;a href=&quot;mailto:g_jyothishlal@cb.amrita.edu&quot;&gt;&lt;strong&gt;g_jyothishlal@cb.amrita.edu&lt;/strong&gt;&lt;/a&gt;和&lt;strong&gt;&lt;a href=&quot;mailto:bharathiraja.akr@gmail.com&quot;&gt;&lt;strong&gt;bharathiraja.akr@gmail.com&lt;/strong&gt;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;</div></div><div class='section'><h3>Important Dates</h3><div class='page-content'>&lt;h2 style=&quot;text-align:center;&quot;&gt;重要日期&lt;/h2&gt;
+&lt;div style=&quot;display:flex;justify-content:center;gap:40px;font-family:Arial;margin-top:20px;&quot;&gt;
+&lt;div&gt;
+&lt;h3 style=&quot;text-align:center;&quot;&gt;事件&lt;/h3&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:260px;margin-bottom:12px;&quot;&gt;任务公告&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:260px;margin-bottom:12px;&quot;&gt;发布训练数据&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:260px;margin-bottom:12px;&quot;&gt;发布测试数据&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:260px;margin-bottom:12px;&quot;&gt;运行提交截止日期&lt;br&gt;&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:260px;margin-bottom:12px;&quot;&gt;公布结果&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:260px;margin-bottom:12px;&quot;&gt;论文提交&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:260px;margin-bottom:12px;&quot;&gt;接收通知&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:260px;margin-bottom:12px;&quot;&gt;最终论文截止日期&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:260px;&quot;&gt;工作坊日期&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;h3 style=&quot;text-align:center;&quot;&gt;日期&lt;/h3&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:200px;margin-bottom:12px;&quot;&gt;2026年6月1日&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:200px;margin-bottom:12px;&quot;&gt;2026年6月10日&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:200px;margin-bottom:12px;&quot;&gt;2026年7月10日&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:200px;margin-bottom:12px;&quot;&gt;2026年7月20日&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:200px;margin-bottom:12px;&quot;&gt;2026年7月25日&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:200px;margin-bottom:12px;&quot;&gt;2026年8月10日&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:200px;margin-bottom:12px;&quot;&gt;2026年9月10日&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:200px;margin-bottom:12px;&quot;&gt;2026年9月30日&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:200px;&quot;&gt;2026年11月9-10日&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr /&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;📧&amp;nbsp;&lt;strong&gt;如有任何疑问，请联系我们 📧&amp;nbsp;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;a href=&quot;mailto:b_premjith@cb.amrtia.edu&quot;&gt;&lt;strong&gt;b_premjith@cb.amrita.edu&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;, &lt;/strong&gt;&lt;a href=&quot;mailto:g_jyothishlal@cb.amrita.edu&quot;&gt;&lt;strong&gt;g_jyothishlal@cb.amrita.edu&lt;/strong&gt;&lt;/a&gt;, 和 &lt;/strong&gt;&lt;a href=&quot;mailto:bharathiraja.akr@gmail.com&quot;&gt;&lt;strong&gt;bharathiraja.akr@gmail.com&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;</div></div><div class='section'><h3>Organizers</h3><div class='page-content'>&lt;h1 style=&quot;text-align:center;&quot;&gt;&lt;strong&gt;组织者&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;div style=&quot;display:flex; flex-direction:column; align-items:center; font-family:Arial; font-size:15px;&quot;&gt;
+
+  &lt;div style=&quot;width:90%; margin-bottom:14px; display:flex; align-items:center;&quot;&gt;
+    &lt;span style=&quot;padding:6px 14px; border:1px solid #aaa; border-radius:30px; display:inline-block;&quot;&gt;
+      &lt;a href=&quot;https://www.amrita.edu/faculty/dr-premjith-b/&quot; target=&quot;_blank&quot;&gt;
+        &lt;strong&gt;Premjith B&lt;/strong&gt;
+      &lt;/a&gt;
+    &lt;/span&gt;
+    &lt;span style=&quot;margin-left:10px;&quot;&gt;– 阿姆利则毗湿奴大学，印度&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;width:90%; margin-bottom:14px; display:flex; align-items:center;&quot;&gt;
+    &lt;span style=&quot;padding:6px 14px; border:1px solid #aaa; border-radius:30px; display:inline-block;&quot;&gt;
+      &lt;a href=&quot;https://www.amrita.edu/faculty/jyothish-lal-g/&quot; target=&quot;_blank&quot;&gt;
+        &lt;strong&gt;Jyothish Lal G&lt;/strong&gt;
+      &lt;/a&gt;
+    &lt;/span&gt;
+    &lt;span style=&quot;margin-left:10px;&quot;&gt;– 阿姆利则毗湿奴大学，印度&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;width:90%; margin-bottom:14px; display:flex; align-items:center;&quot;&gt;
+    &lt;span style=&quot;padding:6px 14px; border:1px solid #aaa; border-radius:30px; display:inline-block;&quot;&gt;
+      &lt;a href=&quot;https://www.amrita.edu/faculty/v-sowmya/&quot; target=&quot;_blank&quot;&gt;
+        &lt;strong&gt;Sowmya V&lt;/strong&gt;
+      &lt;/a&gt;
+    &lt;/span&gt;
+    &lt;span style=&quot;margin-left:10px;&quot;&gt;– 阿姆利则毗湿奴大学，印度&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;width:90%; margin-bottom:14px; display:flex; align-items:center;&quot;&gt;
+    &lt;span style=&quot;padding:6px 14px; border:1px solid #aaa; border-radius:30px; display:inline-block;&quot;&gt;
+      &lt;a href=&quot;https://cutn.ac.in/staff-members/dr-r-saranya/&quot; target=&quot;_blank&quot;&gt;
+        &lt;strong&gt;Saranya Rajiakodi&lt;/strong&gt;
+      &lt;/a&gt;
+    &lt;/span&gt;
+    &lt;span style=&quot;margin-left:10px;&quot;&gt;– 泰米尔纳德中央大学（CUTN），泰米尔纳德，印度&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;width:90%; margin-bottom:14px; display:flex; align-items:center;&quot;&gt;
+    &lt;span style=&quot;padding:6px 14px; border:1px solid #aaa; border-radius:30px; display:inline-block;&quot;&gt;
+      &lt;a href=&quot;https://www.linkedin.com/in/shunmuga-priya-mc-825b15a3/&quot; target=&quot;_blank&quot;&gt;
+        &lt;strong&gt;Shunmuga Priya MC&lt;/strong&gt;
+      &lt;/a&gt;
+    &lt;/span&gt;
+    &lt;span style=&quot;margin-left:10px;&quot;&gt;– 戈尔韦大学，爱尔兰&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;width:90%; margin-bottom:14px; display:flex; align-items:center;&quot;&gt;
+    &lt;span style=&quot;padding:6px 14px; border:1px solid #aaa; border-radius:30px; display:inline-block;&quot;&gt;
+      &lt;a href=&quot;https://www.linkedin.com/in/rahul-ponnusamy/&quot; target=&quot;_blank&quot;&gt;
+        &lt;strong&gt;Rahul Ponnusamy&lt;/strong&gt;
+      &lt;/a&gt;
+    &lt;/span&gt;
+    &lt;span style=&quot;margin-left:10px;&quot;&gt;– 戈尔韦大学，爱尔兰&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;div style=&quot;width:90%; margin-bottom:14px; display:flex; align-items:center;&quot;&gt;
+    &lt;span style=&quot;padding:6px 14px; border:1px solid #aaa; border-radius:30px; display:inline-block;&quot;&gt;
+      &lt;a href=&quot;https://research.universityofgalway.ie/en/persons/bharathi-raja-asoka-chakravarthi/&quot; target=&quot;_blank&quot;&gt;
+        &lt;strong&gt;Bharathi Raja Chakravarthi&lt;/strong&gt;
+      &lt;/a&gt;
+    &lt;/span&gt;
+    &lt;span style=&quot;margin-left:10px;&quot;&gt;– 戈尔韦大学，爱尔兰&lt;/span&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p style=&quot;text-align:center;&quot;&gt;
+  📧 &lt;strong&gt;如有任何疑问，请联系我们&lt;/strong&gt; 📧
+&lt;/p&gt;
+
+&lt;p style=&quot;text-align:center;&quot;&gt;
+  &lt;a href=&quot;mailto:b_premjith@cb.amrita.edu&quot;&gt;
+    &lt;strong&gt;b_premjith@cb.amrita.edu&lt;/strong&gt;
+  &lt;/a&gt;,
+  &lt;a href=&quot;mailto:g_jyothishlal@cb.amrita.edu&quot;&gt;
+    &lt;strong&gt;g_jyothishlal@cb.amrita.edu&lt;/strong&gt;
+  &lt;/a&gt; 和
+  &lt;a href=&quot;mailto:bharathiraja.akr@gmail.com&quot;&gt;
+    &lt;strong&gt;bharathiraja.akr@gmail.com&lt;/strong&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;hr /&gt;</div></div><div class='section'><h3>Dataset files</h3><div class='page-content'>&lt;h1 style=&quot;text-align: center;&quot;&gt;&lt;span&gt;数据集&lt;/span&gt;&lt;/h1&gt;
+&lt;p&gt;我们提供包含以下语言YouTube视频的数据集，这些视频已被标注为厌女性/非厌女性内容。&lt;/p&gt;
+
+&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;8&quot; 
+       style=&quot;border-collapse: collapse; width: 95%; margin: auto;&quot;&gt;
+  &lt;thead style=&quot;background-color: #f2f2f2;&quot;&gt;
+    &lt;tr&gt;
+      &lt;th&gt;语言&lt;/th&gt;
+      &lt;th&gt;训练集&lt;/th&gt;
+      &lt;th&gt;测试集（未标注）&lt;/th&gt;
+      &lt;th&gt;测试集（已标注）&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;马拉雅拉姆语&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot; &quot;&gt;链接&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot; &quot;&gt;链接&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot; &quot;&gt;链接&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;泰米尔语&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot; &quot;&gt;链接&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot; &quot;&gt;链接&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot; &quot;&gt;链接&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;br&gt;&lt;hr&gt;
+
+&lt;hr /&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;📧&amp;nbsp;&lt;strong&gt;如有任何疑问，请联系我们 📧&amp;nbsp;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;a href=&quot;mailto:b_premjith@cb.amrtia.edu&quot;&gt;&lt;strong&gt;b_premjith@cb.amrita.edu&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;、&lt;/strong&gt;&lt;a href=&quot;mailto:g_jyothishlal@cb.amrita.edu&quot;&gt;&lt;strong&gt;g_jyothishlal@cb.amrita.edu&lt;/strong&gt;&lt;/a&gt;和&lt;a href=&quot;mailto:bharathiraja.akr@gmail.com&quot;&gt;&lt;strong&gt;bharathiraja.akr@gmail.com&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;strong&gt;参考文献：&lt;/strong&gt;&lt;/span&gt; &lt;span style=&quot;font-weight: 400; color: #ff0000;&quot;&gt;请引用以下参考资料&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;
+&lt;pre&gt;
+
+&lt;/pre&gt;
+&lt;/p&gt;</div></div><div class='section'><h3>Results</h3><div class='page-content'>**所有语言的排名列表：**
+
+&lt;a href=&#x27; &#x27; target=&#x27;_blank&#x27;&gt;&lt;img src=&#x27; &#x27; border=&#x27;0&#x27; alt=&#x27;Malayalam-Rank-list&#x27; style=&#x27;max-width:100%; height:auto;&#x27;/&gt;&lt;/a&gt;
+
+&lt;hr /&gt;
+
+&lt;a href=&#x27;https://postimages.org/&#x27; target=&#x27;_blank&#x27;&gt;&lt;img src=&#x27; &#x27; border=&#x27;0&#x27; alt=&#x27;Tamil-Rank-list&#x27; style=&#x27;max-width:100%; height:auto;&#x27;/&gt;&lt;/a&gt;
+
+&lt;hr /&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;📧&amp;nbsp;&lt;strong&gt;如有任何疑问，请联系我们 📧&amp;nbsp;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;a href=&quot;mailto:b_premjith@cb.amrtia.edu&quot;&gt;&lt;strong&gt;b_premjith@cb.amrita.edu&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;, &lt;/strong&gt;&lt;a href=&quot;mailto:g_jyothishlal@cb.amrita.edu&quot;&gt;&lt;strong&gt;g_jyothishlal@cb.amrita.edu&lt;/strong&gt;&lt;/a&gt;, and &lt;/strong&gt;&lt;a href=&quot;mailto:bharathiraja.akr@gmail.com&quot;&gt;&lt;strong&gt;bharathiraja.akr@gmail.com&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;</div></div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Neural encoding with deep neural networks (v9 - 2026-04-20) — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>Neural encoding with deep neural networks (v9 - 2026-04-20)</h2>
+  <div class="detail-meta">
+    <span>ID: 15830</span>
+    <span>创建者: psulewski</span>
+    <span>创建时间: 2026-04-20</span>
+    <span>参与人数: 25</span>
+    <span>提交次数: 37</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/15830/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content"># 翻译
+
+预测注视对齐的脑磁图(MEG)活动(204个梯度计通道,注视后110毫秒),基于自然场景图像和来自主动视觉语义(AVS)数据集的眼动元数据,为一个被保留的受试者。
+
+Sulewski, P., Amme, C., Hebart, M., König, P., &amp; Kietzmann, T. (2025). 我们为什么停留:记忆编码而非视觉处理需求驱动自然场景上的注视时间——来自大规模脑磁图数据集的证据。
+
+仅限学术用途。AVS数据集及所有衍生材料专门为学术研究和教育目的提供,用于奥斯纳布吕克大学(Osnabrück University)&quot;深度神经网络神经编码&quot;课程(SoSe 2026)。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-other'>其他</span> Challenge 1</td><td>2026-04-20</td><td>2026-07-31</td><td>25</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'># MEG脑编码挑战
+
+## 目标
+
+构建一个模型，预测人类大脑对自然自由观看视觉场景的反应。具体地说，您将预测**注视对齐的MEG活动**——在每次眼动注视开始后110毫秒时在204个MEG梯度计通道上测得的神经反应模式。
+
+## 背景
+
+数据来自**主动视觉语义学（AVS）**数据集，其中参与者在同时记录眼动和全脑MEG的情况下自由探索自然场景照片。
+
+您获得来自五名训练受试者（受试者1-5）的数据，并被要求推广到**保留的受试者（受试者60）**，其场景观看行为和相关的MEG反应构成评估集。
+
+## 任务
+
+**挑战1——110毫秒处的快照编码**
+
+给定注视元数据（场景ID、凝视坐标、持续时间、序列位置等）和对应的场景图像，预测注视开始后110毫秒时204个MEG梯度计振幅的向量。
+
+**提交形状：** `(7750, 204)` ——开发集中每次注视一行，204个通道。
+
+## 时间表
+
+| 日期 | 事件 |
+|------|------|
+| 2026年4月 | 挑战开放 |
+| 2026年7月 | 挑战关闭 |
+
+## 限制
+
+- 每天5次提交
+- 总共50次提交</div></div><div class='section'><h3>Data</h3><div class='page-content'># 数据
+
+## 您将获得的数据
+
+所有数据通过课程资源库分发。您**不**将数据上传到 Codabench — 仅提交预测结果。
+
+### 训练数据（被试 1–5）
+
+| 文件 | 描述 |
+|------|------|
+| `training/meg_110ms.npy` | 110 ms 时的脑磁图，形状为 `(n_fixations, 204)` |
+| `training/metadata.csv` | 每个注视点的元数据（见下表列名） |
+| `training/channel_names.txt` | 204 个梯度计通道名称的有序列表 |
+| `avs_scenes/` | 完整场景图像（各被试共用） |
+
+### 开发集（被试 60）
+
+| 文件 | 描述 |
+|------|------|
+| `subject60/challenge1_dev/metadata.csv` | 7750 个注视点，需要提交预测 |
+
+被试 60 的真实脑磁图数据**被隐藏**，仅用于评分。
+
+## 元数据列
+
+`metadata.csv` 中的关键列：
+
+| 列名 | 描述 |
+|------|------|
+| `sceneID` | 整数场景标识符 — 链接到图像文件 |
+| `mean_gx`, `mean_gy` | 屏幕中心坐标系中的平均凝视位置（像素）（原点 = 中心，y 轴向上） |
+| `duration` | 注视点持续时间 [ms] |
+| `fix_sequence` | 试次内的注视点索引（1 = 第一个注视点） |
+| `time_in_trial` | 试次开始后的时间 [ms] |
+| `subject` | 被试标识符 |
+
+## 场景图像
+
+场景图像为 JPEG 格式，命名为 `{sceneID:012d}_MEG_size.jpg`，缩放至呈现分辨率（1024 × 768 像素）。注视点补丁（112 × 112 像素，以凝视点为中心）可使用 `megcourselib.data.stim.extract_crop()` 提取。</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'># 评估
+
+## 指标
+
+提交的作品使用**皮尔逊相关系数（r）**进行评估，该系数在开发集的所有7750个注视点中**独立计算每个204个通道**的预测MEG振幅与实际MEG振幅之间的相关性。
+
+这产生一个向量 **r** ∈ ℝ^204，从中导出四个排行榜分数：
+
+| 列 | 定义 |
+|--------|-----------|
+| **平均 r** *（主要指标）* | `mean(r)` — 所有通道的平均编码 |
+| **中位数 r** | `median(r)` — 稳健的中心趋势 |
+| **最大 r** | `max(r)` — 最佳单通道编码 |
+| **最差10个通道** | `mean(r[argsort(r)[:10]])` — 最差10个通道的平均值 |
+
+排名由**平均 r** 决定（越高越好）。所有其他列仅用于诊断目的。
+
+## 提交格式
+
+1. 创建一个形状为 `(7750, 204)` 且数据类型为 `float64` 的NumPy数组。
+   - 行顺序必须与 `subject60/challenge1_dev/metadata.csv` 完全匹配。
+   - 列顺序必须与 `channel_names.txt` 完全匹配（MEG0001 … MEG0204）。
+
+2. 将其保存为 `predictions.npy`：
+   ```python
+   import numpy as np
+   np.save(&quot;predictions.npy&quot;, pred)   # 形状 (7750, 204)
+   ```
+
+3. 压缩它（文件必须在zip的根目录下，不能在子文件夹中）：
+   ```bash
+   zip submission.zip predictions.npy
+   ```
+
+4. 通过提交按钮上传 `submission.zip`。
+
+## 有效性检查
+
+评分程序会拒绝以下提交：
+- 形状错误（除7750 × 204外的任何形状）
+- 包含NaN或Inf值
+
+无效提交在所有列中得分为0.0。</div></div>
+
+</div>
+</body>
+</html>

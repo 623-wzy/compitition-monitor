@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MVAA 2026: Mitral Valve Anatomy Analysis Using Multimodal Imaging Data — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>MVAA 2026: Mitral Valve Anatomy Analysis Using Multimodal Imaging Data</h2>
+  <div class="detail-meta">
+    <span>ID: 15662</span>
+    <span>创建者: db0725</span>
+    <span>创建时间: 2026-04-14</span>
+    <span>参与人数: 137</span>
+    <span>提交次数: 511</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/15662/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">MVAA 2026 评估跨越三个临床基础分割任务的二尖瓣解剖学多模态AI方法：（1）CT分割、（2）3D TEE分割和（3）手术视频分割。
+
+最终排名基于跨任务平均聚合的归一化任务级分数。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-other'>其他</span> Validation Phase</td><td>2026-06-01</td><td>2026-07-01</td><td>5</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Important Notice</h3><div class='page-content'>&lt;div align=&quot;center&quot;&gt;
+
+# 使用多模态影像数据的二尖瓣解剖分析
+
+## MICCAI 2026挑战赛 - 医学世界模型国际研讨会(MWM)
+
+&lt;/div&gt;
+
+二尖瓣评估在结构性心脏病的诊断、治疗规划和术中引导中起着核心作用。在临床实践中，医生依赖具有非常不同特征的多模态影像数据，包括用于术前几何结构的心脏CT、用于术中解剖参考的3D经食管超声心动图，以及用于直接手术观察的选定术中帧。然而，跨这些模态的手动分析仍然劳动密集且受观察者间变异性的影响。
+
+MVAA挑战赛旨在通过提供跨多种影像模态和手术阶段的统一基准来推进自动化二尖瓣分析。鼓励参赛者开发稳健的分割和解剖分析方法，这些方法在异构数据源上保持一致，并支持临床意义的下游应用。
+
+## 挑战赛目标
+
+开发用于跨CT、3D TEE和术中图像帧的多模态二尖瓣解剖分析的自动化方法，评估重点关注分割质量、结构一致性和临床相关性。
+
+**具体目标：**
+
+- 建立涵盖术前、术中和手术影像数据的二尖瓣分析多模态基准。
+- 评估算法在多样化影像特征和临床条件下的准确分割和解剖理解能力。
+- 鼓励开发在模态间具有良好泛化性能同时保留二尖瓣连贯结构表示的模型。
+- 促进AI研究人员、影像科学家和心脏介入临床专家之间的协作。
+
+## 资源
+
+- **挑战赛网站:** https://mwm2026.github.io/mvaa
+- **数据集(训练与验证) - 链接1:** 任务1和任务2的完整数据，加上任务3的标注数据: https://drive.google.com/file/d/14WneBUBZ1X4p69tRdRzximNb0IsWuh2B/view?usp=sharing
+- **数据集(训练与验证) - 链接2:** 任务3的未标注数据: https://drive.google.com/file/d/1K4vFo-4pdL1_xt-8msO-32bc2aEdJ7wS/view?usp=sharing
+- **基线代码:** https://github.com/db0725/MVAA
+- **联系方式:** dbd2002@foxmail.com</div></div><div class='section'><h3>Overview</h3><div class='page-content'># 数据获取方式
+
+参赛者可以选择**百度云盘**或**谷歌云盘**中的**任意一种**方式下载数据集。
+
+### 选项1：百度云盘（单一链接）
+* **链接：** [https://pan.baidu.com/s/1LYCH_MtTgqpiTUQsn0ToNQ?pwd=3ymi](https://pan.baidu.com/s/1LYCH_MtTgqpiTUQsn0ToNQ?pwd=3ymi)
+* **提取码：** `3ymi`
+* **说明：** 该文件夹包含共计**6个压缩文件**。如果页面显示违规警告或某些压缩文件缺失，请改用下方的谷歌云盘链接。
+
+### 选项2：谷歌云盘（必须下载以下两个链接）
+如果选择使用谷歌云盘，你**必须下载以下两个文件**才能获得完整数据集：
+* **链接1：** [https://drive.google.com/file/d/14WneBUBZ1X4p69tRdRzximNb0IsWuh2B/view?usp=sharing](https://drive.google.com/file/d/14WneBUBZ1X4p69tRdRzximNb0IsWuh2B/view?usp=sharing)
+* **链接2：** [https://drive.google.com/file/d/1K4vFo-4pdL1_xt-8msO-32bc2aEdJ7wS/view?usp=sharing](https://drive.google.com/file/d/1K4vFo-4pdL1_xt-8msO-32bc2aEdJ7wS/view?usp=sharing)
+
+### 任务3训练标注说明
+请注意，某个任务3视频训练样本可能存在标注问题：
+
+`t3_vid/train/REC_20250322_101917_746A/REC_20250322_101917_746A_000130.png`
+
+该样本中的标签不仅包含二尖瓣区域，还包含部分心腔空腔。参赛者可在模型训练或数据清理过程中选择排除此单个训练样本。此问题仅限于上述列出的训练集样本；验证集和测试集的标注不受影响。
+
+### 官方基线模型
+参赛者可通过以下链接获取官方基线模型及文档（基线模型的保存方法不会用于最终结果评估；最终评估以官方平台为准）：
+* **链接：** [https://github.com/db0725/MVAA](https://github.com/db0725/MVAA)</div></div><div class='section'><h3>Data Access Method</h3><div class='page-content'># 核心任务
+
+MVAA挑战赛旨在反映跨多种成像模式的真实临床工作流程。该挑战赛分为三个主要分割任务。
+
+### 参赛和模型提交要求
+
+参赛者需要完成并提交全部三个任务的结果。最终排名将基于三个任务的综合性能确定；因此，仅提交一个或两个任务的结果不足以进行最终排名。
+
+但是，参赛者无需使用单一的统一多模态模型。每个任务可以独立处理，参赛者可以为CT、3D TEE和手术视频帧分割任务分别训练并提交不同的模型。
+
+### 任务1：心脏CT中的二尖瓣分割
+该任务重点关注从3D心脏CT扫描中自动进行多类解剖分割。
+*   **目标：** 参赛者需要分割二尖瓣环和前/后瓣叶。
+*   **临床意义：** 高分辨率CT分割提供了术前规划所需的精确空间几何信息，包括装置尺寸确定和经导管二尖瓣边缘修复术（TEER）或环成形术等介入治疗的修复策略选择。
+
+### 任务2：三维经食管超声心动图（3D TEE）中的二尖瓣分割
+该任务解决从容积3D TEE（超声）数据中分割瓣膜结构的问题，这是术中瓣膜功能的关键参考。
+*   **目标：** 从3D超声容积中描绘瓣叶。
+*   **技术重点：** 算法必须足够稳健，能够处理超声特有的伪影、声学噪声、信号丢失以及瓣叶与周围心脏组织之间的模糊边界。
+
+### 任务3：手术视频帧中的二尖瓣分割
+该任务重点关注从术中手术视频提取的单帧中提取解剖信息。
+*   **目标：** 从外科医生直视角度看到的二尖瓣结构的像素级分割。
+*   **方法论：** 虽然数据源自视频录制，但该任务被定义为基于帧的分割问题。参赛者应在训练和推理中将提供的帧视为单独的2D图像。
+*   **临床重点：** 该任务能够在实际介入治疗中验证瓣叶运动和结构连续性，在手术环境中提供实时反馈。</div></div><div class='section'><h3>Core Task</h3><div class='page-content'># MVAA挑战 - 数据系统
+
+## 1. 伦理批准与数据许可
+
+### 1.1 伦理批准
+所有数据已匿名处理，获得医学伦理委员会批准（编号：KY-N-2022-048-01）。
+
+### 1.2 数据使用协议与许可
+* **许可证：** CC BY-NC（署名-非商业性使用）
+* 禁止对数据进行商业使用；所有使用方式必须符合许可证条款。
+
+## 2. 数据来源
+
+### 2.1 采集设备
+* **心脏CT：** 西门子医疗、GE医疗、飞利浦医疗和佳能医疗系统。
+* **3D经食管超声心动图（TEE）：** 飞利浦Epiq心脏超声系统。
+* **手术视频：** 标准内镜视频录制器（720p，30fps）。
+
+### 2.2 采集中心
+数据来自多个临床中心，包括：
+* 广东省人民医院
+* 暨南大学第一附属医院
+* 东莞东城中央医院
+
+## 3. 数据集规模与分割
+
+### 3.1 任务1：心脏CT分割
+* **训练集：** 共1,067张图像（27张含标注，1,040张无标注用于半监督学习）。
+* **验证集：** 30张图像（无标注）。
+
+### 3.2 任务2：3D TEE分割
+* **训练集：** 105张含标注的图像。
+* **验证集：** 20张图像（无标注）。
+
+### 3.3 任务3：手术帧分割
+
+* **训练集：** 共1,559帧。
+    * **标注数据：** 180帧（其中118帧包含二尖瓣）。
+    * **无标注数据：** 1,379帧（用于半监督学习）。
+* **验证集：** 48张图像（无标注，全部包含二尖瓣结构用于评分）。
+
+#### 3.3.1 任务3标注说明
+
+任务3的标注可能包括二尖瓣以外的解剖结构注释。仅二尖瓣标注用于训练和评估。在本任务中，二尖瓣是唯一的目标分割类别。
+
+参赛者应使用每个`*_Label.tar`压缩包内的`*_Label.nii.gz`文件作为真实标注的来源，并参考相应`*_Label.json`文件中的类别映射表进行确认。具体而言，类别ID `10` 对应二尖瓣。
+
+`*_Label.json`文件仅供查看类别名称、颜色和元数据之用，不应作为训练标注的主要来源。
+
+JSON文件中的某些多边形注释可能不完整或为空；因此不建议从`Polys.Shapes`生成训练标注。180帧标注数据中，118帧包含有效的二尖瓣注释。无标注帧中也可能包含没有可见二尖瓣结构的图像。
+
+## 4. 数据新颖性
+* **多模态数据资源：** 本挑战包括来自多个临床中心的心脏CT、3D TEE和手术视频数据。在当前公开发布版本中，这些模态作为独立数据集提供，不包含正式的CT-视频配对元数据或病例映射表。
+* **未发表数据：** 为确保泛化能力的公平评估，提供了140多张新采集的、未发表的超声图像用于验证和测试。
+
+## 5. 纳入与排除标准
+
+### 5.1 纳入标准
+1. 适合二尖瓣评估的标准临床心脏切面。
+2. 图像质量足以支持专家对瓣叶和瓣环进行标注。
+3. 具有相应的临床测量参考值。
+
+### 5.2 排除标准
+1. 严重成像伪影或信号丢失，影响解剖结构可见性。
+2. 重复或损坏的数据。
+3. 临床参考测量值不确定的病例。
+
+## 6. 标注特征
+
+### 6.1 标注方法
+* **两阶段流程：** 由两名经过培训的医学专家进行初始标注，随后由具有10年以上经验的获证放射科医生进行审查和完善。
+* **半自动化完善：** 对于超声数据，初始自动分割之后由两名标注者进行手动审查和修改，直至达成一致意见。
+
+### 6.2 标注质量</div></div><div class='section'><h3>Dataset</h3><div class='page-content'># 评估指标
+
+本挑战赛中的所有任务均使用三个标准分割指标进行评估：Dice相似系数（DSC）、Hausdorff距离（HD）和平均表面距离（ASD）。这些指标衡量提交分割与参考标注之间的区域重叠和边界精度。
+
+对于每个案例，预测结果与相应的真实标签进行比较。最终任务级结果通过对所有评估案例的案例级指标值进行平均得到。
+
+## 1. 指标定义
+
+### Dice相似系数（DSC）
+Dice分数衡量预测分割与真实标签之间的重叠程度。
+- **范围：** [0, 1]，其中1表示完美重叠。
+- **定义：** DSC计算为两个掩模的交集的两倍除以其体积或面积之和。
+- **解释：** DSC值越高表示分割重叠效果越好。
+
+### Hausdorff距离（HD）
+Hausdorff距离通过测量预测结果与真实标签之间的最大表面偏差来评估边界精度。
+- **定义：** HD计算为预测掩模与参考掩模之间的双向表面到表面距离的最大值。
+- **实现：** 从二值掩模中提取表面，当存在图像间距元数据时使用其进行欧几里得距离计算。
+- **解释：** HD值越低表示边界对齐效果越好。
+
+### 平均表面距离（ASD）
+ASD衡量预测表面与真实标签表面之间的平均距离。
+- **定义：** ASD计算为从预测表面到参考表面的距离与从参考表面到预测表面的距离的对称平均值。
+- **实现：** 与HD相同，距离计算在可用时使用图像间距。
+- **解释：** ASD值越低表示总体形状一致性越好。
+
+## 2. 任务特定计算
+
+### 任务1：CT分割
+任务1作为3D分割任务进行评估。
+- **前景定义：** 标签`1`
+- **案例级计算：** 对每个案例的二值前景掩模计算DSC、HD和ASD。
+- **最终任务结果：** 所有案例级值的平均值。
+
+### 任务2：TEE分割
+任务2作为3D多类别分割任务进行评估。
+- **前景定义：** 标签`1`和`2`
+- **案例级计算：** 分别为每个前景类别计算指标，并在每个案例内对类别级指标值进行平均。
+- **最终任务结果：** 所有案例级值的平均值。
+
+### 任务3：视频/图像分割
+任务3作为2D分割任务进行评估。
+- **前景定义：** 预测结果被视为二值前景掩模，并与真实标签中案例特定的`target_label`进行比较。
+- **案例级计算：** 对每个案例或帧计算DSC、HD和ASD。
+- **最终任务结果：** 所有案例级值的平均值。
+
+## 3. 重要评估说明
+
+- **间距感知型距离指标：** 当间距元数据可用时，HD和ASD使用物理间距进行计算；否则使用单位间距。
+- **对称表面距离：** HD和ASD都在预测和参考表面之间双向计算。
+- **缺失或无效预测：** 如果案例缺失或无法评估，将施加惩罚（`DSC = 0`，`HD = 大惩罚值`，`ASD = 大惩罚值`）。
+- **空掩模处理：** 如果对于评估的类别预测和真实标签都为空，则将该案例视为完美匹配（`DSC = 1`，`HD = 0`，`ASD = 0`）。
+
+## 4. 排名策略
+
+官方评估程序包分别报告每个任务的三个指标：
+- `Task1_DSC`、`Task1_HD`、`Task1_ASD`
+- `Task2_DSC`、`Task2_HD`、`Task2_ASD`
+- `Task3_DSC`、`Task3_HD`、`Task3_ASD`
+
+当前评估程序包内不计算其他额外的归一化复合分数。参与者应该</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'># MVAA 挑战赛 - 参赛规则
+
+## 1. 挑战赛生命周期
+* **公开征稿:** 挑战赛在初始会议投稿截止后开放新投稿，以鼓励持续改进和长期基准测试。
+
+## 2. 参赛政策
+
+### 2.1 算法开发
+* **任务特定学习策略:**
+    * **任务1和3(半监督):** 参赛者需要使用任务1(CT)和任务3(手术视频帧)中提供的无标注数据开发半监督方法。
+    * **任务2(监督学习):** 由于任务2(3D TEE)提供的所有数据集均完全标注，参赛者应重点关注该赛道的监督学习方法。
+* **外部数据:** 参赛者仅允许使用公开可得的外部数据集和公开发布的预训练模型。严格禁止对公开数据进行额外的私人标注或使用私有数据集。
+
+### 2.2 组织机构成员参赛
+* 组织方机构的成员可参加挑战赛，但**不具有获奖资格**，且**不会在官方排行榜上列出**。
+
+## 3. 提交规则
+
+### 3.1 提交方式
+* **验证阶段:** 参赛者直接向CodaBench平台提交验证集的预测分割掩模，以获得即时反馈。
+* **测试阶段:** 最终评估时，参赛者必须提供**Docker容器**。这确保了透明、可重复且公平的基准测试环境。
+
+### 3.2 提交限制
+* **验证阶段:** 在验证阶段，各队最多可提交**每天2次**，以防止过度拟合。
+* **最终评估:** 仅使用最后成功的Docker提交用于隐藏测试集上的排名。
+
+## 4. 奖励政策
+
+1. **现金奖励:** 总奖金池为**10,000元人民币**，颁发给**前10名团队**(分配详情待公布)。
+2. **证书:** 为表现最佳的团队和方法最具创新性的团队提供官方证书。
+3. **MICCAI 2026演讲邀请:** 前10名团队将被邀请在MICCAI 2026研讨会进行口头报告。
+4. **期刊邀请:** 优秀团队将被鼓励向相关期刊特刊投稿其方法的扩展版本。
+5. **挑战赛总结文章:** 共同署名挑战赛总结论文，该论文将投稿至高影响力医学影像分析期刊。
+
+## 5. 结果公布
+* 组织方将公开公布表现最好的10种方法。
+* 公布内容包括团队名称和基于官方评估指标的总体排名。
+
+## 6. 发表政策
+* 前10名团队中对研究有重大贡献的成员有资格成为总结论文的作者。
+* 参赛团队可分别发表各自的结果，同时尊重挑战赛的集体努力。
+
+## 7. 代码发布要求
+* 算法代码发布(通过GitHub仓库)和提交对应会议论文是**获奖资格的先决条件**。</div></div><div class='section'><h3>Participation Rules</h3><div class='page-content'># 时间表
+
+所有截止时间均为列出日期的 **23:59 (UTC+8)**。请注意，这些日期可能会根据官方 MICCAI 2026 日程进行细微调整。
+
+## 关键里程碑
+
+* **2026年4月15日：** 训练数据发布
+    - 参赛者可下载训练数据集（标注和未标注），开始模型开发。
+
+* **2026年6月1日：** 验证数据发布
+    - 发布验证集（无标签）。CodaBench 排行榜将开放进行初步评分。
+
+* **2026年7月1日：** 测试阶段 / 最终评估开始
+    - 隐藏测试集评估阶段开始。参赛者需准备最终模型和 Docker 容器。
+
+* **2026年8月1日：** 最终提交截止日期
+    - 所有算法和 Docker 容器提交的截止时间，用于官方竞赛排名。
+
+* **2026年9月1日：** 获胜者公布与邀请
+    - 公布表现最佳的团队，邀请演讲者参加研讨会。
+
+* **2026年9月27日 - 10月1日：** MICCAI 2026 会议（法国）
+    - 官方竞赛研讨会、最终成果展示和颁奖典礼将在 **法国** 举办的 MICCAI 2026 会议期间进行。
+
+## 说明
+时间表如有任何变更，将通过竞赛官网和发送至注册参赛者的电子邮件通知。</div></div><div class='section'><h3>Timeline</h3><div class='page-content'># MVAA挑战赛 - 组织团队
+
+## 1. 组织者
+1. **Jieyun Bai**（奥克兰大学，新西兰）
+2. **Mohamed Hammad**（苏尔坦王子大学，沙特阿拉伯）
+3. **Tao Jia**（重庆师范大学，中国）
+4. **Mohammad Yaqub**（穆罕默德·本·扎耶德人工智能大学，MBZUAI，阿联酋）
+5. **Karim Lekadir**（巴塞罗那大学，西班牙）
+6. **Shuo Li**（凯斯西储大学，美国）
+7. **Jichao Zhao**（奥克兰大学，新西兰）
+8. **Jun Ma**（多伦多大学，加拿大）
+9. **Kuanquan Wang**（哈尔滨工业大学，中国）
+10. **Wei Hu**（曼彻斯特大学，英国）
+11. **Henggui Zhang**（曼彻斯特大学，英国）
+12. **Haibo Ni**（南京大学，中国）
+13. **Yitong Tang**（暨南大学，中国）
+
+## 2. 顾问
+1. **Islem Rekik**（伦敦帝国学院，英国）
+2. **Weidong Cai**（悉尼大学，澳大利亚）
+3. **Dong Ni**（深圳大学，中国）
+4. **Pan Zeng**（重庆师范大学，中国）
+5. **Wenfeng Zhang**（重庆师范大学，中国）
+
+## 3. 贡献者
+1. **Xiaoshen Zhang**（暨南大学第一附属医院，中国）
+2. **Hua Lu**（暨南大学第一附属医院，中国）
+3. **Yufei Zhan**（暨南大学第一附属医院，中国）
+4. **Qinyuan Zeng**（暨南大学第一附属医院，中国）
+5. **Jingyi He**（暨南大学第一附属医院，中国）
+6. **Yu Zhang**（暨南大学第一附属医院，中国）
+7. **Li Wang**（广州市妇女儿童医疗中心，中国）
+8. **Yuxin Huang**（南方医科大学珠江医院，中国）
+9. **Bo Deng**（暨南大学，中国）
+10. **Jiake Li**（暨南大学，中国）
+11. **Patrick Carnahan**（韦仕敦大学，加拿大）
+12. **Jie Gan**（悉尼大学，澳大利亚）
+
+## 4. 临床专家的角色
+* 提供在日常诊疗条件下从多个机构和患者群体中获取的真实临床数据（CT、三维经食道超声心动图和手术视频）。
+* 执行并监督专家标注，包括按照标准化临床方案进行像素级分割掩膜标注。
+* 评估标注质量和评估者间一致性，确保参考标签准确反映真实临床变异性并符合既定诊断标准。
+
+## 5. 主要联系人
+* **姓名：** Jieyun Bai
+* **所属机构：** 奥克兰大学，新西兰
+* **邮箱：** jbai996@aucklanduni.ac.cn</div></div><div class='section'><h3>Organization</h3><div class='page-content'># MVAA挑战赛 - 技术支持
+
+## 1. 挑战赛平台与场地
+
+### 1.1 官方运作平台
+* **CodaBench:** [https://www.codabench.org/](https://www.codabench.org/)
+* 用于提交、评估、排名和结果发布。
+* 提供标准化的评估脚本、指标和执行设置，确保公平和可重复的基准测试环境。
+* **历史参考:** IUGC 2025 on CodaBench ([https://www.codabench.org/competitions/7108/](https://www.codabench.org/competitions/7108/))
+
+### 1.2 挑战赛场地
+* 融入以下MICCAI 2026工作坊：
+    * **第一届MICCAI医学世界模型工作坊 (MWM)**
+
+### 1.3 网站
+* 官方网站在此阶段**尚未公开发布**；所有重要更新将在CodaBench平台和工作坊官方页面发布。
+
+## 2. 计算环境
+
+### 2.1 参赛者端
+* 参赛者使用**自己的计算基础设施**开发和训练算法，在模型设计和优化方面提供充分的灵活性。
+* 解决方案预期在**12GB GPU上处理单个案例需在10秒内完成**。
+
+### 2.2 评估端
+* CodaBench平台使用**标准化计算设置**进行测试集评估（通过Docker容器），以消除本地硬件差异。
+* 评估脚本已预定义，将在GitHub上公开发布，以确保透明度。
+
+## 3. 开源资源（由组织者提供）
+
+### 3.1 评估软件
+* 评估软件将通过开源仓库（如GitHub）向所有参赛者**公开发布**。
+* 包含综合文档、使用说明和平台要求，供最终测试前的本地验证。
+
+### 3.2 官方基准模型
+* 将发布官方基准模型，帮助参赛者校准开发工作。
+* 将包含参考实现和**预训练基础模型检查点**。
+* 将提供关于挑战赛数据集微调和推理的详细说明。
+
+## 4. 代码与数据访问
+
+### 4.1 参赛者代码要求
+* 包含完整源代码的GitHub仓库URL是**获得奖项资格的先决条件**。
+* 代码必须可复现，并遵循标准开源指南。
+
+### 4.2 测试集标签访问
+* 挑战赛期间**仅组织者**可以访问隐藏测试数据集的标签。
+* 所有测试标签将在挑战赛结束后**6个月内公开发布**，供后续研究使用。
+
+## 5. 利益冲突
+* 组织者声明**不存在利益冲突**。任何外部商业或机构利益均不会影响挑战赛的设计、评估或排名。
+
+## 6. 技术联系
+如有任何关于平台、数据完整性或评估脚本的技术问题，请联系：
+* **技术负责人:** [tyt6xx@163.com](mailto:tyt6xx@163.com)</div></div><div class='section'><h3>Technical Support</h3><div class='page-content'># MVAA 挑战赛 - 发表计划与未来规划
+
+MVAA 挑战赛具有完整的发表框架，重点关注临床相关性、方法学创新性和长期多模态基准开发。
+
+## 1. 会议论文集发表
+* **Springer LNCS:** 我们将协调会后论文集，使参赛团队能够在与第一届 MICCAI 医学世界模型研讨会 (MWM) 相关的 **Springer 计算机科学讲义 (LNCS)** 卷中发表详细的方法描述。
+* **开放获取:** 该机制确保所有成功的技术贡献在 MICCAI 生态系统中公开可用且可引用。
+
+## 2. 期刊特刊投稿
+* **优秀投稿:** 高影响力的投稿将被邀请向 **IEEE 生物医学工程汇刊 (TBME)** 特刊提交扩展稿件，特刊题目为：*&quot;数字孪生、基于仿真的人工智能与医学世界模型。&quot;*
+* **遴选标准:** 评估超越排行榜排名，重点关注方法学创新性、跨模态泛化能力和二尖瓣分析的实际临床应用潜力。
+
+## 3. 挑战赛总结论文
+* **期刊级总结:** 我们将协调编写综合性挑战赛总结论文，报告和分析 MVAA 结果。
+* **分析内容:** 包括所有参赛方法的荟萃分析、多模态分割的主要发现，以及结构性心脏病分析的研究趋势。
+* **目的:** 该论文作为社区的权威参考资料，为统一解剖学建模的未来研究方向提供指导。
+
+## 4. 长期未来规划
+1. **年度重复举办:** 将挑战赛作为 **年度活动** 维持运营，与 MICCAI 固定截止日期相关联，持续扩展多模态临床数据集。
+2. **与世界模型集成:** 进一步将基准与 **医学世界模型和数字孪生框架** 集成，将二尖瓣分析扩展至纵向和预测性手术建模。
+3. **临床转化:** 推动表现最佳的算法转化为二尖瓣修复、经导管二尖瓣边缘对边缘修复 (TEER) 和瓣环成形术的临床工具，减少操作者依赖性，提高干预安全性。
+4. **全球合作:** 建立多模态心脏研究可持续联盟，促进临床医生、超声医学工作者和人工智能研究人员之间的持续协作。</div></div><div class='section'><h3>Future Plans</h3><div class='page-content'># 问答
+
+如有任何问题，可以联系以下四位负责人。**请首先联系Bo Deng。**
+
+* **Bo Deng**，暨南大学，中国  
+  邮箱：[dbd2002@foxmail.com](mailto:dbd2002@foxmail.com)
+
+* **Jieyun Bai**，奥克兰大学，新西兰 / 暨南大学，中国  
+  邮箱：[bai_jieyun@126.com](mailto:bai_jieyun@126.com)
+
+* **Yitong Tang**，暨南大学，中国  
+  邮箱：[tyt6xx@163.com](mailto:tyt6xx@163.com)
+
+* **Jiake Li**，暨南大学，中国  
+  邮箱：[ljk.me@qq.com](mailto:ljk.me@qq.com)</div></div><div class='section'><h3>Q&amp;A</h3><div class='page-content'># 问答
+
+如有任何疑问，可联系以下四位负责人。**请先联系Bo Deng。**
+
+* **Bo Deng**，暨南大学，中国  
+  电子邮箱：[dbd2002@foxmail.com](mailto:dbd2002@foxmail.com)
+
+* **Jieyun Bai**，奥克兰大学，新西兰 / 暨南大学，中国  
+  电子邮箱：[bai_jieyun@126.com](mailto:bai_jieyun@126.com)
+
+* **Yitong Tang**，暨南大学，中国  
+  电子邮箱：[tyt6xx@163.com](mailto:tyt6xx@163.com)
+
+* **Jiake Li**，暨南大学，中国  
+  电子邮箱：[ljk.me@qq.com](mailto:ljk.me@qq.com)</div></div>
+
+</div>
+</body>
+</html>

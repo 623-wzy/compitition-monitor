@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Multi Level Political Meme Classification MMLow @ AACL - IJCNP 2026 — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>Multi Level Political Meme Classification MMLow @ AACL - IJCNP 2026</h2>
+  <div class="detail-meta">
+    <span>ID: 16893</span>
+    <span>创建者: dravidian</span>
+    <span>创建时间: 2026-06-02</span>
+    <span>参与人数: 25</span>
+    <span>提交次数: 0</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16893/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">这项共享任务旨在推进泰米尔政治梗图的多模态政治内容分析研究。梗图在政治话题中发挥着重要作用。梗图是高度易接近的交流形式，即使对不理解所用语言的人也能传达语境和意义。梗图的多模态特性结合了视觉、符号和简短文本，使其成为塑造政治叙事和影响公众认知的强大工具。为了应对自动化理解此类内容日益增长的需求，这项共享任务聚焦于开发能够对泰米尔梗图执行多层级分类的系统。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-other'>其他</span> First phase</td><td>2025-11-16</td><td>2026-07-03</td><td>999</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'># 关于
+# 多层级政治表情包分类共享任务
+
+## MMLow
+## @ AACL-IJCNLP 2026
+
+本共享任务旨在推进泰米尔语和马拉雅拉姆语政治表情包的多模态政治内容分析研究。表情包在政治话语中发挥着重要作用。表情包是一种高度易获取的交流形式，即使对所用语言不理解的人也能传达语境和意义。表情包结合视觉、符号和短文本的多模态特性使其成为塑造政治叙事和影响公众认知的强大工具。为了满足对此类内容自动化理解日益增长的需求，本共享任务致力于开发能够对泰米尔语和马拉雅拉姆语表情包进行多层级分类的系统。
+
+## 示例
+
+第一个图例：第1级：支持/赞扬 | 第2级：对个人的支持
+
+第二个图例：第1级：嘲讽/反对 | 第2级：针对个人的嘲讽
+
+第三个图例：第1级：支持/赞扬 | 第2级：对政党的支持
+
+第四个图例：第1级：嘲讽/反对 | 第2级：针对个人的嘲讽/反对
+
+参与者需要开发能够在两个分层级别对每个表情包进行分类的模型：
+
+- **第1级：支持与嘲讽** — 识别表情包是否表达对政治人物、政党或意识形态的支持或嘲讽。
+- **第2级：目标识别** — 确定表情包中引用的具体政治人物、政党或群体。
+
+本共享任务的目标是促进开发具有文化意识的多模态系统，该系统能够理解泰米尔语和马拉雅拉姆语表情包话语中的政治立场和目标信息。
+
+&lt;u&gt;**参与者工具包**&lt;/u&gt;
+
+- **账户设置：**
+  - **&#x27;Codabench&#x27;账户：** 所有参与者必须在Codabench上创建账户以参与竞赛。该平台将用于访问竞赛相关内容</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'>&lt;h1 style=&quot;text-align: center;&quot;&gt;
+  &lt;span style=&quot;text-decoration: underline;&quot;&gt;评估标准&lt;/span&gt;
+&lt;/h1&gt;
+
+&lt;div style=&quot;font-family: Arial, sans-serif; font-size: 14px; text-align: center; border: 2px solid red; padding: 15px; border-radius: 8px; background-color: #fff5f5;&quot;&gt;
+  &lt;strong&gt;我们仅通过Google表单接受测试预测结果&lt;/strong&gt;
+	  &lt;br&gt;&lt;br&gt;
+  &lt;div style=&quot;display: inline-block; padding: 12px 20px; border: 2px dashed #ff4d4d; border-radius: 10px; background-color: #ffecec; margin-bottom: 10px;&quot;&gt;
+  &lt;strong&gt;提交链接：&lt;/strong&gt;
+  &lt;a href=&quot;&quot; 
+     target=&quot;_blank&quot; 
+     style=&quot;color: blue; font-weight: bold; text-decoration: underline;&quot;&gt;
+     通过Google表单提交
+  &lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;br&gt;
+
+&lt;div&gt;
+  &lt;strong&gt;提交内容应为一个以您的团队名称命名的&lt;span style=&quot;background-color: #ffc0cb;&quot;&gt;.zip&lt;/span&gt;文件，其中包含每个任务和每种语言的&lt;span style=&quot;background-color: #ffc0cb;&quot;&gt;.csv&lt;/span&gt;文件：&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;br&gt;
+
+&lt;div style=&quot;border: 2px solid #ff4d4d; padding: 20px; border-radius: 8px; background: #fff5f5; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6;&quot;&gt;
+&lt;div&gt;
+ 
+
+&lt;div style=&quot;border: 2px solid red; padding: 10px; text-align: center;&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;论文提交应采用以下格式。&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Overleaf模板：
+      &lt;a href=&quot;&quot;&gt;
+        待更新
+      &lt;/a&gt;
+    &lt;/strong&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lt;strong&gt;论文提交链接：
+      &lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+		
+ 
+  &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;br&gt;
+
+
+&lt;p&gt;
+  分类系统的性能将通过所有类别的宏平均精确率、宏平均召回率和宏平均F1分数来衡量。
+  建议参赛者使用sklearn分类报告检查其系统
+&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html&quot;&gt;
+      https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html
+    &lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr style=&quot;border-top: 1px dashed black; margin-top: 20px; margin-bottom: 20px;&quot;&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+  &lt;strong&gt;如需更多信息或有任何疑问，&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;br&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+  &lt;strong&gt;联系我们：&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;br&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+  &lt;strong&gt;邮箱：&lt;/strong&gt;
+  &lt;a href=&quot;mailto:bharathiraja.akr@gmail.com&quot;&gt;bharathiraja.akr@gmail.com&lt;/a&gt;
+  和
+  &lt;a href=&quot;mailto:saranya@acad.cutn.ac.in&quot;&gt;saranya@acad.cutn.ac.in&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;hr style=&quot;border-top: 1px dashed black; margin-top: 20px; margin-bottom: 20px;&quot;&gt;</div></div><div class='section'><h3>Important Dates</h3><div class='page-content'>&lt;h2 style=&quot;text-align:center;&quot;&gt;重要日期&lt;/h2&gt;
+&lt;div style=&quot;display:flex;justify-content:center;gap:40px;font-family:Arial;margin-top:20px;&quot;&gt;
+&lt;div&gt;
+&lt;h3 style=&quot;text-align:center;&quot;&gt;事项&lt;/h3&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:260px;margin-bottom:12px;&quot;&gt;任务公告&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:260px;margin-bottom:12px;&quot;&gt;发布训练数据&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:260px;margin-bottom:12px;&quot;&gt;发布测试数据&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:260px;margin-bottom:12px;&quot;&gt;运行提交截止日期&lt;br&gt;&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:260px;margin-bottom:12px;&quot;&gt;公布结果&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:260px;margin-bottom:12px;&quot;&gt;论文提交&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:260px;margin-bottom:12px;&quot;&gt;录用通知&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:260px;margin-bottom:12px;&quot;&gt;最终论文截止日期&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:260px;&quot;&gt;研讨会日期&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;h3 style=&quot;text-align:center;&quot;&gt;日期&lt;/h3&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:200px;margin-bottom:12px;&quot;&gt;2026年6月1日&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:200px;margin-bottom:12px;&quot;&gt;2026年6月10日&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:200px;margin-bottom:12px;&quot;&gt;2026年7月10日&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:200px;margin-bottom:12px;&quot;&gt;2026年7月20日&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:200px;margin-bottom:12px;&quot;&gt;2026年7月25日&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:200px;margin-bottom:12px;&quot;&gt;2026年8月10日&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:200px;margin-bottom:12px;&quot;&gt;2026年9月10日&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:200px;margin-bottom:12px;&quot;&gt;2026年9月30日&lt;/div&gt;
+&lt;div style=&quot;border:2px solid #000;padding:10px;border-radius:12px;width:200px;&quot;&gt;2026年11月9-10日&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr /&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;📧&amp;nbsp;&lt;strong&gt;如有任何疑问，请联系我们 📧&amp;nbsp;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;a href=&quot;mailto:bharathirajaakr@gmail.com&quot;&gt;&lt;strong&gt;bharathiraja.akr@gmail.com&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;, &lt;/strong&gt;&lt;a href=&quot;mailto:saranya&quot;&gt;&lt;strong&gt;g_jyothishlal@cb.amrita.edu&lt;/strong&gt;&lt;/a&gt;, 和 &lt;/strong&gt;&lt;a href=&quot;mailto:bharathiraja.akr@gmail.com&quot;&gt;&lt;strong&gt;bharathiraja.akr@gmail.com&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;</div></div><div class='section'><h3>Organizers</h3><div class='page-content'>&lt;h1 style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;组织者&lt;/strong&gt;&lt;/h1&gt;
+&lt;ul style=&quot;line-height: 1.8;&quot;&gt;
+
+   &lt;li&gt;&lt;a href=&quot;https://cutn.ac.in/staff-members/dr-r-saranya/&quot; target=&quot;_blank&quot;&gt;Saranya Rajiakodi&lt;/a&gt;，印度泰米尔纳德中央大学&lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;https://www.insight-centre.org/our-team/shunmugapriya-muthusamy-chinnan/&quot; target=&quot;_blank&quot;&gt;
+      Shunmuga Priya Muthusamy Chinnan
+    &lt;/a&gt;，爱尔兰高威大学
+  &lt;/li&gt;
+   &lt;li&gt;&lt;a href=&quot;https://www.amrita.edu/faculty/dr-premjith-b/&quot; target=&quot;_blank&quot;&gt;Premjith B&lt;/a&gt;，印度泰米尔纳德阿姆利塔维什瓦维迪亚皮坦&lt;/li&gt;
+	
+
+
+  &lt;li&gt;&lt;a href=&quot;https://www.srmist.edu.in/faculty/subalalitha-c-n/&quot; target=&quot;_blank&quot;&gt;Subalalitha CN&lt;/a&gt;，印度泰米尔纳德SRM科技学院&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/in/rahul-ponnusamy/?originalSubdomain=ie&quot; target=&quot;_blank&quot;&gt;Rahul Ponnusamy&lt;/a&gt;，爱尔兰高威大学&lt;/li&gt;
+	 &lt;li&gt;&lt;a href=&quot;&quot; target=&quot;_blank&quot;&gt;Anshid K A&lt;/a&gt;，印度马尔托玛学院&lt;/li&gt;
+	
+   &lt;li&gt;&lt;a href=&quot;&quot; target=&quot;_blank&quot;&gt;Bhuvaneshwari Sivagnanam&lt;/a&gt;，印度泰米尔纳德中央大学&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;&quot; target=&quot;_blank&quot;&gt;Jananayagan V&lt;/a&gt;，印度泰米尔纳德中央大学&lt;/li&gt;
+  
+	
+  &lt;li&gt;&lt;a href=&quot;https://research.universityofgalway.ie/en/persons/bharathi-raja-asoka-chakravarthi&quot; target=&quot;_blank&quot;&gt;Bharathi Raja Chakravarthi&lt;/a&gt;，爱尔兰高威大学&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1 style=&quot;text-align: Left;&quot;&gt;&lt;strong&gt;学生志愿者&lt;/strong&gt;&lt;/h1&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href=&quot;&quot;&gt;Ragavan N&lt;/a&gt;，印度泰米尔纳德中央大学&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;&quot;&gt;Santhini P&lt;/a&gt;，印度泰米尔纳德中央大学&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;邮箱：&lt;/strong&gt;&lt;a href=&quot;mailto:bharathiraja.akr@gmail.com&quot;&gt;bharathiraja.akr@gmail.com&lt;/a&gt; 和
+&lt;a href=&quot;mailto:saranya@acad.cutn.ac.in &quot;&gt;saranya@acad.cutn.ac.in&lt;/a&gt;&lt;/p&gt;</div></div><div class='section'><h3>Dataset files</h3><div class='page-content'>&lt;h1 style=&quot;text-align: center;&quot;&gt;&lt;span&gt;数据集&lt;/span&gt;&lt;/h1&gt;
+&lt;p&gt;我们呈现包含两种语言的表情包图像数据集，具有多层级注释&lt;/p&gt;
+
+&lt;h2&gt;语言 - 数据集统计&lt;/h2&gt;
+&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;8&quot; style=&quot;border-collapse: collapse; width: 60%; margin-left: auto; margin-right: auto;&quot;&gt;
+  &lt;thead style=&quot;background-color: #f2f2f2;&quot;&gt;
+    &lt;tr&gt;
+      &lt;th&gt;语言&lt;/th&gt;
+      &lt;th&gt;训练集&lt;/th&gt;
+      &lt;th&gt;测试集&lt;/th&gt;
+      &lt;th&gt;总计&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+			&lt;tr&gt;&lt;td&gt;泰米尔语&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+			&lt;tr&gt;&lt;td&gt;马拉雅拉姆语&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;br&gt;&lt;hr&gt;
+&lt;h2&gt;任务数据集下载链接&lt;/h2&gt;
+&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;8&quot; style=&quot;border-collapse: collapse; width: 95%; margin-left: auto; margin-right: auto;&quot;&gt;
+  &lt;thead style=&quot;background-color: #f2f2f2;&quot;&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&quot;2&quot;&gt;语言&lt;/th&gt;
+      &lt;th colspan=&quot;4&quot;&gt;数据集链接&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;训练集&lt;/th&gt;
+      &lt;th&gt;测试集（未标注）&lt;/th&gt;
+      &lt;th&gt;测试集（已标注）&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;泰米尔语&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;&quot;&gt; -- &lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;&quot;&gt;--&lt;/a&gt;&lt;/td&gt; 
+       &lt;td&gt;&lt;a href=&quot;&quot;&gt; -- &lt;/a&gt;&lt;/td&gt; 
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;马拉雅拉姆语&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;&quot;&gt; -- &lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;&quot;&gt; -- &lt;/a&gt;&lt;/td&gt;
+		  &lt;td&gt;&lt;a href=&quot;&quot;&gt; -- &lt;/a&gt;&lt;/td&gt; 
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;br&gt;&lt;hr&gt;
+&lt;h2&gt;评估计划&lt;/h2&gt;
+&lt;p&gt;分类系统的性能将通过宏平均精确率、宏平均召回率以及所有类别的宏平均F值进行衡量。鼓励参赛者使用Scikit-learn的分类报告检验其系统：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html&quot; target=&quot;_blank&quot;&gt;https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;如有任何疑问，请联系我们：&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;a href=&quot;mailto:bharathiraja.akr@gmail.com&quot;&gt;&lt;strong&gt;bharathiraja.akr@gmail.com&lt;/strong&gt;&lt;/a&gt;，以及 &lt;a href=&quot;mailto:saranya@acad.cutn.ac.in &quot;&gt;&lt;strong&gt;saranya@acad.cutn.ac.in &lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;&lt;u&gt;参考文献：&lt;/u&gt;&lt;/strong&gt; &lt;span style=&quot;color: #ff0000;&quot;&gt;请引用以下参考文献&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;color: #ff0000;&quot;&gt;待公布&lt;/p&gt;
+&lt;hr&gt;</div></div><div class='section'><h3>Results</h3><div class='page-content'>**结果：**
+
+即将更新</div></div>
+
+</div>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>本次更新 — Codabench 竞赛监测</title>
+<title>Waste Sorting Detection Challenge — Codabench 竞赛监测</title>
 <style>
 :root {
     --bg: #0f1117;
@@ -97,10 +97,84 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
   <h1>Codabench 竞赛监测</h1>
   <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
 </header>
-<div class="update-wrap">
+<div class="detail-wrap">
   <a class="back-link" href="index.html">← 返回竞赛目录</a>
-  <p style="color:var(--muted);font-size:.875rem;margin-bottom:24px">更新于 2026-06-21 17:34</p>
-<div class='update-section'><h2 class='new'>🆕 新增竞赛</h2><p class='update-empty'>本次无新增竞赛</p></div><div class='update-section'><h2 class='expired'>🗑️ 过期清理</h2><p class='update-empty'>本次无过期清理</p></div>
+  <h2>Waste Sorting Detection Challenge</h2>
+  <div class="detail-meta">
+    <span>ID: 16986</span>
+    <span>创建者: avartan_labs</span>
+    <span>创建时间: 2026-06-06</span>
+    <span>参与人数: 7</span>
+    <span>提交次数: 11</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16986/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">从真实传送带图像中检测和分类废弃物体。
+在19种废物类别中构建最佳物体检测模型。
+由Avartan Labs组织。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-test'>测试</span> submission</td><td>2026-06-20</td><td>2026-06-30</td><td>10</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'># 废弃物分类检测挑战赛
+
+## 关于
+构建最佳目标检测模型，从废弃物分类设施的真实传送带图像中检测和分类废弃物。在19个废弃物类别中竞争。
+
+## 数据集
+- 训练集：5,238张图像，YOLO格式标签
+- 测试集：1,312张图像
+- 格式：YOLO（class x_center y_center width height）
+
+## 类别（共19类）
+| ID | 类别 | ID | 类别 |
+|----|-------|----|-------|
+| 0 | pet-bottle-clear | 10 | sachet |
+| 1 | pet-bottle-green | 11 | tetrapack |
+| 2 | ldpe-clear | 12 | cardboard-brown |
+| 3 | ldpe-hm | 13 | paper-box |
+| 4 | ldpe-black | 14 | coconut-shell |
+| 5 | hdpe-bottle | 15 | footwear |
+| 6 | metal-can | 16 | idpe-colored |
+| 7 | milk-packet | 17 | hard-plastic |
+| 8 | pp-bag | 18 | other |
+| 9 | mlp-packet | | |
+
+## 评估指标
+主要指标：**mAP50**（COCO风格的平均精度均值，IoU=0.50）
+
+## 参赛方式
+1. SSH连接到分配的工作站（凭据另行共享）
+2. 在提供的数据集上训练模型，数据集位置：`/home/user/hackathon/Waste_sorting_dataset/`
+3. 在测试集上生成预测结果
+4. 使用提供的`submit.py`脚本提交
+
+## 提交格式
+提交包含`predictions.json`的ZIP文件，格式为COCO检测格式：
+```json
+[
+  {
+    &quot;image_id&quot;: 0,
+    &quot;category_id&quot;: 0,
+    &quot;bbox&quot;: [x, y, width, height],
+    &quot;score&quot;: 0.95
+  }
+]
+```
+
+## 规则
+- 每天最多3次官方提交
+- 仅在提供的数据集上训练
+- 禁止团队间共享模型权重</div></div>
+
 </div>
 </body>
 </html>

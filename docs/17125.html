@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LoViF 2026 Challenge on AIGC Image Compression Challenge @ ECCV 2026 — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>LoViF 2026 Challenge on AIGC Image Compression Challenge @ ECCV 2026</h2>
+  <div class="detail-meta">
+    <span>ID: 17125</span>
+    <span>创建者: xinli</span>
+    <span>创建时间: 2026-06-14</span>
+    <span>参与人数: 15</span>
+    <span>提交次数: 3</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/17125/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">用于压缩AI生成图像的基准，涵盖多样化模型、提示词和分辨率。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development</td><td>2026-06-16</td><td>2026-07-20</td><td>10</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>overview</h3><div class='page-content'>&lt;div align=&quot;center&quot;&gt;
+&lt;h1&gt;&lt;strong&gt;第2届低层级视觉前沿工作坊（LoViF）@ ECCV 2026&lt;/strong&gt;&lt;/h1&gt;
+&lt;/div&gt;
+&lt;h2&gt;&amp;nbsp;&lt;/h2&gt;
+&lt;h1&gt;AIGC图像压缩挑战赛&lt;/h1&gt;
+&lt;h2&gt;&amp;nbsp;&lt;/h2&gt;
+
+&lt;h2&gt;重要日期&lt;/h2&gt;
+
+&lt;ul&gt;
+    &lt;li&gt;2026.06.15 — 训练数据发布&lt;/li&gt;
+    &lt;li&gt;2026.06.16 — 验证数据发布&lt;/li&gt;
+    &lt;li&gt;2026.06.16 — 验证服务器上线&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;2026.07.18 — 解码器可执行文件提交截止时间（最大文件大小：5 GB）&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;2026.07.18 — 最终测试数据发布&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;2026.07.23 — 测试结果提交截止时间&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;2026.07.23 — 信息表提交截止时间&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;2026.07.25 — 初步测试结果向参赛者发布&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;2026.07.24 — 挑战赛论文提交截止时间（鼓励提交挑战赛论文。我们将从挑战赛论文中遴选一篇杰出论文奖）&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;2026.09.xx — LoViF工作坊、最终结果和奖项宣布（ECCV 2026）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2&gt;挑战赛概述&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+AIGC图像压缩挑战赛作为&lt;a href=&quot;https://lovif-eccv2026-workshop.github.io/&quot;&gt;第2届低层级视觉前沿工作坊——生成式AI、偏好优化和代理系统（LoViF）&lt;/a&gt;的一部分而组织，将与ECCV 2026同期举行。
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+AIGC图像不仅在外观上不同于传统自然图像基准，在压缩后需要保留的内容上也有所不同。在许多生成图像中，用户关心的是与提示词一致的对象组成、可读的文字、海报或UI式的布局、风格化的纹理以及古典摄影数据集中不常见的合成局部细节。一旦这些区域被激进压缩，可见的失真往往不仅限于模糊或振铃伪影：文字可能变得难以阅读、语义结构可能偏移、生成的精细图案可能坍塌成不真实的伪影。
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+因此，本挑战赛关注AIGC图像压缩作为一个独特的问题设置。目标是在精心策划的AI生成图像数据集上对编码效率、感知质量和语义保留进行基准测试，并鼓励对文字繁密提示词、密集组合指令和与模型相关的视觉风格具有鲁棒性的方法。欢迎参赛者探索传统和基于学习的编码器，包括针对文字保真度、生成纹理重建和提示词对齐细节保留调优的方法。
+&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+&lt;h2&gt;竞赛动机&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+虽然图像压缩已经取得了快速进展，但大多数公开基准仍然强调由摄像机捕获的自然图像。这为AIGC内容留下了明显的空白，其中可读的文字、合成图案、提示词一致的结构和风格化区域即使在传统失真度量指标仍可接受的情况下也可能被压缩伪影过度损伤。
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+发布的AIGC-IC基准围绕这一空白而设计。它包含由10个文本到图像模型生成的1000张图像，提示词来自多个互补来源，包括组合式评估、密集提示词追踪、视觉文字生成和长文本渲染。数据涵盖1K和2K分辨率级别，并保留原始生成的PNG内容和输出分辨率，以便基准反映真实的AIGC生成伪影而非事后调整大小的影响。
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+通过引入此基准，AIGC图像压缩挑战赛旨在为&lt;strong&gt;AI生成图像压缩&lt;/strong&gt;提供一个实用的、前瞻性的评估设置。我们希望该挑战赛能够鼓励在生成器族群间通用、预
+&lt;/p&gt;</div></div><div class='section'><h3>data</h3><div class='page-content'>&lt;div align=&quot;center&quot;&gt;
+&lt;h1&gt;&lt;strong&gt;第2届低层次视觉前沿研讨会（LoViF）@ ECCV 2026&lt;/strong&gt;&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;h2&gt;&amp;nbsp;&lt;/h2&gt;
+&lt;h1&gt;AIGC图像压缩挑战赛&lt;/h1&gt;
+&lt;h2&gt;&amp;nbsp;&lt;/h2&gt;
+
+
+&lt;h2&gt;数据概览&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+本挑战赛的官方数据集为&lt;strong&gt;AIGC-IC-1000&lt;/strong&gt;，这是一个为图像压缩研究精心策划的人工智能生成图像基准。该发布版本旨在评估现代生成内容的编码性能，涵盖多样化的提示词、模型系列和输出分辨率。数据集组成如下：
+&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;strong&gt;训练数据：&lt;/strong&gt;
+    共提供800张人工智能生成的图像用于训练。这些图像由10个文本生成图像模型生成，覆盖Geneval、DPG-Bench、CVTG-2K和LongText-Bench风格的提示词。允许使用额外的公开数据集，但所有外部数据源必须在事实说明书中清晰披露。
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;strong&gt;验证数据：&lt;/strong&gt;
+    在开发阶段，提供100张人工智能生成的图像用于性能调优。
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;strong&gt;测试数据：&lt;/strong&gt;
+    在测试阶段，额外提供100张人工智能生成的图像用于最终评估。
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+完整发布版本包含1000张图像，采用800/100/100的训练/验证/测试分割比例。分辨率层级在1K和2K输出之间大致均衡，验证和测试图像保留原始PNG输出，未经过调整大小、裁剪或填充处理。
+&lt;/p&gt;
+
+&lt;h2&gt;数据访问&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+&lt;strong&gt;
+参赛者在访问数据时，隐含同意挑战赛的条款和条件。
+&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;ul&gt;
+
+  &lt;li&gt;
+    &lt;strong&gt;训练数据：&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;a href=&quot;https://drive.google.com/file/d/1i7DPC9qlhc9dw8TqnfmCxhVJaPmqw0VA/view?usp=sharing&quot;&gt;
+        训练数据集
+        &lt;/a&gt;
+        （AIGC-IC-1000训练集，800张PNG图像）
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;strong&gt;开发阶段：&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;a href=&quot;&quot;&gt;
+        验证数据
+        &lt;/a&gt;
+        （AIGC-IC-1000验证集，100张PNG图像）
+      &lt;/li&gt; 
+    &lt;/ul&gt;
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;strong&gt;测试阶段：&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        测试数据：
+        将在测试阶段开始时发布。
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+	&lt;/ul&gt;
+
+&lt;h2&gt;数据集特性&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;strong&gt;生成模型：&lt;/strong&gt;
+    10个文本生成图像模型，每个模型贡献100张图像。
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;strong&gt;提示词来源：&lt;/strong&gt;
+    Geneval、DPG-Bench和CVTG-2K各280个样本，加上LongText-Bench的160个样本。
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;strong&gt;分辨率覆盖：&lt;/strong&gt;
+    混合型正方形、横向和纵向输出，分辨率约为1K和2K两个等级。
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;strong&gt;文件完整性：&lt;/strong&gt;
+    发布的图像为PNG文件，保留输出分辨率和校验和元数据。
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+	&lt;strong&gt;参考文献&lt;/strong&gt;
+	&lt;ol&gt;
+  &lt;li&gt;
+    AIGC-IC基准元数据在随附的数据集发布中。
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    Geneval提示词来源。
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    DPG-Bench提示词来源。
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    CVTG-2K提示词来源。
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    LongText-Bench提示词来源。
+  &lt;/li&gt;
+&lt;/ol&gt;</div></div><div class='section'><h3>evaluation</h3><div class='page-content'># 第2届低级视觉前沿研讨会（LoViF）@ ECCV 2026
+
+# AIGC图像压缩挑战赛
+
+## 开发阶段
+
+在开发阶段，提交物将使用保真度导向和感知导向的度量在低比特率约束下进行评估。评估度量包括PSNR、MS-SSIM、LPIPS、DISTS和比特率（BPP）。PSNR和MS-SSIM均在RGB域中计算。
+
+本挑战赛要求参赛者在**单一比特率操作点**提交结果。整个数据集的平均比特率约束为：
+
+```
+average_bpp ≤ 0.02
+```
+
+违反比特率约束的提交将被视为无效，不会出现在排行榜上。
+
+开发阶段的排行榜排名由以下加权得分决定：
+
+```
+Final_Score = PSNR + 10 × MS_SSIM + 40 × (1 - LPIPS) + 40 × (1 - DISTS)
+```
+
+下面提供了度量计算的简化实现。
+
+```python
+import sys
+import pyiqa
+
+def main(rec_path, gt_path):
+    psnr_m = pyiqa.create_metric(&#x27;psnr&#x27;)
+    ms_m = pyiqa.create_metric(&#x27;ms_ssim&#x27;)
+    lp_m = pyiqa.create_metric(&#x27;lpips&#x27;)
+    dists_m = pyiqa.create_metric(&#x27;dists&#x27;)
+
+    psnr = float(psnr_m(rec_path, gt_path).detach().cpu().squeeze().item())
+    msssim_final = float(ms_m(rec_path, gt_path).detach().cpu().squeeze().item())
+    lpips_final = float(lp_m(rec_path, gt_path).detach().cpu().squeeze().item())
+    dists_final = float(dists_m(rec_path, gt_path).detach().cpu().squeeze().item())
+
+    final_score = psnr + 10.0 * msssim_final - 20.0 * lpips_final - 25.0 * dists_final + 45.0
+
+if __name__ == &#x27;__main__&#x27;:
+    main(sys.argv[1], sys.argv[2])
+```
+
+## 测试阶段
+
+开发阶段结束后，打算参加最终测试阶段的团队必须向挑战赛组织者提交解码器可执行文件以及相应的模型检查点。为了控制模型复杂性和参数规模，提交的解码器和模型检查点的总大小不能超过4 GB。**参赛者在最终评估中必须仅使用提交的代码和相应的模型检查点**。
+
+最终排名将由公开度量集合以及组织者的有效性和可重复性验证决定。提交的方法将从重建保真度和感知质量两个角度进行评估，并额外关注AIGC特定的细节，如文本可读性、合成纹理保留和语义一致性。
+
+请参考提交页面以获取详细的提交说明和所需的文件格式。
+
+## 最终测试阶段 - 初步结果[待公布]
+
+评估完成后，初步结果将在此发布。</div></div><div class='section'><h3>submission</h3><div class='page-content'>&lt;div align=&quot;center&quot;&gt;
+&lt;h1&gt;&lt;strong&gt;第2届低级视觉前沿工作坊（LoViF）@ ECCV 2026&lt;/strong&gt;&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;h2&gt;&amp;nbsp;&lt;/h2&gt;
+&lt;h1&gt;AIGC图像压缩挑战赛&lt;/h1&gt;
+&lt;h2&gt;&amp;nbsp;&lt;/h2&gt;
+
+&lt;h2&gt;提交工作流程&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+挑战赛提交过程包括三个阶段：
+&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;
+&lt;strong&gt;开发阶段（截止日期：2026.07.20）：&lt;/strong&gt;
+参赛者通过Codabench的&lt;strong&gt;&quot;我的提交&quot;&lt;/strong&gt;页面提交遵循要求的结果提交格式的ZIP压缩包。评估服务器将自动计算指标并更新公开排行榜。
+&lt;/li&gt;
+ 
+&lt;li&gt;
+&lt;strong&gt;代码提交阶段（2026.07.20-2026.07.20）：&lt;/strong&gt;
+打算参加最终测试阶段的团队必须通过电子邮件向组织者提交可执行文件/源解码器。提交的解码器必须与测试阶段提交的比特流兼容。&lt;strong&gt;为了限制模型大小和计算复杂性，提交的可执行解码器的大小不得超过4GB。&lt;/strong&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;strong&gt;最终测试阶段（2026.07.20-2026.07.25）：&lt;/strong&gt;
+参赛者必须使用仅对应提交的编解码器对发布的测试集进行推理，并通过电子邮件提交最终ZIP压缩包以供评估，遵循要求的结果提交格式。
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h2&gt;结果提交格式&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt; 
+开发阶段和最终测试阶段的提交都必须遵循以下提交格式。
+&lt;/p&gt;
+
+&lt;ol type=&quot;1&quot;&gt;
+
+&lt;li&gt;
+请确保重建的输出图像具有与对应输入图像完全相同的文件名（例如，输入图像名为&lt;code&gt;0001.png&lt;/code&gt;，重建的输出图像也必须命名为&lt;code&gt;0001.png&lt;/code&gt;）。重建的图像必须保持原始空间分辨率。
+&lt;/li&gt;
+
+&lt;li&gt;
+创建遵循以下结构的&lt;strong&gt;ZIP&lt;/strong&gt;压缩包：
+&lt;br&gt;&lt;br&gt;
+
+&lt;pre&gt;&lt;code&gt;submission.zip
+│
+├── reconstructed/
+│    ├── 0001.png
+│    ├── 0002.png
+│
+├── bitstream/
+│    ├── 0001.bin
+│    ├── 0002.bin
+│
+└── readme.txt&lt;/code&gt;&lt;/pre&gt;
+
+&lt;code&gt;readme.txt&lt;/code&gt;文件应包含每张图像的运行时间（以秒为单位）、推理过程中使用的是CPU还是GPU、是否使用了额外训练数据以及所提交方法的简要描述。如果您的方法包含任何AIGC特定调优、文本保留启发式方法或模型端先验，请在此处记录。
+
+&lt;pre&gt;&lt;code&gt;runtime per image [s] : 10.43
+CPU[1] / GPU[0] : 1
+Extra Data [1] / No Extra Data [0] : 1
+Other description: 简要描述所提交的解决方案，包括依赖项、代码链接、脚本、训练数据或任何其他相关信息。&lt;/code&gt;&lt;/pre&gt;
+
+&lt;/li&gt;
+
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h2&gt;
+开发阶段提交指南
+&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+在开发阶段，参赛者仅需通过Codabench的&quot;我的提交&quot;页面提交遵循结果提交格式的ZIP压缩包。评估服务器将自动计算指标并更新公开排行榜。开发阶段&lt;strong&gt;无需提交&lt;/strong&gt;可执行文件/源解码器。
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;h2&gt;
+代码提交阶段指南
+&lt;/h2&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+开发阶段结束后，打算参加最终测试阶段的团队必须通过电子邮件向挑战赛组织者提交可执行文件/源解码器，电子邮件地址为：
+&lt;a href=&quot;mailto:xiaoyue_ling@sjtu.edu.cn&quot;&gt;xiaoyue_ling@sjtu.edu.cn&lt;/a&gt;
+或
+&lt;a href=&quot;mailto:zhouchuqin@sjtu.edu.cn&quot;&gt;zhouchuqin@sjtu.edu.cn&lt;/a&gt;。
+&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+&lt;strong&gt;代码提交阶段结束后，不允许进行任何编码器/解码器更新、模型重新训练、代码修改或在线/测试时微调&lt;/strong&gt;。
+&lt;/p&gt;
+
+&lt;p&gt;
+电子邮件主题应遵循以下格式：
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;strong&gt;
+[AIGCIC2026] - [AIGC Image Compression] - [YOUR_TEAM_NAME]
+&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+电子邮件正文必须包含以下信息：
+&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;</div></div><div class='section'><h3>organizers</h3><div class='page-content'>&lt;div align=&quot;center&quot;&gt;
+&lt;h1&gt;&lt;strong&gt;第2届低层视觉前沿研讨会(LoViF) @ ECCV 2026&lt;/strong&gt;&lt;/h1&gt;
+&lt;/div&gt;
+&lt;h2&gt;&amp;nbsp;&lt;/h2&gt;
+&lt;h1&gt;组织者&lt;/h1&gt;
+&lt;h3&gt;&amp;nbsp;&lt;/h3&gt;
+&lt;p align=&quot;justify&quot;&gt;AIGC图像压缩挑战赛作为&lt;strong&gt;第2届低层视觉前沿研讨会——生成式AI、偏好优化和代理系统(LoViF)&lt;/strong&gt;的一部分进行组织。组织者负责基准发布、评估协议和竞赛最终结果验证，挑战赛结果将与LoViF 2026一同呈现。&lt;/p&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+如有关于本挑战赛的任何问题，请联系AIGC图像压缩挑战赛的组织者：
+&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+Xin Li:
+&lt;a href=&quot;mailto:xin.li@ustc.edu.cn&quot;&gt;
+xin.li@ustc.edu.cn
+&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p align=&quot;justify&quot;&gt;
+欲了解更多关于LoViF研讨会的信息，请访问：
+&lt;a href=&quot;https://lovif-eccv2026-workshop.github.io/&quot;&gt;
+https://lovif-eccv2026-workshop.github.io/
+&lt;/a&gt;
+&lt;/p&gt;</div></div>
+
+</div>
+</body>
+</html>

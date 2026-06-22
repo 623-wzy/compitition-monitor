@@ -1,0 +1,306 @@
+{
+  "id": 16795,
+  "title": "Fish Species Recognition Challenge",
+  "published": true,
+  "created_by": "khanff",
+  "owner_display_name": "khanff",
+  "created_when": "2026-05-31T12:31:14.005307Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-31-1780230674/99290699ac10/fish.png?AWSAccessKeyId=codabench-prod&Signature=OzoBU50ecnESEemxRqK5mZBKOJ0%3D&Expires=1782037901",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-31-1780230674/99290699ac10/fish_icon.png?AWSAccessKeyId=codabench-prod&Signature=k5OqzuULWyqHKBA6Yon1vE6hNUo%3D&Expires=1782037901",
+  "terms": "### Eligibility\n\nThe challenge is open to all researchers, students, and practitioners from academia and industry.\n\nParticipants may compete individually or as teams. Team mergers after the competition start date are not permitted unless explicitly approved by the organizers.\n\n\n### Allowed Methods\n\nParticipants may use publicly available machine learning models, architectures, and training frameworks.\n\nThe use of general-purpose foundation models is permitted, including but not limited to:\n\n- CLIP and its variants\n- OpenCLIP variants\n- DINO variants\n- SigLIP variants\n- General-purpose large language models (LLMs)\n- General-purpose vision-language models (VLMs)\n- Other publicly available foundation models\n\nParticipants may train, fine-tune, prompt, retrieve from, or otherwise leverage these models provided they comply with the restrictions below.\n\n### Restricted Methods\n\nTo ensure a fair evaluation of generalization ability, participants **must not use models, datasets, or training resources specifically designed for the challenge domain or target categories**.\n\nExamples of prohibited resources include:\n\n- Models explicitly trained for fish species recognition\n- Models fine-tuned on fish-specific datasets\n- Models trained on species-specific benchmark datasets intended for the challenge domain\n- Domain-specific expert systems developed for the target categories\n- Private datasets containing challenge test images or substantially overlapping content\n\nIn general, participants should rely on broadly applicable computer vision and multimodal foundation models rather than domain-specialized recognition systems.\n\nIf there is uncertainty regarding the eligibility of a dataset or model, participants should contact the organizers before submission.\n\nThe organizers reserve the right to request additional details regarding training data and model development to verify compliance.\n\n---\n\n### External Data Policy\n\nThe use of external data is not permitted.\n\n---\n\n## Submission Guidelines\n\nParticipants must submit predictions through the Codabench evaluation server.\n\nParticipants are responsible for ensuring that their submissions follow the required format. Invalid submissions may be rejected automatically.\n\n---\n\n## Fair Play Policy\n\nParticipants must not attempt to obtain test labels through manual inspection, reverse engineering of the evaluation server, or any other means.\n\nAny attempt to manipulate the leaderboard, exploit evaluation infrastructure, or gain unfair access to hidden annotations may result in immediate disqualification.\n\nThe organizers reserve the right to remove submissions that violate the spirit of the challenge.\n\n---\n\n## Transparency Statement\n\nTeams that are selected for final evaluation or prize consideration may be required to submit a transparency statement describing their method.\n\nThe transparency statement should include all the details necessary for reproducing the results. Failure to disclose significant components of a method may result in disqualification.\n\n---\n\n## Code Release\n\nWinning teams may be asked to release code, model checkpoints, or executable inference pipelines sufficient for independent verification of the reported results.\n\nExceptions may be considered for proprietary components, provided that organizers can independently verify the method.\n\n---\n\n## Contact\n\nFor questions regarding the challenge, evaluation protocol, or submission process, please contact the challenge organizers through the official communication channels listed on the CV4E workshop website.",
+  "pages": [
+    {
+      "id": 79915,
+      "title": "Challenge Overview",
+      "content": "# Fish Species Recognition Challenge\n\n## Overview\n\nWelcome to the Fish Species Recognition Challenge! Your task is to build a classifier that identifies fish species from images.\n\nYou will be provided with:\n- A **training set** of labelled fish images (species name for each image)\n- A **test set** of unlabelled fish images used in both the development and final phases\n\nDownload the full dataset from the link provided in the \"How to Participate\" page.\n\n## Task\n\nGiven a fish image, predict its species label. Submissions are JSON files mapping image filenames to predicted species names.\n\n## Evaluation\n\nSubmissions are scored by **classification accuracy** — the fraction of test images whose predicted species matches the ground truth label. Predictions are matched to ground truth **by image filename key**, so ordering does not matter.\n\n## Data Format\n\n**Training labels** (`train_labels.json`):\n```json\n{\n  \"train/img_001.jpg\": \"salmon\",\n  \"train/img_002.jpg\": \"tuna\"\n}\n```\n\n**Submission file** (`prediction.json`) — one entry per test image:\n```json\n{\n  \"img_001.jpg\": \"salmon\",\n  \"img_002.jpg\": \"tuna\",\n  \"img_003.jpg\": \"bass\"\n}\n```\n\n## Getting Started\n\nDownload the starting kit from the Development Phase page for an example submission and baseline code.",
+      "index": 0
+    },
+    {
+      "id": 79916,
+      "title": "How to Participate",
+      "content": "# How to Participate\n\n## 1. Download the Dataset\n\nDownload the fish image dataset from Google Drive: **[TODO: insert your Google Drive link here]**\n\nThe archive contains:\n- `train/` — training images organised into subfolders by species\n- `train_labels.json` — mapping of image filename → species label\n- `test/` — test images (no labels)\n\n## 2. Build Your Model\n\nTrain a fish species classifier on the training data. You are free to use any framework (PyTorch, TensorFlow, scikit-learn, etc.) and any pre-trained backbone.\n\n## 3. Format Your Predictions\n\nCreate a file named `prediction.json` mapping each test image filename to your predicted species label:\n\n```json\n{\n  \"img_001.jpg\": \"salmon\",\n  \"img_002.jpg\": \"tuna\",\n  \"img_003.jpg\": \"bass\",\n  \"img_004.jpg\": \"herring\"\n}\n```\n\nEvery key in the ground truth must appear in your submission — extra keys are ignored, missing keys cause an error.\n\n## 4. Submit\n\nZip your prediction file and upload it:\n\n```bash\nzip submission.zip prediction.json\n```\n\nThen upload `submission.zip` on the Development Phase page.\n\n## 5. Phases\n\n- **Development Phase**: submit as many times as you like to tune your model.\n- **Final Evaluation Phase**: one submission only. Choose your best model carefully.\n\nSee the **Timeline** page for deadlines.",
+      "index": 1
+    },
+    {
+      "id": 79917,
+      "title": "Timeline",
+      "content": "# Timeline\n\n## Development Phase\n**Start:** TODO — set to your workshop start date\n\n**End:** TODO — set to your submission deadline\n\nDuring this phase you can submit as many times as you like. Your predictions are scored against a public development test set and results appear on the leaderboard immediately.\n\nUse this phase to iterate on your model and check your score before the final deadline.\n\n## Final Evaluation Phase\n**Start:** TODO — after the development phase closes\n\nDuring this phase you may submit **once**. Predictions are scored against a hidden test set that was not available during development. Your final rank is determined by this score.",
+      "index": 2
+    }
+  ],
+  "phases": [
+    {
+      "id": 27538,
+      "index": 0,
+      "start": "2026-01-01T00:00:00Z",
+      "end": "2026-06-30T00:00:00Z",
+      "name": "Development Phase",
+      "description": "Development phase: train and tune your fish species classifier.",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "fdb5807c-4089-4310-84a5-c2caba5ca25c",
+          "order_index": 0,
+          "phase": 27538,
+          "id": 33607,
+          "value": "fdb5807c-4089-4310-84a5-c2caba5ca25c",
+          "key": "fdb5807c-4089-4310-84a5-c2caba5ca25c",
+          "created_when": "2026-05-31T12:31:10.603812Z",
+          "name": "Fish Species Development Task",
+          "solutions": [
+            {
+              "name": "solution @ 05-31-2026 12:31",
+              "description": null,
+              "key": "b7d71265-0118-421f-a5a5-3709a2d560ad",
+              "tasks": [
+                "fdb5807c-4089-4310-84a5-c2caba5ca25c"
+              ],
+              "data": "4638a16c-88c8-4baa-84f4-f7e8c62b3840",
+              "md5": "e6a777f2ae65d4a85cf0ad6a4a3c728a",
+              "size": 151.0
+            }
+          ],
+          "public_datasets": [
+            {
+              "id": 803307,
+              "created_by": "khanff",
+              "owner_display_name": "khanff",
+              "created_when": "2026-05-31T12:31:10.161741Z",
+              "name": "scoring_program @ '05-31-2026 12:31'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "e83e7ddd-442a-4fd2-bf5d-29687ff81b6a",
+              "value": "e83e7ddd-442a-4fd2-bf5d-29687ff81b6a",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16795,
+                  "title": "Fish Species Recognition Challenge"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 622.0
+            },
+            {
+              "id": 803308,
+              "created_by": "khanff",
+              "owner_display_name": "khanff",
+              "created_when": "2026-05-31T12:31:10.282174Z",
+              "name": "reference_data @ '05-31-2026 12:31'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "d7bd50ac-06d8-474a-b552-46384593f8ee",
+              "value": "d7bd50ac-06d8-474a-b552-46384593f8ee",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16795,
+                  "title": "Fish Species Recognition Challenge"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 366471.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": {
+        "id": 803314,
+        "created_by": "khanff",
+        "owner_display_name": "khanff",
+        "created_when": "2026-05-31T12:31:13.712623Z",
+        "name": "public_data @ '05-31-2026 12:31'",
+        "type": "public_data",
+        "description": null,
+        "is_public": false,
+        "key": "9782bdad-0167-48f0-ac77-b8d2f01efe24",
+        "value": "9782bdad-0167-48f0-ac77-b8d2f01efe24",
+        "was_created_by_competition": true,
+        "in_use": [
+          {
+            "pk": 16795,
+            "title": "Fish Species Recognition Challenge"
+          }
+        ],
+        "competition": null,
+        "file_name": "",
+        "file_size": 7319.0
+      },
+      "starting_kit": {
+        "id": 803315,
+        "created_by": "khanff",
+        "owner_display_name": "khanff",
+        "created_when": "2026-05-31T12:31:13.774829Z",
+        "name": "starting_kit @ '05-31-2026 12:31'",
+        "type": "starting_kit",
+        "description": null,
+        "is_public": false,
+        "key": "70afe4e0-47a2-4d20-a4fb-fd6c1fee09c7",
+        "value": "70afe4e0-47a2-4d20-a4fb-fd6c1fee09c7",
+        "was_created_by_competition": true,
+        "in_use": [
+          {
+            "pk": 16795,
+            "title": "Fish Species Recognition Challenge"
+          }
+        ],
+        "competition": null,
+        "file_name": "",
+        "file_size": 2427.0
+      },
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    },
+    {
+      "id": 27539,
+      "index": 1,
+      "start": "2026-07-01T00:00:00Z",
+      "end": null,
+      "name": "Final Evaluation Phase",
+      "description": "Final phase: evaluated on a hidden test set. One submission allowed.",
+      "status": "Next",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "1c74f0d0-e44e-4ae0-b90b-d79a2c547c32",
+          "order_index": 0,
+          "phase": 27539,
+          "id": 33608,
+          "value": "1c74f0d0-e44e-4ae0-b90b-d79a2c547c32",
+          "key": "1c74f0d0-e44e-4ae0-b90b-d79a2c547c32",
+          "created_when": "2026-05-31T12:31:13.516758Z",
+          "name": "Fish Species Final Task",
+          "solutions": [
+            {
+              "name": "solution @ 05-31-2026 12:31",
+              "description": null,
+              "key": "2fc815bb-1cdc-42dd-897e-ce41eb369c00",
+              "tasks": [
+                "1c74f0d0-e44e-4ae0-b90b-d79a2c547c32"
+              ],
+              "data": "2d5d85b6-2f9b-4dbe-be30-158936f781e5",
+              "md5": "e6a777f2ae65d4a85cf0ad6a4a3c728a",
+              "size": 151.0
+            }
+          ],
+          "public_datasets": [
+            {
+              "id": 803310,
+              "created_by": "khanff",
+              "owner_display_name": "khanff",
+              "created_when": "2026-05-31T12:31:10.609934Z",
+              "name": "scoring_program @ '05-31-2026 12:31'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "39aee7bc-e0df-4c9d-9fe0-d8fe7085cacd",
+              "value": "39aee7bc-e0df-4c9d-9fe0-d8fe7085cacd",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16795,
+                  "title": "Fish Species Recognition Challenge"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 622.0
+            },
+            {
+              "id": 803311,
+              "created_by": "khanff",
+              "owner_display_name": "khanff",
+              "created_when": "2026-05-31T12:31:13.365973Z",
+              "name": "reference_data @ '05-31-2026 12:31'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "e17b8b99-4198-4a55-a036-53acbbe25baf",
+              "value": "e17b8b99-4198-4a55-a036-53acbbe25baf",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16795,
+                  "title": "Fish Species Recognition Challenge"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 366471.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 1,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 18612,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "main",
+      "columns": [
+        {
+          "id": 80870,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Accuracy",
+          "key": "accuracy",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 2
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Force_Last"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": true,
+  "description": "Classify fish species from images using machine learning. Participants are given labelled training images and must predict the species of unseen test images.",
+  "participants_count": 3,
+  "submissions_count": 4,
+  "queue": null,
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": true,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "codalab/codalab-legacy:py312",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 16520,
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "forum_enabled": true
+}
