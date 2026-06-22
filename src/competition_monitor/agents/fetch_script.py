@@ -233,8 +233,4 @@ class FetchScript:
         path.write_text(json.dumps(raw, ensure_ascii=False, indent=2), encoding="utf-8")
 
     def _get_all(self) -> list[CompetitionSummary]:
-        try:
-            return self._codabench.list_competitions(limit=self._config.max_competitions)
-        except Exception as e:
-            logger.error("获取全量竞赛列表失败: %s", e)
-            return []
+        return self._codabench.list_competitions(limit=self._config.max_competitions)

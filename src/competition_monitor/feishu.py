@@ -25,6 +25,29 @@ def _comp_line(comp: Competition) -> str:
     return f"**[{comp.title}]({detail_url})**\n{phases_str}\n参与者 {comp.participant_count} 人"
 
 
+def push_error(webhook_url: str, title: str, detail: str) -> None:
+    """推送异常告警到飞书。"""
+    content = f"**⚠️ {title}**\n\n{detail}"
+    payload = {
+        "msg_type": "interactive",
+        "card": {
+            "schema": "2.0",
+            "body": {
+                "elements": [{"tag": "markdown", "content": content}]
+            },
+            "header": {
+                "title": {"tag": "plain_text", "content": "Codabench 竞赛监测异常"},
+                "template": "red",
+            },
+        },
+    }
+    try:
+        resp = httpx.post(webhook_url, json=payload, timeout=15)
+        resp.raise_for_status()
+    except Exception as e:
+        logger.error("飞书异常告警推送失败: %s", e)
+
+
 def push_updates(
     webhook_url: str,
     events: list[ChangeEvent],
