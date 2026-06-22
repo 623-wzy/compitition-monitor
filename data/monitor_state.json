@@ -6,7 +6,7 @@
     "description_zh": "EgoLink（自中心语言-视觉交互网络知识挑战赛）旨在推进复杂、真实自中心场景中的具身AI发展。超越传统导航或静态物体感知，该挑战赛全面评估模型在社交推理和交互式任务执行中的能力。它要求智能AI不仅能够感知情感线索、理解因果关系、预测人类交互中的行为意图，还能通过多模态对话、动态工具使用和自主规划积极解决日常生活任务。EgoLink致力于培养集成智能，使感知、推理和决策在非结构化社交环境中紧密耦合。",
     "created_by": "mingbao",
     "created_when": "2026-06-16T02:50:41.179159Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-16-1781578241/1bb687606ca1/logo.png?AWSAccessKeyId=codabench-prod&Signature=l%2FDqytmnxE2Kw9GjV%2FaID%2FWmJsc%3D&Expires=1782128196",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-16-1781578241/1bb687606ca1/logo.png?AWSAccessKeyId=codabench-prod&Signature=oDcgmKJpWSPEAl0ZDCugFHQQUtM%3D&Expires=1782128527",
     "participants_count": 22,
     "submissions_count": 148,
     "first_phase_start": null,
@@ -35,7 +35,7 @@
     "description_zh": "轨道3 (NMM-Source-IED)：癫痫致痫区的5分类定位——结合预提取的同步视觉上下文特征与生理信号来定位发作焦点。仅结果提交：上传预测结果至公开候选集；仅隐藏的官方轨道3样本被评分。主要指标：加权F1。\n\n竞争阶段已结束。该平台在有限时间内开放，严格用于消融研究；这些后续结果将不被纳入官方排行榜排名。",
     "created_by": "neuromm",
     "created_when": "2026-06-17T07:22:35.874297Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-17-1781680955/ef2da8b209ca/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=ecFAzR%2FKJCr0RFTv4Pco7ZKsydM%3D&Expires=1782128195",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-17-1781680955/ef2da8b209ca/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=7iYN6s241LgHFR4zZGnCVYI7gT8%3D&Expires=1782128525",
     "participants_count": 6,
     "submissions_count": 81,
     "first_phase_start": null,
@@ -76,7 +76,7 @@
     "description_zh": "追踪2（NMM-Context-IED）：视觉增强型二分类IED（棘波vs.非棘波）检测——将预提取的同步视觉背景特征与生理信号相结合以抑制伪影。仅结果提交：在已发布的候选集上传预测；仅隐藏的官方Track-2样本被计分。主要指标：AUPRC。\n\n竞争阶段已结束。该平台在限定时间内对外开放，严格用于消融研究；这些后续结果将不被纳入官方排行榜排名。",
     "created_by": "neuromm",
     "created_when": "2026-06-17T07:11:57.172929Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-17-1781680317/d8785d438d44/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=TYq310lCpywAVmVooG3f7UpzAfY%3D&Expires=1782128196",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-17-1781680317/d8785d438d44/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=9kn6pmbNYaAWQPlJtmZRnzhocyw%3D&Expires=1782128529",
     "participants_count": 6,
     "submissions_count": 88,
     "first_phase_start": null,
@@ -117,7 +117,7 @@
     "description_zh": "该挑战聚焦于现实语音处理场景中的音频-视觉-文本多模态关键词识别任务。",
     "created_by": "misp_qeks_bl",
     "created_when": "2026-05-04T05:52:24.137332Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-04-1777873944/1c7a31d17f08/logo_misp2026.png?AWSAccessKeyId=codabench-prod&Signature=%2FFNzYlrCU7%2B0J2283RbSZX1cC8A%3D&Expires=1782128207",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-04-1777873944/1c7a31d17f08/logo_misp2026.png?AWSAccessKeyId=codabench-prod&Signature=RN8Bn6ITMESXIBPs6kOXseZPMIw%3D&Expires=1782128542",
     "participants_count": 11,
     "submissions_count": 30,
     "first_phase_start": null,
@@ -152,7 +152,7 @@
     "description_zh": "从真实传送带图像中检测和分类废弃物体。\n在19种废物类别中构建最佳物体检测模型。\n由Avartan Labs组织。",
     "created_by": "avartan_labs",
     "created_when": "2026-06-06T17:41:37.581384Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-06-1780767697/343e119605f8/logo.png?AWSAccessKeyId=codabench-prod&Signature=AsXf5rzW8OQEZlL94xXkmGcTrEU%3D&Expires=1782128197",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-06-1780767697/343e119605f8/logo.png?AWSAccessKeyId=codabench-prod&Signature=NKxgOoGjvsNcnYJMI%2BlimzFrS%2BY%3D&Expires=1782128528",
     "participants_count": 10,
     "submissions_count": 26,
     "first_phase_start": null,
@@ -181,7 +181,7 @@
     "description_zh": "使用机器学习从图像中分类鱼类物种。参赛者获得标记的训练图像，必须预测未见过的测试图像的物种。",
     "created_by": "khanff",
     "created_when": "2026-05-31T12:31:14.005307Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-31-1780230674/99290699ac10/fish.png?AWSAccessKeyId=codabench-prod&Signature=7XJZSvmC2t4ENyCViwTWl7dAErI%3D&Expires=1782128199",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-31-1780230674/99290699ac10/fish.png?AWSAccessKeyId=codabench-prod&Signature=fMxNyT4UzfwwQeCdGkpFSULjoDM%3D&Expires=1782128533",
     "participants_count": 3,
     "submissions_count": 4,
     "first_phase_start": null,
@@ -222,48 +222,6 @@
       }
     ]
   },
-  "16375": {
-    "id": 16375,
-    "title": "EventAid Frame Interpolation Challenge @ EBMV Workshop, ECCV 2026",
-    "description": "Event-based RGB frame interpolation with 1, 3, 7, and 15 skipped-frame settings, based on EventAid benchmark. EventAid Challenge is a track of the EBMV (Event-Based Multimodal Vision: Imaging, Perception, and Understanding) Workshop @ ECCV 2026!",
-    "description_zh": "基于EventAid基准的RGB帧插值，包含1、3、7和15跳帧设置。EventAid挑战赛是EBMV（事件驱动多模态视觉：成像、感知与理解）研讨会@ECCV 2026的一个赛道！",
-    "created_by": "hylz-2019",
-    "created_when": "2026-05-16T10:25:07.473846Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778927107/6ed2ebb989bd/evaid_challenge_logo.png?AWSAccessKeyId=codabench-prod&Signature=GBBz1YOFsGKGSFCmpd%2F0SpPTxvc%3D&Expires=1782128205",
-    "participants_count": 53,
-    "submissions_count": 30,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 26887,
-        "name": "Validation Phase",
-        "start": "2026-05-16T00:00:00Z",
-        "end": "2026-06-30T00:00:00Z",
-        "max_submissions_per_day": 5
-      },
-      {
-        "id": 26888,
-        "name": "Final Test Phase",
-        "start": "2026-07-01T00:00:00Z",
-        "end": null,
-        "max_submissions_per_day": 5
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Participation",
-        "content": "# EventAid Frame Interpolation Challenge\n\nThis challenge is a track of the EBMV (Event-Based Multimodal Vision: Imaging, Perception, and Understanding) Workshop @ ECCV 2026! Workshop homepage: https://eventbasemultimodalvision.github.io/\n\nIf you encounter any issues, please contact the organizers: Peiqi Duan (duanqi0001@pku.edu.cn), Boyu Li (liboyu@pku.edu.cn), or Hanyue Lou (hylz@pku.edu.cn).\n\n## Task\n\nThis challenge is an event-based frame interpolation task. For each sequence, a method is given:\n\n- a sparse set of RGB input frames,\n- event streams between frames,\n- timestamps and frame metadata.\n\nThe goal is to reconstruct every frame marked as `[TODO]` in `frame_info.txt`.\n\nThe data is organized into four interpolation settings:\n\n- `1skip`: reconstruct 1 missing frame between neighboring input frames.\n- `3skip`: reconstruct 3 missing frames between neighboring input frames.\n- `7skip`: reconstruct 7 missing frames between neighboring input frames.\n- `15skip`: reconstruct 15 missing frames between neighboring input frames.\n\nLarger skip settings have wider temporal gaps and are more difficult.\n\n## Data Usage\n\nThis challenge uses a subset of the publicly released EventAid dataset. The full public EventAid dataset includes ground-truth data for scenes that overlap with this challenge, and using it can easily cause overfitting or data leakage even if the ground truth is not directly inspected. Therefore, participants must **not** use the publicly released EventAid dataset, or any data derived from it, for training, validation, model selection, hyperparameter tuning, pretraining, or any other part of method development.\n\nParticipants may use the data officially provided for this challenge, including the released input data and the validation sequence ground truth, for developing and validating their methods. The validation sequence is provided only to help participants verify the data format and evaluation pipeline; it is not part of the final scored test set.\n\nParticipants may use any other real or synthetic datasets, pretrained models, or external resources, provided that they are legally accessible and are not based on the public EventAid dataset. All external datasets and pretrained resources must be clearly disclosed in the final technical report. Example training datasources include: Synthetic EVFI data based on video datasets such as [GOPRO](https://github.com/SeungjunNah/DeepDeblur_release), [REDS](https://seungjunnah.github.io/Datasets/reds) and [Adobe240FPS](https://www.cs.ubc.ca/labs/imager/tr/2017/DeepVideoDeblurring/), and event simulators such as [ESIM](https://github.com/uzh-rpg/rpg_esim), [V2E](https://github.com/SensorsINI/v2e) and [V2V](https://github.com/HYLZ-2019/V2V); Real EVFI datasets such as [HQ-EVFI](https://openimaginglab.github.io/TimeLens-XL/) and [ERF-X170FPS](https://github.com/intelpro/CBMNet).\n\nThe hidden test set must only be used for official evaluation. Participants must not attempt to access, reconstruct, manually annotate, or reverse-engineer the hidden ground-truth data.\n\n## Public Data\n\nDownload `challenge_data.zip` from the public data tab and extract it:\n\n```bash\nunzip challenge_data.zip\n```\n\nThe extracted directory contains:\n\n```text\nchallenge_data/\n  validation/\n    {1skip,3skip,7skip,15skip}/{sequence}/\n      input/\n      event/\n      gt/\n      event_info.txt\n      frame_info.txt\n      shape.txt\n  test/\n    {1skip,3skip,7skip,15skip}/{sequence}/\n      input/\n      event/\n      event_info.txt\n      frame_info.txt\n      shape.txt\n  run_baseline_method.py\n  evaluate_results.py\n  terms.md\n```\n\nThe validation split includes ground-truth frames under `gt/` so that participants can verify their pipeline locally. The test split does not include ground truth and is used for official ranking.\n\n## Submission Format\n\nSubmit only reconstructed `[TODO]` frames. The required layout is:\n\n```text\nresults/\n  {skip}/\n    {sequence}/\n      {frame_index:06d}.png\n```\n\nFor example:\n\n```text\nresults/1skip/ball/000001.png\nresults/15skip/traffic/000016.png\n```\n\nAll submitted images must be PNG files with the exact `width height` in the corresponding `shape.txt`.\n\nCreate the submission zip from the directory containing `results/`:\n\n```bash\nzip -r submission.zip results\n```\n\n## Local Baseline and Evaluation\n\nA simple linear interpolation baseline is provided. It ignores events and interpolates between neighboring input frames:\n\n```bash\npython challenge_data/run_baseline_method.py \\\n  --data-dir challenge_data \\\n  --output-dir results\n```\n\nAfter producing a `results/` directory, run:\n\n```bash\npython challenge_data/evaluate_results.py \\\n  --data-dir challenge_data \\\n  --results-dir results\n```\n\nThis script checks the submission format for both validation and test splits, and computes PSNR/SSIM only on the public validation ground truth. The script cannot compute test-set metrics because test ground truth is not public.\n\n## Evaluation Phases\n\nThe validation phase reports PSNR and SSIM on the public validation split. After the validation phase closes, the organizers evaluate each team's last valid validation-phase submission on the hidden test split for the final ranking.",
-        "content_zh": "# EventAid帧插值挑战赛\n\n本挑战赛是ECCV 2026 EBMV（基于事件的多模态视觉：成像、感知和理解）研讨会的一个分赛道！研讨会主页：https://eventbasemultimodalvision.github.io/\n\n如遇到任何问题，请联系组织者：段佩琪 (duanqi0001@pku.edu.cn)、李博宇 (liboyu@pku.edu.cn) 或娄寒月 (hylz@pku.edu.cn)。\n\n## 任务\n\n本挑战赛是一项基于事件的帧插值任务。对于每个序列，参赛者将获得：\n\n- 一组稀疏的RGB输入帧，\n- 帧之间的事件流，\n- 时间戳和帧元数据。\n\n目标是重建`frame_info.txt`中所有标记为`[TODO]`的帧。\n\n数据分为四种插值设置：\n\n- `1skip`：在相邻输入帧之间重建1个缺失帧。\n- `3skip`：在相邻输入帧之间重建3个缺失帧。\n- `7skip`：在相邻输入帧之间重建7个缺失帧。\n- `15skip`：在相邻输入帧之间重建15个缺失帧。\n\n较大的跳过设置具有更宽的时间间隙，难度更大。\n\n## 数据使用\n\n本挑战赛使用了公开发布的EventAid数据集的一个子集。完整的公开EventAid数据集包含与本挑战赛重叠的场景的真值数据，使用该数据容易导致过拟合或数据泄漏，即使不直接检查真值也是如此。因此，参赛者**不得**使用公开发布的EventAid数据集或任何源自该数据集的数据进行训练、验证、模型选择、超参数调整、预训练或方法开发的任何其他部分。\n\n参赛者可以使用本挑战赛正式提供的数据，包括发布的输入数据和验证序列真值，用于方法开发和验证。验证序列仅提供用于帮助参赛者验证数据格式和评估流程；它不属于最终计分的测试集。\n\n参赛者可以使用任何其他真实或合成数据集、预训练模型或外部资源，前提是这些资源在法律上可访问且不基于公开EventAid数据集。所有外部数据集和预训练资源必须在最终技术报告中清楚地披露。示例训练数据源包括：基于视频数据集（如[GOPRO](https://github.com/SeungjunNah/DeepDeblur_release)、[REDS](https://seungjunnah.github.io/Datasets/reds)和[Adobe240FPS](https://www.cs.ubc.ca/labs/imager/tr/2017/DeepVideoDeblurring/)）的合成EVFI数据，以及事件模拟器（如[ESIM](https://github.com/uzh-rpg/rpg_esim)、[V2E](https://github.com/SensorsINI/v2e)和[V2V](https://github.com/HYLZ-2019/V2V)）；真实EVFI数据集，如[HQ-EVFI](https://openimaginglab.github.io/TimeLens-XL/)和[ERF-X170FPS](https://github.com/intelpro/CBMNet)。\n\n隐藏测试集仅用于官方评估。参赛者不得尝试访问、重构、手动标注或反向工程隐藏的真值数据。\n\n## 公共数据\n\n从公共数据选项卡下载`challenge_data.zip`并解压：\n\n```bash\nunzip challenge_data.zip\n```\n\n解压后的目录包含：\n\n```text\nchallenge_data/\n  validation/\n    {1skip,3skip,7skip,15skip}/{sequence}/\n      input/\n      event/\n      gt/\n      event_info.txt\n      frame_info.txt\n      shape.txt\n  test/\n    {1skip,3skip,7skip,15skip}/{sequence}/\n      input/\n      event/\n      event_info.txt\n      frame_info.txt\n      shape.txt\n  run_baseline_method.py\n  evaluate_results.py\n  terms.md\n```\n\n验证集在`gt/`下包含真值帧，以便参赛者在本地验证其流程。测试集不包含真值，用于官方排名。\n\n## 提交格式\n\n仅提交重建的`[TODO]`帧。所需的布局为：\n\n```text\nresults/\n  {skip}/\n    {sequence}/\n      {frame_index:06d}.png\n```\n\n例如：\n\n```text\nresults/1skip/ball\n```"
-      },
-      {
-        "index": 1,
-        "title": "Timeline",
-        "content": "# Timeline\n\n## Validation Phase\n\nThe validation phase is open until **June 30, 2026**. Participants may submit reconstructed frames and receive validation PSNR/SSIM feedback.\n\n## Final Evaluation\n\nAfter the validation phase closes, the organizers evaluate each team's last valid validation-phase submission on the hidden test split.\n\nFinal results will be announced on **July 5, 2026**.\n\n## Technical Report\n\nTechnical reports are due on **July 10, 2026**. Reports should describe the method, training data, pretrained models, and any external resources used.",
-        "content_zh": "# 时间表\n\n## 验证阶段\n\n验证阶段开放至 **2026年6月30日**。参与者可以提交重建帧并获得验证PSNR/SSIM反馈。\n\n## 最终评估\n\n验证阶段结束后，组织方在隐藏测试集上评估每个团队在验证阶段的最后一次有效提交。\n\n最终结果将于 **2026年7月5日** 公布。\n\n## 技术报告\n\n技术报告提交截止日期为 **2026年7月10日**。报告应描述所用方法、训练数据、预训练模型以及任何外部资源。"
-      }
-    ]
-  },
   "16261": {
     "id": 16261,
     "title": "Event-Based Multimodal Perception Challenge: Semantic Segmentation Track @ ECCV 2026",
@@ -271,9 +229,9 @@
     "description_zh": null,
     "created_by": "blang",
     "created_when": "2026-05-12T06:00:03.454595Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-12-1778565603/eb281506591a/logo.png?AWSAccessKeyId=codabench-prod&Signature=uAMF9N51VSDN9mrMh9nv1kNoBrY%3D&Expires=1782128206",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-12-1778565603/eb281506591a/logo.png?AWSAccessKeyId=codabench-prod&Signature=RY41MzQ2hkPG1RMlBpV%2F4VFftDQ%3D&Expires=1782128535",
     "participants_count": 40,
-    "submissions_count": 57,
+    "submissions_count": 58,
     "first_phase_start": null,
     "phases": [
       {
@@ -311,6 +269,48 @@
       }
     ]
   },
+  "16375": {
+    "id": 16375,
+    "title": "EventAid Frame Interpolation Challenge @ EBMV Workshop, ECCV 2026",
+    "description": "Event-based RGB frame interpolation with 1, 3, 7, and 15 skipped-frame settings, based on EventAid benchmark. EventAid Challenge is a track of the EBMV (Event-Based Multimodal Vision: Imaging, Perception, and Understanding) Workshop @ ECCV 2026!",
+    "description_zh": "基于EventAid基准的RGB帧插值，包含1、3、7和15跳帧设置。EventAid挑战赛是EBMV（事件驱动多模态视觉：成像、感知与理解）研讨会@ECCV 2026的一个赛道！",
+    "created_by": "hylz-2019",
+    "created_when": "2026-05-16T10:25:07.473846Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778927107/6ed2ebb989bd/evaid_challenge_logo.png?AWSAccessKeyId=codabench-prod&Signature=7usqMTE0ub%2BxBRcgzIn37B2It40%3D&Expires=1782128539",
+    "participants_count": 53,
+    "submissions_count": 30,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 26887,
+        "name": "Validation Phase",
+        "start": "2026-05-16T00:00:00Z",
+        "end": "2026-06-30T00:00:00Z",
+        "max_submissions_per_day": 5
+      },
+      {
+        "id": 26888,
+        "name": "Final Test Phase",
+        "start": "2026-07-01T00:00:00Z",
+        "end": null,
+        "max_submissions_per_day": 5
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Participation",
+        "content": "# EventAid Frame Interpolation Challenge\n\nThis challenge is a track of the EBMV (Event-Based Multimodal Vision: Imaging, Perception, and Understanding) Workshop @ ECCV 2026! Workshop homepage: https://eventbasemultimodalvision.github.io/\n\nIf you encounter any issues, please contact the organizers: Peiqi Duan (duanqi0001@pku.edu.cn), Boyu Li (liboyu@pku.edu.cn), or Hanyue Lou (hylz@pku.edu.cn).\n\n## Task\n\nThis challenge is an event-based frame interpolation task. For each sequence, a method is given:\n\n- a sparse set of RGB input frames,\n- event streams between frames,\n- timestamps and frame metadata.\n\nThe goal is to reconstruct every frame marked as `[TODO]` in `frame_info.txt`.\n\nThe data is organized into four interpolation settings:\n\n- `1skip`: reconstruct 1 missing frame between neighboring input frames.\n- `3skip`: reconstruct 3 missing frames between neighboring input frames.\n- `7skip`: reconstruct 7 missing frames between neighboring input frames.\n- `15skip`: reconstruct 15 missing frames between neighboring input frames.\n\nLarger skip settings have wider temporal gaps and are more difficult.\n\n## Data Usage\n\nThis challenge uses a subset of the publicly released EventAid dataset. The full public EventAid dataset includes ground-truth data for scenes that overlap with this challenge, and using it can easily cause overfitting or data leakage even if the ground truth is not directly inspected. Therefore, participants must **not** use the publicly released EventAid dataset, or any data derived from it, for training, validation, model selection, hyperparameter tuning, pretraining, or any other part of method development.\n\nParticipants may use the data officially provided for this challenge, including the released input data and the validation sequence ground truth, for developing and validating their methods. The validation sequence is provided only to help participants verify the data format and evaluation pipeline; it is not part of the final scored test set.\n\nParticipants may use any other real or synthetic datasets, pretrained models, or external resources, provided that they are legally accessible and are not based on the public EventAid dataset. All external datasets and pretrained resources must be clearly disclosed in the final technical report. Example training datasources include: Synthetic EVFI data based on video datasets such as [GOPRO](https://github.com/SeungjunNah/DeepDeblur_release), [REDS](https://seungjunnah.github.io/Datasets/reds) and [Adobe240FPS](https://www.cs.ubc.ca/labs/imager/tr/2017/DeepVideoDeblurring/), and event simulators such as [ESIM](https://github.com/uzh-rpg/rpg_esim), [V2E](https://github.com/SensorsINI/v2e) and [V2V](https://github.com/HYLZ-2019/V2V); Real EVFI datasets such as [HQ-EVFI](https://openimaginglab.github.io/TimeLens-XL/) and [ERF-X170FPS](https://github.com/intelpro/CBMNet).\n\nThe hidden test set must only be used for official evaluation. Participants must not attempt to access, reconstruct, manually annotate, or reverse-engineer the hidden ground-truth data.\n\n## Public Data\n\nDownload `challenge_data.zip` from the public data tab and extract it:\n\n```bash\nunzip challenge_data.zip\n```\n\nThe extracted directory contains:\n\n```text\nchallenge_data/\n  validation/\n    {1skip,3skip,7skip,15skip}/{sequence}/\n      input/\n      event/\n      gt/\n      event_info.txt\n      frame_info.txt\n      shape.txt\n  test/\n    {1skip,3skip,7skip,15skip}/{sequence}/\n      input/\n      event/\n      event_info.txt\n      frame_info.txt\n      shape.txt\n  run_baseline_method.py\n  evaluate_results.py\n  terms.md\n```\n\nThe validation split includes ground-truth frames under `gt/` so that participants can verify their pipeline locally. The test split does not include ground truth and is used for official ranking.\n\n## Submission Format\n\nSubmit only reconstructed `[TODO]` frames. The required layout is:\n\n```text\nresults/\n  {skip}/\n    {sequence}/\n      {frame_index:06d}.png\n```\n\nFor example:\n\n```text\nresults/1skip/ball/000001.png\nresults/15skip/traffic/000016.png\n```\n\nAll submitted images must be PNG files with the exact `width height` in the corresponding `shape.txt`.\n\nCreate the submission zip from the directory containing `results/`:\n\n```bash\nzip -r submission.zip results\n```\n\n## Local Baseline and Evaluation\n\nA simple linear interpolation baseline is provided. It ignores events and interpolates between neighboring input frames:\n\n```bash\npython challenge_data/run_baseline_method.py \\\n  --data-dir challenge_data \\\n  --output-dir results\n```\n\nAfter producing a `results/` directory, run:\n\n```bash\npython challenge_data/evaluate_results.py \\\n  --data-dir challenge_data \\\n  --results-dir results\n```\n\nThis script checks the submission format for both validation and test splits, and computes PSNR/SSIM only on the public validation ground truth. The script cannot compute test-set metrics because test ground truth is not public.\n\n## Evaluation Phases\n\nThe validation phase reports PSNR and SSIM on the public validation split. After the validation phase closes, the organizers evaluate each team's last valid validation-phase submission on the hidden test split for the final ranking.",
+        "content_zh": "# EventAid帧插值挑战赛\n\n本挑战赛是ECCV 2026 EBMV（基于事件的多模态视觉：成像、感知和理解）研讨会的一个分赛道！研讨会主页：https://eventbasemultimodalvision.github.io/\n\n如遇到任何问题，请联系组织者：段佩琪 (duanqi0001@pku.edu.cn)、李博宇 (liboyu@pku.edu.cn) 或娄寒月 (hylz@pku.edu.cn)。\n\n## 任务\n\n本挑战赛是一项基于事件的帧插值任务。对于每个序列，参赛者将获得：\n\n- 一组稀疏的RGB输入帧，\n- 帧之间的事件流，\n- 时间戳和帧元数据。\n\n目标是重建`frame_info.txt`中所有标记为`[TODO]`的帧。\n\n数据分为四种插值设置：\n\n- `1skip`：在相邻输入帧之间重建1个缺失帧。\n- `3skip`：在相邻输入帧之间重建3个缺失帧。\n- `7skip`：在相邻输入帧之间重建7个缺失帧。\n- `15skip`：在相邻输入帧之间重建15个缺失帧。\n\n较大的跳过设置具有更宽的时间间隙，难度更大。\n\n## 数据使用\n\n本挑战赛使用了公开发布的EventAid数据集的一个子集。完整的公开EventAid数据集包含与本挑战赛重叠的场景的真值数据，使用该数据容易导致过拟合或数据泄漏，即使不直接检查真值也是如此。因此，参赛者**不得**使用公开发布的EventAid数据集或任何源自该数据集的数据进行训练、验证、模型选择、超参数调整、预训练或方法开发的任何其他部分。\n\n参赛者可以使用本挑战赛正式提供的数据，包括发布的输入数据和验证序列真值，用于方法开发和验证。验证序列仅提供用于帮助参赛者验证数据格式和评估流程；它不属于最终计分的测试集。\n\n参赛者可以使用任何其他真实或合成数据集、预训练模型或外部资源，前提是这些资源在法律上可访问且不基于公开EventAid数据集。所有外部数据集和预训练资源必须在最终技术报告中清楚地披露。示例训练数据源包括：基于视频数据集（如[GOPRO](https://github.com/SeungjunNah/DeepDeblur_release)、[REDS](https://seungjunnah.github.io/Datasets/reds)和[Adobe240FPS](https://www.cs.ubc.ca/labs/imager/tr/2017/DeepVideoDeblurring/)）的合成EVFI数据，以及事件模拟器（如[ESIM](https://github.com/uzh-rpg/rpg_esim)、[V2E](https://github.com/SensorsINI/v2e)和[V2V](https://github.com/HYLZ-2019/V2V)）；真实EVFI数据集，如[HQ-EVFI](https://openimaginglab.github.io/TimeLens-XL/)和[ERF-X170FPS](https://github.com/intelpro/CBMNet)。\n\n隐藏测试集仅用于官方评估。参赛者不得尝试访问、重构、手动标注或反向工程隐藏的真值数据。\n\n## 公共数据\n\n从公共数据选项卡下载`challenge_data.zip`并解压：\n\n```bash\nunzip challenge_data.zip\n```\n\n解压后的目录包含：\n\n```text\nchallenge_data/\n  validation/\n    {1skip,3skip,7skip,15skip}/{sequence}/\n      input/\n      event/\n      gt/\n      event_info.txt\n      frame_info.txt\n      shape.txt\n  test/\n    {1skip,3skip,7skip,15skip}/{sequence}/\n      input/\n      event/\n      event_info.txt\n      frame_info.txt\n      shape.txt\n  run_baseline_method.py\n  evaluate_results.py\n  terms.md\n```\n\n验证集在`gt/`下包含真值帧，以便参赛者在本地验证其流程。测试集不包含真值，用于官方排名。\n\n## 提交格式\n\n仅提交重建的`[TODO]`帧。所需的布局为：\n\n```text\nresults/\n  {skip}/\n    {sequence}/\n      {frame_index:06d}.png\n```\n\n例如：\n\n```text\nresults/1skip/ball\n```"
+      },
+      {
+        "index": 1,
+        "title": "Timeline",
+        "content": "# Timeline\n\n## Validation Phase\n\nThe validation phase is open until **June 30, 2026**. Participants may submit reconstructed frames and receive validation PSNR/SSIM feedback.\n\n## Final Evaluation\n\nAfter the validation phase closes, the organizers evaluate each team's last valid validation-phase submission on the hidden test split.\n\nFinal results will be announced on **July 5, 2026**.\n\n## Technical Report\n\nTechnical reports are due on **July 10, 2026**. Reports should describe the method, training data, pretrained models, and any external resources used.",
+        "content_zh": "# 时间表\n\n## 验证阶段\n\n验证阶段开放至 **2026年6月30日**。参与者可以提交重建帧并获得验证PSNR/SSIM反馈。\n\n## 最终评估\n\n验证阶段结束后，组织方在隐藏测试集上评估每个团队在验证阶段的最后一次有效提交。\n\n最终结果将于 **2026年7月5日** 公布。\n\n## 技术报告\n\n技术报告提交截止日期为 **2026年7月10日**。报告应描述所用方法、训练数据、预训练模型以及任何外部资源。"
+      }
+    ]
+  },
   "16218": {
     "id": 16218,
     "title": "Event-Based Multimodal Perception Challenge: Monocular Depth Estimation Track @ ECCV 2026",
@@ -318,7 +318,7 @@
     "description_zh": "这是基于事件的多模态感知挑战赛的单目深度估计赛道。",
     "created_by": "blang",
     "created_when": "2026-05-10T06:53:10.869702Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-11-1778487124/9e519a3a990b/logo.png?AWSAccessKeyId=codabench-prod&Signature=Zske9xN9YmaZAjj2IdTuDSQUOZc%3D&Expires=1782128207",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-11-1778487124/9e519a3a990b/logo.png?AWSAccessKeyId=codabench-prod&Signature=SbHIQo9hD9fpzY5falehLlmxWrU%3D&Expires=1782128540",
     "participants_count": 49,
     "submissions_count": 52,
     "first_phase_start": null,
@@ -365,7 +365,7 @@
     "description_zh": "我们的目标是为真实场景的一体化图像复原算法的开发引入一个新的基准。",
     "created_by": "holflee",
     "created_when": "2026-05-16T12:42:20.469268Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778935340/0aeca58b7892/logo.png?AWSAccessKeyId=codabench-prod&Signature=ecBiDFGIc0syzZupSrh1RMvuK1c%3D&Expires=1782128206",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778935340/0aeca58b7892/logo.png?AWSAccessKeyId=codabench-prod&Signature=zE7XIe6B0w%2BbI%2BdEUVy5aX0Aqmw%3D&Expires=1782128539",
     "participants_count": 127,
     "submissions_count": 875,
     "first_phase_start": null,
@@ -412,7 +412,7 @@
     "description_zh": "MVAA 2026 评估跨越三个临床基础分割任务的二尖瓣解剖学多模态AI方法：（1）CT分割、（2）3D TEE分割和（3）手术视频分割。\n\n最终排名基于跨任务平均聚合的归一化任务级分数。",
     "created_by": "db0725",
     "created_when": "2026-04-14T13:38:37.626348Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-15-1776224307/a53b1e60e5cb/icon.png?AWSAccessKeyId=codabench-prod&Signature=UbrTJ%2F0EbduSKsYg%2BZVCV7zK%2BO4%3D&Expires=1782128209",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-15-1776224307/a53b1e60e5cb/icon.png?AWSAccessKeyId=codabench-prod&Signature=aDR4x2FHfXq9PBJyLLlNT6ge%2Fl8%3D&Expires=1782128546",
     "participants_count": 137,
     "submissions_count": 554,
     "first_phase_start": null,
@@ -507,7 +507,7 @@
     "description_zh": "这项共享任务旨在推进泰米尔政治梗图的多模态政治内容分析研究。梗图在政治话题中发挥着重要作用。梗图是高度易接近的交流形式，即使对不理解所用语言的人也能传达语境和意义。梗图的多模态特性结合了视觉、符号和简短文本，使其成为塑造政治叙事和影响公众认知的强大工具。为了应对自动化理解此类内容日益增长的需求，这项共享任务聚焦于开发能够对泰米尔梗图执行多层级分类的系统。",
     "created_by": "dravidian",
     "created_when": "2026-06-02T08:54:22.657256Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-02-1780390462/88e13a75a227/ChatGPT_Image_Nov_16_2025_01_37_4.png?AWSAccessKeyId=codabench-prod&Signature=AEu4O2urMtDBxvpfqwIZUuqm1Nc%3D&Expires=1782128199",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-02-1780390462/88e13a75a227/ChatGPT_Image_Nov_16_2025_01_37_4.png?AWSAccessKeyId=codabench-prod&Signature=z4549z7dH2HEgYajDfCQdic6e1c%3D&Expires=1782128532",
     "participants_count": 27,
     "submissions_count": 0,
     "first_phase_start": null,
@@ -559,48 +559,6 @@
       }
     ]
   },
-  "16195": {
-    "id": 16195,
-    "title": "EBMV 2026 @ ECCV - Event-Guided Brightness Adjustment on SEE-600K",
-    "description": "# EBMV 2026 Low-Level Imaging Challenge: Event-Guided Brightness Adjustment on SEE-600K\n\n## Overview\n\nReal-world images often suffer from different lighting degradations, including low light, over-exposure, mixed illumination, and high-contrast scenes. This challenge aims to study a unified event-guided solution for low-level image enhancement under broad lighting conditions.\n\nParticipants are asked to use RGB frames and event data to recover clear, well-exposed, and structurally faithful images. The challenge is associated with the ECCV 2026 Workshop on Event-Based Multimodal Vision: Imaging, Perception, and Understanding.\n\n## Dataset\n\nThis challenge is based on SEE-600K, introduced in:\n\n“SEE: See Everything Every Time - Adaptive Brightness Adjustment for Broad Light Range Images via Events”\n\nSEE-600K is a large-scale RGB-event dataset collected under diverse lighting conditions and real-world scenarios. It provides paired RGB images and event data for event-guided brightness adjustment and low-level image restoration.\n\nDataset:\nhttps://huggingface.co/datasets/yunfanlu/SEE-600K\n\nBaseline code:\nhttps://github.com/yunfanLu/SEE\n\nWorkshop website:\nhttps://eventbasemultimodalvision.github.io\n\n## Task\n\nParticipants need to develop an event-guided low-level imaging model.\n\nInput:\n1. An RGB image captured under challenging illumination.\n2. The corresponding event stream or event representation.\n3. Optional metadata or exposure prompt, if provided.\n\nOutput:\n1. A brightness-adjusted RGB image.\n2. The output should preserve scene structure, recover useful details, and avoid unrealistic hallucination.\n\nThe task focuses on event-guided brightness adjustment and image enhancement, rather than general image generation.\n\n## Challenge Track\n\n### Broad-Light Adaptive Brightness Adjustment\n\nParticipants are encouraged to train models on SEE-600K. Extra training data is allowed, but all external datasets, collection settings, and pretrained models should be clearly reported in the final technical report.\n\n## Submission Format\n\nEach submission should be uploaded as a compressed ZIP file.\n\nRecommended structure:\n\nsubmission.zip\n├── scene_000001.png\n├── scene_000002.png\n├── scene_000003.png\n└── ...\n\nRequirements:\n1. The output filename must match the input sample ID.\n2. Images should be saved as PNG files.\n3. Output images should be RGB images.\n4. The output resolution must be the same as the input/reference resolution.\n5. Do not change the file names or folder structure.\n6. Do not include extra files unless explicitly required.\n\n## Evaluation\n\nThe official evaluation will be conducted on the test set.\n\nMetrics:\n1. PSNR: pixel-level reconstruction accuracy.\n2. SSIM: structural similarity.\n3. LPIPS: perceptual similarity.\n\nRanking:\n1. PSNR is the primary ranking metric.\n2. SSIM and LPIPS will be used as secondary metrics.\n3. The final leaderboard will be based on the official test set.\n\nThe validation server is mainly for development and submission-format checking.\n\n## Important Dates\n\nMay 15, 2026: Challenge website opens.\n\nMay 25, 2026: Validation server online.\n\nJune 25, 2026: Test data released and test server online.\n\nJuly 3, 2026: Test submission deadline and test server closes.\n\nJuly 10, 2026: Results announcement. Tentative.\n\n## Awards\n\nTop teams will be recognized at the ECCV 2026 Workshop on Event-Based Multimodal Vision.\n\n## Citation\n\nIf you use SEE-600K or the SEE baseline, please cite:\n\n“SEE: See Everything Every Time - Adaptive Brightness Adjustment for Broad Light Range Images via Events”\n\nMore information is available at:\nhttps://github.com/yunfanLu/SEE\n\n## Contact\n\nYunfan Lu  \nylu066@connect.hkust-gz.edu.cn",
-    "description_zh": "# EBMV 2026 低级图像处理挑战赛：基于事件指导的亮度调整 (SEE-600K)\n\n## 概述\n\n真实世界图像经常受到各种光照退化的影响，包括低光、过曝光、混合光照和高对比度场景。本挑战赛旨在研究在广泛光照条件下基于事件指导的统一低级图像增强方案。\n\n参赛者需要利用RGB帧和事件数据来恢复清晰、曝光正确且结构保真的图像。本挑战赛与ECCV 2026事件多模态视觉研讨会相关联：成像、感知与理解。\n\n## 数据集\n\n本挑战赛基于SEE-600K数据集，详见：\n\n\"SEE: See Everything Every Time - Adaptive Brightness Adjustment for Broad Light Range Images via Events\"\n\nSEE-600K是在多样化光照条件和真实场景下收集的大规模RGB-事件数据集。它为事件指导的亮度调整和低级图像恢复提供配对的RGB图像和事件数据。\n\n数据集：\nhttps://huggingface.co/datasets/yunfanlu/SEE-600K\n\n基线代码：\nhttps://github.com/yunfanLu/SEE\n\n研讨会网址：\nhttps://eventbasemultimodalvision.github.io\n\n## 任务\n\n参赛者需要开发一个基于事件指导的低级图像处理模型。\n\n输入：\n1. 在具有挑战性光照条件下捕获的RGB图像。\n2. 对应的事件流或事件表示。\n3. 可选的元数据或曝光提示（如提供）。\n\n输出：\n1. 亮度调整后的RGB图像。\n2. 输出应保持场景结构、恢复有用细节，避免不真实的幻觉。\n\n该任务重点关注事件指导的亮度调整和图像增强，而非通用图像生成。\n\n## 挑战赛赛道\n\n### 广泛光照自适应亮度调整\n\n参赛者可在SEE-600K上训练模型。允许使用额外训练数据，但所有外部数据集、采集设置和预训练模型应在最终技术报告中明确说明。\n\n## 提交格式\n\n每份提交应上传为压缩ZIP文件。\n\n推荐结构：\n\nsubmission.zip\n├── scene_000001.png\n├── scene_000002.png\n├── scene_000003.png\n└── ...\n\n要求：\n1. 输出文件名必须与输入样本ID匹配。\n2. 图像应保存为PNG文件。\n3. 输出图像应为RGB图像。\n4. 输出分辨率必须与输入/参考分辨率相同。\n5. 不得更改文件名或文件夹结构。\n6. 除非明确要求，不包含额外文件。\n\n## 评估\n\n官方评估将在测试集上进行。\n\n指标：\n1. PSNR：像素级重建准确度。\n2. SSIM：结构相似性。\n3. LPIPS：感知相似性。\n\n排名：\n1. PSNR是主要排名指标。\n2. SSIM和LPIPS用作次要指标。\n3. 最终排行榜基于官方测试集。\n\n验证服务器主要用于开发和提交格式检查。",
-    "created_by": "yunfan_lu",
-    "created_when": "2026-05-07T16:25:48.971115Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-14-1778767621/54b97befc59e/SEE-logo.jpg?AWSAccessKeyId=codabench-prod&Signature=1jHIhLzCtzJE6OXEyIu5UCufrSE%3D&Expires=1782128207",
-    "participants_count": 64,
-    "submissions_count": 143,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 26671,
-        "name": "Test Phase",
-        "start": "2026-05-14T16:00:00Z",
-        "end": "2026-06-24T15:55:00Z",
-        "max_submissions_per_day": 5
-      },
-      {
-        "id": 26672,
-        "name": "Eval Phase",
-        "start": "2026-06-25T08:00:00Z",
-        "end": "2026-07-03T07:55:00Z",
-        "max_submissions_per_day": 5
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Overview",
-        "content": "# SEE Challenge 2026: Event-Guided Brightness Adjustment on SEE-600K\n\nWelcome to the **SEE Challenge 2026**, held with **EBMV @ ECCV 2026**. This competition studies **event-guided brightness adjustment under broad lighting conditions**.\n\nThe goal is to recover a well-exposed RGB image from a challenging RGB input and its corresponding event-camera signal. Participants may use the official baseline code, the SEE-600K dataset, external data, and pretrained models, as long as external resources are clearly reported in the final technical report.\n\n## Start Here\n\n| Need | Link |\n| --- | --- |\n| Code, baseline, dataset links, pretrained models | [GitHub: yunfanLu/SEE](https://github.com/yunfanLu/SEE) |\n| Full setup, training, inference, and evaluation tutorial | [docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md) |\n| CodaBench packaging and upload instructions | [docs/CODABENCH_SUBMISSION_GUIDE.md](https://github.com/yunfanLu/SEE/blob/main/docs/CODABENCH_SUBMISSION_GUIDE.md) |\n| Chinese competition guide | [docs/COMPETITION_GUIDE_ZH.md](https://github.com/yunfanLu/SEE/blob/main/docs/COMPETITION_GUIDE_ZH.md) |\n| Baseline results | [docs/TEST_RESULTS.md](https://github.com/yunfanLu/SEE/blob/main/docs/TEST_RESULTS.md) |\n| Dataset | [SEE-600K on Hugging Face](https://huggingface.co/datasets/yunfanlu/SEE-600K) |\n\nRecommended workflow:\n\n1. Clone the repository and install dependencies.\n2. Download SEE-600K.\n3. Train or adapt a model using the official training split.\n4. Run inference at the original image size, `346 x 260`.\n5. Collect prediction images with the provided CodaBench script.\n6. Zip the collected folder and upload it to CodaBench.\n\n## Task\n\nGiven:\n\n- an RGB image captured under difficult illumination;\n- the corresponding event stream or event representation;\n- optional brightness or exposure metadata when available;\n\nparticipants should output a **brightness-adjusted RGB image**.\n\nThe output should:\n\n- preserve scene structure and image details;\n- produce natural color and exposure;\n- avoid unrealistic hallucinated content;\n- match the original SEE image resolution for submission.\n\n## Dataset: SEE-600K\n\nThe challenge uses **SEE-600K**, a large-scale RGB-event dataset for broad-light-range image enhancement.\n\n| Property | Value |\n| --- | --- |\n| Images | 610,126 |\n| Real-world scenarios | 202 |\n| Modalities | RGB frames + event data |\n| Lighting conditions | low light, normal light, high light, mixed illumination |\n| Image resolution | `346 x 260` |\n\nDownload:\n\n- Hugging Face: [yunfanlu/SEE-600K](https://huggingface.co/datasets/yunfanlu/SEE-600K)\n- Additional mirrors and notes: [GitHub README](https://github.com/yunfanLu/SEE#dataset-download)\n\nExpected dataset structure and setup instructions are documented in [docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#2-prepare-the-dataset).\n\n## Train/Test Split\n\nThe following scenario groups are reserved for official testing and **must not be used for training**:\n\n| Type | Reserved groups |\n| --- | --- |\n| Indoor | 000, 001, 002, 006, 012, 018, 030, 042, 048, 054, 060, 065, 070, 074, 075 |\n| Outdoor | 100, 106, 112, 118, 124, 130, 136, 142, 148, 154, 160, 166, 173, 184, 189, 194, 200, 206, 212, 217, 222, 225 |\n\nAll other groups are available for training. See the split details in [docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#23-traintest-split).\n\n## Baseline: SEE-Net\n\nThe official repository provides **SEE-Net**, a compact baseline with approximately **1.9M parameters**. It uses:\n\n- an RGB frame;\n- event data;\n- a brightness/exposure prompt.\n\nThe baseline supports controllable brightness adjustment through the prompt value `B`:\n\n- `B ~= 0.5`: normal exposure;\n- `B > 0.5`: brighter output;\n- `B < 0.5`: darker output.\n\nBaseline setup, training, inference, and evaluation are documented here:\n\n- Setup: [docs/TUTORIAL.md#3-set-up-the-python-environment](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#3-set-up-the-python-environment)\n- Training: [docs/TUTORIAL.md#5-train-see-net](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#5-train-see-net)\n- Inference and evaluation: [docs/TUTORIAL.md#6-evaluate-or-run-inference](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#6-evaluate-or-run-inference)\n- Pretrained checkpoints: [GitHub README: Pretrained Models](https://github.com/yunfanLu/SEE#pretrained-models)\n\n## Quick Commands\n\nClone and install:\n\n```bash\ngit clone https://github.com/yunfanLu/SEE.git\ncd SEE\n\nconda create -n see python=3.10 -y\nconda activate see\npip install -r requirements.txt\n```\n\nDownload SEE-600K with Hugging Face CLI:\n\n```bash\npip install huggingface_hub\nhf download yunfanlu/SEE-600K --local-dir ./SEE-600K\n```\n\nBefore inference for submission, make sure the YAML crop size is the original image size:\n\n```yaml\ncrop_w: 346\ncrop_h: 260\n```\n\nRun inference with a trained checkpoint:\n\n```bash\npython see/main.py \\\n  --yaml_file=\"options/SEE/SEENet_SEE.yaml\" \\\n  --log_dir=\"./logs/SEE/SEENet_SEE/vis/\" \\\n  --alsologtostderr=True \\\n  --RESUME_PATH=\"./logs/SEE/SEENet_SEE/checkpoint.pth.tar\" \\\n  --TEST_ONLY=True \\\n  --VISUALIZE=True \\\n  --VAL_BATCH_SIZE=4\n```\n\n## Submission Format\n\nAfter inference, the repository will produce a `vis` folder. Use the provided script to collect only the prediction images required by CodaBench:\n\n```bash\npython codabench/collect_codabench_pred.py ${prediction_vis_directory} ${output_directory}\n```\n\nExample:\n\n```bash\npython codabench/collect_codabench_pred.py /path/to/vis /path/to/output_dir\n```\n\nThen create the zip file:\n\n```bash\ncd /path/to/output_dir\nzip -r submission.zip ./*\n```\n\nUpload `submission.zip` on the CodaBench submission page.\n\nBefore uploading, check that:\n\n- prediction images are `.png` files;\n- prediction images are saved at `346 x 260`;\n- the zip contains the collected prediction folder structure, not an extra parent directory;\n- filenames and folders are preserved by the collection script;\n- the submitted images correspond to the main prediction output used for evaluation. If you use the official `vis` naming convention, the evaluator prioritizes prediction files containing `_p0_`.\n\nFull submission instructions: [docs/CODABENCH_SUBMISSION_GUIDE.md](https://github.com/yunfanLu/SEE/blob/main/docs/CODABENCH_SUBMISSION_GUIDE.md).\n\n## Evaluation\n\nRanking is based on reconstruction quality against the official reference images.\n\n| Metric | Role | Direction |\n| --- | --- | --- |\n| PSNR | Primary ranking metric | Higher is better |\n| SSIM | Secondary metric | Higher is better |\n\nThe scorer reports overall PSNR/SSIM and category-level scores for `high-normal`, `low-normal`, and `normal-normal` samples. Missing or invalid predictions receive zero-score penalties for the affected samples.\n\nThe validation server is intended for development and format checking. Final ranking is determined by the official test phase.\n\n## Important Dates\n\n| Date | Event |\n| --- | --- |\n| May 10, 2026 | Competition website opens |\n| May 25, 2026 | Validation server online |\n| June 25, 2026 | Test data released and test server online |\n| July 3, 2026 | Test submission deadline |\n| July 10, 2026 | Results announcement, tentative |\n\n## Rules\n\n- Official SEE-600K training and validation data may be used.\n- External training data, synthetic data, and pretrained models are allowed, but must be clearly described in the technical report.\n- Reserved test groups and hidden ground-truth images must not be used for training or manual tuning.\n- Do not exploit the evaluation server or submission system.\n- Top-ranked teams may be asked to submit a short technical report and provide reproducibility details.\n\n## FAQ\n\n**Which repository should I use?**  \nUse the official repository: [https://github.com/yunfanLu/SEE](https://github.com/yunfanLu/SEE).\n\n**Where are the training and inference commands?**  \nThey are in [docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md).\n\n**How do I prepare the CodaBench zip?**  \nFollow [docs/CODABENCH_SUBMISSION_GUIDE.md](https://github.com/yunfanLu/SEE/blob/main/docs/CODABENCH_SUBMISSION_GUIDE.md). The key steps are: generate `vis`, collect predictions with `codabench/collect_codabench_pred.py`, then zip the collected output folder.\n\n**Why must inference use `346 x 260`?**  \nThis is the original SEE image size. Submissions with a different output size may fail evaluation or produce invalid scores.\n\n**Can I use external data or pretrained models?**  \nYes, but all external resources must be reported in the final technical report.\n\n## Links\n\n- Competition page: [https://www.codabench.org/competitions/16195/](https://www.codabench.org/competitions/16195/)\n- Competition forum: [https://www.codabench.org/forums/15944/](https://www.codabench.org/forums/15944/)\n- GitHub repository: [https://github.com/yunfanLu/SEE](https://github.com/yunfanLu/SEE)\n- Dataset: [https://huggingface.co/datasets/yunfanlu/SEE-600K](https://huggingface.co/datasets/yunfanlu/SEE-600K)\n- Workshop website: [https://eventbasemultimodalvision.github.io](https://eventbasemultimodalvision.github.io)\n- Competition report: [https://arxiv.org/abs/2502.21120](https://arxiv.org/abs/2502.21120)\n\n## Citation\n\nIf you use SEE-600K, SEE-Net, or the official baseline code, please cite:\n\n```bibtex\n@article{lu2025SEE,\n  title={SEE: See Everything Every Time - Adaptive Brightness Adjustment for Broad Light Range Images via Events},\n  author={Yunfan Lu, Xiaogang Xu, Hao Lu, Yanlin Qian, Pengteng Li, Huizai Yao, Bin Yang, Junyi Li, Qianyi Cai, Weiyu Guo, Hui Xiong},\n  year={2025},\n}\n```\n\n## Contact\n\n- Yunfan Lu: <ylu066@connect.hkust-gz.edu.cn>\n- Mingchao Xu：<mingchao.xu.casia@gmail.com>",
-        "content_zh": "# SEE挑战赛2026：SEE-600K上的事件引导亮度调整\n\n欢迎参加**SEE挑战赛2026**，由**EBMV @ ECCV 2026**主办。本竞赛研究**在广泛光照条件下基于事件相机引导的亮度调整**。\n\n目标是从具有挑战性的RGB输入图像及其对应的事件相机信号中恢复一张曝光良好的RGB图像。参赛者可使用官方基准代码、SEE-600K数据集、外部数据和预训练模型，但需在最终技术报告中明确说明所用外部资源。\n\n## 快速开始\n\n| 需求 | 链接 |\n| --- | --- |\n| 代码、基准、数据集链接、预训练模型 | [GitHub: yunfanLu/SEE](https://github.com/yunfanLu/SEE) |\n| 完整设置、训练、推理及评估教程 | [docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md) |\n| CodaBench打包和上传说明 | [docs/CODABENCH_SUBMISSION_GUIDE.md](https://github.com/yunfanLu/SEE/blob/main/docs/CODABENCH_SUBMISSION_GUIDE.md) |\n| 中文竞赛指南 | [docs/COMPETITION_GUIDE_ZH.md](https://github.com/yunfanLu/SEE/blob/main/docs/COMPETITION_GUIDE_ZH.md) |\n| 基准结果 | [docs/TEST_RESULTS.md](https://github.com/yunfanLu/SEE/blob/main/docs/TEST_RESULTS.md) |\n| 数据集 | [SEE-600K on Hugging Face](https://huggingface.co/datasets/yunfanlu/SEE-600K) |\n\n推荐工作流程：\n\n1. 克隆仓库并安装依赖。\n2. 下载SEE-600K。\n3. 使用官方训练集训练或改进模型。\n4. 在原始图像尺寸`346 x 260`下运行推理。\n5. 使用提供的CodaBench脚本收集预测图像。\n6. 压缩收集的文件夹并上传至CodaBench。\n\n## 任务\n\n给定：\n\n- 在困难光照条件下拍摄的RGB图像；\n- 对应的事件流或事件表示；\n- 可选的亮度或曝光元数据（如可用）；\n\n参赛者应输出**亮度调整后的RGB图像**。\n\n输出应满足：\n\n- 保留场景结构和图像细节；\n- 产生自然的色彩和曝光效果；\n- 避免不切实际的幻觉内容；\n- 匹配原始SEE图像分辨率以供提交。\n\n## 数据集：SEE-600K\n\n本挑战赛采用**SEE-600K**，这是一个用于宽光度范围图像增强的大规模RGB-事件数据集。\n\n| 属性 | 数值 |\n| --- | --- |\n| 图像数量 | 610,126 |\n| 真实场景 | 202 |\n| 数据模态 | RGB帧 + 事件数据 |\n| 光照条件 | 低光、正常光、高光、混合光照 |\n| 图像分辨率 | `346 x 260` |\n\n下载：\n\n- Hugging Face: [yunfanlu/SEE-600K](https://huggingface.co/datasets/yunfanlu/SEE-600K)\n- 其他镜像和说明：[GitHub README](https://github.com/yunfanLu/SEE#dataset-download)\n\n预期数据集结构和设置说明见[docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#2-prepare-the-dataset)。\n\n## 训练/测试划分\n\n以下场景组保留用于官方测试，**不能用于训练**：\n\n| 类型 | 保留组 |\n| --- | --- |\n| 室内 | 000, 001, 002, 006, 012, 018, 030, 042, 048, 054, 060, 065, 070, 074, 075 |\n| 室外 | 100, 106, 112, 118, 124, 130, 136, 142, 148, 154, 160, 166, 173, 184, 189, 194, 200, 206, 212, 217, 222, 225 |\n\n所有其他组可用于训练。详细的划分信息见[docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#23-traintest-split)。\n\n## 基准：SEE-Net\n\n官方仓库提供**SEE-Net**，一个参数量约为**190万**的紧凑基准模型。它使用：\n\n- RGB帧；\n- 事件数据；\n- 亮度/曝光提示。\n\n基准支持通过提示值`B`进行可控亮度调整：\n\n- `B ~= 0.5`：正常曝光；\n- `B > 0.5`：更亮的输出；\n- `B < 0.5`：更暗的输出。\n\n基准的设置、训练、推理和评估文档详见：\n\n- 设置：[docs/TUTORIAL.md#3-set-up-the-python-environment](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md)"
-      },
-      {
-        "index": 1,
-        "title": "Rules & Timeline",
-        "content": "# Rules\n\nParticipants may use SEE-600K for model training.\n\nExternal training data, pretrained models, and synthetic data are allowed, but they must be clearly reported in the final technical report.\n\nParticipants must not use hidden ground-truth test data, manually tune results on the test set, or exploit the evaluation server.\n\nTop teams may be asked to submit a short technical report for result verification.\n\n# Important Dates\n\nMay 15, 2026: Challenge website opens.\n\nMay 25, 2026: Validation server online.\n\nJune 25, 2026: Test data released and test server online.\n\nJuly 3, 2026: Test submission deadline and test server closes.\n\nJuly 10, 2026: Results announcement. Tentative.",
-        "content_zh": "# 规则\n\n参赛者可以使用 SEE-600K 进行模型训练。\n\n允许使用外部训练数据、预训练模型和合成数据，但必须在最终技术报告中清楚地报告。\n\n参赛者不得使用隐藏的测试集真实标签、手动调整测试集结果或滥用评估服务器。\n\n排名靠前的团队可能被要求提交简短技术报告以进行结果验证。\n\n# 重要日期\n\n2026年5月15日：竞赛网站开放。\n\n2026年5月25日：验证服务器上线。\n\n2026年6月25日：发布测试数据并启动测试服务器。\n\n2026年7月3日：测试提交截止日期和测试服务器关闭。\n\n2026年7月10日：结果公布。暂定。"
-      }
-    ]
-  },
   "16281": {
     "id": 16281,
     "title": "EBMV 2026 LOW-LEVEL IMAGING CHALLENGE: EVENT-GUIDED LOW-LIGHT VIDEO DEPTH ESTIMATION ON SDE DATASET",
@@ -608,7 +566,7 @@
     "description_zh": "本挑战赛重点关注SDE数据集上的事件引导低光视频深度估计。参赛者需要开发算法，在事件相机信号的辅助下，从低光视频序列中估计准确的深度图。\n\n该挑战赛的目标是促进在具有挑战性的光照条件下的鲁棒深度估计，在这些条件下，传统的基于帧的方法通常会受到运动模糊、低信噪比和纹理可见性差的影响。提交的方案将使用隐藏测试集上的定量深度估计指标进行评估。\n\n本挑战赛作为EBMV 2026的一部分组织举办，面向从事低级视觉、基于事件的视觉、视频增强以及单目或多模态深度估计研究的科研人员。",
     "created_by": "ethanliang99",
     "created_when": "2026-05-13T06:27:08.548287Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-13-1778653628/08a70c7d08bb/ChatGPT_Image_May_13_2026_02_02_4.png?AWSAccessKeyId=codabench-prod&Signature=6y9s4svOc9KU7IazDXLVv%2BLj%2BOg%3D&Expires=1782128206",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-13-1778653628/08a70c7d08bb/ChatGPT_Image_May_13_2026_02_02_4.png?AWSAccessKeyId=codabench-prod&Signature=FbbGV0TVxPkzI8T6ZMPOyXAcClo%3D&Expires=1782128540",
     "participants_count": 17,
     "submissions_count": 2,
     "first_phase_start": null,
@@ -661,6 +619,48 @@
       }
     ]
   },
+  "16195": {
+    "id": 16195,
+    "title": "EBMV 2026 @ ECCV - Event-Guided Brightness Adjustment on SEE-600K",
+    "description": "# EBMV 2026 Low-Level Imaging Challenge: Event-Guided Brightness Adjustment on SEE-600K\n\n## Overview\n\nReal-world images often suffer from different lighting degradations, including low light, over-exposure, mixed illumination, and high-contrast scenes. This challenge aims to study a unified event-guided solution for low-level image enhancement under broad lighting conditions.\n\nParticipants are asked to use RGB frames and event data to recover clear, well-exposed, and structurally faithful images. The challenge is associated with the ECCV 2026 Workshop on Event-Based Multimodal Vision: Imaging, Perception, and Understanding.\n\n## Dataset\n\nThis challenge is based on SEE-600K, introduced in:\n\n“SEE: See Everything Every Time - Adaptive Brightness Adjustment for Broad Light Range Images via Events”\n\nSEE-600K is a large-scale RGB-event dataset collected under diverse lighting conditions and real-world scenarios. It provides paired RGB images and event data for event-guided brightness adjustment and low-level image restoration.\n\nDataset:\nhttps://huggingface.co/datasets/yunfanlu/SEE-600K\n\nBaseline code:\nhttps://github.com/yunfanLu/SEE\n\nWorkshop website:\nhttps://eventbasemultimodalvision.github.io\n\n## Task\n\nParticipants need to develop an event-guided low-level imaging model.\n\nInput:\n1. An RGB image captured under challenging illumination.\n2. The corresponding event stream or event representation.\n3. Optional metadata or exposure prompt, if provided.\n\nOutput:\n1. A brightness-adjusted RGB image.\n2. The output should preserve scene structure, recover useful details, and avoid unrealistic hallucination.\n\nThe task focuses on event-guided brightness adjustment and image enhancement, rather than general image generation.\n\n## Challenge Track\n\n### Broad-Light Adaptive Brightness Adjustment\n\nParticipants are encouraged to train models on SEE-600K. Extra training data is allowed, but all external datasets, collection settings, and pretrained models should be clearly reported in the final technical report.\n\n## Submission Format\n\nEach submission should be uploaded as a compressed ZIP file.\n\nRecommended structure:\n\nsubmission.zip\n├── scene_000001.png\n├── scene_000002.png\n├── scene_000003.png\n└── ...\n\nRequirements:\n1. The output filename must match the input sample ID.\n2. Images should be saved as PNG files.\n3. Output images should be RGB images.\n4. The output resolution must be the same as the input/reference resolution.\n5. Do not change the file names or folder structure.\n6. Do not include extra files unless explicitly required.\n\n## Evaluation\n\nThe official evaluation will be conducted on the test set.\n\nMetrics:\n1. PSNR: pixel-level reconstruction accuracy.\n2. SSIM: structural similarity.\n3. LPIPS: perceptual similarity.\n\nRanking:\n1. PSNR is the primary ranking metric.\n2. SSIM and LPIPS will be used as secondary metrics.\n3. The final leaderboard will be based on the official test set.\n\nThe validation server is mainly for development and submission-format checking.\n\n## Important Dates\n\nMay 15, 2026: Challenge website opens.\n\nMay 25, 2026: Validation server online.\n\nJune 25, 2026: Test data released and test server online.\n\nJuly 3, 2026: Test submission deadline and test server closes.\n\nJuly 10, 2026: Results announcement. Tentative.\n\n## Awards\n\nTop teams will be recognized at the ECCV 2026 Workshop on Event-Based Multimodal Vision.\n\n## Citation\n\nIf you use SEE-600K or the SEE baseline, please cite:\n\n“SEE: See Everything Every Time - Adaptive Brightness Adjustment for Broad Light Range Images via Events”\n\nMore information is available at:\nhttps://github.com/yunfanLu/SEE\n\n## Contact\n\nYunfan Lu  \nylu066@connect.hkust-gz.edu.cn",
+    "description_zh": "# EBMV 2026 低级图像处理挑战赛：基于事件指导的亮度调整 (SEE-600K)\n\n## 概述\n\n真实世界图像经常受到各种光照退化的影响，包括低光、过曝光、混合光照和高对比度场景。本挑战赛旨在研究在广泛光照条件下基于事件指导的统一低级图像增强方案。\n\n参赛者需要利用RGB帧和事件数据来恢复清晰、曝光正确且结构保真的图像。本挑战赛与ECCV 2026事件多模态视觉研讨会相关联：成像、感知与理解。\n\n## 数据集\n\n本挑战赛基于SEE-600K数据集，详见：\n\n\"SEE: See Everything Every Time - Adaptive Brightness Adjustment for Broad Light Range Images via Events\"\n\nSEE-600K是在多样化光照条件和真实场景下收集的大规模RGB-事件数据集。它为事件指导的亮度调整和低级图像恢复提供配对的RGB图像和事件数据。\n\n数据集：\nhttps://huggingface.co/datasets/yunfanlu/SEE-600K\n\n基线代码：\nhttps://github.com/yunfanLu/SEE\n\n研讨会网址：\nhttps://eventbasemultimodalvision.github.io\n\n## 任务\n\n参赛者需要开发一个基于事件指导的低级图像处理模型。\n\n输入：\n1. 在具有挑战性光照条件下捕获的RGB图像。\n2. 对应的事件流或事件表示。\n3. 可选的元数据或曝光提示（如提供）。\n\n输出：\n1. 亮度调整后的RGB图像。\n2. 输出应保持场景结构、恢复有用细节，避免不真实的幻觉。\n\n该任务重点关注事件指导的亮度调整和图像增强，而非通用图像生成。\n\n## 挑战赛赛道\n\n### 广泛光照自适应亮度调整\n\n参赛者可在SEE-600K上训练模型。允许使用额外训练数据，但所有外部数据集、采集设置和预训练模型应在最终技术报告中明确说明。\n\n## 提交格式\n\n每份提交应上传为压缩ZIP文件。\n\n推荐结构：\n\nsubmission.zip\n├── scene_000001.png\n├── scene_000002.png\n├── scene_000003.png\n└── ...\n\n要求：\n1. 输出文件名必须与输入样本ID匹配。\n2. 图像应保存为PNG文件。\n3. 输出图像应为RGB图像。\n4. 输出分辨率必须与输入/参考分辨率相同。\n5. 不得更改文件名或文件夹结构。\n6. 除非明确要求，不包含额外文件。\n\n## 评估\n\n官方评估将在测试集上进行。\n\n指标：\n1. PSNR：像素级重建准确度。\n2. SSIM：结构相似性。\n3. LPIPS：感知相似性。\n\n排名：\n1. PSNR是主要排名指标。\n2. SSIM和LPIPS用作次要指标。\n3. 最终排行榜基于官方测试集。\n\n验证服务器主要用于开发和提交格式检查。",
+    "created_by": "yunfan_lu",
+    "created_when": "2026-05-07T16:25:48.971115Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-14-1778767621/54b97befc59e/SEE-logo.jpg?AWSAccessKeyId=codabench-prod&Signature=661qWCbPL%2Fmcf7h9Ol1VqF35WgE%3D&Expires=1782128542",
+    "participants_count": 64,
+    "submissions_count": 143,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 26671,
+        "name": "Test Phase",
+        "start": "2026-05-14T16:00:00Z",
+        "end": "2026-06-24T15:55:00Z",
+        "max_submissions_per_day": 5
+      },
+      {
+        "id": 26672,
+        "name": "Eval Phase",
+        "start": "2026-06-25T08:00:00Z",
+        "end": "2026-07-03T07:55:00Z",
+        "max_submissions_per_day": 5
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Overview",
+        "content": "# SEE Challenge 2026: Event-Guided Brightness Adjustment on SEE-600K\n\nWelcome to the **SEE Challenge 2026**, held with **EBMV @ ECCV 2026**. This competition studies **event-guided brightness adjustment under broad lighting conditions**.\n\nThe goal is to recover a well-exposed RGB image from a challenging RGB input and its corresponding event-camera signal. Participants may use the official baseline code, the SEE-600K dataset, external data, and pretrained models, as long as external resources are clearly reported in the final technical report.\n\n## Start Here\n\n| Need | Link |\n| --- | --- |\n| Code, baseline, dataset links, pretrained models | [GitHub: yunfanLu/SEE](https://github.com/yunfanLu/SEE) |\n| Full setup, training, inference, and evaluation tutorial | [docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md) |\n| CodaBench packaging and upload instructions | [docs/CODABENCH_SUBMISSION_GUIDE.md](https://github.com/yunfanLu/SEE/blob/main/docs/CODABENCH_SUBMISSION_GUIDE.md) |\n| Chinese competition guide | [docs/COMPETITION_GUIDE_ZH.md](https://github.com/yunfanLu/SEE/blob/main/docs/COMPETITION_GUIDE_ZH.md) |\n| Baseline results | [docs/TEST_RESULTS.md](https://github.com/yunfanLu/SEE/blob/main/docs/TEST_RESULTS.md) |\n| Dataset | [SEE-600K on Hugging Face](https://huggingface.co/datasets/yunfanlu/SEE-600K) |\n\nRecommended workflow:\n\n1. Clone the repository and install dependencies.\n2. Download SEE-600K.\n3. Train or adapt a model using the official training split.\n4. Run inference at the original image size, `346 x 260`.\n5. Collect prediction images with the provided CodaBench script.\n6. Zip the collected folder and upload it to CodaBench.\n\n## Task\n\nGiven:\n\n- an RGB image captured under difficult illumination;\n- the corresponding event stream or event representation;\n- optional brightness or exposure metadata when available;\n\nparticipants should output a **brightness-adjusted RGB image**.\n\nThe output should:\n\n- preserve scene structure and image details;\n- produce natural color and exposure;\n- avoid unrealistic hallucinated content;\n- match the original SEE image resolution for submission.\n\n## Dataset: SEE-600K\n\nThe challenge uses **SEE-600K**, a large-scale RGB-event dataset for broad-light-range image enhancement.\n\n| Property | Value |\n| --- | --- |\n| Images | 610,126 |\n| Real-world scenarios | 202 |\n| Modalities | RGB frames + event data |\n| Lighting conditions | low light, normal light, high light, mixed illumination |\n| Image resolution | `346 x 260` |\n\nDownload:\n\n- Hugging Face: [yunfanlu/SEE-600K](https://huggingface.co/datasets/yunfanlu/SEE-600K)\n- Additional mirrors and notes: [GitHub README](https://github.com/yunfanLu/SEE#dataset-download)\n\nExpected dataset structure and setup instructions are documented in [docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#2-prepare-the-dataset).\n\n## Train/Test Split\n\nThe following scenario groups are reserved for official testing and **must not be used for training**:\n\n| Type | Reserved groups |\n| --- | --- |\n| Indoor | 000, 001, 002, 006, 012, 018, 030, 042, 048, 054, 060, 065, 070, 074, 075 |\n| Outdoor | 100, 106, 112, 118, 124, 130, 136, 142, 148, 154, 160, 166, 173, 184, 189, 194, 200, 206, 212, 217, 222, 225 |\n\nAll other groups are available for training. See the split details in [docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#23-traintest-split).\n\n## Baseline: SEE-Net\n\nThe official repository provides **SEE-Net**, a compact baseline with approximately **1.9M parameters**. It uses:\n\n- an RGB frame;\n- event data;\n- a brightness/exposure prompt.\n\nThe baseline supports controllable brightness adjustment through the prompt value `B`:\n\n- `B ~= 0.5`: normal exposure;\n- `B > 0.5`: brighter output;\n- `B < 0.5`: darker output.\n\nBaseline setup, training, inference, and evaluation are documented here:\n\n- Setup: [docs/TUTORIAL.md#3-set-up-the-python-environment](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#3-set-up-the-python-environment)\n- Training: [docs/TUTORIAL.md#5-train-see-net](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#5-train-see-net)\n- Inference and evaluation: [docs/TUTORIAL.md#6-evaluate-or-run-inference](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#6-evaluate-or-run-inference)\n- Pretrained checkpoints: [GitHub README: Pretrained Models](https://github.com/yunfanLu/SEE#pretrained-models)\n\n## Quick Commands\n\nClone and install:\n\n```bash\ngit clone https://github.com/yunfanLu/SEE.git\ncd SEE\n\nconda create -n see python=3.10 -y\nconda activate see\npip install -r requirements.txt\n```\n\nDownload SEE-600K with Hugging Face CLI:\n\n```bash\npip install huggingface_hub\nhf download yunfanlu/SEE-600K --local-dir ./SEE-600K\n```\n\nBefore inference for submission, make sure the YAML crop size is the original image size:\n\n```yaml\ncrop_w: 346\ncrop_h: 260\n```\n\nRun inference with a trained checkpoint:\n\n```bash\npython see/main.py \\\n  --yaml_file=\"options/SEE/SEENet_SEE.yaml\" \\\n  --log_dir=\"./logs/SEE/SEENet_SEE/vis/\" \\\n  --alsologtostderr=True \\\n  --RESUME_PATH=\"./logs/SEE/SEENet_SEE/checkpoint.pth.tar\" \\\n  --TEST_ONLY=True \\\n  --VISUALIZE=True \\\n  --VAL_BATCH_SIZE=4\n```\n\n## Submission Format\n\nAfter inference, the repository will produce a `vis` folder. Use the provided script to collect only the prediction images required by CodaBench:\n\n```bash\npython codabench/collect_codabench_pred.py ${prediction_vis_directory} ${output_directory}\n```\n\nExample:\n\n```bash\npython codabench/collect_codabench_pred.py /path/to/vis /path/to/output_dir\n```\n\nThen create the zip file:\n\n```bash\ncd /path/to/output_dir\nzip -r submission.zip ./*\n```\n\nUpload `submission.zip` on the CodaBench submission page.\n\nBefore uploading, check that:\n\n- prediction images are `.png` files;\n- prediction images are saved at `346 x 260`;\n- the zip contains the collected prediction folder structure, not an extra parent directory;\n- filenames and folders are preserved by the collection script;\n- the submitted images correspond to the main prediction output used for evaluation. If you use the official `vis` naming convention, the evaluator prioritizes prediction files containing `_p0_`.\n\nFull submission instructions: [docs/CODABENCH_SUBMISSION_GUIDE.md](https://github.com/yunfanLu/SEE/blob/main/docs/CODABENCH_SUBMISSION_GUIDE.md).\n\n## Evaluation\n\nRanking is based on reconstruction quality against the official reference images.\n\n| Metric | Role | Direction |\n| --- | --- | --- |\n| PSNR | Primary ranking metric | Higher is better |\n| SSIM | Secondary metric | Higher is better |\n\nThe scorer reports overall PSNR/SSIM and category-level scores for `high-normal`, `low-normal`, and `normal-normal` samples. Missing or invalid predictions receive zero-score penalties for the affected samples.\n\nThe validation server is intended for development and format checking. Final ranking is determined by the official test phase.\n\n## Important Dates\n\n| Date | Event |\n| --- | --- |\n| May 10, 2026 | Competition website opens |\n| May 25, 2026 | Validation server online |\n| June 25, 2026 | Test data released and test server online |\n| July 3, 2026 | Test submission deadline |\n| July 10, 2026 | Results announcement, tentative |\n\n## Rules\n\n- Official SEE-600K training and validation data may be used.\n- External training data, synthetic data, and pretrained models are allowed, but must be clearly described in the technical report.\n- Reserved test groups and hidden ground-truth images must not be used for training or manual tuning.\n- Do not exploit the evaluation server or submission system.\n- Top-ranked teams may be asked to submit a short technical report and provide reproducibility details.\n\n## FAQ\n\n**Which repository should I use?**  \nUse the official repository: [https://github.com/yunfanLu/SEE](https://github.com/yunfanLu/SEE).\n\n**Where are the training and inference commands?**  \nThey are in [docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md).\n\n**How do I prepare the CodaBench zip?**  \nFollow [docs/CODABENCH_SUBMISSION_GUIDE.md](https://github.com/yunfanLu/SEE/blob/main/docs/CODABENCH_SUBMISSION_GUIDE.md). The key steps are: generate `vis`, collect predictions with `codabench/collect_codabench_pred.py`, then zip the collected output folder.\n\n**Why must inference use `346 x 260`?**  \nThis is the original SEE image size. Submissions with a different output size may fail evaluation or produce invalid scores.\n\n**Can I use external data or pretrained models?**  \nYes, but all external resources must be reported in the final technical report.\n\n## Links\n\n- Competition page: [https://www.codabench.org/competitions/16195/](https://www.codabench.org/competitions/16195/)\n- Competition forum: [https://www.codabench.org/forums/15944/](https://www.codabench.org/forums/15944/)\n- GitHub repository: [https://github.com/yunfanLu/SEE](https://github.com/yunfanLu/SEE)\n- Dataset: [https://huggingface.co/datasets/yunfanlu/SEE-600K](https://huggingface.co/datasets/yunfanlu/SEE-600K)\n- Workshop website: [https://eventbasemultimodalvision.github.io](https://eventbasemultimodalvision.github.io)\n- Competition report: [https://arxiv.org/abs/2502.21120](https://arxiv.org/abs/2502.21120)\n\n## Citation\n\nIf you use SEE-600K, SEE-Net, or the official baseline code, please cite:\n\n```bibtex\n@article{lu2025SEE,\n  title={SEE: See Everything Every Time - Adaptive Brightness Adjustment for Broad Light Range Images via Events},\n  author={Yunfan Lu, Xiaogang Xu, Hao Lu, Yanlin Qian, Pengteng Li, Huizai Yao, Bin Yang, Junyi Li, Qianyi Cai, Weiyu Guo, Hui Xiong},\n  year={2025},\n}\n```\n\n## Contact\n\n- Yunfan Lu: <ylu066@connect.hkust-gz.edu.cn>\n- Mingchao Xu：<mingchao.xu.casia@gmail.com>",
+        "content_zh": "# SEE挑战赛2026：SEE-600K上的事件引导亮度调整\n\n欢迎参加**SEE挑战赛2026**，由**EBMV @ ECCV 2026**主办。本竞赛研究**在广泛光照条件下基于事件相机引导的亮度调整**。\n\n目标是从具有挑战性的RGB输入图像及其对应的事件相机信号中恢复一张曝光良好的RGB图像。参赛者可使用官方基准代码、SEE-600K数据集、外部数据和预训练模型，但需在最终技术报告中明确说明所用外部资源。\n\n## 快速开始\n\n| 需求 | 链接 |\n| --- | --- |\n| 代码、基准、数据集链接、预训练模型 | [GitHub: yunfanLu/SEE](https://github.com/yunfanLu/SEE) |\n| 完整设置、训练、推理及评估教程 | [docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md) |\n| CodaBench打包和上传说明 | [docs/CODABENCH_SUBMISSION_GUIDE.md](https://github.com/yunfanLu/SEE/blob/main/docs/CODABENCH_SUBMISSION_GUIDE.md) |\n| 中文竞赛指南 | [docs/COMPETITION_GUIDE_ZH.md](https://github.com/yunfanLu/SEE/blob/main/docs/COMPETITION_GUIDE_ZH.md) |\n| 基准结果 | [docs/TEST_RESULTS.md](https://github.com/yunfanLu/SEE/blob/main/docs/TEST_RESULTS.md) |\n| 数据集 | [SEE-600K on Hugging Face](https://huggingface.co/datasets/yunfanlu/SEE-600K) |\n\n推荐工作流程：\n\n1. 克隆仓库并安装依赖。\n2. 下载SEE-600K。\n3. 使用官方训练集训练或改进模型。\n4. 在原始图像尺寸`346 x 260`下运行推理。\n5. 使用提供的CodaBench脚本收集预测图像。\n6. 压缩收集的文件夹并上传至CodaBench。\n\n## 任务\n\n给定：\n\n- 在困难光照条件下拍摄的RGB图像；\n- 对应的事件流或事件表示；\n- 可选的亮度或曝光元数据（如可用）；\n\n参赛者应输出**亮度调整后的RGB图像**。\n\n输出应满足：\n\n- 保留场景结构和图像细节；\n- 产生自然的色彩和曝光效果；\n- 避免不切实际的幻觉内容；\n- 匹配原始SEE图像分辨率以供提交。\n\n## 数据集：SEE-600K\n\n本挑战赛采用**SEE-600K**，这是一个用于宽光度范围图像增强的大规模RGB-事件数据集。\n\n| 属性 | 数值 |\n| --- | --- |\n| 图像数量 | 610,126 |\n| 真实场景 | 202 |\n| 数据模态 | RGB帧 + 事件数据 |\n| 光照条件 | 低光、正常光、高光、混合光照 |\n| 图像分辨率 | `346 x 260` |\n\n下载：\n\n- Hugging Face: [yunfanlu/SEE-600K](https://huggingface.co/datasets/yunfanlu/SEE-600K)\n- 其他镜像和说明：[GitHub README](https://github.com/yunfanLu/SEE#dataset-download)\n\n预期数据集结构和设置说明见[docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#2-prepare-the-dataset)。\n\n## 训练/测试划分\n\n以下场景组保留用于官方测试，**不能用于训练**：\n\n| 类型 | 保留组 |\n| --- | --- |\n| 室内 | 000, 001, 002, 006, 012, 018, 030, 042, 048, 054, 060, 065, 070, 074, 075 |\n| 室外 | 100, 106, 112, 118, 124, 130, 136, 142, 148, 154, 160, 166, 173, 184, 189, 194, 200, 206, 212, 217, 222, 225 |\n\n所有其他组可用于训练。详细的划分信息见[docs/TUTORIAL.md](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md#23-traintest-split)。\n\n## 基准：SEE-Net\n\n官方仓库提供**SEE-Net**，一个参数量约为**190万**的紧凑基准模型。它使用：\n\n- RGB帧；\n- 事件数据；\n- 亮度/曝光提示。\n\n基准支持通过提示值`B`进行可控亮度调整：\n\n- `B ~= 0.5`：正常曝光；\n- `B > 0.5`：更亮的输出；\n- `B < 0.5`：更暗的输出。\n\n基准的设置、训练、推理和评估文档详见：\n\n- 设置：[docs/TUTORIAL.md#3-set-up-the-python-environment](https://github.com/yunfanLu/SEE/blob/main/docs/TUTORIAL.md)"
+      },
+      {
+        "index": 1,
+        "title": "Rules & Timeline",
+        "content": "# Rules\n\nParticipants may use SEE-600K for model training.\n\nExternal training data, pretrained models, and synthetic data are allowed, but they must be clearly reported in the final technical report.\n\nParticipants must not use hidden ground-truth test data, manually tune results on the test set, or exploit the evaluation server.\n\nTop teams may be asked to submit a short technical report for result verification.\n\n# Important Dates\n\nMay 15, 2026: Challenge website opens.\n\nMay 25, 2026: Validation server online.\n\nJune 25, 2026: Test data released and test server online.\n\nJuly 3, 2026: Test submission deadline and test server closes.\n\nJuly 10, 2026: Results announcement. Tentative.",
+        "content_zh": "# 规则\n\n参赛者可以使用 SEE-600K 进行模型训练。\n\n允许使用外部训练数据、预训练模型和合成数据，但必须在最终技术报告中清楚地报告。\n\n参赛者不得使用隐藏的测试集真实标签、手动调整测试集结果或滥用评估服务器。\n\n排名靠前的团队可能被要求提交简短技术报告以进行结果验证。\n\n# 重要日期\n\n2026年5月15日：竞赛网站开放。\n\n2026年5月25日：验证服务器上线。\n\n2026年6月25日：发布测试数据并启动测试服务器。\n\n2026年7月3日：测试提交截止日期和测试服务器关闭。\n\n2026年7月10日：结果公布。暂定。"
+      }
+    ]
+  },
   "14963": {
     "id": 14963,
     "title": "DeepPhenoTree - CVPPA Data Challenge",
@@ -668,7 +668,7 @@
     "description_zh": "DeepPhenoTree - Apple Edition 数据集（包含 1,438 张苹果树 RGB 图像，采集自瑞士、比利时、西班牙和意大利，2025 年）包含 22,500 个手动标注的边界框，涵盖三个物候阶段：开花期、果实小球期和果实期。\n\n开发并基准测试目标检测模型，该模型能够自动定位图像中的三个物候阶段。提交的结果将使用平均精度均值（mAP@0.5）进行评估，这是检测挑战的标准指标。\n\n挑战赛的结果将在 ECCV 会议（2026 年 9 月 8-13 日）期间的 CVPPA 研讨会（9 月 8-9 日）中呈现，会议地点为瑞典马尔默。",
     "created_by": "clothode",
     "created_when": "2026-03-17T15:56:27.833010Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-03-20-1774019283/659710f0a7bb/unnamed.jpg?AWSAccessKeyId=codabench-prod&Signature=wu8tqdyuyoijb7bNIGjivYWW13E%3D&Expires=1782128218",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-03-20-1774019283/659710f0a7bb/unnamed.jpg?AWSAccessKeyId=codabench-prod&Signature=qBKSKNJB56p8QdVlmxUYeRKVZqs%3D&Expires=1782128560",
     "participants_count": 32,
     "submissions_count": 321,
     "first_phase_start": null,
@@ -721,6 +721,53 @@
       }
     ]
   },
+  "16614": {
+    "id": 16614,
+    "title": "LoViF 2026 The Third Challenge on Day and Night Raindrop Removal for Dual-Focused Images@ECCV2026",
+    "description": "Our goal is to introduce a new benchmark for the development of Day and Night Raindrop Removal for Dual-Focused Images",
+    "description_zh": "我们的目标是为双焦点图像的日夜雨滴去除引入一个新的基准",
+    "created_by": "yaosh",
+    "created_when": "2026-05-22T05:58:22.308480Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-22-1779429502/2e70ce6bec17/LoViF.png?AWSAccessKeyId=codabench-prod&Signature=ta1LtmKejw8DQ%2FTf%2BNA%2FrcMjCmE%3D&Expires=1782128534",
+    "participants_count": 49,
+    "submissions_count": 228,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 27230,
+        "name": "Development",
+        "start": "2026-05-22T08:00:00Z",
+        "end": "2026-07-08T08:00:00Z",
+        "max_submissions_per_day": 5
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "overview",
+        "content": "<div align=\"center\">\n<h1><strong>The 2nd Workshop on Low-level Vision Frontiers (LoViF) @ ECCV 2026</strong></h1>\n</div>\n<h2>&nbsp;</h2>\n<h1>LoViF 2026 The Third Challenge on Day and Night Raindrop Removal for Dual-Focused Images @ ECCV 2026</h1>\n<h2>Important dates</h2>\n<ul>\n<li>2026.05.22 Release of train data (input and output)</li>\n<li><strong>2026.07.01 Final test data release (inputs only)</strong></li>\n<li><strong>2026.07.08 Test output results submission deadline</strong></li>\n<li><strong>2026.07.08 Fact sheets and code/executable submission deadline</strong></li>\n<li>2026.07.15 Preliminary test results release to the participants</li>\n<li><strong>2026.07.15 Paper submission deadline for entries (Internal Review)</strong></li>\n<li>2026.09.x LoViF workshop and challenges, results and award ceremony (ECCV 2026)</li>\n</ul>\n<h2>&nbsp;</h2>\n<h2>Challenge overview</h2>\n<p align=\"justify\">The <a href=\"https://lovif-eccv2026-workshop.github.io/\">2nd Workshop on Low-level Vision Frontiers (LoViF)</a>&nbsp;will be held in conjunction with ECCV 2026.</p>\n<p align=\"justify\">Image manipulation is a key computer vision task, aiming at the restoration of degraded image content, the filling in of missing information, or the needed transformation and/or manipulation to achieve a desired target (with respect to perceptual quality, contents, or performance of apps working on such images). Recent years have witnessed an increased interest from the vision and graphics communities in these fundamental topics of research. Not only has there been a constantly growing flow of related papers, but also substantial progress has been achieved.</p>\n<p align=\"justify\">Each step forward eases the use of images by people or computers for the fulfillment of further tasks, as image manipulation serves as an important front end. Not surprisingly then, there is an ever-growing range of applications in fields such as surveillance, the automotive industry, electronics, remote sensing, or medical image analysis etc. The emergence and ubiquitous use of mobile and wearable devices offer another fertile ground for additional applications and faster methods.</p>\n<p align=\"justify\">This workshop aims to provide an overview of the new trends and advances in those areas. Moreover, it will offer an opportunity for academic and industrial attendees to interact and explore collaborations.</p>\n<p>&nbsp;</p>\n<h2>Motivation for this competition</h2>\n<!-- (<a href=\"https://lixinustc.github.io/projects/KVQ/\">KVQ</a>) -->\n<p align=\"justify\">Raindrops on camera lenses or windshields significantly reduce image visibility in human life, posing challenges for applications like surveillance and autonomous driving. Effective raindrop removal is crucial to ensuring reliable performance in these systems. However, most deraining datasets overlooked the complex environment in real life. In particular, there are few raindrop-focused datasets, and most existing datasets focus on capturing background scenes while the camera is focused on the background. Meanwhile, these datasets primarily target daytime scenarios, with limited attention to nighttime conditions.</p>\n<p align=\"justify\">To promote the development of deraining, we introduce the first large-scale real-world raindrop-clarity dataset, which includes raindrop-focused images and nighttime scenes. Based on this dataset, we organize LoViF 2026 The Third Challenge on Day and Night Raindrop Removal for Dual-Focused Images @ ECCV 2026, jointly with the LoViF workshop.</p>\n<p align=\"justify\">The goal of this competition is to establish a new and applicable benchmark for the Day and Night Raindrop Removal for Dual-Focused Images. We are looking forward to the collaborative efforts of our participants, aiming to elevate the quality of restored images. The final ranking will be made based on PSNR, SSIM, and LPIPS.</p>\n<!-- <p align=\"justify\">More details on our KVQ database and example code can be found on our <a href=\"https://lixinustc.github.io/projects/KVQ/\">Project Page</a> and <a href=\"https://github.com/lixinustc/KVQ-Challenge-CVPR-NTIRE2026\">Github</a>.</p> -->\n<p>&nbsp;</p>\n<p>The top-ranked participants will be awarded and invited to follow the ECCV submission guide for workshops to describe their solution and to submit to the associated LoViF workshop at ECCV 2026.</p>\n<p align=\"justify\">More details are found in the competition data section.</p>\n<h2 align=\"justify\">Competition</h2>\n<p><strong>The training data will be made available to the registered participants.</strong></p>\n<h2>Provided Resources</h2>\n<ul>\n<li><strong>Scripts:&nbsp;</strong>With the dataset the organizers will provide scripts to facilitate the reproducibility of the images and performance evaluation results after the validation server is online. More information is provided on the data page.</li>\n<li><strong>Contact:&nbsp;</strong>You can use the forum on the data description page (highly recommended!) or directly contact the challenge organizers by email (yshustc@mail.ustc.edu.cn, jinyeying@u.nus.edu, xin.li@ustc.edu.cn) if you have doubts or any questions.</li>\n</ul>",
+        "content_zh": "<div align=\"center\">\n<h1><strong>第2届低阶视觉前沿研讨会(LoViF) @ ECCV 2026</strong></h1>\n</div>\n<h2>&nbsp;</h2>\n<h1>LoViF 2026 第三届日夜双焦点图像雨滴去除挑战赛 @ ECCV 2026</h1>\n<h2>重要日期</h2>\n<ul>\n<li>2026.05.22 发布训练数据(输入和输出)</li>\n<li><strong>2026.07.01 发布最终测试数据(仅限输入)</strong></li>\n<li><strong>2026.07.08 测试输出结果提交截止日期</strong></li>\n<li><strong>2026.07.08 事实说明书及代码/可执行文件提交截止日期</strong></li>\n<li>2026.07.15 向参赛者发布初步测试结果</li>\n<li><strong>2026.07.15 参赛作品论文提交截止日期(内部审查)</strong></li>\n<li>2026.09.x LoViF研讨会、挑战赛、结果发布及颁奖典礼(ECCV 2026)</li>\n</ul>\n<h2>&nbsp;</h2>\n<h2>挑战赛概述</h2>\n<p align=\"justify\">第2届低阶视觉前沿研讨会(LoViF)将与ECCV 2026同期举办。</p>\n<p align=\"justify\">图像处理是计算机视觉的关键任务,旨在恢复退化的图像内容、填补缺失信息,或进行必要的变换和/或处理以实现所需的目标(关于感知质量、内容或基于此类图像的应用性能)。近年来,视觉和图形社区对这些基础研究课题的兴趣不断增加。不仅相关论文数量持续增长,而且在该领域也取得了实质性进展。</p>\n<p align=\"justify\">每一项进展都便于人类或计算机利用图像完成进一步任务,因为图像处理是一个重要的前端。因此,在监控、汽车工业、电子产品、遥感或医学图像分析等领域的应用范围在不断扩大。移动和可穿戴设备的出现和普遍使用为额外应用和更快方法提供了又一个富有成效的领域。</p>\n<p align=\"justify\">本研讨会旨在概述这些领域的新趋势和进展。此外,它将为学术界和业界参与者提供互动和探索合作的机会。</p>\n<p>&nbsp;</p>\n<h2>竞赛动机</h2>\n<p align=\"justify\">相机镜头或挡风玻璃上的雨滴严重降低了人类生活中的图像可见性,对监控和自动驾驶等应用构成了挑战。有效的雨滴去除对确保这些系统的可靠性能至关重要。然而,大多数去雨数据集忽略了现实生活中的复杂环境。特别是,以雨滴为重点的数据集很少,大多数现有数据集在相机聚焦于背景时主要用于捕捉背景场景。同时,这些数据集主要针对白天场景,对夜间条件的关注有限。</p>\n<p align=\"justify\">为了推动去雨技术的发展,我们推出了首个大规模真实世界雨滴清晰度数据集,其中包括以雨滴为重点的图像和夜间场景。基于该数据集,我们组织了LoViF 2026第三届日夜双焦点图像雨滴去除挑战赛,与LoViF研讨会联合举办。</p>\n<p align=\"justify\">本竞赛的目标是为日夜双焦点图像雨滴去除建立新的实用基准。我们期待参赛者的共同努力,旨在提升图像恢复质量。最终排名将基于PSNR、SSIM和LPIPS进行评定。</p>"
+      },
+      {
+        "index": 1,
+        "title": "data",
+        "content": "<div align=\"center\">\n<h1><strong>The 2nd Workshop on Low-level Vision Frontiers (LoViF) @ ECCV 2026</strong></h1>\n</div>\n<h2>&nbsp;</h2>\n<h1>LoViF 2026 The Third Challenge on Day and Night Raindrop Removal for Dual-Focused Images @ ECCV 2026</h1>\n<h3>&nbsp;</h3>\n<h2>Data overview</h2>\n<p align=\"justify\">The dataset named RainDrop Clarity is contributed by Yeying Jin et al (NUS). The dataset includes both daytime and nighttime scenes for training and testing. (i) The daytime raindrop dataset contains a total of 5,442 paired or triplet images, with 4,713 pairs used for training and the remaining 729 pairs for testing. (ii) The nighttime raindrop dataset consists of 9,744 paired or triplet images, where 8,655 pairs are allocated to the training set, and the remaining 1,089 pairs are reserved for the&nbsp;validation and&nbsp;test set.</p>\n<p align=\"justify\">In this competition, the used dataset is composed of:</p>\n<ul>\n<li>train data:&nbsp;<span>A total of 14,139 day and night dual-focused raindrop images with blurry backgrounds and their corresponding clear backgrounds are provided.</span></li>\n<li>validation data: A total of 240 day and night rainy images are provided.&nbsp;</li>\n<li>test data:&nbsp;<span>A total of 731 day and night rainy images are provided.</span></li>\n</ul>\n<h3>&nbsp;</h3>\n<h2>Data access</h2>\n<p align=\"justify\"><strong>By accessing the data the participants implicitly agree with the terms and conditions of the LoViF challenge.</strong></p>\n<h3>&nbsp;</h3>\n<ul>\n<ul>\n<li><strong>Development phase / Learning:</strong></li>\n<ul>\n<li>Train Data, please download <a href=\"https://drive.google.com/file/d/1lHOumI4wDsJfgGnDPOCXM6h_C1F5ZQEA/view\">day rainy data</a> and <a href=\"https://drive.google.com/file/d/1_ruwsBCzbOEkpqcqHIeKoyCg6P2Sxclr/view\">night rainy data</a> with Google drive. Participants are allowed to use publicly available external datasets for training, as long as the sources of the data are explicitly documented in the factsheet. More details about the training data can be found in FoundIR.</li>\n<li><a href=\"https://drive.google.com/file/d/1t2W0OC8qXZ461EIxNNFHwzVtyCgasQs2/view?usp=drive_link\">Validation Data</a> (only input images), has been released</li>\n<li>Test Data (only input images): [TBA]</li>\n</ul>\n</ul>\n</ul>\n<h3>&nbsp;</h3>\n<h2>Final test phase submission guidelines (<span style=\"text-decoration: underline;\">Factsheet can be found in [TBA]</span>)</h2>\n<p>The final submission should be emailed to the organizers (see the \"Organizers\" tab for contact details).</p>\n<p>The title of the mail should be:&nbsp; [LoViF2026] - [TASK_NAME] - [TEAM_NAME]</p>\n<p>The body of the mail shall include the following:</p>\n<ul>\n<ul><ol>\n<li>the challenge full name</li>\n<li>team name</li>\n<li>team leader and all members' names, email addresses and institutes.</li>\n<li>team members with LoViF 2026 sponsors</li>\n<li>team name and user names on LoViF 2026 Codabench competitions</li>\n<li>executable/source code attached or download links</li>\n<li>factsheet attached (you should use the updated factsheet of the competition!)</li>\n<li>download link(s) to the FULL results of ALL of the test frames (corresponding to the last entry in the online Codabench test server and provided codes/exe)</li>\n</ol></ul>\n</ul>\n<p>The executable/source code should include trained models or necessary parameters to ensure reproducibility. A README file explaining how to run the code is mandatory. The Factsheet must be a compiled PDF file along with its LaTeX source files.</p>\n<p>Note that you can still submit to the validation server in those competitions for which the validation ground truth images were not released.&nbsp;</p>\n<p>&nbsp;</p>\n<h1>Final test phase - preliminary results [TBA]</h1>\n<p>Preliminary results will be posted here once the evaluation is complete.</p>\n<p>Note that top-ranked participants will be invited to co-author the challenge report and contribute a paper to the LoViF 2026 workshop. All challenge papers will undergo a peer-review process. For more information, please check the <a href=\"https://lovif-eccv2026-workshop.github.io/\">LoViF 2026 official website</a>.</p>\n<p>&nbsp;</p>",
+        "content_zh": "# 第二届低阶视觉前沿研讨会（LoViF）@ ECCV 2026\n\n# LoViF 2026 第三届双焦点图像日夜雨滴去除挑战赛 @ ECCV 2026\n\n## 数据概览\n\n数据集名称为RainDrop Clarity，由Yeying Jin等人（NUS）贡献。该数据集包含白天和夜间场景的训练和测试数据。(i) 白天雨滴数据集包含共5,442个配对或三元组图像，其中4,713对用于训练，其余729对用于测试。(ii) 夜间雨滴数据集包含9,744个配对或三元组图像，其中8,655对分配给训练集，其余1,089对用于验证和测试集。\n\n本竞赛使用的数据集构成如下：\n\n- 训练数据：提供共14,139张日夜双焦点雨滴图像及其对应的清晰背景图像。\n- 验证数据：提供共240张日夜雨滴图像。\n- 测试数据：提供共731张日夜雨滴图像。\n\n## 数据访问\n\n**参赛者访问数据即表示隐式同意LoViF挑战赛的条款和条件。**\n\n- **发展阶段/学习：**\n  - 训练数据，请通过Google Drive下载[白天雨滴数据](https://drive.google.com/file/d/1lHOumI4wDsJfgGnDPOCXM6h_C1F5ZQEA/view)和[夜间雨滴数据](https://drive.google.com/file/d/1_ruwsBCzbOEkpqcqHIeKoyCg6P2Sxclr/view)。参赛者可以使用公开可用的外部数据集进行训练，但必须在信息表中明确说明数据来源。更多关于训练数据的详细信息可在FoundIR中找到。\n  - [验证数据](https://drive.google.com/file/d/1t2W0OC8qXZ461EIxNNFHwzVtyCgasQs2/view?usp=drive_link)（仅输入图像）已发布\n  - 测试数据（仅输入图像）：待定\n\n## 最终测试阶段提交指南（信息表可在[待定]找到）\n\n最终提交应通过电子邮件发送给组织者（详见\"组织者\"选项卡中的联系方式）。\n\n邮件主题应为：[LoViF2026] - [任务名称] - [团队名称]\n\n邮件正文应包括以下内容：\n\n1. 挑战赛全名\n2. 团队名称\n3. 团队负责人及全部成员的名字、邮箱地址和所属机构\n4. 与LoViF 2026赞助商关联的团队成员\n5. LoViF 2026 Codabench竞赛平台上的团队名称和用户名\n6. 可执行文件/源代码附件或下载链接\n7. 信息表附件（应使用竞赛的最新信息表！）\n8. 全部测试帧的完整结果下载链接（对应在线Codabench测试服务器上的最后一次提交及提供的代码/可执行文件）\n\n可执行文件/源代码应包含训练好的模型或必要的参数以确保可重现性。README文件说明如何运行代码是必须的。信息表必须是编译的PDF文件及其LaTeX源文件。\n\n请注意，对于未发布验证真实标签图像的竞赛，您仍可向验证服务器提交。\n\n# 最终测试阶段——初步结果[待定]\n\n评估完成后，初步结果将在此处发布。\n\n请注意，排名靠前的参赛者将被邀请作为联合作者参与挑战赛报告的撰写，并向LoViF 2026研讨会投稿论文。所有挑战赛论文将接受"
+      },
+      {
+        "index": 2,
+        "title": "evaluation",
+        "content": "<div align=\"center\">\n<h1><strong>The 2nd Workshop on Low-level Vision Frontiers (LoViF) @ ECCV 2026</strong></h1>\n</div>\n<h2>&nbsp;</h2>\n<h1>LoViF 2026 The Third Challenge on Day and Night Raindrop Removal for Dual-Focused Images @ ECCV 2026</h1>\n<h3>&nbsp;</h3>\n<h3>Evaluation</h3>\n<p><span>The evaluation consists of the comparison of the restored images with the reference ground truth images.&nbsp;<span>Please inference all images with the same model (do not distinguish day and night).</span></span></p>\n<p align=\"justify\">The evaluation consists of the comparison of PSNR, SSIM, and LPIPS.</p>\n<p align=\"justify\">For the final results, we will compute it by weighting the above metric as the initial results: final_score = <span>PSNR (Y) + 10*SSIM (Y) - 5*LPIPS</span>.</p>\n<p>For submitting the results, you need to follow these steps:</p>\n<ol type=\"1\">\n<li><strong>process</strong>&nbsp;the input images and keep the same name for the output image results as produced by your method (example: for an input file with the name \"00063.png\" the output file should be \"00063.png\")&nbsp;Note that the output images should have the size of the input images.&nbsp; The submission example can be found in \"https://drive.google.com/file/d/1LTGEuGxU0bXOv--pLcj0VJj-S2JoM2PK/view?usp=sharing\".&nbsp;</li>\n<li>create a&nbsp;<strong>ZIP</strong>&nbsp;archive containing the files and a&nbsp;<strong>readme.txt&nbsp;</strong> Note that the archive should not include folders, all the files should be in the root of the archive.</li>\n<li>the&nbsp;<strong>readme.txt</strong>&nbsp;file should contain the following lines filled in with the runtime per image (in seconds) of the solution, 1 or 0 accordingly if employs CPU or GPU at runtime, and 1 or 0 if employs extra data for training the models or not.<br /> <code>runtime per image [s] : 10.43</code>&nbsp;<br /><code>CPU[1] / GPU[0] : 1</code><br /><code>Extra Data [1] / No Extra Data [0] : 1</code><br /><code>Other description: Solution based on A+ of Timofte et al. ACCV 2014. We have a Matlab/C++ implementation, and report single core CPU runtime. The method was trained on Train 91 of Yang et al. and BSDS 200 of the Berkeley segmentation dataset.&nbsp;</code><br />&nbsp; The last part of the file can have any description you want about the code producing the provided results (dependencies, link, scripts, etc.)<br /> The provided information is very important both during the validation period when different teams can compare their results / solutions but also for establishing the final ranking of the teams and their methods.</li>\n</ol>",
+        "content_zh": "<div align=\"center\">\n<h1><strong>第2届低级视觉前沿研讨会（LoViF）@ ECCV 2026</strong></h1>\n</div>\n<h2>&nbsp;</h2>\n<h1>LoViF 2026 第三届日夜雨滴去除双焦点图像挑战赛 @ ECCV 2026</h1>\n<h3>&nbsp;</h3>\n<h3>评估</h3>\n<p><span>评估包括将恢复的图像与参考真值图像进行比较。<span>请使用同一模型推理所有图像（不区分日间和夜间）。</span></span></p>\n<p align=\"justify\">评估包括PSNR、SSIM和LPIPS的比较。</p>\n<p align=\"justify\">对于最终结果，我们将通过对上述指标进行加权计算得到初始结果：final_score = <span>PSNR (Y) + 10*SSIM (Y) - 5*LPIPS</span>。</p>\n<p>提交结果时，需要按照以下步骤进行：</p>\n<ol type=\"1\">\n<li><strong>处理</strong>输入图像，输出图像结果保持与输入文件相同的名称（例如：输入文件名为\"00063.png\"，输出文件应为\"00063.png\"）。注意输出图像的尺寸应与输入图像相同。提交示例可在\"https://drive.google.com/file/d/1LTGEuGxU0bXOv--pLcj0VJj-S2JoM2PK/view?usp=sharing\"中找到。</li>\n<li>创建包含文件和<strong>readme.txt</strong>的<strong>ZIP</strong>压缩包。注意压缩包中不应包含文件夹，所有文件应位于压缩包的根目录。</li>\n<li><strong>readme.txt</strong>文件应包含以下信息行，并按要求填写解决方案的每张图像运行时间（秒）、运行时是否使用CPU或GPU（1或0）以及是否使用额外数据训练模型（1或0）。<br /> <code>runtime per image [s] : 10.43</code>&nbsp;<br /><code>CPU[1] / GPU[0] : 1</code><br /><code>Extra Data [1] / No Extra Data [0] : 1</code><br /><code>Other description: Solution based on A+ of Timofte et al. ACCV 2014. We have a Matlab/C++ implementation, and report single core CPU runtime. The method was trained on Train 91 of Yang et al. and BSDS 200 of the Berkeley segmentation dataset.&nbsp;</code><br />&nbsp; 文件的最后部分可以包含任何关于代码的描述，用于生成所提供的结果（依赖项、链接、脚本等）。<br /> 所提供的信息对于验证期间不同团队比较其结果/解决方案以及建立团队和方法的最终排名都非常重要。</li>\n</ol>"
+      },
+      {
+        "index": 3,
+        "title": "organizers",
+        "content": "<div align=\"center\">\n<h1><strong>The 2nd Workshop on Low-level Vision Frontiers (LoViF) @ ECCV 2026</strong></h1>\n</div>\n<h2>&nbsp;</h2>\n<h1>Organizers</h1>\n<h3>&nbsp;</h3>\n<p align=\"justify\">LoViF 2026 The Third Challenge on Day and Night Raindrop Removal for Dual-Focused Images @ ECCV 2026 is organized jointly with the University of Science and Technology of China (USTC), National University of Singapore (NUS), and the&nbsp;<a href=\"https://lovif-eccv2026-workshop.github.io/\">LoViF 2026 workshop.</a>&nbsp; The results of the challenge will be published at the LoViF 2026 workshop and in the ECCV 2026 Workshop proceedings.</p>\n<ul>\n<li>Suhang Yao (yshustc@mail.ustc.edu.cn)&nbsp;</li>\n<li><a href=\"https://scholar.google.com/citations?user=Z8PYhA4AAAAJ&amp;hl=en\">Yeying Jin</a> (jinyeying@u.nus.edu)</li>\n<li><a href=\"https://scholar.google.com/citations?user=sbiY97gAAAAJ&amp;hl=zh-CN\">Xin Li</a>&nbsp;(xin.li@ustc.edu.cn)&nbsp;</li>\n</ul>\n<p>The above organizers are the contact persons and direct managers of LoViF 2026 The Third Challenge on Day and Night Raindrop Removal for Dual-Focused Images @ ECCV 2026. If you have any questions, please contact Suhang Yao (yshustc@mail.ustc.edu.cn), <a href=\"https://scholar.google.com/citations?user=Z8PYhA4AAAAJ&amp;hl=en\">Yeying Jin</a>&nbsp;(jinyeying@u.nus.edu), and <a href=\"https://scholar.google.com/citations?user=sbiY97gAAAAJ&amp;hl=zh-CN\">Xin Li</a>&nbsp;(xin.li@ustc.edu.cn).</p>\n<p>&nbsp;</p>\n<p align=\"justify\">More information about the LoViF workshop and challenge organizers is available here:&nbsp;<a href=\"https://lovif-eccv2026-workshop.github.io/\">https://lovif-eccv2026-workshop.github.io/</a></p>",
+        "content_zh": "<div align=\"center\">\n<h1><strong>第2届低级视觉前沿研讨会 (LoViF) @ ECCV 2026</strong></h1>\n</div>\n<h2>&nbsp;</h2>\n<h1>组织者</h1>\n<h3>&nbsp;</h3>\n<p align=\"justify\">LoViF 2026 第三届日夜雨滴去除双焦点图像挑战赛 @ ECCV 2026 由中国科学技术大学 (USTC)、新加坡国立大学 (NUS) 和<a href=\"https://lovif-eccv2026-workshop.github.io/\">LoViF 2026 研讨会</a>联合组织。挑战赛结果将在 LoViF 2026 研讨会上发布，并收录在 ECCV 2026 研讨会论文集中。</p>\n<ul>\n<li>姚苏航 (yshustc@mail.ustc.edu.cn)&nbsp;</li>\n<li><a href=\"https://scholar.google.com/citations?user=Z8PYhA4AAAAJ&amp;hl=en\">靳叶莺</a> (jinyeying@u.nus.edu)</li>\n<li><a href=\"https://scholar.google.com/citations?user=sbiY97gAAAAJ&amp;hl=zh-CN\">李欣</a>&nbsp;(xin.li@ustc.edu.cn)&nbsp;</li>\n</ul>\n<p>上述组织者是 LoViF 2026 第三届日夜雨滴去除双焦点图像挑战赛 @ ECCV 2026 的联系人和直接管理者。如有任何问题，请联系姚苏航 (yshustc@mail.ustc.edu.cn)、<a href=\"https://scholar.google.com/citations?user=Z8PYhA4AAAAJ&amp;hl=en\">靳叶莺</a>&nbsp;(jinyeying@u.nus.edu) 和 <a href=\"https://scholar.google.com/citations?user=sbiY97gAAAAJ&amp;hl=zh-CN\">李欣</a>&nbsp;(xin.li@ustc.edu.cn)。</p>\n<p>&nbsp;</p>\n<p align=\"justify\">关于 LoViF 研讨会和挑战赛组织者的更多信息，请访问：<a href=\"https://lovif-eccv2026-workshop.github.io/\">https://lovif-eccv2026-workshop.github.io/</a></p>"
+      }
+    ]
+  },
   "16656": {
     "id": 16656,
     "title": "LoViF 2026 The Challenge on Ultra-Low Bitrate Image Compression @ ECCV 2026",
@@ -728,7 +775,7 @@
     "description_zh": "我们的目标是在极端比特率限制下引入一个超低比特率图像压缩的新基准。",
     "created_by": "xyling",
     "created_when": "2026-05-25T06:20:45.321967Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-25-1779690045/e8aa9fc7e755/logo.png?AWSAccessKeyId=codabench-prod&Signature=4%2FO%2FBYERS5td9Y7WJDm5O5OPJ0k%3D&Expires=1782128203",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-25-1779690045/e8aa9fc7e755/logo.png?AWSAccessKeyId=codabench-prod&Signature=EkUm6HPr%2BcwEMppw4%2FGBOSEpsao%3D&Expires=1782128534",
     "participants_count": 75,
     "submissions_count": 121,
     "first_phase_start": null,
@@ -774,53 +821,6 @@
       }
     ]
   },
-  "16614": {
-    "id": 16614,
-    "title": "LoViF 2026 The Third Challenge on Day and Night Raindrop Removal for Dual-Focused Images@ECCV2026",
-    "description": "Our goal is to introduce a new benchmark for the development of Day and Night Raindrop Removal for Dual-Focused Images",
-    "description_zh": "我们的目标是为双焦点图像的日夜雨滴去除引入一个新的基准",
-    "created_by": "yaosh",
-    "created_when": "2026-05-22T05:58:22.308480Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-22-1779429502/2e70ce6bec17/LoViF.png?AWSAccessKeyId=codabench-prod&Signature=JuYvmHEzgU3svwomILGm6b6%2Fblk%3D&Expires=1782128204",
-    "participants_count": 49,
-    "submissions_count": 228,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 27230,
-        "name": "Development",
-        "start": "2026-05-22T08:00:00Z",
-        "end": "2026-07-08T08:00:00Z",
-        "max_submissions_per_day": 5
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "overview",
-        "content": "<div align=\"center\">\n<h1><strong>The 2nd Workshop on Low-level Vision Frontiers (LoViF) @ ECCV 2026</strong></h1>\n</div>\n<h2>&nbsp;</h2>\n<h1>LoViF 2026 The Third Challenge on Day and Night Raindrop Removal for Dual-Focused Images @ ECCV 2026</h1>\n<h2>Important dates</h2>\n<ul>\n<li>2026.05.22 Release of train data (input and output)</li>\n<li><strong>2026.07.01 Final test data release (inputs only)</strong></li>\n<li><strong>2026.07.08 Test output results submission deadline</strong></li>\n<li><strong>2026.07.08 Fact sheets and code/executable submission deadline</strong></li>\n<li>2026.07.15 Preliminary test results release to the participants</li>\n<li><strong>2026.07.15 Paper submission deadline for entries (Internal Review)</strong></li>\n<li>2026.09.x LoViF workshop and challenges, results and award ceremony (ECCV 2026)</li>\n</ul>\n<h2>&nbsp;</h2>\n<h2>Challenge overview</h2>\n<p align=\"justify\">The <a href=\"https://lovif-eccv2026-workshop.github.io/\">2nd Workshop on Low-level Vision Frontiers (LoViF)</a>&nbsp;will be held in conjunction with ECCV 2026.</p>\n<p align=\"justify\">Image manipulation is a key computer vision task, aiming at the restoration of degraded image content, the filling in of missing information, or the needed transformation and/or manipulation to achieve a desired target (with respect to perceptual quality, contents, or performance of apps working on such images). Recent years have witnessed an increased interest from the vision and graphics communities in these fundamental topics of research. Not only has there been a constantly growing flow of related papers, but also substantial progress has been achieved.</p>\n<p align=\"justify\">Each step forward eases the use of images by people or computers for the fulfillment of further tasks, as image manipulation serves as an important front end. Not surprisingly then, there is an ever-growing range of applications in fields such as surveillance, the automotive industry, electronics, remote sensing, or medical image analysis etc. The emergence and ubiquitous use of mobile and wearable devices offer another fertile ground for additional applications and faster methods.</p>\n<p align=\"justify\">This workshop aims to provide an overview of the new trends and advances in those areas. Moreover, it will offer an opportunity for academic and industrial attendees to interact and explore collaborations.</p>\n<p>&nbsp;</p>\n<h2>Motivation for this competition</h2>\n<!-- (<a href=\"https://lixinustc.github.io/projects/KVQ/\">KVQ</a>) -->\n<p align=\"justify\">Raindrops on camera lenses or windshields significantly reduce image visibility in human life, posing challenges for applications like surveillance and autonomous driving. Effective raindrop removal is crucial to ensuring reliable performance in these systems. However, most deraining datasets overlooked the complex environment in real life. In particular, there are few raindrop-focused datasets, and most existing datasets focus on capturing background scenes while the camera is focused on the background. Meanwhile, these datasets primarily target daytime scenarios, with limited attention to nighttime conditions.</p>\n<p align=\"justify\">To promote the development of deraining, we introduce the first large-scale real-world raindrop-clarity dataset, which includes raindrop-focused images and nighttime scenes. Based on this dataset, we organize LoViF 2026 The Third Challenge on Day and Night Raindrop Removal for Dual-Focused Images @ ECCV 2026, jointly with the LoViF workshop.</p>\n<p align=\"justify\">The goal of this competition is to establish a new and applicable benchmark for the Day and Night Raindrop Removal for Dual-Focused Images. We are looking forward to the collaborative efforts of our participants, aiming to elevate the quality of restored images. The final ranking will be made based on PSNR, SSIM, and LPIPS.</p>\n<!-- <p align=\"justify\">More details on our KVQ database and example code can be found on our <a href=\"https://lixinustc.github.io/projects/KVQ/\">Project Page</a> and <a href=\"https://github.com/lixinustc/KVQ-Challenge-CVPR-NTIRE2026\">Github</a>.</p> -->\n<p>&nbsp;</p>\n<p>The top-ranked participants will be awarded and invited to follow the ECCV submission guide for workshops to describe their solution and to submit to the associated LoViF workshop at ECCV 2026.</p>\n<p align=\"justify\">More details are found in the competition data section.</p>\n<h2 align=\"justify\">Competition</h2>\n<p><strong>The training data will be made available to the registered participants.</strong></p>\n<h2>Provided Resources</h2>\n<ul>\n<li><strong>Scripts:&nbsp;</strong>With the dataset the organizers will provide scripts to facilitate the reproducibility of the images and performance evaluation results after the validation server is online. More information is provided on the data page.</li>\n<li><strong>Contact:&nbsp;</strong>You can use the forum on the data description page (highly recommended!) or directly contact the challenge organizers by email (yshustc@mail.ustc.edu.cn, jinyeying@u.nus.edu, xin.li@ustc.edu.cn) if you have doubts or any questions.</li>\n</ul>",
-        "content_zh": "<div align=\"center\">\n<h1><strong>第2届低阶视觉前沿研讨会(LoViF) @ ECCV 2026</strong></h1>\n</div>\n<h2>&nbsp;</h2>\n<h1>LoViF 2026 第三届日夜双焦点图像雨滴去除挑战赛 @ ECCV 2026</h1>\n<h2>重要日期</h2>\n<ul>\n<li>2026.05.22 发布训练数据(输入和输出)</li>\n<li><strong>2026.07.01 发布最终测试数据(仅限输入)</strong></li>\n<li><strong>2026.07.08 测试输出结果提交截止日期</strong></li>\n<li><strong>2026.07.08 事实说明书及代码/可执行文件提交截止日期</strong></li>\n<li>2026.07.15 向参赛者发布初步测试结果</li>\n<li><strong>2026.07.15 参赛作品论文提交截止日期(内部审查)</strong></li>\n<li>2026.09.x LoViF研讨会、挑战赛、结果发布及颁奖典礼(ECCV 2026)</li>\n</ul>\n<h2>&nbsp;</h2>\n<h2>挑战赛概述</h2>\n<p align=\"justify\">第2届低阶视觉前沿研讨会(LoViF)将与ECCV 2026同期举办。</p>\n<p align=\"justify\">图像处理是计算机视觉的关键任务,旨在恢复退化的图像内容、填补缺失信息,或进行必要的变换和/或处理以实现所需的目标(关于感知质量、内容或基于此类图像的应用性能)。近年来,视觉和图形社区对这些基础研究课题的兴趣不断增加。不仅相关论文数量持续增长,而且在该领域也取得了实质性进展。</p>\n<p align=\"justify\">每一项进展都便于人类或计算机利用图像完成进一步任务,因为图像处理是一个重要的前端。因此,在监控、汽车工业、电子产品、遥感或医学图像分析等领域的应用范围在不断扩大。移动和可穿戴设备的出现和普遍使用为额外应用和更快方法提供了又一个富有成效的领域。</p>\n<p align=\"justify\">本研讨会旨在概述这些领域的新趋势和进展。此外,它将为学术界和业界参与者提供互动和探索合作的机会。</p>\n<p>&nbsp;</p>\n<h2>竞赛动机</h2>\n<p align=\"justify\">相机镜头或挡风玻璃上的雨滴严重降低了人类生活中的图像可见性,对监控和自动驾驶等应用构成了挑战。有效的雨滴去除对确保这些系统的可靠性能至关重要。然而,大多数去雨数据集忽略了现实生活中的复杂环境。特别是,以雨滴为重点的数据集很少,大多数现有数据集在相机聚焦于背景时主要用于捕捉背景场景。同时,这些数据集主要针对白天场景,对夜间条件的关注有限。</p>\n<p align=\"justify\">为了推动去雨技术的发展,我们推出了首个大规模真实世界雨滴清晰度数据集,其中包括以雨滴为重点的图像和夜间场景。基于该数据集,我们组织了LoViF 2026第三届日夜双焦点图像雨滴去除挑战赛,与LoViF研讨会联合举办。</p>\n<p align=\"justify\">本竞赛的目标是为日夜双焦点图像雨滴去除建立新的实用基准。我们期待参赛者的共同努力,旨在提升图像恢复质量。最终排名将基于PSNR、SSIM和LPIPS进行评定。</p>"
-      },
-      {
-        "index": 1,
-        "title": "data",
-        "content": "<div align=\"center\">\n<h1><strong>The 2nd Workshop on Low-level Vision Frontiers (LoViF) @ ECCV 2026</strong></h1>\n</div>\n<h2>&nbsp;</h2>\n<h1>LoViF 2026 The Third Challenge on Day and Night Raindrop Removal for Dual-Focused Images @ ECCV 2026</h1>\n<h3>&nbsp;</h3>\n<h2>Data overview</h2>\n<p align=\"justify\">The dataset named RainDrop Clarity is contributed by Yeying Jin et al (NUS). The dataset includes both daytime and nighttime scenes for training and testing. (i) The daytime raindrop dataset contains a total of 5,442 paired or triplet images, with 4,713 pairs used for training and the remaining 729 pairs for testing. (ii) The nighttime raindrop dataset consists of 9,744 paired or triplet images, where 8,655 pairs are allocated to the training set, and the remaining 1,089 pairs are reserved for the&nbsp;validation and&nbsp;test set.</p>\n<p align=\"justify\">In this competition, the used dataset is composed of:</p>\n<ul>\n<li>train data:&nbsp;<span>A total of 14,139 day and night dual-focused raindrop images with blurry backgrounds and their corresponding clear backgrounds are provided.</span></li>\n<li>validation data: A total of 240 day and night rainy images are provided.&nbsp;</li>\n<li>test data:&nbsp;<span>A total of 731 day and night rainy images are provided.</span></li>\n</ul>\n<h3>&nbsp;</h3>\n<h2>Data access</h2>\n<p align=\"justify\"><strong>By accessing the data the participants implicitly agree with the terms and conditions of the LoViF challenge.</strong></p>\n<h3>&nbsp;</h3>\n<ul>\n<ul>\n<li><strong>Development phase / Learning:</strong></li>\n<ul>\n<li>Train Data, please download <a href=\"https://drive.google.com/file/d/1lHOumI4wDsJfgGnDPOCXM6h_C1F5ZQEA/view\">day rainy data</a> and <a href=\"https://drive.google.com/file/d/1_ruwsBCzbOEkpqcqHIeKoyCg6P2Sxclr/view\">night rainy data</a> with Google drive. Participants are allowed to use publicly available external datasets for training, as long as the sources of the data are explicitly documented in the factsheet. More details about the training data can be found in FoundIR.</li>\n<li><a href=\"https://drive.google.com/file/d/1t2W0OC8qXZ461EIxNNFHwzVtyCgasQs2/view?usp=drive_link\">Validation Data</a> (only input images), has been released</li>\n<li>Test Data (only input images): [TBA]</li>\n</ul>\n</ul>\n</ul>\n<h3>&nbsp;</h3>\n<h2>Final test phase submission guidelines (<span style=\"text-decoration: underline;\">Factsheet can be found in [TBA]</span>)</h2>\n<p>The final submission should be emailed to the organizers (see the \"Organizers\" tab for contact details).</p>\n<p>The title of the mail should be:&nbsp; [LoViF2026] - [TASK_NAME] - [TEAM_NAME]</p>\n<p>The body of the mail shall include the following:</p>\n<ul>\n<ul><ol>\n<li>the challenge full name</li>\n<li>team name</li>\n<li>team leader and all members' names, email addresses and institutes.</li>\n<li>team members with LoViF 2026 sponsors</li>\n<li>team name and user names on LoViF 2026 Codabench competitions</li>\n<li>executable/source code attached or download links</li>\n<li>factsheet attached (you should use the updated factsheet of the competition!)</li>\n<li>download link(s) to the FULL results of ALL of the test frames (corresponding to the last entry in the online Codabench test server and provided codes/exe)</li>\n</ol></ul>\n</ul>\n<p>The executable/source code should include trained models or necessary parameters to ensure reproducibility. A README file explaining how to run the code is mandatory. The Factsheet must be a compiled PDF file along with its LaTeX source files.</p>\n<p>Note that you can still submit to the validation server in those competitions for which the validation ground truth images were not released.&nbsp;</p>\n<p>&nbsp;</p>\n<h1>Final test phase - preliminary results [TBA]</h1>\n<p>Preliminary results will be posted here once the evaluation is complete.</p>\n<p>Note that top-ranked participants will be invited to co-author the challenge report and contribute a paper to the LoViF 2026 workshop. All challenge papers will undergo a peer-review process. For more information, please check the <a href=\"https://lovif-eccv2026-workshop.github.io/\">LoViF 2026 official website</a>.</p>\n<p>&nbsp;</p>",
-        "content_zh": "# 第二届低阶视觉前沿研讨会（LoViF）@ ECCV 2026\n\n# LoViF 2026 第三届双焦点图像日夜雨滴去除挑战赛 @ ECCV 2026\n\n## 数据概览\n\n数据集名称为RainDrop Clarity，由Yeying Jin等人（NUS）贡献。该数据集包含白天和夜间场景的训练和测试数据。(i) 白天雨滴数据集包含共5,442个配对或三元组图像，其中4,713对用于训练，其余729对用于测试。(ii) 夜间雨滴数据集包含9,744个配对或三元组图像，其中8,655对分配给训练集，其余1,089对用于验证和测试集。\n\n本竞赛使用的数据集构成如下：\n\n- 训练数据：提供共14,139张日夜双焦点雨滴图像及其对应的清晰背景图像。\n- 验证数据：提供共240张日夜雨滴图像。\n- 测试数据：提供共731张日夜雨滴图像。\n\n## 数据访问\n\n**参赛者访问数据即表示隐式同意LoViF挑战赛的条款和条件。**\n\n- **发展阶段/学习：**\n  - 训练数据，请通过Google Drive下载[白天雨滴数据](https://drive.google.com/file/d/1lHOumI4wDsJfgGnDPOCXM6h_C1F5ZQEA/view)和[夜间雨滴数据](https://drive.google.com/file/d/1_ruwsBCzbOEkpqcqHIeKoyCg6P2Sxclr/view)。参赛者可以使用公开可用的外部数据集进行训练，但必须在信息表中明确说明数据来源。更多关于训练数据的详细信息可在FoundIR中找到。\n  - [验证数据](https://drive.google.com/file/d/1t2W0OC8qXZ461EIxNNFHwzVtyCgasQs2/view?usp=drive_link)（仅输入图像）已发布\n  - 测试数据（仅输入图像）：待定\n\n## 最终测试阶段提交指南（信息表可在[待定]找到）\n\n最终提交应通过电子邮件发送给组织者（详见\"组织者\"选项卡中的联系方式）。\n\n邮件主题应为：[LoViF2026] - [任务名称] - [团队名称]\n\n邮件正文应包括以下内容：\n\n1. 挑战赛全名\n2. 团队名称\n3. 团队负责人及全部成员的名字、邮箱地址和所属机构\n4. 与LoViF 2026赞助商关联的团队成员\n5. LoViF 2026 Codabench竞赛平台上的团队名称和用户名\n6. 可执行文件/源代码附件或下载链接\n7. 信息表附件（应使用竞赛的最新信息表！）\n8. 全部测试帧的完整结果下载链接（对应在线Codabench测试服务器上的最后一次提交及提供的代码/可执行文件）\n\n可执行文件/源代码应包含训练好的模型或必要的参数以确保可重现性。README文件说明如何运行代码是必须的。信息表必须是编译的PDF文件及其LaTeX源文件。\n\n请注意，对于未发布验证真实标签图像的竞赛，您仍可向验证服务器提交。\n\n# 最终测试阶段——初步结果[待定]\n\n评估完成后，初步结果将在此处发布。\n\n请注意，排名靠前的参赛者将被邀请作为联合作者参与挑战赛报告的撰写，并向LoViF 2026研讨会投稿论文。所有挑战赛论文将接受"
-      },
-      {
-        "index": 2,
-        "title": "evaluation",
-        "content": "<div align=\"center\">\n<h1><strong>The 2nd Workshop on Low-level Vision Frontiers (LoViF) @ ECCV 2026</strong></h1>\n</div>\n<h2>&nbsp;</h2>\n<h1>LoViF 2026 The Third Challenge on Day and Night Raindrop Removal for Dual-Focused Images @ ECCV 2026</h1>\n<h3>&nbsp;</h3>\n<h3>Evaluation</h3>\n<p><span>The evaluation consists of the comparison of the restored images with the reference ground truth images.&nbsp;<span>Please inference all images with the same model (do not distinguish day and night).</span></span></p>\n<p align=\"justify\">The evaluation consists of the comparison of PSNR, SSIM, and LPIPS.</p>\n<p align=\"justify\">For the final results, we will compute it by weighting the above metric as the initial results: final_score = <span>PSNR (Y) + 10*SSIM (Y) - 5*LPIPS</span>.</p>\n<p>For submitting the results, you need to follow these steps:</p>\n<ol type=\"1\">\n<li><strong>process</strong>&nbsp;the input images and keep the same name for the output image results as produced by your method (example: for an input file with the name \"00063.png\" the output file should be \"00063.png\")&nbsp;Note that the output images should have the size of the input images.&nbsp; The submission example can be found in \"https://drive.google.com/file/d/1LTGEuGxU0bXOv--pLcj0VJj-S2JoM2PK/view?usp=sharing\".&nbsp;</li>\n<li>create a&nbsp;<strong>ZIP</strong>&nbsp;archive containing the files and a&nbsp;<strong>readme.txt&nbsp;</strong> Note that the archive should not include folders, all the files should be in the root of the archive.</li>\n<li>the&nbsp;<strong>readme.txt</strong>&nbsp;file should contain the following lines filled in with the runtime per image (in seconds) of the solution, 1 or 0 accordingly if employs CPU or GPU at runtime, and 1 or 0 if employs extra data for training the models or not.<br /> <code>runtime per image [s] : 10.43</code>&nbsp;<br /><code>CPU[1] / GPU[0] : 1</code><br /><code>Extra Data [1] / No Extra Data [0] : 1</code><br /><code>Other description: Solution based on A+ of Timofte et al. ACCV 2014. We have a Matlab/C++ implementation, and report single core CPU runtime. The method was trained on Train 91 of Yang et al. and BSDS 200 of the Berkeley segmentation dataset.&nbsp;</code><br />&nbsp; The last part of the file can have any description you want about the code producing the provided results (dependencies, link, scripts, etc.)<br /> The provided information is very important both during the validation period when different teams can compare their results / solutions but also for establishing the final ranking of the teams and their methods.</li>\n</ol>",
-        "content_zh": "<div align=\"center\">\n<h1><strong>第2届低级视觉前沿研讨会（LoViF）@ ECCV 2026</strong></h1>\n</div>\n<h2>&nbsp;</h2>\n<h1>LoViF 2026 第三届日夜雨滴去除双焦点图像挑战赛 @ ECCV 2026</h1>\n<h3>&nbsp;</h3>\n<h3>评估</h3>\n<p><span>评估包括将恢复的图像与参考真值图像进行比较。<span>请使用同一模型推理所有图像（不区分日间和夜间）。</span></span></p>\n<p align=\"justify\">评估包括PSNR、SSIM和LPIPS的比较。</p>\n<p align=\"justify\">对于最终结果，我们将通过对上述指标进行加权计算得到初始结果：final_score = <span>PSNR (Y) + 10*SSIM (Y) - 5*LPIPS</span>。</p>\n<p>提交结果时，需要按照以下步骤进行：</p>\n<ol type=\"1\">\n<li><strong>处理</strong>输入图像，输出图像结果保持与输入文件相同的名称（例如：输入文件名为\"00063.png\"，输出文件应为\"00063.png\"）。注意输出图像的尺寸应与输入图像相同。提交示例可在\"https://drive.google.com/file/d/1LTGEuGxU0bXOv--pLcj0VJj-S2JoM2PK/view?usp=sharing\"中找到。</li>\n<li>创建包含文件和<strong>readme.txt</strong>的<strong>ZIP</strong>压缩包。注意压缩包中不应包含文件夹，所有文件应位于压缩包的根目录。</li>\n<li><strong>readme.txt</strong>文件应包含以下信息行，并按要求填写解决方案的每张图像运行时间（秒）、运行时是否使用CPU或GPU（1或0）以及是否使用额外数据训练模型（1或0）。<br /> <code>runtime per image [s] : 10.43</code>&nbsp;<br /><code>CPU[1] / GPU[0] : 1</code><br /><code>Extra Data [1] / No Extra Data [0] : 1</code><br /><code>Other description: Solution based on A+ of Timofte et al. ACCV 2014. We have a Matlab/C++ implementation, and report single core CPU runtime. The method was trained on Train 91 of Yang et al. and BSDS 200 of the Berkeley segmentation dataset.&nbsp;</code><br />&nbsp; 文件的最后部分可以包含任何关于代码的描述，用于生成所提供的结果（依赖项、链接、脚本等）。<br /> 所提供的信息对于验证期间不同团队比较其结果/解决方案以及建立团队和方法的最终排名都非常重要。</li>\n</ol>"
-      },
-      {
-        "index": 3,
-        "title": "organizers",
-        "content": "<div align=\"center\">\n<h1><strong>The 2nd Workshop on Low-level Vision Frontiers (LoViF) @ ECCV 2026</strong></h1>\n</div>\n<h2>&nbsp;</h2>\n<h1>Organizers</h1>\n<h3>&nbsp;</h3>\n<p align=\"justify\">LoViF 2026 The Third Challenge on Day and Night Raindrop Removal for Dual-Focused Images @ ECCV 2026 is organized jointly with the University of Science and Technology of China (USTC), National University of Singapore (NUS), and the&nbsp;<a href=\"https://lovif-eccv2026-workshop.github.io/\">LoViF 2026 workshop.</a>&nbsp; The results of the challenge will be published at the LoViF 2026 workshop and in the ECCV 2026 Workshop proceedings.</p>\n<ul>\n<li>Suhang Yao (yshustc@mail.ustc.edu.cn)&nbsp;</li>\n<li><a href=\"https://scholar.google.com/citations?user=Z8PYhA4AAAAJ&amp;hl=en\">Yeying Jin</a> (jinyeying@u.nus.edu)</li>\n<li><a href=\"https://scholar.google.com/citations?user=sbiY97gAAAAJ&amp;hl=zh-CN\">Xin Li</a>&nbsp;(xin.li@ustc.edu.cn)&nbsp;</li>\n</ul>\n<p>The above organizers are the contact persons and direct managers of LoViF 2026 The Third Challenge on Day and Night Raindrop Removal for Dual-Focused Images @ ECCV 2026. If you have any questions, please contact Suhang Yao (yshustc@mail.ustc.edu.cn), <a href=\"https://scholar.google.com/citations?user=Z8PYhA4AAAAJ&amp;hl=en\">Yeying Jin</a>&nbsp;(jinyeying@u.nus.edu), and <a href=\"https://scholar.google.com/citations?user=sbiY97gAAAAJ&amp;hl=zh-CN\">Xin Li</a>&nbsp;(xin.li@ustc.edu.cn).</p>\n<p>&nbsp;</p>\n<p align=\"justify\">More information about the LoViF workshop and challenge organizers is available here:&nbsp;<a href=\"https://lovif-eccv2026-workshop.github.io/\">https://lovif-eccv2026-workshop.github.io/</a></p>",
-        "content_zh": "<div align=\"center\">\n<h1><strong>第2届低级视觉前沿研讨会 (LoViF) @ ECCV 2026</strong></h1>\n</div>\n<h2>&nbsp;</h2>\n<h1>组织者</h1>\n<h3>&nbsp;</h3>\n<p align=\"justify\">LoViF 2026 第三届日夜雨滴去除双焦点图像挑战赛 @ ECCV 2026 由中国科学技术大学 (USTC)、新加坡国立大学 (NUS) 和<a href=\"https://lovif-eccv2026-workshop.github.io/\">LoViF 2026 研讨会</a>联合组织。挑战赛结果将在 LoViF 2026 研讨会上发布，并收录在 ECCV 2026 研讨会论文集中。</p>\n<ul>\n<li>姚苏航 (yshustc@mail.ustc.edu.cn)&nbsp;</li>\n<li><a href=\"https://scholar.google.com/citations?user=Z8PYhA4AAAAJ&amp;hl=en\">靳叶莺</a> (jinyeying@u.nus.edu)</li>\n<li><a href=\"https://scholar.google.com/citations?user=sbiY97gAAAAJ&amp;hl=zh-CN\">李欣</a>&nbsp;(xin.li@ustc.edu.cn)&nbsp;</li>\n</ul>\n<p>上述组织者是 LoViF 2026 第三届日夜雨滴去除双焦点图像挑战赛 @ ECCV 2026 的联系人和直接管理者。如有任何问题，请联系姚苏航 (yshustc@mail.ustc.edu.cn)、<a href=\"https://scholar.google.com/citations?user=Z8PYhA4AAAAJ&amp;hl=en\">靳叶莺</a>&nbsp;(jinyeying@u.nus.edu) 和 <a href=\"https://scholar.google.com/citations?user=sbiY97gAAAAJ&amp;hl=zh-CN\">李欣</a>&nbsp;(xin.li@ustc.edu.cn)。</p>\n<p>&nbsp;</p>\n<p align=\"justify\">关于 LoViF 研讨会和挑战赛组织者的更多信息，请访问：<a href=\"https://lovif-eccv2026-workshop.github.io/\">https://lovif-eccv2026-workshop.github.io/</a></p>"
-      }
-    ]
-  },
   "16303": {
     "id": 16303,
     "title": "EVENT-BASED MULTIMODAL UNDERSTANDING CHALLENGE: SPATIAL REASONING TRACK @ECCV 2026",
@@ -828,7 +828,7 @@
     "description_zh": "该挑战对事件型视觉上的多模态大型语言模型（MLLMs）的空间推理能力进行基准测试，重点关注目标计数、绝对距离估计和空间关系推理。",
     "created_by": "liusy",
     "created_when": "2026-05-14T01:12:48.802883Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-14-1778721168/24208541bb36/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=lkdgU%2F5g0EUT5vhQMimQ27Ajhro%3D&Expires=1782128206",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-14-1778721168/24208541bb36/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=Bky%2BZQjGfmmxjuT3H35wc3SNSBY%3D&Expires=1782128540",
     "participants_count": 50,
     "submissions_count": 111,
     "first_phase_start": null,
@@ -875,7 +875,7 @@
     "description_zh": "评估事件流的通用动态场景理解能力，涵盖详细理解、因果推理、动作识别、手势识别和事件光学字符识别。",
     "created_by": "liusy",
     "created_when": "2026-05-01T07:20:57.568282Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-01-1777620057/31dabf650506/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=KCKyk3QlUyKxBW6nq8GqCOHdWHw%3D&Expires=1782128207",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-01-1777620057/31dabf650506/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=cVdBdKJx8SVWJ%2BH%2F6cRbGWe3Lf4%3D&Expires=1782128543",
     "participants_count": 78,
     "submissions_count": 303,
     "first_phase_start": null,
@@ -922,7 +922,7 @@
     "description_zh": "# 使用CRAI框架评估AI生成图像对卡塔尔和阿拉伯文化场景的真实性表现\n\n## 文化准确性（Cultural Accuracy）\n- **服饰表现**：评估传统服装（如阿拜亚、古特拉、阿拉伯头巾）的细节准确性\n- **建筑风格**：验证伊斯兰建筑元素（如拱形、穹顶、书法装饰）是否正确呈现\n- **宗教仪式**：检查礼拜场景、斋月相关元素的真实性\n- **社会场景**：评估家庭聚会、市集、传统活动的文化真实性\n\n## 代表性（Representation）\n- **多样性**：确保呈现卡塔尔和阿拉伯世界的多元性，避免单一刻板印象\n- **地理差异**：区分不同地区的文化特征（城市、沙漠、海滨）\n- **代际表现**：反映传统与现代元素的融合\n- **性别与身份**：公平准确地呈现不同群体\n\n## 人工制品与物质文化（Artifacts）\n- **传统手工艺**：阿拉伯书法、陶艺、纺织品的准确性\n- **日常用品**：咖啡器具、香炉等文化象征物\n- **装饰元素**：几何纹样、穆斯林花纹设计的准确性\n- **食文化**：传统美食呈现的真实性\n\n## 背景与语境（Context）\n- **历史准确性**：时代背景的正确性\n- **社会背景**：活动场景的合理性与适切性\n- **语言符号**：阿拉伯书写的准确性\n- **文化敏感性**：尊重宗教和社会禁忌",
     "created_by": "sabdaljalil",
     "created_when": "2026-06-03T19:07:43.639396Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780513663/396055ccba31/logo.png?AWSAccessKeyId=codabench-prod&Signature=EQu0KZed%2F9FEbROSir5A9pGwE4s%3D&Expires=1782128197",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780513663/396055ccba31/logo.png?AWSAccessKeyId=codabench-prod&Signature=vfbNHXFucAHag5IzDQ1evQvHBLw%3D&Expires=1782128530",
     "participants_count": 1,
     "submissions_count": 1,
     "first_phase_start": null,
@@ -970,7 +970,7 @@
     "description_zh": "用于压缩AI生成图像的基准，涵盖多样化模型、提示词和分辨率。",
     "created_by": "xinli",
     "created_when": "2026-06-14T13:43:46.550281Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-14-1781444626/885bb1bf4dc3/logo.png?AWSAccessKeyId=codabench-prod&Signature=v89Xg2O7oP3277PA9wtsA4qRJdw%3D&Expires=1782128195",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-14-1781444626/885bb1bf4dc3/logo.png?AWSAccessKeyId=codabench-prod&Signature=TAB1ytrfKQnWFsHVZaFlJdW40xI%3D&Expires=1782128528",
     "participants_count": 18,
     "submissions_count": 3,
     "first_phase_start": null,
@@ -1016,150 +1016,6 @@
       }
     ]
   },
-  "17051": {
-    "id": 17051,
-    "title": "ImageEval 2026 — Ayn-VQA Task 1b: Hallucination Detection (English)",
-    "description": "Given an image and 3 statements (English), label EACH statement True (grounded in the image) or False (hallucinated). Exactly one statement is grounded. Part of the ImageEval 2026 Ayn-VQA shared task on cultural grounding in Arabic multimodal understanding. \nData on HuggingFace (QCRI/AynVQA-ArabicNLP26).\nJoin our Slack for announcements and discussion: https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA",
-    "description_zh": "我是科技竞赛信息翻译助手。您提供的文本已是英文竞赛内容说明，我将其翻译成简体中文：\n\n---\n\n给定一张图像和3个陈述句（英文），请为每个陈述句标记为真（有图像依据）或假（幻想内容）。恰好有一个陈述句有依据。这是ImageEval 2026 Ayn-VQA共享任务的一部分，该任务聚焦阿拉伯语多模态理解中的文化扎根。数据可在HuggingFace获取（QCRI/AynVQA-ArabicNLP26）。请同时在以下链接注册：https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform",
-    "created_by": "hunzed",
-    "created_when": "2026-06-10T09:40:02.195020Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084402/15c7bcf31878/logo.png?AWSAccessKeyId=codabench-prod&Signature=8A4rdMtJYTPUPbjY3QBeEBLv9Hg%3D&Expires=1782128196",
-    "participants_count": 7,
-    "submissions_count": 23,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 28479,
-        "name": "Development Phase",
-        "start": "2026-05-22T00:00:00Z",
-        "end": "2026-07-19T00:00:00Z",
-        "max_submissions_per_day": 5
-      },
-      {
-        "id": 28480,
-        "name": "Testing Phase",
-        "start": "2026-07-20T00:00:00Z",
-        "end": "2026-07-29T00:00:00Z",
-        "max_submissions_per_day": 20
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Participation",
-        "content": "# How to participate\n\n**ImageEval 2026 — Ayn-VQA Task 1b: Hallucination Detection (English)** — the **English** track of Task 1b\n(Hallucination Detection), part of the [ImageEval 2026](https://imageeval2026.github.io/) shared task on cultural\ngrounding in Arabic multimodal generation and understanding.\n\nGiven an image and 3 statements (English), label EACH statement True (grounded in the image) or False (hallucinated). Exactly one statement is grounded.\n\n## Join our Slack (please do this first)\nJoin the **[ImageEval Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA)** for announcements, deadlines, data updates, and to connect with other participants.\n\n## Who can join\nIndividuals or teams; one member submits on the team's behalf. You may enter more\nthan one track.\n\n## Steps\n1. Sign up on this Codabench page, then join the [Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA) for updates.\n2. Read the **Terms** tab — note the exact prediction format.\n3. Get the data from the Hugging Face Hub: **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**.\n4. Follow the task description in the [tasks repo](https://github.com/ImageEval2026/ImageEval2026-tasks).\n5. Predict on **devtest** during the development phase, and on **test** during the\n   final-evaluation phase.\n\n## System description paper\nAll teams are encouraged to submit a system-description paper for the workshop.\n\n## Contact\nimageeval2026@gmail.com",
-        "content_zh": "# 如何参与\n\n**ImageEval 2026 — Ayn-VQA 任务1b：幻觉检测（英文）** — 任务1b（幻觉检测）的**英文**赛道，是[ImageEval 2026](https://imageeval2026.github.io/)共享任务的一部分，该任务涉及阿拉伯多模态生成和理解中的文化基础。\n\n给定一张图像和3条陈述句（英文），为每条陈述句标记为真（基于图像）或假（幻觉）。恰好有一条陈述句是有根据的。\n\n## 注册（请先完成此步骤）\n填写**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)** — 这样组织者可以追踪参与者，并通知您有关数据、截止日期和任何更新的信息。\n\n## 谁可以参加\n个人或团队；由一名成员代表团队提交。您可以参加多个赛道。\n\n## 步骤\n1. 在此Codabench页面**和**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)上注册。\n2. 阅读**条款**选项卡 — 注意确切的预测格式。\n3. 从Hugging Face Hub获取数据：**[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**。\n4. 按照[任务仓库](https://github.com/ImageEval2026/ImageEval2026-tasks)中的任务描述进行操作。\n5. 在开发阶段对**开发测试集**进行预测，在最终评估阶段对**测试集**进行预测。\n\n## 系统描述论文\n鼓励所有团队为研讨会提交系统描述论文。\n\n## 联系方式\nimageeval2026@gmail.com"
-      },
-      {
-        "index": 1,
-        "title": "Dataset",
-        "content": "# Dataset\n\nAll splits live on the Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — as config\n`task1b_en`. This competition scores **devtest** (development phase) and **test**\n(final phase).\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1b_en\", split=\"devtest\")\n```\n\n## Splits\n\n| split | labels | items | phase | purpose |\n|---|---|---:|---|---|\n| `train`   | yes | 3000 | development | training / fine-tuning |\n| `dev`     | yes | 500  | development | local validation |\n| `devtest` | no  | 500  | development (leaderboard) | submission target, dev phase |\n| `test`    | no  | 1000 | final evaluation | blind ranking (human-recorded audio) |\n\n- **Language:** English.\n- Media (images / audio) are referenced by **relative path** keyed on `id`.\n- Task 1b is image + text only (no audio): three statements, exactly one grounded.\n\n## Licence\nCC BY-NC 4.0 — non-commercial research use only.",
-        "content_zh": "# 数据集\n\n所有数据集都托管在 Hugging Face Hub 上 — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — 配置为 `task1b_en`。本竞赛评分对象包括 **devtest**（开发阶段）和 **test**（最终阶段）。\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1b_en\", split=\"devtest\")\n```\n\n## 数据划分\n\n| 数据集 | 标签 | 项目数 | 阶段 | 用途 |\n|---|---|---:|---|---|\n| `train`   | 有 | 3000 | 开发阶段 | 训练/微调 |\n| `dev`     | 有 | 500  | 开发阶段 | 本地验证 |\n| `devtest` | 无  | 500  | 开发阶段（排行榜） | 提交目标，开发阶段 |\n| `test`    | 无  | 1000 | 最终评估 | 盲测排名（人工录制音频） |\n\n- **语言：** 英文。\n- 媒体（图像/音频）通过 **相对路径** 按 `id` 键引用。\n- 任务 1b 仅包含图像和文本（无音频）：三个陈述句，恰好一个是有根据的。\n\n## 许可证\nCC BY-NC 4.0 — 仅限非商业研究使用。"
-      },
-      {
-        "index": 2,
-        "title": "Timeline",
-        "content": "# Timeline\n\n## Development phase\nTune on `train` + `dev`; submit predictions on **devtest** for the leaderboard.\n\n**Window:** `2026-05-22 → 2026-07-19`  ·  up to 5 submissions/day, 100 total.\n\n## Testing phase\nThe blind **test** set is released on [Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26); submit predictions\non `test` for the official ranking.\n\n**Window:** `2026-07-20 → 2026-07-29`  ·  up to 20 submissions/day, 100 total.\n\n> Dates are set in `competition.yaml` (`phases.start` / `phases.end`) — adjust if\n> the schedule shifts. Announcements: [website](https://imageeval2026.github.io/).",
-        "content_zh": "# 时间表\n\n## 开发阶段\n在 `train` + `dev` 上进行调整；在 **devtest** 上提交预测结果参与排行榜竞争。\n\n**时间窗口：** `2026-05-22 → 2026-07-19`  ·  每天最多 5 次提交，总共 100 次。\n\n## 测试阶段\n盲测 **test** 集合发布于 [Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)；在 `test` 上提交预测结果以获得官方排名。\n\n**时间窗口：** `2026-07-20 → 2026-07-29`  ·  每天最多 20 次提交，总共 100 次。\n\n> 日期设置在 `competition.yaml`（`phases.start` / `phases.end`）中——如果时间表变更，请进行调整。公告：[网站](https://imageeval2026.github.io/)。"
-      }
-    ]
-  },
-  "17049": {
-    "id": 17049,
-    "title": "ImageEval 2026 — Ayn-VQA Task 1a: Spoken VQA (English)",
-    "description": "Given an image and the spoken question/options (English audio), pick the correct option index (0-2). Part of the ImageEval 2026 Ayn-VQA shared task on cultural grounding in Arabic multimodal understanding. \nData on HuggingFace (QCRI/AynVQA-ArabicNLP26). \nJoin our Slack for announcements and discussion: https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA",
-    "description_zh": "我理解了。这是关于 ImageEval 2026 Ayn-VQA 共享任务的说明，该任务聚焦于阿拉伯多模态理解中的文化基础问题。\n\n**任务说明翻译：**\n\n给定一幅图像和口头问题/选项（英文音频），选择正确的选项索引（0-2）。这是 ImageEval 2026 Ayn-VQA 共享任务的一部分，专注于阿拉伯多模态理解中的文化基础。数据可在 HuggingFace 获取（QCRI/AynVQA-ArabicNLP26）。请同时在以下链接注册：https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform\n\n如果您需要帮助完成此任务，请提供：\n- 图像\n- 问题和选项（英文音频转录）\n\n我将帮助您选择正确的选项。",
-    "created_by": "hunzed",
-    "created_when": "2026-06-10T09:38:36.786130Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084316/073f73e0eefc/logo.png?AWSAccessKeyId=codabench-prod&Signature=XmwSv5fU41SvvDP2qEECmlYQw9Q%3D&Expires=1782128196",
-    "participants_count": 4,
-    "submissions_count": 1,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 28475,
-        "name": "Development Phase",
-        "start": "2026-05-22T00:00:00Z",
-        "end": "2026-07-19T00:00:00Z",
-        "max_submissions_per_day": 5
-      },
-      {
-        "id": 28476,
-        "name": "Testing Phase",
-        "start": "2026-07-20T00:00:00Z",
-        "end": "2026-07-29T00:00:00Z",
-        "max_submissions_per_day": 20
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Participation",
-        "content": "# How to participate\n\n**ImageEval 2026 — Ayn-VQA Task 1a: Spoken VQA (English)** — the **English** track of Task 1a\n(Spoken VQA), part of the [ImageEval 2026](https://imageeval2026.github.io/) shared task on cultural\ngrounding in Arabic multimodal generation and understanding.\n\nGiven an image and the spoken question/options (English audio), pick the correct option index (0-2).\n\n## Join our Slack (please do this first)\nJoin the **[ImageEval Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA)** for announcements, deadlines, data updates, and to connect with other participants.\n\n\n## Who can join\nIndividuals or teams; one member submits on the team's behalf. You may enter more\nthan one track.\n\n## Steps\n1. Sign up on this Codabench page, then join the [Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA) for updates.\n2. Read the **Terms** tab — note the exact prediction format.\n3. Get the data from the Hugging Face Hub: **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**.\n4. Follow the task description in the [tasks repo](https://github.com/ImageEval2026/ImageEval2026-tasks).\n5. Predict on **devtest** during the development phase, and on **test** during the\n   final-evaluation phase.\n\n## System description paper\nAll teams are encouraged to submit a system-description paper for the workshop.\n\n## Contact\nimageeval2026@gmail.com",
-        "content_zh": "# 参赛方式\n\n**ImageEval 2026 — Ayn-VQA Task 1a: 语音VQA (英文)** — Task 1a（语音VQA）的**英文**赛道，属于[ImageEval 2026](https://imageeval2026.github.io/)共享任务，聚焦阿拉伯语多模态生成和理解中的文化基础。\n\n给定一张图像和语音问题/选项（英文音频），选择正确的选项索引（0-2）。\n\n## 注册（请首先完成此步骤）\n填写**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)** — 这样可以让组织者追踪参与者，并通知您有关数据、截止日期和任何更新。\n\n## 谁可以参加\n个人或团队；由团队成员代表提交。您可以参加多个赛道。\n\n## 步骤\n1. 在此Codabench页面上注册**以及**填写[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)。\n2. 阅读**条款**选项卡 — 注意准确的预测格式。\n3. 从Hugging Face Hub获取数据：**[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**。\n4. 按照[任务仓库](https://github.com/ImageEval2026/ImageEval2026-tasks)中的任务描述进行操作。\n5. 在开发阶段对**开发测试集**进行预测，在最终评估阶段对**测试集**进行预测。\n\n## 系统描述论文\n鼓励所有团队为研讨会提交系统描述论文。\n\n## 联系方式\nimageeval2026@gmail.com"
-      },
-      {
-        "index": 1,
-        "title": "Dataset",
-        "content": "# Dataset\n\nAll splits live on the Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — as config\n`task1a_en`. This competition scores **devtest** (development phase) and **test**\n(final phase).\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1a_en\", split=\"devtest\")\n```\n\n## Splits\n\n| split | labels | items | phase | purpose |\n|---|---|---:|---|---|\n| `train`   | yes | 3000 | development | training / fine-tuning |\n| `dev`     | yes | 500  | development | local validation |\n| `devtest` | no  | 500  | development (leaderboard) | submission target, dev phase |\n| `test`    | no  | 1000 | final evaluation | blind ranking (human-recorded audio) |\n\n- **Language:** English.\n- Media (images / audio) are referenced by **relative path** keyed on `id`.\n- 🔊 Dev-phase audio is synthetically generated (voice cloning); the final **test** audio is human-recorded — expect a recording-condition shift.\n\n## Licence\nCC BY-NC 4.0 — non-commercial research use only.",
-        "content_zh": "# 数据集\n\n所有数据集都在 Hugging Face Hub 上 — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — 作为配置 `task1a_en`。本竞赛评分**开发测试集**（开发阶段）和**测试集**（最终阶段）。\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1a_en\", split=\"devtest\")\n```\n\n## 数据集划分\n\n| 划分 | 标签 | 项目数 | 阶段 | 用途 |\n|---|---|---:|---|---|\n| `train`   | 有 | 3000 | 开发 | 训练/微调 |\n| `dev`     | 有 | 500  | 开发 | 本地验证 |\n| `devtest` | 无  | 500  | 开发（排行榜） | 提交目标，开发阶段 |\n| `test`    | 无  | 1000 | 最终评估 | 盲目排名（人工录音音频） |\n\n- **语言：** 英文。\n- 媒体（图像/音频）以**相对路径**的形式通过 `id` 进行引用。\n- 🔊 开发阶段音频为合成生成（语音克隆）；最终**测试**音频为人工录音 — 需注意录音条件的转移。\n\n## 许可证\nCC BY-NC 4.0 — 仅限非商业研究使用。"
-      },
-      {
-        "index": 2,
-        "title": "Timeline",
-        "content": "# Timeline\n\n## Development phase\nTune on `train` + `dev`; submit predictions on **devtest** for the leaderboard.\n\n**Window:** `2026-05-22 → 2026-07-19`  ·  up to 5 submissions/day, 100 total.\n\n## Testing phase\nThe blind **test** set is released on [Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26); submit predictions\non `test` for the official ranking.\n\n**Window:** `2026-07-20 → 2026-07-29`  ·  up to 20 submissions/day, 100 total.\n\n> Dates are set in `competition.yaml` (`phases.start` / `phases.end`) — adjust if\n> the schedule shifts. Announcements: [website](https://imageeval2026.github.io/).",
-        "content_zh": "# 时间表\n\n## 开发阶段\n在 `train` + `dev` 上进行调优；在 **devtest** 上提交预测以获得排行榜成绩。\n\n**时间窗口：** `2026-05-22 → 2026-07-19`  ·  每天最多 5 次提交，总计 100 次。\n\n## 测试阶段\n盲测 **test** 集合在 [Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26) 上发布；在 `test` 上提交预测以获得官方排名。\n\n**时间窗口：** `2026-07-20 → 2026-07-29`  ·  每天最多 20 次提交，总计 100 次。\n\n> 日期设置在 `competition.yaml`（`phases.start` / `phases.end`）中 — 如果时间表有变动，请进行调整。公告：[网站](https://imageeval2026.github.io/)。"
-      }
-    ]
-  },
-  "17048": {
-    "id": 17048,
-    "title": "ImageEval 2026 — Ayn-VQA Task 1a: Spoken VQA (MSA)",
-    "description": "Given an image and the spoken question/options (English audio), pick the correct option index (0-2). Part of the ImageEval 2026 Ayn-VQA shared task on cultural grounding in Arabic multimodal understanding. \nData on HuggingFace (QCRI/AynVQA-ArabicNLP26). \nJoin our Slack for announcements and discussion: https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA",
-    "description_zh": "# ImageEval 2026 Ayn-VQA 共享任务\n\n给定一张图像和口头问题/选项（MSA音频），选择正确的选项索引（0-2）。\n\n这是 ImageEval 2026 Ayn-VQA 共享任务的一部分，专注于阿拉伯多模态理解中的文化根植。\n\n**数据集位置**：HuggingFace（QCRI/AynVQA-ArabicNLP26）\n\n**报名链接**：https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform",
-    "created_by": "hunzed",
-    "created_when": "2026-06-10T09:38:23.495469Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084303/9c583c7e5a2a/logo.png?AWSAccessKeyId=codabench-prod&Signature=ou016CMLSNl6dsXEm9b98z6aFOQ%3D&Expires=1782128196",
-    "participants_count": 3,
-    "submissions_count": 1,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 28473,
-        "name": "Development Phase",
-        "start": "2026-05-22T00:00:00Z",
-        "end": "2026-07-19T00:00:00Z",
-        "max_submissions_per_day": 5
-      },
-      {
-        "id": 28474,
-        "name": "Testing Phase",
-        "start": "2026-07-20T00:00:00Z",
-        "end": "2026-07-29T00:00:00Z",
-        "max_submissions_per_day": 20
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Participation",
-        "content": "# How to participate\n\n**ImageEval 2026 — Ayn-VQA Task 1a: Spoken VQA (MSA)** — the **MSA** track of Task 1a\n(Spoken VQA), part of the [ImageEval 2026](https://imageeval2026.github.io/) shared task on cultural\ngrounding in Arabic multimodal generation and understanding.\n\nGiven an image and the spoken question/options (MSA audio), pick the correct option index (0-2).\n\n## Join our Slack (please do this first)\nJoin the **[ImageEval Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA)** for announcements, deadlines, data updates, and to connect with other participants.\n\n## Who can join\nIndividuals or teams; one member submits on the team's behalf. You may enter more\nthan one track.\n\n## Steps\n1. Sign up on this Codabench page, then join the [Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA) for updates.\n2. Read the **Terms** tab — note the exact prediction format.\n3. Get the data from the Hugging Face Hub: **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**.\n4. Follow the task description in the [tasks repo](https://github.com/ImageEval2026/ImageEval2026-tasks).\n5. Predict on **devtest** during the development phase, and on **test** during the\n   final-evaluation phase.\n\n## System description paper\nAll teams are encouraged to submit a system-description paper for the workshop.\n\n## Contact\nimageeval2026@gmail.com",
-        "content_zh": "# 参与方式\n\n**ImageEval 2026 — Ayn-VQA 任务1a：口语VQA（MSA）** — 任务1a（口语VQA）的**MSA**赛道\n是[ImageEval 2026](https://imageeval2026.github.io/)共享任务的一部分，该任务聚焦阿拉伯语多模态生成和理解中的文化基础。\n\n给定一张图像和口语问题/选项（MSA音频），选择正确的选项索引（0-2）。\n\n## 注册（请首先完成此步骤）\n填写**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)**——这让组织者能够追踪参与者并通知您关于数据、截止日期和任何更新的信息。\n\n## 谁可以参加\n个人或团队；由一名成员代表团队提交。您可以参加多个赛道。\n\n## 步骤\n1. 在此Codabench页面**和**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)上注册。\n2. 阅读**条款**选项卡——注意确切的预测格式。\n3. 从Hugging Face Hub获取数据：**[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**。\n4. 遵循[任务仓库](https://github.com/ImageEval2026/ImageEval2026-tasks)中的任务描述。\n5. 在开发阶段对**devtest**进行预测，在最终评估阶段对**test**进行预测。\n\n## 系统描述论文\n鼓励所有团队为研讨会提交系统描述论文。\n\n## 联系方式\nimageeval2026@gmail.com"
-      },
-      {
-        "index": 1,
-        "title": "Dataset",
-        "content": "# Dataset\n\nAll splits live on the Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — as config\n`task1a_msa`. This competition scores **devtest** (development phase) and **test**\n(final phase).\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1a_msa\", split=\"devtest\")\n```\n\n## Splits\n\n| split | labels | items | phase | purpose |\n|---|---|---:|---|---|\n| `train`   | yes | 3000 | development | training / fine-tuning |\n| `dev`     | yes | 500  | development | local validation |\n| `devtest` | no  | 500  | development (leaderboard) | submission target, dev phase |\n| `test`    | no  | 1000 | final evaluation | blind ranking (human-recorded audio) |\n\n- **Language:** MSA.\n- Media (images / audio) are referenced by **relative path** keyed on `id`.\n- 🔊 Dev-phase audio is synthetically generated (voice cloning); the final **test** audio is human-recorded — expect a recording-condition shift.\n\n## Licence\nCC BY-NC 4.0 — non-commercial research use only.",
-        "content_zh": "# 数据集\n\n所有数据集分割位于 Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — 配置为 `task1a_msa`。本竞赛评分**开发测试集**（开发阶段）和**测试集**（最终阶段）。\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1a_msa\", split=\"devtest\")\n```\n\n## 分割\n\n| 分割 | 标签 | 数量 | 阶段 | 用途 |\n|---|---|---:|---|---|\n| `train`   | 有 | 3000 | 开发 | 训练 / 微调 |\n| `dev`     | 有 | 500  | 开发 | 本地验证 |\n| `devtest` | 无  | 500  | 开发（排行榜） | 提交目标，开发阶段 |\n| `test`    | 无  | 1000 | 最终评估 | 盲目排名（人工录制音频） |\n\n- **语言**：现代标准阿拉伯语（MSA）。\n- 媒体（图像/音频）通过相对路径按 `id` 引用。\n- 🔊 开发阶段音频为合成生成（语音克隆）；最终**测试**音频为人工录制 — 预期存在录制条件偏移。\n\n## 许可证\nCC BY-NC 4.0 — 仅限非商业研究使用。"
-      },
-      {
-        "index": 2,
-        "title": "Timeline",
-        "content": "# Timeline\n\n## Development phase\nTune on `train` + `dev`; submit predictions on **devtest** for the leaderboard.\n\n**Window:** `2026-05-22 → 2026-07-19`  ·  up to 5 submissions/day, 100 total.\n\n## Testing phase\nThe blind **test** set is released on [Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26); submit predictions\non `test` for the official ranking.\n\n**Window:** `2026-07-20 → 2026-07-29`  ·  up to 20 submissions/day, 100 total.\n\n> Dates are set in `competition.yaml` (`phases.start` / `phases.end`) — adjust if\n> the schedule shifts. Announcements: [website](https://imageeval2026.github.io/).",
-        "content_zh": "# 时间表\n\n## 开发阶段\n在`train`+`dev`上进行调优；在**devtest**上提交预测结果用于排行榜。\n\n**时间窗口**：`2026-05-22 → 2026-07-19`  ·  每天最多5次提交，总共100次。\n\n## 测试阶段\n盲测**test**集合在[Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)上发布；在`test`上提交预测结果用于官方排名。\n\n**时间窗口**：`2026-07-20 → 2026-07-29`  ·  每天最多20次提交，总共100次。\n\n> 日期设置在`competition.yaml`中（`phases.start` / `phases.end`）— 如果时间表有变化可进行调整。公告：[网站](https://imageeval2026.github.io/)。"
-      }
-    ]
-  },
   "17050": {
     "id": 17050,
     "title": "ImageEval 2026 — Ayn-VQA Task 1b: Hallucination Detection (MSA)",
@@ -1167,7 +1023,7 @@
     "description_zh": "我理解你的请求。这是ImageEval 2026的一部分——一个关于阿拉伯多模态理解中文化基础的AynVQA共享任务。\n\n请注意，作为一个翻译助手，我需要说明：\n\n**我无法完成此任务，因为：**\n\n1. **缺少图像** - 你没有提供需要分析的图像\n2. **缺少语句** - 你没有提供3条需要标注为\"真\"或\"假\"的语句(MSA)\n3. **任务性质** - 这是一个多模态视觉问答任务，而非翻译任务\n\n**要完成此任务，你需要：**\n\n1. 上传相关图像\n2. 提供3条阿拉伯标准语(MSA)或英文语句\n3. 我可以帮助翻译这些语句，但标注\"真/假\"判断需要你自己基于图像内容进行\n\n**相关资源：**\n- HuggingFace数据集: QCRI/AynVQA-ArabicNLP26\n- 注册表单: https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform\n\n请提供图像和语句，我可以帮助翻译相关文本。",
     "created_by": "hunzed",
     "created_when": "2026-06-10T09:39:37.693956Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084377/5517d0a96f0a/logo.png?AWSAccessKeyId=codabench-prod&Signature=sKvPgyib1%2FI6fgwP8UaoFX4cjig%3D&Expires=1782128197",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084377/5517d0a96f0a/logo.png?AWSAccessKeyId=codabench-prod&Signature=7BqDbZUIfYX3ClHka62QFHWusuw%3D&Expires=1782128529",
     "participants_count": 5,
     "submissions_count": 3,
     "first_phase_start": null,
@@ -1215,7 +1071,7 @@
     "description_zh": "阿拉伯语多模态仇恨迷因分类。给定一个迷因（图像加光学字符识别提取的阿拉伯语文本），预测其是否为仇恨性或非仇恨性。官方指标：宏平均F1分数。",
     "created_by": "mohamedbayan",
     "created_when": "2026-06-03T11:38:35.423737Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780486715/5b6f981490c6/logo.png?AWSAccessKeyId=codabench-prod&Signature=B%2BCwUZzxn9HPHJTPnL2Z7rqICAg%3D&Expires=1782128199",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780486715/5b6f981490c6/logo.png?AWSAccessKeyId=codabench-prod&Signature=7qjSyCErACEAQl1Tlp0hcfYqFgU%3D&Expires=1782128530",
     "participants_count": 8,
     "submissions_count": 2,
     "first_phase_start": null,
@@ -1256,6 +1112,150 @@
       }
     ]
   },
+  "17051": {
+    "id": 17051,
+    "title": "ImageEval 2026 — Ayn-VQA Task 1b: Hallucination Detection (English)",
+    "description": "Given an image and 3 statements (English), label EACH statement True (grounded in the image) or False (hallucinated). Exactly one statement is grounded. Part of the ImageEval 2026 Ayn-VQA shared task on cultural grounding in Arabic multimodal understanding. \nData on HuggingFace (QCRI/AynVQA-ArabicNLP26).\nJoin our Slack for announcements and discussion: https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA",
+    "description_zh": "我是科技竞赛信息翻译助手。您提供的文本已是英文竞赛内容说明，我将其翻译成简体中文：\n\n---\n\n给定一张图像和3个陈述句（英文），请为每个陈述句标记为真（有图像依据）或假（幻想内容）。恰好有一个陈述句有依据。这是ImageEval 2026 Ayn-VQA共享任务的一部分，该任务聚焦阿拉伯语多模态理解中的文化扎根。数据可在HuggingFace获取（QCRI/AynVQA-ArabicNLP26）。请同时在以下链接注册：https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform",
+    "created_by": "hunzed",
+    "created_when": "2026-06-10T09:40:02.195020Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084402/15c7bcf31878/logo.png?AWSAccessKeyId=codabench-prod&Signature=mY54dU%2Bl8gy0XQWEaiTLzW8tPF4%3D&Expires=1782128530",
+    "participants_count": 7,
+    "submissions_count": 23,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 28479,
+        "name": "Development Phase",
+        "start": "2026-05-22T00:00:00Z",
+        "end": "2026-07-19T00:00:00Z",
+        "max_submissions_per_day": 5
+      },
+      {
+        "id": 28480,
+        "name": "Testing Phase",
+        "start": "2026-07-20T00:00:00Z",
+        "end": "2026-07-29T00:00:00Z",
+        "max_submissions_per_day": 20
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Participation",
+        "content": "# How to participate\n\n**ImageEval 2026 — Ayn-VQA Task 1b: Hallucination Detection (English)** — the **English** track of Task 1b\n(Hallucination Detection), part of the [ImageEval 2026](https://imageeval2026.github.io/) shared task on cultural\ngrounding in Arabic multimodal generation and understanding.\n\nGiven an image and 3 statements (English), label EACH statement True (grounded in the image) or False (hallucinated). Exactly one statement is grounded.\n\n## Join our Slack (please do this first)\nJoin the **[ImageEval Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA)** for announcements, deadlines, data updates, and to connect with other participants.\n\n## Who can join\nIndividuals or teams; one member submits on the team's behalf. You may enter more\nthan one track.\n\n## Steps\n1. Sign up on this Codabench page, then join the [Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA) for updates.\n2. Read the **Terms** tab — note the exact prediction format.\n3. Get the data from the Hugging Face Hub: **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**.\n4. Follow the task description in the [tasks repo](https://github.com/ImageEval2026/ImageEval2026-tasks).\n5. Predict on **devtest** during the development phase, and on **test** during the\n   final-evaluation phase.\n\n## System description paper\nAll teams are encouraged to submit a system-description paper for the workshop.\n\n## Contact\nimageeval2026@gmail.com",
+        "content_zh": "# 如何参与\n\n**ImageEval 2026 — Ayn-VQA 任务1b：幻觉检测（英文）** — 任务1b（幻觉检测）的**英文**赛道，是[ImageEval 2026](https://imageeval2026.github.io/)共享任务的一部分，该任务涉及阿拉伯多模态生成和理解中的文化基础。\n\n给定一张图像和3条陈述句（英文），为每条陈述句标记为真（基于图像）或假（幻觉）。恰好有一条陈述句是有根据的。\n\n## 注册（请先完成此步骤）\n填写**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)** — 这样组织者可以追踪参与者，并通知您有关数据、截止日期和任何更新的信息。\n\n## 谁可以参加\n个人或团队；由一名成员代表团队提交。您可以参加多个赛道。\n\n## 步骤\n1. 在此Codabench页面**和**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)上注册。\n2. 阅读**条款**选项卡 — 注意确切的预测格式。\n3. 从Hugging Face Hub获取数据：**[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**。\n4. 按照[任务仓库](https://github.com/ImageEval2026/ImageEval2026-tasks)中的任务描述进行操作。\n5. 在开发阶段对**开发测试集**进行预测，在最终评估阶段对**测试集**进行预测。\n\n## 系统描述论文\n鼓励所有团队为研讨会提交系统描述论文。\n\n## 联系方式\nimageeval2026@gmail.com"
+      },
+      {
+        "index": 1,
+        "title": "Dataset",
+        "content": "# Dataset\n\nAll splits live on the Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — as config\n`task1b_en`. This competition scores **devtest** (development phase) and **test**\n(final phase).\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1b_en\", split=\"devtest\")\n```\n\n## Splits\n\n| split | labels | items | phase | purpose |\n|---|---|---:|---|---|\n| `train`   | yes | 3000 | development | training / fine-tuning |\n| `dev`     | yes | 500  | development | local validation |\n| `devtest` | no  | 500  | development (leaderboard) | submission target, dev phase |\n| `test`    | no  | 1000 | final evaluation | blind ranking (human-recorded audio) |\n\n- **Language:** English.\n- Media (images / audio) are referenced by **relative path** keyed on `id`.\n- Task 1b is image + text only (no audio): three statements, exactly one grounded.\n\n## Licence\nCC BY-NC 4.0 — non-commercial research use only.",
+        "content_zh": "# 数据集\n\n所有数据集都托管在 Hugging Face Hub 上 — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — 配置为 `task1b_en`。本竞赛评分对象包括 **devtest**（开发阶段）和 **test**（最终阶段）。\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1b_en\", split=\"devtest\")\n```\n\n## 数据划分\n\n| 数据集 | 标签 | 项目数 | 阶段 | 用途 |\n|---|---|---:|---|---|\n| `train`   | 有 | 3000 | 开发阶段 | 训练/微调 |\n| `dev`     | 有 | 500  | 开发阶段 | 本地验证 |\n| `devtest` | 无  | 500  | 开发阶段（排行榜） | 提交目标，开发阶段 |\n| `test`    | 无  | 1000 | 最终评估 | 盲测排名（人工录制音频） |\n\n- **语言：** 英文。\n- 媒体（图像/音频）通过 **相对路径** 按 `id` 键引用。\n- 任务 1b 仅包含图像和文本（无音频）：三个陈述句，恰好一个是有根据的。\n\n## 许可证\nCC BY-NC 4.0 — 仅限非商业研究使用。"
+      },
+      {
+        "index": 2,
+        "title": "Timeline",
+        "content": "# Timeline\n\n## Development phase\nTune on `train` + `dev`; submit predictions on **devtest** for the leaderboard.\n\n**Window:** `2026-05-22 → 2026-07-19`  ·  up to 5 submissions/day, 100 total.\n\n## Testing phase\nThe blind **test** set is released on [Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26); submit predictions\non `test` for the official ranking.\n\n**Window:** `2026-07-20 → 2026-07-29`  ·  up to 20 submissions/day, 100 total.\n\n> Dates are set in `competition.yaml` (`phases.start` / `phases.end`) — adjust if\n> the schedule shifts. Announcements: [website](https://imageeval2026.github.io/).",
+        "content_zh": "# 时间表\n\n## 开发阶段\n在 `train` + `dev` 上进行调整；在 **devtest** 上提交预测结果参与排行榜竞争。\n\n**时间窗口：** `2026-05-22 → 2026-07-19`  ·  每天最多 5 次提交，总共 100 次。\n\n## 测试阶段\n盲测 **test** 集合发布于 [Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)；在 `test` 上提交预测结果以获得官方排名。\n\n**时间窗口：** `2026-07-20 → 2026-07-29`  ·  每天最多 20 次提交，总共 100 次。\n\n> 日期设置在 `competition.yaml`（`phases.start` / `phases.end`）中——如果时间表变更，请进行调整。公告：[网站](https://imageeval2026.github.io/)。"
+      }
+    ]
+  },
+  "17049": {
+    "id": 17049,
+    "title": "ImageEval 2026 — Ayn-VQA Task 1a: Spoken VQA (English)",
+    "description": "Given an image and the spoken question/options (English audio), pick the correct option index (0-2). Part of the ImageEval 2026 Ayn-VQA shared task on cultural grounding in Arabic multimodal understanding. \nData on HuggingFace (QCRI/AynVQA-ArabicNLP26). \nJoin our Slack for announcements and discussion: https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA",
+    "description_zh": "我理解了。这是关于 ImageEval 2026 Ayn-VQA 共享任务的说明，该任务聚焦于阿拉伯多模态理解中的文化基础问题。\n\n**任务说明翻译：**\n\n给定一幅图像和口头问题/选项（英文音频），选择正确的选项索引（0-2）。这是 ImageEval 2026 Ayn-VQA 共享任务的一部分，专注于阿拉伯多模态理解中的文化基础。数据可在 HuggingFace 获取（QCRI/AynVQA-ArabicNLP26）。请同时在以下链接注册：https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform\n\n如果您需要帮助完成此任务，请提供：\n- 图像\n- 问题和选项（英文音频转录）\n\n我将帮助您选择正确的选项。",
+    "created_by": "hunzed",
+    "created_when": "2026-06-10T09:38:36.786130Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084316/073f73e0eefc/logo.png?AWSAccessKeyId=codabench-prod&Signature=wiOALQgtD2lY9LJRtTEhRQU3nlc%3D&Expires=1782128530",
+    "participants_count": 4,
+    "submissions_count": 1,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 28475,
+        "name": "Development Phase",
+        "start": "2026-05-22T00:00:00Z",
+        "end": "2026-07-19T00:00:00Z",
+        "max_submissions_per_day": 5
+      },
+      {
+        "id": 28476,
+        "name": "Testing Phase",
+        "start": "2026-07-20T00:00:00Z",
+        "end": "2026-07-29T00:00:00Z",
+        "max_submissions_per_day": 20
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Participation",
+        "content": "# How to participate\n\n**ImageEval 2026 — Ayn-VQA Task 1a: Spoken VQA (English)** — the **English** track of Task 1a\n(Spoken VQA), part of the [ImageEval 2026](https://imageeval2026.github.io/) shared task on cultural\ngrounding in Arabic multimodal generation and understanding.\n\nGiven an image and the spoken question/options (English audio), pick the correct option index (0-2).\n\n## Join our Slack (please do this first)\nJoin the **[ImageEval Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA)** for announcements, deadlines, data updates, and to connect with other participants.\n\n\n## Who can join\nIndividuals or teams; one member submits on the team's behalf. You may enter more\nthan one track.\n\n## Steps\n1. Sign up on this Codabench page, then join the [Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA) for updates.\n2. Read the **Terms** tab — note the exact prediction format.\n3. Get the data from the Hugging Face Hub: **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**.\n4. Follow the task description in the [tasks repo](https://github.com/ImageEval2026/ImageEval2026-tasks).\n5. Predict on **devtest** during the development phase, and on **test** during the\n   final-evaluation phase.\n\n## System description paper\nAll teams are encouraged to submit a system-description paper for the workshop.\n\n## Contact\nimageeval2026@gmail.com",
+        "content_zh": "# 参赛方式\n\n**ImageEval 2026 — Ayn-VQA Task 1a: 语音VQA (英文)** — Task 1a（语音VQA）的**英文**赛道，属于[ImageEval 2026](https://imageeval2026.github.io/)共享任务，聚焦阿拉伯语多模态生成和理解中的文化基础。\n\n给定一张图像和语音问题/选项（英文音频），选择正确的选项索引（0-2）。\n\n## 注册（请首先完成此步骤）\n填写**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)** — 这样可以让组织者追踪参与者，并通知您有关数据、截止日期和任何更新。\n\n## 谁可以参加\n个人或团队；由团队成员代表提交。您可以参加多个赛道。\n\n## 步骤\n1. 在此Codabench页面上注册**以及**填写[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)。\n2. 阅读**条款**选项卡 — 注意准确的预测格式。\n3. 从Hugging Face Hub获取数据：**[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**。\n4. 按照[任务仓库](https://github.com/ImageEval2026/ImageEval2026-tasks)中的任务描述进行操作。\n5. 在开发阶段对**开发测试集**进行预测，在最终评估阶段对**测试集**进行预测。\n\n## 系统描述论文\n鼓励所有团队为研讨会提交系统描述论文。\n\n## 联系方式\nimageeval2026@gmail.com"
+      },
+      {
+        "index": 1,
+        "title": "Dataset",
+        "content": "# Dataset\n\nAll splits live on the Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — as config\n`task1a_en`. This competition scores **devtest** (development phase) and **test**\n(final phase).\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1a_en\", split=\"devtest\")\n```\n\n## Splits\n\n| split | labels | items | phase | purpose |\n|---|---|---:|---|---|\n| `train`   | yes | 3000 | development | training / fine-tuning |\n| `dev`     | yes | 500  | development | local validation |\n| `devtest` | no  | 500  | development (leaderboard) | submission target, dev phase |\n| `test`    | no  | 1000 | final evaluation | blind ranking (human-recorded audio) |\n\n- **Language:** English.\n- Media (images / audio) are referenced by **relative path** keyed on `id`.\n- 🔊 Dev-phase audio is synthetically generated (voice cloning); the final **test** audio is human-recorded — expect a recording-condition shift.\n\n## Licence\nCC BY-NC 4.0 — non-commercial research use only.",
+        "content_zh": "# 数据集\n\n所有数据集都在 Hugging Face Hub 上 — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — 作为配置 `task1a_en`。本竞赛评分**开发测试集**（开发阶段）和**测试集**（最终阶段）。\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1a_en\", split=\"devtest\")\n```\n\n## 数据集划分\n\n| 划分 | 标签 | 项目数 | 阶段 | 用途 |\n|---|---|---:|---|---|\n| `train`   | 有 | 3000 | 开发 | 训练/微调 |\n| `dev`     | 有 | 500  | 开发 | 本地验证 |\n| `devtest` | 无  | 500  | 开发（排行榜） | 提交目标，开发阶段 |\n| `test`    | 无  | 1000 | 最终评估 | 盲目排名（人工录音音频） |\n\n- **语言：** 英文。\n- 媒体（图像/音频）以**相对路径**的形式通过 `id` 进行引用。\n- 🔊 开发阶段音频为合成生成（语音克隆）；最终**测试**音频为人工录音 — 需注意录音条件的转移。\n\n## 许可证\nCC BY-NC 4.0 — 仅限非商业研究使用。"
+      },
+      {
+        "index": 2,
+        "title": "Timeline",
+        "content": "# Timeline\n\n## Development phase\nTune on `train` + `dev`; submit predictions on **devtest** for the leaderboard.\n\n**Window:** `2026-05-22 → 2026-07-19`  ·  up to 5 submissions/day, 100 total.\n\n## Testing phase\nThe blind **test** set is released on [Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26); submit predictions\non `test` for the official ranking.\n\n**Window:** `2026-07-20 → 2026-07-29`  ·  up to 20 submissions/day, 100 total.\n\n> Dates are set in `competition.yaml` (`phases.start` / `phases.end`) — adjust if\n> the schedule shifts. Announcements: [website](https://imageeval2026.github.io/).",
+        "content_zh": "# 时间表\n\n## 开发阶段\n在 `train` + `dev` 上进行调优；在 **devtest** 上提交预测以获得排行榜成绩。\n\n**时间窗口：** `2026-05-22 → 2026-07-19`  ·  每天最多 5 次提交，总计 100 次。\n\n## 测试阶段\n盲测 **test** 集合在 [Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26) 上发布；在 `test` 上提交预测以获得官方排名。\n\n**时间窗口：** `2026-07-20 → 2026-07-29`  ·  每天最多 20 次提交，总计 100 次。\n\n> 日期设置在 `competition.yaml`（`phases.start` / `phases.end`）中 — 如果时间表有变动，请进行调整。公告：[网站](https://imageeval2026.github.io/)。"
+      }
+    ]
+  },
+  "17048": {
+    "id": 17048,
+    "title": "ImageEval 2026 — Ayn-VQA Task 1a: Spoken VQA (MSA)",
+    "description": "Given an image and the spoken question/options (English audio), pick the correct option index (0-2). Part of the ImageEval 2026 Ayn-VQA shared task on cultural grounding in Arabic multimodal understanding. \nData on HuggingFace (QCRI/AynVQA-ArabicNLP26). \nJoin our Slack for announcements and discussion: https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA",
+    "description_zh": "# ImageEval 2026 Ayn-VQA 共享任务\n\n给定一张图像和口头问题/选项（MSA音频），选择正确的选项索引（0-2）。\n\n这是 ImageEval 2026 Ayn-VQA 共享任务的一部分，专注于阿拉伯多模态理解中的文化根植。\n\n**数据集位置**：HuggingFace（QCRI/AynVQA-ArabicNLP26）\n\n**报名链接**：https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform",
+    "created_by": "hunzed",
+    "created_when": "2026-06-10T09:38:23.495469Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084303/9c583c7e5a2a/logo.png?AWSAccessKeyId=codabench-prod&Signature=hnukSCXPGk5SQo4joSZDg31zZo0%3D&Expires=1782128530",
+    "participants_count": 3,
+    "submissions_count": 1,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 28473,
+        "name": "Development Phase",
+        "start": "2026-05-22T00:00:00Z",
+        "end": "2026-07-19T00:00:00Z",
+        "max_submissions_per_day": 5
+      },
+      {
+        "id": 28474,
+        "name": "Testing Phase",
+        "start": "2026-07-20T00:00:00Z",
+        "end": "2026-07-29T00:00:00Z",
+        "max_submissions_per_day": 20
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Participation",
+        "content": "# How to participate\n\n**ImageEval 2026 — Ayn-VQA Task 1a: Spoken VQA (MSA)** — the **MSA** track of Task 1a\n(Spoken VQA), part of the [ImageEval 2026](https://imageeval2026.github.io/) shared task on cultural\ngrounding in Arabic multimodal generation and understanding.\n\nGiven an image and the spoken question/options (MSA audio), pick the correct option index (0-2).\n\n## Join our Slack (please do this first)\nJoin the **[ImageEval Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA)** for announcements, deadlines, data updates, and to connect with other participants.\n\n## Who can join\nIndividuals or teams; one member submits on the team's behalf. You may enter more\nthan one track.\n\n## Steps\n1. Sign up on this Codabench page, then join the [Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA) for updates.\n2. Read the **Terms** tab — note the exact prediction format.\n3. Get the data from the Hugging Face Hub: **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**.\n4. Follow the task description in the [tasks repo](https://github.com/ImageEval2026/ImageEval2026-tasks).\n5. Predict on **devtest** during the development phase, and on **test** during the\n   final-evaluation phase.\n\n## System description paper\nAll teams are encouraged to submit a system-description paper for the workshop.\n\n## Contact\nimageeval2026@gmail.com",
+        "content_zh": "# 参与方式\n\n**ImageEval 2026 — Ayn-VQA 任务1a：口语VQA（MSA）** — 任务1a（口语VQA）的**MSA**赛道\n是[ImageEval 2026](https://imageeval2026.github.io/)共享任务的一部分，该任务聚焦阿拉伯语多模态生成和理解中的文化基础。\n\n给定一张图像和口语问题/选项（MSA音频），选择正确的选项索引（0-2）。\n\n## 注册（请首先完成此步骤）\n填写**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)**——这让组织者能够追踪参与者并通知您关于数据、截止日期和任何更新的信息。\n\n## 谁可以参加\n个人或团队；由一名成员代表团队提交。您可以参加多个赛道。\n\n## 步骤\n1. 在此Codabench页面**和**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)上注册。\n2. 阅读**条款**选项卡——注意确切的预测格式。\n3. 从Hugging Face Hub获取数据：**[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**。\n4. 遵循[任务仓库](https://github.com/ImageEval2026/ImageEval2026-tasks)中的任务描述。\n5. 在开发阶段对**devtest**进行预测，在最终评估阶段对**test**进行预测。\n\n## 系统描述论文\n鼓励所有团队为研讨会提交系统描述论文。\n\n## 联系方式\nimageeval2026@gmail.com"
+      },
+      {
+        "index": 1,
+        "title": "Dataset",
+        "content": "# Dataset\n\nAll splits live on the Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — as config\n`task1a_msa`. This competition scores **devtest** (development phase) and **test**\n(final phase).\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1a_msa\", split=\"devtest\")\n```\n\n## Splits\n\n| split | labels | items | phase | purpose |\n|---|---|---:|---|---|\n| `train`   | yes | 3000 | development | training / fine-tuning |\n| `dev`     | yes | 500  | development | local validation |\n| `devtest` | no  | 500  | development (leaderboard) | submission target, dev phase |\n| `test`    | no  | 1000 | final evaluation | blind ranking (human-recorded audio) |\n\n- **Language:** MSA.\n- Media (images / audio) are referenced by **relative path** keyed on `id`.\n- 🔊 Dev-phase audio is synthetically generated (voice cloning); the final **test** audio is human-recorded — expect a recording-condition shift.\n\n## Licence\nCC BY-NC 4.0 — non-commercial research use only.",
+        "content_zh": "# 数据集\n\n所有数据集分割位于 Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — 配置为 `task1a_msa`。本竞赛评分**开发测试集**（开发阶段）和**测试集**（最终阶段）。\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1a_msa\", split=\"devtest\")\n```\n\n## 分割\n\n| 分割 | 标签 | 数量 | 阶段 | 用途 |\n|---|---|---:|---|---|\n| `train`   | 有 | 3000 | 开发 | 训练 / 微调 |\n| `dev`     | 有 | 500  | 开发 | 本地验证 |\n| `devtest` | 无  | 500  | 开发（排行榜） | 提交目标，开发阶段 |\n| `test`    | 无  | 1000 | 最终评估 | 盲目排名（人工录制音频） |\n\n- **语言**：现代标准阿拉伯语（MSA）。\n- 媒体（图像/音频）通过相对路径按 `id` 引用。\n- 🔊 开发阶段音频为合成生成（语音克隆）；最终**测试**音频为人工录制 — 预期存在录制条件偏移。\n\n## 许可证\nCC BY-NC 4.0 — 仅限非商业研究使用。"
+      },
+      {
+        "index": 2,
+        "title": "Timeline",
+        "content": "# Timeline\n\n## Development phase\nTune on `train` + `dev`; submit predictions on **devtest** for the leaderboard.\n\n**Window:** `2026-05-22 → 2026-07-19`  ·  up to 5 submissions/day, 100 total.\n\n## Testing phase\nThe blind **test** set is released on [Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26); submit predictions\non `test` for the official ranking.\n\n**Window:** `2026-07-20 → 2026-07-29`  ·  up to 20 submissions/day, 100 total.\n\n> Dates are set in `competition.yaml` (`phases.start` / `phases.end`) — adjust if\n> the schedule shifts. Announcements: [website](https://imageeval2026.github.io/).",
+        "content_zh": "# 时间表\n\n## 开发阶段\n在`train`+`dev`上进行调优；在**devtest**上提交预测结果用于排行榜。\n\n**时间窗口**：`2026-05-22 → 2026-07-19`  ·  每天最多5次提交，总共100次。\n\n## 测试阶段\n盲测**test**集合在[Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)上发布；在`test`上提交预测结果用于官方排名。\n\n**时间窗口**：`2026-07-20 → 2026-07-29`  ·  每天最多20次提交，总共100次。\n\n> 日期设置在`competition.yaml`中（`phases.start` / `phases.end`）— 如果时间表有变化可进行调整。公告：[网站](https://imageeval2026.github.io/)。"
+      }
+    ]
+  },
   "16817": {
     "id": 16817,
     "title": "LifeGenIP Challenge - Unlearnable Videos against Diffusion-based Customization @ ECCV 2026",
@@ -1263,7 +1263,7 @@
     "description_zh": "# 视频防护设计，用于阻止基于扩散的视频定制（I2V和LoRA调优）\n\n## 概述\n\n设计防护机制使扩散模型无法准确再现目标身份或跟随攻击者提示的视频定制方法失效。\n\n## 核心防护策略\n\n### 1. 身份特征扰动\n- **面部几何变形**：在视频帧中引入轻微但持续的面部特征偏移\n- **皮肤纹理干扰**：添加不可感知的高频纹理噪声，破坏身份特征学习\n- **眼睛和嘴部模糊**：针对性地模糊关键生物识别特征\n\n### 2. 时间一致性破坏\n- **帧间不一致性注入**：在连续帧中引入微小的视觉变异\n- **光流扰动**：改变物体运动模式的潜在表示\n- **闪烁伪影**：插入难以察觉的帧间视觉不一致\n\n### 3. 提示跟随阻止\n- **语义对抗扰动**：在视频嵌入空间中添加针对常见提示的对抗性噪声\n- **属性干扰**：随机改变可被提示引用的视觉属性（颜色、光照、背景）\n- **语言-视觉失对齐**：破坏视频内容与文本描述之间的对应关系\n\n### 4. LoRA适应阻止\n- **特征空间扰动**：在扩散模型的中间层特征中添加噪声\n- **权重梯度噪声**：在LoRA微调期间污染梯度信息\n- **秩空间干扰**：扰动低秩更新能够有效操作的特征子空间\n\n### 5. 图像到视频（I2V）防护\n- **参考图像扭曲**：对输入参考图像应用几何或光度变换\n- **多模态不匹配**：在参考图像和视频序列间创建风格/内容分歧\n- **特征提取器欺骗**：针对I2V模型的编码器添加对抗性扰动\n\n## 技术实现方法\n\n### 不可感知扰动\n```\n- 操作范围：ΔL < 1-2 ΔCIE LAB单位（人眼难以察觉）\n- 频率分析：集中在20-60 Hz范围（对视觉系统的屏蔽频率）\n- 自适应幅度：根据局部内容复杂度调整扰动强度\n```\n\n### 多层防护叠加\n- 将多种扰动类型组合应用\n- 动态调整干扰参数以对抗自适应攻击\n- 在不同视觉处理阶段引入冗余防护\n\n## 评估指标\n\n### 防护有效性\n- I2V/LoRA身份再现失败率\n- 提示跟随准确度下降\n- 攻击成功率相对于未保护视频的减少\n\n### 用户体验保持\n- 视频感知质量（VMAF、LPIPS）\n- 结构相似性（SSIM）保留率\n- 原始内容可识别性\n\n## 防护鲁棒性考虑\n\n- **对抗适应**：防护应抵抗对防护机制的反向工程\n- **多模型泛化**：在不同扩散架构上测试防护有效性\n- **计算效率**：确保防护处理开销最小化\n\n## 部署场景\n\n- 视频内容保护（防止未授权定制）\n- 深伪防御\n- 身份隐私保护\n- 媒体认证和完整性验证",
     "created_by": "lifegenip_w",
     "created_when": "2026-05-31T22:01:57.495846Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-31-1780264917/f2d06ba47a50/logo.png?AWSAccessKeyId=codabench-prod&Signature=vHz24CxzeXKhbAk2gXVq6YSNEyI%3D&Expires=1782128199",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-31-1780264917/f2d06ba47a50/logo.png?AWSAccessKeyId=codabench-prod&Signature=xBc56QkDPu3ArnX199jxN9QZJTY%3D&Expires=1782128530",
     "participants_count": 41,
     "submissions_count": 13,
     "first_phase_start": null,
@@ -1323,7 +1323,7 @@
     "description_zh": "我是一个科技竞赛信息翻译助手。\n\n**功能描述：**\n\n将用户提供的英文竞赛文本翻译成简体中文，保持专业术语准确，输出纯翻译结果。\n\n**特点：**\n- ✓ 专业术语翻译准确\n- ✓ 保持原文意思不变\n- ✓ 输出纯翻译内容\n- ✓ 支持科技竞赛相关领域\n\n**使用方式：**\n直接粘贴英文竞赛文本，我会给出中文翻译。",
     "created_by": "dravidian",
     "created_when": "2026-05-30T08:48:21.614394Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-02-1780380380/3d180381fa35/ChatGPT_Image_Jun_2_2026_at_11_35_.png?AWSAccessKeyId=codabench-prod&Signature=%2BhFdQpVip5VJer0OgaqnqUiBalk%3D&Expires=1782128200",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-02-1780380380/3d180381fa35/ChatGPT_Image_Jun_2_2026_at_11_35_.png?AWSAccessKeyId=codabench-prod&Signature=Ex%2BeckA1iaeOrMDykEphWn%2FRnwY%3D&Expires=1782128533",
     "participants_count": 11,
     "submissions_count": 0,
     "first_phase_start": null,
@@ -1382,7 +1382,7 @@
     "description_zh": "# 翻译\n\n预测注视对齐的脑磁图(MEG)活动(204个梯度计通道,注视后110毫秒),基于自然场景图像和来自主动视觉语义(AVS)数据集的眼动元数据,为一个被保留的受试者。\n\nSulewski, P., Amme, C., Hebart, M., König, P., & Kietzmann, T. (2025). 我们为什么停留:记忆编码而非视觉处理需求驱动自然场景上的注视时间——来自大规模脑磁图数据集的证据。\n\n仅限学术用途。AVS数据集及所有衍生材料专门为学术研究和教育目的提供,用于奥斯纳布吕克大学(Osnabrück University)\"深度神经网络神经编码\"课程(SoSe 2026)。",
     "created_by": "psulewski",
     "created_when": "2026-04-20T14:42:51.242593Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-20-1776696171/148af8ac1426/logo.png?AWSAccessKeyId=codabench-prod&Signature=5acNjOf1f407XUmU0HfsR24p6%2BM%3D&Expires=1782128208",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-20-1776696171/148af8ac1426/logo.png?AWSAccessKeyId=codabench-prod&Signature=ArqxOBqo918Km%2FGz2A8Kbpt%2Bjow%3D&Expires=1782128543",
     "participants_count": 25,
     "submissions_count": 37,
     "first_phase_start": null,
@@ -1423,7 +1423,7 @@
     "description_zh": "该竞赛在超声图像回归任务上评估基础模型。参赛者预测解剖学标志点坐标。评估指标为平均径向误差（MRE）和平均绝对误差（MAE），数值越低越好。",
     "created_by": "jared2408",
     "created_when": "2026-04-12T05:59:27.070072Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-13-1776048868/504537dff745/logo.png?AWSAccessKeyId=codabench-prod&Signature=M9W2ooqXX4tF5RvciWuAunb5fV0%3D&Expires=1782128209",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-13-1776048868/504537dff745/logo.png?AWSAccessKeyId=codabench-prod&Signature=EOckHpJBf6myiBPdfrc0WaIWxWU%3D&Expires=1782128547",
     "participants_count": 139,
     "submissions_count": 546,
     "first_phase_start": null,
@@ -1512,7 +1512,7 @@
     "description_zh": "阿拉伯语多模态仇恨表情包细粒度分类。给定一张表情包（图像加光学字符识别提取的阿拉伯语文本），从涵盖仇恨和非仇恨类别的统一10类活跃词汇中预测零个或多个细粒度子类型。官方指标：宏F1（macro-F1）。",
     "created_by": "alishahroor",
     "created_when": "2026-06-03T11:45:25.550972Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780487125/68e3a857bebe/logo.png?AWSAccessKeyId=codabench-prod&Signature=UL07WfLtsY16qCae3TfOYKRB%2BNI%3D&Expires=1782128198",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780487125/68e3a857bebe/logo.png?AWSAccessKeyId=codabench-prod&Signature=eY3Ei4aahsyNnLvb9B3X8e3q2g4%3D&Expires=1782128529",
     "participants_count": 6,
     "submissions_count": 3,
     "first_phase_start": null,
@@ -1560,7 +1560,7 @@
     "description_zh": "印度手语（ISL）视频数据中的孤立手势识别到其对应的词标签（词汇标注）",
     "created_by": "wslp_workshop",
     "created_when": "2026-06-01T19:06:53.463848Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780340813/3af0ccccd8c8/logo.png?AWSAccessKeyId=codabench-prod&Signature=9ojIswGNRF40PcO6FLWl04KNJAc%3D&Expires=1782128199",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780340813/3af0ccccd8c8/logo.png?AWSAccessKeyId=codabench-prod&Signature=RJvhf8vKa7gG%2BSYNGIF2a%2FJ0AMk%3D&Expires=1782128532",
     "participants_count": 5,
     "submissions_count": 3,
     "first_phase_start": null,
@@ -1608,7 +1608,7 @@
     "description_zh": "给定一个单词\\符号（手语词汇），预测其是否出现在完整的印度手语（ISL）句子视频中，解决手语识别和上下文对齐的挑战。",
     "created_by": "wslp_workshop",
     "created_when": "2026-06-01T18:23:44.041000Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780338224/034be48cb6b4/logo.png?AWSAccessKeyId=codabench-prod&Signature=Wg68YFpM8cxfYJnpKopWDXcjgJQ%3D&Expires=1782128199",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780338224/034be48cb6b4/logo.png?AWSAccessKeyId=codabench-prod&Signature=LSv21z0ssYCsiPcjOEzIKEnvqT4%3D&Expires=1782128532",
     "participants_count": 4,
     "submissions_count": 3,
     "first_phase_start": null,
@@ -1656,7 +1656,7 @@
     "description_zh": "从印度手语（ISL）视频/姿态数据到英文文本的句子级别翻译，使用iSign数据集。",
     "created_by": "wslp_workshop",
     "created_when": "2026-06-01T18:10:35.480917Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780337435/69dcff319769/logo.png?AWSAccessKeyId=codabench-prod&Signature=W8nxTOCTeYIy4kTbbK3rMmMNUow%3D&Expires=1782128200",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780337435/69dcff319769/logo.png?AWSAccessKeyId=codabench-prod&Signature=dpM%2B095E1kdTWvvX%2FaTeAdviLzc%3D&Expires=1782128532",
     "participants_count": 6,
     "submissions_count": 3,
     "first_phase_start": null,

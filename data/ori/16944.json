@@ -5,8 +5,8 @@
   "created_by": "sabdaljalil",
   "owner_display_name": "sabdaljalil",
   "created_when": "2026-06-03T19:07:43.639396Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780513663/396055ccba31/logo.png?AWSAccessKeyId=codabench-prod&Signature=EQu0KZed%2F9FEbROSir5A9pGwE4s%3D&Expires=1782128197",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780513663/396055ccba31/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=%2F2rxl3eGo2n2WgWm2IKb5faKLvc%3D&Expires=1782128197",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780513663/396055ccba31/logo.png?AWSAccessKeyId=codabench-prod&Signature=vfbNHXFucAHag5IzDQ1evQvHBLw%3D&Expires=1782128530",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780513663/396055ccba31/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=tYpuH1scktg2lA8d3m0exA0bERQ%3D&Expires=1782128530",
   "terms": "<h2>Terms and Conditions</h2>\n<ul>\n  <li>Data is released for research purposes under CC BY 4.0.</li>\n  <li>Teams may use any external data or pre-trained models.</li>\n  <li>Manual annotation of test instances is not permitted.</li>\n  <li>Each participating team must submit a system description paper to be included in the final rankings.</li>\n  <li>Test set gold labels must not be shared before the results announcement.</li>\n  <li>By participating, teams agree to allow their results to be published in the shared task overview paper.</li>\n</ul>",
   "pages": [
     {
