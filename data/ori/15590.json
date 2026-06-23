@@ -5,8 +5,8 @@
   "created_by": "jared2408",
   "owner_display_name": "jared2408",
   "created_when": "2026-04-12T05:59:27.070072Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-13-1776048868/504537dff745/logo.png?AWSAccessKeyId=codabench-prod&Signature=EOckHpJBf6myiBPdfrc0WaIWxWU%3D&Expires=1782128547",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-13-1776048868/504537dff745/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=8RjwOWi9stLxg6TqotuWu0WQedI%3D&Expires=1782128547",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-13-1776048868/504537dff745/logo.png?AWSAccessKeyId=codabench-prod&Signature=tQizo8fdtaRKOl4Qr3pYiyoL6sE%3D&Expires=1782215270",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-13-1776048868/504537dff745/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=r4pbGmak6Lo0tmZs59Bvab7oRsg%3D&Expires=1782215270",
   "terms": "# FU_Biometry Challenge - References\n\n1. Bai J, et al. Beyond Benchmarks of IUGC: Rethinking Requirements of Deep Learning Method for Intrapartum Ultrasound Biometry from Fetal Ultrasound Videos. Medical Image Analysis, 2026.\n2. Bai J, et al. IUGC: A Benchmark of Landmark Detection in End-to-End Intrapartum Ultrasound Biometry. Medical Image Analysis, 2026: 103960.\n3. Bai J, Zhou Z, Ou Z, et al. PSFHS challenge report: Pubic symphysis and fetal head segmentation from intrapartum ultrasound images. Medical Image Analysis, 2025, 99:103353.\n4. Chen Z, Ou Z, Lu Y, et al. Direction-guided and multi-scale feature screening for fetal head–pubic symphysis segmentation and angle of progression calculation. Expert Systems with Applications, 2024, 245:123096.\n5. Lu Y, Zhi D, Zhou M, et al. Multitask deep neural network for the fully automatic measurement of the angle of progression. Computational and Mathematical Methods in Medicine, 2022.\n6. Lu Y, Zhou M, Zhi D, et al. The JNU-IFM dataset for segmenting pubic symphysis-fetal head. Data in Brief, 2022, 41:107904.\n7. Bai J, Sun Z, Yu S, et al. A framework for computing angle of progression from transperineal ultrasound images for evaluating fetal head descent using a novel double branch network. Frontiers in Physiology, 2022, 13:2565.\n8. Zhou Z, Lu Y, Bai J, et al. Segment Anything Model for fetal head–pubic symphysis segmentation in intrapartum ultrasound image analysis. Expert Systems with Applications, 2024:125699.\n9. Jiang J, Wang H, Bai J, et al. Intrapartum Ultrasound Image Segmentation of Pubic Symphysis and Fetal Head Using Dual Student-Teacher Framework with CNN-ViT Collaborative Learning. MICCAI. Springer, 2024:448–458.\n10. Ou Z, Bai J, Chen Z, et al. RTSeg-Net: a lightweight network for real-time segmentation of fetal head and pubic symphysis from intrapartum ultrasound images. Computers in Biology and Medicine, 2024, 175:108501.\n11. Qiu R, Zhou M, Bai J, et al. PSFHSP-Net: an efficient lightweight network for identifying pubic symphysis-fetal head standard plane from intrapartum ultrasound images. Medical & Biological Engineering & Computing, 2024.\n12. Chen G, Bai J, Ou Z, et al. PSFHS: intrapartum ultrasound image dataset for AI-based segmentation of pubic symphysis and fetal head. Scientific Data, 2024, 11(1):436.\n13. Chen Z, Lu Y, Long S, et al. Fetal head and pubic symphysis segmentation in intrapartum ultrasound image using a dual-path boundary-guided residual network. IEEE Journal of Biomedical and Health Informatics, 2024.\n14. Bai J, Lekadir K, Ni D, et al. Intrapartum Ultrasound Grand Challenge 2024. MICCAI 2024. Zenodo, 2024.\n15. Bai J, Ou Z, Lu Y, et al. Pubic Symphysis-Fetal Head Segmentation from Transperineal Ultrasound Images. MICCAI 2023. Zenodo, 2023.\n16. Bai J, Khobo I, Slimani S, et al. Landmark Detection Challenge for Intrapartum Ultrasound Measurement Meeting the Actual Clinical Assessment of Labor Progress. MICCAI 2025. Zenodo, 2025.\n17. Bai J, Yang Z, Hasan K, et al. Fetal Ultrasound Grand Challenge: Semi-Supervised Cervical Segmentation (FUGC25). ISBI 2025. Zenodo, 2024.\n18. Chen S, Wang H, Long S, Bai J, Jiang J. Ultrasound Video Segmentation of Pubic Symphysis and Fetal Head for Angle of Progression Measurement. ACM Multimedia Asia, 2024.\n19. Gan J, Liang Z, Fan J, et al. Accurate Fetal Head Descent Assessment During Labor Using Video Swin Transformer and Wavelet-Based Multitask Learning for 2024 MICCAI Challenge IUGC. Intrapartum Ultrasound. Springer, 2024:21–31.\n20. Gan J, Liang Z, Fan J, et al. Sequential Spatial-Temporal Network for Interpretable Automatic Ultrasonic Assessment of Fetal Head During Labor. ISBI 2025. IEEE, 2025.\n21. Chen Z, Ou Z, Lu Y, Campello VM, Bai J, Lekadir K. Uncertainty fetal head and pubic symphysis segmentation with enhanced multi-scale features and sparse visual graph attention. Expert Systems with Applications, 2026, 296:128998.\n22. Bai J, Kang X, Wang W, et al. A multimodal model in the prediction of the delivery mode using data from a digital twin-empowered labor monitoring system. Digital Health, 2024, 10:20552076241304934.\n23. Ramirez Zegarra R, Lizarraga Cepeda E, Ghi T. Intrapartum ultrasound. Best Practice & Research Clinical Obstetrics & Gynaecology, 2025, 101:102617.\n24. Zhou M, Yuan C, Chen Z, et al. Automatic angle of progress measurement of intrapartum transperineal ultrasound image with deep learning. MICCAI. Springer, 2020:406–414.\n25. Sherer DM. Intrapartum ultrasound. Ultrasound in Obstetrics & Gynecology, 2007, 30:123–139.\n26. Deng, Bo, et al. \"Baseline Method of the Foundation Model Challenge for Ultrasound Image Analysis.\" arXiv preprint arXiv:2602.01055 (2026).\n27. Luo Y, Long S, Wang H, et al. DSTCS: Dual-Student Teacher Framework with Segment Anything Model for Semi-Supervised Pubic Symphysis Fetal Head Segmentation[J]. arXiv preprint arXiv:2601.19446, 2026.\n28. Bai J, Tang Y, Zhou Z, et al. FUGC: Benchmarking Semi-Supervised Learning Methods for Cervical Segmentation[J]. arXiv preprint arXiv:2601.15572, 2026.\n29. Lin Z, Han L, Wang X, et al. Diagnostic Performance of Universal-Learning Ultrasound AI Across Multiple Organs and Tasks: the UUSIC25 Challenge[J]. arXiv preprint arXiv:2512.17279, 2025.\n30. Luo Y, Long S, Wang H, et al. Edge Awareness Network with Large Kernel Attention for Small Target Segmentation from Intrapartum Ultrasound Images[C]//2025 IEEE International Conference on Bioinformatics and Biomedicine (BIBM). IEEE, 2025: 5876-5883.\n31. Wiesenfarth, M., Reinke, A., Landman, B.A. et al. Methods and open-source toolkit for analyzing and visualizing challenge results. Sci Rep 11, 2369 (2021).\n32. Ghi, Tullio, et al. \"ISUOG Practice Guidelines: intrapartum ultrasound.\" Ultrasound Obstet Gynecol 52.1 (2018): 128-139.\n33. Salomon, L. J., et al. \"ISUOG Practice Guidelines: ultrasound assessment of fetal biometry and growth.\" Ultrasound Obstet Gynecol 53.6 (2019): 715-723.\n34. Coutinho, Conrado Milani, et al. \"ISUOG Practice Guidelines: role of ultrasound in the prediction of spontaneous preterm birth.\" Ultrasound Obstet Gynecol 60.3 (2022): 435-456.\n35. Carvalho, J. S., et al. \"ISUOG Practice Guidelines (updated): fetal cardiac screening.\" Ultrasound Obstet Gynecol 61.6 (2023): 788-803.",
   "pages": [
     {
@@ -16,15 +16,15 @@
       "index": 0
     },
     {
-      "id": 81329,
-      "title": "⚠️⚠️Notice",
-      "content": "Please re-download the FUGC validation set. The FUGC_val dataset has been uploaded to the cloud drive, as the previous version contained duplicate data. Thank you.",
+      "id": 82025,
+      "title": "⚠️⚠️NEW_Notice",
+      "content": "The discrepancies observed in the AOP predictions may stem from misaligned ordering of data points between the training and validation sets. The system has since adjusted the data sequence, and contestants may resubmit their prediction files, which should yield reduced AOP prediction errors.",
       "index": 1
     },
     {
-      "id": 79852,
-      "title": "⚠️ Validation Dataset Release",
-      "content": "Start Date: June 1st。\n\n1.Dataset Download\nYou can download the val_data folder via the following channels\n\nBaiduyunpan：https://pan.baidu.com/s/14pFgrB0jPxtN3MrMAX4GsQ?pwd=1234\nGoogleDrive:https://drive.google.com/drive/folders/1xae7zzKL5YsiIteFJWZEqCfAsSFeGk-z?usp=sharingifications\n\n2. Submission Specifications\nPlease strictly follow the submission requirements below:\n- Generate your prediction results as a single JSON file.\n-  Compress the JSON file into a zip archive before submission.\n- Upload the compressed file to the CodaBench platform.\n\n3. Result Feedback & Notes\n- The platform will provide automatic feedback immediately after your submission.\n- The scores displayed on the platform and the leaderboard have no practical significance for the final ranking.\n- Please mainly check whether your submitted file fully complies with the official JSON format standards.",
+      "id": 82026,
+      "title": "⚠️Notice1",
+      "content": "Please re-download the FUGC validation set. The FUGC_val dataset has been uploaded to the cloud drive, as the previous version contained duplicate data. Thank you.",
       "index": 2
     },
     {
@@ -34,27 +34,27 @@
       "index": 3
     },
     {
+      "id": 82027,
+      "title": "Validation Dataset Release",
+      "content": "Start Date: June 1st。\n\n1.Dataset Download\nYou can download the val_data folder via the following channels\n\nBaiduyunpan：https://pan.baidu.com/s/14pFgrB0jPxtN3MrMAX4GsQ?pwd=1234\nGoogleDrive:https://drive.google.com/drive/folders/1xae7zzKL5YsiIteFJWZEqCfAsSFeGk-z?usp=sharingifications\n\n2. Submission Specifications\nPlease strictly follow the submission requirements below:\n- Generate your prediction results as a single JSON file.\n-  Compress the JSON file into a zip archive before submission.\n- Upload the compressed file to the CodaBench platform.\n\n3. Result Feedback & Notes\n- The platform will provide automatic feedback immediately after your submission.\n- The scores displayed on the platform and the leaderboard have no practical significance for the final ranking.\n- Please mainly check whether your submitted file fully complies with the official JSON format standards.",
+      "index": 4
+    },
+    {
       "id": 74951,
       "title": "Data Access Method",
       "content": "Participants can get the baseline the following channel：\n\nhttps://github.com/lijiake2408/Foundation-Model-for-Ultrasound-Biometry\n\nTraining set: Released with full annotations for model development.\nValidation set: Raw images distributed to participants. Upload your predictions in submission.zip to the platform for scoring.\nTest set: Hosted by the organizers. Your Docker image will be run on this data during the final phase.\n\nHow to get datasetsParticipants can get the train dataset through the following channels:\n\nBaiduyunpan：https://pan.baidu.com/s/14pFgrB0jPxtN3MrMAX4GsQ?pwd=1234\nGoogleDrive:https://drive.google.com/drive/folders/1xae7zzKL5YsiIteFJWZEqCfAsSFeGk-z?usp=sharing",
-      "index": 4
+      "index": 5
     },
     {
       "id": 74949,
       "title": "Dataset",
       "content": "# FU_Biometry Challenge - Dataset System\n\n## 1. Ethics Approval & Data License\n### 1.1 Ethics Approval\n- All data is anonymized, with approval from the Medical Ethics Committee (No. JNUKY-2022-019, 2025-KY-405-01 and 279A01).\n\n### 1.2 Data Usage Agreement & License\n- License: **CC BY-NC (Attribution-NonCommercial)**\n- No commercial use of the data is permitted; all usage must comply with the license terms.\n\n## 2. Data Source\n### 2.1 Acquisition Devices (Multi-vendor, for clinical heterogeneity simulation)\n- Philiph-cx50\n- Toshiba Aplio300\n- Voluson P8\n- Esaote Mylab\n- Lian-med ObEye\n- Youkey Q7\n\n### 2.2 Acquisition Protocols\n- Follow ISUOG (International Society of Ultrasound in Obstetrics and Gynecology) practice guidelines:\n  1. Intrapartum ultrasound (2018)\n  2. Ultrasound assessment of fetal biometry and growth (2019)\n  3. Ultrasound in the prediction of spontaneous preterm birth (2022)\n  4. Fetal cardiac screening (2023)",
-      "index": 5
+      "index": 6
     },
     {
       "id": 74927,
       "title": "Evaluation",
       "content": "# FU_Biometry Challenge - Evaluation Methods\n\n## 1. Assessment Aims (No Priority Order)\n- Optimize algorithm performance in the following properties:\n  - Accuracy\n  - Complexity\n  - Hardware requirements\n  - Runtime\n  - Robustness\n  - Sensitivity\n  - Specificity\n\n## 2. Core Evaluation Metrics\nTwo metrics with **equal 50% weighting**, both used for final ranking:\n### 2.1 Mean Radial Error (MRE)\n- **Purpose**: Measure landmark localization accuracy.\n- **Calculation**: For a case with K required landmarks (predictions {p_k}, references {g_k}):\n  \\[MRE =(1 / K) \\sum_{k=1}^{K}|| p_k-g_k||_2\\]\n- **Unit**: Pixels; converted to millimeters (mm) if pixel spacing is available.\n- **Note**: Only computed for the applicable subset of landmarks for each image.\n\n### 2.2 Ultrasound Parameter Prediction Difference\n- **Purpose**: Measure the accuracy of clinically derived parameters.\n- **Calculation**: Mean Absolute Error (MAE) |ŷ_j − y_j| (ŷ_j = predicted parameter, y_j = manual measurement) in native physical units (mm/degrees).\n- **Normalization**: Each parameter is normalized using clinically defined tolerance ranges or interquartile range (IQR) to prevent large-range parameters from dominating evaluation.\n- **Reporting**: Both raw and normalized errors are published for transparency.\n\n## 3. Ranking Calculation Method\n### 3.1 Score Aggregation\n- Final score = **50% normalized MRE + 50% normalized parameter error** (equal weighting to balance geometric accuracy and clinical measurement reliability).\n\n### 3.2 Ranking Framework (ChallengeR-style rank-then-aggregate)\n1. Domain-balanced weighting across 4 predefined data domains (avoid dominance of a single acquisition source).\n2. Dual leaderboards: **overall ranking** + **domain-stratified ranking** (for transparency).\n3. Tie-breaking rule: Superior measurement accuracy (lower normalized parameter error) takes priority (higher clinical relevance).\n\n### 3.3 Missing Result Handling\n- Submissions with missing test case results are penalized by assigning the **worst performance score** for the corresponding metric among all valid submissions.\n\n## 4. Statistical Analyses\n### 4.1 Software Tools\n- R language; Python libraries (SciPy, Pandas) (widely accepted in scientific research).\n\n### 4.2 Missing Data Handling\n- No multiple imputation; missing outputs are penalized (final results have no missing values).\n- Bootstrap 95% confidence intervals (CIs) with 1,000 resamples are reported for all metrics.\n\n### 4.3 Performance Precision Assessment\n- **Percentile bootstrap 95% CIs (1,000 resamples)** on the test set for all algorithm performance estimates.\n\n### 4.4 Performance Variability Assessment\n- Across test cases: Per-case metric distributions reported via standard deviation (SD), interquartile range (IQR), boxplots/violin plots, and explicit outlier reporting.\n- Ranking variability: Assessed using the **bootstrap method** (nonparametric, minimal assumptions).\n\n### 4.5 Statistical Significance Test\n- **Paired Wilcoxon signed-rank test** for pairwise algorithm performance comparisons (nonparametric, adapted for non-normal metric distributions).\n- Multiple-comparison correction (Holm or Benjamini–Hochberg) to avoid false positives.\n- Effect sizes (e.g., Cliff’s delta) reported alongside p-values for clinical interpretability.\n- Domain/device-stratified analyses to contextualize cross-domain generalization.\n\n### 4.6 Data Assumption Validation\n- Pre-validation tests for all statistical methods:\n  1. Shapiro-Wilk test: Assess data normality.\n  2. Levene's test: Evaluate variance homogeneity.\n\n## 5. Further Analyses\n1. Performance verification of **ensemble models** built from the top-ranked teams’ algorithms.\n2. Analysis of inter-algorithm variability, common biases/problems of submitted methods.\n3. In-depth analysis of ranking variability across different data domains/devices.",
-      "index": 6
-    },
-    {
-      "id": 74928,
-      "title": "Participation Rules",
-      "content": "# FU_Biometry Challenge - Participation Rules\n\n## 1. Challenge Life Cycle\n- Repeated event with annual fixed conference submission deadline\n\n## 2. Participation Policies\n### 2.1 Algorithm Development\n- Participants must use all unlabeled data to develop semi-supervised methods.\n- Only publicly available external datasets and pre-trained models are allowed for training; additional private annotations of public data are prohibited.\n\n### 2.2 Organizer Institute Participants\n- May participate in the challenge but are **not eligible for awards** and **not listed in the leaderboard**.\n\n## 3. Submission Rules\n### 3.1 Submission Method\n- Testing phase: Only **one successful Docker container submission** per team (prevent repeated tuning on hidden test set).\n- Strict separation between public validation leaderboard and private final test evaluation; final rankings based solely on unseen test set.\n- Top-ranked submissions undergo manual verification (Docker executability, method descriptions, rule compliance).\n\n### 3.2 Validation Phase Submission\n- Teams may submit up to **10 times in total**, with no more than **2 submissions per day**.\n- Validation scores serve only as sanity checks (completeness and format), not for ranking or comparative evaluation.\n\n## 4. Award Policy\n1. Certificates and cash awards for top teams, the most innovative method team, and teams with the most careful method description.\n2. **Top 10 teams** are invited to give oral presentations at MICCAI 2026 and encouraged to submit extended manuscripts to the IEEE Transactions on Biomedical Engineering (TBME) Special Issue.\n3. Co-authorship of the challenge compendium paper to be submitted to top journals (MedIA/TMI).\n\n## 5. Result Announcement\n- The **top 10 performing methods** are publicly announced by organizers.\n- Announcement includes team names and overall ranking based on official evaluation metrics.\n\n## 6. Publication Policy\n### 6.1 Authorship Qualification\n- Members of top-10 teams who made significant contributions to research conceptualization, design, execution or interpretation qualify as authors.\n\n### 6.2 Independent Publication\n- Participating teams may publish results separately, with respect for the challenge’s collective efforts.\n\n### 6.3 Embargo Period\n- Organizers publish a comprehensive challenge paper first; individual teams are encouraged to refrain from publishing complete findings independently during this period.\n\n## 7. Code Availability Requirement\n- Algorithm code release (via GitHub repository) and corresponding conference paper submission are **prerequisites for award eligibility** and further data usage.",
       "index": 7
     },
     {
@@ -64,16 +64,22 @@
       "index": 8
     },
     {
+      "id": 74928,
+      "title": "Participation Rules",
+      "content": "# FU_Biometry Challenge - Participation Rules\n\n## 1. Challenge Life Cycle\n- Repeated event with annual fixed conference submission deadline\n\n## 2. Participation Policies\n### 2.1 Algorithm Development\n- Participants must use all unlabeled data to develop semi-supervised methods.\n- Only publicly available external datasets and pre-trained models are allowed for training; additional private annotations of public data are prohibited.\n\n### 2.2 Organizer Institute Participants\n- May participate in the challenge but are **not eligible for awards** and **not listed in the leaderboard**.\n\n## 3. Submission Rules\n### 3.1 Submission Method\n- Testing phase: Only **one successful Docker container submission** per team (prevent repeated tuning on hidden test set).\n- Strict separation between public validation leaderboard and private final test evaluation; final rankings based solely on unseen test set.\n- Top-ranked submissions undergo manual verification (Docker executability, method descriptions, rule compliance).\n\n### 3.2 Validation Phase Submission\n- Teams may submit up to **10 times in total**, with no more than **2 submissions per day**.\n- Validation scores serve only as sanity checks (completeness and format), not for ranking or comparative evaluation.\n\n## 4. Award Policy\n1. Certificates and cash awards for top teams, the most innovative method team, and teams with the most careful method description.\n2. **Top 10 teams** are invited to give oral presentations at MICCAI 2026 and encouraged to submit extended manuscripts to the IEEE Transactions on Biomedical Engineering (TBME) Special Issue.\n3. Co-authorship of the challenge compendium paper to be submitted to top journals (MedIA/TMI).\n\n## 5. Result Announcement\n- The **top 10 performing methods** are publicly announced by organizers.\n- Announcement includes team names and overall ranking based on official evaluation metrics.\n\n## 6. Publication Policy\n### 6.1 Authorship Qualification\n- Members of top-10 teams who made significant contributions to research conceptualization, design, execution or interpretation qualify as authors.\n\n### 6.2 Independent Publication\n- Participating teams may publish results separately, with respect for the challenge’s collective efforts.\n\n### 6.3 Embargo Period\n- Organizers publish a comprehensive challenge paper first; individual teams are encouraged to refrain from publishing complete findings independently during this period.\n\n## 7. Code Availability Requirement\n- Algorithm code release (via GitHub repository) and corresponding conference paper submission are **prerequisites for award eligibility** and further data usage.",
+      "index": 9
+    },
+    {
       "id": 74932,
       "title": "Organization",
       "content": "# FU_Biometry Challenge - Organization Team\n\n## 1. Organizers\n1. Jieyun Bai (The University of Auckland, New Zealand)\n2. Mohammad Yaqub (Mohamed bin Zayed University of Artificial Intelligence, MBZUAI, UAE)\n3. Karim Lekadir (University of Barcelona, Spain)\n4. Shuo Li (Case Western Reserve University, USA)\n5. Dong Ni (Shenzhen University, China)\n6. Weidong Cai (University of Sydney, Australia)\n7. Jun Ma (University of Toronto, Canada)\n\n## 2. Advisors\n1. Mohamed Hammad (Prince Sultan University, Saudi Arabia)\n2. Fangyijie Wang (University College Dublin, Ireland)\n3. Yihua He (Beijing Anzhen Hospital, Capital Medical University, China)\n\n## 3. Contributors\n1. Vien Ngoc Dang (University of Barcelona, Spain)\n2. Dang Van Anh Kiet (Cho Ray Hospital, Vietnam)\n3. Stacy Atieno (Aga Khan University Hospital, Kenya)\n4. Ran Shi (Zhenjiang Maternal and Child Health Hospital, China)\n5. Jianjun Yu (Third People’s Hospital of Zhenjiang City, China)\n6. Haixia Huang (Fifth People’s Hospital of Zhenjiang City, China)\n7. Yuxin Huang (Southern Medical University, China)\n8. Li Wang (Guangzhou Women and Children’s Medical Center, China)\n9. Yu Zhang (First Affiliated Hospital of Jinan University, China)\n10. Yue Yu (First Affiliated Hospital of Naval Military Medical University, China)\n\n## 4. Role of Clinical Experts\n- Provide real-world clinical ultrasound data collected under routine diagnostic conditions across multiple institutions and populations.\n- Perform and supervise expert annotations (landmark identification, measurement labeling) following standardized clinical protocols.\n- Evaluate annotation quality and inter-rater consistency to ensure reference labels reflect clinical variability and meet diagnostic standards.\n\n## 5. Primary Contact\n- **Name**: Jieyun Bai\n- **Affiliation**: The University of Auckland, New Zealand\n- **Email**: jbai996@aucklanuni.ac.nz",
-      "index": 9
+      "index": 10
     },
     {
       "id": 79021,
       "title": "Q&A",
       "content": "If you have any questions, you can contact the following four persons in charge.\n\njiake Li, Jinan University, China :lijiakekobe@gmail.com     ljk.me@qq.com\n\nJieyun Bai, The University of Auckland, New Zealand/Jinan University, China :bai_jieyun@126.com\n\nYitong Tang, Jinan University, China : tyt6xx@163.com\n\nBo Deng, Jinan University, China : dbd2002@foxmail.com",
-      "index": 10
+      "index": 11
     }
   ],
   "phases": [
@@ -165,16 +171,16 @@
               "file_size": 77033.0
             },
             {
-              "id": 830532,
+              "id": 846952,
               "created_by": "jared2408",
               "owner_display_name": "jared2408",
-              "created_when": "2026-06-13T08:57:17.221641Z",
-              "name": "input_data2",
+              "created_when": "2026-06-23T07:05:52.799988Z",
+              "name": "input_data1",
               "type": "input_data",
-              "description": "",
+              "description": "input",
               "is_public": false,
-              "key": "fb874916-02a7-484e-92c3-d5f94774443b",
-              "value": "fb874916-02a7-484e-92c3-d5f94774443b",
+              "key": "fd081dec-4e64-4682-865c-031d7f9647ab",
+              "value": "fd081dec-4e64-4682-865c-031d7f9647ab",
               "was_created_by_competition": false,
               "in_use": [
                 {
@@ -184,14 +190,14 @@
               ],
               "competition": null,
               "file_name": "input_data.zip",
-              "file_size": 22370.0
+              "file_size": 34033.0
             }
           ]
         }
       ],
       "has_max_submissions": true,
       "max_submissions_per_day": 5,
-      "max_submissions_per_person": 30,
+      "max_submissions_per_person": 60,
       "auto_migrate_to_this_phase": false,
       "hide_output": false,
       "hide_prediction_output": false,
@@ -438,8 +444,8 @@
   "collaborators": [],
   "registration_auto_approve": true,
   "description": "This competition evaluates foundation models on ultrasound image regression tasks.\nParticipants predict anatomical landmark coordinates. The evaluation metric is \nMean Radial Error (MRE) and Mean Absolute Error（MAE）lower is better..",
-  "participants_count": 139,
-  "submissions_count": 546,
+  "participants_count": 140,
+  "submissions_count": 581,
   "queue": null,
   "enable_detailed_results": false,
   "show_detailed_results_in_submission_panel": true,
