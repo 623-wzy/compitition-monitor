@@ -1,0 +1,41 @@
+{
+  "id": 17197,
+  "title": "MER2026-Prefer",
+  "description": "MER-Prefer is a newly introduced track that predicts which of two emotion descriptions is preferred by human annotators for a given video. The concept of emotion preference was first proposed in EmoPrefer, playing a crucial role in training reward models capable of understanding human emotions. We employ the weighted F1-score (WAF) as the primary metric and accuracy (ACC) as the secondary metric. This is part of the MER2026 Challenge at ACM Multimedia 2026.",
+  "description_zh": "MER-Prefer是一个新推出的赛道，用于预测人类标注者对给定视频的两个情感描述中哪一个更偏好。情感偏好的概念最初在EmoPrefer中提出，在训练能够理解人类情感的奖励模型中起着至关重要的作用。我们采用加权F1分数（WAF）作为主要指标，准确率（ACC）作为次要指标。这是ACM Multimedia 2026的MER2026挑战赛的一部分。",
+  "created_by": "coffey",
+  "created_when": "2026-06-20T08:59:42.063619Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-20-1781945982/7743bc90b492/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=vwrvOB7n%2BGoMhKzrpye39U6PQRY%3D&Expires=1782301910",
+  "participants_count": 35,
+  "submissions_count": 79,
+  "first_phase_start": null,
+  "phases": [
+    {
+      "id": 28706,
+      "name": "Start",
+      "start": "2026-06-19T00:00:00Z",
+      "end": "2026-07-14T12:00:00Z",
+      "max_submissions_per_day": 20
+    }
+  ],
+  "pages": [
+    {
+      "index": 0,
+      "title": "data",
+      "content": "<h1>Data</h1>\n<p>Please complete the End User License Agreement (EULA) on Hugging Face to access the dataset:</p>\n<p><a href=\"https://huggingface.co/datasets/MERChallenge/MER2026\">https://huggingface.co/datasets/MERChallenge/MER2026</a></p>\n<p>The EULA clearly states that the dataset is for academic research purposes only and prohibits any modifications or uploads to the Internet. We will review the submitted EULA promptly; once approved, participants will gain access to the dataset.</p>\n<p>The MER2026 baseline paper and code are also available:</p>\n<ul><li>Baseline paper: <a href=\"https://arxiv.org/abs/2604.19417\">https://arxiv.org/abs/2604.19417</a></li><li>Baseline code (Tracks 1-3): <a href=\"https://github.com/zeroQiaoba/MERTools\">https://github.com/zeroQiaoba/MERTools</a></li></ul>\n<p>Official website: <a href=\"https://zeroqiaoba.github.io/MER-Challenge/\">https://zeroqiaoba.github.io/MER-Challenge/</a></p>",
+      "content_zh": "<h1>数据</h1>\n<p>请在Hugging Face上完成最终用户许可协议(EULA)以访问数据集：</p>\n<p><a href=\"https://huggingface.co/datasets/MERChallenge/MER2026\">https://huggingface.co/datasets/MERChallenge/MER2026</a></p>\n<p>EULA明确声明该数据集仅供学术研究使用，禁止进行任何修改或上传到互联网。我们将及时审核提交的EULA；审核通过后，参赛者将获得数据集的访问权限。</p>\n<p>MER2026基准论文和代码也已发布：</p>\n<ul><li>基准论文：<a href=\"https://arxiv.org/abs/2604.19417\">https://arxiv.org/abs/2604.19417</a></li><li>基准代码(赛道1-3)：<a href=\"https://github.com/zeroQiaoba/MERTools\">https://github.com/zeroQiaoba/MERTools</a></li></ul>\n<p>官方网站：<a href=\"https://zeroqiaoba.github.io/MER-Challenge/\">https://zeroqiaoba.github.io/MER-Challenge/</a></p>"
+    },
+    {
+      "index": 1,
+      "title": "overview",
+      "content": "<h1>MER-Prefer: Emotion Preference</h1>\n<p>MER-Prefer is a newly introduced track. The concept of emotion preference was first proposed in <a href=\"https://arxiv.org/abs/2508.01318\">EmoPrefer</a>, which predicts which of two emotion descriptions is preferred by human annotators for a given video. This task plays a crucial role in training reward models capable of understanding human emotions.</p>\n<p>We provide two training datasets: <b>EmoPrefer-Data</b> with majority-voted labels and <b>EmoPrefer-Data-V2</b> with single-annotator labels. For testing, we provide 379 samples with majority-voted labels.</p>\n<p>See the baseline paper for more details: <a href=\"https://arxiv.org/abs/2604.19417\">https://arxiv.org/abs/2604.19417</a></p>\n<p>Official website: <a href=\"https://zeroqiaoba.github.io/MER-Challenge/\">https://zeroqiaoba.github.io/MER-Challenge/</a></p>\n<h2>Submission Format</h2>\n<p>The result file must be named <code>answer.csv</code> with the following columns:</p>\n<ul>\n<li><code>name</code>: sample identifier</li>\n<li><code>a1</code>: first emotion description (text)</li>\n<li><code>a2</code>: second emotion description (text)</li>\n<li><code>preference</code>: the preferred description — must be exactly <code>a1</code> or <code>a2</code></li>\n</ul>\n<p>Compress <code>answer.csv</code> into <code>answer.zip</code> and submit via Codabench.</p>",
+      "content_zh": "# MER-Prefer：情感偏好\n\nMER-Prefer是一个新引入的赛道。情感偏好的概念首次在<a href=\"https://arxiv.org/abs/2508.01318\">EmoPrefer</a>中提出，用于预测人类标注者对给定视频的两个情感描述中哪一个更偏好。该任务在训练能够理解人类情感的奖励模型中起着至关重要的作用。\n\n我们提供两个训练数据集：**EmoPrefer-Data**（带多数投票标签）和**EmoPrefer-Data-V2**（带单个标注者标签）。对于测试，我们提供379个带多数投票标签的样本。\n\n更多详情见基线论文：<a href=\"https://arxiv.org/abs/2604.19417\">https://arxiv.org/abs/2604.19417</a>\n\n官方网站：<a href=\"https://zeroqiaoba.github.io/MER-Challenge/\">https://zeroqiaoba.github.io/MER-Challenge/</a>\n\n## 提交格式\n\n结果文件必须命名为 `answer.csv`，包含以下列：\n\n- `name`：样本标识符\n- `a1`：第一个情感描述（文本）\n- `a2`：第二个情感描述（文本）\n- `preference`：偏好的描述——必须恰好是 `a1` 或 `a2`\n\n将 `answer.csv` 压缩成 `answer.zip` 并通过Codabench提交。"
+    },
+    {
+      "index": 2,
+      "title": "evaluation",
+      "content": "<h1>Evaluation</h1>\n<p>In MER-Prefer, we evaluate two-class preference classification using <b>Weighted F1-score (WAF)</b> as the primary metric and <b>Accuracy (ACC)</b> as the secondary metric.</p>\n<p>For each sample, the submission must predict whether description <code>a1</code> or <code>a2</code> is preferred by human annotators. The prediction is evaluated against the ground truth preference labels.</p>\n<p>The submission must contain exactly 10,000 samples. Only samples whose <code>(name, a1, a2)</code> tuple exists in the ground truth set are evaluated.</p>\n<p>See the baseline paper for more details: <a href=\"https://arxiv.org/abs/2604.19417\">https://arxiv.org/abs/2604.19417</a></p>\n<p>Official website: <a href=\"https://zeroqiaoba.github.io/MER-Challenge/\">https://zeroqiaoba.github.io/MER-Challenge/</a></p>",
+      "content_zh": "<h1>评估</h1>\n<p>在MER-Prefer中，我们使用<b>加权F1分数（WAF）</b>作为主要评估指标，<b>准确率（ACC）</b>作为次要评估指标来评估二分类偏好分类。</p>\n<p>对于每个样本，提交内容必须预测人类标注员更倾向于描述<code>a1</code>还是<code>a2</code>。预测结果将与真实的偏好标签进行比较。</p>\n<p>提交内容必须包含恰好10,000个样本。仅评估其<code>(name, a1, a2)</code>元组存在于真实数据集中的样本。</p>\n<p>详见基准论文：<a href=\"https://arxiv.org/abs/2604.19417\">https://arxiv.org/abs/2604.19417</a></p>\n<p>官方网站：<a href=\"https://zeroqiaoba.github.io/MER-Challenge/\">https://zeroqiaoba.github.io/MER-Challenge/</a></p>"
+    }
+  ]
+}

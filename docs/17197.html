@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>EgoLink 2026 — Codabench 竞赛监测</title>
+<title>MER2026-Prefer — Codabench 竞赛监测</title>
 <style>
 :root {
     --bg: #0f1117;
@@ -99,48 +99,60 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
 </header>
 <div class="detail-wrap">
   <a class="back-link" href="index.html">← 返回竞赛目录</a>
-  <h2>EgoLink 2026</h2>
+  <h2>MER2026-Prefer</h2>
   <div class="detail-meta">
-    <span>ID: 17143</span>
-    <span>创建者: mingbao</span>
-    <span>创建时间: 2026-06-16</span>
-    <span>参与人数: 23</span>
-    <span>提交次数: 260</span>
-    <a class="ext-link" href="https://www.codabench.org/competitions/17143/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+    <span>ID: 17197</span>
+    <span>创建者: coffey</span>
+    <span>创建时间: 2026-06-20</span>
+    <span>参与人数: 35</span>
+    <span>提交次数: 79</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/17197/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
   </div>
 
   <div class="section">
     <h3>竞赛描述</h3>
-    <div class="page-content">EgoLink（自中心语言-视觉交互网络知识挑战赛）旨在推进复杂、真实自中心场景中的具身AI发展。超越传统导航或静态物体感知，该挑战赛全面评估模型在社交推理和交互式任务执行中的能力。它要求智能AI不仅能够感知情感线索、理解因果关系、预测人类交互中的行为意图，还能通过多模态对话、动态工具使用和自主规划积极解决日常生活任务。EgoLink致力于培养集成智能，使感知、推理和决策在非结构化社交环境中紧密耦合。</div>
+    <div class="page-content">MER-Prefer是一个新推出的赛道，用于预测人类标注者对给定视频的两个情感描述中哪一个更偏好。情感偏好的概念最初在EmoPrefer中提出，在训练能够理解人类情感的奖励模型中起着至关重要的作用。我们采用加权F1分数（WAF）作为主要指标，准确率（ACC）作为次要指标。这是ACM Multimedia 2026的MER2026挑战赛的一部分。</div>
   </div>
 
   <div class="section">
     <h3>竞赛阶段</h3>
     <table class="phases-table">
       <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
-      <tbody><tr><td><span class='badge badge-test'>测试</span> Evaluation</td><td>2026-06-16</td><td>2026-06-23</td><td>5</td></tr></tbody>
+      <tbody><tr><td><span class='badge badge-other'>其他</span> Start</td><td>2026-06-19</td><td>2026-07-14</td><td>20</td></tr></tbody>
     </table>
   </div>
 
-<div class='section'><h3>EgoLink Bench</h3><div class='page-content'>EgoLink 2026 自我中心社交推理评估基准
+<div class='section'><h3>data</h3><div class='page-content'>&lt;h1&gt;数据&lt;/h1&gt;
+&lt;p&gt;请在Hugging Face上完成最终用户许可协议(EULA)以访问数据集：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://huggingface.co/datasets/MERChallenge/MER2026&quot;&gt;https://huggingface.co/datasets/MERChallenge/MER2026&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;EULA明确声明该数据集仅供学术研究使用，禁止进行任何修改或上传到互联网。我们将及时审核提交的EULA；审核通过后，参赛者将获得数据集的访问权限。&lt;/p&gt;
+&lt;p&gt;MER2026基准论文和代码也已发布：&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;基准论文：&lt;a href=&quot;https://arxiv.org/abs/2604.19417&quot;&gt;https://arxiv.org/abs/2604.19417&lt;/a&gt;&lt;/li&gt;&lt;li&gt;基准代码(赛道1-3)：&lt;a href=&quot;https://github.com/zeroQiaoba/MERTools&quot;&gt;https://github.com/zeroQiaoba/MERTools&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;官方网站：&lt;a href=&quot;https://zeroqiaoba.github.io/MER-Challenge/&quot;&gt;https://zeroqiaoba.github.io/MER-Challenge/&lt;/a&gt;&lt;/p&gt;</div></div><div class='section'><h3>overview</h3><div class='page-content'># MER-Prefer：情感偏好
 
-注册
-确保在 EgoLink 2026 中使用相同的电子邮件地址和团队名称，我们将根据在 EgoLink 2026 中注册的电子邮件地址和团队名称手动添加可提交结果的用户。
+MER-Prefer是一个新引入的赛道。情感偏好的概念首次在&lt;a href=&quot;https://arxiv.org/abs/2508.01318&quot;&gt;EmoPrefer&lt;/a&gt;中提出，用于预测人类标注者对给定视频的两个情感描述中哪一个更偏好。该任务在训练能够理解人类情感的奖励模型中起着至关重要的作用。
 
-提交结果并检查分数
-确保您提交的 zip 文件具有以下目录结构：
+我们提供两个训练数据集：**EmoPrefer-Data**（带多数投票标签）和**EmoPrefer-Data-V2**（带单个标注者标签）。对于测试，我们提供379个带多数投票标签的样本。
 
-|submission.zip
+更多详情见基线论文：&lt;a href=&quot;https://arxiv.org/abs/2604.19417&quot;&gt;https://arxiv.org/abs/2604.19417&lt;/a&gt;
 
-||--predictions.jsonl
+官方网站：&lt;a href=&quot;https://zeroqiaoba.github.io/MER-Challenge/&quot;&gt;https://zeroqiaoba.github.io/MER-Challenge/&lt;/a&gt;
 
-predictions.jsonl 文件遵循以下格式：
+## 提交格式
 
-{&quot;id&quot;: &quot;\&lt;id\&gt;&quot;, &quot;answer&quot;: &quot;\&lt;your_answer\&gt;&quot;}
+结果文件必须命名为 `answer.csv`，包含以下列：
 
-示例：
+- `name`：样本标识符
+- `a1`：第一个情感描述（文本）
+- `a2`：第二个情感描述（文本）
+- `preference`：偏好的描述——必须恰好是 `a1` 或 `a2`
 
-{&quot;id&quot;: &quot;Eval_4020&quot;, &quot;answer&quot;: &quot;Casual friendliness with lighthearted teasing&quot;}</div></div>
+将 `answer.csv` 压缩成 `answer.zip` 并通过Codabench提交。</div></div><div class='section'><h3>evaluation</h3><div class='page-content'>&lt;h1&gt;评估&lt;/h1&gt;
+&lt;p&gt;在MER-Prefer中，我们使用&lt;b&gt;加权F1分数（WAF）&lt;/b&gt;作为主要评估指标，&lt;b&gt;准确率（ACC）&lt;/b&gt;作为次要评估指标来评估二分类偏好分类。&lt;/p&gt;
+&lt;p&gt;对于每个样本，提交内容必须预测人类标注员更倾向于描述&lt;code&gt;a1&lt;/code&gt;还是&lt;code&gt;a2&lt;/code&gt;。预测结果将与真实的偏好标签进行比较。&lt;/p&gt;
+&lt;p&gt;提交内容必须包含恰好10,000个样本。仅评估其&lt;code&gt;(name, a1, a2)&lt;/code&gt;元组存在于真实数据集中的样本。&lt;/p&gt;
+&lt;p&gt;详见基准论文：&lt;a href=&quot;https://arxiv.org/abs/2604.19417&quot;&gt;https://arxiv.org/abs/2604.19417&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;官方网站：&lt;a href=&quot;https://zeroqiaoba.github.io/MER-Challenge/&quot;&gt;https://zeroqiaoba.github.io/MER-Challenge/&lt;/a&gt;&lt;/p&gt;</div></div>
 
 </div>
 </body>

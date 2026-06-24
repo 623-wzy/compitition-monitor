@@ -5,8 +5,8 @@
   "created_by": "hunzed",
   "owner_display_name": "hunzed",
   "created_when": "2026-06-10T09:39:37.693956Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084377/5517d0a96f0a/logo.png?AWSAccessKeyId=codabench-prod&Signature=m1cFiLnXlw3QF%2Bdr9BCIKEQEYWY%3D&Expires=1782215256",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084377/5517d0a96f0a/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=XoGn7J3SVk6V6zZ%2FP5cyzATQ0ms%3D&Expires=1782215256",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084377/5517d0a96f0a/logo.png?AWSAccessKeyId=codabench-prod&Signature=a2dV%2BqSPxtcn3ZQFgsXZWSAyZVs%3D&Expires=1782301911",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084377/5517d0a96f0a/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=lL8vCPkYQybRmraruhxMJr3mCvc%3D&Expires=1782301911",
   "terms": "# Terms\n\n## Submission format\nSubmit a **UTF-8 CSV** named `prediction.csv`, zipped as `prediction.zip`.\nFor every item, submit **three rows** — one per statement.\n\n**Required columns**\n- `id` — the item id (do not reorder/rename).\n- `statement_index` — `0`, `1` or `2`, matching the position in `statements`.\n- `prediction` — `true` if that statement is grounded in the image, else `false`.\n\n```\nid,statement_index,prediction\n1dcdf6da...,0,false\n1dcdf6da...,1,true\n1dcdf6da...,2,false\n```\n\n## Rules\n1. Your `id`s must exactly match the gold set for the active phase (`devtest`,\n   then `test`); missing/extra rows are rejected.\n2. Exactly one statement per item is grounded; predict `true`/`false` for all three.\n\n## Metric\nRanking metric: **Contrastive Instability (CI)**, lower is better. Of the items\nwhere at least one of the three statements is correct, CI is the fraction that are\nnot fully correct (all three right). A model that labels every statement false to\ndrive its hallucination rate to zero still scores poorly on CI.\n\nAlso reported as diagnostics: **combined accuracy** (all three labels correct),\n**CFHR** (of the items where Q+ was correct, the share that still affirmed a\nhallucinated statement), and **Q+ / Q- accuracy**.\n\n## Registration, data usage, ethics\n- Join our **[Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA)** for announcements and discussion.\n- Data is **CC BY-NC 4.0** (non-commercial research use only).\n- Any pretrained model / external data / compute is allowed; document it in your paper.\n\n## Contact\nimageeval2026@gmail.com",
   "pages": [
     {
@@ -280,7 +280,7 @@
   "registration_auto_approve": true,
   "description": "Given an image and 3 statements (MSA), label EACH statement True (grounded in the image) or False (hallucinated). Exactly one statement is grounded. Part of the ImageEval 2026 Ayn-VQA shared task on cultural grounding in Arabic multimodal understanding. \nData on HuggingFace (QCRI/AynVQA-ArabicNLP26). \nJoin our Slack for announcements and discussion: https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA",
   "participants_count": 5,
-  "submissions_count": 3,
+  "submissions_count": 6,
   "queue": null,
   "enable_detailed_results": true,
   "show_detailed_results_in_submission_panel": true,

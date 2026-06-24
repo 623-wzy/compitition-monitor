@@ -5,8 +5,8 @@
   "created_by": "avartan_labs",
   "owner_display_name": "avartan_labs",
   "created_when": "2026-06-06T17:41:37.581384Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-06-1780767697/343e119605f8/logo.png?AWSAccessKeyId=codabench-prod&Signature=OaXkL26sIyzcoaTy6QN7BqMO1M8%3D&Expires=1782215258",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-06-1780767697/343e119605f8/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=6AwGLNgu5N3JI4H%2F1E%2FVR8T9Xzk%3D&Expires=1782215258",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-06-1780767697/343e119605f8/logo.png?AWSAccessKeyId=codabench-prod&Signature=u07Jn%2FobbDYxScB2mrxceRtfwuY%3D&Expires=1782301916",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-06-1780767697/343e119605f8/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=uLVPBlSnTvGo%2BoGKIrP3theD3Zs%3D&Expires=1782301916",
   "terms": "By participating in this challenge you agree to:\n1. Not share your credentials with anyone\n2. Not attempt to access other teams' files or workspaces\n3. Submit only your own original work\n4. Maximum 3 official submissions per day\n5. Results are final as shown on the leaderboard",
   "pages": [
     {
@@ -21,7 +21,7 @@
       "id": 28389,
       "index": 0,
       "start": "2026-06-20T04:00:00Z",
-      "end": "2026-06-30T18:30:00Z",
+      "end": "2026-06-30T21:00:00Z",
       "name": "submission",
       "description": "Submit your predictions.json file to get your score. Maximum 10 submissions per day.\n\nTo submit:\n1. Generate predictions.json on the workstation\n2. Run: python3 /home/team_X/submit.py\n3. Check leaderboard for your score (takes 5-10 minutes)",
       "status": "Current",
@@ -191,7 +191,7 @@
   "registration_auto_approve": false,
   "description": "Detect and classify waste objects from real conveyor belt images. \nBuild the best object detection model across 19 waste categories.\nOrganized by Avartan Labs pvt ltd.",
   "participants_count": 10,
-  "submissions_count": 39,
+  "submissions_count": 62,
   "queue": null,
   "enable_detailed_results": true,
   "show_detailed_results_in_submission_panel": true,
