@@ -5,7 +5,7 @@
   "description_zh": "轨道3 (NMM-Source-IED)：癫痫致痫区的5分类定位——结合预提取的同步视觉上下文特征与生理信号来定位发作焦点。仅结果提交：上传预测结果至公开候选集；仅隐藏的官方轨道3样本被评分。主要指标：加权F1。\n\n竞争阶段已结束。该平台在有限时间内开放，严格用于消融研究；这些后续结果将不被纳入官方排行榜排名。",
   "created_by": "neuromm",
   "created_when": "2026-06-17T07:22:35.874297Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-17-1781680955/ef2da8b209ca/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=l2uQh3iWAQsngaz3%2B%2Fi%2BuDlCX28%3D&Expires=1782301912",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-17-1781680955/ef2da8b209ca/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=U4iYbzzBsE5OPxgrsga%2FA8p8JqY%3D&Expires=1782388665",
   "participants_count": 7,
   "submissions_count": 105,
   "first_phase_start": null,
@@ -14,7 +14,7 @@
       "id": 28659,
       "name": "Dev Phase",
       "start": "2026-06-16T00:00:00Z",
-      "end": "2026-06-25T00:00:00Z",
+      "end": "2026-06-30T00:00:00Z",
       "max_submissions_per_day": 20
     }
   ],

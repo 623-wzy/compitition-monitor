@@ -5,8 +5,8 @@
   "created_by": "dravidian",
   "owner_display_name": "dravidian",
   "created_when": "2026-06-02T08:54:22.657256Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-02-1780390462/88e13a75a227/ChatGPT_Image_Nov_16_2025_01_37_4.png?AWSAccessKeyId=codabench-prod&Signature=nJeYFylWF9ihTlDByk36k9gf%2BQA%3D&Expires=1782301918",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-02-1780390462/88e13a75a227/ChatGPT_Image_Nov_16_2025_01_37_4_icon.png?AWSAccessKeyId=codabench-prod&Signature=y45%2Fbxpz8LHMvgHX7i8o3rM9cqQ%3D&Expires=1782301918",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-02-1780390462/88e13a75a227/ChatGPT_Image_Nov_16_2025_01_37_4.png?AWSAccessKeyId=codabench-prod&Signature=I1MUNXF1qA9MrWLjOVJUTh8KVxg%3D&Expires=1782388668",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-02-1780390462/88e13a75a227/ChatGPT_Image_Nov_16_2025_01_37_4_icon.png?AWSAccessKeyId=codabench-prod&Signature=2treZAOnhZR%2BvKKig8TVCoFCfm0%3D&Expires=1782388668",
   "terms": "<h1 style=\"text-align: center;\"><span data-preserver-spaces=\"true\">Terms and Conditions</span></h1>\n<p style=\"text-align: justify;\"><span data-preserver-spaces=\"true\">By downloading the data or by accessing it in any manner, you agree not to redistribute the data except for non-commercial and academic research purposes. The data must not be used for providing surveillance, analyses, or research that isolates a group of individuals or any single individual for any unlawful or discriminatory purpose.</span></p>\n\n<hr style=\"border-top: 1px dashed black; margin-top: 20px; margin-bottom: 20px;\" />\n<div style=\"text-align: center;\"><span data-preserver-spaces=\"true\"><strong>For more information or any doubts,</strong></span></div>\n<div>&nbsp;</div>\n<div style=\"text-align: center;\"><span data-preserver-spaces=\"true\"><strong>Contact Us:</strong></span></div>\n<div>&nbsp;</div>\n<div style=\"text-align: center;\"><span data-preserver-spaces=\"true\"><strong>Email:&nbsp;</strong>&nbsp;<a href=\"mailto:bharathiraja.akr@gmail.com\">bharathiraja.akr@gmail.com</a> and <a href=\"mailto:saranya@acad.cutn.ac.in\">saranya@acad.cutn.ac.in</a></span></div>\n<hr style=\"border-top: 1px dashed black; margin-top: 20px; margin-bottom: 20px;\" />\n<div style=\"display: none;\">&nbsp;</div>",
   "pages": [
     {
@@ -179,7 +179,7 @@
   ],
   "registration_auto_approve": false,
   "description": "This shared task aims to advance research in the automated analysis of multimodal political content in Tamil memes. Political memes have emerged as a prominent medium of online political communication, enabling the rapid dissemination of opinions, ideologies, and narratives. Due to their multimodal nature combining images, text, symbols, and contextual cues memes can effectively convey messages even to audiences with limited understanding of the underlying language. Their widespread reach and influence make them powerful tools for shaping public opinion and political discourse. To address the growing need for computational methods capable of understanding such content, this shared task focuses on developing systems for multi-level classification of Tamil political memes.",
-  "participants_count": 27,
+  "participants_count": 28,
   "submissions_count": 0,
   "queue": null,
   "enable_detailed_results": false,
