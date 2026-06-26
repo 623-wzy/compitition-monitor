@@ -1,0 +1,54 @@
+{
+  "id": 13374,
+  "title": "Toy_benchmark_v1",
+  "description": "## Toy Benchmark v1: Pairwise Point Tracking\n\nThis benchmark evaluates a simple **pairwise point tracking** task on image data.\n\n### Task Definition\nFor each test sample, participants are given:\n- A reference image (`ref`)\n- A target image (`tgt`)\n- A reference point `(x_ref, y_ref)` defined on the reference image\n\nThe goal is to **predict the corresponding point location `(x, y)` on the target image**.\n\n### Evaluation\nPredictions are evaluated using the **Euclidean distance** between the predicted point and the ground-truth point on the target image.\nThe final score is the **mean error over all test samples** (lower is better).",
+  "description_zh": "## 玩具基准 v1：成对点追踪\n\n该基准评估图像数据上的简单**成对点追踪**任务。\n\n### 任务定义\n对于每个测试样本，参与者获得：\n- 参考图像（`ref`）\n- 目标图像（`tgt`）\n- 在参考图像上定义的参考点 `(x_ref, y_ref)`\n\n目标是**预测目标图像上对应的点位置 `(x, y)`**。\n\n### 评估\n使用目标图像上预测点与真值点之间的**欧氏距离**评估预测结果。\n最终分数是**所有测试样本上的平均误差**（分数越低越好）。",
+  "created_by": "lanxiao",
+  "created_when": "2026-01-29T20:19:17.964849Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-01-29-1769717957/3a83607f7a38/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260128161328_371_2.png?AWSAccessKeyId=codabench-prod&Signature=OP6TSJo84BAcWpjYj6fK%2Bc1TMrM%3D&Expires=1782475374",
+  "participants_count": 2,
+  "submissions_count": 4,
+  "first_phase_start": null,
+  "phases": [
+    {
+      "id": 21882,
+      "name": "Development Phase",
+      "start": "2026-06-23T00:00:00Z",
+      "end": "2026-07-23T22:00:00Z",
+      "max_submissions_per_day": 5
+    },
+    {
+      "id": 21883,
+      "name": "Testing Phase",
+      "start": "2026-08-01T00:00:00Z",
+      "end": "2026-08-06T00:00:00Z",
+      "max_submissions_per_day": 5
+    }
+  ],
+  "pages": [
+    {
+      "index": 0,
+      "title": "Home",
+      "content": "## Toy Benchmark v1\n\nThis benchmark provides a minimal example of a **pairwise point tracking** task implemented using CodaBench.\n\nThe goal of this benchmark is to:\n- Validate a complete benchmark pipeline (data, submission, scoring)\n- Serve as a learning and prototyping platform\n- Provide a clean baseline for future extensions",
+      "content_zh": "## 玩具基准测试 v1\n\n该基准测试使用 CodaBench 实现了一个**成对点追踪**任务的最小示例。\n\n该基准测试的目标是：\n- 验证完整的基准测试管道（数据、提交、评分）\n- 作为学习和原型设计平台\n- 为未来扩展提供清晰的基线"
+    },
+    {
+      "index": 1,
+      "title": "Data",
+      "content": "## Data Description\n\nThis benchmark uses image-based data for a pairwise tracking task.\n\n### Trian Input Data\nThe public training set contains:\n- Pairs of images (reference and target)\n- A reference point on the reference image\n- The corresponding ground-truth point on the target image\n\nThis data can be used for training or sanity checking.\n\n### Test Input Data\nThe test set contains:\n- Pairs of images (reference and target)\n- A reference point on the reference image\n\nGround-truth target points for the test set are **hidden** and used only for evaluation.",
+      "content_zh": "## 数据描述\n\n本基准使用基于图像的配对追踪任务数据。\n\n### 训练输入数据\n公开训练集包含：\n- 图像对（参考图像和目标图像）\n- 参考图像上的参考点\n- 目标图像上对应的真实标注点\n\n该数据可用于训练或完整性检查。\n\n### 测试输入数据\n测试集包含：\n- 图像对（参考图像和目标图像）\n- 参考图像上的参考点\n\n测试集的真实标注目标点**隐藏**，仅用于评估。"
+    },
+    {
+      "index": 2,
+      "title": "Submission",
+      "content": "## Submission Instructions\n\nParticipants are required to submit a **single CSV file** named **`submission.csv`**.  \nEach submission corresponds to predictions for **all test samples**.\n\n---\n\n## Submission File Format\n\nThe submission file must be a **comma-separated values (CSV)** file with the following header:\n\n    id,x_pred,y_pred\n\n---\n\n## Column Description\n\n- **id**  \n  Unique identifier of the test sample.  \n  This must **exactly match** the sample IDs provided in the test input file.\n\n- **x_pred**  \n  Predicted **x-coordinate** of the target point on the target image.\n\n- **y_pred**  \n  Predicted **y-coordinate** of the target point on the target image.\n\nEach row corresponds to **one test sample**.\n\n---\n\n## Coordinate System\n\n- Coordinates are specified in **pixel space**\n- The origin **(0, 0)** is at the **top-left corner** of the image\n- The **x-axis** increases from **left → right**\n- The **y-axis** increases from **top → bottom**\n- `x_pred` and `y_pred` may be **integers or floating-point numbers**\n\n---\n\n## Example Submission\n\n    id,x_pred,y_pred\n    101,125,85\n    102,70,150\n\n---\n\n## Submission Requirements\n\n- The file must be named exactly **`submission.csv`**\n- The file must contain **all test sample IDs**\n- Each test sample ID must appear **exactly once**\n- **No additional columns** are allowed\n- **Do not include extra files** in your submission package\n- Submissions that do not follow the specified format **may fail during evaluation**\n\n---\n\n## Submission and Evaluation Process\n\n1. Download the test input data (**images + `test.csv`**)\n2. Generate predictions for **each test sample**\n3. Save the results to **`submission.csv`**\n4. Upload **`submission.csv`** as your submission\n5. The system evaluates your submission using **hidden ground-truth target points**\n6. A **score** is computed and displayed on the **leaderboard**\n\n---\n\n## Notes\n\n- Ground-truth target points for the test set are **hidden** and used **only for scoring**",
+      "content_zh": "## 提交说明\n\n参与者需要提交一个**单一CSV文件**，命名为**`submission.csv`**。  \n每次提交对应对**所有测试样本**的预测。\n\n---\n\n## 提交文件格式\n\n提交文件必须是**逗号分隔值（CSV）**文件，包含以下表头：\n\n    id,x_pred,y_pred\n\n---\n\n## 列说明\n\n- **id**  \n  测试样本的唯一标识符。  \n  必须**完全匹配**测试输入文件中提供的样本ID。\n\n- **x_pred**  \n  目标图像上目标点的**x坐标**预测值。\n\n- **y_pred**  \n  目标图像上目标点的**y坐标**预测值。\n\n每行对应**一个**测试样本。\n\n---\n\n## 坐标系\n\n- 坐标在**像素空间**中指定\n- 原点**(0, 0)**位于图像的**左上角**\n- **x轴**从**左→右**递增\n- **y轴**从**上→下**递增\n- `x_pred`和`y_pred`可以是**整数或浮点数**\n\n---\n\n## 提交示例\n\n    id,x_pred,y_pred\n    101,125,85\n    102,70,150\n\n---\n\n## 提交要求\n\n- 文件必须命名为**`submission.csv`**\n- 文件必须包含**所有**测试样本ID\n- 每个测试样本ID必须**恰好出现一次**\n- **不允许额外列**\n- **不要在提交包中包含额外文件**\n- 不按照指定格式的提交**可能在评估期间失败**\n\n---\n\n## 提交和评估流程\n\n1. 下载测试输入数据（**图像 + `test.csv`**）\n2. 为**每个测试样本**生成预测\n3. 将结果保存到**`submission.csv`**\n4. 上传**`submission.csv`**作为你的提交\n5. 系统使用**隐藏的地面真值目标点**评估你的提交\n6. 计算**分数**并显示在**排行榜**上\n\n---\n\n## 注意\n\n- 测试集的地面真值目标点是**隐藏的**，**仅用于评分**"
+    },
+    {
+      "index": 3,
+      "title": "Evaluation",
+      "content": "## Evaluation\n\nSubmissions are evaluated using the **Euclidean distance** between predicted points and ground-truth points on the target images.\n\nFor each test sample, the error is computed as:\n\n\\[\n\\sqrt{(x_{pred} - x_{gt})^2 + (y_{pred} - y_{gt})^2}\n\\]\n\n### Final Score\nThe final score is the **mean error over all test samples**.\n\nLower scores indicate better performance.",
+      "content_zh": "## 评估\n\n提交结果使用目标图像上预测点与真实点之间的**欧几里得距离**进行评估。\n\n对于每个测试样本，误差计算如下：\n\n\\[\n\\sqrt{(x_{pred} - x_{gt})^2 + (y_{pred} - y_{gt})^2}\n\\]\n\n### 最终得分\n最终得分是**所有测试样本上的平均误差**。\n\n分数越低表示性能越好。"
+    }
+  ]
+}

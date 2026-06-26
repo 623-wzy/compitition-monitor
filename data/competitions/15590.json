@@ -5,9 +5,9 @@
   "description_zh": "该竞赛在超声图像回归任务上评估基础模型。参赛者预测解剖学标志点坐标。评估指标为平均径向误差（MRE）和平均绝对误差（MAE），数值越低越好。",
   "created_by": "jared2408",
   "created_when": "2026-04-12T05:59:27.070072Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-13-1776048868/504537dff745/logo.png?AWSAccessKeyId=codabench-prod&Signature=yLng05ZkTEUlLTf37IFCERNpGQs%3D&Expires=1782388682",
-  "participants_count": 146,
-  "submissions_count": 656,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-13-1776048868/504537dff745/logo.png?AWSAccessKeyId=codabench-prod&Signature=YftUdGQ2ajdpwzXviFQ06%2FbFaNU%3D&Expires=1782475350",
+  "participants_count": 147,
+  "submissions_count": 699,
   "first_phase_start": null,
   "phases": [
     {

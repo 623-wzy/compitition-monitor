@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ImageEval 2026 — Ayn-VQA Task 1a: Spoken VQA (MSA) — Codabench 竞赛监测</title>
+<title>Toy_benchmark_v1 — Codabench 竞赛监测</title>
 <style>
 :root {
     --bg: #0f1117;
@@ -99,97 +99,154 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
 </header>
 <div class="detail-wrap">
   <a class="back-link" href="index.html">← 返回竞赛目录</a>
-  <h2>ImageEval 2026 — Ayn-VQA Task 1a: Spoken VQA (MSA)</h2>
+  <h2>Toy_benchmark_v1</h2>
   <div class="detail-meta">
-    <span>ID: 17048</span>
-    <span>创建者: hunzed</span>
-    <span>创建时间: 2026-06-10</span>
-    <span>参与人数: 6</span>
-    <span>提交次数: 2</span>
-    <a class="ext-link" href="https://www.codabench.org/competitions/17048/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+    <span>ID: 13374</span>
+    <span>创建者: lanxiao</span>
+    <span>创建时间: 2026-01-29</span>
+    <span>参与人数: 2</span>
+    <span>提交次数: 4</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/13374/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
   </div>
 
   <div class="section">
     <h3>竞赛描述</h3>
-    <div class="page-content"># ImageEval 2026 Ayn-VQA 共享任务
+    <div class="page-content">## 玩具基准 v1：成对点追踪
 
-给定一张图像和口头问题/选项（MSA音频），选择正确的选项索引（0-2）。
+该基准评估图像数据上的简单**成对点追踪**任务。
 
-这是 ImageEval 2026 Ayn-VQA 共享任务的一部分，专注于阿拉伯多模态理解中的文化根植。
+### 任务定义
+对于每个测试样本，参与者获得：
+- 参考图像（`ref`）
+- 目标图像（`tgt`）
+- 在参考图像上定义的参考点 `(x_ref, y_ref)`
 
-**数据集位置**：HuggingFace（QCRI/AynVQA-ArabicNLP26）
+目标是**预测目标图像上对应的点位置 `(x, y)`**。
 
-**报名链接**：https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform</div>
+### 评估
+使用目标图像上预测点与真值点之间的**欧氏距离**评估预测结果。
+最终分数是**所有测试样本上的平均误差**（分数越低越好）。</div>
   </div>
 
   <div class="section">
     <h3>竞赛阶段</h3>
     <table class="phases-table">
       <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
-      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development Phase</td><td>2026-05-22</td><td>2026-07-19</td><td>5</td></tr><tr><td><span class='badge badge-test'>测试</span> Testing Phase</td><td>2026-07-20</td><td>2026-07-29</td><td>20</td></tr></tbody>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development Phase</td><td>2026-06-23</td><td>2026-07-23</td><td>5</td></tr><tr><td><span class='badge badge-test'>测试</span> Testing Phase</td><td>2026-08-01</td><td>2026-08-06</td><td>5</td></tr></tbody>
     </table>
   </div>
 
-<div class='section'><h3>Participation</h3><div class='page-content'># 参与方式
+<div class='section'><h3>Home</h3><div class='page-content'>## 玩具基准测试 v1
 
-**ImageEval 2026 — Ayn-VQA 任务1a：口语VQA（MSA）** — 任务1a（口语VQA）的**MSA**赛道
-是[ImageEval 2026](https://imageeval2026.github.io/)共享任务的一部分，该任务聚焦阿拉伯语多模态生成和理解中的文化基础。
+该基准测试使用 CodaBench 实现了一个**成对点追踪**任务的最小示例。
 
-给定一张图像和口语问题/选项（MSA音频），选择正确的选项索引（0-2）。
+该基准测试的目标是：
+- 验证完整的基准测试管道（数据、提交、评分）
+- 作为学习和原型设计平台
+- 为未来扩展提供清晰的基线</div></div><div class='section'><h3>Data</h3><div class='page-content'>## 数据描述
 
-## 注册（请首先完成此步骤）
-填写**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)**——这让组织者能够追踪参与者并通知您关于数据、截止日期和任何更新的信息。
+本基准使用基于图像的配对追踪任务数据。
 
-## 谁可以参加
-个人或团队；由一名成员代表团队提交。您可以参加多个赛道。
+### 训练输入数据
+公开训练集包含：
+- 图像对（参考图像和目标图像）
+- 参考图像上的参考点
+- 目标图像上对应的真实标注点
 
-## 步骤
-1. 在此Codabench页面**和**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)上注册。
-2. 阅读**条款**选项卡——注意确切的预测格式。
-3. 从Hugging Face Hub获取数据：**[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**。
-4. 遵循[任务仓库](https://github.com/ImageEval2026/ImageEval2026-tasks)中的任务描述。
-5. 在开发阶段对**devtest**进行预测，在最终评估阶段对**test**进行预测。
+该数据可用于训练或完整性检查。
 
-## 系统描述论文
-鼓励所有团队为研讨会提交系统描述论文。
+### 测试输入数据
+测试集包含：
+- 图像对（参考图像和目标图像）
+- 参考图像上的参考点
 
-## 联系方式
-imageeval2026@gmail.com</div></div><div class='section'><h3>Dataset</h3><div class='page-content'># 数据集
+测试集的真实标注目标点**隐藏**，仅用于评估。</div></div><div class='section'><h3>Submission</h3><div class='page-content'>## 提交说明
 
-所有数据集分割位于 Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — 配置为 `task1a_msa`。本竞赛评分**开发测试集**（开发阶段）和**测试集**（最终阶段）。
+参与者需要提交一个**单一CSV文件**，命名为**`submission.csv`**。  
+每次提交对应对**所有测试样本**的预测。
 
-```python
-from datasets import load_dataset
-ds = load_dataset(&quot;QCRI/AynVQA-ArabicNLP26&quot;, &quot;task1a_msa&quot;, split=&quot;devtest&quot;)
-```
+---
 
-## 分割
+## 提交文件格式
 
-| 分割 | 标签 | 数量 | 阶段 | 用途 |
-|---|---|---:|---|---|
-| `train`   | 有 | 3000 | 开发 | 训练 / 微调 |
-| `dev`     | 有 | 500  | 开发 | 本地验证 |
-| `devtest` | 无  | 500  | 开发（排行榜） | 提交目标，开发阶段 |
-| `test`    | 无  | 1000 | 最终评估 | 盲目排名（人工录制音频） |
+提交文件必须是**逗号分隔值（CSV）**文件，包含以下表头：
 
-- **语言**：现代标准阿拉伯语（MSA）。
-- 媒体（图像/音频）通过相对路径按 `id` 引用。
-- 🔊 开发阶段音频为合成生成（语音克隆）；最终**测试**音频为人工录制 — 预期存在录制条件偏移。
+    id,x_pred,y_pred
 
-## 许可证
-CC BY-NC 4.0 — 仅限非商业研究使用。</div></div><div class='section'><h3>Timeline</h3><div class='page-content'># 时间表
+---
 
-## 开发阶段
-在`train`+`dev`上进行调优；在**devtest**上提交预测结果用于排行榜。
+## 列说明
 
-**时间窗口**：`2026-05-22 → 2026-07-19`  ·  每天最多5次提交，总共100次。
+- **id**  
+  测试样本的唯一标识符。  
+  必须**完全匹配**测试输入文件中提供的样本ID。
 
-## 测试阶段
-盲测**test**集合在[Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)上发布；在`test`上提交预测结果用于官方排名。
+- **x_pred**  
+  目标图像上目标点的**x坐标**预测值。
 
-**时间窗口**：`2026-07-20 → 2026-07-29`  ·  每天最多20次提交，总共100次。
+- **y_pred**  
+  目标图像上目标点的**y坐标**预测值。
 
-&gt; 日期设置在`competition.yaml`中（`phases.start` / `phases.end`）— 如果时间表有变化可进行调整。公告：[网站](https://imageeval2026.github.io/)。</div></div>
+每行对应**一个**测试样本。
+
+---
+
+## 坐标系
+
+- 坐标在**像素空间**中指定
+- 原点**(0, 0)**位于图像的**左上角**
+- **x轴**从**左→右**递增
+- **y轴**从**上→下**递增
+- `x_pred`和`y_pred`可以是**整数或浮点数**
+
+---
+
+## 提交示例
+
+    id,x_pred,y_pred
+    101,125,85
+    102,70,150
+
+---
+
+## 提交要求
+
+- 文件必须命名为**`submission.csv`**
+- 文件必须包含**所有**测试样本ID
+- 每个测试样本ID必须**恰好出现一次**
+- **不允许额外列**
+- **不要在提交包中包含额外文件**
+- 不按照指定格式的提交**可能在评估期间失败**
+
+---
+
+## 提交和评估流程
+
+1. 下载测试输入数据（**图像 + `test.csv`**）
+2. 为**每个测试样本**生成预测
+3. 将结果保存到**`submission.csv`**
+4. 上传**`submission.csv`**作为你的提交
+5. 系统使用**隐藏的地面真值目标点**评估你的提交
+6. 计算**分数**并显示在**排行榜**上
+
+---
+
+## 注意
+
+- 测试集的地面真值目标点是**隐藏的**，**仅用于评分**</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'>## 评估
+
+提交结果使用目标图像上预测点与真实点之间的**欧几里得距离**进行评估。
+
+对于每个测试样本，误差计算如下：
+
+\[
+\sqrt{(x_{pred} - x_{gt})^2 + (y_{pred} - y_{gt})^2}
+\]
+
+### 最终得分
+最终得分是**所有测试样本上的平均误差**。
+
+分数越低表示性能越好。</div></div>
 
 </div>
 </body>

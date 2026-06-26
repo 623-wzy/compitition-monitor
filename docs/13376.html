@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ImageEval 2026 — Ayn-VQA Task 1a: Spoken VQA (MSA) — Codabench 竞赛监测</title>
+<title>Toy_benchmark_v2 (Ingestion-based) — Codabench 竞赛监测</title>
 <style>
 :root {
     --bg: #0f1117;
@@ -99,97 +99,148 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
 </header>
 <div class="detail-wrap">
   <a class="back-link" href="index.html">← 返回竞赛目录</a>
-  <h2>ImageEval 2026 — Ayn-VQA Task 1a: Spoken VQA (MSA)</h2>
+  <h2>Toy_benchmark_v2 (Ingestion-based)</h2>
   <div class="detail-meta">
-    <span>ID: 17048</span>
-    <span>创建者: hunzed</span>
-    <span>创建时间: 2026-06-10</span>
-    <span>参与人数: 6</span>
-    <span>提交次数: 2</span>
-    <a class="ext-link" href="https://www.codabench.org/competitions/17048/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+    <span>ID: 13376</span>
+    <span>创建者: lanxiao</span>
+    <span>创建时间: 2026-01-29</span>
+    <span>参与人数: 2</span>
+    <span>提交次数: 11</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/13376/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
   </div>
 
   <div class="section">
     <h3>竞赛描述</h3>
-    <div class="page-content"># ImageEval 2026 Ayn-VQA 共享任务
+    <div class="page-content">## 玩具基准 v2：成对点跟踪
 
-给定一张图像和口头问题/选项（MSA音频），选择正确的选项索引（0-2）。
+该基准评估了图像数据上的简单**成对点跟踪**任务。
 
-这是 ImageEval 2026 Ayn-VQA 共享任务的一部分，专注于阿拉伯多模态理解中的文化根植。
+### 任务定义
+对于每个测试样本，参与者获得：
+- 参考图像 (`ref`)
+- 目标图像 (`tgt`)
+- 在参考图像上定义的参考点 `(x_ref, y_ref)`
 
-**数据集位置**：HuggingFace（QCRI/AynVQA-ArabicNLP26）
+目标是**预测目标图像上相应的点位置 `(x, y)`**。
 
-**报名链接**：https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform</div>
+### 评估
+使用**预测点与目标图像上真实点之间的欧几里得距离**来评估预测。
+最终得分是**所有测试样本上的平均误差**（越低越好）。</div>
   </div>
 
   <div class="section">
     <h3>竞赛阶段</h3>
     <table class="phases-table">
       <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
-      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development Phase</td><td>2026-05-22</td><td>2026-07-19</td><td>5</td></tr><tr><td><span class='badge badge-test'>测试</span> Testing Phase</td><td>2026-07-20</td><td>2026-07-29</td><td>20</td></tr></tbody>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development Phase</td><td>2026-06-22</td><td>2026-06-26</td><td>5</td></tr><tr><td><span class='badge badge-test'>测试</span> Testing Phase</td><td>2026-07-07</td><td>—</td><td>5</td></tr></tbody>
     </table>
   </div>
 
-<div class='section'><h3>Participation</h3><div class='page-content'># 参与方式
+<div class='section'><h3>Home</h3><div class='page-content'>## 玩具基准 v2（基于摄入的）
 
-**ImageEval 2026 — Ayn-VQA 任务1a：口语VQA（MSA）** — 任务1a（口语VQA）的**MSA**赛道
-是[ImageEval 2026](https://imageeval2026.github.io/)共享任务的一部分，该任务聚焦阿拉伯语多模态生成和理解中的文化基础。
+该基准使用**基于摄入的评估协议**来评估**点对跟踪**任务的算法。
 
-给定一张图像和口语问题/选项（MSA音频），选择正确的选项索引（0-2）。
+参与者需要提交可执行的算法，而不是预先计算的预测结果。提交的算法在受控环境中执行以生成预测，然后自动进行评估。</div></div><div class='section'><h3>Data</h3><div class='page-content'>## 数据描述
 
-## 注册（请首先完成此步骤）
-填写**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)**——这让组织者能够追踪参与者并通知您关于数据、截止日期和任何更新的信息。
+本基准测试为提交的算法提供数据作为输入。
 
-## 谁可以参加
-个人或团队；由一名成员代表团队提交。您可以参加多个赛道。
+### 输入数据结构
 
-## 步骤
-1. 在此Codabench页面**和**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)上注册。
-2. 阅读**条款**选项卡——注意确切的预测格式。
-3. 从Hugging Face Hub获取数据：**[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**。
-4. 遵循[任务仓库](https://github.com/ImageEval2026/ImageEval2026-tasks)中的任务描述。
-5. 在开发阶段对**devtest**进行预测，在最终评估阶段对**test**进行预测。
+每个阶段提供以下数据作为输入：
 
-## 系统描述论文
-鼓励所有团队为研讨会提交系统描述论文。
+- **训练数据**：可被算法用于训练或自适应
+- **测试数据**：用于在评估过程中生成预测
 
-## 联系方式
-imageeval2026@gmail.com</div></div><div class='section'><h3>Dataset</h3><div class='page-content'># 数据集
+真实标注**未包含**在输入数据中，为了评估目的而保密。
 
-所有数据集分割位于 Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — 配置为 `task1a_msa`。本竞赛评分**开发测试集**（开发阶段）和**测试集**（最终阶段）。
+### 注意事项
 
-```python
-from datasets import load_dataset
-ds = load_dataset(&quot;QCRI/AynVQA-ArabicNLP26&quot;, &quot;task1a_msa&quot;, split=&quot;devtest&quot;)
+- 所有数据均以预定义的目录结构提供
+- 算法必须从提供的输入目录读取数据
+- 算法不得依赖外部数据源</div></div><div class='section'><h3>Submission</h3><div class='page-content'>## 提交说明
+
+参赛者需要提交**算法实现**，而不是预测文件。
+
+每次提交必须包含可执行代码，该代码可由基准测试摄入程序运行
+以生成所提供测试数据的预测结果。
+
+---
+
+## 提交内容
+
+有效的提交必须包括：
+
+- 实现追踪算法的源代码
+- 与摄入接口兼容的模型定义
+- 在提供的环境中执行所需的所有文件
+
+提交必须遵循摄入程序期望的目录和接口约定。
+
+---
+
+## 执行协议
+
+对于每次提交：
+
+1. 摄入程序加载提交的算法
+2. 训练数据作为输入被提供
+3. 执行算法以在测试数据上生成预测
+4. 预测传递到评分程序进行评估
+
+---
+
+## 限制条件
+
+- 提交不得执行网络访问
+- 提交必须在分配的资源限制内运行
+- 执行期间仅可访问提交包中包含的文件
+
+---
+
+### 必需接口
+
+文件 `model.py` 必须定义一个名为 `Model` 的类，包含以下方法：
+
 ```
+class Model: 
+    def fit(self, train_data):
+        &quot;&quot;&quot;
+        train_data: 从 train.csv 加载的 numpy 数组或结构化数据
+        &quot;&quot;&quot;
+        pass
 
-## 分割
+    def predict(self, test_data):
+        &quot;&quot;&quot;
+        test_data: 从 test.csv 加载的 numpy 数组或结构化数据
 
-| 分割 | 标签 | 数量 | 阶段 | 用途 |
-|---|---|---:|---|---|
-| `train`   | 有 | 3000 | 开发 | 训练 / 微调 |
-| `dev`     | 有 | 500  | 开发 | 本地验证 |
-| `devtest` | 无  | 500  | 开发（排行榜） | 提交目标，开发阶段 |
-| `test`    | 无  | 1000 | 最终评估 | 盲目排名（人工录制音频） |
+        返回：
+            predictions: 形状为 (N, 2) 的 numpy 数组
+            每一行对应 (x_pred, y_pred)
+        &quot;&quot;&quot;
+        return predictions
+```</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'>## 评估协议
 
-- **语言**：现代标准阿拉伯语（MSA）。
-- 媒体（图像/音频）通过相对路径按 `id` 引用。
-- 🔊 开发阶段音频为合成生成（语音克隆）；最终**测试**音频为人工录制 — 预期存在录制条件偏移。
+提交算法生成的预测结果使用**欧几里得距离**来评估预测点与真值点之间的差异。
 
-## 许可证
-CC BY-NC 4.0 — 仅限非商业研究使用。</div></div><div class='section'><h3>Timeline</h3><div class='page-content'># 时间表
+### 评分
 
-## 开发阶段
-在`train`+`dev`上进行调优；在**devtest**上提交预测结果用于排行榜。
+对于每个测试样本，误差计算公式如下：
 
-**时间窗口**：`2026-05-22 → 2026-07-19`  ·  每天最多5次提交，总共100次。
+\[
+\sqrt{(x_{pred} - x_{gt})^2 + (y_{pred} - y_{gt})^2}
+\]
 
-## 测试阶段
-盲测**test**集合在[Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)上发布；在`test`上提交预测结果用于官方排名。
+最终得分为**所有测试样本的平均误差**。
 
-**时间窗口**：`2026-07-20 → 2026-07-29`  ·  每天最多20次提交，总共100次。
+得分越低表示性能越好。
 
-&gt; 日期设置在`competition.yaml`中（`phases.start` / `phases.end`）— 如果时间表有变化可进行调整。公告：[网站](https://imageeval2026.github.io/)。</div></div>
+---
+
+## 注意事项
+
+- 参赛者无法获取真值标注
+- 评估过程完全自动化
+- 所有阶段使用相同的评估协议</div></div>
 
 </div>
 </body>

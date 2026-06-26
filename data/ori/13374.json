@@ -1,0 +1,323 @@
+{
+  "id": 13374,
+  "title": "Toy_benchmark_v1",
+  "published": true,
+  "created_by": "lanxiao",
+  "owner_display_name": "lanxiao",
+  "created_when": "2026-01-29T20:19:17.964849Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-01-29-1769717957/3a83607f7a38/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260128161328_371_2.png?AWSAccessKeyId=codabench-prod&Signature=OP6TSJo84BAcWpjYj6fK%2Bc1TMrM%3D&Expires=1782475374",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-01-29-1769717957/3a83607f7a38/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260128161328_371_2_icon.png?AWSAccessKeyId=codabench-prod&Signature=25BR4VSdr1eY73GXQrJO5x4XVQE%3D&Expires=1782475374",
+  "terms": "## Participation Terms\n\nThis is a toy benchmark created for academic and educational purposes.\n\n- The data provided in this benchmark is synthetic / mock data.\n- There are no restrictions on model design or implementation.\n- Submissions are evaluated automatically using a predefined metric.\n- This benchmark is not intended for real-world deployment or clinical use.\n\nBy participating, you agree to these terms.",
+  "pages": [
+    {
+      "id": 62236,
+      "title": "Home",
+      "content": "## Toy Benchmark v1\n\nThis benchmark provides a minimal example of a **pairwise point tracking** task implemented using CodaBench.\n\nThe goal of this benchmark is to:\n- Validate a complete benchmark pipeline (data, submission, scoring)\n- Serve as a learning and prototyping platform\n- Provide a clean baseline for future extensions",
+      "index": 0
+    },
+    {
+      "id": 62237,
+      "title": "Data",
+      "content": "## Data Description\n\nThis benchmark uses image-based data for a pairwise tracking task.\n\n### Trian Input Data\nThe public training set contains:\n- Pairs of images (reference and target)\n- A reference point on the reference image\n- The corresponding ground-truth point on the target image\n\nThis data can be used for training or sanity checking.\n\n### Test Input Data\nThe test set contains:\n- Pairs of images (reference and target)\n- A reference point on the reference image\n\nGround-truth target points for the test set are **hidden** and used only for evaluation.",
+      "index": 1
+    },
+    {
+      "id": 62238,
+      "title": "Submission",
+      "content": "## Submission Instructions\n\nParticipants are required to submit a **single CSV file** named **`submission.csv`**.  \nEach submission corresponds to predictions for **all test samples**.\n\n---\n\n## Submission File Format\n\nThe submission file must be a **comma-separated values (CSV)** file with the following header:\n\n    id,x_pred,y_pred\n\n---\n\n## Column Description\n\n- **id**  \n  Unique identifier of the test sample.  \n  This must **exactly match** the sample IDs provided in the test input file.\n\n- **x_pred**  \n  Predicted **x-coordinate** of the target point on the target image.\n\n- **y_pred**  \n  Predicted **y-coordinate** of the target point on the target image.\n\nEach row corresponds to **one test sample**.\n\n---\n\n## Coordinate System\n\n- Coordinates are specified in **pixel space**\n- The origin **(0, 0)** is at the **top-left corner** of the image\n- The **x-axis** increases from **left → right**\n- The **y-axis** increases from **top → bottom**\n- `x_pred` and `y_pred` may be **integers or floating-point numbers**\n\n---\n\n## Example Submission\n\n    id,x_pred,y_pred\n    101,125,85\n    102,70,150\n\n---\n\n## Submission Requirements\n\n- The file must be named exactly **`submission.csv`**\n- The file must contain **all test sample IDs**\n- Each test sample ID must appear **exactly once**\n- **No additional columns** are allowed\n- **Do not include extra files** in your submission package\n- Submissions that do not follow the specified format **may fail during evaluation**\n\n---\n\n## Submission and Evaluation Process\n\n1. Download the test input data (**images + `test.csv`**)\n2. Generate predictions for **each test sample**\n3. Save the results to **`submission.csv`**\n4. Upload **`submission.csv`** as your submission\n5. The system evaluates your submission using **hidden ground-truth target points**\n6. A **score** is computed and displayed on the **leaderboard**\n\n---\n\n## Notes\n\n- Ground-truth target points for the test set are **hidden** and used **only for scoring**",
+      "index": 2
+    },
+    {
+      "id": 62239,
+      "title": "Evaluation",
+      "content": "## Evaluation\n\nSubmissions are evaluated using the **Euclidean distance** between predicted points and ground-truth points on the target images.\n\nFor each test sample, the error is computed as:\n\n\\[\n\\sqrt{(x_{pred} - x_{gt})^2 + (y_{pred} - y_{gt})^2}\n\\]\n\n### Final Score\nThe final score is the **mean error over all test samples**.\n\nLower scores indicate better performance.",
+      "index": 3
+    }
+  ],
+  "phases": [
+    {
+      "id": 21882,
+      "index": 0,
+      "start": "2026-06-23T00:00:00Z",
+      "end": "2026-07-23T22:00:00Z",
+      "name": "Development Phase",
+      "description": "Development phase: tune your models.",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "aa5ec40c-1fb3-4b5c-a019-23a8ad66078e",
+          "order_index": 0,
+          "phase": 21882,
+          "id": 26983,
+          "value": "aa5ec40c-1fb3-4b5c-a019-23a8ad66078e",
+          "key": "aa5ec40c-1fb3-4b5c-a019-23a8ad66078e",
+          "created_when": "2026-01-29T20:07:29.143166Z",
+          "name": "toy_task_v1",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 518633,
+              "created_by": "lanxiao",
+              "owner_display_name": "lanxiao",
+              "created_when": "2026-01-29T19:49:59.493428Z",
+              "name": "Test_Input_Dataset_v1",
+              "type": "input_data",
+              "description": "Test input dataset without ground-truth annotations. Used for final evaluation in the Test Phase.",
+              "is_public": false,
+              "key": "fdce3307-119f-4bc6-a7e9-53cd445e6c2d",
+              "value": "fdce3307-119f-4bc6-a7e9-53cd445e6c2d",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 13374,
+                  "title": "Toy_benchmark_v1"
+                }
+              ],
+              "competition": null,
+              "file_name": "Test_Phase_Input.zip",
+              "file_size": 2805745.0
+            },
+            {
+              "id": 518636,
+              "created_by": "lanxiao",
+              "owner_display_name": "lanxiao",
+              "created_when": "2026-01-29T19:50:40.966319Z",
+              "name": "Test_Reference_Dataset_v1",
+              "type": "reference_data",
+              "description": "Hidden ground-truth annotations for the test set. Used only for scoring in the Test Phase.",
+              "is_public": false,
+              "key": "5ab92f0b-b1f6-4fee-88d6-60b5acc0cb7f",
+              "value": "5ab92f0b-b1f6-4fee-88d6-60b5acc0cb7f",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 13374,
+                  "title": "Toy_benchmark_v1"
+                },
+                {
+                  "pk": 13376,
+                  "title": "Toy_benchmark_v2 (Ingestion-based)"
+                }
+              ],
+              "competition": null,
+              "file_name": "reference.zip",
+              "file_size": 219.0
+            },
+            {
+              "id": 518732,
+              "created_by": "lanxiao",
+              "owner_display_name": "lanxiao",
+              "created_when": "2026-01-29T20:33:41.017219Z",
+              "name": "scoring_v1",
+              "type": "scoring_program",
+              "description": "",
+              "is_public": false,
+              "key": "2145afa8-4b54-47b0-a299-972bfc6a373e",
+              "value": "2145afa8-4b54-47b0-a299-972bfc6a373e",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 13374,
+                  "title": "Toy_benchmark_v1"
+                }
+              ],
+              "competition": null,
+              "file_name": "scoring.zip",
+              "file_size": 782.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": {
+        "id": 518631,
+        "created_by": "lanxiao",
+        "owner_display_name": "lanxiao",
+        "created_when": "2026-01-29T19:48:48.809348Z",
+        "name": "Development_Input_Dataset_v1",
+        "type": "public_data",
+        "description": "Public development dataset with ground-truth annotations. Used for debugging and validation in the Development Phase.",
+        "is_public": false,
+        "key": "2897385d-5276-46e5-8e21-ec966c432d9d",
+        "value": "2897385d-5276-46e5-8e21-ec966c432d9d",
+        "was_created_by_competition": false,
+        "in_use": [
+          {
+            "pk": 13374,
+            "title": "Toy_benchmark_v1"
+          },
+          {
+            "pk": 13376,
+            "title": "Toy_benchmark_v2 (Ingestion-based)"
+          }
+        ],
+        "competition": null,
+        "file_name": "Development_Phase_Input.zip",
+        "file_size": 5611389.0
+      },
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    },
+    {
+      "id": 21883,
+      "index": 1,
+      "start": "2026-08-01T00:00:00Z",
+      "end": "2026-08-06T00:00:00Z",
+      "name": "Testing Phase",
+      "description": "Final Phase: test against unseen data.",
+      "status": "Next",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "aa5ec40c-1fb3-4b5c-a019-23a8ad66078e",
+          "order_index": 0,
+          "phase": 21883,
+          "id": 26983,
+          "value": "aa5ec40c-1fb3-4b5c-a019-23a8ad66078e",
+          "key": "aa5ec40c-1fb3-4b5c-a019-23a8ad66078e",
+          "created_when": "2026-01-29T20:07:29.143166Z",
+          "name": "toy_task_v1",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 518633,
+              "created_by": "lanxiao",
+              "owner_display_name": "lanxiao",
+              "created_when": "2026-01-29T19:49:59.493428Z",
+              "name": "Test_Input_Dataset_v1",
+              "type": "input_data",
+              "description": "Test input dataset without ground-truth annotations. Used for final evaluation in the Test Phase.",
+              "is_public": false,
+              "key": "fdce3307-119f-4bc6-a7e9-53cd445e6c2d",
+              "value": "fdce3307-119f-4bc6-a7e9-53cd445e6c2d",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 13374,
+                  "title": "Toy_benchmark_v1"
+                }
+              ],
+              "competition": null,
+              "file_name": "Test_Phase_Input.zip",
+              "file_size": 2805745.0
+            },
+            {
+              "id": 518636,
+              "created_by": "lanxiao",
+              "owner_display_name": "lanxiao",
+              "created_when": "2026-01-29T19:50:40.966319Z",
+              "name": "Test_Reference_Dataset_v1",
+              "type": "reference_data",
+              "description": "Hidden ground-truth annotations for the test set. Used only for scoring in the Test Phase.",
+              "is_public": false,
+              "key": "5ab92f0b-b1f6-4fee-88d6-60b5acc0cb7f",
+              "value": "5ab92f0b-b1f6-4fee-88d6-60b5acc0cb7f",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 13374,
+                  "title": "Toy_benchmark_v1"
+                },
+                {
+                  "pk": 13376,
+                  "title": "Toy_benchmark_v2 (Ingestion-based)"
+                }
+              ],
+              "competition": null,
+              "file_name": "reference.zip",
+              "file_size": 219.0
+            },
+            {
+              "id": 518732,
+              "created_by": "lanxiao",
+              "owner_display_name": "lanxiao",
+              "created_when": "2026-01-29T20:33:41.017219Z",
+              "name": "scoring_v1",
+              "type": "scoring_program",
+              "description": "",
+              "is_public": false,
+              "key": "2145afa8-4b54-47b0-a299-972bfc6a373e",
+              "value": "2145afa8-4b54-47b0-a299-972bfc6a373e",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 13374,
+                  "title": "Toy_benchmark_v1"
+                }
+              ],
+              "competition": null,
+              "file_name": "scoring.zip",
+              "file_size": 782.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 14743,
+      "primary_index": 0,
+      "title": "Toy Leaderboard",
+      "key": "main",
+      "columns": [
+        {
+          "id": 63777,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "score",
+          "key": "score",
+          "sorting": "asc",
+          "index": 0,
+          "hidden": false,
+          "precision": 4
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Add"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": false,
+  "description": "## Toy Benchmark v1: Pairwise Point Tracking\n\nThis benchmark evaluates a simple **pairwise point tracking** task on image data.\n\n### Task Definition\nFor each test sample, participants are given:\n- A reference image (`ref`)\n- A target image (`tgt`)\n- A reference point `(x_ref, y_ref)` defined on the reference image\n\nThe goal is to **predict the corresponding point location `(x, y)` on the target image**.\n\n### Evaluation\nPredictions are evaluated using the **Euclidean distance** between the predicted point and the ground-truth point on the target image.\nThe final score is the **mean error over all test samples** (lower is better).",
+  "participants_count": 2,
+  "submissions_count": 4,
+  "queue": null,
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": false,
+  "show_detailed_results_in_leaderboard": false,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": false,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "codalab/codalab-legacy:py37",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 13190,
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "forum_enabled": false
+}
