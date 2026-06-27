@@ -5,8 +5,8 @@
   "created_by": "coffey",
   "owner_display_name": "coffey",
   "created_when": "2026-06-20T08:59:42.063619Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-20-1781945982/7743bc90b492/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=zIYNe9XjTTklZtC1cq%2F1VMPQNec%3D&Expires=1782475338",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-20-1781945982/7743bc90b492/logo_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=sdbeyGFKfDy%2BvR37jHS8SjUYCg8%3D&Expires=1782475338",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-20-1781945982/7743bc90b492/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=e6vUAGWEfc0Le7zksj5aWl3n4vI%3D&Expires=1782562023",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-20-1781945982/7743bc90b492/logo_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=rnhG4QVRAN%2FTGvqNdOLnHbg7nt0%3D&Expires=1782562023",
   "terms": "<h1>Rules</h1>\n<ul><li>You may submit up to 20 submissions per day.</li><li>Maximum 400 submissions in total.</li><li>This challenge is governed by the <a href=\"http://www.causality.inf.ethz.ch/GeneralChalearnContestRuleTerms.html\">general ChaLearn contest rules</a>.</li><li>The dataset is for academic research purposes only.</li></ul>\n<h2>Submission Format</h2>\n<ol><li>The result file must be named `answer.csv`.</li><li>Compress `answer.csv` into `answer.zip` and submit via Codabench.</li><li>The `preference` column must contain exactly `a1` or `a2`.</li><li>See the starting kit for an example.</li></ol>\n<p>Official website: <a href=\"https://zeroqiaoba.github.io/MER-Challenge/\">https://zeroqiaoba.github.io/MER-Challenge/</a></p>",
   "pages": [
     {
@@ -185,8 +185,8 @@
   ],
   "registration_auto_approve": false,
   "description": "MER-Prefer is a newly introduced track that predicts which of two emotion descriptions is preferred by human annotators for a given video. The concept of emotion preference was first proposed in EmoPrefer, playing a crucial role in training reward models capable of understanding human emotions. We employ the weighted F1-score (WAF) as the primary metric and accuracy (ACC) as the secondary metric. This is part of the MER2026 Challenge at ACM Multimedia 2026.",
-  "participants_count": 48,
-  "submissions_count": 322,
+  "participants_count": 49,
+  "submissions_count": 376,
   "queue": null,
   "enable_detailed_results": true,
   "show_detailed_results_in_submission_panel": true,
