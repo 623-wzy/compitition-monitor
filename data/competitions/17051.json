@@ -5,8 +5,8 @@
   "description_zh": "我是科技竞赛信息翻译助手。您提供的文本已是英文竞赛内容说明，我将其翻译成简体中文：\n\n---\n\n给定一张图像和3个陈述句（英文），请为每个陈述句标记为真（有图像依据）或假（幻想内容）。恰好有一个陈述句有依据。这是ImageEval 2026 Ayn-VQA共享任务的一部分，该任务聚焦阿拉伯语多模态理解中的文化扎根。数据可在HuggingFace获取（QCRI/AynVQA-ArabicNLP26）。请同时在以下链接注册：https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform",
   "created_by": "hunzed",
   "created_when": "2026-06-10T09:40:02.195020Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084402/15c7bcf31878/logo.png?AWSAccessKeyId=codabench-prod&Signature=jbT%2F%2BTzxqyD%2BVyldFTm%2BpusTW30%3D&Expires=1782562024",
-  "participants_count": 7,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084402/15c7bcf31878/logo.png?AWSAccessKeyId=codabench-prod&Signature=vC0cocen18FKmgsx%2B1ibD3CXv3o%3D&Expires=1782648673",
+  "participants_count": 8,
   "submissions_count": 42,
   "first_phase_start": null,
   "phases": [

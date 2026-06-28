@@ -5,8 +5,8 @@
   "created_by": "avartan_labs",
   "owner_display_name": "avartan_labs",
   "created_when": "2026-06-06T17:41:37.581384Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-06-1780767697/343e119605f8/logo.png?AWSAccessKeyId=codabench-prod&Signature=zL6tPN9oKJ9nYV1H2P0qs5ymZqE%3D&Expires=1782562027",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-06-1780767697/343e119605f8/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=fg9Tbid%2BmMghgMYrBnRuHrMTg%2Fo%3D&Expires=1782562027",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-06-1780767697/343e119605f8/logo.png?AWSAccessKeyId=codabench-prod&Signature=JqBMLu7J2czt49F%2FY8xVD4CK0rI%3D&Expires=1782648675",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-06-1780767697/343e119605f8/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=UjxHvOj5HaUeSiT%2FAD%2B3AdJuvIo%3D&Expires=1782648675",
   "terms": "By participating in this challenge you agree to:\n1. Not share your credentials with anyone\n2. Not attempt to access other teams' files or workspaces\n3. Submit only your own original work\n4. Maximum 3 official submissions per day\n5. Results are final as shown on the leaderboard",
   "pages": [
     {
@@ -191,7 +191,7 @@
   "registration_auto_approve": false,
   "description": "Detect and classify waste objects from real conveyor belt images. \nBuild the best object detection model across 19 waste categories.\nOrganized by Avartan Labs pvt ltd.",
   "participants_count": 10,
-  "submissions_count": 107,
+  "submissions_count": 111,
   "queue": null,
   "enable_detailed_results": true,
   "show_detailed_results_in_submission_panel": true,
