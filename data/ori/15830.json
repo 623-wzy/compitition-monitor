@@ -5,8 +5,8 @@
   "created_by": "psulewski",
   "owner_display_name": "Philip Sulewski",
   "created_when": "2026-04-20T14:42:51.242593Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-20-1776696171/148af8ac1426/logo.png?AWSAccessKeyId=codabench-prod&Signature=hsubY4mx7xeMy2KhG8HhIwn0gt8%3D&Expires=1782648690",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-20-1776696171/148af8ac1426/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=F9Q5rR%2F4hfTemVFz%2Fokke6TMfDk%3D&Expires=1782648690",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-20-1776696171/148af8ac1426/logo.png?AWSAccessKeyId=codabench-prod&Signature=yaNNkwTGgYbBLuHAGTnTbCS%2BmrY%3D&Expires=1782735366",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-20-1776696171/148af8ac1426/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=UObUvQ0gtIkrXRoKuOmRnmM917c%3D&Expires=1782735366",
   "terms": "# Terms and Conditions\n\nBy participating in this challenge you agree to the following:\n\n1. **Academic use only.** The AVS dataset and all derived materials are provided exclusively for academic research and educational purposes within the course \"Neural encoding with deep neural networks\" (SoSe 2026) at Osnabrück University.\n\n2. **No redistribution.** You may not share, publish, or redistribute the dataset, ground truth labels, or any derivatives outside the course.\n\n3. **Honest participation.** Submissions must reflect your own work. Manual inspection of the ground truth or leaderboard manipulation is not permitted.\n\n4. **Attribution.** Any publications or reports arising from work developed in this challenge must appropriately cite the AVS dataset and acknowledge the course. \n\nSulewski, P., Amme, C., Hebart, M., König, P., & Kietzmann, T. (2025). Why we linger: Memory encoding, rather than visual processing demand, drives fixation timing on natural scenes-evidence from a large-scale MEG dataset.",
   "pages": [
     {

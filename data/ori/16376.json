@@ -5,8 +5,8 @@
   "created_by": "holflee",
   "owner_display_name": "holflee",
   "created_when": "2026-05-16T12:42:20.469268Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778935340/0aeca58b7892/logo.png?AWSAccessKeyId=codabench-prod&Signature=8xYGHKZun%2FlnWhseEX%2BnJPBaOM0%3D&Expires=1782648683",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778935340/0aeca58b7892/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=fcYR8DDOlnfh3yq3yERlt61lD5g%3D&Expires=1782648683",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778935340/0aeca58b7892/logo.png?AWSAccessKeyId=codabench-prod&Signature=PFTB9H9gZG4Gg0OVlZbzDil9nLg%3D&Expires=1782735361",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778935340/0aeca58b7892/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=HfTihlpT0%2BmUeXnQnsFjeHBXJ9Q%3D&Expires=1782735361",
   "terms": "<div align=\"center\">\n<h1><strong>The 2nd Workshop on Low-level Vision Frontiers (LoViF) @ ECCV 2026</strong></h1>\n</div>\n<h2>&nbsp;</h2>\n<h1>Official Terms and Conditions</h1>\n\n<p align=\"justify\">These are the official rules that govern how the <strong>LoViF Challenge @ ECCV 2026</strong> will operate. By registering, you agree to these terms. \"We\" refers to the LoViF organizers; \"you\" refers to the participant.</p>\n\n<h2>1. Contest Description</h2>\n<p align=\"justify\">This is a skill-based scientific contest. The goal is to advance the state-of-the-art in low-level vision using <strong>Generative AI, Preference Optimization, and Agentic Systems</strong>. Winners are determined by the performance of their methods on the test data, the reproducibility of their results, and the quality of their technical reports.</p>\n\n<h2>2. Eligibility</h2>\n<ul>\n  <li><strong>General:</strong> Open to individuals and teams worldwide who accept these rules.</li>\n  <li><strong>Conflicts of Interest:</strong> Organizers of the LoViF challenge and their immediate relatives are ineligible to win prizes.</li>\n  <li><strong>Industry Participation:</strong> Industry and research labs are welcome. However, to be officially ranked and eligible for awards, <strong>reproducibility is mandatory</strong>. Industry-affiliated winners will receive certificates but may be ineligible for certain sponsored cash prizes depending on sponsor policies.</li>\n</ul>\n\n<h2>3. Reproducibility and Code Release</h2>\n<p align=\"justify\">Academic integrity is paramount. To ensure the scientific value of the challenge:</p>\n<ul>\n  <li><strong>Requirement:</strong> To be officially ranked on the final leaderboard, participants <strong>must</strong> submit their validation code or executables (e.g., Docker) for verification.</li>\n  <li><strong>Top-3 Winners:</strong> The top three teams are encouraged to publicly release their code under an OSI-approved license (e.g., MIT, Apache 2.0) for at least one year.</li>\n</ul>\n\n<h2>4. Data Usage Policy</h2>\n<ul>\n  <li><strong>Purpose:</strong> Datasets provided by LoViF are for <strong>non-commercial research and educational use only</strong>.</li>\n  <li><strong>Copyright:</strong> The copyright of the images remains with their respective owners. You agree not to redistribute the data without prior written consent.</li>\n\n</ul>\n\n<h2>5. Intellectual Property</h2>\n<p align=\"justify\">We do not claim ownership of your entry. However, by submitting, you grant the organizers an irrevocable, worldwide, royalty-free license to:</p>\n<ol type=\"1\">\n  <li>Analyze your results and code for competition analysis purposes.</li>\n  <li>Feature your method and results in the challenge report and promotional media (e.g., workshop website, CVPR presentations).</li>\n</ol>\n\n<h2>6. Judging and Awards</h2>\n<p align=\"justify\">A panel of experts will review the entries. Rankings are primarily based on the quantitative metrics defined in the Evaluation tab. The judges' decisions are final. In the event of a tie, the submission with the earlier timestamp on the server will prevail. Prizes will be delivered within three months after the workshop.</p>\n\n<h2>7. Publication</h2>\n<ul>\n  <li><strong>Challenge Report:</strong> Top-ranked teams and those with novel methods will be invited as co-authors of the LoViF Challenge Report, to be published in the <strong>ECCV 2026 Workshop Proceedings</strong>.</li>\n  <li><strong>Optional Workshop Papers:</strong> All participants are encouraged to submit a full paper to the LoViF workshop. These papers will undergo a standard double-blind peer-review process.</li>\n</ul>\n\n<p>&nbsp;</p>\n<hr />\n<p align=\"justify\"><span>The terms and conditions are inspired by the NTIRE and AIM challenge series. For updates, please visit: <a href=\"https://lovif-eccv2026-workshop.github.io/\">https://lovif-eccv2026-workshop.github.io/</a></span></p>",
   "pages": [
     {
@@ -115,6 +115,87 @@
       "is_final_phase": true,
       "used_submissions_per_day": 0,
       "used_submissions_per_person": 0
+    },
+    {
+      "id": 28834,
+      "index": 1,
+      "start": "2026-07-01T08:00:00Z",
+      "end": "2026-07-08T16:00:00Z",
+      "name": "Testing",
+      "description": "",
+      "status": "Next",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "b09235a8-c5fe-4610-9d96-8ffcde9c7261",
+          "order_index": 0,
+          "phase": 28834,
+          "id": 34532,
+          "value": "b09235a8-c5fe-4610-9d96-8ffcde9c7261",
+          "key": "b09235a8-c5fe-4610-9d96-8ffcde9c7261",
+          "created_when": "2026-06-28T14:22:49.638874Z",
+          "name": "all-in-one-testing",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 763820,
+              "created_by": "holflee",
+              "owner_display_name": "holflee",
+              "created_when": "2026-05-16T13:18:53.182405Z",
+              "name": "all-in-one-score",
+              "type": "scoring_program",
+              "description": "",
+              "is_public": false,
+              "key": "d5dc55fa-5a13-442d-874c-8472b0a61e53",
+              "value": "d5dc55fa-5a13-442d-874c-8472b0a61e53",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 16376,
+                  "title": "LoViF 2026 The Second Challenge on Real-World All-in-One Image Restoration @ ECCV 2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "scoring_program_pyiqa.zip",
+              "file_size": 4655.0
+            },
+            {
+              "id": 855512,
+              "created_by": "holflee",
+              "owner_display_name": "holflee",
+              "created_when": "2026-06-28T14:21:24.275677Z",
+              "name": "all-in-one-testingGT",
+              "type": "reference_data",
+              "description": "",
+              "is_public": false,
+              "key": "b0f52492-811b-465a-9aa2-bcc90f0ba05b",
+              "value": "b0f52492-811b-465a-9aa2-bcc90f0ba05b",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 16376,
+                  "title": "LoViF 2026 The Second Challenge on Real-World All-in-One Image Restoration @ ECCV 2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "TestGT.zip",
+              "file_size": 29956597.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 35,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
     }
   ],
   "leaderboards": [
@@ -221,7 +302,7 @@
   "registration_auto_approve": true,
   "description": "Our goal is to introduce a new benchmark for the development of real-world all-in-one image restoration algorithms.",
   "participants_count": 137,
-  "submissions_count": 1120,
+  "submissions_count": 1153,
   "queue": null,
   "enable_detailed_results": false,
   "show_detailed_results_in_submission_panel": true,

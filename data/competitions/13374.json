@@ -5,7 +5,7 @@
   "description_zh": "## 玩具基准 v1：成对点追踪\n\n该基准评估图像数据上的简单**成对点追踪**任务。\n\n### 任务定义\n对于每个测试样本，参与者获得：\n- 参考图像（`ref`）\n- 目标图像（`tgt`）\n- 在参考图像上定义的参考点 `(x_ref, y_ref)`\n\n目标是**预测目标图像上对应的点位置 `(x, y)`**。\n\n### 评估\n使用目标图像上预测点与真值点之间的**欧氏距离**评估预测结果。\n最终分数是**所有测试样本上的平均误差**（分数越低越好）。",
   "created_by": "lanxiao",
   "created_when": "2026-01-29T20:19:17.964849Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-01-29-1769717957/3a83607f7a38/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260128161328_371_2.png?AWSAccessKeyId=codabench-prod&Signature=cEye7R1HJ3dFEY1RRHtYeFSNU%2BQ%3D&Expires=1782648725",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-01-29-1769717957/3a83607f7a38/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260128161328_371_2.png?AWSAccessKeyId=codabench-prod&Signature=GhfZnTSB3ppV51nMsrBvGa8MN8Y%3D&Expires=1782735395",
   "participants_count": 2,
   "submissions_count": 4,
   "first_phase_start": null,

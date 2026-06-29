@@ -5,17 +5,24 @@
   "description_zh": "从真实传送带图像中检测和分类废弃物体。\n在19种废物类别中构建最佳物体检测模型。\n由Avartan Labs组织。",
   "created_by": "avartan_labs",
   "created_when": "2026-06-06T17:41:37.581384Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-06-1780767697/343e119605f8/logo.png?AWSAccessKeyId=codabench-prod&Signature=JqBMLu7J2czt49F%2FY8xVD4CK0rI%3D&Expires=1782648675",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-06-1780767697/343e119605f8/logo.png?AWSAccessKeyId=codabench-prod&Signature=HVD3mNj0WL4pypuPKO665Dfj%2B44%3D&Expires=1782735357",
   "participants_count": 10,
-  "submissions_count": 111,
+  "submissions_count": 116,
   "first_phase_start": null,
   "phases": [
     {
       "id": 28389,
       "name": "submission",
       "start": "2026-06-20T04:00:00Z",
-      "end": "2026-06-30T21:00:00Z",
+      "end": "2026-06-29T07:25:00Z",
       "max_submissions_per_day": 10
+    },
+    {
+      "id": 28849,
+      "name": "Waste Sorting Phase 1 - Final Test",
+      "start": "2026-06-29T07:30:00Z",
+      "end": "2026-06-30T18:30:00Z",
+      "max_submissions_per_day": 5
     }
   ],
   "pages": [

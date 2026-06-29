@@ -5,9 +5,9 @@
   "description_zh": "评估事件流的通用动态场景理解能力，涵盖详细理解、因果推理、动作识别、手势识别和事件光学字符识别。",
   "created_by": "liusy",
   "created_when": "2026-05-01T07:20:57.568282Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-01-1777620057/31dabf650506/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=oS0jdIV%2FWC%2FngIx5w4v9Exqy%2Fsg%3D&Expires=1782648689",
-  "participants_count": 83,
-  "submissions_count": 444,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-01-1777620057/31dabf650506/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=2e5SMAQzJsr5pdpwCBzxAfN%2Bvdo%3D&Expires=1782735366",
+  "participants_count": 85,
+  "submissions_count": 466,
   "first_phase_start": null,
   "phases": [
     {

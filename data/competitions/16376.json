@@ -5,9 +5,9 @@
   "description_zh": "我们的目标是为真实场景的一体化图像复原算法的开发引入一个新的基准。",
   "created_by": "holflee",
   "created_when": "2026-05-16T12:42:20.469268Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778935340/0aeca58b7892/logo.png?AWSAccessKeyId=codabench-prod&Signature=8xYGHKZun%2FlnWhseEX%2BnJPBaOM0%3D&Expires=1782648683",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-16-1778935340/0aeca58b7892/logo.png?AWSAccessKeyId=codabench-prod&Signature=PFTB9H9gZG4Gg0OVlZbzDil9nLg%3D&Expires=1782735361",
   "participants_count": 137,
-  "submissions_count": 1120,
+  "submissions_count": 1153,
   "first_phase_start": null,
   "phases": [
     {
@@ -16,6 +16,13 @@
       "start": "2026-05-20T00:00:00Z",
       "end": "2026-07-01T00:00:00Z",
       "max_submissions_per_day": 10
+    },
+    {
+      "id": 28834,
+      "name": "Testing",
+      "start": "2026-07-01T08:00:00Z",
+      "end": "2026-07-08T16:00:00Z",
+      "max_submissions_per_day": 5
     }
   ],
   "pages": [

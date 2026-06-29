@@ -5,8 +5,8 @@
   "created_by": "avartan_labs",
   "owner_display_name": "avartan_labs",
   "created_when": "2026-06-06T17:41:37.581384Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-06-1780767697/343e119605f8/logo.png?AWSAccessKeyId=codabench-prod&Signature=JqBMLu7J2czt49F%2FY8xVD4CK0rI%3D&Expires=1782648675",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-06-1780767697/343e119605f8/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=UjxHvOj5HaUeSiT%2FAD%2B3AdJuvIo%3D&Expires=1782648675",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-06-1780767697/343e119605f8/logo.png?AWSAccessKeyId=codabench-prod&Signature=HVD3mNj0WL4pypuPKO665Dfj%2B44%3D&Expires=1782735357",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-06-1780767697/343e119605f8/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=8zzGJYSgMRqV3M88N7bpRCoFoi8%3D&Expires=1782735357",
   "terms": "By participating in this challenge you agree to:\n1. Not share your credentials with anyone\n2. Not attempt to access other teams' files or workspaces\n3. Submit only your own original work\n4. Maximum 3 official submissions per day\n5. Results are final as shown on the leaderboard",
   "pages": [
     {
@@ -21,10 +21,10 @@
       "id": 28389,
       "index": 0,
       "start": "2026-06-20T04:00:00Z",
-      "end": "2026-06-30T21:00:00Z",
+      "end": "2026-06-29T07:25:00Z",
       "name": "submission",
       "description": "Submit your predictions.json file to get your score. Maximum 10 submissions per day.\n\nTo submit:\n1. Generate predictions.json on the workstation\n2. Run: python3 /home/team_X/submit.py\n3. Check leaderboard for your score (takes 5-10 minutes)",
-      "status": "Current",
+      "status": "Previous",
       "execution_time_limit": 1200,
       "tasks": [
         {
@@ -118,6 +118,108 @@
       "is_final_phase": true,
       "used_submissions_per_day": 0,
       "used_submissions_per_person": 0
+    },
+    {
+      "id": 28849,
+      "index": 1,
+      "start": "2026-06-29T07:30:00Z",
+      "end": "2026-06-30T18:30:00Z",
+      "name": "Waste Sorting Phase 1 - Final Test",
+      "description": "Final test phase for Phase 1 of the Waste Sorting Detection Challenge. Submit your model predictions on the test set. Submissions will be evaluated against held-out ground truth using mAP50.",
+      "status": "Current",
+      "execution_time_limit": 1200,
+      "tasks": [
+        {
+          "task": "28423b77-ad5a-4118-bd9e-daf9a4a577e1",
+          "order_index": 0,
+          "phase": 28849,
+          "id": 34546,
+          "value": "28423b77-ad5a-4118-bd9e-daf9a4a577e1",
+          "key": "28423b77-ad5a-4118-bd9e-daf9a4a577e1",
+          "created_when": "2026-06-29T07:09:19.248939Z",
+          "name": "waste_sorting_phase_1_evaluation",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 818016,
+              "created_by": "avartan_labs",
+              "owner_display_name": "avartan_labs",
+              "created_when": "2026-06-06T17:35:30.717310Z",
+              "name": "scoring",
+              "type": "scoring_program",
+              "description": "eval",
+              "is_public": false,
+              "key": "55dd83a5-78e1-44e7-acc7-fc2d0e386a6e",
+              "value": "55dd83a5-78e1-44e7-acc7-fc2d0e386a6e",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 16986,
+                  "title": "Waste Sorting Detection Challenge"
+                }
+              ],
+              "competition": null,
+              "file_name": "scoring_program_v2.zip",
+              "file_size": 3156.0
+            },
+            {
+              "id": 856380,
+              "created_by": "avartan_labs",
+              "owner_display_name": "avartan_labs",
+              "created_when": "2026-06-29T07:06:16.388425Z",
+              "name": "test_reference",
+              "type": "reference_data",
+              "description": "ground_truth",
+              "is_public": false,
+              "key": "c30f1f5d-a057-44b6-a68e-ab40bdd2f121",
+              "value": "c30f1f5d-a057-44b6-a68e-ab40bdd2f121",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 16986,
+                  "title": "Waste Sorting Detection Challenge"
+                }
+              ],
+              "competition": null,
+              "file_name": "test_reference.zip",
+              "file_size": 545867.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": {
+        "id": 819123,
+        "created_by": "avartan_labs",
+        "owner_display_name": "avartan_labs",
+        "created_when": "2026-06-07T11:39:51.016358Z",
+        "name": "sample_dataset",
+        "type": "public_data",
+        "description": "",
+        "is_public": false,
+        "key": "dd12c0ea-bfa8-41f9-a8a1-a2a1acb3ede1",
+        "value": "dd12c0ea-bfa8-41f9-a8a1-a2a1acb3ede1",
+        "was_created_by_competition": false,
+        "in_use": [
+          {
+            "pk": 16986,
+            "title": "Waste Sorting Detection Challenge"
+          }
+        ],
+        "competition": null,
+        "file_name": "sample_dataset.zip",
+        "file_size": 18963566.0
+      },
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
     }
   ],
   "leaderboards": [
@@ -191,7 +293,7 @@
   "registration_auto_approve": false,
   "description": "Detect and classify waste objects from real conveyor belt images. \nBuild the best object detection model across 19 waste categories.\nOrganized by Avartan Labs pvt ltd.",
   "participants_count": 10,
-  "submissions_count": 111,
+  "submissions_count": 116,
   "queue": null,
   "enable_detailed_results": true,
   "show_detailed_results_in_submission_panel": true,
