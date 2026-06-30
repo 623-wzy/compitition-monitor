@@ -5,8 +5,8 @@
   "created_by": "neuromm",
   "owner_display_name": "neuromm",
   "created_when": "2026-06-17T07:22:35.874297Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-17-1781680955/ef2da8b209ca/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=Fuxe2Df2TkoqwMaYnBFXC4nuVGA%3D&Expires=1782735352",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-17-1781680955/ef2da8b209ca/logo_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=FttYTGOomQkyfhtyufLNrSTlmlw%3D&Expires=1782735352",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-17-1781680955/ef2da8b209ca/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=oA7Fbb6X4zHMreiCWKCilcBosvE%3D&Expires=1782822099",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-17-1781680955/ef2da8b209ca/logo_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=saAqxsSFvhXyTG5bFNMWV89HbTE%3D&Expires=1782822099",
   "terms": "# Terms and Conditions\n\nBy participating in the NeuroMM-2026 Challenge (Track 3: NMM-Source-IED) you agree to:\n\n- Use the provided data **only** for research and participation in this\n  challenge. Redistribution of the data, or any commercial / unauthorized use,\n  is prohibited.\n- Make predictions with automated machine-learning methods. Manual labeling of\n  samples by human inspection of the physiological signals is **not** an\n  acceptable methodology and violates the spirit of the challenge.\n- Not attempt to de-anonymize samples, identify which candidate ids are the\n  scored official samples, or otherwise reverse-engineer the hidden labels.\n- Make a reasonable number of submissions (a daily cap is enforced). Abusing\n  the evaluation service to probe hidden labels is prohibited.\n\nThe organizers may update these rules and the competition schedule when\nnecessary, and reserve the right to disqualify submissions that violate these\nterms.\n\nThe dataset is provided under the NeuroMM-2026 data usage policy\n(academic research and challenge participation only).",
   "pages": [
     {
@@ -36,7 +36,7 @@
       "end": "2026-06-30T00:00:00Z",
       "name": "Dev Phase",
       "description": "",
-      "status": "Current",
+      "status": "Previous",
       "execution_time_limit": 600,
       "tasks": [
         {

@@ -1,0 +1,389 @@
+{
+  "id": 17301,
+  "title": "MVAA 2026 Final Test: Docker Evaluation Portal",
+  "published": true,
+  "created_by": "db0725",
+  "owner_display_name": "MVAA_baseline",
+  "created_when": "2026-06-29T13:28:58.227688Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-29-1782739738/5879f76f7bc9/icon.png?AWSAccessKeyId=codabench-prod&Signature=tc%2FUdhaHmMojzv%2Ba9syfTBCJ8CA%3D&Expires=1782822103",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-29-1782739738/5879f76f7bc9/icon_icon.png?AWSAccessKeyId=codabench-prod&Signature=IITYl%2FRid6sQVkOEjrNcCPdTIms%3D&Expires=1782822103",
+  "terms": "# MVAA 2026 References\n\n1. Bai J, et al. Beyond Benchmarks of IUGC: Rethinking Requirements of Deep Learning Method for Intrapartum Ultrasound Biometry from Fetal Ultrasound Videos. Medical Image Analysis, 2026.\n2. Bai J, et al. IUGC: A Benchmark of Landmark Detection in End-to-End Intrapartum Ultrasound Biometry. Medical Image Analysis, 2026: 103960.\n3. Bai J, Zhou Z, Ou Z, et al. PSFHS challenge report: Pubic symphysis and fetal head segmentation from intrapartum ultrasound images. Medical Image Analysis, 2025, 99:103353.\n4. Chen Z, Ou Z, Lu Y, et al. Direction-guided and multi-scale feature screening for fetal head–pubic symphysis segmentation and angle of progression calculation. Expert Systems with Applications, 2024, 245:123096.\n5. Lu Y, Zhi D, Zhou M, et al. Multitask deep neural network for the fully automatic measurement of the angle of progression. Computational and Mathematical Methods in Medicine, 2022.\n6. Lu Y, Zhou M, Zhi D, et al. The JNU-IFM dataset for segmenting pubic symphysis-fetal head. Data in Brief, 2022, 41:107904.\n7. Bai J, Sun Z, Yu S, et al. A framework for computing angle of progression from transperineal ultrasound images for evaluating fetal head descent using a novel double branch network. Frontiers in Physiology, 2022, 13:2565.\n8. Zhou Z, Lu Y, Bai J, et al. Segment Anything Model for fetal head–pubic symphysis segmentation in intrapartum ultrasound image analysis. Expert Systems with Applications, 2024:125699.\n9. Jiang J, Wang H, Bai J, et al. Intrapartum Ultrasound Image Segmentation of Pubic Symphysis and Fetal Head Using Dual Student-Teacher Framework with CNN-ViT Collaborative Learning. MICCAI. Springer, 2024:448–458.\n10. Ou Z, Bai J, Chen Z, et al. RTSeg-Net: a lightweight network for real-time segmentation of fetal head and pubic symphysis from intrapartum ultrasound images. Computers in Biology and Medicine, 2024, 175:108501.\n11. Qiu R, Zhou M, Bai J, et al. PSFHSP-Net: an efficient lightweight network for identifying pubic symphysis-fetal head standard plane from intrapartum ultrasound images. Medical & Biological Engineering & Computing, 2024.\n12. Chen G, Bai J, Ou Z, et al. PSFHS: intrapartum ultrasound image dataset for AI-based segmentation of pubic symphysis and fetal head. Scientific Data, 2024, 11(1):436.\n13. Chen Z, Lu Y, Long S, et al. Fetal head and pubic symphysis segmentation in intrapartum ultrasound image using a dual-path boundary-guided residual network. IEEE Journal of Biomedical and Health Informatics, 2024.\n14. Bai J, Lekadir K, Ni D, et al. Intrapartum Ultrasound Grand Challenge 2024. MICCAI 2024. Zenodo, 2024.\n15. Bai J, Ou Z, Lu Y, et al. Pubic Symphysis-Fetal Head Segmentation from Transperineal Ultrasound Images. MICCAI 2023. Zenodo, 2023.\n16. Bai J, Khobo I, Slimani S, et al. Landmark Detection Challenge for Intrapartum Ultrasound Measurement Meeting the Actual Clinical Assessment of Labor Progress. MICCAI 2025. Zenodo, 2025.\n17. Bai J, Yang Z, Hasan K, et al. Fetal Ultrasound Grand Challenge: Semi-Supervised Cervical Segmentation (FUGC25). ISBI 2025. Zenodo, 2024.\n18. Chen S, Wang H, Long S, Bai J, Jiang J. Ultrasound Video Segmentation of Pubic Symphysis and Fetal Head for Angle of Progression Measurement. ACM Multimedia Asia, 2024.\n19. Gan J, Liang Z, Fan J, et al. Accurate Fetal Head Descent Assessment During Labor Using Video Swin Transformer and Wavelet-Based Multitask Learning for 2024 MICCAI Challenge IUGC. Intrapartum Ultrasound. Springer, 2024:21–31.\n20. Gan J, Liang Z, Fan J, et al. Sequential Spatial-Temporal Network for Interpretable Automatic Ultrasonic Assessment of Fetal Head During Labor. ISBI 2025. IEEE, 2025.\n21. Chen Z, Ou Z, Lu Y, Campello VM, Bai J, Lekadir K. Uncertainty fetal head and pubic symphysis segmentation with enhanced multi-scale features and sparse visual graph attention. Expert Systems with Applications, 2026, 296:128998.\n22. Bai J, Kang X, Wang W, et al. A multimodal model in the prediction of the delivery mode using data from a digital twin-empowered labor monitoring system. Digital Health, 2024, 10:20552076241304934.\n23. Ramirez Zegarra R, Lizarraga Cepeda E, Ghi T. Intrapartum ultrasound. Best Practice & Research Clinical Obstetrics & Gynaecology, 2025, 101:102617.\n24. Zhou M, Yuan C, Chen Z, et al. Automatic angle of progress measurement of intrapartum transperineal ultrasound image with deep learning. MICCAI. Springer, 2020:406–414.\n25. Sherer DM. Intrapartum ultrasound. Ultrasound in Obstetrics & Gynecology, 2007, 30:123–139.\n26. Deng, Bo, et al. \"Baseline Method of the Foundation Model Challenge for Ultrasound Image Analysis.\" arXiv preprint arXiv:2602.01055 (2026).\n27. Luo Y, Long S, Wang H, et al. DSTCS: Dual-Student Teacher Framework with Segment Anything Model for Semi-Supervised Pubic Symphysis Fetal Head Segmentation[J]. arXiv preprint arXiv:2601.19446, 2026.\n28. Bai J, Tang Y, Zhou Z, et al. FUGC: Benchmarking Semi-Supervised Learning Methods for Cervical Segmentation[J]. arXiv preprint arXiv:2601.15572, 2026.\n29. Lin Z, Han L, Wang X, et al. Diagnostic Performance of Universal-Learning Ultrasound AI Across Multiple Organs and Tasks: the UUSIC25 Challenge[J]. arXiv preprint arXiv:2512.17279, 2025.\n30. Luo Y, Long S, Wang H, et al. Edge Awareness Network with Large Kernel Attention for Small Target Segmentation from Intrapartum Ultrasound Images[C]//2025 IEEE International Conference on Bioinformatics and Biomedicine (BIBM). IEEE, 2025: 5876-5883.\n31. Wiesenfarth, M., Reinke, A., Landman, B.A. et al. Methods and open-source toolkit for analyzing and visualizing challenge results. Sci Rep 11, 2369 (2021).\n32. Ghi, Tullio, et al. \"ISUOG Practice Guidelines: intrapartum ultrasound.\" Ultrasound Obstet Gynecol 52.1 (2018): 128-139.\n33. Salomon, L. J., et al. \"ISUOG Practice Guidelines: ultrasound assessment of fetal biometry and growth.\" Ultrasound Obstet Gynecol 53.6 (2019): 715-723.\n34. Coutinho, Conrado Milani, et al. \"ISUOG Practice Guidelines: role of ultrasound in the prediction of spontaneous preterm birth.\" Ultrasound Obstet Gynecol 60.3 (2022): 435-456.\n35. Carvalho, J. S., et al. \"ISUOG Practice Guidelines (updated): fetal cardiac screening.\" Ultrasound Obstet Gynecol 61.6 (2023): 788-803.",
+  "pages": [
+    {
+      "id": 82383,
+      "title": "Important Notice",
+      "content": "﻿# Important Notice: Final Test Docker Evaluation\n\nThe MVAA 2026 challenge has entered the final hidden-test Docker evaluation stage.\n\nParticipants must submit a Docker image reference through this CodaBench portal. Direct upload of prediction masks is **not** used for the official final ranking.\n\n## Required Submission\n\nEach team should submit a `submission.zip` containing a root-level `submission.json` file:\n\n```json\n{\n  \"image\": \"registry.example.com/mvaa/team001@sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n  \"timeout_seconds\": 21600\n}\n```\n\nThe Docker image must contain the complete inference environment, including model weights, code, runtime dependencies, and an automatic entrypoint.\n\n## Hidden Test Evaluation\n\nAfter a descriptor is accepted, a private organizer-side CodaBench worker forwards it to the MVAA GPU runner. The runner pulls the Docker image, runs it on the hidden test inputs, computes official DSC/HD/ASD metrics using the private reference annotations, and returns the scores to this CodaBench leaderboard.\n\nThe hidden test images and labels are not released to participants. Labels are never mounted into participant containers.\n\n## Hardware Compatibility\n\nThe final evaluation server uses an NVIDIA Tesla V100 32GB GPU. Submitted images must be compatible with compute capability `sm_70`.\n\n## Deadline\n\nThe final Docker submission deadline is **August 01, 2026, 23:59 (UTC+8)**.",
+      "index": 0
+    },
+    {
+      "id": 82384,
+      "title": "Overview",
+      "content": "﻿<div align=\"center\">\n\n# MVAA 2026 Final Test\n\n## Docker-Based Hidden Test Evaluation for Mitral Valve Anatomy Analysis\n\n</div>\n\nMitral valve assessment plays a central role in the diagnosis, treatment planning, and intraoperative guidance of structural heart disease. The MVAA challenge evaluates automated methods for mitral valve anatomy analysis across three imaging modalities: cardiac CT, 3D transesophageal echocardiography (3D TEE), and surgical video frames.\n\nThis CodaBench portal is dedicated to the **final hidden-test stage**. Participants submit Docker images containing their complete inference pipelines. The organizers then run the submitted images on the hidden test set and compute the official metrics using the private reference annotations.\n\n## Final Test Objective\n\nThe final test phase evaluates whether submitted algorithms can generalize to unseen data under a standardized computing environment. The evaluation covers:\n\n- Task 1: cardiac CT segmentation;\n- Task 2: 3D TEE multi-class segmentation;\n- Task 3: surgical video frame segmentation.\n\n## Submission Mode\n\nFor this stage, participants submit a lightweight `submission.zip` containing only a Docker image reference. The Docker image itself must be hosted in an accessible registry and must include all inference code, model weights, and dependencies.\n\nPlease read the **Final Docker Submission** page before submitting.\n\n## Resources\n\n- Challenge website: https://mwm2026.github.io/mvaa\n- Baseline code: https://github.com/db0725/MVAA\n- CodaBench platform: https://www.codabench.org/\n- Contact: dbd2002@foxmail.com",
+      "index": 1
+    },
+    {
+      "id": 82385,
+      "title": "Final Docker Submission",
+      "content": "# Final Docker Submission\n\nThis page describes the required Docker submission format for the MVAA 2026 hidden test phase.\n\nDuring the final test phase, participants do **not** upload prediction masks directly. Instead, each team submits a lightweight `submission.zip` containing a Docker image reference. A private organizer-side CodaBench worker will forward the descriptor to the MVAA GPU runner. The runner pulls the image, runs it on the hidden test set, computes official metrics, and returns the scores to CodaBench.\n\n## 1. What to Submit to CodaBench\n\nSubmit a single `submission.zip` file with the following structure:\n\n```text\nsubmission.zip\n`-- submission.json\n```\n\nThe root-level `submission.json` must contain:\n\n```json\n{\n  \"image\": \"registry.example.com/mvaa/team001:final\",\n  \"timeout_seconds\": 21600\n}\n```\n\nFields:\n\n- `image`: Docker/OCI image reference containing your inference code, model weights, dependencies, and default entrypoint.\n- `timeout_seconds`: Optional runtime limit requested by the participant. The default limit is 21600 seconds (6 hours). The hard maximum is 43200 seconds (12 hours).\n\n\nPrivacy note: the submitted Docker image reference is used only for organizer-side evaluation and is not shown in the public leaderboard or detailed result page. Do not put registry passwords or access tokens in `submission.json`. If your image is hosted in a private registry, please make sure the organizers have pull access before submission.\n\nFor reproducibility, a digest-pinned image is recommended:\n\n```json\n{\n  \"image\": \"registry.example.com/mvaa/team001@sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n}\n```\n\n\n## 2. Reference Baseline Docker Image\n\nThe organizers provide a public reference baseline Docker image so participants can inspect the expected Docker-based inference style:\n\n```bash\ndocker pull db0725/mvaa-baseline-infer:final-20260626\n```\n\nThis image is provided only as a reference example. Participants may build their own images using any compatible environment, as long as the final image follows the input/output contract described below.\n\n## 3. Docker Image Requirements\n\nYour Docker image must include:\n\n- all inference code;\n- all model weights and checkpoints;\n- all Python/system dependencies required at runtime;\n- a default `ENTRYPOINT` or `CMD` that starts inference automatically.\n\nYour Docker image must **not** require:\n\n- internet access at runtime;\n- interactive terminal input;\n- downloading extra model weights during evaluation;\n- access to hidden labels or organizer-only files.\n\nThe submitted image must be a Linux `amd64` Docker/OCI image.\n\n## 4. Organizer Runtime Contract\n\nThe organizer runner will execute the submitted image with the following input/output contract. The exact Docker flags may vary by organizer-side infrastructure:\n\n```bash\ndocker run --rm --gpus all \\\n  --network none \\\n  --memory 28g \\\n  --cpus 14 \\\n  --pids-limit 2048 \\\n  --shm-size 8g \\\n  --cap-drop ALL \\\n  --security-opt no-new-privileges \\\n  -v /hidden/test_data:/input:ro \\\n  -v /job/output:/output:rw \\\n  -v /job/work:/work:rw \\\n  -e MVAA_INPUT_DIR=/input \\\n  -e MVAA_OUTPUT_DIR=/output \\\n  -w /work \\\n  YOUR_IMAGE\n```\n\nYour container must:\n\n- read test inputs from `/input`;\n- write predictions to `/output`;\n- exit with code `0` on success.\n\n## 5. Expected Output Layout\n\nAfter inference, `/output` should contain:\n\n```text\n/output/\n|-- t1_ct/\n|   |-- task1_predictions.json\n|   |-- case001_pred.nii.gz\n|   `-- ...\n|-- t2_tee/\n|   |-- task2_predictions.json\n|   |-- case001_pred.nii.gz\n|   `-- ...\n`-- t3_vid/\n    |-- task3_predictions.json\n    |-- REC_xxx/frame001_pred.png\n    `-- ...\n```\n\nTask 1 prediction JSON:\n\n```json\n{\n  \"cases\": [\n    {\n      \"case_id\": \"case001\",\n      \"segmentation\": \"case001_pred.nii.gz\"\n    }\n  ]\n}\n```\n\nTask 2 prediction JSON:\n\n```json\n{\n  \"cases\": [\n    {\n      \"case_id\": \"case001\",\n      \"segmentation\": \"case001_pred.nii.gz\"\n    }\n  ]\n}\n```\n\nTask 3 prediction JSON:\n\n```json\n{\n  \"cases\": [\n    {\n      \"case_id\": \"REC_xxx_000001\",\n      \"segmentation\": \"REC_xxx/REC_xxx_000001_pred.png\"\n    }\n  ]\n}\n```\n\nThe `segmentation` field must be a relative path under the corresponding task output folder. Absolute paths and path traversal such as `../` are not allowed.\n\n## 6. Mask Format\n\nTask 1:\n\n- File format: `.nii.gz`\n- Labels: `0` for background, `1` for target foreground.\n\nTask 2:\n\n- File format: `.nii.gz`\n- Labels: `0` for background, `1` and `2` for the two target classes.\n\nTask 3:\n\n- Recommended file format: `.png`\n- Labels: `0` for background, any positive value for foreground. Binary masks using `255` for foreground are recommended.\n\n## 7. GPU Compatibility\n\nThe official final-test server uses:\n\n```text\nGPU: NVIDIA Tesla V100 32GB\nCUDA driver: 550.x / CUDA 12.4\nCompute capability: sm_70\n```\n\nYour Docker image must be compatible with NVIDIA V100 / `sm_70`. Do not rely on Ampere/Ada/Hopper-only features such as BF16-only execution, TF32-only kernels, or CUDA extensions compiled only for `sm80`, `sm86`, or `sm89`.\n\nIf you compile custom CUDA extensions, include:\n\n```bash\nTORCH_CUDA_ARCH_LIST=\"7.0\"\n```\n\n## 8. Minimal Dockerfile Example\n\n```dockerfile\nFROM pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime\n\nENV PYTHONUNBUFFERED=1\nENV MVAA_INPUT_DIR=/input\nENV MVAA_OUTPUT_DIR=/output\n\nWORKDIR /workspace\n\nCOPY requirements.txt /workspace/requirements.txt\nRUN pip install --no-cache-dir -r /workspace/requirements.txt\n\nCOPY src/ /workspace/src/\nCOPY weights/ /workspace/weights/\nCOPY run.sh /workspace/run.sh\nRUN chmod +x /workspace/run.sh\n\nENTRYPOINT [\"/workspace/run.sh\"]\n```\n\nExample `run.sh`:\n\n```bash\n#!/usr/bin/env bash\nset -euo pipefail\n\nINPUT_DIR=\"${MVAA_INPUT_DIR:-/input}\"\nOUTPUT_DIR=\"${MVAA_OUTPUT_DIR:-/output}\"\n\nmkdir -p \"${OUTPUT_DIR}/t1_ct\" \"${OUTPUT_DIR}/t2_tee\" \"${OUTPUT_DIR}/t3_vid\"\n\npython /workspace/src/infer.py \\\n  --input \"${INPUT_DIR}\" \\\n  --output \"${OUTPUT_DIR}\"\n```\n\n## 9. Local Test Command\n\nBefore final submission, test your image locally:\n\n```bash\ndocker run --rm --gpus all \\\n  --network none \\\n  -v /path/to/test_input:/input:ro \\\n  -v /path/to/output:/output:rw \\\n  your-image:final\n```\n\nThen package `submission.json`:\n\n```bash\nzip submission.zip submission.json\n```",
+      "index": 2
+    },
+    {
+      "id": 82386,
+      "title": "Data Access Method",
+      "content": "# Data Access Method\n\n## Training and Validation Data\n\nParticipants should use the released training and validation data for algorithm development and local validation.\n\n### Option 1: Baiduyunpan\n\n- Link: https://pan.baidu.com/s/1LYCH_MtTgqpiTUQsn0ToNQ?pwd=3ymi\n- Password: `3ymi`\n\n### Option 2: Google Drive\n\nBoth links are required for the complete released dataset:\n\n- Link 1: https://drive.google.com/file/d/14WneBUBZ1X4p69tRdRzximNb0IsWuh2B/view?usp=sharing\n- Link 2: https://drive.google.com/file/d/1K4vFo-4pdL1_xt-8msO-32bc2aEdJ7wS/view?usp=sharing\n\n## Hidden Test Data\n\nThe hidden test set is not distributed to participants. During final evaluation, the organizers mount the hidden test inputs into each submitted Docker container at:\n\n```text\n/input\n```\n\nThe hidden test labels are only accessible to the organizer-side scorer and are never mounted into participant containers.\n\n## Baseline Code and Reference Docker Image\n\nParticipants can access the official baseline and documentation here:\n\n- https://github.com/db0725/MVAA\n\nThe baseline is intended as a reference implementation. A public reference Docker image is also available for participants who want to inspect the expected Docker-based inference style:\n\n```bash\ndocker pull db0725/mvaa-baseline-infer:final-20260626\n```\n\nFinal submissions must follow the Docker format described in the **Final Docker Submission** page.\n\n## Task 3 Training Annotation Note\n\nOne Task 3 video training sample may contain an annotation issue:\n\n```text\nt3_vid/train/REC_20250322_101917_746A/REC_20250322_101917_746A_000130.png\n```\n\nParticipants may choose to exclude this sample during model training or data cleaning. This issue is limited to the listed training sample; the validation and hidden test annotations are not affected.",
+      "index": 3
+    },
+    {
+      "id": 82387,
+      "title": "Core Task",
+      "content": "# Core Task\n\nThe MVAA challenge is designed to reflect the real-world clinical workflow across multiple imaging modalities. The challenge is structured into three primary segmentation tasks.\n\n### Participation and Model Submission Requirements\n\nParticipants are required to complete and submit results for all three tasks. The official final ranking will be determined using the normalized final score described on the **Final Ranking** page; therefore, submissions for only one or two tasks will not be sufficient for the final ranking.\n\nHowever, participants are not required to use a single unified multimodal model. Each task may be addressed independently, and participants may train and submit separate models for the CT, 3D TEE, and surgical video frame segmentation tasks.\n\n### Task 1: Mitral Valve Segmentation in Cardiac CT\nThis task focuses on the automated, multi-class anatomical segmentation of the mitral valve from 3D cardiac CT scans.\n*   **Target:** Participants are required to segment the mitral annulus and the anterior/posterior leaflets.\n*   **Clinical Significance:** High-resolution CT segmentation provides the precise spatial geometry necessary for pre-procedural planning, including device sizing and the selection of repair strategies for interventions like TEER or annuloplasty.\n\n### Task 2: Mitral Valve Segmentation in 3D Transesophageal Echocardiography (3D TEE)\nThis task addresses the segmentation of valve structures from volumetric 3D TEE (ultrasound) data, which serves as the key intraoperative reference for valve function.\n*   **Target:** Delineation of the valve leaflets from 3D ultrasound volumes.\n*   **Technical Focus:** Algorithms must be robust enough to handle ultrasound-specific artifacts, acoustic noise, signal dropout, and ambiguous boundaries between the leaflets and surrounding cardiac tissues.\n\n### Task 3: Mitral Valve Segmentation from Surgical Video Frames\nThis task focuses on extracting anatomical information from individual frames extracted from intraoperative surgical videos.\n*   **Target:** Pixel-level segmentation of the mitral valve structures as seen from the surgeon's direct viewpoint.\n*   **Methodology:** Although the data originates from video recordings, this task is defined as a frame-based segmentation problem. Participants should treat the provided frames as individual 2D images for training and inference.\n*   **Clinical Focus:** This task enables the verification of leaflet motion and structural continuity during the actual intervention, providing real-time feedback within the surgical environment.",
+      "index": 4
+    },
+    {
+      "id": 82388,
+      "title": "Dataset",
+      "content": "# MVAA Challenge - Dataset System\n\n## 1. Ethics Approval & Data License\n\n### 1.1 Ethics Approval\nAll data is anonymized, with approval from the Medical Ethics Committee (No. KY-N-2022-048-01).\n\n### 1.2 Data Usage Agreement & License\n* **License:** CC BY-NC (Attribution-NonCommercial)\n* No commercial use of the data is permitted; all usage must comply with the license terms.\n\n## 2. Data Source\n\n### 2.1 Acquisition Devices\n* **Cardiac CT:** Siemens Healthineers, GE Healthcare, Philips Healthcare, and Canon Medical Systems.\n* **3D TEE:** Philips Epiq cardiac ultrasound system.\n* **Surgical Video:** Standard endoscopic video recorder (720p, 30fps).\n\n### 2.2 Acquisition Centers\nThe dataset is collected from multiple clinical centers, including:\n* Guangdong Provincial People’s Hospital\n* The First Affiliated Hospital of Jinan University\n* Dongguan Eastern Central Hospital\n\n## 3. Dataset Scale & Partition\n\n### 3.1 Task 1: Cardiac CT Segmentation\n* **Training Set:** 1,067 images total (27 with ground-truth labels, 1,040 unlabeled for semi-supervised learning).\n* **Validation Set:** 30 images (without labels).\n\n### 3.2 Task 2: 3D TEE Segmentation\n* **Training Set:** 105 images with ground-truth labels.\n* **Validation Set:** 20 images (without labels).\n\n### 3.3 Task 3: Surgical Frame Segmentation\n\n* **Training Set:** 1,559 frames total.\n    * **Labeled Data:** 180 frames (118 frames contain the mitral valve).\n    * **Unlabeled Data:** 1,379 frames (for semi-supervised learning).\n* **Validation Set:** 48 images (without labels, all containing mitral valve structures for scoring).\n\n#### 3.3.1 Task 3 Label Note\n\nTask 3 labels may include annotations beyond the mitral valve. Only the mitral valve label is used for training and evaluation. In this task, the mitral valve is the only target segmentation class.\n\nParticipants should use the `*_Label.nii.gz` file within each `*_Label.tar` archive as the source of ground-truth annotations, and refer to the category mapping table in the corresponding `*_Label.json` file for confirmation. Specifically, category ID `10` corresponds to the mitral valve.\n\nThe `*_Label.json` file is intended only for reading category names, colors, and metadata, and should not be used as the primary label source for training.\n\nSome polygon annotations in the JSON files are incomplete or empty; therefore, generating training labels from `Polys.Shapes` is not recommended. Of the 180 labeled frames, 118 contain valid mitral valve annotations. Unlabeled frames may also include images without visible mitral valve structures.\n\n\n## 4. Data Novelty\n* **Multi-modal Data Resource:** The challenge includes cardiac CT, 3D TEE, and surgical video data collected from multiple clinical centers. In the current public release, these modalities are provided as independent datasets, and no formal CT-video pairing metadata or case mapping table is included.\n* **Unpublished Data:** More than 140 newly collected, unpublished ultrasound images have been provided for validation and testing to ensure fair evaluation of generalization.\n\n## 5. Inclusion & Exclusion Criteria\n\n### 5.1 Inclusion Criteria\n1. Standard clinical cardiac views suitable for mitral valve assessment.\n2. Sufficient image quality for expert annotation of leaflets and annulus.\n3. Availability of corresponding clinical measurement references.\n\n### 5.2 Exclusion Criteria\n1. Severe imaging artifacts or signal dropout hindering anatomical visibility.\n2. Duplicated or corrupted data.\n3. Cases with uncertain clinical reference measurements.\n\n## 6. Annotation Characteristics\n\n### 6.1 Annotation Method\n* **Two-Stage Process:** Initial annotations by two trained medical experts followed by review and refinement by a board-certified radiologist with over 10 years of experience.\n* **Semi-automated refinement:** For ultrasound data, an initial automatic segmentation was followed by manual review and modification by two annotators until agreement was reached.\n\n### 6.2 Annotation Quality Control (QC)\n* **Inter-observer Reliability:** Evaluated on a subset of 30 images using ICC and absolute error distributions.\n* **Adjudication:** Senior clinical specialists resolved discrepancies to ensure the reliability of reference annotations.\n\n## 7. Data Preprocessing\n1. **Anonymization:** Removal of all patient-related information from metadata.\n2. **Standardization:** CT and TEE data converted to NIfTI format; surgical video frames extracted as 2D images.\n3. **Resampling:** Data resampled to a consistent resolution to ensure uniform slice-level annotation.\n\n## 8. Main Annotation Error Sources\n1. **Inter-Annotator Variability:** Differences in identifying subtle mitral valve boundaries in low-contrast cases.\n2. **Annotation Ambiguity:** Inherent ambiguity of valve boundaries due to pathological alterations or imaging limitations.\n3. **Technical Limitations:** Errors introduced by the resolution constraints of the annotation tools.",
+      "index": 5
+    },
+    {
+      "id": 82389,
+      "title": "Evaluation",
+      "content": "# Evaluation\n\n## Final Test Evaluation Mode\n\nIn the final hidden-test phase, participants submit Docker image descriptors through CodaBench. A private organizer-side CodaBench worker forwards accepted descriptors to the MVAA GPU runner, which pulls each submitted image, runs inference on the hidden test set, computes official metrics, and returns the resulting scores to the CodaBench leaderboard.\n\nMetrics are computed outside the public CodaBench environment on the organizer-side server. The leaderboard columns in this portal are the official hidden-test raw metrics returned by that runner. The official overall ranking is based on normalized metric scores as described on the **Final Ranking** page.\n\n## Metrics\n\nAll tasks are evaluated using Dice Similarity Coefficient (DSC), Hausdorff Distance (HD), and Average Surface Distance (ASD). Higher DSC is better; lower HD and ASD are better.\n\n### Dice Similarity Coefficient (DSC)\n\nDSC measures overlap between the predicted segmentation and the ground truth. It is computed as twice the intersection divided by the sum of the predicted and reference foreground sizes.\n\n### Hausdorff Distance (HD)\n\nHD measures the largest bidirectional surface discrepancy between the prediction and reference mask. Surfaces are extracted from binary masks and Euclidean distances are computed using image spacing when spacing metadata is available.\n\n### Average Surface Distance (ASD)\n\nASD is the symmetric mean surface-to-surface distance between prediction and reference masks.\n\n## Task-Specific Computation\n\n### Task 1: CT Segmentation\n\n- Foreground label: `1`\n- Per-case metrics: DSC, HD, ASD on the binary foreground mask\n- Final task score: mean across all Task 1 cases\n\n### Task 2: TEE Segmentation\n\n- Foreground labels: `1` and `2`\n- Metrics are computed separately for each foreground class and averaged within each case\n- Final task score: mean across all Task 2 cases\n\n### Task 3: Video/Image Segmentation\n\n- Prediction foreground: any positive pixel value\n- Reference foreground: the case-specific `target_label`\n- Final task score: mean across all Task 3 frames/cases\n\n## Evaluation Notes\n\n- HD and ASD use physical spacing when available; otherwise unit spacing is used.\n- Missing or invalid predictions receive penalty metrics: `DSC = 0`, `HD = large penalty`, `ASD = large penalty`.\n- If both prediction and reference are empty for an evaluated class, that class is treated as a perfect match: `DSC = 1`, `HD = 0`, `ASD = 0`.\n- Prediction paths in JSON files must be relative paths under the corresponding task output folder. Absolute paths and `../` traversal are rejected.\n\n## Leaderboard Columns\n\nThe final leaderboard reports:\n\n- `Task1_DSC`, `Task1_HD`, `Task1_ASD`\n- `Task2_DSC`, `Task2_HD`, `Task2_ASD`\n- `Task3_DSC`, `Task3_HD`, `Task3_ASD`\n- `Evaluation_Status`\n- `Runtime_Seconds`\n\n`Evaluation_Status = 1` means the organizer-side runner completed successfully. `Evaluation_Status = 0` means descriptor validation, image pulling, inference, or scoring failed; failed submissions receive penalty metrics.\n\n## Participant Result Summary\n\nAfter a successful final-test submission, participants will see the leaderboard values for the three mean metrics of each task. Per-case or per-image scores are not shown in the final hidden-test phase.\n\nThe detailed result summary follows this structure:\n\n```text\nMVAA Final Hidden-Test Evaluation\nStatus: done\nMessage: official hidden-test evaluation completed\n\nTask-level mean metrics:\n- Task 1 (CT): mean DSC = ..., mean HD = ..., mean ASD = ...\n- Task 2 (TEE): mean DSC = ..., mean HD = ..., mean ASD = ...\n- Task 3 (Video/Image): mean DSC = ..., mean HD = ..., mean ASD = ...\n\nEvaluation_Status: 1\nRuntime_Seconds: ...\n```",
+      "index": 6
+    },
+    {
+      "id": 82397,
+      "title": "Final Ranking",
+      "content": "# Final Score, Prizes, and Certificates\n\n\nThe official overall ranking will be based on normalized metric scores from the final hidden-test evaluation. The raw leaderboard metrics will remain visible for transparency, while the normalized score will be used for final ranking and award decisions.\n\nBecause Task 2 uses a public dataset, its three normalized metric scores will be assigned as 100 points for all eligible teams to avoid unfair advantage from public test-set information.\n\nTo be eligible for prize money, a team must satisfy the participation rules, rank in the overall top 10, and, barring exceptional circumstances approved by the organizers, must attend the onsite presentation.\n\nIn addition to the overall awards, the top three teams in Task 1 and the top three teams in Task 3 will receive additional task-specific certificates.",
+      "index": 7
+    },
+    {
+      "id": 82402,
+      "title": "Participation Rules",
+      "content": "# MVAA Challenge - Participation Rules\n\n## 1. Challenge Life Cycle\n\nThe final test stage uses hidden data and Docker-based evaluation. The official ranking is determined by running each accepted Docker submission on the hidden test set and applying the normalized final score described on the **Final Ranking** page.\n\n## 2. Participation Policies\n\n### 2.1 Algorithm Development\n\n- Task 1 and Task 3 encourage semi-supervised learning using the released labeled and unlabeled data.\n- Task 2 is a supervised 3D TEE segmentation task.\n- Public external datasets and public pre-trained models are allowed.\n- Private datasets, private annotations of public data, and hidden test data leakage are strictly prohibited.\n\n### 2.2 Organizer Institute Participants\n\nMembers of the organizers' institutes may participate but are not eligible for awards and will not be listed in the official award ranking.\n\n## 3. Final Docker Submission Rules\n\n### 3.1 Submission Method\n\nParticipants must submit a `submission.zip` file containing a root-level `submission.json` with a Docker image reference.\n\nDirect prediction-mask uploads are not used for final hidden-test ranking.\n\n### 3.2 Docker Image Requirements\n\nThe Docker image must include:\n\n- inference code;\n- model weights;\n- all runtime dependencies;\n- a default entrypoint that runs inference automatically.\n\nThe Docker image must not require internet access during evaluation. Runtime network access may be restricted or disabled by the organizers.\n\n### 3.3 Runtime Environment\n\nThe organizer-side runner will provide:\n\n- `/input`: hidden test inputs, read-only;\n- `/output`: prediction output directory, writable;\n- one NVIDIA Tesla V100 32GB GPU;\n- runtime network access may be restricted or disabled.\n\n### 3.4 Submission Limits\n\nEach team may submit up to 10 times in total during the final test phase. Among them, at most 7 valid submissions are allowed for each team.\n\nThe additional 3 submission attempts are reserved for possible technical failures, such as descriptor-format errors, image-pulling failures, platform errors, or other unexpected submission issues. These failed or invalid attempts may be excluded from the valid-submission count at the organizers' discretion.\n\nThe submission limit applies to the team as a whole, not to individual CodaBench accounts. Submissions made from different accounts belonging to the same team will be counted together. If members of the same team use multiple accounts to bypass the submission limit, the team may be disqualified.\n\nThis rule is intended to ensure fairness for smaller teams.\n\n## 4. Award Policy\n\n1. The official overall ranking is based on the normalized final score described on the **Final Ranking** page.\n2. A total prize pool of 10,000 RMB will be awarded to eligible teams in the overall top 10 after score verification and rule-compliance checks.\n3. To receive prize money, an eligible top-10 team must attend the onsite presentation unless exceptional circumstances are approved by the organizers.\n4. In addition to the overall awards, the top three teams in Task 1 and the top three teams in Task 3 will receive additional task-specific certificates.\n5. Outstanding teams may be encouraged to submit extended versions of their methods to a related journal special issue.\n6. Eligible top teams may be invited to contribute to the challenge summary paper.\n\n## 5. Result Announcement\n\nOfficial final results will be announced after the organizers have completed hidden-test execution, score verification, and rule-compliance checks.\n\n## 6. Publication Policy\n\nParticipating teams may publish their methods separately, while respecting challenge data usage rules and collective challenge contributions.\n\n## 7. Code Availability Requirement\n\nAlgorithm code release through a public GitHub repository and the submission of a corresponding conference paper are prerequisites for award eligibility.",
+      "index": 8
+    },
+    {
+      "id": 82392,
+      "title": "Timeline",
+      "content": "﻿# Timeline\n\nAll deadlines are at **23:59 (UTC+8)** on the dates listed below. Dates may be adjusted depending on the official MICCAI 2026 schedule.\n\n## Key Milestones\n\n- **April 15, 2026:** Training Data Release\n  - Participants can download the released training datasets.\n\n- **June 01, 2026:** Validation Data Release\n  - The validation leaderboard opens for preliminary scoring.\n\n- **July 01, 2026:** Final Test Docker Submission Opens\n  - Participants prepare and submit Docker image descriptors through this CodaBench portal.\n\n- **August 01, 2026:** Final Docker Submission Deadline\n  - Deadline for all final Docker image descriptors.\n\n- **August 2026:** Hidden-Test Execution and Score Verification\n  - The organizers run accepted Docker images on the hidden test set and verify official scores.\n\n- **September 01, 2026:** Winner Announcement and Invitations\n  - Top-performing teams are announced and invited to present.\n\n- **September 27 - October 01, 2026:** MICCAI 2026 Conference\n  - The official challenge workshop, final result presentation, and award ceremony will take place during MICCAI 2026 in France.\n\n## Note\n\nAny schedule changes will be announced through the competition website and email notifications to registered participants.",
+      "index": 9
+    },
+    {
+      "id": 82393,
+      "title": "Organization",
+      "content": "# MVAA Challenge - Organization Team\n\n## 1. Organizers\n1. **Jieyun Bai** (The University of Auckland, New Zealand)\n2. **Mohamed Hammad** (Prince Sultan University, Saudi Arabia)\n3. **Tao Jia** (Chongqing Normal University, China)\n4. **Mohammad Yaqub** (Mohamed bin Zayed University of Artificial Intelligence, MBZUAI, UAE)\n5. **Karim Lekadir** (University of Barcelona, Spain)\n6. **Shuo Li** (Case Western Reserve University, USA)\n7. **Jichao Zhao** (The University of Auckland, New Zealand)\n8. **Jun Ma** (University of Toronto, Canada)\n9. **Kuanquan Wang** (Harbin Institute of Technology, China)\n10. **Wei Hu** (The University of Manchester, UK)\n11. **Henggui Zhang** (The University of Manchester, UK)\n12. **Haibo Ni** (Nanjing University, China)\n13. **Yitong Tang** (Jinan University, China)\n\n## 2. Advisors\n1. **Islem Rekik** (Imperial College London, UK)\n2. **Weidong Cai** (University of Sydney, Australia)\n3. **Dong Ni** (Shenzhen University, China)\n4. **Pan Zeng** (Chongqing Normal University, China)\n5. **Wenfeng Zhang** (Chongqing Normal University, China)\n\n## 3. Contributors\n1. **Xiaoshen Zhang** (The First Affiliated Hospital of Jinan University, China)\n2. **Hua Lu** (The First Affiliated Hospital of Jinan University, China)\n3. **Yufei Zhan** (The First Affiliated Hospital of Jinan University, China)\n4. **Qinyuan Zeng** (The First Affiliated Hospital of Jinan University, China)\n5. **Jingyi He** (The First Affiliated Hospital of Jinan University, China)\n6. **Yu Zhang** (The First Affiliated Hospital of Jinan University, China)\n7. **Li Wang** (Guangzhou Women and Children's Medical Center, China)\n8. **Yuxin Huang** (Zhujiang Hospital of Southern Medical University, China)\n9. **Bo Deng** (Jinan University, China)\n10. **Jiake Li** (Jinan University, China)\n11. **Patrick Carnahan** (Western University, Canada)\n12. **Jie Gan** (University of Sydney, Australia)\n\n## 4. Role of Clinical Experts\n* Provide real-world clinical data (CT, 3D TEE, and Surgical Video) acquired under routine diagnostic conditions across multiple institutions and patient populations.\n* Perform and supervise expert annotations, including pixel-level segmentation mask labeling in accordance with standardized clinical protocols.\n* Evaluate annotation quality and inter-rater consistency to ensure that the reference labels accurately reflect true clinical variability and meet established diagnostic standards.\n\n## 5. Primary Contact\n* **Name:** Jieyun Bai\n* **Affiliation:** The University of Auckland, New Zealand\n* **Email:** jbai996@aucklanduni.ac.cn",
+      "index": 10
+    },
+    {
+      "id": 82394,
+      "title": "Technical Support",
+      "content": "﻿# MVAA Challenge - Technical Support\n\n## 1. Platform Role\n\nThis CodaBench portal collects final Docker submission descriptors and returns official hidden-test scores. The descriptor is first validated by CodaBench, then a private organizer-side CodaBench worker forwards the Docker image reference to the MVAA GPU runner.\n\n## 2. Final Evaluation Server\n\nThe official final-test runner uses a standardized GPU server:\n\n```text\nGPU: NVIDIA Tesla V100 32GB\nCUDA driver: 550.x / CUDA 12.4\nCompute capability: sm_70\nRuntime network inside participant container: disabled\n```\n\nParticipant containers are run with `/input` mounted read-only and `/output` mounted writable.\n\n## 3. Recommended Local Validation\n\nBefore submitting, participants should test their image locally:\n\n```bash\ndocker run --rm --gpus all \\\n  --network none \\\n  -v /path/to/test_input:/input:ro \\\n  -v /path/to/output:/output:rw \\\n  your-image:final\n```\n\nThe container should exit with code `0` and write prediction JSON files and masks under `/output`.\n\n## 4. Common Failure Reasons\n\n- `submission.json` is not at the root of `submission.zip`.\n- The `image` field is missing or contains whitespace/control characters.\n- The Docker image is private and the organizers cannot pull it.\n- The Docker image requires internet access at runtime.\n- The container does not have an automatic entrypoint.\n- The image is not compatible with NVIDIA V100 / `sm_70`.\n- Prediction files are missing or paths in prediction JSON contain absolute paths or `../`.\n- The container exceeds the configured runtime, memory, or disk limits.\n\n## 5. Technical Contact\n\nFor technical issues regarding Docker submission, data integrity, or evaluation scripts, please contact:\n\n- Technical Lead: [tyt6xx@163.com](mailto:tyt6xx@163.com)\n- Challenge Contact: [dbd2002@foxmail.com](mailto:dbd2002@foxmail.com)",
+      "index": 11
+    },
+    {
+      "id": 82395,
+      "title": "Future Plans",
+      "content": "# MVAA Challenge - Publication & Future Plans\n\nThe MVAA challenge has a comprehensive publication framework, with a focus on clinical relevance, methodological novelty, and long-term multimodal benchmark development.\n\n## 1. Conference Proceedings Publication\n* **Springer LNCS:** We will coordinate post-conference proceedings, enabling participating teams to publish detailed method descriptions in the **Springer Lecture Notes in Computer Science (LNCS)** volumes linked to the 1st MICCAI Workshop on Medical World Models (MWM).\n* **Open Access:** This mechanism ensures that all successful technical contributions are publicly available and citeable within the MICCAI ecosystem.\n\n## 2. Journal Special Issue Submission\n* **Outstanding Contributions:** High-impact submissions will be invited to submit extended manuscripts to the **IEEE Transactions on Biomedical Engineering (TBME)** Special Issue entitled: *“Digital Twins, Simulation-Based AI and Medical World Models.”*\n* **Selection Criteria:** Evaluation goes beyond leaderboard ranking, focusing on methodological novelty, cross-modal generalization, and real-world clinical deployment potential for mitral valve analysis.\n\n## 3. Challenge Summary Manuscripts\n* **Journal-level Summary:** We will coordinate a comprehensive challenge summary manuscript to report and analyze MVAA outcomes.\n* **Analysis:** Content will include a meta-analysis of all participating methods, key findings in multimodal segmentation, and research trends in structural heart disease analysis.\n* **Purpose:** This paper serves as an authoritative reference for the community, informing future research directions in unified anatomical modeling.\n\n## 4. Long-Term Future Plans\n1. **Annual Repeated Event:** Maintain the challenge as an **annual event** with fixed MICCAI deadlines, continuously expanding the dataset with new multimodal clinical data.\n2. **Integration with World Models:** Further integrate the benchmark with **medical world models and digital twin frameworks**, extending mitral valve analysis to longitudinal and predictive surgical modeling.\n3. **Clinical Translation:** Promote the translation of top-performing algorithms into clinical tools for mitral valve repair, TEER, and annuloplasty, reducing operator dependence and improving intervention safety.\n4. **Global Collaboration:** Establish a sustainable consortium for multimodal heart research, fostering ongoing collaboration between clinicians, sonographers, and AI researchers.",
+      "index": 12
+    },
+    {
+      "id": 82403,
+      "title": "Q&A",
+      "content": "# Q&A\n\n## What should I submit in the final test phase?\n\nSubmit `submission.zip` containing a root-level `submission.json` with your Docker image reference.\n\n## Do I upload model weights separately?\n\nNo. Your Docker image must include all model weights and dependencies needed for inference.\n\n## Will my Docker container have internet access?\n\nYour image must not require internet access during hidden-test evaluation. Runtime network access may be restricted or disabled by the organizers.\n\n## Where are the hidden test images mounted?\n\nThe hidden test inputs are mounted at `/input` inside your container.\n\n## Where should predictions be written?\n\nWrite all prediction JSON files and masks under `/output`.\n\n## Does the CodaBench leaderboard show final DSC/HD/ASD scores?\n\nYes. After descriptor validation, the private organizer-side worker runs the submitted image on the hidden test set and returns official Task1/Task2/Task3 DSC, HD, and ASD metrics to this leaderboard.\n\n## Why might my row show Evaluation_Status = 0?\n\n`Evaluation_Status = 0` means validation, image pulling, container execution, output checking, or scoring failed. Check the submission logs and the `Message` line in the detailed score output.\n\n## Which GPU should my image support?\n\nThe official runner uses NVIDIA Tesla V100 32GB. Your image must support compute capability `sm_70`.\n\n## Will my Docker image reference be visible to other participants?\n\nNo. The Docker image reference is used for organizer-side evaluation and is not shown in the public leaderboard or detailed result page. If you need to protect code or weights, use a private registry and provide pull access to the organizers.\n## Is there a reference baseline Docker image?\n\nYes. Participants may pull the public reference baseline image to inspect the expected Docker-based inference style:\n\n```bash\ndocker pull db0725/mvaa-baseline-infer:final-20260626\n```\n\nThis image is only a reference example. Participants may submit their own Docker images as long as they follow the required input/output contract.\n\n## How many final-test submissions are allowed?\n\nEach team may submit up to 10 times in total during the final test phase. Among them, at most 7 valid submissions are allowed for each team.\n\nThe additional 3 submission attempts are reserved for possible technical failures, such as descriptor-format errors, image-pulling failures, platform errors, or other unexpected submission issues. These failed or invalid attempts may be excluded from the valid-submission count at the organizers' discretion.\n\nThe limit applies to the team as a whole, not to individual CodaBench accounts. If members of the same team use multiple accounts to bypass the submission limit, the team may be disqualified. This rule is intended to ensure fairness for smaller teams.",
+      "index": 13
+    }
+  ],
+  "phases": [
+    {
+      "id": 28853,
+      "index": 0,
+      "start": "2026-07-01T00:00:00Z",
+      "end": "2026-08-01T00:00:00Z",
+      "name": "Final Test Docker Evaluation",
+      "description": "Submit a submission.zip containing root-level submission.json with your Docker image reference. Accepted images are pulled and evaluated automatically on the organizer-side hidden-test GPU runner; final metrics are returned to this leaderboard.",
+      "status": "Next",
+      "execution_time_limit": 43200,
+      "tasks": [
+        {
+          "task": "a07682b5-e359-4dab-9c71-a6031b78e014",
+          "order_index": 0,
+          "phase": 28853,
+          "id": 34551,
+          "value": "a07682b5-e359-4dab-9c71-a6031b78e014",
+          "key": "a07682b5-e359-4dab-9c71-a6031b78e014",
+          "created_when": "2026-06-29T13:28:58.150080Z",
+          "name": "MVAA Final Docker Evaluation",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 857085,
+              "created_by": "db0725",
+              "owner_display_name": "MVAA_baseline",
+              "created_when": "2026-06-29T13:28:57.798311Z",
+              "name": "ingestion_program @ '06-29-2026 13:28'",
+              "type": "ingestion_program",
+              "description": null,
+              "is_public": false,
+              "key": "35c249a3-1102-4529-abeb-2f3f170196f0",
+              "value": "35c249a3-1102-4529-abeb-2f3f170196f0",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 17301,
+                  "title": "MVAA 2026 Final Test: Docker Evaluation Portal"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 2419.0
+            },
+            {
+              "id": 857086,
+              "created_by": "db0725",
+              "owner_display_name": "MVAA_baseline",
+              "created_when": "2026-06-29T13:28:57.874657Z",
+              "name": "input_data @ '06-29-2026 13:28'",
+              "type": "input_data",
+              "description": null,
+              "is_public": false,
+              "key": "58e878e1-6a88-4c9c-ab71-7a844b5954fb",
+              "value": "58e878e1-6a88-4c9c-ab71-7a844b5954fb",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 17301,
+                  "title": "MVAA 2026 Final Test: Docker Evaluation Portal"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 291.0
+            },
+            {
+              "id": 857087,
+              "created_by": "db0725",
+              "owner_display_name": "MVAA_baseline",
+              "created_when": "2026-06-29T13:28:57.958549Z",
+              "name": "scoring_program @ '06-29-2026 13:28'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "e39ab7e4-71a8-49b8-b065-34856112a418",
+              "value": "e39ab7e4-71a8-49b8-b065-34856112a418",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 17301,
+                  "title": "MVAA 2026 Final Test: Docker Evaluation Portal"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 4290.0
+            },
+            {
+              "id": 857088,
+              "created_by": "db0725",
+              "owner_display_name": "MVAA_baseline",
+              "created_when": "2026-06-29T13:28:58.015348Z",
+              "name": "reference_data @ '06-29-2026 13:28'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "b5d139d4-f01a-4e29-bd56-92241c6b2c5f",
+              "value": "b5d139d4-f01a-4e29-bd56-92241c6b2c5f",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 17301,
+                  "title": "MVAA 2026 Final Test: Docker Evaluation Portal"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 260.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 2,
+      "max_submissions_per_person": 10,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": true,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 19183,
+      "primary_index": 0,
+      "title": "MVAA Final Hidden-Test Raw Metrics",
+      "key": "mvaa_final_scores",
+      "columns": [
+        {
+          "id": 83986,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task1 DSC",
+          "key": "Task1_DSC",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 83987,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task1 HD",
+          "key": "Task1_HD",
+          "sorting": "asc",
+          "index": 1,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 83988,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task1 ASD",
+          "key": "Task1_ASD",
+          "sorting": "asc",
+          "index": 2,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 83989,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task2 DSC",
+          "key": "Task2_DSC",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 83990,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task2 HD",
+          "key": "Task2_HD",
+          "sorting": "asc",
+          "index": 4,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 83991,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task2 ASD",
+          "key": "Task2_ASD",
+          "sorting": "asc",
+          "index": 5,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 83992,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task3 DSC",
+          "key": "Task3_DSC",
+          "sorting": "desc",
+          "index": 6,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 83993,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task3 HD",
+          "key": "Task3_HD",
+          "sorting": "asc",
+          "index": 7,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 83994,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task3 ASD",
+          "key": "Task3_ASD",
+          "sorting": "asc",
+          "index": 8,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 83995,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Eval Status",
+          "key": "Evaluation_Status",
+          "sorting": "desc",
+          "index": 9,
+          "hidden": false,
+          "precision": 0
+        },
+        {
+          "id": 83996,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Runtime Seconds",
+          "key": "Runtime_Seconds",
+          "sorting": "asc",
+          "index": 10,
+          "hidden": false,
+          "precision": 1
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Add"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": true,
+  "description": "Final hidden-test Docker evaluation portal for MVAA 2026. Participants submit a lightweight submission.zip containing a Docker image reference. A private organizer-side Codabench worker forwards the descriptor to the MVAA GPU runner, which pulls the image, runs inference on the hidden test set, computes official metrics, and returns Task1/Task2/Task3 scores to Codabench.",
+  "participants_count": 17,
+  "submissions_count": 1,
+  "queue": {
+    "name": "mvaa-final-test-v100",
+    "vhost": "aa041c8f-524e-47e1-8d81-9a642aa5d9b2",
+    "is_public": false,
+    "owner": "db0725",
+    "organizers": [],
+    "broker_url": "pyamqp://8b5d041c-4e65-4702-a89c-326a919c62c3:2bd71fb7-3ed6-4074-8c8c-a335a042b557@www.codabench.org:5672/aa041c8f-524e-47e1-8d81-9a642aa5d9b2",
+    "created_when": "2026-06-28T06:30:18.544086Z",
+    "is_owner": false,
+    "id": 876
+  },
+  "enable_detailed_results": true,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": false,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "python:3.10-slim",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 17000,
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "forum_enabled": true
+}
