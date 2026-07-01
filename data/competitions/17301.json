@@ -5,9 +5,9 @@
   "description_zh": "MVAA 2026 最终隐藏测试Docker评估平台。参赛者提交一个轻量级submission.zip，包含Docker镜像引用。私有的组织方Codabench工作进程将描述符转发给MVAA GPU运行器，该运行器拉取镜像、在隐藏测试集上运行推理、计算官方指标，并将Task1/Task2/Task3分数返回到Codabench。",
   "created_by": "db0725",
   "created_when": "2026-06-29T13:28:58.227688Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-29-1782739738/5879f76f7bc9/icon.png?AWSAccessKeyId=codabench-prod&Signature=tc%2FUdhaHmMojzv%2Ba9syfTBCJ8CA%3D&Expires=1782822103",
-  "participants_count": 17,
-  "submissions_count": 1,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-29-1782739738/5879f76f7bc9/icon.png?AWSAccessKeyId=codabench-prod&Signature=Xha7QDndHCWdxSoqDEvN8rwmjBc%3D&Expires=1782908834",
+  "participants_count": 21,
+  "submissions_count": 2,
   "first_phase_start": null,
   "phases": [
     {
