@@ -5,8 +5,8 @@
   "created_by": "mohamedbayan",
   "owner_display_name": "mohamedbayan",
   "created_when": "2026-06-03T11:38:35.423737Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780486715/5b6f981490c6/logo.png?AWSAccessKeyId=codabench-prod&Signature=nPhCHqcBuw43iwNZbxYfhz0w4Co%3D&Expires=1782908842",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780486715/5b6f981490c6/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=wrWcycL1IjiDsxZ42l003dm%2BEXE%3D&Expires=1782908842",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780486715/5b6f981490c6/logo.png?AWSAccessKeyId=codabench-prod&Signature=0ArlBQQu6h0gY5fMvAJOuNWGX6I%3D&Expires=1782995494",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780486715/5b6f981490c6/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=FRzXe6tAnYBKZDMPR3%2FrBU50WxM%3D&Expires=1782995494",
   "terms": "# Terms\n\n## Submission format\n\nSubmit your predictions as a **single zip** named `prediction.zip` containing one **UTF-8-encoded TSV** file named `prediction.tsv`.\n\nThe TSV must have an exact header line and exactly three tab-separated columns:\n\n```\nid\tlabel\trun_id\nabc123.jpg\tHateful\tmy_team_run1\ndef456.jpg\tNot Hateful\tmy_team_run1\n…\n```\n\n- **`id`** — the original meme filename, exactly as it appears in the dataset.\n- **`label`** — one of `Hateful`, `Not Hateful` (exact case, no extra whitespace).\n- **`run_id`** — a single non-empty string repeated on every row. Use it to label different submissions (e.g. `team_x_v2`).\n\n## Rules\n1. The set of `id`s in your submission must exactly match the set of `id`s in the gold file for the active phase (`dev_test` during development, `test` during the final phase). Missing or extra rows result in an automatic rejection.\n2. `id`s must be unique within a submission.\n3. `run_id` must be the same on every row.\n4. Labels outside `{Hateful, Not Hateful}` (including different case or extra whitespace) are rejected.\n\nYou can validate your submission locally using the format checker in the starter kit before uploading:\n\n```bash\npython format_checker/format_checker.py --subtask a1 --predictions prediction.tsv\n```\n\n## Metric\nThe official metric is **macro-F1**. Accuracy, macro precision / recall, weighted F1, and per-class F1 are reported as diagnostics.\n\n## Data usage and ethics\n- The dataset is licensed under **CC BY-NC 4.0** — non-commercial research use only.\n- The data contains text and imagery that is offensive or harmful by design; handle responsibly.\n- You may use any pretrained model, any external dataset, and any compute budget. Document your setup in the system paper.\n\n## Contact\narguard2026-organizers@googlegroups.com",
   "pages": [
     {
@@ -280,7 +280,7 @@
   "registration_auto_approve": true,
   "description": "Arabic multimodal hateful-meme classification. Given a meme (image plus OCR-extracted Arabic text), predict whether it is Hateful or Not Hateful. Official metric: macro-F1.",
   "participants_count": 12,
-  "submissions_count": 17,
+  "submissions_count": 18,
   "queue": null,
   "enable_detailed_results": true,
   "show_detailed_results_in_submission_panel": true,

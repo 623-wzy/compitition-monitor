@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MICCAI FLARE 2026 Task 2: AutoMSC: Automated Medical Image Segmentation and Classification — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>MICCAI FLARE 2026 Task 2: AutoMSC: Automated Medical Image Segmentation and Classification</h2>
+  <div class="detail-meta">
+    <span>ID: 15553</span>
+    <span>创建者: junma</span>
+    <span>创建时间: 2026-04-09</span>
+    <span>参与人数: 49</span>
+    <span>提交次数: 2</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/15553/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">MICCAI FLARE 2026 任务2：AutoMSC - 医学图像自动分割与分类</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development Phase</td><td>2026-04-01</td><td>2026-08-31</td><td>5</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'>## &lt;center&gt;[MICCAI FLARE26](https://flare-medfm.github.io/) 任务2: AutoMSC: 自动医学图像分割和分类&lt;/center&gt;
+
+用于3D医学成像的深度学习模型传统上是为单个任务(分割或分类)手工设计的，需要对架构、超参数和预处理管道进行大量手动调整。随着临床数据集规模和复杂性的增加，这种手动设计过程变得越来越低效，限制了自适应通用模型的部署。受医学分割十项全能挑战赛和获胜方案nnU-Net成功的启发，任务2侧重于构建能够自动适应多样化3D医学成像数据集，同时执行分割和分类的自配置模型。
+
+本任务旨在推进3D医学成像自主模型设计系统的下一代发展。参赛者需要设计能够自动推断最优配置(如架构、分辨率、补丁大小、归一化策略和损失平衡)的模型，并联合学习高质量分割掩码和临床有意义的分类标签。这些模型应能跨成像模态、肿瘤类型进行泛化，无需特定任务的手动工程，包括MRI扫描中的前列腺癌复发预测、CT扫描中的肺结节诊断和PET/CT扫描中的肝转移灶来源预测。
+
+主要特征：
+
+- **多任务学习**：模型必须从同一输入体积执行3D分割和分类，同时优化两个输出的精度并保持计算效率。
+- **自配置**：解决方案应包含自动配置机制，能够适应数据集属性，如体素间距、图像大小、对比度变异性和类不平衡，无需人工设计的启发式方法。
+- **数据集多样性**：基准包括具有不同模态(CT、MRI和PET-CT)和分类目标的异构3D医学成像扫描，促进真正可泛化3D模型的开发。
+- **鲁棒性和效率**：模型将基于分割精度(DSC和NSD)、分类性能(平衡精度和AUROC)和资源效率(运行时间)进行评估，突出其在实际临床应用中的潜力。
+
+参赛者还被鼓励探索其他挑战赛道，网址为https://flare-medfm.github.io/，包括：泛癌症分割和多模态模型。
+
+---
+
+## 🚀 加入挑战赛(2026.04.01开放)
+
+* 在本网站注册账户并加入挑战赛
+* 填写[注册表](https://forms.gle/my1MimQ758oDyhWb9)   注：若需修改团队信息，请重新提交表格。
+* 申请数据集[FLARE-AutoMSC](https://huggingface.co/datasets/FLARE-MedFM/FLARE-AutoMSC)。我们将在审核申请后1-2个工作日内批准您的申请。
+
+备注：
+* 本挑战赛分为两个赛道：1) 用于联合分割和分类的统一模型(如[JSC](https://github.com/bowang-lab/JSC))。2) 用于分割(如[nnUNet](https://github.com/MIC-DKFZ/nnUNet))或分类的独立模型([nnClass](https://github.com/bowang-lab/nnClass))。参赛者可参加一个或两个赛道。
+* 对于两个赛道，解决方案应包含能够适应不同数据集的自动配置机制。
+* 如有常见问题页面未列出的问题，请联系chingyuanyu.iec@gmail.com
+
+---
+
+## 🏊‍ 验证提交(2026.4.15-8.05)
+
+* 所有团队可直接在挑战赛页面提交验证结果以获取指标。
+* 所有真值文件已为验证任务发布。参赛者应在论文中报告验证性能。
+
+---
+
+## 🏹 测试提交(2026.8.05-8.20)
+
+提交的Docker</div></div><div class='section'><h3>Organizers</h3><div class='page-content'># 组织者
+
+## 负责人
+[马军](https://scholar.google.com.hk/citations?hl=en&amp;user=bW1UV4IAAAAJ&amp;view_op=list_works&amp;sortby=pubdate)（多伦多大学健康网络）
+
+余庆元（多伦多大学健康网络）
+
+[王博](https://wanglab.ai/)（多伦多大学；多伦多大学健康网络；Vector研究所）
+
+## 协调员
+
+
+
+## 基线贡献者
+
+
+
+## 数据贡献者</div></div><div class='section'><h3>Dataset</h3><div class='page-content'>## 数据集
+
+### 数据集 001 — BrainMets (PROTEAS)
+**纵向多模态脑转移瘤**数据集，包含6个共配准通道（T1、T1c、T2、FLAIR、CT、RTP）。提供**3类肿瘤分割**（坏死核心、增强肿瘤、水肿）和**非小细胞肺癌 vs. 乳腺癌**原发灶分类。40名患者共166个时间点。许可证：CC BY 4.0。
+**来源：** Flouri D, Papanikas CP, Manikis GC, 等。*A longitudinal MRI dataset of brain metastases with tumor segmentations, clinical &amp; radiomic data.* **Scientific Data**, 2025年11月19日; 12:1828。
+
+### 数据集 002 — MU_Glioma_Post
+**治疗后胶质瘤**多序列MRI（t1c、t1n、t2f、t2w），包含**4类肿瘤分割**（NCR、ED、ET、NET_RC）和**3类原发诊断**标签（胶质母细胞瘤/星形细胞瘤/其他）。来自203名患者的591个纵向时间点。
+**来源：** Mahmoud E, Gass J, Dhemesh Y, 等。*MU-Glioma Post: A comprehensive dataset of automated MR multi-sequence segmentation and clinical features.* **Scientific Data**, 2025年11月20日; 12(1):1847。
+
+### 数据集 003 — UCSD_PTGB
+**加州大学圣地亚哥分校治疗后胶质母细胞瘤**队列，采用T1post、FLAIR和ADC成像。提供**全细胞肿瘤**掩模和**IDH突变状态**（野生型 vs. 突变型）。184个病例，3个通道。
+**来源：** Gagnon L, Gupta D, Nguyen U, 等。*The University of California San Diego Post-Treatment Glioblastoma (UCSD-PTGBM) annotated multimodal MRI Dataset.* **Scientific Data**, 2026年1月6日。
+
+### 数据集 004 — PI-CAI
+基准中最大的数据集：**前列腺MRI**（T2W、ADC、HBV），用于**临床显著性前列腺癌（csPCa）分割**和**6级ISUP分级**分类（良性/惰性 + ISUP 1–5）。来自11个中心的1,476名患者的1,500个病例。
+**来源：** Saha A, Bosma JS, Twilt JJ, 等。*Artificial intelligence and radiologists in prostate cancer detection on MRI (PI-CAI): an international, paired, non-inferiority, confirmatory study.* **Lancet Oncology**, 2024; 25:879–887。
+
+### 数据集 005 — LUNA25
+来自**LUNA25挑战赛**的裁剪**低剂量胸部CT图像块**，用于肺癌筛查。每个图像块包含一个结节及**分割掩模**和**良性 vs. 恶性**风险标签。6,141个结节裁剪图，单CT通道。许可证：CC BY 4.0。
+**来源：** Peeters D, Obreja B, Antonissen N, Jacobs C。*Benchmarking of Artificial Intelligence and Radiologists for Lung Cancer Screening in CT: The LUNA25 Challenge.* **MICCAI 2025**（Zenodo: [10.5281/zenodo.15094631](https://doi.org/10.5281/zenodo.15094631)）。
+
+### 数据集 061 — PETWB_Lung
+**PETWB-REP**全身FDG PET/CT集合的子集，配对TotalSegmentator衍生的**肺掩模**和**肺癌 vs. 其他**标签。来自4个队列的490个病例，2个通道（CT、PET）。任务：二元肺分割 + 二元癌症类型分类。许可证：CC BY 4.0。
+**来源：** Xue L, Feng G, Wenbo Z, 等。*PETWB-REP: A Multi-Cancer Whole-Body FDG PET/CT Dataset with Corresponding Radiology Reports.* **Scientific Data**, 2026。
+
+### 数据集 062 — PETWB_Liver
+来自**同一PETWB-REP来源**的数据集061的配套数据集，针对**肝脏**：TotalSegmentator衍生的肝脏掩模配对**肝癌 vs. 其他**标签。490个病例，2个通道（CT、PET）。许可证：CC BY 4.0。
+**来源：** Xue L, Feng G, Wenbo Z, 等。*PETWB-REP: A Multi-Cancer Whole-Body FDG PET/CT Dataset with Corresponding Radiology Reports.* **Scientific Data**, 2026。</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'>## 评估
+
+**分割精度指标：**
+
+* 骰子相似系数（DSC）
+* 归一化表面距离（NSD）
+
+**二分类精度指标：**
+
+* 平衡精度
+* 受试者工作特征曲线下面积（AUROC）
+
+**精度评估脚本：**
+* https://github.com/medfm-flare/AutoMSC_Baseline
+
+**分割效率指标：**
+
+* 运行时间（秒）。我们对运行时间给予45秒的容差（包括docker启动时间）。此外，每个病例的推理时间应在60秒以内。否则，该病例将被视为失败病例（DSC=0，NSD=0）。
+
+![运行时间](https://s2.loli.net/2024/04/06/Fvt1nmPYqZLWxsU.jpg)
+
+* GPU内存消耗（GPU内存-时间曲线下的面积）。
+
+![GPU内存](https://s2.loli.net/2024/03/14/XlnhM3qB27yVZtS.png)
+
+所有指标都将用于计算排名。我们对GPU内存消耗给予4GB的容差，GPU内存 = max(0, 实际GPU内存-4096MB)，因为所有前期顶级团队（即FLARE21-23）都能在该容差范围内实现最先进的分割精度。我们还对运行时间给予容差（FLARE 2023中获胜方案的运行时间），因为它满足典型的临床要求且代码已公开发布。
+
+评估代码已公开发布于：https://github.com/JunMa11/FLARE
+
+&lt;code&gt;docker load -i teamname.tar.gz&lt;/code&gt;
+
+&lt;code&gt;docker container run --gpus &quot;device=1&quot; -m 28G --name teamname --rm -v \$PWD/FLARE_Test/:/workspace/inputs/ -v \$PWD/teamname_outputs/:/workspace/outputs/ teamname:latest /bin/bash -c &quot;sh predict.sh&quot;&lt;/code&gt;
+
+---
+
+## 评估平台
+
+提交的docker容器将在Ubuntu 20.04桌面上进行评估。详细信息如下：
+
+* CPU：Intel® Xeon(R) W-2133 CPU @ 3.60GHz × 12
+* GPU：NVIDIA QUADRO RTX5000（16G）
+* RAM：28G
+* CUDA版本：13.0
+* Docker版本29.4.2
+
+---
+
+## 排名方案
+
+根据ChallengeR [1]中的建议，我们采用先排名后聚合的排名方案，包含以下三个步骤：
+
+步骤1. 对于每个测试病例，计算四项指标；
+
+步骤2. 对每个测试病例和每项指标对参赛者进行排名；
+
+步骤3. 对所有排名进行平均。
+
+[1] Wiesenfarth, M., Reinke, A., Landman, B.A. et al. Methods and open-source toolkit for analyzing and visualizing challenge results. Sci Rep 11, 2369 (2021).</div></div><div class='section'><h3>Baseline</h3><div class='page-content'>## 基线方案
+
+基于nnU-Net的联合分割和分类
+- 代码: https://github.com/medfm-flare/AutoMSC-Baseline
+- 模型和结果: https://huggingface.co/cyyu96/AutoMSC-Baselines</div></div><div class='section'><h3>MICCAI Program</h3><div class='page-content'>TBD</div></div><div class='section'><h3>Award</h3><div class='page-content'>TBD</div></div><div class='section'><h3>Q&amp;A</h3><div class='page-content'>## 常见问题
+
+如有其他问题，请发送邮件至 chingyuanyu.iec@gmail.com。
+
+**Q: 发送签署的挑战规则后，参赛申请需要多长时间才能被批准？**
+
+A: 如果签署的挑战规则文件填写正确，申请将在2-4个工作日内被批准。
+
+**Q: 我只对挑战数据集感兴趣，但不想参加挑战。我可以不加入挑战而下载数据集吗？**
+
+A: 感谢您的关注。为了确保有足够的提交，数据集仅在挑战期间对参与者开放。
+
+**Q: 一个团队最多可以有多少人？**
+
+A: 每支队伍最多可以有6人。论文作者应与团队成员名单相同。
+
+**Q: 我已加入挑战并下载了数据集。我可以退出挑战吗？**
+
+A: 不可以！请尊重已签署的协议。如果已注册的参与者没有成功提交作品，所有团队成员将被列入不诚实名单。
+
+**算法相关问题**
+
+**Q: 我们可以使用其他数据集或预训练模型来开发分割算法吗？**
+
+A: 可以，但你需要先在论坛上发布它们。
+
+**Q: 我们可以手动标注未标记的图像来扩大训练集吗？**
+
+A: 不可以。不允许任何手动干预。
+
+**Q: 我们可以手动选择未标记图像的高质量伪标签吗？**
+
+A: 不可以。不允许任何手动干预。
+
+**Q: 验证提交会影响最终排名吗？**
+
+A: 不会。
+
+**Q: 在测试阶段，我可以修改方法和论文吗？**
+
+A: 可以，你可以在测试提交前进行修改。进行测试提交后，你不能进行修改。
+
+**Q: 我可以将验证集用于模型预训练吗？**
+
+A: 不可以！
+
+**Q: 我可以使用其他公开数据集进行模型预训练吗？**
+
+A: 可以，但你应该在论坛上发布数据集链接，同时还需要提交一个仅用挑战数据集训练的算法。
+
+**Q: 我何时可以访问测试集？**
+
+A: 测试集在挑战期间不会发布，以避免数据泄露。</div></div>
+
+</div>
+</body>
+</html>
