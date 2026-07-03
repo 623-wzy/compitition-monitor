@@ -5,8 +5,8 @@
   "description_zh": "该挑战对事件型视觉上的多模态大型语言模型（MLLMs）的空间推理能力进行基准测试，重点关注目标计数、绝对距离估计和空间关系推理。",
   "created_by": "liusy",
   "created_when": "2026-05-14T01:12:48.802883Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-14-1778721168/24208541bb36/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=3FCLMWBGgSTYDo0q1VDpaqi1p8U%3D&Expires=1782995499",
-  "participants_count": 54,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-14-1778721168/24208541bb36/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=vk%2ByXxQsqqbt1W3VuNrZgGQwT9I%3D&Expires=1783082210",
+  "participants_count": 56,
   "submissions_count": 164,
   "first_phase_start": null,
   "phases": [
@@ -14,7 +14,7 @@
       "id": 26900,
       "name": "Spatial Reasoning",
       "start": "2026-05-20T00:00:00Z",
-      "end": "2026-07-10T00:00:00Z",
+      "end": "2026-07-03T23:59:00Z",
       "max_submissions_per_day": 5
     }
   ],

@@ -5,9 +5,9 @@
   "description_zh": "该竞赛在超声图像回归任务上评估基础模型。参赛者预测解剖学标志点坐标。评估指标为平均径向误差（MRE）和平均绝对误差（MAE），数值越低越好。",
   "created_by": "jared2408",
   "created_when": "2026-04-12T05:59:27.070072Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-13-1776048868/504537dff745/logo.png?AWSAccessKeyId=codabench-prod&Signature=Vw6miaU2ddSrnANINZ4c2Vvqbqc%3D&Expires=1782995504",
-  "participants_count": 171,
-  "submissions_count": 992,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-13-1776048868/504537dff745/logo.png?AWSAccessKeyId=codabench-prod&Signature=DGyZoyFmEJZrg04fsJMVKKafpEY%3D&Expires=1783082217",
+  "participants_count": 173,
+  "submissions_count": 1074,
   "first_phase_start": null,
   "phases": [
     {
@@ -27,14 +27,14 @@
     },
     {
       "index": 1,
-      "title": "⚠️⚠️NEW_Notice",
-      "content": "The discrepancies observed in the AOP predictions may stem from misaligned ordering of data points between the training and validation sets. The system has since adjusted the data sequence, and contestants may resubmit their prediction files, which should yield reduced AOP prediction errors.",
+      "title": "⚠️⚠️⚠️NEW_Notice",
+      "content": "We appreciate the inquiries submitted by participants. The training datasets corresponding to the four cardiac views, namely A4C, PSAX, PLAX and IVC, contain a portion of split-screen ultrasound images. All participants may independently determine whether to adopt these split-screen images for model training. Although training with split-screen images may improve prediction performance, it could also result in adverse effects. The competition organizing committee has confirmed that no split-screen images are included in the test dataset, so all participants may rest assured.",
       "content_zh": "开始日期：6月1日\n\n1.数据集下载\n您可以通过以下渠道下载val_data文件夹\n\n百度网盘：https://pan.baidu.com/s/14pFgrB0jPxtN3MrMAX4GsQ?pwd=1234\n谷歌云盘：https://drive.google.com/drive/folders/1xae7zzKL5YsiIteFJWZEqCfAsSFeGk-z?usp=sharing\n\n2. 提交规范\n请严格按照以下提交要求：\n- 将预测结果生成为单个JSON文件\n- 将JSON文件压缩成zip存档后提交\n- 将压缩文件上传到CodaBench平台\n\n3. 结果反馈与说明\n- 平台将在您提交后立即提供自动反馈\n- 平台上显示的分数和排行榜对最终排名没有实际意义\n- 请主要检查您提交的文件是否完全符合官方JSON格式标准"
     },
     {
       "index": 2,
       "title": "⚠️Notice_before",
-      "content": "1.The required FA file for the FA dataset has been updated from FA_train.csv to FA_train_new.csv.\nPlease kindly replace it accordingly.\nAlternatively, you can simply swap the order of the third and fourth items in FA_train.csv.\n\n2.Please re-download the FUGC validation set. The FUGC_val dataset has been uploaded to the cloud drive, as the previous version contained duplicate data. Thank you\n\n3.The discrepancies observed in the AOP predictions may stem from misaligned ordering of data points between the training and validation sets. The system has since adjusted the data sequence, and contestants may resubmit their prediction files, which should yield reduced AOP prediction errors.",
+      "content": "1.The required FA file for the FA dataset has been updated from FA_train.csv to FA_train_new.csv.\nPlease kindly replace it accordingly.\nAlternatively, you can simply swap the order of the third and fourth items in FA_train.csv.\n\n2.Please re-download the FUGC validation set. The FUGC_val dataset has been uploaded to the cloud drive, as the previous version contained duplicate data. Thank you",
       "content_zh": "FA 数据集所需的 FA 文件已从 FA_train.csv 更新为 FA_train_new.csv。\n\n请相应地替换它。\n\n或者，您可以简单地交换 FA_train.csv 中第三项和第四项的顺序。"
     },
     {
