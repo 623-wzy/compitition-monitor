@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UCF UrbanTwin Sim2Real LiDAR Challenge — V2X-Real Track — ECCV Workshop 2026 — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>UCF UrbanTwin Sim2Real LiDAR Challenge — V2X-Real Track — ECCV Workshop 2026</h2>
+  <div class="detail-meta">
+    <span>ID: 16048</span>
+    <span>创建者: mshahbazkharal</span>
+    <span>创建时间: 2026-04-30</span>
+    <span>参与人数: 5</span>
+    <span>提交次数: 0</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16048/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">合成LiDAR数据，针对V2X-Real的基础设施中心分布；在合成数据上训练，在真实V2X-Real-IC上评估。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development</td><td>2026-06-01</td><td>2026-08-02</td><td>5</td></tr><tr><td><span class='badge badge-test'>测试</span> Final</td><td>2026-08-02</td><td>2026-08-16</td><td>1</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'># UrbanTwin Sim2Real LiDAR挑战赛 — V2X-Real赛道
+
+*6th DriveX Workshop @ ECCV 2026的挑战赛道 —
+  &lt;a href=&quot;https://drivex-workshop.github.io/eccv2026&quot;&gt;drivex-workshop.github.io/eccv2026&lt;/a&gt;。*
+
+路侧LiDAR感知在智能交通系统中的发展受到了大规模、高质量标注真实数据成本高昂且稀缺的限制。本挑战赛提出问题：合成LiDAR数据是否能够足够逼真，使得在其上训练的深度学习模型能够泛化到真实LiDAR帧？
+
+为此，本挑战赛要求参赛者生成自己的合成LiDAR数据以匹配**V2X-Real**分布，在该数据上训练目标检测器，并提交对真实保留测试集帧的检测结果。评分基于：(1)其合成帧与真实帧的分布接近程度，以及(2)仅在合成数据上训练的检测器在真实帧上的性能。
+
+## 参赛者参考资源
+
+为支持需要有据可查的起点的参赛者，我们公开提供了一整套完整参考管道，涵盖合成方法论、实证分析、即用型合成数据集，以及开源LiDAR数据处理和可视化软件。这些资料作为参考方向提供，不作为强制要求。
+
+合成管道详见&lt;a href=&quot;https://arxiv.org/pdf/2509.02903&quot;&gt;UrbanTwin: Building High-Fidelity Digital Twins for Sim2Real LiDAR Perception and Evaluation（arXiv预印本）&lt;/a&gt;，更深入的实证分析包括本挑战赛采用的分布真实性指标详见&lt;a href=&quot;https://scholar.google.com/scholar?oi=bibs&amp;cluster=6844982498826808010&amp;btnI=1&amp;hl=en&quot;&gt;High-Fidelity Digital Twins for Bridging the Sim2Real Gap in LiDAR-Based ITS Perception（IEEE T-ITS，2026）&lt;/a&gt;。
+
+使用该管道生成的合成LiDAR数据集发布在&lt;a href=&quot;https://ieeexplore.ieee.org/iel8/8784355/8957420/11357520.pdf&quot;&gt;UrbanTwin: Synthetic Roadside LiDAR Datasets（IEEE OJ-ITS，2026）&lt;/a&gt;，可在&lt;a href=&quot;https://dataverse.harvard.edu/dataverse/ucf-ut&quot;&gt;Harvard Dataverse&lt;/a&gt;下载。每个数据集包含**10K帧**，标注涵盖**六个物体类别**，支持**检测、跟踪和分割任务**，与本挑战赛采用的多类别评估直接兼容；论文中的实证分析包括分布真实性指标和单类别3D物体检测概念验证研究。对于端到端LiDAR处理，我们还提供&lt;a href=&quot;https://ieeexplore.ieee.org/document/11498694&quot;&gt;LiGuard框架（IEEE T-IV，2026）&lt;/a&gt;，以及更简洁的软件相关阅读&lt;a href=&quot;https://joss.theoj.org/papers/10.21105/joss.06751.pdf&quot;&gt;《开源软件期刊》&lt;/a&gt;。
+
+## 你将要做的事
+
+1. 下载公开的真实**V2X-Real**数据集和已发布的检测测试点云（50个真实帧，无标签）。
+2. 使用任何方法生成合成LiDAR帧——模拟（CARLA、LGSVL、自定义）、生成模型（扩散、GAN、基于流的模型）、混合管道或其他任何方法。
+3. **仅在你的合成数据**上训练3D物体检测器（任何架构）。
+4. 提交：
+   - 50个你的合成LiDAR帧
+   - 你的检测器对50个已发布测试点云的预测结果
+   - 一份签署的诚信声明
+
+## 评分概览
+
+综合得分 = `0.6 × 归一化3D mAP` + `0.4 × 归一化真实性`，其中3D mAP在本赛道定义的**3个**物体类别（*车辆、行人、卡车*）上求平均，真实性对归一化倒角距离、最大均值差异、地球移动距离和Fréchet点云距离求平均</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'># 评估协议
+
+&lt;p&gt;
+计算两个分数并将其合并为单一的&lt;em&gt;综合&lt;/em&gt;分数，该分数决定排行榜排名。
+&lt;/p&gt;
+
+&lt;h2&gt;1. 分布真实性&lt;/h2&gt;
+
+&lt;p&gt;聚合：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;将50帧提交的合成帧连接成一个集合&lt;code&gt;S_syn&lt;/code&gt;；将50帧保留的真实参考帧连接成&lt;code&gt;S_real&lt;/code&gt;。&lt;/li&gt;
+  &lt;li&gt;将两者掩码到点云范围&lt;code&gt;[-40, -40, -8, 40, 40, 2]&lt;/code&gt;。&lt;/li&gt;
+  &lt;li&gt;以均匀随机方式以&lt;strong&gt;每侧N = 10,000个点&lt;/strong&gt;进行下采样，种子值为1234（与启动工具包中的本地评估器使用的种子相同）。&lt;/li&gt;
+  &lt;li&gt;在整个10,000个点的集合上计算&lt;strong&gt;一个&lt;/strong&gt; CD、MMD、EMD和FPD。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;1a. 倒角距离（CD）&lt;/h3&gt;
+&lt;pre&gt;
+CD(P, Q) = (1/|P|) &amp;Sigma;_{p &amp;isin; P} min_{q &amp;isin; Q} ||p - q||&amp;sup2;
+         + (1/|Q|) &amp;Sigma;_{q &amp;isin; Q} min_{p &amp;isin; P} ||p - q||&amp;sup2;
+&lt;/pre&gt;
+&lt;p&gt;平方L2最近邻成本；对称。越低越好。&lt;/p&gt;
+
+&lt;h3&gt;1b. 最大平均差异（MMD）&lt;/h3&gt;
+&lt;pre&gt;
+MMD&amp;sup2;(X, Y) = E[k(x, x&#x27;)] + E[k(y, y&#x27;)] - 2 E[k(x, y)],   k(a, b) = exp(-&amp;gamma; ||a - b||&amp;sup2;)
+&lt;/pre&gt;
+&lt;p&gt;
+无偏估计量（非对角线）。带宽&lt;code&gt;&amp;gamma;&lt;/code&gt;由1,000个点的联合子样本上的中位数启发式设置（&lt;code&gt;&amp;gamma; = 1 / (2 &amp;middot; median ||x - y||&amp;sup2;)&lt;/code&gt;），使核在激光雷达空间尺度不会饱和。越低越好。
+&lt;/p&gt;
+
+&lt;h3&gt;1c. 地球搬运距离（EMD）&lt;/h3&gt;
+&lt;pre&gt;
+EMD(X, Y) = &amp;radic; ( min_{T &amp;isin; &amp;Pi;(X, Y)} &amp;Sigma;_{i,j} T_{ij} &amp;middot; ||x_i - y_j|| )
+&lt;/pre&gt;
+&lt;p&gt;
+Wasserstein-1距离，欧几里得地面成本，由网络单纯形精确求解（POT的&lt;code&gt;ot.emd2&lt;/code&gt;）。以米为单位报告。越低越好。
+&lt;/p&gt;
+
+&lt;h3&gt;1d. Fréchet点云距离（FPD）&lt;/h3&gt;
+&lt;pre&gt;
+FPD = ||&amp;mu;_X - &amp;mu;_Y||&amp;sup2; + Tr(&amp;Sigma;_X + &amp;Sigma;_Y - 2 (&amp;Sigma;_X &amp;middot; &amp;Sigma;_Y)^{1/2})
+&lt;/pre&gt;
+&lt;p&gt;
+FID风格：对每个集合的点拟合3变量高斯分布，计算高斯分布之间的2-Wasserstein距离。越低越好。
+&lt;/p&gt;
+
+&lt;h2&gt;2. 三维物体检测&lt;/h2&gt;
+
+&lt;p&gt;
+参赛者在50帧真实激光雷达帧上提交检测结果（&lt;code&gt;predictions.json&lt;/code&gt;），这些帧的真实标签被保留。我们计算在&lt;strong&gt;本赛道定义的3个物体类别&lt;/strong&gt;（&lt;em&gt;车辆、行人、卡车&lt;/em&gt;）上的平均精度，IoU阈值为0.5（主要）和0.7（次要）。报告按类别的AP，&lt;strong&gt;类别间的平均AP（mAP）&lt;/strong&gt;是排行榜的检测分数；保留集中真实标签数为零的类别被排除在平均值外。报告KITTI 11点和40点插值AP；40点形式是排行榜的主要指标。
+&lt;/p&gt;
+
+&lt;p&gt;
+真实标签和预测框使用OpenPCDet 7-DoF格式&lt;code&gt;[x, y, z, dx, dy, dz, heading]&lt;/code&gt;。IoU计算为两个有向BEV矩形的三维交并比乘以Z重叠。未应用KITTI截断/遮挡/最小高度难度过滤，因为这些取决于对于路边激光雷达数据集不自然的二维边界框注释。
+&lt;/p&gt;
+
+&lt;p&gt;本赛道的有效类别字符串列在&lt;code&gt;config.json&lt;/code&gt;中（在&lt;code&gt;reference_data/&lt;/code&gt;中提供）和启动工具包中的&lt;code&gt;submission_format.md&lt;/code&gt;中。任何具有无法识别的类别标签的预测都将被丢弃。&lt;/p&gt;
+
+&lt;h2&gt;3. 综合分数&lt;/h2&gt;
+
+&lt;p&gt;每个组件使用按赛道的归一化范围被最小-最大归一化到[0, 1]：&lt;/p&gt;
+&lt;pre&gt;
+score_realism   = mean( norm(CD), norm(MMD), norm(EMD), norm(FPD) )    (越低越好 &amp;rarr; 1 - clip)
+score_detection = norm( AP_3d @ IoU 0.5 )                               (越高越好 &amp;rarr; clip)
+score_combined  = 0.6 &amp;middot; score_detection + 0.4 &amp;middot; score_realism
+&lt;/pre&gt;
+&lt;p&gt;
+归一化端点在&lt;code&gt;config.json&lt;/code&gt;中公开（在&lt;code&gt;reference_data/&lt;/code&gt;中提供），因此本地评估器和服务器计算相同的分数。
+&lt;/p&gt;</div></div><div class='section'><h3>Data</h3><div class='page-content'>&lt;h1&gt;数据&lt;/h1&gt;
+
+&lt;h2&gt;V2X-Real&lt;/h2&gt;
+
+&lt;p&gt;
+真实的&lt;strong&gt;V2X-Real&lt;/strong&gt;数据从其原始发布以来已公开可用。我们不重新分发该数据集。参赛者必须根据其许可证直接从源获取真实数据集。
+&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;来源：&lt;/strong&gt; &lt;a href=&quot;https://github.com/ucla-mobility/V2X-Real&quot;&gt;https://github.com/ucla-mobility/V2X-Real&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;许可证：&lt;/strong&gt;见来源。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;为参赛者发布的资源&lt;/h2&gt;
+&lt;p&gt;起始工具包（&lt;em&gt;Files&lt;/em&gt;选项卡 → starting_kit）包含：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;detection_test_frames/&lt;/code&gt; — &lt;strong&gt;50个真实激光雷达帧&lt;/strong&gt;（仅点云，无标签），您必须在这些帧上运行检测器并提交预测。&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;detection_test_frame_ids.json&lt;/code&gt; — 您的&lt;code&gt;predictions.json&lt;/code&gt;必须按顺序涵盖的规范帧ID列表。&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;forbidden_frames.txt&lt;/code&gt; — &lt;strong&gt;100个帧ID，您不能在其上进行训练、验证或超参数调整&lt;/strong&gt;。这是50个检测测试帧和50个真实性参考帧的并集。基于荣誉制度，由您提交中的签署声明执行。&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;local_eval.py&lt;/code&gt; — 发送到Codabench工作者的确切评分程序。在本地运行以从发布的检测测试帧生成虚拟参考集后，逐位重现服务器分数。&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;make_dummy_submission.py&lt;/code&gt; — 生成已知的不良提交来测试格式。对于验证您的管道很有用。&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;submission_format.md&lt;/code&gt; — 完整的提交规范。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;保留（仅组织者）&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;50个用作&lt;em&gt;真实性参考集&lt;/em&gt;的真实帧。&lt;/li&gt;
+  &lt;li&gt;50个检测测试帧的真实标注框。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;评估的类别&lt;/h2&gt;
+&lt;p&gt;
+本赛道在&lt;strong&gt;V2X-Real&lt;/strong&gt;数据集定义的&lt;strong&gt;3&lt;/strong&gt;个目标类别上评分：&lt;em&gt;车辆、行人、卡车&lt;/em&gt;。排行榜的检测分数是这些类别中的平均AP；在保留的50帧集中没有真实实例的类别从平均值中排除。
+&lt;/p&gt;
+
+&lt;h2&gt;数据集划分&lt;/h2&gt;
+&lt;p&gt;
+划分是使用固定种子1234的分层随机样本。精确的帧ID列表已在起始工具包中发布，以便任何人都可以从发布的真实数据集中重现它们。
+&lt;/p&gt;
+
+&lt;h2&gt;参考基线&lt;/h2&gt;
+&lt;p&gt;
+下面报告的数字仅适用于&lt;em&gt;车辆&lt;/em&gt;类，来自该数据集上的先前工作。排行榜的检测分数是该赛道定义的所有类别的平均AP（见&lt;strong&gt;评估&lt;/strong&gt;），因此提交在比这些单类参考更广泛的覆盖范围上评分。包括这些基线是为了证明模拟→真实转移在该基准上是可实现的，并为您迭代时提供每类参考点以供参考。
+&lt;/p&gt;
+&lt;table border=&quot;1&quot; cellpadding=&quot;6&quot;&gt;
+  &lt;tr&gt;
+    &lt;th&gt;系统&lt;/th&gt;&lt;th&gt;车辆3D AP @ 0.5&lt;/th&gt;&lt;th&gt;车辆3D AP @ 0.7&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;V2X-Real无融合基准（SECOND，真实）&lt;/td&gt;
+    &lt;td&gt;0.3556&lt;/td&gt;
+    &lt;td&gt;n/r&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;SECOND（UT-V2X-Real合成 → V2X-Real-IC，IEEE T-ITS 2026）&lt;/td&gt;
+    &lt;td&gt;0.6318&lt;/td&gt;
+    &lt;td&gt;n/r&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</div></div><div class='section'><h3>Submission</h3><div class='page-content'># 提交格式
+
+将以下所有内容打包到单个 `submission.zip` 中，然后在*提交*标签页上传。
+
+```
+submission.zip
+├── synthetic/
+│   ├── 0001.bin
+│   ├── 0002.bin
+│   ├── ...
+│   └── 0050.bin           # 恰好50个文件
+├── predictions.json
+└── declaration.pdf        # 签署的荣誉声明（PDF）。也接受 declaration.txt。
+```
+
+## synthetic/&lt;id&gt;.bin
+
+- 恰好 **50** 个文件。
+- 每个文件为原始 `float32` 格式，形状为 `N × 3`，按行主序存储，通道为 `(x, y, z)`（单位：米）。
+- 接受 `N × 3` 或 `N × 4`（xyz + 强度）格式；若存在强度列，计分前会将其丢弃。
+- 每个文件 ≤ 1.5 MB（约 125,000 个点）。真实感在数据集级别计算：将所有 50 帧连接，遮罩到轨迹的点云范围，然后下采样到 10,000 个点（种子 1234），再计算 CD / MMD / EMD / FPD。提交更密集的帧不会改善分数；帧顺序无关。
+- 最简单的有效命名为 `0001.bin … 0050.bin`。
+
+## predictions.json
+
+JSON 对象，其键为 `detection_test_frame_ids.json`（在初始工具包中）中的帧 ID。对每个帧 ID 必须包含一个条目，即使值为空列表也是如此。
+
+```
+{
+  &quot;&lt;frame_id_1&gt;&quot;: [
+    {&quot;box&quot;: [x, y, z, dx, dy, dz, heading], &quot;score&quot;: 0.97, &quot;class&quot;: &quot;vehicle&quot;},
+    {&quot;box&quot;: [...],                          &quot;score&quot;: 0.81, &quot;class&quot;: &quot;pedestrian&quot;}
+  ],
+  &quot;&lt;frame_id_2&gt;&quot;: [],
+  ...
+}
+```
+
+- `box`：7 个浮点数，遵循 OpenPCDet 规范。`(x, y, z)` 是盒子*中心*在 LiDAR 坐标系中的位置（单位：米），`(dx, dy, dz)` 是沿盒子局部轴的完整尺寸，`heading` 是围绕 `+Z` 的旋转（单位：弧度）。
+- `score`：置信度，范围 [0, 1]。
+- `class`：此轨迹的有效类别字符串之一。有效值：`vehicle`（车辆）、`pedestrian`（行人）、`truck`（卡车）。类别字符串匹配不区分大小写。计算 AP 前会丢弃具有无法识别类别字符串的预测。
+
+## declaration.pdf（或 declaration.txt）
+
+初始工具包包含 `declaration_template.pdf`，这是一份单页表单，具有预先打印的必需荣誉声明和签名行。填入团队名称和日期，签署（使用任何 PDF 工具进行数字签名，或打印 → 签署 → 扫描），另存为 `declaration.pdf`，并将其包含在每次提交中。
+
+如果无法轻松生成签署的 PDF，也接受纯文本 `declaration.txt`。必需声明（逐字，不区分大小写）：
+
+&gt; *我确认我没有对 `forbidden_frames.txt` 中列出的任何帧进行训练，且所有提交的检测都是由仅在我生成的合成数据上训练的模型生成的。*
+
+## 返回内容
+
+评分后（有效提交通常 &lt; 5 分钟），您将在排行榜上看到您的位置，以及包含所有组件指标的*详细结果*视图，包括按类别的 AP。</div></div><div class='section'><h3>Rules</h3><div class='page-content'>&lt;h1&gt;规则&lt;/h1&gt;
+
+&lt;h2&gt;参赛资格&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;面向所有人开放——研究人员、学生、产业团队均可参赛。&lt;/li&gt;
+  &lt;li&gt;每个团队必须注册一个参赛者账户，不得维持多个账户。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;允许的内容&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;任何仿真框架或生成模型（CARLA、Helios++、OpenScene、神经辐射场、扩散模型、GAN、自定义物理引擎）。开源或闭源均可——重要的是合成数据的质量。&lt;/li&gt;
+  &lt;li&gt;任何3D目标检测器架构，仅在&lt;em&gt;你自己生成的合成数据&lt;/em&gt;上训练。&lt;/li&gt;
+  &lt;li&gt;检测器训练过程中应用的数据增强（旋转、缩放、翻转、真值采样、噪声）——这些操作作用于合成数据，而非禁止的真实图像。&lt;/li&gt;
+  &lt;li&gt;使用公共真实数据集的&lt;strong&gt;训练集&lt;/strong&gt;进行超参数选择或域适应，&lt;em&gt;条件是不接触任何禁止的图像&lt;/em&gt;。（禁止列表仅包含100个保留帧，不包括整个真实训练集。）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;禁止的内容&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;对&lt;code&gt;forbidden_frames.txt&lt;/code&gt;中列出的任何100帧进行训练、验证、超参数调整或以其他方式观察其真值标注。这由签署声明强制执行，是本挑战赛的基础完整性规则。&lt;/li&gt;
+  &lt;li&gt;提交由在任何路侧激光雷达数据集的真实标签上训练过的模型所生成的预测结果。检测器必须仅基于仿真数据。&lt;/li&gt;
+  &lt;li&gt;通过Codabench排行榜信号逆向工程或推断被保留的真实参考帧（例如，设计用于泄露参考集身份的探测性提交）。发现进行此操作的提交将被取消资格。&lt;/li&gt;
+  &lt;li&gt;多个账户、子团队账户或已注册团队间的协调。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;取消资格&lt;/h2&gt;
+&lt;p&gt;
+组织者保留权利检查任何提交的合成图像和预测结果，以寻找禁止帧泄露的证据（例如，与被保留真实图像可疑相似的合成帧；其分布暗示获得了被保留真值标注的预测）。被取消资格的参赛者将从排行榜和奖项考虑中被移除。
+&lt;/p&gt;
+
+&lt;h2&gt;奖金&lt;/h2&gt;
+  &lt;p&gt;每个赛道：第1名USD 500，第2名USD 300，第3名USD 200。赞助商信息将在开发阶段开始前公布。&lt;/p&gt;
+
+&lt;h2&gt;发表与署名&lt;/h2&gt;
+  &lt;ul&gt;
+    &lt;li&gt;每支参赛团队提交一份&lt;strong&gt;4–8页的挑战赛报告&lt;/strong&gt;，描述其方法。&lt;/li&gt;
+    &lt;li&gt;不愿发表的团队可选择参加研讨会的&lt;em&gt;非发表赛道&lt;/em&gt;。&lt;/li&gt;
+    &lt;li&gt;每个赛道的前3名团队另外邀请向&lt;em&gt;下一届DriveX研讨会论文集赛道&lt;/em&gt;提交完整论文。&lt;/li&gt;
+    &lt;li&gt;挑战赛组织者可发表所有提交的汇总分析（匿名处理，除非获得明确授权）。&lt;/li&gt;
+  &lt;/ul&gt;</div></div><div class='section'><h3>Citations</h3><div class='page-content'>&lt;h1&gt;引用&lt;/h1&gt;
+
+&lt;p&gt;如果您使用了挑战数据、基线或评分代码，请引用以下内容。&lt;/p&gt;
+
+&lt;h2&gt;UrbanTwin 出版物&lt;/h2&gt;
+
+&lt;pre style=&quot;white-space: pre-wrap;&quot;&gt;
+@article{shahbaz2026urbantwin,
+  title   = {UrbanTwin: Synthetic Roadside LiDAR Datasets},
+  author  = {Shahbaz, Muhammad and Agarwal, Shaurya},
+  journal = {IEEE Open Journal of Intelligent Transportation Systems},
+  year    = {2026}
+}
+
+@article{shahbaz2026hifidelity,
+  title   = {High-Fidelity Digital Twins for Bridging the Sim2Real Gap in LiDAR-Based ITS Perception},
+  author  = {Shahbaz, Muhammad and Agarwal, Shaurya},
+  journal = {IEEE Transactions on Intelligent Transportation Systems},
+  year    = {2026}
+}
+
+@article{shahbaz2025urbantwin,
+  title   = {UrbanTwin: Building High-Fidelity Digital Twins for Sim2Real LiDAR Perception and Evaluation},
+  author  = {Shahbaz, Muhammad and Agarwal, Shaurya},
+  journal = {arXiv preprint arXiv:2509.02903},
+  year    = {2025}
+}
+&lt;/pre&gt;
+
+&lt;h2&gt;基础真实数据集&lt;/h2&gt;
+
+&lt;pre style=&quot;white-space: pre-wrap;&quot;&gt;@article{xiang2024v2xreal, title={V2X-Real: a Large-Scale Dataset for Vehicle-to-Everything Cooperative Perception}, author={Xiang, Hao and others}, journal={ECCV}, year={2024}}&lt;/pre&gt;
+
+&lt;h2&gt;检测器代码&lt;/h2&gt;
+
+&lt;pre style=&quot;white-space: pre-wrap;&quot;&gt;
+@misc{openpcdet2020,
+  title        = {OpenPCDet: An Open-Source Toolbox for 3D Object Detection from Point Clouds},
+  author       = {{OpenPCDet Development Team}},
+  howpublished = {https://github.com/open-mmlab/OpenPCDet},
+  year         = {2020}
+}
+&lt;/pre&gt;
+
+&lt;h2&gt;检测器骨干网络&lt;/h2&gt;
+
+&lt;pre style=&quot;white-space: pre-wrap;&quot;&gt;
+@inproceedings{liu2024seed,
+  title     = {SEED: A Simple and Effective 3D DETR in Point Clouds},
+  author    = {Liu, Zhe and Hou, Zhikang and Ye, Xiwu and Wang, Tao and Wang, Jingdong and Bai, Xiang},
+  booktitle = {ECCV},
+  year      = {2024}
+}
+
+@article{yan2018second,
+  title   = {SECOND: Sparsely Embedded Convolutional Detection},
+  author  = {Yan, Yan and Mao, Yuxing and Li, Bo},
+  journal = {Sensors},
+  volume  = {18},
+  number  = {10},
+  year    = {2018}
+}
+&lt;/pre&gt;
+
+&lt;h2&gt;评估指标&lt;/h2&gt;
+
+&lt;pre style=&quot;white-space: pre-wrap;&quot;&gt;
+@inproceedings{achlioptas2018learning,
+  title     = {Learning Representations and Generative Models for 3D Point Clouds},
+  author    = {Achlioptas, Panos and Diamanti, Olga and Mitliagkas, Ioannis and Guibas, Leonidas},
+  booktitle = {ICML},
+  year      = {2018}
+}
+
+@article{flamary2021pot,
+  title   = {POT: Python Optimal Transport},
+  author  = {Flamary, Rémi and Courty, Nicolas and others},
+  journal = {Journal of Machine Learning Research},
+  volume  = {22},
+  number  = {78},
+  year    = {2021}
+}
+&lt;/pre&gt;</div></div>
+
+</div>
+</body>
+</html>
