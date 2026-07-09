@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>本次更新 — Codabench 竞赛监测</title>
+<title>MER2026-Prefer-stage2 — Codabench 竞赛监测</title>
 <style>
 :root {
     --bg: #0f1117;
@@ -97,10 +97,70 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
   <h1>Codabench 竞赛监测</h1>
   <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
 </header>
-<div class="update-wrap">
+<div class="detail-wrap">
   <a class="back-link" href="index.html">← 返回竞赛目录</a>
-  <p style="color:var(--muted);font-size:.875rem;margin-bottom:24px">更新于 2026-07-09 20:05</p>
-<div class='update-section'><h2 class='new'>🆕 新增竞赛</h2><div class='update-item'><div class='item-title'><a href='17467.html'>iscslp_test</a></div><div class='item-detail'>Dev phase: 2026-07-08 → 2026-07-12</div></div><div class='update-item'><div class='item-title'><a href='17459.html'>MER2026-Prefer-stage2</a></div><div class='item-detail'>Start: 2026-07-12 → 2026-07-14</div></div></div><div class='update-section'><h2 class='expired'>🗑️ 过期清理</h2><div class='update-item'><div class='item-title'>LoViF 2026 The Third Challenge on Day and Night Raindrop Removal for Dual-Focused Images@ECCV2026</div><div class='item-detail'>ID: 16614</div></div><div class='update-item'><div class='item-title'>LoViF 2026 The Challenge on Ultra-Low Bitrate Image Compression @ ECCV 2026</div><div class='item-detail'>ID: 16656</div></div></div>
+  <h2>MER2026-Prefer-stage2</h2>
+  <div class="detail-meta">
+    <span>ID: 17459</span>
+    <span>创建者: coffey</span>
+    <span>创建时间: 2026-07-09</span>
+    <span>参与人数: 52</span>
+    <span>提交次数: 2</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/17459/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">MER-Prefer是一个新引入的赛道，用于预测人类标注员对给定视频的两个情感描述中哪一个更倾向于选择。情感偏好的概念首次在EmoPrefer中提出，在训练能够理解人类情感的奖励模型中发挥了关键作用。我们采用加权F1分数（WAF）作为主要指标，准确率（ACC）作为次要指标。这是2026年ACM Multimedia大会MER2026挑战赛的一部分。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-other'>其他</span> Start</td><td>2026-07-12</td><td>2026-07-14</td><td>3</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>data</h3><div class='page-content'>&lt;h1&gt;数据&lt;/h1&gt;
+&lt;p&gt;请完成Hugging Face上的最终用户许可协议（EULA）以访问该数据集：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://huggingface.co/datasets/MERChallenge/MER2026&quot;&gt;https://huggingface.co/datasets/MERChallenge/MER2026&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;EULA明确规定该数据集仅供学术研究使用，禁止任何修改或上传到互联网。我们将及时审核提交的EULA；审核通过后，参赛者将获得数据集的访问权限。&lt;/p&gt;
+&lt;p&gt;MER2026基线论文和代码也已发布：&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;基线论文：&lt;a href=&quot;https://arxiv.org/abs/2604.19417&quot;&gt;https://arxiv.org/abs/2604.19417&lt;/a&gt;&lt;/li&gt;&lt;li&gt;基线代码（赛道1-3）：&lt;a href=&quot;https://github.com/zeroQiaoba/MERTools&quot;&gt;https://github.com/zeroQiaoba/MERTools&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;官方网站：&lt;a href=&quot;https://zeroqiaoba.github.io/MER-Challenge/&quot;&gt;https://zeroqiaoba.github.io/MER-Challenge/&lt;/a&gt;&lt;/p&gt;</div></div><div class='section'><h3>overview</h3><div class='page-content'># mer_prefer_stage2：情感偏好
+
+&lt;p&gt;MER-Prefer 是一个新引入的赛道。情感偏好的概念首次在 &lt;a href=&quot;https://arxiv.org/abs/2508.01318&quot;&gt;EmoPrefer&lt;/a&gt; 中提出，该概念针对给定视频预测人类标注者更倾向于哪个情感描述。该任务在训练能够理解人类情感的奖励模型中起着至关重要的作用。&lt;/p&gt;
+
+&lt;p&gt;我们提供两个训练数据集：&lt;b&gt;EmoPrefer-Data&lt;/b&gt;（多数投票标签）和 &lt;b&gt;EmoPrefer-Data-V2&lt;/b&gt;（单一标注者标签）。对于测试，我们提供 379 个样本，均采用多数投票标签。&lt;/p&gt;
+
+&lt;p&gt;有关更多详情，请参阅基准论文：&lt;a href=&quot;https://arxiv.org/abs/2604.19417&quot;&gt;https://arxiv.org/abs/2604.19417&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;官方网站：&lt;a href=&quot;https://zeroqiaoba.github.io/MER-Challenge/&quot;&gt;https://zeroqiaoba.github.io/MER-Challenge/&lt;/a&gt;&lt;/p&gt;
+
+## 提交格式
+
+&lt;p&gt;结果文件必须命名为 &lt;code&gt;answer.csv&lt;/code&gt;，包含以下列：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;name&lt;/code&gt;：样本标识符&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;a1&lt;/code&gt;：第一个情感描述（文本）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;a2&lt;/code&gt;：第二个情感描述（文本）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;preference&lt;/code&gt;：首选描述 — 必须恰好是 &lt;code&gt;a1&lt;/code&gt; 或 &lt;code&gt;a2&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;将 &lt;code&gt;answer.csv&lt;/code&gt; 压缩为 &lt;code&gt;answer.zip&lt;/code&gt; 并通过 Codabench 提交。&lt;/p&gt;</div></div><div class='section'><h3>evaluation</h3><div class='page-content'># 评估
+
+在MER-Prefer中，我们使用**加权F1分数（WAF）**作为主要评估指标，**准确率（ACC）**作为次要评估指标进行二分类偏好分类评估。
+
+对于每个样本，提交内容必须预测人工标注者更倾向于描述`a1`还是`a2`。该预测与地面真实偏好标签进行比较评估。
+
+仅评估在地面真实集合中存在`(name, a1, a2)`元组的样本。
+
+详见基线论文：&lt;a href=&quot;https://arxiv.org/abs/2604.19417&quot;&gt;https://arxiv.org/abs/2604.19417&lt;/a&gt;
+
+官方网站：&lt;a href=&quot;https://zeroqiaoba.github.io/MER-Challenge/&quot;&gt;https://zeroqiaoba.github.io/MER-Challenge/&lt;/a&gt;</div></div>
+
 </div>
 </body>
 </html>

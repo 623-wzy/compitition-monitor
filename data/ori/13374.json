@@ -5,8 +5,8 @@
   "created_by": "lanxiao",
   "owner_display_name": "lanxiao",
   "created_when": "2026-01-29T20:19:17.964849Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-01-29-1769717957/3a83607f7a38/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260128161328_371_2.png?AWSAccessKeyId=codabench-prod&Signature=vl8xPO6JUGI89RJkUkmgyQHjFR8%3D&Expires=1783515594",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-01-29-1769717957/3a83607f7a38/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260128161328_371_2_icon.png?AWSAccessKeyId=codabench-prod&Signature=8ryG1MMkAtsWB%2BQhhz2BibXUMZM%3D&Expires=1783515594",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-01-29-1769717957/3a83607f7a38/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260128161328_371_2.png?AWSAccessKeyId=codabench-prod&Signature=QHWGbiZ3enW%2Bv90OEK8Tzh4Ep8w%3D&Expires=1783602239",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-01-29-1769717957/3a83607f7a38/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260128161328_371_2_icon.png?AWSAccessKeyId=codabench-prod&Signature=4TGKU4LZpCQniZq%2FiuN2UE0lJu8%3D&Expires=1783602239",
   "terms": "## Participation Terms\n\nThis is a toy benchmark created for academic and educational purposes.\n\n- The data provided in this benchmark is synthetic / mock data.\n- There are no restrictions on model design or implementation.\n- Submissions are evaluated automatically using a predefined metric.\n- This benchmark is not intended for real-world deployment or clinical use.\n\nBy participating, you agree to these terms.",
   "pages": [
     {
