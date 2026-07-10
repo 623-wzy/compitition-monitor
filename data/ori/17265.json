@@ -1,0 +1,296 @@
+{
+  "id": 17265,
+  "title": "第十届全国激光雷达大会——City-Facade建筑立面点云实例分割大赛",
+  "published": true,
+  "created_by": "jianlongguan",
+  "owner_display_name": "jianlongguan",
+  "created_when": "2026-06-26T12:50:09.783065Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=mc2xzKfOgU5cEIbknVMtWFftxws%3D&Expires=1783688944",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381_icon.png?AWSAccessKeyId=codabench-prod&Signature=wHvGREZyZpe06WJwxr%2B3IlpBWtA%3D&Expires=1783688944",
+  "terms": "City-Facade 数据集仅限按照其数据许可协议和本比赛规则，用于科研、教学和比赛相关的非商业用途。数据集、点云数据及其语义和实例标注的相关权利归原始数据提供方所有。\n\n参赛者在使用比赛数据时，应遵守以下规定：\n\n- 未经数据提供方书面许可，不得出售、转让、再许可或以其他方式商业使用比赛数据；\n- 不得将完整数据集、测试数据、实例标注或其衍生标注重新公开发布；\n- 不得尝试获取、推测、恢复、交换或传播隐藏测试标签；\n- 不得对测试集进行人工逐点或逐实例标注；\n- 不得根据排行榜反馈人工修正测试集实例分割结果；\n- 不得使用多个账号或多个队伍规避提交次数限制；\n- 不得提交其他参赛团队或第三方的预测结果；\n- 不得利用平台漏洞、恶意文件或其他不正当方式影响比赛评测。\n\n参赛者可以使用公开可获得的预训练模型或外部数据，但应遵守相关资源的许可协议，并在最终技术报告中完整披露数据来源、模型来源和具体使用方式。比赛组织方有权依据正式比赛规则限制部分外部资源的使用。\n\n使用 City-Facade 数据集开展研究或发表成果时，应引用以下论文：\n\n```bibtex\n@article{chen2026cityfacade,\n  title={City-Facade: A city-level large-scale point cloud building facade dataset for semantic \\& instance segmentation},\n  author={Chen, Yiping and Li, Jonathan and Han, Ting and Feng, Huifang and Chen, Jun and Wang, Cheng},\n  journal={ISPRS Journal of Photogrammetry and Remote Sensing},\n  volume={232},\n  pages={675--688},\n  year={2026},\n  doi={10.1016/j.isprsjprs.2026.01.003}\n}\n```\n\n数据集项目地址：\n\n```text\nhttps://github.com/gorgeouseping/City-Facade\n```\n\n排行榜成绩不直接等同于最终获奖结果。排名靠前的团队须按照比赛组织方要求提交完整代码、模型权重、运行环境、技术报告和必要的复现材料。\n\n无法复现、材料不完整、未披露外部数据或存在违规行为的结果，可能被取消成绩、排名或获奖资格。\n\n参加本比赛即表示参赛者已阅读、理解并同意遵守上述条款。比赛组织方保留对违规行为进行调查和处理，以及对比赛规则作出最终解释的权利。",
+  "pages": [
+    {
+      "id": 82246,
+      "title": "比赛说明",
+      "content": "# **建筑物立面点云语义/实例分割**\n\n## **Overview**\n\n本赛道采用 City-Facade 城市建筑立面点云数据集，开展建筑立面点云语义分割与实例分割。\n\n参赛者需要为测试集中的每个点预测语义类别，并进一步区分同一语义类别下不同建筑立面构件的实例编号。\n\nCity-Facade 数据由车载移动激光扫描系统采集，覆盖厦门市 6 类典型城市街区场景，累计道路长度约 60 km，包含约 2 亿个带标注点。\n\n语义类别如下：\n\n| **编号** | **英文类别**              | **中文类别** |\n| -------- | ------------------------- | ------------ |\n| 0        | Background / Unclassified | 背景或未分类 |\n| 1        | Wall                      | 墙面         |\n| 2        | Window                    | 窗户         |\n| 3        | Door                      | 门           |\n| 4        | Roof                      | 屋顶         |\n| 5        | Advertisement             | 广告牌       |\n| 6        | Air Conditioner           | 空调外机     |\n| 7        | Rain Shed                 | 雨棚         |\n| 8        | Balcony                   | 阳台         |\n\n参赛流程：\n\n1. 在训练数据集上开发三维点云语义分割与实例分割模型；\n2. 使用训练完成的模型预测测试数据；\n3. 为每个测试点生成语义标签和实例标签；\n4. 按指定目录结构压缩预测结果；\n5. 将结果上传至 Codabench；\n6. 平台自动评测并更新排行榜。\n\n数据集项目地址：\n\n```text\nhttps://github.com/gorgeouseping/City-Facade\n```\n\n## **Evaluation**\n\n主排名指标为综合得分：\n\n```text\nScore = 0.5 × mIoU + 0.5 × AP50\n```\n\n其中：\n\n- mIoU 用于评价语义分割精度；\n- AP50 用于评价实例分割精度。\n\n辅助指标包括：\n\n- mIoU\n- OA\n- 各类别 IoU\n- AP\n- AP25\n- AP50\n\n所有指标均为越高越好。\n\n每支队伍每日最多提交 5 次。\n\n若综合得分相同，建议依次按照 AP50、mIoU、AP25 和提交时间确定排名。\n\n## **Submission Format**\n\n参赛者须为测试集中的每个点提供语义标签和实例标签，并提交一个 ZIP 压缩包。\n\n```text\nsubmission.zip\n└── predictions/\n    ├── CAR/\n    │   ├── CAR-30-003_000000.txt\n    │   ├── CAR-30-003_000001.txt\n    │   └── ...\n    ├── JMC/\n    ├── SGS/\n    └── ...\n```\n\n目录名称和预测文件名称必须与测试数据保持一致。\n\n每个 TXT 文件包含 6 个字段：\n\n```text\nX Y Z intensity semantic_label instance_id\n```\n\n数组维度为：\n\n```text\nN × 6\n```\n\n其中：\n\n- `N` 为点云点数；\n- `X Y Z` 为三维坐标；\n- `intensity` 为激光强度；\n- `semantic_label` 为预测语义类别；\n- `instance_id` 为预测实例编号。\n\n提交文件必须满足：\n\n1. 点数和点顺序与原测试文件完全一致；\n2. 三维坐标和强度字段不得修改；\n3. 语义类别编号范围为 0—8；\n4. 实例编号必须为非负整数；\n5. 不同实例使用不同的实例编号；\n6. 预测文件的目录和文件名必须与测试集一致；\n7. ZIP 根目录必须包含 `predictions` 文件夹。\n\n## **Citation**\n\n使用 City-Facade 数据集开展研究或发表成果时，请引用：\n\n```bibtex\n@article{chen2026cityfacade,\n  title={City-Facade: A city-level large-scale point cloud building facade dataset for semantic \\& instance segmentation},\n  author={Chen, Yiping and Li, Jonathan and Han, Ting and Feng, Huifang and Chen, Jun and Wang, Cheng},\n  journal={ISPRS Journal of Photogrammetry and Remote Sensing},\n  volume={232},\n  pages={675--688},\n  year={2026},\n  doi={10.1016/j.isprsjprs.2026.01.003}\n}\n```",
+      "index": 0
+    }
+  ],
+  "phases": [
+    {
+      "id": 28803,
+      "index": 0,
+      "start": "2026-06-05T00:00:00Z",
+      "end": "2026-09-07T23:59:00Z",
+      "name": "City-Facade建筑立面点云实例分割",
+      "description": "",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "b880c063-49ca-494e-959e-4d81bec2ef75",
+          "order_index": 0,
+          "phase": 28803,
+          "id": 34824,
+          "value": "b880c063-49ca-494e-959e-4d81bec2ef75",
+          "key": "b880c063-49ca-494e-959e-4d81bec2ef75",
+          "created_when": "2026-07-09T12:45:04.747142Z",
+          "name": "CityFacade 建筑物立面点云实例分割",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 876344,
+              "created_by": "jianlongguan",
+              "owner_display_name": "jianlongguan",
+              "created_when": "2026-07-09T12:41:35.315047Z",
+              "name": "city_facade_gt",
+              "type": "reference_data",
+              "description": "Ground truth of CItyFacade dataset",
+              "is_public": false,
+              "key": "95cd84b7-f644-4b5a-b1d7-fd882d0c66ac",
+              "value": "95cd84b7-f644-4b5a-b1d7-fd882d0c66ac",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 17265,
+                  "title": "第十届全国激光雷达大会——City-Facade建筑立面点云实例分割大赛"
+                }
+              ],
+              "competition": null,
+              "file_name": "test_GT.zip",
+              "file_size": 232157876.0
+            },
+            {
+              "id": 877797,
+              "created_by": "jianlongguan",
+              "owner_display_name": "jianlongguan",
+              "created_when": "2026-07-10T08:05:30.070601Z",
+              "name": "city_facade_scoring_program",
+              "type": "scoring_program",
+              "description": "city_facade_codabench_scoring_program",
+              "is_public": false,
+              "key": "685b23c5-0b90-4eec-9b0a-19445cfd1850",
+              "value": "685b23c5-0b90-4eec-9b0a-19445cfd1850",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 17265,
+                  "title": "第十届全国激光雷达大会——City-Facade建筑立面点云实例分割大赛"
+                }
+              ],
+              "competition": null,
+              "file_name": "city_facade_codabench_scoring_program.zip",
+              "file_size": 11961.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 19143,
+      "primary_index": 0,
+      "title": "City-Facade建筑立面点云实例分割排行榜",
+      "key": "instance_main",
+      "columns": [
+        {
+          "id": 83720,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Score",
+          "key": "score",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 83721,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "mIoU",
+          "key": "miou",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 83724,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "AP50",
+          "key": "ap50",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 83723,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "AP25",
+          "key": "ap25",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 83722,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "AP",
+          "key": "ap",
+          "sorting": "desc",
+          "index": 4,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 83751,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "OA",
+          "key": "oa",
+          "sorting": "desc",
+          "index": 5,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 85292,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Wall",
+          "key": "iou_wall",
+          "sorting": "desc",
+          "index": 6,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 85293,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Window",
+          "key": "iou_window",
+          "sorting": "desc",
+          "index": 7,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 85294,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Door",
+          "key": "iou_door",
+          "sorting": "desc",
+          "index": 8,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 85295,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Roof",
+          "key": "iou_roof",
+          "sorting": "desc",
+          "index": 9,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 85296,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Advertisement",
+          "key": "iou_advertisement",
+          "sorting": "desc",
+          "index": 10,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 85297,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Air Conditioner",
+          "key": "iou_air_conditioner",
+          "sorting": "desc",
+          "index": 11,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 85298,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Rain Shed",
+          "key": "iou_rain_shed",
+          "sorting": "desc",
+          "index": 12,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 85299,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Balcony",
+          "key": "iou_balcony",
+          "sorting": "desc",
+          "index": 13,
+          "hidden": false,
+          "precision": 4
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Force_Best"
+    }
+  ],
+  "collaborators": [
+    {
+      "id": 26086,
+      "name": null,
+      "username": "luoyang"
+    }
+  ],
+  "registration_auto_approve": false,
+  "description": "本比赛面向城市级建筑立面构件精细理解，采用City-Facade大规模三维点云数据集。\n\n数据由车载移动激光扫描系统采集，覆盖厦门市多类典型城市街区，累计道路长度约60 km。数据包含墙面、窗户、门、屋顶、广告牌、空调外机、雨棚和阳台等细粒度建筑立面要素标注，并提供语义级与实例级标签。\n\n参赛者需要识别测试点云中的独立建筑立面构件实例，并输出相应语义类别和实例编号。\n\n比赛采用结果提交模式。参赛者在本地完成模型训练和推理，仅向Codabench提交预测结果，平台使用隐藏实例标签进行自动评分。",
+  "participants_count": 3,
+  "submissions_count": 2,
+  "queue": null,
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": false,
+  "show_detailed_results_in_leaderboard": false,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": false,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "codalab/codalab-legacy:py37",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 16966,
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "forum_enabled": true
+}

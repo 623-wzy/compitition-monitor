@@ -5,8 +5,8 @@
   "created_by": "rezzsl",
   "owner_display_name": "rezzsl",
   "created_when": "2026-07-09T08:43:16.497886Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783586596/03efed198eeb/challenge_icon.png?AWSAccessKeyId=codabench-prod&Signature=BLHg1%2F%2FW3G8SYzJLFr8IcdS71qo%3D&Expires=1783602189",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783586596/03efed198eeb/challenge_icon_icon.png?AWSAccessKeyId=codabench-prod&Signature=SOOPu8SnCxzo%2F1srqNTOIlQZ7pk%3D&Expires=1783602189",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783586596/03efed198eeb/challenge_icon.png?AWSAccessKeyId=codabench-prod&Signature=expXoWPsubPY7i4QUrn1MUgSEEw%3D&Expires=1783688939",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783586596/03efed198eeb/challenge_icon_icon.png?AWSAccessKeyId=codabench-prod&Signature=cEEKrbsMlP0AZUlTD0gRHX%2F9DSw%3D&Expires=1783688939",
   "terms": "Each account may only submit entries three times a day.",
   "pages": [
     {
@@ -116,16 +116,8 @@
                   "title": "RTPSeg Challenge"
                 },
                 {
-                  "pk": 17242,
-                  "title": "RTPSeg Challenge"
-                },
-                {
                   "pk": 17264,
                   "title": "第十届全国激光雷达大会——2Dinsight3D城市级点云语义分割大赛"
-                },
-                {
-                  "pk": 17265,
-                  "title": "第十届全国激光雷达大会——City-Facade建筑立面点云实例分割大赛"
                 },
                 {
                   "pk": 17430,
@@ -226,16 +218,8 @@
                   "title": "RTPSeg Challenge"
                 },
                 {
-                  "pk": 17242,
-                  "title": "RTPSeg Challenge"
-                },
-                {
                   "pk": 17264,
                   "title": "第十届全国激光雷达大会——2Dinsight3D城市级点云语义分割大赛"
-                },
-                {
-                  "pk": 17265,
-                  "title": "第十届全国激光雷达大会——City-Facade建筑立面点云实例分割大赛"
                 },
                 {
                   "pk": 17430,
@@ -280,51 +264,18 @@
       "id": 19370,
       "primary_index": 0,
       "title": "dev results",
-      "key": "main",
+      "key": "Results",
       "columns": [
         {
           "id": 85192,
           "computation": null,
           "computation_indexes": null,
-          "title": "New Column",
-          "key": "SI-SDR",
+          "title": "SI-SDR(remix)",
+          "key": "REMIX_SI_SDR",
           "sorting": "desc",
           "index": 0,
           "hidden": false,
           "precision": 3
-        },
-        {
-          "id": 85193,
-          "computation": null,
-          "computation_indexes": null,
-          "title": "New Column",
-          "key": "PESQ",
-          "sorting": "desc",
-          "index": 1,
-          "hidden": false,
-          "precision": 3
-        },
-        {
-          "id": 85194,
-          "computation": null,
-          "computation_indexes": null,
-          "title": "New Column",
-          "key": "STOI",
-          "sorting": "desc",
-          "index": 2,
-          "hidden": false,
-          "precision": 2
-        },
-        {
-          "id": 85195,
-          "computation": null,
-          "computation_indexes": null,
-          "title": "New Column",
-          "key": "UTMOS",
-          "sorting": "desc",
-          "index": 3,
-          "hidden": false,
-          "precision": 2
         }
       ],
       "hidden": false,
@@ -335,7 +286,7 @@
   "registration_auto_approve": true,
   "description": "A challenge that pushes audio-visual speech enhancement beyond simulated-speech, clean-video benchmarks toward real-world robustness.",
   "participants_count": 1,
-  "submissions_count": 0,
+  "submissions_count": 4,
   "queue": null,
   "enable_detailed_results": false,
   "show_detailed_results_in_submission_panel": false,
@@ -344,7 +295,7 @@
   "can_participants_make_submissions_public": false,
   "make_programs_available": false,
   "make_input_data_available": false,
-  "docker_image": "rezzsl/real-avse-baseline",
+  "docker_image": "rezzsl/real-avse-baseline:v1",
   "allow_robot_submissions": false,
   "competition_type": "competition",
   "fact_sheet": null,

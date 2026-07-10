@@ -5,8 +5,8 @@
   "description_zh": "MER-Prefer是一个新引入的赛道，用于预测人类标注员对给定视频的两个情感描述中哪一个更倾向于选择。情感偏好的概念首次在EmoPrefer中提出，在训练能够理解人类情感的奖励模型中发挥了关键作用。我们采用加权F1分数（WAF）作为主要指标，准确率（ACC）作为次要指标。这是2026年ACM Multimedia大会MER2026挑战赛的一部分。",
   "created_by": "coffey",
   "created_when": "2026-07-09T02:48:45.738890Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783565325/83154855c836/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=gMS7SOq%2BjRhdeabCkC9Ps8L7VB8%3D&Expires=1783602191",
-  "participants_count": 52,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783565325/83154855c836/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=yKtGHVBABFFegvdsqEIBQI0Cgu4%3D&Expires=1783688943",
+  "participants_count": 59,
   "submissions_count": 2,
   "first_phase_start": null,
   "phases": [

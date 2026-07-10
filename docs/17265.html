@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第十届全国激光雷达大会——City-Facade建筑立面点云实例分割大赛 — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>第十届全国激光雷达大会——City-Facade建筑立面点云实例分割大赛</h2>
+  <div class="detail-meta">
+    <span>ID: 17265</span>
+    <span>创建者: jianlongguan</span>
+    <span>创建时间: 2026-06-26</span>
+    <span>参与人数: 3</span>
+    <span>提交次数: 2</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/17265/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">This competition focuses on fine-grained understanding of urban-level building facade components, utilizing the City-Fac dataset.
+
+The data is collected by vehicle-mounted mobile laser scanning systems, covering multiple types of typical urban street blocks in Xiamen, with a cumulative road length of approximately 60 km. The dataset includes fine-grained building facade element annotations such as walls, windows, doors, roofs, billboards, air conditioning units, canopies, and balconies, with both semantic-level and instance-level labels provided.
+
+Participants need to identify independent building facade component instances in the test point cloud and output the corresponding semantic categories and instance numbers.
+
+The competition adopts a result submission mode. Participants complete model training and inference locally and only submit prediction results to Codabench, where the platform automatically scores using hidden instance labels.</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-other'>其他</span> City-Facade建筑立面点云实例分割</td><td>2026-06-05</td><td>2026-09-07</td><td>5</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>比赛说明</h3><div class='page-content'># **Building Facade Point Cloud Semantic/Instance Segmentation**
+
+## **Overview**
+
+This track uses the City-Facade dataset to conduct semantic segmentation and instance segmentation of building facade point clouds.
+
+Participants need to predict semantic categories for each point in the test set and further distinguish instance numbers of different building facade components within the same semantic category.
+
+The City-Facade dataset is collected by vehicle-mounted mobile laser scanning systems, covering 6 typical urban street scene categories in Xiamen City, with a total road length of approximately 60 km and containing approximately 200 million annotated points.
+
+Semantic categories are as follows:
+
+| **ID** | **English Category**      | **Chinese Category** |
+| ------ | ------------------------- | -------------------- |
+| 0      | Background / Unclassified | Background/Unclassified |
+| 1      | Wall                      | Wall                 |
+| 2      | Window                    | Window               |
+| 3      | Door                      | Door                 |
+| 4      | Roof                      | Roof                 |
+| 5      | Advertisement             | Advertisement Board  |
+| 6      | Air Conditioner           | Air Conditioner Unit |
+| 7      | Rain Shed                 | Rain Shed            |
+| 8      | Balcony                   | Balcony              |
+
+Competition workflow:
+
+1. Develop 3D point cloud semantic and instance segmentation models on the training dataset;
+2. Use the trained model to predict test data;
+3. Generate semantic labels and instance labels for each test point;
+4. Compress prediction results according to the specified directory structure;
+5. Upload results to Codabench;
+6. The platform automatically evaluates and updates the leaderboard.
+
+Dataset project address:
+
+```text
+https://github.com/gorgeouseping/City-Facade
+```
+
+## **Evaluation**
+
+The main ranking metric is the comprehensive score:
+
+```text
+Score = 0.5 × mIoU + 0.5 × AP50
+```
+
+Where:
+
+- mIoU is used to evaluate semantic segmentation accuracy;
+- AP50 is used to evaluate instance segmentation accuracy.
+
+Auxiliary metrics include:
+
+- mIoU
+- OA
+- IoU for each category
+- AP
+- AP25
+- AP50
+
+All metrics are higher the better.
+
+Each team can submit a maximum of 5 times per day.
+
+If the comprehensive score is the same, it is recommended to determine rankings in order by AP50, mIoU, AP25, and submission time.
+
+## **Submission Format**
+
+Participants must provide semantic labels and instance labels for each point in the test set and submit a ZIP compressed package.
+
+```text
+submission.zip
+└── predictions/
+    ├── CAR/
+    │   ├── CAR-30-003_000000.txt
+    │   ├── CAR-30-003_000001.txt
+    │   └── ...
+    ├── JMC/
+    ├── SGS/
+    └── ...
+```
+
+Directory names and prediction file names must be consistent with the test data.
+
+Each TXT file contains 6 fields:
+
+```text
+X Y Z intensity semantic_label instance_id
+```
+
+Array dimensions are:
+
+```text
+N × 6
+```
+
+Where:
+
+- `N` is the number of points in the point cloud;
+- `X Y Z` are 3D coordinates;
+- `intensity` is laser intensity;
+- `semantic_label` is the predicted semantic category;
+- `instance_id` is the predicted instance number.
+
+Submitted files must satisfy:
+
+1. The number and order of points are completely consistent with the original test files;
+2. The 3D coordinates and intensity fields must not be modified;
+3. Semantic category ID range is 0-8;
+4. Instance IDs must be non-negative integers;
+5. Different instances use different instance IDs;
+6. Prediction file directories and file names must be consistent with the test set;
+7. The ZIP root directory must contain a `predictions` folder.
+
+## **Citation**
+
+When using the City-Facade dataset, please cite:
+
+```bibtex
+@article{chen2026cityfacade,
+  title={City-Facade: A city-level large-scale building facade point cloud dataset for semantic and instance segmentation},
+  author={Chen, Yiping and Li, Jonathan and Han, Ting and Feng, Huifang and Chen, Jun and Wang, Cheng},
+  journal={ISPRS Journal of Photogrammetry and Remote Sensing},
+  volume={232},
+  pages={675--688},
+  year={2026},
+  doi={10.1016/j.isprsjprs.2026.01.003}
+}
+```</div></div>
+
+</div>
+</body>
+</html>
