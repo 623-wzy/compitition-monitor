@@ -5,8 +5,8 @@
   "created_by": "junma",
   "owner_display_name": "Jun Ma",
   "created_when": "2026-04-09T21:08:06.808342Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-09-1775769761/960f641105b9/logo-task2.png?AWSAccessKeyId=codabench-prod&Signature=%2FlujACSw%2FDaobFMYrMT3BS1zAzM%3D&Expires=1783688986",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-09-1775769761/960f641105b9/logo-task2_icon.png?AWSAccessKeyId=codabench-prod&Signature=mGdL7oHpJXn8wEMg79PjaQGhUAY%3D&Expires=1783688986",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-09-1775769761/960f641105b9/logo-task2.png?AWSAccessKeyId=codabench-prod&Signature=KMX%2FL6GahfC8mFpPD6Ac%2B6BlYAo%3D&Expires=1783775809",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-09-1775769761/960f641105b9/logo-task2_icon.png?AWSAccessKeyId=codabench-prod&Signature=3MFWYFfAxCPMe1lQ4kEb%2FoBtykc%3D&Expires=1783775809",
   "terms": "## Rules\n\n1. All participants should register for this challenge with their real names, affiliations (including department, full name of university/institute/company, country), and affiliation E-mails. Incomplete and redundant registrations will be removed without notice. Each team can have at most six people.\n2. All participants must submit a complete solution to this challenge during the validation and testing phase. A complete solution includes a Docker container (tar file) and a qualified methodology paper (at least 8 pages, LNCS format).\n3. All participants should agree that the submitted short papers can be publicly available to the community on the challenge website, and organizers can use the information provided by the participants, including scores, predicted labels, and papers.\n4. If registered participants do not make submissions (Docker container and methodology paper), they will be listed in the dishonest list.\n5. Participants are not allowed to register multiple teams and accounts. Participants from the same research group are also not allowed to register multiple teams. FLARE Organizers keep the right to disqualify such participants.\n6. Redistribution or transfer of data or data links is not allowed. Participants should use the data only by themselves. The challenge data will be free to use after the submission of a challenge summary paper (Jan. 31, 2027).\n7. Participants should develop fully automatic methods and any manual interventions (e.g., manually annotating the cases) are not allowed.",
   "pages": [
     {
@@ -70,28 +70,28 @@
       "execution_time_limit": 6000,
       "tasks": [
         {
-          "task": "9b7a72e2-f38e-4c6c-b10b-6ace2580696c",
+          "task": "bd867424-53a3-4a3b-a4d6-c780fc66e70c",
           "order_index": 0,
           "phase": 25616,
-          "id": 31489,
-          "value": "9b7a72e2-f38e-4c6c-b10b-6ace2580696c",
-          "key": "9b7a72e2-f38e-4c6c-b10b-6ace2580696c",
-          "created_when": "2026-04-09T21:08:06.127485Z",
-          "name": "FLARE24 Task 1 Evaluation",
+          "id": 34850,
+          "value": "bd867424-53a3-4a3b-a4d6-c780fc66e70c",
+          "key": "bd867424-53a3-4a3b-a4d6-c780fc66e70c",
+          "created_when": "2026-07-11T03:19:31.896902Z",
+          "name": "MICCAI FLARE 2026 Task 2: AutoMSC: Automated Medical Image Segmentation and Classification score task",
           "solutions": [],
           "public_datasets": [
             {
-              "id": 695116,
-              "created_by": "junma",
-              "owner_display_name": "Jun Ma",
-              "created_when": "2026-04-09T21:08:05.680962Z",
-              "name": "scoring_program @ '04-09-2026 21:08'",
-              "type": "scoring_program",
-              "description": null,
+              "id": 879216,
+              "created_by": "bard_li",
+              "owner_display_name": "bard_li",
+              "created_when": "2026-07-11T02:20:24.813813Z",
+              "name": "MICCAI FLARE 2026 Task 2: AutoMSC: Automated Medical Image Segmentation and Classification Ground Truth",
+              "type": "reference_data",
+              "description": "",
               "is_public": false,
-              "key": "29ec5879-8361-488f-9a57-7d79512fdf08",
-              "value": "29ec5879-8361-488f-9a57-7d79512fdf08",
-              "was_created_by_competition": true,
+              "key": "dee1e6db-67c1-4270-b27a-0505804dd394",
+              "value": "dee1e6db-67c1-4270-b27a-0505804dd394",
+              "was_created_by_competition": false,
               "in_use": [
                 {
                   "pk": 15553,
@@ -99,21 +99,21 @@
                 }
               ],
               "competition": null,
-              "file_name": "",
-              "file_size": 29678.0
+              "file_name": "reference_data.zip",
+              "file_size": 1157179.0
             },
             {
-              "id": 695117,
-              "created_by": "junma",
-              "owner_display_name": "Jun Ma",
-              "created_when": "2026-04-09T21:08:05.825423Z",
-              "name": "reference_data @ '04-09-2026 21:08'",
-              "type": "reference_data",
-              "description": null,
+              "id": 879268,
+              "created_by": "bard_li",
+              "owner_display_name": "bard_li",
+              "created_when": "2026-07-11T03:18:55.776385Z",
+              "name": "MICCAI FLARE 2026 Task 2: AutoMSC: Automated Medical Image Segmentation and Classification Ground Truth score program",
+              "type": "scoring_program",
+              "description": "",
               "is_public": false,
-              "key": "c037a8ae-2e6a-484f-9b8d-87f916375ab5",
-              "value": "c037a8ae-2e6a-484f-9b8d-87f916375ab5",
-              "was_created_by_competition": true,
+              "key": "adb03f1e-07e3-48cc-8d67-8cbda4ce4c0a",
+              "value": "adb03f1e-07e3-48cc-8d67-8cbda4ce4c0a",
+              "was_created_by_competition": false,
               "in_use": [
                 {
                   "pk": 15553,
@@ -121,8 +121,8 @@
                 }
               ],
               "competition": null,
-              "file_name": "",
-              "file_size": 3451360.0
+              "file_name": "scoring_program.zip",
+              "file_size": 6592.0
             }
           ]
         }
@@ -153,7 +153,7 @@
           "computation": null,
           "computation_indexes": null,
           "title": "Lesion DSC",
-          "key": "Lesion_DSC",
+          "key": "DSC",
           "sorting": "desc",
           "index": 0,
           "hidden": false,
@@ -164,9 +164,64 @@
           "computation": null,
           "computation_indexes": null,
           "title": "Lesion NSD",
-          "key": "Lesion_NSD",
+          "key": "NSD",
           "sorting": "desc",
           "index": 1,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 85339,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "IDH BalAcc",
+          "key": "IDH_BalAcc",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 85340,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "IDH AUROC",
+          "key": "IDH_AUROC",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 85341,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Grade BalAcc",
+          "key": "Grade_BalAcc",
+          "sorting": "desc",
+          "index": 4,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 85342,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Grade AUROC",
+          "key": "Grade_AUROC",
+          "sorting": "desc",
+          "index": 5,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 85343,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Overall",
+          "key": "Overall",
+          "sorting": "desc",
+          "index": 6,
           "hidden": false,
           "precision": 2
         }
@@ -190,7 +245,7 @@
   "registration_auto_approve": true,
   "description": "MICCAI FLARE 2026 Task 2: AutoMSC: Automated Medical image Segmentation and Classification",
   "participants_count": 53,
-  "submissions_count": 3,
+  "submissions_count": 5,
   "queue": null,
   "enable_detailed_results": true,
   "show_detailed_results_in_submission_panel": true,

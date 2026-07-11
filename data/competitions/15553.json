@@ -5,9 +5,9 @@
   "description_zh": "MICCAI FLARE 2026 任务2：AutoMSC - 医学图像自动分割与分类",
   "created_by": "junma",
   "created_when": "2026-04-09T21:08:06.808342Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-09-1775769761/960f641105b9/logo-task2.png?AWSAccessKeyId=codabench-prod&Signature=%2FlujACSw%2FDaobFMYrMT3BS1zAzM%3D&Expires=1783688986",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-09-1775769761/960f641105b9/logo-task2.png?AWSAccessKeyId=codabench-prod&Signature=KMX%2FL6GahfC8mFpPD6Ac%2B6BlYAo%3D&Expires=1783775809",
   "participants_count": 53,
-  "submissions_count": 3,
+  "submissions_count": 5,
   "first_phase_start": null,
   "phases": [
     {

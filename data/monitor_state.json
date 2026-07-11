@@ -6,7 +6,7 @@
     "description_zh": "一项将音视频语音增强从模拟语音、干净视频基准推向现实世界鲁棒性的挑战。",
     "created_by": "rezzsl",
     "created_when": "2026-07-09T08:43:16.497886Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783586596/03efed198eeb/challenge_icon.png?AWSAccessKeyId=codabench-prod&Signature=expXoWPsubPY7i4QUrn1MUgSEEw%3D&Expires=1783688939",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783586596/03efed198eeb/challenge_icon.png?AWSAccessKeyId=codabench-prod&Signature=r%2FhKqe5T5yM9VgIvSpO9g%2FvmSF4%3D&Expires=1783775781",
     "participants_count": 1,
     "submissions_count": 4,
     "first_phase_start": null,
@@ -35,8 +35,8 @@
     "description_zh": "MER-Prefer是一个新引入的赛道，用于预测人类标注员对给定视频的两个情感描述中哪一个更倾向于选择。情感偏好的概念首次在EmoPrefer中提出，在训练能够理解人类情感的奖励模型中发挥了关键作用。我们采用加权F1分数（WAF）作为主要指标，准确率（ACC）作为次要指标。这是2026年ACM Multimedia大会MER2026挑战赛的一部分。",
     "created_by": "coffey",
     "created_when": "2026-07-09T02:48:45.738890Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783565325/83154855c836/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=yKtGHVBABFFegvdsqEIBQI0Cgu4%3D&Expires=1783688943",
-    "participants_count": 59,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783565325/83154855c836/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=SFPlXyiiGxn%2B8DA557NP85djbYU%3D&Expires=1783775782",
+    "participants_count": 64,
     "submissions_count": 2,
     "first_phase_start": null,
     "phases": [
@@ -76,9 +76,9 @@
     "description_zh": "MER-Prefer是一个新推出的赛道，用于预测人类标注者对给定视频的两个情感描述中哪一个更偏好。情感偏好的概念最初在EmoPrefer中提出，在训练能够理解人类情感的奖励模型中起着至关重要的作用。我们采用加权F1分数（WAF）作为主要指标，准确率（ACC）作为次要指标。这是ACM Multimedia 2026的MER2026挑战赛的一部分。",
     "created_by": "coffey",
     "created_when": "2026-06-20T08:59:42.063619Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-20-1781945982/7743bc90b492/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=SMNNbGpf2kjOYLfOO6dz8xM01R8%3D&Expires=1783688947",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-20-1781945982/7743bc90b492/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=k6ShFArxKoTuTk0qdQpa0u3wdLQ%3D&Expires=1783775785",
     "participants_count": 78,
-    "submissions_count": 2113,
+    "submissions_count": 2224,
     "first_phase_start": null,
     "phases": [
       {
@@ -117,7 +117,7 @@
     "description_zh": "# 使用CRAI框架评估AI生成图像对卡塔尔和阿拉伯文化场景的真实性表现\n\n## 文化准确性（Cultural Accuracy）\n- **服饰表现**：评估传统服装（如阿拜亚、古特拉、阿拉伯头巾）的细节准确性\n- **建筑风格**：验证伊斯兰建筑元素（如拱形、穹顶、书法装饰）是否正确呈现\n- **宗教仪式**：检查礼拜场景、斋月相关元素的真实性\n- **社会场景**：评估家庭聚会、市集、传统活动的文化真实性\n\n## 代表性（Representation）\n- **多样性**：确保呈现卡塔尔和阿拉伯世界的多元性，避免单一刻板印象\n- **地理差异**：区分不同地区的文化特征（城市、沙漠、海滨）\n- **代际表现**：反映传统与现代元素的融合\n- **性别与身份**：公平准确地呈现不同群体\n\n## 人工制品与物质文化（Artifacts）\n- **传统手工艺**：阿拉伯书法、陶艺、纺织品的准确性\n- **日常用品**：咖啡器具、香炉等文化象征物\n- **装饰元素**：几何纹样、穆斯林花纹设计的准确性\n- **食文化**：传统美食呈现的真实性\n\n## 背景与语境（Context）\n- **历史准确性**：时代背景的正确性\n- **社会背景**：活动场景的合理性与适切性\n- **语言符号**：阿拉伯书写的准确性\n- **文化敏感性**：尊重宗教和社会禁忌",
     "created_by": "sabdaljalil",
     "created_when": "2026-06-03T19:07:43.639396Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780513663/396055ccba31/logo.png?AWSAccessKeyId=codabench-prod&Signature=Qrkwz2hCBUHpjvcQmAcg%2FkuENoQ%3D&Expires=1783688953",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780513663/396055ccba31/logo.png?AWSAccessKeyId=codabench-prod&Signature=XuF8u0ytkUQliozrwIUrW3Gch9o%3D&Expires=1783775789",
     "participants_count": 3,
     "submissions_count": 1,
     "first_phase_start": null,
@@ -165,9 +165,9 @@
     "description_zh": "用于压缩AI生成图像的基准，涵盖多样化模型、提示词和分辨率。",
     "created_by": "xinli",
     "created_when": "2026-06-14T13:43:46.550281Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-14-1781444626/885bb1bf4dc3/logo.png?AWSAccessKeyId=codabench-prod&Signature=Ak9bUGT00y0cNMLx0%2BrkshBtzjs%3D&Expires=1783688948",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-14-1781444626/885bb1bf4dc3/logo.png?AWSAccessKeyId=codabench-prod&Signature=pKH1VazDY%2Fe9bP3JSXwC0n%2B5HUo%3D&Expires=1783775786",
     "participants_count": 51,
-    "submissions_count": 97,
+    "submissions_count": 99,
     "first_phase_start": null,
     "phases": [
       {
@@ -211,102 +211,6 @@
       }
     ]
   },
-  "17048": {
-    "id": 17048,
-    "title": "ImageEval 2026 — Ayn-VQA Task 1a: Spoken VQA (MSA)",
-    "description": "Given an image and the spoken question/options (English audio), pick the correct option index (0-2). Part of the ImageEval 2026 Ayn-VQA shared task on cultural grounding in Arabic multimodal understanding. \nData on HuggingFace (QCRI/AynVQA-ArabicNLP26). \nJoin our Slack for announcements and discussion: https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA",
-    "description_zh": "# ImageEval 2026 Ayn-VQA 共享任务\n\n给定一张图像和口头问题/选项（MSA音频），选择正确的选项索引（0-2）。\n\n这是 ImageEval 2026 Ayn-VQA 共享任务的一部分，专注于阿拉伯多模态理解中的文化根植。\n\n**数据集位置**：HuggingFace（QCRI/AynVQA-ArabicNLP26）\n\n**报名链接**：https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform",
-    "created_by": "hunzed",
-    "created_when": "2026-06-10T09:38:23.495469Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084303/9c583c7e5a2a/logo.png?AWSAccessKeyId=codabench-prod&Signature=qwCokebPd8CuOZZpBT9j5jGA3cg%3D&Expires=1783688949",
-    "participants_count": 9,
-    "submissions_count": 6,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 28473,
-        "name": "Development Phase",
-        "start": "2026-05-22T00:00:00Z",
-        "end": "2026-07-19T00:00:00Z",
-        "max_submissions_per_day": 5
-      },
-      {
-        "id": 28474,
-        "name": "Testing Phase",
-        "start": "2026-07-20T00:00:00Z",
-        "end": "2026-07-29T00:00:00Z",
-        "max_submissions_per_day": 20
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Participation",
-        "content": "# How to participate\n\n**ImageEval 2026 — Ayn-VQA Task 1a: Spoken VQA (MSA)** — the **MSA** track of Task 1a\n(Spoken VQA), part of the [ImageEval 2026](https://imageeval2026.github.io/) shared task on cultural\ngrounding in Arabic multimodal generation and understanding.\n\nGiven an image and the spoken question/options (MSA audio), pick the correct option index (0-2).\n\n## Join our Slack (please do this first)\nJoin the **[ImageEval Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA)** for announcements, deadlines, data updates, and to connect with other participants.\n\n## Who can join\nIndividuals or teams; one member submits on the team's behalf. You may enter more\nthan one track.\n\n## Steps\n1. Sign up on this Codabench page, then join the [Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA) for updates.\n2. Read the **Terms** tab — note the exact prediction format.\n3. Get the data from the Hugging Face Hub: **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**.\n4. Follow the task description in the [tasks repo](https://github.com/ImageEval2026/ImageEval2026-tasks).\n5. Predict on **devtest** during the development phase, and on **test** during the\n   final-evaluation phase.\n\n## System description paper\nAll teams are encouraged to submit a system-description paper for the workshop.\n\n## Contact\nimageeval2026@gmail.com",
-        "content_zh": "# 参与方式\n\n**ImageEval 2026 — Ayn-VQA 任务1a：口语VQA（MSA）** — 任务1a（口语VQA）的**MSA**赛道\n是[ImageEval 2026](https://imageeval2026.github.io/)共享任务的一部分，该任务聚焦阿拉伯语多模态生成和理解中的文化基础。\n\n给定一张图像和口语问题/选项（MSA音频），选择正确的选项索引（0-2）。\n\n## 注册（请首先完成此步骤）\n填写**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)**——这让组织者能够追踪参与者并通知您关于数据、截止日期和任何更新的信息。\n\n## 谁可以参加\n个人或团队；由一名成员代表团队提交。您可以参加多个赛道。\n\n## 步骤\n1. 在此Codabench页面**和**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)上注册。\n2. 阅读**条款**选项卡——注意确切的预测格式。\n3. 从Hugging Face Hub获取数据：**[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**。\n4. 遵循[任务仓库](https://github.com/ImageEval2026/ImageEval2026-tasks)中的任务描述。\n5. 在开发阶段对**devtest**进行预测，在最终评估阶段对**test**进行预测。\n\n## 系统描述论文\n鼓励所有团队为研讨会提交系统描述论文。\n\n## 联系方式\nimageeval2026@gmail.com"
-      },
-      {
-        "index": 1,
-        "title": "Dataset",
-        "content": "# Dataset\n\nAll splits live on the Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — as config\n`task1a_msa`. This competition scores **devtest** (development phase) and **test**\n(final phase).\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1a_msa\", split=\"devtest\")\n```\n\n## Splits\n\n| split | labels | items | phase | purpose |\n|---|---|---:|---|---|\n| `train`   | yes | 3000 | development | training / fine-tuning |\n| `dev`     | yes | 500  | development | local validation |\n| `devtest` | no  | 500  | development (leaderboard) | submission target, dev phase |\n| `test`    | no  | 1000 | final evaluation | blind ranking (human-recorded audio) |\n\n- **Language:** MSA.\n- Media (images / audio) are referenced by **relative path** keyed on `id`.\n- 🔊 Dev-phase audio is synthetically generated (voice cloning); the final **test** audio is human-recorded — expect a recording-condition shift.\n\n## Licence\nCC BY-NC 4.0 — non-commercial research use only.",
-        "content_zh": "# 数据集\n\n所有数据集分割位于 Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — 配置为 `task1a_msa`。本竞赛评分**开发测试集**（开发阶段）和**测试集**（最终阶段）。\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1a_msa\", split=\"devtest\")\n```\n\n## 分割\n\n| 分割 | 标签 | 数量 | 阶段 | 用途 |\n|---|---|---:|---|---|\n| `train`   | 有 | 3000 | 开发 | 训练 / 微调 |\n| `dev`     | 有 | 500  | 开发 | 本地验证 |\n| `devtest` | 无  | 500  | 开发（排行榜） | 提交目标，开发阶段 |\n| `test`    | 无  | 1000 | 最终评估 | 盲目排名（人工录制音频） |\n\n- **语言**：现代标准阿拉伯语（MSA）。\n- 媒体（图像/音频）通过相对路径按 `id` 引用。\n- 🔊 开发阶段音频为合成生成（语音克隆）；最终**测试**音频为人工录制 — 预期存在录制条件偏移。\n\n## 许可证\nCC BY-NC 4.0 — 仅限非商业研究使用。"
-      },
-      {
-        "index": 2,
-        "title": "Timeline",
-        "content": "# Timeline\n\n## Development phase\nTune on `train` + `dev`; submit predictions on **devtest** for the leaderboard.\n\n**Window:** `2026-05-22 → 2026-07-19`  ·  up to 5 submissions/day, 100 total.\n\n## Testing phase\nThe blind **test** set is released on [Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26); submit predictions\non `test` for the official ranking.\n\n**Window:** `2026-07-20 → 2026-07-29`  ·  up to 20 submissions/day, 100 total.\n\n> Dates are set in `competition.yaml` (`phases.start` / `phases.end`) — adjust if\n> the schedule shifts. Announcements: [website](https://imageeval2026.github.io/).",
-        "content_zh": "# 时间表\n\n## 开发阶段\n在`train`+`dev`上进行调优；在**devtest**上提交预测结果用于排行榜。\n\n**时间窗口**：`2026-05-22 → 2026-07-19`  ·  每天最多5次提交，总共100次。\n\n## 测试阶段\n盲测**test**集合在[Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)上发布；在`test`上提交预测结果用于官方排名。\n\n**时间窗口**：`2026-07-20 → 2026-07-29`  ·  每天最多20次提交，总共100次。\n\n> 日期设置在`competition.yaml`中（`phases.start` / `phases.end`）— 如果时间表有变化可进行调整。公告：[网站](https://imageeval2026.github.io/)。"
-      }
-    ]
-  },
-  "17051": {
-    "id": 17051,
-    "title": "ImageEval 2026 — Ayn-VQA Task 1b: Hallucination Detection (English)",
-    "description": "Given an image and 3 statements (English), label EACH statement True (grounded in the image) or False (hallucinated). Exactly one statement is grounded. Part of the ImageEval 2026 Ayn-VQA shared task on cultural grounding in Arabic multimodal understanding. \nData on HuggingFace (QCRI/AynVQA-ArabicNLP26).\nJoin our Slack for announcements and discussion: https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA",
-    "description_zh": "我是科技竞赛信息翻译助手。您提供的文本已是英文竞赛内容说明，我将其翻译成简体中文：\n\n---\n\n给定一张图像和3个陈述句（英文），请为每个陈述句标记为真（有图像依据）或假（幻想内容）。恰好有一个陈述句有依据。这是ImageEval 2026 Ayn-VQA共享任务的一部分，该任务聚焦阿拉伯语多模态理解中的文化扎根。数据可在HuggingFace获取（QCRI/AynVQA-ArabicNLP26）。请同时在以下链接注册：https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform",
-    "created_by": "hunzed",
-    "created_when": "2026-06-10T09:40:02.195020Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084402/15c7bcf31878/logo.png?AWSAccessKeyId=codabench-prod&Signature=O4MldlMm60EFBtRXfq1qIQO6gkM%3D&Expires=1783688948",
-    "participants_count": 10,
-    "submissions_count": 50,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 28479,
-        "name": "Development Phase",
-        "start": "2026-05-22T00:00:00Z",
-        "end": "2026-07-19T00:00:00Z",
-        "max_submissions_per_day": 5
-      },
-      {
-        "id": 28480,
-        "name": "Testing Phase",
-        "start": "2026-07-20T00:00:00Z",
-        "end": "2026-07-29T00:00:00Z",
-        "max_submissions_per_day": 20
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Participation",
-        "content": "# How to participate\n\n**ImageEval 2026 — Ayn-VQA Task 1b: Hallucination Detection (English)** — the **English** track of Task 1b\n(Hallucination Detection), part of the [ImageEval 2026](https://imageeval2026.github.io/) shared task on cultural\ngrounding in Arabic multimodal generation and understanding.\n\nGiven an image and 3 statements (English), label EACH statement True (grounded in the image) or False (hallucinated). Exactly one statement is grounded.\n\n## Join our Slack (please do this first)\nJoin the **[ImageEval Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA)** for announcements, deadlines, data updates, and to connect with other participants.\n\n## Who can join\nIndividuals or teams; one member submits on the team's behalf. You may enter more\nthan one track.\n\n## Steps\n1. Sign up on this Codabench page, then join the [Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA) for updates.\n2. Read the **Terms** tab — note the exact prediction format.\n3. Get the data from the Hugging Face Hub: **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**.\n4. Follow the task description in the [tasks repo](https://github.com/ImageEval2026/ImageEval2026-tasks).\n5. Predict on **devtest** during the development phase, and on **test** during the\n   final-evaluation phase.\n\n## System description paper\nAll teams are encouraged to submit a system-description paper for the workshop.\n\n## Contact\nimageeval2026@gmail.com",
-        "content_zh": "# 如何参与\n\n**ImageEval 2026 — Ayn-VQA 任务1b：幻觉检测（英文）** — 任务1b（幻觉检测）的**英文**赛道，是[ImageEval 2026](https://imageeval2026.github.io/)共享任务的一部分，该任务涉及阿拉伯多模态生成和理解中的文化基础。\n\n给定一张图像和3条陈述句（英文），为每条陈述句标记为真（基于图像）或假（幻觉）。恰好有一条陈述句是有根据的。\n\n## 注册（请先完成此步骤）\n填写**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)** — 这样组织者可以追踪参与者，并通知您有关数据、截止日期和任何更新的信息。\n\n## 谁可以参加\n个人或团队；由一名成员代表团队提交。您可以参加多个赛道。\n\n## 步骤\n1. 在此Codabench页面**和**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)上注册。\n2. 阅读**条款**选项卡 — 注意确切的预测格式。\n3. 从Hugging Face Hub获取数据：**[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**。\n4. 按照[任务仓库](https://github.com/ImageEval2026/ImageEval2026-tasks)中的任务描述进行操作。\n5. 在开发阶段对**开发测试集**进行预测，在最终评估阶段对**测试集**进行预测。\n\n## 系统描述论文\n鼓励所有团队为研讨会提交系统描述论文。\n\n## 联系方式\nimageeval2026@gmail.com"
-      },
-      {
-        "index": 1,
-        "title": "Dataset",
-        "content": "# Dataset\n\nAll splits live on the Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — as config\n`task1b_en`. This competition scores **devtest** (development phase) and **test**\n(final phase).\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1b_en\", split=\"devtest\")\n```\n\n## Splits\n\n| split | labels | items | phase | purpose |\n|---|---|---:|---|---|\n| `train`   | yes | 3000 | development | training / fine-tuning |\n| `dev`     | yes | 500  | development | local validation |\n| `devtest` | no  | 500  | development (leaderboard) | submission target, dev phase |\n| `test`    | no  | 1000 | final evaluation | blind ranking (human-recorded audio) |\n\n- **Language:** English.\n- Media (images / audio) are referenced by **relative path** keyed on `id`.\n- Task 1b is image + text only (no audio): three statements, exactly one grounded.\n\n## Licence\nCC BY-NC 4.0 — non-commercial research use only.",
-        "content_zh": "# 数据集\n\n所有数据集都托管在 Hugging Face Hub 上 — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — 配置为 `task1b_en`。本竞赛评分对象包括 **devtest**（开发阶段）和 **test**（最终阶段）。\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1b_en\", split=\"devtest\")\n```\n\n## 数据划分\n\n| 数据集 | 标签 | 项目数 | 阶段 | 用途 |\n|---|---|---:|---|---|\n| `train`   | 有 | 3000 | 开发阶段 | 训练/微调 |\n| `dev`     | 有 | 500  | 开发阶段 | 本地验证 |\n| `devtest` | 无  | 500  | 开发阶段（排行榜） | 提交目标，开发阶段 |\n| `test`    | 无  | 1000 | 最终评估 | 盲测排名（人工录制音频） |\n\n- **语言：** 英文。\n- 媒体（图像/音频）通过 **相对路径** 按 `id` 键引用。\n- 任务 1b 仅包含图像和文本（无音频）：三个陈述句，恰好一个是有根据的。\n\n## 许可证\nCC BY-NC 4.0 — 仅限非商业研究使用。"
-      },
-      {
-        "index": 2,
-        "title": "Timeline",
-        "content": "# Timeline\n\n## Development phase\nTune on `train` + `dev`; submit predictions on **devtest** for the leaderboard.\n\n**Window:** `2026-05-22 → 2026-07-19`  ·  up to 5 submissions/day, 100 total.\n\n## Testing phase\nThe blind **test** set is released on [Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26); submit predictions\non `test` for the official ranking.\n\n**Window:** `2026-07-20 → 2026-07-29`  ·  up to 20 submissions/day, 100 total.\n\n> Dates are set in `competition.yaml` (`phases.start` / `phases.end`) — adjust if\n> the schedule shifts. Announcements: [website](https://imageeval2026.github.io/).",
-        "content_zh": "# 时间表\n\n## 开发阶段\n在 `train` + `dev` 上进行调整；在 **devtest** 上提交预测结果参与排行榜竞争。\n\n**时间窗口：** `2026-05-22 → 2026-07-19`  ·  每天最多 5 次提交，总共 100 次。\n\n## 测试阶段\n盲测 **test** 集合发布于 [Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)；在 `test` 上提交预测结果以获得官方排名。\n\n**时间窗口：** `2026-07-20 → 2026-07-29`  ·  每天最多 20 次提交，总共 100 次。\n\n> 日期设置在 `competition.yaml`（`phases.start` / `phases.end`）中——如果时间表变更，请进行调整。公告：[网站](https://imageeval2026.github.io/)。"
-      }
-    ]
-  },
   "17049": {
     "id": 17049,
     "title": "ImageEval 2026 — Ayn-VQA Task 1a: Spoken VQA (English)",
@@ -314,7 +218,7 @@
     "description_zh": "我理解了。这是关于 ImageEval 2026 Ayn-VQA 共享任务的说明，该任务聚焦于阿拉伯多模态理解中的文化基础问题。\n\n**任务说明翻译：**\n\n给定一幅图像和口头问题/选项（英文音频），选择正确的选项索引（0-2）。这是 ImageEval 2026 Ayn-VQA 共享任务的一部分，专注于阿拉伯多模态理解中的文化基础。数据可在 HuggingFace 获取（QCRI/AynVQA-ArabicNLP26）。请同时在以下链接注册：https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform\n\n如果您需要帮助完成此任务，请提供：\n- 图像\n- 问题和选项（英文音频转录）\n\n我将帮助您选择正确的选项。",
     "created_by": "hunzed",
     "created_when": "2026-06-10T09:38:36.786130Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084316/073f73e0eefc/logo.png?AWSAccessKeyId=codabench-prod&Signature=%2FI2iwkyvPYkGkTj2VziAP1%2BKU4E%3D&Expires=1783688949",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084316/073f73e0eefc/logo.png?AWSAccessKeyId=codabench-prod&Signature=D3rDQa%2BHZUBxSb7CeBE%2BgAB0HHU%3D&Expires=1783775788",
     "participants_count": 8,
     "submissions_count": 5,
     "first_phase_start": null,
@@ -362,7 +266,7 @@
     "description_zh": "我理解你的请求。这是ImageEval 2026的一部分——一个关于阿拉伯多模态理解中文化基础的AynVQA共享任务。\n\n请注意，作为一个翻译助手，我需要说明：\n\n**我无法完成此任务，因为：**\n\n1. **缺少图像** - 你没有提供需要分析的图像\n2. **缺少语句** - 你没有提供3条需要标注为\"真\"或\"假\"的语句(MSA)\n3. **任务性质** - 这是一个多模态视觉问答任务，而非翻译任务\n\n**要完成此任务，你需要：**\n\n1. 上传相关图像\n2. 提供3条阿拉伯标准语(MSA)或英文语句\n3. 我可以帮助翻译这些语句，但标注\"真/假\"判断需要你自己基于图像内容进行\n\n**相关资源：**\n- HuggingFace数据集: QCRI/AynVQA-ArabicNLP26\n- 注册表单: https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform\n\n请提供图像和语句，我可以帮助翻译相关文本。",
     "created_by": "hunzed",
     "created_when": "2026-06-10T09:39:37.693956Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084377/5517d0a96f0a/logo.png?AWSAccessKeyId=codabench-prod&Signature=hSWDG9tA%2Bg8gU6nrNeF6RQgTysY%3D&Expires=1783688948",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084377/5517d0a96f0a/logo.png?AWSAccessKeyId=codabench-prod&Signature=94vedl2CYbe8vlqSIDa%2FNt01xdM%3D&Expires=1783775789",
     "participants_count": 7,
     "submissions_count": 6,
     "first_phase_start": null,
@@ -403,6 +307,102 @@
       }
     ]
   },
+  "17048": {
+    "id": 17048,
+    "title": "ImageEval 2026 — Ayn-VQA Task 1a: Spoken VQA (MSA)",
+    "description": "Given an image and the spoken question/options (English audio), pick the correct option index (0-2). Part of the ImageEval 2026 Ayn-VQA shared task on cultural grounding in Arabic multimodal understanding. \nData on HuggingFace (QCRI/AynVQA-ArabicNLP26). \nJoin our Slack for announcements and discussion: https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA",
+    "description_zh": "# ImageEval 2026 Ayn-VQA 共享任务\n\n给定一张图像和口头问题/选项（MSA音频），选择正确的选项索引（0-2）。\n\n这是 ImageEval 2026 Ayn-VQA 共享任务的一部分，专注于阿拉伯多模态理解中的文化根植。\n\n**数据集位置**：HuggingFace（QCRI/AynVQA-ArabicNLP26）\n\n**报名链接**：https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform",
+    "created_by": "hunzed",
+    "created_when": "2026-06-10T09:38:23.495469Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084303/9c583c7e5a2a/logo.png?AWSAccessKeyId=codabench-prod&Signature=W7gaCNUHWDxHk654GPgTFb8k4nA%3D&Expires=1783775788",
+    "participants_count": 9,
+    "submissions_count": 6,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 28473,
+        "name": "Development Phase",
+        "start": "2026-05-22T00:00:00Z",
+        "end": "2026-07-19T00:00:00Z",
+        "max_submissions_per_day": 5
+      },
+      {
+        "id": 28474,
+        "name": "Testing Phase",
+        "start": "2026-07-20T00:00:00Z",
+        "end": "2026-07-29T00:00:00Z",
+        "max_submissions_per_day": 20
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Participation",
+        "content": "# How to participate\n\n**ImageEval 2026 — Ayn-VQA Task 1a: Spoken VQA (MSA)** — the **MSA** track of Task 1a\n(Spoken VQA), part of the [ImageEval 2026](https://imageeval2026.github.io/) shared task on cultural\ngrounding in Arabic multimodal generation and understanding.\n\nGiven an image and the spoken question/options (MSA audio), pick the correct option index (0-2).\n\n## Join our Slack (please do this first)\nJoin the **[ImageEval Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA)** for announcements, deadlines, data updates, and to connect with other participants.\n\n## Who can join\nIndividuals or teams; one member submits on the team's behalf. You may enter more\nthan one track.\n\n## Steps\n1. Sign up on this Codabench page, then join the [Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA) for updates.\n2. Read the **Terms** tab — note the exact prediction format.\n3. Get the data from the Hugging Face Hub: **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**.\n4. Follow the task description in the [tasks repo](https://github.com/ImageEval2026/ImageEval2026-tasks).\n5. Predict on **devtest** during the development phase, and on **test** during the\n   final-evaluation phase.\n\n## System description paper\nAll teams are encouraged to submit a system-description paper for the workshop.\n\n## Contact\nimageeval2026@gmail.com",
+        "content_zh": "# 参与方式\n\n**ImageEval 2026 — Ayn-VQA 任务1a：口语VQA（MSA）** — 任务1a（口语VQA）的**MSA**赛道\n是[ImageEval 2026](https://imageeval2026.github.io/)共享任务的一部分，该任务聚焦阿拉伯语多模态生成和理解中的文化基础。\n\n给定一张图像和口语问题/选项（MSA音频），选择正确的选项索引（0-2）。\n\n## 注册（请首先完成此步骤）\n填写**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)**——这让组织者能够追踪参与者并通知您关于数据、截止日期和任何更新的信息。\n\n## 谁可以参加\n个人或团队；由一名成员代表团队提交。您可以参加多个赛道。\n\n## 步骤\n1. 在此Codabench页面**和**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)上注册。\n2. 阅读**条款**选项卡——注意确切的预测格式。\n3. 从Hugging Face Hub获取数据：**[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**。\n4. 遵循[任务仓库](https://github.com/ImageEval2026/ImageEval2026-tasks)中的任务描述。\n5. 在开发阶段对**devtest**进行预测，在最终评估阶段对**test**进行预测。\n\n## 系统描述论文\n鼓励所有团队为研讨会提交系统描述论文。\n\n## 联系方式\nimageeval2026@gmail.com"
+      },
+      {
+        "index": 1,
+        "title": "Dataset",
+        "content": "# Dataset\n\nAll splits live on the Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — as config\n`task1a_msa`. This competition scores **devtest** (development phase) and **test**\n(final phase).\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1a_msa\", split=\"devtest\")\n```\n\n## Splits\n\n| split | labels | items | phase | purpose |\n|---|---|---:|---|---|\n| `train`   | yes | 3000 | development | training / fine-tuning |\n| `dev`     | yes | 500  | development | local validation |\n| `devtest` | no  | 500  | development (leaderboard) | submission target, dev phase |\n| `test`    | no  | 1000 | final evaluation | blind ranking (human-recorded audio) |\n\n- **Language:** MSA.\n- Media (images / audio) are referenced by **relative path** keyed on `id`.\n- 🔊 Dev-phase audio is synthetically generated (voice cloning); the final **test** audio is human-recorded — expect a recording-condition shift.\n\n## Licence\nCC BY-NC 4.0 — non-commercial research use only.",
+        "content_zh": "# 数据集\n\n所有数据集分割位于 Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — 配置为 `task1a_msa`。本竞赛评分**开发测试集**（开发阶段）和**测试集**（最终阶段）。\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1a_msa\", split=\"devtest\")\n```\n\n## 分割\n\n| 分割 | 标签 | 数量 | 阶段 | 用途 |\n|---|---|---:|---|---|\n| `train`   | 有 | 3000 | 开发 | 训练 / 微调 |\n| `dev`     | 有 | 500  | 开发 | 本地验证 |\n| `devtest` | 无  | 500  | 开发（排行榜） | 提交目标，开发阶段 |\n| `test`    | 无  | 1000 | 最终评估 | 盲目排名（人工录制音频） |\n\n- **语言**：现代标准阿拉伯语（MSA）。\n- 媒体（图像/音频）通过相对路径按 `id` 引用。\n- 🔊 开发阶段音频为合成生成（语音克隆）；最终**测试**音频为人工录制 — 预期存在录制条件偏移。\n\n## 许可证\nCC BY-NC 4.0 — 仅限非商业研究使用。"
+      },
+      {
+        "index": 2,
+        "title": "Timeline",
+        "content": "# Timeline\n\n## Development phase\nTune on `train` + `dev`; submit predictions on **devtest** for the leaderboard.\n\n**Window:** `2026-05-22 → 2026-07-19`  ·  up to 5 submissions/day, 100 total.\n\n## Testing phase\nThe blind **test** set is released on [Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26); submit predictions\non `test` for the official ranking.\n\n**Window:** `2026-07-20 → 2026-07-29`  ·  up to 20 submissions/day, 100 total.\n\n> Dates are set in `competition.yaml` (`phases.start` / `phases.end`) — adjust if\n> the schedule shifts. Announcements: [website](https://imageeval2026.github.io/).",
+        "content_zh": "# 时间表\n\n## 开发阶段\n在`train`+`dev`上进行调优；在**devtest**上提交预测结果用于排行榜。\n\n**时间窗口**：`2026-05-22 → 2026-07-19`  ·  每天最多5次提交，总共100次。\n\n## 测试阶段\n盲测**test**集合在[Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)上发布；在`test`上提交预测结果用于官方排名。\n\n**时间窗口**：`2026-07-20 → 2026-07-29`  ·  每天最多20次提交，总共100次。\n\n> 日期设置在`competition.yaml`中（`phases.start` / `phases.end`）— 如果时间表有变化可进行调整。公告：[网站](https://imageeval2026.github.io/)。"
+      }
+    ]
+  },
+  "17051": {
+    "id": 17051,
+    "title": "ImageEval 2026 — Ayn-VQA Task 1b: Hallucination Detection (English)",
+    "description": "Given an image and 3 statements (English), label EACH statement True (grounded in the image) or False (hallucinated). Exactly one statement is grounded. Part of the ImageEval 2026 Ayn-VQA shared task on cultural grounding in Arabic multimodal understanding. \nData on HuggingFace (QCRI/AynVQA-ArabicNLP26).\nJoin our Slack for announcements and discussion: https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA",
+    "description_zh": "我是科技竞赛信息翻译助手。您提供的文本已是英文竞赛内容说明，我将其翻译成简体中文：\n\n---\n\n给定一张图像和3个陈述句（英文），请为每个陈述句标记为真（有图像依据）或假（幻想内容）。恰好有一个陈述句有依据。这是ImageEval 2026 Ayn-VQA共享任务的一部分，该任务聚焦阿拉伯语多模态理解中的文化扎根。数据可在HuggingFace获取（QCRI/AynVQA-ArabicNLP26）。请同时在以下链接注册：https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform",
+    "created_by": "hunzed",
+    "created_when": "2026-06-10T09:40:02.195020Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084402/15c7bcf31878/logo.png?AWSAccessKeyId=codabench-prod&Signature=aLaN3xoxwhik9AdQw5ySUzvPcd4%3D&Expires=1783775788",
+    "participants_count": 11,
+    "submissions_count": 55,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 28479,
+        "name": "Development Phase",
+        "start": "2026-05-22T00:00:00Z",
+        "end": "2026-07-19T00:00:00Z",
+        "max_submissions_per_day": 5
+      },
+      {
+        "id": 28480,
+        "name": "Testing Phase",
+        "start": "2026-07-20T00:00:00Z",
+        "end": "2026-07-29T00:00:00Z",
+        "max_submissions_per_day": 20
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Participation",
+        "content": "# How to participate\n\n**ImageEval 2026 — Ayn-VQA Task 1b: Hallucination Detection (English)** — the **English** track of Task 1b\n(Hallucination Detection), part of the [ImageEval 2026](https://imageeval2026.github.io/) shared task on cultural\ngrounding in Arabic multimodal generation and understanding.\n\nGiven an image and 3 statements (English), label EACH statement True (grounded in the image) or False (hallucinated). Exactly one statement is grounded.\n\n## Join our Slack (please do this first)\nJoin the **[ImageEval Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA)** for announcements, deadlines, data updates, and to connect with other participants.\n\n## Who can join\nIndividuals or teams; one member submits on the team's behalf. You may enter more\nthan one track.\n\n## Steps\n1. Sign up on this Codabench page, then join the [Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA) for updates.\n2. Read the **Terms** tab — note the exact prediction format.\n3. Get the data from the Hugging Face Hub: **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**.\n4. Follow the task description in the [tasks repo](https://github.com/ImageEval2026/ImageEval2026-tasks).\n5. Predict on **devtest** during the development phase, and on **test** during the\n   final-evaluation phase.\n\n## System description paper\nAll teams are encouraged to submit a system-description paper for the workshop.\n\n## Contact\nimageeval2026@gmail.com",
+        "content_zh": "# 如何参与\n\n**ImageEval 2026 — Ayn-VQA 任务1b：幻觉检测（英文）** — 任务1b（幻觉检测）的**英文**赛道，是[ImageEval 2026](https://imageeval2026.github.io/)共享任务的一部分，该任务涉及阿拉伯多模态生成和理解中的文化基础。\n\n给定一张图像和3条陈述句（英文），为每条陈述句标记为真（基于图像）或假（幻觉）。恰好有一条陈述句是有根据的。\n\n## 注册（请先完成此步骤）\n填写**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)** — 这样组织者可以追踪参与者，并通知您有关数据、截止日期和任何更新的信息。\n\n## 谁可以参加\n个人或团队；由一名成员代表团队提交。您可以参加多个赛道。\n\n## 步骤\n1. 在此Codabench页面**和**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)上注册。\n2. 阅读**条款**选项卡 — 注意确切的预测格式。\n3. 从Hugging Face Hub获取数据：**[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**。\n4. 按照[任务仓库](https://github.com/ImageEval2026/ImageEval2026-tasks)中的任务描述进行操作。\n5. 在开发阶段对**开发测试集**进行预测，在最终评估阶段对**测试集**进行预测。\n\n## 系统描述论文\n鼓励所有团队为研讨会提交系统描述论文。\n\n## 联系方式\nimageeval2026@gmail.com"
+      },
+      {
+        "index": 1,
+        "title": "Dataset",
+        "content": "# Dataset\n\nAll splits live on the Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — as config\n`task1b_en`. This competition scores **devtest** (development phase) and **test**\n(final phase).\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1b_en\", split=\"devtest\")\n```\n\n## Splits\n\n| split | labels | items | phase | purpose |\n|---|---|---:|---|---|\n| `train`   | yes | 3000 | development | training / fine-tuning |\n| `dev`     | yes | 500  | development | local validation |\n| `devtest` | no  | 500  | development (leaderboard) | submission target, dev phase |\n| `test`    | no  | 1000 | final evaluation | blind ranking (human-recorded audio) |\n\n- **Language:** English.\n- Media (images / audio) are referenced by **relative path** keyed on `id`.\n- Task 1b is image + text only (no audio): three statements, exactly one grounded.\n\n## Licence\nCC BY-NC 4.0 — non-commercial research use only.",
+        "content_zh": "# 数据集\n\n所有数据集都托管在 Hugging Face Hub 上 — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — 配置为 `task1b_en`。本竞赛评分对象包括 **devtest**（开发阶段）和 **test**（最终阶段）。\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1b_en\", split=\"devtest\")\n```\n\n## 数据划分\n\n| 数据集 | 标签 | 项目数 | 阶段 | 用途 |\n|---|---|---:|---|---|\n| `train`   | 有 | 3000 | 开发阶段 | 训练/微调 |\n| `dev`     | 有 | 500  | 开发阶段 | 本地验证 |\n| `devtest` | 无  | 500  | 开发阶段（排行榜） | 提交目标，开发阶段 |\n| `test`    | 无  | 1000 | 最终评估 | 盲测排名（人工录制音频） |\n\n- **语言：** 英文。\n- 媒体（图像/音频）通过 **相对路径** 按 `id` 键引用。\n- 任务 1b 仅包含图像和文本（无音频）：三个陈述句，恰好一个是有根据的。\n\n## 许可证\nCC BY-NC 4.0 — 仅限非商业研究使用。"
+      },
+      {
+        "index": 2,
+        "title": "Timeline",
+        "content": "# Timeline\n\n## Development phase\nTune on `train` + `dev`; submit predictions on **devtest** for the leaderboard.\n\n**Window:** `2026-05-22 → 2026-07-19`  ·  up to 5 submissions/day, 100 total.\n\n## Testing phase\nThe blind **test** set is released on [Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26); submit predictions\non `test` for the official ranking.\n\n**Window:** `2026-07-20 → 2026-07-29`  ·  up to 20 submissions/day, 100 total.\n\n> Dates are set in `competition.yaml` (`phases.start` / `phases.end`) — adjust if\n> the schedule shifts. Announcements: [website](https://imageeval2026.github.io/).",
+        "content_zh": "# 时间表\n\n## 开发阶段\n在 `train` + `dev` 上进行调整；在 **devtest** 上提交预测结果参与排行榜竞争。\n\n**时间窗口：** `2026-05-22 → 2026-07-19`  ·  每天最多 5 次提交，总共 100 次。\n\n## 测试阶段\n盲测 **test** 集合发布于 [Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)；在 `test` 上提交预测结果以获得官方排名。\n\n**时间窗口：** `2026-07-20 → 2026-07-29`  ·  每天最多 20 次提交，总共 100 次。\n\n> 日期设置在 `competition.yaml`（`phases.start` / `phases.end`）中——如果时间表变更，请进行调整。公告：[网站](https://imageeval2026.github.io/)。"
+      }
+    ]
+  },
   "16909": {
     "id": 16909,
     "title": "ArGuard 2026 — Subtask A1 (Binary Hateful Meme Detection)",
@@ -410,8 +410,8 @@
     "description_zh": "阿拉伯语多模态仇恨迷因分类。给定一个迷因（图像加光学字符识别提取的阿拉伯语文本），预测其是否为仇恨性或非仇恨性。官方指标：宏平均F1分数。",
     "created_by": "mohamedbayan",
     "created_when": "2026-06-03T11:38:35.423737Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780486715/5b6f981490c6/logo.png?AWSAccessKeyId=codabench-prod&Signature=umHFiSpZv%2BdT8YAyuIjwb%2BW0Gng%3D&Expires=1783688954",
-    "participants_count": 13,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780486715/5b6f981490c6/logo.png?AWSAccessKeyId=codabench-prod&Signature=d1LhPqqazUt8bRgbAQynbI4ZApE%3D&Expires=1783775791",
+    "participants_count": 14,
     "submissions_count": 20,
     "first_phase_start": null,
     "phases": [
@@ -458,9 +458,9 @@
     "description_zh": "# 视频防护设计，用于阻止基于扩散的视频定制（I2V和LoRA调优）\n\n## 概述\n\n设计防护机制使扩散模型无法准确再现目标身份或跟随攻击者提示的视频定制方法失效。\n\n## 核心防护策略\n\n### 1. 身份特征扰动\n- **面部几何变形**：在视频帧中引入轻微但持续的面部特征偏移\n- **皮肤纹理干扰**：添加不可感知的高频纹理噪声，破坏身份特征学习\n- **眼睛和嘴部模糊**：针对性地模糊关键生物识别特征\n\n### 2. 时间一致性破坏\n- **帧间不一致性注入**：在连续帧中引入微小的视觉变异\n- **光流扰动**：改变物体运动模式的潜在表示\n- **闪烁伪影**：插入难以察觉的帧间视觉不一致\n\n### 3. 提示跟随阻止\n- **语义对抗扰动**：在视频嵌入空间中添加针对常见提示的对抗性噪声\n- **属性干扰**：随机改变可被提示引用的视觉属性（颜色、光照、背景）\n- **语言-视觉失对齐**：破坏视频内容与文本描述之间的对应关系\n\n### 4. LoRA适应阻止\n- **特征空间扰动**：在扩散模型的中间层特征中添加噪声\n- **权重梯度噪声**：在LoRA微调期间污染梯度信息\n- **秩空间干扰**：扰动低秩更新能够有效操作的特征子空间\n\n### 5. 图像到视频（I2V）防护\n- **参考图像扭曲**：对输入参考图像应用几何或光度变换\n- **多模态不匹配**：在参考图像和视频序列间创建风格/内容分歧\n- **特征提取器欺骗**：针对I2V模型的编码器添加对抗性扰动\n\n## 技术实现方法\n\n### 不可感知扰动\n```\n- 操作范围：ΔL < 1-2 ΔCIE LAB单位（人眼难以察觉）\n- 频率分析：集中在20-60 Hz范围（对视觉系统的屏蔽频率）\n- 自适应幅度：根据局部内容复杂度调整扰动强度\n```\n\n### 多层防护叠加\n- 将多种扰动类型组合应用\n- 动态调整干扰参数以对抗自适应攻击\n- 在不同视觉处理阶段引入冗余防护\n\n## 评估指标\n\n### 防护有效性\n- I2V/LoRA身份再现失败率\n- 提示跟随准确度下降\n- 攻击成功率相对于未保护视频的减少\n\n### 用户体验保持\n- 视频感知质量（VMAF、LPIPS）\n- 结构相似性（SSIM）保留率\n- 原始内容可识别性\n\n## 防护鲁棒性考虑\n\n- **对抗适应**：防护应抵抗对防护机制的反向工程\n- **多模型泛化**：在不同扩散架构上测试防护有效性\n- **计算效率**：确保防护处理开销最小化\n\n## 部署场景\n\n- 视频内容保护（防止未授权定制）\n- 深伪防御\n- 身份隐私保护\n- 媒体认证和完整性验证",
     "created_by": "lifegenip_w",
     "created_when": "2026-05-31T22:01:57.495846Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-31-1780264917/f2d06ba47a50/logo.png?AWSAccessKeyId=codabench-prod&Signature=%2F4759yzTzlCjUTGBtn84fysxuyw%3D&Expires=1783688955",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-31-1780264917/f2d06ba47a50/logo.png?AWSAccessKeyId=codabench-prod&Signature=wwSsJ%2FGq4BO9UAzfI7RRSgs6zbw%3D&Expires=1783775793",
     "participants_count": 70,
-    "submissions_count": 198,
+    "submissions_count": 208,
     "first_phase_start": null,
     "phases": [
       {
@@ -518,7 +518,7 @@
     "description_zh": "我是一个科技竞赛信息翻译助手。\n\n**功能描述：**\n\n将用户提供的英文竞赛文本翻译成简体中文，保持专业术语准确，输出纯翻译结果。\n\n**特点：**\n- ✓ 专业术语翻译准确\n- ✓ 保持原文意思不变\n- ✓ 输出纯翻译内容\n- ✓ 支持科技竞赛相关领域\n\n**使用方式：**\n直接粘贴英文竞赛文本，我会给出中文翻译。",
     "created_by": "dravidian",
     "created_when": "2026-05-30T08:48:21.614394Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-02-1780380380/3d180381fa35/ChatGPT_Image_Jun_2_2026_at_11_35_.png?AWSAccessKeyId=codabench-prod&Signature=lE%2BzTm%2FwOw3FaruxT%2B6F%2FUEq5Yk%3D&Expires=1783688960",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-02-1780380380/3d180381fa35/ChatGPT_Image_Jun_2_2026_at_11_35_.png?AWSAccessKeyId=codabench-prod&Signature=3w3WiwyPxJlHdixYbjzXZonV8tA%3D&Expires=1783775794",
     "participants_count": 12,
     "submissions_count": 0,
     "first_phase_start": null,
@@ -577,7 +577,7 @@
     "description_zh": "# 翻译\n\n预测注视对齐的脑磁图(MEG)活动(204个梯度计通道,注视后110毫秒),基于自然场景图像和来自主动视觉语义(AVS)数据集的眼动元数据,为一个被保留的受试者。\n\nSulewski, P., Amme, C., Hebart, M., König, P., & Kietzmann, T. (2025). 我们为什么停留:记忆编码而非视觉处理需求驱动自然场景上的注视时间——来自大规模脑磁图数据集的证据。\n\n仅限学术用途。AVS数据集及所有衍生材料专门为学术研究和教育目的提供,用于奥斯纳布吕克大学(Osnabrück University)\"深度神经网络神经编码\"课程(SoSe 2026)。",
     "created_by": "psulewski",
     "created_when": "2026-04-20T14:42:51.242593Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-20-1776696171/148af8ac1426/logo.png?AWSAccessKeyId=codabench-prod&Signature=8pdOk6OSCMyzJSRyFbjxaOhK3xk%3D&Expires=1783688979",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-20-1776696171/148af8ac1426/logo.png?AWSAccessKeyId=codabench-prod&Signature=7WCE3SAUz6H3jb7eCcBO%2FfXdcn8%3D&Expires=1783775807",
     "participants_count": 25,
     "submissions_count": 37,
     "first_phase_start": null,
@@ -618,9 +618,9 @@
     "description_zh": "MVAA 2026 最终隐藏测试Docker评估平台。参赛者提交一个轻量级submission.zip，包含Docker镜像引用。私有的组织方Codabench工作进程将描述符转发给MVAA GPU运行器，该运行器拉取镜像、在隐藏测试集上运行推理、计算官方指标，并将Task1/Task2/Task3分数返回到Codabench。",
     "created_by": "db0725",
     "created_when": "2026-06-29T13:28:58.227688Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-29-1782739738/5879f76f7bc9/icon.png?AWSAccessKeyId=codabench-prod&Signature=jmIAobpCukhP0VlLZypo83g4hLI%3D&Expires=1783688944",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-29-1782739738/5879f76f7bc9/icon.png?AWSAccessKeyId=codabench-prod&Signature=9WPRyniUZKqZBnq8m%2Fmux3N5Wiw%3D&Expires=1783775782",
     "participants_count": 31,
-    "submissions_count": 33,
+    "submissions_count": 34,
     "first_phase_start": null,
     "phases": [
       {
@@ -725,9 +725,9 @@
     "description_zh": "MVAA 2026 评估跨越三个临床基础分割任务的二尖瓣解剖学多模态AI方法：（1）CT分割、（2）3D TEE分割和（3）手术视频分割。\n\n最终排名基于跨任务平均聚合的归一化任务级分数。",
     "created_by": "db0725",
     "created_when": "2026-04-14T13:38:37.626348Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-15-1776224307/a53b1e60e5cb/icon.png?AWSAccessKeyId=codabench-prod&Signature=4PfaBmb6qVEBy0ac5KjMw%2FEk4hM%3D&Expires=1783688986",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-15-1776224307/a53b1e60e5cb/icon.png?AWSAccessKeyId=codabench-prod&Signature=391cGZ8Lhy9oHB0t53F8FJ1NuPY%3D&Expires=1783775806",
     "participants_count": 157,
-    "submissions_count": 1757,
+    "submissions_count": 1818,
     "first_phase_start": null,
     "phases": [
       {
@@ -826,9 +826,9 @@
     "description_zh": "该竞赛在超声图像回归任务上评估基础模型。参赛者预测解剖学标志点坐标。评估指标为平均径向误差（MRE）和平均绝对误差（MAE），数值越低越好。",
     "created_by": "jared2408",
     "created_when": "2026-04-12T05:59:27.070072Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-13-1776048868/504537dff745/logo.png?AWSAccessKeyId=codabench-prod&Signature=U0hKaUzC8YdZIiKbFzfpQGamNsg%3D&Expires=1783688984",
-    "participants_count": 186,
-    "submissions_count": 1487,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-13-1776048868/504537dff745/logo.png?AWSAccessKeyId=codabench-prod&Signature=%2FnnYAXPTPoQXAlMFaTuR0%2BRl50g%3D&Expires=1783775809",
+    "participants_count": 187,
+    "submissions_count": 1571,
     "first_phase_start": null,
     "phases": [
       {
@@ -921,7 +921,7 @@
     "description_zh": "阿拉伯语多模态仇恨表情包细粒度分类。给定一张表情包（图像加光学字符识别提取的阿拉伯语文本），从涵盖仇恨和非仇恨类别的统一10类活跃词汇中预测零个或多个细粒度子类型。官方指标：宏F1（macro-F1）。",
     "created_by": "alishahroor",
     "created_when": "2026-06-03T11:45:25.550972Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780487125/68e3a857bebe/logo.png?AWSAccessKeyId=codabench-prod&Signature=T1i%2BnBAFT83t4WxsupfgSFphZ8U%3D&Expires=1783688954",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780487125/68e3a857bebe/logo.png?AWSAccessKeyId=codabench-prod&Signature=nMVga3%2BWAvi3XPhfKhyOtvjwkrI%3D&Expires=1783775791",
     "participants_count": 10,
     "submissions_count": 4,
     "first_phase_start": null,
@@ -969,7 +969,7 @@
     "description_zh": "## 玩具基准 v1：成对点追踪\n\n该基准评估图像数据上的简单**成对点追踪**任务。\n\n### 任务定义\n对于每个测试样本，参与者获得：\n- 参考图像（`ref`）\n- 目标图像（`tgt`）\n- 在参考图像上定义的参考点 `(x_ref, y_ref)`\n\n目标是**预测目标图像上对应的点位置 `(x, y)`**。\n\n### 评估\n使用目标图像上预测点与真值点之间的**欧氏距离**评估预测结果。\n最终分数是**所有测试样本上的平均误差**（分数越低越好）。",
     "created_by": "lanxiao",
     "created_when": "2026-01-29T20:19:17.964849Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-01-29-1769717957/3a83607f7a38/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260128161328_371_2.png?AWSAccessKeyId=codabench-prod&Signature=eM1x%2BVzYsPhyYsgAkERAGAh8RtI%3D&Expires=1783689031",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-01-29-1769717957/3a83607f7a38/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260128161328_371_2.png?AWSAccessKeyId=codabench-prod&Signature=Cms4OhQZj3DaSrGnkNaMjIrHgvE%3D&Expires=1783775840",
     "participants_count": 2,
     "submissions_count": 4,
     "first_phase_start": null,
@@ -1016,6 +1016,54 @@
       }
     ]
   },
+  "16887": {
+    "id": 16887,
+    "title": "WSLP@EMNLP-2026 Shared Task - Word\\Sign  Presence Prediction",
+    "description": "Predict if a given word\\Sign (gloss) is present in a full Indian Sign Language (ISL) sentence video, addressing sign spotting and context alignment challenges.",
+    "description_zh": "给定一个单词\\符号（手语词汇），预测其是否出现在完整的印度手语（ISL）句子视频中，解决手语识别和上下文对齐的挑战。",
+    "created_by": "wslp_workshop",
+    "created_when": "2026-06-01T18:23:44.041000Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780338224/034be48cb6b4/logo.png?AWSAccessKeyId=codabench-prod&Signature=kyOW%2Bdj5hbVsPbV7k39MD3a72KY%3D&Expires=1783775792",
+    "participants_count": 7,
+    "submissions_count": 10,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 28097,
+        "name": "Training Phase",
+        "start": "2026-06-08T00:00:00Z",
+        "end": "2026-07-31T00:00:00Z",
+        "max_submissions_per_day": 20
+      },
+      {
+        "id": 28098,
+        "name": "Testing Phase",
+        "start": "2026-07-31T00:01:00Z",
+        "end": "2026-08-10T00:00:00Z",
+        "max_submissions_per_day": 20
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Overview",
+        "content": "<h1 dir=\"ltr\">Welcome to the WSLP@EMNLP-2026 Shared Task: Word\\Sign Presence Prediction</h1>\n\n<h4 dir=\"ltr\">Advancing Indian Sign Language Understanding through Sign Spotting</h4>\n\n<h2 dir=\"ltr\">Registration</h2>\n<p dir=\"ltr\">\nTo participate in this shared task, please visit the <a href=\"https://www.codabench.org/competitions/16887/#/participate-tab\">\"Participate\"</a> tab and create a Codabench account using a valid institutional or personal email address.\nParticipation is open to both individuals and teams.\n</p>\n\n<p dir=\"ltr\">\nAfter registration, navigate to your <strong>Settings</strong> and fill in all the required details.\n<br><br>\nPlease ensure that your <strong>team name</strong> (or individual name) is clearly identifiable and used consistently across all submissions.\n</p>\n\n<h2>Overview</h2>\n<p>\nIndian Sign Language (ISL) is a rich and expressive visual language. In this shared task, participants are challenged to predict whether a specific word (gloss) is present within a given ISL sentence video — a task commonly known as <em>sign spotting</em>.\n</p>\n\n<p>\nThis task is crucial for real-world applications such as query-based sign language video retrieval and semantic search. It represents a step forward in building models that understand continuous signing in a structured and meaningful way.\n</p>\n\n<p>\nWe provide a dedicated dataset — the <strong>Word\\Sign Presence Dataset</strong> — containing 1,543 (video, word) query pairs. Your goal is to build a model that can accurately predict whether a queried word is signed in a given ISL sentence video.\n</p>\n\n<h2>Phases</h2>\n<p>\nThe competition consists of two distinct phases:\n</p>\n<ul>\n  <li><strong>Phase 1: Training & Validation</strong> – Participants will train and validate their models using the provided datasets.</li>\n  <li><strong>Phase 2: Testing</strong> – A held-out test set will be released. Participants will submit predictions to evaluate the generalization of their models.</li>\n</ul>\n\n<h3>Task Details</h3>\n<ul>\n  <li><strong>Input:</strong> ISL sentence video or corresponding pose sequence, and a query word</li>\n  <li><strong>Output:</strong> Binary prediction indicating the presence of the word (1 = Present, 0 = Not Present)</li>\n  <li><strong>Dataset:</strong> Word Presence Dataset</li>\n  <li><strong>Evaluation Metrics:</strong> Accuracy, Macro Precision, Macro Recall, Macro F1-Score</li>\n</ul>\n\n<h2>Submission Guidelines</h2>\n<p>\nEach submission must be a ZIP archive named <code>submission.zip</code>, containing the following file:\n</p>\n\n<ol>\n  <li>\n    <code>answer.csv</code> – A comma-separated file with the following three columns:\n    <ul>\n      <li><strong>Column 1:</strong> <code>sentence_id</code> – ID of the input ISL sentence video</li>\n      <li><strong>Column 2:</strong> <code>query_id</code> – ID of the queried word</li>\n      <li><strong>Column 3:</strong> <code>is_present</code> – Your model’s binary prediction (<code>1</code> for Present, <code>0</code> for Not Present)</li>\n    </ul>\n    <strong>Note:</strong> Ensure that all <code>(sentence_id, query_id)</code> pairs appear in the exact same order as in the reference file. Mismatches may lead to invalid scoring or disqualification. Make sure  columns name in the answer.csv files are (sentence_is, query_id, is_present).\n  </li>\n</ol>\n\n<p>\nSample submission files is made available along with the dataset to guide your formatting. <a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/blob/main/Shared_task_WPP/sample_submission.csv\">Sample Submission file</a> \n</p>\n\n<p>\nTo submit your predictions, visit the <a href=\"https://www.codabench.org/competitions/16887/#/participate-tab\">\"Submission\"</a> tab and upload your <code>submission.zip</code> file. Participants may make multiple submissions per day, subject to platform-imposed limits.\n</p>\n\n<h2>Results and Leaderboard</h2>\n<p>\nLeaderboard results will be displayed under the <a href=\"https://www.codabench.org/competitions/16887/#/results-tab\">\"Results\"</a> tab. Final rankings will be based primarily on the <strong>F1-Score</strong> for the positive class (i.e., correct prediction of presence), with <strong>Accuracy</strong>, <strong>Precision</strong>, and <strong>Recall</strong> (all macro-averaged) serving as secondary metrics.\n</p>\n\n<p>\nTop-performing teams will be recognized and invited to present their approaches at the <strong>WSLP@EMNLP-2026</strong> event.\n</p>\n\n<h2>Acknowledgements</h2>\n<p>\nThis shared task is part of the <strong>Workshop on Sign Language Processing (WSLP@EMNLP-2026)</strong>, co-located with <strong>EMNLP 2026</strong> at <strong>Budapest, Hungary</strong>.\n</p>\n\n<p>\nWe sincerely thank all participants, organizers, collaborators, and the broader research community for their continued efforts in advancing the field of sign language technology.\n</p>\n<p>\nTo stay updated and connect with other participants, join our Discord server \n<ul>\n\t<li> <a href=\"https://discord.gg/ty7dqTHC2v\"> Discord : Shared Task </a> </li>\n\t<li> <a href=\"https://discord.gg/x6tHXEFyW7\"> Discord : Workshop </a> </li>\n\t<li><a href=\"https://exploration-lab.github.io/WSLP-2026/task/\"> Shared Task Webpage </a> </li>\n\t</ul>\n</p>",
+        "content_zh": "# 欢迎来到WSLP@EMNLP-2026共享任务：词/手语存在预测\n\n## 通过手语识别推进印度手语理解\n\n## 注册\n\n要参加此共享任务，请访问<a href=\"https://www.codabench.org/competitions/16887/#/participate-tab\">\"参与\"</a>选项卡，并使用有效的机构或个人电子邮件地址创建Codabench账户。\n个人和团队都可以参加。\n\n注册后，导航到您的**设置**并填入所有必需信息。\n\n请确保您的**团队名称**（或个人名称）清晰可辨，并在所有提交中保持一致。\n\n## 概述\n\n印度手语（ISL）是一种丰富而富有表现力的视觉语言。在此共享任务中，参与者需要预测特定词汇（标记）是否出现在给定的ISL句子视频中——这个任务通常被称为**手语识别**。\n\n此任务对于实际应用至关重要，例如基于查询的手语视频检索和语义搜索。这代表了在构建以结构化和有意义的方式理解连续手语的模型方面的进步。\n\n我们提供了一个专用数据集——**词/手语存在数据集**——包含1,543个（视频、词汇）查询对。您的目标是构建一个模型，能够准确预测查询的词汇是否在给定的ISL句子视频中被手语表达。\n\n## 阶段\n\n竞赛包括两个不同的阶段：\n\n- **阶段1：训练与验证** – 参与者将使用提供的数据集训练和验证其模型。\n- **阶段2：测试** – 将发布保留的测试集。参与者将提交预测以评估其模型的泛化能力。\n\n## 任务详情\n\n- **输入：** ISL句子视频或对应的姿态序列，以及一个查询词汇\n- **输出：** 表示词汇存在的二元预测（1 = 存在，0 = 不存在）\n- **数据集：** 词汇存在数据集\n- **评估指标：** 准确率、宏平均精准率、宏平均召回率、宏平均F1分数\n\n## 提交指南\n\n每次提交必须是名为`submission.zip`的ZIP压缩包，包含以下文件：\n\n1. `answer.csv` – 逗号分隔的文件，包含以下三列：\n   - **第1列：** `sentence_id` – 输入ISL句子视频的ID\n   - **第2列：** `query_id` – 查询词汇的ID\n   - **第3列：** `is_present` – 您模型的二元预测（`1`表示存在，`0`表示不存在）\n   \n   **注意：** 确保所有`(sentence_id, query_id)`对与参考文件的顺序完全相同。不匹配可能导致无效计分或被取消资格。请确保answer.csv文件中的列名为(sentence_id, query_id, is_present)。\n\n样本提交文件已随数据集提供，用以指导您的格式设置。<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/blob/main/Shared_task_WPP/sample_submission.csv\">样本提交文件</a>\n\n要提交您的预测，请访问<a href=\"https://www.codabench.org/competitions/16887/#/participate-tab\">\"提交\"</a>选项卡并上传您的`submission.zip`文件。参与者每天可进行多次提交，需遵守平台限制。\n\n## 结果和排行榜\n\n排行榜结果将显示在<a href=\"https://www.codabench.org/competitions/16887/#/resu\">排行榜</a>选项卡下。"
+      },
+      {
+        "index": 1,
+        "title": "Data",
+        "content": "<h3>🧠 Word Presence Prediction Task</h3>\n\n<p>\nParticipants are required to develop models that can predict whether a given word is present in a sign language video. This task focuses on learning meaningful word-level representations from Indian Sign Language videos.\n</p>\n\n<p>\nFor training, participants may use any publicly available dataset. A large corpus of Indian Sign Language videos with corresponding annotations is available for download from:\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Train-Dataset\" target=\"_blank\">\nhere\n</a>.\n</p>\n\n<p>\nThe validation set can be accessed from \n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Validation-Dataset\" target=\"_blank\">\nhere\n</a>.\n</p>\n\n<p>\nThe test set will be released after the Training Phase. Once available, you can download the test data from \n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Test-Dataset\" target=\"_blank\">\nhere\n</a>.\n</p>\n\n<p>\n📌 <strong>Note:</strong> Please ensure your models do not use any external private data. Only publicly available resources are permitted.\n</p>\n<p> <a href=\"https://github.com/zeleznyt/T5_for_SLT/blob/WSLP2026/WSLP2026_BASELINE.md\" target=\"_blank\">\nStarting kit\n</a>\n</p>",
+        "content_zh": "<h3>🧠 词语存在预测任务</h3>\n\n<p>\n参赛者需要开发模型，以预测给定词语是否出现在手语视频中。该任务专注于从印度手语视频中学习有意义的词级表征。\n</p>\n\n<p>\n在训练中，参赛者可以使用任何公开可用的数据集。一个包含大量印度手语视频及相应注释的语料库可从以下位置下载：\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Train-Dataset\" target=\"_blank\">\n这里\n</a>。\n</p>\n\n<p>\n验证集可从\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Validation-Dataset\" target=\"_blank\">\n这里\n</a>\n访问。\n</p>\n\n<p>\n测试集将在训练阶段后发布。发布后，您可以从\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Test-Dataset\" target=\"_blank\">\n这里\n</a>\n下载测试数据。\n</p>\n\n<p>\n📌 <strong>注意：</strong> 请确保您的模型不使用任何外部私有数据。仅允许使用公开可用的资源。\n</p>"
+      },
+      {
+        "index": 2,
+        "title": "Evaluation",
+        "content": "<p><strong>📊 Evaluation Criteria</strong></p>\n\n<p>\nSubmissions for the Word\\Sign Presence Prediction task will be evaluated using the following metrics:\n</p>\n\n<ul>\n  <li><strong>Accuracy</strong></li>\n  <li><strong>Macro Precision</strong></li>\n  <li><strong>Macro Recall</strong></li>\n  <li><strong>Macro F1-Score</strong></li>\n</ul>\n\n<p>\nThese metrics ensure a balanced evaluation across all word classes, especially in the presence of class imbalance.\n</p>\n\n<p>\nYou can read more about these evaluation metrics in the following resources:\n<a href=\"https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html\" target=\"_blank\">Precision, Recall, and F1-Score (Scikit-learn docs)</a></li>\n</p>",
+        "content_zh": "<p><strong>📊 评估标准</strong></p>\n\n<p>\n单词/手势存在预测任务的提交将使用以下指标进行评估：\n</p>\n\n<ul>\n  <li><strong>准确率（Accuracy）</strong></li>\n  <li><strong>宏平均精准率（Macro Precision）</strong></li>\n  <li><strong>宏平均召回率（Macro Recall）</strong></li>\n  <li><strong>宏平均F1分数（Macro F1-Score）</strong></li>\n</ul>\n\n<p>\n这些指标确保了对所有单词类别的平衡评估，特别是在存在类别不平衡的情况下。\n</p>\n\n<p>\n您可以在以下资源中了解更多关于这些评估指标的信息：\n<a href=\"https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html\" target=\"_blank\">精准率、召回率和F1分数（Scikit-learn文档）</a></li>\n</p>"
+      }
+    ]
+  },
   "16890": {
     "id": 16890,
     "title": "WSLP@EMNLP 2026 Shared Task - Isolated Sign Language Recognition (ISLR)",
@@ -1023,7 +1071,7 @@
     "description_zh": "印度手语（ISL）视频数据中的孤立手势识别到其对应的词标签（词汇标注）",
     "created_by": "wslp_workshop",
     "created_when": "2026-06-01T19:06:53.463848Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780340813/3af0ccccd8c8/logo.png?AWSAccessKeyId=codabench-prod&Signature=7Cw9Zq50jD0FMtJ%2F%2BbGPBT3CTRI%3D&Expires=1783688954",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780340813/3af0ccccd8c8/logo.png?AWSAccessKeyId=codabench-prod&Signature=YTQXcnbPC4O4gUC19jtr%2FBAKdew%3D&Expires=1783775791",
     "participants_count": 9,
     "submissions_count": 35,
     "first_phase_start": null,
@@ -1071,9 +1119,9 @@
     "description_zh": "从印度手语（ISL）视频/姿态数据到英文文本的句子级别翻译，使用iSign数据集。",
     "created_by": "wslp_workshop",
     "created_when": "2026-06-01T18:10:35.480917Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780337435/69dcff319769/logo.png?AWSAccessKeyId=codabench-prod&Signature=zWjhCFrlQBh7UrGlF7CruLXNCLA%3D&Expires=1783688955",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780337435/69dcff319769/logo.png?AWSAccessKeyId=codabench-prod&Signature=ki%2BXZp%2FY7rWJN%2BtxAaZOLhMQCZA%3D&Expires=1783775792",
     "participants_count": 13,
-    "submissions_count": 3,
+    "submissions_count": 4,
     "first_phase_start": null,
     "phases": [
       {
@@ -1112,54 +1160,6 @@
       }
     ]
   },
-  "16887": {
-    "id": 16887,
-    "title": "WSLP@EMNLP-2026 Shared Task - Word\\Sign  Presence Prediction",
-    "description": "Predict if a given word\\Sign (gloss) is present in a full Indian Sign Language (ISL) sentence video, addressing sign spotting and context alignment challenges.",
-    "description_zh": "给定一个单词\\符号（手语词汇），预测其是否出现在完整的印度手语（ISL）句子视频中，解决手语识别和上下文对齐的挑战。",
-    "created_by": "wslp_workshop",
-    "created_when": "2026-06-01T18:23:44.041000Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780338224/034be48cb6b4/logo.png?AWSAccessKeyId=codabench-prod&Signature=Km%2BlSKE3RhgMWl3T0LGV9A48c3s%3D&Expires=1783688954",
-    "participants_count": 7,
-    "submissions_count": 9,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 28097,
-        "name": "Training Phase",
-        "start": "2026-06-08T00:00:00Z",
-        "end": "2026-07-31T00:00:00Z",
-        "max_submissions_per_day": 20
-      },
-      {
-        "id": 28098,
-        "name": "Testing Phase",
-        "start": "2026-07-31T00:01:00Z",
-        "end": "2026-08-10T00:00:00Z",
-        "max_submissions_per_day": 20
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Overview",
-        "content": "<h1 dir=\"ltr\">Welcome to the WSLP@EMNLP-2026 Shared Task: Word\\Sign Presence Prediction</h1>\n\n<h4 dir=\"ltr\">Advancing Indian Sign Language Understanding through Sign Spotting</h4>\n\n<h2 dir=\"ltr\">Registration</h2>\n<p dir=\"ltr\">\nTo participate in this shared task, please visit the <a href=\"https://www.codabench.org/competitions/16887/#/participate-tab\">\"Participate\"</a> tab and create a Codabench account using a valid institutional or personal email address.\nParticipation is open to both individuals and teams.\n</p>\n\n<p dir=\"ltr\">\nAfter registration, navigate to your <strong>Settings</strong> and fill in all the required details.\n<br><br>\nPlease ensure that your <strong>team name</strong> (or individual name) is clearly identifiable and used consistently across all submissions.\n</p>\n\n<h2>Overview</h2>\n<p>\nIndian Sign Language (ISL) is a rich and expressive visual language. In this shared task, participants are challenged to predict whether a specific word (gloss) is present within a given ISL sentence video — a task commonly known as <em>sign spotting</em>.\n</p>\n\n<p>\nThis task is crucial for real-world applications such as query-based sign language video retrieval and semantic search. It represents a step forward in building models that understand continuous signing in a structured and meaningful way.\n</p>\n\n<p>\nWe provide a dedicated dataset — the <strong>Word\\Sign Presence Dataset</strong> — containing 1,543 (video, word) query pairs. Your goal is to build a model that can accurately predict whether a queried word is signed in a given ISL sentence video.\n</p>\n\n<h2>Phases</h2>\n<p>\nThe competition consists of two distinct phases:\n</p>\n<ul>\n  <li><strong>Phase 1: Training & Validation</strong> – Participants will train and validate their models using the provided datasets.</li>\n  <li><strong>Phase 2: Testing</strong> – A held-out test set will be released. Participants will submit predictions to evaluate the generalization of their models.</li>\n</ul>\n\n<h3>Task Details</h3>\n<ul>\n  <li><strong>Input:</strong> ISL sentence video or corresponding pose sequence, and a query word</li>\n  <li><strong>Output:</strong> Binary prediction indicating the presence of the word (1 = Present, 0 = Not Present)</li>\n  <li><strong>Dataset:</strong> Word Presence Dataset</li>\n  <li><strong>Evaluation Metrics:</strong> Accuracy, Macro Precision, Macro Recall, Macro F1-Score</li>\n</ul>\n\n<h2>Submission Guidelines</h2>\n<p>\nEach submission must be a ZIP archive named <code>submission.zip</code>, containing the following file:\n</p>\n\n<ol>\n  <li>\n    <code>answer.csv</code> – A comma-separated file with the following three columns:\n    <ul>\n      <li><strong>Column 1:</strong> <code>sentence_id</code> – ID of the input ISL sentence video</li>\n      <li><strong>Column 2:</strong> <code>query_id</code> – ID of the queried word</li>\n      <li><strong>Column 3:</strong> <code>is_present</code> – Your model’s binary prediction (<code>1</code> for Present, <code>0</code> for Not Present)</li>\n    </ul>\n    <strong>Note:</strong> Ensure that all <code>(sentence_id, query_id)</code> pairs appear in the exact same order as in the reference file. Mismatches may lead to invalid scoring or disqualification. Make sure  columns name in the answer.csv files are (sentence_is, query_id, is_present).\n  </li>\n</ol>\n\n<p>\nSample submission files is made available along with the dataset to guide your formatting. <a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/blob/main/Shared_task_WPP/sample_submission.csv\">Sample Submission file</a> \n</p>\n\n<p>\nTo submit your predictions, visit the <a href=\"https://www.codabench.org/competitions/16887/#/participate-tab\">\"Submission\"</a> tab and upload your <code>submission.zip</code> file. Participants may make multiple submissions per day, subject to platform-imposed limits.\n</p>\n\n<h2>Results and Leaderboard</h2>\n<p>\nLeaderboard results will be displayed under the <a href=\"https://www.codabench.org/competitions/16887/#/results-tab\">\"Results\"</a> tab. Final rankings will be based primarily on the <strong>F1-Score</strong> for the positive class (i.e., correct prediction of presence), with <strong>Accuracy</strong>, <strong>Precision</strong>, and <strong>Recall</strong> (all macro-averaged) serving as secondary metrics.\n</p>\n\n<p>\nTop-performing teams will be recognized and invited to present their approaches at the <strong>WSLP@EMNLP-2026</strong> event.\n</p>\n\n<h2>Acknowledgements</h2>\n<p>\nThis shared task is part of the <strong>Workshop on Sign Language Processing (WSLP@EMNLP-2026)</strong>, co-located with <strong>EMNLP 2026</strong> at <strong>Budapest, Hungary</strong>.\n</p>\n\n<p>\nWe sincerely thank all participants, organizers, collaborators, and the broader research community for their continued efforts in advancing the field of sign language technology.\n</p>\n<p>\nTo stay updated and connect with other participants, join our Discord server \n<ul>\n\t<li> <a href=\"https://discord.gg/ty7dqTHC2v\"> Discord : Shared Task </a> </li>\n\t<li> <a href=\"https://discord.gg/x6tHXEFyW7\"> Discord : Workshop </a> </li>\n\t<li><a href=\"https://exploration-lab.github.io/WSLP-2026/task/\"> Shared Task Webpage </a> </li>\n\t</ul>\n</p>",
-        "content_zh": "# 欢迎来到WSLP@EMNLP-2026共享任务：词/手语存在预测\n\n## 通过手语识别推进印度手语理解\n\n## 注册\n\n要参加此共享任务，请访问<a href=\"https://www.codabench.org/competitions/16887/#/participate-tab\">\"参与\"</a>选项卡，并使用有效的机构或个人电子邮件地址创建Codabench账户。\n个人和团队都可以参加。\n\n注册后，导航到您的**设置**并填入所有必需信息。\n\n请确保您的**团队名称**（或个人名称）清晰可辨，并在所有提交中保持一致。\n\n## 概述\n\n印度手语（ISL）是一种丰富而富有表现力的视觉语言。在此共享任务中，参与者需要预测特定词汇（标记）是否出现在给定的ISL句子视频中——这个任务通常被称为**手语识别**。\n\n此任务对于实际应用至关重要，例如基于查询的手语视频检索和语义搜索。这代表了在构建以结构化和有意义的方式理解连续手语的模型方面的进步。\n\n我们提供了一个专用数据集——**词/手语存在数据集**——包含1,543个（视频、词汇）查询对。您的目标是构建一个模型，能够准确预测查询的词汇是否在给定的ISL句子视频中被手语表达。\n\n## 阶段\n\n竞赛包括两个不同的阶段：\n\n- **阶段1：训练与验证** – 参与者将使用提供的数据集训练和验证其模型。\n- **阶段2：测试** – 将发布保留的测试集。参与者将提交预测以评估其模型的泛化能力。\n\n## 任务详情\n\n- **输入：** ISL句子视频或对应的姿态序列，以及一个查询词汇\n- **输出：** 表示词汇存在的二元预测（1 = 存在，0 = 不存在）\n- **数据集：** 词汇存在数据集\n- **评估指标：** 准确率、宏平均精准率、宏平均召回率、宏平均F1分数\n\n## 提交指南\n\n每次提交必须是名为`submission.zip`的ZIP压缩包，包含以下文件：\n\n1. `answer.csv` – 逗号分隔的文件，包含以下三列：\n   - **第1列：** `sentence_id` – 输入ISL句子视频的ID\n   - **第2列：** `query_id` – 查询词汇的ID\n   - **第3列：** `is_present` – 您模型的二元预测（`1`表示存在，`0`表示不存在）\n   \n   **注意：** 确保所有`(sentence_id, query_id)`对与参考文件的顺序完全相同。不匹配可能导致无效计分或被取消资格。请确保answer.csv文件中的列名为(sentence_id, query_id, is_present)。\n\n样本提交文件已随数据集提供，用以指导您的格式设置。<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/blob/main/Shared_task_WPP/sample_submission.csv\">样本提交文件</a>\n\n要提交您的预测，请访问<a href=\"https://www.codabench.org/competitions/16887/#/participate-tab\">\"提交\"</a>选项卡并上传您的`submission.zip`文件。参与者每天可进行多次提交，需遵守平台限制。\n\n## 结果和排行榜\n\n排行榜结果将显示在<a href=\"https://www.codabench.org/competitions/16887/#/resu\">排行榜</a>选项卡下。"
-      },
-      {
-        "index": 1,
-        "title": "Data",
-        "content": "<h3>🧠 Word Presence Prediction Task</h3>\n\n<p>\nParticipants are required to develop models that can predict whether a given word is present in a sign language video. This task focuses on learning meaningful word-level representations from Indian Sign Language videos.\n</p>\n\n<p>\nFor training, participants may use any publicly available dataset. A large corpus of Indian Sign Language videos with corresponding annotations is available for download from:\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Train-Dataset\" target=\"_blank\">\nhere\n</a>.\n</p>\n\n<p>\nThe validation set can be accessed from \n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Validation-Dataset\" target=\"_blank\">\nhere\n</a>.\n</p>\n\n<p>\nThe test set will be released after the Training Phase. Once available, you can download the test data from \n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Test-Dataset\" target=\"_blank\">\nhere\n</a>.\n</p>\n\n<p>\n📌 <strong>Note:</strong> Please ensure your models do not use any external private data. Only publicly available resources are permitted.\n</p>\n<p> <a href=\"https://github.com/zeleznyt/T5_for_SLT/blob/WSLP2026/WSLP2026_BASELINE.md\" target=\"_blank\">\nStarting kit\n</a>\n</p>",
-        "content_zh": "<h3>🧠 词语存在预测任务</h3>\n\n<p>\n参赛者需要开发模型，以预测给定词语是否出现在手语视频中。该任务专注于从印度手语视频中学习有意义的词级表征。\n</p>\n\n<p>\n在训练中，参赛者可以使用任何公开可用的数据集。一个包含大量印度手语视频及相应注释的语料库可从以下位置下载：\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Train-Dataset\" target=\"_blank\">\n这里\n</a>。\n</p>\n\n<p>\n验证集可从\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Validation-Dataset\" target=\"_blank\">\n这里\n</a>\n访问。\n</p>\n\n<p>\n测试集将在训练阶段后发布。发布后，您可以从\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Test-Dataset\" target=\"_blank\">\n这里\n</a>\n下载测试数据。\n</p>\n\n<p>\n📌 <strong>注意：</strong> 请确保您的模型不使用任何外部私有数据。仅允许使用公开可用的资源。\n</p>"
-      },
-      {
-        "index": 2,
-        "title": "Evaluation",
-        "content": "<p><strong>📊 Evaluation Criteria</strong></p>\n\n<p>\nSubmissions for the Word\\Sign Presence Prediction task will be evaluated using the following metrics:\n</p>\n\n<ul>\n  <li><strong>Accuracy</strong></li>\n  <li><strong>Macro Precision</strong></li>\n  <li><strong>Macro Recall</strong></li>\n  <li><strong>Macro F1-Score</strong></li>\n</ul>\n\n<p>\nThese metrics ensure a balanced evaluation across all word classes, especially in the presence of class imbalance.\n</p>\n\n<p>\nYou can read more about these evaluation metrics in the following resources:\n<a href=\"https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html\" target=\"_blank\">Precision, Recall, and F1-Score (Scikit-learn docs)</a></li>\n</p>",
-        "content_zh": "<p><strong>📊 评估标准</strong></p>\n\n<p>\n单词/手势存在预测任务的提交将使用以下指标进行评估：\n</p>\n\n<ul>\n  <li><strong>准确率（Accuracy）</strong></li>\n  <li><strong>宏平均精准率（Macro Precision）</strong></li>\n  <li><strong>宏平均召回率（Macro Recall）</strong></li>\n  <li><strong>宏平均F1分数（Macro F1-Score）</strong></li>\n</ul>\n\n<p>\n这些指标确保了对所有单词类别的平衡评估，特别是在存在类别不平衡的情况下。\n</p>\n\n<p>\n您可以在以下资源中了解更多关于这些评估指标的信息：\n<a href=\"https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html\" target=\"_blank\">精准率、召回率和F1分数（Scikit-learn文档）</a></li>\n</p>"
-      }
-    ]
-  },
   "16048": {
     "id": 16048,
     "title": "UCF UrbanTwin Sim2Real LiDAR Challenge — V2X-Real Track — ECCV Workshop 2026",
@@ -1167,7 +1167,7 @@
     "description_zh": "合成LiDAR数据，针对V2X-Real的基础设施中心分布；在合成数据上训练，在真实V2X-Real-IC上评估。",
     "created_by": "mshahbazkharal",
     "created_when": "2026-04-30T07:14:54.554531Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833294/142ee41df4c9/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=YSHwM0HoHeeFSYhOy%2BEromrwcjU%3D&Expires=1783688978",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833294/142ee41df4c9/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=FxbwTgO%2B1uyHiA2BFPSl24bwnDk%3D&Expires=1783775802",
     "participants_count": 6,
     "submissions_count": 0,
     "first_phase_start": null,
@@ -1233,7 +1233,7 @@
     "description_zh": "# LiDAR数据合成\n\n针对LUMPI汉诺威路边交叉口分布的LiDAR数据合成；在合成数据上训练，在真实数据上评估。\n\n---\n\n**关键要素：**\n\n- **数据合成** - 针对LUMPI汉诺威道路交叉口场景的LiDAR合成数据生成\n- **训练集** - 使用合成LiDAR数据进行模型训练\n- **评估集** - 在真实LiDAR数据上进行性能评估",
     "created_by": "mshahbazkharal",
     "created_when": "2026-04-30T07:09:42.003344Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833284/11b6c0bba3ac/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=Ycz6NNT13yLcvO00SfWDVwYPQ8c%3D&Expires=1783688978",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833284/11b6c0bba3ac/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=D6MwOXB5LtvsRVsYfUJj6AeOqac%3D&Expires=1783775803",
     "participants_count": 4,
     "submissions_count": 0,
     "first_phase_start": null,
@@ -1299,9 +1299,9 @@
     "description_zh": "MICCAI FLARE 2026 任务2：AutoMSC - 医学图像自动分割与分类",
     "created_by": "junma",
     "created_when": "2026-04-09T21:08:06.808342Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-09-1775769761/960f641105b9/logo-task2.png?AWSAccessKeyId=codabench-prod&Signature=%2FlujACSw%2FDaobFMYrMT3BS1zAzM%3D&Expires=1783688986",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-09-1775769761/960f641105b9/logo-task2.png?AWSAccessKeyId=codabench-prod&Signature=KMX%2FL6GahfC8mFpPD6Ac%2B6BlYAo%3D&Expires=1783775809",
     "participants_count": 53,
-    "submissions_count": 3,
+    "submissions_count": 5,
     "first_phase_start": null,
     "phases": [
       {
@@ -1370,7 +1370,7 @@
     "description_zh": "该挑战对近距离短波红外高光谱成像的×4超分辨率进行基准测试。\n\n参赛者获得使用同一传感器采集的低分辨率HSI立方体，通过不同镜头创建受控的分辨率变化，避免光谱偏差。任务是从×4下采样的输入重建高分辨率短波红外高光谱图像。",
     "created_by": "rafariva",
     "created_when": "2025-12-30T16:14:49.840049Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-12-30-1767111468/edd5610f43a0/logo_HISR.png?AWSAccessKeyId=codabench-prod&Signature=0mzL3mfZkVPAKb7zH4CwwmyJSZ8%3D&Expires=1783689061",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-12-30-1767111468/edd5610f43a0/logo_HISR.png?AWSAccessKeyId=codabench-prod&Signature=9e2KrcbplMY75kf6jgxeuyIcsdw%3D&Expires=1783775857",
     "participants_count": 53,
     "submissions_count": 582,
     "first_phase_start": null,
@@ -1429,7 +1429,7 @@
     "description_zh": "一个基于混合信号数据集的协作3D目标检测挑战，该数据集是一个多样化的真实点云数据集，用于异构激光雷达V2X协作（3辆连接的车辆+配备双激光雷达的路侧单元）。融合多个智能体的点云，在鸟瞰图平面上检测车辆、自行车和行人，并在排行榜上攀升。",
     "created_by": "mixed-signals",
     "created_when": "2026-07-09T01:30:36.192294Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783560636/614edf812e36/logo.png?AWSAccessKeyId=codabench-prod&Signature=pc62DM3GKS4fF8AwvyJQV%2B2t%2FSI%3D&Expires=1783688943",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783560636/614edf812e36/logo.png?AWSAccessKeyId=codabench-prod&Signature=SRQbxiwGPnjU7t0iMnJzch1H29U%3D&Expires=1783775782",
     "participants_count": 2,
     "submissions_count": 0,
     "first_phase_start": null,
@@ -1473,11 +1473,11 @@
   "17265": {
     "id": 17265,
     "title": "第十届全国激光雷达大会——City-Facade建筑立面点云实例分割大赛",
-    "description": "本比赛面向城市级建筑立面构件精细理解，采用City-Facade大规模三维点云数据集。\n\n数据由车载移动激光扫描系统采集，覆盖厦门市多类典型城市街区，累计道路长度约60 km。数据包含墙面、窗户、门、屋顶、广告牌、空调外机、雨棚和阳台等细粒度建筑立面要素标注，并提供语义级与实例级标签。\n\n参赛者需要识别测试点云中的独立建筑立面构件实例，并输出相应语义类别和实例编号。\n\n比赛采用结果提交模式。参赛者在本地完成模型训练和推理，仅向Codabench提交预测结果，平台使用隐藏实例标签进行自动评分。",
+    "description": "本比赛面向城市级建筑立面构件精细理解，采用City-Facade大规模三维点云数据集。\n\n数据由车载移动激光扫描系统采集，覆盖厦门市多类典型城市街区，累计道路长度约60 km。数据包含墙面、窗户、门、屋顶、广告牌、空调外机、雨棚和阳台等细粒度建筑立面要素标注，并提供语义级与实例级标签。\n\n参赛者需要识别测试点云中的独立建筑立面构件实例，并输出相应实例编号和语义类别。\n\n比赛采用结果提交模式。参赛者在本地完成模型训练和推理，仅向Codabench提交预测结果，平台使用隐藏实例标签进行自动评分。",
     "description_zh": "This competition focuses on fine-grained understanding of urban-level building facade components, utilizing the City-Fac dataset.\n\nThe data is collected by vehicle-mounted mobile laser scanning systems, covering multiple types of typical urban street blocks in Xiamen, with a cumulative road length of approximately 60 km. The dataset includes fine-grained building facade element annotations such as walls, windows, doors, roofs, billboards, air conditioning units, canopies, and balconies, with both semantic-level and instance-level labels provided.\n\nParticipants need to identify independent building facade component instances in the test point cloud and output the corresponding semantic categories and instance numbers.\n\nThe competition adopts a result submission mode. Participants complete model training and inference locally and only submit prediction results to Codabench, where the platform automatically scores using hidden instance labels.",
     "created_by": "jianlongguan",
     "created_when": "2026-06-26T12:50:09.783065Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=mc2xzKfOgU5cEIbknVMtWFftxws%3D&Expires=1783688944",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=ypc0lE%2FijEa5qCJ6HAg%2BFxlOPqQ%3D&Expires=1783775783",
     "participants_count": 3,
     "submissions_count": 2,
     "first_phase_start": null,
@@ -1494,7 +1494,7 @@
       {
         "index": 0,
         "title": "比赛说明",
-        "content": "# **建筑物立面点云语义/实例分割**\n\n## **Overview**\n\n本赛道采用 City-Facade 城市建筑立面点云数据集，开展建筑立面点云语义分割与实例分割。\n\n参赛者需要为测试集中的每个点预测语义类别，并进一步区分同一语义类别下不同建筑立面构件的实例编号。\n\nCity-Facade 数据由车载移动激光扫描系统采集，覆盖厦门市 6 类典型城市街区场景，累计道路长度约 60 km，包含约 2 亿个带标注点。\n\n语义类别如下：\n\n| **编号** | **英文类别**              | **中文类别** |\n| -------- | ------------------------- | ------------ |\n| 0        | Background / Unclassified | 背景或未分类 |\n| 1        | Wall                      | 墙面         |\n| 2        | Window                    | 窗户         |\n| 3        | Door                      | 门           |\n| 4        | Roof                      | 屋顶         |\n| 5        | Advertisement             | 广告牌       |\n| 6        | Air Conditioner           | 空调外机     |\n| 7        | Rain Shed                 | 雨棚         |\n| 8        | Balcony                   | 阳台         |\n\n参赛流程：\n\n1. 在训练数据集上开发三维点云语义分割与实例分割模型；\n2. 使用训练完成的模型预测测试数据；\n3. 为每个测试点生成语义标签和实例标签；\n4. 按指定目录结构压缩预测结果；\n5. 将结果上传至 Codabench；\n6. 平台自动评测并更新排行榜。\n\n数据集项目地址：\n\n```text\nhttps://github.com/gorgeouseping/City-Facade\n```\n\n## **Evaluation**\n\n主排名指标为综合得分：\n\n```text\nScore = 0.5 × mIoU + 0.5 × AP50\n```\n\n其中：\n\n- mIoU 用于评价语义分割精度；\n- AP50 用于评价实例分割精度。\n\n辅助指标包括：\n\n- mIoU\n- OA\n- 各类别 IoU\n- AP\n- AP25\n- AP50\n\n所有指标均为越高越好。\n\n每支队伍每日最多提交 5 次。\n\n若综合得分相同，建议依次按照 AP50、mIoU、AP25 和提交时间确定排名。\n\n## **Submission Format**\n\n参赛者须为测试集中的每个点提供语义标签和实例标签，并提交一个 ZIP 压缩包。\n\n```text\nsubmission.zip\n└── predictions/\n    ├── CAR/\n    │   ├── CAR-30-003_000000.txt\n    │   ├── CAR-30-003_000001.txt\n    │   └── ...\n    ├── JMC/\n    ├── SGS/\n    └── ...\n```\n\n目录名称和预测文件名称必须与测试数据保持一致。\n\n每个 TXT 文件包含 6 个字段：\n\n```text\nX Y Z intensity semantic_label instance_id\n```\n\n数组维度为：\n\n```text\nN × 6\n```\n\n其中：\n\n- `N` 为点云点数；\n- `X Y Z` 为三维坐标；\n- `intensity` 为激光强度；\n- `semantic_label` 为预测语义类别；\n- `instance_id` 为预测实例编号。\n\n提交文件必须满足：\n\n1. 点数和点顺序与原测试文件完全一致；\n2. 三维坐标和强度字段不得修改；\n3. 语义类别编号范围为 0—8；\n4. 实例编号必须为非负整数；\n5. 不同实例使用不同的实例编号；\n6. 预测文件的目录和文件名必须与测试集一致；\n7. ZIP 根目录必须包含 `predictions` 文件夹。\n\n## **Citation**\n\n使用 City-Facade 数据集开展研究或发表成果时，请引用：\n\n```bibtex\n@article{chen2026cityfacade,\n  title={City-Facade: A city-level large-scale point cloud building facade dataset for semantic \\& instance segmentation},\n  author={Chen, Yiping and Li, Jonathan and Han, Ting and Feng, Huifang and Chen, Jun and Wang, Cheng},\n  journal={ISPRS Journal of Photogrammetry and Remote Sensing},\n  volume={232},\n  pages={675--688},\n  year={2026},\n  doi={10.1016/j.isprsjprs.2026.01.003}\n}\n```",
+        "content": "# **建筑物立面点云语义/实例分割**\n\n## **Overview**\n\n本赛道采用 City-Facade 城市建筑立面点云数据集，开展建筑立面点云语义分割与实例分割。\n\n参赛者需要为测试集中的每个点预测语义类别，并进一步区分同一语义类别下不同建筑立面构件的实例编号。\n\nCity-Facade 数据由车载移动激光扫描系统采集，覆盖厦门市 6 类典型城市街区场景，累计道路长度约 60 km，包含约 2 亿个带标注点。\n\n语义类别如下：\n\n| **编号** | **英文类别**              | **中文类别** |\n| -------- | ------------------------- | ------------ |\n| 0        | Background / Unclassified | 背景或未分类 |\n| 1        | Wall                      | 墙面         |\n| 2        | Window                    | 窗户         |\n| 3        | Door                      | 门           |\n| 4        | Roof                      | 屋顶         |\n| 5        | Advertisement             | 广告牌       |\n| 6        | Air Conditioner           | 空调外机     |\n| 7        | Rain Shed                 | 雨棚         |\n| 8        | Balcony                   | 阳台         |\n\n参赛流程：\n\n1. 在训练数据集上开发三维点云语义分割与实例分割模型；\n2. 使用训练完成的模型预测测试数据；\n3. 为每个测试点生成语义标签和实例标签；\n4. 按指定目录结构压缩预测结果；\n5. 将结果上传至 Codabench；\n6. 平台自动评测并更新排行榜。\n\n数据集项目地址：\n\n```text\nhttps://github.com/gorgeouseping/City-Facade\n```\n\n## **Evaluation**\n\n主排名指标为综合得分：\n\n```text\nScore = 0.5 × mIoU + 0.5 × AP50\n```\n\n其中：\n\n- mIoU 用于评价语义分割精度；\n- AP50 用于评价实例分割精度。\n\n辅助指标包括：\n\n- mIoU\n- OA\n- 各类别 IoU\n- AP\n- AP25\n- AP50\n\n所有指标均为越高越好。\n\n每支队伍每日最多提交 5 次。\n\n若综合得分相同，建议依次按照 AP50、mIoU、AP25 和提交时间确定排名。\n\n## **Submission Format**\n\n参赛者须为测试集中的每个点提供语义标签和实例标签，并提交一个 ZIP 压缩包。\n\n压缩包根目录必须包含`predictions/`文件夹：\n\n```text\nsubmission.zip\n└── predictions/\n    ├── CAR/\n    │   ├── CAR-30-003_000000.txt\n    │   ├── CAR-30-003_000001.txt\n    │   └── ...\n    ├── JMC/\n    ├── SGS/\n    ├── XHR/\n    └── YWR/\n```\n\n目录名称和预测文件名称必须与测试数据保持一致。例如：\n\n```text\ntest/JMC/JMC-1-013_000000.txt\npredictions/JMC/JMC-1-013_000000.txt\n```\n\n每个预测 `.txt` 文件为 `N x 6` 数组，字段顺序固定为：\n\n```text\nX Y Z intensity instance_id semantic_label\n```\n\n其中：\n\n- `N` 为点云点数；\n- `X Y Z` 为三维坐标；\n- `intensity` 为激光强度；\n- `instance_id` 为预测实例编号；\n- `semantic_label` 为预测语义类别。\n\n字段索引从 `0` 开始时：\n\n```text\nX=0, Y=1, Z=2, intensity=3, instance_id=4, semantic_label=5\n```\n\n提交文件必须满足：\n\n1. 每个测试 `.txt` 文件都必须有对应预测文件；\n2. 预测文件的相对路径和文件名必须与测试集一致；\n3. 每个预测文件的点数必须与对应测试文件完全一致；\n4. 点顺序必须与测试文件完全一致；\n5. `X Y Z intensity` 四列应保持与测试文件一致；\n6. `semantic_label` 必须为整数，取值范围为 `0` 到 `8`；\n7. `instance_id` 必须为非负整数；\n8. 对于语义类别 `1` 到 `8` 的前景构件，不同实例应使用不同的实例编号；\n9. 对于类别 `0` 的背景或未分类点，`instance_id` 可设为 `0`；\n10. ZIP 根目录必须包含 `predictions/` 文件夹，不要额外嵌套一层目录。\n\n## **Citation**\n\n使用 City-Facade 数据集开展研究或发表成果时，请引用：\n\n```bibtex\n@article{chen2026cityfacade,\n  title={City-Facade: A city-level large-scale point cloud building facade dataset for semantic \\& instance segmentation},\n  author={Chen, Yiping and Li, Jonathan and Han, Ting and Feng, Huifang and Chen, Jun and Wang, Cheng},\n  journal={ISPRS Journal of Photogrammetry and Remote Sensing},\n  volume={232},\n  pages={675--688},\n  year={2026},\n  doi={10.1016/j.isprsjprs.2026.01.003}\n}\n```",
         "content_zh": "# **Building Facade Point Cloud Semantic/Instance Segmentation**\n\n## **Overview**\n\nThis track uses the City-Facade dataset to conduct semantic segmentation and instance segmentation of building facade point clouds.\n\nParticipants need to predict semantic categories for each point in the test set and further distinguish instance numbers of different building facade components within the same semantic category.\n\nThe City-Facade dataset is collected by vehicle-mounted mobile laser scanning systems, covering 6 typical urban street scene categories in Xiamen City, with a total road length of approximately 60 km and containing approximately 200 million annotated points.\n\nSemantic categories are as follows:\n\n| **ID** | **English Category**      | **Chinese Category** |\n| ------ | ------------------------- | -------------------- |\n| 0      | Background / Unclassified | Background/Unclassified |\n| 1      | Wall                      | Wall                 |\n| 2      | Window                    | Window               |\n| 3      | Door                      | Door                 |\n| 4      | Roof                      | Roof                 |\n| 5      | Advertisement             | Advertisement Board  |\n| 6      | Air Conditioner           | Air Conditioner Unit |\n| 7      | Rain Shed                 | Rain Shed            |\n| 8      | Balcony                   | Balcony              |\n\nCompetition workflow:\n\n1. Develop 3D point cloud semantic and instance segmentation models on the training dataset;\n2. Use the trained model to predict test data;\n3. Generate semantic labels and instance labels for each test point;\n4. Compress prediction results according to the specified directory structure;\n5. Upload results to Codabench;\n6. The platform automatically evaluates and updates the leaderboard.\n\nDataset project address:\n\n```text\nhttps://github.com/gorgeouseping/City-Facade\n```\n\n## **Evaluation**\n\nThe main ranking metric is the comprehensive score:\n\n```text\nScore = 0.5 × mIoU + 0.5 × AP50\n```\n\nWhere:\n\n- mIoU is used to evaluate semantic segmentation accuracy;\n- AP50 is used to evaluate instance segmentation accuracy.\n\nAuxiliary metrics include:\n\n- mIoU\n- OA\n- IoU for each category\n- AP\n- AP25\n- AP50\n\nAll metrics are higher the better.\n\nEach team can submit a maximum of 5 times per day.\n\nIf the comprehensive score is the same, it is recommended to determine rankings in order by AP50, mIoU, AP25, and submission time.\n\n## **Submission Format**\n\nParticipants must provide semantic labels and instance labels for each point in the test set and submit a ZIP compressed package.\n\n```text\nsubmission.zip\n└── predictions/\n    ├── CAR/\n    │   ├── CAR-30-003_000000.txt\n    │   ├── CAR-30-003_000001.txt\n    │   └── ...\n    ├── JMC/\n    ├── SGS/\n    └── ...\n```\n\nDirectory names and prediction file names must be consistent with the test data.\n\nEach TXT file contains 6 fields:\n\n```text\nX Y Z intensity semantic_label instance_id\n```\n\nArray dimensions are:\n\n```text\nN × 6\n```\n\nWhere:\n\n- `N` is the number of points in the point cloud;\n- `X Y Z` are 3D coordinates;\n- `intensity` is laser intensity;\n- `semantic_label` is the predicted semantic category;\n- `instance_id` is the predicted instance number.\n\nSubmitted files must satisfy:\n\n1. The number and order of points are completely consistent with the original test files;\n2. The 3D coordinates and intensity fields must not be modified;\n3. Semantic category ID range is 0-8;\n4. Instance IDs must be non-negative integers;\n5. Different instances use different instance IDs;\n6. Prediction file directories and file names must be consistent with the test set;\n7. The ZIP root directory must contain a `predictions` folder.\n\n## **Citation**\n\nWhen using the City-Facade dataset, please cite:\n\n```bibtex\n@article{chen2026cityfacade,\n  title={City-Facade: A city-level large-scale building facade point cloud dataset for semantic and instance segmentation},\n  author={Chen, Yiping and Li, Jonathan and Han, Ting and Feng, Huifang and Chen, Jun and Wang, Cheng},\n  journal={ISPRS Journal of Photogrammetry and Remote Sensing},\n  volume={232},\n  pages={675--688},\n  year={2026},\n  doi={10.1016/j.isprsjprs.2026.01.003}\n}\n```"
       }
     ]
