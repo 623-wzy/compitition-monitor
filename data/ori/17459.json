@@ -5,8 +5,8 @@
   "created_by": "coffey",
   "owner_display_name": "coffey",
   "created_when": "2026-07-09T02:48:45.738890Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783565325/83154855c836/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=SFPlXyiiGxn%2B8DA557NP85djbYU%3D&Expires=1783775782",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783565325/83154855c836/logo_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=3KDxW%2FxKbJPlVkgC0DGEjuiz3Z8%3D&Expires=1783775782",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783565325/83154855c836/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=mqQUrZeLh3oaAewd14%2BNiYy8bOM%3D&Expires=1783862466",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783565325/83154855c836/logo_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=xvFqEZOY9Ie1XNU25%2BEyDXOVb98%3D&Expires=1783862466",
   "terms": "<h1>Rules</h1>\n<ul><li>You may submit up to 3 submissions per day.</li><li>Maximum 3 submissions in total.</li><li>This challenge is governed by the <a href=\"http://www.causality.inf.ethz.ch/GeneralChalearnContestRuleTerms.html\">general ChaLearn contest rules</a>.</li><li>The dataset is for academic research purposes only.</li></ul>\n<h2>Submission Format</h2>\n<ol><li>The result file must be named `answer.csv`.</li><li>Compress `answer.csv` into `answer.zip` and submit via Codabench.</li><li>The `preference` column must contain exactly `a1` or `a2`.</li><li>See the starting kit for an example.</li></ol>\n<p>Official website: <a href=\"https://zeroqiaoba.github.io/MER-Challenge/\">https://zeroqiaoba.github.io/MER-Challenge/</a></p>",
   "pages": [
     {
@@ -32,11 +32,11 @@
     {
       "id": 29088,
       "index": 0,
-      "start": "2026-07-12T12:00:00Z",
+      "start": "2026-07-12T06:00:00Z",
       "end": "2026-07-14T12:00:00Z",
       "name": "Start",
       "description": "The file name should be 'answer.csv', containing 'name', 'a1', 'a2', and 'preference'. Then, you should compress 'answer.csv' in 'answer.zip' and submit 'answer.zip' into the codaLab. We provide an example in starting_kit.",
-      "status": "Next",
+      "status": "Current",
       "execution_time_limit": 600,
       "tasks": [
         {
@@ -185,8 +185,8 @@
   ],
   "registration_auto_approve": false,
   "description": "MER-Prefer is a newly introduced track that predicts which of two emotion descriptions is preferred by human annotators for a given video. The concept of emotion preference was first proposed in EmoPrefer, playing a crucial role in training reward models capable of understanding human emotions. We employ the weighted F1-score (WAF) as the primary metric and accuracy (ACC) as the secondary metric. This is part of the MER2026 Challenge at ACM Multimedia 2026.",
-  "participants_count": 64,
-  "submissions_count": 2,
+  "participants_count": 66,
+  "submissions_count": 3,
   "queue": null,
   "enable_detailed_results": true,
   "show_detailed_results_in_submission_panel": true,
