@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Toy_benchmark_v1 — Codabench 竞赛监测</title>
+<title>8th LSVOS Challenge - MeViS-Text Track — Codabench 竞赛监测</title>
 <style>
 :root {
     --bg: #0f1117;
@@ -99,154 +99,102 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
 </header>
 <div class="detail-wrap">
   <a class="back-link" href="index.html">← 返回竞赛目录</a>
-  <h2>Toy_benchmark_v1</h2>
+  <h2>8th LSVOS Challenge - MeViS-Text Track</h2>
   <div class="detail-meta">
-    <span>ID: 13374</span>
-    <span>创建者: lanxiao</span>
-    <span>创建时间: 2026-01-29</span>
-    <span>参与人数: 2</span>
-    <span>提交次数: 4</span>
-    <a class="ext-link" href="https://www.codabench.org/competitions/13374/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+    <span>ID: 17496</span>
+    <span>创建者: ntulc</span>
+    <span>创建时间: 2026-07-12</span>
+    <span>参与人数: 3</span>
+    <span>提交次数: 0</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/17496/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
   </div>
 
   <div class="section">
     <h3>竞赛描述</h3>
-    <div class="page-content">## 玩具基准 v1：成对点追踪
-
-该基准评估图像数据上的简单**成对点追踪**任务。
-
-### 任务定义
-对于每个测试样本，参与者获得：
-- 参考图像（`ref`）
-- 目标图像（`tgt`）
-- 在参考图像上定义的参考点 `(x_ref, y_ref)`
-
-目标是**预测目标图像上对应的点位置 `(x, y)`**。
-
-### 评估
-使用目标图像上预测点与真值点之间的**欧氏距离**评估预测结果。
-最终分数是**所有测试样本上的平均误差**（分数越低越好）。</div>
+    <div class="page-content">MeViS：用于指代运动表达视频分割的多模态数据集</div>
   </div>
 
   <div class="section">
     <h3>竞赛阶段</h3>
     <table class="phases-table">
       <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
-      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development Phase</td><td>2026-06-23</td><td>2026-07-23</td><td>5</td></tr><tr><td><span class='badge badge-test'>测试</span> Testing Phase</td><td>2026-08-01</td><td>2026-08-06</td><td>5</td></tr></tbody>
+      <tbody><tr><td><span class='badge badge-other'>其他</span> valid</td><td>2026-07-10</td><td>2026-07-19</td><td>3</td></tr><tr><td><span class='badge badge-test'>测试</span> test</td><td>2026-07-20</td><td>2026-07-27</td><td>5</td></tr></tbody>
     </table>
   </div>
 
-<div class='section'><h3>Home</h3><div class='page-content'>## 玩具基准测试 v1
+<div class='section'><h3>Overview</h3><div class='page-content'># MeViS: 一个用于指代动作表达视频分割的多模态数据集
 
-该基准测试使用 CodaBench 实现了一个**成对点追踪**任务的最小示例。
+🏠[主页](https://henghuiding.com/MeViS/) 📄[论文](https://ieeexplore.ieee.org/abstract/document/11130435/)
 
-该基准测试的目标是：
-- 验证完整的基准测试管道（数据、提交、评分）
-- 作为学习和原型设计平台
-- 为未来扩展提供清晰的基线</div></div><div class='section'><h3>Data</h3><div class='page-content'>## 数据描述
+## 摘要
+本文提出了一个大规模多模态数据集，用于指代动作表达视频分割，重点是基于对象动作的语言描述在视频中分割和跟踪目标对象。现有的指代视频分割数据集通常关注显著对象，使用富含静态属性的语言表达，可能允许在单个帧中识别目标对象。这类数据集对视频和语言中动作角色的强调不足。为了探索使用动作表达和动作推理线索进行像素级视频理解的可行性，我们引入了MeViS数据集，包含33,072个人工标注的文本和音频动作表达，涵盖2,006个复杂场景视频中的8,171个对象。我们在MeViS支持的4项任务中对15种现有方法进行了基准测试，包括6种指代视频对象分割(RVOS)方法、3种音频引导视频对象分割(AVOS)方法、2种指代多对象跟踪(RMOT)方法和4种用于新引入的指代动作表达生成(RMEG)任务的视频标题方法。结果表明现有方法在处理动作表达引导的视频理解方面存在弱点和局限。我们进一步分析了挑战，并提出了LMPM++方法用于RVOS/AVOS/RMOT，实现了新的最先进结果。我们的数据集为在复杂视频场景中开发动作表达引导的视频理解算法提供了平台。提议的MeViS数据集和方法的源代码已在https://henghuiding.github.io/MeViS发布。
 
-本基准使用基于图像的配对追踪任务数据。
+## BibTeX
 
-### 训练输入数据
-公开训练集包含：
-- 图像对（参考图像和目标图像）
-- 参考图像上的参考点
-- 目标图像上对应的真实标注点
+```
+@article{MeViSv2,
+    title={{MeViS}: A Multi-Modal Dataset for Referring Motion Expression Video Segmentation},
+    author={Ding, Henghui and Liu, Chang and He, Shuting and Ying, Kaining and Jiang, Xudong and Loy, Chen Change and Jiang, Yu-Gang},
+    journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+    year={2025}
+}
+```
 
-该数据可用于训练或完整性检查。
+```
+@article{MOSEv2,
+    title={{MOSEv2}: A More Challenging Dataset for Video Object Segmentation in Complex Scenes},
+    author={Ding, Henghui and Ying, Kaining and Liu, Chang and He, Shuting and Jiang, Xudong and Jiang, Yu-Gang and Torr, Philip HS and Bai, Song},
+    journal={arXiv preprint arXiv:2508.05630},
+    year={2025}
+}
+```
 
-### 测试输入数据
-测试集包含：
-- 图像对（参考图像和目标图像）
-- 参考图像上的参考点
+```
+@inproceedings{MOSE,
+    title={{MOSE}: A New Dataset for Video Object Segmentation in Complex Scenes},
+    author={Ding, Henghui and Liu, Chang and He, Shuting and Jiang, Xudong and Torr, Philip HS and Bai, Song},
+    booktitle={ICCV},
+    year={2023}
+}
+```
 
-测试集的真实标注目标点**隐藏**，仅用于评估。</div></div><div class='section'><h3>Submission</h3><div class='page-content'>## 提交说明
+```
+@inproceedings{MeViS,
+    title={{MeViS}: A Large-scale Benchmark for Video Segmentation with Motion Expressions},
+    author={Ding, Henghui and Liu, Chang and He, Shuting and Jiang, Xudong and Loy, Chen Change},
+    booktitle={ICCV},
+    year={2023}
+}
+```</div></div><div class='section'><h3>Data</h3><div class='page-content'># 🔥🔥🔥[MeViS: 用于指代运动表达视频分割的多模态数据集](https://ieeexplore.ieee.org/abstract/document/11130435)🔥🔥🔥
 
-参与者需要提交一个**单一CSV文件**，命名为**`submission.csv`**。  
-每次提交对应对**所有测试样本**的预测。
+🏠 [主页](https://henghuiding.com/MeViS/) | 📄 [论文](https://ieeexplore.ieee.org/abstract/document/11130435) | 🔗 [GitHub](https://github.com/henghuiding/MeViS)
 
----
+## 下载（训练集和验证集）
+⬇️ 从以下位置获取数据集：
 
-## 提交文件格式
+- 🤗 [Hugging Face](https://huggingface.co/datasets/FudanCVL/MeViSv2)
+- ☁️ [Google Drive](https://drive.google.com/drive/folders/1cft6BC3xBe6HFsZOLA0riRwoUpKPP90-?usp=drive_link)
 
-提交文件必须是**逗号分隔值（CSV）**文件，包含以下表头：
+## 提交
+提交文件应该是一个 **.zip** 压缩包，包含所有视频的结果。如同DAVIS2017，视频文件夹应放在zip的**根目录**下。确保预测帧的文件名与图像帧的文件名相匹配。
 
-    id,x_pred,y_pred
+请参考下载链接中的样本提交进行参考。
 
----
-
-## 列说明
-
-- **id**  
-  测试样本的唯一标识符。  
-  必须**完全匹配**测试输入文件中提供的样本ID。
-
-- **x_pred**  
-  目标图像上目标点的**x坐标**预测值。
-
-- **y_pred**  
-  目标图像上目标点的**y坐标**预测值。
-
-每行对应**一个**测试样本。
-
----
-
-## 坐标系
-
-- 坐标在**像素空间**中指定
-- 原点**(0, 0)**位于图像的**左上角**
-- **x轴**从**左→右**递增
-- **y轴**从**上→下**递增
-- `x_pred`和`y_pred`可以是**整数或浮点数**
-
----
-
-## 提交示例
-
-    id,x_pred,y_pred
-    101,125,85
-    102,70,150
-
----
-
-## 提交要求
-
-- 文件必须命名为**`submission.csv`**
-- 文件必须包含**所有**测试样本ID
-- 每个测试样本ID必须**恰好出现一次**
-- **不允许额外列**
-- **不要在提交包中包含额外文件**
-- 不按照指定格式的提交**可能在评估期间失败**
-
----
-
-## 提交和评估流程
-
-1. 下载测试输入数据（**图像 + `test.csv`**）
-2. 为**每个测试样本**生成预测
-3. 将结果保存到**`submission.csv`**
-4. 上传**`submission.csv`**作为你的提交
-5. 系统使用**隐藏的地面真值目标点**评估你的提交
-6. 计算**分数**并显示在**排行榜**上
-
----
-
-## 注意
-
-- 测试集的地面真值目标点是**隐藏的**，**仅用于评分**</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'>## 评估
-
-提交结果使用目标图像上预测点与真实点之间的**欧几里得距离**进行评估。
-
-对于每个测试样本，误差计算如下：
-
-\[
-\sqrt{(x_{pred} - x_{gt})^2 + (y_{pred} - y_{gt})^2}
-\]
-
-### 最终得分
-最终得分是**所有测试样本上的平均误差**。
-
-分数越低表示性能越好。</div></div>
+```
+&lt;submission.zip&gt;
+│ 
+├── &lt;video_name_1&gt;
+│ ├── 00000.png
+│ ├── 00001.png
+│ └── ...
+│ 
+├── &lt;video_name_2&gt;
+│ ├── 00000.png
+│ ├── 00001.png
+│ └── ...
+│ 
+└── &lt;video_name_...&gt;
+```</div></div>
 
 </div>
 </body>

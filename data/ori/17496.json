@@ -1,0 +1,390 @@
+{
+  "id": 17496,
+  "title": "8th LSVOS Challenge - MeViS-Text Track",
+  "published": true,
+  "created_by": "ntulc",
+  "owner_display_name": "ntulc",
+  "created_when": "2026-07-12T12:49:05.646368Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-12-1783860545/bbb9e33f3f37/logo_mevis_t.png?AWSAccessKeyId=codabench-prod&Signature=T9BJZ%2Bpic%2F%2FuaMQwv8wc%2BCUOYb8%3D&Expires=1783949158",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-12-1783860545/bbb9e33f3f37/logo_mevis_t_icon.png?AWSAccessKeyId=codabench-prod&Signature=FsmZj7gp7uhT7d2h61MI1D%2B7NJo%3D&Expires=1783949158",
+  "terms": "<p>MeViSv2 is licensed under a <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\" target=\"_blank\">CC BY-NC-SA 4.0 License</a>. The data of MeViSv2 is released for non-commercial research purpose only.</p>",
+  "pages": [
+    {
+      "id": 83282,
+      "title": "Overview",
+      "content": "# MeViS: A Multi-Modal Dataset for Referring Motion Expression Video Segmentation\n\n🏠[Homepage](https://henghuiding.com/MeViS/) 📄[Paper](https://ieeexplore.ieee.org/abstract/document/11130435/)\n\n## Abstract\nThis paper proposes a large-scale multi-modal dataset for referring motion expression video segmentation, focusing on segmenting and tracking target objects in videos based on language description of objects' motions. Existing referring video segmentation datasets often focus on salient objects and use language expressions rich in static attributes, potentially allowing the target object to be identified in a single frame. Such datasets underemphasize the role of motion in both videos and languages. To explore the feasibility of using motion expressions and motion reasoning clues for pixel-level video understanding, we introduce MeViS, a dataset containing 33,072 human-annotated motion expressions in both text and audio, covering 8,171 objects in 2,006 videos of complex scenarios. We benchmark 15 existing methods across 4 tasks supported by MeViS, including 6 referring video object segmentation (RVOS) methods, 3 audio-guided video object segmentation (AVOS) methods, 2 referring multi-object tracking (RMOT) methods, and 4 video captioning methods for the newly introduced referring motion expression generation (RMEG) task. The results demonstrate weaknesses and limitations of existing methods in addressing motion expression-guided video understanding. We further analyze the challenges and propose an approach LMPM++ for RVOS/AVOS/RMOT that achieves new state-of-the-art results. Our dataset provides a platform that facilitates the development of motion expression-guided video understanding algorithms in complex video scenes. The proposed MeViS dataset and the method's source code are released at https://henghuiding.github.io/MeViS.\n\n\n## BibTeX\n\n```\n@article{MeViSv2,\n    title={{MeViS}: A Multi-Modal Dataset for Referring Motion Expression Video Segmentation},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Ying, Kaining and Jiang, Xudong and Loy, Chen Change and Jiang, Yu-Gang},\n    journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},\n    year={2025}\n}\n```\n\n```\n@article{MOSEv2,\n    title={{MOSEv2}: A More Challenging Dataset for Video Object Segmentation in Complex Scenes},\n    author={Ding, Henghui and Ying, Kaining and Liu, Chang and He, Shuting and Jiang, Xudong and Jiang, Yu-Gang and Torr, Philip HS and Bai, Song},\n    journal={arXiv preprint arXiv:2508.05630},\n    year={2025}\n}\n```\n\n```\n@inproceedings{MOSE,\n    title={{MOSE}: A New Dataset for Video Object Segmentation in Complex Scenes},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Jiang, Xudong and Torr, Philip HS and Bai, Song},\n    booktitle={ICCV},\n    year={2023}\n}\n```\n\n```\n@inproceedings{MeViS,\n    title={{MeViS}: A Large-scale Benchmark for Video Segmentation with Motion Expressions},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Jiang, Xudong and Loy, Chen Change},\n    booktitle={ICCV},\n    year={2023}\n}\n```",
+      "index": 0
+    },
+    {
+      "id": 83281,
+      "title": "Data",
+      "content": "# 🔥🔥🔥[MeViS: A Multi-Modal Dataset for Referring Motion Expression Video Segmentation](https://ieeexplore.ieee.org/abstract/document/11130435)🔥🔥🔥\n\n🏠 [Homepage](https://henghuiding.com/MeViS/) | 📄 [Paper](https://ieeexplore.ieee.org/abstract/document/11130435) | 🔗 [GitHub](https://github.com/henghuiding/MeViS)\n## Download (Training set and validation set)\n⬇️ Get the dataset from:\n\n- 🤗 [Hugging Face](https://huggingface.co/datasets/FudanCVL/MeViSv2)\n- ☁️ [Google Drive](https://drive.google.com/drive/folders/1cft6BC3xBe6HFsZOLA0riRwoUpKPP90-?usp=drive_link)\n\n## Submission\nThe submission file should be a **.zip** pack contains the results on all videos. Like DAVIS2017, video folders should be put in the **root directory** of the zip. Make sure the filenames of the predicted frames match the filenames of the image frames.\n\nPlease check the sample submission in the download link for reference.\n```\n<submission.zip>\n│ \n├── <video_name_1>\n│ ├── 00000.png\n│ ├── 00001.png\n│ └── ...\n│ \n├── <video_name_2>\n│ ├── 00000.png\n│ ├── 00001.png\n│ └── ...\n│ \n└── <video_name_...>\n```",
+      "index": 1
+    }
+  ],
+  "phases": [
+    {
+      "id": 29155,
+      "index": 0,
+      "start": "2026-07-10T00:00:00Z",
+      "end": "2026-07-19T00:00:00Z",
+      "name": "valid",
+      "description": "",
+      "status": "Current",
+      "execution_time_limit": 2400,
+      "tasks": [
+        {
+          "task": "82320b62-6be5-40fb-9bb5-1402e5a531d3",
+          "order_index": 0,
+          "phase": 29155,
+          "id": 23495,
+          "value": "82320b62-6be5-40fb-9bb5-1402e5a531d3",
+          "key": "82320b62-6be5-40fb-9bb5-1402e5a531d3",
+          "created_when": "2025-11-04T11:28:16.257870Z",
+          "name": "MeViS v2 valid",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 406846,
+              "created_by": "ntulc",
+              "owner_display_name": "ntulc",
+              "created_when": "2025-11-04T11:27:00.222773Z",
+              "name": "MeViS v2 valid ground truth",
+              "type": "reference_data",
+              "description": "MeViS v2 valid ground truth",
+              "is_public": false,
+              "key": "ed825031-6d01-4a73-a936-6fd9568c15fc",
+              "value": "ed825031-6d01-4a73-a936-6fd9568c15fc",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 11420,
+                  "title": "MeViS v2"
+                },
+                {
+                  "pk": 14017,
+                  "title": "5th PVUW Challenge - MeViS-Text Track"
+                },
+                {
+                  "pk": 14018,
+                  "title": "5th PVUW Challenge - MeViS-Audio Track"
+                },
+                {
+                  "pk": 17495,
+                  "title": "8th LSVOS Challenge - MeViS-Audio Track"
+                },
+                {
+                  "pk": 17496,
+                  "title": "8th LSVOS Challenge - MeViS-Text Track"
+                }
+              ],
+              "competition": null,
+              "file_name": "valid.zip",
+              "file_size": 26909465.0
+            },
+            {
+              "id": 822199,
+              "created_by": "ntulc",
+              "owner_display_name": "ntulc",
+              "created_when": "2026-06-09T02:04:15.997064Z",
+              "name": "mevisv2_noise",
+              "type": "scoring_program",
+              "description": "mevisv2_noise",
+              "is_public": false,
+              "key": "36899c6d-5d93-42a0-bd76-93926bfd3bfa",
+              "value": "36899c6d-5d93-42a0-bd76-93926bfd3bfa",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 11420,
+                  "title": "MeViS v2"
+                },
+                {
+                  "pk": 14017,
+                  "title": "5th PVUW Challenge - MeViS-Text Track"
+                },
+                {
+                  "pk": 14018,
+                  "title": "5th PVUW Challenge - MeViS-Audio Track"
+                },
+                {
+                  "pk": 17495,
+                  "title": "8th LSVOS Challenge - MeViS-Audio Track"
+                },
+                {
+                  "pk": 17496,
+                  "title": "8th LSVOS Challenge - MeViS-Text Track"
+                }
+              ],
+              "competition": null,
+              "file_name": "mevisv2_noise.zip",
+              "file_size": 6378.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 3,
+      "max_submissions_per_person": 9999,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    },
+    {
+      "id": 29156,
+      "index": 1,
+      "start": "2026-07-20T00:00:00Z",
+      "end": "2026-07-27T00:00:00Z",
+      "name": "test",
+      "description": "",
+      "status": "Next",
+      "execution_time_limit": 1200,
+      "tasks": [
+        {
+          "task": "2f83be77-21ea-44da-a932-95b1c447bc7a",
+          "order_index": 0,
+          "phase": 29156,
+          "id": 29908,
+          "value": "2f83be77-21ea-44da-a932-95b1c447bc7a",
+          "key": "2f83be77-21ea-44da-a932-95b1c447bc7a",
+          "created_when": "2026-03-09T12:57:19.123503Z",
+          "name": "PVUW 26 MeViS-Text",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 619793,
+              "created_by": "ntulc",
+              "owner_display_name": "ntulc",
+              "created_when": "2026-03-09T12:51:49.840014Z",
+              "name": "CVPR26 MeViS-Text test annotation",
+              "type": "reference_data",
+              "description": "CVPR26 MeViS-Text test annotation",
+              "is_public": false,
+              "key": "758523e2-03ca-4c58-98fc-de8ed0b68b9f",
+              "value": "758523e2-03ca-4c58-98fc-de8ed0b68b9f",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 14017,
+                  "title": "5th PVUW Challenge - MeViS-Text Track"
+                },
+                {
+                  "pk": 17496,
+                  "title": "8th LSVOS Challenge - MeViS-Text Track"
+                }
+              ],
+              "competition": null,
+              "file_name": "Archive.zip",
+              "file_size": 37336854.0
+            },
+            {
+              "id": 619815,
+              "created_by": "ntulc",
+              "owner_display_name": "ntulc",
+              "created_when": "2026-03-09T12:56:55.440268Z",
+              "name": "MeViS v2 scoring script 5cpu v3 nooutput",
+              "type": "scoring_program",
+              "description": "MeViS v2 scoring script 5cpu v3 nooutput",
+              "is_public": false,
+              "key": "4842d594-cd69-4266-a5d8-fc4b27a78b8d",
+              "value": "4842d594-cd69-4266-a5d8-fc4b27a78b8d",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 14017,
+                  "title": "5th PVUW Challenge - MeViS-Text Track"
+                },
+                {
+                  "pk": 14018,
+                  "title": "5th PVUW Challenge - MeViS-Audio Track"
+                },
+                {
+                  "pk": 17495,
+                  "title": "8th LSVOS Challenge - MeViS-Audio Track"
+                },
+                {
+                  "pk": 17496,
+                  "title": "8th LSVOS Challenge - MeViS-Text Track"
+                }
+              ],
+              "competition": null,
+              "file_name": "Archive.zip",
+              "file_size": 5286.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 5,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 19400,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "Results",
+      "columns": [
+        {
+          "id": 85374,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "J&F",
+          "key": "J&F",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 85375,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "J",
+          "key": "J",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 85376,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "F",
+          "key": "F",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 85377,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "N-acc.",
+          "key": "N-acc.",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 85378,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "T-acc.",
+          "key": "T-acc.",
+          "sorting": "desc",
+          "index": 4,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 85379,
+          "computation": "avg",
+          "computation_indexes": [
+            "0",
+            "3",
+            "4"
+          ],
+          "title": "Final",
+          "key": "Final",
+          "sorting": "desc",
+          "index": 5,
+          "hidden": false,
+          "precision": 6
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Force_Best"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": true,
+  "description": "MeViS: A Multi-Modal Dataset for Referring Motion Expression Video Segmentation",
+  "participants_count": 3,
+  "submissions_count": 0,
+  "queue": null,
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": false,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "hub.youtupi.me/ntulc/codalab_mevis:v1",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": {
+    "org": {
+      "key": "org",
+      "type": "text",
+      "title": "Affiliation Name",
+      "selection": "",
+      "is_required": "true",
+      "is_on_leaderboard": "false"
+    },
+    "name": {
+      "key": "name",
+      "type": "text",
+      "title": "Team Name",
+      "selection": "",
+      "is_required": "true",
+      "is_on_leaderboard": "false"
+    },
+    "email": {
+      "key": "email",
+      "type": "text",
+      "title": "Email Address (Please use a real email address. Your information will be kept confidential.)",
+      "selection": "",
+      "is_required": "true",
+      "is_on_leaderboard": "false"
+    },
+    "terms": {
+      "key": "terms",
+      "type": "text",
+      "title": "I agree that one organization (University, Institute, Lab, etc.) can have only one team. (Please respond Yes)",
+      "selection": "",
+      "is_required": "true",
+      "is_on_leaderboard": "false"
+    },
+    "terms2": {
+      "key": "terms2",
+      "type": "text",
+      "title": "My team is not using multiple accounts for extra (>5) submission chances. (Please respond Yes)",
+      "selection": "",
+      "is_required": "true",
+      "is_on_leaderboard": "false"
+    },
+    "terms3": {
+      "key": "terms3",
+      "type": "text",
+      "title": "Teams using fake identities will be banned.",
+      "selection": "",
+      "is_required": "true",
+      "is_on_leaderboard": "false"
+    }
+  },
+  "forum": 17192,
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "forum_enabled": true
+}

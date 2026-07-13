@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>iscslp_test — Codabench 竞赛监测</title>
+<title>8th LSVOS Challenge - MeViS-Audio Track — Codabench 竞赛监测</title>
 <style>
 :root {
     --bg: #0f1117;
@@ -99,30 +99,102 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
 </header>
 <div class="detail-wrap">
   <a class="back-link" href="index.html">← 返回竞赛目录</a>
-  <h2>iscslp_test</h2>
+  <h2>8th LSVOS Challenge - MeViS-Audio Track</h2>
   <div class="detail-meta">
-    <span>ID: 17467</span>
-    <span>创建者: rezzsl</span>
-    <span>创建时间: 2026-07-09</span>
-    <span>参与人数: 1</span>
-    <span>提交次数: 4</span>
-    <a class="ext-link" href="https://www.codabench.org/competitions/17467/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+    <span>ID: 17495</span>
+    <span>创建者: ntulc</span>
+    <span>创建时间: 2026-07-12</span>
+    <span>参与人数: 5</span>
+    <span>提交次数: 0</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/17495/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
   </div>
 
   <div class="section">
     <h3>竞赛描述</h3>
-    <div class="page-content">一项将音视频语音增强从模拟语音、干净视频基准推向现实世界鲁棒性的挑战。</div>
+    <div class="page-content">MeViS: 用于指代运动表达的视频分割的多模态数据集</div>
   </div>
 
   <div class="section">
     <h3>竞赛阶段</h3>
     <table class="phases-table">
       <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
-      <tbody><tr><td><span class='badge badge-dev'>开发</span> Dev phase</td><td>2026-07-08</td><td>2026-07-12</td><td>5</td></tr></tbody>
+      <tbody><tr><td><span class='badge badge-other'>其他</span> valid</td><td>2026-07-10</td><td>2026-07-19</td><td>3</td></tr><tr><td><span class='badge badge-test'>测试</span> test</td><td>2026-07-20</td><td>2026-07-27</td><td>5</td></tr></tbody>
     </table>
   </div>
 
-<div class='section'><h3>Submission Rules</h3><div class='page-content'>每个团队每天最多可提交三份作品。</div></div>
+<div class='section'><h3>Overview</h3><div class='page-content'># MeViS：运动表达视频分割多模态数据集
+
+🏠[主页](https://henghuiding.com/MeViS/) 📄[论文](https://ieeexplore.ieee.org/abstract/document/11130435/)
+
+## 摘要
+本文提出了一个大规模多模态数据集，用于基于语言描述物体运动的视频分割和追踪。现有的指代视频分割数据集通常关注显著物体，使用富含静态属性的语言表达，这可能使目标物体能够在单个帧中被识别。此类数据集低估了运动在视频和语言中的作用。为了探索利用运动表达和运动推理线索进行像素级视频理解的可行性，我们引入了MeViS数据集，包含33,072个由人类标注的文本和音频运动表达，涵盖2,006个复杂场景视频中的8,171个物体。我们在MeViS支持的4项任务上对15种现有方法进行了基准测试，包括6种指代视频物体分割(RVOS)方法、3种音频引导视频物体分割(AVOS)方法、2种指代多物体追踪(RMOT)方法，以及4种用于新引入的指代运动表达生成(RMEG)任务的视频描述方法。结果表明现有方法在解决运动表达引导的视频理解方面存在薄弱环节和局限性。我们进一步分析了挑战因素，并提出了LMPM++方法用于RVOS/AVOS/RMOT任务，取得了新的最优结果。我们的数据集为复杂视频场景中运动表达引导的视频理解算法的开发提供了平台。MeViS数据集和方法源代码已发布在https://henghuiding.github.io/MeViS。
+
+
+## BibTeX
+
+```
+@article{MeViSv2,
+    title={{MeViS}: A Multi-Modal Dataset for Referring Motion Expression Video Segmentation},
+    author={Ding, Henghui and Liu, Chang and He, Shuting and Ying, Kaining and Jiang, Xudong and Loy, Chen Change and Jiang, Yu-Gang},
+    journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+    year={2025}
+}
+```
+
+```
+@article{MOSEv2,
+    title={{MOSEv2}: A More Challenging Dataset for Video Object Segmentation in Complex Scenes},
+    author={Ding, Henghui and Ying, Kaining and Liu, Chang and He, Shuting and Jiang, Xudong and Jiang, Yu-Gang and Torr, Philip HS and Bai, Song},
+    journal={arXiv preprint arXiv:2508.05630},
+    year={2025}
+}
+```
+
+```
+@inproceedings{MOSE,
+    title={{MOSE}: A New Dataset for Video Object Segmentation in Complex Scenes},
+    author={Ding, Henghui and Liu, Chang and He, Shuting and Jiang, Xudong and Torr, Philip HS and Bai, Song},
+    booktitle={ICCV},
+    year={2023}
+}
+```
+
+```
+@inproceedings{MeViS,
+    title={{MeViS}: A Large-scale Benchmark for Video Segmentation with Motion Expressions},
+    author={Ding, Henghui and Liu, Chang and He, Shuting and Jiang, Xudong and Loy, Chen Change},
+    booktitle={ICCV},
+    year={2023}
+}
+```</div></div><div class='section'><h3>Data</h3><div class='page-content'># 🔥🔥🔥[MeViS: 指称运动表达视频分割多模态数据集](https://ieeexplore.ieee.org/abstract/document/11130435)🔥🔥🔥
+
+🏠 [主页](https://henghuiding.com/MeViS/) | 📄 [论文](https://ieeexplore.ieee.org/abstract/document/11130435) | 🔗 [GitHub](https://github.com/henghuiding/MeViS)
+
+## 下载（训练集和验证集）
+⬇️ 从以下位置获取数据集：
+
+- 🤗 [Hugging Face](https://huggingface.co/datasets/FudanCVL/MeViSv2)
+- ☁️ [Google Drive](https://drive.google.com/drive/folders/1cft6BC3xBe6HFsZOLA0riRwoUpKPP90-?usp=drive_link)
+
+## 提交
+提交文件应为包含所有视频结果的 **.zip** 压缩包。与DAVIS2017类似，视频文件夹应放在zip的**根目录**中。确保预测帧的文件名与图像帧的文件名匹配。
+
+请参考下载链接中的示例提交以供参考。
+```
+&lt;submission.zip&gt;
+│ 
+├── &lt;video_name_1&gt;
+│ ├── 00000.png
+│ ├── 00001.png
+│ └── ...
+│ 
+├── &lt;video_name_2&gt;
+│ ├── 00000.png
+│ ├── 00001.png
+│ └── ...
+│ 
+└── &lt;video_name_...&gt;
+```</div></div>
 
 </div>
 </body>

@@ -1,0 +1,42 @@
+{
+  "id": 17495,
+  "title": "8th LSVOS Challenge - MeViS-Audio Track",
+  "description": "MeViS: A Multi-Modal Dataset for Referring Motion Expression Video Segmentation",
+  "description_zh": "MeViS: 用于指代运动表达的视频分割的多模态数据集",
+  "created_by": "ntulc",
+  "created_when": "2026-07-12T12:48:43.104865Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-12-1783860523/056a95934101/logo_mevis_a.png?AWSAccessKeyId=codabench-prod&Signature=tsizdm9NEIoEhX4wBp304wHs3eM%3D&Expires=1783949156",
+  "participants_count": 5,
+  "submissions_count": 0,
+  "first_phase_start": null,
+  "phases": [
+    {
+      "id": 29153,
+      "name": "valid",
+      "start": "2026-07-10T00:00:00Z",
+      "end": "2026-07-19T00:00:00Z",
+      "max_submissions_per_day": 3
+    },
+    {
+      "id": 29154,
+      "name": "test",
+      "start": "2026-07-20T00:00:00Z",
+      "end": "2026-07-27T00:00:00Z",
+      "max_submissions_per_day": 5
+    }
+  ],
+  "pages": [
+    {
+      "index": 0,
+      "title": "Overview",
+      "content": "# MeViS: A Multi-Modal Dataset for Referring Motion Expression Video Segmentation\n\n🏠[Homepage](https://henghuiding.com/MeViS/) 📄[Paper](https://ieeexplore.ieee.org/abstract/document/11130435/)\n\n## Abstract\nThis paper proposes a large-scale multi-modal dataset for referring motion expression video segmentation, focusing on segmenting and tracking target objects in videos based on language description of objects' motions. Existing referring video segmentation datasets often focus on salient objects and use language expressions rich in static attributes, potentially allowing the target object to be identified in a single frame. Such datasets underemphasize the role of motion in both videos and languages. To explore the feasibility of using motion expressions and motion reasoning clues for pixel-level video understanding, we introduce MeViS, a dataset containing 33,072 human-annotated motion expressions in both text and audio, covering 8,171 objects in 2,006 videos of complex scenarios. We benchmark 15 existing methods across 4 tasks supported by MeViS, including 6 referring video object segmentation (RVOS) methods, 3 audio-guided video object segmentation (AVOS) methods, 2 referring multi-object tracking (RMOT) methods, and 4 video captioning methods for the newly introduced referring motion expression generation (RMEG) task. The results demonstrate weaknesses and limitations of existing methods in addressing motion expression-guided video understanding. We further analyze the challenges and propose an approach LMPM++ for RVOS/AVOS/RMOT that achieves new state-of-the-art results. Our dataset provides a platform that facilitates the development of motion expression-guided video understanding algorithms in complex video scenes. The proposed MeViS dataset and the method's source code are released at https://henghuiding.github.io/MeViS.\n\n\n## BibTeX\n\n```\n@article{MeViSv2,\n    title={{MeViS}: A Multi-Modal Dataset for Referring Motion Expression Video Segmentation},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Ying, Kaining and Jiang, Xudong and Loy, Chen Change and Jiang, Yu-Gang},\n    journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},\n    year={2025}\n}\n```\n\n```\n@article{MOSEv2,\n    title={{MOSEv2}: A More Challenging Dataset for Video Object Segmentation in Complex Scenes},\n    author={Ding, Henghui and Ying, Kaining and Liu, Chang and He, Shuting and Jiang, Xudong and Jiang, Yu-Gang and Torr, Philip HS and Bai, Song},\n    journal={arXiv preprint arXiv:2508.05630},\n    year={2025}\n}\n```\n\n```\n@inproceedings{MOSE,\n    title={{MOSE}: A New Dataset for Video Object Segmentation in Complex Scenes},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Jiang, Xudong and Torr, Philip HS and Bai, Song},\n    booktitle={ICCV},\n    year={2023}\n}\n```\n\n```\n@inproceedings{MeViS,\n    title={{MeViS}: A Large-scale Benchmark for Video Segmentation with Motion Expressions},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Jiang, Xudong and Loy, Chen Change},\n    booktitle={ICCV},\n    year={2023}\n}\n```",
+      "content_zh": "# MeViS：运动表达视频分割多模态数据集\n\n🏠[主页](https://henghuiding.com/MeViS/) 📄[论文](https://ieeexplore.ieee.org/abstract/document/11130435/)\n\n## 摘要\n本文提出了一个大规模多模态数据集，用于基于语言描述物体运动的视频分割和追踪。现有的指代视频分割数据集通常关注显著物体，使用富含静态属性的语言表达，这可能使目标物体能够在单个帧中被识别。此类数据集低估了运动在视频和语言中的作用。为了探索利用运动表达和运动推理线索进行像素级视频理解的可行性，我们引入了MeViS数据集，包含33,072个由人类标注的文本和音频运动表达，涵盖2,006个复杂场景视频中的8,171个物体。我们在MeViS支持的4项任务上对15种现有方法进行了基准测试，包括6种指代视频物体分割(RVOS)方法、3种音频引导视频物体分割(AVOS)方法、2种指代多物体追踪(RMOT)方法，以及4种用于新引入的指代运动表达生成(RMEG)任务的视频描述方法。结果表明现有方法在解决运动表达引导的视频理解方面存在薄弱环节和局限性。我们进一步分析了挑战因素，并提出了LMPM++方法用于RVOS/AVOS/RMOT任务，取得了新的最优结果。我们的数据集为复杂视频场景中运动表达引导的视频理解算法的开发提供了平台。MeViS数据集和方法源代码已发布在https://henghuiding.github.io/MeViS。\n\n\n## BibTeX\n\n```\n@article{MeViSv2,\n    title={{MeViS}: A Multi-Modal Dataset for Referring Motion Expression Video Segmentation},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Ying, Kaining and Jiang, Xudong and Loy, Chen Change and Jiang, Yu-Gang},\n    journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},\n    year={2025}\n}\n```\n\n```\n@article{MOSEv2,\n    title={{MOSEv2}: A More Challenging Dataset for Video Object Segmentation in Complex Scenes},\n    author={Ding, Henghui and Ying, Kaining and Liu, Chang and He, Shuting and Jiang, Xudong and Jiang, Yu-Gang and Torr, Philip HS and Bai, Song},\n    journal={arXiv preprint arXiv:2508.05630},\n    year={2025}\n}\n```\n\n```\n@inproceedings{MOSE,\n    title={{MOSE}: A New Dataset for Video Object Segmentation in Complex Scenes},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Jiang, Xudong and Torr, Philip HS and Bai, Song},\n    booktitle={ICCV},\n    year={2023}\n}\n```\n\n```\n@inproceedings{MeViS,\n    title={{MeViS}: A Large-scale Benchmark for Video Segmentation with Motion Expressions},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Jiang, Xudong and Loy, Chen Change},\n    booktitle={ICCV},\n    year={2023}\n}\n```"
+    },
+    {
+      "index": 1,
+      "title": "Data",
+      "content": "# 🔥🔥🔥[MeViS: A Multi-Modal Dataset for Referring Motion Expression Video Segmentation](https://ieeexplore.ieee.org/abstract/document/11130435)🔥🔥🔥\n\n🏠 [Homepage](https://henghuiding.com/MeViS/) | 📄 [Paper](https://ieeexplore.ieee.org/abstract/document/11130435) | 🔗 [GitHub](https://github.com/henghuiding/MeViS)\n## Download (Training set and validation set)\n⬇️ Get the dataset from:\n\n- 🤗 [Hugging Face](https://huggingface.co/datasets/FudanCVL/MeViSv2)\n- ☁️ [Google Drive](https://drive.google.com/drive/folders/1cft6BC3xBe6HFsZOLA0riRwoUpKPP90-?usp=drive_link)\n\n## Submission\nThe submission file should be a **.zip** pack contains the results on all videos. Like DAVIS2017, video folders should be put in the **root directory** of the zip. Make sure the filenames of the predicted frames match the filenames of the image frames.\n\nPlease check the sample submission in the download link for reference.\n```\n<submission.zip>\n│ \n├── <video_name_1>\n│ ├── 00000.png\n│ ├── 00001.png\n│ └── ...\n│ \n├── <video_name_2>\n│ ├── 00000.png\n│ ├── 00001.png\n│ └── ...\n│ \n└── <video_name_...>\n```",
+      "content_zh": "# 🔥🔥🔥[MeViS: 指称运动表达视频分割多模态数据集](https://ieeexplore.ieee.org/abstract/document/11130435)🔥🔥🔥\n\n🏠 [主页](https://henghuiding.com/MeViS/) | 📄 [论文](https://ieeexplore.ieee.org/abstract/document/11130435) | 🔗 [GitHub](https://github.com/henghuiding/MeViS)\n\n## 下载（训练集和验证集）\n⬇️ 从以下位置获取数据集：\n\n- 🤗 [Hugging Face](https://huggingface.co/datasets/FudanCVL/MeViSv2)\n- ☁️ [Google Drive](https://drive.google.com/drive/folders/1cft6BC3xBe6HFsZOLA0riRwoUpKPP90-?usp=drive_link)\n\n## 提交\n提交文件应为包含所有视频结果的 **.zip** 压缩包。与DAVIS2017类似，视频文件夹应放在zip的**根目录**中。确保预测帧的文件名与图像帧的文件名匹配。\n\n请参考下载链接中的示例提交以供参考。\n```\n<submission.zip>\n│ \n├── <video_name_1>\n│ ├── 00000.png\n│ ├── 00001.png\n│ └── ...\n│ \n├── <video_name_2>\n│ ├── 00000.png\n│ ├── 00001.png\n│ └── ...\n│ \n└── <video_name_...>\n```"
+    }
+  ]
+}
