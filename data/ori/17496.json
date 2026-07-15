@@ -5,8 +5,8 @@
   "created_by": "ntulc",
   "owner_display_name": "ntulc",
   "created_when": "2026-07-12T12:49:05.646368Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-12-1783860545/bbb9e33f3f37/logo_mevis_t.png?AWSAccessKeyId=codabench-prod&Signature=IiHMzoptoRbq4UlIERK9qV37eps%3D&Expires=1784035747",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-12-1783860545/bbb9e33f3f37/logo_mevis_t_icon.png?AWSAccessKeyId=codabench-prod&Signature=M1KpmVmIw9yX6Mmdh6JtjYGdbHQ%3D&Expires=1784035747",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-12-1783860545/bbb9e33f3f37/logo_mevis_t.png?AWSAccessKeyId=codabench-prod&Signature=GpeoFYopz4LvqnSKzsBbQLGOG%2Bw%3D&Expires=1784122522",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-12-1783860545/bbb9e33f3f37/logo_mevis_t_icon.png?AWSAccessKeyId=codabench-prod&Signature=pAQg5JkuXzSX6WVOiBz1H%2FRmgiM%3D&Expires=1784122522",
   "terms": "<p>MeViSv2 is licensed under a <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\" target=\"_blank\">CC BY-NC-SA 4.0 License</a>. The data of MeViSv2 is released for non-commercial research purpose only.</p>",
   "pages": [
     {
@@ -319,7 +319,7 @@
   "collaborators": [],
   "registration_auto_approve": true,
   "description": "MeViS: A Multi-Modal Dataset for Referring Motion Expression Video Segmentation",
-  "participants_count": 4,
+  "participants_count": 5,
   "submissions_count": 0,
   "queue": null,
   "enable_detailed_results": false,

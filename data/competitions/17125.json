@@ -5,9 +5,9 @@
   "description_zh": "用于压缩AI生成图像的基准，涵盖多样化模型、提示词和分辨率。",
   "created_by": "xinli",
   "created_when": "2026-06-14T13:43:46.550281Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-14-1781444626/885bb1bf4dc3/logo.png?AWSAccessKeyId=codabench-prod&Signature=rHZbeiq0KibshWfSw9jpTnIKiSI%3D&Expires=1784035754",
-  "participants_count": 52,
-  "submissions_count": 110,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-14-1781444626/885bb1bf4dc3/logo.png?AWSAccessKeyId=codabench-prod&Signature=KB%2B7LZd2VWeE4e8gWZQLB7BdFZ8%3D&Expires=1784122529",
+  "participants_count": 55,
+  "submissions_count": 124,
   "first_phase_start": null,
   "phases": [
     {

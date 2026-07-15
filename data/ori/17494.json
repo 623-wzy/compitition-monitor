@@ -5,8 +5,8 @@
   "created_by": "ntulc",
   "owner_display_name": "ntulc",
   "created_when": "2026-07-12T12:35:29.397513Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-12-1783859729/3312768436c8/logo_mose.png.png?AWSAccessKeyId=codabench-prod&Signature=DzH0NIN93EcpuoH1nGNeDJseIIg%3D&Expires=1784035749",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-12-1783859729/3312768436c8/logo_mose.png_icon.png?AWSAccessKeyId=codabench-prod&Signature=FHz5LAcAIvjB4rcZBoEoMmRx85Y%3D&Expires=1784035749",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-12-1783859729/3312768436c8/logo_mose.png.png?AWSAccessKeyId=codabench-prod&Signature=CVKKLupZeTWrTBaF0um6%2FLBVkCc%3D&Expires=1784122523",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-12-1783859729/3312768436c8/logo_mose.png_icon.png?AWSAccessKeyId=codabench-prod&Signature=fQ7CzN6wAOuE3MzxWaWEW106%2FoE%3D&Expires=1784122523",
   "terms": "<p>MOSEv2 is licensed under a <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\" target=\"_blank\">CC BY-NC-SA 4.0 License</a>. The data of MOSEv2 is released for non-commercial research purpose only.</p>",
   "pages": [
     {
@@ -308,8 +308,8 @@
   "collaborators": [],
   "registration_auto_approve": true,
   "description": "A More Challenging Dataset for Video Object Segmentation in Complex Scenes.",
-  "participants_count": 4,
-  "submissions_count": 0,
+  "participants_count": 6,
+  "submissions_count": 2,
   "queue": null,
   "enable_detailed_results": false,
   "show_detailed_results_in_submission_panel": true,
