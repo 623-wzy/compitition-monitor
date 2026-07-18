@@ -5,8 +5,8 @@
   "created_by": "ntulc",
   "owner_display_name": "ntulc",
   "created_when": "2026-07-12T12:49:05.646368Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-12-1783860545/bbb9e33f3f37/logo_mevis_t.png?AWSAccessKeyId=codabench-prod&Signature=Iin%2Bffv3hF%2FaiaBE4nITrFAN2BU%3D&Expires=1784295823",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-12-1783860545/bbb9e33f3f37/logo_mevis_t_icon.png?AWSAccessKeyId=codabench-prod&Signature=%2BdUfiWnJOm2H%2B71tWHAD9wwdVyo%3D&Expires=1784295823",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-12-1783860545/bbb9e33f3f37/logo_mevis_t.png?AWSAccessKeyId=codabench-prod&Signature=GuAaF%2BnDA%2FLwLTXycoKMBj%2Bj8Lw%3D&Expires=1784382434",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-12-1783860545/bbb9e33f3f37/logo_mevis_t_icon.png?AWSAccessKeyId=codabench-prod&Signature=I7LMfgVqHJYvstrqtTjpeq1L8nY%3D&Expires=1784382434",
   "terms": "<p>MeViSv2 is licensed under a <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\" target=\"_blank\">CC BY-NC-SA 4.0 License</a>. The data of MeViSv2 is released for non-commercial research purpose only.</p>",
   "pages": [
     {
@@ -319,9 +319,19 @@
   "collaborators": [],
   "registration_auto_approve": true,
   "description": "MeViS: A Multi-Modal Dataset for Referring Motion Expression Video Segmentation",
-  "participants_count": 6,
-  "submissions_count": 0,
-  "queue": null,
+  "participants_count": 8,
+  "submissions_count": 3,
+  "queue": {
+    "name": "Fudan_4090",
+    "vhost": "4cf47390-123d-4782-ba5c-a98d6d4014c5",
+    "is_public": false,
+    "owner": "ntulc",
+    "organizers": [],
+    "broker_url": "pyamqp://83fa3a46-890c-414b-85ec-75f994d50127:84f0078a-18fd-4da8-a730-e67963a68d60@www.codabench.org:5672/4cf47390-123d-4782-ba5c-a98d6d4014c5",
+    "created_when": "2025-08-27T12:03:03.922161Z",
+    "is_owner": false,
+    "id": 582
+  },
   "enable_detailed_results": false,
   "show_detailed_results_in_submission_panel": true,
   "show_detailed_results_in_leaderboard": true,
