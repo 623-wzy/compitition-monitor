@@ -6,9 +6,9 @@
     "description_zh": "用于压缩AI生成图像的基准，涵盖多样化模型、提示词和分辨率。",
     "created_by": "xinli",
     "created_when": "2026-06-14T13:43:46.550281Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-14-1781444626/885bb1bf4dc3/logo.png?AWSAccessKeyId=codabench-prod&Signature=bsrJ1%2FQtQjtYBx4BTNeJ0%2BAVE40%3D&Expires=1784469090",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-14-1781444626/885bb1bf4dc3/logo.png?AWSAccessKeyId=codabench-prod&Signature=R%2Fc%2BJ%2F%2FY0VuYrGHFT5mghZIRg74%3D&Expires=1784555849",
     "participants_count": 61,
-    "submissions_count": 171,
+    "submissions_count": 177,
     "first_phase_start": null,
     "phases": [
       {
@@ -52,186 +52,6 @@
       }
     ]
   },
-  "17496": {
-    "id": 17496,
-    "title": "8th LSVOS Challenge - MeViS-Text Track",
-    "description": "MeViS: A Multi-Modal Dataset for Referring Motion Expression Video Segmentation",
-    "description_zh": "MeViS：用于指代运动表达视频分割的多模态数据集",
-    "created_by": "ntulc",
-    "created_when": "2026-07-12T12:49:05.646368Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-12-1783860545/bbb9e33f3f37/logo_mevis_t.png?AWSAccessKeyId=codabench-prod&Signature=VSOTdDbewcGegUxk4k%2BeivAk6Hc%3D&Expires=1784469086",
-    "participants_count": 10,
-    "submissions_count": 3,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 29155,
-        "name": "valid",
-        "start": "2026-07-10T00:00:00Z",
-        "end": "2026-07-19T00:00:00Z",
-        "max_submissions_per_day": 3
-      },
-      {
-        "id": 29156,
-        "name": "test",
-        "start": "2026-07-20T00:00:00Z",
-        "end": "2026-07-27T00:00:00Z",
-        "max_submissions_per_day": 5
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Overview",
-        "content": "# MeViS: A Multi-Modal Dataset for Referring Motion Expression Video Segmentation\n\n🏠[Homepage](https://henghuiding.com/MeViS/) 📄[Paper](https://ieeexplore.ieee.org/abstract/document/11130435/)\n\n## Abstract\nThis paper proposes a large-scale multi-modal dataset for referring motion expression video segmentation, focusing on segmenting and tracking target objects in videos based on language description of objects' motions. Existing referring video segmentation datasets often focus on salient objects and use language expressions rich in static attributes, potentially allowing the target object to be identified in a single frame. Such datasets underemphasize the role of motion in both videos and languages. To explore the feasibility of using motion expressions and motion reasoning clues for pixel-level video understanding, we introduce MeViS, a dataset containing 33,072 human-annotated motion expressions in both text and audio, covering 8,171 objects in 2,006 videos of complex scenarios. We benchmark 15 existing methods across 4 tasks supported by MeViS, including 6 referring video object segmentation (RVOS) methods, 3 audio-guided video object segmentation (AVOS) methods, 2 referring multi-object tracking (RMOT) methods, and 4 video captioning methods for the newly introduced referring motion expression generation (RMEG) task. The results demonstrate weaknesses and limitations of existing methods in addressing motion expression-guided video understanding. We further analyze the challenges and propose an approach LMPM++ for RVOS/AVOS/RMOT that achieves new state-of-the-art results. Our dataset provides a platform that facilitates the development of motion expression-guided video understanding algorithms in complex video scenes. The proposed MeViS dataset and the method's source code are released at https://henghuiding.github.io/MeViS.\n\n\n## BibTeX\n\n```\n@article{MeViSv2,\n    title={{MeViS}: A Multi-Modal Dataset for Referring Motion Expression Video Segmentation},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Ying, Kaining and Jiang, Xudong and Loy, Chen Change and Jiang, Yu-Gang},\n    journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},\n    year={2025}\n}\n```\n\n```\n@article{MOSEv2,\n    title={{MOSEv2}: A More Challenging Dataset for Video Object Segmentation in Complex Scenes},\n    author={Ding, Henghui and Ying, Kaining and Liu, Chang and He, Shuting and Jiang, Xudong and Jiang, Yu-Gang and Torr, Philip HS and Bai, Song},\n    journal={arXiv preprint arXiv:2508.05630},\n    year={2025}\n}\n```\n\n```\n@inproceedings{MOSE,\n    title={{MOSE}: A New Dataset for Video Object Segmentation in Complex Scenes},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Jiang, Xudong and Torr, Philip HS and Bai, Song},\n    booktitle={ICCV},\n    year={2023}\n}\n```\n\n```\n@inproceedings{MeViS,\n    title={{MeViS}: A Large-scale Benchmark for Video Segmentation with Motion Expressions},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Jiang, Xudong and Loy, Chen Change},\n    booktitle={ICCV},\n    year={2023}\n}\n```",
-        "content_zh": "# MeViS: 一个用于指代动作表达视频分割的多模态数据集\n\n🏠[主页](https://henghuiding.com/MeViS/) 📄[论文](https://ieeexplore.ieee.org/abstract/document/11130435/)\n\n## 摘要\n本文提出了一个大规模多模态数据集，用于指代动作表达视频分割，重点是基于对象动作的语言描述在视频中分割和跟踪目标对象。现有的指代视频分割数据集通常关注显著对象，使用富含静态属性的语言表达，可能允许在单个帧中识别目标对象。这类数据集对视频和语言中动作角色的强调不足。为了探索使用动作表达和动作推理线索进行像素级视频理解的可行性，我们引入了MeViS数据集，包含33,072个人工标注的文本和音频动作表达，涵盖2,006个复杂场景视频中的8,171个对象。我们在MeViS支持的4项任务中对15种现有方法进行了基准测试，包括6种指代视频对象分割(RVOS)方法、3种音频引导视频对象分割(AVOS)方法、2种指代多对象跟踪(RMOT)方法和4种用于新引入的指代动作表达生成(RMEG)任务的视频标题方法。结果表明现有方法在处理动作表达引导的视频理解方面存在弱点和局限。我们进一步分析了挑战，并提出了LMPM++方法用于RVOS/AVOS/RMOT，实现了新的最先进结果。我们的数据集为在复杂视频场景中开发动作表达引导的视频理解算法提供了平台。提议的MeViS数据集和方法的源代码已在https://henghuiding.github.io/MeViS发布。\n\n## BibTeX\n\n```\n@article{MeViSv2,\n    title={{MeViS}: A Multi-Modal Dataset for Referring Motion Expression Video Segmentation},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Ying, Kaining and Jiang, Xudong and Loy, Chen Change and Jiang, Yu-Gang},\n    journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},\n    year={2025}\n}\n```\n\n```\n@article{MOSEv2,\n    title={{MOSEv2}: A More Challenging Dataset for Video Object Segmentation in Complex Scenes},\n    author={Ding, Henghui and Ying, Kaining and Liu, Chang and He, Shuting and Jiang, Xudong and Jiang, Yu-Gang and Torr, Philip HS and Bai, Song},\n    journal={arXiv preprint arXiv:2508.05630},\n    year={2025}\n}\n```\n\n```\n@inproceedings{MOSE,\n    title={{MOSE}: A New Dataset for Video Object Segmentation in Complex Scenes},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Jiang, Xudong and Torr, Philip HS and Bai, Song},\n    booktitle={ICCV},\n    year={2023}\n}\n```\n\n```\n@inproceedings{MeViS,\n    title={{MeViS}: A Large-scale Benchmark for Video Segmentation with Motion Expressions},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Jiang, Xudong and Loy, Chen Change},\n    booktitle={ICCV},\n    year={2023}\n}\n```"
-      },
-      {
-        "index": 1,
-        "title": "Data",
-        "content": "# 🔥🔥🔥[MeViS: A Multi-Modal Dataset for Referring Motion Expression Video Segmentation](https://ieeexplore.ieee.org/abstract/document/11130435)🔥🔥🔥\n\n🏠 [Homepage](https://henghuiding.com/MeViS/) | 📄 [Paper](https://ieeexplore.ieee.org/abstract/document/11130435) | 🔗 [GitHub](https://github.com/henghuiding/MeViS)\n## Download (Training set and validation set)\n⬇️ Get the dataset from:\n\n- 🤗 [Hugging Face](https://huggingface.co/datasets/FudanCVL/MeViSv2)\n- ☁️ [Google Drive](https://drive.google.com/drive/folders/1cft6BC3xBe6HFsZOLA0riRwoUpKPP90-?usp=drive_link)\n\n## Submission\nThe submission file should be a **.zip** pack contains the results on all videos. Like DAVIS2017, video folders should be put in the **root directory** of the zip. Make sure the filenames of the predicted frames match the filenames of the image frames.\n\nPlease check the sample submission in the download link for reference.\n```\n<submission.zip>\n│ \n├── <video_name_1>\n│ ├── 00000.png\n│ ├── 00001.png\n│ └── ...\n│ \n├── <video_name_2>\n│ ├── 00000.png\n│ ├── 00001.png\n│ └── ...\n│ \n└── <video_name_...>\n```",
-        "content_zh": "# 🔥🔥🔥[MeViS: 用于指代运动表达视频分割的多模态数据集](https://ieeexplore.ieee.org/abstract/document/11130435)🔥🔥🔥\n\n🏠 [主页](https://henghuiding.com/MeViS/) | 📄 [论文](https://ieeexplore.ieee.org/abstract/document/11130435) | 🔗 [GitHub](https://github.com/henghuiding/MeViS)\n\n## 下载（训练集和验证集）\n⬇️ 从以下位置获取数据集：\n\n- 🤗 [Hugging Face](https://huggingface.co/datasets/FudanCVL/MeViSv2)\n- ☁️ [Google Drive](https://drive.google.com/drive/folders/1cft6BC3xBe6HFsZOLA0riRwoUpKPP90-?usp=drive_link)\n\n## 提交\n提交文件应该是一个 **.zip** 压缩包，包含所有视频的结果。如同DAVIS2017，视频文件夹应放在zip的**根目录**下。确保预测帧的文件名与图像帧的文件名相匹配。\n\n请参考下载链接中的样本提交进行参考。\n\n```\n<submission.zip>\n│ \n├── <video_name_1>\n│ ├── 00000.png\n│ ├── 00001.png\n│ └── ...\n│ \n├── <video_name_2>\n│ ├── 00000.png\n│ ├── 00001.png\n│ └── ...\n│ \n└── <video_name_...>\n```"
-      }
-    ]
-  },
-  "17494": {
-    "id": 17494,
-    "title": "8th LSVOS Challenge - MOSEv2 Track",
-    "description": "A More Challenging Dataset for Video Object Segmentation in Complex Scenes.",
-    "description_zh": "一个用于复杂场景中视频目标分割的更具挑战性的数据集。",
-    "created_by": "ntulc",
-    "created_when": "2026-07-12T12:35:29.397513Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-12-1783859729/3312768436c8/logo_mose.png.png?AWSAccessKeyId=codabench-prod&Signature=qyqweO%2FQdoj8WSaFteuOx5lUR6k%3D&Expires=1784469087",
-    "participants_count": 12,
-    "submissions_count": 3,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 29151,
-        "name": "valid",
-        "start": "2026-07-10T00:00:00Z",
-        "end": "2026-07-19T00:00:00Z",
-        "max_submissions_per_day": 50
-      },
-      {
-        "id": 29152,
-        "name": "test",
-        "start": "2026-07-20T00:00:00Z",
-        "end": "2026-07-27T00:00:00Z",
-        "max_submissions_per_day": 5
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Data",
-        "content": "# 🔥🔥🔥[MOSEv2: A More Challenging Dataset for Video Object Segmentation in Complex Scenes](https://mose.video/)🔥🔥🔥\n\n## Download (Training set and validation set)\n⬇️ Get the dataset from:\n\n- 🤗 [Hugging Face](https://huggingface.co/datasets/FudanCVL/MOSEv2)\n- ☁️ [Google Drive](https://drive.google.com/drive/folders/1tb6duuZPrjfuHVvJLcWXItsqde3fup4n?usp=drive_link)\n- ☁️ [OneDrive](https://1drv.ms/f/c/c2b61e01a0e33ea5/EjSXr6Erm5BCuj_fj3Bw6ncBLfOqrGwmvYX1eNnhf2qWog?e=E2R8on) \n- ☁️ [Baidu Pan](https://pan.baidu.com/s/1QWzovOubI0Uvr2gEQChy7Q?pwd=p2m6) (pwd: p2m6)\n\n\n\n## Download (Training set and validation set)\n\n```shell\n# train.tar.gz\ngdown 'https://drive.google.com/uc?id=ID_removed_to_avoid_overaccesses_get_it_by_yourself'\n\n# valid.tar.gz\ngdown 'https://drive.google.com/uc?id=ID_removed_to_avoid_overaccesses_get_it_by_yourself'\n\n# test set will be released when competition starts.\n```\n\n\n## Submission\nThe submission file should be a **.zip** pack contains the results on all videos. Like DAVIS2017, video folders should be put in the **root directory** of the zip. Make sure the filenames of the predicted frames match the filenames of the image frames.\n\nPlease check the sample submission in the download link for reference.\n```\n<submission.zip>\n│ \n├── <video_name_1>\n│ ├── 00000.png\n│ ├── 00001.png\n│ └── ...\n│ \n├── <video_name_2>\n│ ├── 00000.png\n│ ├── 00001.png\n│ └── ...\n│ \n└── <video_name_...>\n```\n\n# Evaluation\nWe evaluate performance using multiple metrics: the Jaccard index (J), F-Measure (F), their mean (J&F), an improved F-Measure (Ḟ), and the mean of J and F_new (J&Ḟ). To better assess the complex scenarios in MOSEv2 where objects frequently disappear and reappear, we also report specialized metrics: J&Ḟ_disappear and J&Ḟ_reappear.\n\n**Note**: Ḟ adaptively computes boundary thresholds based on object size, providing fairer evaluation of boundary prediction quality across objects of different scales. For more information, please refer to the paper.\n\n*The evaluation may take 20 minutes to finish because of the data size. If your submussion exceed the time limit (20min) during scoring, please check if your data meets the requirements and view your log. If the issue persists, please contact us~*",
-        "content_zh": "# 🔥🔥🔥[MOSEv2: 复杂场景下的视频目标分割更具挑战性数据集](https://mose.video/)🔥🔥🔥\n\n## 下载（训练集和验证集）\n⬇️ 从以下渠道获取数据集：\n\n- 🤗 [Hugging Face](https://huggingface.co/datasets/FudanCVL/MOSEv2)\n- ☁️ [Google Drive](https://drive.google.com/drive/folders/1tb6duuZPrjfuHVvJLcWXItsqde3fup4n?usp=drive_link)\n- ☁️ [OneDrive](https://1drv.ms/f/c/c2b61e01a0e33ea5/EjSXr6Erm5BCuj_fj3Bw6ncBLfOqrGwmvYX1eNnhf2qWog?e=E2R8on) \n- ☁️ [百度网盘](https://pan.baidu.com/s/1QWzovOubI0Uvr2gEQChy7Q?pwd=p2m6) (密码: p2m6)\n\n## 下载（训练集和验证集）\n\n```shell\n# train.tar.gz\ngdown 'https://drive.google.com/uc?id=ID_removed_to_avoid_overaccesses_get_it_by_yourself'\n\n# valid.tar.gz\ngdown 'https://drive.google.com/uc?id=ID_removed_to_avoid_overaccesses_get_it_by_yourself'\n\n# 测试集将在竞赛开始时发布。\n```\n\n## 提交\n提交文件应为一个 **.zip** 压缩包，包含所有视频的结果。与DAVIS2017类似，视频文件夹应放在zip文件的**根目录**中。确保预测帧的文件名与图像帧的文件名匹配。\n\n请参考下载链接中的示例提交文件。\n```\n<submission.zip>\n│ \n├── <video_name_1>\n│ ├── 00000.png\n│ ├── 00001.png\n│ └── ...\n│ \n├── <video_name_2>\n│ ├── 00000.png\n│ ├── 00001.png\n│ └── ...\n│ \n└── <video_name_...>\n```\n\n## 评估\n我们使用多个指标评估性能：Jaccard指数（J）、F-Measure（F）、它们的均值（J&F）、改进的F-Measure（Ḟ）以及J和F_new的均值（J&Ḟ）。为了更好地评估MOSEv2中的复杂场景（其中目标频繁消失和重新出现），我们还报告专门的指标：J&Ḟ_disappear和J&Ḟ_reappear。\n\n**注意**：Ḟ根据目标大小自适应地计算边界阈值，为不同尺度的目标提供更公平的边界预测质量评估。更多信息请参考论文。\n\n*由于数据量较大，评估可能需要20分钟才能完成。如果您的提交在评分过程中超过时间限制（20分钟），请检查您的数据是否符合要求并查看日志。如果问题依然存在，请与我们联系~*"
-      },
-      {
-        "index": 1,
-        "title": "Overview",
-        "content": "# MOSEv2: A More Challenging Dataset for Video Object Segmentation in Complex Scenes\n\n🏠[Homepage](https://MOSE.video) 📄[Arxiv](https://arxiv.org/abs/2508.05630)\n\n## Abstract\nVideo object segmentation (VOS) aims to segment specified target objects throughout a video. Although state-of-the-art methods have achieved impressive performance (e.g., 90+% J&F) on existing benchmarks such as DAVIS and YouTube-VOS, these datasets primarily contain salient, dominant, and isolated objects, limiting their generalization to real-world scenarios. To advance VOS toward more realistic environments, coMplex video Object SEgmentation (MOSEv1) was introduced to facilitate VOS research in complex scenes. Building on the strengths and limitations of MOSEv1, we present MOSEv2, a significantly more challenging dataset designed to further advance VOS methods under real-world conditions. MOSEv2 consists of 5,024 videos and over 701,976 high-quality masks for 10,074 objects across 200 categories. Compared to its predecessor, MOSEv2 introduces significantly greater scene complexity, including more frequent object disappearance and reappearance, severe occlusions and crowding, smaller objects, as well as a range of new challenges such as adverse weather (e.g., rain, snow, fog), low-light scenes (e.g., nighttime, underwater), multi-shot sequences, camouflaged objects, non-physical targets (e.g., shadows, reflections), scenarios requiring external knowledge, etc. We benchmark 20 representative VOS methods under 5 different settings and observe consistent performance drops. For example, SAM2 drops from 76.4% on MOSEv1 to only 50.9% on MOSEv2. We further evaluate 9 video object tracking methods and find similar declines, demonstrating that MOSEv2 presents challenges across tasks. These results highlight that despite high accuracy on existing datasets, current VOS methods still struggle under real-world complexities. MOSEv2 is publicly available at https://MOSE.video.\n\n## BibTeX\n\n```\n@article{MOSEv2,\n    title={{MOSEv2}: A More Challenging Dataset for Video Object Segmentation in Complex Scenes},\n    author={Ding, Henghui and Ying, Kaining and Liu, Chang and He, Shuting and Jiang, Xudong and Jiang, Yu-Gang and Torr, Philip HS and Bai, Song},\n    journal={arXiv preprint arXiv:2508.05630},\n    year={2025}\n}\n```\n\n```\n@inproceedings{MOSE,\n    title={{MOSE}: A New Dataset for Video Object Segmentation in Complex Scenes},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Jiang, Xudong and Torr, Philip HS and Bai, Song},\n    booktitle={ICCV},\n    year={2023}\n}\n```\n\n```\n@article{MeViSv2,\n    title={{MeViS}: A Large-scale Benchmark for Video Segmentation with Motion Expressions},\n    author={Ding, Henghui and Liu, Chang and He, Shuting, Ying, Kaining and Jiang, Xudong and Loy, Chen Change and Jiang, Yu-Gang},\n    journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},\n    year={2025}\n}\n```\n\n```\n@inproceedings{MeViS,\n    title={{MeViS}: A Large-scale Benchmark for Video Segmentation with Motion Expressions},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Jiang, Xudong and Loy, Chen Change},\n    booktitle={ICCV},\n    year={2023}\n}\n```",
-        "content_zh": "# MOSEv2：复杂场景中的视频目标分割更具挑战性的数据集\n\n🏠[主页](https://MOSE.video) 📄[Arxiv](https://arxiv.org/abs/2508.05630)\n\n## 摘要\n视频目标分割（VOS）旨在分割视频中指定的目标物体。尽管最先进的方法在DAVIS和YouTube-VOS等现有基准上取得了令人印象深刻的性能（如90+% J&F），但这些数据集主要包含显著、主导和孤立的物体，限制了其在真实场景中的泛化能力。为了推进VOS朝向更现实的环境发展，引入了复杂视频目标分割（MOSEv1）以促进复杂场景中的VOS研究。基于MOSEv1的优势和局限性，我们提出了MOSEv2，这是一个设计用于在真实世界条件下进一步推进VOS方法的明显更具挑战性的数据集。MOSEv2包含5,024个视频和超过701,976个高质量掩码，涵盖200个类别中的10,074个物体。与其前身相比，MOSEv2引入了明显更高的场景复杂性，包括更频繁的物体消失和重新出现、严重的遮挡和拥挤、较小的物体，以及一系列新的挑战，如恶劣天气（如雨、雪、雾）、低光场景（如夜间、水下）、多镜头序列、伪装物体、非物理目标（如阴影、反射）、需要外部知识的场景等。我们在5种不同设置下对20种代表性VOS方法进行了基准测试，观察到性能持续下降。例如，SAM2从MOSEv1上的76.4%下降到MOSEv2上的仅50.9%。我们进一步评估了9种视频目标跟踪方法，发现了类似的性能下降，表明MOSEv2在多个任务中都呈现挑战。这些结果突出表明，尽管在现有数据集上精度很高，但当前的VOS方法在真实世界复杂性面前仍然表现不佳。MOSEv2可在https://MOSE.video获取。\n\n## BibTeX\n\n```\n@article{MOSEv2,\n    title={{MOSEv2}: A More Challenging Dataset for Video Object Segmentation in Complex Scenes},\n    author={Ding, Henghui and Ying, Kaining and Liu, Chang and He, Shuting and Jiang, Xudong and Jiang, Yu-Gang and Torr, Philip HS and Bai, Song},\n    journal={arXiv preprint arXiv:2508.05630},\n    year={2025}\n}\n```\n\n```\n@inproceedings{MOSE,\n    title={{MOSE}: A New Dataset for Video Object Segmentation in Complex Scenes},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Jiang, Xudong and Torr, Philip HS and Bai, Song},\n    booktitle={ICCV},\n    year={2023}\n}\n```\n\n```\n@article{MeViSv2,\n    title={{MeViS}: A Large-scale Benchmark for Video Segmentation with Motion Expressions},\n    author={Ding, Henghui and Liu, Chang and He, Shuting, and Ying, Kaining and Jiang, Xudong and Loy, Chen Change and Jiang, Yu-Gang},\n    journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},\n    year={2025}\n}\n```\n\n```\n@inproceedings{MeViS,\n    title={{MeViS}: A Large-scale Benchmark for Video Segmentation with Motion Expressions},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Jiang, Xudong and Loy, Chen Change},\n    booktitle={ICCV},\n    year={2023}\n}\n```"
-      },
-      {
-        "index": 2,
-        "title": "Evaluation",
-        "content": "Please check the Data page under the Participate tab.",
-        "content_zh": "请检查\"参赛\"选项卡下的\"数据\"页面。"
-      }
-    ]
-  },
-  "17495": {
-    "id": 17495,
-    "title": "8th LSVOS Challenge - MeViS-Audio Track",
-    "description": "MeViS: A Multi-Modal Dataset for Referring Motion Expression Video Segmentation",
-    "description_zh": "MeViS: 用于指代运动表达的视频分割的多模态数据集",
-    "created_by": "ntulc",
-    "created_when": "2026-07-12T12:48:43.104865Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-12-1783860523/056a95934101/logo_mevis_a.png?AWSAccessKeyId=codabench-prod&Signature=zl8sssKE84AVJhJDE11dfv1XWJ0%3D&Expires=1784469090",
-    "participants_count": 11,
-    "submissions_count": 3,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 29153,
-        "name": "valid",
-        "start": "2026-07-10T00:00:00Z",
-        "end": "2026-07-19T23:55:00Z",
-        "max_submissions_per_day": 3
-      },
-      {
-        "id": 29154,
-        "name": "test",
-        "start": "2026-07-20T00:00:00Z",
-        "end": "2026-07-27T00:00:00Z",
-        "max_submissions_per_day": 5
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Overview",
-        "content": "# MeViS: A Multi-Modal Dataset for Referring Motion Expression Video Segmentation\n\n🏠[Homepage](https://henghuiding.com/MeViS/) 📄[Paper](https://ieeexplore.ieee.org/abstract/document/11130435/)\n\n## Abstract\nThis paper proposes a large-scale multi-modal dataset for referring motion expression video segmentation, focusing on segmenting and tracking target objects in videos based on language description of objects' motions. Existing referring video segmentation datasets often focus on salient objects and use language expressions rich in static attributes, potentially allowing the target object to be identified in a single frame. Such datasets underemphasize the role of motion in both videos and languages. To explore the feasibility of using motion expressions and motion reasoning clues for pixel-level video understanding, we introduce MeViS, a dataset containing 33,072 human-annotated motion expressions in both text and audio, covering 8,171 objects in 2,006 videos of complex scenarios. We benchmark 15 existing methods across 4 tasks supported by MeViS, including 6 referring video object segmentation (RVOS) methods, 3 audio-guided video object segmentation (AVOS) methods, 2 referring multi-object tracking (RMOT) methods, and 4 video captioning methods for the newly introduced referring motion expression generation (RMEG) task. The results demonstrate weaknesses and limitations of existing methods in addressing motion expression-guided video understanding. We further analyze the challenges and propose an approach LMPM++ for RVOS/AVOS/RMOT that achieves new state-of-the-art results. Our dataset provides a platform that facilitates the development of motion expression-guided video understanding algorithms in complex video scenes. The proposed MeViS dataset and the method's source code are released at https://henghuiding.github.io/MeViS.\n\n\n## BibTeX\n\n```\n@article{MeViSv2,\n    title={{MeViS}: A Multi-Modal Dataset for Referring Motion Expression Video Segmentation},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Ying, Kaining and Jiang, Xudong and Loy, Chen Change and Jiang, Yu-Gang},\n    journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},\n    year={2025}\n}\n```\n\n```\n@article{MOSEv2,\n    title={{MOSEv2}: A More Challenging Dataset for Video Object Segmentation in Complex Scenes},\n    author={Ding, Henghui and Ying, Kaining and Liu, Chang and He, Shuting and Jiang, Xudong and Jiang, Yu-Gang and Torr, Philip HS and Bai, Song},\n    journal={arXiv preprint arXiv:2508.05630},\n    year={2025}\n}\n```\n\n```\n@inproceedings{MOSE,\n    title={{MOSE}: A New Dataset for Video Object Segmentation in Complex Scenes},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Jiang, Xudong and Torr, Philip HS and Bai, Song},\n    booktitle={ICCV},\n    year={2023}\n}\n```\n\n```\n@inproceedings{MeViS,\n    title={{MeViS}: A Large-scale Benchmark for Video Segmentation with Motion Expressions},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Jiang, Xudong and Loy, Chen Change},\n    booktitle={ICCV},\n    year={2023}\n}\n```",
-        "content_zh": "# MeViS：运动表达视频分割多模态数据集\n\n🏠[主页](https://henghuiding.com/MeViS/) 📄[论文](https://ieeexplore.ieee.org/abstract/document/11130435/)\n\n## 摘要\n本文提出了一个大规模多模态数据集，用于基于语言描述物体运动的视频分割和追踪。现有的指代视频分割数据集通常关注显著物体，使用富含静态属性的语言表达，这可能使目标物体能够在单个帧中被识别。此类数据集低估了运动在视频和语言中的作用。为了探索利用运动表达和运动推理线索进行像素级视频理解的可行性，我们引入了MeViS数据集，包含33,072个由人类标注的文本和音频运动表达，涵盖2,006个复杂场景视频中的8,171个物体。我们在MeViS支持的4项任务上对15种现有方法进行了基准测试，包括6种指代视频物体分割(RVOS)方法、3种音频引导视频物体分割(AVOS)方法、2种指代多物体追踪(RMOT)方法，以及4种用于新引入的指代运动表达生成(RMEG)任务的视频描述方法。结果表明现有方法在解决运动表达引导的视频理解方面存在薄弱环节和局限性。我们进一步分析了挑战因素，并提出了LMPM++方法用于RVOS/AVOS/RMOT任务，取得了新的最优结果。我们的数据集为复杂视频场景中运动表达引导的视频理解算法的开发提供了平台。MeViS数据集和方法源代码已发布在https://henghuiding.github.io/MeViS。\n\n\n## BibTeX\n\n```\n@article{MeViSv2,\n    title={{MeViS}: A Multi-Modal Dataset for Referring Motion Expression Video Segmentation},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Ying, Kaining and Jiang, Xudong and Loy, Chen Change and Jiang, Yu-Gang},\n    journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},\n    year={2025}\n}\n```\n\n```\n@article{MOSEv2,\n    title={{MOSEv2}: A More Challenging Dataset for Video Object Segmentation in Complex Scenes},\n    author={Ding, Henghui and Ying, Kaining and Liu, Chang and He, Shuting and Jiang, Xudong and Jiang, Yu-Gang and Torr, Philip HS and Bai, Song},\n    journal={arXiv preprint arXiv:2508.05630},\n    year={2025}\n}\n```\n\n```\n@inproceedings{MOSE,\n    title={{MOSE}: A New Dataset for Video Object Segmentation in Complex Scenes},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Jiang, Xudong and Torr, Philip HS and Bai, Song},\n    booktitle={ICCV},\n    year={2023}\n}\n```\n\n```\n@inproceedings{MeViS,\n    title={{MeViS}: A Large-scale Benchmark for Video Segmentation with Motion Expressions},\n    author={Ding, Henghui and Liu, Chang and He, Shuting and Jiang, Xudong and Loy, Chen Change},\n    booktitle={ICCV},\n    year={2023}\n}\n```"
-      },
-      {
-        "index": 1,
-        "title": "Data",
-        "content": "# 🔥🔥🔥[MeViS: A Multi-Modal Dataset for Referring Motion Expression Video Segmentation](https://ieeexplore.ieee.org/abstract/document/11130435)🔥🔥🔥\n\n🏠 [Homepage](https://henghuiding.com/MeViS/) | 📄 [Paper](https://ieeexplore.ieee.org/abstract/document/11130435) | 🔗 [GitHub](https://github.com/henghuiding/MeViS)\n## Download (Training set and validation set)\n⬇️ Get the dataset from:\n\n- 🤗 [Hugging Face](https://huggingface.co/datasets/FudanCVL/MeViSv2)\n- ☁️ [Google Drive](https://drive.google.com/drive/folders/1cft6BC3xBe6HFsZOLA0riRwoUpKPP90-?usp=drive_link)\n\n## Submission\nThe submission file should be a **.zip** pack contains the results on all videos. Like DAVIS2017, video folders should be put in the **root directory** of the zip. Make sure the filenames of the predicted frames match the filenames of the image frames.\n\nPlease check the sample submission in the download link for reference.\n```\n<submission.zip>\n│ \n├── <video_name_1>\n│ ├── 00000.png\n│ ├── 00001.png\n│ └── ...\n│ \n├── <video_name_2>\n│ ├── 00000.png\n│ ├── 00001.png\n│ └── ...\n│ \n└── <video_name_...>\n```",
-        "content_zh": "# 🔥🔥🔥[MeViS: 指称运动表达视频分割多模态数据集](https://ieeexplore.ieee.org/abstract/document/11130435)🔥🔥🔥\n\n🏠 [主页](https://henghuiding.com/MeViS/) | 📄 [论文](https://ieeexplore.ieee.org/abstract/document/11130435) | 🔗 [GitHub](https://github.com/henghuiding/MeViS)\n\n## 下载（训练集和验证集）\n⬇️ 从以下位置获取数据集：\n\n- 🤗 [Hugging Face](https://huggingface.co/datasets/FudanCVL/MeViSv2)\n- ☁️ [Google Drive](https://drive.google.com/drive/folders/1cft6BC3xBe6HFsZOLA0riRwoUpKPP90-?usp=drive_link)\n\n## 提交\n提交文件应为包含所有视频结果的 **.zip** 压缩包。与DAVIS2017类似，视频文件夹应放在zip的**根目录**中。确保预测帧的文件名与图像帧的文件名匹配。\n\n请参考下载链接中的示例提交以供参考。\n```\n<submission.zip>\n│ \n├── <video_name_1>\n│ ├── 00000.png\n│ ├── 00001.png\n│ └── ...\n│ \n├── <video_name_2>\n│ ├── 00000.png\n│ ├── 00001.png\n│ └── ...\n│ \n└── <video_name_...>\n```"
-      }
-    ]
-  },
-  "16909": {
-    "id": 16909,
-    "title": "ArGuard 2026 — Subtask A1 (Binary Hateful Meme Detection)",
-    "description": "Arabic multimodal hateful-meme classification. Given a meme (image plus OCR-extracted Arabic text), predict whether it is Hateful or Not Hateful. Official metric: macro-F1.",
-    "description_zh": "阿拉伯语多模态仇恨迷因分类。给定一个迷因（图像加光学字符识别提取的阿拉伯语文本），预测其是否为仇恨性或非仇恨性。官方指标：宏平均F1分数。",
-    "created_by": "mohamedbayan",
-    "created_when": "2026-06-03T11:38:35.423737Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780486715/5b6f981490c6/logo.png?AWSAccessKeyId=codabench-prod&Signature=eS0s0sIJJHO956VX3RBsZerOu%2Fk%3D&Expires=1784469092",
-    "participants_count": 18,
-    "submissions_count": 30,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 28206,
-        "name": "Development Phase",
-        "start": "2026-05-14T00:00:00Z",
-        "end": "2026-07-19T00:00:00Z",
-        "max_submissions_per_day": 5
-      },
-      {
-        "id": 28207,
-        "name": "Testing Phase",
-        "start": "2026-07-20T00:00:00Z",
-        "end": "2026-07-29T00:00:00Z",
-        "max_submissions_per_day": 20
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Participation",
-        "content": "# How to participate\n\nArGuard 2026 — Task 1 / Track A · **Subtask A1: Binary Hateful Meme Detection**.\n\n## Who can join\nYou can take part as an individual or as a team. A person can participate in multiple shared tasks within ArGuard 2026 — see the full list at the [task website](https://araieval.gitlab.io/ArGuard2026/).\n\n## How to register\n1. Sign up on this CodaBench competition page.\n2. Read the [Terms](#) tab — pay particular attention to the submission file format and naming convention.\n3. Download the data from the Hugging Face Hub: [`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1).\n4. Clone the starter kit: [`araieval/ArGuard-2026-tasks`](https://github.com/araieval/ArGuard-2026-tasks).\n5. Train your model and generate predictions on the `dev_test` split during the development phase, and on the `test` split during the final-evaluation phase.\n\n## Submitting\n- One team member submits per phase via the **Submit** tab.\n- Upload your TSV prediction file as `prediction.zip` (see Terms).\n- The latest valid submission before the deadline counts as your team's final submission for that phase.\n\n## System description paper\nAll teams are encouraged to submit a system-description paper for the workshop. A single paper may cover multiple subtasks if you participated in more than one.\n\n## Contact\nQuestions: arguard2026-organizers@googlegroups.com",
-        "content_zh": "# 参赛指南\n\nArGuard 2026 — 任务1 / Track A · **子任务A1：仇恨表情包二分类检测**\n\n## 参赛资格\n您可以以个人或团队身份参加。一个人可以参加ArGuard 2026内的多个共享任务——详见[任务网站](https://araieval.gitlab.io/ArGuard2026/)的完整列表。\n\n## 如何注册\n1. 在本CodaBench竞赛页面上注册。\n2. 阅读[条款](#)选项卡——特别注意提交文件格式和命名规范。\n3. 从Hugging Face Hub下载数据：[`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1)。\n4. 克隆启动工具包：[`araieval/ArGuard-2026-tasks`](https://github.com/araieval/ArGuard-2026-tasks)。\n5. 在开发阶段对`dev_test`分割集训练模型并生成预测，在最终评估阶段对`test`分割集进行预测。\n\n## 提交\n- 每个阶段由一名团队成员通过**提交**选项卡提交。\n- 将TSV预测文件上传为`prediction.zip`（见条款）。\n- 截止日期前最后一次有效提交将作为该阶段团队的最终提交。\n\n## 系统描述论文\n鼓励所有团队为研讨会提交系统描述论文。如果您参加了多个子任务，单篇论文可涵盖多个子任务。\n\n## 联系方式\n问题咨询：arguard2026-organizers@googlegroups.com"
-      },
-      {
-        "index": 1,
-        "title": "Dataset",
-        "content": "# Dataset\n\nArGuard Task 1 — Track A is built around an Arabic multimodal meme dataset: each instance is an image with overlaid Arabic text (OCR-extracted). Memes are manually annotated for hatefulness.\n\nFor **Subtask A1**, every meme has a single binary label from {`Hateful`, `Not Hateful`}.\n\n## Get the data\nThe official splits live on the Hugging Face Hub at [`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1). Download them with the helper script from the starter kit:\n\n```bash\ngit clone https://github.com/araieval/ArGuard-2026-tasks.git\ncd ArGuard-2026-tasks/task1\npip install -r requirements.txt\npython data/download_data.py\n```\n\n## Splits\n\n| Split        | Records | Labels   | Phase                    | Purpose                                    |\n|--------------|--------:|----------|--------------------------|--------------------------------------------|\n| `train`      |   3,500 | full     | development              | model training                             |\n| `dev`        |     500 | full     | development              | hyperparameter selection, local evaluation |\n| `dev_test`   |     500 | **none** | development (leaderboard)| submission target for the dev-phase leaderboard |\n| `test`       |     500 | full     | final evaluation         | blind ranking (triple-annotated gold)      |\n\nThe `dev_test` split is released with labels stripped — that is the file you submit predictions for during the development phase.\n\n## Record schema (after `download_data.py`)\n```json\n{\n    \"id\": \"f9a8…b1.jpg\",\n    \"image_path\": \"img/f9a8…b1.jpg\",\n    \"text\": \"OCR-extracted Arabic text…\",\n    \"label\": \"Hateful\" | \"Not Hateful\" | null,\n    \"fine_grained_label\": [\"Mocking\", \"Incitement\"],\n    \"annotations\": []\n}\n```\n\n## Licence\nThe dataset is released under **CC BY-NC 4.0** (non-commercial research use only).\n\n## Resources\n- Starter kit: <https://github.com/araieval/ArGuard-2026-tasks>\n- Task website: <https://araieval.gitlab.io/ArGuard2026/>",
-        "content_zh": "# 数据集\n\nArGuard Task 1 — Track A 基于阿拉伯语多模态表情包数据集构建：每个实例包含一张图片和叠加在其上的阿拉伯文本（通过OCR提取）。表情包已手动标注仇恨属性。\n\n对于**子任务A1**，每个表情包都有一个来自{`Hateful`（仇恨）、`Not Hateful`（非仇恨）}的单一二元标签。\n\n## 获取数据\n官方数据集位于 Hugging Face Hub 的[`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1)。使用启动工具包中的辅助脚本下载：\n\n```bash\ngit clone https://github.com/araieval/ArGuard-2026-tasks.git\ncd ArGuard-2026-tasks/task1\npip install -r requirements.txt\npython data/download_data.py\n```\n\n## 数据分割\n\n| 数据集        | 记录数 | 标签   | 阶段                    | 用途                                    |\n|--------------|--------:|----------|--------------------------|--------------------------------------------|\n| `train`      |   3,500 | 完整     | 开发阶段              | 模型训练                             |\n| `dev`        |     500 | 完整     | 开发阶段              | 超参数选择、本地评估 |\n| `dev_test`   |     500 | **无** | 开发阶段（排行榜）| 开发阶段排行榜的提交目标 |\n| `test`       |     500 | 完整     | 最终评估         | 盲测排名（三重标注黄金标准）      |\n\n`dev_test` 数据集以标签被移除的形式发布——这是开发阶段提交预测结果的文件。\n\n## 记录架构（运行 `download_data.py` 后）\n```json\n{\n    \"id\": \"f9a8…b1.jpg\",\n    \"image_path\": \"img/f9a8…b1.jpg\",\n    \"text\": \"OCR提取的阿拉伯文本…\",\n    \"label\": \"Hateful\" | \"Not Hateful\" | null,\n    \"fine_grained_label\": [\"Mocking\", \"Incitement\"],\n    \"annotations\": []\n}\n```\n\n## 许可证\n数据集采用 **CC BY-NC 4.0** 许可证发布（仅供非商业研究使用）。\n\n## 资源\n- 启动工具包：<https://github.com/araieval/ArGuard-2026-tasks>\n- 任务网站：<https://araieval.gitlab.io/ArGuard2026/>"
-      },
-      {
-        "index": 2,
-        "title": "Timeline",
-        "content": "# Timeline\n\n## Development phase\nUse this phase to tune your models on `train.jsonl` / `dev.jsonl` and submit predictions on `dev_test.jsonl` for the leaderboard.\n\n**Window:** `2026-05-14 → 2026-07-19`\n**Submissions:** up to 5 per day, 100 total.\n\n## Testing phase\nThe final blind test split is released. Train on `train.jsonl` + `dev.jsonl`, submit predictions on `test.jsonl` — your best valid submission counts toward the official ranking.\n\n**Window:** `2026-07-20 → 2026-07-29`\n**Submissions:** up to 20 per day, 100 total.\n\n> Adjust the dates inside `competition.yaml` (the `phases.start` / `phases.end` fields) if your task schedule shifts.\n\n## Workshop\nPaper submissions and notification dates will be announced on the [task website](https://araieval.gitlab.io/ArGuard2026/).",
-        "content_zh": "# 时间表\n\n## 开发阶段\n使用此阶段在 `train.jsonl` / `dev.jsonl` 上调优模型，并在 `dev_test.jsonl` 上提交预测以参与排行榜竞争。\n\n**时间窗口：** `2026-05-14 → 2026-07-19`\n**提交次数：** 每天最多5次，总共100次。\n\n## 测试阶段\n发布最终的盲测数据集。在 `train.jsonl` + `dev.jsonl` 上训练，在 `test.jsonl` 上提交预测——最佳有效提交将计入官方排名。\n\n**时间窗口：** `2026-07-20 → 2026-07-29`\n**提交次数：** 每天最多20次，总共100次。\n\n> 如果任务日程有变动，请调整 `competition.yaml` 中的日期（`phases.start` / `phases.end` 字段）。\n\n## 研讨会\n论文提交和通知日期将在[任务网站](https://araieval.gitlab.io/ArGuard2026/)上公布。"
-      }
-    ]
-  },
   "16782": {
     "id": 16782,
     "title": "Shared Task on Identifying misogynistic videos in Dravidian languages @ MMLow 2026",
@@ -239,9 +59,9 @@
     "description_zh": "我是一个科技竞赛信息翻译助手。\n\n**功能描述：**\n\n将用户提供的英文竞赛文本翻译成简体中文，保持专业术语准确，输出纯翻译结果。\n\n**特点：**\n- ✓ 专业术语翻译准确\n- ✓ 保持原文意思不变\n- ✓ 输出纯翻译内容\n- ✓ 支持科技竞赛相关领域\n\n**使用方式：**\n直接粘贴英文竞赛文本，我会给出中文翻译。",
     "created_by": "dravidian",
     "created_when": "2026-05-30T08:48:21.614394Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-02-1780380380/3d180381fa35/ChatGPT_Image_Jun_2_2026_at_11_35_.png?AWSAccessKeyId=codabench-prod&Signature=wfhTUIfeQJGradbHMhxRvBIexN0%3D&Expires=1784469094",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-02-1780380380/3d180381fa35/ChatGPT_Image_Jun_2_2026_at_11_35_.png?AWSAccessKeyId=codabench-prod&Signature=XtF8RKlip77OfMjOb5HwCio9AFA%3D&Expires=1784555857",
     "participants_count": 12,
-    "submissions_count": 0,
+    "submissions_count": 1,
     "first_phase_start": null,
     "phases": [
       {
@@ -298,7 +118,7 @@
     "description_zh": "# 翻译\n\n预测注视对齐的脑磁图(MEG)活动(204个梯度计通道,注视后110毫秒),基于自然场景图像和来自主动视觉语义(AVS)数据集的眼动元数据,为一个被保留的受试者。\n\nSulewski, P., Amme, C., Hebart, M., König, P., & Kietzmann, T. (2025). 我们为什么停留:记忆编码而非视觉处理需求驱动自然场景上的注视时间——来自大规模脑磁图数据集的证据。\n\n仅限学术用途。AVS数据集及所有衍生材料专门为学术研究和教育目的提供,用于奥斯纳布吕克大学(Osnabrück University)\"深度神经网络神经编码\"课程(SoSe 2026)。",
     "created_by": "psulewski",
     "created_when": "2026-04-20T14:42:51.242593Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-20-1776696171/148af8ac1426/logo.png?AWSAccessKeyId=codabench-prod&Signature=4BdvX%2BXHJcaRzLPKT%2FDmqayIAqU%3D&Expires=1784469101",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-20-1776696171/148af8ac1426/logo.png?AWSAccessKeyId=codabench-prod&Signature=UrPESAO7Oa7RrnJyVstcWIOFRnc%3D&Expires=1784555864",
     "participants_count": 25,
     "submissions_count": 37,
     "first_phase_start": null,
@@ -339,9 +159,9 @@
     "description_zh": "MVAA 2026 最终隐藏测试Docker评估平台。参赛者提交一个轻量级submission.zip，包含Docker镜像引用。私有的组织方Codabench工作进程将描述符转发给MVAA GPU运行器，该运行器拉取镜像、在隐藏测试集上运行推理、计算官方指标，并将Task1/Task2/Task3分数返回到Codabench。",
     "created_by": "db0725",
     "created_when": "2026-06-29T13:28:58.227688Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-29-1782739738/5879f76f7bc9/icon.png?AWSAccessKeyId=codabench-prod&Signature=vUCJXqNt57gcOJUcDZDcVmcGNoY%3D&Expires=1784469088",
-    "participants_count": 40,
-    "submissions_count": 66,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-29-1782739738/5879f76f7bc9/icon.png?AWSAccessKeyId=codabench-prod&Signature=TzL7%2BYxrHx%2B1bxigrjDwgrqT6Vs%3D&Expires=1784555847",
+    "participants_count": 41,
+    "submissions_count": 76,
     "first_phase_start": null,
     "phases": [
       {
@@ -446,9 +266,9 @@
     "description_zh": "MVAA 2026 评估跨越三个临床基础分割任务的二尖瓣解剖学多模态AI方法：（1）CT分割、（2）3D TEE分割和（3）手术视频分割。\n\n最终排名基于跨任务平均聚合的归一化任务级分数。",
     "created_by": "db0725",
     "created_when": "2026-04-14T13:38:37.626348Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-15-1776224307/a53b1e60e5cb/icon.png?AWSAccessKeyId=codabench-prod&Signature=wKbpU6UZPZkWQp8iG%2FIyvOe2KRQ%3D&Expires=1784469102",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-15-1776224307/a53b1e60e5cb/icon.png?AWSAccessKeyId=codabench-prod&Signature=46z1ED6nTLbtw%2FKu0t3wRshlyzg%3D&Expires=1784555869",
     "participants_count": 162,
-    "submissions_count": 2118,
+    "submissions_count": 2164,
     "first_phase_start": null,
     "phases": [
       {
@@ -547,7 +367,7 @@
     "description_zh": "# 使用CRAI框架评估AI生成图像对卡塔尔和阿拉伯文化场景的真实性表现\n\n## 文化准确性（Cultural Accuracy）\n- **服饰表现**：评估传统服装（如阿拜亚、古特拉、阿拉伯头巾）的细节准确性\n- **建筑风格**：验证伊斯兰建筑元素（如拱形、穹顶、书法装饰）是否正确呈现\n- **宗教仪式**：检查礼拜场景、斋月相关元素的真实性\n- **社会场景**：评估家庭聚会、市集、传统活动的文化真实性\n\n## 代表性（Representation）\n- **多样性**：确保呈现卡塔尔和阿拉伯世界的多元性，避免单一刻板印象\n- **地理差异**：区分不同地区的文化特征（城市、沙漠、海滨）\n- **代际表现**：反映传统与现代元素的融合\n- **性别与身份**：公平准确地呈现不同群体\n\n## 人工制品与物质文化（Artifacts）\n- **传统手工艺**：阿拉伯书法、陶艺、纺织品的准确性\n- **日常用品**：咖啡器具、香炉等文化象征物\n- **装饰元素**：几何纹样、穆斯林花纹设计的准确性\n- **食文化**：传统美食呈现的真实性\n\n## 背景与语境（Context）\n- **历史准确性**：时代背景的正确性\n- **社会背景**：活动场景的合理性与适切性\n- **语言符号**：阿拉伯书写的准确性\n- **文化敏感性**：尊重宗教和社会禁忌",
     "created_by": "sabdaljalil",
     "created_when": "2026-06-03T19:07:43.639396Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780513663/396055ccba31/logo.png?AWSAccessKeyId=codabench-prod&Signature=2I7n46C4NiZn0kSSxpBGby7CqcM%3D&Expires=1784469092",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780513663/396055ccba31/logo.png?AWSAccessKeyId=codabench-prod&Signature=Um1Gn3m0kt9UDaEFn1XD0EHeKb8%3D&Expires=1784555852",
     "participants_count": 5,
     "submissions_count": 1,
     "first_phase_start": null,
@@ -595,9 +415,9 @@
     "description_zh": "阿拉伯语多模态仇恨表情包细粒度分类。给定一张表情包（图像加光学字符识别提取的阿拉伯语文本），从涵盖仇恨和非仇恨类别的统一10类活跃词汇中预测零个或多个细粒度子类型。官方指标：宏F1（macro-F1）。",
     "created_by": "alishahroor",
     "created_when": "2026-06-03T11:45:25.550972Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780487125/68e3a857bebe/logo.png?AWSAccessKeyId=codabench-prod&Signature=oEa98x3ALOOXeMvDAc4Xos1tQJk%3D&Expires=1784469092",
-    "participants_count": 13,
-    "submissions_count": 6,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780487125/68e3a857bebe/logo.png?AWSAccessKeyId=codabench-prod&Signature=lDjBuV%2FPBu4jiZvenpsSJT%2B%2Fwsk%3D&Expires=1784555852",
+    "participants_count": 14,
+    "submissions_count": 10,
     "first_phase_start": null,
     "phases": [
       {
@@ -643,7 +463,7 @@
     "description_zh": "## 玩具基准 v1: 成对点跟踪\n\n该基准评估图像数据上的简单**成对点跟踪**任务。\n\n### 任务定义\n对于每个测试样本，参与者获得：\n- 一张参考图像 (`ref`)\n- 一张目标图像 (`tgt`)\n- 在参考图像上定义的参考点 `(x_ref, y_ref)`\n\n目标是**预测目标图像上对应点的位置 `(x, y)`**。\n\n### 评估\n预测使用**欧几里得距离**进行评估，即预测点与目标图像上地面真实点之间的距离。\n最终得分是**所有测试样本的平均误差**（越低越好）。",
     "created_by": "lanxiao",
     "created_when": "2026-01-29T20:19:17.964849Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-01-29-1769717957/3a83607f7a38/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260128161328_371_2.png?AWSAccessKeyId=codabench-prod&Signature=16wh%2BVBIV6C7TCj8VMcPMVAiKOk%3D&Expires=1784469136",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-01-29-1769717957/3a83607f7a38/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260128161328_371_2.png?AWSAccessKeyId=codabench-prod&Signature=ZlsJdPXI0VHa39Tg%2BCuo%2Bes1VoE%3D&Expires=1784555895",
     "participants_count": 2,
     "submissions_count": 4,
     "first_phase_start": null,
@@ -690,6 +510,54 @@
       }
     ]
   },
+  "17048": {
+    "id": 17048,
+    "title": "ImageEval 2026 — Ayn-VQA Task 1a: Spoken VQA (MSA)",
+    "description": "Given an image and the spoken question/options (English audio), pick the correct option index (0-2). Part of the ImageEval 2026 Ayn-VQA shared task on cultural grounding in Arabic multimodal understanding. \nData on HuggingFace (QCRI/AynVQA-ArabicNLP26). \nJoin our Slack for announcements and discussion: https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA",
+    "description_zh": "# ImageEval 2026 Ayn-VQA 共享任务\n\n给定一张图像和口头问题/选项（MSA音频），选择正确的选项索引（0-2）。\n\n这是 ImageEval 2026 Ayn-VQA 共享任务的一部分，专注于阿拉伯多模态理解中的文化根植。\n\n**数据集位置**：HuggingFace（QCRI/AynVQA-ArabicNLP26）\n\n**报名链接**：https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform",
+    "created_by": "hunzed",
+    "created_when": "2026-06-10T09:38:23.495469Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084303/9c583c7e5a2a/logo.png?AWSAccessKeyId=codabench-prod&Signature=n8GOFTwemMK4KRoStYUQcUBhfUY%3D&Expires=1784555850",
+    "participants_count": 10,
+    "submissions_count": 6,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 28473,
+        "name": "Development Phase",
+        "start": "2026-05-21T00:00:00Z",
+        "end": "2026-08-02T00:00:00Z",
+        "max_submissions_per_day": 5
+      },
+      {
+        "id": 28474,
+        "name": "Testing Phase",
+        "start": "2026-08-02T00:00:00Z",
+        "end": "2026-08-07T23:55:00Z",
+        "max_submissions_per_day": 20
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Participation",
+        "content": "# How to participate\n\n**ImageEval 2026 — Ayn-VQA Task 1a: Spoken VQA (MSA)** — the **MSA** track of Task 1a\n(Spoken VQA), part of the [ImageEval 2026](https://imageeval2026.github.io/) shared task on cultural\ngrounding in Arabic multimodal generation and understanding.\n\nGiven an image and the spoken question/options (MSA audio), pick the correct option index (0-2).\n\n## Join our Slack (please do this first)\nJoin the **[ImageEval Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA)** for announcements, deadlines, data updates, and to connect with other participants.\n\n## Who can join\nIndividuals or teams; one member submits on the team's behalf. You may enter more\nthan one track.\n\n## Steps\n1. Sign up on this Codabench page, then join the [Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA) for updates.\n2. Read the **Terms** tab — note the exact prediction format.\n3. Get the data from the Hugging Face Hub: **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**.\n4. Follow the task description in the [tasks repo](https://github.com/ImageEval2026/ImageEval2026-tasks).\n5. Predict on **devtest** during the development phase, and on **test** during the\n   final-evaluation phase.\n\n## System description paper\nAll teams are encouraged to submit a system-description paper for the workshop.\n\n## Contact\nimageeval2026@gmail.com",
+        "content_zh": "# 参与方式\n\n**ImageEval 2026 — Ayn-VQA 任务1a：口语VQA（MSA）** — 任务1a（口语VQA）的**MSA**赛道\n是[ImageEval 2026](https://imageeval2026.github.io/)共享任务的一部分，该任务聚焦阿拉伯语多模态生成和理解中的文化基础。\n\n给定一张图像和口语问题/选项（MSA音频），选择正确的选项索引（0-2）。\n\n## 注册（请首先完成此步骤）\n填写**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)**——这让组织者能够追踪参与者并通知您关于数据、截止日期和任何更新的信息。\n\n## 谁可以参加\n个人或团队；由一名成员代表团队提交。您可以参加多个赛道。\n\n## 步骤\n1. 在此Codabench页面**和**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)上注册。\n2. 阅读**条款**选项卡——注意确切的预测格式。\n3. 从Hugging Face Hub获取数据：**[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**。\n4. 遵循[任务仓库](https://github.com/ImageEval2026/ImageEval2026-tasks)中的任务描述。\n5. 在开发阶段对**devtest**进行预测，在最终评估阶段对**test**进行预测。\n\n## 系统描述论文\n鼓励所有团队为研讨会提交系统描述论文。\n\n## 联系方式\nimageeval2026@gmail.com"
+      },
+      {
+        "index": 1,
+        "title": "Dataset",
+        "content": "# Dataset\n\nAll splits live on the Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — as config\n`task1a_msa`. This competition scores **devtest** (development phase) and **test**\n(final phase).\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1a_msa\", split=\"devtest\")\n```\n\n## Splits\n\n| split | labels | items | phase | purpose |\n|---|---|---:|---|---|\n| `train`   | yes | 3000 | development | training / fine-tuning |\n| `dev`     | yes | 500  | development | local validation |\n| `devtest` | no  | 500  | development (leaderboard) | submission target, dev phase |\n| `test`    | no  | 1000 | final evaluation | blind ranking (human-recorded audio) |\n\n- **Language:** MSA.\n- Media (images / audio) are referenced by **relative path** keyed on `id`.\n- 🔊 Dev-phase audio is synthetically generated (voice cloning); the final **test** audio is human-recorded — expect a recording-condition shift.\n\n## Licence\nCC BY-NC 4.0 — non-commercial research use only.",
+        "content_zh": "# 数据集\n\n所有数据集分割位于 Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — 配置为 `task1a_msa`。本竞赛评分**开发测试集**（开发阶段）和**测试集**（最终阶段）。\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1a_msa\", split=\"devtest\")\n```\n\n## 分割\n\n| 分割 | 标签 | 数量 | 阶段 | 用途 |\n|---|---|---:|---|---|\n| `train`   | 有 | 3000 | 开发 | 训练 / 微调 |\n| `dev`     | 有 | 500  | 开发 | 本地验证 |\n| `devtest` | 无  | 500  | 开发（排行榜） | 提交目标，开发阶段 |\n| `test`    | 无  | 1000 | 最终评估 | 盲目排名（人工录制音频） |\n\n- **语言**：现代标准阿拉伯语（MSA）。\n- 媒体（图像/音频）通过相对路径按 `id` 引用。\n- 🔊 开发阶段音频为合成生成（语音克隆）；最终**测试**音频为人工录制 — 预期存在录制条件偏移。\n\n## 许可证\nCC BY-NC 4.0 — 仅限非商业研究使用。"
+      },
+      {
+        "index": 2,
+        "title": "Timeline",
+        "content": "# Timeline\n\n## Development phase\nTune on `train` + `dev`; submit predictions on **devtest** for the leaderboard.\n\n**Window:** `2026-05-22 → 2026-08-02`  ·  up to 5 submissions/day, 100 total.\n\n## Testing phase\nThe blind **test** set is released on [Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26); submit predictions\non `test` for the official ranking.\n\n**Window:** `2026-08-02 → 2026-08-07`  ·  up to 20 submissions/day, 100 total.\n\n> Dates are set in `competition.yaml` (`phases.start` / `phases.end`) — adjust if\n> the schedule shifts. Announcements: [website](https://imageeval2026.github.io/).",
+        "content_zh": "# 时间表\n\n## 开发阶段\n在`train`+`dev`上进行调优；在**devtest**上提交预测结果用于排行榜。\n\n**时间窗口**：`2026-05-22 → 2026-07-19`  ·  每天最多5次提交，总共100次。\n\n## 测试阶段\n盲测**test**集合在[Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)上发布；在`test`上提交预测结果用于官方排名。\n\n**时间窗口**：`2026-07-20 → 2026-07-29`  ·  每天最多20次提交，总共100次。\n\n> 日期设置在`competition.yaml`中（`phases.start` / `phases.end`）— 如果时间表有变化可进行调整。公告：[网站](https://imageeval2026.github.io/)。"
+      }
+    ]
+  },
   "17049": {
     "id": 17049,
     "title": "ImageEval 2026 — Ayn-VQA Task 1a: Spoken VQA (English)",
@@ -697,9 +565,9 @@
     "description_zh": "我理解了。这是关于 ImageEval 2026 Ayn-VQA 共享任务的说明，该任务聚焦于阿拉伯多模态理解中的文化基础问题。\n\n**任务说明翻译：**\n\n给定一幅图像和口头问题/选项（英文音频），选择正确的选项索引（0-2）。这是 ImageEval 2026 Ayn-VQA 共享任务的一部分，专注于阿拉伯多模态理解中的文化基础。数据可在 HuggingFace 获取（QCRI/AynVQA-ArabicNLP26）。请同时在以下链接注册：https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform\n\n如果您需要帮助完成此任务，请提供：\n- 图像\n- 问题和选项（英文音频转录）\n\n我将帮助您选择正确的选项。",
     "created_by": "hunzed",
     "created_when": "2026-06-10T09:38:36.786130Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084316/073f73e0eefc/logo.png?AWSAccessKeyId=codabench-prod&Signature=R7dv2U027%2BNV%2FjOH1%2FHcJ8S7thc%3D&Expires=1784469091",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084316/073f73e0eefc/logo.png?AWSAccessKeyId=codabench-prod&Signature=Pepy9L0EcdXtV8967hwKupwr0Lk%3D&Expires=1784555850",
     "participants_count": 11,
-    "submissions_count": 11,
+    "submissions_count": 14,
     "first_phase_start": null,
     "phases": [
       {
@@ -745,7 +613,7 @@
     "description_zh": "我理解你的请求。这是ImageEval 2026的一部分——一个关于阿拉伯多模态理解中文化基础的AynVQA共享任务。\n\n请注意，作为一个翻译助手，我需要说明：\n\n**我无法完成此任务，因为：**\n\n1. **缺少图像** - 你没有提供需要分析的图像\n2. **缺少语句** - 你没有提供3条需要标注为\"真\"或\"假\"的语句(MSA)\n3. **任务性质** - 这是一个多模态视觉问答任务，而非翻译任务\n\n**要完成此任务，你需要：**\n\n1. 上传相关图像\n2. 提供3条阿拉伯标准语(MSA)或英文语句\n3. 我可以帮助翻译这些语句，但标注\"真/假\"判断需要你自己基于图像内容进行\n\n**相关资源：**\n- HuggingFace数据集: QCRI/AynVQA-ArabicNLP26\n- 注册表单: https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform\n\n请提供图像和语句，我可以帮助翻译相关文本。",
     "created_by": "hunzed",
     "created_when": "2026-06-10T09:39:37.693956Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084377/5517d0a96f0a/logo.png?AWSAccessKeyId=codabench-prod&Signature=vJ65vqzWXbH%2F%2BrDTBUVMC5fc5Zs%3D&Expires=1784469091",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084377/5517d0a96f0a/logo.png?AWSAccessKeyId=codabench-prod&Signature=kaJ2tmfYmazDw4o2X3P95f4Xoqw%3D&Expires=1784555851",
     "participants_count": 8,
     "submissions_count": 6,
     "first_phase_start": null,
@@ -786,30 +654,30 @@
       }
     ]
   },
-  "17048": {
-    "id": 17048,
-    "title": "ImageEval 2026 — Ayn-VQA Task 1a: Spoken VQA (MSA)",
-    "description": "Given an image and the spoken question/options (English audio), pick the correct option index (0-2). Part of the ImageEval 2026 Ayn-VQA shared task on cultural grounding in Arabic multimodal understanding. \nData on HuggingFace (QCRI/AynVQA-ArabicNLP26). \nJoin our Slack for announcements and discussion: https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA",
-    "description_zh": "# ImageEval 2026 Ayn-VQA 共享任务\n\n给定一张图像和口头问题/选项（MSA音频），选择正确的选项索引（0-2）。\n\n这是 ImageEval 2026 Ayn-VQA 共享任务的一部分，专注于阿拉伯多模态理解中的文化根植。\n\n**数据集位置**：HuggingFace（QCRI/AynVQA-ArabicNLP26）\n\n**报名链接**：https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform",
-    "created_by": "hunzed",
-    "created_when": "2026-06-10T09:38:23.495469Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084303/9c583c7e5a2a/logo.png?AWSAccessKeyId=codabench-prod&Signature=5O%2BSp4GM78q3yODkzfX4XvskqVg%3D&Expires=1784469091",
-    "participants_count": 10,
-    "submissions_count": 6,
+  "16909": {
+    "id": 16909,
+    "title": "ArGuard 2026 — Subtask A1 (Binary Hateful Meme Detection)",
+    "description": "Arabic multimodal hateful-meme classification. Given a meme (image plus OCR-extracted Arabic text), predict whether it is Hateful or Not Hateful. Official metric: macro-F1.",
+    "description_zh": "阿拉伯语多模态仇恨迷因分类。给定一个迷因（图像加光学字符识别提取的阿拉伯语文本），预测其是否为仇恨性或非仇恨性。官方指标：宏平均F1分数。",
+    "created_by": "mohamedbayan",
+    "created_when": "2026-06-03T11:38:35.423737Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780486715/5b6f981490c6/logo.png?AWSAccessKeyId=codabench-prod&Signature=sD1Q9hSayhY%2BvxMn2fwN62K%2FbcQ%3D&Expires=1784555852",
+    "participants_count": 18,
+    "submissions_count": 45,
     "first_phase_start": null,
     "phases": [
       {
-        "id": 28473,
+        "id": 28206,
         "name": "Development Phase",
-        "start": "2026-05-21T00:00:00Z",
-        "end": "2026-08-02T00:00:00Z",
+        "start": "2026-05-14T00:00:00Z",
+        "end": "2026-08-01T00:00:00Z",
         "max_submissions_per_day": 5
       },
       {
-        "id": 28474,
+        "id": 28207,
         "name": "Testing Phase",
-        "start": "2026-08-02T00:00:00Z",
-        "end": "2026-08-07T23:55:00Z",
+        "start": "2026-08-01T00:00:00Z",
+        "end": "2026-08-07T00:00:00Z",
         "max_submissions_per_day": 20
       }
     ],
@@ -817,20 +685,68 @@
       {
         "index": 0,
         "title": "Participation",
-        "content": "# How to participate\n\n**ImageEval 2026 — Ayn-VQA Task 1a: Spoken VQA (MSA)** — the **MSA** track of Task 1a\n(Spoken VQA), part of the [ImageEval 2026](https://imageeval2026.github.io/) shared task on cultural\ngrounding in Arabic multimodal generation and understanding.\n\nGiven an image and the spoken question/options (MSA audio), pick the correct option index (0-2).\n\n## Join our Slack (please do this first)\nJoin the **[ImageEval Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA)** for announcements, deadlines, data updates, and to connect with other participants.\n\n## Who can join\nIndividuals or teams; one member submits on the team's behalf. You may enter more\nthan one track.\n\n## Steps\n1. Sign up on this Codabench page, then join the [Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA) for updates.\n2. Read the **Terms** tab — note the exact prediction format.\n3. Get the data from the Hugging Face Hub: **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**.\n4. Follow the task description in the [tasks repo](https://github.com/ImageEval2026/ImageEval2026-tasks).\n5. Predict on **devtest** during the development phase, and on **test** during the\n   final-evaluation phase.\n\n## System description paper\nAll teams are encouraged to submit a system-description paper for the workshop.\n\n## Contact\nimageeval2026@gmail.com",
-        "content_zh": "# 参与方式\n\n**ImageEval 2026 — Ayn-VQA 任务1a：口语VQA（MSA）** — 任务1a（口语VQA）的**MSA**赛道\n是[ImageEval 2026](https://imageeval2026.github.io/)共享任务的一部分，该任务聚焦阿拉伯语多模态生成和理解中的文化基础。\n\n给定一张图像和口语问题/选项（MSA音频），选择正确的选项索引（0-2）。\n\n## 注册（请首先完成此步骤）\n填写**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)**——这让组织者能够追踪参与者并通知您关于数据、截止日期和任何更新的信息。\n\n## 谁可以参加\n个人或团队；由一名成员代表团队提交。您可以参加多个赛道。\n\n## 步骤\n1. 在此Codabench页面**和**[注册表](https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform)上注册。\n2. 阅读**条款**选项卡——注意确切的预测格式。\n3. 从Hugging Face Hub获取数据：**[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**。\n4. 遵循[任务仓库](https://github.com/ImageEval2026/ImageEval2026-tasks)中的任务描述。\n5. 在开发阶段对**devtest**进行预测，在最终评估阶段对**test**进行预测。\n\n## 系统描述论文\n鼓励所有团队为研讨会提交系统描述论文。\n\n## 联系方式\nimageeval2026@gmail.com"
+        "content": "# How to participate\n\nArGuard 2026 — Task 1 / Track A · **Subtask A1: Binary Hateful Meme Detection**.\n\n## Who can join\nYou can take part as an individual or as a team. A person can participate in multiple shared tasks within ArGuard 2026 — see the full list at the [task website](https://araieval.gitlab.io/ArGuard2026/).\n\n## How to register\n1. Sign up on this CodaBench competition page.\n2. Read the [Terms](#) tab — pay particular attention to the submission file format and naming convention.\n3. Download the data from the Hugging Face Hub: [`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1).\n4. Clone the starter kit: [`araieval/ArGuard-2026-tasks`](https://github.com/araieval/ArGuard-2026-tasks).\n5. Train your model and generate predictions on the `dev_test` split during the development phase, and on the `test` split during the final-evaluation phase.\n\n## Submitting\n- One team member submits per phase via the **Submit** tab.\n- Upload your TSV prediction file as `prediction.zip` (see Terms).\n- The latest valid submission before the deadline counts as your team's final submission for that phase.\n\n## System description paper\nAll teams are encouraged to submit a system-description paper for the workshop. A single paper may cover multiple subtasks if you participated in more than one.\n\n## Contact\nQuestions: arguard2026-organizers@googlegroups.com",
+        "content_zh": "# 参赛指南\n\nArGuard 2026 — 任务1 / Track A · **子任务A1：仇恨表情包二分类检测**\n\n## 参赛资格\n您可以以个人或团队身份参加。一个人可以参加ArGuard 2026内的多个共享任务——详见[任务网站](https://araieval.gitlab.io/ArGuard2026/)的完整列表。\n\n## 如何注册\n1. 在本CodaBench竞赛页面上注册。\n2. 阅读[条款](#)选项卡——特别注意提交文件格式和命名规范。\n3. 从Hugging Face Hub下载数据：[`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1)。\n4. 克隆启动工具包：[`araieval/ArGuard-2026-tasks`](https://github.com/araieval/ArGuard-2026-tasks)。\n5. 在开发阶段对`dev_test`分割集训练模型并生成预测，在最终评估阶段对`test`分割集进行预测。\n\n## 提交\n- 每个阶段由一名团队成员通过**提交**选项卡提交。\n- 将TSV预测文件上传为`prediction.zip`（见条款）。\n- 截止日期前最后一次有效提交将作为该阶段团队的最终提交。\n\n## 系统描述论文\n鼓励所有团队为研讨会提交系统描述论文。如果您参加了多个子任务，单篇论文可涵盖多个子任务。\n\n## 联系方式\n问题咨询：arguard2026-organizers@googlegroups.com"
       },
       {
         "index": 1,
         "title": "Dataset",
-        "content": "# Dataset\n\nAll splits live on the Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — as config\n`task1a_msa`. This competition scores **devtest** (development phase) and **test**\n(final phase).\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1a_msa\", split=\"devtest\")\n```\n\n## Splits\n\n| split | labels | items | phase | purpose |\n|---|---|---:|---|---|\n| `train`   | yes | 3000 | development | training / fine-tuning |\n| `dev`     | yes | 500  | development | local validation |\n| `devtest` | no  | 500  | development (leaderboard) | submission target, dev phase |\n| `test`    | no  | 1000 | final evaluation | blind ranking (human-recorded audio) |\n\n- **Language:** MSA.\n- Media (images / audio) are referenced by **relative path** keyed on `id`.\n- 🔊 Dev-phase audio is synthetically generated (voice cloning); the final **test** audio is human-recorded — expect a recording-condition shift.\n\n## Licence\nCC BY-NC 4.0 — non-commercial research use only.",
-        "content_zh": "# 数据集\n\n所有数据集分割位于 Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — 配置为 `task1a_msa`。本竞赛评分**开发测试集**（开发阶段）和**测试集**（最终阶段）。\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1a_msa\", split=\"devtest\")\n```\n\n## 分割\n\n| 分割 | 标签 | 数量 | 阶段 | 用途 |\n|---|---|---:|---|---|\n| `train`   | 有 | 3000 | 开发 | 训练 / 微调 |\n| `dev`     | 有 | 500  | 开发 | 本地验证 |\n| `devtest` | 无  | 500  | 开发（排行榜） | 提交目标，开发阶段 |\n| `test`    | 无  | 1000 | 最终评估 | 盲目排名（人工录制音频） |\n\n- **语言**：现代标准阿拉伯语（MSA）。\n- 媒体（图像/音频）通过相对路径按 `id` 引用。\n- 🔊 开发阶段音频为合成生成（语音克隆）；最终**测试**音频为人工录制 — 预期存在录制条件偏移。\n\n## 许可证\nCC BY-NC 4.0 — 仅限非商业研究使用。"
+        "content": "# Dataset\n\nArGuard Task 1 — Track A is built around an Arabic multimodal meme dataset: each instance is an image with overlaid Arabic text (OCR-extracted). Memes are manually annotated for hatefulness.\n\nFor **Subtask A1**, every meme has a single binary label from {`Hateful`, `Not Hateful`}.\n\n## Get the data\nThe official splits live on the Hugging Face Hub at [`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1). Download them with the helper script from the starter kit:\n\n```bash\ngit clone https://github.com/araieval/ArGuard-2026-tasks.git\ncd ArGuard-2026-tasks/task1\npip install -r requirements.txt\npython data/download_data.py\n```\n\n## Splits\n\n| Split        | Records | Labels   | Phase                    | Purpose                                    |\n|--------------|--------:|----------|--------------------------|--------------------------------------------|\n| `train`      |   3,500 | full     | development              | model training                             |\n| `dev`        |     500 | full     | development              | hyperparameter selection, local evaluation |\n| `dev_test`   |     500 | **none** | development (leaderboard)| submission target for the dev-phase leaderboard |\n| `test`       |     500 | full     | final evaluation         | blind ranking (triple-annotated gold)      |\n\nThe `dev_test` split is released with labels stripped — that is the file you submit predictions for during the development phase.\n\n## Record schema (after `download_data.py`)\n```json\n{\n    \"id\": \"f9a8…b1.jpg\",\n    \"image_path\": \"img/f9a8…b1.jpg\",\n    \"text\": \"OCR-extracted Arabic text…\",\n    \"label\": \"Hateful\" | \"Not Hateful\" | null,\n    \"fine_grained_label\": [\"Mocking\", \"Incitement\"],\n    \"annotations\": []\n}\n```\n\n## Licence\nThe dataset is released under **CC BY-NC 4.0** (non-commercial research use only).\n\n## Resources\n- Starter kit: <https://github.com/araieval/ArGuard-2026-tasks>\n- Task website: <https://araieval.gitlab.io/ArGuard2026/>",
+        "content_zh": "# 数据集\n\nArGuard Task 1 — Track A 基于阿拉伯语多模态表情包数据集构建：每个实例包含一张图片和叠加在其上的阿拉伯文本（通过OCR提取）。表情包已手动标注仇恨属性。\n\n对于**子任务A1**，每个表情包都有一个来自{`Hateful`（仇恨）、`Not Hateful`（非仇恨）}的单一二元标签。\n\n## 获取数据\n官方数据集位于 Hugging Face Hub 的[`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1)。使用启动工具包中的辅助脚本下载：\n\n```bash\ngit clone https://github.com/araieval/ArGuard-2026-tasks.git\ncd ArGuard-2026-tasks/task1\npip install -r requirements.txt\npython data/download_data.py\n```\n\n## 数据分割\n\n| 数据集        | 记录数 | 标签   | 阶段                    | 用途                                    |\n|--------------|--------:|----------|--------------------------|--------------------------------------------|\n| `train`      |   3,500 | 完整     | 开发阶段              | 模型训练                             |\n| `dev`        |     500 | 完整     | 开发阶段              | 超参数选择、本地评估 |\n| `dev_test`   |     500 | **无** | 开发阶段（排行榜）| 开发阶段排行榜的提交目标 |\n| `test`       |     500 | 完整     | 最终评估         | 盲测排名（三重标注黄金标准）      |\n\n`dev_test` 数据集以标签被移除的形式发布——这是开发阶段提交预测结果的文件。\n\n## 记录架构（运行 `download_data.py` 后）\n```json\n{\n    \"id\": \"f9a8…b1.jpg\",\n    \"image_path\": \"img/f9a8…b1.jpg\",\n    \"text\": \"OCR提取的阿拉伯文本…\",\n    \"label\": \"Hateful\" | \"Not Hateful\" | null,\n    \"fine_grained_label\": [\"Mocking\", \"Incitement\"],\n    \"annotations\": []\n}\n```\n\n## 许可证\n数据集采用 **CC BY-NC 4.0** 许可证发布（仅供非商业研究使用）。\n\n## 资源\n- 启动工具包：<https://github.com/araieval/ArGuard-2026-tasks>\n- 任务网站：<https://araieval.gitlab.io/ArGuard2026/>"
       },
       {
         "index": 2,
         "title": "Timeline",
-        "content": "# Timeline\n\n## Development phase\nTune on `train` + `dev`; submit predictions on **devtest** for the leaderboard.\n\n**Window:** `2026-05-22 → 2026-08-02`  ·  up to 5 submissions/day, 100 total.\n\n## Testing phase\nThe blind **test** set is released on [Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26); submit predictions\non `test` for the official ranking.\n\n**Window:** `2026-08-02 → 2026-08-07`  ·  up to 20 submissions/day, 100 total.\n\n> Dates are set in `competition.yaml` (`phases.start` / `phases.end`) — adjust if\n> the schedule shifts. Announcements: [website](https://imageeval2026.github.io/).",
-        "content_zh": "# 时间表\n\n## 开发阶段\n在`train`+`dev`上进行调优；在**devtest**上提交预测结果用于排行榜。\n\n**时间窗口**：`2026-05-22 → 2026-07-19`  ·  每天最多5次提交，总共100次。\n\n## 测试阶段\n盲测**test**集合在[Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)上发布；在`test`上提交预测结果用于官方排名。\n\n**时间窗口**：`2026-07-20 → 2026-07-29`  ·  每天最多20次提交，总共100次。\n\n> 日期设置在`competition.yaml`中（`phases.start` / `phases.end`）— 如果时间表有变化可进行调整。公告：[网站](https://imageeval2026.github.io/)。"
+        "content": "# Timeline\n\n## Development phase\nUse this phase to tune your models on `train.jsonl` / `dev.jsonl` and submit predictions on `dev_test.jsonl` for the leaderboard.\n\n**Window:** `2026-05-14 → 2026-07-19`\n**Submissions:** up to 5 per day, 100 total.\n\n## Testing phase\nThe final blind test split is released. Train on `train.jsonl` + `dev.jsonl`, submit predictions on `test.jsonl` — your best valid submission counts toward the official ranking.\n\n**Window:** `2026-07-20 → 2026-07-29`\n**Submissions:** up to 20 per day, 100 total.\n\n> Adjust the dates inside `competition.yaml` (the `phases.start` / `phases.end` fields) if your task schedule shifts.\n\n## Workshop\nPaper submissions and notification dates will be announced on the [task website](https://araieval.gitlab.io/ArGuard2026/).",
+        "content_zh": "# 时间表\n\n## 开发阶段\n使用此阶段在 `train.jsonl` / `dev.jsonl` 上调优模型，并在 `dev_test.jsonl` 上提交预测以参与排行榜竞争。\n\n**时间窗口：** `2026-05-14 → 2026-07-19`\n**提交次数：** 每天最多5次，总共100次。\n\n## 测试阶段\n发布最终的盲测数据集。在 `train.jsonl` + `dev.jsonl` 上训练，在 `test.jsonl` 上提交预测——最佳有效提交将计入官方排名。\n\n**时间窗口：** `2026-07-20 → 2026-07-29`\n**提交次数：** 每天最多20次，总共100次。\n\n> 如果任务日程有变动，请调整 `competition.yaml` 中的日期（`phases.start` / `phases.end` 字段）。\n\n## 研讨会\n论文提交和通知日期将在[任务网站](https://araieval.gitlab.io/ArGuard2026/)上公布。"
+      }
+    ]
+  },
+  "16887": {
+    "id": 16887,
+    "title": "WSLP@EMNLP-2026 Shared Task - Word\\Sign  Presence Prediction",
+    "description": "Predict if a given word\\Sign (gloss) is present in a full Indian Sign Language (ISL) sentence video, addressing sign spotting and context alignment challenges.",
+    "description_zh": "给定一个单词\\符号（手语词汇），预测其是否出现在完整的印度手语（ISL）句子视频中，解决手语识别和上下文对齐的挑战。",
+    "created_by": "wslp_workshop",
+    "created_when": "2026-06-01T18:23:44.041000Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780338224/034be48cb6b4/logo.png?AWSAccessKeyId=codabench-prod&Signature=ZFWkxKxWBUB2Bdz5aztSftdr44k%3D&Expires=1784555852",
+    "participants_count": 12,
+    "submissions_count": 35,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 28097,
+        "name": "Training Phase",
+        "start": "2026-06-08T00:00:00Z",
+        "end": "2026-07-31T00:00:00Z",
+        "max_submissions_per_day": 20
+      },
+      {
+        "id": 28098,
+        "name": "Testing Phase",
+        "start": "2026-07-31T00:01:00Z",
+        "end": "2026-08-10T00:00:00Z",
+        "max_submissions_per_day": 20
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Overview",
+        "content": "<h1 dir=\"ltr\">Welcome to the WSLP@EMNLP-2026 Shared Task: Word\\Sign Presence Prediction</h1>\n\n<h4 dir=\"ltr\">Advancing Indian Sign Language Understanding through Sign Spotting</h4>\n\n<h2 dir=\"ltr\">Registration</h2>\n<p dir=\"ltr\">\nTo participate in this shared task, please visit the <a href=\"https://www.codabench.org/competitions/16887/#/participate-tab\">\"Participate\"</a> tab and create a Codabench account using a valid institutional or personal email address.\nParticipation is open to both individuals and teams.\n</p>\n\n<p dir=\"ltr\">\nAfter registration, navigate to your <strong>Settings</strong> and fill in all the required details.\n<br><br>\nPlease ensure that your <strong>team name</strong> (or individual name) is clearly identifiable and used consistently across all submissions.\n</p>\n\n<h2>Overview</h2>\n<p>\nIndian Sign Language (ISL) is a rich and expressive visual language. In this shared task, participants are challenged to predict whether a specific word (gloss) is present within a given ISL sentence video — a task commonly known as <em>sign spotting</em>.\n</p>\n\n<p>\nThis task is crucial for real-world applications such as query-based sign language video retrieval and semantic search. It represents a step forward in building models that understand continuous signing in a structured and meaningful way.\n</p>\n\n<p>\nWe provide a dedicated dataset — the <strong>Word\\Sign Presence Dataset</strong> — containing 1,543 (video, word) query pairs. Your goal is to build a model that can accurately predict whether a queried word is signed in a given ISL sentence video.\n</p>\n\n<h2>Phases</h2>\n<p>\nThe competition consists of two distinct phases:\n</p>\n<ul>\n  <li><strong>Phase 1: Training & Validation</strong> – Participants will train and validate their models using the provided datasets.</li>\n  <li><strong>Phase 2: Testing</strong> – A held-out test set will be released. Participants will submit predictions to evaluate the generalization of their models.</li>\n</ul>\n\n<h3>Task Details</h3>\n<ul>\n  <li><strong>Input:</strong> ISL sentence video or corresponding pose sequence, and a query word</li>\n  <li><strong>Output:</strong> Binary prediction indicating the presence of the word (1 = Present, 0 = Not Present)</li>\n  <li><strong>Dataset:</strong> Word Presence Dataset</li>\n  <li><strong>Evaluation Metrics:</strong> Accuracy, Macro Precision, Macro Recall, Macro F1-Score</li>\n</ul>\n\n<h2>Submission Guidelines</h2>\n<p>\nEach submission must be a ZIP archive named <code>submission.zip</code>, containing the following file:\n</p>\n\n<ol>\n  <li>\n    <code>answer.csv</code> – A comma-separated file with the following three columns:\n    <ul>\n      <li><strong>Column 1:</strong> <code>sentence_id</code> – ID of the input ISL sentence video</li>\n      <li><strong>Column 2:</strong> <code>query_id</code> – ID of the queried word</li>\n      <li><strong>Column 3:</strong> <code>is_present</code> – Your model’s binary prediction (<code>1</code> for Present, <code>0</code> for Not Present)</li>\n    </ul>\n    <strong>Note:</strong> Ensure that all <code>(sentence_id, query_id)</code> pairs appear in the exact same order as in the reference file. Mismatches may lead to invalid scoring or disqualification. Make sure  columns name in the answer.csv files are (sentence_is, query_id, is_present).\n  </li>\n</ol>\n\n<p>\nSample submission files is made available along with the dataset to guide your formatting. <a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/blob/main/Shared_task_WPP/sample_submission.csv\">Sample Submission file</a> \n</p>\n\n<p>\nTo submit your predictions, visit the <a href=\"https://www.codabench.org/competitions/16887/#/participate-tab\">\"Submission\"</a> tab and upload your <code>submission.zip</code> file. Participants may make multiple submissions per day, subject to platform-imposed limits.\n</p>\n\n<h2>Results and Leaderboard</h2>\n<p>\nLeaderboard results will be displayed under the <a href=\"https://www.codabench.org/competitions/16887/#/results-tab\">\"Results\"</a> tab. Final rankings will be based primarily on the <strong>F1-Score</strong> for the positive class (i.e., correct prediction of presence), with <strong>Accuracy</strong>, <strong>Precision</strong>, and <strong>Recall</strong> (all macro-averaged) serving as secondary metrics.\n</p>\n\n<p>\nTop-performing teams will be recognized and invited to present their approaches at the <strong>WSLP@EMNLP-2026</strong> event.\n</p>\n\n<h2>Acknowledgements</h2>\n<p>\nThis shared task is part of the <strong>Workshop on Sign Language Processing (WSLP@EMNLP-2026)</strong>, co-located with <strong>EMNLP 2026</strong> at <strong>Budapest, Hungary</strong>.\n</p>\n\n<p>\nWe sincerely thank all participants, organizers, collaborators, and the broader research community for their continued efforts in advancing the field of sign language technology.\n</p>\n<p>\nTo stay updated and connect with other participants, join our Discord server \n<ul>\n\t<li> <a href=\"https://discord.gg/ty7dqTHC2v\"> Discord : Shared Task </a> </li>\n\t<li> <a href=\"https://discord.gg/x6tHXEFyW7\"> Discord : Workshop </a> </li>\n\t<li><a href=\"https://exploration-lab.github.io/WSLP-2026/task/\"> Shared Task Webpage </a> </li>\n\t</ul>\n</p>",
+        "content_zh": "# 欢迎来到WSLP@EMNLP-2026共享任务：词/手语存在预测\n\n## 通过手语识别推进印度手语理解\n\n## 注册\n\n要参加此共享任务，请访问<a href=\"https://www.codabench.org/competitions/16887/#/participate-tab\">\"参与\"</a>选项卡，并使用有效的机构或个人电子邮件地址创建Codabench账户。\n个人和团队都可以参加。\n\n注册后，导航到您的**设置**并填入所有必需信息。\n\n请确保您的**团队名称**（或个人名称）清晰可辨，并在所有提交中保持一致。\n\n## 概述\n\n印度手语（ISL）是一种丰富而富有表现力的视觉语言。在此共享任务中，参与者需要预测特定词汇（标记）是否出现在给定的ISL句子视频中——这个任务通常被称为**手语识别**。\n\n此任务对于实际应用至关重要，例如基于查询的手语视频检索和语义搜索。这代表了在构建以结构化和有意义的方式理解连续手语的模型方面的进步。\n\n我们提供了一个专用数据集——**词/手语存在数据集**——包含1,543个（视频、词汇）查询对。您的目标是构建一个模型，能够准确预测查询的词汇是否在给定的ISL句子视频中被手语表达。\n\n## 阶段\n\n竞赛包括两个不同的阶段：\n\n- **阶段1：训练与验证** – 参与者将使用提供的数据集训练和验证其模型。\n- **阶段2：测试** – 将发布保留的测试集。参与者将提交预测以评估其模型的泛化能力。\n\n## 任务详情\n\n- **输入：** ISL句子视频或对应的姿态序列，以及一个查询词汇\n- **输出：** 表示词汇存在的二元预测（1 = 存在，0 = 不存在）\n- **数据集：** 词汇存在数据集\n- **评估指标：** 准确率、宏平均精准率、宏平均召回率、宏平均F1分数\n\n## 提交指南\n\n每次提交必须是名为`submission.zip`的ZIP压缩包，包含以下文件：\n\n1. `answer.csv` – 逗号分隔的文件，包含以下三列：\n   - **第1列：** `sentence_id` – 输入ISL句子视频的ID\n   - **第2列：** `query_id` – 查询词汇的ID\n   - **第3列：** `is_present` – 您模型的二元预测（`1`表示存在，`0`表示不存在）\n   \n   **注意：** 确保所有`(sentence_id, query_id)`对与参考文件的顺序完全相同。不匹配可能导致无效计分或被取消资格。请确保answer.csv文件中的列名为(sentence_id, query_id, is_present)。\n\n样本提交文件已随数据集提供，用以指导您的格式设置。<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/blob/main/Shared_task_WPP/sample_submission.csv\">样本提交文件</a>\n\n要提交您的预测，请访问<a href=\"https://www.codabench.org/competitions/16887/#/participate-tab\">\"提交\"</a>选项卡并上传您的`submission.zip`文件。参与者每天可进行多次提交，需遵守平台限制。\n\n## 结果和排行榜\n\n排行榜结果将显示在<a href=\"https://www.codabench.org/competitions/16887/#/resu\">排行榜</a>选项卡下。"
+      },
+      {
+        "index": 1,
+        "title": "Data",
+        "content": "<h3>🧠 Word Presence Prediction Task</h3>\n\n<p>\nParticipants are required to develop models that can predict whether a given word is present in a sign language video. This task focuses on learning meaningful word-level representations from Indian Sign Language videos.\n</p>\n\n<p>\nFor training, participants may use any publicly available dataset. A large corpus of Indian Sign Language videos with corresponding annotations is available for download from:\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Train-Dataset\" target=\"_blank\">\nhere\n</a>.\n</p>\n\n<p>\nThe validation set can be accessed from \n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Validation-Dataset\" target=\"_blank\">\nhere\n</a>.\n</p>\n\n<p>\nThe test set will be released after the Training Phase. Once available, you can download the test data from \n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Test-Dataset\" target=\"_blank\">\nhere\n</a>.\n</p>\n\n<p>\n📌 <strong>Note:</strong> Please ensure your models do not use any external private data. Only publicly available resources are permitted.\n</p>\n<p> <a href=\"https://github.com/zeleznyt/T5_for_SLT/blob/WSLP2026/WSLP2026_BASELINE.md\" target=\"_blank\">\nStarting kit\n</a>\n</p>",
+        "content_zh": "<h3>🧠 词语存在预测任务</h3>\n\n<p>\n参赛者需要开发模型，以预测给定词语是否出现在手语视频中。该任务专注于从印度手语视频中学习有意义的词级表征。\n</p>\n\n<p>\n在训练中，参赛者可以使用任何公开可用的数据集。一个包含大量印度手语视频及相应注释的语料库可从以下位置下载：\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Train-Dataset\" target=\"_blank\">\n这里\n</a>。\n</p>\n\n<p>\n验证集可从\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Validation-Dataset\" target=\"_blank\">\n这里\n</a>\n访问。\n</p>\n\n<p>\n测试集将在训练阶段后发布。发布后，您可以从\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Test-Dataset\" target=\"_blank\">\n这里\n</a>\n下载测试数据。\n</p>\n\n<p>\n📌 <strong>注意：</strong> 请确保您的模型不使用任何外部私有数据。仅允许使用公开可用的资源。\n</p>"
+      },
+      {
+        "index": 2,
+        "title": "Evaluation",
+        "content": "<p><strong>📊 Evaluation Criteria</strong></p>\n\n<p>\nSubmissions for the Word\\Sign Presence Prediction task will be evaluated using the following metrics:\n</p>\n\n<ul>\n  <li><strong>Accuracy</strong></li>\n  <li><strong>Macro Precision</strong></li>\n  <li><strong>Macro Recall</strong></li>\n  <li><strong>Macro F1-Score</strong></li>\n</ul>\n\n<p>\nThese metrics ensure a balanced evaluation across all word classes, especially in the presence of class imbalance.\n</p>\n\n<p>\nYou can read more about these evaluation metrics in the following resources:\n<a href=\"https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html\" target=\"_blank\">Precision, Recall, and F1-Score (Scikit-learn docs)</a></li>\n</p>",
+        "content_zh": "<p><strong>📊 评估标准</strong></p>\n\n<p>\n单词/手势存在预测任务的提交将使用以下指标进行评估：\n</p>\n\n<ul>\n  <li><strong>准确率（Accuracy）</strong></li>\n  <li><strong>宏平均精准率（Macro Precision）</strong></li>\n  <li><strong>宏平均召回率（Macro Recall）</strong></li>\n  <li><strong>宏平均F1分数（Macro F1-Score）</strong></li>\n</ul>\n\n<p>\n这些指标确保了对所有单词类别的平衡评估，特别是在存在类别不平衡的情况下。\n</p>\n\n<p>\n您可以在以下资源中了解更多关于这些评估指标的信息：\n<a href=\"https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html\" target=\"_blank\">精准率、召回率和F1分数（Scikit-learn文档）</a></li>\n</p>"
       }
     ]
   },
@@ -841,9 +757,9 @@
     "description_zh": "印度手语（ISL）视频数据中的孤立手势识别到其对应的词标签（词汇标注）",
     "created_by": "wslp_workshop",
     "created_when": "2026-06-01T19:06:53.463848Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780340813/3af0ccccd8c8/logo.png?AWSAccessKeyId=codabench-prod&Signature=TV5GXv%2B5NAb0NfuexqNsbiMXQwQ%3D&Expires=1784469092",
-    "participants_count": 16,
-    "submissions_count": 92,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780340813/3af0ccccd8c8/logo.png?AWSAccessKeyId=codabench-prod&Signature=1CLyicw3sSTg2vHK2UYQm2M%2BUzs%3D&Expires=1784555852",
+    "participants_count": 17,
+    "submissions_count": 104,
     "first_phase_start": null,
     "phases": [
       {
@@ -889,8 +805,8 @@
     "description_zh": "从印度手语（ISL）视频/姿态数据到英文文本的句子级别翻译，使用iSign数据集。",
     "created_by": "wslp_workshop",
     "created_when": "2026-06-01T18:10:35.480917Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780337435/69dcff319769/logo.png?AWSAccessKeyId=codabench-prod&Signature=UGTWw7G8sopLLbPvTroONubqBaE%3D&Expires=1784469093",
-    "participants_count": 17,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780337435/69dcff319769/logo.png?AWSAccessKeyId=codabench-prod&Signature=%2FzZVgjzzgcpF4QL4aukX%2BxysDT8%3D&Expires=1784555853",
+    "participants_count": 18,
     "submissions_count": 8,
     "first_phase_start": null,
     "phases": [
@@ -930,54 +846,6 @@
       }
     ]
   },
-  "16887": {
-    "id": 16887,
-    "title": "WSLP@EMNLP-2026 Shared Task - Word\\Sign  Presence Prediction",
-    "description": "Predict if a given word\\Sign (gloss) is present in a full Indian Sign Language (ISL) sentence video, addressing sign spotting and context alignment challenges.",
-    "description_zh": "给定一个单词\\符号（手语词汇），预测其是否出现在完整的印度手语（ISL）句子视频中，解决手语识别和上下文对齐的挑战。",
-    "created_by": "wslp_workshop",
-    "created_when": "2026-06-01T18:23:44.041000Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780338224/034be48cb6b4/logo.png?AWSAccessKeyId=codabench-prod&Signature=emIkOLhEkrHfybTcnAJqX7XjifY%3D&Expires=1784469092",
-    "participants_count": 12,
-    "submissions_count": 34,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 28097,
-        "name": "Training Phase",
-        "start": "2026-06-08T00:00:00Z",
-        "end": "2026-07-31T00:00:00Z",
-        "max_submissions_per_day": 20
-      },
-      {
-        "id": 28098,
-        "name": "Testing Phase",
-        "start": "2026-07-31T00:01:00Z",
-        "end": "2026-08-10T00:00:00Z",
-        "max_submissions_per_day": 20
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Overview",
-        "content": "<h1 dir=\"ltr\">Welcome to the WSLP@EMNLP-2026 Shared Task: Word\\Sign Presence Prediction</h1>\n\n<h4 dir=\"ltr\">Advancing Indian Sign Language Understanding through Sign Spotting</h4>\n\n<h2 dir=\"ltr\">Registration</h2>\n<p dir=\"ltr\">\nTo participate in this shared task, please visit the <a href=\"https://www.codabench.org/competitions/16887/#/participate-tab\">\"Participate\"</a> tab and create a Codabench account using a valid institutional or personal email address.\nParticipation is open to both individuals and teams.\n</p>\n\n<p dir=\"ltr\">\nAfter registration, navigate to your <strong>Settings</strong> and fill in all the required details.\n<br><br>\nPlease ensure that your <strong>team name</strong> (or individual name) is clearly identifiable and used consistently across all submissions.\n</p>\n\n<h2>Overview</h2>\n<p>\nIndian Sign Language (ISL) is a rich and expressive visual language. In this shared task, participants are challenged to predict whether a specific word (gloss) is present within a given ISL sentence video — a task commonly known as <em>sign spotting</em>.\n</p>\n\n<p>\nThis task is crucial for real-world applications such as query-based sign language video retrieval and semantic search. It represents a step forward in building models that understand continuous signing in a structured and meaningful way.\n</p>\n\n<p>\nWe provide a dedicated dataset — the <strong>Word\\Sign Presence Dataset</strong> — containing 1,543 (video, word) query pairs. Your goal is to build a model that can accurately predict whether a queried word is signed in a given ISL sentence video.\n</p>\n\n<h2>Phases</h2>\n<p>\nThe competition consists of two distinct phases:\n</p>\n<ul>\n  <li><strong>Phase 1: Training & Validation</strong> – Participants will train and validate their models using the provided datasets.</li>\n  <li><strong>Phase 2: Testing</strong> – A held-out test set will be released. Participants will submit predictions to evaluate the generalization of their models.</li>\n</ul>\n\n<h3>Task Details</h3>\n<ul>\n  <li><strong>Input:</strong> ISL sentence video or corresponding pose sequence, and a query word</li>\n  <li><strong>Output:</strong> Binary prediction indicating the presence of the word (1 = Present, 0 = Not Present)</li>\n  <li><strong>Dataset:</strong> Word Presence Dataset</li>\n  <li><strong>Evaluation Metrics:</strong> Accuracy, Macro Precision, Macro Recall, Macro F1-Score</li>\n</ul>\n\n<h2>Submission Guidelines</h2>\n<p>\nEach submission must be a ZIP archive named <code>submission.zip</code>, containing the following file:\n</p>\n\n<ol>\n  <li>\n    <code>answer.csv</code> – A comma-separated file with the following three columns:\n    <ul>\n      <li><strong>Column 1:</strong> <code>sentence_id</code> – ID of the input ISL sentence video</li>\n      <li><strong>Column 2:</strong> <code>query_id</code> – ID of the queried word</li>\n      <li><strong>Column 3:</strong> <code>is_present</code> – Your model’s binary prediction (<code>1</code> for Present, <code>0</code> for Not Present)</li>\n    </ul>\n    <strong>Note:</strong> Ensure that all <code>(sentence_id, query_id)</code> pairs appear in the exact same order as in the reference file. Mismatches may lead to invalid scoring or disqualification. Make sure  columns name in the answer.csv files are (sentence_is, query_id, is_present).\n  </li>\n</ol>\n\n<p>\nSample submission files is made available along with the dataset to guide your formatting. <a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/blob/main/Shared_task_WPP/sample_submission.csv\">Sample Submission file</a> \n</p>\n\n<p>\nTo submit your predictions, visit the <a href=\"https://www.codabench.org/competitions/16887/#/participate-tab\">\"Submission\"</a> tab and upload your <code>submission.zip</code> file. Participants may make multiple submissions per day, subject to platform-imposed limits.\n</p>\n\n<h2>Results and Leaderboard</h2>\n<p>\nLeaderboard results will be displayed under the <a href=\"https://www.codabench.org/competitions/16887/#/results-tab\">\"Results\"</a> tab. Final rankings will be based primarily on the <strong>F1-Score</strong> for the positive class (i.e., correct prediction of presence), with <strong>Accuracy</strong>, <strong>Precision</strong>, and <strong>Recall</strong> (all macro-averaged) serving as secondary metrics.\n</p>\n\n<p>\nTop-performing teams will be recognized and invited to present their approaches at the <strong>WSLP@EMNLP-2026</strong> event.\n</p>\n\n<h2>Acknowledgements</h2>\n<p>\nThis shared task is part of the <strong>Workshop on Sign Language Processing (WSLP@EMNLP-2026)</strong>, co-located with <strong>EMNLP 2026</strong> at <strong>Budapest, Hungary</strong>.\n</p>\n\n<p>\nWe sincerely thank all participants, organizers, collaborators, and the broader research community for their continued efforts in advancing the field of sign language technology.\n</p>\n<p>\nTo stay updated and connect with other participants, join our Discord server \n<ul>\n\t<li> <a href=\"https://discord.gg/ty7dqTHC2v\"> Discord : Shared Task </a> </li>\n\t<li> <a href=\"https://discord.gg/x6tHXEFyW7\"> Discord : Workshop </a> </li>\n\t<li><a href=\"https://exploration-lab.github.io/WSLP-2026/task/\"> Shared Task Webpage </a> </li>\n\t</ul>\n</p>",
-        "content_zh": "# 欢迎来到WSLP@EMNLP-2026共享任务：词/手语存在预测\n\n## 通过手语识别推进印度手语理解\n\n## 注册\n\n要参加此共享任务，请访问<a href=\"https://www.codabench.org/competitions/16887/#/participate-tab\">\"参与\"</a>选项卡，并使用有效的机构或个人电子邮件地址创建Codabench账户。\n个人和团队都可以参加。\n\n注册后，导航到您的**设置**并填入所有必需信息。\n\n请确保您的**团队名称**（或个人名称）清晰可辨，并在所有提交中保持一致。\n\n## 概述\n\n印度手语（ISL）是一种丰富而富有表现力的视觉语言。在此共享任务中，参与者需要预测特定词汇（标记）是否出现在给定的ISL句子视频中——这个任务通常被称为**手语识别**。\n\n此任务对于实际应用至关重要，例如基于查询的手语视频检索和语义搜索。这代表了在构建以结构化和有意义的方式理解连续手语的模型方面的进步。\n\n我们提供了一个专用数据集——**词/手语存在数据集**——包含1,543个（视频、词汇）查询对。您的目标是构建一个模型，能够准确预测查询的词汇是否在给定的ISL句子视频中被手语表达。\n\n## 阶段\n\n竞赛包括两个不同的阶段：\n\n- **阶段1：训练与验证** – 参与者将使用提供的数据集训练和验证其模型。\n- **阶段2：测试** – 将发布保留的测试集。参与者将提交预测以评估其模型的泛化能力。\n\n## 任务详情\n\n- **输入：** ISL句子视频或对应的姿态序列，以及一个查询词汇\n- **输出：** 表示词汇存在的二元预测（1 = 存在，0 = 不存在）\n- **数据集：** 词汇存在数据集\n- **评估指标：** 准确率、宏平均精准率、宏平均召回率、宏平均F1分数\n\n## 提交指南\n\n每次提交必须是名为`submission.zip`的ZIP压缩包，包含以下文件：\n\n1. `answer.csv` – 逗号分隔的文件，包含以下三列：\n   - **第1列：** `sentence_id` – 输入ISL句子视频的ID\n   - **第2列：** `query_id` – 查询词汇的ID\n   - **第3列：** `is_present` – 您模型的二元预测（`1`表示存在，`0`表示不存在）\n   \n   **注意：** 确保所有`(sentence_id, query_id)`对与参考文件的顺序完全相同。不匹配可能导致无效计分或被取消资格。请确保answer.csv文件中的列名为(sentence_id, query_id, is_present)。\n\n样本提交文件已随数据集提供，用以指导您的格式设置。<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/blob/main/Shared_task_WPP/sample_submission.csv\">样本提交文件</a>\n\n要提交您的预测，请访问<a href=\"https://www.codabench.org/competitions/16887/#/participate-tab\">\"提交\"</a>选项卡并上传您的`submission.zip`文件。参与者每天可进行多次提交，需遵守平台限制。\n\n## 结果和排行榜\n\n排行榜结果将显示在<a href=\"https://www.codabench.org/competitions/16887/#/resu\">排行榜</a>选项卡下。"
-      },
-      {
-        "index": 1,
-        "title": "Data",
-        "content": "<h3>🧠 Word Presence Prediction Task</h3>\n\n<p>\nParticipants are required to develop models that can predict whether a given word is present in a sign language video. This task focuses on learning meaningful word-level representations from Indian Sign Language videos.\n</p>\n\n<p>\nFor training, participants may use any publicly available dataset. A large corpus of Indian Sign Language videos with corresponding annotations is available for download from:\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Train-Dataset\" target=\"_blank\">\nhere\n</a>.\n</p>\n\n<p>\nThe validation set can be accessed from \n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Validation-Dataset\" target=\"_blank\">\nhere\n</a>.\n</p>\n\n<p>\nThe test set will be released after the Training Phase. Once available, you can download the test data from \n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Test-Dataset\" target=\"_blank\">\nhere\n</a>.\n</p>\n\n<p>\n📌 <strong>Note:</strong> Please ensure your models do not use any external private data. Only publicly available resources are permitted.\n</p>\n<p> <a href=\"https://github.com/zeleznyt/T5_for_SLT/blob/WSLP2026/WSLP2026_BASELINE.md\" target=\"_blank\">\nStarting kit\n</a>\n</p>",
-        "content_zh": "<h3>🧠 词语存在预测任务</h3>\n\n<p>\n参赛者需要开发模型，以预测给定词语是否出现在手语视频中。该任务专注于从印度手语视频中学习有意义的词级表征。\n</p>\n\n<p>\n在训练中，参赛者可以使用任何公开可用的数据集。一个包含大量印度手语视频及相应注释的语料库可从以下位置下载：\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Train-Dataset\" target=\"_blank\">\n这里\n</a>。\n</p>\n\n<p>\n验证集可从\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Validation-Dataset\" target=\"_blank\">\n这里\n</a>\n访问。\n</p>\n\n<p>\n测试集将在训练阶段后发布。发布后，您可以从\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Test-Dataset\" target=\"_blank\">\n这里\n</a>\n下载测试数据。\n</p>\n\n<p>\n📌 <strong>注意：</strong> 请确保您的模型不使用任何外部私有数据。仅允许使用公开可用的资源。\n</p>"
-      },
-      {
-        "index": 2,
-        "title": "Evaluation",
-        "content": "<p><strong>📊 Evaluation Criteria</strong></p>\n\n<p>\nSubmissions for the Word\\Sign Presence Prediction task will be evaluated using the following metrics:\n</p>\n\n<ul>\n  <li><strong>Accuracy</strong></li>\n  <li><strong>Macro Precision</strong></li>\n  <li><strong>Macro Recall</strong></li>\n  <li><strong>Macro F1-Score</strong></li>\n</ul>\n\n<p>\nThese metrics ensure a balanced evaluation across all word classes, especially in the presence of class imbalance.\n</p>\n\n<p>\nYou can read more about these evaluation metrics in the following resources:\n<a href=\"https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html\" target=\"_blank\">Precision, Recall, and F1-Score (Scikit-learn docs)</a></li>\n</p>",
-        "content_zh": "<p><strong>📊 评估标准</strong></p>\n\n<p>\n单词/手势存在预测任务的提交将使用以下指标进行评估：\n</p>\n\n<ul>\n  <li><strong>准确率（Accuracy）</strong></li>\n  <li><strong>宏平均精准率（Macro Precision）</strong></li>\n  <li><strong>宏平均召回率（Macro Recall）</strong></li>\n  <li><strong>宏平均F1分数（Macro F1-Score）</strong></li>\n</ul>\n\n<p>\n这些指标确保了对所有单词类别的平衡评估，特别是在存在类别不平衡的情况下。\n</p>\n\n<p>\n您可以在以下资源中了解更多关于这些评估指标的信息：\n<a href=\"https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html\" target=\"_blank\">精准率、召回率和F1分数（Scikit-learn文档）</a></li>\n</p>"
-      }
-    ]
-  },
   "15590": {
     "id": 15590,
     "title": "Foundation Model for Ultrasound Biometry",
@@ -985,9 +853,9 @@
     "description_zh": "该竞赛在超声图像回归任务上评估基础模型。参赛者预测解剖学标志点坐标。评估指标为平均径向误差（MRE）和平均绝对误差（MAE），数值越低越好。",
     "created_by": "jared2408",
     "created_when": "2026-04-12T05:59:27.070072Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-13-1776048868/504537dff745/logo.png?AWSAccessKeyId=codabench-prod&Signature=pEp33xsDjz3vUVPCzpdp1z1V7c8%3D&Expires=1784469104",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-13-1776048868/504537dff745/logo.png?AWSAccessKeyId=codabench-prod&Signature=WEYzV%2B7waEgXDWItAGAQCrd3K2U%3D&Expires=1784555865",
     "participants_count": 195,
-    "submissions_count": 2046,
+    "submissions_count": 2103,
     "first_phase_start": null,
     "phases": [
       {
@@ -1080,9 +948,9 @@
     "description_zh": "# LiDAR数据合成\n\n针对LUMPI汉诺威路边交叉口分布的LiDAR数据合成；在合成数据上训练，在真实数据上评估。\n\n---\n\n**关键要素：**\n\n- **数据合成** - 针对LUMPI汉诺威道路交叉口场景的LiDAR合成数据生成\n- **训练集** - 使用合成LiDAR数据进行模型训练\n- **评估集** - 在真实LiDAR数据上进行性能评估",
     "created_by": "mshahbazkharal",
     "created_when": "2026-04-30T07:09:42.003344Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833284/11b6c0bba3ac/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=Rj393jg2WycSFbJprDLMO6D29OA%3D&Expires=1784469100",
-    "participants_count": 7,
-    "submissions_count": 2,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833284/11b6c0bba3ac/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=Gqmdfx0FKqRO2gSotMW7Xj0geB4%3D&Expires=1784555862",
+    "participants_count": 9,
+    "submissions_count": 10,
     "first_phase_start": null,
     "phases": [
       {
@@ -1146,9 +1014,9 @@
     "description_zh": "合成LiDAR数据，针对V2X-Real的基础设施中心分布；在合成数据上训练，在真实V2X-Real-IC上评估。",
     "created_by": "mshahbazkharal",
     "created_when": "2026-04-30T07:14:54.554531Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833294/142ee41df4c9/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=toyj78y8aJnfVqENgHrCrTl2TCY%3D&Expires=1784469101",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833294/142ee41df4c9/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=Y5ONT6nhjLpF2SaIaI28faUfEUE%3D&Expires=1784555861",
     "participants_count": 8,
-    "submissions_count": 3,
+    "submissions_count": 5,
     "first_phase_start": null,
     "phases": [
       {
@@ -1205,57 +1073,57 @@
       }
     ]
   },
-  "17555": {
-    "id": 17555,
-    "title": "2026 “金睛杯”光学时敏弱小目标探测挑战赛（赛道一：红外视频卫星空中动目标检测）",
-    "description": "光学时敏弱小目标探测是智能视觉感知领域中的重要研究方向，也是复杂环境下目标探测与态势感知中的关键技术问题。与常规目标检测任务相比，弱小目标通常存在成像尺度小、目标能量弱、背景干扰强、目标形态不稳定等特点，单帧图像中可利用的信息十分有限，算法在真实场景中容易出现漏检、误检和检测结果不连续等问题。\n本次挑战赛依托 CSIG2026 学术会议平台，围绕光学时敏弱小目标探测中的关键问题，设置\"红外视频卫星空中动目标检测\"和\"基于事件相机的运动小目标检测\"两个赛道，为参赛队伍提供公平、可复现的算法验证平台，推动相关数据建设、方法创新和技术交流。",
-    "description_zh": "Optical temporal-sensitive small target detection is an important research direction in intelligent visual perception and a key technical issue in target detection and situational awareness in complex environments. Compared with conventional target detection tasks, small targets typically exhibit characteristics such as small imaging scale, weak target energy, strong background interference, and unstable target morphology. The information available in a single frame is very limited, and algorithms are prone to missed detections, false positives, and discontinuous detection results in real-world scenarios.\n\nThis challenge competition, based on the CSIG2026 academic conference platform, focuses on key problems in optical temporal-sensitive small target detection, establishing two tracks: \"infrared video satellite aerial moving target detection\" and \"event camera-based moving small target detection.\" It provides participating teams with a fair and reproducible algorithm validation platform, promoting related data construction, method innovation, and technical exchange.",
-    "created_by": "irnewbie",
-    "created_when": "2026-07-16T15:58:17.338227Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217497/8cef6a724fb4/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=cqy4dDqyzlVkWPJIAk3HmKi8us8%3D&Expires=1784469086",
-    "participants_count": 2,
-    "submissions_count": 0,
+  "17595": {
+    "id": 17595,
+    "title": "ChildSafeAds: Commercial Content in Child-Facing YouTube Videos (NLLP @ EMNLP 2026)",
+    "description": "Detect and classify commercial content in YouTube videos that plausibly reach a minor audience: commercial type, product category, and compliance risk flags grounded in EU consumer law. Framed as a system-design challenge over four data-access levels.",
+    "description_zh": "# YouTube商业内容检测与分类系统：未成年人受众合规评估\n\n## 系统概述\n针对可能触及未成年人受众的YouTube视频中的商业内容进行检测、分类和合规风险评估，基于欧盟消费者法律框架，分四个数据访问层级架构。\n\n---\n\n## 第一层：基础内容识别\n\n### 检测维度\n- **视频元数据分析**：频道类目、观众年龄统计、内容标签\n- **视频脚本扫描**：自动字幕/手动转录的商业语言模式识别\n- **视觉元素识别**：品牌logo、产品展示、赞助标识\n\n### 输出分类\n| 商业内容类型 | 识别信号 | 风险等级 |\n|---------|--------|--------|\n| 直接广告 | 明确产品推荐、定价信息 | 高 |\n| 原生广告 | 产品集成、品牌合作 | 中高 |\n| 隐性置入 | 背景品牌、角色使用产品 | 中 |\n| 联盟营销 | 推荐链接、折扣码 | 中高 |\n\n---\n\n## 第二层：产品类别与监管映射\n\n### 高风险产品类别（未成年人保护）\n- **食品饮料**：高糖/高盐、能量饮料、酒精相关\n- **科技产品**：游戏、社交应用、沉浸式内容\n- **时尚美容**：化妆品、整容相关服务、极端减肥产品\n- **金融产品**：加密资产、赌博、在线交易平台\n- **药品与补充剂**：处方药推荐、声称疗效的补充品\n\n### 分类规则\n```\n产品类别 → 年龄敏感度 → 欧盟指令 → 特定标记要求\n```\n\n**示例**：能量饮料(食品) → 高(12岁以下) → 2006/114/EC(误导性广告) → 必须标注\"咖啡因含量\"\n\n---\n\n## 第三层：欧盟合规风险标记\n\n### 法律框架应用\n\n#### A. 欧盟《消费者权利指令》(2011/83/EU)\n- **风险标记**：\n  - 缺少清晰的商业意图披露\n  - 不透明的价格条款\n  - 无冷静期声明（适用产品）\n\n#### B. 《不公平商业惯例指令》(2005/29/EC)\n- **风险标记**：\n  - 虚假/误导性声明（健康效益、性能）\n  - 攻击性营销实践（强制购买、时间压力）\n  - 儿童针对性的操纵策略\n\n#### C. 《视听传媒服务指令》(2010/13/EU)修订案\n- **风险标记**：\n  - 缺少商业广告边界标记(\"reklame\"、\"Werbung\"、\"publicité\")\n  - 儿童节目中的插播广告违规\n  - 名人/影响者代言未标注\n\n#### D. 《儿童在线隐私保护规则》(GDPR第8条+指南)\n- **风险标记**：\n  - 14岁以下受众的个性化广告\n  - 未获得可验证的父母同意\n  - 行为追踪/数据收集未披露\n\n### 风险评分矩阵\n\n| 合规维度 | 低风险 | 中风险 | 高风险 |\n|---------|-------|-------|-------|\n| 披露透明度 | 明确标记 | 模糊标记 | 无标记 |\n| 年龄针对性 | 通用内容 | 混合受众 | 明确针对儿童 |\n| 声称验证性 | 有证据支持 | 部分声称 | 未实质性声称 |\n| 数据实践 | 最小收集 | 追踪但同意 | 追踪无同意 |\n\n---\n\n## 第四层：报告与可视化输出\n\n### 检测结果架构\n\n```json\n{\n  \"video_id\": \"string\",\n  \"commercial_content\": {\n    \"detected\": boolean,\n    \"types\": [\"native_advertising\", \"affiliate_marketing\"],\n    \"confidence\": 0.92\n  },\n  \"product_classification\": {\n    \"category\": \"energy_beverages\",\n    \"risk_tier\": \"high\",\n    \"age_sensitivity\": \"12+\"\n  },\n  \"compliance_flags\": {\n    \"disclosure_clarity\": {\n      \"status\": \"non-compliant\",\n      \"issue\": \"商业意图未标记\",\n      \"regulation\": \"2010/13/EU\",\n      \"severity\": \"critical\"\n    },\n    \"misleading_claims\": {\n      \"status\": \"flagged\",\n      \"claims\": [\"增加体能\", \"改善注意力\"],\n      \"evidence_status\": \"unsubstantiated\",\n      \"regulation\": \"2005/29/EC\",\n      \"severity\": \"high\"\n    },\n    \"influencer_compliance\": {\n      \"status\": \"non-compliant\",\n      \"issue\": \"影响者代言未披露\",\n      \"regulation\": \"2005/29/EC + 2010/13/EU\",\n      \"severity\": \"high\"\n    },\n    \"gdpr_data_practices\": {\n      \"status\": \"warning\",\n      \"issue\": \"链接产品的应用进行未同意追踪\",\n      \"regulation\": \"GDPR Art.8\",\n      \"severity\": \"medium\"\n    }\n  },\n  \"audience_assessment\": {\n    \"likely_minor_reach\": 0.78,\n    \"channel_category\": \"gaming\",\n    \"viewer_demographics\": \"primarily_under_18\"\n  },\n  \"recommendations\": [\n    \"添加明确的商业披露标记\",\n    \"删除未实质性支持的健康声称\",\n    \"获取影响者代言的书面披露\",\n    \"审查链接产品的儿童隐私设置\"\n  ]\n}\n```\n\n### 仪表板指标\n- **内容风险热图**：按产品类别和合规维度\n- **频道合规趋势**：时间序列违规频率\n- **欧盟成员国地区映射**：国家特定法律强度权重\n- **影响者网络分析**：代言关系与披露一致性\n\n---\n\n## 实施考量\n\n### 技术栈\n- **自然语言处理**：多语言商业语言检测(英语、德语、法语、西班牙语等)\n- **计算机视觉**：品牌识别、视觉商业标记\n- **图知识库**：产品-类别-法规映射\n\n### 局限性与透明度\n- 文化差异：商业实践的地区规范差异\n- 假阳性风险：讽刺/教育性内容误分类\n- 法律滞后：新兴平台实践的监管覆盖不足\n\n---\n\n## 参考法律工具\n\n| 指令 | 关键条款 | 实施成员国差异 |\n|-----|--------|------------|\n| 2010/13/EU(AVMSD) | 第9条:广告披露 | 德国严格;南欧执法宽松 |\n| 2005/29/EC | 附件I:禁止实践 | 一致性高 |\n| GDPR | 第8条:儿童同意 | 比利时(7岁);其他国家(16岁) |\n\n此系统设计可扩展至TikTok、Instagram等平台的适应性修改。",
+    "created_by": "thalesbertaglia",
+    "created_when": "2026-07-20T09:51:37.748643Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784541097/a7995f6fb767/logo.png?AWSAccessKeyId=codabench-prod&Signature=nNZMbrl6Q0zfBUf9qO68aAqgvt0%3D&Expires=1784555843",
+    "participants_count": 3,
+    "submissions_count": 1,
     "first_phase_start": null,
     "phases": [
       {
-        "id": 29256,
-        "name": "模型训练与验证",
-        "start": "2026-07-20T16:00:00Z",
-        "end": "2026-08-28T04:00:00Z",
-        "max_submissions_per_day": 30
+        "id": 29351,
+        "name": "Development",
+        "start": "2026-07-20T00:00:00Z",
+        "end": "2026-08-10T00:00:00Z",
+        "max_submissions_per_day": 10
       },
       {
-        "id": 29257,
-        "name": "最终评测",
-        "start": "2026-08-28T11:00:00Z",
-        "end": "2026-08-31T04:00:00Z",
-        "max_submissions_per_day": 2
+        "id": 29352,
+        "name": "Evaluation",
+        "start": "2026-08-11T00:00:00Z",
+        "end": "2026-08-18T00:00:00Z",
+        "max_submissions_per_day": 5
       }
     ],
     "pages": [
       {
         "index": 0,
-        "title": "赛事日程",
-        "content": "# 赛事日程\n\n| 时间 | 任务 |\n| :---: | :---: |\n| 2026年5月29日－6月7日 | 组委会完成比赛任务、参赛办法、评比方式、报名材料和发布页面的准备工作。 |\n| 2026年6月8日 09:00 | 组委会在网站、微信公众号等平台正式公布比赛任务、参赛办法和评比方式，并同步启动报名。 |\n| 2026年6月8日－7月20日 | 参赛队伍报名及邮件资格确认。 |\n| 2026年7月20日 18:00 | 报名截止，组委会完成报名信息汇总与资格确认。 |\n| 2026年7月21日 － 8月28日 12：00 结束 | 比赛正式开始，组委会发布比赛训练集和评测格式，参赛队伍开展模型训练、算法优化和结果准备。 |\n| 2026年8月28日 19：00 开始 － 8月31日 12：00 结束 | 组委会开放比赛评测通道，各参赛队伍在规定时间内完成比赛任务，并将测试结果上传比赛网站。 |\n| 2026年9月4日－9月8日 | 参赛队伍提交算法代码、模型文件及算法报告，组委会对各参赛队伍进行真实性审查。 |\n| 2026年9月10日－9月14日 | 组委会完成成绩复核，并发布比赛成绩。 |\n| 2026年11月－12月 | 举行颁奖典礼。 |",
-        "content_zh": "这是一份中文文档，原样返回如下：\n\n# 赛事日程\n\n| 时间 | 任务 |\n| :---: | :---: |\n| 2026年5月29日－6月7日 | 组委会完成比赛任务、参赛办法、评比方式、报名材料和发布页面的准备工作。 |\n| 2026年6月8日 09:00 | 组委会在网站、微信公众号等平台正式公布比赛任务、参赛办法和评比方式，并同步启动报名。 |\n| 2026年6月8日－7月20日 | 参赛队伍报名及邮件资格确认。 |\n| 2026年7月20日 18:00 | 报名截止，组委会完成报名信息汇总与资格确认。 |\n| 2026年7月21日 － 8月28日 12：00 结束 | 比赛正式开始，组委会发布比赛训练集和评测格式，参赛队伍开展模型训练、算法优化和结果准备。 |\n| 2026年8月28日 19：00 开始 － 8月31日 12：00 结束 | 组委会开放比赛评测通道，各参赛队伍在规定时间内完成比赛任务，并将测试结果上传比赛网站。 |\n| 2026年9月4日－9月8日 | 参赛队伍提交算法代码、模型文件及算法报告，组委会对各参赛队伍进行真实性审查。 |\n| 2026年9月10日－9月14日 | 组委会完成成绩复核，并发布比赛成绩。 |\n| 2026年11月－12月 | 举行颁奖典礼。 |"
+        "title": "Overview",
+        "content": "# ChildSafeAds — Commercial Content in Child-Facing YouTube Videos\n\n**A shared task at [NLLP](https://nllpw.org) @ EMNLP 2026.**\n\nImagine you work at an authority responsible for monitoring commercial content that reaches minors on video platforms. How would you build that monitoring system, and what can it achieve at each level of data access and cost?\n\nInfluencer marketing reaching children and teenagers is widespread on YouTube and frequently undisclosed. Assessing it at platform scale needs automated support, but doing so responsibly means classifying what is being sold, categorising it, and reasoning about the advertising-law concerns it raises. This task puts those three together on real data.\n\n## The Data\n\n**3,360 instances**: train 2,353 / dev 504 / test 503, **channel-disjoint** (no channel appears in more than one split). Each instance is one sponsored segment, community-verified via SponsorBlock, on a channel curated to plausibly reach a significant teen audience, paired with the product page its description links to.\n\nFields are grouped into **four access levels ordered by collection cost**: the segment transcript, then video metadata including YouTube's own paid-promotion flag, then channel context, then the crawled product page. A transcript-only system uses one field; each further level costs more to obtain at scale.\n\n## The Sub-Tasks\n\n| | Task | Output |\n|---|---|---|\n| **ST1** | Commercial type | one label (EU Consumer Rights Directive contract types) |\n| **ST2** | Product category | one or more labels |\n| **ST3** | Compliance risk flags | one or more flags, grounded in EU consumer law (UCPD, AVMSD, DSA, CRD) |\n\nParticipate in any subset. Definitions are in `labels_taxonomy.md`, shipped with the data; per-flag legal grounding is in `legal_provisions.json` as citations and notes, not statutory text.\n\nTwo things are given by the dataset and should not be re-assessed by systems: the channel is child-facing, and the segment is commercial. The question is what is being sold and what concerns it raises.\n\n## What We Are Actually Asking\n\nAccuracy is scored on the leaderboard, but the interesting question is a design one: **what does each additional level of data buy, and is it worth the cost?** Every submission therefore records which data levels it used, and that appears on the leaderboard beside the score, so results read as *accuracy at a given data cost*. Beyond that one dropdown, we highly encourage a short **system design report** describing the trade-offs you weighed. It is not a full paper, and it is where the most interesting findings of this task are likely to live.\n\nA **bonus track** invites teams to go further and collect off-platform destination data themselves (shops, terms of service, apps) starting from the outbound link we ship. Not scored, very welcome in the report.\n\n## Getting Started\n\n1. Register (approval required; registering accepts the data-use terms).\n2. Download **Public Data** and the **Starting Kit** from the Participate tab.\n3. Run the majority baseline to produce a valid submission, check it with the included format checker, and submit.\n\nSee the **Data**, **Evaluation**, and **Terms** pages for specifics.",
+        "content_zh": "# ChildSafeAds — 儿童面向YouTube视频中的商业内容\n\n**一项共同任务，在[NLLP](https://nllpw.org) @ EMNLP 2026举行。**\n\n想象你在一个负责监督到达视频平台未成年人的商业内容的机构工作。你如何构建监控系统，以及在每个数据访问和成本级别，它能达到什么效果？\n\n影响者营销到达儿童和青少年在YouTube上广泛存在，且经常未披露。在平台规模上评估它需要自动化支持，但负责任地进行此操作意味着分类正在销售的内容、对其进行分类，并推理其引发的广告法律问题。本任务在真实数据上将这三个方面结合在一起。\n\n## 数据\n\n**3,360个实例**：训练集2,353 / 开发集504 / 测试集503，**频道不相交**（任何频道不在多个分割中出现）。每个实例是一个赞助片段，通过SponsorBlock社区验证，在精心策划的可能到达大量青少年受众的频道上，配有其描述链接到的产品页面。\n\n字段按**四个访问级别按收集成本排序**分组：片段文本记录、包括YouTube自有付费推广标志的视频元数据、频道上下文，以及爬取的产品页面。纯文本记录系统使用一个字段；每个进一步级别在规模上获取需要更多成本。\n\n## 子任务\n\n| | 任务 | 输出 |\n|---|---|---|\n| **ST1** | 商业类型 | 一个标签（EU消费者权益指令合同类型） |\n| **ST2** | 产品类别 | 一个或多个标签 |\n| **ST3** | 合规风险标志 | 一个或多个标志，基于EU消费者法（UCPD、AVMSD、DSA、CRD） |\n\n可参与任何子集。定义在随数据提供的`labels_taxonomy.md`中；每个标志的法律依据在`legal_provisions.json`中作为引用和说明，而非法定文本。\n\n数据集给出两点且系统不应重新评估：频道面向儿童，片段为商业内容。问题是销售的是什么以及它引发什么问题。\n\n## 我们实际在询问的内容\n\n准确度在排行榜上评分，但有趣的问题是设计问题：**每个额外的数据级别能买到什么，成本是否值得？** 因此每个提交都记录其使用了哪些数据级别，这出现在排行榜上分数旁边，所以结果读作*给定数据成本下的准确度*。除了那个下拉菜单外，我们高度鼓励一份简短的**系统设计报告**，描述你权衡的权衡。这不是完整论文，这是本任务最有趣的发现可能存在的地方。\n\n**额外赛道**邀请团队进一步自行收集平台外目标数据（商店、服务条款、应用程序），从我们提供的出站链接开始。不计分，非常欢迎在报告中呈现。\n\n## 入门\n\n1. 注册（需要批准；注册即表示接受数据使用条款）。\n2. 从\"参与\"标签下载**公开数据**和**入门工具包**。\n3. 运行多数基线以生成有效提交、用包含的格式检查器检查，然后提交。\n\n见**数据**、**评估**和**条款**页面了解具体信息。"
       },
       {
         "index": 1,
-        "title": "赛事说明",
-        "content": "## 挑战赛的目的\n\n**通过本次挑战赛促进科研技术的交流研讨和应用推广**  \n\n本次挑战赛旨在依托 CSIG2026 学术会议平台，围绕光学时敏弱小目标探测中的关键问题，搭建面向学术界和产业界的开放竞赛与交流平台，吸引更多高校、科研院所和企业团队参与红外视频小目标检测、事件相机小目标检测等方向的研究。  \n\n**通过本次挑战赛促进光学时敏弱小目标探测技术发展**  \n\n通过竞赛汇聚工业界和学术界的智慧与力量，促进相关算法、数据集和评价体系的共同发展，推动领域垂类大模型发展与应用，加速技术创新和产业推广。  \n\n---\n\n## 挑战赛的意义\n\n**光学时敏弱小目标探测应用广泛，关键技术问题突出**  \n\n光学时敏弱小目标探测是智能视觉感知领域中的重要研究方向，也是复杂环境下目标探测与态势感知中的关键技术问题。弱小目标通常存在成像尺度小、目标能量弱、背景干扰强、目标形态不稳定等特点，单帧图像中可利用的信息十分有限。  \n\n**红外视频卫星目标检测亟需融合时域信息与轨迹关联**  \n\n卫星视角下的红外视频弱小目标往往具有成像距离远、信噪比低、背景复杂、运动轨迹细弱等特点，仅依靠单帧检测难以获得稳定结果，需要进一步结合多帧时域信息、运动一致性和目标轨迹关联关系。\n\n**事件相机小目标检测亟需发挥事件流时空连续性优势**  \n\n事件相机能够以异步方式感知亮度变化，具有高时间分辨率、低延迟、高动态范围和低数据冗余等优势。面向事件点云和事件流的时空建模方法发展，对于提升复杂场景下运动小目标的检测能力具有重要意义。\n\n**公开数据和统一评测标准有助于推动领域发展**  \n\n红外视频卫星目标和事件相机小目标相关公开数据仍相对有限，真实场景数据获取和标注成本较高。本次竞赛通过开放具有针对性的数据资源和统一评测标准，为参赛队伍提供公平、可复现的算法验证平台。\n\n---\n\n## 任务设置\n\n### 赛道一：红外视频卫星空中动目标检测  \n\n  赛道一的主要任务是对视频中的红外小目标的质心进行预测，附加任务是对目标进行跟踪。参赛队伍根据红外小目标图像特点自行设计相关算法，使用主办方提供的数据集进行模型训练，最终以召回率（Recall）、精确率（Precision）和 F1 分数作为评价指标，以及轨迹完整度和轨迹准确度作为附加评价指标，衡量参赛队伍算法模型的性能。\n\n### 赛道二：基于事件相机的运动小目标检测  \n\n  赛道二的主要任务是对事件流中的目标事件进行逐事件分割。参赛队伍根据事件小目标特性自行设计相关算法，使用主办方提供的事件数据集进行模型训练，最终以交并比（IoU）、准确率（ACC）、检测率（Pd）和虚警率（Fa）作为主要评价指标，衡量参赛队伍算法模型的性能。\n\n---\n\n## 数据集简介\n\n### 赛道一数据集简介\n\n  竞赛数据集由国防科技大学与武汉大学联合开发，包括：基于热红外卫星的 IRAir 数据集、基于 Landsat 卫星的 IRSatVideo-LEO 数据集、基于高分四号卫星的 IRSatVideo-GEO 数据集，以及实测卫星热红外视频数据，共 1400 段视频序列（1000 段用于训练，200 段用于验证，200 段用于测试）。比赛开始前，将发布训练集和验证集视频及掩码标注；进入评测阶段时公布测试集视频，测试集标签不公开。\n\n| 数据集 | 数据集简介 | 图像与目标示意 |\n| :---: | :---: | :---: |\n| IRAir | 数据来源：热红外 SDG 卫星一号图像，仿真目标<br>目标特点：飞机，低轨，暗目标<br>分辨率：256×256 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image1.png\" alt=\"IRAir 图像与目标示意\" width=\"400\"> |\n| IRSatVideo-LEO | 数据来源：Landsat 卫星图像，仿真目标<br>目标特点：低轨，亮目标，短波红外<br>分辨率：1024×1024 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image2.png\" alt=\"IRSatVideo-LEO 图像与目标示意\" width=\"400\"> |\n| IRSatVideo-GEO | 数据来源：高分四号卫星图像，仿真目标<br>目标特点：地球同步轨道，中波红外，弱目标<br>分辨率：742×733（平均） | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image3.png\" alt=\"IRSatVideo-GEO 图像与目标示意\" width=\"400\"> |\n| 实测热红外视频数据 | 数据来源：实测卫星热红外视频<br>目标特点：长波<br>分辨率：512×640 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image4.png\" alt=\"实测热红外视频数据图像与目标示意\" width=\"400\"> |\n\n\n### 赛道二数据集简介\n\n  基于 DAVIS346 事件相机的 EV-UAV 数据集作为训练、验证和测试数据集。总共 147 段序列（99 段用于训练，24 段用于验证，24 段用于测试）。（暂定）\n\n| 数据集 | 数据集简介 | 图像与目标示意 |\n| :---: | :---: | :---:|\n| EV-UAV &nbsp;| 数据来源：DAVIS346 事件相机实拍<br>分辨率：346×260 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/赛道二-image1.png\" alt=\"EV-UAV 图像与目标示意\" width=\"600\"> |\n\n---\n\n## 挑战赛评价方式\n\n### 赛道一评价方式\n\n  本次挑战赛赛道一的算法评价指标为召回率（Recall）和精确率（Precision），附加评价指标为轨迹完整度、轨迹准确度。算法最终评分结果由 F1 分数和附加分数组成。\n\n$$\nRecall = \\frac{TD}{AT}, \\quad Precision = \\frac{TD}{TD + FD}\n$$\n\n$$\nF1 = \\frac{2 \\times Recall \\times Precision}{Recall + Precision}\n$$\n\n$$\nTrackCompleteness = \\frac{NTA}{N}, \\quad TrackAccuracy = \\frac{NTA}{NA}\n$$\n\n| 附加得分项 | 阈值一 | 阈值二 | 阈值三 |\n| :---: | :---: | :---: | :---: |\n| 轨迹完整度得分 | ≥25%：+2分 | ≥35%：+3分 | ≥50%：+5分 |\n| 轨迹准确度得分 | ≥55%：+2分 | ≥65%：+3分 | ≥80%：+5分 |\n\n  最终得分为 F1 分数 × 100 + 附加得分，满分为 110 分。\n\n---\n\n### 赛道二评价方式\n\n  赛道二的算法评价指标为交并比（IoU）、准确率（Acc）、检测率（Pd）和虚警率（Fa），最终评分结果由各指标加权得分。\n\n$$\nIoU = \\frac{GT \\cap Pred}{GT \\cup Pred}, \\quad Acc = \\frac{TP_{target}}{TP_{target} + FN_{target}}\n$$\n\n$$\nPd = \\frac{TD}{AT}, \\quad Fa = \\frac{FD}{N_{frame} \\times H \\times W}\n$$\n\n$$\nScore_{Fa} = e^{-10000 \\times Fa}\n$$\n\n$$\nScore = 0.4Pd + 0.3Score_{Fa} + 0.2IoU + 0.1Acc\n$$\n\n---\n\n## 结果提交方式\n\n**结果提交格式、提交入口和提交次数限制**：待补充  \n\n**提交内容与时间要求**：参赛队伍须在规定时间内提交测试结果，并在后继阶段提交算法代码、模型文件及算法报告。组委会将对各参赛队伍进行真实性审查。  \n\n**真实性与可复现性要求**：为避免参赛队伍滥用其他数据集或验证集标签信息用于算法训练，参赛队伍需提供算法训练时的相关参数，确保算法结果可复现。如发现违规使用数据信息或算法结果无法复现，组委会将按赛事规则处理。\n\n---\n\n## 专题研讨会  \n组委会将举办挑战赛技术论坛，邀请获得一、二等奖的参赛队伍参加作特邀技术报告。\n\n---\n\n## 知识产权归属  \n\n参赛队伍提交的算法及可执行模型的知识产权归参赛团队所有，比赛数据集归主办方所有。  \n\n各参赛队伍需要承诺提交的结果可重复，组织方承诺履行保密义务，并不用于除本挑战赛外的任何其他用途。  \n\n参赛队伍应保证所提供的方案、算法属于自有知识产权。组织方对参赛队伍因使用本队提供完成的算法和结果而产生的任何实际侵权或者被任何第三方指控侵权概不负责。一旦上述情况和事件发生，参赛队伍必须承担一切相关法律责任和经济赔偿责任并保护组织方免于承担该等责任。",
-        "content_zh": "# 这是中文原文\n\n您提供的文本已经是简体中文，无需翻译。以下为原文内容：\n\n## 挑战赛的目的\n\n**通过本次挑战赛促进科研技术的交流研讨和应用推广**  \n\n本次挑战赛旨在依托 CSIG2026 学术会议平台，围绕光学时敏弱小目标探测中的关键问题，搭建面向学术界和产业界的开放竞赛与交流平台，吸引更多高校、科研院所和企业团队参与红外视频小目标检测、事件相机小目标检测等方向的研究。  \n\n**通过本次挑战赛促进光学时敏弱小目标探测技术发展**  \n\n通过竞赛汇聚工业界和学术界的智慧与力量，促进相关算法、数据集和评价体系的共同发展，推动领域垂类大模型发展与应用，加速技术创新和产业推广。  \n\n---\n\n## 挑战赛的意义\n\n**光学时敏弱小目标探测应用广泛，关键技术问题突出**  \n\n光学时敏弱小目标探测是智能视觉感知领域中的重要研究方向，也是复杂环境下目标探测与态势感知中的关键技术问题。弱小目标通常存在成像尺度小、目标能量弱、背景干扰强、目标形态不稳定等特点，单帧图像中可利用的信息十分有限。  \n\n**红外视频卫星目标检测亟需融合时域信息与轨迹关联**  \n\n卫星视角下的红外视频弱小目标往往具有成像距离远、信噪比低、背景复杂、运动轨迹细弱等特点，仅依靠单帧检测难以获得稳定结果，需要进一步结合多帧时域信息、运动一致性和目标轨迹关联关系。\n\n**事件相机小目标检测亟需发挥事件流时空连续性优势**  \n\n事件相机能够以异步方式感知亮度变化，具有高时间分辨率、低延迟、高动态范围和低数据冗余等优势。面向事件点云和事件流的时空建模方法发展，对于提升复杂场景下运动小目标的检测能力具有重要意义。\n\n**公开数据和统一评测标准有助于推动领域发展**  \n\n红外视频卫星目标和事件相机小目标相关公开数据仍相对有限，真实场景数据获取和标注成本较高。本次竞赛通过开放具有针对性的数据资源和统一评测标准，为参赛队伍提供公平、可复现的算法验证平台。\n\n---\n\n## 任务设置\n\n### 赛道一：红外视频卫星空中动目标检测  \n\n赛道一的主要任务是对视频中的红外小目标的质心进行预测，附加任务是对目标进行跟踪。参赛队伍根据红外小目标图像特点自行设计相关算法，使用主办方提供的数据集进行模型训练，最终以召回率（Recall）、精确率（Precision）和 F1 分数作为评价指标，以及轨迹完整度和轨迹准确度作为附加评价指标，衡量参赛队伍算法模型的性能。\n\n### 赛道二：基于事件相机的运动小目标检测  \n\n赛道二的主要任务是对事件流中的目标事件进行逐事件分割。参赛队伍根据事件小目标特性自行设计相关算法，使用主办方提供的事件数据集进行模型训练，最终以交并比（IoU）、准确率（ACC）、检测率（Pd）和虚警率（Fa）作为主要评价指标，衡量参赛队伍算法模型的性能。\n\n---\n\n## 数据集简介\n\n### 赛道一数据集简介\n\n竞赛数据集由国防科技大学与武汉大学联合开发，包括：基于热红外卫星的 IRAir 数据集、基于 Landsat 卫星的 IRSatVideo-LEO 数据集、基于高分四号卫星的 IRSatVideo-GEO 数据集，以及实测卫星热红外视频数据，共 1400 段视频序列（1000 段用于训练，200 段用于验证，200 段用于测试）。比赛开始前，将发布训练集和验证集视频及掩码标注；进入评测阶段时公布测试集视频，测试集标签不公开。\n\n| 数据集 | 数据集简介 | 图像与目标示意 |\n| :---: | :---: | :---: |\n| IRAir | 数据来源：热红外 SDG 卫星一号图像，仿真目标<br>目标特点：飞机，低轨，暗目标<br>分辨率：256×256 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image1.png\" alt=\"IRAir 图像与目标示意\" width=\"400\"> |\n| IRSatVideo-LEO | 数据来源：Landsat 卫星图像，仿真目标<br>目标特点：低轨，亮目标，短波红外<br>分辨率：1024×1024 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image2.png\" alt=\"IRSatVideo-LEO 图像与目标示意\" width=\"400\"> |\n| IRSatVideo-GEO | 数据来源：高分四号卫星图像，仿真目标<br>目标特点：地球同步轨道，中波红外，弱目标<br>分辨率：742×733（平均） | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image3.png\" alt=\"IRSatVideo-GEO 图像与目标示意\" width=\"400\"> |\n| 实测热红外视频数据 | 数据来源：实测卫星热红外视频<br>目标特点：长波<br>分辨率：512×640 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image4.png\" alt=\"实测热红外视频数据图像与目标示意\" width=\"400\"> |\n\n### 赛道二数据集简介\n\n基于 DAVIS346 事件相机的 EV-UAV 数据集作为训练、验证和测试数据集。总共 147 段序列（99 段用于训练，24 段用于验证，24 段用于测试）。（暂定）\n\n| 数据集 | 数据集简介 | 图像与目标示意 |\n| :---: | :---: | :---:|\n| EV-UAV | 数据来源：DAVIS346 事件相机实拍<br>分辨率：346×260 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/赛道二-image1.png\" alt=\"EV-UAV 图像与目标示意\" width=\"600\"> |\n\n---\n\n## 挑战赛评价方式\n\n### 赛道一评价方式\n\n本次挑战赛赛道一的算法评价指标为召回率（Recall）和精确率（Precision），附加评价指标为轨迹完整度、轨迹准确度。算法最终评分结果由 F1 分数和附加分数组成。\n\n$$\nRecall = \\frac{TD}{AT}, \\quad Precision = \\frac{TD}{TD + FD}\n$$\n\n$$\nF1 = \\frac{2 \\times Recall \\times Precision}{Recall + Precision}\n$$\n\n$$\nTrackCompleteness = \\frac{NTA}{N}, \\quad TrackAccuracy = \\frac{NTA}{NA}\n$$\n\n| 附加得分项 | 阈值一 | 阈值二 | 阈值三 |\n| :---: | :---: | :---: | :---: |\n| 轨迹完整度得分 | ≥25%：+2分 | ≥35%：+3分 | ≥50%：+5分 |\n| 轨迹准确度得分 | ≥55%：+2分 | ≥65%：+3分 | ≥80%：+5分 |\n\n最终得分为 F1 分数 × 100 + 附加得分，满分为 110 分。\n\n---\n\n### 赛道二评价方式\n\n赛道二的算法评价指标为交并比（IoU）、准确率（Acc）、检测率（Pd）和虚警率（Fa），最终评分结果由各指标加权得分。\n\n$$\nIoU = \\frac{GT \\cap Pred}{GT \\cup Pred}, \\quad Acc = \\frac{TP_{target}}{TP_{target} + FN_{target}}\n$$\n\n$$\nPd = \\frac{TD}{AT}, \\quad Fa = \\frac{FD}{N_{frame} \\times H \\times W}\n$$\n\n$$\nScore_{Fa} = e^{-10000 \\times Fa}\n$$\n\n$$\nScore = 0.4Pd + 0.3Score_{Fa} + 0.2IoU + 0.1Acc\n$$\n\n---\n\n## 结果提交方式\n\n**结果提交格式、提交入口和提交次数限制**：待补充  \n\n**提交内容与时间要求**：参赛队伍须在规定时间内提交测试结果，并在后继阶段提交算法代码、模型文件及算法报告。组委会将对各参赛队伍进行真实性审查。  \n\n**真实性与可复现性要求**：为避免参赛队伍滥用其他数据集或验证集标签信息用于算法训练，参赛队伍需提供算法训练时的相关参数，确保算法结果可复现。如发现违规使用数据信息或算法结果无法复现，组委会将按赛事规则处理。\n\n---\n\n## 专题研讨会  \n组委会将举办挑战赛技术论坛，邀请获得一、二等奖的参赛队伍参加作特邀技术报告。\n\n---\n\n## 知识产权归属  \n\n参赛队伍提交的算法及可执行模型的知识产权归参赛团队所有，比赛数据集归主办方所有。  \n\n各参赛队伍需要承诺提交的结果可重复，组织方承诺履行保密义务，并不用于除本挑战赛外的任何其他用途。  \n\n参赛队伍应保证所提供的方案、算法属于自有知识产权。组织方对参赛队伍因使用本队提供完成的算法和结果而产生的任何实际侵权或者被任何第三方指控侵权概不负责。一旦上述情况和事件发生，参赛队伍必须承担一切相关法律责任和经济赔偿责任并保护组织方免于承担该等责任。"
+        "title": "Data",
+        "content": "# Data\n\n## Where to Get It\n\nThe dataset is attached to each phase of this competition. Go to the **Participate** tab and download **Public Data**:\n\n| Phase | File | Contents |\n|-------|------|----------|\n| Development | `public_data_dev.zip` | `train.jsonl` (2,353) and `dev.jsonl` (504), both labelled, plus documentation |\n| Evaluation | `public_data_test.zip` | `test.jsonl` (503), unlabelled, plus documentation |\n\nTest inputs are released when the evaluation phase opens. The **Starting Kit**, on the same tab, contains a loader for this format, a submission-format checker, a majority baseline, and a valid sample submission.\n\nEach zip also contains `README.md` (dataset card), `labels_taxonomy.md` (full label definitions, severity, the direct-exhortation test, the bonus track) and `legal_provisions.json`.\n\n## Format\n\nSplits are **channel-disjoint**: no channel appears in more than one split. Each line of a JSONL file is one instance, with fields grouped into four access levels ordered by collection cost, so a system can use as much or as little as its design calls for.\n\n| Level | Field | Contents | Collection cost |\n|-------|-------|----------|-----------------|\n| 1 | `transcript` | `text`, `segment_start`, `segment_end` | Lowest; scales to the whole platform |\n| 2 | `video_context` | `videoID`, `title`, `description`, `official_disclosure` | One metadata call per video |\n| 3 | `channel_context` | `channelID`, `channel_name` | One channel lookup |\n| 4 | `product_page` | `raw_url`, `resolved_url`, `page_title`, `text` | Crawl the outbound link; some pages are dead or block automated access |\n\n`official_disclosure` is YouTube's own \"Includes paid promotion\" label: `\"true\"`, `\"false\"`, or `\"\"` when it could not be determined.\n\n`train.jsonl` and `dev.jsonl` carry a `labels` block; `test.jsonl` does not.\n\n```json\n\"labels\": {\n  \"st1\": \"digital_content_or_services\",\n  \"st2\": [\"apps\", \"gambling_adjacent\"],\n  \"st3\": [\"undisclosed_advertising\"],\n  \"st3_evidence\": [{\"flag\": \"undisclosed_advertising\", \"quote\": \"verbatim span from this instance's text\"}]\n}\n```\n\nEach `st3_evidence` quote is verbatim from that instance's own transcript, description, or product page. Quotes that could not be matched to the source are omitted, so a flag may carry no evidence entry.\n\n## Labels and Legal Grounding\n\n`labels_taxonomy.md` gives the full definitions. In brief: ST1 is single-label (what the buyer receives), ST2 is multi-label (what is being sold), ST3 is multi-label compliance flags, where `no_flag` and `insufficient_context` each stand alone.\n\n`legal_provisions.json` maps each flag to the EU instruments and provisions that ground it, with a severity attribute and a note on what each provision requires. It holds **citations and notes, not statutory text**, and covers the provisions behind the flags in this release rather than the whole of EU advertising law. The identifiers resolve against EUR-Lex and Commission guidance if you want to retrieve fuller legal material yourself; whether doing so improves flag prediction is an open question we would like reports to address.\n\n## Provenance and Curation\n\nChannels were curated to plausibly reach a significant teen audience: an automated classifier over channel descriptions, video titles and metadata, followed by a human-validated exclusion pass. This is not guaranteed correct for every channel, but it means **systems do not need to assess audience themselves**; treat \"child-facing\" as a dataset-level property.\n\nLabels are automatically annotated, with human validation and legal calibration. Some compliance flags remain under legal review and may be refined in a point release; any change will be announced on this competition. Human-annotated calibration examples will be released with the evaluation phase.\n\n## Licence\n\nThe dataset derives from the [SponsorBlock](https://sponsor.ajay.app/database) database, licensed **CC BY-NC-SA 4.0**. Under that licence's share-alike term, the derived labels, instance structure and resolved page text are distributed under the same licence, attributing SponsorBlock. Video-derived fields are for research use under the task's terms. See the Terms page and the dataset `README.md`.",
+        "content_zh": "# 数据\n\n## 获取方式\n\n数据集附加到此竞赛的每个阶段。请进入**参赛**选项卡并下载**公开数据**：\n\n| 阶段 | 文件 | 内容 |\n|------|------|------|\n| 开发阶段 | `public_data_dev.zip` | `train.jsonl`（2,353条）和`dev.jsonl`（504条），均已标注，附带文档 |\n| 评估阶段 | `public_data_test.zip` | `test.jsonl`（503条），未标注，附带文档 |\n\n测试输入在评估阶段开启时发布。同一选项卡上的**启动工具包**包含该格式的加载器、提交格式检查器、多数基线和有效样本提交。\n\n每个压缩包还包含`README.md`（数据集说明卡）、`labels_taxonomy.md`（完整标签定义、严重程度、直接劝说测试、额外任务）和`legal_provisions.json`。\n\n## 格式\n\n数据集划分采用**渠道隔离**方式：任何渠道仅出现在一个数据集中。JSONL文件的每一行代表一个实例，字段分为四个访问级别，按收集成本排序，以便系统根据需要使用相应的数据。\n\n| 级别 | 字段 | 内容 | 收集成本 |\n|------|------|------|---------|\n| 1 | `transcript` | `text`、`segment_start`、`segment_end` | 最低；可扩展至整个平台 |\n| 2 | `video_context` | `videoID`、`title`、`description`、`official_disclosure` | 每个视频一次元数据调用 |\n| 3 | `channel_context` | `channelID`、`channel_name` | 一次频道查询 |\n| 4 | `product_page` | `raw_url`、`resolved_url`、`page_title`、`text` | 爬取出站链接；部分页面已失效或阻止自动访问 |\n\n`official_disclosure`是YouTube自身的\"包含付费推广\"标签：`\"true\"`、`\"false\"`或当无法确定时为`\"\"`。\n\n`train.jsonl`和`dev.jsonl`包含`labels`块；`test.jsonl`不包含。\n\n```json\n\"labels\": {\n  \"st1\": \"digital_content_or_services\",\n  \"st2\": [\"apps\", \"gambling_adjacent\"],\n  \"st3\": [\"undisclosed_advertising\"],\n  \"st3_evidence\": [{\"flag\": \"undisclosed_advertising\", \"quote\": \"verbatim span from this instance's text\"}]\n}\n```\n\n每个`st3_evidence`引文来自该实例本身的转录文本、描述或产品页面的逐字段选。无法匹配到来源的引文被省略，因此一个标志可能不带任何证据条目。\n\n## 标签和法律依据\n\n`labels_taxonomy.md`提供完整定义。简言之：ST1是单标签（购买者获得的内容）、ST2是多标签（被销售的内容）、ST3是多标签合规标志，其中`no_flag`和`insufficient_context`各自独立。\n\n`legal_provisions.json`将每个标志映射到为其提供依据的欧盟法律工具和条款，并附带严重程度属性和各条款要求的说明。它包含**引文和注释，而非法定条文**，涵盖本版本中标志后的条款而非整个欧盟广告法。标识符可根据EUR-Lex和委员会指南解析，如需检索更完整的法律材料；这样做是否改进标志预测是我们希望报告探讨的一个开放问题。\n\n## 来源和策划\n\n频道经过策划，合理覆盖重要的青少年受众：使用基于频道描述、视频标题和元数据的自动分类器，随后进行人工验证的排除审查。这对每个频道的准确性无法保证，但意味着**系统无需自行评估受众**；将\"面向儿童\"视为数据集级属性。\n\n标签经过自动注释，并进行人工验证和法律校准。部分合规标志仍在法律审查中，可能在补丁版本中细化；任何变更将在此竞赛中公布。人工标注的校准示例将与评估阶段一同发布。\n\n## 许可证\n\n该数据集源自[SponsorBlock](https://sponsor.ajay.app/database)数据库，采用**CC BY-NC-SA 4.0**许可。根据该许可的共享条款，衍生标签、实例结构"
       },
       {
         "index": 2,
-        "title": "赛事报名",
-        "content": "## 挑战赛参与者要求  \n\n  自愿报名参赛，参赛队伍和成员的组成可为：  \n  1. 各培养单位正式注册教师、在读本科生、研究生以及博士生；  \n  2. 国内各研究团体、企事业单位。  \n\n---\n\n## 报名方式\n\n  仅接受以团队形式通过邮件报名参赛，每支参赛队伍人员不超过5人（不包括指导老师），每名参赛选手只能参加1个参赛队。\n\n  参赛团队下载并填写CSIG2026\"金睛杯\"光学时敏弱小目标探测挑战赛的报名表，将报名表发邮件至竞赛联系人邮箱wangyujj@nudt.edu.cn。\n\n  邮件标题格式：\"CSIG2026'金睛杯'光学时敏弱小目标探测挑战赛_(参赛队单位名称)_(参赛队名称)\"。\n\n  邮件内容包括附件报名表。报名表格式如下：\n\n| 参赛成员姓名&nbsp;&nbsp;&nbsp; | 组成 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  | 单位&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;| 职称&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;| 手机号 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 邮箱&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;|\n|:-------------------:|:------------------:|:-----------------:|:---------------------:|:----------------------:|:--------------------:|\n|              | 队长     |      |      |        |      |\n|              | 队员     |      |      |        |      |\n|              | 队员     |      |      |        |      |\n|              | 队员     |      |      |        |      |\n|              | 队员     |      |      |        |      |\n|              | 指导老师 |      |      |        |      |\n|              | 指导老师 |      |      |        |      |\n\n  报名截止时间：2026年7月20日 18:00。\n\n  组织方收到邮件并与报名者确认后，报名成功。\n\n  报名表下载：[2026年第七届中国图像图形学学会图形技术挑战赛报名表.xlsx](https://jinsight-cup.github.io/JinSight-ChallengeV3/downloads/2026年第七届中国图像图形学学会图形技术挑战赛报名表.xls?v=20260629)  \n\n---\n\n## 参赛团队注册方式  \n参赛团队报名成功，并在排行榜上获得有效的公开成绩，即为成功注册，可获得评奖资格。  \n\n---\n\n## 比赛交流微信群  \n\n<div align=\"center\">\n  <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/wechat-challenge-group-1.jpg?v=20260629-2\" alt=\"比赛交流微信群二维码\" width=\"250\">\n</div>",
-        "content_zh": "## 挑战赛参与者要求  \n\n自愿报名参赛，参赛队伍和成员的组成可为：  \n1. 各培养单位正式注册教师、在读本科生、研究生以及博士生；  \n2. 国内各研究团体、企事业单位。  \n\n---\n\n## 报名方式\n\n仅接受以团队形式通过邮件报名参赛，每支参赛队伍人员不超过5人（不包括指导老师），每名参赛选手只能参加1个参赛队。\n\n参赛团队下载并填写CSIG2026\"金睛杯\"光学时敏弱小目标探测挑战赛的报名表，将报名表发邮件至竞赛联系人邮箱wangyujj@nudt.edu.cn。\n\n邮件标题格式：\"CSIG2026'金睛杯'光学时敏弱小目标探测挑战赛_(参赛队单位名称)_(参赛队名称)\"。\n\n邮件内容包括附件报名表。报名表格式如下：\n\n| 参赛成员姓名 | 组成 | 单位 | 职称 | 手机号 | 邮箱 |\n|:---:|:---:|:---:|:---:|:---:|:---:|\n| | 队长 | | | | |\n| | 队员 | | | | |\n| | 队员 | | | | |\n| | 队员 | | | | |\n| | 队员 | | | | |\n| | 指导老师 | | | | |\n| | 指导老师 | | | | |\n\n报名截止时间：2026年7月20日 18:00。\n\n组织方收到邮件并与报名者确认后，报名成功。\n\n报名表下载：[2026年第七届中国图像图形学学会图形技术挑战赛报名表.xlsx](https://jinsight-cup.github.io/JinSight-ChallengeV3/downloads/2026年第七届中国图像图形学学会图形技术挑战赛报名表.xls?v=20260629)  \n\n---\n\n## 参赛团队注册方式  \n\n参赛团队报名成功，并在排行榜上获得有效的公开成绩，即为成功注册，可获得评奖资格。  \n\n---\n\n## 比赛交流微信群  \n\n<div align=\"center\">\n  <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/wechat-challenge-group-1.jpg?v=20260629-2\" alt=\"比赛交流微信群二维码\" width=\"250\">\n</div>"
+        "title": "Evaluation",
+        "content": "# Evaluation and Submission\n\n## Phases\n\n| Phase | Dates | Predict on | Submissions |\n|-------|-------|-----------|-------------|\n| Development | 20 July – 10 August 2026 | `dev.jsonl` | 10 per day |\n| Evaluation | 11 – 18 August 2026 | `test.jsonl` | 3 in total |\n\nThe development phase has a live leaderboard for tuning. The evaluation phase determines the final ranking, so spend your three submissions carefully.\n\n## Submission Format\n\nUpload a **zip containing one JSONL file**, with one object per instance:\n\n```json\n{\"instanceID\": \"...\", \"st1\": \"physical_goods\", \"st2\": [\"toys\"], \"st3\": [\"no_flag\"]}\n```\n\n- Omit a field for any sub-task you are not entering. Missing predictions score 0 for that instance on that sub-task, so partial participation is fine but incomplete coverage is penalised.\n- `st3` must respect exclusivity: `no_flag` and `insufficient_context` each stand alone.\n- Validate before uploading with `check_submission.py` from the Starting Kit:\n  `python check_submission.py submission.jsonl dev.jsonl`\n\n## Metrics\n\nAll macro-F1, higher is better. Reported per submission:\n\n| Key | Meaning |\n|-----|---------|\n| `mean_macro_f1` | Mean of the three sub-task scores. **Ranks the leaderboard.** |\n| `st1_macro_f1` | Sub-task 1, single-label |\n| `st2_macro_f1` | Sub-task 2, multi-label |\n| `st3_macro_f1` | Sub-task 3, fine-grained flags |\n| `st3_family_macro_f1` | Sub-task 3, flags collapsed to families (disclosure / content / product) |\n\nThe family-level score is reported because flag frequencies are heavily imbalanced, so a fine-grained macro-F1 alone can be dominated by rare flags. `coverage` (the share of reference instances you predicted) is also returned for diagnosis.\n\nFor reference, the majority-class baseline in the Starting Kit scores **0.093 mean macro-F1** on dev (ST1 0.151, ST2 0.042, ST3 0.085). It exists to establish the floor and to let you verify your pipeline end to end.\n\n## The System Design Report (Highly Encouraged)\n\nThe leaderboard is only half of the evaluation. Because this task is about *how to build a monitoring system*, we highly encourage every team to describe their design. There are two parts to this, and neither requires writing a full paper.\n\n### 1. The submission form (takes seconds)\n\nEvery submission carries a short questionnaire. **Only one answer is required:** which **data access levels** your system used. That answer appears as a column on the leaderboard next to your score, so results can be read as *accuracy at a given data cost*, which is the point of the task. A system using transcripts alone and scoring near one using the full crawl is a genuinely interesting result, and we want that visible.\n\nThe remaining questions are optional and exist so you can record, at whatever depth suits you: system type, a two-to-three sentence method summary, whether you retrieved legal material beyond the citations we ship, the approximate cost of running over all 3,360 instances, and a **link to a fuller report**.\n\nPlease complete the optional fields on your **final evaluation-phase submission**, even if you skip them while tuning.\n\n### 2. A short document (optional but valuable)\n\nIf you can, write up the design in a few pages and paste the link (PDF, preprint, or repository) into the `report_url` field. Useful content:\n\n- results at more than one access level, and what each level bought;\n- cost, reliability, and scalability at platform scale;\n- model and compute choices, and how they would generalise beyond this dataset;\n- for ST3, the provisions your predictions relied on, and whether richer legal context helped.\n\nLegal grounding is **not scored** on the leaderboard: we would rather report honestly on classification than score a component we cannot yet evaluate rigorously, so the report is where that work is recognised. Teams writing a full system description paper for the workshop are welcome to link that instead.\n\n## Rules\n\nAny model or resource is allowed, including LLMs, provided you document it in your report. Do not manually label the test set. One account per team. Please do not create multiple accounts to gain extra submissions.",
+        "content_zh": "# 评估与提交\n\n## 阶段\n\n| 阶段 | 日期 | 预测对象 | 提交次数 |\n|-------|-------|-----------|-------------|\n| 开发 | 2026年7月20日 – 8月10日 | `dev.jsonl` | 每天10次 |\n| 评估 | 2026年8月11日 – 18日 | `test.jsonl` | 共3次 |\n\n开发阶段提供实时排行榜供调优使用。评估阶段决定最终排名，请谨慎使用你的三次提交机会。\n\n## 提交格式\n\n上传**包含一个JSONL文件的zip文件**，每个实例对应一个对象：\n\n```json\n{\"instanceID\": \"...\", \"st1\": \"physical_goods\", \"st2\": [\"toys\"], \"st3\": [\"no_flag\"]}\n```\n\n- 对于未参加的子任务，请省略相应字段。缺失的预测在该子任务上每个实例得分为0，因此部分参与是可以接受的，但覆盖不完整会被扣分。\n- `st3`必须遵守互斥性：`no_flag`和`insufficient_context`各自独立。\n- 在上传前使用初始工具包中的`check_submission.py`进行验证：\n  `python check_submission.py submission.jsonl dev.jsonl`\n\n## 评估指标\n\n所有指标均为宏平均F1分数，分数越高越好。每次提交报告的指标：\n\n| 键 | 含义 |\n|-----|-------|\n| `mean_macro_f1` | 三个子任务分数的平均值。**决定排行榜排名。** |\n| `st1_macro_f1` | 子任务1，单标签 |\n| `st2_macro_f1` | 子任务2，多标签 |\n| `st3_macro_f1` | 子任务3，细粒度标志 |\n| `st3_family_macro_f1` | 子任务3，标志合并到类别（披露/内容/产品） |\n\n报告类别级分数是因为标志分布严重不均衡，仅有细粒度宏平均F1可能被稀有标志主导。还会返回`coverage`（你预测的参考实例所占份额）用于诊断。\n\n作为参考，初始工具包中的多数类基线在开发集上得分为**0.093平均宏F1**（ST1 0.151，ST2 0.042，ST3 0.085）。这是为了建立下限，让你能够端到端验证流程。\n\n## 系统设计报告（强烈推荐）\n\n排行榜只是评估的一半。因为本任务旨在*构建监控系统的方法*，我们强烈建议每个团队描述其设计。这包括两个部分，均不需要写完整的论文。\n\n### 1. 提交表格（只需数秒）\n\n每次提交附带一份简短问卷。**只有一个答案是必需的：** 你的系统使用的**数据访问级别**。该答案会在排行榜上以列的形式显示在你的分数旁，这样结果可以理解为*特定数据成本下的精度*，这正是本任务的重点。仅使用转录文本的系统与使用完整爬取数据的系统分数接近是一个真正有趣的结果，我们希望这一点可见。\n\n其余问题是可选的，存在的目的是让你记录（深度由你决定）：系统类型、两到三句的方法总结、是否检索了我们提供的引文之外的法律材料、在所有3,360个实例上运行的大约成本，以及**较完整报告的链接**。\n\n请在**最终评估阶段提交**时填写可选字段，即使你在调优期间跳过它们。\n\n### 2. 一份简短文档（可选但有价值）\n\n如果可能的话，用几页篇幅写出设计说明，并将链接（PDF、预印本或代码库）粘贴到`report_url`字段。有用的内容包括：\n\n- 多个访问级别的结果，以及每个级别带来了什么；\n- 平台规模的成本、可靠性和可扩展性；\n- 模型和计算选择，以及它们如何超越本数据集推广；\n- 对于ST3，你的预测所依赖的条款，以及更丰富的法律背景是否提供帮助。\n\n法律基础**不在排行榜上计分**：我们更希望诚实报告分类，而不是给无法严格评估的组件评分，所以报告是该工作被认可的地方。撰写研讨会论文的完整系统描述的团队欢迎链接该论文。\n\n## 规则\n\n允许使用任何模型或资源，包括大语言模型，只要你在"
       },
       {
         "index": 3,
-        "title": "赛事结果",
-        "content": "## 比赛结果\n\n  公布内容：CSIG2026“金睛杯”光学时敏弱小目标探测挑战赛获奖队伍名单、比赛结果图片和赛事总结将在成绩复核后公布",
-        "content_zh": "# Competition Results\n\nPublished Content: The list of winning teams in the CSIG2026 \"Golden Eye Cup\" Optical Time-Sensitive Weak and Small Target Detection Challenge, competition result images, and event summary will be released after score verification."
+        "title": "Terms",
+        "content": "# Terms and Conditions\n\nBy registering for this competition you agree to the following.\n\n## Data Use\n\n1. **Research use within this shared task.** The data is provided for research participation in ChildSafeAds. Using it to train systems for other purposes requires separate permission from the organisers.\n2. **Licence.** The dataset derives from the [SponsorBlock](https://sponsor.ajay.app/database) database, licensed CC BY-NC-SA 4.0. Under that licence's share-alike term, the labels, instance structure and resolved page text are distributed under the same **CC BY-NC-SA 4.0**, attributing SponsorBlock: non-commercial use, share-alike, with attribution. Video-derived fields (transcripts, titles, descriptions, metadata) are provided for research use under these terms. Resolved page text is extracted from third-party commercial websites and is likewise research-use only.\n3. **Platform terms.** You must comply with the YouTube Terms of Service when using any video-derived field or when collecting further data yourself.\n4. **No re-identification or contact.** Do not attempt to re-identify, contact, or harass creators, channels, or any individual appearing in the data. Do not publish material that singles out an individual creator as non-compliant; findings should be reported in aggregate.\n5. **Redistribution.** Do not redistribute the dataset outside your team. Direct others to this competition instead.\n\n## Competition Conduct\n\n6. **Do not manually label the test set.** Predictions on the evaluation phase must be produced by your system.\n7. **One account per team.** Do not create additional accounts to obtain extra submissions.\n8. **Document your system.** Any model or resource is permitted, including LLMs, provided it is documented in your system design report.\n\n## A Note on the Labels\n\nThe compliance labels reflect the organisers' reading of EU consumer law for the purposes of a research benchmark. They are **not legal advice and not a finding of unlawfulness** about any creator, brand, or video. Some flags remain under legal review and may be refined in a point release.\n\n## Bonus Track\n\nIf you collect off-platform destination data yourself, you remain responsible for doing so lawfully and for respecting the terms of the sites you access.\n\n## Organisers\n\nThales Bertaglia (Utrecht University), Catalina Goanta (Utrecht University), Gerasimos Spanakis (Maastricht University), Güneş Acar (Radboud University).\n\nQuestions: please use the competition forum, so answers reach all participants.",
+        "content_zh": "# 条款和条件\n\n通过注册本竞赛，您同意以下条款。\n\n## 数据使用\n\n1. **本共享任务中的研究使用。** 提供数据仅用于参与ChildSafeAds研究。将其用于其他目的需要从组织者处获得单独许可。\n2. **许可证。** 该数据集源自[SponsorBlock](https://sponsor.ajay.app/database)数据库，采用CC BY-NC-SA 4.0许可证。根据该许可证的相同条款，标签、实例结构和解析页面文本采用相同的**CC BY-NC-SA 4.0**许可证分发，需要注明SponsorBlock：非商业使用、相同方式共享、需要署名。视频衍生字段（文本记录、标题、描述、元数据）仅在这些条款下提供用于研究目的。解析页面文本从第三方商业网站提取，同样仅供研究使用。\n3. **平台条款。** 使用任何视频衍生字段或自行收集更多数据时，您必须遵守YouTube服务条款。\n4. **禁止重新识别或联系。** 不得试图重新识别、联系或骚扰创作者、频道或数据中出现的任何个人。不得发布针对单个创作者不合规的材料；研究成果应以汇总形式报告。\n5. **禁止重新分发。** 不得在您的团队外分发该数据集。请将其他人引导至本竞赛。\n\n## 竞赛规则\n\n6. **不得手动标注测试集。** 评估阶段的预测必须由您的系统生成。\n7. **每个团队仅一个账户。** 不得创建额外账户以获得更多提交机会。\n8. **记录您的系统。** 允许使用任何模型或资源，包括大语言模型（LLM），但必须在系统设计报告中记录。\n\n## 关于标签的说明\n\n合规标签反映组织者对欧盟消费者法律的理解，旨在建立研究基准。这些标签**不构成法律建议，不代表对任何创作者、品牌或视频的违法性认定**。某些标签仍在法律审查中，可能在次要版本中进行修订。\n\n## 附加内容\n\n如果您自行收集平台外的目标数据，您应负责以合法方式进行此操作，并尊重您访问的网站条款。\n\n## 组织者\n\nThales Bertaglia（乌得勒支大学）、Catalina Goanta（乌得勒支大学）、Gerasimos Spanakis（马斯特里赫特大学）、Güneş Acar（拉德堡德大学）。\n\n问题：请使用竞赛论坛，以便所有参与者都能获得答案。"
       }
     ]
   },
@@ -1266,8 +1134,8 @@
     "description_zh": "Optical Time-Sensitive Weak-Small Target Detection is an important research direction in intelligent visual perception and a key technical challenge in target detection and situation awareness in complex environments. Compared to conventional target detection tasks, weak-small targets typically exhibit characteristics such as small imaging scale, weak target energy, strong background interference, and unstable target morphology. The usable information in a single frame image is extremely limited, and algorithms are prone to issues such as missed detections, false detections, and discontinuous detection results in real-world scenarios.\n\nThis challenge competition, based on the CSIG2026 academic conference platform, focuses on key problems in optical time-sensitive weak-small target detection, and sets up two competition tracks: \"Infrared Video Satellite Airborne Moving Target Detection\" and \"Motion Small Target Detection Based on Event Camera\". It provides participating teams with a fair and reproducible algorithm validation platform, promoting advances in related data construction, method innovation, and technical exchange.",
     "created_by": "irnewbie",
     "created_when": "2026-07-16T16:05:17.810335Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217917/f590d1281393/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=IAp4rg8eASanOAvkxZLO9qIqvz0%3D&Expires=1784469086",
-    "participants_count": 1,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217917/f590d1281393/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=Mpcze9cdHU3o2j%2FfgViTd0tRYp4%3D&Expires=1784555844",
+    "participants_count": 16,
     "submissions_count": 0,
     "first_phase_start": null,
     "phases": [
@@ -1313,6 +1181,96 @@
       }
     ]
   },
+  "17590": {
+    "id": 17590,
+    "title": "2026年“新智砺剑”比赛-红外视频卫星空中动目标检测赛道",
+    "description": "详情请看比赛内部官网详情页",
+    "description_zh": "我注意到你提供的文本已经是简体中文，我原样返回：\n\n详情请看比赛内部官网详情页",
+    "created_by": "irnewbie",
+    "created_when": "2026-07-20T06:11:10.993454Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784528469/7e8bf5c614cd/ScreenShot_2026-07-20_140940_018.png?AWSAccessKeyId=codabench-prod&Signature=n6nacRKwL7oarJZBnHkl%2FXyZQSc%3D&Expires=1784555844",
+    "participants_count": 1,
+    "submissions_count": 0,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 29343,
+        "name": "模型训练与验证",
+        "start": "2026-07-20T16:00:00Z",
+        "end": "2026-08-28T04:00:00Z",
+        "max_submissions_per_day": 30
+      },
+      {
+        "id": 29344,
+        "name": "最终评测",
+        "start": "2026-08-28T11:00:00Z",
+        "end": "2026-08-31T04:00:00Z",
+        "max_submissions_per_day": 2
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "赛事结果",
+        "content": "详情请看比赛内部官网详情页",
+        "content_zh": "这段文本已经是中文，原样返回：\n\n详情请看比赛内部官网详情页"
+      }
+    ]
+  },
+  "17555": {
+    "id": 17555,
+    "title": "2026 “金睛杯”光学时敏弱小目标探测挑战赛（赛道一：红外视频卫星空中动目标检测）",
+    "description": "光学时敏弱小目标探测是智能视觉感知领域中的重要研究方向，也是复杂环境下目标探测与态势感知中的关键技术问题。与常规目标检测任务相比，弱小目标通常存在成像尺度小、目标能量弱、背景干扰强、目标形态不稳定等特点，单帧图像中可利用的信息十分有限，算法在真实场景中容易出现漏检、误检和检测结果不连续等问题。\n本次挑战赛依托 CSIG2026 学术会议平台，围绕光学时敏弱小目标探测中的关键问题，设置\"红外视频卫星空中动目标检测\"和\"基于事件相机的运动小目标检测\"两个赛道，为参赛队伍提供公平、可复现的算法验证平台，推动相关数据建设、方法创新和技术交流。",
+    "description_zh": "Optical temporal-sensitive small target detection is an important research direction in intelligent visual perception and a key technical issue in target detection and situational awareness in complex environments. Compared with conventional target detection tasks, small targets typically exhibit characteristics such as small imaging scale, weak target energy, strong background interference, and unstable target morphology. The information available in a single frame is very limited, and algorithms are prone to missed detections, false positives, and discontinuous detection results in real-world scenarios.\n\nThis challenge competition, based on the CSIG2026 academic conference platform, focuses on key problems in optical temporal-sensitive small target detection, establishing two tracks: \"infrared video satellite aerial moving target detection\" and \"event camera-based moving small target detection.\" It provides participating teams with a fair and reproducible algorithm validation platform, promoting related data construction, method innovation, and technical exchange.",
+    "created_by": "irnewbie",
+    "created_when": "2026-07-16T15:58:17.338227Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217497/8cef6a724fb4/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=x41O8mTw9D06pP%2B1ZdJgP7eurio%3D&Expires=1784555843",
+    "participants_count": 36,
+    "submissions_count": 0,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 29256,
+        "name": "模型训练与验证",
+        "start": "2026-07-20T16:00:00Z",
+        "end": "2026-08-28T04:00:00Z",
+        "max_submissions_per_day": 30
+      },
+      {
+        "id": 29257,
+        "name": "最终评测",
+        "start": "2026-08-28T11:00:00Z",
+        "end": "2026-08-31T04:00:00Z",
+        "max_submissions_per_day": 2
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "赛事日程",
+        "content": "# 赛事日程\n\n| 时间 | 任务 |\n| :---: | :---: |\n| 2026年5月29日－6月7日 | 组委会完成比赛任务、参赛办法、评比方式、报名材料和发布页面的准备工作。 |\n| 2026年6月8日 09:00 | 组委会在网站、微信公众号等平台正式公布比赛任务、参赛办法和评比方式，并同步启动报名。 |\n| 2026年6月8日－7月20日 | 参赛队伍报名及邮件资格确认。 |\n| 2026年7月20日 18:00 | 报名截止，组委会完成报名信息汇总与资格确认。 |\n| 2026年7月21日 － 8月28日 12：00 结束 | 比赛正式开始，组委会发布比赛训练集和评测格式，参赛队伍开展模型训练、算法优化和结果准备。 |\n| 2026年8月28日 19：00 开始 － 8月31日 12：00 结束 | 组委会开放比赛评测通道，各参赛队伍在规定时间内完成比赛任务，并将测试结果上传比赛网站。 |\n| 2026年9月4日－9月8日 | 参赛队伍提交算法代码、模型文件及算法报告，组委会对各参赛队伍进行真实性审查。 |\n| 2026年9月10日－9月14日 | 组委会完成成绩复核，并发布比赛成绩。 |\n| 2026年11月－12月 | 举行颁奖典礼。 |",
+        "content_zh": "这是一份中文文档，原样返回如下：\n\n# 赛事日程\n\n| 时间 | 任务 |\n| :---: | :---: |\n| 2026年5月29日－6月7日 | 组委会完成比赛任务、参赛办法、评比方式、报名材料和发布页面的准备工作。 |\n| 2026年6月8日 09:00 | 组委会在网站、微信公众号等平台正式公布比赛任务、参赛办法和评比方式，并同步启动报名。 |\n| 2026年6月8日－7月20日 | 参赛队伍报名及邮件资格确认。 |\n| 2026年7月20日 18:00 | 报名截止，组委会完成报名信息汇总与资格确认。 |\n| 2026年7月21日 － 8月28日 12：00 结束 | 比赛正式开始，组委会发布比赛训练集和评测格式，参赛队伍开展模型训练、算法优化和结果准备。 |\n| 2026年8月28日 19：00 开始 － 8月31日 12：00 结束 | 组委会开放比赛评测通道，各参赛队伍在规定时间内完成比赛任务，并将测试结果上传比赛网站。 |\n| 2026年9月4日－9月8日 | 参赛队伍提交算法代码、模型文件及算法报告，组委会对各参赛队伍进行真实性审查。 |\n| 2026年9月10日－9月14日 | 组委会完成成绩复核，并发布比赛成绩。 |\n| 2026年11月－12月 | 举行颁奖典礼。 |"
+      },
+      {
+        "index": 1,
+        "title": "赛事说明",
+        "content": "## 挑战赛的目的\n\n**通过本次挑战赛促进科研技术的交流研讨和应用推广**  \n\n本次挑战赛旨在依托 CSIG2026 学术会议平台，围绕光学时敏弱小目标探测中的关键问题，搭建面向学术界和产业界的开放竞赛与交流平台，吸引更多高校、科研院所和企业团队参与红外视频小目标检测、事件相机小目标检测等方向的研究。  \n\n**通过本次挑战赛促进光学时敏弱小目标探测技术发展**  \n\n通过竞赛汇聚工业界和学术界的智慧与力量，促进相关算法、数据集和评价体系的共同发展，推动领域垂类大模型发展与应用，加速技术创新和产业推广。  \n\n---\n\n## 挑战赛的意义\n\n**光学时敏弱小目标探测应用广泛，关键技术问题突出**  \n\n光学时敏弱小目标探测是智能视觉感知领域中的重要研究方向，也是复杂环境下目标探测与态势感知中的关键技术问题。弱小目标通常存在成像尺度小、目标能量弱、背景干扰强、目标形态不稳定等特点，单帧图像中可利用的信息十分有限。  \n\n**红外视频卫星目标检测亟需融合时域信息与轨迹关联**  \n\n卫星视角下的红外视频弱小目标往往具有成像距离远、信噪比低、背景复杂、运动轨迹细弱等特点，仅依靠单帧检测难以获得稳定结果，需要进一步结合多帧时域信息、运动一致性和目标轨迹关联关系。\n\n**事件相机小目标检测亟需发挥事件流时空连续性优势**  \n\n事件相机能够以异步方式感知亮度变化，具有高时间分辨率、低延迟、高动态范围和低数据冗余等优势。面向事件点云和事件流的时空建模方法发展，对于提升复杂场景下运动小目标的检测能力具有重要意义。\n\n**公开数据和统一评测标准有助于推动领域发展**  \n\n红外视频卫星目标和事件相机小目标相关公开数据仍相对有限，真实场景数据获取和标注成本较高。本次竞赛通过开放具有针对性的数据资源和统一评测标准，为参赛队伍提供公平、可复现的算法验证平台。\n\n---\n\n## 任务设置\n\n### 赛道一：红外视频卫星空中动目标检测  \n\n  赛道一的主要任务是对视频中的红外小目标的质心进行预测，附加任务是对目标进行跟踪。参赛队伍根据红外小目标图像特点自行设计相关算法，使用主办方提供的数据集进行模型训练，最终以召回率（Recall）、精确率（Precision）和 F1 分数作为评价指标，以及轨迹完整度和轨迹准确度作为附加评价指标，衡量参赛队伍算法模型的性能。\n\n### 赛道二：基于事件相机的运动小目标检测  \n\n  赛道二的主要任务是对事件流中的目标事件进行逐事件分割。参赛队伍根据事件小目标特性自行设计相关算法，使用主办方提供的事件数据集进行模型训练，最终以交并比（IoU）、准确率（ACC）、检测率（Pd）和虚警率（Fa）作为主要评价指标，衡量参赛队伍算法模型的性能。\n\n---\n\n## 数据集简介\n\n### 赛道一数据集简介\n\n  竞赛数据集由国防科技大学与武汉大学联合开发，包括：基于热红外卫星的 IRAir 数据集、基于 Landsat 卫星的 IRSatVideo-LEO 数据集、基于高分四号卫星的 IRSatVideo-GEO 数据集，以及实测卫星热红外视频数据，共 1400 段视频序列（1000 段用于训练，200 段用于验证，200 段用于测试）。比赛开始前，将发布训练集和验证集视频及掩码标注；进入评测阶段时公布测试集视频，测试集标签不公开。\n\n| 数据集 | 数据集简介 | 图像与目标示意 |\n| :---: | :---: | :---: |\n| IRAir | 数据来源：热红外 SDG 卫星一号图像，仿真目标<br>目标特点：飞机，低轨，暗目标<br>分辨率：256×256 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image1.png\" alt=\"IRAir 图像与目标示意\" width=\"400\"> |\n| IRSatVideo-LEO | 数据来源：Landsat 卫星图像，仿真目标<br>目标特点：低轨，亮目标，短波红外<br>分辨率：1024×1024 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image2.png\" alt=\"IRSatVideo-LEO 图像与目标示意\" width=\"400\"> |\n| IRSatVideo-GEO | 数据来源：高分四号卫星图像，仿真目标<br>目标特点：地球同步轨道，中波红外，弱目标<br>分辨率：742×733（平均） | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image3.png\" alt=\"IRSatVideo-GEO 图像与目标示意\" width=\"400\"> |\n| 实测热红外视频数据 | 数据来源：实测卫星热红外视频<br>目标特点：长波<br>分辨率：512×640 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image4.png\" alt=\"实测热红外视频数据图像与目标示意\" width=\"400\"> |\n\n\n### 赛道二数据集简介\n\n  基于 DAVIS346 事件相机的 EV-UAV 数据集作为训练、验证和测试数据集。总共 147 段序列（99 段用于训练，24 段用于验证，24 段用于测试）。（暂定）\n\n| 数据集 | 数据集简介 | 图像与目标示意 |\n| :---: | :---: | :---:|\n| EV-UAV &nbsp;| 数据来源：DAVIS346 事件相机实拍<br>分辨率：346×260 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/赛道二-image1.png\" alt=\"EV-UAV 图像与目标示意\" width=\"600\"> |\n\n---\n\n## 挑战赛评价方式\n\n### 赛道一评价方式\n\n  本次挑战赛赛道一的算法评价指标为召回率（Recall）和精确率（Precision），附加评价指标为轨迹完整度、轨迹准确度。算法最终评分结果由 F1 分数和附加分数组成。\n\n$$\nRecall = \\frac{TD}{AT}, \\quad Precision = \\frac{TD}{TD + FD}\n$$\n\n$$\nF1 = \\frac{2 \\times Recall \\times Precision}{Recall + Precision}\n$$\n\n$$\nTrackCompleteness = \\frac{NTA}{N}, \\quad TrackAccuracy = \\frac{NTA}{NA}\n$$\n\n| 附加得分项 | 阈值一 | 阈值二 | 阈值三 |\n| :---: | :---: | :---: | :---: |\n| 轨迹完整度得分 | ≥25%：+2分 | ≥35%：+3分 | ≥50%：+5分 |\n| 轨迹准确度得分 | ≥55%：+2分 | ≥65%：+3分 | ≥80%：+5分 |\n\n  最终得分为 F1 分数 × 100 + 附加得分，满分为 110 分。\n\n---\n\n### 赛道二评价方式\n\n  赛道二的算法评价指标为交并比（IoU）、准确率（Acc）、检测率（Pd）和虚警率（Fa），最终评分结果由各指标加权得分。\n\n$$\nIoU = \\frac{GT \\cap Pred}{GT \\cup Pred}, \\quad Acc = \\frac{TP_{target}}{TP_{target} + FN_{target}}\n$$\n\n$$\nPd = \\frac{TD}{AT}, \\quad Fa = \\frac{FD}{N_{frame} \\times H \\times W}\n$$\n\n$$\nScore_{Fa} = e^{-10000 \\times Fa}\n$$\n\n$$\nScore = 0.4Pd + 0.3Score_{Fa} + 0.2IoU + 0.1Acc\n$$\n\n---\n\n## 结果提交方式\n\n**结果提交格式、提交入口和提交次数限制**：待补充  \n\n**提交内容与时间要求**：参赛队伍须在规定时间内提交测试结果，并在后继阶段提交算法代码、模型文件及算法报告。组委会将对各参赛队伍进行真实性审查。  \n\n**真实性与可复现性要求**：为避免参赛队伍滥用其他数据集或验证集标签信息用于算法训练，参赛队伍需提供算法训练时的相关参数，确保算法结果可复现。如发现违规使用数据信息或算法结果无法复现，组委会将按赛事规则处理。\n\n---\n\n## 专题研讨会  \n组委会将举办挑战赛技术论坛，邀请获得一、二等奖的参赛队伍参加作特邀技术报告。\n\n---\n\n## 知识产权归属  \n\n参赛队伍提交的算法及可执行模型的知识产权归参赛团队所有，比赛数据集归主办方所有。  \n\n各参赛队伍需要承诺提交的结果可重复，组织方承诺履行保密义务，并不用于除本挑战赛外的任何其他用途。  \n\n参赛队伍应保证所提供的方案、算法属于自有知识产权。组织方对参赛队伍因使用本队提供完成的算法和结果而产生的任何实际侵权或者被任何第三方指控侵权概不负责。一旦上述情况和事件发生，参赛队伍必须承担一切相关法律责任和经济赔偿责任并保护组织方免于承担该等责任。",
+        "content_zh": "# 这是中文原文\n\n您提供的文本已经是简体中文，无需翻译。以下为原文内容：\n\n## 挑战赛的目的\n\n**通过本次挑战赛促进科研技术的交流研讨和应用推广**  \n\n本次挑战赛旨在依托 CSIG2026 学术会议平台，围绕光学时敏弱小目标探测中的关键问题，搭建面向学术界和产业界的开放竞赛与交流平台，吸引更多高校、科研院所和企业团队参与红外视频小目标检测、事件相机小目标检测等方向的研究。  \n\n**通过本次挑战赛促进光学时敏弱小目标探测技术发展**  \n\n通过竞赛汇聚工业界和学术界的智慧与力量，促进相关算法、数据集和评价体系的共同发展，推动领域垂类大模型发展与应用，加速技术创新和产业推广。  \n\n---\n\n## 挑战赛的意义\n\n**光学时敏弱小目标探测应用广泛，关键技术问题突出**  \n\n光学时敏弱小目标探测是智能视觉感知领域中的重要研究方向，也是复杂环境下目标探测与态势感知中的关键技术问题。弱小目标通常存在成像尺度小、目标能量弱、背景干扰强、目标形态不稳定等特点，单帧图像中可利用的信息十分有限。  \n\n**红外视频卫星目标检测亟需融合时域信息与轨迹关联**  \n\n卫星视角下的红外视频弱小目标往往具有成像距离远、信噪比低、背景复杂、运动轨迹细弱等特点，仅依靠单帧检测难以获得稳定结果，需要进一步结合多帧时域信息、运动一致性和目标轨迹关联关系。\n\n**事件相机小目标检测亟需发挥事件流时空连续性优势**  \n\n事件相机能够以异步方式感知亮度变化，具有高时间分辨率、低延迟、高动态范围和低数据冗余等优势。面向事件点云和事件流的时空建模方法发展，对于提升复杂场景下运动小目标的检测能力具有重要意义。\n\n**公开数据和统一评测标准有助于推动领域发展**  \n\n红外视频卫星目标和事件相机小目标相关公开数据仍相对有限，真实场景数据获取和标注成本较高。本次竞赛通过开放具有针对性的数据资源和统一评测标准，为参赛队伍提供公平、可复现的算法验证平台。\n\n---\n\n## 任务设置\n\n### 赛道一：红外视频卫星空中动目标检测  \n\n赛道一的主要任务是对视频中的红外小目标的质心进行预测，附加任务是对目标进行跟踪。参赛队伍根据红外小目标图像特点自行设计相关算法，使用主办方提供的数据集进行模型训练，最终以召回率（Recall）、精确率（Precision）和 F1 分数作为评价指标，以及轨迹完整度和轨迹准确度作为附加评价指标，衡量参赛队伍算法模型的性能。\n\n### 赛道二：基于事件相机的运动小目标检测  \n\n赛道二的主要任务是对事件流中的目标事件进行逐事件分割。参赛队伍根据事件小目标特性自行设计相关算法，使用主办方提供的事件数据集进行模型训练，最终以交并比（IoU）、准确率（ACC）、检测率（Pd）和虚警率（Fa）作为主要评价指标，衡量参赛队伍算法模型的性能。\n\n---\n\n## 数据集简介\n\n### 赛道一数据集简介\n\n竞赛数据集由国防科技大学与武汉大学联合开发，包括：基于热红外卫星的 IRAir 数据集、基于 Landsat 卫星的 IRSatVideo-LEO 数据集、基于高分四号卫星的 IRSatVideo-GEO 数据集，以及实测卫星热红外视频数据，共 1400 段视频序列（1000 段用于训练，200 段用于验证，200 段用于测试）。比赛开始前，将发布训练集和验证集视频及掩码标注；进入评测阶段时公布测试集视频，测试集标签不公开。\n\n| 数据集 | 数据集简介 | 图像与目标示意 |\n| :---: | :---: | :---: |\n| IRAir | 数据来源：热红外 SDG 卫星一号图像，仿真目标<br>目标特点：飞机，低轨，暗目标<br>分辨率：256×256 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image1.png\" alt=\"IRAir 图像与目标示意\" width=\"400\"> |\n| IRSatVideo-LEO | 数据来源：Landsat 卫星图像，仿真目标<br>目标特点：低轨，亮目标，短波红外<br>分辨率：1024×1024 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image2.png\" alt=\"IRSatVideo-LEO 图像与目标示意\" width=\"400\"> |\n| IRSatVideo-GEO | 数据来源：高分四号卫星图像，仿真目标<br>目标特点：地球同步轨道，中波红外，弱目标<br>分辨率：742×733（平均） | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image3.png\" alt=\"IRSatVideo-GEO 图像与目标示意\" width=\"400\"> |\n| 实测热红外视频数据 | 数据来源：实测卫星热红外视频<br>目标特点：长波<br>分辨率：512×640 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image4.png\" alt=\"实测热红外视频数据图像与目标示意\" width=\"400\"> |\n\n### 赛道二数据集简介\n\n基于 DAVIS346 事件相机的 EV-UAV 数据集作为训练、验证和测试数据集。总共 147 段序列（99 段用于训练，24 段用于验证，24 段用于测试）。（暂定）\n\n| 数据集 | 数据集简介 | 图像与目标示意 |\n| :---: | :---: | :---:|\n| EV-UAV | 数据来源：DAVIS346 事件相机实拍<br>分辨率：346×260 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/赛道二-image1.png\" alt=\"EV-UAV 图像与目标示意\" width=\"600\"> |\n\n---\n\n## 挑战赛评价方式\n\n### 赛道一评价方式\n\n本次挑战赛赛道一的算法评价指标为召回率（Recall）和精确率（Precision），附加评价指标为轨迹完整度、轨迹准确度。算法最终评分结果由 F1 分数和附加分数组成。\n\n$$\nRecall = \\frac{TD}{AT}, \\quad Precision = \\frac{TD}{TD + FD}\n$$\n\n$$\nF1 = \\frac{2 \\times Recall \\times Precision}{Recall + Precision}\n$$\n\n$$\nTrackCompleteness = \\frac{NTA}{N}, \\quad TrackAccuracy = \\frac{NTA}{NA}\n$$\n\n| 附加得分项 | 阈值一 | 阈值二 | 阈值三 |\n| :---: | :---: | :---: | :---: |\n| 轨迹完整度得分 | ≥25%：+2分 | ≥35%：+3分 | ≥50%：+5分 |\n| 轨迹准确度得分 | ≥55%：+2分 | ≥65%：+3分 | ≥80%：+5分 |\n\n最终得分为 F1 分数 × 100 + 附加得分，满分为 110 分。\n\n---\n\n### 赛道二评价方式\n\n赛道二的算法评价指标为交并比（IoU）、准确率（Acc）、检测率（Pd）和虚警率（Fa），最终评分结果由各指标加权得分。\n\n$$\nIoU = \\frac{GT \\cap Pred}{GT \\cup Pred}, \\quad Acc = \\frac{TP_{target}}{TP_{target} + FN_{target}}\n$$\n\n$$\nPd = \\frac{TD}{AT}, \\quad Fa = \\frac{FD}{N_{frame} \\times H \\times W}\n$$\n\n$$\nScore_{Fa} = e^{-10000 \\times Fa}\n$$\n\n$$\nScore = 0.4Pd + 0.3Score_{Fa} + 0.2IoU + 0.1Acc\n$$\n\n---\n\n## 结果提交方式\n\n**结果提交格式、提交入口和提交次数限制**：待补充  \n\n**提交内容与时间要求**：参赛队伍须在规定时间内提交测试结果，并在后继阶段提交算法代码、模型文件及算法报告。组委会将对各参赛队伍进行真实性审查。  \n\n**真实性与可复现性要求**：为避免参赛队伍滥用其他数据集或验证集标签信息用于算法训练，参赛队伍需提供算法训练时的相关参数，确保算法结果可复现。如发现违规使用数据信息或算法结果无法复现，组委会将按赛事规则处理。\n\n---\n\n## 专题研讨会  \n组委会将举办挑战赛技术论坛，邀请获得一、二等奖的参赛队伍参加作特邀技术报告。\n\n---\n\n## 知识产权归属  \n\n参赛队伍提交的算法及可执行模型的知识产权归参赛团队所有，比赛数据集归主办方所有。  \n\n各参赛队伍需要承诺提交的结果可重复，组织方承诺履行保密义务，并不用于除本挑战赛外的任何其他用途。  \n\n参赛队伍应保证所提供的方案、算法属于自有知识产权。组织方对参赛队伍因使用本队提供完成的算法和结果而产生的任何实际侵权或者被任何第三方指控侵权概不负责。一旦上述情况和事件发生，参赛队伍必须承担一切相关法律责任和经济赔偿责任并保护组织方免于承担该等责任。"
+      },
+      {
+        "index": 2,
+        "title": "赛事报名",
+        "content": "## 挑战赛参与者要求  \n\n  自愿报名参赛，参赛队伍和成员的组成可为：  \n  1. 各培养单位正式注册教师、在读本科生、研究生以及博士生；  \n  2. 国内各研究团体、企事业单位。  \n\n---\n\n## 报名方式\n\n  仅接受以团队形式通过邮件报名参赛，每支参赛队伍人员不超过5人（不包括指导老师），每名参赛选手只能参加1个参赛队。\n\n  参赛团队下载并填写CSIG2026\"金睛杯\"光学时敏弱小目标探测挑战赛的报名表，将报名表发邮件至竞赛联系人邮箱wangyujj@nudt.edu.cn。\n\n  邮件标题格式：\"CSIG2026'金睛杯'光学时敏弱小目标探测挑战赛_(参赛队单位名称)_(参赛队名称)\"。\n\n  邮件内容包括附件报名表。报名表格式如下：\n\n| 参赛成员姓名&nbsp;&nbsp;&nbsp; | 组成 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  | 单位&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;| 职称&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;| 手机号 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 邮箱&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;|\n|:-------------------:|:------------------:|:-----------------:|:---------------------:|:----------------------:|:--------------------:|\n|              | 队长     |      |      |        |      |\n|              | 队员     |      |      |        |      |\n|              | 队员     |      |      |        |      |\n|              | 队员     |      |      |        |      |\n|              | 队员     |      |      |        |      |\n|              | 指导老师 |      |      |        |      |\n|              | 指导老师 |      |      |        |      |\n\n  报名截止时间：2026年7月20日 18:00。\n\n  组织方收到邮件并与报名者确认后，报名成功。\n\n  报名表下载：[2026年第七届中国图像图形学学会图形技术挑战赛报名表.xlsx](https://jinsight-cup.github.io/JinSight-ChallengeV3/downloads/2026年第七届中国图像图形学学会图形技术挑战赛报名表.xls?v=20260629)  \n\n---\n\n## 参赛团队注册方式  \n参赛团队报名成功，并在排行榜上获得有效的公开成绩，即为成功注册，可获得评奖资格。  \n\n---\n\n## 比赛交流微信群  \n\n<div align=\"center\">\n  <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/wechat-challenge-group-1.jpg?v=20260629-2\" alt=\"比赛交流微信群二维码\" width=\"250\">\n</div>",
+        "content_zh": "## 挑战赛参与者要求  \n\n自愿报名参赛，参赛队伍和成员的组成可为：  \n1. 各培养单位正式注册教师、在读本科生、研究生以及博士生；  \n2. 国内各研究团体、企事业单位。  \n\n---\n\n## 报名方式\n\n仅接受以团队形式通过邮件报名参赛，每支参赛队伍人员不超过5人（不包括指导老师），每名参赛选手只能参加1个参赛队。\n\n参赛团队下载并填写CSIG2026\"金睛杯\"光学时敏弱小目标探测挑战赛的报名表，将报名表发邮件至竞赛联系人邮箱wangyujj@nudt.edu.cn。\n\n邮件标题格式：\"CSIG2026'金睛杯'光学时敏弱小目标探测挑战赛_(参赛队单位名称)_(参赛队名称)\"。\n\n邮件内容包括附件报名表。报名表格式如下：\n\n| 参赛成员姓名 | 组成 | 单位 | 职称 | 手机号 | 邮箱 |\n|:---:|:---:|:---:|:---:|:---:|:---:|\n| | 队长 | | | | |\n| | 队员 | | | | |\n| | 队员 | | | | |\n| | 队员 | | | | |\n| | 队员 | | | | |\n| | 指导老师 | | | | |\n| | 指导老师 | | | | |\n\n报名截止时间：2026年7月20日 18:00。\n\n组织方收到邮件并与报名者确认后，报名成功。\n\n报名表下载：[2026年第七届中国图像图形学学会图形技术挑战赛报名表.xlsx](https://jinsight-cup.github.io/JinSight-ChallengeV3/downloads/2026年第七届中国图像图形学学会图形技术挑战赛报名表.xls?v=20260629)  \n\n---\n\n## 参赛团队注册方式  \n\n参赛团队报名成功，并在排行榜上获得有效的公开成绩，即为成功注册，可获得评奖资格。  \n\n---\n\n## 比赛交流微信群  \n\n<div align=\"center\">\n  <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/wechat-challenge-group-1.jpg?v=20260629-2\" alt=\"比赛交流微信群二维码\" width=\"250\">\n</div>"
+      },
+      {
+        "index": 3,
+        "title": "赛事结果",
+        "content": "## 比赛结果\n\n  公布内容：CSIG2026“金睛杯”光学时敏弱小目标探测挑战赛获奖队伍名单、比赛结果图片和赛事总结将在成绩复核后公布",
+        "content_zh": "# Competition Results\n\nPublished Content: The list of winning teams in the CSIG2026 \"Golden Eye Cup\" Optical Time-Sensitive Weak and Small Target Detection Challenge, competition result images, and event summary will be released after score verification."
+      }
+    ]
+  },
   "15553": {
     "id": 15553,
     "title": "MICCAI FLARE 2026 Task 2: AutoMSC: Automated Medical Image Segmentation and Classification",
@@ -1320,9 +1278,9 @@
     "description_zh": "MICCAI FLARE 2026 任务2：AutoMSC - 医学图像自动分割与分类",
     "created_by": "junma",
     "created_when": "2026-04-09T21:08:06.808342Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-09-1775769761/960f641105b9/logo-task2.png?AWSAccessKeyId=codabench-prod&Signature=yQG9NXTzkJFCb2Oe3rG%2Bmdkmhjc%3D&Expires=1784469105",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-09-1775769761/960f641105b9/logo-task2.png?AWSAccessKeyId=codabench-prod&Signature=Q%2F9tkGF0UBdfe5M67NhgcqousZE%3D&Expires=1784555866",
     "participants_count": 56,
-    "submissions_count": 10,
+    "submissions_count": 11,
     "first_phase_start": null,
     "phases": [
       {
@@ -1391,7 +1349,7 @@
     "description_zh": "该竞赛对近距离短波红外高光谱成像的×4超分辨率进行基准测试。\n参赛者将获得使用同一传感器和不同镜头采集的低分辨率HSI立方体数据，通过控制分辨率变化而不引入光谱偏差。任务是从×4下采样输入重建高分辨率短波红外高光谱图像。",
     "created_by": "rafariva",
     "created_when": "2025-12-30T16:14:49.840049Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-12-30-1767111468/edd5610f43a0/logo_HISR.png?AWSAccessKeyId=codabench-prod&Signature=ewW3SMCKHBqwwad3BObAtUMDLew%3D&Expires=1784469151",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-12-30-1767111468/edd5610f43a0/logo_HISR.png?AWSAccessKeyId=codabench-prod&Signature=73jUbf6JIFkpzNCeSzmVDfnLRuQ%3D&Expires=1784555915",
     "participants_count": 53,
     "submissions_count": 582,
     "first_phase_start": null,
@@ -1450,7 +1408,7 @@
     "description_zh": "一个基于混合信号数据集的协作3D目标检测挑战，该数据集是一个多样化的真实点云数据集，用于异构激光雷达V2X协作（3辆连接的车辆+配备双激光雷达的路侧单元）。融合多个智能体的点云，在鸟瞰图平面上检测车辆、自行车和行人，并在排行榜上攀升。",
     "created_by": "mixed-signals",
     "created_when": "2026-07-09T01:30:36.192294Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783560636/614edf812e36/logo.png?AWSAccessKeyId=codabench-prod&Signature=akrRn1SQOOEBi4on1jkuiEGkLLo%3D&Expires=1784469087",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783560636/614edf812e36/logo.png?AWSAccessKeyId=codabench-prod&Signature=j1b5veKoCDqidoKFiR5528t2Q%2B0%3D&Expires=1784555847",
     "participants_count": 9,
     "submissions_count": 0,
     "first_phase_start": null,
@@ -1498,8 +1456,8 @@
     "description_zh": "This competition focuses on fine-grained understanding of urban-level building facade components, utilizing the City-Fac dataset.\n\nThe data is collected by vehicle-mounted mobile laser scanning systems, covering multiple types of typical urban street blocks in Xiamen, with a cumulative road length of approximately 60 km. The dataset includes fine-grained building facade element annotations such as walls, windows, doors, roofs, billboards, air conditioning units, canopies, and balconies, with both semantic-level and instance-level labels provided.\n\nParticipants need to identify independent building facade component instances in the test point cloud and output the corresponding semantic categories and instance numbers.\n\nThe competition adopts a result submission mode. Participants complete model training and inference locally and only submit prediction results to Codabench, where the platform automatically scores using hidden instance labels.",
     "created_by": "jianlongguan",
     "created_when": "2026-06-26T12:50:09.783065Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=C0ZZlle2QvDwadsqagSmc1MtmJ8%3D&Expires=1784469088",
-    "participants_count": 5,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=kWZLxiznuew8D1s0OhpC5bbZczU%3D&Expires=1784555849",
+    "participants_count": 6,
     "submissions_count": 7,
     "first_phase_start": null,
     "phases": [

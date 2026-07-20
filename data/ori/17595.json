@@ -1,0 +1,441 @@
+{
+  "id": 17595,
+  "title": "ChildSafeAds: Commercial Content in Child-Facing YouTube Videos (NLLP @ EMNLP 2026)",
+  "published": true,
+  "created_by": "thalesbertaglia",
+  "owner_display_name": "thales bertaglia",
+  "created_when": "2026-07-20T09:51:37.748643Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784541097/a7995f6fb767/logo.png?AWSAccessKeyId=codabench-prod&Signature=nNZMbrl6Q0zfBUf9qO68aAqgvt0%3D&Expires=1784555843",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784541097/a7995f6fb767/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=kNCAx4FG0iIY5Xj%2B7Cc62VeixwQ%3D&Expires=1784555843",
+  "terms": "# Terms and Conditions\n\nBy registering for this competition you agree to the following.\n\n## Data Use\n\n1. **Research use within this shared task.** The data is provided for research participation in ChildSafeAds. Using it to train systems for other purposes requires separate permission from the organisers.\n2. **Licence.** The dataset derives from the [SponsorBlock](https://sponsor.ajay.app/database) database, licensed CC BY-NC-SA 4.0. Under that licence's share-alike term, the labels, instance structure and resolved page text are distributed under the same **CC BY-NC-SA 4.0**, attributing SponsorBlock: non-commercial use, share-alike, with attribution. Video-derived fields (transcripts, titles, descriptions, metadata) are provided for research use under these terms. Resolved page text is extracted from third-party commercial websites and is likewise research-use only.\n3. **Platform terms.** You must comply with the YouTube Terms of Service when using any video-derived field or when collecting further data yourself.\n4. **No re-identification or contact.** Do not attempt to re-identify, contact, or harass creators, channels, or any individual appearing in the data. Do not publish material that singles out an individual creator as non-compliant; findings should be reported in aggregate.\n5. **Redistribution.** Do not redistribute the dataset outside your team. Direct others to this competition instead.\n\n## Competition Conduct\n\n6. **Do not manually label the test set.** Predictions on the evaluation phase must be produced by your system.\n7. **One account per team.** Do not create additional accounts to obtain extra submissions.\n8. **Document your system.** Any model or resource is permitted, including LLMs, provided it is documented in your system design report.\n\n## A Note on the Labels\n\nThe compliance labels reflect the organisers' reading of EU consumer law for the purposes of a research benchmark. They are **not legal advice and not a finding of unlawfulness** about any creator, brand, or video. Some flags remain under legal review and may be refined in a point release.\n\n## Bonus Track\n\nIf you collect off-platform destination data yourself, you remain responsible for doing so lawfully and for respecting the terms of the sites you access.\n\n## Organisers\n\nThales Bertaglia (Utrecht University), Catalina Goanta (Utrecht University), Gerasimos Spanakis (Maastricht University), Güneş Acar (Radboud University).\n\nQuestions: please use the competition forum, so answers reach all participants.",
+  "pages": [
+    {
+      "id": 83810,
+      "title": "Overview",
+      "content": "# ChildSafeAds — Commercial Content in Child-Facing YouTube Videos\n\n**A shared task at [NLLP](https://nllpw.org) @ EMNLP 2026.**\n\nImagine you work at an authority responsible for monitoring commercial content that reaches minors on video platforms. How would you build that monitoring system, and what can it achieve at each level of data access and cost?\n\nInfluencer marketing reaching children and teenagers is widespread on YouTube and frequently undisclosed. Assessing it at platform scale needs automated support, but doing so responsibly means classifying what is being sold, categorising it, and reasoning about the advertising-law concerns it raises. This task puts those three together on real data.\n\n## The Data\n\n**3,360 instances**: train 2,353 / dev 504 / test 503, **channel-disjoint** (no channel appears in more than one split). Each instance is one sponsored segment, community-verified via SponsorBlock, on a channel curated to plausibly reach a significant teen audience, paired with the product page its description links to.\n\nFields are grouped into **four access levels ordered by collection cost**: the segment transcript, then video metadata including YouTube's own paid-promotion flag, then channel context, then the crawled product page. A transcript-only system uses one field; each further level costs more to obtain at scale.\n\n## The Sub-Tasks\n\n| | Task | Output |\n|---|---|---|\n| **ST1** | Commercial type | one label (EU Consumer Rights Directive contract types) |\n| **ST2** | Product category | one or more labels |\n| **ST3** | Compliance risk flags | one or more flags, grounded in EU consumer law (UCPD, AVMSD, DSA, CRD) |\n\nParticipate in any subset. Definitions are in `labels_taxonomy.md`, shipped with the data; per-flag legal grounding is in `legal_provisions.json` as citations and notes, not statutory text.\n\nTwo things are given by the dataset and should not be re-assessed by systems: the channel is child-facing, and the segment is commercial. The question is what is being sold and what concerns it raises.\n\n## What We Are Actually Asking\n\nAccuracy is scored on the leaderboard, but the interesting question is a design one: **what does each additional level of data buy, and is it worth the cost?** Every submission therefore records which data levels it used, and that appears on the leaderboard beside the score, so results read as *accuracy at a given data cost*. Beyond that one dropdown, we highly encourage a short **system design report** describing the trade-offs you weighed. It is not a full paper, and it is where the most interesting findings of this task are likely to live.\n\nA **bonus track** invites teams to go further and collect off-platform destination data themselves (shops, terms of service, apps) starting from the outbound link we ship. Not scored, very welcome in the report.\n\n## Getting Started\n\n1. Register (approval required; registering accepts the data-use terms).\n2. Download **Public Data** and the **Starting Kit** from the Participate tab.\n3. Run the majority baseline to produce a valid submission, check it with the included format checker, and submit.\n\nSee the **Data**, **Evaluation**, and **Terms** pages for specifics.",
+      "index": 0
+    },
+    {
+      "id": 83811,
+      "title": "Data",
+      "content": "# Data\n\n## Where to Get It\n\nThe dataset is attached to each phase of this competition. Go to the **Participate** tab and download **Public Data**:\n\n| Phase | File | Contents |\n|-------|------|----------|\n| Development | `public_data_dev.zip` | `train.jsonl` (2,353) and `dev.jsonl` (504), both labelled, plus documentation |\n| Evaluation | `public_data_test.zip` | `test.jsonl` (503), unlabelled, plus documentation |\n\nTest inputs are released when the evaluation phase opens. The **Starting Kit**, on the same tab, contains a loader for this format, a submission-format checker, a majority baseline, and a valid sample submission.\n\nEach zip also contains `README.md` (dataset card), `labels_taxonomy.md` (full label definitions, severity, the direct-exhortation test, the bonus track) and `legal_provisions.json`.\n\n## Format\n\nSplits are **channel-disjoint**: no channel appears in more than one split. Each line of a JSONL file is one instance, with fields grouped into four access levels ordered by collection cost, so a system can use as much or as little as its design calls for.\n\n| Level | Field | Contents | Collection cost |\n|-------|-------|----------|-----------------|\n| 1 | `transcript` | `text`, `segment_start`, `segment_end` | Lowest; scales to the whole platform |\n| 2 | `video_context` | `videoID`, `title`, `description`, `official_disclosure` | One metadata call per video |\n| 3 | `channel_context` | `channelID`, `channel_name` | One channel lookup |\n| 4 | `product_page` | `raw_url`, `resolved_url`, `page_title`, `text` | Crawl the outbound link; some pages are dead or block automated access |\n\n`official_disclosure` is YouTube's own \"Includes paid promotion\" label: `\"true\"`, `\"false\"`, or `\"\"` when it could not be determined.\n\n`train.jsonl` and `dev.jsonl` carry a `labels` block; `test.jsonl` does not.\n\n```json\n\"labels\": {\n  \"st1\": \"digital_content_or_services\",\n  \"st2\": [\"apps\", \"gambling_adjacent\"],\n  \"st3\": [\"undisclosed_advertising\"],\n  \"st3_evidence\": [{\"flag\": \"undisclosed_advertising\", \"quote\": \"verbatim span from this instance's text\"}]\n}\n```\n\nEach `st3_evidence` quote is verbatim from that instance's own transcript, description, or product page. Quotes that could not be matched to the source are omitted, so a flag may carry no evidence entry.\n\n## Labels and Legal Grounding\n\n`labels_taxonomy.md` gives the full definitions. In brief: ST1 is single-label (what the buyer receives), ST2 is multi-label (what is being sold), ST3 is multi-label compliance flags, where `no_flag` and `insufficient_context` each stand alone.\n\n`legal_provisions.json` maps each flag to the EU instruments and provisions that ground it, with a severity attribute and a note on what each provision requires. It holds **citations and notes, not statutory text**, and covers the provisions behind the flags in this release rather than the whole of EU advertising law. The identifiers resolve against EUR-Lex and Commission guidance if you want to retrieve fuller legal material yourself; whether doing so improves flag prediction is an open question we would like reports to address.\n\n## Provenance and Curation\n\nChannels were curated to plausibly reach a significant teen audience: an automated classifier over channel descriptions, video titles and metadata, followed by a human-validated exclusion pass. This is not guaranteed correct for every channel, but it means **systems do not need to assess audience themselves**; treat \"child-facing\" as a dataset-level property.\n\nLabels are automatically annotated, with human validation and legal calibration. Some compliance flags remain under legal review and may be refined in a point release; any change will be announced on this competition. Human-annotated calibration examples will be released with the evaluation phase.\n\n## Licence\n\nThe dataset derives from the [SponsorBlock](https://sponsor.ajay.app/database) database, licensed **CC BY-NC-SA 4.0**. Under that licence's share-alike term, the derived labels, instance structure and resolved page text are distributed under the same licence, attributing SponsorBlock. Video-derived fields are for research use under the task's terms. See the Terms page and the dataset `README.md`.",
+      "index": 1
+    },
+    {
+      "id": 83812,
+      "title": "Evaluation",
+      "content": "# Evaluation and Submission\n\n## Phases\n\n| Phase | Dates | Predict on | Submissions |\n|-------|-------|-----------|-------------|\n| Development | 20 July – 10 August 2026 | `dev.jsonl` | 10 per day |\n| Evaluation | 11 – 18 August 2026 | `test.jsonl` | 3 in total |\n\nThe development phase has a live leaderboard for tuning. The evaluation phase determines the final ranking, so spend your three submissions carefully.\n\n## Submission Format\n\nUpload a **zip containing one JSONL file**, with one object per instance:\n\n```json\n{\"instanceID\": \"...\", \"st1\": \"physical_goods\", \"st2\": [\"toys\"], \"st3\": [\"no_flag\"]}\n```\n\n- Omit a field for any sub-task you are not entering. Missing predictions score 0 for that instance on that sub-task, so partial participation is fine but incomplete coverage is penalised.\n- `st3` must respect exclusivity: `no_flag` and `insufficient_context` each stand alone.\n- Validate before uploading with `check_submission.py` from the Starting Kit:\n  `python check_submission.py submission.jsonl dev.jsonl`\n\n## Metrics\n\nAll macro-F1, higher is better. Reported per submission:\n\n| Key | Meaning |\n|-----|---------|\n| `mean_macro_f1` | Mean of the three sub-task scores. **Ranks the leaderboard.** |\n| `st1_macro_f1` | Sub-task 1, single-label |\n| `st2_macro_f1` | Sub-task 2, multi-label |\n| `st3_macro_f1` | Sub-task 3, fine-grained flags |\n| `st3_family_macro_f1` | Sub-task 3, flags collapsed to families (disclosure / content / product) |\n\nThe family-level score is reported because flag frequencies are heavily imbalanced, so a fine-grained macro-F1 alone can be dominated by rare flags. `coverage` (the share of reference instances you predicted) is also returned for diagnosis.\n\nFor reference, the majority-class baseline in the Starting Kit scores **0.093 mean macro-F1** on dev (ST1 0.151, ST2 0.042, ST3 0.085). It exists to establish the floor and to let you verify your pipeline end to end.\n\n## The System Design Report (Highly Encouraged)\n\nThe leaderboard is only half of the evaluation. Because this task is about *how to build a monitoring system*, we highly encourage every team to describe their design. There are two parts to this, and neither requires writing a full paper.\n\n### 1. The submission form (takes seconds)\n\nEvery submission carries a short questionnaire. **Only one answer is required:** which **data access levels** your system used. That answer appears as a column on the leaderboard next to your score, so results can be read as *accuracy at a given data cost*, which is the point of the task. A system using transcripts alone and scoring near one using the full crawl is a genuinely interesting result, and we want that visible.\n\nThe remaining questions are optional and exist so you can record, at whatever depth suits you: system type, a two-to-three sentence method summary, whether you retrieved legal material beyond the citations we ship, the approximate cost of running over all 3,360 instances, and a **link to a fuller report**.\n\nPlease complete the optional fields on your **final evaluation-phase submission**, even if you skip them while tuning.\n\n### 2. A short document (optional but valuable)\n\nIf you can, write up the design in a few pages and paste the link (PDF, preprint, or repository) into the `report_url` field. Useful content:\n\n- results at more than one access level, and what each level bought;\n- cost, reliability, and scalability at platform scale;\n- model and compute choices, and how they would generalise beyond this dataset;\n- for ST3, the provisions your predictions relied on, and whether richer legal context helped.\n\nLegal grounding is **not scored** on the leaderboard: we would rather report honestly on classification than score a component we cannot yet evaluate rigorously, so the report is where that work is recognised. Teams writing a full system description paper for the workshop are welcome to link that instead.\n\n## Rules\n\nAny model or resource is allowed, including LLMs, provided you document it in your report. Do not manually label the test set. One account per team. Please do not create multiple accounts to gain extra submissions.",
+      "index": 2
+    },
+    {
+      "id": 83813,
+      "title": "Terms",
+      "content": "# Terms and Conditions\n\nBy registering for this competition you agree to the following.\n\n## Data Use\n\n1. **Research use within this shared task.** The data is provided for research participation in ChildSafeAds. Using it to train systems for other purposes requires separate permission from the organisers.\n2. **Licence.** The dataset derives from the [SponsorBlock](https://sponsor.ajay.app/database) database, licensed CC BY-NC-SA 4.0. Under that licence's share-alike term, the labels, instance structure and resolved page text are distributed under the same **CC BY-NC-SA 4.0**, attributing SponsorBlock: non-commercial use, share-alike, with attribution. Video-derived fields (transcripts, titles, descriptions, metadata) are provided for research use under these terms. Resolved page text is extracted from third-party commercial websites and is likewise research-use only.\n3. **Platform terms.** You must comply with the YouTube Terms of Service when using any video-derived field or when collecting further data yourself.\n4. **No re-identification or contact.** Do not attempt to re-identify, contact, or harass creators, channels, or any individual appearing in the data. Do not publish material that singles out an individual creator as non-compliant; findings should be reported in aggregate.\n5. **Redistribution.** Do not redistribute the dataset outside your team. Direct others to this competition instead.\n\n## Competition Conduct\n\n6. **Do not manually label the test set.** Predictions on the evaluation phase must be produced by your system.\n7. **One account per team.** Do not create additional accounts to obtain extra submissions.\n8. **Document your system.** Any model or resource is permitted, including LLMs, provided it is documented in your system design report.\n\n## A Note on the Labels\n\nThe compliance labels reflect the organisers' reading of EU consumer law for the purposes of a research benchmark. They are **not legal advice and not a finding of unlawfulness** about any creator, brand, or video. Some flags remain under legal review and may be refined in a point release.\n\n## Bonus Track\n\nIf you collect off-platform destination data yourself, you remain responsible for doing so lawfully and for respecting the terms of the sites you access.\n\n## Organisers\n\nThales Bertaglia (Utrecht University), Catalina Goanta (Utrecht University), Gerasimos Spanakis (Maastricht University), Güneş Acar (Radboud University).\n\nQuestions: please use the competition forum, so answers reach all participants.",
+      "index": 3
+    }
+  ],
+  "phases": [
+    {
+      "id": 29351,
+      "index": 0,
+      "start": "2026-07-20T00:00:00Z",
+      "end": "2026-08-10T00:00:00Z",
+      "name": "Development",
+      "description": "Tune on dev; daily submission cap 10.",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "ed480eef-3db9-4d65-9b3d-a53717a0fd02",
+          "order_index": 999,
+          "phase": 29351,
+          "id": 35051,
+          "value": "ed480eef-3db9-4d65-9b3d-a53717a0fd02",
+          "key": "ed480eef-3db9-4d65-9b3d-a53717a0fd02",
+          "created_when": "2026-07-20T09:51:36.307834Z",
+          "name": "Development (dev set)",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 897285,
+              "created_by": "thalesbertaglia",
+              "owner_display_name": "thales bertaglia",
+              "created_when": "2026-07-20T09:51:36.090308Z",
+              "name": "scoring_program @ '07-20-2026 09:51'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "a2b330e5-f008-4a87-94cf-e960a187c527",
+              "value": "a2b330e5-f008-4a87-94cf-e960a187c527",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 17595,
+                  "title": "ChildSafeAds: Commercial Content in Child-Facing YouTube Videos (NLLP @ EMNLP 2026)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 2080.0
+            },
+            {
+              "id": 897286,
+              "created_by": "thalesbertaglia",
+              "owner_display_name": "thales bertaglia",
+              "created_when": "2026-07-20T09:51:36.198437Z",
+              "name": "reference_data @ '07-20-2026 09:51'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "f29ee821-582d-4225-b3f4-8d6c50442474",
+              "value": "f29ee821-582d-4225-b3f4-8d6c50442474",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 17595,
+                  "title": "ChildSafeAds: Commercial Content in Child-Facing YouTube Videos (NLLP @ EMNLP 2026)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 43706.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 10,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": {
+        "id": 897289,
+        "created_by": "thalesbertaglia",
+        "owner_display_name": "thales bertaglia",
+        "created_when": "2026-07-20T09:51:36.734429Z",
+        "name": "public_data @ '07-20-2026 09:51'",
+        "type": "public_data",
+        "description": null,
+        "is_public": false,
+        "key": "f0bb7119-0c16-4de9-bc45-8a258f52b96c",
+        "value": "f0bb7119-0c16-4de9-bc45-8a258f52b96c",
+        "was_created_by_competition": true,
+        "in_use": [
+          {
+            "pk": 17595,
+            "title": "ChildSafeAds: Commercial Content in Child-Facing YouTube Videos (NLLP @ EMNLP 2026)"
+          }
+        ],
+        "competition": null,
+        "file_name": "",
+        "file_size": 4943455.0
+      },
+      "starting_kit": {
+        "id": 897290,
+        "created_by": "thalesbertaglia",
+        "owner_display_name": "thales bertaglia",
+        "created_when": "2026-07-20T09:51:37.004613Z",
+        "name": "starting_kit @ '07-20-2026 09:51'",
+        "type": "starting_kit",
+        "description": null,
+        "is_public": false,
+        "key": "c405e518-7bf7-4e30-8cfc-b235219d8409",
+        "value": "c405e518-7bf7-4e30-8cfc-b235219d8409",
+        "was_created_by_competition": true,
+        "in_use": [
+          {
+            "pk": 17595,
+            "title": "ChildSafeAds: Commercial Content in Child-Facing YouTube Videos (NLLP @ EMNLP 2026)"
+          }
+        ],
+        "competition": null,
+        "file_name": "",
+        "file_size": 13789.0
+      },
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    },
+    {
+      "id": 29352,
+      "index": 1,
+      "start": "2026-08-11T00:00:00Z",
+      "end": "2026-08-18T00:00:00Z",
+      "name": "Evaluation",
+      "description": "Final test submissions (max 3 total).",
+      "status": "Next",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "ae8c6079-6173-4d5d-a464-1657f4f43e04",
+          "order_index": 999,
+          "phase": 29352,
+          "id": 35052,
+          "value": "ae8c6079-6173-4d5d-a464-1657f4f43e04",
+          "key": "ae8c6079-6173-4d5d-a464-1657f4f43e04",
+          "created_when": "2026-07-20T09:51:36.696804Z",
+          "name": "Evaluation (test set)",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 897287,
+              "created_by": "thalesbertaglia",
+              "owner_display_name": "thales bertaglia",
+              "created_when": "2026-07-20T09:51:36.318040Z",
+              "name": "scoring_program @ '07-20-2026 09:51'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "fc3857fc-322e-419e-95f5-79ee7bfbae86",
+              "value": "fc3857fc-322e-419e-95f5-79ee7bfbae86",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 17595,
+                  "title": "ChildSafeAds: Commercial Content in Child-Facing YouTube Videos (NLLP @ EMNLP 2026)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 2080.0
+            },
+            {
+              "id": 897288,
+              "created_by": "thalesbertaglia",
+              "owner_display_name": "thales bertaglia",
+              "created_when": "2026-07-20T09:51:36.610287Z",
+              "name": "reference_data @ '07-20-2026 09:51'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "505b14db-69ae-40a3-974c-9f5ca50fea82",
+              "value": "505b14db-69ae-40a3-974c-9f5ca50fea82",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 17595,
+                  "title": "ChildSafeAds: Commercial Content in Child-Facing YouTube Videos (NLLP @ EMNLP 2026)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 45042.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 3,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": {
+        "id": 897291,
+        "created_by": "thalesbertaglia",
+        "owner_display_name": "thales bertaglia",
+        "created_when": "2026-07-20T09:51:37.534977Z",
+        "name": "public_data @ '07-20-2026 09:51'",
+        "type": "public_data",
+        "description": null,
+        "is_public": false,
+        "key": "b93534b5-47f6-45ff-a82d-781080dd8bdb",
+        "value": "b93534b5-47f6-45ff-a82d-781080dd8bdb",
+        "was_created_by_competition": true,
+        "in_use": [
+          {
+            "pk": 17595,
+            "title": "ChildSafeAds: Commercial Content in Child-Facing YouTube Videos (NLLP @ EMNLP 2026)"
+          }
+        ],
+        "competition": null,
+        "file_name": "",
+        "file_size": 910141.0
+      },
+      "starting_kit": {
+        "id": 897292,
+        "created_by": "thalesbertaglia",
+        "owner_display_name": "thales bertaglia",
+        "created_when": "2026-07-20T09:51:37.668495Z",
+        "name": "starting_kit @ '07-20-2026 09:51'",
+        "type": "starting_kit",
+        "description": null,
+        "is_public": false,
+        "key": "468dd329-43de-4a4b-8024-c1344855ae7e",
+        "value": "468dd329-43de-4a4b-8024-c1344855ae7e",
+        "was_created_by_competition": true,
+        "in_use": [
+          {
+            "pk": 17595,
+            "title": "ChildSafeAds: Commercial Content in Child-Facing YouTube Videos (NLLP @ EMNLP 2026)"
+          }
+        ],
+        "competition": null,
+        "file_name": "",
+        "file_size": 13789.0
+      },
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 19554,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "results",
+      "columns": [
+        {
+          "id": 86132,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Mean macro-F1",
+          "key": "mean_macro_f1",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 86133,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "ST1",
+          "key": "st1_macro_f1",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 86134,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "ST2",
+          "key": "st2_macro_f1",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 86135,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "ST3",
+          "key": "st3_macro_f1",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 86136,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "ST3 family",
+          "key": "st3_family_macro_f1",
+          "sorting": "desc",
+          "index": 4,
+          "hidden": false,
+          "precision": 4
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Add"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": false,
+  "description": "Detect and classify commercial content in YouTube videos that plausibly reach a minor audience: commercial type, product category, and compliance risk flags grounded in EU consumer law. Framed as a system-design challenge over four data-access levels.",
+  "participants_count": 3,
+  "submissions_count": 1,
+  "queue": null,
+  "enable_detailed_results": true,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": true,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "codalab/codalab-legacy:py39",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": {
+    "report_url": {
+      "key": "report_url",
+      "type": "text",
+      "title": "System design report: link to PDF, preprint, or repository",
+      "selection": "",
+      "is_required": "false",
+      "is_on_leaderboard": "false"
+    },
+    "data_levels": {
+      "key": "data_levels",
+      "type": "select",
+      "title": "Data access levels used (see the Data page)",
+      "selection": [
+        "",
+        "1 — transcript only",
+        "1-2 — + video context",
+        "1-3 — + channel context",
+        "1-4 — + product page",
+        "1-4 + own off-platform data (bonus track)"
+      ],
+      "is_required": "true",
+      "is_on_leaderboard": "true"
+    },
+    "system_type": {
+      "key": "system_type",
+      "type": "select",
+      "title": "System type",
+      "selection": [
+        "",
+        "LLM (API)",
+        "LLM (open weights)",
+        "Fine-tuned encoder",
+        "Classical ML",
+        "Rules or hybrid",
+        "Other"
+      ],
+      "is_required": "false",
+      "is_on_leaderboard": "true"
+    },
+    "compute_cost": {
+      "key": "compute_cost",
+      "type": "text",
+      "title": "Approximate cost or compute to run your system over all 3,360 instances",
+      "selection": "",
+      "is_required": "false",
+      "is_on_leaderboard": "false"
+    },
+    "method_summary": {
+      "key": "method_summary",
+      "type": "text",
+      "title": "Method summary (2-3 sentences)",
+      "selection": "",
+      "is_required": "false",
+      "is_on_leaderboard": "false"
+    },
+    "retrieved_legal_material": {
+      "key": "retrieved_legal_material",
+      "type": "checkbox",
+      "title": "Did you retrieve legal material beyond the citations shipped in legal_provisions.json?",
+      "selection": [
+        true,
+        false
+      ],
+      "is_required": "false",
+      "is_on_leaderboard": "false"
+    }
+  },
+  "forum": 17287,
+  "reward": null,
+  "contact_email": null,
+  "report": null,
+  "forum_enabled": true
+}

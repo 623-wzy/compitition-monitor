@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ChildSafeAds: Commercial Content in Child-Facing YouTube Videos (NLLP @ EMNLP 2026) — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>ChildSafeAds: Commercial Content in Child-Facing YouTube Videos (NLLP @ EMNLP 2026)</h2>
+  <div class="detail-meta">
+    <span>ID: 17595</span>
+    <span>创建者: thalesbertaglia</span>
+    <span>创建时间: 2026-07-20</span>
+    <span>参与人数: 3</span>
+    <span>提交次数: 1</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/17595/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content"># YouTube商业内容检测与分类系统：未成年人受众合规评估
+
+## 系统概述
+针对可能触及未成年人受众的YouTube视频中的商业内容进行检测、分类和合规风险评估，基于欧盟消费者法律框架，分四个数据访问层级架构。
+
+---
+
+## 第一层：基础内容识别
+
+### 检测维度
+- **视频元数据分析**：频道类目、观众年龄统计、内容标签
+- **视频脚本扫描**：自动字幕/手动转录的商业语言模式识别
+- **视觉元素识别**：品牌logo、产品展示、赞助标识
+
+### 输出分类
+| 商业内容类型 | 识别信号 | 风险等级 |
+|---------|--------|--------|
+| 直接广告 | 明确产品推荐、定价信息 | 高 |
+| 原生广告 | 产品集成、品牌合作 | 中高 |
+| 隐性置入 | 背景品牌、角色使用产品 | 中 |
+| 联盟营销 | 推荐链接、折扣码 | 中高 |
+
+---
+
+## 第二层：产品类别与监管映射
+
+### 高风险产品类别（未成年人保护）
+- **食品饮料**：高糖/高盐、能量饮料、酒精相关
+- **科技产品**：游戏、社交应用、沉浸式内容
+- **时尚美容**：化妆品、整容相关服务、极端减肥产品
+- **金融产品**：加密资产、赌博、在线交易平台
+- **药品与补充剂**：处方药推荐、声称疗效的补充品
+
+### 分类规则
+```
+产品类别 → 年龄敏感度 → 欧盟指令 → 特定标记要求
+```
+
+**示例**：能量饮料(食品) → 高(12岁以下) → 2006/114/EC(误导性广告) → 必须标注&quot;咖啡因含量&quot;
+
+---
+
+## 第三层：欧盟合规风险标记
+
+### 法律框架应用
+
+#### A. 欧盟《消费者权利指令》(2011/83/EU)
+- **风险标记**：
+  - 缺少清晰的商业意图披露
+  - 不透明的价格条款
+  - 无冷静期声明（适用产品）
+
+#### B. 《不公平商业惯例指令》(2005/29/EC)
+- **风险标记**：
+  - 虚假/误导性声明（健康效益、性能）
+  - 攻击性营销实践（强制购买、时间压力）
+  - 儿童针对性的操纵策略
+
+#### C. 《视听传媒服务指令》(2010/13/EU)修订案
+- **风险标记**：
+  - 缺少商业广告边界标记(&quot;reklame&quot;、&quot;Werbung&quot;、&quot;publicité&quot;)
+  - 儿童节目中的插播广告违规
+  - 名人/影响者代言未标注
+
+#### D. 《儿童在线隐私保护规则》(GDPR第8条+指南)
+- **风险标记**：
+  - 14岁以下受众的个性化广告
+  - 未获得可验证的父母同意
+  - 行为追踪/数据收集未披露
+
+### 风险评分矩阵
+
+| 合规维度 | 低风险 | 中风险 | 高风险 |
+|---------|-------|-------|-------|
+| 披露透明度 | 明确标记 | 模糊标记 | 无标记 |
+| 年龄针对性 | 通用内容 | 混合受众 | 明确针对儿童 |
+| 声称验证性 | 有证据支持 | 部分声称 | 未实质性声称 |
+| 数据实践 | 最小收集 | 追踪但同意 | 追踪无同意 |
+
+---
+
+## 第四层：报告与可视化输出
+
+### 检测结果架构
+
+```json
+{
+  &quot;video_id&quot;: &quot;string&quot;,
+  &quot;commercial_content&quot;: {
+    &quot;detected&quot;: boolean,
+    &quot;types&quot;: [&quot;native_advertising&quot;, &quot;affiliate_marketing&quot;],
+    &quot;confidence&quot;: 0.92
+  },
+  &quot;product_classification&quot;: {
+    &quot;category&quot;: &quot;energy_beverages&quot;,
+    &quot;risk_tier&quot;: &quot;high&quot;,
+    &quot;age_sensitivity&quot;: &quot;12+&quot;
+  },
+  &quot;compliance_flags&quot;: {
+    &quot;disclosure_clarity&quot;: {
+      &quot;status&quot;: &quot;non-compliant&quot;,
+      &quot;issue&quot;: &quot;商业意图未标记&quot;,
+      &quot;regulation&quot;: &quot;2010/13/EU&quot;,
+      &quot;severity&quot;: &quot;critical&quot;
+    },
+    &quot;misleading_claims&quot;: {
+      &quot;status&quot;: &quot;flagged&quot;,
+      &quot;claims&quot;: [&quot;增加体能&quot;, &quot;改善注意力&quot;],
+      &quot;evidence_status&quot;: &quot;unsubstantiated&quot;,
+      &quot;regulation&quot;: &quot;2005/29/EC&quot;,
+      &quot;severity&quot;: &quot;high&quot;
+    },
+    &quot;influencer_compliance&quot;: {
+      &quot;status&quot;: &quot;non-compliant&quot;,
+      &quot;issue&quot;: &quot;影响者代言未披露&quot;,
+      &quot;regulation&quot;: &quot;2005/29/EC + 2010/13/EU&quot;,
+      &quot;severity&quot;: &quot;high&quot;
+    },
+    &quot;gdpr_data_practices&quot;: {
+      &quot;status&quot;: &quot;warning&quot;,
+      &quot;issue&quot;: &quot;链接产品的应用进行未同意追踪&quot;,
+      &quot;regulation&quot;: &quot;GDPR Art.8&quot;,
+      &quot;severity&quot;: &quot;medium&quot;
+    }
+  },
+  &quot;audience_assessment&quot;: {
+    &quot;likely_minor_reach&quot;: 0.78,
+    &quot;channel_category&quot;: &quot;gaming&quot;,
+    &quot;viewer_demographics&quot;: &quot;primarily_under_18&quot;
+  },
+  &quot;recommendations&quot;: [
+    &quot;添加明确的商业披露标记&quot;,
+    &quot;删除未实质性支持的健康声称&quot;,
+    &quot;获取影响者代言的书面披露&quot;,
+    &quot;审查链接产品的儿童隐私设置&quot;
+  ]
+}
+```
+
+### 仪表板指标
+- **内容风险热图**：按产品类别和合规维度
+- **频道合规趋势**：时间序列违规频率
+- **欧盟成员国地区映射**：国家特定法律强度权重
+- **影响者网络分析**：代言关系与披露一致性
+
+---
+
+## 实施考量
+
+### 技术栈
+- **自然语言处理**：多语言商业语言检测(英语、德语、法语、西班牙语等)
+- **计算机视觉**：品牌识别、视觉商业标记
+- **图知识库**：产品-类别-法规映射
+
+### 局限性与透明度
+- 文化差异：商业实践的地区规范差异
+- 假阳性风险：讽刺/教育性内容误分类
+- 法律滞后：新兴平台实践的监管覆盖不足
+
+---
+
+## 参考法律工具
+
+| 指令 | 关键条款 | 实施成员国差异 |
+|-----|--------|------------|
+| 2010/13/EU(AVMSD) | 第9条:广告披露 | 德国严格;南欧执法宽松 |
+| 2005/29/EC | 附件I:禁止实践 | 一致性高 |
+| GDPR | 第8条:儿童同意 | 比利时(7岁);其他国家(16岁) |
+
+此系统设计可扩展至TikTok、Instagram等平台的适应性修改。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development</td><td>2026-07-20</td><td>2026-08-10</td><td>10</td></tr><tr><td><span class='badge badge-test'>测试</span> Evaluation</td><td>2026-08-11</td><td>2026-08-18</td><td>5</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'># ChildSafeAds — 儿童面向YouTube视频中的商业内容
+
+**一项共同任务，在[NLLP](https://nllpw.org) @ EMNLP 2026举行。**
+
+想象你在一个负责监督到达视频平台未成年人的商业内容的机构工作。你如何构建监控系统，以及在每个数据访问和成本级别，它能达到什么效果？
+
+影响者营销到达儿童和青少年在YouTube上广泛存在，且经常未披露。在平台规模上评估它需要自动化支持，但负责任地进行此操作意味着分类正在销售的内容、对其进行分类，并推理其引发的广告法律问题。本任务在真实数据上将这三个方面结合在一起。
+
+## 数据
+
+**3,360个实例**：训练集2,353 / 开发集504 / 测试集503，**频道不相交**（任何频道不在多个分割中出现）。每个实例是一个赞助片段，通过SponsorBlock社区验证，在精心策划的可能到达大量青少年受众的频道上，配有其描述链接到的产品页面。
+
+字段按**四个访问级别按收集成本排序**分组：片段文本记录、包括YouTube自有付费推广标志的视频元数据、频道上下文，以及爬取的产品页面。纯文本记录系统使用一个字段；每个进一步级别在规模上获取需要更多成本。
+
+## 子任务
+
+| | 任务 | 输出 |
+|---|---|---|
+| **ST1** | 商业类型 | 一个标签（EU消费者权益指令合同类型） |
+| **ST2** | 产品类别 | 一个或多个标签 |
+| **ST3** | 合规风险标志 | 一个或多个标志，基于EU消费者法（UCPD、AVMSD、DSA、CRD） |
+
+可参与任何子集。定义在随数据提供的`labels_taxonomy.md`中；每个标志的法律依据在`legal_provisions.json`中作为引用和说明，而非法定文本。
+
+数据集给出两点且系统不应重新评估：频道面向儿童，片段为商业内容。问题是销售的是什么以及它引发什么问题。
+
+## 我们实际在询问的内容
+
+准确度在排行榜上评分，但有趣的问题是设计问题：**每个额外的数据级别能买到什么，成本是否值得？** 因此每个提交都记录其使用了哪些数据级别，这出现在排行榜上分数旁边，所以结果读作*给定数据成本下的准确度*。除了那个下拉菜单外，我们高度鼓励一份简短的**系统设计报告**，描述你权衡的权衡。这不是完整论文，这是本任务最有趣的发现可能存在的地方。
+
+**额外赛道**邀请团队进一步自行收集平台外目标数据（商店、服务条款、应用程序），从我们提供的出站链接开始。不计分，非常欢迎在报告中呈现。
+
+## 入门
+
+1. 注册（需要批准；注册即表示接受数据使用条款）。
+2. 从&quot;参与&quot;标签下载**公开数据**和**入门工具包**。
+3. 运行多数基线以生成有效提交、用包含的格式检查器检查，然后提交。
+
+见**数据**、**评估**和**条款**页面了解具体信息。</div></div><div class='section'><h3>Data</h3><div class='page-content'># 数据
+
+## 获取方式
+
+数据集附加到此竞赛的每个阶段。请进入**参赛**选项卡并下载**公开数据**：
+
+| 阶段 | 文件 | 内容 |
+|------|------|------|
+| 开发阶段 | `public_data_dev.zip` | `train.jsonl`（2,353条）和`dev.jsonl`（504条），均已标注，附带文档 |
+| 评估阶段 | `public_data_test.zip` | `test.jsonl`（503条），未标注，附带文档 |
+
+测试输入在评估阶段开启时发布。同一选项卡上的**启动工具包**包含该格式的加载器、提交格式检查器、多数基线和有效样本提交。
+
+每个压缩包还包含`README.md`（数据集说明卡）、`labels_taxonomy.md`（完整标签定义、严重程度、直接劝说测试、额外任务）和`legal_provisions.json`。
+
+## 格式
+
+数据集划分采用**渠道隔离**方式：任何渠道仅出现在一个数据集中。JSONL文件的每一行代表一个实例，字段分为四个访问级别，按收集成本排序，以便系统根据需要使用相应的数据。
+
+| 级别 | 字段 | 内容 | 收集成本 |
+|------|------|------|---------|
+| 1 | `transcript` | `text`、`segment_start`、`segment_end` | 最低；可扩展至整个平台 |
+| 2 | `video_context` | `videoID`、`title`、`description`、`official_disclosure` | 每个视频一次元数据调用 |
+| 3 | `channel_context` | `channelID`、`channel_name` | 一次频道查询 |
+| 4 | `product_page` | `raw_url`、`resolved_url`、`page_title`、`text` | 爬取出站链接；部分页面已失效或阻止自动访问 |
+
+`official_disclosure`是YouTube自身的&quot;包含付费推广&quot;标签：`&quot;true&quot;`、`&quot;false&quot;`或当无法确定时为`&quot;&quot;`。
+
+`train.jsonl`和`dev.jsonl`包含`labels`块；`test.jsonl`不包含。
+
+```json
+&quot;labels&quot;: {
+  &quot;st1&quot;: &quot;digital_content_or_services&quot;,
+  &quot;st2&quot;: [&quot;apps&quot;, &quot;gambling_adjacent&quot;],
+  &quot;st3&quot;: [&quot;undisclosed_advertising&quot;],
+  &quot;st3_evidence&quot;: [{&quot;flag&quot;: &quot;undisclosed_advertising&quot;, &quot;quote&quot;: &quot;verbatim span from this instance&#x27;s text&quot;}]
+}
+```
+
+每个`st3_evidence`引文来自该实例本身的转录文本、描述或产品页面的逐字段选。无法匹配到来源的引文被省略，因此一个标志可能不带任何证据条目。
+
+## 标签和法律依据
+
+`labels_taxonomy.md`提供完整定义。简言之：ST1是单标签（购买者获得的内容）、ST2是多标签（被销售的内容）、ST3是多标签合规标志，其中`no_flag`和`insufficient_context`各自独立。
+
+`legal_provisions.json`将每个标志映射到为其提供依据的欧盟法律工具和条款，并附带严重程度属性和各条款要求的说明。它包含**引文和注释，而非法定条文**，涵盖本版本中标志后的条款而非整个欧盟广告法。标识符可根据EUR-Lex和委员会指南解析，如需检索更完整的法律材料；这样做是否改进标志预测是我们希望报告探讨的一个开放问题。
+
+## 来源和策划
+
+频道经过策划，合理覆盖重要的青少年受众：使用基于频道描述、视频标题和元数据的自动分类器，随后进行人工验证的排除审查。这对每个频道的准确性无法保证，但意味着**系统无需自行评估受众**；将&quot;面向儿童&quot;视为数据集级属性。
+
+标签经过自动注释，并进行人工验证和法律校准。部分合规标志仍在法律审查中，可能在补丁版本中细化；任何变更将在此竞赛中公布。人工标注的校准示例将与评估阶段一同发布。
+
+## 许可证
+
+该数据集源自[SponsorBlock](https://sponsor.ajay.app/database)数据库，采用**CC BY-NC-SA 4.0**许可。根据该许可的共享条款，衍生标签、实例结构</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'># 评估与提交
+
+## 阶段
+
+| 阶段 | 日期 | 预测对象 | 提交次数 |
+|-------|-------|-----------|-------------|
+| 开发 | 2026年7月20日 – 8月10日 | `dev.jsonl` | 每天10次 |
+| 评估 | 2026年8月11日 – 18日 | `test.jsonl` | 共3次 |
+
+开发阶段提供实时排行榜供调优使用。评估阶段决定最终排名，请谨慎使用你的三次提交机会。
+
+## 提交格式
+
+上传**包含一个JSONL文件的zip文件**，每个实例对应一个对象：
+
+```json
+{&quot;instanceID&quot;: &quot;...&quot;, &quot;st1&quot;: &quot;physical_goods&quot;, &quot;st2&quot;: [&quot;toys&quot;], &quot;st3&quot;: [&quot;no_flag&quot;]}
+```
+
+- 对于未参加的子任务，请省略相应字段。缺失的预测在该子任务上每个实例得分为0，因此部分参与是可以接受的，但覆盖不完整会被扣分。
+- `st3`必须遵守互斥性：`no_flag`和`insufficient_context`各自独立。
+- 在上传前使用初始工具包中的`check_submission.py`进行验证：
+  `python check_submission.py submission.jsonl dev.jsonl`
+
+## 评估指标
+
+所有指标均为宏平均F1分数，分数越高越好。每次提交报告的指标：
+
+| 键 | 含义 |
+|-----|-------|
+| `mean_macro_f1` | 三个子任务分数的平均值。**决定排行榜排名。** |
+| `st1_macro_f1` | 子任务1，单标签 |
+| `st2_macro_f1` | 子任务2，多标签 |
+| `st3_macro_f1` | 子任务3，细粒度标志 |
+| `st3_family_macro_f1` | 子任务3，标志合并到类别（披露/内容/产品） |
+
+报告类别级分数是因为标志分布严重不均衡，仅有细粒度宏平均F1可能被稀有标志主导。还会返回`coverage`（你预测的参考实例所占份额）用于诊断。
+
+作为参考，初始工具包中的多数类基线在开发集上得分为**0.093平均宏F1**（ST1 0.151，ST2 0.042，ST3 0.085）。这是为了建立下限，让你能够端到端验证流程。
+
+## 系统设计报告（强烈推荐）
+
+排行榜只是评估的一半。因为本任务旨在*构建监控系统的方法*，我们强烈建议每个团队描述其设计。这包括两个部分，均不需要写完整的论文。
+
+### 1. 提交表格（只需数秒）
+
+每次提交附带一份简短问卷。**只有一个答案是必需的：** 你的系统使用的**数据访问级别**。该答案会在排行榜上以列的形式显示在你的分数旁，这样结果可以理解为*特定数据成本下的精度*，这正是本任务的重点。仅使用转录文本的系统与使用完整爬取数据的系统分数接近是一个真正有趣的结果，我们希望这一点可见。
+
+其余问题是可选的，存在的目的是让你记录（深度由你决定）：系统类型、两到三句的方法总结、是否检索了我们提供的引文之外的法律材料、在所有3,360个实例上运行的大约成本，以及**较完整报告的链接**。
+
+请在**最终评估阶段提交**时填写可选字段，即使你在调优期间跳过它们。
+
+### 2. 一份简短文档（可选但有价值）
+
+如果可能的话，用几页篇幅写出设计说明，并将链接（PDF、预印本或代码库）粘贴到`report_url`字段。有用的内容包括：
+
+- 多个访问级别的结果，以及每个级别带来了什么；
+- 平台规模的成本、可靠性和可扩展性；
+- 模型和计算选择，以及它们如何超越本数据集推广；
+- 对于ST3，你的预测所依赖的条款，以及更丰富的法律背景是否提供帮助。
+
+法律基础**不在排行榜上计分**：我们更希望诚实报告分类，而不是给无法严格评估的组件评分，所以报告是该工作被认可的地方。撰写研讨会论文的完整系统描述的团队欢迎链接该论文。
+
+## 规则
+
+允许使用任何模型或资源，包括大语言模型，只要你在</div></div><div class='section'><h3>Terms</h3><div class='page-content'># 条款和条件
+
+通过注册本竞赛，您同意以下条款。
+
+## 数据使用
+
+1. **本共享任务中的研究使用。** 提供数据仅用于参与ChildSafeAds研究。将其用于其他目的需要从组织者处获得单独许可。
+2. **许可证。** 该数据集源自[SponsorBlock](https://sponsor.ajay.app/database)数据库，采用CC BY-NC-SA 4.0许可证。根据该许可证的相同条款，标签、实例结构和解析页面文本采用相同的**CC BY-NC-SA 4.0**许可证分发，需要注明SponsorBlock：非商业使用、相同方式共享、需要署名。视频衍生字段（文本记录、标题、描述、元数据）仅在这些条款下提供用于研究目的。解析页面文本从第三方商业网站提取，同样仅供研究使用。
+3. **平台条款。** 使用任何视频衍生字段或自行收集更多数据时，您必须遵守YouTube服务条款。
+4. **禁止重新识别或联系。** 不得试图重新识别、联系或骚扰创作者、频道或数据中出现的任何个人。不得发布针对单个创作者不合规的材料；研究成果应以汇总形式报告。
+5. **禁止重新分发。** 不得在您的团队外分发该数据集。请将其他人引导至本竞赛。
+
+## 竞赛规则
+
+6. **不得手动标注测试集。** 评估阶段的预测必须由您的系统生成。
+7. **每个团队仅一个账户。** 不得创建额外账户以获得更多提交机会。
+8. **记录您的系统。** 允许使用任何模型或资源，包括大语言模型（LLM），但必须在系统设计报告中记录。
+
+## 关于标签的说明
+
+合规标签反映组织者对欧盟消费者法律的理解，旨在建立研究基准。这些标签**不构成法律建议，不代表对任何创作者、品牌或视频的违法性认定**。某些标签仍在法律审查中，可能在次要版本中进行修订。
+
+## 附加内容
+
+如果您自行收集平台外的目标数据，您应负责以合法方式进行此操作，并尊重您访问的网站条款。
+
+## 组织者
+
+Thales Bertaglia（乌得勒支大学）、Catalina Goanta（乌得勒支大学）、Gerasimos Spanakis（马斯特里赫特大学）、Güneş Acar（拉德堡德大学）。
+
+问题：请使用竞赛论坛，以便所有参与者都能获得答案。</div></div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{
+  "id": 17590,
+  "title": "2026年“新智砺剑”比赛-红外视频卫星空中动目标检测赛道",
+  "description": "详情请看比赛内部官网详情页",
+  "description_zh": "我注意到你提供的文本已经是简体中文，我原样返回：\n\n详情请看比赛内部官网详情页",
+  "created_by": "irnewbie",
+  "created_when": "2026-07-20T06:11:10.993454Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784528469/7e8bf5c614cd/ScreenShot_2026-07-20_140940_018.png?AWSAccessKeyId=codabench-prod&Signature=n6nacRKwL7oarJZBnHkl%2FXyZQSc%3D&Expires=1784555844",
+  "participants_count": 1,
+  "submissions_count": 0,
+  "first_phase_start": null,
+  "phases": [
+    {
+      "id": 29343,
+      "name": "模型训练与验证",
+      "start": "2026-07-20T16:00:00Z",
+      "end": "2026-08-28T04:00:00Z",
+      "max_submissions_per_day": 30
+    },
+    {
+      "id": 29344,
+      "name": "最终评测",
+      "start": "2026-08-28T11:00:00Z",
+      "end": "2026-08-31T04:00:00Z",
+      "max_submissions_per_day": 2
+    }
+  ],
+  "pages": [
+    {
+      "index": 0,
+      "title": "赛事结果",
+      "content": "详情请看比赛内部官网详情页",
+      "content_zh": "这段文本已经是中文，原样返回：\n\n详情请看比赛内部官网详情页"
+    }
+  ]
+}
