@@ -5,8 +5,8 @@
   "created_by": "irnewbie",
   "owner_display_name": "irnewbie",
   "created_when": "2026-07-20T06:11:10.993454Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784528469/7e8bf5c614cd/ScreenShot_2026-07-20_140940_018.png?AWSAccessKeyId=codabench-prod&Signature=n6nacRKwL7oarJZBnHkl%2FXyZQSc%3D&Expires=1784555844",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784528469/7e8bf5c614cd/ScreenShot_2026-07-20_140940_018_icon.png?AWSAccessKeyId=codabench-prod&Signature=IX9vD4BO5O2UoUrBeV8XDqrs1sA%3D&Expires=1784555844",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784528469/7e8bf5c614cd/ScreenShot_2026-07-20_140940_018.png?AWSAccessKeyId=codabench-prod&Signature=gz9ZG5%2BVEMZkm0Z4u7GlvuHQ96U%3D&Expires=1784642557",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784528469/7e8bf5c614cd/ScreenShot_2026-07-20_140940_018_icon.png?AWSAccessKeyId=codabench-prod&Signature=R5vyNceNSc5xv31QF83wC6PHoHE%3D&Expires=1784642557",
   "terms": "详情请看比赛内部官网详情页",
   "pages": [
     {
@@ -24,7 +24,7 @@
       "end": "2026-08-28T04:00:00Z",
       "name": "模型训练与验证",
       "description": "详情请看比赛内部官网详情页",
-      "status": "Next",
+      "status": "Current",
       "execution_time_limit": 600,
       "tasks": [
         {
@@ -236,10 +236,16 @@
       "submission_rule": "Add"
     }
   ],
-  "collaborators": [],
+  "collaborators": [
+    {
+      "id": 75749,
+      "name": null,
+      "username": "yishuqi"
+    }
+  ],
   "registration_auto_approve": false,
   "description": "详情请看比赛内部官网详情页",
-  "participants_count": 1,
+  "participants_count": 7,
   "submissions_count": 0,
   "queue": null,
   "enable_detailed_results": false,
