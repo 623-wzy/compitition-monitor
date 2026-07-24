@@ -6,9 +6,9 @@
     "description_zh": "用于压缩AI生成图像的基准，涵盖多样化模型、提示词和分辨率。",
     "created_by": "xinli",
     "created_when": "2026-06-14T13:43:46.550281Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-14-1781444626/885bb1bf4dc3/logo.png?AWSAccessKeyId=codabench-prod&Signature=%2BdqqbHbsjndxUNwALhDos0EdbMQ%3D&Expires=1784816117",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-14-1781444626/885bb1bf4dc3/logo.png?AWSAccessKeyId=codabench-prod&Signature=rKP44H03%2BpPPGBFDLQ1hxFwHYMI%3D&Expires=1784902753",
     "participants_count": 62,
-    "submissions_count": 191,
+    "submissions_count": 209,
     "first_phase_start": null,
     "phases": [
       {
@@ -59,7 +59,7 @@
     "description_zh": "我是一个科技竞赛信息翻译助手。\n\n**功能描述：**\n\n将用户提供的英文竞赛文本翻译成简体中文，保持专业术语准确，输出纯翻译结果。\n\n**特点：**\n- ✓ 专业术语翻译准确\n- ✓ 保持原文意思不变\n- ✓ 输出纯翻译内容\n- ✓ 支持科技竞赛相关领域\n\n**使用方式：**\n直接粘贴英文竞赛文本，我会给出中文翻译。",
     "created_by": "dravidian",
     "created_when": "2026-05-30T08:48:21.614394Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-02-1780380380/3d180381fa35/ChatGPT_Image_Jun_2_2026_at_11_35_.png?AWSAccessKeyId=codabench-prod&Signature=du3sLbBMmmmzydfucCl2T%2FOy25I%3D&Expires=1784816121",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-02-1780380380/3d180381fa35/ChatGPT_Image_Jun_2_2026_at_11_35_.png?AWSAccessKeyId=codabench-prod&Signature=Ye0a7ggyxG%2Bd1waEQDsLkgPO9iM%3D&Expires=1784902756",
     "participants_count": 12,
     "submissions_count": 1,
     "first_phase_start": null,
@@ -118,7 +118,7 @@
     "description_zh": "# 翻译\n\n预测注视对齐的脑磁图(MEG)活动(204个梯度计通道,注视后110毫秒),基于自然场景图像和来自主动视觉语义(AVS)数据集的眼动元数据,为一个被保留的受试者。\n\nSulewski, P., Amme, C., Hebart, M., König, P., & Kietzmann, T. (2025). 我们为什么停留:记忆编码而非视觉处理需求驱动自然场景上的注视时间——来自大规模脑磁图数据集的证据。\n\n仅限学术用途。AVS数据集及所有衍生材料专门为学术研究和教育目的提供,用于奥斯纳布吕克大学(Osnabrück University)\"深度神经网络神经编码\"课程(SoSe 2026)。",
     "created_by": "psulewski",
     "created_when": "2026-04-20T14:42:51.242593Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-20-1776696171/148af8ac1426/logo.png?AWSAccessKeyId=codabench-prod&Signature=JESMjTNtxp261QLvYnhkRhq1WG8%3D&Expires=1784816131",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-20-1776696171/148af8ac1426/logo.png?AWSAccessKeyId=codabench-prod&Signature=uL63Vv8Ws%2FpMQJvE807feDSG32E%3D&Expires=1784902773",
     "participants_count": 25,
     "submissions_count": 37,
     "first_phase_start": null,
@@ -159,9 +159,9 @@
     "description_zh": "MVAA 2026 最终隐藏测试Docker评估平台。参赛者提交一个轻量级submission.zip，包含Docker镜像引用。私有的组织方Codabench工作进程将描述符转发给MVAA GPU运行器，该运行器拉取镜像、在隐藏测试集上运行推理、计算官方指标，并将Task1/Task2/Task3分数返回到Codabench。",
     "created_by": "db0725",
     "created_when": "2026-06-29T13:28:58.227688Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-29-1782739738/5879f76f7bc9/icon.png?AWSAccessKeyId=codabench-prod&Signature=RCQKluPvaMQfetJu%2BEyYYWdV2bc%3D&Expires=1784816116",
-    "participants_count": 43,
-    "submissions_count": 98,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-29-1782739738/5879f76f7bc9/icon.png?AWSAccessKeyId=codabench-prod&Signature=aAW8TbEBuZ%2B0AKC6VAZIFnCzoE8%3D&Expires=1784902748",
+    "participants_count": 45,
+    "submissions_count": 111,
     "first_phase_start": null,
     "phases": [
       {
@@ -266,9 +266,9 @@
     "description_zh": "MVAA 2026 评估跨越三个临床基础分割任务的二尖瓣解剖学多模态AI方法：（1）CT分割、（2）3D TEE分割和（3）手术视频分割。\n\n最终排名基于跨任务平均聚合的归一化任务级分数。",
     "created_by": "db0725",
     "created_when": "2026-04-14T13:38:37.626348Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-15-1776224307/a53b1e60e5cb/icon.png?AWSAccessKeyId=codabench-prod&Signature=ofHNW8TNYpkl64%2BzHLlQvqZ3ptM%3D&Expires=1784816132",
-    "participants_count": 162,
-    "submissions_count": 2340,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-15-1776224307/a53b1e60e5cb/icon.png?AWSAccessKeyId=codabench-prod&Signature=dlpw485XgWqgFxCbaou3%2BXp4JyI%3D&Expires=1784902777",
+    "participants_count": 163,
+    "submissions_count": 2410,
     "first_phase_start": null,
     "phases": [
       {
@@ -367,8 +367,8 @@
     "description_zh": "阿拉伯语多模态仇恨表情包细粒度分类。给定一张表情包（图像加光学字符识别提取的阿拉伯语文本），从涵盖仇恨和非仇恨类别的统一10类活跃词汇中预测零个或多个细粒度子类型。官方指标：宏F1（macro-F1）。",
     "created_by": "alishahroor",
     "created_when": "2026-06-03T11:45:25.550972Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780487125/68e3a857bebe/logo.png?AWSAccessKeyId=codabench-prod&Signature=%2BnyoxAKNirc6s74GSEKt5qj9Oso%3D&Expires=1784816119",
-    "participants_count": 15,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780487125/68e3a857bebe/logo.png?AWSAccessKeyId=codabench-prod&Signature=dyFrdBB45%2FQbC%2BHCVqdJenJrdb8%3D&Expires=1784902754",
+    "participants_count": 17,
     "submissions_count": 12,
     "first_phase_start": null,
     "phases": [
@@ -415,7 +415,7 @@
     "description_zh": "# 使用CRAI框架评估AI生成图像对卡塔尔和阿拉伯文化场景的真实性表现\n\n## 文化准确性（Cultural Accuracy）\n- **服饰表现**：评估传统服装（如阿拜亚、古特拉、阿拉伯头巾）的细节准确性\n- **建筑风格**：验证伊斯兰建筑元素（如拱形、穹顶、书法装饰）是否正确呈现\n- **宗教仪式**：检查礼拜场景、斋月相关元素的真实性\n- **社会场景**：评估家庭聚会、市集、传统活动的文化真实性\n\n## 代表性（Representation）\n- **多样性**：确保呈现卡塔尔和阿拉伯世界的多元性，避免单一刻板印象\n- **地理差异**：区分不同地区的文化特征（城市、沙漠、海滨）\n- **代际表现**：反映传统与现代元素的融合\n- **性别与身份**：公平准确地呈现不同群体\n\n## 人工制品与物质文化（Artifacts）\n- **传统手工艺**：阿拉伯书法、陶艺、纺织品的准确性\n- **日常用品**：咖啡器具、香炉等文化象征物\n- **装饰元素**：几何纹样、穆斯林花纹设计的准确性\n- **食文化**：传统美食呈现的真实性\n\n## 背景与语境（Context）\n- **历史准确性**：时代背景的正确性\n- **社会背景**：活动场景的合理性与适切性\n- **语言符号**：阿拉伯书写的准确性\n- **文化敏感性**：尊重宗教和社会禁忌",
     "created_by": "sabdaljalil",
     "created_when": "2026-06-03T19:07:43.639396Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780513663/396055ccba31/logo.png?AWSAccessKeyId=codabench-prod&Signature=SCgGJPEuFhiXX8W%2FWkJ25URWIqU%3D&Expires=1784816120",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780513663/396055ccba31/logo.png?AWSAccessKeyId=codabench-prod&Signature=tUH%2BDrBUdgKJMVL2ywU4Jzvv17o%3D&Expires=1784902755",
     "participants_count": 5,
     "submissions_count": 1,
     "first_phase_start": null,
@@ -456,84 +456,30 @@
       }
     ]
   },
-  "13374": {
-    "id": 13374,
-    "title": "Toy_benchmark_v1",
-    "description": "## Toy Benchmark v1: Pairwise Point Tracking\n\nThis benchmark evaluates a simple **pairwise point tracking** task on image data.\n\n### Task Definition\nFor each test sample, participants are given:\n- A reference image (`ref`)\n- A target image (`tgt`)\n- A reference point `(x_ref, y_ref)` defined on the reference image\n\nThe goal is to **predict the corresponding point location `(x, y)` on the target image**.\n\n### Evaluation\nPredictions are evaluated using the **Euclidean distance** between the predicted point and the ground-truth point on the target image.\nThe final score is the **mean error over all test samples** (lower is better).",
-    "description_zh": "## 玩具基准 v1: 成对点跟踪\n\n该基准评估图像数据上的简单**成对点跟踪**任务。\n\n### 任务定义\n对于每个测试样本，参与者获得：\n- 一张参考图像 (`ref`)\n- 一张目标图像 (`tgt`)\n- 在参考图像上定义的参考点 `(x_ref, y_ref)`\n\n目标是**预测目标图像上对应点的位置 `(x, y)`**。\n\n### 评估\n预测使用**欧几里得距离**进行评估，即预测点与目标图像上地面真实点之间的距离。\n最终得分是**所有测试样本的平均误差**（越低越好）。",
-    "created_by": "lanxiao",
-    "created_when": "2026-01-29T20:19:17.964849Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-01-29-1769717957/3a83607f7a38/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260128161328_371_2.png?AWSAccessKeyId=codabench-prod&Signature=HaxplwLjmPg03miNRmLnu%2BVWWMk%3D&Expires=1784816157",
-    "participants_count": 2,
-    "submissions_count": 4,
+  "17051": {
+    "id": 17051,
+    "title": "ImageEval 2026 — Ayn-VQA Task 1b: Hallucination Detection (English)",
+    "description": "Given an image and 3 statements (English), label EACH statement True (grounded in the image) or False (hallucinated). Exactly one statement is grounded. Part of the ImageEval 2026 Ayn-VQA shared task on cultural grounding in Arabic multimodal understanding. \nData on HuggingFace (QCRI/AynVQA-ArabicNLP26).\nJoin our Slack for announcements and discussion: https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA",
+    "description_zh": "我是一个科技竞赛信息翻译助手。根据您提供的英文竞赛文本，以下是简体中文翻译：\n\n给定一张图像和3个陈述（英文），标记每个陈述为真（植根于图像）或假（幻觉）。恰好有一个陈述是有根据的。这是ImageEval 2026 Ayn-VQA共享任务的一部分，该任务关于阿拉伯多模态理解中的文化基础。\n\nHuggingFace上的数据（QCRI/AynVQA-ArabicNLP26）。\n\n加入我们的Slack了解公告和讨论：https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA",
+    "created_by": "hunzed",
+    "created_when": "2026-06-10T09:40:02.195020Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084402/15c7bcf31878/logo.png?AWSAccessKeyId=codabench-prod&Signature=1ez2rc8GcShB3AdDhK52wMoArcs%3D&Expires=1784902752",
+    "participants_count": 17,
+    "submissions_count": 80,
     "first_phase_start": null,
     "phases": [
       {
-        "id": 21882,
+        "id": 28479,
         "name": "Development Phase",
-        "start": "2026-06-23T00:00:00Z",
-        "end": "2026-07-23T22:00:00Z",
+        "start": "2026-05-22T00:00:00Z",
+        "end": "2026-08-02T00:00:00Z",
         "max_submissions_per_day": 5
       },
       {
-        "id": 21883,
+        "id": 28480,
         "name": "Testing Phase",
-        "start": "2026-08-01T00:00:00Z",
-        "end": "2026-08-06T00:00:00Z",
-        "max_submissions_per_day": 5
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Home",
-        "content": "## Toy Benchmark v1\n\nThis benchmark provides a minimal example of a **pairwise point tracking** task implemented using CodaBench.\n\nThe goal of this benchmark is to:\n- Validate a complete benchmark pipeline (data, submission, scoring)\n- Serve as a learning and prototyping platform\n- Provide a clean baseline for future extensions",
-        "content_zh": "## 玩具基准测试 v1\n\n该基准测试使用CodaBench实现了一个最小化的**成对点追踪**任务示例。\n\n该基准测试的目标是：\n- 验证完整的基准测试管道（数据、提交、评分）\n- 作为学习和原型开发平台\n- 为未来扩展提供干净的基线"
-      },
-      {
-        "index": 1,
-        "title": "Data",
-        "content": "## Data Description\n\nThis benchmark uses image-based data for a pairwise tracking task.\n\n### Trian Input Data\nThe public training set contains:\n- Pairs of images (reference and target)\n- A reference point on the reference image\n- The corresponding ground-truth point on the target image\n\nThis data can be used for training or sanity checking.\n\n### Test Input Data\nThe test set contains:\n- Pairs of images (reference and target)\n- A reference point on the reference image\n\nGround-truth target points for the test set are **hidden** and used only for evaluation.",
-        "content_zh": "## 数据描述\n\n本基准测试使用基于图像的成对追踪任务。\n\n### 训练输入数据\n公开训练集包含：\n- 图像对（参考图像和目标图像）\n- 参考图像上的参考点\n- 目标图像上对应的真值点\n\n此数据可用于训练或完整性检查。\n\n### 测试输入数据\n测试集包含：\n- 图像对（参考图像和目标图像）\n- 参考图像上的参考点\n\n测试集的真值目标点被**隐藏**，仅用于评估。"
-      },
-      {
-        "index": 2,
-        "title": "Submission",
-        "content": "## Submission Instructions\n\nParticipants are required to submit a **single CSV file** named **`submission.csv`**.  \nEach submission corresponds to predictions for **all test samples**.\n\n---\n\n## Submission File Format\n\nThe submission file must be a **comma-separated values (CSV)** file with the following header:\n\n    id,x_pred,y_pred\n\n---\n\n## Column Description\n\n- **id**  \n  Unique identifier of the test sample.  \n  This must **exactly match** the sample IDs provided in the test input file.\n\n- **x_pred**  \n  Predicted **x-coordinate** of the target point on the target image.\n\n- **y_pred**  \n  Predicted **y-coordinate** of the target point on the target image.\n\nEach row corresponds to **one test sample**.\n\n---\n\n## Coordinate System\n\n- Coordinates are specified in **pixel space**\n- The origin **(0, 0)** is at the **top-left corner** of the image\n- The **x-axis** increases from **left → right**\n- The **y-axis** increases from **top → bottom**\n- `x_pred` and `y_pred` may be **integers or floating-point numbers**\n\n---\n\n## Example Submission\n\n    id,x_pred,y_pred\n    101,125,85\n    102,70,150\n\n---\n\n## Submission Requirements\n\n- The file must be named exactly **`submission.csv`**\n- The file must contain **all test sample IDs**\n- Each test sample ID must appear **exactly once**\n- **No additional columns** are allowed\n- **Do not include extra files** in your submission package\n- Submissions that do not follow the specified format **may fail during evaluation**\n\n---\n\n## Submission and Evaluation Process\n\n1. Download the test input data (**images + `test.csv`**)\n2. Generate predictions for **each test sample**\n3. Save the results to **`submission.csv`**\n4. Upload **`submission.csv`** as your submission\n5. The system evaluates your submission using **hidden ground-truth target points**\n6. A **score** is computed and displayed on the **leaderboard**\n\n---\n\n## Notes\n\n- Ground-truth target points for the test set are **hidden** and used **only for scoring**",
-        "content_zh": "## 提交说明\n\n参与者需要提交一个名为 **`submission.csv`** 的**单一CSV文件**。  \n每次提交对应**所有测试样本**的预测结果。\n\n---\n\n## 提交文件格式\n\n提交文件必须是**逗号分隔值（CSV）**文件，包含以下标题行：\n\n    id,x_pred,y_pred\n\n---\n\n## 列描述\n\n- **id**  \n  测试样本的唯一标识符。  \n  必须**完全匹配**测试输入文件中提供的样本ID。\n\n- **x_pred**  \n  目标图像上目标点的预测 **x坐标**。\n\n- **y_pred**  \n  目标图像上目标点的预测 **y坐标**。\n\n每行对应**一个测试样本**。\n\n---\n\n## 坐标系统\n\n- 坐标在**像素空间**中指定\n- 原点 **(0, 0)** 位于图像的**左上角**\n- **x轴** 从**左 → 右**递增\n- **y轴** 从**上 → 下**递增\n- `x_pred` 和 `y_pred` 可以是**整数或浮点数**\n\n---\n\n## 提交示例\n\n    id,x_pred,y_pred\n    101,125,85\n    102,70,150\n\n---\n\n## 提交要求\n\n- 文件必须命名为 **`submission.csv`**\n- 文件必须包含**所有测试样本ID**\n- 每个测试样本ID必须**恰好出现一次**\n- **不允许添加额外列**\n- **不包含额外文件**在提交包中\n- 不遵循指定格式的提交**可能在评估时失败**\n\n---\n\n## 提交和评估流程\n\n1. 下载测试输入数据（**图像 + `test.csv`**）\n2. 为**每个测试样本**生成预测结果\n3. 将结果保存到 **`submission.csv`**\n4. 上传 **`submission.csv`** 作为提交\n5. 系统使用**隐藏的真实目标点**评估提交\n6. 计算**分数**并显示在**排行榜**上\n\n---\n\n## 注意\n\n- 测试集的真实目标点是**隐藏的**，**仅用于评分**"
-      },
-      {
-        "index": 3,
-        "title": "Evaluation",
-        "content": "## Evaluation\n\nSubmissions are evaluated using the **Euclidean distance** between predicted points and ground-truth points on the target images.\n\nFor each test sample, the error is computed as:\n\n\\[\n\\sqrt{(x_{pred} - x_{gt})^2 + (y_{pred} - y_{gt})^2}\n\\]\n\n### Final Score\nThe final score is the **mean error over all test samples**.\n\nLower scores indicate better performance.",
-        "content_zh": "## 评估\n\n提交的结果使用目标图像上预测点与真实值点之间的**欧几里得距离**进行评估。\n\n对于每个测试样本，误差计算如下：\n\n\\[\n\\sqrt{(x_{pred} - x_{gt})^2 + (y_{pred} - y_{gt})^2}\n\\]\n\n### 最终分数\n最终分数是所有测试样本上的**平均误差**。\n\n分数越低，性能越好。"
-      }
-    ]
-  },
-  "16909": {
-    "id": 16909,
-    "title": "ArGuard 2026 — Subtask A1 (Binary Hateful Meme Detection)",
-    "description": "Arabic multimodal hateful-meme classification. Given a meme (image plus OCR-extracted Arabic text), predict whether it is Hateful or Not Hateful. Official metric: macro-F1.",
-    "description_zh": "阿拉伯语多模态仇恨迷因分类。给定一个迷因（图像加光学字符识别提取的阿拉伯语文本），预测其是否为仇恨性或非仇恨性。官方指标：宏平均F1分数。",
-    "created_by": "mohamedbayan",
-    "created_when": "2026-06-03T11:38:35.423737Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780486715/5b6f981490c6/logo.png?AWSAccessKeyId=codabench-prod&Signature=7DEnbZ%2FdwqsQemAQXL5c0jhXWJU%3D&Expires=1784816120",
-    "participants_count": 20,
-    "submissions_count": 65,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 28206,
-        "name": "Development Phase",
-        "start": "2026-05-14T00:00:00Z",
-        "end": "2026-08-01T00:00:00Z",
-        "max_submissions_per_day": 5
-      },
-      {
-        "id": 28207,
-        "name": "Testing Phase",
-        "start": "2026-08-01T00:00:00Z",
-        "end": "2026-08-07T00:00:00Z",
+        "start": "2026-08-02T00:00:00Z",
+        "end": "2026-08-07T23:55:00Z",
         "max_submissions_per_day": 20
       }
     ],
@@ -541,20 +487,20 @@
       {
         "index": 0,
         "title": "Participation",
-        "content": "# How to participate\n\nArGuard 2026 — Task 1 / Track A · **Subtask A1: Binary Hateful Meme Detection**.\n\n## Who can join\nYou can take part as an individual or as a team. A person can participate in multiple shared tasks within ArGuard 2026 — see the full list at the [task website](https://araieval.gitlab.io/ArGuard2026/).\n\n## How to register\n1. Sign up on this CodaBench competition page.\n2. Read the [Terms](#) tab — pay particular attention to the submission file format and naming convention.\n3. Download the data from the Hugging Face Hub: [`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1).\n4. Clone the starter kit: [`araieval/ArGuard-2026-tasks`](https://github.com/araieval/ArGuard-2026-tasks).\n5. Train your model and generate predictions on the `dev_test` split during the development phase, and on the `test` split during the final-evaluation phase.\n\n## Submitting\n- One team member submits per phase via the **Submit** tab.\n- Upload your TSV prediction file as `prediction.zip` (see Terms).\n- The latest valid submission before the deadline counts as your team's final submission for that phase.\n\n## System description paper\nAll teams are encouraged to submit a system-description paper for the workshop. A single paper may cover multiple subtasks if you participated in more than one.\n\n## Contact\nQuestions: arguard2026-organizers@googlegroups.com",
-        "content_zh": "# 参赛指南\n\nArGuard 2026 — 任务1 / Track A · **子任务A1：仇恨表情包二分类检测**\n\n## 参赛资格\n您可以以个人或团队身份参加。一个人可以参加ArGuard 2026内的多个共享任务——详见[任务网站](https://araieval.gitlab.io/ArGuard2026/)的完整列表。\n\n## 如何注册\n1. 在本CodaBench竞赛页面上注册。\n2. 阅读[条款](#)选项卡——特别注意提交文件格式和命名规范。\n3. 从Hugging Face Hub下载数据：[`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1)。\n4. 克隆启动工具包：[`araieval/ArGuard-2026-tasks`](https://github.com/araieval/ArGuard-2026-tasks)。\n5. 在开发阶段对`dev_test`分割集训练模型并生成预测，在最终评估阶段对`test`分割集进行预测。\n\n## 提交\n- 每个阶段由一名团队成员通过**提交**选项卡提交。\n- 将TSV预测文件上传为`prediction.zip`（见条款）。\n- 截止日期前最后一次有效提交将作为该阶段团队的最终提交。\n\n## 系统描述论文\n鼓励所有团队为研讨会提交系统描述论文。如果您参加了多个子任务，单篇论文可涵盖多个子任务。\n\n## 联系方式\n问题咨询：arguard2026-organizers@googlegroups.com"
+        "content": "# How to participate\n\n**ImageEval 2026 — Ayn-VQA Task 1b: Hallucination Detection (English)** — the **English** track of Task 1b\n(Hallucination Detection), part of the [ImageEval 2026](https://imageeval2026.github.io/) shared task on cultural\ngrounding in Arabic multimodal generation and understanding.\n\nGiven an image and 3 statements (English), label EACH statement True (grounded in the image) or False (hallucinated). Exactly one statement is grounded.\n\n## Join our Slack (please do this first)\nJoin the **[ImageEval Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA)** for announcements, deadlines, data updates, and to connect with other participants.\n\n## Who can join\nIndividuals or teams; one member submits on the team's behalf. You may enter more\nthan one track.\n\n## Steps\n1. Sign up on this Codabench page, then join the [Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA) for updates.\n2. Read the **Terms** tab — note the exact prediction format.\n3. Get the data from the Hugging Face Hub: **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**.\n4. Follow the task description in the [tasks repo](https://github.com/ImageEval2026/ImageEval2026-tasks).\n5. Predict on **devtest** during the development phase, and on **test** during the\n   final-evaluation phase.\n\n## System description paper\nAll teams are encouraged to submit a system-description paper for the workshop.\n\n## Contact\nimageeval2026@gmail.com",
+        "content_zh": "# 如何参与\n\n**ImageEval 2026 — Ayn-VQA 任务1b：幻觉检测（英文）** — 任务1b（幻觉检测）的**英文**赛道，是[ImageEval 2026](https://imageeval2026.github.io/)共享任务的一部分，该任务围绕阿拉伯多模态生成和理解中的文化基础进行。\n\n给定一张图像和3个陈述句（英文），对每个陈述句标记为真实（图像中有依据）或虚假（幻觉）。恰好有一个陈述句是有依据的。\n\n## 加入我们的Slack频道（请先执行此操作）\n加入**[ImageEval Slack频道](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA)**获取公告、截止日期、数据更新，并与其他参赛者建立联系。\n\n## 谁可以参与\n个人或团队；由团队的一名成员代表提交。您可以参加多个赛道。\n\n## 步骤\n1. 在Codabench页面上注册，然后加入[Slack频道](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA)获取更新。\n2. 阅读**条款**选项卡 — 注意确切的预测格式。\n3. 从Hugging Face Hub获取数据：**[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**。\n4. 按照[任务仓库](https://github.com/ImageEval2026/ImageEval2026-tasks)中的任务描述进行操作。\n5. 在开发阶段对**devtest**进行预测，在最终评估阶段对**test**进行预测。\n\n## 系统描述论文\n鼓励所有团队为工作坊提交系统描述论文。\n\n## 联系方式\nimageeval2026@gmail.com"
       },
       {
         "index": 1,
         "title": "Dataset",
-        "content": "# Dataset\n\nArGuard Task 1 — Track A is built around an Arabic multimodal meme dataset: each instance is an image with overlaid Arabic text (OCR-extracted). Memes are manually annotated for hatefulness.\n\nFor **Subtask A1**, every meme has a single binary label from {`Hateful`, `Not Hateful`}.\n\n## Get the data\nThe official splits live on the Hugging Face Hub at [`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1). Download them with the helper script from the starter kit:\n\n```bash\ngit clone https://github.com/araieval/ArGuard-2026-tasks.git\ncd ArGuard-2026-tasks/task1\npip install -r requirements.txt\npython data/download_data.py\n```\n\n## Splits\n\n| Split        | Records | Labels   | Phase                    | Purpose                                    |\n|--------------|--------:|----------|--------------------------|--------------------------------------------|\n| `train`      |   3,500 | full     | development              | model training                             |\n| `dev`        |     500 | full     | development              | hyperparameter selection, local evaluation |\n| `dev_test`   |     500 | **none** | development (leaderboard)| submission target for the dev-phase leaderboard |\n| `test`       |     500 | full     | final evaluation         | blind ranking (triple-annotated gold)      |\n\nThe `dev_test` split is released with labels stripped — that is the file you submit predictions for during the development phase.\n\n## Record schema (after `download_data.py`)\n```json\n{\n    \"id\": \"f9a8…b1.jpg\",\n    \"image_path\": \"img/f9a8…b1.jpg\",\n    \"text\": \"OCR-extracted Arabic text…\",\n    \"label\": \"Hateful\" | \"Not Hateful\" | null,\n    \"fine_grained_label\": [\"Mocking\", \"Incitement\"],\n    \"annotations\": []\n}\n```\n\n## Licence\nThe dataset is released under **CC BY-NC 4.0** (non-commercial research use only).\n\n## Resources\n- Starter kit: <https://github.com/araieval/ArGuard-2026-tasks>\n- Task website: <https://araieval.gitlab.io/ArGuard2026/>",
-        "content_zh": "# 数据集\n\nArGuard Task 1 — Track A 基于阿拉伯语多模态表情包数据集构建：每个实例包含一张图片和叠加在其上的阿拉伯文本（通过OCR提取）。表情包已手动标注仇恨属性。\n\n对于**子任务A1**，每个表情包都有一个来自{`Hateful`（仇恨）、`Not Hateful`（非仇恨）}的单一二元标签。\n\n## 获取数据\n官方数据集位于 Hugging Face Hub 的[`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1)。使用启动工具包中的辅助脚本下载：\n\n```bash\ngit clone https://github.com/araieval/ArGuard-2026-tasks.git\ncd ArGuard-2026-tasks/task1\npip install -r requirements.txt\npython data/download_data.py\n```\n\n## 数据分割\n\n| 数据集        | 记录数 | 标签   | 阶段                    | 用途                                    |\n|--------------|--------:|----------|--------------------------|--------------------------------------------|\n| `train`      |   3,500 | 完整     | 开发阶段              | 模型训练                             |\n| `dev`        |     500 | 完整     | 开发阶段              | 超参数选择、本地评估 |\n| `dev_test`   |     500 | **无** | 开发阶段（排行榜）| 开发阶段排行榜的提交目标 |\n| `test`       |     500 | 完整     | 最终评估         | 盲测排名（三重标注黄金标准）      |\n\n`dev_test` 数据集以标签被移除的形式发布——这是开发阶段提交预测结果的文件。\n\n## 记录架构（运行 `download_data.py` 后）\n```json\n{\n    \"id\": \"f9a8…b1.jpg\",\n    \"image_path\": \"img/f9a8…b1.jpg\",\n    \"text\": \"OCR提取的阿拉伯文本…\",\n    \"label\": \"Hateful\" | \"Not Hateful\" | null,\n    \"fine_grained_label\": [\"Mocking\", \"Incitement\"],\n    \"annotations\": []\n}\n```\n\n## 许可证\n数据集采用 **CC BY-NC 4.0** 许可证发布（仅供非商业研究使用）。\n\n## 资源\n- 启动工具包：<https://github.com/araieval/ArGuard-2026-tasks>\n- 任务网站：<https://araieval.gitlab.io/ArGuard2026/>"
+        "content": "# Dataset\n\nAll splits live on the Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — as config\n`task1b_en`. This competition scores **devtest** (development phase) and **test**\n(final phase).\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1b_en\", split=\"devtest\")\n```\n\n## Splits\n\n| split | labels | items | phase | purpose |\n|---|---|---:|---|---|\n| `train`   | yes | 3000 | development | training / fine-tuning |\n| `dev`     | yes | 500  | development | local validation |\n| `devtest` | no  | 500  | development (leaderboard) | submission target, dev phase |\n| `test`    | no  | 1000 | final evaluation | blind ranking (human-recorded audio) |\n\n- **Language:** English.\n- Media (images / audio) are referenced by **relative path** keyed on `id`.\n- Task 1b is image + text only (no audio): three statements, exactly one grounded.\n\n## Licence\nCC BY-NC 4.0 — non-commercial research use only.",
+        "content_zh": "# 数据集\n\n所有数据分割都存在于 Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — 作为配置`task1b_en`。该竞赛评分**开发测试集**（开发阶段）和**测试集**（最终阶段）。\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1b_en\", split=\"devtest\")\n```\n\n## 数据分割\n\n| 分割 | 标签 | 项数 | 阶段 | 用途 |\n|---|---|---:|---|---|\n| `train`   | 是 | 3000 | 开发 | 训练/微调 |\n| `dev`     | 是 | 500  | 开发 | 本地验证 |\n| `devtest` | 否  | 500  | 开发（排行榜） | 提交目标，开发阶段 |\n| `test`    | 否  | 1000 | 最终评估 | 盲测排名（人工录制音频） |\n\n- **语言：** 英文。\n- 媒体（图像/音频）通过**相对路径**按`id`键引用。\n- 任务 1b 仅包含图像和文本（无音频）：三个陈述句，恰好一个有根据。\n\n## 许可证\nCC BY-NC 4.0 — 仅限非商业研究使用。"
       },
       {
         "index": 2,
         "title": "Timeline",
-        "content": "# Timeline\n\n## Development phase\nUse this phase to tune your models on `train.jsonl` / `dev.jsonl` and submit predictions on `dev_test.jsonl` for the leaderboard.\n\n**Window:** `2026-05-14 → 2026-07-19`\n**Submissions:** up to 5 per day, 100 total.\n\n## Testing phase\nThe final blind test split is released. Train on `train.jsonl` + `dev.jsonl`, submit predictions on `test.jsonl` — your best valid submission counts toward the official ranking.\n\n**Window:** `2026-07-20 → 2026-07-29`\n**Submissions:** up to 20 per day, 100 total.\n\n> Adjust the dates inside `competition.yaml` (the `phases.start` / `phases.end` fields) if your task schedule shifts.\n\n## Workshop\nPaper submissions and notification dates will be announced on the [task website](https://araieval.gitlab.io/ArGuard2026/).",
-        "content_zh": "# 时间表\n\n## 开发阶段\n使用此阶段在 `train.jsonl` / `dev.jsonl` 上调优模型，并在 `dev_test.jsonl` 上提交预测以参与排行榜竞争。\n\n**时间窗口：** `2026-05-14 → 2026-07-19`\n**提交次数：** 每天最多5次，总共100次。\n\n## 测试阶段\n发布最终的盲测数据集。在 `train.jsonl` + `dev.jsonl` 上训练，在 `test.jsonl` 上提交预测——最佳有效提交将计入官方排名。\n\n**时间窗口：** `2026-07-20 → 2026-07-29`\n**提交次数：** 每天最多20次，总共100次。\n\n> 如果任务日程有变动，请调整 `competition.yaml` 中的日期（`phases.start` / `phases.end` 字段）。\n\n## 研讨会\n论文提交和通知日期将在[任务网站](https://araieval.gitlab.io/ArGuard2026/)上公布。"
+        "content": "# Timeline\n\n## Development phase\nTune on `train` + `dev`; submit predictions on **devtest** for the leaderboard.\n\n**Window:** `2026-05-22 → 2026-08-02`  ·  up to 5 submissions/day, 100 total.\n\n## Testing phase\nThe blind **test** set is released on [Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26); submit predictions\non `test` for the official ranking.\n\n**Window:** `2026-08-02 → 2026-08-07`  ·  up to 20 submissions/day, 100 total.\n\n> Dates are set in `competition.yaml` (`phases.start` / `phases.end`) — adjust if\n> the schedule shifts. Announcements: [website](https://imageeval2026.github.io/).",
+        "content_zh": "# 时间表\n\n## 开发阶段\n在`train` + `dev`上调参；在**devtest**上提交预测以参与排行榜。\n\n**时间窗口：** `2026-05-22 → 2026-08-02`  ·  每天最多5次提交，总计100次。\n\n## 测试阶段\n盲测**test**集在[Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)上发布；在`test`上提交预测以获得官方排名。\n\n**时间窗口：** `2026-08-02 → 2026-08-07`  ·  每天最多20次提交，总计100次。\n\n> 日期设置在`competition.yaml`（`phases.start` / `phases.end`）中——如果时间表有变更请进行调整。公告：[网站](https://imageeval2026.github.io/)。"
       }
     ]
   },
@@ -565,9 +511,9 @@
     "description_zh": "我理解了。这是关于 ImageEval 2026 Ayn-VQA 共享任务的说明，该任务聚焦于阿拉伯多模态理解中的文化基础问题。\n\n**任务说明翻译：**\n\n给定一幅图像和口头问题/选项（英文音频），选择正确的选项索引（0-2）。这是 ImageEval 2026 Ayn-VQA 共享任务的一部分，专注于阿拉伯多模态理解中的文化基础。数据可在 HuggingFace 获取（QCRI/AynVQA-ArabicNLP26）。请同时在以下链接注册：https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform\n\n如果您需要帮助完成此任务，请提供：\n- 图像\n- 问题和选项（英文音频转录）\n\n我将帮助您选择正确的选项。",
     "created_by": "hunzed",
     "created_when": "2026-06-10T09:38:36.786130Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084316/073f73e0eefc/logo.png?AWSAccessKeyId=codabench-prod&Signature=uQMk0v0XT7o2UuSCJ%2BkMI8aQer4%3D&Expires=1784816120",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084316/073f73e0eefc/logo.png?AWSAccessKeyId=codabench-prod&Signature=937d%2BlNadAg025U4iHNjhHxqcWo%3D&Expires=1784902752",
     "participants_count": 12,
-    "submissions_count": 25,
+    "submissions_count": 30,
     "first_phase_start": null,
     "phases": [
       {
@@ -613,9 +559,9 @@
     "description_zh": "# ImageEval 2026 Ayn-VQA 共享任务\n\n给定一张图像和口头问题/选项（MSA音频），选择正确的选项索引（0-2）。\n\n这是 ImageEval 2026 Ayn-VQA 共享任务的一部分，专注于阿拉伯多模态理解中的文化根植。\n\n**数据集位置**：HuggingFace（QCRI/AynVQA-ArabicNLP26）\n\n**报名链接**：https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform",
     "created_by": "hunzed",
     "created_when": "2026-06-10T09:38:23.495469Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084303/9c583c7e5a2a/logo.png?AWSAccessKeyId=codabench-prod&Signature=r%2Bfh0L93wO3JXMHsGCkF91Vtnf4%3D&Expires=1784816120",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084303/9c583c7e5a2a/logo.png?AWSAccessKeyId=codabench-prod&Signature=k83bQtGy%2FWHeLqpCxpokIBZwmZ4%3D&Expires=1784902752",
     "participants_count": 10,
-    "submissions_count": 12,
+    "submissions_count": 18,
     "first_phase_start": null,
     "phases": [
       {
@@ -661,9 +607,9 @@
     "description_zh": "我理解你的请求。这是ImageEval 2026的一部分——一个关于阿拉伯多模态理解中文化基础的AynVQA共享任务。\n\n请注意，作为一个翻译助手，我需要说明：\n\n**我无法完成此任务，因为：**\n\n1. **缺少图像** - 你没有提供需要分析的图像\n2. **缺少语句** - 你没有提供3条需要标注为\"真\"或\"假\"的语句(MSA)\n3. **任务性质** - 这是一个多模态视觉问答任务，而非翻译任务\n\n**要完成此任务，你需要：**\n\n1. 上传相关图像\n2. 提供3条阿拉伯标准语(MSA)或英文语句\n3. 我可以帮助翻译这些语句，但标注\"真/假\"判断需要你自己基于图像内容进行\n\n**相关资源：**\n- HuggingFace数据集: QCRI/AynVQA-ArabicNLP26\n- 注册表单: https://docs.google.com/forms/d/e/1FAIpQLSd1QKF4rXD_gbLJlDykLvB0DGMIogwhraeOtWRiQiotucK0zA/viewform\n\n请提供图像和语句，我可以帮助翻译相关文本。",
     "created_by": "hunzed",
     "created_when": "2026-06-10T09:39:37.693956Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084377/5517d0a96f0a/logo.png?AWSAccessKeyId=codabench-prod&Signature=hdCI7tDE9zhDKZNUO1inZcM%2B6zc%3D&Expires=1784816120",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084377/5517d0a96f0a/logo.png?AWSAccessKeyId=codabench-prod&Signature=tG0QSmdSd1is6%2BnR1VLC4Qqg8nE%3D&Expires=1784902752",
     "participants_count": 8,
-    "submissions_count": 6,
+    "submissions_count": 10,
     "first_phase_start": null,
     "phases": [
       {
@@ -702,30 +648,30 @@
       }
     ]
   },
-  "17051": {
-    "id": 17051,
-    "title": "ImageEval 2026 — Ayn-VQA Task 1b: Hallucination Detection (English)",
-    "description": "Given an image and 3 statements (English), label EACH statement True (grounded in the image) or False (hallucinated). Exactly one statement is grounded. Part of the ImageEval 2026 Ayn-VQA shared task on cultural grounding in Arabic multimodal understanding. \nData on HuggingFace (QCRI/AynVQA-ArabicNLP26).\nJoin our Slack for announcements and discussion: https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA",
-    "description_zh": "我是一个科技竞赛信息翻译助手。根据您提供的英文竞赛文本，以下是简体中文翻译：\n\n给定一张图像和3个陈述（英文），标记每个陈述为真（植根于图像）或假（幻觉）。恰好有一个陈述是有根据的。这是ImageEval 2026 Ayn-VQA共享任务的一部分，该任务关于阿拉伯多模态理解中的文化基础。\n\nHuggingFace上的数据（QCRI/AynVQA-ArabicNLP26）。\n\n加入我们的Slack了解公告和讨论：https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA",
-    "created_by": "hunzed",
-    "created_when": "2026-06-10T09:40:02.195020Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084402/15c7bcf31878/logo.png?AWSAccessKeyId=codabench-prod&Signature=Y49LBB15GuJqQAgD1f0P%2BWPzxxk%3D&Expires=1784816118",
-    "participants_count": 17,
+  "16909": {
+    "id": 16909,
+    "title": "ArGuard 2026 — Subtask A1 (Binary Hateful Meme Detection)",
+    "description": "Arabic multimodal hateful-meme classification. Given a meme (image plus OCR-extracted Arabic text), predict whether it is Hateful or Not Hateful. Official metric: macro-F1.",
+    "description_zh": "阿拉伯语多模态仇恨迷因分类。给定一个迷因（图像加光学字符识别提取的阿拉伯语文本），预测其是否为仇恨性或非仇恨性。官方指标：宏平均F1分数。",
+    "created_by": "mohamedbayan",
+    "created_when": "2026-06-03T11:38:35.423737Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-03-1780486715/5b6f981490c6/logo.png?AWSAccessKeyId=codabench-prod&Signature=S9AfZrjsD3YPZIvhR4ZWDZRz7io%3D&Expires=1784902756",
+    "participants_count": 22,
     "submissions_count": 71,
     "first_phase_start": null,
     "phases": [
       {
-        "id": 28479,
+        "id": 28206,
         "name": "Development Phase",
-        "start": "2026-05-22T00:00:00Z",
-        "end": "2026-08-02T00:00:00Z",
+        "start": "2026-05-14T00:00:00Z",
+        "end": "2026-08-01T00:00:00Z",
         "max_submissions_per_day": 5
       },
       {
-        "id": 28480,
+        "id": 28207,
         "name": "Testing Phase",
-        "start": "2026-08-02T00:00:00Z",
-        "end": "2026-08-07T23:55:00Z",
+        "start": "2026-08-01T00:00:00Z",
+        "end": "2026-08-07T00:00:00Z",
         "max_submissions_per_day": 20
       }
     ],
@@ -733,20 +679,68 @@
       {
         "index": 0,
         "title": "Participation",
-        "content": "# How to participate\n\n**ImageEval 2026 — Ayn-VQA Task 1b: Hallucination Detection (English)** — the **English** track of Task 1b\n(Hallucination Detection), part of the [ImageEval 2026](https://imageeval2026.github.io/) shared task on cultural\ngrounding in Arabic multimodal generation and understanding.\n\nGiven an image and 3 statements (English), label EACH statement True (grounded in the image) or False (hallucinated). Exactly one statement is grounded.\n\n## Join our Slack (please do this first)\nJoin the **[ImageEval Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA)** for announcements, deadlines, data updates, and to connect with other participants.\n\n## Who can join\nIndividuals or teams; one member submits on the team's behalf. You may enter more\nthan one track.\n\n## Steps\n1. Sign up on this Codabench page, then join the [Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA) for updates.\n2. Read the **Terms** tab — note the exact prediction format.\n3. Get the data from the Hugging Face Hub: **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**.\n4. Follow the task description in the [tasks repo](https://github.com/ImageEval2026/ImageEval2026-tasks).\n5. Predict on **devtest** during the development phase, and on **test** during the\n   final-evaluation phase.\n\n## System description paper\nAll teams are encouraged to submit a system-description paper for the workshop.\n\n## Contact\nimageeval2026@gmail.com",
-        "content_zh": "# 如何参与\n\n**ImageEval 2026 — Ayn-VQA 任务1b：幻觉检测（英文）** — 任务1b（幻觉检测）的**英文**赛道，是[ImageEval 2026](https://imageeval2026.github.io/)共享任务的一部分，该任务围绕阿拉伯多模态生成和理解中的文化基础进行。\n\n给定一张图像和3个陈述句（英文），对每个陈述句标记为真实（图像中有依据）或虚假（幻觉）。恰好有一个陈述句是有依据的。\n\n## 加入我们的Slack频道（请先执行此操作）\n加入**[ImageEval Slack频道](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA)**获取公告、截止日期、数据更新，并与其他参赛者建立联系。\n\n## 谁可以参与\n个人或团队；由团队的一名成员代表提交。您可以参加多个赛道。\n\n## 步骤\n1. 在Codabench页面上注册，然后加入[Slack频道](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA)获取更新。\n2. 阅读**条款**选项卡 — 注意确切的预测格式。\n3. 从Hugging Face Hub获取数据：**[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)**。\n4. 按照[任务仓库](https://github.com/ImageEval2026/ImageEval2026-tasks)中的任务描述进行操作。\n5. 在开发阶段对**devtest**进行预测，在最终评估阶段对**test**进行预测。\n\n## 系统描述论文\n鼓励所有团队为工作坊提交系统描述论文。\n\n## 联系方式\nimageeval2026@gmail.com"
+        "content": "# How to participate\n\nArGuard 2026 — Task 1 / Track A · **Subtask A1: Binary Hateful Meme Detection**.\n\n## Who can join\nYou can take part as an individual or as a team. A person can participate in multiple shared tasks within ArGuard 2026 — see the full list at the [task website](https://araieval.gitlab.io/ArGuard2026/).\n\n## How to register\n1. Sign up on this CodaBench competition page.\n2. Read the [Terms](#) tab — pay particular attention to the submission file format and naming convention.\n3. Download the data from the Hugging Face Hub: [`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1).\n4. Clone the starter kit: [`araieval/ArGuard-2026-tasks`](https://github.com/araieval/ArGuard-2026-tasks).\n5. Train your model and generate predictions on the `dev_test` split during the development phase, and on the `test` split during the final-evaluation phase.\n\n## Submitting\n- One team member submits per phase via the **Submit** tab.\n- Upload your TSV prediction file as `prediction.zip` (see Terms).\n- The latest valid submission before the deadline counts as your team's final submission for that phase.\n\n## System description paper\nAll teams are encouraged to submit a system-description paper for the workshop. A single paper may cover multiple subtasks if you participated in more than one.\n\n## Contact\nQuestions: arguard2026-organizers@googlegroups.com",
+        "content_zh": "# 参赛指南\n\nArGuard 2026 — 任务1 / Track A · **子任务A1：仇恨表情包二分类检测**\n\n## 参赛资格\n您可以以个人或团队身份参加。一个人可以参加ArGuard 2026内的多个共享任务——详见[任务网站](https://araieval.gitlab.io/ArGuard2026/)的完整列表。\n\n## 如何注册\n1. 在本CodaBench竞赛页面上注册。\n2. 阅读[条款](#)选项卡——特别注意提交文件格式和命名规范。\n3. 从Hugging Face Hub下载数据：[`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1)。\n4. 克隆启动工具包：[`araieval/ArGuard-2026-tasks`](https://github.com/araieval/ArGuard-2026-tasks)。\n5. 在开发阶段对`dev_test`分割集训练模型并生成预测，在最终评估阶段对`test`分割集进行预测。\n\n## 提交\n- 每个阶段由一名团队成员通过**提交**选项卡提交。\n- 将TSV预测文件上传为`prediction.zip`（见条款）。\n- 截止日期前最后一次有效提交将作为该阶段团队的最终提交。\n\n## 系统描述论文\n鼓励所有团队为研讨会提交系统描述论文。如果您参加了多个子任务，单篇论文可涵盖多个子任务。\n\n## 联系方式\n问题咨询：arguard2026-organizers@googlegroups.com"
       },
       {
         "index": 1,
         "title": "Dataset",
-        "content": "# Dataset\n\nAll splits live on the Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — as config\n`task1b_en`. This competition scores **devtest** (development phase) and **test**\n(final phase).\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1b_en\", split=\"devtest\")\n```\n\n## Splits\n\n| split | labels | items | phase | purpose |\n|---|---|---:|---|---|\n| `train`   | yes | 3000 | development | training / fine-tuning |\n| `dev`     | yes | 500  | development | local validation |\n| `devtest` | no  | 500  | development (leaderboard) | submission target, dev phase |\n| `test`    | no  | 1000 | final evaluation | blind ranking (human-recorded audio) |\n\n- **Language:** English.\n- Media (images / audio) are referenced by **relative path** keyed on `id`.\n- Task 1b is image + text only (no audio): three statements, exactly one grounded.\n\n## Licence\nCC BY-NC 4.0 — non-commercial research use only.",
-        "content_zh": "# 数据集\n\n所有数据分割都存在于 Hugging Face Hub — **[QCRI/AynVQA-ArabicNLP26](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)** — 作为配置`task1b_en`。该竞赛评分**开发测试集**（开发阶段）和**测试集**（最终阶段）。\n\n```python\nfrom datasets import load_dataset\nds = load_dataset(\"QCRI/AynVQA-ArabicNLP26\", \"task1b_en\", split=\"devtest\")\n```\n\n## 数据分割\n\n| 分割 | 标签 | 项数 | 阶段 | 用途 |\n|---|---|---:|---|---|\n| `train`   | 是 | 3000 | 开发 | 训练/微调 |\n| `dev`     | 是 | 500  | 开发 | 本地验证 |\n| `devtest` | 否  | 500  | 开发（排行榜） | 提交目标，开发阶段 |\n| `test`    | 否  | 1000 | 最终评估 | 盲测排名（人工录制音频） |\n\n- **语言：** 英文。\n- 媒体（图像/音频）通过**相对路径**按`id`键引用。\n- 任务 1b 仅包含图像和文本（无音频）：三个陈述句，恰好一个有根据。\n\n## 许可证\nCC BY-NC 4.0 — 仅限非商业研究使用。"
+        "content": "# Dataset\n\nArGuard Task 1 — Track A is built around an Arabic multimodal meme dataset: each instance is an image with overlaid Arabic text (OCR-extracted). Memes are manually annotated for hatefulness.\n\nFor **Subtask A1**, every meme has a single binary label from {`Hateful`, `Not Hateful`}.\n\n## Get the data\nThe official splits live on the Hugging Face Hub at [`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1). Download them with the helper script from the starter kit:\n\n```bash\ngit clone https://github.com/araieval/ArGuard-2026-tasks.git\ncd ArGuard-2026-tasks/task1\npip install -r requirements.txt\npython data/download_data.py\n```\n\n## Splits\n\n| Split        | Records | Labels   | Phase                    | Purpose                                    |\n|--------------|--------:|----------|--------------------------|--------------------------------------------|\n| `train`      |   3,500 | full     | development              | model training                             |\n| `dev`        |     500 | full     | development              | hyperparameter selection, local evaluation |\n| `dev_test`   |     500 | **none** | development (leaderboard)| submission target for the dev-phase leaderboard |\n| `test`       |     500 | full     | final evaluation         | blind ranking (triple-annotated gold)      |\n\nThe `dev_test` split is released with labels stripped — that is the file you submit predictions for during the development phase.\n\n## Record schema (after `download_data.py`)\n```json\n{\n    \"id\": \"f9a8…b1.jpg\",\n    \"image_path\": \"img/f9a8…b1.jpg\",\n    \"text\": \"OCR-extracted Arabic text…\",\n    \"label\": \"Hateful\" | \"Not Hateful\" | null,\n    \"fine_grained_label\": [\"Mocking\", \"Incitement\"],\n    \"annotations\": []\n}\n```\n\n## Licence\nThe dataset is released under **CC BY-NC 4.0** (non-commercial research use only).\n\n## Resources\n- Starter kit: <https://github.com/araieval/ArGuard-2026-tasks>\n- Task website: <https://araieval.gitlab.io/ArGuard2026/>",
+        "content_zh": "# 数据集\n\nArGuard Task 1 — Track A 基于阿拉伯语多模态表情包数据集构建：每个实例包含一张图片和叠加在其上的阿拉伯文本（通过OCR提取）。表情包已手动标注仇恨属性。\n\n对于**子任务A1**，每个表情包都有一个来自{`Hateful`（仇恨）、`Not Hateful`（非仇恨）}的单一二元标签。\n\n## 获取数据\n官方数据集位于 Hugging Face Hub 的[`QCRI/ArGuard-Task1`](https://huggingface.co/datasets/QCRI/ArGuard-Task1)。使用启动工具包中的辅助脚本下载：\n\n```bash\ngit clone https://github.com/araieval/ArGuard-2026-tasks.git\ncd ArGuard-2026-tasks/task1\npip install -r requirements.txt\npython data/download_data.py\n```\n\n## 数据分割\n\n| 数据集        | 记录数 | 标签   | 阶段                    | 用途                                    |\n|--------------|--------:|----------|--------------------------|--------------------------------------------|\n| `train`      |   3,500 | 完整     | 开发阶段              | 模型训练                             |\n| `dev`        |     500 | 完整     | 开发阶段              | 超参数选择、本地评估 |\n| `dev_test`   |     500 | **无** | 开发阶段（排行榜）| 开发阶段排行榜的提交目标 |\n| `test`       |     500 | 完整     | 最终评估         | 盲测排名（三重标注黄金标准）      |\n\n`dev_test` 数据集以标签被移除的形式发布——这是开发阶段提交预测结果的文件。\n\n## 记录架构（运行 `download_data.py` 后）\n```json\n{\n    \"id\": \"f9a8…b1.jpg\",\n    \"image_path\": \"img/f9a8…b1.jpg\",\n    \"text\": \"OCR提取的阿拉伯文本…\",\n    \"label\": \"Hateful\" | \"Not Hateful\" | null,\n    \"fine_grained_label\": [\"Mocking\", \"Incitement\"],\n    \"annotations\": []\n}\n```\n\n## 许可证\n数据集采用 **CC BY-NC 4.0** 许可证发布（仅供非商业研究使用）。\n\n## 资源\n- 启动工具包：<https://github.com/araieval/ArGuard-2026-tasks>\n- 任务网站：<https://araieval.gitlab.io/ArGuard2026/>"
       },
       {
         "index": 2,
         "title": "Timeline",
-        "content": "# Timeline\n\n## Development phase\nTune on `train` + `dev`; submit predictions on **devtest** for the leaderboard.\n\n**Window:** `2026-05-22 → 2026-08-02`  ·  up to 5 submissions/day, 100 total.\n\n## Testing phase\nThe blind **test** set is released on [Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26); submit predictions\non `test` for the official ranking.\n\n**Window:** `2026-08-02 → 2026-08-07`  ·  up to 20 submissions/day, 100 total.\n\n> Dates are set in `competition.yaml` (`phases.start` / `phases.end`) — adjust if\n> the schedule shifts. Announcements: [website](https://imageeval2026.github.io/).",
-        "content_zh": "# 时间表\n\n## 开发阶段\n在`train` + `dev`上调参；在**devtest**上提交预测以参与排行榜。\n\n**时间窗口：** `2026-05-22 → 2026-08-02`  ·  每天最多5次提交，总计100次。\n\n## 测试阶段\n盲测**test**集在[Hugging Face](https://huggingface.co/datasets/QCRI/AynVQA-ArabicNLP26)上发布；在`test`上提交预测以获得官方排名。\n\n**时间窗口：** `2026-08-02 → 2026-08-07`  ·  每天最多20次提交，总计100次。\n\n> 日期设置在`competition.yaml`（`phases.start` / `phases.end`）中——如果时间表有变更请进行调整。公告：[网站](https://imageeval2026.github.io/)。"
+        "content": "# Timeline\n\n## Development phase\nUse this phase to tune your models on `train.jsonl` / `dev.jsonl` and submit predictions on `dev_test.jsonl` for the leaderboard.\n\n**Window:** `2026-05-14 → 2026-07-19`\n**Submissions:** up to 5 per day, 100 total.\n\n## Testing phase\nThe final blind test split is released. Train on `train.jsonl` + `dev.jsonl`, submit predictions on `test.jsonl` — your best valid submission counts toward the official ranking.\n\n**Window:** `2026-07-20 → 2026-07-29`\n**Submissions:** up to 20 per day, 100 total.\n\n> Adjust the dates inside `competition.yaml` (the `phases.start` / `phases.end` fields) if your task schedule shifts.\n\n## Workshop\nPaper submissions and notification dates will be announced on the [task website](https://araieval.gitlab.io/ArGuard2026/).",
+        "content_zh": "# 时间表\n\n## 开发阶段\n使用此阶段在 `train.jsonl` / `dev.jsonl` 上调优模型，并在 `dev_test.jsonl` 上提交预测以参与排行榜竞争。\n\n**时间窗口：** `2026-05-14 → 2026-07-19`\n**提交次数：** 每天最多5次，总共100次。\n\n## 测试阶段\n发布最终的盲测数据集。在 `train.jsonl` + `dev.jsonl` 上训练，在 `test.jsonl` 上提交预测——最佳有效提交将计入官方排名。\n\n**时间窗口：** `2026-07-20 → 2026-07-29`\n**提交次数：** 每天最多20次，总共100次。\n\n> 如果任务日程有变动，请调整 `competition.yaml` 中的日期（`phases.start` / `phases.end` 字段）。\n\n## 研讨会\n论文提交和通知日期将在[任务网站](https://araieval.gitlab.io/ArGuard2026/)上公布。"
+      }
+    ]
+  },
+  "16887": {
+    "id": 16887,
+    "title": "WSLP@EMNLP-2026 Shared Task - Word\\Sign  Presence Prediction",
+    "description": "Predict if a given word\\Sign (gloss) is present in a full Indian Sign Language (ISL) sentence video, addressing sign spotting and context alignment challenges.",
+    "description_zh": "给定一个单词\\符号（手语词汇），预测其是否出现在完整的印度手语（ISL）句子视频中，解决手语识别和上下文对齐的挑战。",
+    "created_by": "wslp_workshop",
+    "created_when": "2026-06-01T18:23:44.041000Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780338224/034be48cb6b4/logo.png?AWSAccessKeyId=codabench-prod&Signature=OI2NJvIqkxbvvqDpA5%2FQNk1nLbA%3D&Expires=1784902755",
+    "participants_count": 12,
+    "submissions_count": 42,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 28097,
+        "name": "Training Phase",
+        "start": "2026-06-08T00:00:00Z",
+        "end": "2026-07-31T00:00:00Z",
+        "max_submissions_per_day": 20
+      },
+      {
+        "id": 28098,
+        "name": "Testing Phase",
+        "start": "2026-07-31T00:01:00Z",
+        "end": "2026-08-10T00:00:00Z",
+        "max_submissions_per_day": 20
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Overview",
+        "content": "<h1 dir=\"ltr\">Welcome to the WSLP@EMNLP-2026 Shared Task: Word\\Sign Presence Prediction</h1>\n\n<h4 dir=\"ltr\">Advancing Indian Sign Language Understanding through Sign Spotting</h4>\n\n<h2 dir=\"ltr\">Registration</h2>\n<p dir=\"ltr\">\nTo participate in this shared task, please visit the <a href=\"https://www.codabench.org/competitions/16887/#/participate-tab\">\"Participate\"</a> tab and create a Codabench account using a valid institutional or personal email address.\nParticipation is open to both individuals and teams.\n</p>\n\n<p dir=\"ltr\">\nAfter registration, navigate to your <strong>Settings</strong> and fill in all the required details.\n<br><br>\nPlease ensure that your <strong>team name</strong> (or individual name) is clearly identifiable and used consistently across all submissions.\n</p>\n\n<h2>Overview</h2>\n<p>\nIndian Sign Language (ISL) is a rich and expressive visual language. In this shared task, participants are challenged to predict whether a specific word (gloss) is present within a given ISL sentence video — a task commonly known as <em>sign spotting</em>.\n</p>\n\n<p>\nThis task is crucial for real-world applications such as query-based sign language video retrieval and semantic search. It represents a step forward in building models that understand continuous signing in a structured and meaningful way.\n</p>\n\n<p>\nWe provide a dedicated dataset — the <strong>Word\\Sign Presence Dataset</strong> — containing 1,543 (video, word) query pairs. Your goal is to build a model that can accurately predict whether a queried word is signed in a given ISL sentence video.\n</p>\n\n<h2>Phases</h2>\n<p>\nThe competition consists of two distinct phases:\n</p>\n<ul>\n  <li><strong>Phase 1: Training & Validation</strong> – Participants will train and validate their models using the provided datasets.</li>\n  <li><strong>Phase 2: Testing</strong> – A held-out test set will be released. Participants will submit predictions to evaluate the generalization of their models.</li>\n</ul>\n\n<h3>Task Details</h3>\n<ul>\n  <li><strong>Input:</strong> ISL sentence video or corresponding pose sequence, and a query word</li>\n  <li><strong>Output:</strong> Binary prediction indicating the presence of the word (1 = Present, 0 = Not Present)</li>\n  <li><strong>Dataset:</strong> Word Presence Dataset</li>\n  <li><strong>Evaluation Metrics:</strong> Accuracy, Macro Precision, Macro Recall, Macro F1-Score</li>\n</ul>\n\n<h2>Submission Guidelines</h2>\n<p>\nEach submission must be a ZIP archive named <code>submission.zip</code>, containing the following file:\n</p>\n\n<ol>\n  <li>\n    <code>answer.csv</code> – A comma-separated file with the following three columns:\n    <ul>\n      <li><strong>Column 1:</strong> <code>sentence_id</code> – ID of the input ISL sentence video</li>\n      <li><strong>Column 2:</strong> <code>query_id</code> – ID of the queried word</li>\n      <li><strong>Column 3:</strong> <code>is_present</code> – Your model’s binary prediction (<code>1</code> for Present, <code>0</code> for Not Present)</li>\n    </ul>\n    <strong>Note:</strong> Ensure that all <code>(sentence_id, query_id)</code> pairs appear in the exact same order as in the reference file. Mismatches may lead to invalid scoring or disqualification. Make sure  columns name in the answer.csv files are (sentence_is, query_id, is_present).\n  </li>\n</ol>\n\n<p>\nSample submission files is made available along with the dataset to guide your formatting. <a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/blob/main/Shared_task_WPP/sample_submission.csv\">Sample Submission file</a> \n</p>\n\n<p>\nTo submit your predictions, visit the <a href=\"https://www.codabench.org/competitions/16887/#/participate-tab\">\"Submission\"</a> tab and upload your <code>submission.zip</code> file. Participants may make multiple submissions per day, subject to platform-imposed limits.\n</p>\n\n<h2>Results and Leaderboard</h2>\n<p>\nLeaderboard results will be displayed under the <a href=\"https://www.codabench.org/competitions/16887/#/results-tab\">\"Results\"</a> tab. Final rankings will be based primarily on the <strong>F1-Score</strong> for the positive class (i.e., correct prediction of presence), with <strong>Accuracy</strong>, <strong>Precision</strong>, and <strong>Recall</strong> (all macro-averaged) serving as secondary metrics.\n</p>\n\n<p>\nTop-performing teams will be recognized and invited to present their approaches at the <strong>WSLP@EMNLP-2026</strong> event.\n</p>\n\n<h2>Acknowledgements</h2>\n<p>\nThis shared task is part of the <strong>Workshop on Sign Language Processing (WSLP@EMNLP-2026)</strong>, co-located with <strong>EMNLP 2026</strong> at <strong>Budapest, Hungary</strong>.\n</p>\n\n<p>\nWe sincerely thank all participants, organizers, collaborators, and the broader research community for their continued efforts in advancing the field of sign language technology.\n</p>\n<p>\nTo stay updated and connect with other participants, join our Discord server \n<ul>\n\t<li> <a href=\"https://discord.gg/ty7dqTHC2v\"> Discord : Shared Task </a> </li>\n\t<li> <a href=\"https://discord.gg/x6tHXEFyW7\"> Discord : Workshop </a> </li>\n\t<li><a href=\"https://exploration-lab.github.io/WSLP-2026/task/\"> Shared Task Webpage </a> </li>\n\t</ul>\n</p>",
+        "content_zh": "# 欢迎来到WSLP@EMNLP-2026共享任务：词/手语存在预测\n\n## 通过手语识别推进印度手语理解\n\n## 注册\n\n要参加此共享任务，请访问<a href=\"https://www.codabench.org/competitions/16887/#/participate-tab\">\"参与\"</a>选项卡，并使用有效的机构或个人电子邮件地址创建Codabench账户。\n个人和团队都可以参加。\n\n注册后，导航到您的**设置**并填入所有必需信息。\n\n请确保您的**团队名称**（或个人名称）清晰可辨，并在所有提交中保持一致。\n\n## 概述\n\n印度手语（ISL）是一种丰富而富有表现力的视觉语言。在此共享任务中，参与者需要预测特定词汇（标记）是否出现在给定的ISL句子视频中——这个任务通常被称为**手语识别**。\n\n此任务对于实际应用至关重要，例如基于查询的手语视频检索和语义搜索。这代表了在构建以结构化和有意义的方式理解连续手语的模型方面的进步。\n\n我们提供了一个专用数据集——**词/手语存在数据集**——包含1,543个（视频、词汇）查询对。您的目标是构建一个模型，能够准确预测查询的词汇是否在给定的ISL句子视频中被手语表达。\n\n## 阶段\n\n竞赛包括两个不同的阶段：\n\n- **阶段1：训练与验证** – 参与者将使用提供的数据集训练和验证其模型。\n- **阶段2：测试** – 将发布保留的测试集。参与者将提交预测以评估其模型的泛化能力。\n\n## 任务详情\n\n- **输入：** ISL句子视频或对应的姿态序列，以及一个查询词汇\n- **输出：** 表示词汇存在的二元预测（1 = 存在，0 = 不存在）\n- **数据集：** 词汇存在数据集\n- **评估指标：** 准确率、宏平均精准率、宏平均召回率、宏平均F1分数\n\n## 提交指南\n\n每次提交必须是名为`submission.zip`的ZIP压缩包，包含以下文件：\n\n1. `answer.csv` – 逗号分隔的文件，包含以下三列：\n   - **第1列：** `sentence_id` – 输入ISL句子视频的ID\n   - **第2列：** `query_id` – 查询词汇的ID\n   - **第3列：** `is_present` – 您模型的二元预测（`1`表示存在，`0`表示不存在）\n   \n   **注意：** 确保所有`(sentence_id, query_id)`对与参考文件的顺序完全相同。不匹配可能导致无效计分或被取消资格。请确保answer.csv文件中的列名为(sentence_id, query_id, is_present)。\n\n样本提交文件已随数据集提供，用以指导您的格式设置。<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/blob/main/Shared_task_WPP/sample_submission.csv\">样本提交文件</a>\n\n要提交您的预测，请访问<a href=\"https://www.codabench.org/competitions/16887/#/participate-tab\">\"提交\"</a>选项卡并上传您的`submission.zip`文件。参与者每天可进行多次提交，需遵守平台限制。\n\n## 结果和排行榜\n\n排行榜结果将显示在<a href=\"https://www.codabench.org/competitions/16887/#/resu\">排行榜</a>选项卡下。"
+      },
+      {
+        "index": 1,
+        "title": "Data",
+        "content": "<h3>🧠 Word Presence Prediction Task</h3>\n\n<p>\nParticipants are required to develop models that can predict whether a given word is present in a sign language video. This task focuses on learning meaningful word-level representations from Indian Sign Language videos.\n</p>\n\n<p>\nFor training, participants may use any publicly available dataset. A large corpus of Indian Sign Language videos with corresponding annotations is available for download from:\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Train-Dataset\" target=\"_blank\">\nhere\n</a>.\n</p>\n\n<p>\nThe validation set can be accessed from \n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Validation-Dataset\" target=\"_blank\">\nhere\n</a>.\n</p>\n\n<p>\nThe test set will be released after the Training Phase. Once available, you can download the test data from \n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Test-Dataset\" target=\"_blank\">\nhere\n</a>.\n</p>\n\n<p>\n📌 <strong>Note:</strong> Please ensure your models do not use any external private data. Only publicly available resources are permitted.\n</p>\n<p> <a href=\"https://github.com/zeleznyt/T5_for_SLT/blob/WSLP2026/WSLP2026_BASELINE.md\" target=\"_blank\">\nStarting kit\n</a>\n</p>",
+        "content_zh": "<h3>🧠 词语存在预测任务</h3>\n\n<p>\n参赛者需要开发模型，以预测给定词语是否出现在手语视频中。该任务专注于从印度手语视频中学习有意义的词级表征。\n</p>\n\n<p>\n在训练中，参赛者可以使用任何公开可用的数据集。一个包含大量印度手语视频及相应注释的语料库可从以下位置下载：\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Train-Dataset\" target=\"_blank\">\n这里\n</a>。\n</p>\n\n<p>\n验证集可从\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Validation-Dataset\" target=\"_blank\">\n这里\n</a>\n访问。\n</p>\n\n<p>\n测试集将在训练阶段后发布。发布后，您可以从\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Test-Dataset\" target=\"_blank\">\n这里\n</a>\n下载测试数据。\n</p>\n\n<p>\n📌 <strong>注意：</strong> 请确保您的模型不使用任何外部私有数据。仅允许使用公开可用的资源。\n</p>"
+      },
+      {
+        "index": 2,
+        "title": "Evaluation",
+        "content": "<p><strong>📊 Evaluation Criteria</strong></p>\n\n<p>\nSubmissions for the Word\\Sign Presence Prediction task will be evaluated using the following metrics:\n</p>\n\n<ul>\n  <li><strong>Accuracy</strong></li>\n  <li><strong>Macro Precision</strong></li>\n  <li><strong>Macro Recall</strong></li>\n  <li><strong>Macro F1-Score</strong></li>\n</ul>\n\n<p>\nThese metrics ensure a balanced evaluation across all word classes, especially in the presence of class imbalance.\n</p>\n\n<p>\nYou can read more about these evaluation metrics in the following resources:\n<a href=\"https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html\" target=\"_blank\">Precision, Recall, and F1-Score (Scikit-learn docs)</a></li>\n</p>",
+        "content_zh": "<p><strong>📊 评估标准</strong></p>\n\n<p>\n单词/手势存在预测任务的提交将使用以下指标进行评估：\n</p>\n\n<ul>\n  <li><strong>准确率（Accuracy）</strong></li>\n  <li><strong>宏平均精准率（Macro Precision）</strong></li>\n  <li><strong>宏平均召回率（Macro Recall）</strong></li>\n  <li><strong>宏平均F1分数（Macro F1-Score）</strong></li>\n</ul>\n\n<p>\n这些指标确保了对所有单词类别的平衡评估，特别是在存在类别不平衡的情况下。\n</p>\n\n<p>\n您可以在以下资源中了解更多关于这些评估指标的信息：\n<a href=\"https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html\" target=\"_blank\">精准率、召回率和F1分数（Scikit-learn文档）</a></li>\n</p>"
       }
     ]
   },
@@ -757,7 +751,7 @@
     "description_zh": "从印度手语（ISL）视频/姿态数据到英文文本的句子级别翻译，使用iSign数据集。",
     "created_by": "wslp_workshop",
     "created_when": "2026-06-01T18:10:35.480917Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780337435/69dcff319769/logo.png?AWSAccessKeyId=codabench-prod&Signature=rX0yvzy2%2Ft4HCCs6KGSzVKwkySE%3D&Expires=1784816122",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780337435/69dcff319769/logo.png?AWSAccessKeyId=codabench-prod&Signature=nFvOLE7%2FZnbu%2B%2FVzFe9zUNNfsZk%3D&Expires=1784902755",
     "participants_count": 19,
     "submissions_count": 11,
     "first_phase_start": null,
@@ -805,9 +799,9 @@
     "description_zh": "印度手语（ISL）视频数据中的孤立手势识别到其对应的词标签（词汇标注）",
     "created_by": "wslp_workshop",
     "created_when": "2026-06-01T19:06:53.463848Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780340813/3af0ccccd8c8/logo.png?AWSAccessKeyId=codabench-prod&Signature=S93JFa0HAqYL%2BE3fdMs4oTWFfVY%3D&Expires=1784816121",
-    "participants_count": 17,
-    "submissions_count": 118,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780340813/3af0ccccd8c8/logo.png?AWSAccessKeyId=codabench-prod&Signature=XHNt%2BTLGduowqreGV9MKGSs6lf4%3D&Expires=1784902757",
+    "participants_count": 18,
+    "submissions_count": 150,
     "first_phase_start": null,
     "phases": [
       {
@@ -846,54 +840,6 @@
       }
     ]
   },
-  "16887": {
-    "id": 16887,
-    "title": "WSLP@EMNLP-2026 Shared Task - Word\\Sign  Presence Prediction",
-    "description": "Predict if a given word\\Sign (gloss) is present in a full Indian Sign Language (ISL) sentence video, addressing sign spotting and context alignment challenges.",
-    "description_zh": "给定一个单词\\符号（手语词汇），预测其是否出现在完整的印度手语（ISL）句子视频中，解决手语识别和上下文对齐的挑战。",
-    "created_by": "wslp_workshop",
-    "created_when": "2026-06-01T18:23:44.041000Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780338224/034be48cb6b4/logo.png?AWSAccessKeyId=codabench-prod&Signature=865UFvhknFiKxYEtGrjCYX%2B9XEk%3D&Expires=1784816122",
-    "participants_count": 12,
-    "submissions_count": 42,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 28097,
-        "name": "Training Phase",
-        "start": "2026-06-08T00:00:00Z",
-        "end": "2026-07-31T00:00:00Z",
-        "max_submissions_per_day": 20
-      },
-      {
-        "id": 28098,
-        "name": "Testing Phase",
-        "start": "2026-07-31T00:01:00Z",
-        "end": "2026-08-10T00:00:00Z",
-        "max_submissions_per_day": 20
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Overview",
-        "content": "<h1 dir=\"ltr\">Welcome to the WSLP@EMNLP-2026 Shared Task: Word\\Sign Presence Prediction</h1>\n\n<h4 dir=\"ltr\">Advancing Indian Sign Language Understanding through Sign Spotting</h4>\n\n<h2 dir=\"ltr\">Registration</h2>\n<p dir=\"ltr\">\nTo participate in this shared task, please visit the <a href=\"https://www.codabench.org/competitions/16887/#/participate-tab\">\"Participate\"</a> tab and create a Codabench account using a valid institutional or personal email address.\nParticipation is open to both individuals and teams.\n</p>\n\n<p dir=\"ltr\">\nAfter registration, navigate to your <strong>Settings</strong> and fill in all the required details.\n<br><br>\nPlease ensure that your <strong>team name</strong> (or individual name) is clearly identifiable and used consistently across all submissions.\n</p>\n\n<h2>Overview</h2>\n<p>\nIndian Sign Language (ISL) is a rich and expressive visual language. In this shared task, participants are challenged to predict whether a specific word (gloss) is present within a given ISL sentence video — a task commonly known as <em>sign spotting</em>.\n</p>\n\n<p>\nThis task is crucial for real-world applications such as query-based sign language video retrieval and semantic search. It represents a step forward in building models that understand continuous signing in a structured and meaningful way.\n</p>\n\n<p>\nWe provide a dedicated dataset — the <strong>Word\\Sign Presence Dataset</strong> — containing 1,543 (video, word) query pairs. Your goal is to build a model that can accurately predict whether a queried word is signed in a given ISL sentence video.\n</p>\n\n<h2>Phases</h2>\n<p>\nThe competition consists of two distinct phases:\n</p>\n<ul>\n  <li><strong>Phase 1: Training & Validation</strong> – Participants will train and validate their models using the provided datasets.</li>\n  <li><strong>Phase 2: Testing</strong> – A held-out test set will be released. Participants will submit predictions to evaluate the generalization of their models.</li>\n</ul>\n\n<h3>Task Details</h3>\n<ul>\n  <li><strong>Input:</strong> ISL sentence video or corresponding pose sequence, and a query word</li>\n  <li><strong>Output:</strong> Binary prediction indicating the presence of the word (1 = Present, 0 = Not Present)</li>\n  <li><strong>Dataset:</strong> Word Presence Dataset</li>\n  <li><strong>Evaluation Metrics:</strong> Accuracy, Macro Precision, Macro Recall, Macro F1-Score</li>\n</ul>\n\n<h2>Submission Guidelines</h2>\n<p>\nEach submission must be a ZIP archive named <code>submission.zip</code>, containing the following file:\n</p>\n\n<ol>\n  <li>\n    <code>answer.csv</code> – A comma-separated file with the following three columns:\n    <ul>\n      <li><strong>Column 1:</strong> <code>sentence_id</code> – ID of the input ISL sentence video</li>\n      <li><strong>Column 2:</strong> <code>query_id</code> – ID of the queried word</li>\n      <li><strong>Column 3:</strong> <code>is_present</code> – Your model’s binary prediction (<code>1</code> for Present, <code>0</code> for Not Present)</li>\n    </ul>\n    <strong>Note:</strong> Ensure that all <code>(sentence_id, query_id)</code> pairs appear in the exact same order as in the reference file. Mismatches may lead to invalid scoring or disqualification. Make sure  columns name in the answer.csv files are (sentence_is, query_id, is_present).\n  </li>\n</ol>\n\n<p>\nSample submission files is made available along with the dataset to guide your formatting. <a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/blob/main/Shared_task_WPP/sample_submission.csv\">Sample Submission file</a> \n</p>\n\n<p>\nTo submit your predictions, visit the <a href=\"https://www.codabench.org/competitions/16887/#/participate-tab\">\"Submission\"</a> tab and upload your <code>submission.zip</code> file. Participants may make multiple submissions per day, subject to platform-imposed limits.\n</p>\n\n<h2>Results and Leaderboard</h2>\n<p>\nLeaderboard results will be displayed under the <a href=\"https://www.codabench.org/competitions/16887/#/results-tab\">\"Results\"</a> tab. Final rankings will be based primarily on the <strong>F1-Score</strong> for the positive class (i.e., correct prediction of presence), with <strong>Accuracy</strong>, <strong>Precision</strong>, and <strong>Recall</strong> (all macro-averaged) serving as secondary metrics.\n</p>\n\n<p>\nTop-performing teams will be recognized and invited to present their approaches at the <strong>WSLP@EMNLP-2026</strong> event.\n</p>\n\n<h2>Acknowledgements</h2>\n<p>\nThis shared task is part of the <strong>Workshop on Sign Language Processing (WSLP@EMNLP-2026)</strong>, co-located with <strong>EMNLP 2026</strong> at <strong>Budapest, Hungary</strong>.\n</p>\n\n<p>\nWe sincerely thank all participants, organizers, collaborators, and the broader research community for their continued efforts in advancing the field of sign language technology.\n</p>\n<p>\nTo stay updated and connect with other participants, join our Discord server \n<ul>\n\t<li> <a href=\"https://discord.gg/ty7dqTHC2v\"> Discord : Shared Task </a> </li>\n\t<li> <a href=\"https://discord.gg/x6tHXEFyW7\"> Discord : Workshop </a> </li>\n\t<li><a href=\"https://exploration-lab.github.io/WSLP-2026/task/\"> Shared Task Webpage </a> </li>\n\t</ul>\n</p>",
-        "content_zh": "# 欢迎来到WSLP@EMNLP-2026共享任务：词/手语存在预测\n\n## 通过手语识别推进印度手语理解\n\n## 注册\n\n要参加此共享任务，请访问<a href=\"https://www.codabench.org/competitions/16887/#/participate-tab\">\"参与\"</a>选项卡，并使用有效的机构或个人电子邮件地址创建Codabench账户。\n个人和团队都可以参加。\n\n注册后，导航到您的**设置**并填入所有必需信息。\n\n请确保您的**团队名称**（或个人名称）清晰可辨，并在所有提交中保持一致。\n\n## 概述\n\n印度手语（ISL）是一种丰富而富有表现力的视觉语言。在此共享任务中，参与者需要预测特定词汇（标记）是否出现在给定的ISL句子视频中——这个任务通常被称为**手语识别**。\n\n此任务对于实际应用至关重要，例如基于查询的手语视频检索和语义搜索。这代表了在构建以结构化和有意义的方式理解连续手语的模型方面的进步。\n\n我们提供了一个专用数据集——**词/手语存在数据集**——包含1,543个（视频、词汇）查询对。您的目标是构建一个模型，能够准确预测查询的词汇是否在给定的ISL句子视频中被手语表达。\n\n## 阶段\n\n竞赛包括两个不同的阶段：\n\n- **阶段1：训练与验证** – 参与者将使用提供的数据集训练和验证其模型。\n- **阶段2：测试** – 将发布保留的测试集。参与者将提交预测以评估其模型的泛化能力。\n\n## 任务详情\n\n- **输入：** ISL句子视频或对应的姿态序列，以及一个查询词汇\n- **输出：** 表示词汇存在的二元预测（1 = 存在，0 = 不存在）\n- **数据集：** 词汇存在数据集\n- **评估指标：** 准确率、宏平均精准率、宏平均召回率、宏平均F1分数\n\n## 提交指南\n\n每次提交必须是名为`submission.zip`的ZIP压缩包，包含以下文件：\n\n1. `answer.csv` – 逗号分隔的文件，包含以下三列：\n   - **第1列：** `sentence_id` – 输入ISL句子视频的ID\n   - **第2列：** `query_id` – 查询词汇的ID\n   - **第3列：** `is_present` – 您模型的二元预测（`1`表示存在，`0`表示不存在）\n   \n   **注意：** 确保所有`(sentence_id, query_id)`对与参考文件的顺序完全相同。不匹配可能导致无效计分或被取消资格。请确保answer.csv文件中的列名为(sentence_id, query_id, is_present)。\n\n样本提交文件已随数据集提供，用以指导您的格式设置。<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/blob/main/Shared_task_WPP/sample_submission.csv\">样本提交文件</a>\n\n要提交您的预测，请访问<a href=\"https://www.codabench.org/competitions/16887/#/participate-tab\">\"提交\"</a>选项卡并上传您的`submission.zip`文件。参与者每天可进行多次提交，需遵守平台限制。\n\n## 结果和排行榜\n\n排行榜结果将显示在<a href=\"https://www.codabench.org/competitions/16887/#/resu\">排行榜</a>选项卡下。"
-      },
-      {
-        "index": 1,
-        "title": "Data",
-        "content": "<h3>🧠 Word Presence Prediction Task</h3>\n\n<p>\nParticipants are required to develop models that can predict whether a given word is present in a sign language video. This task focuses on learning meaningful word-level representations from Indian Sign Language videos.\n</p>\n\n<p>\nFor training, participants may use any publicly available dataset. A large corpus of Indian Sign Language videos with corresponding annotations is available for download from:\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Train-Dataset\" target=\"_blank\">\nhere\n</a>.\n</p>\n\n<p>\nThe validation set can be accessed from \n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Validation-Dataset\" target=\"_blank\">\nhere\n</a>.\n</p>\n\n<p>\nThe test set will be released after the Training Phase. Once available, you can download the test data from \n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Test-Dataset\" target=\"_blank\">\nhere\n</a>.\n</p>\n\n<p>\n📌 <strong>Note:</strong> Please ensure your models do not use any external private data. Only publicly available resources are permitted.\n</p>\n<p> <a href=\"https://github.com/zeleznyt/T5_for_SLT/blob/WSLP2026/WSLP2026_BASELINE.md\" target=\"_blank\">\nStarting kit\n</a>\n</p>",
-        "content_zh": "<h3>🧠 词语存在预测任务</h3>\n\n<p>\n参赛者需要开发模型，以预测给定词语是否出现在手语视频中。该任务专注于从印度手语视频中学习有意义的词级表征。\n</p>\n\n<p>\n在训练中，参赛者可以使用任何公开可用的数据集。一个包含大量印度手语视频及相应注释的语料库可从以下位置下载：\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Train-Dataset\" target=\"_blank\">\n这里\n</a>。\n</p>\n\n<p>\n验证集可从\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Validation-Dataset\" target=\"_blank\">\n这里\n</a>\n访问。\n</p>\n\n<p>\n测试集将在训练阶段后发布。发布后，您可以从\n<a href=\"https://huggingface.co/datasets/Exploration-Lab/WSLP-AACL-2025/tree/main/Shared_task_WPP/Test-Dataset\" target=\"_blank\">\n这里\n</a>\n下载测试数据。\n</p>\n\n<p>\n📌 <strong>注意：</strong> 请确保您的模型不使用任何外部私有数据。仅允许使用公开可用的资源。\n</p>"
-      },
-      {
-        "index": 2,
-        "title": "Evaluation",
-        "content": "<p><strong>📊 Evaluation Criteria</strong></p>\n\n<p>\nSubmissions for the Word\\Sign Presence Prediction task will be evaluated using the following metrics:\n</p>\n\n<ul>\n  <li><strong>Accuracy</strong></li>\n  <li><strong>Macro Precision</strong></li>\n  <li><strong>Macro Recall</strong></li>\n  <li><strong>Macro F1-Score</strong></li>\n</ul>\n\n<p>\nThese metrics ensure a balanced evaluation across all word classes, especially in the presence of class imbalance.\n</p>\n\n<p>\nYou can read more about these evaluation metrics in the following resources:\n<a href=\"https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html\" target=\"_blank\">Precision, Recall, and F1-Score (Scikit-learn docs)</a></li>\n</p>",
-        "content_zh": "<p><strong>📊 评估标准</strong></p>\n\n<p>\n单词/手势存在预测任务的提交将使用以下指标进行评估：\n</p>\n\n<ul>\n  <li><strong>准确率（Accuracy）</strong></li>\n  <li><strong>宏平均精准率（Macro Precision）</strong></li>\n  <li><strong>宏平均召回率（Macro Recall）</strong></li>\n  <li><strong>宏平均F1分数（Macro F1-Score）</strong></li>\n</ul>\n\n<p>\n这些指标确保了对所有单词类别的平衡评估，特别是在存在类别不平衡的情况下。\n</p>\n\n<p>\n您可以在以下资源中了解更多关于这些评估指标的信息：\n<a href=\"https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html\" target=\"_blank\">精准率、召回率和F1分数（Scikit-learn文档）</a></li>\n</p>"
-      }
-    ]
-  },
   "15590": {
     "id": 15590,
     "title": "Foundation Model for Ultrasound Biometry",
@@ -901,9 +847,9 @@
     "description_zh": "该竞赛在超声图像回归任务上评估基础模型。参赛者预测解剖学标志点坐标。评估指标为平均径向误差（MRE）和平均绝对误差（MAE），数值越低越好。",
     "created_by": "jared2408",
     "created_when": "2026-04-12T05:59:27.070072Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-13-1776048868/504537dff745/logo.png?AWSAccessKeyId=codabench-prod&Signature=zmdItFocZAWLeXbgMEoMKfF6yIs%3D&Expires=1784816133",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-13-1776048868/504537dff745/logo.png?AWSAccessKeyId=codabench-prod&Signature=v6Ww9cpPoTsQP%2FX%2FSQhTGL1yPXc%3D&Expires=1784902777",
     "participants_count": 197,
-    "submissions_count": 2277,
+    "submissions_count": 2309,
     "first_phase_start": null,
     "phases": [
       {
@@ -996,9 +942,9 @@
     "description_zh": "合成LiDAR数据，针对V2X-Real的基础设施中心分布；在合成数据上训练，在真实V2X-Real-IC上评估。",
     "created_by": "mshahbazkharal",
     "created_when": "2026-04-30T07:14:54.554531Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833294/142ee41df4c9/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=JOPQV%2B8PidsN%2FWLoEGrnXVHVBSY%3D&Expires=1784816130",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833294/142ee41df4c9/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=voaaiJftEFOnQ2OgL3GEUv8q9jE%3D&Expires=1784902772",
     "participants_count": 10,
-    "submissions_count": 25,
+    "submissions_count": 31,
     "first_phase_start": null,
     "phases": [
       {
@@ -1062,9 +1008,9 @@
     "description_zh": "# LiDAR数据合成\n\n针对LUMPI汉诺威路边交叉口分布的LiDAR数据合成；在合成数据上训练，在真实数据上评估。\n\n---\n\n**关键要素：**\n\n- **数据合成** - 针对LUMPI汉诺威道路交叉口场景的LiDAR合成数据生成\n- **训练集** - 使用合成LiDAR数据进行模型训练\n- **评估集** - 在真实LiDAR数据上进行性能评估",
     "created_by": "mshahbazkharal",
     "created_when": "2026-04-30T07:09:42.003344Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833284/11b6c0bba3ac/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=i26DrKIGsDHnzD7hKtQ4esXVp48%3D&Expires=1784816130",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833284/11b6c0bba3ac/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=He9TCE7m4mDdGl82PY%2F4UvtX4Cg%3D&Expires=1784902773",
     "participants_count": 11,
-    "submissions_count": 43,
+    "submissions_count": 57,
     "first_phase_start": null,
     "phases": [
       {
@@ -1128,9 +1074,9 @@
     "description_zh": "# YouTube商业内容检测与分类系统：未成年人受众合规评估\n\n## 系统概述\n针对可能触及未成年人受众的YouTube视频中的商业内容进行检测、分类和合规风险评估，基于欧盟消费者法律框架，分四个数据访问层级架构。\n\n---\n\n## 第一层：基础内容识别\n\n### 检测维度\n- **视频元数据分析**：频道类目、观众年龄统计、内容标签\n- **视频脚本扫描**：自动字幕/手动转录的商业语言模式识别\n- **视觉元素识别**：品牌logo、产品展示、赞助标识\n\n### 输出分类\n| 商业内容类型 | 识别信号 | 风险等级 |\n|---------|--------|--------|\n| 直接广告 | 明确产品推荐、定价信息 | 高 |\n| 原生广告 | 产品集成、品牌合作 | 中高 |\n| 隐性置入 | 背景品牌、角色使用产品 | 中 |\n| 联盟营销 | 推荐链接、折扣码 | 中高 |\n\n---\n\n## 第二层：产品类别与监管映射\n\n### 高风险产品类别（未成年人保护）\n- **食品饮料**：高糖/高盐、能量饮料、酒精相关\n- **科技产品**：游戏、社交应用、沉浸式内容\n- **时尚美容**：化妆品、整容相关服务、极端减肥产品\n- **金融产品**：加密资产、赌博、在线交易平台\n- **药品与补充剂**：处方药推荐、声称疗效的补充品\n\n### 分类规则\n```\n产品类别 → 年龄敏感度 → 欧盟指令 → 特定标记要求\n```\n\n**示例**：能量饮料(食品) → 高(12岁以下) → 2006/114/EC(误导性广告) → 必须标注\"咖啡因含量\"\n\n---\n\n## 第三层：欧盟合规风险标记\n\n### 法律框架应用\n\n#### A. 欧盟《消费者权利指令》(2011/83/EU)\n- **风险标记**：\n  - 缺少清晰的商业意图披露\n  - 不透明的价格条款\n  - 无冷静期声明（适用产品）\n\n#### B. 《不公平商业惯例指令》(2005/29/EC)\n- **风险标记**：\n  - 虚假/误导性声明（健康效益、性能）\n  - 攻击性营销实践（强制购买、时间压力）\n  - 儿童针对性的操纵策略\n\n#### C. 《视听传媒服务指令》(2010/13/EU)修订案\n- **风险标记**：\n  - 缺少商业广告边界标记(\"reklame\"、\"Werbung\"、\"publicité\")\n  - 儿童节目中的插播广告违规\n  - 名人/影响者代言未标注\n\n#### D. 《儿童在线隐私保护规则》(GDPR第8条+指南)\n- **风险标记**：\n  - 14岁以下受众的个性化广告\n  - 未获得可验证的父母同意\n  - 行为追踪/数据收集未披露\n\n### 风险评分矩阵\n\n| 合规维度 | 低风险 | 中风险 | 高风险 |\n|---------|-------|-------|-------|\n| 披露透明度 | 明确标记 | 模糊标记 | 无标记 |\n| 年龄针对性 | 通用内容 | 混合受众 | 明确针对儿童 |\n| 声称验证性 | 有证据支持 | 部分声称 | 未实质性声称 |\n| 数据实践 | 最小收集 | 追踪但同意 | 追踪无同意 |\n\n---\n\n## 第四层：报告与可视化输出\n\n### 检测结果架构\n\n```json\n{\n  \"video_id\": \"string\",\n  \"commercial_content\": {\n    \"detected\": boolean,\n    \"types\": [\"native_advertising\", \"affiliate_marketing\"],\n    \"confidence\": 0.92\n  },\n  \"product_classification\": {\n    \"category\": \"energy_beverages\",\n    \"risk_tier\": \"high\",\n    \"age_sensitivity\": \"12+\"\n  },\n  \"compliance_flags\": {\n    \"disclosure_clarity\": {\n      \"status\": \"non-compliant\",\n      \"issue\": \"商业意图未标记\",\n      \"regulation\": \"2010/13/EU\",\n      \"severity\": \"critical\"\n    },\n    \"misleading_claims\": {\n      \"status\": \"flagged\",\n      \"claims\": [\"增加体能\", \"改善注意力\"],\n      \"evidence_status\": \"unsubstantiated\",\n      \"regulation\": \"2005/29/EC\",\n      \"severity\": \"high\"\n    },\n    \"influencer_compliance\": {\n      \"status\": \"non-compliant\",\n      \"issue\": \"影响者代言未披露\",\n      \"regulation\": \"2005/29/EC + 2010/13/EU\",\n      \"severity\": \"high\"\n    },\n    \"gdpr_data_practices\": {\n      \"status\": \"warning\",\n      \"issue\": \"链接产品的应用进行未同意追踪\",\n      \"regulation\": \"GDPR Art.8\",\n      \"severity\": \"medium\"\n    }\n  },\n  \"audience_assessment\": {\n    \"likely_minor_reach\": 0.78,\n    \"channel_category\": \"gaming\",\n    \"viewer_demographics\": \"primarily_under_18\"\n  },\n  \"recommendations\": [\n    \"添加明确的商业披露标记\",\n    \"删除未实质性支持的健康声称\",\n    \"获取影响者代言的书面披露\",\n    \"审查链接产品的儿童隐私设置\"\n  ]\n}\n```\n\n### 仪表板指标\n- **内容风险热图**：按产品类别和合规维度\n- **频道合规趋势**：时间序列违规频率\n- **欧盟成员国地区映射**：国家特定法律强度权重\n- **影响者网络分析**：代言关系与披露一致性\n\n---\n\n## 实施考量\n\n### 技术栈\n- **自然语言处理**：多语言商业语言检测(英语、德语、法语、西班牙语等)\n- **计算机视觉**：品牌识别、视觉商业标记\n- **图知识库**：产品-类别-法规映射\n\n### 局限性与透明度\n- 文化差异：商业实践的地区规范差异\n- 假阳性风险：讽刺/教育性内容误分类\n- 法律滞后：新兴平台实践的监管覆盖不足\n\n---\n\n## 参考法律工具\n\n| 指令 | 关键条款 | 实施成员国差异 |\n|-----|--------|------------|\n| 2010/13/EU(AVMSD) | 第9条:广告披露 | 德国严格;南欧执法宽松 |\n| 2005/29/EC | 附件I:禁止实践 | 一致性高 |\n| GDPR | 第8条:儿童同意 | 比利时(7岁);其他国家(16岁) |\n\n此系统设计可扩展至TikTok、Instagram等平台的适应性修改。",
     "created_by": "thalesbertaglia",
     "created_when": "2026-07-20T09:51:37.748643Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784541097/a7995f6fb767/logo.png?AWSAccessKeyId=codabench-prod&Signature=fPbAp5AeF%2B0qOW7DHeOoUPzVh2c%3D&Expires=1784816111",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784541097/a7995f6fb767/logo.png?AWSAccessKeyId=codabench-prod&Signature=WRm95mWUnLTt6pYjtDX2LPS12V4%3D&Expires=1784902745",
     "participants_count": 28,
-    "submissions_count": 13,
+    "submissions_count": 30,
     "first_phase_start": null,
     "phases": [
       {
@@ -1175,6 +1121,89 @@
       }
     ]
   },
+  "17263": {
+    "id": 17263,
+    "title": "Universal UltraSound Image & Video Analysis Challenge 2026",
+    "description": "Universal ultrasound image and video analysis benchmark for multi-organ classification and segmentation across B-mode ultrasound, contrast-enhanced ultrasound (CEUS), and cardiac ultrasound videos.",
+    "description_zh": "通用超声图像和视频分析基准，用于B型超声、造影增强超声（CEUS）和心脏超声视频的多器官分类和分割。",
+    "created_by": "uusivc2026",
+    "created_when": "2026-06-26T07:10:19.780392Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782457819/2259d81709fc/Deep-Breath-logo.png?AWSAccessKeyId=codabench-prod&Signature=SFDyev3PTyENyqr0noCFS0nikwU%3D&Expires=1784902749",
+    "participants_count": 57,
+    "submissions_count": 48,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 28799,
+        "name": "Validation",
+        "start": "2026-06-01T00:00:00Z",
+        "end": "2026-08-25T00:00:00Z",
+        "max_submissions_per_day": 15
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Overview",
+        "content": "# Welcome to the UUSIVC 2026 Challenge\n\nWelcome to the **Universal UltraSound Image & Video Analysis Challenge 2026: Multi-Organ Classification and Segmentation Across B-mode and Contrast-Enhanced Ultrasound**.\n\nThis challenge focuses on evaluating algorithms for multi-organ, multi-modal ultrasound image and video analysis. The benchmark covers classification and segmentation tasks across B-mode ultrasound images, contrast-enhanced ultrasound (CEUS) videos, and cardiac ultrasound videos. The goal is to advance the generalizability, robustness, and clinical applicability of AI models in ultrasound image analysis.\n\n🧪Participants will benchmark their methods via Codabench through automated submission and evaluation pipelines, with live leaderboards tracking performance across classification and segmentation tasks.\n\n🏆Challenge results and winners will be announced during the [Deep-Breath 2026: 3rd Deep Breast Workshop on AI and Imaging for Diagnostic and Treatment Challenges in Breast Care Workshop](https://deep-breath-miccai.github.io/deepbreath-2026/), held in conjunction with [MICCAI 2026](https://conferences.miccai.org/2026/en/default.asp) in Strasbourg, France.\n\n🌐For updates, guidelines, dataset access, and community discussions, visit the [UUSIVC2026 website](https://uusivc2026-sudo.github.io/uusivc2026.github.io/).\n\n📄 The full challenge proposal is available [here](https://zenodo.org/records/19729665).\n\n🔗[Baseline](https://github.com/uusivc2026-sudo/UUSIVC-2026-Challenge). It provides one possible implementation path for participating in the challenge. Participants are encouraged to explore their own approaches and develop more competitive, state-of-the-art research algorithms.\n\n## Registration\n\nParticipants must register their team name and provide their details through a [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfbO05JF__QkYzL77rdGwoFb3stit-3S5zcbVh4ALYcKjJ7AQ/viewform) before accessing the data and submitting their results. Each team has a maximum of **3 members**, including the team leader. Please ensure that you provide accurate **Codabench** usernames to enable access to data and submission permissions.\n\n## Dataset\n\nThe UUSIVC 2026 dataset is composed of multiple public ultrasound datasets and private datasets collected in collaboration with partner hospitals.\n\nThe benchmark includes:\n\n- B-mode ultrasound image classification.\n- B-mode ultrasound image segmentation.\n- CEUS video/sequence classification.\n- CEUS video/frame segmentation.\n- Cardiac ultrasound video/frame segmentation.\n\nDatasets are available through two independent download sources. Please choose either one of the following links to download the dataset:\n\n- [Hugging Face](https://huggingface.co/datasets/WyattH/UUSIVC2026/tree/main)\n- [Baidu Netdisk](https://pan.baidu.com/s/1_8ZDKJdsR1dCsOf7XzG_ew?pwd=usvc)\n\nEach download source contains both the training and validation data. The training set includes the input data together with the corresponding sample-level labels for classification tasks and pixel-level annotations for segmentation tasks. The validation set contains only the input data, without labels or annotations.\n\n\n## Tasks\n\nParticipants are encouraged to develop a unified model or pipeline capable of handling multiple organs, modalities, and task types.\n\t\nThe online validation benchmark includes five task groups:\n\n- **image_cls**: ultrasound image classification.\n- **ceus_cls**: CEUS video/sequence classification.\n- **image_seg**: 2D ultrasound image segmentation.\n- **ceus_seg**: CEUS video/frame segmentation.\n- **video_seg**: cardiac ultrasound video/frame segmentation.\n\nThe target organs and datasets include breast, thyroid, liver, prostate, appendix, kidney, fetal head, and cardiac structures, depending on the task type.\n\nRepresentative tasks include:\n\n- Breast lesion classification and segmentation.\n- Liver disease classification.\n- Appendix classification.\n- Thyroid nodule segmentation.\n- Kidney contour segmentation.\n- Fetal head contour segmentation.\n- Cardiac structure segmentation.\n- Prostate image classification and segmentation.\n- Cardiac video structure segmentation.\n- CEUS-based classification and lesion segmentation.\n\nEach organ is associated with a distinct clinical task, exemplifying the multi-disease and multi-task nature of the challenge. In addition to the public datasets, we will provide a small portion of our private datasets for training to mitigate domain gap difficulties. The validation and test sets will primarily consist of private data, where the validation labels and test sets will not be publicly disclosed.\n\n## Timeline\n\n| Phase | Dates          | Details                                                                      |\n|---|----------------|------------------------------------------------------------------------------|\n| Development Phase | June 29, 2026  | Website opens for registration, release training and validation images. |\n| Validation Phase | June 29, 2026  | Submission system opens for validation.                                     |\n| Paper Phase | Aug. 25, 2026 | Short paper and docker submission deadline.                                  |\n| Test Phase | Aug. 26, 2026 | Submission system for testing.                                         |\n| Workshop | Sept. 27, 2026 | Final results are released during the Deep-Breath workshop at MICCAI 2026.    |\n\n## Submission Guidelines\n\nWe provide guides on how to develop model, infer and submit results in the validation phase, as well as how to prepare and submit the Docker file of the model in the testing phase. Please see the **Submission Guidelines** page.\n\n## Rules\n\n### Methods\n\nParticipants are allowed to base their methods on existing open-source general models. And they are invited to submit a short paper (refer to Technical Report page) to the Deep-Breath workshop to introduce the details of their methods and declare innovations in areas such as preprocessing, model architecture, or post-processing.\n\n### Use of other training data/pre-trained models\nNo additional data allowed;\nThe publicly available pre-trained model, such as ResNet50 trained on ImageNet, can be used. To ensure fairness and reproducibility of results, using unpublished pre-trained models is prohibited.\n\n### Award Eligibility\nAs a condition for being ranked and considered as the challenge winner or eligible for any prize, the teams/participants must fulfil the following obligations:\n\n- Present their method at the final event of the challenge at MICCAI 2026;\n- Submit a paper to Deep-Breath workshop reporting the details of the methods in a short or long (up to the teams) LNCS format;\n- Sign and return all prize acceptance documents as may be required by Competition Sponsor/Organizers;\n- Commit to citing the data challenge paper and the data overview paper whenever submitting the developed method for scientific and non-scientific publications.\n\n## Awards\nTop-10 teams will be invited to present talks and winning certificates will be provided.\n\nWe will provide a prize of 9,900 CNY for the Top 10 teams.\n\n- 1st Place: 2,500 CNY\n- 2nd-3rd Place: 1,500 CNY\n- 4th-6th Place: 1,200 CNY\n- 7th-10th Place: 500 CNY\n\nSponsors for the awards are currently being investigated.\n\nThe challenge organizers aim to publish a summary paper in a relevant journal. The top ten performing teams will be invited to as co-authors. Participants can submit their own paper after submitting the summary paper or once the challenge paper is published on Arxiv.\n\n## Frequently Asked Questions (FAQ)\nYou can view the full FAQ on the corresponding page. And please do not hesitate to email us ([uusivc2026@gmail.com](mailto:uusivc2026@gmail.com)) if you have any questions.",
+        "content_zh": "# 欢迎来到UUSIVC 2026挑战赛\n\n欢迎参加**通用超声图像与视频分析挑战赛2026：B模式和对比增强超声跨多器官分类与分割**。\n\n本挑战赛致力于评估多器官、多模态超声图像和视频分析算法。基准测试涵盖B模式超声图像、对比增强超声(CEUS)视频和心脏超声视频的分类和分割任务。目标是推进超声图像分析中AI模型的泛化能力、鲁棒性和临床适用性。\n\n🧪参与者将通过Codabench平台进行基准测试，利用自动化提交和评估管道，实时排行榜跟踪分类和分割任务的性能表现。\n\n🏆挑战赛结果和获奖者将在[Deep-Breath 2026: 第3届Deep Breast工作坊——乳腺影像诊断和治疗挑战中的AI和影像学](https://deep-breath-miccai.github.io/deepbreath-2026/)期间公布，该工作坊与[MICCAI 2026](https://conferences.miccai.org/2026/en/default.asp)在法国斯特拉斯堡联合举办。\n\n🌐如需了解最新信息、获取指南、数据集访问权限和社区讨论，请访问[UUSIVC2026网站](https://uusivc2026-sudo.github.io/uusivc2026.github.io/)。\n\n📄完整的挑战赛方案可在[此处](https://zenodo.org/records/19729665)获取。\n\n🔗[基准实现](https://github.com/uusivc2026-sudo/UUSIVC-2026-Challenge)。它提供了参与挑战赛的一种可能的实现路径。鼓励参与者探索自己的方法，开发更具竞争力的、最先进的研究算法。\n\n## 注册\n\n参与者必须通过[谷歌表单](https://docs.google.com/forms/d/e/1FAIpQLSfbO05JF__QkYzL77rdGwoFb3stit-3S5zcbVh4ALYcKjJ7AQ/viewform)注册团队名称并提供相关信息，以获得数据访问权限并提交结果。每个团队最多包括**3名成员**，包括团队负责人。请确保提供准确的**Codabench**用户名，以启用数据访问和提交权限。\n\n## 数据集\n\nUUSIVC 2026数据集由多个公开超声数据集和与合作医院共同收集的私有数据集组成。\n\n基准测试包括：\n\n- B模式超声图像分类\n- B模式超声图像分割\n- CEUS视频/序列分类\n- CEUS视频/帧分割\n- 心脏超声视频/帧分割\n\n数据集可通过两个独立的下载来源获取。请选择以下链接之一下载数据集：\n\n- [Hugging Face](https://huggingface.co/datasets/WyattH/UUSIVC2026/tree/main)\n- [百度网盘](https://pan.baidu.com/s/1_8ZDKJdsR1dCsOf7XzG_ew?pwd=usvc)\n\n每个下载来源都包含训练和验证数据。训练集包括输入数据以及相应的样本级标签(用于分类任务)和像素级标注(用于分割任务)。验证集仅包含输入数据，不包含标签或标注。\n\n## 任务\n\n鼓励参与者开发能够处理多个器官、多种模态和多种任务类型的统一模型或管道。\n\n在线验证基准包括五个任务组：\n\n- **image_cls**：超声图像分类\n- **ceus_cls**：CEUS视频/序列分类\n- **image_seg**：二维超声图像分割\n- **ceus_seg**：CEUS视频/帧分割\n- **video_seg**：心脏超声视频/帧分割\n\n目标器官和数据集包括乳腺、甲状腺、肝脏、前列腺、阑尾、肾脏、胎儿头部和心脏结构，具体取决于任务类型。\n\n代表性任务包括：\n\n- 乳腺病变分类和分割\n- 肝病分类\n- 阑尾分类\n- 甲状腺结节分割\n- 肾脏轮廓分割\n- 胎儿头部"
+      },
+      {
+        "index": 1,
+        "title": "Submission Guidelines",
+        "content": "# Submission Guidelines\n\nThis page describes the required submission format for the validation and testing phases.\n\n**Important: Participants should register their team name and participants via a [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfbO05JF__QkYzL77rdGwoFb3stit-3S5zcbVh4ALYcKjJ7AQ/viewform) before participating.**\n\n## Development Phase\n\nTo help participants quickly get familiar with the data processing and model building workflow, we provide the training code and pre-trained weights for our baseline model [here](https://github.com/uusivc2026-sudo/UUSIVC-2026-Challenge). Participants are encouraged to use this baseline as a starting point to build and customize their own approach, or alternatively, develop a completely new method from scratch based on their own ideas.\n\n## Submission type\n\nThe validation phase uses **result submission**.\n\nParticipants should submit prediction files. The submitted archive should contain:\n\n```text\nclassification.json\nimage_seg/<Dataset>/masks/*.png\nceus_seg/<Dataset>/annotations/*.npz\nvideo_seg/<Dataset>/annotations/*.npz\n```\n\nThe top level of the zip file must directly contain `classification.json`, `image_seg`, `ceus_seg`, and `video_seg`. Do not wrap them inside an extra parent folder.\n\nCorrect:\n\n```text\nsubmission.zip\n-- classification.json\n-- image_seg/\n-- ceus_seg/\n-- video_seg/\n```\n\nIncorrect:\n\n```text\nsubmission.zip\n-- my_submission_folder/\n    -- classification.json\n    -- image_seg/\n    -- ceus_seg/\n    -- video_seg/\n```\n\n## Classification prediction format\n\nTask4 ImageCls includes Appendix, Breast, Liver, and Prostate. Task5 CEUSCls includes BreastCEUS, LiverCEUS, ProstateCEUS, and ThyroidCEUS.\n\n\nClassification predictions should be saved in a JSON file named:\n\n```text\nclassification.json\n```\n\nThe JSON should map either `sample_id` or `input_path_relative` to a prediction object. We recommend using `input_path_relative` because it is easy to match with `datalist.json`.\n\nExample:\n\n```json\n{\n  \"ceus_cls/Breast/videos/cls_00000.npy\": {\n    \"prediction\": 1,\n    \"probability\": [0.2, 0.8]\n  },\n  \"image_cls/Appendix/imgs/cls_00000.jpg\": {\n    \"prediction\": 0,\n    \"probability\": [0.9, 0.1]\n  }\n}\n```\n\nFields:\n\n| Field | Description |\n|---|---|\n| `prediction` | Predicted class index. |\n| `probability` | Class probability list. |\n\nFor binary classification tasks, `probability` should contain two values:\n\n## Image segmentation prediction format\n\nTask1 ImageSeg includes Breast, Fetal Head, Heart, Kidney, Thyroid, and Prostate.\n\n\nFor `image_seg`, predictions should be grayscale mask images.\n\nRequired folder structure:\n\n```text\nimage_seg/<Dataset>/masks/<mask_name>.png\n```\n\nExample:\n\n```text\nimage_seg/Breast/masks/seg_mask_00000.png\nimage_seg/Thyroid/masks/seg_mask_00000.png\nimage_seg/Prostate/masks/seg_mask_00000.png\n```\n\nMask requirements:\n\n- Single-channel grayscale PNG is recommended.\n- Background should be `0`.\n- Foreground can be any non-zero value, preferably `255`.\n- If the submitted mask size differs from the reference size, the scorer will resize the prediction to the reference size using nearest-neighbor interpolation.\n\n## CEUS segmentation prediction format\n\nFor `ceus_seg`, predictions should be saved as `.npz` files under:\n\n```text\nceus_seg/<Dataset>/annotations/<annotation_name>.npz\n```\n\nExample:\n\n```text\nceus_seg/BreastCEUS/annotations/seg_annotation_00000.npz\nceus_seg/LiverCEUS/annotations/seg_annotation_00000.npz\n```\n\nThe expected `.npz` file should contain a key named `mask`:\n\n```python\nimport numpy as np\n\nmask = np.zeros((256, 512), dtype=np.uint8)\n# mask[predicted_foreground > 0] = 255\nnp.savez(\"seg_annotation_00000.npz\", mask=mask)\n```\n\nMask requirements:\n\n- `mask` should be a 2D array.\n- Background should be `0`.\n- Foreground can be any non-zero value, preferably `255`.\n\n## Video segmentation prediction format\n\nFor `video_seg`, predictions should be saved as `.npz` files under:\n\n```text\nvideo_seg/<Dataset>/annotations/<annotation_name>.npz\n```\n\nExample:\n\n```text\nvideo_seg/CardiacCH/annotations/seg_annotation_00000.npz\n```\n\nThe expected `.npz` file should contain a dictionary named `fnum_mask`, where each key is a frame index and each value is a 2D mask array.\n\nExample:\n\n```python\nimport numpy as np\n\nfnum_mask = {\n    \"0\": np.zeros((256, 256), dtype=np.uint8),\n    \"14\": np.zeros((256, 256), dtype=np.uint8),\n    \"33\": np.zeros((256, 256), dtype=np.uint8),\n}\n\nnp.savez(\"seg_annotation_00000.npz\", fnum_mask=fnum_mask)\n```\n\nMask requirements:\n\n- Keys should match the annotated frame indices provided in `datalist.json`.\n- Each mask should be a 2D array.\n- Background should be `0`.\n- Foreground can be any non-zero value, preferably `255`.\n\n## Submission archive checklist\n\nBefore uploading, check that the zip file directly contains the required prediction files and folders:\n\n```text\nsubmission.zip\n-- classification.json\n-- image_seg/\n-- ceus_seg/\n-- video_seg/\n```\n\n## Validation scoring\n\nThe online validation ranking is based on evaluation metrics only.\n\nFor classification datasets:\n\n```text\nclassification dataset score = 0.5 * Accuracy + 0.5 * AUC\n```\n\nFor segmentation samples or annotated frames:\n\n```text\ncase/frame segmentation score = 0.7 * DSC + 0.3 * NSD\n```\n\nDataset-level and task-family scores are aggregated using dataset-size-based weights.\n\nThe online validation score is:\n\n```text\noverall_score = mean(Task1, Task2, Task3, Task4, Task5)\n```\n\nEfficiency metrics such as runtime and GPU memory are not included in the online validation ranking.\n\n## Testing Phase\n\n### Submission Requirements\nDuring the testing phase, each team must submit:\n- A Docker image containing your method\n    - This image will be used by the organizers to run and evaluate your model.\n    - Please follow the Docker building instructions.\n- A 4-page technical report in Word or PDF format, which must include:\n  - Team Name\n  - Team Leader’s Name\n  - Team Members\n  - Affiliation\n  - The content should describe your approach, methodology, and any important implementation details.\n\n### Submission Method\nPlease send both files by email to the organizing committee:\n\n- Email Address: [uusivc2026@gmail.com](uusivc2026@gmail.com)\n- Subject Format: UUSIC-Testing Phase Submission-[TeamName]\n- Attachments:\n  - Docker image file (or a link to download it) or Docker Hub link\n  - Technical report (Word or PDF)\n\n## Important Notes\nOnly teams that submit both the Docker image and the technical report will be eligible to:\n\n- Participate in the testing phase\n- Appear in the final ranking\n- Receive prize awards\n- Be included as co-authors in the post-challenge paper\n- Submissions that do not follow the Docker build instructions may fail to run during evaluation.",
+        "content_zh": "# 提交指南\n\n本页面描述了验证和测试阶段所需的提交格式。\n\n**重要提示：参赛者应在参赛前通过[谷歌表单](https://docs.google.com/forms/d/e/1FAIpQLSfbO05JF__QkYzL77rdGwoFb3stit-3S5zcbVh4ALYcKjJ7AQ/viewform)注册团队名称和参赛者信息。**\n\n## 开发阶段\n\n为了帮助参赛者快速熟悉数据处理和模型构建工作流，我们在[此处](https://github.com/uusivc2026-sudo/UUSIVC-2026-Challenge)提供了基线模型的训练代码和预训练权重。建议参赛者以该基线为起点构建和自定义自己的方法，或者基于自己的想法从零开始开发全新方法。\n\n## 提交类型\n\n验证阶段使用**结果提交**。\n\n参赛者应提交预测文件。提交的压缩包应包含：\n\n```text\nclassification.json\nimage_seg/<Dataset>/masks/*.png\nceus_seg/<Dataset>/annotations/*.npz\nvideo_seg/<Dataset>/annotations/*.npz\n```\n\n压缩文件的顶层必须直接包含`classification.json`、`image_seg`、`ceus_seg`和`video_seg`。不要将它们放在额外的父文件夹内。\n\n正确示例：\n\n```text\nsubmission.zip\n-- classification.json\n-- image_seg/\n-- ceus_seg/\n-- video_seg/\n```\n\n错误示例：\n\n```text\nsubmission.zip\n-- my_submission_folder/\n    -- classification.json\n    -- image_seg/\n    -- ceus_seg/\n    -- video_seg/\n```\n\n## 分类预测格式\n\n任务4 ImageCls包括阑尾、乳腺、肝脏和前列腺。任务5 CEUSCls包括乳腺CEUS、肝脏CEUS、前列腺CEUS和甲状腺CEUS。\n\n分类预测应保存在名为以下文件名的JSON文件中：\n\n```text\nclassification.json\n```\n\nJSON应将`sample_id`或`input_path_relative`映射到预测对象。建议使用`input_path_relative`，因为它易于与`datalist.json`匹配。\n\n示例：\n\n```json\n{\n  \"ceus_cls/Breast/videos/cls_00000.npy\": {\n    \"prediction\": 1,\n    \"probability\": [0.2, 0.8]\n  },\n  \"image_cls/Appendix/imgs/cls_00000.jpg\": {\n    \"prediction\": 0,\n    \"probability\": [0.9, 0.1]\n  }\n}\n```\n\n字段说明：\n\n| 字段 | 描述 |\n|---|---|\n| `prediction` | 预测的类别索引。 |\n| `probability` | 类别概率列表。 |\n\n对于二分类任务，`probability`应包含两个值。\n\n## 图像分割预测格式\n\n任务1 ImageSeg包括乳腺、胎儿头部、心脏、肾脏、甲状腺和前列腺。\n\n对于`image_seg`，预测应为灰度掩模图像。\n\n所需的文件夹结构：\n\n```text\nimage_seg/<Dataset>/masks/<mask_name>.png\n```\n\n示例：\n\n```text\nimage_seg/Breast/masks/seg_mask_00000.png\nimage_seg/Thyroid/masks/seg_mask_00000.png\nimage_seg/Prostate/masks/seg_mask_00000.png\n```\n\n掩模要求：\n\n- 建议使用单通道灰度PNG。\n- 背景应为`0`。\n- 前景可以是任何非零值，最好是`255`。\n- 如果提交的掩模大小与参考大小不同，评分程序将使用最近邻插值将预测调整为参考大小。\n\n## CEUS分割预测格式\n\n对于`ceus_seg`，预测应保存为`.npz`文件，位置如下：\n\n```text\nceus_seg/<Dataset>/annotations/<annotation_name>.npz\n```\n\n示例：\n\n```text\nceus_seg/BreastCEUS/annotations/seg_annotation_00000.npz\nceus_seg/LiverCEUS/annotations/seg_annotation_00000.npz\n```\n\n预期的`.npz`文件应包含一个名为`mask`的键：\n\n```python\nimport numpy as np\n\nmask = np.zeros((256, 512), dtype=np.uint8)\n# mask[predicted_foreground > 0] = 255\nnp.savez(\"seg_annotation_00000.npz\", mask=mask)\n```\n\n掩模要求：\n\n- `mask`应为2D数组。\n- 背景应为`0`。\n- 前景可以是任何非零值，最好是`255`。\n\n## 视频分割预测格式\n\n对于`video_seg`，预测应保存为`.npz`文件，位置如下：\n\n```text\nvideo_seg/<Dataset>/annotations/<annotation_name>.npz\n```\n\n示例："
+      },
+      {
+        "index": 2,
+        "title": "Scoring Formulas",
+        "content": "# Scoring Formulas\n\nThe algorithm will be assessed using the following metrics, and all metrics will be used to compute the ranking. The implementation of the used metrics can be found [here](https://github.com/uusic2025/challenge/blob/main/evaluation/metrics.py)\n\n## Segmentation Metrics\n\n### Dice Similarity Coefficient (DSC)\n\nDice Similarity Coefficient measures the overlap between the predicted segmentation mask and the ground-truth segmentation mask.\n\n### Normalized Surface Dice (NSD)\n\nNormalized Surface Dice evaluates boundary agreement between the predicted mask and the ground-truth mask within a tolerance distance.\n\n\n## Classification Metrics\n\n### Area Under Curve (AUC)\n\nArea Under Curve evaluates classification performance across decision thresholds.\n\n### Accuracy\n\nAccuracy measures the proportion of correctly classified samples.\n\n\n## Task-wise Scores\n\nThe validation leaderboard is organized into five task groups:\n\n- **Task1 ImageSeg**: B-mode ultrasound image segmentation, including Breast, Fetal Head, Heart, Kidney, Thyroid, and Prostate.\n- **Task2 CEUSSeg**: CEUS lesion segmentation, including BreastCEUS, LiverCEUS, ProstateCEUS, and ThyroidCEUS.\n- **Task3 VideoSeg**: cardiac ultrasound video/frame segmentation, including CardiacCH.\n- **Task4 ImageCls**: B-mode ultrasound image classification, including Appendix, Breast, Liver, and Prostate.\n- **Task5 CEUSCls**: CEUS video/sequence classification, including BreastCEUS, LiverCEUS, ProstateCEUS, and ThyroidCEUS.\n\nFor each classification dataset:\n\n```text\ndataset score = 0.5 * Accuracy + 0.5 * AUC\n```\n\nFor each segmentation sample or annotated frame:\n\n```text\ncase/frame score = 0.7 * DSC + 0.3 * NSD\n```\n\nEach task score is the sample-weighted average of its datasets. The online validation ranking score is the equal-weighted average of the five task scores:\n\n```text\noverall_score = mean(Task1, Task2, Task3, Task4, Task5)\n```\n\n## Online Validation Ranking\n\nThe online validation leaderboard is ranked by performance metrics only. Efficiency terms such as running time and GPU memory are not included in the Codabench validation score because validation submissions are prediction files and are not executed in a unified hardware environment.\n\nFor the final test stage, selected teams will submit Docker containers. The organizers will run the containers offline on unified hardware and may report computational efficiency separately.",
+        "content_zh": "# 评分公式\n\n该算法将使用以下指标进行评估，所有指标都将用于计算排名。使用指标的实现可以在[这里](https://github.com/uusic2025/challenge/blob/main/evaluation/metrics.py)找到。\n\n## 分割指标\n\n### Dice 相似系数 (DSC)\n\nDice 相似系数衡量预测分割掩膜与真实值分割掩膜之间的重叠程度。\n\n### 归一化表面 Dice (NSD)\n\n归一化表面 Dice 评估预测掩膜与真实值掩膜在容差距离内的边界一致性。\n\n\n## 分类指标\n\n### 曲线下面积 (AUC)\n\n曲线下面积评估分类模型在不同决策阈值下的性能。\n\n### 准确度\n\n准确度衡量正确分类样本的比例。\n\n\n## 任务级评分\n\n验证排行榜分为五个任务组：\n\n- **任务1 ImageSeg**：B模式超声图像分割，包括乳腺、胎儿头部、心脏、肾脏、甲状腺和前列腺。\n- **任务2 CEUSSeg**：造影超声病灶分割，包括乳腺造影超声、肝脏造影超声、前列腺造影超声和甲状腺造影超声。\n- **任务3 VideoSeg**：心脏超声视频/帧分割，包括心脏造影超声。\n- **任务4 ImageCls**：B模式超声图像分类，包括阑尾、乳腺、肝脏和前列腺。\n- **任务5 CEUSCls**：造影超声视频/序列分类，包括乳腺造影超声、肝脏造影超声、前列腺造影超声和甲状腺造影超声。\n\n对于每个分类数据集：\n\n```text\n数据集评分 = 0.5 × 准确度 + 0.5 × AUC\n```\n\n对于每个分割样本或标注帧：\n\n```text\n样本/帧评分 = 0.7 × DSC + 0.3 × NSD\n```\n\n每个任务评分是其数据集的样本加权平均值。在线验证排名评分是五个任务评分的等权平均值：\n\n```text\n总体评分 = 平均值(任务1, 任务2, 任务3, 任务4, 任务5)\n```\n\n## 在线验证排名\n\n在线验证排行榜仅按性能指标排名。由于验证提交是预测文件，不在统一硬件环境中执行，因此评分中不包含运行时间和GPU显存等效率指标。\n\n对于最终测试阶段，入选团队需提交Docker容器。组织者将在统一硬件上离线运行这些容器，并可能单独报告计算效率。"
+      },
+      {
+        "index": 3,
+        "title": "Technical Report",
+        "content": "# Content of the paper\n\n### Introduction\n\nDice Similarity Coefficient measures the overlap between the predicted segmentation mask and the ground-truth segmentation mask.\n\n### Method\n\n- Multi-task Paradigm\n- Model Architectures\n- Loss Function\n\n## Classification Metrics\n\n### Experimental Results\n\n- Implementation Details\n- Results\n\n### Discussion and Conclusion\n\n## References\nPlease cite our papers. ...",
+        "content_zh": "# 论文内容\n\n### 介绍\n\n骰子相似系数衡量预测分割掩模与地面真实分割掩模之间的重叠程度。\n\n### 方法\n\n- 多任务范式\n- 模型架构\n- 损失函数\n\n## 分类指标\n\n### 实验结果\n\n- 实现细节\n- 结果\n\n### 讨论与结论\n\n## 参考文献\n请引用我们的论文。..."
+      }
+    ]
+  },
+  "17590": {
+    "id": 17590,
+    "title": "2026年“新智砺剑”比赛-红外视频卫星空中动目标检测赛道",
+    "description": "详情请看比赛内部官网详情页",
+    "description_zh": "我注意到你提供的文本已经是简体中文，我原样返回：\n\n详情请看比赛内部官网详情页",
+    "created_by": "irnewbie",
+    "created_when": "2026-07-20T06:11:10.993454Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784528469/7e8bf5c614cd/ScreenShot_2026-07-20_140940_018.png?AWSAccessKeyId=codabench-prod&Signature=nOditert4UsiZ1pSxs6GGpNhMMk%3D&Expires=1784902745",
+    "participants_count": 20,
+    "submissions_count": 18,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 29343,
+        "name": "模型训练与验证",
+        "start": "2026-07-20T16:00:00Z",
+        "end": "2026-08-28T04:00:00Z",
+        "max_submissions_per_day": 30
+      },
+      {
+        "id": 29344,
+        "name": "最终评测",
+        "start": "2026-08-28T11:00:00Z",
+        "end": "2026-08-31T04:00:00Z",
+        "max_submissions_per_day": 2
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "赛事结果",
+        "content": "详情请看比赛内部官网详情页",
+        "content_zh": "这段文本已经是中文，原样返回：\n\n详情请看比赛内部官网详情页"
+      }
+    ]
+  },
   "17556": {
     "id": 17556,
     "title": "2026 “金睛杯”光学时敏弱小目标探测挑战赛（赛道二：基于事件相机的运动小目标检测）",
@@ -1182,9 +1211,9 @@
     "description_zh": "Optical Time-Sensitive Weak-Small Target Detection is an important research direction in intelligent visual perception and a key technical challenge in target detection and situation awareness in complex environments. Compared to conventional target detection tasks, weak-small targets typically exhibit characteristics such as small imaging scale, weak target energy, strong background interference, and unstable target morphology. The usable information in a single frame image is extremely limited, and algorithms are prone to issues such as missed detections, false detections, and discontinuous detection results in real-world scenarios.\n\nThis challenge competition, based on the CSIG2026 academic conference platform, focuses on key problems in optical time-sensitive weak-small target detection, and sets up two competition tracks: \"Infrared Video Satellite Airborne Moving Target Detection\" and \"Motion Small Target Detection Based on Event Camera\". It provides participating teams with a fair and reproducible algorithm validation platform, promoting advances in related data construction, method innovation, and technical exchange.",
     "created_by": "irnewbie",
     "created_when": "2026-07-16T16:05:17.810335Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217917/f590d1281393/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=3NxuK34sFhDAsNAeX8Z7JuHT8uI%3D&Expires=1784816111",
-    "participants_count": 62,
-    "submissions_count": 94,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217917/f590d1281393/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=R6A5KH3y7Kulkn%2FANMP0shC4bmE%3D&Expires=1784902746",
+    "participants_count": 64,
+    "submissions_count": 165,
     "first_phase_start": null,
     "phases": [
       {
@@ -1236,9 +1265,9 @@
     "description_zh": "Optical temporal-sensitive small target detection is an important research direction in intelligent visual perception and a key technical issue in target detection and situational awareness in complex environments. Compared with conventional target detection tasks, small targets typically exhibit characteristics such as small imaging scale, weak target energy, strong background interference, and unstable target morphology. The information available in a single frame is very limited, and algorithms are prone to missed detections, false positives, and discontinuous detection results in real-world scenarios.\n\nThis challenge competition, based on the CSIG2026 academic conference platform, focuses on key problems in optical temporal-sensitive small target detection, establishing two tracks: \"infrared video satellite aerial moving target detection\" and \"event camera-based moving small target detection.\" It provides participating teams with a fair and reproducible algorithm validation platform, promoting related data construction, method innovation, and technical exchange.",
     "created_by": "irnewbie",
     "created_when": "2026-07-16T15:58:17.338227Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217497/8cef6a724fb4/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=HO%2BwSQC7cDzZOjapgwLYIl1ZL6w%3D&Expires=1784816112",
-    "participants_count": 85,
-    "submissions_count": 30,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217497/8cef6a724fb4/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=7OI%2FtV1qGJfWuzGTCPNhBEPjC1E%3D&Expires=1784902747",
+    "participants_count": 90,
+    "submissions_count": 83,
     "first_phase_start": null,
     "phases": [
       {
@@ -1283,42 +1312,6 @@
       }
     ]
   },
-  "17590": {
-    "id": 17590,
-    "title": "2026年“新智砺剑”比赛-红外视频卫星空中动目标检测赛道",
-    "description": "详情请看比赛内部官网详情页",
-    "description_zh": "我注意到你提供的文本已经是简体中文，我原样返回：\n\n详情请看比赛内部官网详情页",
-    "created_by": "irnewbie",
-    "created_when": "2026-07-20T06:11:10.993454Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784528469/7e8bf5c614cd/ScreenShot_2026-07-20_140940_018.png?AWSAccessKeyId=codabench-prod&Signature=7SPiTBbeXMephwJXWPVAWPwYLfY%3D&Expires=1784816113",
-    "participants_count": 16,
-    "submissions_count": 10,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 29343,
-        "name": "模型训练与验证",
-        "start": "2026-07-20T16:00:00Z",
-        "end": "2026-08-28T04:00:00Z",
-        "max_submissions_per_day": 30
-      },
-      {
-        "id": 29344,
-        "name": "最终评测",
-        "start": "2026-08-28T11:00:00Z",
-        "end": "2026-08-31T04:00:00Z",
-        "max_submissions_per_day": 2
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "赛事结果",
-        "content": "详情请看比赛内部官网详情页",
-        "content_zh": "这段文本已经是中文，原样返回：\n\n详情请看比赛内部官网详情页"
-      }
-    ]
-  },
   "15553": {
     "id": 15553,
     "title": "MICCAI FLARE 2026 Task 2: AutoMSC: Automated Medical Image Segmentation and Classification",
@@ -1326,9 +1319,9 @@
     "description_zh": "MICCAI FLARE 2026 任务2：AutoMSC - 医学图像自动分割与分类",
     "created_by": "junma",
     "created_when": "2026-04-09T21:08:06.808342Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-23-1784773803/182fbbd79fab/automsc-logo-light-ring.png?AWSAccessKeyId=codabench-prod&Signature=a4nP4U%2BF%2BrB13yKpEkjRQiPuNmo%3D&Expires=1784816133",
-    "participants_count": 58,
-    "submissions_count": 18,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-23-1784773803/182fbbd79fab/automsc-logo-light-ring.png?AWSAccessKeyId=codabench-prod&Signature=khyPSbPByWJPQYzHsXJ6%2BsiykkE%3D&Expires=1784902777",
+    "participants_count": 63,
+    "submissions_count": 26,
     "first_phase_start": null,
     "phases": [
       {
@@ -1343,7 +1336,7 @@
       {
         "index": 0,
         "title": "Overview",
-        "content": "## <center>[MICCAI FLARE26](https://flare-medfm.github.io/) Task 2: AutoMSC: Automated Medical image Segmentation and Classification </center>\n\nDeep learning models for 3D medical imaging have traditionally been handcrafted for individual tasks, either\nsegmentation or classification, requiring extensive manual tuning of architectures, hyperparameters, and\npreprocessing pipelines. As clinical datasets grow in scale and complexity, this manual design process becomes\nincreasingly inefficient and limits the deployment of adaptable, general-purpose models. Motivated by the\nsuccess of the Medical Segmentation Decathlon challenge and nnU-Net (the winning solution), Task 2 focuses on\nbuilding self-configured models capable of automatically adapting to diverse 3D medical imaging datasets while\nsimultaneously performing both segmentation and classification.\n\nThis task aims to advance the next generation of autonomous modeldesign systems for 3D medical imaging.\nParticipants are required to design models that can automatically infer optimal configurations (e.g., architecture,\nresolution, patch size, normalization strategy, and loss balancing) and jointly learn highquality segmentation\nmasks and clinically meaningful classification labels. These models should generalize across imaging modality,\ntumor types without taskspecific manual engineering, including prostate cancer recurrence prediction in MRI\nscans, lung nodule diagnosis in CT scans, and liver metastasis origin prediction in PET/CT scans.\n\nKey Features:\n\n- **Multi-task Learning**: Models must perform both 3D segmentation and classification from the same input volume,\noptimizing for accuracy in both outputs while maintaining computational efficiency.\n- **Self-configuration**: Solutions should include automated configuration mechanisms capable of adapting to\ndataset properties, such as voxel spacing, image size, contrast variability, and class imbalance, without\nhuman-designed heuristics.\n- **Dataset Diversity**: The benchmark includes heterogeneous 3D medical imaging scans with varying modalities (CT,\nMRI, and PET-CT) and classification targets, encouraging the development of truly generalizable 3D models.\n- **Robustness and Efficiency**: Models will be evaluated on segmentation accuracy (DSC and NSD), classification\nperformance (balanced accuracy and AUROC), and resource efficiency (runtime), highlighting their potential for\nreal-world clinical adoption.\n\nParticipants are also encouraged to explore other challenge tracks at https://flare-medfm.github.io/, including: pan-cancer segmentation, and multimodal models. \n\n---\n\n## 🚀 Join the challenge (2026.04.01-8.20)\n\n\n\n* Register an account on this website and join the challenge\n* Fill out the [registration form](https://forms.gle/my1MimQ758oDyhWb9)   Note: To change team information, please simply re-submit the form.\n* Test your account by making a submission with [baseline](https://drive.google.com/file/d/1Awx9GE4kMNBCdZa0nxc5957f327tlQb5/view?usp=drive_link)\n* Request Dataset [FLARE-AutoMSC](https://huggingface.co/datasets/FLARE-MedFM/FLARE-AutoMSC). We will approve your request in 1-2 working days after reviewing your application.\n\nRemarks:\n* This challenge has two tracks: 1) Unified models for joint segmentation and classification (e.g., [JSC](https://github.com/bowang-lab/JSC)). 2) Independent models for segmentation (e.g., [nnUNet](https://github.com/MIC-DKFZ/nnUNet)) or classification ([nnClass](https://github.com/bowang-lab/nnClass)). Participants can join one track or both tracks.  \n* For both tracks, solutions should include automated configuration mechanisms capable of adapting to different datasets. \n* Clinical data (if available) is optional but encouraged for model development. \n* If you have any questions that are not listed on the QA page, please reach out to chingyuanyu.iec@gmail.com\n\n---\n\n\n## 🏊‍ Validation submission (2026.4.20-8.20)\n\n* All teams can directly submit the validation results on the challenge page to get the metrics.\n* To get the runtime metrics, participants are allowed to make one docker submission every week by sending email to chingyuanyu.iec@gmail.com.\n\n### Submission format ([example](https://drive.google.com/file/d/1Awx9GE4kMNBCdZa0nxc5957f327tlQb5/view?usp=drive_link))\n\nSubmit a **single ZIP** whose contents sit in one **flat** directory (no sub-folders):\n```\nsubmission.zip\n├── predictions.csv          # classification predictions\n├── BT0001.nii.gz            # predicted segmentation masks (same level as the CSV)\n├── BT0007.nii.gz\n└── ...\n```\n**Segmentation masks** — one file per case, named `{identifier}.nii.gz` (e.g. `BT0001.nii.gz`), binary whole-tumor label (`1` = tumor, `0` = background), same geometry (spacing orientation, and origin) as the input image.\n\n**predictions.csv** — one row per case, with the exact column headers (case-sensitive, in this order):\n\n| Column | Description |\n|--------|---------|\n| `identifier` | case ID, e.g. `BT0001` |\n| `idh_wildtype` | Probability(IDH = Unaltered / wild-type) |\n| `idh_mutated` | Probability(IDH = Altered / mutated) |\n| `grade2` | Probability(Grade 2) |\n|`grade3` | Probability(Grade 3) |\n| `grade4` | Probability(Grade 4) |\n\n\nExample:\n\n|identifier|idh_wildtype|idh_mutated|grade2|grade3|grade4|\n|--------|---------|--------|---------|--------|---------|\n|BT0001|0.90|0.10|0.10|0.30|0.60|\n|BT0007|0.15|0.85|0.05|0.25|0.70|\n\nNotes:\n* Column headers and mask filenames must match exactly so predictions can be paired with the ground truth; missing cases are scored 0.\n* Model ensemble are not allowed in this competition. (If the data contains two different classification tasks, it's allowed to train two separate models but it's not allowed to train multiple models (or multi-fold ensemble) for ensemble for the same classification task.)\n\n\n---\n\n## 🏹 Testing submission (2026.8.20-8.31)\n\nThe submitted Docker container will be evaluated with the following commands. If the Docker container does not work or the paper does not include all the necessary information to reproduce the method, we will return back the error information and review comments to participants.\n\n<code>docker load -i teamname.tar.gz</code>    \n<code>docker container run --gpus \"device=1\" -m 28G --name teamname --rm -v \\$PWD/FLARE_Test/:/workspace/inputs/ -v \n\t\\$PWD/teamname_outputs/:/workspace/outputs/ teamname:latest /bin/bash -c \"sh predict.sh\"</code>\n\n## Paper submission(Due on 8.31)\n\nPlease parepare the paper with this [template-tbd]() and submit it on [openreview](https://openreview.net/group) by Aug. 31, 2026. Please carefully read the template and the common issue before writing the manuscript. The evaluation process mainly focuses on the paper's completeness. Don't worry about the low performance. Since this task is very challenging, all attempts are worth sharing with readers. We will not reject papers because of Iow performance.\n\n---\n\n## 🏆 Awards\n\n- If there are more than 20 testing docker submissions, we will provide cash prizes for the top 5 teams (Amazon gift cards with 300/200/150/100/100 CAD, respectively) and souvenirs for the top 6-10 teams. Otherwise, only the winning team will be provided with the cash prize. \n- The top 5 teams will be invited to give oral presentations during MICCAI 2026.\n- The first author of the top 5 teams will be invited to contribute to a challenge summary paper.\n- A certificate will be awarded to the top 10 teams. (Top teams should make their code publicly available on GitHub for reproducibility.)\n- All teams have the opportunity to publish their methods in the challenge proceeding (Tentative LNCS, EI Index). [Here](https://link.springer.com/conference/flare) is an example of our previous FLARE Challenge.\n\n\nThe challenge summary paper will be submitted to top-tired journals. Here are some of our previous summaries:\n\n* \"Fast and low-GPU-memory abdomen CT organ segmentation: the flare challenge.\" Medical Image Analysis 82 (2022): 102616.\n* \"Unleashing the strengths of unlabeled data in pan-cancer abdominal organ quantification: the flare22 challenge.\" Lancet Digital Health (2024). \n* \"The multimodality cell segmentation challenge: toward universal solutions.\" Nature Methods (2024): 21, 1103–1113.",
+        "content": "## <center>[MICCAI FLARE26](https://flare-medfm.github.io/) Task 2: AutoMSC: Automated Medical image Segmentation and Classification </center>\n\nDeep learning models for 3D medical imaging have traditionally been handcrafted for individual tasks, either\nsegmentation or classification, requiring extensive manual tuning of architectures, hyperparameters, and\npreprocessing pipelines. As clinical datasets grow in scale and complexity, this manual design process becomes\nincreasingly inefficient and limits the deployment of adaptable, general-purpose models. Motivated by the\nsuccess of the Medical Segmentation Decathlon challenge and nnU-Net (the winning solution), Task 2 focuses on\nbuilding self-configured models capable of automatically adapting to diverse 3D medical imaging datasets while\nsimultaneously performing both segmentation and classification.\n\nThis task aims to advance the next generation of autonomous modeldesign systems for 3D medical imaging.\nParticipants are required to design models that can automatically infer optimal configurations (e.g., architecture,\nresolution, patch size, normalization strategy, and loss balancing) and jointly learn highquality segmentation\nmasks and clinically meaningful classification labels. These models should generalize across imaging modality,\ntumor types without taskspecific manual engineering, including prostate cancer recurrence prediction in MRI\nscans, lung nodule diagnosis in CT scans, and liver metastasis origin prediction in PET/CT scans.\n\nKey Features:\n\n- **Multi-task Learning**: Models must perform both 3D segmentation and classification from the same input volume,\noptimizing for accuracy in both outputs while maintaining computational efficiency.\n- **Self-configuration**: Solutions should include automated configuration mechanisms capable of adapting to\ndataset properties, such as voxel spacing, image size, contrast variability, and class imbalance, without\nhuman-designed heuristics.\n- **Dataset Diversity**: The benchmark includes heterogeneous 3D medical imaging scans with varying modalities (CT,\nMRI, and PET-CT) and classification targets, encouraging the development of truly generalizable 3D models.\n- **Robustness and Efficiency**: Models will be evaluated on segmentation accuracy (DSC and NSD), classification\nperformance (balanced accuracy and AUROC), and resource efficiency (runtime), highlighting their potential for\nreal-world clinical adoption.\n\nParticipants are also encouraged to explore other challenge tracks at https://flare-medfm.github.io/, including: pan-cancer segmentation, and multimodal models. \n\n---\n\n## 🚀 Join the challenge (2026.04.01-8.20)\n\n\n\n* Register an account on this website and join the challenge\n* Fill out the [registration form](https://forms.gle/my1MimQ758oDyhWb9)   Note: To change team information, please simply re-submit the form.\n* Test your account by making a submission with [baseline](https://drive.google.com/file/d/1Awx9GE4kMNBCdZa0nxc5957f327tlQb5/view?usp=drive_link)\n* Request Dataset [FLARE-AutoMSC](https://huggingface.co/datasets/FLARE-MedFM/FLARE-AutoMSC). We will approve your request in 1-2 working days after reviewing your application.\n\nRemarks:\n* This challenge has two tracks: 1) Unified models for joint segmentation and classification (e.g., [JSC](https://github.com/bowang-lab/JSC)). 2) Independent models for segmentation (e.g., [nnUNet](https://github.com/MIC-DKFZ/nnUNet)) or classification ([nnClass](https://github.com/bowang-lab/nnClass)). Participants can join one track or both tracks.  \n* For both tracks, solutions should include automated configuration mechanisms capable of adapting to different datasets. \n* Clinical data (if available) is optional but encouraged for model development. \n* If you have any questions that are not listed on the QA page, please reach out to chingyuanyu.iec@gmail.com\n\n---\n\n\n## 🏊‍ Validation submission (2026.4.20-8.20)\n\n* All teams can directly submit the validation results on the challenge page to get the metrics.\n* To get the runtime metrics, participants are allowed to make one docker submission every week by sending email to chingyuanyu.iec@gmail.com.\n\n### Baseline Docker output([example](https://drive.google.com/file/d/1FA1eVlaJuXy9uOtpZY-2AXnQqNQLQGLc/view?usp=drive_link))\n### Submission format ([example](https://drive.google.com/file/d/1Awx9GE4kMNBCdZa0nxc5957f327tlQb5/view?usp=drive_link))\n\nSubmit a **single ZIP** whose contents sit in one **flat** directory (no sub-folders):\n```\nsubmission.zip\n├── predictions.csv          # classification predictions\n├── BT0001.nii.gz            # predicted segmentation masks (same level as the CSV)\n├── BT0007.nii.gz\n└── ...\n```\n**Segmentation masks** — one file per case, named `{identifier}.nii.gz` (e.g. `BT0001.nii.gz`), binary whole-tumor label (`1` = tumor, `0` = background), same geometry (spacing orientation, and origin) as the input image.\n\n**predictions.csv** — one row per case, with the exact column headers (case-sensitive, in this order):\n\n| Column | Description |\n|--------|---------|\n| `identifier` | case ID, e.g. `BT0001` |\n| `idh_wildtype` | Probability(IDH = Unaltered / wild-type) |\n| `idh_mutated` | Probability(IDH = Altered / mutated) |\n| `grade2` | Probability(Grade 2) |\n|`grade3` | Probability(Grade 3) |\n| `grade4` | Probability(Grade 4) |\n\n\nExample:\n\n|identifier|idh_wildtype|idh_mutated|grade2|grade3|grade4|\n|--------|---------|--------|---------|--------|---------|\n|BT0001|0.90|0.10|0.10|0.30|0.60|\n|BT0007|0.15|0.85|0.05|0.25|0.70|\n\nNotes:\n* Column headers and mask filenames must match exactly so predictions can be paired with the ground truth; missing cases are scored 0.\n* Model ensemble are not allowed in this competition. (If the data contains two different classification tasks, it's allowed to train two separate models but it's not allowed to train multiple models (or multi-fold ensemble) for ensemble for the same classification task.)\n\n\n---\n\n## 🏹 Testing submission (2026.8.20-8.31)\n\nThe submitted Docker container will be evaluated with the following commands. If the Docker container does not work or the paper does not include all the necessary information to reproduce the method, we will return back the error information and review comments to participants.\n\n<code>docker load -i teamname.tar.gz</code>    \n<code>docker container run --gpus \"device=1\" -m 28G --name teamname --rm -v \\$PWD/FLARE_Test/:/workspace/inputs/ -v \n\t\\$PWD/teamname_outputs/:/workspace/outputs/ teamname:latest /bin/bash -c \"sh predict.sh\"</code>\n\n## Paper submission(Due on 8.31)\n\nPlease parepare the paper with this [template-tbd]() and submit it on [openreview](https://openreview.net/group) by Aug. 31, 2026. Please carefully read the template and the common issue before writing the manuscript. The evaluation process mainly focuses on the paper's completeness. Don't worry about the low performance. Since this task is very challenging, all attempts are worth sharing with readers. We will not reject papers because of Iow performance.\n\n---\n\n## 🏆 Awards\n\n- If there are more than 20 testing docker submissions, we will provide cash prizes for the top 5 teams (Amazon gift cards with 300/200/150/100/100 CAD, respectively) and souvenirs for the top 6-10 teams. Otherwise, only the winning team will be provided with the cash prize. \n- The top 5 teams will be invited to give oral presentations during MICCAI 2026.\n- The first author of the top 5 teams will be invited to contribute to a challenge summary paper.\n- A certificate will be awarded to the top 10 teams. (Top teams should make their code publicly available on GitHub for reproducibility.)\n- All teams have the opportunity to publish their methods in the challenge proceeding (Tentative LNCS, EI Index). [Here](https://link.springer.com/conference/flare) is an example of our previous FLARE Challenge.\n\n\nThe challenge summary paper will be submitted to top-tired journals. Here are some of our previous summaries:\n\n* \"Fast and low-GPU-memory abdomen CT organ segmentation: the flare challenge.\" Medical Image Analysis 82 (2022): 102616.\n* \"Unleashing the strengths of unlabeled data in pan-cancer abdominal organ quantification: the flare22 challenge.\" Lancet Digital Health (2024). \n* \"The multimodality cell segmentation challenge: toward universal solutions.\" Nature Methods (2024): 21, 1103–1113.",
         "content_zh": "## <center>[MICCAI FLARE26](https://flare-medfm.github.io/) 任务2: AutoMSC: 自动医学图像分割和分类</center>\n\n用于3D医学成像的深度学习模型传统上是为单个任务(分割或分类)手工设计的，需要对架构、超参数和预处理管道进行大量手动调整。随着临床数据集规模和复杂性的增加，这种手动设计过程变得越来越低效，限制了自适应通用模型的部署。受医学分割十项全能挑战赛和获胜方案nnU-Net成功的启发，任务2侧重于构建能够自动适应多样化3D医学成像数据集，同时执行分割和分类的自配置模型。\n\n本任务旨在推进3D医学成像自主模型设计系统的下一代发展。参赛者需要设计能够自动推断最优配置(如架构、分辨率、补丁大小、归一化策略和损失平衡)的模型，并联合学习高质量分割掩码和临床有意义的分类标签。这些模型应能跨成像模态、肿瘤类型进行泛化，无需特定任务的手动工程，包括MRI扫描中的前列腺癌复发预测、CT扫描中的肺结节诊断和PET/CT扫描中的肝转移灶来源预测。\n\n主要特征：\n\n- **多任务学习**：模型必须从同一输入体积执行3D分割和分类，同时优化两个输出的精度并保持计算效率。\n- **自配置**：解决方案应包含自动配置机制，能够适应数据集属性，如体素间距、图像大小、对比度变异性和类不平衡，无需人工设计的启发式方法。\n- **数据集多样性**：基准包括具有不同模态(CT、MRI和PET-CT)和分类目标的异构3D医学成像扫描，促进真正可泛化3D模型的开发。\n- **鲁棒性和效率**：模型将基于分割精度(DSC和NSD)、分类性能(平衡精度和AUROC)和资源效率(运行时间)进行评估，突出其在实际临床应用中的潜力。\n\n参赛者还被鼓励探索其他挑战赛道，网址为https://flare-medfm.github.io/，包括：泛癌症分割和多模态模型。\n\n---\n\n## 🚀 加入挑战赛(2026.04.01开放)\n\n* 在本网站注册账户并加入挑战赛\n* 填写[注册表](https://forms.gle/my1MimQ758oDyhWb9)   注：若需修改团队信息，请重新提交表格。\n* 申请数据集[FLARE-AutoMSC](https://huggingface.co/datasets/FLARE-MedFM/FLARE-AutoMSC)。我们将在审核申请后1-2个工作日内批准您的申请。\n\n备注：\n* 本挑战赛分为两个赛道：1) 用于联合分割和分类的统一模型(如[JSC](https://github.com/bowang-lab/JSC))。2) 用于分割(如[nnUNet](https://github.com/MIC-DKFZ/nnUNet))或分类的独立模型([nnClass](https://github.com/bowang-lab/nnClass))。参赛者可参加一个或两个赛道。\n* 对于两个赛道，解决方案应包含能够适应不同数据集的自动配置机制。\n* 如有常见问题页面未列出的问题，请联系chingyuanyu.iec@gmail.com\n\n---\n\n## 🏊‍ 验证提交(2026.4.15-8.05)\n\n* 所有团队可直接在挑战赛页面提交验证结果以获取指标。\n* 所有真值文件已为验证任务发布。参赛者应在论文中报告验证性能。\n\n---\n\n## 🏹 测试提交(2026.8.05-8.20)\n\n提交的Docker"
       },
       {
@@ -1367,7 +1360,7 @@
       {
         "index": 4,
         "title": "Baseline",
-        "content": "## Baseline\n\nJoint segmentation and classification based on nnU-Net\n- code: https://github.com/medfm-flare/AutoMSC-Baseline\n- model and results: https://huggingface.co/cyyu96/AutoMSC-Baselines\n\nBaseline Results Report\n* Dataset001_BrainMets:  https://huggingface.co/cyyu96/AutoMSC-Baselines/blob/main/Dataset001_BrainMets/README.md\n* Dataset002_MU_Glioma: https://huggingface.co/cyyu96/AutoMSC-Baselines/blob/main/Dataset002_MU_Glioma/README.md\n*",
+        "content": "## Baseline\n\nJoint segmentation and classification based on nnU-Net\n- code: https://github.com/medfm-flare/AutoMSC-Baseline\n- model and results: https://huggingface.co/cyyu96/AutoMSC-Baselines\n- validation baseline: https://huggingface.co/FLARE-MedFM/FLARE-AutoMSC-Val-Baseline\n\nBaseline Results Report\n* Dataset001_BrainMets: https://huggingface.co/cyyu96/AutoMSC-Baselines/blob/main/Dataset001_BrainMets/README.md\n* Dataset002_MU_Glioma: https://huggingface.co/cyyu96/AutoMSC-Baselines/blob/main/Dataset002_MU_Glioma/README.md\n* Dataset003_UCSD_PTGB: https://huggingface.co/cyyu96/AutoMSC-Baselines/blob/main/Dataset003_UCSD_PTGB/README.md\n* Dataset004_PICAI: https://huggingface.co/cyyu96/AutoMSC-Baselines/blob/main/Dataset004_PICAI/README.md\n* Dataset005_LUNA25: https://huggingface.co/cyyu96/AutoMSC-Baselines/blob/main/Dataset005_LUNA25/README.md\n* Dataset061_PETWB_Lung: https://huggingface.co/cyyu96/AutoMSC-Baselines/blob/main/Dataset061_PETWB_Lung/README.md\n* Dataset062_PETWB_Liver: https://huggingface.co/cyyu96/AutoMSC-Baselines/blob/main/Dataset062_PETWB_Liver/README.md",
         "content_zh": "## 基线方案\n\n基于nnU-Net的联合分割和分类\n- 代码: https://github.com/medfm-flare/AutoMSC-Baseline\n- 模型和结果: https://huggingface.co/cyyu96/AutoMSC-Baselines"
       },
       {
@@ -1397,7 +1390,7 @@
     "description_zh": "该竞赛对近距离短波红外高光谱成像的×4超分辨率进行基准测试。\n参赛者将获得使用同一传感器和不同镜头采集的低分辨率HSI立方体数据，通过控制分辨率变化而不引入光谱偏差。任务是从×4下采样输入重建高分辨率短波红外高光谱图像。",
     "created_by": "rafariva",
     "created_when": "2025-12-30T16:14:49.840049Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-12-30-1767111468/edd5610f43a0/logo_HISR.png?AWSAccessKeyId=codabench-prod&Signature=r0R43beY2b9G0fOCcoL6hsvgzLU%3D&Expires=1784816175",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-12-30-1767111468/edd5610f43a0/logo_HISR.png?AWSAccessKeyId=codabench-prod&Signature=%2FCOaLEFJdtYzsCIg3EwmfJA3ZV4%3D&Expires=1784902822",
     "participants_count": 53,
     "submissions_count": 582,
     "first_phase_start": null,
@@ -1456,8 +1449,8 @@
     "description_zh": "一个基于混合信号数据集的协作3D目标检测挑战，该数据集是一个多样化的真实点云数据集，用于异构激光雷达V2X协作（3辆连接的车辆+配备双激光雷达的路侧单元）。融合多个智能体的点云，在鸟瞰图平面上检测车辆、自行车和行人，并在排行榜上攀升。",
     "created_by": "mixed-signals",
     "created_when": "2026-07-09T01:30:36.192294Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783560636/614edf812e36/logo.png?AWSAccessKeyId=codabench-prod&Signature=71G1on21yzQitnHnP5g9e%2FO%2Fhss%3D&Expires=1784816114",
-    "participants_count": 12,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783560636/614edf812e36/logo.png?AWSAccessKeyId=codabench-prod&Signature=0lfoO0zkY6JN0YIpwDwIKa9M8KE%3D&Expires=1784902747",
+    "participants_count": 13,
     "submissions_count": 0,
     "first_phase_start": null,
     "phases": [
@@ -1504,9 +1497,9 @@
     "description_zh": "This competition focuses on fine-grained understanding of urban-level building facade components, utilizing the City-Fac dataset.\n\nThe data is collected by vehicle-mounted mobile laser scanning systems, covering multiple types of typical urban street blocks in Xiamen, with a cumulative road length of approximately 60 km. The dataset includes fine-grained building facade element annotations such as walls, windows, doors, roofs, billboards, air conditioning units, canopies, and balconies, with both semantic-level and instance-level labels provided.\n\nParticipants need to identify independent building facade component instances in the test point cloud and output the corresponding semantic categories and instance numbers.\n\nThe competition adopts a result submission mode. Participants complete model training and inference locally and only submit prediction results to Codabench, where the platform automatically scores using hidden instance labels.",
     "created_by": "jianlongguan",
     "created_when": "2026-06-26T12:50:09.783065Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=U1aAjM2kW8lDpfMqR74uSJ8befA%3D&Expires=1784816116",
-    "participants_count": 7,
-    "submissions_count": 26,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=IYfqPRl3PCnOvX9pxgHXnvQKbAQ%3D&Expires=1784902748",
+    "participants_count": 9,
+    "submissions_count": 35,
     "first_phase_start": null,
     "phases": [
       {

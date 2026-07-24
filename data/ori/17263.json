@@ -1,0 +1,484 @@
+{
+  "id": 17263,
+  "title": "Universal UltraSound Image & Video Analysis Challenge 2026",
+  "published": true,
+  "created_by": "uusivc2026",
+  "owner_display_name": "uusivc2026",
+  "created_when": "2026-06-26T07:10:19.780392Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782457819/2259d81709fc/Deep-Breath-logo.png?AWSAccessKeyId=codabench-prod&Signature=SFDyev3PTyENyqr0noCFS0nikwU%3D&Expires=1784902749",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782457819/2259d81709fc/Deep-Breath-logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=QHDV5QI1nDkQ2396eCXQaL8w2Ao%3D&Expires=1784902749",
+  "terms": "# Rules\n\n- **General Terms:** This benchmark is governed by the [http://www.causality.inf.ethz.ch/GeneralChalearnContestRuleTerms.html](General ChaLearn Contest Rule Terms), the [https://github.com/codalab/codalab-competitions/wiki/Privacy](CodaLab Terms and Conditions), and the specific rules set forth.\n- **Registration:** The participants must register to Codabench and provide a valid email address. Teams must register only once and provide a group email, which is forwarded to all team members. Teams or solo participants registering multiple times to gain an advantage in the competition may be disqualified.\n- **Anonymity:** The participants who do not present their results at the workshop can elect to remain anonymous by using a pseudonym. Their results will be published on the leaderboard under that pseudonym, and their real name will remain confidential. However, the participants must disclose their real identity to the organizers to claim any prize they might win. See our [http://www.chalearn.org/privacy.html](privacy policy) for details.\n- **Submission method:** The results must be submitted through this Codabench site. The number of submissions per day and maximum total computational time are restrained and subject to change, according to the number of participants. Using multiple accounts to increase the number of submissions in NOT permitted, except that participants that want to enter the 2 leagues \"free-style\" and \"meta-learning\" are allowed to create a second account under the name \"originalID_2\" , where originalID is their other account they use to make submissions (we will ask in the fact sheets which is which). In case of problem, send email to [mailto:organizers-email](organizers-email). The entries must be formatted as specified on the Instructions page.\n- **Reproducibility:** The participant should make efforts to guarantee the reproducibility of their method, which in particular implies that they should use everywhere in their code the same random seed, as exemplified in the starting kit. In the Final Phase, all submissions will be run three times with various random seeds, and the worst performance will be used for final ranking. The participants will be given 2 weeks when results are released to scrutinize the evaluation procedure and the code of the winners.",
+  "pages": [
+    {
+      "id": 83109,
+      "title": "Overview",
+      "content": "# Welcome to the UUSIVC 2026 Challenge\n\nWelcome to the **Universal UltraSound Image & Video Analysis Challenge 2026: Multi-Organ Classification and Segmentation Across B-mode and Contrast-Enhanced Ultrasound**.\n\nThis challenge focuses on evaluating algorithms for multi-organ, multi-modal ultrasound image and video analysis. The benchmark covers classification and segmentation tasks across B-mode ultrasound images, contrast-enhanced ultrasound (CEUS) videos, and cardiac ultrasound videos. The goal is to advance the generalizability, robustness, and clinical applicability of AI models in ultrasound image analysis.\n\n🧪Participants will benchmark their methods via Codabench through automated submission and evaluation pipelines, with live leaderboards tracking performance across classification and segmentation tasks.\n\n🏆Challenge results and winners will be announced during the [Deep-Breath 2026: 3rd Deep Breast Workshop on AI and Imaging for Diagnostic and Treatment Challenges in Breast Care Workshop](https://deep-breath-miccai.github.io/deepbreath-2026/), held in conjunction with [MICCAI 2026](https://conferences.miccai.org/2026/en/default.asp) in Strasbourg, France.\n\n🌐For updates, guidelines, dataset access, and community discussions, visit the [UUSIVC2026 website](https://uusivc2026-sudo.github.io/uusivc2026.github.io/).\n\n📄 The full challenge proposal is available [here](https://zenodo.org/records/19729665).\n\n🔗[Baseline](https://github.com/uusivc2026-sudo/UUSIVC-2026-Challenge). It provides one possible implementation path for participating in the challenge. Participants are encouraged to explore their own approaches and develop more competitive, state-of-the-art research algorithms.\n\n## Registration\n\nParticipants must register their team name and provide their details through a [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfbO05JF__QkYzL77rdGwoFb3stit-3S5zcbVh4ALYcKjJ7AQ/viewform) before accessing the data and submitting their results. Each team has a maximum of **3 members**, including the team leader. Please ensure that you provide accurate **Codabench** usernames to enable access to data and submission permissions.\n\n## Dataset\n\nThe UUSIVC 2026 dataset is composed of multiple public ultrasound datasets and private datasets collected in collaboration with partner hospitals.\n\nThe benchmark includes:\n\n- B-mode ultrasound image classification.\n- B-mode ultrasound image segmentation.\n- CEUS video/sequence classification.\n- CEUS video/frame segmentation.\n- Cardiac ultrasound video/frame segmentation.\n\nDatasets are available through two independent download sources. Please choose either one of the following links to download the dataset:\n\n- [Hugging Face](https://huggingface.co/datasets/WyattH/UUSIVC2026/tree/main)\n- [Baidu Netdisk](https://pan.baidu.com/s/1_8ZDKJdsR1dCsOf7XzG_ew?pwd=usvc)\n\nEach download source contains both the training and validation data. The training set includes the input data together with the corresponding sample-level labels for classification tasks and pixel-level annotations for segmentation tasks. The validation set contains only the input data, without labels or annotations.\n\n\n## Tasks\n\nParticipants are encouraged to develop a unified model or pipeline capable of handling multiple organs, modalities, and task types.\n\t\nThe online validation benchmark includes five task groups:\n\n- **image_cls**: ultrasound image classification.\n- **ceus_cls**: CEUS video/sequence classification.\n- **image_seg**: 2D ultrasound image segmentation.\n- **ceus_seg**: CEUS video/frame segmentation.\n- **video_seg**: cardiac ultrasound video/frame segmentation.\n\nThe target organs and datasets include breast, thyroid, liver, prostate, appendix, kidney, fetal head, and cardiac structures, depending on the task type.\n\nRepresentative tasks include:\n\n- Breast lesion classification and segmentation.\n- Liver disease classification.\n- Appendix classification.\n- Thyroid nodule segmentation.\n- Kidney contour segmentation.\n- Fetal head contour segmentation.\n- Cardiac structure segmentation.\n- Prostate image classification and segmentation.\n- Cardiac video structure segmentation.\n- CEUS-based classification and lesion segmentation.\n\nEach organ is associated with a distinct clinical task, exemplifying the multi-disease and multi-task nature of the challenge. In addition to the public datasets, we will provide a small portion of our private datasets for training to mitigate domain gap difficulties. The validation and test sets will primarily consist of private data, where the validation labels and test sets will not be publicly disclosed.\n\n## Timeline\n\n| Phase | Dates          | Details                                                                      |\n|---|----------------|------------------------------------------------------------------------------|\n| Development Phase | June 29, 2026  | Website opens for registration, release training and validation images. |\n| Validation Phase | June 29, 2026  | Submission system opens for validation.                                     |\n| Paper Phase | Aug. 25, 2026 | Short paper and docker submission deadline.                                  |\n| Test Phase | Aug. 26, 2026 | Submission system for testing.                                         |\n| Workshop | Sept. 27, 2026 | Final results are released during the Deep-Breath workshop at MICCAI 2026.    |\n\n## Submission Guidelines\n\nWe provide guides on how to develop model, infer and submit results in the validation phase, as well as how to prepare and submit the Docker file of the model in the testing phase. Please see the **Submission Guidelines** page.\n\n## Rules\n\n### Methods\n\nParticipants are allowed to base their methods on existing open-source general models. And they are invited to submit a short paper (refer to Technical Report page) to the Deep-Breath workshop to introduce the details of their methods and declare innovations in areas such as preprocessing, model architecture, or post-processing.\n\n### Use of other training data/pre-trained models\nNo additional data allowed;\nThe publicly available pre-trained model, such as ResNet50 trained on ImageNet, can be used. To ensure fairness and reproducibility of results, using unpublished pre-trained models is prohibited.\n\n### Award Eligibility\nAs a condition for being ranked and considered as the challenge winner or eligible for any prize, the teams/participants must fulfil the following obligations:\n\n- Present their method at the final event of the challenge at MICCAI 2026;\n- Submit a paper to Deep-Breath workshop reporting the details of the methods in a short or long (up to the teams) LNCS format;\n- Sign and return all prize acceptance documents as may be required by Competition Sponsor/Organizers;\n- Commit to citing the data challenge paper and the data overview paper whenever submitting the developed method for scientific and non-scientific publications.\n\n## Awards\nTop-10 teams will be invited to present talks and winning certificates will be provided.\n\nWe will provide a prize of 9,900 CNY for the Top 10 teams.\n\n- 1st Place: 2,500 CNY\n- 2nd-3rd Place: 1,500 CNY\n- 4th-6th Place: 1,200 CNY\n- 7th-10th Place: 500 CNY\n\nSponsors for the awards are currently being investigated.\n\nThe challenge organizers aim to publish a summary paper in a relevant journal. The top ten performing teams will be invited to as co-authors. Participants can submit their own paper after submitting the summary paper or once the challenge paper is published on Arxiv.\n\n## Frequently Asked Questions (FAQ)\nYou can view the full FAQ on the corresponding page. And please do not hesitate to email us ([uusivc2026@gmail.com](mailto:uusivc2026@gmail.com)) if you have any questions.",
+      "index": 0
+    },
+    {
+      "id": 82827,
+      "title": "Submission Guidelines",
+      "content": "# Submission Guidelines\n\nThis page describes the required submission format for the validation and testing phases.\n\n**Important: Participants should register their team name and participants via a [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfbO05JF__QkYzL77rdGwoFb3stit-3S5zcbVh4ALYcKjJ7AQ/viewform) before participating.**\n\n## Development Phase\n\nTo help participants quickly get familiar with the data processing and model building workflow, we provide the training code and pre-trained weights for our baseline model [here](https://github.com/uusivc2026-sudo/UUSIVC-2026-Challenge). Participants are encouraged to use this baseline as a starting point to build and customize their own approach, or alternatively, develop a completely new method from scratch based on their own ideas.\n\n## Submission type\n\nThe validation phase uses **result submission**.\n\nParticipants should submit prediction files. The submitted archive should contain:\n\n```text\nclassification.json\nimage_seg/<Dataset>/masks/*.png\nceus_seg/<Dataset>/annotations/*.npz\nvideo_seg/<Dataset>/annotations/*.npz\n```\n\nThe top level of the zip file must directly contain `classification.json`, `image_seg`, `ceus_seg`, and `video_seg`. Do not wrap them inside an extra parent folder.\n\nCorrect:\n\n```text\nsubmission.zip\n-- classification.json\n-- image_seg/\n-- ceus_seg/\n-- video_seg/\n```\n\nIncorrect:\n\n```text\nsubmission.zip\n-- my_submission_folder/\n    -- classification.json\n    -- image_seg/\n    -- ceus_seg/\n    -- video_seg/\n```\n\n## Classification prediction format\n\nTask4 ImageCls includes Appendix, Breast, Liver, and Prostate. Task5 CEUSCls includes BreastCEUS, LiverCEUS, ProstateCEUS, and ThyroidCEUS.\n\n\nClassification predictions should be saved in a JSON file named:\n\n```text\nclassification.json\n```\n\nThe JSON should map either `sample_id` or `input_path_relative` to a prediction object. We recommend using `input_path_relative` because it is easy to match with `datalist.json`.\n\nExample:\n\n```json\n{\n  \"ceus_cls/Breast/videos/cls_00000.npy\": {\n    \"prediction\": 1,\n    \"probability\": [0.2, 0.8]\n  },\n  \"image_cls/Appendix/imgs/cls_00000.jpg\": {\n    \"prediction\": 0,\n    \"probability\": [0.9, 0.1]\n  }\n}\n```\n\nFields:\n\n| Field | Description |\n|---|---|\n| `prediction` | Predicted class index. |\n| `probability` | Class probability list. |\n\nFor binary classification tasks, `probability` should contain two values:\n\n## Image segmentation prediction format\n\nTask1 ImageSeg includes Breast, Fetal Head, Heart, Kidney, Thyroid, and Prostate.\n\n\nFor `image_seg`, predictions should be grayscale mask images.\n\nRequired folder structure:\n\n```text\nimage_seg/<Dataset>/masks/<mask_name>.png\n```\n\nExample:\n\n```text\nimage_seg/Breast/masks/seg_mask_00000.png\nimage_seg/Thyroid/masks/seg_mask_00000.png\nimage_seg/Prostate/masks/seg_mask_00000.png\n```\n\nMask requirements:\n\n- Single-channel grayscale PNG is recommended.\n- Background should be `0`.\n- Foreground can be any non-zero value, preferably `255`.\n- If the submitted mask size differs from the reference size, the scorer will resize the prediction to the reference size using nearest-neighbor interpolation.\n\n## CEUS segmentation prediction format\n\nFor `ceus_seg`, predictions should be saved as `.npz` files under:\n\n```text\nceus_seg/<Dataset>/annotations/<annotation_name>.npz\n```\n\nExample:\n\n```text\nceus_seg/BreastCEUS/annotations/seg_annotation_00000.npz\nceus_seg/LiverCEUS/annotations/seg_annotation_00000.npz\n```\n\nThe expected `.npz` file should contain a key named `mask`:\n\n```python\nimport numpy as np\n\nmask = np.zeros((256, 512), dtype=np.uint8)\n# mask[predicted_foreground > 0] = 255\nnp.savez(\"seg_annotation_00000.npz\", mask=mask)\n```\n\nMask requirements:\n\n- `mask` should be a 2D array.\n- Background should be `0`.\n- Foreground can be any non-zero value, preferably `255`.\n\n## Video segmentation prediction format\n\nFor `video_seg`, predictions should be saved as `.npz` files under:\n\n```text\nvideo_seg/<Dataset>/annotations/<annotation_name>.npz\n```\n\nExample:\n\n```text\nvideo_seg/CardiacCH/annotations/seg_annotation_00000.npz\n```\n\nThe expected `.npz` file should contain a dictionary named `fnum_mask`, where each key is a frame index and each value is a 2D mask array.\n\nExample:\n\n```python\nimport numpy as np\n\nfnum_mask = {\n    \"0\": np.zeros((256, 256), dtype=np.uint8),\n    \"14\": np.zeros((256, 256), dtype=np.uint8),\n    \"33\": np.zeros((256, 256), dtype=np.uint8),\n}\n\nnp.savez(\"seg_annotation_00000.npz\", fnum_mask=fnum_mask)\n```\n\nMask requirements:\n\n- Keys should match the annotated frame indices provided in `datalist.json`.\n- Each mask should be a 2D array.\n- Background should be `0`.\n- Foreground can be any non-zero value, preferably `255`.\n\n## Submission archive checklist\n\nBefore uploading, check that the zip file directly contains the required prediction files and folders:\n\n```text\nsubmission.zip\n-- classification.json\n-- image_seg/\n-- ceus_seg/\n-- video_seg/\n```\n\n## Validation scoring\n\nThe online validation ranking is based on evaluation metrics only.\n\nFor classification datasets:\n\n```text\nclassification dataset score = 0.5 * Accuracy + 0.5 * AUC\n```\n\nFor segmentation samples or annotated frames:\n\n```text\ncase/frame segmentation score = 0.7 * DSC + 0.3 * NSD\n```\n\nDataset-level and task-family scores are aggregated using dataset-size-based weights.\n\nThe online validation score is:\n\n```text\noverall_score = mean(Task1, Task2, Task3, Task4, Task5)\n```\n\nEfficiency metrics such as runtime and GPU memory are not included in the online validation ranking.\n\n## Testing Phase\n\n### Submission Requirements\nDuring the testing phase, each team must submit:\n- A Docker image containing your method\n    - This image will be used by the organizers to run and evaluate your model.\n    - Please follow the Docker building instructions.\n- A 4-page technical report in Word or PDF format, which must include:\n  - Team Name\n  - Team Leader’s Name\n  - Team Members\n  - Affiliation\n  - The content should describe your approach, methodology, and any important implementation details.\n\n### Submission Method\nPlease send both files by email to the organizing committee:\n\n- Email Address: [uusivc2026@gmail.com](uusivc2026@gmail.com)\n- Subject Format: UUSIC-Testing Phase Submission-[TeamName]\n- Attachments:\n  - Docker image file (or a link to download it) or Docker Hub link\n  - Technical report (Word or PDF)\n\n## Important Notes\nOnly teams that submit both the Docker image and the technical report will be eligible to:\n\n- Participate in the testing phase\n- Appear in the final ranking\n- Receive prize awards\n- Be included as co-authors in the post-challenge paper\n- Submissions that do not follow the Docker build instructions may fail to run during evaluation.",
+      "index": 1
+    },
+    {
+      "id": 82197,
+      "title": "Scoring Formulas",
+      "content": "# Scoring Formulas\n\nThe algorithm will be assessed using the following metrics, and all metrics will be used to compute the ranking. The implementation of the used metrics can be found [here](https://github.com/uusic2025/challenge/blob/main/evaluation/metrics.py)\n\n## Segmentation Metrics\n\n### Dice Similarity Coefficient (DSC)\n\nDice Similarity Coefficient measures the overlap between the predicted segmentation mask and the ground-truth segmentation mask.\n\n### Normalized Surface Dice (NSD)\n\nNormalized Surface Dice evaluates boundary agreement between the predicted mask and the ground-truth mask within a tolerance distance.\n\n\n## Classification Metrics\n\n### Area Under Curve (AUC)\n\nArea Under Curve evaluates classification performance across decision thresholds.\n\n### Accuracy\n\nAccuracy measures the proportion of correctly classified samples.\n\n\n## Task-wise Scores\n\nThe validation leaderboard is organized into five task groups:\n\n- **Task1 ImageSeg**: B-mode ultrasound image segmentation, including Breast, Fetal Head, Heart, Kidney, Thyroid, and Prostate.\n- **Task2 CEUSSeg**: CEUS lesion segmentation, including BreastCEUS, LiverCEUS, ProstateCEUS, and ThyroidCEUS.\n- **Task3 VideoSeg**: cardiac ultrasound video/frame segmentation, including CardiacCH.\n- **Task4 ImageCls**: B-mode ultrasound image classification, including Appendix, Breast, Liver, and Prostate.\n- **Task5 CEUSCls**: CEUS video/sequence classification, including BreastCEUS, LiverCEUS, ProstateCEUS, and ThyroidCEUS.\n\nFor each classification dataset:\n\n```text\ndataset score = 0.5 * Accuracy + 0.5 * AUC\n```\n\nFor each segmentation sample or annotated frame:\n\n```text\ncase/frame score = 0.7 * DSC + 0.3 * NSD\n```\n\nEach task score is the sample-weighted average of its datasets. The online validation ranking score is the equal-weighted average of the five task scores:\n\n```text\noverall_score = mean(Task1, Task2, Task3, Task4, Task5)\n```\n\n## Online Validation Ranking\n\nThe online validation leaderboard is ranked by performance metrics only. Efficiency terms such as running time and GPU memory are not included in the Codabench validation score because validation submissions are prediction files and are not executed in a unified hardware environment.\n\nFor the final test stage, selected teams will submit Docker containers. The organizers will run the containers offline on unified hardware and may report computational efficiency separately.",
+      "index": 2
+    },
+    {
+      "id": 82198,
+      "title": "Technical Report",
+      "content": "# Content of the paper\n\n### Introduction\n\nDice Similarity Coefficient measures the overlap between the predicted segmentation mask and the ground-truth segmentation mask.\n\n### Method\n\n- Multi-task Paradigm\n- Model Architectures\n- Loss Function\n\n## Classification Metrics\n\n### Experimental Results\n\n- Implementation Details\n- Results\n\n### Discussion and Conclusion\n\n## References\nPlease cite our papers. ...",
+      "index": 3
+    }
+  ],
+  "phases": [
+    {
+      "id": 28799,
+      "index": 0,
+      "start": "2026-06-01T00:00:00Z",
+      "end": "2026-08-25T00:00:00Z",
+      "name": "Validation",
+      "description": "Online validation phase. Participants submit prediction files to receive feedback. Final ranking is determined in a later offline Docker-based test phase run by the organizers.",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "600d4e12-81d3-4513-a555-13ad8f2c2f6d",
+          "order_index": 0,
+          "phase": 28799,
+          "id": 34469,
+          "value": "600d4e12-81d3-4513-a555-13ad8f2c2f6d",
+          "key": "600d4e12-81d3-4513-a555-13ad8f2c2f6d",
+          "created_when": "2026-06-26T07:10:19.545164Z",
+          "name": "Validation",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 851981,
+              "created_by": "uusivc2026",
+              "owner_display_name": "uusivc2026",
+              "created_when": "2026-06-26T07:10:18.080444Z",
+              "name": "ingestion_program @ '06-26-2026 07:10'",
+              "type": "ingestion_program",
+              "description": null,
+              "is_public": false,
+              "key": "17346b29-bb2f-40a8-b924-187c0f3fbf33",
+              "value": "17346b29-bb2f-40a8-b924-187c0f3fbf33",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 17263,
+                  "title": "Universal UltraSound Image & Video Analysis Challenge 2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 948.0
+            },
+            {
+              "id": 851982,
+              "created_by": "uusivc2026",
+              "owner_display_name": "uusivc2026",
+              "created_when": "2026-06-26T07:10:18.221008Z",
+              "name": "input_data @ '06-26-2026 07:10'",
+              "type": "input_data",
+              "description": null,
+              "is_public": false,
+              "key": "340fac97-c46a-4306-a0e0-5971eb184222",
+              "value": "340fac97-c46a-4306-a0e0-5971eb184222",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 17263,
+                  "title": "Universal UltraSound Image & Video Analysis Challenge 2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 137791.0
+            },
+            {
+              "id": 851983,
+              "created_by": "uusivc2026",
+              "owner_display_name": "uusivc2026",
+              "created_when": "2026-06-26T07:10:18.375395Z",
+              "name": "scoring_program @ '06-26-2026 07:10'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "1b51ab23-8b45-4dbf-9d7b-fc3523a19553",
+              "value": "1b51ab23-8b45-4dbf-9d7b-fc3523a19553",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 17263,
+                  "title": "Universal UltraSound Image & Video Analysis Challenge 2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 5483.0
+            },
+            {
+              "id": 851984,
+              "created_by": "uusivc2026",
+              "owner_display_name": "uusivc2026",
+              "created_when": "2026-06-26T07:10:18.467011Z",
+              "name": "reference_data @ '06-26-2026 07:10'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "1024f90c-d3f1-4a0d-ac61-a2e41172ab5f",
+              "value": "1024f90c-d3f1-4a0d-ac61-a2e41172ab5f",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 17263,
+                  "title": "Universal UltraSound Image & Video Analysis Challenge 2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 3371456.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 15,
+      "max_submissions_per_person": 45,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 19140,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "Results",
+      "columns": [
+        {
+          "id": 83688,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Average",
+          "key": "overall_score",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83689,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Average Task1",
+          "key": "task1_score",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83690,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Average Task2",
+          "key": "task2_score",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83691,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Average Task3",
+          "key": "task3_score",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83692,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Average Task4",
+          "key": "task4_score",
+          "sorting": "desc",
+          "index": 4,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83693,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Average Task5",
+          "key": "task5_score",
+          "sorting": "desc",
+          "index": 5,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83694,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task1 Breast",
+          "key": "image_seg_Breast_score",
+          "sorting": "desc",
+          "index": 6,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83695,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task1 Fetal Head",
+          "key": "image_seg_Fetal_Head_score",
+          "sorting": "desc",
+          "index": 7,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83696,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task1 Heart",
+          "key": "image_seg_Heart_score",
+          "sorting": "desc",
+          "index": 8,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83697,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task1 Kidney",
+          "key": "image_seg_Kidney_score",
+          "sorting": "desc",
+          "index": 9,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83698,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task1 Thyroid",
+          "key": "image_seg_Thyroid_score",
+          "sorting": "desc",
+          "index": 10,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83699,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task1 Prostate",
+          "key": "image_seg_Prostate_score",
+          "sorting": "desc",
+          "index": 11,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83700,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task2 BreastCEUS",
+          "key": "ceus_seg_BreastCEUS_score",
+          "sorting": "desc",
+          "index": 12,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83701,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task2 LiverCEUS",
+          "key": "ceus_seg_LiverCEUS_score",
+          "sorting": "desc",
+          "index": 13,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83702,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task2 ProstateCEUS",
+          "key": "ceus_seg_ProstateCEUS_score",
+          "sorting": "desc",
+          "index": 14,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83703,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task2 ThyroidCEUS",
+          "key": "ceus_seg_ThyroidCEUS_score",
+          "sorting": "desc",
+          "index": 15,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83704,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task3 CardiacCH",
+          "key": "video_seg_CardiacCH_score",
+          "sorting": "desc",
+          "index": 16,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83705,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task4 Appendix",
+          "key": "image_cls_Appendix_score",
+          "sorting": "desc",
+          "index": 17,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83706,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task4 Breast",
+          "key": "image_cls_Breast_score",
+          "sorting": "desc",
+          "index": 18,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83707,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task4 Liver",
+          "key": "image_cls_Liver_score",
+          "sorting": "desc",
+          "index": 19,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83708,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task4 Prostate",
+          "key": "image_cls_Prostate_score",
+          "sorting": "desc",
+          "index": 20,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83709,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task5 BreastCEUS",
+          "key": "ceus_cls_BreastCEUS_score",
+          "sorting": "desc",
+          "index": 21,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83710,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task5 LiverCEUS",
+          "key": "ceus_cls_LiverCEUS_score",
+          "sorting": "desc",
+          "index": 22,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83711,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task5 ProstateCEUS",
+          "key": "ceus_cls_ProstateCEUS_score",
+          "sorting": "desc",
+          "index": 23,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83712,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Task5 ThyroidCEUS",
+          "key": "ceus_cls_ThyroidCEUS_score",
+          "sorting": "desc",
+          "index": 24,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83713,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Missing Predictions",
+          "key": "missing_predictions",
+          "sorting": "asc",
+          "index": 25,
+          "hidden": false,
+          "precision": 2
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Add_And_Delete"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": true,
+  "description": "Universal ultrasound image and video analysis benchmark for multi-organ classification and segmentation across B-mode ultrasound, contrast-enhanced ultrasound (CEUS), and cardiac ultrasound videos.",
+  "participants_count": 57,
+  "submissions_count": 48,
+  "queue": null,
+  "enable_detailed_results": true,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": true,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "codalab/codalab-legacy:py39",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 16964,
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "forum_enabled": true
+}
