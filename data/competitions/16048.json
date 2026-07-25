@@ -5,9 +5,9 @@
   "description_zh": "合成LiDAR数据，针对V2X-Real的基础设施中心分布；在合成数据上训练，在真实V2X-Real-IC上评估。",
   "created_by": "mshahbazkharal",
   "created_when": "2026-04-30T07:14:54.554531Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833294/142ee41df4c9/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=voaaiJftEFOnQ2OgL3GEUv8q9jE%3D&Expires=1784902772",
-  "participants_count": 10,
-  "submissions_count": 31,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833294/142ee41df4c9/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=OS9FCRzpdp202GST4Uapge4dT24%3D&Expires=1784989452",
+  "participants_count": 11,
+  "submissions_count": 103,
   "first_phase_start": null,
   "phases": [
     {

@@ -5,9 +5,9 @@
   "description_zh": "# LiDAR数据合成\n\n针对LUMPI汉诺威路边交叉口分布的LiDAR数据合成；在合成数据上训练，在真实数据上评估。\n\n---\n\n**关键要素：**\n\n- **数据合成** - 针对LUMPI汉诺威道路交叉口场景的LiDAR合成数据生成\n- **训练集** - 使用合成LiDAR数据进行模型训练\n- **评估集** - 在真实LiDAR数据上进行性能评估",
   "created_by": "mshahbazkharal",
   "created_when": "2026-04-30T07:09:42.003344Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833284/11b6c0bba3ac/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=He9TCE7m4mDdGl82PY%2F4UvtX4Cg%3D&Expires=1784902773",
-  "participants_count": 11,
-  "submissions_count": 57,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833284/11b6c0bba3ac/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=%2FivNZwdhpqu7a9axqKhV5KCIw5Y%3D&Expires=1784989453",
+  "participants_count": 12,
+  "submissions_count": 78,
   "first_phase_start": null,
   "phases": [
     {
