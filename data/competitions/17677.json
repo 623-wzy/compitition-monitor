@@ -1,0 +1,41 @@
+{
+  "id": 17677,
+  "title": "Multi-Sensor LiDAR SLAM Challenge 2026 - LiDAR-Inertial",
+  "description": "Translation-only evaluation for the LiDAR-inertial SLAM track.",
+  "description_zh": "LiDAR-惯性SLAM赛道的仅翻译评估。",
+  "created_by": "yuhangxu",
+  "created_when": "2026-07-26T09:50:41.414250Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059441/adc6bc07e4f0/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=cMnRh%2BTAYJs2Wxsclo393G8GqME%3D&Expires=1785076066",
+  "participants_count": 1,
+  "submissions_count": 1,
+  "first_phase_start": null,
+  "phases": [
+    {
+      "id": 29486,
+      "name": "Official Evaluation",
+      "start": "2026-07-17T00:00:00Z",
+      "end": "2026-09-20T15:59:00Z",
+      "max_submissions_per_day": 5
+    }
+  ],
+  "pages": [
+    {
+      "index": 0,
+      "title": "Overview",
+      "content": "# LiDAR-Inertial SLAM\n\nThis is the independent LiDAR-inertial track of the Multi-Sensor LiDAR SLAM Challenge 2026. Participants process the two released scenes locally and submit estimated trajectories only. Reliable ground truth and its timestamps remain private on Codabench.\n\nBoth `scene_0001` and `scene_0002` are required. Completion has no hard threshold; missing trajectory coverage reduces AUC recall and the final score.\n\nThe dataset was recorded with an Airy LiDAR and its built-in IMU. The following images are route-shape references only and contain no ground truth.\n\n![Scene 1 trajectory reference](images/scene_0001_trajectory_reference.png)\n\n![Scene 2 trajectory reference](images/scene_0002_trajectory_reference.png)",
+      "content_zh": "# LiDAR-惯性SLAM\n\n这是多传感器LiDAR SLAM挑战赛2026的独立LiDAR-惯性赛道。参与者在本地处理两个发布的场景，仅提交估计轨迹。可靠的地面真值及其时间戳保持隐私，存储在Codabench上。\n\n需要完成`scene_0001`和`scene_0002`两个场景。完成度没有硬性阈值；缺失轨迹覆盖会降低AUC召回率和最终得分。\n\n数据集采用Airy LiDAR及其内置IMU记录。以下图像仅作为路线形状参考，不包含地面真值。\n\n![场景1轨迹参考](images/scene_0001_trajectory_reference.png)\n\n![场景2轨迹参考](images/scene_0002_trajectory_reference.png)"
+    },
+    {
+      "index": 1,
+      "title": "Submission",
+      "content": "# Submission format\n\nUpload a ZIP whose root contains `README.md` and `trajectories/scene_0001.txt` plus `trajectories/scene_0002.txt`. Each trajectory uses TUM rows:\n\n```text\ntimestamp tx ty tz qx qy qz qw\n```\n\nTimestamps must be strictly increasing. Values must be finite and quaternions must be non-zero. There is no submission-count limit. Only the most recent valid submission is ranked.",
+      "content_zh": "# 提交格式\n\n上传一个ZIP文件，其根目录包含 `README.md` 和 `trajectories/scene_0001.txt` 以及 `trajectories/scene_0002.txt`。每个轨迹使用TUM格式的行：\n\n```text\ntimestamp tx ty tz qx qy qz qw\n```\n\n时间戳必须严格递增。数值必须是有限的，四元数必须非零。提交次数无限制。只有最新的有效提交才会被排名。"
+    },
+    {
+      "index": 2,
+      "title": "Evaluation",
+      "content": "# Evaluation\n\nScoring uses EVO time synchronization and one no-scale SE(3) alignment per scene against the private reference trajectory. Completion has no hard threshold and is published; missing pose pairs reduce AUC recall. Evaluation timestamps and ground truth are not published.\n\nATE is EVO translational APE RMSE. AUC uses EVO one-frame translational RPE and the F1-AUC protocol. RTE is the RMSE of EVO translational RPE normalized at 1 m, 5 m, and 10 m. Aggregate and per-scene RTE@1m, RTE@5m, and RTE@10m are all published alongside the combined RTE. Gaps over 0.3 s are never crossed.\n\nAUC and RTE use aligned world-frame positions with identity orientations, so a fixed participant body-axis convention does not affect translation scores. Every scene uses one scene-level SE(3) alignment.\n\nThe total score is `100 * (0.40 * AUC + 0.40 * exp(-ATE / tau_ate) + 0.20 * exp(-RTE / tau_rte))`. Reference result is the published reference: its aggregate ATE and RTE define `tau_ate` and `tau_rte` after the final scorer is frozen.\n\nResults publish the total score, aggregate and per-scene AUC/ATE/combined RTE/RTE@1m/RTE@5m/RTE@10m, normalized score components, completion, and match counts. Per-timestamp errors, associations, alignment transforms, and ground truth remain private.",
+      "content_zh": "# 评估\n\n评分使用EVO时间同步和每个场景一个无缩放SE(3)对齐，对标私有参考轨迹。完成度无硬阈值并公开发布；缺失的位姿对会降低AUC召回率。评估时间戳和真值不公开。\n\nATE是EVO平移APE均方根误差。AUC使用EVO单帧平移RPE和F1-AUC协议。RTE是EVO平移RPE的均方根误差，在1 m、5 m和10 m处归一化。总体和各场景的RTE@1m、RTE@5m和RTE@10m均与合并RTE一起公开发布。超过0.3 s的间隔不被跨越。\n\nAUC和RTE使用对齐的世界坐标系位置和单位方向，因此固定的参与者机体坐标系约定不影响平移得分。每个场景使用一个场景级SE(3)对齐。\n\n总分为`100 * (0.40 * AUC + 0.40 * exp(-ATE / tau_ate) + 0.20 * exp(-RTE / tau_rte))`。参考结果是已发布的参考值：其总体ATE和RTE在最终评分器冻结后定义`tau_ate`和`tau_rte`。\n\n结果公开发布总分、总体和各场景AUC/ATE/合并RTE/RTE@1m/RTE@5m/RTE@10m、归一化得分组件、完成度和匹配计数。单时间戳误差、关联、对齐变换和真值保持私有。"
+    }
+  ]
+}

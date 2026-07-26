@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>本次更新 — Codabench 竞赛监测</title>
+<title>Multi-Sensor LiDAR SLAM Challenge 2026 - LiDAR-Inertial — Codabench 竞赛监测</title>
 <style>
 :root {
     --bg: #0f1117;
@@ -97,10 +97,61 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
   <h1>Codabench 竞赛监测</h1>
   <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
 </header>
-<div class="update-wrap">
+<div class="detail-wrap">
   <a class="back-link" href="index.html">← 返回竞赛目录</a>
-  <p style="color:var(--muted);font-size:.875rem;margin-bottom:24px">更新于 2026-07-26 21:30</p>
-<div class='update-section'><h2 class='new'>🆕 新增竞赛</h2><div class='update-item'><div class='item-title'><a href='17678.html'>Multi-Sensor LiDAR SLAM Challenge 2026 - LiDAR-Visual-Inertial</a></div><div class='item-detail'>Official Evaluation: 2026-07-17 → 2026-09-20</div></div><div class='update-item'><div class='item-title'><a href='17677.html'>Multi-Sensor LiDAR SLAM Challenge 2026 - LiDAR-Inertial</a></div><div class='item-detail'>Official Evaluation: 2026-07-17 → 2026-09-20</div></div></div><div class='update-section'><h2 class='expired'>🗑️ 过期清理</h2><div class='update-item'><div class='item-title'>LoViF 2026 Challenge on AIGC Image Compression Challenge @ ECCV 2026</div><div class='item-detail'>ID: 17125</div></div></div>
+  <h2>Multi-Sensor LiDAR SLAM Challenge 2026 - LiDAR-Inertial</h2>
+  <div class="detail-meta">
+    <span>ID: 17677</span>
+    <span>创建者: yuhangxu</span>
+    <span>创建时间: 2026-07-26</span>
+    <span>参与人数: 1</span>
+    <span>提交次数: 1</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/17677/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">LiDAR-惯性SLAM赛道的仅翻译评估。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-test'>测试</span> Official Evaluation</td><td>2026-07-17</td><td>2026-09-20</td><td>5</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'># LiDAR-惯性SLAM
+
+这是多传感器LiDAR SLAM挑战赛2026的独立LiDAR-惯性赛道。参与者在本地处理两个发布的场景，仅提交估计轨迹。可靠的地面真值及其时间戳保持隐私，存储在Codabench上。
+
+需要完成`scene_0001`和`scene_0002`两个场景。完成度没有硬性阈值；缺失轨迹覆盖会降低AUC召回率和最终得分。
+
+数据集采用Airy LiDAR及其内置IMU记录。以下图像仅作为路线形状参考，不包含地面真值。
+
+![场景1轨迹参考](images/scene_0001_trajectory_reference.png)
+
+![场景2轨迹参考](images/scene_0002_trajectory_reference.png)</div></div><div class='section'><h3>Submission</h3><div class='page-content'># 提交格式
+
+上传一个ZIP文件，其根目录包含 `README.md` 和 `trajectories/scene_0001.txt` 以及 `trajectories/scene_0002.txt`。每个轨迹使用TUM格式的行：
+
+```text
+timestamp tx ty tz qx qy qz qw
+```
+
+时间戳必须严格递增。数值必须是有限的，四元数必须非零。提交次数无限制。只有最新的有效提交才会被排名。</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'># 评估
+
+评分使用EVO时间同步和每个场景一个无缩放SE(3)对齐，对标私有参考轨迹。完成度无硬阈值并公开发布；缺失的位姿对会降低AUC召回率。评估时间戳和真值不公开。
+
+ATE是EVO平移APE均方根误差。AUC使用EVO单帧平移RPE和F1-AUC协议。RTE是EVO平移RPE的均方根误差，在1 m、5 m和10 m处归一化。总体和各场景的RTE@1m、RTE@5m和RTE@10m均与合并RTE一起公开发布。超过0.3 s的间隔不被跨越。
+
+AUC和RTE使用对齐的世界坐标系位置和单位方向，因此固定的参与者机体坐标系约定不影响平移得分。每个场景使用一个场景级SE(3)对齐。
+
+总分为`100 * (0.40 * AUC + 0.40 * exp(-ATE / tau_ate) + 0.20 * exp(-RTE / tau_rte))`。参考结果是已发布的参考值：其总体ATE和RTE在最终评分器冻结后定义`tau_ate`和`tau_rte`。
+
+结果公开发布总分、总体和各场景AUC/ATE/合并RTE/RTE@1m/RTE@5m/RTE@10m、归一化得分组件、完成度和匹配计数。单时间戳误差、关联、对齐变换和真值保持私有。</div></div>
+
 </div>
 </body>
 </html>

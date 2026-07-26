@@ -1,0 +1,389 @@
+{
+  "id": 17678,
+  "title": "Multi-Sensor LiDAR SLAM Challenge 2026 - LiDAR-Visual-Inertial",
+  "published": true,
+  "created_by": "yuhangxu",
+  "owner_display_name": "yuhangxu",
+  "created_when": "2026-07-26T09:51:43.642130Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059503/c4f5eea4397e/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=BmpXjTP%2Blbn0IaOEJMXumU6nviM%3D&Expires=1785076064",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059503/c4f5eea4397e/images/conference-banner_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=JNm%2FsqZH2CB%2FqqUym4QOHpxRYlY%3D&Expires=1785076064",
+  "terms": "# Terms\n\nBy participating, teams agree to the challenge rules and dataset licence published by the organizers. Hidden ground truth, leaked evaluation material, manual truth-based correction, and unauthorized redistribution of challenge data are prohibited.",
+  "pages": [
+    {
+      "id": 84269,
+      "title": "Overview",
+      "content": "# LiDAR-Visual-Inertial SLAM\n\nThis is the independent LiDAR-visual-inertial track of the Multi-Sensor LiDAR SLAM Challenge 2026. Participants process the two released scenes locally and submit estimated trajectories only. Reliable ground truth and its timestamps remain private on Codabench.\n\nBoth `scene_0001` and `scene_0002` are required. Completion has no hard threshold; missing trajectory coverage reduces AUC recall and the final score.\n\nThe dataset was recorded with an Airy LiDAR and its built-in IMU plus the front-left and front-right Seeker fisheye cameras. The following images are route-shape references only and contain no ground truth.\n\n![Scene 1 trajectory reference](images/scene_0001_trajectory_reference.png)\n\n![Scene 2 trajectory reference](images/scene_0002_trajectory_reference.png)",
+      "index": 0
+    },
+    {
+      "id": 84270,
+      "title": "Submission",
+      "content": "# Submission format\n\nUpload a ZIP whose root contains `README.md` and `trajectories/scene_0001.txt` plus `trajectories/scene_0002.txt`. Each trajectory uses TUM rows:\n\n```text\ntimestamp tx ty tz qx qy qz qw\n```\n\nTimestamps must be strictly increasing. Values must be finite and quaternions must be non-zero. There is no submission-count limit. Only the most recent valid submission is ranked.",
+      "index": 1
+    },
+    {
+      "id": 84271,
+      "title": "Evaluation",
+      "content": "# Evaluation\n\nScoring uses EVO time synchronization and one no-scale SE(3) alignment per scene against the private reference trajectory. Completion has no hard threshold and is published; missing pose pairs reduce AUC recall. Evaluation timestamps and ground truth are not published.\n\nATE is EVO translational APE RMSE. AUC uses EVO one-frame translational RPE and the F1-AUC protocol. RTE is the RMSE of EVO translational RPE normalized at 1 m, 5 m, and 10 m. Aggregate and per-scene RTE@1m, RTE@5m, and RTE@10m are all published alongside the combined RTE. Gaps over 0.3 s are never crossed.\n\nAUC and RTE use aligned world-frame positions with identity orientations, so a fixed participant body-axis convention does not affect translation scores. Every scene uses one scene-level SE(3) alignment.\n\nThe total score is `100 * (0.40 * AUC + 0.40 * exp(-ATE / tau_ate) + 0.20 * exp(-RTE / tau_rte))`. Reference result is the published reference: its aggregate ATE and RTE define `tau_ate` and `tau_rte` after the final scorer is frozen.\n\nResults publish the total score, aggregate and per-scene AUC/ATE/combined RTE/RTE@1m/RTE@5m/RTE@10m, normalized score components, completion, and match counts. Per-timestamp errors, associations, alignment transforms, and ground truth remain private.",
+      "index": 2
+    }
+  ],
+  "phases": [
+    {
+      "id": 29487,
+      "index": 0,
+      "start": "2026-07-17T00:00:00Z",
+      "end": "2026-09-20T15:59:00Z",
+      "name": "Official Evaluation",
+      "description": "Submit one TUM trajectory ZIP containing both required scenes.",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "f905d99b-4179-4517-9d77-589e99bc66c5",
+          "order_index": 0,
+          "phase": 29487,
+          "id": 35232,
+          "value": "f905d99b-4179-4517-9d77-589e99bc66c5",
+          "key": "f905d99b-4179-4517-9d77-589e99bc66c5",
+          "created_when": "2026-07-26T09:51:43.414302Z",
+          "name": "LiDAR-Visual-Inertial trajectory evaluation",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 906266,
+              "created_by": "yuhangxu",
+              "owner_display_name": "yuhangxu",
+              "created_when": "2026-07-26T09:51:43.187498Z",
+              "name": "scoring_program @ '07-26-2026 09:51'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "8f387d54-df0b-4b16-88ea-95e4eb84b2e8",
+              "value": "8f387d54-df0b-4b16-88ea-95e4eb84b2e8",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 17678,
+                  "title": "Multi-Sensor LiDAR SLAM Challenge 2026 - LiDAR-Visual-Inertial"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 22430.0
+            },
+            {
+              "id": 906267,
+              "created_by": "yuhangxu",
+              "owner_display_name": "yuhangxu",
+              "created_when": "2026-07-26T09:51:43.264265Z",
+              "name": "reference_data @ '07-26-2026 09:51'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "79111911-669a-495d-b0e6-737a3b7a66a8",
+              "value": "79111911-669a-495d-b0e6-737a3b7a66a8",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 17678,
+                  "title": "Multi-Sensor LiDAR SLAM Challenge 2026 - LiDAR-Visual-Inertial"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 297829.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": {
+        "id": 906268,
+        "created_by": "yuhangxu",
+        "owner_display_name": "yuhangxu",
+        "created_when": "2026-07-26T09:51:43.467643Z",
+        "name": "starting_kit @ '07-26-2026 09:51'",
+        "type": "starting_kit",
+        "description": null,
+        "is_public": false,
+        "key": "4faf8fb5-a186-49c9-bc8d-1c76f92b9f38",
+        "value": "4faf8fb5-a186-49c9-bc8d-1c76f92b9f38",
+        "was_created_by_competition": true,
+        "in_use": [
+          {
+            "pk": 17678,
+            "title": "Multi-Sensor LiDAR SLAM Challenge 2026 - LiDAR-Visual-Inertial"
+          }
+        ],
+        "competition": null,
+        "file_name": "",
+        "file_size": 163476.0
+      },
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 19663,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "main",
+      "columns": [
+        {
+          "id": 86966,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Total Score",
+          "key": "total_score",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 86967,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "AUC",
+          "key": "auc",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 86968,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "ATE RMSE (m)",
+          "key": "ate_rmse_m",
+          "sorting": "asc",
+          "index": 2,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 86969,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "RTE (%)",
+          "key": "rte_pct",
+          "sorting": "asc",
+          "index": 3,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 86970,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "RTE@1m (%)",
+          "key": "rte_1m_pct",
+          "sorting": "asc",
+          "index": 4,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 86971,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "RTE@5m (%)",
+          "key": "rte_5m_pct",
+          "sorting": "asc",
+          "index": 5,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 86972,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "RTE@10m (%)",
+          "key": "rte_10m_pct",
+          "sorting": "asc",
+          "index": 6,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 86973,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Scene 1 AUC",
+          "key": "scene_0001_auc",
+          "sorting": "desc",
+          "index": 7,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 86974,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Scene 1 ATE RMSE (m)",
+          "key": "scene_0001_ate_rmse_m",
+          "sorting": "asc",
+          "index": 8,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 86975,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Scene 1 RTE (%)",
+          "key": "scene_0001_rte_pct",
+          "sorting": "asc",
+          "index": 9,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 86976,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Scene 1 RTE@1m (%)",
+          "key": "scene_0001_rte_1m_pct",
+          "sorting": "asc",
+          "index": 10,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 86977,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Scene 1 RTE@5m (%)",
+          "key": "scene_0001_rte_5m_pct",
+          "sorting": "asc",
+          "index": 11,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 86978,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Scene 1 RTE@10m (%)",
+          "key": "scene_0001_rte_10m_pct",
+          "sorting": "asc",
+          "index": 12,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 86979,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Scene 2 AUC",
+          "key": "scene_0002_auc",
+          "sorting": "desc",
+          "index": 13,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 86980,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Scene 2 ATE RMSE (m)",
+          "key": "scene_0002_ate_rmse_m",
+          "sorting": "asc",
+          "index": 14,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 86981,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Scene 2 RTE (%)",
+          "key": "scene_0002_rte_pct",
+          "sorting": "asc",
+          "index": 15,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 86982,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Scene 2 RTE@1m (%)",
+          "key": "scene_0002_rte_1m_pct",
+          "sorting": "asc",
+          "index": 16,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 86983,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Scene 2 RTE@5m (%)",
+          "key": "scene_0002_rte_5m_pct",
+          "sorting": "asc",
+          "index": 17,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 86984,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Scene 2 RTE@10m (%)",
+          "key": "scene_0002_rte_10m_pct",
+          "sorting": "asc",
+          "index": 18,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 86985,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Completion (%)",
+          "key": "completion_pct",
+          "sorting": "desc",
+          "index": 19,
+          "hidden": false,
+          "precision": 2
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Force_Last"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": true,
+  "description": "Translation-only evaluation for the LiDAR-visual-inertial SLAM track.",
+  "participants_count": 1,
+  "submissions_count": 1,
+  "queue": null,
+  "enable_detailed_results": true,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": false,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "yuhangxu/slam-codabench-eval:evo-1.28.0",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 17368,
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "forum_enabled": true
+}
