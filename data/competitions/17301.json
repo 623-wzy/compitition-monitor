@@ -5,9 +5,9 @@
   "description_zh": "MVAA 2026 最终隐藏测试Docker评估平台。参赛者提交一个轻量级submission.zip，包含Docker镜像引用。私有的组织方Codabench工作进程将描述符转发给MVAA GPU运行器，该运行器拉取镜像、在隐藏测试集上运行推理、计算官方指标，并将Task1/Task2/Task3分数返回到Codabench。",
   "created_by": "db0725",
   "created_when": "2026-06-29T13:28:58.227688Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-29-1782739738/5879f76f7bc9/icon.png?AWSAccessKeyId=codabench-prod&Signature=Zn%2BmGPbkQTN%2FgBKmVCbbKneuAjk%3D&Expires=1785162777",
-  "participants_count": 46,
-  "submissions_count": 138,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-29-1782739738/5879f76f7bc9/icon.png?AWSAccessKeyId=codabench-prod&Signature=dm95QC2EQdat0GhPgn7tI4i%2FbCM%3D&Expires=1785249461",
+  "participants_count": 47,
+  "submissions_count": 161,
   "first_phase_start": null,
   "phases": [
     {
@@ -15,7 +15,7 @@
       "name": "Final Test Docker Evaluation",
       "start": "2026-07-01T00:00:00Z",
       "end": "2026-08-01T00:00:00Z",
-      "max_submissions_per_day": 5
+      "max_submissions_per_day": 20
     }
   ],
   "pages": [
@@ -88,7 +88,7 @@
     {
       "index": 11,
       "title": "Technical Support",
-      "content": "﻿# MVAA Challenge - Technical Support\n\n## 1. Platform Role\n\nThis CodaBench portal collects final Docker submission descriptors and returns official hidden-test scores. The descriptor is first validated by CodaBench, then a private organizer-side CodaBench worker forwards the Docker image reference to the MVAA GPU runner.\n\n## 2. Final Evaluation Server\n\nThe official final-test runner uses a standardized GPU server:\n\n```text\nGPU: NVIDIA Tesla V100 32GB\nCUDA driver: 550.x / CUDA 12.4\nCompute capability: sm_70\nRuntime network inside participant container: disabled\n```\n\nParticipant containers are run with `/input` mounted read-only and `/output` mounted writable.\n\n## 3. Recommended Local Validation\n\nBefore submitting, participants should test their image locally:\n\n```bash\ndocker run --rm --gpus all \\\n  --network none \\\n  -v /path/to/test_input:/input:ro \\\n  -v /path/to/output:/output:rw \\\n  your-image:final\n```\n\nThe container should exit with code `0` and write prediction JSON files and masks under `/output`.\n\n## 4. Common Failure Reasons\n\n- `submission.json` is not at the root of `submission.zip`.\n- The `image` field is missing or contains whitespace/control characters.\n- The Docker image is private and the organizers cannot pull it.\n- The Docker image requires internet access at runtime.\n- The container does not have an automatic entrypoint.\n- The image is not compatible with NVIDIA V100 / `sm_70`.\n- Prediction files are missing or paths in prediction JSON contain absolute paths or `../`.\n- The container exceeds the configured runtime, memory, or disk limits.\n\n## 5. Technical Contact\n\nFor technical issues regarding Docker submission, data integrity, or evaluation scripts, please contact:\n\n- Technical Lead: [tyt6xx@163.com](mailto:tyt6xx@163.com)\n- Challenge Contact: [dbd2002@foxmail.com](mailto:dbd2002@foxmail.com)",
+      "content": "﻿# MVAA Challenge - Technical Support\n\n## 1. Platform Role\n\nThis CodaBench portal collects final Docker submission descriptors and returns official hidden-test scores. The descriptor is first validated by CodaBench, then a private organizer-side CodaBench worker forwards the Docker image reference to the MVAA GPU runner.\n\n## 2. Final Evaluation Server\n\nThe official final-test runner uses a standardized GPU server:\n\n```text\nGPU: NVIDIA Tesla V100 32GB\nCUDA driver: 550.x / CUDA 12.4\nCompute capability: sm_70\nRuntime network inside participant container: disabled\n```\n\nParticipant containers are run with `/input` mounted read-only and `/output` mounted writable.\n\n## 3. Recommended Local Validation\n\nBefore submitting, participants should test their image locally:\n\n```bash\ndocker run --rm --gpus all \\\n  --network none \\\n  -v /path/to/test_input:/input:ro \\\n  -v /path/to/output:/output:rw \\\n  your-image:final\n```\n\nThe container should exit with code `0` and write prediction JSON files and masks under `/output`.\n\n## 4. Common Failure Reasons\n\n- `submission.json` is not at the root of `submission.zip`.\n- The `image` field is missing or contains whitespace/control characters.\n- The Docker image is private and the organizers cannot pull it.\n- The Docker image requires internet access at runtime.\n- The container does not have an automatic entrypoint.\n- The image is not compatible with NVIDIA V100 / `sm_70`.\n- Prediction files are missing or paths in prediction JSON contain absolute paths or `../`.\n- The container exceeds the configured runtime, memory, or disk limits.\n\n## 5. Technical Contact\n\nFor technical issues regarding Docker submission, data integrity, or evaluation scripts, please contact:\n\n- Technical Lead: [dbd2002@foxmail.com](mailto:dbd2002@foxmail.com)\n- Challenge Contact: [dbd2002@foxmail.com](mailto:dbd2002@foxmail.com)",
       "content_zh": "# MVAA挑战 - 技术支持\n\n## 1. 平台角色\n\n该CodaBench门户收集最终Docker提交描述符并返回官方隐藏测试得分。描述符首先由CodaBench验证，然后私有组织方CodaBench工作进程将Docker镜像引用转发到MVAA GPU运行器。\n\n## 2. 最终评估服务器\n\n官方最终测试运行器使用标准化GPU服务器：\n\n```text\nGPU: NVIDIA Tesla V100 32GB\nCUDA驱动程序: 550.x / CUDA 12.4\n计算能力: sm_70\n参与者容器内的运行时网络: 禁用\n```\n\n参与者容器以`/input`挂载为只读，`/output`挂载为可写的方式运行。\n\n## 3. 推荐的本地验证\n\n提交前，参与者应在本地测试其镜像：\n\n```bash\ndocker run --rm --gpus all \\\n  --network none \\\n  -v /path/to/test_input:/input:ro \\\n  -v /path/to/output:/output:rw \\\n  your-image:final\n```\n\n容器应以代码`0`退出，并在`/output`下写入预测JSON文件和掩码。\n\n## 4. 常见失败原因\n\n- `submission.json`不在`submission.zip`的根目录中。\n- `image`字段缺失或包含空格/控制字符。\n- Docker镜像是私有的，组织方无法拉取。\n- Docker镜像在运行时需要互联网访问。\n- 容器没有自动入口点。\n- 镜像与NVIDIA V100 / `sm_70`不兼容。\n- 预测文件缺失或预测JSON中的路径包含绝对路径或`../`。\n- 容器超过配置的运行时间、内存或磁盘限制。\n\n## 5. 技术联系\n\n如有关于Docker提交、数据完整性或评估脚本的技术问题，请联系：\n\n- 技术负责人: [tyt6xx@163.com](mailto:tyt6xx@163.com)\n- 挑战联系人: [dbd2002@foxmail.com](mailto:dbd2002@foxmail.com)"
     },
     {

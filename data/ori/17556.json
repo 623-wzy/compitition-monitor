@@ -5,8 +5,8 @@
   "created_by": "irnewbie",
   "owner_display_name": "irnewbie",
   "created_when": "2026-07-16T16:05:17.810335Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217917/f590d1281393/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=Si131Bt3q33oHn%2FcWMhPpZn5yRQ%3D&Expires=1785162772",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217917/f590d1281393/logo2-1-no-grid1_icon.png?AWSAccessKeyId=codabench-prod&Signature=XWz0zUgTXiqwsMPJELerrWw7C2M%3D&Expires=1785162772",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217917/f590d1281393/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=NhwlMy8WH8JgDB81CxGm6Be4iOY%3D&Expires=1785249450",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217917/f590d1281393/logo2-1-no-grid1_icon.png?AWSAccessKeyId=codabench-prod&Signature=I0%2FSqpTEDA1Rq%2BueT6JJGAznon4%3D&Expires=1785249450",
   "terms": "## 挑战赛参与者要求\n\n  自愿报名参赛的原则，参赛队伍和成员的组成可以为：\t\n\t\n  1. 各培养单位正式注册教师、在读本科生、研究生以及博士生；\t\n\t\n  2. 国内各研究团体、企事业单位。\n\n---\n\n## 结果提交要求\n\n  参赛队伍需在规定时间内提交测试结果，并在后续阶段提交算法代码、模型文件及算法报告。组委会将对各参赛队进行真实性审查。\n\t\n  为了避免参赛队伍滥用其他数据集或验证集标签信息用于算法训练，参赛队伍需提供算法训练时的相关参数，要求算法结果可复现。如发现违规使用数据信息或算法结果无法复现，组委会将按赛事规则处理。\n\t\n---\n\t\n## \t知识产权归属\n\n  参赛队伍提交的算法及可执行模型的知识产权归参赛团队所有，比赛数据集归主办方所有。\n\t\n  各参赛队伍需要承诺提交的结果可重复，组织方承诺履行保密义务，并不用于除本挑战赛外的任何其他用途。\n\t\n  参赛队伍应保证所提供的方案、算法属于自有知识产权。组织方对参赛队伍因使用本队提供完成的算法和结果而产生的任何实际侵权或者被任何第三方指控侵权概不负责。一旦上述情况和事件发生，参赛队伍必须承担一切相关法律责任和经济赔偿责任并保护组织方免于承担该等责任。",
   "pages": [
     {
@@ -310,8 +310,8 @@
   ],
   "registration_auto_approve": false,
   "description": "光学时敏弱小目标探测是智能视觉感知领域中的重要研究方向，也是复杂环境下目标探测与态势感知中的关键技术问题。与常规目标检测任务相比，弱小目标通常存在成像尺度小、目标能量弱、背景干扰强、目标形态不稳定等特点，单帧图像中可利用的信息十分有限，算法在真实场景中容易出现漏检、误检和检测结果不连续等问题。\n本次挑战赛依托 CSIG2026 学术会议平台，围绕光学时敏弱小目标探测中的关键问题，设置\"红外视频卫星空中动目标检测\"和\"基于事件相机的运动小目标检测\"两个赛道，为参赛队伍提供公平、可复现的算法验证平台，推动相关数据建设、方法创新和技术交流。",
-  "participants_count": 68,
-  "submissions_count": 266,
+  "participants_count": 69,
+  "submissions_count": 290,
   "queue": null,
   "enable_detailed_results": false,
   "show_detailed_results_in_submission_panel": false,
