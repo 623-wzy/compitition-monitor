@@ -5,8 +5,8 @@
   "created_by": "mshahbazkharal",
   "owner_display_name": "UCF Urbanity Lab",
   "created_when": "2026-04-30T07:14:54.554531Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833294/142ee41df4c9/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=EPiYnIKN2gW4bNJj86GC%2BeondsA%3D&Expires=1785249485",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833294/142ee41df4c9/round_logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=%2FAHSXtB5JTEbeYBKn0Mf3WOgWaA%3D&Expires=1785249485",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833294/142ee41df4c9/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=C%2FhHRBZaA9z%2BFF9KtsHsEf1jhkk%3D&Expires=1785336201",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833294/142ee41df4c9/round_logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=3hUIux2dpff0ekTS3NjsWVj5F4c%3D&Expires=1785336201",
   "terms": "<h1>Terms and Conditions</h1>\n\n<p>\nBy registering for this challenge, you agree to the following:\n</p>\n\n<ol>\n  <li>You will abide by the rules listed on the <strong>Rules</strong> tab,\n      including the prohibition on using forbidden frames for any aspect of\n      training, validation, or hyperparameter selection.</li>\n  <li>You will use the underlying real dataset(s) under their own original\n      license, obtained directly from the dataset's source. The challenge\n      organizers do not redistribute real data and grant no license to it.</li>\n  <li>The released \"detection-test point clouds\" (50 real frames, labels\n      withheld) are made available to participants strictly for generating\n      challenge submissions. They may not be re-distributed, re-hosted, or\n      used outside this challenge.</li>\n  <li>Submissions are evaluated by the scoring program shipped with this\n      bundle. The organizer team's interpretation of the scoring program's\n      output is final, including in the case of ties.</li>\n  <li>You consent to your username and submission scores appearing on a\n      public leaderboard. Other artifacts of your submission (the synthetic\n      frames, predictions, and declaration) are visible only to the\n      organizers and to you, unless you explicitly opt to make a submission\n      public.</li>\n  <li>Top-ranked teams in the Final phase agree to be contacted to verify\n      their submission's integrity and may be asked to provide a brief\n      methods description.</li>\n  <li>The organizers reserve the right to disqualify submissions that violate\n      these terms or the rules, and to amend these terms with notice on this\n      page if the challenge's logistical needs change before the Final phase\n      opens.</li>\n</ol>\n\n<h2>Honor declaration</h2>\n<p>\nEvery submission must include a signed <code>declaration.txt</code>. The\nrequired statement is:\n</p>\n<blockquote>\n<em>I confirm that I did not train on any frame listed in\n<code>forbidden_frames.txt</code>, and that all submitted detections were produced\nby a model trained only on synthetic data I generated.</em>\n</blockquote>\n<p>\nFalsifying this declaration is grounds for immediate disqualification and\nremoval from any associated workshop proceedings.\n</p>",
   "pages": [
     {
@@ -365,7 +365,7 @@
   "registration_auto_approve": true,
   "description": "Synthesize LiDAR data targeting V2X-Real's infrastructure-centric distribution; train on synthetic, evaluate on real V2X-Real-IC.",
   "participants_count": 12,
-  "submissions_count": 159,
+  "submissions_count": 176,
   "queue": null,
   "enable_detailed_results": true,
   "show_detailed_results_in_submission_panel": true,

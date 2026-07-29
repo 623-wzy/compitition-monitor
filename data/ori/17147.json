@@ -1,0 +1,762 @@
+{
+  "id": 17147,
+  "title": "Arbitrary-Scale UAV Video Super-Resolution",
+  "published": true,
+  "created_by": "cylwk",
+  "owner_display_name": "cylwk",
+  "created_when": "2026-06-16T08:59:05.171345Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-16-1781618288/37a77e473e98/420a6900-614b-4150-9684-87298260914.png?AWSAccessKeyId=codabench-prod&Signature=phxLZNseEQ1KkvoeGvwcnIcTC1k%3D&Expires=1785336185",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-16-1781618288/37a77e473e98/420a6900-614b-4150-9684-87298260914_icon.png?AWSAccessKeyId=codabench-prod&Signature=ZwrOi8ho5uZcdHtJKjhWaashLrI%3D&Expires=1785336185",
+  "terms": "### 🏆 I. Competition Overview\n\n- **Competition Name**: CSIG Image and Graphics Technology Challenge - Drone Video Arbitrary-Scale Super-Resolution Reconstruction Challenge\n- **Organizer**: China Society of Image and Graphics (CSIG)\n- **Host Institutions**: Sun Yat-sen University, Information Engineering University\n- **Background**: Against the backdrop of the booming low-altitude economy, this challenge aims to address the issues of low resolution and blurred details in drone aerial videos caused by hardware limitations. It focuses on enhancing video super-resolution reconstruction capabilities to support applications in国土测绘, emergency rescue, and other fields.\n\n### 📅 II. Participation Requirements & Schedule\n\n- **Eligibility**: Open to teams and individuals from enterprises, institutions, universities, and colleges nationwide. Each team must consist of no more than 5 members.\n- **Key Dates**:\n  - **Registration Period**: June 3, 2026 - August 15, 2im26\n  - **Result Submission Period**: June 20, 2026 - August 20, 2026\n- **Platforms**:\n  - **Competition Website**: `https://www.codabench.org/competitions/edit/17147/`\n  - **Registration Link**: `https://v.wjx.cn/vm/OIAIWZk.aspx#`\n\n### 📹 III. Data & Tasks\n\n- **Dataset Composition**:\n  - **Evaluation Sets**: Includes 2 sets of drone visible-light video datasets (covering scenarios like weak-texture roads and drastic viewpoint changes) and 1 set of drone thermal-infrared video dataset (covering scenarios like edge blur and low signal-to-noise ratio).\n  - **Task Objective**: Input is low-resolution drone video sequences. Output must support high-resolution reconstruction at arbitrary scales (4x, 6.7x, 9.8x, 12.9x).\n  - **Ground Truth**: High-resolution ground truth is provided for quantitative evaluation. Participants may use self-selected training data.\n- **Submission Requirements**:\n  - Reconstruction results (High-resolution videos).\n  - Code and documentation (Executable scripts/source code, Technical report ≤ 3 pages).\n\n### 📊 IV. Evaluation Criteria & Hardware Constraints\n\n- **Hardware Limits**:\n  - **CPU**: Xeon Platinum 8462Y+ / AMD Epyc 9534\n  - **GPU**: NVIDIA RTX PRO 6000 Blackwell / A100\n  - **Memory**: 128GB DDR4\n- **Core Evaluation Dimensions (Threshold Conditions)**:\n  - **Pixel Accuracy**: PSNR (Peak Signal-to-Noise Ratio), SSIM (Structural Similarity Index).\n  - **Perceptual Accuracy**: LPIPS (Learned Perceptual Image Patch Similarity), DISTS (Deep Image Structure and Texture Similarity).\n  - **Temporal Consistency**: tLP (Temporal Learned Perceptual similarity), tOF (Temporal Order Fidelity, based on RAFT-Large optical flow estimation).\n- **Specific Metric Requirements**:\n\n| Scenario | Pixel Accuracy (PSNR/SSIM) | Perceptual Accuracy (LPIPS/DISTS) | Temporal Accuracy (tLP/tOF) |\n| :--- | :--- | :--- | :--- |\n| **General Requirements** | PSNR≥28.0dB; SSIM≥0.750 | LPIPS≤0.250; DISTS≤0.180 | tLP≤12.00; tOF≤0.650 |\n| **Visible Light Dataset** | PSNR≥24.5dB; SSIM≥0.720 | LPIPS≤0.200; DISTS≤0.150 | tLP≤10.00; tOF≤0.600 |\n| **Thermal Infrared Dataset** | PSNR≥41.0dB; SSIM≥0.970 | LPIPS≤0.070; DISTS≤0.080 | tLP≤5.50; tOF≤7.50 |\n| **Low-Light Night Scene (Optional)** | PSNR≥22.0dB; SSIM≥0.650 | LPIPS≤0.280; DISTS≤0.200 | tLP≤15.0; tOF≤0.800 |\n\n### 📮 V. Contacts\n\n- **Wang Hanyun** (Sun Yat-sen University): [wanghanyun@mail.sysu.edu.cn](mailto:wanghanyun@mail.sysu.edu.cn)\n- **Dai Chenguang** (Information Engineering University): [cgdai2008@163.com](mailto:cgdai2008@163.com)\n-- **Wang Longguang** (Sun Yat-sen University): [wanglg9@mail.sysu.edu.cn](mailto:wanglg9@mail.sysu.edu.cn)\n- **Li Wenke** (Ph.D. Student, Sun Yat-sen University): [ieulwk@163.com](mailto:ieulwk@163.com)\n- **Li Kangrui** (Ph.D. Student, Information Engineering University): [kangrui.li21@outlook.com](mailto:kangrui.li21@outlook.com)\n\nThis competition addresses the pressing need for high-quality drone video data in the low-altitude economy. By setting strict thresholds for pixel accuracy, perceptual quality, and temporal consistency, it aims to drive the practical application of computer vision technologies in real-world aerial scenarios.",
+  "pages": [
+    {
+      "id": 81605,
+      "title": "Overview",
+      "content": "### 🏆 1. Competition Overview\n\n- **Competition Name:** CSIG Image and Graphics Technology Challenge - UAV Video Arbitrary Scale Super-Resolution Reconstruction Challenge\n- **Organizer:** China Society of Image and Graphics (CSIG)\n- **Co-organizers:** Sun Yat-sen University, Information Engineering University\n- **Background:** Addressing the application requirements of UAV aerial video in national land surveying, emergency rescue, and other fields under the low-altitude economy, this challenge aims to solve the problems of low resolution and blurred details caused by hardware limitations. It seeks to enhance video super-resolution reconstruction capabilities through algorithmic innovation.\n\n### 📅 2. Participation Requirements & Schedule\n\n- **Eligibility:** Open to enterprises, institutions, faculty, students, and teams (maximum of 5 members per team) from across the country, as well as individuals.\n- Key Dates:\n  - **Registration Period:** June 3, 2026 – August 15, 026\n  - **Submission Period:** June 20, 2026 – August 20, 2026\n- Platforms:\n  - Competition Website: `[Codabench](https://www.codabench.org/competitions/edit/17147/)` \n  - Registration Link: [](https://v.wjx.cn/vm/OIAIWZk.aspx#)\n\n### 📹 3. Competition Data & Task\n\n- Dataset Composition:\n  - **Evaluation Set:** Includes 2 sets of UAV visible-light video datasets (covering scenarios like weak-texture roads and drastic viewpoint changes) and 1 set of UAV thermal-infrared video dataset (covering scenarios like edge blurring and low SNR).\n  - **Task Objective:** Input is low-resolution UAV video sequences. Output must support high-resolution reconstruction at arbitrary scales (4x, 6.7x, 9.8x, 12.9x).\n  - **Ground Truth:** High-resolution ground truth is provided for quantitative evaluation. Participants may select their own training data.\n- Submission Requirements:\n  - Reconstruction results (High-resolution videos).\n  - Code and documentation (Run scripts/Source code, Technical report ≤ 3 pages).\n\n### 📊 4. Evaluation Criteria & Hardware Constraints\n\n- Hardware Limits:\n  - **CPU:** Xeon Platinum 8462Y+ / AMD Epyc 9534\n  - **GPU:** NVIDIA RTX PRO 6000 Blackwell / A100\n  - **Memory:** 128GB DDR4\n- Core Evaluation Metrics (Threshold Conditions):\n  - **Pixel Accuracy:** PSNR (Peak Signal-to-Noise Ratio), SSIM (Structural Similarity Index).\n  - **Perceptual Accuracy:** LPIPS (Learned Perceptual Image Patch Similarity), DISTS (Deep Image Structure and Texture Similarity).\n  - **Temporal Accuracy:** tLP (Temporal Learned Perceptual Image Patch Similarity), tOF (Temporal Order Fidelity, estimated based on RAFT-Large optical flow).\n\n| Scenario                               | Pixel Accuracy (PSNR/SSIM) | Perceptual Accuracy (LPIPS/DISTS) | Temporal Accuracy (tLP/tOF) |\n| -------------------------------------- | -------------------------- | --------------------------------- | --------------------------- |\n| **General Requirement**                | PSNR≥28.0dB; SSIM≥0.750    | LPIPS≤0.250; DISTS≤0.180          | tLP≤12.00; tOF≤0.650        |\n| **Visible Light Dataset**              | PSNR≥24.5dB; SSIM≥0.720    | LPIPS≤0.200; DISTS≤0.150          | tLP≤10.00; tOF≤0.600        |\n| **Thermal Infrared Dataset**           | PSNR≥41.0dB; SSIM≥0.970    | LPIPS≤0.070; DISTS≤0.080          | tLP≤5.50; tOF≤7.50          |\n| **Low-Light Night Scene (Additional)** | PSNR≥22.0dB; SSIM≥0.650    | LPIPS≤0.280; DISTS≤0.200          | tLP≤15.0; tOF≤0.800         |\n\n### 📮 5. Contacts\n\n- **Wang Hanyun** (Sun Yat-sen University): [wanghanyun@mail.sysu.edu.cn](mailto:wanghanyun@mail.sysu.edu.cn)\n- **Dai Chenguang** (Information Engineering University): [cgdai2008@163.com](mailto:cgdai2008@163.com)\n- **Li Wenke** (PhD Student, Sun Yat-sen University): [ieulwk@163.com](mailto:ieulwk@163.com)\n- **Li Kangrui** (PhD Student, Information Engineering University): [kangrui.li21@outlook.com](mailto:kangrui.li21@outlook.com)\n\nThis competition closely aligns with the demands of the low-altitude economy, focusing on super-resolution reconstruction difficulties in complex UAV video scenarios. By setting strict metrics for pixel accuracy, perception, and temporal consistency, it aims to promote the practical application of computer vision technology in real-world aerial footage.",
+      "index": 0
+    },
+    {
+      "id": 81606,
+      "title": "Evaluation",
+      "content": "### Weight Allocation Strategy\n\nThis scheme significantly increases the weight of perceptual metrics, establishing LPIPS and DISTS as core indicators; uses pixel metrics as constraints for basic fidelity; and employs temporal metrics to guarantee a baseline for video quality.\n\n| Metric Category | Role | Specific Metric | Weight ($W$) | Design Rationale |\n| :--- | :--- | :--- | :--- | :--- |\n| **Perceptual Quality** | Core Dominant | **LPIPS** | **30%** | Primary metric. The most human-perception-aligned metric in deep learning super-resolution. High weight encourages models to generate rich high-frequency textures and avoid over-smoothing. |\n| | Detail Auxiliary | DISTS | 20% | Secondary metric. Combines structural and textural distortion, specifically validating details of complex ground objects (e.g., trees, roofs) from a drone perspective to prevent artifacts. |\n| **Pixel Accuracy** | Basic Constraint | PSNR | 15% | Primary metric. Although its weight is reduced, it remains the physical baseline to prevent severe color shifts or noise amplification caused by pursuing perceptual quality. |\n| | Structural Auxiliary | SSIM | 10% | Secondary metric. Ensures overall structural integrity, guaranteeing clear building outlines without structural collapse. |\n| **Temporal Consistency** | Stability Guarantee | tLP | 15% | Primary metric. Measures temporal jitter in feature space. Flickering is fatal for video tasks; sufficient weight is required to ensure viewing comfort. |\n| | Motion Validation | tOF | 10% | Secondary metric. Constrains motion consistency at the physical optical flow level to prevent non-physical jumps in object trajectories. |\n| **Total** | - | - | **100%** | - |\n\n### Detailed Calculation Formulas\n\nTo fairly compare metrics with different dimensions, **Min-Max Normalization** is applied to map all metrics to the $[0, 1]$ interval before weighted summation.\n\n#### Step 1: Data Collection & Extreme Value Determination\nLet the set of participating teams be $N$. For each metric $m$ (e.g., PSNR, LPIPS):\n- Identify the maximum value $Max_m$ and minimum value $Min_m$ across all teams.\n- *Note: To prevent extreme outliers from skewing normalization, it is recommended to exclude the top 1% and bottom 1% extreme values before determining Max/Min, or set theoretical upper/lower bounds (e.g., capping PSNR at 40dB).*\n\n#### Step 2: Metric Normalization\nSince metric directions differ (higher is better vs. lower is better), they must be processed separately:\n\n**A. Positive Metrics (Higher is Better):** PSNR, SSIM\n$$ Score_{i,m} = \\frac{Value_{i,m} - Min_m}{Max_m - Min_m} $$\n\n**B. Negative Metrics (Lower is Better):** LPIPS, DISTS, tLP, tOF\n$$ Score_{i,m} = \\frac{Max_m - Value_{i,m}}{Max_m - Min_m} $$\n\n*Where $Score_{i,m}$ represents the normalized score of team $i$ on metric $m$ (ranging from 0 to 1).*\n\n#### Step 3: Weighted Total Score Calculation\n$$ TotalScore_i = (0.30 \\times S_{LPIPS}) + (0.20 \\times S_{DISTS}) + (0.15 \\times S_{PSNR}) + (0.10 \\times S_{SSIM}) + (0.15 \\times S_{tLP}) + (0.10 \\times S_{tOF}) $$\n\nThe final score should be rounded to four decimal places.\n\n### Threshold Condition Review (Based on New Strategy)\n\nTo align with the new weighting system, it is recommended to update entry thresholds simultaneously. This ensures that top-scoring teams excel not only in perception but also meet baseline quality standards:\n\n| Dimension | Metric | Recommended Threshold | Description |\n| :--- | :--- | :--- | :--- |\n| **Perceptual** | LPIPS | $\\le 0.250$ | Core threshold. Values above this indicate insufficient texture recovery capability. |\n| **Perceptual** | DISTS | $\\le 0.180$ | Auxiliary threshold. Prevents structural collapse caused by over-optimizing for LPIPS. |\n| **Pixel** | PSNR | $\\ge 26.0 \\text{ dB}$ | Appropriately relaxed (compared to pure PSNR orientation). Allows sacrificing a small amount of SNR for perceptual quality, but not excessively. |\n| **Pixel** | SSIM | $\\ge 0.700$ | Ensures basic structural similarity. |\n| **Temporal** | tLP | $\\le 12.0$ | Baseline requirement to ensure flicker-free video. |\n| **Temporal** | tOF | $\\le 0.650$ | Ensures generally reasonable motion trajectories. |",
+      "index": 1
+    },
+    {
+      "id": 81607,
+      "title": "Terms and Conditions",
+      "content": "### 📅 Competition Timeline\nThe competition is currently in the **Registration Phase**. According to the schedule outlined in the document, the key dates are as follows:\n\n| Phase | Time Period | Status (as of Jun 16, 2026) |\n| :--- | :--- | :--- |\n| **Registration** | June 3, 2026 - **August 15, 2026** | **Open** |\n| **Result Submission** | June 20, 2026 - August 20, 2026 | Upcoming |\n\n### 🎯 Eligibility and Entry\n- **Open To:** Teams and individuals from enterprises, institutions, universities, and colleges nationwide.\n- **Team Size:** Each team must consist of **no more than five (5) members**.\n\n### 💻 Technical Specifications\nTo ensure fairness and practical applicability, the competition enforces strict hardware and output constraints.\n\n#### 1. Hardware Constraints\nAll solutions must be executable on hardware not exceeding the following specifications:\n- **CPU:** Xeon Platinum 8462Y+ / AMD Epyc 9534\n- **GPU:** NVIDIA RTX PRO 6000 Blackwell / A100\n- **Memory:** 128GB DDR4\n\n#### 2. Submission Requirements\nParticipants must submit the following items:\n- **Reconstruction Results:** High-resolution video outputs.\n- **Code and Documentation:**\n    - Executable scripts, programs, or source code.\n    - A technical report (maximum 3 pages) including a method overview, innovations, runtime, and memory/GPU memory usage.\n\n### 📊 Evaluation Criteria\nThe evaluation employs a multi-dimensional metric system to assess image quality, perception, and temporal consistency. The **threshold conditions** for qualifying submissions are detailed below.\n\n#### Threshold Conditions for Qualification\nSubmissions must meet the following requirements across different scenarios to be considered valid.\n\n| Scenario | Pixel Accuracy Requirements | Perceptual Accuracy Requirements | Temporal Consistency Requirements |\n| :--- | :--- | :--- | :--- |\n| **General Requirements** | • PSNR ≥ 28.0dB• SSIM ≥ 0.750 | • LPIPS ≤ 0.250• DISTS ≤ 0.180 | • tLP ≤ 12.00• tOF ≤ 0.650 |\n| **Visible Light Dataset** | • PSNR ≥ 24.5dB• SSIM ≥ 0.720 | • LPIPS ≤ 0.200• DISTS ≤ 0.150 | • tLP ≤ 10.00• tOF ≤ 0.600 |\n| **Thermal Infrared Dataset** | • PSNR ≥ 41.0dB• SSIM ≥ 0.970 | • LPIPS ≤ 0.070• DISTS ≤ 0.080 | • tLP ≤ 5.50• tOF ≤ 7.50 |\n| **Low-Light Night Scene*(Optional)* | • PSNR ≥ 22.0dB• SSIM ≥ 0.650 | • LPIPS ≤ 0.280• DISTS ≤ 0.200 | • tLP ≤ 15.0• tOF ≤ 0.800 |\n\n> **Note:** The Low-Light Night Scene is an **optional additional item** and is not part of the mandatory qualification threshold.\n\n### 📥 Registration and Access\n- **Registration Link:** [https://v.wjx.cn/vm/OIAIWZk.aspx#](https://v.wjx.cn/vm/OIAIWZk.aspx#)\n- **Competition Website:** [https://www.codabench.org/competitions/edit/17147/](https://www.codabench.org/competitions/edit/17147/) (Website subject to change)\n- **Data Download:** Baidu Netdisk link provided in the document (`https://pan.baidu.com/s/16yE93GK0qu9rBbl0OsDdbA?pwd=v44u`).",
+      "index": 2
+    }
+  ],
+  "phases": [
+    {
+      "id": 28637,
+      "index": 0,
+      "start": "2026-06-02T08:00:00Z",
+      "end": "2026-08-15T07:59:00Z",
+      "name": "develop",
+      "description": "Release of train data (input and output) and validation data (inputs only)",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "6a372968-b7f7-4d3e-8d38-7ff0a56e56ef",
+          "order_index": 0,
+          "phase": 28637,
+          "id": 30339,
+          "value": "6a372968-b7f7-4d3e-8d38-7ff0a56e56ef",
+          "key": "6a372968-b7f7-4d3e-8d38-7ff0a56e56ef",
+          "created_when": "2026-03-16T03:21:55.223329Z",
+          "name": "Clickbait Development Task",
+          "solutions": [
+            {
+              "name": "solution @ 03-16-2026 03:21",
+              "description": null,
+              "key": "dd7a9ec2-e59a-4f8f-a571-5d98ca44c57a",
+              "tasks": [
+                "6a372968-b7f7-4d3e-8d38-7ff0a56e56ef",
+                "3d2504c1-e8b8-4308-bcd9-08f984828ce0"
+              ],
+              "data": "82d2a0e2-e969-492d-9165-2a913f1e6673",
+              "md5": "9974b7c16d04f0653dd1f225293bddc7",
+              "size": 523.0
+            }
+          ],
+          "public_datasets": [
+            {
+              "id": 648660,
+              "created_by": "wiatrp",
+              "owner_display_name": "wiatrp",
+              "created_when": "2026-03-16T22:59:31.666013Z",
+              "name": "Clickbait Scoring Program",
+              "type": "scoring_program",
+              "description": "",
+              "is_public": true,
+              "key": "d4a4f84a-b179-45a1-8beb-5f10c20682c8",
+              "value": "d4a4f84a-b179-45a1-8beb-5f10c20682c8",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 14865,
+                  "title": "Classify Articles As Clickbait"
+                },
+                {
+                  "pk": 15362,
+                  "title": "Сигнал"
+                },
+                {
+                  "pk": 17147,
+                  "title": "Arbitrary-Scale UAV Video Super-Resolution"
+                },
+                {
+                  "pk": 17254,
+                  "title": "TwinWorld 2026 The Challenge on Large-Scale 3D Semantic Gaussian Splatting Reconstruction @ ECCV 2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "scoring.zip",
+              "file_size": 1383.0
+            },
+            {
+              "id": 648724,
+              "created_by": "wiatrp",
+              "owner_display_name": "wiatrp",
+              "created_when": "2026-03-16T23:20:51.311334Z",
+              "name": "Clickbait Ingestion Program",
+              "type": "ingestion_program",
+              "description": "",
+              "is_public": true,
+              "key": "398e043f-4a30-4848-9a19-1f3641b41e18",
+              "value": "398e043f-4a30-4848-9a19-1f3641b41e18",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 14865,
+                  "title": "Classify Articles As Clickbait"
+                },
+                {
+                  "pk": 15362,
+                  "title": "Сигнал"
+                },
+                {
+                  "pk": 17147,
+                  "title": "Arbitrary-Scale UAV Video Super-Resolution"
+                },
+                {
+                  "pk": 17254,
+                  "title": "TwinWorld 2026 The Challenge on Large-Scale 3D Semantic Gaussian Splatting Reconstruction @ ECCV 2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "ingestion.zip",
+              "file_size": 1669.0
+            },
+            {
+              "id": 648758,
+              "created_by": "wiatrp",
+              "owner_display_name": "wiatrp",
+              "created_when": "2026-03-16T23:25:58.259585Z",
+              "name": "Clickbait Input data",
+              "type": "input_data",
+              "description": "",
+              "is_public": true,
+              "key": "75600fc8-9b6e-4222-963f-420ede2e7700",
+              "value": "75600fc8-9b6e-4222-963f-420ede2e7700",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 14865,
+                  "title": "Classify Articles As Clickbait"
+                },
+                {
+                  "pk": 15362,
+                  "title": "Сигнал"
+                },
+                {
+                  "pk": 17147,
+                  "title": "Arbitrary-Scale UAV Video Super-Resolution"
+                },
+                {
+                  "pk": 17254,
+                  "title": "TwinWorld 2026 The Challenge on Large-Scale 3D Semantic Gaussian Splatting Reconstruction @ ECCV 2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "input_data.zip",
+              "file_size": 783409.0
+            },
+            {
+              "id": 648760,
+              "created_by": "wiatrp",
+              "owner_display_name": "wiatrp",
+              "created_when": "2026-03-16T23:26:20.664940Z",
+              "name": "Clickbait Reference Data",
+              "type": "reference_data",
+              "description": "",
+              "is_public": false,
+              "key": "772f0f71-0960-401b-b8ea-d6052ecad809",
+              "value": "772f0f71-0960-401b-b8ea-d6052ecad809",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 14865,
+                  "title": "Classify Articles As Clickbait"
+                },
+                {
+                  "pk": 15362,
+                  "title": "Сигнал"
+                },
+                {
+                  "pk": 17147,
+                  "title": "Arbitrary-Scale UAV Video Super-Resolution"
+                },
+                {
+                  "pk": 17254,
+                  "title": "TwinWorld 2026 The Challenge on Large-Scale 3D Semantic Gaussian Splatting Reconstruction @ ECCV 2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "reference_data.zip",
+              "file_size": 1152.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    },
+    {
+      "id": 28638,
+      "index": 1,
+      "start": "2026-08-15T08:00:00Z",
+      "end": "2026-08-19T08:00:00Z",
+      "name": "Testing",
+      "description": "Validation server online",
+      "status": "Next",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "0a796bc7-e7d7-4990-851b-e27b00b81111",
+          "order_index": 0,
+          "phase": 28638,
+          "id": 30385,
+          "value": "0a796bc7-e7d7-4990-851b-e27b00b81111",
+          "key": "0a796bc7-e7d7-4990-851b-e27b00b81111",
+          "created_when": "2026-03-16T16:49:10.549490Z",
+          "name": "Test",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 647373,
+              "created_by": "wangalyssa121",
+              "owner_display_name": "wangalyssa121",
+              "created_when": "2026-03-16T16:48:18.247607Z",
+              "name": "Scoring Program (test)",
+              "type": "scoring_program",
+              "description": "Scoring Program (test)",
+              "is_public": false,
+              "key": "d0e6a16d-e447-4af8-9f36-07369bd273f3",
+              "value": "d0e6a16d-e447-4af8-9f36-07369bd273f3",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 14902,
+                  "title": "Test (4nl3)"
+                },
+                {
+                  "pk": 15134,
+                  "title": "BRIGHT Challenge"
+                },
+                {
+                  "pk": 15245,
+                  "title": "test challenge"
+                },
+                {
+                  "pk": 15246,
+                  "title": "test challenge"
+                },
+                {
+                  "pk": 15247,
+                  "title": "test challenge"
+                },
+                {
+                  "pk": 15272,
+                  "title": "ICML 2026 AI for Math Workshop"
+                },
+                {
+                  "pk": 15504,
+                  "title": "India's 1st Boldest AI Challenge."
+                },
+                {
+                  "pk": 15505,
+                  "title": "India's 1st Boldest AI Challenge."
+                },
+                {
+                  "pk": 15569,
+                  "title": "Fashion-MNIST Challenge: Efficient Image Classification for Scientific Computing"
+                },
+                {
+                  "pk": 15635,
+                  "title": "BITDeepLearningExp1"
+                },
+                {
+                  "pk": 16021,
+                  "title": "test1"
+                },
+                {
+                  "pk": 16281,
+                  "title": "EBMV 2026 LOW-LEVEL IMAGING CHALLENGE: EVENT-GUIDED LOW-LIGHT VIDEO DEPTH ESTIMATION ON SDE DATASET"
+                },
+                {
+                  "pk": 16703,
+                  "title": "7K Challenge - Synthetic injections for grids"
+                },
+                {
+                  "pk": 17068,
+                  "title": "test"
+                },
+                {
+                  "pk": 17147,
+                  "title": "Arbitrary-Scale UAV Video Super-Resolution"
+                },
+                {
+                  "pk": 17241,
+                  "title": "RTPSeg Challenge"
+                },
+                {
+                  "pk": 17264,
+                  "title": "第十届全国激光雷达大会——2Dinsight3D城市级点云语义分割大赛"
+                },
+                {
+                  "pk": 17431,
+                  "title": "Domain-Specific Small Language Models (SLM) Challenge: Medical Advice"
+                },
+                {
+                  "pk": 17432,
+                  "title": "Domain-Specific Small Language Models (SLM) Challenge: Legal Advice"
+                },
+                {
+                  "pk": 17467,
+                  "title": "iscslp_test"
+                },
+                {
+                  "pk": 17503,
+                  "title": "SemEval-2027: Meaning change across multiple time period"
+                },
+                {
+                  "pk": 17509,
+                  "title": "SemEval-2027: Meaning change across multiple time period"
+                },
+                {
+                  "pk": 17510,
+                  "title": "SemEval-2027: Meaning change across multiple time period"
+                }
+              ],
+              "competition": null,
+              "file_name": "scoring_program (1).zip",
+              "file_size": 3075.0
+            },
+            {
+              "id": 647376,
+              "created_by": "wangalyssa121",
+              "owner_display_name": "wangalyssa121",
+              "created_when": "2026-03-16T16:48:44.520103Z",
+              "name": "Reference Data (test)",
+              "type": "reference_data",
+              "description": "Reference Data (test)",
+              "is_public": false,
+              "key": "48e01c3b-a832-4f59-abae-926907e53257",
+              "value": "48e01c3b-a832-4f59-abae-926907e53257",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 14902,
+                  "title": "Test (4nl3)"
+                },
+                {
+                  "pk": 15134,
+                  "title": "BRIGHT Challenge"
+                },
+                {
+                  "pk": 15245,
+                  "title": "test challenge"
+                },
+                {
+                  "pk": 15246,
+                  "title": "test challenge"
+                },
+                {
+                  "pk": 15247,
+                  "title": "test challenge"
+                },
+                {
+                  "pk": 15272,
+                  "title": "ICML 2026 AI for Math Workshop"
+                },
+                {
+                  "pk": 15504,
+                  "title": "India's 1st Boldest AI Challenge."
+                },
+                {
+                  "pk": 15505,
+                  "title": "India's 1st Boldest AI Challenge."
+                },
+                {
+                  "pk": 15569,
+                  "title": "Fashion-MNIST Challenge: Efficient Image Classification for Scientific Computing"
+                },
+                {
+                  "pk": 15635,
+                  "title": "BITDeepLearningExp1"
+                },
+                {
+                  "pk": 16021,
+                  "title": "test1"
+                },
+                {
+                  "pk": 16281,
+                  "title": "EBMV 2026 LOW-LEVEL IMAGING CHALLENGE: EVENT-GUIDED LOW-LIGHT VIDEO DEPTH ESTIMATION ON SDE DATASET"
+                },
+                {
+                  "pk": 16703,
+                  "title": "7K Challenge - Synthetic injections for grids"
+                },
+                {
+                  "pk": 17068,
+                  "title": "test"
+                },
+                {
+                  "pk": 17147,
+                  "title": "Arbitrary-Scale UAV Video Super-Resolution"
+                },
+                {
+                  "pk": 17241,
+                  "title": "RTPSeg Challenge"
+                },
+                {
+                  "pk": 17264,
+                  "title": "第十届全国激光雷达大会——2Dinsight3D城市级点云语义分割大赛"
+                },
+                {
+                  "pk": 17431,
+                  "title": "Domain-Specific Small Language Models (SLM) Challenge: Medical Advice"
+                },
+                {
+                  "pk": 17432,
+                  "title": "Domain-Specific Small Language Models (SLM) Challenge: Legal Advice"
+                },
+                {
+                  "pk": 17467,
+                  "title": "iscslp_test"
+                },
+                {
+                  "pk": 17503,
+                  "title": "SemEval-2027: Meaning change across multiple time period"
+                },
+                {
+                  "pk": 17509,
+                  "title": "SemEval-2027: Meaning change across multiple time period"
+                },
+                {
+                  "pk": 17510,
+                  "title": "SemEval-2027: Meaning change across multiple time period"
+                }
+              ],
+              "competition": null,
+              "file_name": "reference_data (1).zip",
+              "file_size": 11581.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    },
+    {
+      "id": 28639,
+      "index": 2,
+      "start": "2026-08-20T00:00:00Z",
+      "end": "2026-08-20T23:59:00Z",
+      "name": "Competition Ends",
+      "description": "Final test data release (inputs only)",
+      "status": "Next",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "3d2504c1-e8b8-4308-bcd9-08f984828ce0",
+          "order_index": 0,
+          "phase": 28639,
+          "id": 30340,
+          "value": "3d2504c1-e8b8-4308-bcd9-08f984828ce0",
+          "key": "3d2504c1-e8b8-4308-bcd9-08f984828ce0",
+          "created_when": "2026-03-16T03:21:55.871148Z",
+          "name": "Clickbait Final Task",
+          "solutions": [
+            {
+              "name": "solution @ 03-16-2026 03:21",
+              "description": null,
+              "key": "dd7a9ec2-e59a-4f8f-a571-5d98ca44c57a",
+              "tasks": [
+                "6a372968-b7f7-4d3e-8d38-7ff0a56e56ef",
+                "3d2504c1-e8b8-4308-bcd9-08f984828ce0"
+              ],
+              "data": "82d2a0e2-e969-492d-9165-2a913f1e6673",
+              "md5": "9974b7c16d04f0653dd1f225293bddc7",
+              "size": 523.0
+            }
+          ],
+          "public_datasets": [
+            {
+              "id": 648660,
+              "created_by": "wiatrp",
+              "owner_display_name": "wiatrp",
+              "created_when": "2026-03-16T22:59:31.666013Z",
+              "name": "Clickbait Scoring Program",
+              "type": "scoring_program",
+              "description": "",
+              "is_public": true,
+              "key": "d4a4f84a-b179-45a1-8beb-5f10c20682c8",
+              "value": "d4a4f84a-b179-45a1-8beb-5f10c20682c8",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 14865,
+                  "title": "Classify Articles As Clickbait"
+                },
+                {
+                  "pk": 15362,
+                  "title": "Сигнал"
+                },
+                {
+                  "pk": 17147,
+                  "title": "Arbitrary-Scale UAV Video Super-Resolution"
+                },
+                {
+                  "pk": 17254,
+                  "title": "TwinWorld 2026 The Challenge on Large-Scale 3D Semantic Gaussian Splatting Reconstruction @ ECCV 2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "scoring.zip",
+              "file_size": 1383.0
+            },
+            {
+              "id": 648724,
+              "created_by": "wiatrp",
+              "owner_display_name": "wiatrp",
+              "created_when": "2026-03-16T23:20:51.311334Z",
+              "name": "Clickbait Ingestion Program",
+              "type": "ingestion_program",
+              "description": "",
+              "is_public": true,
+              "key": "398e043f-4a30-4848-9a19-1f3641b41e18",
+              "value": "398e043f-4a30-4848-9a19-1f3641b41e18",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 14865,
+                  "title": "Classify Articles As Clickbait"
+                },
+                {
+                  "pk": 15362,
+                  "title": "Сигнал"
+                },
+                {
+                  "pk": 17147,
+                  "title": "Arbitrary-Scale UAV Video Super-Resolution"
+                },
+                {
+                  "pk": 17254,
+                  "title": "TwinWorld 2026 The Challenge on Large-Scale 3D Semantic Gaussian Splatting Reconstruction @ ECCV 2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "ingestion.zip",
+              "file_size": 1669.0
+            },
+            {
+              "id": 648758,
+              "created_by": "wiatrp",
+              "owner_display_name": "wiatrp",
+              "created_when": "2026-03-16T23:25:58.259585Z",
+              "name": "Clickbait Input data",
+              "type": "input_data",
+              "description": "",
+              "is_public": true,
+              "key": "75600fc8-9b6e-4222-963f-420ede2e7700",
+              "value": "75600fc8-9b6e-4222-963f-420ede2e7700",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 14865,
+                  "title": "Classify Articles As Clickbait"
+                },
+                {
+                  "pk": 15362,
+                  "title": "Сигнал"
+                },
+                {
+                  "pk": 17147,
+                  "title": "Arbitrary-Scale UAV Video Super-Resolution"
+                },
+                {
+                  "pk": 17254,
+                  "title": "TwinWorld 2026 The Challenge on Large-Scale 3D Semantic Gaussian Splatting Reconstruction @ ECCV 2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "input_data.zip",
+              "file_size": 783409.0
+            },
+            {
+              "id": 648760,
+              "created_by": "wiatrp",
+              "owner_display_name": "wiatrp",
+              "created_when": "2026-03-16T23:26:20.664940Z",
+              "name": "Clickbait Reference Data",
+              "type": "reference_data",
+              "description": "",
+              "is_public": false,
+              "key": "772f0f71-0960-401b-b8ea-d6052ecad809",
+              "value": "772f0f71-0960-401b-b8ea-d6052ecad809",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 14865,
+                  "title": "Classify Articles As Clickbait"
+                },
+                {
+                  "pk": 15362,
+                  "title": "Сигнал"
+                },
+                {
+                  "pk": 17147,
+                  "title": "Arbitrary-Scale UAV Video Super-Resolution"
+                },
+                {
+                  "pk": 17254,
+                  "title": "TwinWorld 2026 The Challenge on Large-Scale 3D Semantic Gaussian Splatting Reconstruction @ ECCV 2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "reference_data.zip",
+              "file_size": 1152.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 19017,
+      "primary_index": 0,
+      "title": "leader",
+      "key": "score-vsr",
+      "columns": [
+        {
+          "id": 83228,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "PSNR",
+          "key": "PSNR",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83229,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "SSIM",
+          "key": "SSIM",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83230,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "LPIPS",
+          "key": "LPIPS",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83231,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "DISTS",
+          "key": "DISTS",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83232,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "tLP",
+          "key": "tLP",
+          "sorting": "desc",
+          "index": 4,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 83233,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "tOF",
+          "key": "tOF",
+          "sorting": "desc",
+          "index": 5,
+          "hidden": false,
+          "precision": 2
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Add"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": true,
+  "description": "Against the backdrop of the booming low-altitude economy, drone aerial videos have become a core data source for fields such as land surveying and mapping, emergency rescue, and precision agriculture. However, constrained by payload power consumption and transmission bandwidth, raw videos often face bottlenecks like low resolution and blurred details, which restrict the effectiveness of downstream target recognition and scene analysis. As a key technology to break through hardware limitations and enhance data value, video super-resolution reconstruction serves as a crucial bridge connecting front-end data acquisition with back-end intelligent applications. To gather top-tier algorithm teams worldwide, explore the technological boundaries of spatiotemporal information mining, and tackle the challenges of detail recovery and texture enhancement in complex dynamic scenes, we are proud to host the Drone Video Super-Resolution Reconstruction Competition.\n\nThrough this competition, we aim to stimulate algorithmic innovation and improve system capabilities in high-fidelity temporal reconstruction and fine texture recovery under real-world aerial scenarios characterized by low resolution, high compression, and motion blur. This event will not only serve as a comprehensive assessment of technical strength at the intersection of computer vision and temporal signal processing but also provide forward-looking exploration for major applications such as all-weather intelligent surveillance, high-precision geographic information updating, and automated disaster assessment.",
+  "participants_count": 3,
+  "submissions_count": 1,
+  "queue": null,
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": false,
+  "show_detailed_results_in_leaderboard": false,
+  "auto_run_submissions": false,
+  "can_participants_make_submissions_public": false,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "codalab",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 16853,
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "forum_enabled": false
+}

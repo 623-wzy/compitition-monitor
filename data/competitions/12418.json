@@ -5,7 +5,7 @@
   "description_zh": "该竞赛对近距离短波红外高光谱成像的×4超分辨率进行基准测试。\n参赛者将获得使用同一传感器和不同镜头采集的低分辨率HSI立方体数据，通过控制分辨率变化而不引入光谱偏差。任务是从×4下采样输入重建高分辨率短波红外高光谱图像。",
   "created_by": "rafariva",
   "created_when": "2025-12-30T16:14:49.840049Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-12-30-1767111468/edd5610f43a0/logo_HISR.png?AWSAccessKeyId=codabench-prod&Signature=Pm1NHPSi6Sgi3x4tR%2B5Cwa5YFRM%3D&Expires=1785249544",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-12-30-1767111468/edd5610f43a0/logo_HISR.png?AWSAccessKeyId=codabench-prod&Signature=Q0eSgJtv5hP5eO9gDGcC6FIjWUU%3D&Expires=1785336256",
   "participants_count": 53,
   "submissions_count": 582,
   "first_phase_start": null,
