@@ -5,32 +5,32 @@
   "created_by": "allam",
   "owner_display_name": "D3-OU",
   "created_when": "2026-07-27T05:47:11.519603Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=omoGxrRsnZC7bsKDyat1IfVscZg%3D&Expires=1785336174",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2_icon.png?AWSAccessKeyId=codabench-prod&Signature=dOlTPNFAIfsVTuEWFgsDbME3JrE%3D&Expires=1785336174",
-  "terms": "The competition is open to everyone. \n\nPlease  register and join the competition. \n\nNote: Please use your institutional email to register for the competition, do NOT use gmail.com or qq.com, otherwise the registration will not be approved.",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=O3JH5HQJG8S5upWYFjfuR0IE2dQ%3D&Expires=1785422908",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2_icon.png?AWSAccessKeyId=codabench-prod&Signature=m%2FUxQEDPy1lIHMjbsLLz1C4R8SQ%3D&Expires=1785422908",
+  "terms": "The competition is open to research teams. \n\nPlease  register and join the competition. \n\nNote: Please use your institutional email to register for the competition, do NOT use gmail.com or qq.com, otherwise the registration will not be approved.\n\nParticipants are required to sign the dataset license agreement and send the scanned PDF to alsherfawi@yy.d3c.osaka-u.ac.jp cc: allam@yy.d3c.osaka-u.ac.jp. You can download the agreement from [here](http://www.am.sanken.osaka-u.ac.jp/BiometricDB/dataset/Competition/WBA2026/WBA_ACCV_2026%20Competition_License%20Agreement.pdf).",
   "pages": [
     {
-      "id": 84299,
+      "id": 84496,
       "title": "Overview",
-      "content": "Welcome to the first International Competition on **Teleoperator Identity Verification in Reenacted Avatar Videos — WBA 2026**.\n## Motivation\nPhotorealistic avatars are increasingly used in telepresence, mixed reality, gaming, virtual environments, and AI-mediated video communication. In these settings, the visible face may be synthetic or may differ entirely from the person controlling it. Consequently, conventional face-recognition methods may not be sufficient to verify the identity of the underlying user.\n\nThe **Who Is Behind the Avatar? (WBA)** challenge investigates whether behavioral information preserved in avatar videos can be used to authenticate the human teleoperator independently of the avatar’s visual appearance.\n\nUnlike conventional DeepFake-detection challenges, WBA does not ask participants to determine whether a video is real or synthetic. Avatar-generated videos are treated as legitimate communication media. The objective is instead to verify **operator authenticity**: whether an avatar is controlled by the authorized person.\n\n## Challenge Task\n\nWBA 2026 is a **cross-avatar teleoperator verification challenge**.\n\nFor each verification trial, participants are provided with:\n\n1. a gallery avatar video driven by a known teleoperator; and\n2. a probe avatar video driven by an unknown teleoperator.\n\nParticipants must determine whether the two avatar videos are driven by:\n\n* the **same teleoperator**, representing a genuine trial; or\n* **different teleoperators**, representing an impostor trial.\n\nThe gallery and probe videos may represent the same person through different avatar identities. Therefore, systems should focus on teleoperator-specific behavioral information rather than the visible appearance of the avatar.\n\nPotential behavioral cues include:\n\n* facial-motion dynamics\n* head movement and pose\n* expression timing\n* gaze behavior\n* speech-related facial movement\n* temporal motion patterns\n* other person-specific behavioral characteristics\n\nParticipants may develop systems using RGB video, facial landmarks, head-pose features, expression dynamics, temporal motion descriptors, video embeddings, or other suitable representations.\n\n## Dataset\n\nThe source driving videos were collected in Japan during controlled dyadic online first-meeting conversations. The selected sequences are taken from the self-introduction portion of the conversations and include both speaking and listening segments.\n\nThe original recordings were captured under controlled frontal-camera and lighting conditions. However, the original human videos are retained by the organizers and are not released to challenge participants.\n\nInstead, the motion and expression information from the original recordings are transferred to photorealistic avatar templates through a face-reenactment pipeline. The avatar appearances are selected from the publicly available **NVFAIR** dataset, while the reenacted videos are generated using **GAGAvatar**.\n\nThis design reduces the direct exposure of the original participants’ visual identities while preserving motion and behavioral information relevant to teleoperator verification.\n\nAudio is not included in the released dataset and is not used during evaluation.\n\n<div style=\"text-align:center;\">\n    <figure>\n        <img src=\"![images/Overview.png]\" alt=\"WBA cross-avatar teleoperator verification pipeline\" width=\"750\"/>\n        <figcaption>\n            Figure 1: Overview of the WBA cross-avatar teleoperator verification pipeline. \n            Participants extract embeddings from two avatar videos and determine whether \n            they are driven by the same teleoperator.\n        </figcaption>\n    </figure>\n</div>",
+      "content": "Welcome to the first International Competition on **Teleoperator Identity Verification in Reenacted Avatar Videos — WBA 2026 @ ACCV 2026**.\n## Motivation\nPhotorealistic avatars are increasingly used in telepresence, mixed reality, gaming, virtual environments, and AI-mediated video communication. In these settings, the visible face may be synthetic or may differ entirely from the person controlling it. Consequently, conventional face-recognition methods may not be sufficient to verify the identity of the underlying user.\n\nThe **Who Is Behind the Avatar? (WBA)** challenge investigates whether behavioral information preserved in avatar videos can be used to authenticate the human teleoperator independently of the avatar’s visual appearance.\n\nUnlike conventional DeepFake-detection challenges, WBA does not ask participants to determine whether a video is real or synthetic. Avatar-generated videos are treated as legitimate communication media. The objective is instead to verify **operator authenticity**: whether an avatar is controlled by the authorized person.\n\n## Challenge Task\n<div style=\"text-align:center;\">\n    <figure>\n        <img src=\"https://raw.githubusercontent.com/jasam-sheja/wba-starter/refs/heads/main/assets/Overview.png\" alt=\"WBA cross-avatar teleoperator verification pipeline\" width=\"750\"/>\n        <figcaption>\n            Figure 1: Overview of the WBA cross-avatar teleoperator verification pipeline. \n            Participants extract embeddings from two avatar videos and determine whether \n            they are driven by the same teleoperator.\n        </figcaption>\n    </figure>\n</div>\n\nWBA 2026 is a **cross-avatar teleoperator verification challenge**.\n\nFor each verification trial, participants are provided with:\n\n1. a gallery avatar video driven by a known teleoperator; and\n2. a probe avatar video driven by an unknown teleoperator.\n\nParticipants must determine whether the two avatar videos are driven by:\n\n* the **same teleoperator**, representing a genuine trial; or\n* **different teleoperators**, representing an impostor trial.\n\nThe gallery and probe videos may represent the same person through different avatar identities. Therefore, systems should focus on teleoperator-specific behavioral information rather than the visible appearance of the avatar.\n\nPotential behavioral cues include:\n\n* facial-motion dynamics\n* head movement and pose\n* expression timing\n* gaze behavior\n* speech-related facial movement\n* temporal motion patterns\n* other person-specific behavioral characteristics\n\nParticipants may develop systems using RGB video, facial landmarks, head-pose features, expression dynamics, temporal motion descriptors, video embeddings, or other suitable representations.\n\n## Dataset\n\nThe source driving videos were collected in Japan during controlled dyadic online first-meeting conversations. The selected sequences are taken from the self-introduction portion of the conversations and include both speaking and listening segments.\n\nThe original recordings were captured under controlled frontal-camera and lighting conditions. However, the original human videos are retained by the organizers and are not released to challenge participants.\n\nInstead, the motion and expression information from the original recordings are transferred to photorealistic avatar templates through a face-reenactment pipeline. The avatar appearances are selected from the publicly available **NVFAIR** dataset.\n\nThis design reduces the direct exposure of the original participants’ visual identities while preserving motion and behavioral information relevant to teleoperator verification.\n\n## License agreement\nParticipants are required to sign the dataset license agreement and send the scanned PDF to alsherfawi@yy.d3c.osaka-u.ac.jp cc: allam@yy.d3c.osaka-u.ac.jp. You can download the agreement from [here](http://www.am.sanken.osaka-u.ac.jp/BiometricDB/dataset/Competition/WBA2026/WBA_ACCV_2026%20Competition_License%20Agreement.pdf).",
       "index": 0
     },
     {
-      "id": 84300,
+      "id": 84501,
       "title": "Participation",
-      "content": "The competition is open to everyone.\n\n<strong><span style=\"background-color: yellow;\">Important: Please register using your institutional email. Registrations with gmail.com or qq.com email addresses will not be approved. As well, the Team Leader must sign the license aggreement. If you are student, your supervisor must sign</span></strong>.\n\n<strong><span style=\"background-color: orange;\">Data sharing Policy: When releasing the data for the competition, participants will be required to agree to use it for \"Academic use only\". The dataset will be provided exclusively to registered participating teams and is strictly limited to use for the challenge</span></strong>.\n\nIf you have any questions or need further assistance, please don’t hesitate to reach out to ammar@yy.d3c.osaka-u.ac.jp and cc: allam@yy.d3c.osaka-u.ac.jp\n\t\nWe will provide \n\nYou can use the following repo to extract the data, [Starter kit](https://github.com/jasam-sheja/OUMVLP-OF-challenge).\n\n## Released Resources\n\nThe organizers plan to provide:\n\n* training data\n* test-data access instructions\n* official verification trial lists\n* a baseline embedding and similarity system\n* evaluation code\n* a sample submission\n* a submission-validation tool\n* competition rules and documentation\n\nThe baseline system is intended to support reproducibility, reduce the entry barrier, and encourage participants to investigate stronger temporal and behavioral representations.\n\n## Data-Use Policy\n\nThe challenge data may only be used in accordance with the official WBA 2026 participation rules and the licenses associated with the source datasets and avatar-generation resources.\n\nParticipants must not attempt to recover, identify, manually label, or disclose the identities of individuals represented in the hidden evaluation data. Access to hidden labels, avatar-template identities, or unauthorized annotations is prohibited.\n\nAny external datasets, pretrained models, or additional resources used by participants must be disclosed in the team’s technical report and must comply with their applicable licenses.",
+      "content": "<strong><span style=\"background-color: yellow;\">Important: Please register using your institutional email. Registrations with gmail.com or qq.com email addresses will not be approved. As well, the Team Leader must sign the license aggreement. If you are student, your supervisor must sign</span></strong>.\n\nIf you have any questions or need further assistance, please don’t hesitate to reach out to alsherfawi@yy.d3c.osaka-u.ac.jp and cc: allam@yy.d3c.osaka-u.ac.jp\n\n## Released Resources\n\nThe organizers plan to provide:\n\nData:\n* labeled training data (re-enacted videos and landmarks)\n* test data (for submission)\n* a sample submission\n\n[Starter kit](https://github.com/jasam-sheja/wba-starter)\n* evaluation code on validation subset\n* a submission-validation tool\n\nThe baseline system is intended to support reproducibility, reduce the entry barrier, and encourage participants to investigate stronger temporal and behavioral representations.\n\n### How to get the dataset?\nParticipants are required to sign the dataset license agreement and send the scanned PDF to alsherfawi@yy.d3c.osaka-u.ac.jp cc: allam@yy.d3c.osaka-u.ac.jp. You can download the agreement from [here](http://www.am.sanken.osaka-u.ac.jp/BiometricDB/dataset/Competition/WBA2026/WBA_ACCV_2026%20Competition_License%20Agreement.pdf). \n\nAfter the organizers verify the signed agreement they will send a link to download the data.\nFollow the instructions in the [starter kit](https://github.com/jasam-sheja/wba-starter) to prepare the data for training.\n\n\nThe dataset will be provided exclusively to registered participating teams and is strictly limited to use for the challenge.\n\n## Data-Use Policy\n\nThe challenge data may only be used in accordance with the official WBA 2026 participation rules and the provided license agreement associated with the source datasets and avatar-generation resources.\n\nParticipants must not attempt to recover, identify, manually label, or disclose the identities of individuals represented in the hidden evaluation data. Access to hidden labels, avatar-template identities, or unauthorized annotations is prohibited.",
       "index": 1
     },
     {
-      "id": 84301,
-      "title": "Evaluation",
-      "content": "## Training and Test Protocol\n\nThe training and test sets are disjoint with respect to both:\n\n* teleoperator identity; and\n* avatar appearance.\n\nNo teleoperator appearing in the test set is included in the training set. Similarly, the avatar templates used for testing are not included in the training data.\n\nThis protocol evaluates whether submitted systems can generalize to:\n\n* unseen teleoperators;\n* unseen avatar identities;\n* different speaking conditions;\n* variations in avatar geometry and motion response.\n\nThe challenge is designed to discourage reliance on avatar appearance and encourage the development of representations that capture persistent teleoperator-specific behavioral characteristics.\n\n## Submission\n\nParticipants are required to generate and submit an embedding for every test video.\n\nFor each verification pair, the submitted gallery and probe embeddings are compared using one of the following measures:\n\n* cosine similarity or cosine distance; or\n* Euclidean distance.\n\nParticipants specify the comparison method used by their system at submission time.\n\nThe Codabench evaluation program calculates the verification scores and corresponding performance metrics from the submitted embeddings.\n\n## Evaluation\n\nThe official evaluation metrics are:\n\n* **Area Under the Receiver Operating Characteristic Curve — AUC**\n* **Equal Error Rate — EER**\n\nTeams are ranked exclusively according to **AUC**.\n\nEER is reported as an additional reference metric and is not used to determine the final leaderboard ranking.\n\nPerformance is evaluated under three conditions:\n\n### Speaking Condition\n\nBoth the gallery and probe videos contain speaking sequences.\n\n### Non-Speaking Condition\n\nBoth the gallery and probe videos contain listening or non-speaking sequences.\n\n### Cross-Condition\n\nOne video contains a speaking sequence, while the other contains a non-speaking sequence.\n\nThe final leaderboard score is calculated as the **average AUC across the three evaluation conditions**.",
+      "id": 84499,
+      "title": "Submission",
+      "content": "## Training and Test Protocol\n\nThe training and test sets are disjoint with respect to both:\n\n* teleoperator identity; and\n* avatar appearance.\n\nNo teleoperator appearing in the test set is included in the training set. Similarly, the avatar templates used for testing are not included in the training data.\n\nThis protocol evaluates whether submitted systems can generalize to:\n\n* unseen teleoperators;\n* unseen avatar identities;\n* different speaking conditions;\n* variations in avatar geometry and motion response.\n\nThe challenge is designed to discourage reliance on avatar appearance and encourage the development of representations that capture persistent teleoperator-specific behavioral characteristics.\n\n## Submission\n<strong><span style=\"background-color: yellow;\">Important: For a submission to be considered valid, all models used must be trained exclusively on the provided training data. Submissions must not rely on external datasets, external models, pretrained models trained on other datasets, or any similar external resources. </span></strong>.\n\nParticipants are required to generate and submit an embedding for every test video.\n\nFor each verification pair, the submitted gallery and probe embeddings are compared using one of the following measures:\n\n* cosine similarity or cosine distance; or\n* Euclidean distance.\n\nParticipants specify the comparison method used by their system at submission time.\n\n## Evaluation\n\nThe official evaluation metrics is **Area Under the Receiver Operating Characteristic Curve — AUC**\n\nEER is reported as an additional reference metric and is not used to determine the final leaderboard ranking.\n\nPerformance is evaluated under three conditions:\n\n### Speaking Condition\n\nBoth the gallery and probe videos contain speaking sequences.\n\n### Non-Speaking Condition\n\nBoth the gallery and probe videos contain listening or non-speaking sequences.\n\n### Cross-Condition\n\nOne video contains a speaking sequence, while the other contains a non-speaking sequence.\n\nThe final leaderboard score is calculated as the **average AUC across the three evaluation conditions**.",
       "index": 2
     },
     {
-      "id": 84335,
+      "id": 84503,
       "title": "Prizes",
-      "content": "We are excited to recognize the outstanding achievements of **the top three teams**  in this competition with the following rewards:\n\n1. **Award Certificates**: All members of the winning teams will receive official certificates of achievement.\n2. **ACCV workshop submission Co-Authorship**: Up to three members per team (from the 1st, 2nd, and 3rd-place teams) will be invited as co-authors on a competition-related paper to be submitted to 18th Asian Conference on Computer Vision (ACCV)\n\nThis is a unique opportunity to gain academic recognition, contribute to cutting-edge research, and enhance your professional profile.",
+      "content": "We are excited to recognize the outstanding achievements of **the top three teams**  in this competition with the following rewards:\n\n1. **Award Certificates**: All members of the winning teams will receive official certificates of achievement.\n2. **ACCV Workshop Paper Submission**:  Members of the 1st-, 2nd-, and 3rd-place teams will be eligible to prepare and submit papers to the competition’s associated ACCV workshop.\n\nThis is a unique opportunity to gain academic recognition, contribute to cutting-edge research, and enhance your professional profile.",
       "index": 3
     },
     {
@@ -44,10 +44,10 @@
     {
       "id": 29491,
       "index": 0,
-      "start": "2026-08-04T00:00:00Z",
-      "end": "2026-09-10T00:00:00Z",
+      "start": "2026-08-02T23:59:00Z",
+      "end": "2026-09-13T23:59:00Z",
       "name": "Phase 1",
-      "description": "We provide the 2500 gallery samples  along with Only 20% of the probe set.",
+      "description": "",
       "status": "Next",
       "execution_time_limit": 30,
       "tasks": [
@@ -59,7 +59,7 @@
           "value": "52ce7840-5b50-4ae7-807e-e4f78d1fd945",
           "key": "52ce7840-5b50-4ae7-807e-e4f78d1fd945",
           "created_when": "2026-07-27T05:47:11.383484Z",
-          "name": "Identification_Verification",
+          "name": "Avatar Authentication",
           "solutions": [],
           "public_datasets": [
             {
@@ -112,23 +112,56 @@
           "id": 87045,
           "computation": null,
           "computation_indexes": null,
-          "title": "AUC",
-          "key": "AUC",
+          "title": "Spk→Spk",
+          "key": "Spk,Spk",
           "sorting": "desc",
           "index": 0,
           "hidden": false,
-          "precision": 3
+          "precision": 2
         },
         {
-          "id": 87047,
+          "id": 87338,
           "computation": null,
           "computation_indexes": null,
-          "title": "EER",
-          "key": "EER",
-          "sorting": "asc",
+          "title": "Sil→Sil",
+          "key": "Sil,Sil",
+          "sorting": "desc",
           "index": 1,
           "hidden": false,
-          "precision": 3
+          "precision": 2
+        },
+        {
+          "id": 87339,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Spk→Sil",
+          "key": "Spk,Sil",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 87340,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Sil→Spk",
+          "key": "Sil,Spk",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 87341,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Average",
+          "key": "AUC",
+          "sorting": "desc",
+          "index": 4,
+          "hidden": false,
+          "precision": 2
         }
       ],
       "hidden": false,
@@ -144,7 +177,7 @@
   ],
   "registration_auto_approve": false,
   "description": "Welcome to the first International Competition on Verifying Teleoperator Identity in Reenacted Avatar Videos. The competition will be in conjunction with [ACCV2026](https://https://accv2026.org/])",
-  "participants_count": 6,
+  "participants_count": 8,
   "submissions_count": 0,
   "queue": null,
   "enable_detailed_results": false,
@@ -152,8 +185,8 @@
   "show_detailed_results_in_leaderboard": true,
   "auto_run_submissions": true,
   "can_participants_make_submissions_public": false,
-  "make_programs_available": true,
-  "make_input_data_available": true,
+  "make_programs_available": false,
+  "make_input_data_available": false,
   "docker_image": "codalab/codalab-legacy:py39",
   "allow_robot_submissions": false,
   "competition_type": "competition",
