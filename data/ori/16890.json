@@ -5,8 +5,8 @@
   "created_by": "wslp_workshop",
   "owner_display_name": "Exploration-lab-IITK",
   "created_when": "2026-06-01T19:06:53.463848Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780340813/3af0ccccd8c8/logo.png?AWSAccessKeyId=codabench-prod&Signature=O43E0DWCHsBORvnufGp3%2B6%2BsQno%3D&Expires=1785422923",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780340813/3af0ccccd8c8/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=tVi%2F%2FWrmNnzy04jR5WlyprikyfU%3D&Expires=1785422923",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780340813/3af0ccccd8c8/logo.png?AWSAccessKeyId=codabench-prod&Signature=tKg9HmNJXEIvnpAR5d1qfEHTYYY%3D&Expires=1785509623",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-01-1780340813/3af0ccccd8c8/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=fvSZXgZDBxYyoqC42vXq%2BSiBC%2Fg%3D&Expires=1785509623",
   "terms": "<h3>Terms and Conditions</h3>\n\n<p>\n<em>\nParticipants are required to register using a valid institutional or personal email address. Once registered, the organizers will review and approve your request to participate.\n</em>\n</p>\n\n<p>\nPlease ensure that your <strong>team name</strong> is clearly mentioned during registration and used consistently for all submissions. This helps in managing team entries and leaderboard rankings accurately.\n</p>\n\n<p>\nDuring <strong>Phase 1 (Training Phase)</strong>, each team may submit a maximum of <strong>20 submissions per day</strong>, and a total of <strong>500 submissions</strong> throughout the phase.\n</p>\n\n<p>\nDuring <strong>Phase 2 (Testing Phase)</strong>, each team may submit up to <strong>10 submissions per day</strong>, and a total of <strong>100 submissions</strong> throughout the phase.\n\n</p>\n\n<p>\nSubmissions must follow the format specified in the <strong>Submission Guidelines</strong>. Any deviation from the expected file structure or content may result in disqualification or errors during evaluation.\n</p>\n\n<p>\nBy participating, you agree to abide by the rules, evaluation criteria, and ethical research practices outlined by the organizers of the WSLP 2026 Shared Task.\n</p>",
   "pages": [
     {
@@ -36,7 +36,7 @@
       "end": "2026-07-31T00:00:00Z",
       "name": "Training Phase",
       "description": "(Timing in UTC) **Training Phase** for ISL Word/Gloss Recognition: Participants will develop and validate their models using the training set and a corresponding validation set. Submissions are evaluated on the validation set.",
-      "status": "Current",
+      "status": "Previous",
       "execution_time_limit": 600,
       "tasks": [
         {
@@ -117,7 +117,7 @@
       "end": "2026-08-10T00:00:00Z",
       "name": "Testing Phase",
       "description": "(Timing in UTC) **Testing Phase** for ISL Word/Gloss Recognition: A held-out test set will be released. Participants will submit predictions to evaluate their models' generalization capabilities on unseen data.",
-      "status": "Next",
+      "status": "Current",
       "execution_time_limit": 600,
       "tasks": [
         {
@@ -240,8 +240,8 @@
   "collaborators": [],
   "registration_auto_approve": true,
   "description": "Isolated sign recognition from Indian Sign Language (ISL) videos data to their corresponding word labels (glosses)",
-  "participants_count": 18,
-  "submissions_count": 211,
+  "participants_count": 19,
+  "submissions_count": 224,
   "queue": null,
   "enable_detailed_results": false,
   "show_detailed_results_in_submission_panel": true,

@@ -1,0 +1,422 @@
+{
+  "id": 17560,
+  "title": "Foundation Model for Ultrasound Biometry - Final Test",
+  "published": true,
+  "created_by": "jared2408",
+  "owner_display_name": "jared2408",
+  "created_when": "2026-07-17T05:01:21.296699Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-17-1784264481/fe0874732472/logo.png?AWSAccessKeyId=codabench-prod&Signature=lD1QIV%2BQUwNYgoRgHHhH9IcXjps%3D&Expires=1785509609",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-17-1784264481/fe0874732472/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=zNTbzWlm967Rqatx3YRXlcM4G8w%3D&Expires=1785509609",
+  "terms": "# Foundation Model for Ultrasound Biometry - Final Test\n\nSubmit your Docker image for evaluation on the hidden test set.",
+  "pages": [
+    {
+      "id": 84348,
+      "title": "Overview",
+      "content": "# Foundation Model for Ultrasound Biometry (FU_Biometry) 2026 — Final Hidden Test\n\n## A Foundation Model Challenge for Ultrasound Biometry\n\nAccurate and reliable ultrasound measurement is essential for clinical diagnosis and decision-making in prenatal, pediatric, and adult care. Current manual and semi-automated methods are time-consuming, operator-dependent, and suffer from high inter- and intra-observer variability. Automated and generalizable systems can reduce measurement time by 50%–80% and improve clinical workflow efficiency.\n\n\n**FU_Biometry** establishes a large-scale unified benchmark for ultrasound biometry, covering prenatal, intrapartum, and adult cardiac ultrasound with over **20 clinical parameters**. It promotes generalizable, multi-task, cross-domain models with improved efficiency, measurement consistency, and real-world clinical utility.\n\n---\n\n## Final Test Stage\n\nThis CodaBench portal is dedicated to the **final hidden-test stage**. Participants submit **Docker images** containing their complete inference pipelines. The organizers run the submitted images on the hidden test set and compute the official metrics using private reference annotations.\n\n\n### Submission Mode\n\nParticipants submit a lightweight `submission.zip` containing only a **Docker image reference** (`submission.json`). The Docker image itself must be hosted in an accessible public registry (e.g., Docker Hub) and must include all inference code, model weights, and dependencies.\n\nPlease read the Docker Submission Guide before submitting.",
+      "index": 0
+    },
+    {
+      "id": 84587,
+      "title": "⚠️ Important Notice",
+      "content": "# Important Notice: Final Test Docker Evaluation\n\n## 1. Submission Rules & Attempt Limits\n- ⚠️**Only one valid submission is accepted during the testing round.Once a valid submission is received, all subsequent submissions will not be graded and will be marked as failed.**\n- Resubmission is permitted if your submission fails. Each participant has a total of **10 submission attempts**.\n- **Do not submit repeatedly without error correction**.\n- If you fail to locate the specific cause of errors, please contact me:\n  - Email: lijiakekobe@gmail.com\n  - QQ: ljk.me@qq.com\n\n## 2. Docker Image Tag Requirements\n- Every updated image **must adopt a new unique tag**. Do NOT overwrite existing tags for resubmission.\n- Example: If the first failed submission uses tag `v1.0`, you need to push the fixed image with `v1.1`.\n- Warning: Overwriting an existing tag may cause the server to load the outdated image.\n\n## 3. Time Limits for Evaluation Tasks\n- **Image pulling and inference take time. Please avoid submitting entries in the final few days to prevent unexpected issues.**\n- Maximum image pull time: 6 hours\n- Maximum container inference time: 5 hours\n- Results will not be generated instantly after you upload the JSON file. The system requires time to pull images and execute inference. A persistent \"scoring\" status is normal.\n\n\n## 4. Phase Deadlines\n- Validation Phase closes: August 10th\n- Final Test Phase closes: August 15th\n\n## 5. Leaderboard & Final Ranking Statement\n- The real-time leaderboard **does not represent final rankings**. It only shows intermediate metrics used for final evaluation.\n- After the test phase ends, the organizing committee will:\n  1. Calculate all metric data\n  2. Announce the official ranking rules\n  3. Confirm final rankings\n  4. Publish results on the Codabench platform\n\n## 6. Support Contact\n- General issues: Email lijiakekobe@gmail.com\n- Complicated issues hard to explain in text: QQ: 3464516176@qq.com",
+      "index": 1
+    },
+    {
+      "id": 84604,
+      "title": "Docker Submission Guide",
+      "content": "# FU Biometry Final Test — Participant Docker Submission Guide\n\n> **GPU**：NVIDIA RTX 3080 10GB | **CUDA Runtime**：12.1 | **Inference Timeout**：5 hours | **Network**：Container is fully offline\n\n---\n\n## Quick Start (3 Steps)\n\n```bash\n# 1. Prepare local submission folder and package it\nmkdir -p submission\necho '{\"image\": \"your-dockerhub-username/image-name:v1.0\"}' > submission/submission.json\n\n# You MUST zip the submission folder itself\nzip -r submission.zip submission/\n\n# 2. Build and push the image\ndocker build -t your-dockerhub-username/image-name:v1.0 .\ndocker push your-dockerhub-username/image-name:v1.0\n\n# 3. Upload submission.zip on Codabench\n```\n\n---\n\n## 1. Submission Format\n\nYou MUST create a `submission/` folder, place `submission.json` inside it, then zip the folder itself.\n\nLocal structure before packaging:\n\n```text\nsubmission/\n└── submission.json\n```\n\nThe uploaded `submission.zip` must preserve this directory:\n\n```\nsubmission.zip\n└── submission/\n    └── submission.json   ← { \"image\": \"dockerhub-username/image-name:tag\" }\n```\n\n> Note: Do NOT zip only the files inside `submission/`. The ZIP must contain `submission/submission.json`; otherwise Codabench cannot locate the descriptor file according to this competition's submission structure.\n\nVerify before uploading:\n\n```bash\nunzip -l submission.zip\n```\n\nCorrect output should include:\n\n```text\nsubmission/\nsubmission/submission.json\n```\n\n```json\n{\n  \"image\": \"lijiake/fu-biometry:v2.1\"\n}\n```\n\n> use a public image with an immutable new tag (e.g. `v1.0.1`). Do not repeatedly overwrite `latest`.\n> For security purposes, all participants are advised to set their repositories to private and add lijiake as a collaborator to ensure only the competition organizers can pull the images. then follow these steps:\n>\n> 1. Log in to [Docker Hub](https://hub.docker.com)\n> 2. Go to your repository → **Settings** → **Collaborators**\n> 3. Add the following account with **Read & Write** permission:\n>\n>    ```\n>    lijiake\n>    ```\n>\n> 4. Click **Add** to complete authorization\n>\n> **Do NOT send Docker Hub passwords or access tokens.**\n>\n> After authorization, you may push new tags or digests to the same private repository within the allowed submission quota and resubmit the corresponding image reference on Codabench. As long as the organizer's account retains read/pull access to your repository, no further permission changes are needed.\n\n--\n\n## 2. Code Specification (Core)\n\n### 2.1 File Structure\n\nOrganize your code under the Docker build directory:\n\n```\nyour-project/\n├── Dockerfile              ← Image definition\n├── requirements.txt        ← Python dependencies\n├── predict.py              ← Container entry script (provided by organizers, **DO NOT MODIFY**)\n├── model.py                ← ⭐ Model inference code, must include class Model\n├── model_factory.py        ← Network architecture (can be split or merged into model.py)\n├── best_model.pth          ← Model weights (must be inside the image!)\n└── ...                     ← Other files\n```\n\n### 2.2 Mandatory Rules\n\n| # | Rule | Description |\n|---|------|-------------|\n| 1 | **predict.py is the entry script; DO NOT MODIFY** | Organizer-provided container entry; responsible for data preparation and calling model.py (**this is a script file, NOT the method inside model**). |\n| 2 | **model.py MUST contain class Model** | model.py must also implement the `predict()` **method** (inference logic). |\n| 3 | **All weights packaged inside the image** | The container is fully offline; no runtime downloads of any files. |\n| 4 | **ENTRYPOINT is fixed** | `ENTRYPOINT [\"python3\", \"/app/predict.py\"]` |\n| 5 | **Output file is fixed** | `/output/regression_predictions.json` |\n| 6 | **Image is linux/amd64** | Mac M series requires `docker build --platform linux/amd64` |\n\n> 📌 **Summary**: `predict.py` (the script) handles environment setup → calls `model.Model.predict()` (the method) to run inference. Both are named `predict`, but they reside in different files and serve different roles.\n\n### 2.3 model.py Inference Method\n\n`model.py` **internal implementation is completely free** (PyTorch / ONNX / TensorRT all accepted), but it MUST contain the `Model` class with a `predict()` **method**:\n\n```python\nclass Model:\n    def __init__(self):\n        \"\"\"\n        Initialization phase: load model weights.\n        Called once automatically after container starts.\n        \"\"\"\n        pass\n\n    def predict(self, data_root: str, output_dir: str, batch_size: int = 8):\n        \"\"\"\n        Args:\n            data_root  : data root directory (see structure below)\n            output_dir : output directory = /output; must write predictions.json here\n            batch_size : inference batch size (entry script passes 8; adjust in implementation based on VRAM)\n        \"\"\"\n        pass\n```\n\n### 2.4 Data Layout\n\nOnce the platform launches your image, `predict.py` automatically prepares the following structure and passes it as `data_root`:\n\n```\n{data_root}/\n├── images/\n│   ├── A4C/                   → symlink to /input/A4C_test\n│   ├── AOP/                   → symlink to /input/AOP_test\n│   ├── ...(9 task directories in total)\n│   └── fetal_femur/           → symlink to /input/fetal_femur_test\n├── csv/\n│   └── test_metadata.csv      ← Test set metadata\n└── best_model.pth             ← Weight file you packaged into the image\n```\n\n**`test_metadata.csv` format**：\n\n```csv\nimage_path,task_name,task_id,num_classes,height,width\nA4C/0021.png,Regression,A4C,16,600,800\nFA/0189.png,Regression,FA,4,768,1024\n...\n```\n\n| Column | Description |\n|--------|-------------|\n| `image_path` | Relative image path, e.g. `A4C/0021.png`; read by joining to `{data_root}/images/` |\n| `task_id` | A4C / AOP / FA / FUGC / HC / IVC / PLAX / PSAX / fetal_femur |\n| `num_classes` | Number of landmarks for this task |\n| `height` / `width` | Image dimensions |\n\n### 2.5 Entry Script predict.py (provided by organizers; DO NOT MODIFY)\n\n> ⚠️ **This is the Docker entry script, NOT the predict() method inside model.py.** `predict.py` prepares the data directory and calls your `model.Model.predict()` method.\n\n```python\n#!/usr/bin/env python3\n\"\"\"Docker entry — provided by organizers, DO NOT MODIFY.\"\"\"\n\nimport os\nimport shutil\nimport sys\n\nINPUT_DIR  = os.environ[\"GU_INPUT_DIR\"]\nOUTPUT_DIR = os.environ[\"GU_OUTPUT_DIR\"]\nWORK_DIR   = \"/work\"\nos.makedirs(OUTPUT_DIR, exist_ok=True)\n\ndef prepare_images():\n    \"\"\"Map platform directories (e.g. A4C_test) to metadata paths (e.g. A4C).\"\"\"\n    images_dir = os.path.join(WORK_DIR, \"images\")\n    os.makedirs(images_dir, exist_ok=True)\n\n    for name in os.listdir(INPUT_DIR):\n        source = os.path.join(INPUT_DIR, name)\n        if not os.path.isdir(source):\n            continue\n        task_name = name[:-5] if name.endswith(\"_test\") else name\n        target = os.path.join(images_dir, task_name)\n        if not os.path.lexists(target):\n            os.symlink(source, target)\n\nos.makedirs(os.path.join(WORK_DIR, \"csv\"), exist_ok=True)\nprepare_images()\n\nshutil.copy2(\n    os.path.join(INPUT_DIR, \"test_metadata.csv\"),\n    os.path.join(WORK_DIR, \"csv\", \"test_metadata.csv\"),\n)\n\n# Copy weights from /app/ to working directory\nshutil.copy2(\"/app/best_model.pth\", os.path.join(WORK_DIR, \"best_model.pth\"))\nos.chdir(WORK_DIR)\n\n# Import your Model\nsys.path.insert(0, \"/app\")\nfrom model import Model\n\nmodel = Model()\nmodel.predict(data_root=WORK_DIR, output_dir=OUTPUT_DIR, batch_size=8)\n\nprint(\"Done!\", flush=True)\n```\n\n> ⚠️ **Critical constraint**: The container is fully offline (`--network none`). All model weights and pretrained parameters must be COPY'd into the image at build time.\n\n---\n\n## 3. Output Format\n\n`Model.predict()` MUST generate **a single file** `regression_predictions.json` inside `output_dir`:\n\n```json\n[\n  {\n    \"image_path\": \"A4C/0021.png\",\n    \"task_id\": \"A4C\",\n    \"predicted_points_pixels\": [411.0, 235.0, 345.0, 372.0, ...]\n  },\n  {\n    \"image_path\": \"FA/0189.png\",\n    \"task_id\": \"FA\",\n    \"predicted_points_pixels\": [506.0, 154.0, 506.0, 552.0, 716.0, 353.0, 296.0, 353.0]\n  }\n]\n```\n\n| Field | Type | Description |\n|-------|------|-------------|\n| `image_path` | string | Exactly as it appears in `test_metadata.csv` |\n| `task_id` | string | One of the 9 tasks |\n| `predicted_points_pixels` | float[] | Flat coordinates `[x1,y1,x2,y2,...]`, length = num_classes × 2 |\n\nCode example:\n\n```python\nimport json, os\n\ndef save_predictions(predictions, output_dir):\n    path = os.path.join(output_dir, \"regression_predictions.json\")\n    with open(path, \"w\") as f:\n        json.dump(predictions, f)\n    print(f\"Saved {len(predictions)} predictions to {path}\")\n\n# Call at the end of the predict() method\n# save_predictions(all_predictions, output_dir)\n```\n\n---\n\n## 4. Dockerfile Template\n\n```dockerfile\nFROM pytorch/pytorch:2.3.1-cuda12.1-cudnn8-runtime\n\nWORKDIR /app\n\n# System dependencies (required by OpenCV / albumentations etc.)\nRUN apt-get update -qq && apt-get install -y -qq --no-install-recommends \\\n    libgl1-mesa-glx libglib2.0-0 libsm6 libxrender1 libxext6 \\\n    && rm -rf /var/lib/apt/lists/*\n\n# Python dependencies\nCOPY requirements.txt .\nRUN pip install --no-cache-dir -r requirements.txt\n\n# Pretrained weights (if any) — MUST be downloaded and COPY'd into the image beforehand!\nCOPY dinov2_vit_small.pth /app/dinov2_vit_small.pth\n\n# Model code + weights\nCOPY model.py model_factory.py utils.py predict.py /app/\nCOPY best_model.pth /app/best_model.pth\n\nENTRYPOINT [\"python3\", \"/app/predict.py\"]\n```\n\n---\n\n## Docker Image Requirements\nYour Docker image must not require:\n\ninternet access at runtime;\ninteractive terminal input;\ndownloading extra model weights during evaluation;\naccess to hidden labels or organizer-only files.\nThe submitted image must be a Linux/amd64 Docker/OCI image\n\n## 5. Local Self-Check (Mandatory Before Submission)\n\nUse the following commands to simulate the platform runtime environment:\n\n```bash\n# Prepare test set (simulate with validation set)\nmkdir -p /tmp/test_local /tmp/test_output\ncp -r /path/to/validation_data/* /tmp/test_local/\ncp /path/to/test_metadata.csv /tmp/test_local/\n\n# Run the image\ndocker run --rm --gpus all \\\n  --network none \\\n  --memory 7g --cpus 4 --shm-size 2g \\\n  -v /tmp/test_local:/input:ro \\\n  -v /tmp/test_output:/output:rw \\\n  -e GU_INPUT_DIR=/input \\\n  -e GU_OUTPUT_DIR=/output \\\n  your-image-name:v1.0\n\n# Check output\ncat /tmp/test_output/regression_predictions.json | python3 -c \"\nimport json, sys\ndata = json.load(sys.stdin)\nprint(f'{len(data)} predictions')\nprint(f'Tasks: {set(p[\\\"task_id\\\"] for p in data)}')\n\"\n```\n\n---\n\n## 6. Checklist (Verify Item by Item Before Submission)\n\n- [ ] ZIP retains the `submission/` directory; descriptor path is `submission/submission.json`\n- [ ] `submission.json` format is correct `{\"image\": \"xxx/yyy:tag\"}`, image is pushed to Docker Hub and set to **Public**\n- [ ] Project directory includes `predict.py` (organizer-provided entry script; no modifications made)\n- [ ] `model.py` contains `class Model` with a `predict()` **method** (inference logic) implemented\n- [ ] `predict()` outputs to `/output/regression_predictions.json` with exactly correct field names and format\n- [ ] All model weights and pretrained parameters have been COPY'd into the image (runtime is **fully offline**)\n- [ ] Dockerfile ENTRYPOINT is `[\"python3\", \"/app/predict.py\"]`\n- [ ] Local test with `--network none` passes, exit code is 0\n- [ ] Image is `linux/amd64` (Mac M series: `docker build --platform linux/amd64`)\n\n---\n\n## 7. Common Pitfalls\n\n| Issue | Cause | Solution |\n|-------|-------|----------|\n| `Cannot find submission.json` | ZIP doesn't preserve the required `submission/` directory, or filename is incorrect | Use `zip -r submission.zip submission/`; verify with `unzip -l submission.zip` that `submission/submission.json` exists |\n| `FileNotFoundError: /input/...` | Hardcoded paths | Use `os.environ[\"GU_INPUT_DIR\"]` instead of hardcoding `/input` |\n| Image too large to pull | Base image too heavy | Use `-runtime` (not `-devel`), clean apt cache |\n| Model downloaded at runtime | Code uses `pretrained=True` | Change to `pretrained=False`, COPY weights into the image |\n| `--network none` test fails | Code accesses HuggingFace etc. | Download all resources at build time |\n| `CUDA out of memory` | Batch size, model ensemble count, or input dimensions too large | Total GPU VRAM is 10 GB; entry passes 8, reduce actual batch inside `Model.predict()` if needed |\n| Exit code non-zero but no error message | ENTRYPOINT not set correctly | Run locally first, then add --network none to verify |\n\n---\n\n## 8. Hardware & Constraints\n\n| Item | Value |\n|------|-------|\n| GPU | NVIDIA RTX 3080 (10 GB VRAM) |\n| CUDA | 12.1 |\n| GPU VRAM | 10 GB |\n| Container memory limit | 7 GB |\n| CPU cores | 4 |\n| Shared memory | 2 GB (--shm-size 2g) |\n| Runtime limit | 6 hours |\n| Network | **Fully offline** (`--network none` + `--cap-drop ALL`) |\n| Filesystem | `/input` read-only, `/output` writable |",
+      "index": 2
+    }
+  ],
+  "phases": [
+    {
+      "id": 29264,
+      "index": 0,
+      "start": "2026-07-31T16:00:00Z",
+      "end": "2026-08-15T16:00:00Z",
+      "name": "Final Test",
+      "description": "Final evaluation on hidden test set using Docker submissions. Your submission.zip must contain submission.json with Docker image URL.",
+      "status": "Next",
+      "execution_time_limit": 43200,
+      "tasks": [
+        {
+          "task": "ab81cd27-b93f-48e3-af74-44a7eb28a4c7",
+          "order_index": 0,
+          "phase": 29264,
+          "id": 34965,
+          "value": "ab81cd27-b93f-48e3-af74-44a7eb28a4c7",
+          "key": "ab81cd27-b93f-48e3-af74-44a7eb28a4c7",
+          "created_when": "2026-07-17T05:01:21.207062Z",
+          "name": "Final Test",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 894184,
+              "created_by": "jared2408",
+              "owner_display_name": "jared2408",
+              "created_when": "2026-07-17T05:01:20.582482Z",
+              "name": "ingestion_program @ '07-17-2026 05:01'",
+              "type": "ingestion_program",
+              "description": null,
+              "is_public": false,
+              "key": "b8bf4a5c-cd11-4516-a545-ae5f72a18977",
+              "value": "b8bf4a5c-cd11-4516-a545-ae5f72a18977",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 17560,
+                  "title": "Foundation Model for Ultrasound Biometry - Final Test"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 306.0
+            },
+            {
+              "id": 894185,
+              "created_by": "jared2408",
+              "owner_display_name": "jared2408",
+              "created_when": "2026-07-17T05:01:20.857148Z",
+              "name": "input_data @ '07-17-2026 05:01'",
+              "type": "input_data",
+              "description": null,
+              "is_public": false,
+              "key": "3215f517-7d50-43c2-b499-8c83faa3eb98",
+              "value": "3215f517-7d50-43c2-b499-8c83faa3eb98",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 17560,
+                  "title": "Foundation Model for Ultrasound Biometry - Final Test"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 116.0
+            },
+            {
+              "id": 894187,
+              "created_by": "jared2408",
+              "owner_display_name": "jared2408",
+              "created_when": "2026-07-17T05:01:21.012486Z",
+              "name": "reference_data @ '07-17-2026 05:01'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "553de51d-4085-4b46-98a2-b0036f4e1e8b",
+              "value": "553de51d-4085-4b46-98a2-b0036f4e1e8b",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 17560,
+                  "title": "Foundation Model for Ultrasound Biometry - Final Test"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 116.0
+            },
+            {
+              "id": 897136,
+              "created_by": "jared2408",
+              "owner_display_name": "jared2408",
+              "created_when": "2026-07-20T07:36:45.088404Z",
+              "name": "scoring_program1",
+              "type": "scoring_program",
+              "description": "",
+              "is_public": false,
+              "key": "2a25d593-8b59-4467-bb49-91cf7835ef2f",
+              "value": "2a25d593-8b59-4467-bb49-91cf7835ef2f",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 17560,
+                  "title": "Foundation Model for Ultrasound Biometry - Final Test"
+                }
+              ],
+              "competition": null,
+              "file_name": "scoring_program_updated.zip",
+              "file_size": 1669.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 10,
+      "max_submissions_per_person": 10,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 19519,
+      "primary_index": 0,
+      "title": "Final Test Leaderboard",
+      "key": "final",
+      "columns": [
+        {
+          "id": 85936,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Avg MRE",
+          "key": "Average_MRE",
+          "sorting": "asc",
+          "index": 0,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 85937,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Avg MAE",
+          "key": "Average_MAE",
+          "sorting": "asc",
+          "index": 1,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 85938,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "A4C MRE",
+          "key": "A4C_MRE",
+          "sorting": "asc",
+          "index": 2,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 85939,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "A4C MAE",
+          "key": "A4C_MAE",
+          "sorting": "asc",
+          "index": 3,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 85940,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "AOP MRE",
+          "key": "AOP_MRE",
+          "sorting": "asc",
+          "index": 4,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 85941,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "AOP MAE",
+          "key": "AOP_MAE",
+          "sorting": "asc",
+          "index": 5,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 85942,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "FA MRE",
+          "key": "FA_MRE",
+          "sorting": "asc",
+          "index": 6,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 85943,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "FA MAE",
+          "key": "FA_MAE",
+          "sorting": "asc",
+          "index": 7,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 85944,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Femur MRE",
+          "key": "fetal_femur_MRE",
+          "sorting": "asc",
+          "index": 8,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 85945,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Femur MAE",
+          "key": "fetal_femur_MAE",
+          "sorting": "asc",
+          "index": 9,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 85946,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "FUGC MRE",
+          "key": "FUGC_MRE",
+          "sorting": "asc",
+          "index": 10,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 85947,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "FUGC MAE",
+          "key": "FUGC_MAE",
+          "sorting": "asc",
+          "index": 11,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 85948,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "HC MRE",
+          "key": "HC_MRE",
+          "sorting": "asc",
+          "index": 12,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 85949,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "HC MAE",
+          "key": "HC_MAE",
+          "sorting": "asc",
+          "index": 13,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 85950,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "IVC MRE",
+          "key": "IVC_MRE",
+          "sorting": "asc",
+          "index": 14,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 85951,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "IVC MAE",
+          "key": "IVC_MAE",
+          "sorting": "asc",
+          "index": 15,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 85952,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "PLAX MRE",
+          "key": "PLAX_MRE",
+          "sorting": "asc",
+          "index": 16,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 85953,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "PLAX MAE",
+          "key": "PLAX_MAE",
+          "sorting": "asc",
+          "index": 17,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 85954,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "PSAX MRE",
+          "key": "PSAX_MRE",
+          "sorting": "asc",
+          "index": 18,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 85955,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "PSAX MAE",
+          "key": "PSAX_MAE",
+          "sorting": "asc",
+          "index": 19,
+          "hidden": false,
+          "precision": 2
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Add"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": true,
+  "description": "Final test phase. Submit your Docker image for evaluation on the hidden test set.\nYour container must read /input and write regression_predictions.json to /output.",
+  "participants_count": 14,
+  "submissions_count": 0,
+  "queue": {
+    "name": "FUB",
+    "vhost": "d444f60c-4b21-4fa5-8e51-914f9866729e",
+    "is_public": true,
+    "owner": "jared2408",
+    "organizers": [],
+    "broker_url": "pyamqp://e4908ada-aae6-4186-b4f6-6021b676aca0:c82ee80f-83cf-4345-aee1-100719a4a276@www.codabench.org:5672/d444f60c-4b21-4fa5-8e51-914f9866729e",
+    "created_when": "2026-07-09T09:24:32.599855Z",
+    "is_owner": false,
+    "id": 896
+  },
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": false,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "codalab/codalab-legacy:py37",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 17255,
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "forum_enabled": true
+}

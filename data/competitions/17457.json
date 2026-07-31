@@ -5,8 +5,8 @@
   "description_zh": "一个基于混合信号数据集的协作3D目标检测挑战，该数据集是一个多样化的真实点云数据集，用于异构激光雷达V2X协作（3辆连接的车辆+配备双激光雷达的路侧单元）。融合多个智能体的点云，在鸟瞰图平面上检测车辆、自行车和行人，并在排行榜上攀升。",
   "created_by": "mixed-signals",
   "created_when": "2026-07-09T01:30:36.192294Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783560636/614edf812e36/logo.png?AWSAccessKeyId=codabench-prod&Signature=jEidosV58zwXUTq%2BxRzAmYHM0tw%3D&Expires=1785422913",
-  "participants_count": 16,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783560636/614edf812e36/logo.png?AWSAccessKeyId=codabench-prod&Signature=rYaC7cXNpORqTQaLFHesfT9Tdoc%3D&Expires=1785509612",
+  "participants_count": 17,
   "submissions_count": 0,
   "first_phase_start": null,
   "phases": [
