@@ -5,8 +5,8 @@
   "created_by": "irnewbie",
   "owner_display_name": "irnewbie",
   "created_when": "2026-07-20T06:11:10.993454Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784528469/7e8bf5c614cd/ScreenShot_2026-07-20_140940_018.png?AWSAccessKeyId=codabench-prod&Signature=3cXM2eN%2B7bfCxv11pKoxCu1qwIA%3D&Expires=1785509609",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784528469/7e8bf5c614cd/ScreenShot_2026-07-20_140940_018_icon.png?AWSAccessKeyId=codabench-prod&Signature=59uwcSUEFNCmS9%2FvtGO5l3Vhcvo%3D&Expires=1785509609",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784528469/7e8bf5c614cd/ScreenShot_2026-07-20_140940_018.png?AWSAccessKeyId=codabench-prod&Signature=x0qaD80lhGcccV2JW8Hd%2FfTwTw0%3D&Expires=1785596299",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784528469/7e8bf5c614cd/ScreenShot_2026-07-20_140940_018_icon.png?AWSAccessKeyId=codabench-prod&Signature=Tz5STYKxB4jd%2FcPKGssrRMyJ1mI%3D&Expires=1785596299",
   "terms": "详情请看比赛内部官网详情页",
   "pages": [
     {
@@ -246,7 +246,7 @@
   "registration_auto_approve": false,
   "description": "详情请看比赛内部官网详情页",
   "participants_count": 26,
-  "submissions_count": 80,
+  "submissions_count": 84,
   "queue": null,
   "enable_detailed_results": false,
   "show_detailed_results_in_submission_panel": false,

@@ -5,8 +5,8 @@
   "created_by": "jared2408",
   "owner_display_name": "jared2408",
   "created_when": "2026-07-17T05:01:21.296699Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-17-1784264481/fe0874732472/logo.png?AWSAccessKeyId=codabench-prod&Signature=lD1QIV%2BQUwNYgoRgHHhH9IcXjps%3D&Expires=1785509609",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-17-1784264481/fe0874732472/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=zNTbzWlm967Rqatx3YRXlcM4G8w%3D&Expires=1785509609",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-17-1784264481/fe0874732472/logo.png?AWSAccessKeyId=codabench-prod&Signature=4EzfVJkAGpf6cEvpz5J890oC7UY%3D&Expires=1785596298",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-17-1784264481/fe0874732472/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=c1We8%2BILLZD%2FnIpV%2BqvcusMW5%2Fo%3D&Expires=1785596298",
   "terms": "# Foundation Model for Ultrasound Biometry - Final Test\n\nSubmit your Docker image for evaluation on the hidden test set.",
   "pages": [
     {
@@ -36,7 +36,7 @@
       "end": "2026-08-15T16:00:00Z",
       "name": "Final Test",
       "description": "Final evaluation on hidden test set using Docker submissions. Your submission.zip must contain submission.json with Docker image URL.",
-      "status": "Next",
+      "status": "Current",
       "execution_time_limit": 43200,
       "tasks": [
         {
@@ -390,8 +390,8 @@
   "collaborators": [],
   "registration_auto_approve": true,
   "description": "Final test phase. Submit your Docker image for evaluation on the hidden test set.\nYour container must read /input and write regression_predictions.json to /output.",
-  "participants_count": 14,
-  "submissions_count": 0,
+  "participants_count": 15,
+  "submissions_count": 3,
   "queue": {
     "name": "FUB",
     "vhost": "d444f60c-4b21-4fa5-8e51-914f9866729e",
