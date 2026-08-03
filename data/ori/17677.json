@@ -5,8 +5,8 @@
   "created_by": "yuhangxu",
   "owner_display_name": "yuhangxu",
   "created_when": "2026-07-26T09:50:41.414250Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059441/adc6bc07e4f0/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=OPRAUmayGohy73od9%2BAeBvpx2qc%3D&Expires=1785682964",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059441/adc6bc07e4f0/images/conference-banner_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=EBs6XtRFjihT9fmTtPTUYdj8vhc%3D&Expires=1785682964",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059441/adc6bc07e4f0/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=NzffJr9ukDH%2F2WhaV0maRzEx598%3D&Expires=1785769878",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059441/adc6bc07e4f0/images/conference-banner_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=sou1ICueCgYjz3uiUuyvmt9UQiY%3D&Expires=1785769878",
   "terms": "# Terms\n\nBy participating, teams agree to the challenge rules and dataset licence published by the organizers. Hidden ground truth, leaked evaluation material, manual truth-based correction, and unauthorized redistribution of challenge data are prohibited.",
   "pages": [
     {
@@ -367,8 +367,8 @@
   "collaborators": [],
   "registration_auto_approve": true,
   "description": "Translation-only evaluation for the LiDAR-inertial SLAM track.",
-  "participants_count": 5,
-  "submissions_count": 4,
+  "participants_count": 6,
+  "submissions_count": 8,
   "queue": null,
   "enable_detailed_results": true,
   "show_detailed_results_in_submission_panel": true,

@@ -5,8 +5,8 @@
   "created_by": "hunzed",
   "owner_display_name": "hunzed",
   "created_when": "2026-06-10T09:38:36.786130Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084316/073f73e0eefc/logo.png?AWSAccessKeyId=codabench-prod&Signature=zlJk1evNHu0vIZL%2FjVASN8y2JXk%3D&Expires=1785682973",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084316/073f73e0eefc/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=s65FBkHxBJ5idBQx3BF3yXsd9p4%3D&Expires=1785682973",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084316/073f73e0eefc/logo.png?AWSAccessKeyId=codabench-prod&Signature=lWZ87pJsC94iXrQAIRNtXq%2BjwnM%3D&Expires=1785769891",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084316/073f73e0eefc/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=6MRabG%2F6Q5LmG%2BkrxtT%2FjYnhgfs%3D&Expires=1785769891",
   "terms": "# Terms\n\n## Submission format\nSubmit a **UTF-8 CSV** named `prediction.csv`, zipped as `prediction.zip`.\nOne row per item.\n\n**Required columns**\n- `id` — the item id (do not reorder/rename).\n- `prediction` — a single integer `0`, `1` or `2`: the index of the correct\n  option (inferred from the spoken audio).\n\n```\nid,prediction\n1dcdf6da...,0\n803ca9b8...,2\n```\n\n## Rules\n1. Your `id`s must exactly match the gold set for the active phase (`devtest`,\n   then `test`); missing/extra rows are rejected.\n2. `prediction` must be a single integer 0, 1 or 2.\n\n## Metric\nRanking metric: **accuracy**. **Balanced accuracy** (mean per-class recall) and **macro-F1** are also\nreported on the leaderboard as robustness diagnostics.\n\n## Registration, data usage, ethics\n- Join our **[Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA)** for announcements and discussion.\n- Data is **CC BY-NC 4.0** (non-commercial research use only).\n- Any pretrained model / external data / compute is allowed; document it in your paper.\n\n## Contact\nimageeval2026@gmail.com",
   "pages": [
     {
@@ -36,7 +36,7 @@
       "end": "2026-08-03T12:00:00Z",
       "name": "Development Phase",
       "description": "Tune on train + dev; submit predictions on devtest for the leaderboard.",
-      "status": "Current",
+      "status": "Previous",
       "execution_time_limit": 600,
       "tasks": [
         {
@@ -117,7 +117,7 @@
       "end": "2026-08-08T12:00:00Z",
       "name": "Testing Phase",
       "description": "Final blind evaluation on the held-out test split.",
-      "status": "Next",
+      "status": "Current",
       "execution_time_limit": 600,
       "tasks": [
         {
@@ -180,7 +180,7 @@
       ],
       "has_max_submissions": true,
       "max_submissions_per_day": 5,
-      "max_submissions_per_person": 5,
+      "max_submissions_per_person": 6,
       "auto_migrate_to_this_phase": false,
       "hide_output": false,
       "hide_prediction_output": false,
@@ -192,72 +192,22 @@
       "used_submissions_per_person": 0
     }
   ],
-  "leaderboards": [
-    {
-      "id": 18867,
-      "primary_index": 0,
-      "title": "Results",
-      "key": "main",
-      "columns": [
-        {
-          "id": 82740,
-          "computation": null,
-          "computation_indexes": null,
-          "title": "Accuracy",
-          "key": "accuracy",
-          "sorting": "desc",
-          "index": 0,
-          "hidden": false,
-          "precision": 4
-        },
-        {
-          "id": 82741,
-          "computation": null,
-          "computation_indexes": null,
-          "title": "Balanced Acc",
-          "key": "balanced_accuracy",
-          "sorting": "desc",
-          "index": 1,
-          "hidden": false,
-          "precision": 4
-        },
-        {
-          "id": 82742,
-          "computation": null,
-          "computation_indexes": null,
-          "title": "Macro-F1",
-          "key": "macro_f1",
-          "sorting": "desc",
-          "index": 2,
-          "hidden": false,
-          "precision": 4
-        },
-        {
-          "id": 82743,
-          "computation": null,
-          "computation_indexes": null,
-          "title": "Duration",
-          "key": "duration",
-          "sorting": "asc",
-          "index": 3,
-          "hidden": false,
-          "precision": 2
-        }
-      ],
-      "hidden": false,
-      "submission_rule": "Force_Best"
-    }
-  ],
+  "leaderboards": [],
   "collaborators": [
     {
       "id": 144,
       "name": null,
       "username": "firojalam"
+    },
+    {
+      "id": 70813,
+      "name": null,
+      "username": "sabdaljalil"
     }
   ],
   "registration_auto_approve": true,
   "description": "Given an image and the spoken question/options (English audio), pick the correct option index (0-2). Part of the ImageEval 2026 Ayn-VQA shared task on cultural grounding in Arabic multimodal understanding. \nData on HuggingFace (QCRI/AynVQA-ArabicNLP26). \nJoin our Slack for announcements and discussion: https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA",
-  "participants_count": 16,
+  "participants_count": 17,
   "submissions_count": 30,
   "queue": null,
   "enable_detailed_results": true,

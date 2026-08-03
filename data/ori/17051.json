@@ -5,8 +5,8 @@
   "created_by": "hunzed",
   "owner_display_name": "hunzed",
   "created_when": "2026-06-10T09:40:02.195020Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084402/15c7bcf31878/logo.png?AWSAccessKeyId=codabench-prod&Signature=kg0QCnwr8L%2BhpaCtTi8MexWVv9g%3D&Expires=1785682973",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084402/15c7bcf31878/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=0WlJQv%2Bwp5hgDZp6BzxK54wHxJA%3D&Expires=1785682973",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084402/15c7bcf31878/logo.png?AWSAccessKeyId=codabench-prod&Signature=vq2LHI7ahEURe6mDV38wj%2BzuX8E%3D&Expires=1785769891",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084402/15c7bcf31878/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=7takvpI8Kyo6qHmDgNvrjUFD7Og%3D&Expires=1785769891",
   "terms": "# Terms\n\n## Submission format\nSubmit a **UTF-8 CSV** named `prediction.csv`, zipped as `prediction.zip`.\nFor every item, submit **three rows** — one per statement.\n\n**Required columns**\n- `id` — the item id (do not reorder/rename).\n- `statement_index` — `0`, `1` or `2`, matching the position in `statements`.\n- `prediction` — `true` if that statement is grounded in the image, else `false`.\n\n```\nid,statement_index,prediction\n1dcdf6da...,0,false\n1dcdf6da...,1,true\n1dcdf6da...,2,false\n```\n\n## Rules\n1. Your `id`s must exactly match the gold set for the active phase (`devtest`,\n   then `test`); missing/extra rows are rejected.\n2. Exactly one statement per item is grounded; predict `true`/`false` for all three.\n\n## Metric\nRanking metric: **Contrastive Instability (CI)**, lower is better. Of the items\nwhere at least one of the three statements is correct, CI is the fraction that are\nnot fully correct (all three right). A model that labels every statement false to\ndrive its hallucination rate to zero still scores poorly on CI.\n\nAlso reported as diagnostics: **combined accuracy** (all three labels correct),\n**CFHR** (of the items where Q+ was correct, the share that still affirmed a\nhallucinated statement), and **Q+ / Q- accuracy**.\n\n## Registration, data usage, ethics\n- Join our **[Slack channel](https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA)** for announcements and discussion.\n- Data is **CC BY-NC 4.0** (non-commercial research use only).\n- Any pretrained model / external data / compute is allowed; document it in your paper.\n\n## Contact\nimageeval2026@gmail.com",
   "pages": [
     {
@@ -36,7 +36,7 @@
       "end": "2026-08-03T12:00:00Z",
       "name": "Development Phase",
       "description": "Tune on train + dev; submit predictions on devtest for the leaderboard.",
-      "status": "Current",
+      "status": "Previous",
       "execution_time_limit": 600,
       "tasks": [
         {
@@ -117,7 +117,7 @@
       "end": "2026-08-08T12:00:00Z",
       "name": "Testing Phase",
       "description": "Final blind evaluation on the held-out test split.",
-      "status": "Next",
+      "status": "Current",
       "execution_time_limit": 600,
       "tasks": [
         {
@@ -180,7 +180,7 @@
       ],
       "has_max_submissions": true,
       "max_submissions_per_day": 5,
-      "max_submissions_per_person": 5,
+      "max_submissions_per_person": 6,
       "auto_migrate_to_this_phase": false,
       "hide_output": false,
       "hide_prediction_output": false,
@@ -192,98 +192,26 @@
       "used_submissions_per_person": 0
     }
   ],
-  "leaderboards": [
-    {
-      "id": 18869,
-      "primary_index": 0,
-      "title": "Results",
-      "key": "main",
-      "columns": [
-        {
-          "id": 82750,
-          "computation": null,
-          "computation_indexes": null,
-          "title": "Contrastive Instability",
-          "key": "cfhr_3_rate",
-          "sorting": "asc",
-          "index": 0,
-          "hidden": false,
-          "precision": 4
-        },
-        {
-          "id": 82751,
-          "computation": null,
-          "computation_indexes": null,
-          "title": "Combined Acc",
-          "key": "combined_accuracy",
-          "sorting": "desc",
-          "index": 1,
-          "hidden": false,
-          "precision": 4
-        },
-        {
-          "id": 82752,
-          "computation": null,
-          "computation_indexes": null,
-          "title": "CFHR",
-          "key": "cfhr_2_rate",
-          "sorting": "asc",
-          "index": 2,
-          "hidden": false,
-          "precision": 4
-        },
-        {
-          "id": 82753,
-          "computation": null,
-          "computation_indexes": null,
-          "title": "Q+ Acc",
-          "key": "q_plus_accuracy",
-          "sorting": "desc",
-          "index": 3,
-          "hidden": false,
-          "precision": 4
-        },
-        {
-          "id": 82754,
-          "computation": null,
-          "computation_indexes": null,
-          "title": "Q- Acc",
-          "key": "q_minus_accuracy",
-          "sorting": "desc",
-          "index": 4,
-          "hidden": false,
-          "precision": 4
-        },
-        {
-          "id": 82755,
-          "computation": null,
-          "computation_indexes": null,
-          "title": "Duration",
-          "key": "duration",
-          "sorting": "asc",
-          "index": 5,
-          "hidden": false,
-          "precision": 2
-        }
-      ],
-      "hidden": false,
-      "submission_rule": "Force_Best"
-    }
-  ],
+  "leaderboards": [],
   "collaborators": [
     {
       "id": 144,
       "name": null,
       "username": "firojalam"
+    },
+    {
+      "id": 70813,
+      "name": null,
+      "username": "sabdaljalil"
     }
   ],
   "registration_auto_approve": true,
   "description": "Given an image and 3 statements (English), label EACH statement True (grounded in the image) or False (hallucinated). Exactly one statement is grounded. Part of the ImageEval 2026 Ayn-VQA shared task on cultural grounding in Arabic multimodal understanding. \nData on HuggingFace (QCRI/AynVQA-ArabicNLP26).\nJoin our Slack for announcements and discussion: https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA",
-  "participants_count": 20,
-  "submissions_count": 88,
+  "participants_count": 22,
+  "submissions_count": 95,
   "queue": null,
-  "enable_detailed_results": true,
-  "show_detailed_results_in_submission_panel": true,
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": false,
   "show_detailed_results_in_leaderboard": false,
   "auto_run_submissions": true,
   "can_participants_make_submissions_public": true,

@@ -5,9 +5,9 @@
   "description_zh": "我是一个科技竞赛信息翻译助手。根据您提供的英文竞赛文本，以下是简体中文翻译：\n\n给定一张图像和3个陈述（英文），标记每个陈述为真（植根于图像）或假（幻觉）。恰好有一个陈述是有根据的。这是ImageEval 2026 Ayn-VQA共享任务的一部分，该任务关于阿拉伯多模态理解中的文化基础。\n\nHuggingFace上的数据（QCRI/AynVQA-ArabicNLP26）。\n\n加入我们的Slack了解公告和讨论：https://join.slack.com/t/mm-eval/shared_invite/zt-41j09ml4j-WMn0NzhqAgT9ZK6e1L8eBA",
   "created_by": "hunzed",
   "created_when": "2026-06-10T09:40:02.195020Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084402/15c7bcf31878/logo.png?AWSAccessKeyId=codabench-prod&Signature=kg0QCnwr8L%2BhpaCtTi8MexWVv9g%3D&Expires=1785682973",
-  "participants_count": 20,
-  "submissions_count": 88,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-10-1781084402/15c7bcf31878/logo.png?AWSAccessKeyId=codabench-prod&Signature=vq2LHI7ahEURe6mDV38wj%2BzuX8E%3D&Expires=1785769891",
+  "participants_count": 22,
+  "submissions_count": 95,
   "first_phase_start": null,
   "phases": [
     {
