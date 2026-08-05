@@ -5,9 +5,9 @@
   "description_zh": "最终测试阶段。提交您的 Docker 镜像以在隐藏测试集上进行评估。\n您的容器必须读取 /input 并将 regression_predictions.json 写入 /output。",
   "created_by": "jared2408",
   "created_when": "2026-07-17T05:01:21.296699Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-17-1784264481/fe0874732472/logo.png?AWSAccessKeyId=codabench-prod&Signature=888yyus9I4y6TFK9s1sSEeUcWUs%3D&Expires=1785856661",
-  "participants_count": 26,
-  "submissions_count": 11,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-17-1784264481/fe0874732472/logo.png?AWSAccessKeyId=codabench-prod&Signature=WIDfPP0zf17Jxvh4OaQzu7YQazM%3D&Expires=1785943355",
+  "participants_count": 28,
+  "submissions_count": 12,
   "first_phase_start": null,
   "phases": [
     {

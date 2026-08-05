@@ -1,0 +1,322 @@
+{
+  "id": 17661,
+  "title": "TwinWorld Challenge @ECCV 2026",
+  "published": true,
+  "created_by": "jumponthemoon",
+  "owner_display_name": "jumponthemoon",
+  "created_when": "2026-07-24T10:11:38.562965Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-24-1784887898/b3c2c760151c/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=f7L105qn6A98C4nEpr3nNH2%2F8Kc%3D&Expires=1785943356",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-24-1784887898/b3c2c760151c/logo_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=eOgsC1MpMM9VxHZ1oRiJ462P3s4%3D&Expires=1785943356",
+  "terms": "# Terms and Conditions\n\nBy participating in TwinWorld Challenge 2026, you agree to the following terms:\n\n1. **Data usage** — The provided TUM2TWIN dataset may only be used for the purposes of this challenge.\n2. **Submission limit** — Participants are limited to 3 submissions per day during the Development phase and 1 per day during the Final phase (max 10 total).\n3. **Code sharing** — Top-ranked participants may be required to share their code for verification before being listed on the final leaderboard.\n4. **Fair play** — Any attempt to manipulate the leaderboard or use external ground-truth data will result in disqualification.\n5. **Publication** — Results may be presented at the TwinWorld Workshop @ ECCV 2026 (8 Sep 2026, Malmö, Sweden).\n\nFor questions, contact the organizers at **okw24@cam.ac.uk**.",
+  "pages": [
+    {
+      "id": 84859,
+      "title": "Overview",
+      "content": "# TwinWorld Challenge 2026\n\n**TwinWorld Challenge 2026** is the official challenge of the [TwinWorld Workshop](https://twin-world.github.io/) at **ECCV 2026** (8 September 2026, Malmö, Sweden).\n\n## Challenge Task\n\n**Large-Scale 3D Semantic Gaussian Splatting Reconstruction**\n\nThe challenge targets large-scale drone imagery and semantic neural reconstruction on two datasets: **TUM** (TUM2TWIN) and **Gold Coast**. Participants are asked to:\n\n1. **Novel view synthesis** — render photorealistic RGB images from the provided camera poses (all scenes).\n2. **3D geometric reconstruction** — reconstruct a 3D point cloud of the scene (evaluated on TUM scenes).\n3. **3D semantic segmentation** — assign one of 5 semantic class labels (ground, wall, roof, window, other) to each point of the reconstructed point cloud (evaluated on Gold Coast scenes).\n\n## Timeline\n\n| Milestone | Date |\n|-----------|------|\n| Development phase opens | 04 Aug 2026 |\n| Final phase opens | 20 Aug 2026 |\n| Final phase closes | 1 Sep 2026 |\n| Results presented at workshop | 8 Sep 2026 |\n\n## Workshop\n\nThe challenge results will be presented at the **TwinWorld @ ECCV 2026** workshop session (09:30, 8 Sep 2026).\n\nThe workshop focuses on scalable 3D and 4D scene understanding, multimodal reconstruction, semantic scene graphs, and real-world digital twin applications for autonomous driving, construction monitoring, and robotics.\n\n## Challenge Organizers\n\nOlaf Wysocki;\nQilin Zhang;\nChenghao Qian \n\nSee the [TwinWorld website](https://twin-world.github.io/) for the full organizing committee @ CV4DT University of Cambridge.",
+      "index": 0
+    },
+    {
+      "id": 84155,
+      "title": "Evaluation",
+      "content": "# Evaluation\n\n## Submission Format\n\nParticipants submit a **zip file** with the following structure (zip the dataset folders directly, without an extra top-level folder):\n\n```\nsubmission.zip\n├── tum/\n│   └── <scene_id>/\n│       ├── rgb/\n│       │   ├── <frame_id>.png      # rendered novel views, one per reference frame\n│       │   └── ...\n│       └── 3D_point_cloud/\n│           └── point_cloud.ply     # x, y, z (float)\n└── gold_coast/\n    └── <scene_id>/\n        ├── rgb/\n        │   └── <frame_id>.png\n        └── 3D_point_cloud/\n            └── point_cloud.ply     # x, y, z (float) + classification (uchar)\n```\n\n- `rgb/` — rendered images, **PNG**, exactly the same resolution and frame IDs (file name stems) as the reference frames provided for each scene.\n- `3D_point_cloud/point_cloud.ply` — the reconstructed point cloud. `x, y, z` are always required. The `classification` property (integer, one of the 5 class indices below or 255 = ignore) is required **only for Gold Coast scenes**.\n- Scene IDs and frame IDs must **exactly match** those in the starting kit. A submission missing any required file is rejected without being scored (`incomplete_submission`).\n\n## Semantic Classes (Gold Coast)\n\n| Index | Class |\n|-------|-------|\n| 0 | ground |\n| 1 | wall |\n| 2 | roof |\n| 3 | window |\n| 4 | other |\n| 255 | ignore (excluded from scoring) |\n\n## Metrics\n\n**2D rendering (all scenes):**\n\n| Metric | Description | Direction |\n|--------|-------------|-----------|\n| **PSNR** | Peak Signal-to-Noise Ratio on rendered RGB images | ↑ |\n| **SSIM** | Structural Similarity Index (Wang et al., Gaussian-weighted) | ↑ |\n| **LPIPS** | Learned Perceptual Image Patch Similarity (VGG) | ↓ |\n\n**3D geometry (TUM scenes only):** GT and submitted point clouds are cropped to the GT bounding box (+20 cm padding) and voxel-downsampled at 2 cm; then precision/recall **F-scores at 5 cm, 10 cm, and 20 cm** are computed. The reported `F-score` is the mean of the three.\n\n**3D semantics (Gold Coast scenes only):** each GT point takes the label of the nearest submitted point within 10 cm (unmatched points count as errors). Per-class IoU is pooled over all scenes; **mIoU 3D** is the mean over the 5 classes.\n\n## Final Score & Ranking\n\nThe leaderboard is ranked by **Final Score** (descending):\n\n```\nrendering_score = mean(PSNR / 50 capped at 1,  SSIM,  1 − LPIPS)   # in [0, 1]\ngeometry_score  = mean(F-score @ 5 cm, 10 cm, 20 cm)               # in [0, 1]\nsemantic_score  = mIoU 3D                                           # in [0, 1]\n\nFinal Score = rendering_score + geometry_score + semantic_score     # in [0, 3]\n```\n\nHigher is better; the maximum Final Score is **3.0**.",
+      "index": 1
+    },
+    {
+      "id": 84595,
+      "title": "Data",
+      "content": "# Data\n\n## Datasets\n\nThe challenge uses two large-scale drone imagery datasets:\n\n- **TUM** ([TUM2TWIN](https://tum2t.win/)) — urban scenes; evaluated on **2D rendering + 3D geometry**.\n- **Gold Coast** ([GT-LOD3 Benchmark](https://github.com/gdslab/GT-LOD3-Benchmark), [Gold Coast subset](https://stac.d2s.org/collections/ee10a5c0-2554-44e5-b59f-81eedfe02eb6?.language=en)) — coastal urban scenes; evaluated on **2D rendering + 3D semantic segmentation** (5 classes).\n\nFull dataset access details are announced via the [TwinWorld Dataset website](https://huggingface.co/datasets/Zqlin/TwinWorld_Datasets).\n\n## Starting Kit\n\nThe[ starting kit](https://huggingface.co/datasets/Zqlin/TwinWorld_Datasets/tree/main/starting_kit) is included with the dataset on Hugging Face, under `starting_kit/`. It contains:\n\n- `README.md` — the submission format description, plus a set of reference Gaussian Splatting implementations to use as a starting point.\n- `make_dummy_submission.py` — script that generates a correctly structured (random-content) submission zip for pipeline testing\n\n## Submission Format\n\nA single **zip file**, containing the dataset folders at the top level:\n\n```\nsubmission.zip\n├── tum/<scene_id>/\n│   ├── rgb/<frame_id>.png\n│   └── 3D_point_cloud/point_cloud.ply         # x, y, z\n└── gold_coast/<scene_id>/\n    ├── rgb/<frame_id>.png\n    └── 3D_point_cloud/point_cloud.ply         # x, y, z, classification\n```\n\n- Scene IDs and frame IDs (file name stems) must **exactly match** the reference frames provided for each phase.\n- `rgb/` images must be PNG at exactly the reference resolution.\n- Point clouds must be valid PLY with finite `x, y, z` coordinates. Binary little-endian PLY with `float32` coordinates is recommended to keep uploads small; store only the properties listed above (no colors/normals — they are ignored by the scorer and inflate the upload).\n- Gold Coast point clouds additionally require an integer `classification` property with values in {0, 1, 2, 3, 4, 255}.\n\n## Semantic Classes\n\n5 evaluated classes: `0 ground, 1 wall, 2 roof, 3 window, 4 other`; `255` = ignore (excluded from scoring).",
+      "index": 2
+    },
+    {
+      "id": 84866,
+      "title": "Terms",
+      "content": "# Terms and Conditions\n\nBy participating in TwinWorld Challenge 2026, you agree to the following terms:\n\n1. **Data usage** — The provided TUM2TWIN dataset may only be used for the purposes of this challenge.\n2. **Submission limit** — Participants are limited to 3 submissions per day during the Development phase and 1 per day during the Final phase (max 10 total).\n3. **Code sharing** — Top-ranked participants may be required to share their code for verification before being listed on the final leaderboard.\n4. **Fair play** — Any attempt to manipulate the leaderboard or use external ground-truth data will result in disqualification.\n5. **Publication** — Results may be presented at the TwinWorld Workshop @ ECCV 2026 (8 Sep 2026, Malmö, Sweden).\n\nFor questions, contact the organizers at okw24@cam.ac.uk ; qilin.zhang@kit.edu; yohji.qian@gmail.com",
+      "index": 3
+    }
+  ],
+  "phases": [
+    {
+      "id": 29457,
+      "index": 0,
+      "start": "2026-08-04T00:00:00Z",
+      "end": "2026-08-20T00:00:00Z",
+      "name": "Development",
+      "description": "Practice phase — use the provided starting kit to test your submission pipeline on the validation scenes.",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "18770d12-82c8-48c8-9819-658be5b374c6",
+          "order_index": 0,
+          "phase": 29457,
+          "id": 35170,
+          "value": "18770d12-82c8-48c8-9819-658be5b374c6",
+          "key": "18770d12-82c8-48c8-9819-658be5b374c6",
+          "created_when": "2026-07-24T10:11:38.370002Z",
+          "name": "TwinWorld Reconstruction — Development",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 903670,
+              "created_by": "jumponthemoon",
+              "owner_display_name": "jumponthemoon",
+              "created_when": "2026-07-24T10:16:20.801301Z",
+              "name": "twinworld_refdata_validation",
+              "type": "reference_data",
+              "description": "Development Phase",
+              "is_public": false,
+              "key": "c51b00e7-391a-4082-8362-5ddd01adf6c5",
+              "value": "c51b00e7-391a-4082-8362-5ddd01adf6c5",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 17661,
+                  "title": "TwinWorld Challenge @ECCV 2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "twinworld_refdata_validation.zip",
+              "file_size": 1203974711.0
+            },
+            {
+              "id": 904065,
+              "created_by": "jumponthemoon",
+              "owner_display_name": "jumponthemoon",
+              "created_when": "2026-07-24T14:54:29.440730Z",
+              "name": "scoring_v3",
+              "type": "scoring_program",
+              "description": "",
+              "is_public": false,
+              "key": "71381f25-06c3-474c-b683-9cfd8cdef2b9",
+              "value": "71381f25-06c3-474c-b683-9cfd8cdef2b9",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 17661,
+                  "title": "TwinWorld Challenge @ECCV 2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "twinworld_scoring_program_v3.zip",
+              "file_size": 9873.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 3,
+      "max_submissions_per_person": 99,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    },
+    {
+      "id": 29458,
+      "index": 1,
+      "start": "2026-08-20T00:00:00Z",
+      "end": "2026-09-01T00:00:00Z",
+      "name": "Final",
+      "description": "Official evaluation phase on the held-out test scenes. Results presented at ECCV 2026 TwinWorld Workshop, 8 Sep 2026.",
+      "status": "Next",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "3c3b12d3-4ba3-47d4-9c75-994dad99064d",
+          "order_index": 0,
+          "phase": 29458,
+          "id": 35171,
+          "value": "3c3b12d3-4ba3-47d4-9c75-994dad99064d",
+          "key": "3c3b12d3-4ba3-47d4-9c75-994dad99064d",
+          "created_when": "2026-07-24T10:11:38.524270Z",
+          "name": "TwinWorld Reconstruction — Final",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 903675,
+              "created_by": "jumponthemoon",
+              "owner_display_name": "jumponthemoon",
+              "created_when": "2026-07-24T10:21:38.197093Z",
+              "name": "twinworld_refdata_final",
+              "type": "reference_data",
+              "description": "Final Phase",
+              "is_public": false,
+              "key": "dbdb3ffa-f784-491c-9479-2033cb585fb4",
+              "value": "dbdb3ffa-f784-491c-9479-2033cb585fb4",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 17661,
+                  "title": "TwinWorld Challenge @ECCV 2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "twinworld_refdata_final.zip",
+              "file_size": 1331713660.0
+            },
+            {
+              "id": 904065,
+              "created_by": "jumponthemoon",
+              "owner_display_name": "jumponthemoon",
+              "created_when": "2026-07-24T14:54:29.440730Z",
+              "name": "scoring_v3",
+              "type": "scoring_program",
+              "description": "",
+              "is_public": false,
+              "key": "71381f25-06c3-474c-b683-9cfd8cdef2b9",
+              "value": "71381f25-06c3-474c-b683-9cfd8cdef2b9",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 17661,
+                  "title": "TwinWorld Challenge @ECCV 2026"
+                }
+              ],
+              "competition": null,
+              "file_name": "twinworld_scoring_program_v3.zip",
+              "file_size": 9873.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 1,
+      "max_submissions_per_person": 15,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 19646,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "main",
+      "columns": [
+        {
+          "id": 86838,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Final Score (↑)",
+          "key": "final_score",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 86839,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "PSNR (↑)",
+          "key": "psnr",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 86840,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "SSIM (↑)",
+          "key": "ssim",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 86841,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "LPIPS (↓)",
+          "key": "lpips",
+          "sorting": "asc",
+          "index": 3,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 86842,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "F-score (↑)",
+          "key": "fscore",
+          "sorting": "desc",
+          "index": 4,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 86843,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "mIoU 3D (↑)",
+          "key": "miou_3d",
+          "sorting": "desc",
+          "index": 5,
+          "hidden": false,
+          "precision": 2
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Add"
+    }
+  ],
+  "collaborators": [
+    {
+      "id": 73728,
+      "name": null,
+      "username": "qilinzhang"
+    },
+    {
+      "id": 77003,
+      "name": null,
+      "username": "olafwysocki"
+    }
+  ],
+  "registration_auto_approve": false,
+  "description": "Large-Scale 3D Semantic Gaussian Splatting Reconstruction on drone imagery (TUM + Gold Coast). ECCV 2026 Workshop · 8 Sep 2026 · Malmö, Sweden.",
+  "participants_count": 4,
+  "submissions_count": 14,
+  "queue": {
+    "name": "twinworld-local-3070",
+    "vhost": "19ddee7b-25c7-4997-aac2-6db31df16b47",
+    "is_public": true,
+    "owner": "jumponthemoon",
+    "organizers": [],
+    "broker_url": "pyamqp://77ffba1f-a7c4-428e-8093-c1ed7c3ed945:27a79154-75a1-447f-a447-4ed8246a11cc@www.codabench.org:5672/19ddee7b-25c7-4997-aac2-6db31df16b47",
+    "created_when": "2026-07-24T13:43:39.295843Z",
+    "is_owner": false,
+    "id": 915
+  },
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": true,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "localhost:5000/twinworld-scorer:1.0",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 17351,
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "forum_enabled": true
+}
