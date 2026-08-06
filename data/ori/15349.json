@@ -1,0 +1,264 @@
+{
+  "id": 15349,
+  "title": "RAIL-BENCH: Rail Track Detection",
+  "published": true,
+  "created_by": "annikabaetz",
+  "owner_display_name": "annikabaetz",
+  "created_when": "2026-04-01T13:11:59.370797Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-01-1775049119/d467cc87d53a/img_346_train.jpg?AWSAccessKeyId=codabench-prod&Signature=92HTjtiHW0EpP1emuw3z2J%2FlVao%3D&Expires=1786030099",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-01-1775049119/d467cc87d53a/img_346_train_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=3RdD7rRiHueK2stK%2FRzlFCDaiQk%3D&Expires=1786030099",
+  "terms": "# Terms and Conditions\n\n## General terms of use\n\nYou are free to use the RAIL-BENCH datasets for **academic and non-commercial research** purposes. Any commercial use is strictly prohibited. Please take a look at [Terms and Conditions](https://www.mrt.kit.edu/railbench_data/README.md) for more details. \n\n\n## Training data policy \n\nWe provide a specific training and validation dataset on our [website](https://www.mrt.kit.edu/railbench/). Do not use the validation set for training, but only for hyperparameter tuning, early stopping, etc. The test images should not be used in any way during training, but only during the final inference. \n\nYou are free to use additional publicly available data sources, but you must disclose this in the submission. This includes standard training data such as ImageNet and COCO. \n\n## Submission Policy\n\nThe evaluation server may not be used for parameter tuning since we rely here on a shared resource that is provided by the Codabench team and its sponsors. We ask each participant to upload the final results of their model/algorithm only once to the server and perform all other experiments on the validation set. \n\nHowever, it is allowed to make several submission with varying model architectures or algorithms. We impose an upper limit (currently 10 attempts) on the number of submissions. \n\nImportant note: It is NOT allowed to register multiple times to the server using different email addresses. We are actively monitoring submissions and we will revoke access and delete submissions. When registering with Codabench, we encourage all participants to use a unique institutional email address (e.g., .edu) or company email address. \n\n## Citation \nIf you report any of your results in the RAIL-BENCH Rail challenge in your work, please cite it as:\n\nA. Baetz, P. Klasek, S.-Y. Ham, P. Neumaier, M. Koeppel, and M. Lauer (2026). *Railway Artificial Intelligence Learning Benchmark (RAIL-BENCH): A Benchmark Suite for Perception in the Railway Domain.* Submitted to IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS).\n\nIf you use BibTeX, you can cite it using the following entry:\n\n```bibtex\n@inproceedings{baetz2026railbench,\n\tauthor    = {A. B\\\"atz and P. Klasek and S.-Y. Ham and P. Neumaier and M. K\\\"oppel and M. Lauer},\n\ttitle     = {Railway Artificial Intelligence Learning Benchmark (RAIL-BENCH): A Benchmark Suite for Perception in the Railway Domain},\n\tbooktitle = {IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},\n\tyear      = {2026},\n\tnote      = {submitted}\n}\n```",
+  "pages": [
+    {
+      "id": 84980,
+      "title": "Overview",
+      "content": "# RAIL-BENCH Rail: Detection of Railway Tracks\n\nRAIL-BENCH is the world's first perception benchmark suite for the railway domain. RAIL-BENCH Rail is one of its five challenges. \n\nIn the following, we give a brief overview of the RAIL-BENCH Rail dataset, challenge and its evaluation protocol. For detailed information, please visit our [website](https://www.mrt.kit.edu/railbench/) and take a look at our [RAIL-BENCH toolkit](https://github.com/KIT-MRT/RAIL-BENCH_toolkit).\n\n## News (06.08.2026)\n\nWe are currently working on an few updates and improvements. The initial phase was closed. A new phase will be opened at the end of August when our updates are completed. \n\n## Motivation\n\nRobust rail track detection is a fundamental component of scene understanding in automated railway systems. It provides precise \ninformation about regions of interest used for obstacle detection. Moreover, the detection of rails combined with other landmarks can be utilized for self-localization.\n\n## Dataset\n\nRAIL-BENCH Rail contains **2500** images taken from a train driver's perspective. The images were recorded in Germany in diverse scenarios (train stations, urban, rural, etc.) and weather conditions (sun, rain, fog, etc.) and with varying camera setups. All visible rails were annotated with polylines.\n\nThe dataset is divided into **1500** training, **500** validation, and **500** test images. All 2500 images as well as the ground truth of the training and validation split can be accessed through our website. The ground truth annotations for the test set are kept hidden for the purpose of this challenge.\n\n## Challenge\n\nThe task of RAIL-BENCH Rail is to detect all rails in the 500 test images. See the **\"how to participate**\" page for details on how you can submit your results.\n\nSubmitted results are evaluated using two metrics, LineAP and ChamferAP, at multiple distance thresholds. For each metric we report the score at each individual threshold and compute an average across all thresholds. The two averaged metric scores are then averaged to produce the final **mAP** (mean Average Precision) used for ranking. This final mAP - averaged across both metrics and all thresholds - is the primary ranking score of our challenge.\n\nFor more details on LineAP and ChamferAP, take a look at the [RAIL-BENCH toolkit](https://github.com/KIT-MRT/RAIL-BENCH_toolkit).\n\n## Organizers \n\nThis benchmark challenge is organized by Annika Baetz and Dr. Martin Lauer from the Karlsruhe Institute of Technology (KIT) with support by Dr. Martin Köppel (DB InfraGo), Dr. Philip Neumaier (DB InfraGO), Pavel Klasek (DZSF), Seo-Young Ham (DZSF). Please contact Annika Baetz (annika.baetz@kit.edu) if you have any questions or doubts.",
+      "index": 0
+    },
+    {
+      "id": 77004,
+      "title": "How to participate",
+      "content": "# How to participate\n\n## 1. Model Training\n\nYou can download the training, validation, and test images from our [website](https://www.mrt.kit.edu/railbench/) as well as the ground truth for the training and validation split. We expect that you train your model with the training set, and use the validation set only for hyperparameter tuning, early stopping, etc. \n\n**Do not use the test images during training and validation in any way!**\n\nNote: The ground truth annotations not only contain polylines to mark rails, but also polygons for ignore areas. We advise to remove the ignore areas during training and only use them for evaluation purposes. \n\nOnce you have completed training, run inference on the 500 test images and submit your results following these guidelines: \n\n## 2. Save predictions in json file\n\nSave your predictions in a json file named `pred_test.json` that follows this format: \n\n```python\n{\n 'img_2001_test.png': {\n    'rails': [<polyline1>,\n              <polyline2>,\n              ...],\n    'score': [<confidence1>,\n              <confidence2>,\n              ... ]\n    },\n 'img_2002_test.png': {...},\n 'img_2003_test.png': {...},\n ...\n 'img_2500_test.png': {...},\n}\n```\n\nFor each image, you need to provide two lists (`rails` and `score`) where each corresponding pair of elements (e.g., `polyline1` and `confidence1`), represents one predicted polyline and the respective confidence score of your model.\n\n### Polylines\n\nEach polyline is represented by a list of at least 2 points:\n\n```python\n[[u1, v1], [u2, v2], ..., [uN, vN]]  \n# u, v are standard image coordinates with u pointing to the right and v downward\n```\n\nPolylines should start in the foreground and extend into the background, i.e. `v1 > vN`. \n\n### Confidence score\n\nEach confidence score should be value between `0` and `1` (1 represents maximal confidence in the predicted rail).\n\n### Simple Example\n\nA possible prediction could look like this:\n\n```python\n{\n 'img_2001_test.png': {\n    'rails': [[[100, 2500], [110, 2400], ..., [250, 1000]],\n              [[25,  1490], [120, 1300], ..., [2200, 500]],\n              ...],\n    'score': [0.71,\n              0.84,\n              ... ]\n    },\n 'img_2002_test.png': {...},\n 'img_2003_test.png': {...},\n ...\n 'img_2500_test.png': {...},\n}\n```\n\n### Tips:\n\n- Ensure that your predictions are scaled to the original image size. Note, that the test images have varying sizes and width to height ratios. \n- To check your formatting, use our [RAIL-BENCH toolkit](https://github.com/KIT-MRT/RAIL-BENCH_toolkit) and use the `check_formatting.py` function. \n\n# 3. Submisson\n\nZip your `pred_test.json` file without a parent directory: \n\n```bash\n# create a zip containing only the prediction file (no parent directories)\n# (use -j to strip any path information so the file sits at the root of the zip)\nzip -j submission.zip pred_test.json\n```\n\nSubmit your zip file at **\"My Submissions -> Submit\"**.\n\nPlease fill out the **method description field** on the submission page to clarify whether you used any additional training data. This includes any datasets that were used to obtain any model weights, even if you did not personally train on that data explicitly.",
+      "index": 1
+    },
+    {
+      "id": 82008,
+      "title": "Terms",
+      "content": "# Terms and Conditions\n\n## General terms of use\n\nYou are free to use the RAIL-BENCH datasets for **academic and non-commercial research** purposes. Any commercial use is strictly prohibited. Please take a look at [Terms and Conditions](https://www.mrt.kit.edu/railbench_data/README.md) for more details. \n\n\n## Training data policy \n\nWe provide a specific training and validation dataset on our [website](https://www.mrt.kit.edu/railbench/). Do not use the validation set for training, but only for hyperparameter tuning, early stopping, etc. The test images should not be used in any way during training, but only during the final inference. \n\nYou are free to use additional publicly available data sources, but you must disclose this in the submission. This includes standard training data such as ImageNet and COCO. \n\n## Submission Policy\n\nThe evaluation server may not be used for parameter tuning since we rely here on a shared resource that is provided by the Codabench team and its sponsors. We ask each participant to upload the final results of their model/algorithm only once to the server and perform all other experiments on the validation set. \n\nHowever, it is allowed to make several submission with varying model architectures or algorithms. We impose an upper limit (currently 10 attempts) on the number of submissions. \n\nImportant note: It is NOT allowed to register multiple times to the server using different email addresses. We are actively monitoring submissions and we will revoke access and delete submissions. When registering with Codabench, we encourage all participants to use a unique institutional email address (e.g., .edu) or company email address. \n\n## Citation \nIf you report any of your results in the RAIL-BENCH Rail challenge in your work, please cite it as:\n\n> Baetz, A., Klasek, P., Ham, S.-Y., Neumaier, P., Koeppel, M., & Lauer, M. (2026). Railway Artificial Intelligence Learning Benchmark (RAIL-BENCH): A Benchmark Suite for Perception in the Railway Domain. *arXiv preprint arXiv:2604.22507.*\n\nIf you use BibTeX, you can cite it using the following entry:\n\n```bibtex\n@misc{baetz2026railwayartificialintelligencelearning,\n      title={Railway Artificial Intelligence Learning Benchmark (RAIL-BENCH): A Benchmark Suite for Perception in the Railway Domain}, \n      author={Annika Baetz and Pavel Klasek and Seo-Young Ham and Philipp Neumaier and Martin Koeppel and Martin Lauer},\n      year={2026},\n      eprint={2604.22507},\n      archivePrefix={arXiv},\n      primaryClass={cs.CV},\n      url={https://arxiv.org/abs/2604.22507}, \n}\n```",
+      "index": 2
+    }
+  ],
+  "phases": [
+    {
+      "id": 25337,
+      "index": 0,
+      "start": "2026-04-01T19:00:00Z",
+      "end": "2026-08-06T00:00:00Z",
+      "name": "RAIL-BENCH Rail Challenge Phase",
+      "description": "Test phase: submit your predictions.",
+      "status": "Previous",
+      "execution_time_limit": 1200,
+      "tasks": [
+        {
+          "task": "67cf9eb0-bfde-4e93-8241-c9cf52f8deb7",
+          "order_index": 0,
+          "phase": 25337,
+          "id": 31182,
+          "value": "67cf9eb0-bfde-4e93-8241-c9cf52f8deb7",
+          "key": "67cf9eb0-bfde-4e93-8241-c9cf52f8deb7",
+          "created_when": "2026-04-01T13:11:59.270954Z",
+          "name": "Rail Track Detection Task",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 682098,
+              "created_by": "annikabaetz",
+              "owner_display_name": "annikabaetz",
+              "created_when": "2026-04-01T13:11:58.910099Z",
+              "name": "scoring_program @ '04-01-2026 13:11'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "74de3a66-fd9c-4e62-882d-e4cd4b45c9f3",
+              "value": "74de3a66-fd9c-4e62-882d-e4cd4b45c9f3",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 15349,
+                  "title": "RAIL-BENCH: Rail Track Detection"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 26346.0
+            },
+            {
+              "id": 682099,
+              "created_by": "annikabaetz",
+              "owner_display_name": "annikabaetz",
+              "created_when": "2026-04-01T13:11:59.038678Z",
+              "name": "reference_data @ '04-01-2026 13:11'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "192dc6cc-6155-4e2a-9c2e-3d50c4f3bc8d",
+              "value": "192dc6cc-6155-4e2a-9c2e-3d50c4f3bc8d",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 15349,
+                  "title": "RAIL-BENCH: Rail Track Detection"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 718837.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 10,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 16936,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "main",
+      "columns": [
+        {
+          "id": 72719,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "mAP (overall score)",
+          "key": "mAP",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 72720,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "mLineAP",
+          "key": "mLineAP",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 72721,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "mChamferAP",
+          "key": "mChamferAP",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 72722,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "LineAP@0.1",
+          "key": "LineAP_0.1",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 72723,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "LineAP@0.5",
+          "key": "LineAP_0.5",
+          "sorting": "desc",
+          "index": 4,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 72724,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "LineAP@1.0",
+          "key": "LineAP_1.0",
+          "sorting": "desc",
+          "index": 5,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 72725,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "ChamferAP@0.5",
+          "key": "ChamferAP_0.5",
+          "sorting": "desc",
+          "index": 6,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 72726,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "ChamferAP@1.0",
+          "key": "ChamferAP_1.0",
+          "sorting": "desc",
+          "index": 7,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 72727,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "ChamferAP@5.0",
+          "key": "ChamferAP_5.0",
+          "sorting": "desc",
+          "index": 8,
+          "hidden": false,
+          "precision": 4
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Add_And_Delete_Multiple"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": true,
+  "description": "Detect all visible rails in the given images.",
+  "participants_count": 7,
+  "submissions_count": 4,
+  "queue": null,
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": true,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "annikabaetz/railbench:latest",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": {
+    "add_data": {
+      "key": "add_data",
+      "type": "text",
+      "title": "Additional Training Data",
+      "selection": "",
+      "is_required": "true",
+      "is_on_leaderboard": "true"
+    },
+    "method_name": {
+      "key": "method_name",
+      "type": "text",
+      "title": "Method Name",
+      "selection": "",
+      "is_required": "true",
+      "is_on_leaderboard": "true"
+    }
+  },
+  "forum": 15143,
+  "reward": "",
+  "contact_email": "annika.baetz@kit.edu",
+  "report": "",
+  "forum_enabled": true
+}
