@@ -6,9 +6,9 @@
     "description_zh": "该竞赛在超声图像回归任务上评估基础模型。参赛者预测解剖学标志点坐标。评估指标为平均径向误差（MRE）和平均绝对误差（MAE），数值越低越好。",
     "created_by": "jared2408",
     "created_when": "2026-04-12T05:59:27.070072Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-13-1776048868/504537dff745/logo.png?AWSAccessKeyId=codabench-prod&Signature=zGJlT5WYo0r4V4ycYKipSKQuGAw%3D&Expires=1786203556",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-04-13-1776048868/504537dff745/logo.png?AWSAccessKeyId=codabench-prod&Signature=DB%2FYQBGIZbD3UO4T%2FX%2BkZd43yz0%3D&Expires=1786290212",
     "participants_count": 206,
-    "submissions_count": 2897,
+    "submissions_count": 2986,
     "first_phase_start": null,
     "phases": [
       {
@@ -113,9 +113,9 @@
     "description_zh": "最终测试阶段。提交您的 Docker 镜像以在隐藏测试集上进行评估。\n您的容器必须读取 /input 并将 regression_predictions.json 写入 /output。",
     "created_by": "jared2408",
     "created_when": "2026-07-17T05:01:21.296699Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-17-1784264481/fe0874732472/logo.png?AWSAccessKeyId=codabench-prod&Signature=O5XiyBKN%2B92KzbY%2BP5t6dbQfAbE%3D&Expires=1786203527",
-    "participants_count": 39,
-    "submissions_count": 26,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-17-1784264481/fe0874732472/logo.png?AWSAccessKeyId=codabench-prod&Signature=DRQQkGlWOtQfVDWN58wVGLev03w%3D&Expires=1786290184",
+    "participants_count": 41,
+    "submissions_count": 30,
     "first_phase_start": null,
     "phases": [
       {
@@ -154,9 +154,9 @@
     "description_zh": "# YouTube商业内容检测与分类系统：未成年人受众合规评估\n\n## 系统概述\n针对可能触及未成年人受众的YouTube视频中的商业内容进行检测、分类和合规风险评估，基于欧盟消费者法律框架，分四个数据访问层级架构。\n\n---\n\n## 第一层：基础内容识别\n\n### 检测维度\n- **视频元数据分析**：频道类目、观众年龄统计、内容标签\n- **视频脚本扫描**：自动字幕/手动转录的商业语言模式识别\n- **视觉元素识别**：品牌logo、产品展示、赞助标识\n\n### 输出分类\n| 商业内容类型 | 识别信号 | 风险等级 |\n|---------|--------|--------|\n| 直接广告 | 明确产品推荐、定价信息 | 高 |\n| 原生广告 | 产品集成、品牌合作 | 中高 |\n| 隐性置入 | 背景品牌、角色使用产品 | 中 |\n| 联盟营销 | 推荐链接、折扣码 | 中高 |\n\n---\n\n## 第二层：产品类别与监管映射\n\n### 高风险产品类别（未成年人保护）\n- **食品饮料**：高糖/高盐、能量饮料、酒精相关\n- **科技产品**：游戏、社交应用、沉浸式内容\n- **时尚美容**：化妆品、整容相关服务、极端减肥产品\n- **金融产品**：加密资产、赌博、在线交易平台\n- **药品与补充剂**：处方药推荐、声称疗效的补充品\n\n### 分类规则\n```\n产品类别 → 年龄敏感度 → 欧盟指令 → 特定标记要求\n```\n\n**示例**：能量饮料(食品) → 高(12岁以下) → 2006/114/EC(误导性广告) → 必须标注\"咖啡因含量\"\n\n---\n\n## 第三层：欧盟合规风险标记\n\n### 法律框架应用\n\n#### A. 欧盟《消费者权利指令》(2011/83/EU)\n- **风险标记**：\n  - 缺少清晰的商业意图披露\n  - 不透明的价格条款\n  - 无冷静期声明（适用产品）\n\n#### B. 《不公平商业惯例指令》(2005/29/EC)\n- **风险标记**：\n  - 虚假/误导性声明（健康效益、性能）\n  - 攻击性营销实践（强制购买、时间压力）\n  - 儿童针对性的操纵策略\n\n#### C. 《视听传媒服务指令》(2010/13/EU)修订案\n- **风险标记**：\n  - 缺少商业广告边界标记(\"reklame\"、\"Werbung\"、\"publicité\")\n  - 儿童节目中的插播广告违规\n  - 名人/影响者代言未标注\n\n#### D. 《儿童在线隐私保护规则》(GDPR第8条+指南)\n- **风险标记**：\n  - 14岁以下受众的个性化广告\n  - 未获得可验证的父母同意\n  - 行为追踪/数据收集未披露\n\n### 风险评分矩阵\n\n| 合规维度 | 低风险 | 中风险 | 高风险 |\n|---------|-------|-------|-------|\n| 披露透明度 | 明确标记 | 模糊标记 | 无标记 |\n| 年龄针对性 | 通用内容 | 混合受众 | 明确针对儿童 |\n| 声称验证性 | 有证据支持 | 部分声称 | 未实质性声称 |\n| 数据实践 | 最小收集 | 追踪但同意 | 追踪无同意 |\n\n---\n\n## 第四层：报告与可视化输出\n\n### 检测结果架构\n\n```json\n{\n  \"video_id\": \"string\",\n  \"commercial_content\": {\n    \"detected\": boolean,\n    \"types\": [\"native_advertising\", \"affiliate_marketing\"],\n    \"confidence\": 0.92\n  },\n  \"product_classification\": {\n    \"category\": \"energy_beverages\",\n    \"risk_tier\": \"high\",\n    \"age_sensitivity\": \"12+\"\n  },\n  \"compliance_flags\": {\n    \"disclosure_clarity\": {\n      \"status\": \"non-compliant\",\n      \"issue\": \"商业意图未标记\",\n      \"regulation\": \"2010/13/EU\",\n      \"severity\": \"critical\"\n    },\n    \"misleading_claims\": {\n      \"status\": \"flagged\",\n      \"claims\": [\"增加体能\", \"改善注意力\"],\n      \"evidence_status\": \"unsubstantiated\",\n      \"regulation\": \"2005/29/EC\",\n      \"severity\": \"high\"\n    },\n    \"influencer_compliance\": {\n      \"status\": \"non-compliant\",\n      \"issue\": \"影响者代言未披露\",\n      \"regulation\": \"2005/29/EC + 2010/13/EU\",\n      \"severity\": \"high\"\n    },\n    \"gdpr_data_practices\": {\n      \"status\": \"warning\",\n      \"issue\": \"链接产品的应用进行未同意追踪\",\n      \"regulation\": \"GDPR Art.8\",\n      \"severity\": \"medium\"\n    }\n  },\n  \"audience_assessment\": {\n    \"likely_minor_reach\": 0.78,\n    \"channel_category\": \"gaming\",\n    \"viewer_demographics\": \"primarily_under_18\"\n  },\n  \"recommendations\": [\n    \"添加明确的商业披露标记\",\n    \"删除未实质性支持的健康声称\",\n    \"获取影响者代言的书面披露\",\n    \"审查链接产品的儿童隐私设置\"\n  ]\n}\n```\n\n### 仪表板指标\n- **内容风险热图**：按产品类别和合规维度\n- **频道合规趋势**：时间序列违规频率\n- **欧盟成员国地区映射**：国家特定法律强度权重\n- **影响者网络分析**：代言关系与披露一致性\n\n---\n\n## 实施考量\n\n### 技术栈\n- **自然语言处理**：多语言商业语言检测(英语、德语、法语、西班牙语等)\n- **计算机视觉**：品牌识别、视觉商业标记\n- **图知识库**：产品-类别-法规映射\n\n### 局限性与透明度\n- 文化差异：商业实践的地区规范差异\n- 假阳性风险：讽刺/教育性内容误分类\n- 法律滞后：新兴平台实践的监管覆盖不足\n\n---\n\n## 参考法律工具\n\n| 指令 | 关键条款 | 实施成员国差异 |\n|-----|--------|------------|\n| 2010/13/EU(AVMSD) | 第9条:广告披露 | 德国严格;南欧执法宽松 |\n| 2005/29/EC | 附件I:禁止实践 | 一致性高 |\n| GDPR | 第8条:儿童同意 | 比利时(7岁);其他国家(16岁) |\n\n此系统设计可扩展至TikTok、Instagram等平台的适应性修改。",
     "created_by": "thalesbertaglia",
     "created_when": "2026-07-20T09:51:37.748643Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784541097/a7995f6fb767/logo.png?AWSAccessKeyId=codabench-prod&Signature=q4%2FYMEKxePiKbLHUFuKI5EMdWCs%3D&Expires=1786203525",
-    "participants_count": 45,
-    "submissions_count": 98,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784541097/a7995f6fb767/logo.png?AWSAccessKeyId=codabench-prod&Signature=S3lrTio%2BsySq%2B%2FqrG8xRSUJMa8w%3D&Expires=1786290184",
+    "participants_count": 47,
+    "submissions_count": 110,
     "first_phase_start": null,
     "phases": [
       {
@@ -208,8 +208,8 @@
     "description_zh": "在低空经济蓬勃发展的大背景下，无人机航拍视频已成为国土测绘、应急救援、精准农业等领域的核心数据源。然而，受限于载荷功耗和传输带宽的制约，原始视频常面临分辨率低、细节模糊等瓶颈问题，这严重影响了下游目标识别和场景分析的有效性。视频超分辨率重建作为突破硬件限制、增强数据价值的关键技术，是连接前端数据采集与后端智能应用的重要桥梁。为汇聚全球顶尖算法团队，探索时空信息挖掘的技术边界，攻克复杂动态场景中的细节恢复和纹理增强难题，我们荣幸举办无人机视频超分辨率重建竞赛。\n\n通过此次竞赛，我们旨在激发算法创新，提升真实无人机航拍场景中的高保真时间重建和精细纹理恢复能力——这些场景往往具有低分辨率、高压缩率和运动模糊的特点。该赛事不仅是对计算机视觉与时间信号处理交叉领域技术实力的全面考察，也为全天候智能监控、高精度地理信息更新和自动灾情评估等重大应用提供前瞻性探索。",
     "created_by": "cylwk",
     "created_when": "2026-06-16T08:59:05.171345Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-16-1781618288/37a77e473e98/420a6900-614b-4150-9684-87298260914.png?AWSAccessKeyId=codabench-prod&Signature=w7PGvlfPrz3bm7sNXOV4cfKzpVQ%3D&Expires=1786203537",
-    "participants_count": 5,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-16-1781618288/37a77e473e98/420a6900-614b-4150-9684-87298260914.png?AWSAccessKeyId=codabench-prod&Signature=dJVXZtW4OA4SMDlkQ1BRqzm9fuU%3D&Expires=1786290192",
+    "participants_count": 6,
     "submissions_count": 1,
     "first_phase_start": null,
     "phases": [
@@ -263,9 +263,9 @@
     "description_zh": "通用超声图像和视频分析基准，用于B型超声、造影增强超声（CEUS）和心脏超声视频的多器官分类和分割。",
     "created_by": "uusivc2026",
     "created_when": "2026-06-26T07:10:19.780392Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782457819/2259d81709fc/Deep-Breath-logo.png?AWSAccessKeyId=codabench-prod&Signature=CXR4akcUmE5RbdV1hGFMUMKM91Q%3D&Expires=1786203531",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782457819/2259d81709fc/Deep-Breath-logo.png?AWSAccessKeyId=codabench-prod&Signature=67aCa%2FG2LH%2BCi0%2FTIkWMlLs6E1Y%3D&Expires=1786290189",
     "participants_count": 69,
-    "submissions_count": 227,
+    "submissions_count": 235,
     "first_phase_start": null,
     "phases": [
       {
@@ -310,9 +310,9 @@
     "description_zh": "Optical Time-Sensitive Weak-Small Target Detection is an important research direction in intelligent visual perception and a key technical challenge in target detection and situation awareness in complex environments. Compared to conventional target detection tasks, weak-small targets typically exhibit characteristics such as small imaging scale, weak target energy, strong background interference, and unstable target morphology. The usable information in a single frame image is extremely limited, and algorithms are prone to issues such as missed detections, false detections, and discontinuous detection results in real-world scenarios.\n\nThis challenge competition, based on the CSIG2026 academic conference platform, focuses on key problems in optical time-sensitive weak-small target detection, and sets up two competition tracks: \"Infrared Video Satellite Airborne Moving Target Detection\" and \"Motion Small Target Detection Based on Event Camera\". It provides participating teams with a fair and reproducible algorithm validation platform, promoting advances in related data construction, method innovation, and technical exchange.",
     "created_by": "irnewbie",
     "created_when": "2026-07-16T16:05:17.810335Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217917/f590d1281393/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=ShKxYZwhyyUbCQjEs%2B%2Bb9%2FCPRTU%3D&Expires=1786203525",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217917/f590d1281393/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=xozX9DW9poeOwiMfBrxiMqRRTEA%3D&Expires=1786290185",
     "participants_count": 74,
-    "submissions_count": 625,
+    "submissions_count": 659,
     "first_phase_start": null,
     "phases": [
       {
@@ -364,9 +364,9 @@
     "description_zh": "我注意到你提供的文本已经是简体中文，我原样返回：\n\n详情请看比赛内部官网详情页",
     "created_by": "irnewbie",
     "created_when": "2026-07-20T06:11:10.993454Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784528469/7e8bf5c614cd/ScreenShot_2026-07-20_140940_018.png?AWSAccessKeyId=codabench-prod&Signature=QBd7uf7Q0fhO2YWYfzuD9TkiohQ%3D&Expires=1786203526",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784528469/7e8bf5c614cd/ScreenShot_2026-07-20_140940_018.png?AWSAccessKeyId=codabench-prod&Signature=%2B7S1xmdliXF0n5kPiVca9ndcA94%3D&Expires=1786290186",
     "participants_count": 31,
-    "submissions_count": 163,
+    "submissions_count": 180,
     "first_phase_start": null,
     "phases": [
       {
@@ -400,9 +400,9 @@
     "description_zh": "Optical temporal-sensitive small target detection is an important research direction in intelligent visual perception and a key technical issue in target detection and situational awareness in complex environments. Compared with conventional target detection tasks, small targets typically exhibit characteristics such as small imaging scale, weak target energy, strong background interference, and unstable target morphology. The information available in a single frame is very limited, and algorithms are prone to missed detections, false positives, and discontinuous detection results in real-world scenarios.\n\nThis challenge competition, based on the CSIG2026 academic conference platform, focuses on key problems in optical temporal-sensitive small target detection, establishing two tracks: \"infrared video satellite aerial moving target detection\" and \"event camera-based moving small target detection.\" It provides participating teams with a fair and reproducible algorithm validation platform, promoting related data construction, method innovation, and technical exchange.",
     "created_by": "irnewbie",
     "created_when": "2026-07-16T15:58:17.338227Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217497/8cef6a724fb4/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=4aUTFnyX6Ak9xU0IdKK%2Fyy83qAY%3D&Expires=1786203526",
-    "participants_count": 109,
-    "submissions_count": 636,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217497/8cef6a724fb4/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=JJa1t2ittQXKwoS6b4O5awqWaL4%3D&Expires=1786290186",
+    "participants_count": 110,
+    "submissions_count": 677,
     "first_phase_start": null,
     "phases": [
       {
@@ -454,9 +454,9 @@
     "description_zh": "MICCAI FLARE 2026 任务2：AutoMSC - 医学图像自动分割与分类",
     "created_by": "junma",
     "created_when": "2026-04-09T21:08:06.808342Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-23-1784773803/182fbbd79fab/automsc-logo-light-ring.png?AWSAccessKeyId=codabench-prod&Signature=wfn%2F0XmP6joPQp0LD6By8esUAwc%3D&Expires=1786203555",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-23-1784773803/182fbbd79fab/automsc-logo-light-ring.png?AWSAccessKeyId=codabench-prod&Signature=TGG3hFFclh6ttoSXq72x2q4pH40%3D&Expires=1786290212",
     "participants_count": 78,
-    "submissions_count": 50,
+    "submissions_count": 51,
     "first_phase_start": null,
     "phases": [
       {
@@ -525,9 +525,9 @@
     "description_zh": "无人机图像上的大规模3D语义高斯泼溅重建（TUM+黄金海岸）。ECCV 2026研讨会·2026年9月8日·瑞典马尔默。",
     "created_by": "jumponthemoon",
     "created_when": "2026-07-24T10:11:38.562965Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-24-1784887898/b3c2c760151c/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=964V%2FbJmxG6XooS2fcJ%2Buy%2FRl5A%3D&Expires=1786203524",
-    "participants_count": 12,
-    "submissions_count": 29,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-24-1784887898/b3c2c760151c/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=7ZSbfe%2FWPTsk77N87ZhK9XHKk68%3D&Expires=1786290183",
+    "participants_count": 13,
+    "submissions_count": 40,
     "first_phase_start": null,
     "phases": [
       {
@@ -579,7 +579,7 @@
     "description_zh": "该竞赛对近距离短波红外高光谱成像的×4超分辨率进行基准测试。\n参赛者将获得使用同一传感器和不同镜头采集的低分辨率HSI立方体数据，通过控制分辨率变化而不引入光谱偏差。任务是从×4下采样输入重建高分辨率短波红外高光谱图像。",
     "created_by": "rafariva",
     "created_when": "2025-12-30T16:14:49.840049Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-12-30-1767111468/edd5610f43a0/logo_HISR.png?AWSAccessKeyId=codabench-prod&Signature=x%2BmdUhWk1ePIdVcf9ECUur6AeFM%3D&Expires=1786203600",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-12-30-1767111468/edd5610f43a0/logo_HISR.png?AWSAccessKeyId=codabench-prod&Signature=THiN0sg10j8gnh%2FFfakkohuI1BU%3D&Expires=1786290261",
     "participants_count": 53,
     "submissions_count": 582,
     "first_phase_start": null,
@@ -638,9 +638,9 @@
     "description_zh": "一个基于混合信号数据集的协作3D目标检测挑战，该数据集是一个多样化的真实点云数据集，用于异构激光雷达V2X协作（3辆连接的车辆+配备双激光雷达的路侧单元）。融合多个智能体的点云，在鸟瞰图平面上检测车辆、自行车和行人，并在排行榜上攀升。",
     "created_by": "mixed-signals",
     "created_when": "2026-07-09T01:30:36.192294Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783560636/614edf812e36/logo.png?AWSAccessKeyId=codabench-prod&Signature=B2tOIZK%2Bea71wArECXV4cpdbK5w%3D&Expires=1786203532",
-    "participants_count": 26,
-    "submissions_count": 17,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783560636/614edf812e36/logo.png?AWSAccessKeyId=codabench-prod&Signature=%2B1uUbaSiSZB7tWaKcoxU58pzkE8%3D&Expires=1786290189",
+    "participants_count": 27,
+    "submissions_count": 21,
     "first_phase_start": null,
     "phases": [
       {
@@ -686,9 +686,9 @@
     "description_zh": "This competition focuses on fine-grained understanding of urban-level building facade components, utilizing the City-Fac dataset.\n\nThe data is collected by vehicle-mounted mobile laser scanning systems, covering multiple types of typical urban street blocks in Xiamen, with a cumulative road length of approximately 60 km. The dataset includes fine-grained building facade element annotations such as walls, windows, doors, roofs, billboards, air conditioning units, canopies, and balconies, with both semantic-level and instance-level labels provided.\n\nParticipants need to identify independent building facade component instances in the test point cloud and output the corresponding semantic categories and instance numbers.\n\nThe competition adopts a result submission mode. Participants complete model training and inference locally and only submit prediction results to Codabench, where the platform automatically scores using hidden instance labels.",
     "created_by": "jianlongguan",
     "created_when": "2026-06-26T12:50:09.783065Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=O%2F%2Fpz79VAXDzOvsQCZ4z00G%2FkiA%3D&Expires=1786203535",
-    "participants_count": 12,
-    "submissions_count": 55,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=grbtTuO24Ax4xE%2Fo1MCHIXewFP4%3D&Expires=1786290193",
+    "participants_count": 13,
+    "submissions_count": 56,
     "first_phase_start": null,
     "phases": [
       {
@@ -715,7 +715,7 @@
     "description_zh": "欢迎来到首届\"重演化身视频中远程操作者身份验证\"国际竞赛。本竞赛将与[ACCV2026](https://https://accv2026.org/)联合举办。",
     "created_by": "allam",
     "created_when": "2026-07-27T05:47:11.519603Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=L%2B4yHwEH8lFh2AyJJ4VVLgsinjI%3D&Expires=1786203522",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=ZI%2BLHw%2BDTVZiL%2FaRVQ339yGa3iQ%3D&Expires=1786290183",
     "participants_count": 14,
     "submissions_count": 0,
     "first_phase_start": null,
@@ -768,7 +768,7 @@
     "description_zh": "LiDAR-视觉-惯性SLAM赛道的纯翻译评估",
     "created_by": "yuhangxu",
     "created_when": "2026-07-26T09:51:43.642130Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059503/c4f5eea4397e/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=nWChywYvWwvbFVoDPy6dWlkXuAo%3D&Expires=1786203524",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059503/c4f5eea4397e/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=oNCRAr6Yat6wRPE42afiWbO%2FW5s%3D&Expires=1786290183",
     "participants_count": 3,
     "submissions_count": 1,
     "first_phase_start": null,
@@ -809,7 +809,7 @@
     "description_zh": "LiDAR-惯性SLAM赛道的仅翻译评估。",
     "created_by": "yuhangxu",
     "created_when": "2026-07-26T09:50:41.414250Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059441/adc6bc07e4f0/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=YDHHyAs2JG9G9EIm5y6bm4PRs%2Bs%3D&Expires=1786203526",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059441/adc6bc07e4f0/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=Z%2FIJKzg8c%2BudC1t6ZNBJlYxPRsA%3D&Expires=1786290186",
     "participants_count": 9,
     "submissions_count": 26,
     "first_phase_start": null,
