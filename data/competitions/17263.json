@@ -5,9 +5,9 @@
   "description_zh": "通用超声图像和视频分析基准，用于B型超声、造影增强超声（CEUS）和心脏超声视频的多器官分类和分割。",
   "created_by": "uusivc2026",
   "created_when": "2026-06-26T07:10:19.780392Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782457819/2259d81709fc/Deep-Breath-logo.png?AWSAccessKeyId=codabench-prod&Signature=67aCa%2FG2LH%2BCi0%2FTIkWMlLs6E1Y%3D&Expires=1786290189",
-  "participants_count": 69,
-  "submissions_count": 235,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782457819/2259d81709fc/Deep-Breath-logo.png?AWSAccessKeyId=codabench-prod&Signature=8y8vLUggT9VRT%2BMYOqdPKCMN%2F%2B8%3D&Expires=1786376882",
+  "participants_count": 70,
+  "submissions_count": 249,
   "first_phase_start": null,
   "phases": [
     {
