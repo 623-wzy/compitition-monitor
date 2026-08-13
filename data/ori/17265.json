@@ -5,8 +5,8 @@
   "created_by": "jianlongguan",
   "owner_display_name": "jianlongguan",
   "created_when": "2026-06-26T12:50:09.783065Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=qyD85EMV5vxeU9FF8HqYYZYuy3s%3D&Expires=1786550336",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381_icon.png?AWSAccessKeyId=codabench-prod&Signature=FJV3McVN%2FdiHKQeZDtG%2FRK%2BHvf4%3D&Expires=1786550336",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=%2F%2F7jF7151%2BFERiMAKNtj6pNKVFA%3D&Expires=1786637003",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381_icon.png?AWSAccessKeyId=codabench-prod&Signature=w8e0CduAAh97R61IwZMYp3%2F76fA%3D&Expires=1786637003",
   "terms": "City-Facade 数据集仅限按照其数据许可协议和本比赛规则，用于科研、教学和比赛相关的非商业用途。数据集、点云数据及其语义和实例标注的相关权利归原始数据提供方所有。\n\n参赛者在使用比赛数据时，应遵守以下规定：\n\n- 未经数据提供方书面许可，不得出售、转让、再许可或以其他方式商业使用比赛数据；\n- 不得将完整数据集、测试数据、实例标注或其衍生标注重新公开发布；\n- 不得尝试获取、推测、恢复、交换或传播隐藏测试标签；\n- 不得对测试集进行人工逐点或逐实例标注；\n- 不得根据排行榜反馈人工修正测试集实例分割结果；\n- 不得使用多个账号或多个队伍规避提交次数限制；\n- 不得提交其他参赛团队或第三方的预测结果；\n- 不得利用平台漏洞、恶意文件或其他不正当方式影响比赛评测。\n\n参赛者可以使用公开可获得的预训练模型或外部数据，但应遵守相关资源的许可协议，并在最终技术报告中完整披露数据来源、模型来源和具体使用方式。比赛组织方有权依据正式比赛规则限制部分外部资源的使用。\n\n使用 City-Facade 数据集开展研究或发表成果时，应引用以下论文：\n\n```bibtex\n@article{chen2026cityfacade,\n  title={City-Facade: A city-level large-scale point cloud building facade dataset for semantic \\& instance segmentation},\n  author={Chen, Yiping and Li, Jonathan and Han, Ting and Feng, Huifang and Chen, Jun and Wang, Cheng},\n  journal={ISPRS Journal of Photogrammetry and Remote Sensing},\n  volume={232},\n  pages={675--688},\n  year={2026},\n  doi={10.1016/j.isprsjprs.2026.01.003}\n}\n```\n\n数据集项目地址：\n\n```text\nhttps://github.com/gorgeouseping/City-Facade\n```\n\n排行榜成绩不直接等同于最终获奖结果。排名靠前的团队须按照比赛组织方要求提交完整代码、模型权重、运行环境、技术报告和必要的复现材料。\n\n无法复现、材料不完整、未披露外部数据或存在违规行为的结果，可能被取消成绩、排名或获奖资格。\n\n参加本比赛即表示参赛者已阅读、理解并同意遵守上述条款。比赛组织方保留对违规行为进行调查和处理，以及对比赛规则作出最终解释的权利。",
   "pages": [
     {
@@ -275,7 +275,7 @@
   "registration_auto_approve": true,
   "description": "本比赛面向城市级建筑立面构件精细理解，采用City-Facade大规模三维点云数据集。\n\n数据由车载移动激光扫描系统采集，覆盖厦门市多类典型城市街区，累计道路长度约60 km。数据包含墙面、窗户、门、屋顶、广告牌、空调外机、雨棚和阳台等细粒度建筑立面要素标注，并提供语义级与实例级标签。\n\n参赛者需要识别测试点云中的独立建筑立面构件实例，并输出相应实例编号和语义类别。\n\n比赛采用结果提交模式。参赛者在本地完成模型训练和推理，仅向Codabench提交预测结果，平台使用隐藏实例标签进行自动评分。",
   "participants_count": 16,
-  "submissions_count": 62,
+  "submissions_count": 66,
   "queue": null,
   "enable_detailed_results": false,
   "show_detailed_results_in_submission_panel": false,

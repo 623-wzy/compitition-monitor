@@ -6,9 +6,9 @@
     "description_zh": "最终测试阶段。提交您的 Docker 镜像以在隐藏测试集上进行评估。\n您的容器必须读取 /input 并将 regression_predictions.json 写入 /output。",
     "created_by": "jared2408",
     "created_when": "2026-07-17T05:01:21.296699Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-17-1784264481/fe0874732472/logo.png?AWSAccessKeyId=codabench-prod&Signature=WdUA15no5T5IYsAS4h3jZx7T%2F1M%3D&Expires=1786550332",
-    "participants_count": 48,
-    "submissions_count": 42,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-17-1784264481/fe0874732472/logo.png?AWSAccessKeyId=codabench-prod&Signature=OYE21px35W8GcC2j%2BqRzuAP4j%2Bg%3D&Expires=1786636998",
+    "participants_count": 49,
+    "submissions_count": 49,
     "first_phase_start": null,
     "phases": [
       {
@@ -47,7 +47,7 @@
     "description_zh": "在低空经济蓬勃发展的大背景下，无人机航拍视频已成为国土测绘、应急救援、精准农业等领域的核心数据源。然而，受限于载荷功耗和传输带宽的制约，原始视频常面临分辨率低、细节模糊等瓶颈问题，这严重影响了下游目标识别和场景分析的有效性。视频超分辨率重建作为突破硬件限制、增强数据价值的关键技术，是连接前端数据采集与后端智能应用的重要桥梁。为汇聚全球顶尖算法团队，探索时空信息挖掘的技术边界，攻克复杂动态场景中的细节恢复和纹理增强难题，我们荣幸举办无人机视频超分辨率重建竞赛。\n\n通过此次竞赛，我们旨在激发算法创新，提升真实无人机航拍场景中的高保真时间重建和精细纹理恢复能力——这些场景往往具有低分辨率、高压缩率和运动模糊的特点。该赛事不仅是对计算机视觉与时间信号处理交叉领域技术实力的全面考察，也为全天候智能监控、高精度地理信息更新和自动灾情评估等重大应用提供前瞻性探索。",
     "created_by": "cylwk",
     "created_when": "2026-06-16T08:59:05.171345Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-16-1781618288/37a77e473e98/420a6900-614b-4150-9684-87298260914.png?AWSAccessKeyId=codabench-prod&Signature=xaA4HeTsqaSJ5VN%2B%2F%2FkC%2FiZyvts%3D&Expires=1786550337",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-16-1781618288/37a77e473e98/420a6900-614b-4150-9684-87298260914.png?AWSAccessKeyId=codabench-prod&Signature=cGo6OLQwJnO4ddTD%2FT4JSk9kK9c%3D&Expires=1786637007",
     "participants_count": 8,
     "submissions_count": 1,
     "first_phase_start": null,
@@ -102,9 +102,9 @@
     "description_zh": "通用超声图像和视频分析基准，用于B型超声、造影增强超声（CEUS）和心脏超声视频的多器官分类和分割。",
     "created_by": "uusivc2026",
     "created_when": "2026-06-26T07:10:19.780392Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782457819/2259d81709fc/Deep-Breath-logo.png?AWSAccessKeyId=codabench-prod&Signature=DtfzqQ28Gnz5t4wEoxr6SazmMws%3D&Expires=1786550336",
-    "participants_count": 71,
-    "submissions_count": 292,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782457819/2259d81709fc/Deep-Breath-logo.png?AWSAccessKeyId=codabench-prod&Signature=9TSKFLWX5tUQumiKvWUY0C2zZmc%3D&Expires=1786637004",
+    "participants_count": 72,
+    "submissions_count": 314,
     "first_phase_start": null,
     "phases": [
       {
@@ -149,9 +149,9 @@
     "description_zh": "我注意到你提供的文本已经是简体中文，我原样返回：\n\n详情请看比赛内部官网详情页",
     "created_by": "irnewbie",
     "created_when": "2026-07-20T06:11:10.993454Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784528469/7e8bf5c614cd/ScreenShot_2026-07-20_140940_018.png?AWSAccessKeyId=codabench-prod&Signature=yK32dHaII5xOHbQ3LECZ7w6lbvg%3D&Expires=1786550332",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784528469/7e8bf5c614cd/ScreenShot_2026-07-20_140940_018.png?AWSAccessKeyId=codabench-prod&Signature=As%2BMd6IyPFRxKRXcraQzhwU9j8I%3D&Expires=1786636999",
     "participants_count": 31,
-    "submissions_count": 222,
+    "submissions_count": 237,
     "first_phase_start": null,
     "phases": [
       {
@@ -178,60 +178,6 @@
       }
     ]
   },
-  "17555": {
-    "id": 17555,
-    "title": "2026 “金睛杯”光学时敏弱小目标探测挑战赛（赛道一：红外视频卫星空中动目标检测）",
-    "description": "光学时敏弱小目标探测是智能视觉感知领域中的重要研究方向，也是复杂环境下目标探测与态势感知中的关键技术问题。与常规目标检测任务相比，弱小目标通常存在成像尺度小、目标能量弱、背景干扰强、目标形态不稳定等特点，单帧图像中可利用的信息十分有限，算法在真实场景中容易出现漏检、误检和检测结果不连续等问题。\n本次挑战赛依托 CSIG2026 学术会议平台，围绕光学时敏弱小目标探测中的关键问题，设置\"红外视频卫星空中动目标检测\"和\"基于事件相机的运动小目标检测\"两个赛道，为参赛队伍提供公平、可复现的算法验证平台，推动相关数据建设、方法创新和技术交流。",
-    "description_zh": "Optical temporal-sensitive small target detection is an important research direction in intelligent visual perception and a key technical issue in target detection and situational awareness in complex environments. Compared with conventional target detection tasks, small targets typically exhibit characteristics such as small imaging scale, weak target energy, strong background interference, and unstable target morphology. The information available in a single frame is very limited, and algorithms are prone to missed detections, false positives, and discontinuous detection results in real-world scenarios.\n\nThis challenge competition, based on the CSIG2026 academic conference platform, focuses on key problems in optical temporal-sensitive small target detection, establishing two tracks: \"infrared video satellite aerial moving target detection\" and \"event camera-based moving small target detection.\" It provides participating teams with a fair and reproducible algorithm validation platform, promoting related data construction, method innovation, and technical exchange.",
-    "created_by": "irnewbie",
-    "created_when": "2026-07-16T15:58:17.338227Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217497/8cef6a724fb4/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=uEonZqXp9TEpBTlqxmtDWH0EFFU%3D&Expires=1786550332",
-    "participants_count": 112,
-    "submissions_count": 785,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 29256,
-        "name": "模型训练与验证",
-        "start": "2026-07-20T16:00:00Z",
-        "end": "2026-08-28T04:00:00Z",
-        "max_submissions_per_day": 30
-      },
-      {
-        "id": 29257,
-        "name": "最终评测",
-        "start": "2026-08-28T11:00:00Z",
-        "end": "2026-08-31T04:00:00Z",
-        "max_submissions_per_day": 2
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "赛事日程",
-        "content": "# 赛事日程\n\n| 时间 | 任务 |\n| :---: | :---: |\n| 2026年5月29日－6月7日 | 组委会完成比赛任务、参赛办法、评比方式、报名材料和发布页面的准备工作。 |\n| 2026年6月8日 09:00 | 组委会在网站、微信公众号等平台正式公布比赛任务、参赛办法和评比方式，并同步启动报名。 |\n| 2026年6月8日－7月20日 | 参赛队伍报名及邮件资格确认。 |\n| 2026年7月20日 18:00 | 报名截止，组委会完成报名信息汇总与资格确认。 |\n| 2026年7月21日 － 8月28日 12：00 结束 | 比赛正式开始，组委会发布比赛训练集和评测格式，参赛队伍开展模型训练、算法优化和结果准备。 |\n| 2026年8月28日 19：00 开始 － 8月31日 12：00 结束 | 组委会开放比赛评测通道，各参赛队伍在规定时间内完成比赛任务，并将测试结果上传比赛网站。 |\n| 2026年9月4日－9月8日 | 参赛队伍提交算法代码、模型文件及算法报告，组委会对各参赛队伍进行真实性审查。 |\n| 2026年9月10日－9月14日 | 组委会完成成绩复核，并发布比赛成绩。 |\n| 2026年11月－12月 | 举行颁奖典礼。 |",
-        "content_zh": "这是一份中文文档，原样返回如下：\n\n# 赛事日程\n\n| 时间 | 任务 |\n| :---: | :---: |\n| 2026年5月29日－6月7日 | 组委会完成比赛任务、参赛办法、评比方式、报名材料和发布页面的准备工作。 |\n| 2026年6月8日 09:00 | 组委会在网站、微信公众号等平台正式公布比赛任务、参赛办法和评比方式，并同步启动报名。 |\n| 2026年6月8日－7月20日 | 参赛队伍报名及邮件资格确认。 |\n| 2026年7月20日 18:00 | 报名截止，组委会完成报名信息汇总与资格确认。 |\n| 2026年7月21日 － 8月28日 12：00 结束 | 比赛正式开始，组委会发布比赛训练集和评测格式，参赛队伍开展模型训练、算法优化和结果准备。 |\n| 2026年8月28日 19：00 开始 － 8月31日 12：00 结束 | 组委会开放比赛评测通道，各参赛队伍在规定时间内完成比赛任务，并将测试结果上传比赛网站。 |\n| 2026年9月4日－9月8日 | 参赛队伍提交算法代码、模型文件及算法报告，组委会对各参赛队伍进行真实性审查。 |\n| 2026年9月10日－9月14日 | 组委会完成成绩复核，并发布比赛成绩。 |\n| 2026年11月－12月 | 举行颁奖典礼。 |"
-      },
-      {
-        "index": 1,
-        "title": "赛事说明",
-        "content": "## 挑战赛的目的\n\n**通过本次挑战赛促进科研技术的交流研讨和应用推广**  \n\n本次挑战赛旨在依托 CSIG2026 学术会议平台，围绕光学时敏弱小目标探测中的关键问题，搭建面向学术界和产业界的开放竞赛与交流平台，吸引更多高校、科研院所和企业团队参与红外视频小目标检测、事件相机小目标检测等方向的研究。  \n\n**通过本次挑战赛促进光学时敏弱小目标探测技术发展**  \n\n通过竞赛汇聚工业界和学术界的智慧与力量，促进相关算法、数据集和评价体系的共同发展，推动领域垂类大模型发展与应用，加速技术创新和产业推广。  \n\n---\n\n## 挑战赛的意义\n\n**光学时敏弱小目标探测应用广泛，关键技术问题突出**  \n\n光学时敏弱小目标探测是智能视觉感知领域中的重要研究方向，也是复杂环境下目标探测与态势感知中的关键技术问题。弱小目标通常存在成像尺度小、目标能量弱、背景干扰强、目标形态不稳定等特点，单帧图像中可利用的信息十分有限。  \n\n**红外视频卫星目标检测亟需融合时域信息与轨迹关联**  \n\n卫星视角下的红外视频弱小目标往往具有成像距离远、信噪比低、背景复杂、运动轨迹细弱等特点，仅依靠单帧检测难以获得稳定结果，需要进一步结合多帧时域信息、运动一致性和目标轨迹关联关系。\n\n**事件相机小目标检测亟需发挥事件流时空连续性优势**  \n\n事件相机能够以异步方式感知亮度变化，具有高时间分辨率、低延迟、高动态范围和低数据冗余等优势。面向事件点云和事件流的时空建模方法发展，对于提升复杂场景下运动小目标的检测能力具有重要意义。\n\n**公开数据和统一评测标准有助于推动领域发展**  \n\n红外视频卫星目标和事件相机小目标相关公开数据仍相对有限，真实场景数据获取和标注成本较高。本次竞赛通过开放具有针对性的数据资源和统一评测标准，为参赛队伍提供公平、可复现的算法验证平台。\n\n---\n\n## 任务设置\n\n### 赛道一：红外视频卫星空中动目标检测  \n\n  赛道一的主要任务是对视频中的红外小目标的质心进行预测，附加任务是对目标进行跟踪。参赛队伍根据红外小目标图像特点自行设计相关算法，使用主办方提供的数据集进行模型训练，最终以召回率（Recall）、精确率（Precision）和 F1 分数作为评价指标，以及轨迹完整度和轨迹准确度作为附加评价指标，衡量参赛队伍算法模型的性能。\n\n### 赛道二：基于事件相机的运动小目标检测  \n\n  赛道二的主要任务是对事件流中的目标事件进行逐事件分割。参赛队伍根据事件小目标特性自行设计相关算法，使用主办方提供的事件数据集进行模型训练，最终以交并比（IoU）、准确率（ACC）、检测率（Pd）和虚警率（Fa）作为主要评价指标，衡量参赛队伍算法模型的性能。\n\n---\n\n## 数据集简介\n\n### 赛道一数据集简介\n\n  竞赛数据集由国防科技大学与武汉大学联合开发，包括：基于热红外卫星的 IRAir 数据集、基于 Landsat 卫星的 IRSatVideo-LEO 数据集、基于高分四号卫星的 IRSatVideo-GEO 数据集，以及实测卫星热红外视频数据，共 1400 段视频序列（1000 段用于训练，200 段用于验证，200 段用于测试）。比赛开始前，将发布训练集和验证集视频及掩码标注；进入评测阶段时公布测试集视频，测试集标签不公开。\n\n| 数据集 | 数据集简介 | 图像与目标示意 |\n| :---: | :---: | :---: |\n| IRAir | 数据来源：热红外 SDG 卫星一号图像，仿真目标<br>目标特点：飞机，低轨，暗目标<br>分辨率：256×256 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image1.png\" alt=\"IRAir 图像与目标示意\" width=\"400\"> |\n| IRSatVideo-LEO | 数据来源：Landsat 卫星图像，仿真目标<br>目标特点：低轨，亮目标，短波红外<br>分辨率：1024×1024 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image2.png\" alt=\"IRSatVideo-LEO 图像与目标示意\" width=\"400\"> |\n| IRSatVideo-GEO | 数据来源：高分四号卫星图像，仿真目标<br>目标特点：地球同步轨道，中波红外，弱目标<br>分辨率：742×733（平均） | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image3.png\" alt=\"IRSatVideo-GEO 图像与目标示意\" width=\"400\"> |\n| 实测热红外视频数据 | 数据来源：实测卫星热红外视频<br>目标特点：长波<br>分辨率：512×640 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image4.png\" alt=\"实测热红外视频数据图像与目标示意\" width=\"400\"> |\n\n\n### 赛道二数据集简介\n\n  基于 DAVIS346 事件相机的 EV-UAV 数据集作为训练、验证和测试数据集。总共 147 段序列（99 段用于训练，24 段用于验证，24 段用于测试）。（暂定）\n\n| 数据集 | 数据集简介 | 图像与目标示意 |\n| :---: | :---: | :---:|\n| EV-UAV &nbsp;| 数据来源：DAVIS346 事件相机实拍<br>分辨率：346×260 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/赛道二-image1.png\" alt=\"EV-UAV 图像与目标示意\" width=\"600\"> |\n\n---\n\n## 挑战赛评价方式\n\n### 赛道一评价方式\n\n  本次挑战赛赛道一的算法评价指标为召回率（Recall）和精确率（Precision），附加评价指标为轨迹完整度、轨迹准确度。算法最终评分结果由 F1 分数和附加分数组成。\n\n$$\nRecall = \\frac{TD}{AT}, \\quad Precision = \\frac{TD}{TD + FD}\n$$\n\n$$\nF1 = \\frac{2 \\times Recall \\times Precision}{Recall + Precision}\n$$\n\n$$\nTrackCompleteness = \\frac{NTA}{N}, \\quad TrackAccuracy = \\frac{NTA}{NA}\n$$\n\n| 附加得分项 | 阈值一 | 阈值二 | 阈值三 |\n| :---: | :---: | :---: | :---: |\n| 轨迹完整度得分 | ≥25%：+2分 | ≥35%：+3分 | ≥50%：+5分 |\n| 轨迹准确度得分 | ≥55%：+2分 | ≥65%：+3分 | ≥80%：+5分 |\n\n  最终得分为 F1 分数 × 100 + 附加得分，满分为 110 分。\n\n---\n\n### 赛道二评价方式\n\n  赛道二的算法评价指标为交并比（IoU）、准确率（Acc）、检测率（Pd）和虚警率（Fa），最终评分结果由各指标加权得分。\n\n$$\nIoU = \\frac{GT \\cap Pred}{GT \\cup Pred}, \\quad Acc = \\frac{TP_{target}}{TP_{target} + FN_{target}}\n$$\n\n$$\nPd = \\frac{TD}{AT}, \\quad Fa = \\frac{FD}{N_{frame} \\times H \\times W}\n$$\n\n$$\nScore_{Fa} = e^{-10000 \\times Fa}\n$$\n\n$$\nScore = 0.4Pd + 0.3Score_{Fa} + 0.2IoU + 0.1Acc\n$$\n\n---\n\n## 结果提交方式\n\n**结果提交格式、提交入口和提交次数限制**：待补充  \n\n**提交内容与时间要求**：参赛队伍须在规定时间内提交测试结果，并在后继阶段提交算法代码、模型文件及算法报告。组委会将对各参赛队伍进行真实性审查。  \n\n**真实性与可复现性要求**：为避免参赛队伍滥用其他数据集或验证集标签信息用于算法训练，参赛队伍需提供算法训练时的相关参数，确保算法结果可复现。如发现违规使用数据信息或算法结果无法复现，组委会将按赛事规则处理。\n\n---\n\n## 专题研讨会  \n组委会将举办挑战赛技术论坛，邀请获得一、二等奖的参赛队伍参加作特邀技术报告。\n\n---\n\n## 知识产权归属  \n\n参赛队伍提交的算法及可执行模型的知识产权归参赛团队所有，比赛数据集归主办方所有。  \n\n各参赛队伍需要承诺提交的结果可重复，组织方承诺履行保密义务，并不用于除本挑战赛外的任何其他用途。  \n\n参赛队伍应保证所提供的方案、算法属于自有知识产权。组织方对参赛队伍因使用本队提供完成的算法和结果而产生的任何实际侵权或者被任何第三方指控侵权概不负责。一旦上述情况和事件发生，参赛队伍必须承担一切相关法律责任和经济赔偿责任并保护组织方免于承担该等责任。",
-        "content_zh": "# 这是中文原文\n\n您提供的文本已经是简体中文，无需翻译。以下为原文内容：\n\n## 挑战赛的目的\n\n**通过本次挑战赛促进科研技术的交流研讨和应用推广**  \n\n本次挑战赛旨在依托 CSIG2026 学术会议平台，围绕光学时敏弱小目标探测中的关键问题，搭建面向学术界和产业界的开放竞赛与交流平台，吸引更多高校、科研院所和企业团队参与红外视频小目标检测、事件相机小目标检测等方向的研究。  \n\n**通过本次挑战赛促进光学时敏弱小目标探测技术发展**  \n\n通过竞赛汇聚工业界和学术界的智慧与力量，促进相关算法、数据集和评价体系的共同发展，推动领域垂类大模型发展与应用，加速技术创新和产业推广。  \n\n---\n\n## 挑战赛的意义\n\n**光学时敏弱小目标探测应用广泛，关键技术问题突出**  \n\n光学时敏弱小目标探测是智能视觉感知领域中的重要研究方向，也是复杂环境下目标探测与态势感知中的关键技术问题。弱小目标通常存在成像尺度小、目标能量弱、背景干扰强、目标形态不稳定等特点，单帧图像中可利用的信息十分有限。  \n\n**红外视频卫星目标检测亟需融合时域信息与轨迹关联**  \n\n卫星视角下的红外视频弱小目标往往具有成像距离远、信噪比低、背景复杂、运动轨迹细弱等特点，仅依靠单帧检测难以获得稳定结果，需要进一步结合多帧时域信息、运动一致性和目标轨迹关联关系。\n\n**事件相机小目标检测亟需发挥事件流时空连续性优势**  \n\n事件相机能够以异步方式感知亮度变化，具有高时间分辨率、低延迟、高动态范围和低数据冗余等优势。面向事件点云和事件流的时空建模方法发展，对于提升复杂场景下运动小目标的检测能力具有重要意义。\n\n**公开数据和统一评测标准有助于推动领域发展**  \n\n红外视频卫星目标和事件相机小目标相关公开数据仍相对有限，真实场景数据获取和标注成本较高。本次竞赛通过开放具有针对性的数据资源和统一评测标准，为参赛队伍提供公平、可复现的算法验证平台。\n\n---\n\n## 任务设置\n\n### 赛道一：红外视频卫星空中动目标检测  \n\n赛道一的主要任务是对视频中的红外小目标的质心进行预测，附加任务是对目标进行跟踪。参赛队伍根据红外小目标图像特点自行设计相关算法，使用主办方提供的数据集进行模型训练，最终以召回率（Recall）、精确率（Precision）和 F1 分数作为评价指标，以及轨迹完整度和轨迹准确度作为附加评价指标，衡量参赛队伍算法模型的性能。\n\n### 赛道二：基于事件相机的运动小目标检测  \n\n赛道二的主要任务是对事件流中的目标事件进行逐事件分割。参赛队伍根据事件小目标特性自行设计相关算法，使用主办方提供的事件数据集进行模型训练，最终以交并比（IoU）、准确率（ACC）、检测率（Pd）和虚警率（Fa）作为主要评价指标，衡量参赛队伍算法模型的性能。\n\n---\n\n## 数据集简介\n\n### 赛道一数据集简介\n\n竞赛数据集由国防科技大学与武汉大学联合开发，包括：基于热红外卫星的 IRAir 数据集、基于 Landsat 卫星的 IRSatVideo-LEO 数据集、基于高分四号卫星的 IRSatVideo-GEO 数据集，以及实测卫星热红外视频数据，共 1400 段视频序列（1000 段用于训练，200 段用于验证，200 段用于测试）。比赛开始前，将发布训练集和验证集视频及掩码标注；进入评测阶段时公布测试集视频，测试集标签不公开。\n\n| 数据集 | 数据集简介 | 图像与目标示意 |\n| :---: | :---: | :---: |\n| IRAir | 数据来源：热红外 SDG 卫星一号图像，仿真目标<br>目标特点：飞机，低轨，暗目标<br>分辨率：256×256 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image1.png\" alt=\"IRAir 图像与目标示意\" width=\"400\"> |\n| IRSatVideo-LEO | 数据来源：Landsat 卫星图像，仿真目标<br>目标特点：低轨，亮目标，短波红外<br>分辨率：1024×1024 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image2.png\" alt=\"IRSatVideo-LEO 图像与目标示意\" width=\"400\"> |\n| IRSatVideo-GEO | 数据来源：高分四号卫星图像，仿真目标<br>目标特点：地球同步轨道，中波红外，弱目标<br>分辨率：742×733（平均） | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image3.png\" alt=\"IRSatVideo-GEO 图像与目标示意\" width=\"400\"> |\n| 实测热红外视频数据 | 数据来源：实测卫星热红外视频<br>目标特点：长波<br>分辨率：512×640 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image4.png\" alt=\"实测热红外视频数据图像与目标示意\" width=\"400\"> |\n\n### 赛道二数据集简介\n\n基于 DAVIS346 事件相机的 EV-UAV 数据集作为训练、验证和测试数据集。总共 147 段序列（99 段用于训练，24 段用于验证，24 段用于测试）。（暂定）\n\n| 数据集 | 数据集简介 | 图像与目标示意 |\n| :---: | :---: | :---:|\n| EV-UAV | 数据来源：DAVIS346 事件相机实拍<br>分辨率：346×260 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/赛道二-image1.png\" alt=\"EV-UAV 图像与目标示意\" width=\"600\"> |\n\n---\n\n## 挑战赛评价方式\n\n### 赛道一评价方式\n\n本次挑战赛赛道一的算法评价指标为召回率（Recall）和精确率（Precision），附加评价指标为轨迹完整度、轨迹准确度。算法最终评分结果由 F1 分数和附加分数组成。\n\n$$\nRecall = \\frac{TD}{AT}, \\quad Precision = \\frac{TD}{TD + FD}\n$$\n\n$$\nF1 = \\frac{2 \\times Recall \\times Precision}{Recall + Precision}\n$$\n\n$$\nTrackCompleteness = \\frac{NTA}{N}, \\quad TrackAccuracy = \\frac{NTA}{NA}\n$$\n\n| 附加得分项 | 阈值一 | 阈值二 | 阈值三 |\n| :---: | :---: | :---: | :---: |\n| 轨迹完整度得分 | ≥25%：+2分 | ≥35%：+3分 | ≥50%：+5分 |\n| 轨迹准确度得分 | ≥55%：+2分 | ≥65%：+3分 | ≥80%：+5分 |\n\n最终得分为 F1 分数 × 100 + 附加得分，满分为 110 分。\n\n---\n\n### 赛道二评价方式\n\n赛道二的算法评价指标为交并比（IoU）、准确率（Acc）、检测率（Pd）和虚警率（Fa），最终评分结果由各指标加权得分。\n\n$$\nIoU = \\frac{GT \\cap Pred}{GT \\cup Pred}, \\quad Acc = \\frac{TP_{target}}{TP_{target} + FN_{target}}\n$$\n\n$$\nPd = \\frac{TD}{AT}, \\quad Fa = \\frac{FD}{N_{frame} \\times H \\times W}\n$$\n\n$$\nScore_{Fa} = e^{-10000 \\times Fa}\n$$\n\n$$\nScore = 0.4Pd + 0.3Score_{Fa} + 0.2IoU + 0.1Acc\n$$\n\n---\n\n## 结果提交方式\n\n**结果提交格式、提交入口和提交次数限制**：待补充  \n\n**提交内容与时间要求**：参赛队伍须在规定时间内提交测试结果，并在后继阶段提交算法代码、模型文件及算法报告。组委会将对各参赛队伍进行真实性审查。  \n\n**真实性与可复现性要求**：为避免参赛队伍滥用其他数据集或验证集标签信息用于算法训练，参赛队伍需提供算法训练时的相关参数，确保算法结果可复现。如发现违规使用数据信息或算法结果无法复现，组委会将按赛事规则处理。\n\n---\n\n## 专题研讨会  \n组委会将举办挑战赛技术论坛，邀请获得一、二等奖的参赛队伍参加作特邀技术报告。\n\n---\n\n## 知识产权归属  \n\n参赛队伍提交的算法及可执行模型的知识产权归参赛团队所有，比赛数据集归主办方所有。  \n\n各参赛队伍需要承诺提交的结果可重复，组织方承诺履行保密义务，并不用于除本挑战赛外的任何其他用途。  \n\n参赛队伍应保证所提供的方案、算法属于自有知识产权。组织方对参赛队伍因使用本队提供完成的算法和结果而产生的任何实际侵权或者被任何第三方指控侵权概不负责。一旦上述情况和事件发生，参赛队伍必须承担一切相关法律责任和经济赔偿责任并保护组织方免于承担该等责任。"
-      },
-      {
-        "index": 2,
-        "title": "赛事报名",
-        "content": "## 挑战赛参与者要求  \n\n  自愿报名参赛，参赛队伍和成员的组成可为：  \n  1. 各培养单位正式注册教师、在读本科生、研究生以及博士生；  \n  2. 国内各研究团体、企事业单位。  \n\n---\n\n## 报名方式\n\n  仅接受以团队形式通过邮件报名参赛，每支参赛队伍人员不超过5人（不包括指导老师），每名参赛选手只能参加1个参赛队。\n\n  参赛团队下载并填写CSIG2026\"金睛杯\"光学时敏弱小目标探测挑战赛的报名表，将报名表发邮件至竞赛联系人邮箱wangyujj@nudt.edu.cn。\n\n  邮件标题格式：\"CSIG2026'金睛杯'光学时敏弱小目标探测挑战赛_(参赛队单位名称)_(参赛队名称)\"。\n\n  邮件内容包括附件报名表。报名表格式如下：\n\n| 参赛成员姓名&nbsp;&nbsp;&nbsp; | 组成 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  | 单位&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;| 职称&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;| 手机号 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 邮箱&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;|\n|:-------------------:|:------------------:|:-----------------:|:---------------------:|:----------------------:|:--------------------:|\n|              | 队长     |      |      |        |      |\n|              | 队员     |      |      |        |      |\n|              | 队员     |      |      |        |      |\n|              | 队员     |      |      |        |      |\n|              | 队员     |      |      |        |      |\n|              | 指导老师 |      |      |        |      |\n|              | 指导老师 |      |      |        |      |\n\n  报名截止时间：2026年7月20日 18:00。\n\n  组织方收到邮件并与报名者确认后，报名成功。\n\n  报名表下载：[2026年第七届中国图像图形学学会图形技术挑战赛报名表.xlsx](https://jinsight-cup.github.io/JinSight-ChallengeV3/downloads/2026年第七届中国图像图形学学会图形技术挑战赛报名表.xls?v=20260629)  \n\n---\n\n## 参赛团队注册方式  \n参赛团队报名成功，并在排行榜上获得有效的公开成绩，即为成功注册，可获得评奖资格。  \n\n---\n\n## 比赛交流微信群  \n\n<div align=\"center\">\n  <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/wechat-challenge-group-1.jpg?v=20260629-2\" alt=\"比赛交流微信群二维码\" width=\"250\">\n</div>",
-        "content_zh": "## 挑战赛参与者要求  \n\n自愿报名参赛，参赛队伍和成员的组成可为：  \n1. 各培养单位正式注册教师、在读本科生、研究生以及博士生；  \n2. 国内各研究团体、企事业单位。  \n\n---\n\n## 报名方式\n\n仅接受以团队形式通过邮件报名参赛，每支参赛队伍人员不超过5人（不包括指导老师），每名参赛选手只能参加1个参赛队。\n\n参赛团队下载并填写CSIG2026\"金睛杯\"光学时敏弱小目标探测挑战赛的报名表，将报名表发邮件至竞赛联系人邮箱wangyujj@nudt.edu.cn。\n\n邮件标题格式：\"CSIG2026'金睛杯'光学时敏弱小目标探测挑战赛_(参赛队单位名称)_(参赛队名称)\"。\n\n邮件内容包括附件报名表。报名表格式如下：\n\n| 参赛成员姓名 | 组成 | 单位 | 职称 | 手机号 | 邮箱 |\n|:---:|:---:|:---:|:---:|:---:|:---:|\n| | 队长 | | | | |\n| | 队员 | | | | |\n| | 队员 | | | | |\n| | 队员 | | | | |\n| | 队员 | | | | |\n| | 指导老师 | | | | |\n| | 指导老师 | | | | |\n\n报名截止时间：2026年7月20日 18:00。\n\n组织方收到邮件并与报名者确认后，报名成功。\n\n报名表下载：[2026年第七届中国图像图形学学会图形技术挑战赛报名表.xlsx](https://jinsight-cup.github.io/JinSight-ChallengeV3/downloads/2026年第七届中国图像图形学学会图形技术挑战赛报名表.xls?v=20260629)  \n\n---\n\n## 参赛团队注册方式  \n\n参赛团队报名成功，并在排行榜上获得有效的公开成绩，即为成功注册，可获得评奖资格。  \n\n---\n\n## 比赛交流微信群  \n\n<div align=\"center\">\n  <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/wechat-challenge-group-1.jpg?v=20260629-2\" alt=\"比赛交流微信群二维码\" width=\"250\">\n</div>"
-      },
-      {
-        "index": 3,
-        "title": "赛事结果",
-        "content": "## 比赛结果\n\n  公布内容：CSIG2026“金睛杯”光学时敏弱小目标探测挑战赛获奖队伍名单、比赛结果图片和赛事总结将在成绩复核后公布",
-        "content_zh": "# Competition Results\n\nPublished Content: The list of winning teams in the CSIG2026 \"Golden Eye Cup\" Optical Time-Sensitive Weak and Small Target Detection Challenge, competition result images, and event summary will be released after score verification."
-      }
-    ]
-  },
   "17556": {
     "id": 17556,
     "title": "2026 “金睛杯”光学时敏弱小目标探测挑战赛（赛道二：基于事件相机的运动小目标检测）",
@@ -239,9 +185,9 @@
     "description_zh": "Optical Time-Sensitive Weak-Small Target Detection is an important research direction in intelligent visual perception and a key technical challenge in target detection and situation awareness in complex environments. Compared to conventional target detection tasks, weak-small targets typically exhibit characteristics such as small imaging scale, weak target energy, strong background interference, and unstable target morphology. The usable information in a single frame image is extremely limited, and algorithms are prone to issues such as missed detections, false detections, and discontinuous detection results in real-world scenarios.\n\nThis challenge competition, based on the CSIG2026 academic conference platform, focuses on key problems in optical time-sensitive weak-small target detection, and sets up two competition tracks: \"Infrared Video Satellite Airborne Moving Target Detection\" and \"Motion Small Target Detection Based on Event Camera\". It provides participating teams with a fair and reproducible algorithm validation platform, promoting advances in related data construction, method innovation, and technical exchange.",
     "created_by": "irnewbie",
     "created_when": "2026-07-16T16:05:17.810335Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217917/f590d1281393/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=cBiS38kgQ4sGXoZNcaFwvsm0m7w%3D&Expires=1786550332",
-    "participants_count": 75,
-    "submissions_count": 730,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217917/f590d1281393/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=eOGtMRZhcr4ia5Xra7b0BtXWTiQ%3D&Expires=1786637000",
+    "participants_count": 76,
+    "submissions_count": 741,
     "first_phase_start": null,
     "phases": [
       {
@@ -286,6 +232,60 @@
       }
     ]
   },
+  "17555": {
+    "id": 17555,
+    "title": "2026 “金睛杯”光学时敏弱小目标探测挑战赛（赛道一：红外视频卫星空中动目标检测）",
+    "description": "光学时敏弱小目标探测是智能视觉感知领域中的重要研究方向，也是复杂环境下目标探测与态势感知中的关键技术问题。与常规目标检测任务相比，弱小目标通常存在成像尺度小、目标能量弱、背景干扰强、目标形态不稳定等特点，单帧图像中可利用的信息十分有限，算法在真实场景中容易出现漏检、误检和检测结果不连续等问题。\n本次挑战赛依托 CSIG2026 学术会议平台，围绕光学时敏弱小目标探测中的关键问题，设置\"红外视频卫星空中动目标检测\"和\"基于事件相机的运动小目标检测\"两个赛道，为参赛队伍提供公平、可复现的算法验证平台，推动相关数据建设、方法创新和技术交流。",
+    "description_zh": "Optical temporal-sensitive small target detection is an important research direction in intelligent visual perception and a key technical issue in target detection and situational awareness in complex environments. Compared with conventional target detection tasks, small targets typically exhibit characteristics such as small imaging scale, weak target energy, strong background interference, and unstable target morphology. The information available in a single frame is very limited, and algorithms are prone to missed detections, false positives, and discontinuous detection results in real-world scenarios.\n\nThis challenge competition, based on the CSIG2026 academic conference platform, focuses on key problems in optical temporal-sensitive small target detection, establishing two tracks: \"infrared video satellite aerial moving target detection\" and \"event camera-based moving small target detection.\" It provides participating teams with a fair and reproducible algorithm validation platform, promoting related data construction, method innovation, and technical exchange.",
+    "created_by": "irnewbie",
+    "created_when": "2026-07-16T15:58:17.338227Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217497/8cef6a724fb4/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=5kIwn%2F5bhXFku2lzSaK2EwQn6hA%3D&Expires=1786637000",
+    "participants_count": 112,
+    "submissions_count": 823,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 29256,
+        "name": "模型训练与验证",
+        "start": "2026-07-20T16:00:00Z",
+        "end": "2026-08-28T04:00:00Z",
+        "max_submissions_per_day": 30
+      },
+      {
+        "id": 29257,
+        "name": "最终评测",
+        "start": "2026-08-28T11:00:00Z",
+        "end": "2026-08-31T04:00:00Z",
+        "max_submissions_per_day": 2
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "赛事日程",
+        "content": "# 赛事日程\n\n| 时间 | 任务 |\n| :---: | :---: |\n| 2026年5月29日－6月7日 | 组委会完成比赛任务、参赛办法、评比方式、报名材料和发布页面的准备工作。 |\n| 2026年6月8日 09:00 | 组委会在网站、微信公众号等平台正式公布比赛任务、参赛办法和评比方式，并同步启动报名。 |\n| 2026年6月8日－7月20日 | 参赛队伍报名及邮件资格确认。 |\n| 2026年7月20日 18:00 | 报名截止，组委会完成报名信息汇总与资格确认。 |\n| 2026年7月21日 － 8月28日 12：00 结束 | 比赛正式开始，组委会发布比赛训练集和评测格式，参赛队伍开展模型训练、算法优化和结果准备。 |\n| 2026年8月28日 19：00 开始 － 8月31日 12：00 结束 | 组委会开放比赛评测通道，各参赛队伍在规定时间内完成比赛任务，并将测试结果上传比赛网站。 |\n| 2026年9月4日－9月8日 | 参赛队伍提交算法代码、模型文件及算法报告，组委会对各参赛队伍进行真实性审查。 |\n| 2026年9月10日－9月14日 | 组委会完成成绩复核，并发布比赛成绩。 |\n| 2026年11月－12月 | 举行颁奖典礼。 |",
+        "content_zh": "这是一份中文文档，原样返回如下：\n\n# 赛事日程\n\n| 时间 | 任务 |\n| :---: | :---: |\n| 2026年5月29日－6月7日 | 组委会完成比赛任务、参赛办法、评比方式、报名材料和发布页面的准备工作。 |\n| 2026年6月8日 09:00 | 组委会在网站、微信公众号等平台正式公布比赛任务、参赛办法和评比方式，并同步启动报名。 |\n| 2026年6月8日－7月20日 | 参赛队伍报名及邮件资格确认。 |\n| 2026年7月20日 18:00 | 报名截止，组委会完成报名信息汇总与资格确认。 |\n| 2026年7月21日 － 8月28日 12：00 结束 | 比赛正式开始，组委会发布比赛训练集和评测格式，参赛队伍开展模型训练、算法优化和结果准备。 |\n| 2026年8月28日 19：00 开始 － 8月31日 12：00 结束 | 组委会开放比赛评测通道，各参赛队伍在规定时间内完成比赛任务，并将测试结果上传比赛网站。 |\n| 2026年9月4日－9月8日 | 参赛队伍提交算法代码、模型文件及算法报告，组委会对各参赛队伍进行真实性审查。 |\n| 2026年9月10日－9月14日 | 组委会完成成绩复核，并发布比赛成绩。 |\n| 2026年11月－12月 | 举行颁奖典礼。 |"
+      },
+      {
+        "index": 1,
+        "title": "赛事说明",
+        "content": "## 挑战赛的目的\n\n**通过本次挑战赛促进科研技术的交流研讨和应用推广**  \n\n本次挑战赛旨在依托 CSIG2026 学术会议平台，围绕光学时敏弱小目标探测中的关键问题，搭建面向学术界和产业界的开放竞赛与交流平台，吸引更多高校、科研院所和企业团队参与红外视频小目标检测、事件相机小目标检测等方向的研究。  \n\n**通过本次挑战赛促进光学时敏弱小目标探测技术发展**  \n\n通过竞赛汇聚工业界和学术界的智慧与力量，促进相关算法、数据集和评价体系的共同发展，推动领域垂类大模型发展与应用，加速技术创新和产业推广。  \n\n---\n\n## 挑战赛的意义\n\n**光学时敏弱小目标探测应用广泛，关键技术问题突出**  \n\n光学时敏弱小目标探测是智能视觉感知领域中的重要研究方向，也是复杂环境下目标探测与态势感知中的关键技术问题。弱小目标通常存在成像尺度小、目标能量弱、背景干扰强、目标形态不稳定等特点，单帧图像中可利用的信息十分有限。  \n\n**红外视频卫星目标检测亟需融合时域信息与轨迹关联**  \n\n卫星视角下的红外视频弱小目标往往具有成像距离远、信噪比低、背景复杂、运动轨迹细弱等特点，仅依靠单帧检测难以获得稳定结果，需要进一步结合多帧时域信息、运动一致性和目标轨迹关联关系。\n\n**事件相机小目标检测亟需发挥事件流时空连续性优势**  \n\n事件相机能够以异步方式感知亮度变化，具有高时间分辨率、低延迟、高动态范围和低数据冗余等优势。面向事件点云和事件流的时空建模方法发展，对于提升复杂场景下运动小目标的检测能力具有重要意义。\n\n**公开数据和统一评测标准有助于推动领域发展**  \n\n红外视频卫星目标和事件相机小目标相关公开数据仍相对有限，真实场景数据获取和标注成本较高。本次竞赛通过开放具有针对性的数据资源和统一评测标准，为参赛队伍提供公平、可复现的算法验证平台。\n\n---\n\n## 任务设置\n\n### 赛道一：红外视频卫星空中动目标检测  \n\n  赛道一的主要任务是对视频中的红外小目标的质心进行预测，附加任务是对目标进行跟踪。参赛队伍根据红外小目标图像特点自行设计相关算法，使用主办方提供的数据集进行模型训练，最终以召回率（Recall）、精确率（Precision）和 F1 分数作为评价指标，以及轨迹完整度和轨迹准确度作为附加评价指标，衡量参赛队伍算法模型的性能。\n\n### 赛道二：基于事件相机的运动小目标检测  \n\n  赛道二的主要任务是对事件流中的目标事件进行逐事件分割。参赛队伍根据事件小目标特性自行设计相关算法，使用主办方提供的事件数据集进行模型训练，最终以交并比（IoU）、准确率（ACC）、检测率（Pd）和虚警率（Fa）作为主要评价指标，衡量参赛队伍算法模型的性能。\n\n---\n\n## 数据集简介\n\n### 赛道一数据集简介\n\n  竞赛数据集由国防科技大学与武汉大学联合开发，包括：基于热红外卫星的 IRAir 数据集、基于 Landsat 卫星的 IRSatVideo-LEO 数据集、基于高分四号卫星的 IRSatVideo-GEO 数据集，以及实测卫星热红外视频数据，共 1400 段视频序列（1000 段用于训练，200 段用于验证，200 段用于测试）。比赛开始前，将发布训练集和验证集视频及掩码标注；进入评测阶段时公布测试集视频，测试集标签不公开。\n\n| 数据集 | 数据集简介 | 图像与目标示意 |\n| :---: | :---: | :---: |\n| IRAir | 数据来源：热红外 SDG 卫星一号图像，仿真目标<br>目标特点：飞机，低轨，暗目标<br>分辨率：256×256 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image1.png\" alt=\"IRAir 图像与目标示意\" width=\"400\"> |\n| IRSatVideo-LEO | 数据来源：Landsat 卫星图像，仿真目标<br>目标特点：低轨，亮目标，短波红外<br>分辨率：1024×1024 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image2.png\" alt=\"IRSatVideo-LEO 图像与目标示意\" width=\"400\"> |\n| IRSatVideo-GEO | 数据来源：高分四号卫星图像，仿真目标<br>目标特点：地球同步轨道，中波红外，弱目标<br>分辨率：742×733（平均） | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image3.png\" alt=\"IRSatVideo-GEO 图像与目标示意\" width=\"400\"> |\n| 实测热红外视频数据 | 数据来源：实测卫星热红外视频<br>目标特点：长波<br>分辨率：512×640 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image4.png\" alt=\"实测热红外视频数据图像与目标示意\" width=\"400\"> |\n\n\n### 赛道二数据集简介\n\n  基于 DAVIS346 事件相机的 EV-UAV 数据集作为训练、验证和测试数据集。总共 147 段序列（99 段用于训练，24 段用于验证，24 段用于测试）。（暂定）\n\n| 数据集 | 数据集简介 | 图像与目标示意 |\n| :---: | :---: | :---:|\n| EV-UAV &nbsp;| 数据来源：DAVIS346 事件相机实拍<br>分辨率：346×260 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/赛道二-image1.png\" alt=\"EV-UAV 图像与目标示意\" width=\"600\"> |\n\n---\n\n## 挑战赛评价方式\n\n### 赛道一评价方式\n\n  本次挑战赛赛道一的算法评价指标为召回率（Recall）和精确率（Precision），附加评价指标为轨迹完整度、轨迹准确度。算法最终评分结果由 F1 分数和附加分数组成。\n\n$$\nRecall = \\frac{TD}{AT}, \\quad Precision = \\frac{TD}{TD + FD}\n$$\n\n$$\nF1 = \\frac{2 \\times Recall \\times Precision}{Recall + Precision}\n$$\n\n$$\nTrackCompleteness = \\frac{NTA}{N}, \\quad TrackAccuracy = \\frac{NTA}{NA}\n$$\n\n| 附加得分项 | 阈值一 | 阈值二 | 阈值三 |\n| :---: | :---: | :---: | :---: |\n| 轨迹完整度得分 | ≥25%：+2分 | ≥35%：+3分 | ≥50%：+5分 |\n| 轨迹准确度得分 | ≥55%：+2分 | ≥65%：+3分 | ≥80%：+5分 |\n\n  最终得分为 F1 分数 × 100 + 附加得分，满分为 110 分。\n\n---\n\n### 赛道二评价方式\n\n  赛道二的算法评价指标为交并比（IoU）、准确率（Acc）、检测率（Pd）和虚警率（Fa），最终评分结果由各指标加权得分。\n\n$$\nIoU = \\frac{GT \\cap Pred}{GT \\cup Pred}, \\quad Acc = \\frac{TP_{target}}{TP_{target} + FN_{target}}\n$$\n\n$$\nPd = \\frac{TD}{AT}, \\quad Fa = \\frac{FD}{N_{frame} \\times H \\times W}\n$$\n\n$$\nScore_{Fa} = e^{-10000 \\times Fa}\n$$\n\n$$\nScore = 0.4Pd + 0.3Score_{Fa} + 0.2IoU + 0.1Acc\n$$\n\n---\n\n## 结果提交方式\n\n**结果提交格式、提交入口和提交次数限制**：待补充  \n\n**提交内容与时间要求**：参赛队伍须在规定时间内提交测试结果，并在后继阶段提交算法代码、模型文件及算法报告。组委会将对各参赛队伍进行真实性审查。  \n\n**真实性与可复现性要求**：为避免参赛队伍滥用其他数据集或验证集标签信息用于算法训练，参赛队伍需提供算法训练时的相关参数，确保算法结果可复现。如发现违规使用数据信息或算法结果无法复现，组委会将按赛事规则处理。\n\n---\n\n## 专题研讨会  \n组委会将举办挑战赛技术论坛，邀请获得一、二等奖的参赛队伍参加作特邀技术报告。\n\n---\n\n## 知识产权归属  \n\n参赛队伍提交的算法及可执行模型的知识产权归参赛团队所有，比赛数据集归主办方所有。  \n\n各参赛队伍需要承诺提交的结果可重复，组织方承诺履行保密义务，并不用于除本挑战赛外的任何其他用途。  \n\n参赛队伍应保证所提供的方案、算法属于自有知识产权。组织方对参赛队伍因使用本队提供完成的算法和结果而产生的任何实际侵权或者被任何第三方指控侵权概不负责。一旦上述情况和事件发生，参赛队伍必须承担一切相关法律责任和经济赔偿责任并保护组织方免于承担该等责任。",
+        "content_zh": "# 这是中文原文\n\n您提供的文本已经是简体中文，无需翻译。以下为原文内容：\n\n## 挑战赛的目的\n\n**通过本次挑战赛促进科研技术的交流研讨和应用推广**  \n\n本次挑战赛旨在依托 CSIG2026 学术会议平台，围绕光学时敏弱小目标探测中的关键问题，搭建面向学术界和产业界的开放竞赛与交流平台，吸引更多高校、科研院所和企业团队参与红外视频小目标检测、事件相机小目标检测等方向的研究。  \n\n**通过本次挑战赛促进光学时敏弱小目标探测技术发展**  \n\n通过竞赛汇聚工业界和学术界的智慧与力量，促进相关算法、数据集和评价体系的共同发展，推动领域垂类大模型发展与应用，加速技术创新和产业推广。  \n\n---\n\n## 挑战赛的意义\n\n**光学时敏弱小目标探测应用广泛，关键技术问题突出**  \n\n光学时敏弱小目标探测是智能视觉感知领域中的重要研究方向，也是复杂环境下目标探测与态势感知中的关键技术问题。弱小目标通常存在成像尺度小、目标能量弱、背景干扰强、目标形态不稳定等特点，单帧图像中可利用的信息十分有限。  \n\n**红外视频卫星目标检测亟需融合时域信息与轨迹关联**  \n\n卫星视角下的红外视频弱小目标往往具有成像距离远、信噪比低、背景复杂、运动轨迹细弱等特点，仅依靠单帧检测难以获得稳定结果，需要进一步结合多帧时域信息、运动一致性和目标轨迹关联关系。\n\n**事件相机小目标检测亟需发挥事件流时空连续性优势**  \n\n事件相机能够以异步方式感知亮度变化，具有高时间分辨率、低延迟、高动态范围和低数据冗余等优势。面向事件点云和事件流的时空建模方法发展，对于提升复杂场景下运动小目标的检测能力具有重要意义。\n\n**公开数据和统一评测标准有助于推动领域发展**  \n\n红外视频卫星目标和事件相机小目标相关公开数据仍相对有限，真实场景数据获取和标注成本较高。本次竞赛通过开放具有针对性的数据资源和统一评测标准，为参赛队伍提供公平、可复现的算法验证平台。\n\n---\n\n## 任务设置\n\n### 赛道一：红外视频卫星空中动目标检测  \n\n赛道一的主要任务是对视频中的红外小目标的质心进行预测，附加任务是对目标进行跟踪。参赛队伍根据红外小目标图像特点自行设计相关算法，使用主办方提供的数据集进行模型训练，最终以召回率（Recall）、精确率（Precision）和 F1 分数作为评价指标，以及轨迹完整度和轨迹准确度作为附加评价指标，衡量参赛队伍算法模型的性能。\n\n### 赛道二：基于事件相机的运动小目标检测  \n\n赛道二的主要任务是对事件流中的目标事件进行逐事件分割。参赛队伍根据事件小目标特性自行设计相关算法，使用主办方提供的事件数据集进行模型训练，最终以交并比（IoU）、准确率（ACC）、检测率（Pd）和虚警率（Fa）作为主要评价指标，衡量参赛队伍算法模型的性能。\n\n---\n\n## 数据集简介\n\n### 赛道一数据集简介\n\n竞赛数据集由国防科技大学与武汉大学联合开发，包括：基于热红外卫星的 IRAir 数据集、基于 Landsat 卫星的 IRSatVideo-LEO 数据集、基于高分四号卫星的 IRSatVideo-GEO 数据集，以及实测卫星热红外视频数据，共 1400 段视频序列（1000 段用于训练，200 段用于验证，200 段用于测试）。比赛开始前，将发布训练集和验证集视频及掩码标注；进入评测阶段时公布测试集视频，测试集标签不公开。\n\n| 数据集 | 数据集简介 | 图像与目标示意 |\n| :---: | :---: | :---: |\n| IRAir | 数据来源：热红外 SDG 卫星一号图像，仿真目标<br>目标特点：飞机，低轨，暗目标<br>分辨率：256×256 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image1.png\" alt=\"IRAir 图像与目标示意\" width=\"400\"> |\n| IRSatVideo-LEO | 数据来源：Landsat 卫星图像，仿真目标<br>目标特点：低轨，亮目标，短波红外<br>分辨率：1024×1024 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image2.png\" alt=\"IRSatVideo-LEO 图像与目标示意\" width=\"400\"> |\n| IRSatVideo-GEO | 数据来源：高分四号卫星图像，仿真目标<br>目标特点：地球同步轨道，中波红外，弱目标<br>分辨率：742×733（平均） | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image3.png\" alt=\"IRSatVideo-GEO 图像与目标示意\" width=\"400\"> |\n| 实测热红外视频数据 | 数据来源：实测卫星热红外视频<br>目标特点：长波<br>分辨率：512×640 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/image4.png\" alt=\"实测热红外视频数据图像与目标示意\" width=\"400\"> |\n\n### 赛道二数据集简介\n\n基于 DAVIS346 事件相机的 EV-UAV 数据集作为训练、验证和测试数据集。总共 147 段序列（99 段用于训练，24 段用于验证，24 段用于测试）。（暂定）\n\n| 数据集 | 数据集简介 | 图像与目标示意 |\n| :---: | :---: | :---:|\n| EV-UAV | 数据来源：DAVIS346 事件相机实拍<br>分辨率：346×260 | <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/dataset/赛道二-image1.png\" alt=\"EV-UAV 图像与目标示意\" width=\"600\"> |\n\n---\n\n## 挑战赛评价方式\n\n### 赛道一评价方式\n\n本次挑战赛赛道一的算法评价指标为召回率（Recall）和精确率（Precision），附加评价指标为轨迹完整度、轨迹准确度。算法最终评分结果由 F1 分数和附加分数组成。\n\n$$\nRecall = \\frac{TD}{AT}, \\quad Precision = \\frac{TD}{TD + FD}\n$$\n\n$$\nF1 = \\frac{2 \\times Recall \\times Precision}{Recall + Precision}\n$$\n\n$$\nTrackCompleteness = \\frac{NTA}{N}, \\quad TrackAccuracy = \\frac{NTA}{NA}\n$$\n\n| 附加得分项 | 阈值一 | 阈值二 | 阈值三 |\n| :---: | :---: | :---: | :---: |\n| 轨迹完整度得分 | ≥25%：+2分 | ≥35%：+3分 | ≥50%：+5分 |\n| 轨迹准确度得分 | ≥55%：+2分 | ≥65%：+3分 | ≥80%：+5分 |\n\n最终得分为 F1 分数 × 100 + 附加得分，满分为 110 分。\n\n---\n\n### 赛道二评价方式\n\n赛道二的算法评价指标为交并比（IoU）、准确率（Acc）、检测率（Pd）和虚警率（Fa），最终评分结果由各指标加权得分。\n\n$$\nIoU = \\frac{GT \\cap Pred}{GT \\cup Pred}, \\quad Acc = \\frac{TP_{target}}{TP_{target} + FN_{target}}\n$$\n\n$$\nPd = \\frac{TD}{AT}, \\quad Fa = \\frac{FD}{N_{frame} \\times H \\times W}\n$$\n\n$$\nScore_{Fa} = e^{-10000 \\times Fa}\n$$\n\n$$\nScore = 0.4Pd + 0.3Score_{Fa} + 0.2IoU + 0.1Acc\n$$\n\n---\n\n## 结果提交方式\n\n**结果提交格式、提交入口和提交次数限制**：待补充  \n\n**提交内容与时间要求**：参赛队伍须在规定时间内提交测试结果，并在后继阶段提交算法代码、模型文件及算法报告。组委会将对各参赛队伍进行真实性审查。  \n\n**真实性与可复现性要求**：为避免参赛队伍滥用其他数据集或验证集标签信息用于算法训练，参赛队伍需提供算法训练时的相关参数，确保算法结果可复现。如发现违规使用数据信息或算法结果无法复现，组委会将按赛事规则处理。\n\n---\n\n## 专题研讨会  \n组委会将举办挑战赛技术论坛，邀请获得一、二等奖的参赛队伍参加作特邀技术报告。\n\n---\n\n## 知识产权归属  \n\n参赛队伍提交的算法及可执行模型的知识产权归参赛团队所有，比赛数据集归主办方所有。  \n\n各参赛队伍需要承诺提交的结果可重复，组织方承诺履行保密义务，并不用于除本挑战赛外的任何其他用途。  \n\n参赛队伍应保证所提供的方案、算法属于自有知识产权。组织方对参赛队伍因使用本队提供完成的算法和结果而产生的任何实际侵权或者被任何第三方指控侵权概不负责。一旦上述情况和事件发生，参赛队伍必须承担一切相关法律责任和经济赔偿责任并保护组织方免于承担该等责任。"
+      },
+      {
+        "index": 2,
+        "title": "赛事报名",
+        "content": "## 挑战赛参与者要求  \n\n  自愿报名参赛，参赛队伍和成员的组成可为：  \n  1. 各培养单位正式注册教师、在读本科生、研究生以及博士生；  \n  2. 国内各研究团体、企事业单位。  \n\n---\n\n## 报名方式\n\n  仅接受以团队形式通过邮件报名参赛，每支参赛队伍人员不超过5人（不包括指导老师），每名参赛选手只能参加1个参赛队。\n\n  参赛团队下载并填写CSIG2026\"金睛杯\"光学时敏弱小目标探测挑战赛的报名表，将报名表发邮件至竞赛联系人邮箱wangyujj@nudt.edu.cn。\n\n  邮件标题格式：\"CSIG2026'金睛杯'光学时敏弱小目标探测挑战赛_(参赛队单位名称)_(参赛队名称)\"。\n\n  邮件内容包括附件报名表。报名表格式如下：\n\n| 参赛成员姓名&nbsp;&nbsp;&nbsp; | 组成 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  | 单位&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;| 职称&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;| 手机号 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 邮箱&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;|\n|:-------------------:|:------------------:|:-----------------:|:---------------------:|:----------------------:|:--------------------:|\n|              | 队长     |      |      |        |      |\n|              | 队员     |      |      |        |      |\n|              | 队员     |      |      |        |      |\n|              | 队员     |      |      |        |      |\n|              | 队员     |      |      |        |      |\n|              | 指导老师 |      |      |        |      |\n|              | 指导老师 |      |      |        |      |\n\n  报名截止时间：2026年7月20日 18:00。\n\n  组织方收到邮件并与报名者确认后，报名成功。\n\n  报名表下载：[2026年第七届中国图像图形学学会图形技术挑战赛报名表.xlsx](https://jinsight-cup.github.io/JinSight-ChallengeV3/downloads/2026年第七届中国图像图形学学会图形技术挑战赛报名表.xls?v=20260629)  \n\n---\n\n## 参赛团队注册方式  \n参赛团队报名成功，并在排行榜上获得有效的公开成绩，即为成功注册，可获得评奖资格。  \n\n---\n\n## 比赛交流微信群  \n\n<div align=\"center\">\n  <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/wechat-challenge-group-1.jpg?v=20260629-2\" alt=\"比赛交流微信群二维码\" width=\"250\">\n</div>",
+        "content_zh": "## 挑战赛参与者要求  \n\n自愿报名参赛，参赛队伍和成员的组成可为：  \n1. 各培养单位正式注册教师、在读本科生、研究生以及博士生；  \n2. 国内各研究团体、企事业单位。  \n\n---\n\n## 报名方式\n\n仅接受以团队形式通过邮件报名参赛，每支参赛队伍人员不超过5人（不包括指导老师），每名参赛选手只能参加1个参赛队。\n\n参赛团队下载并填写CSIG2026\"金睛杯\"光学时敏弱小目标探测挑战赛的报名表，将报名表发邮件至竞赛联系人邮箱wangyujj@nudt.edu.cn。\n\n邮件标题格式：\"CSIG2026'金睛杯'光学时敏弱小目标探测挑战赛_(参赛队单位名称)_(参赛队名称)\"。\n\n邮件内容包括附件报名表。报名表格式如下：\n\n| 参赛成员姓名 | 组成 | 单位 | 职称 | 手机号 | 邮箱 |\n|:---:|:---:|:---:|:---:|:---:|:---:|\n| | 队长 | | | | |\n| | 队员 | | | | |\n| | 队员 | | | | |\n| | 队员 | | | | |\n| | 队员 | | | | |\n| | 指导老师 | | | | |\n| | 指导老师 | | | | |\n\n报名截止时间：2026年7月20日 18:00。\n\n组织方收到邮件并与报名者确认后，报名成功。\n\n报名表下载：[2026年第七届中国图像图形学学会图形技术挑战赛报名表.xlsx](https://jinsight-cup.github.io/JinSight-ChallengeV3/downloads/2026年第七届中国图像图形学学会图形技术挑战赛报名表.xls?v=20260629)  \n\n---\n\n## 参赛团队注册方式  \n\n参赛团队报名成功，并在排行榜上获得有效的公开成绩，即为成功注册，可获得评奖资格。  \n\n---\n\n## 比赛交流微信群  \n\n<div align=\"center\">\n  <img src=\"https://jinsight-cup.github.io/JinSight-ChallengeV3/img/wechat-challenge-group-1.jpg?v=20260629-2\" alt=\"比赛交流微信群二维码\" width=\"250\">\n</div>"
+      },
+      {
+        "index": 3,
+        "title": "赛事结果",
+        "content": "## 比赛结果\n\n  公布内容：CSIG2026“金睛杯”光学时敏弱小目标探测挑战赛获奖队伍名单、比赛结果图片和赛事总结将在成绩复核后公布",
+        "content_zh": "# Competition Results\n\nPublished Content: The list of winning teams in the CSIG2026 \"Golden Eye Cup\" Optical Time-Sensitive Weak and Small Target Detection Challenge, competition result images, and event summary will be released after score verification."
+      }
+    ]
+  },
   "15553": {
     "id": 15553,
     "title": "MICCAI FLARE 2026 Task 2: AutoMSC: Automated Medical Image Segmentation and Classification",
@@ -293,9 +293,9 @@
     "description_zh": "MICCAI FLARE 2026 任务2：AutoMSC - 医学图像自动分割与分类",
     "created_by": "junma",
     "created_when": "2026-04-09T21:08:06.808342Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-23-1784773803/182fbbd79fab/automsc-logo-light-ring.png?AWSAccessKeyId=codabench-prod&Signature=16BlFV9oQxmRwzJD9Q04QUb3Oto%3D&Expires=1786550364",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-23-1784773803/182fbbd79fab/automsc-logo-light-ring.png?AWSAccessKeyId=codabench-prod&Signature=DCflDuWXzLNFoqpji5WECaCtlZI%3D&Expires=1786637025",
     "participants_count": 78,
-    "submissions_count": 61,
+    "submissions_count": 62,
     "first_phase_start": null,
     "phases": [
       {
@@ -364,9 +364,9 @@
     "description_zh": "无人机图像上的大规模3D语义高斯泼溅重建（TUM+黄金海岸）。ECCV 2026研讨会·2026年9月8日·瑞典马尔默。",
     "created_by": "jumponthemoon",
     "created_when": "2026-07-24T10:11:38.562965Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-24-1784887898/b3c2c760151c/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=fjPlVDGZ8hC1mo2NqR6Am2PCWk8%3D&Expires=1786550332",
-    "participants_count": 25,
-    "submissions_count": 72,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-24-1784887898/b3c2c760151c/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=DKmlp%2FMSRceLEhuFOxfVDUjgYK8%3D&Expires=1786636997",
+    "participants_count": 32,
+    "submissions_count": 83,
     "first_phase_start": null,
     "phases": [
       {
@@ -418,7 +418,7 @@
     "description_zh": "该竞赛对近距离短波红外高光谱成像的×4超分辨率进行基准测试。\n参赛者将获得使用同一传感器和不同镜头采集的低分辨率HSI立方体数据，通过控制分辨率变化而不引入光谱偏差。任务是从×4下采样输入重建高分辨率短波红外高光谱图像。",
     "created_by": "rafariva",
     "created_when": "2025-12-30T16:14:49.840049Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-12-30-1767111468/edd5610f43a0/logo_HISR.png?AWSAccessKeyId=codabench-prod&Signature=HHzLLoaZWnUyJf19uAkhOh1FtZw%3D&Expires=1786550413",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-12-30-1767111468/edd5610f43a0/logo_HISR.png?AWSAccessKeyId=codabench-prod&Signature=wB6a4j4dmud3ysacD4HFCaE0o5Q%3D&Expires=1786637082",
     "participants_count": 53,
     "submissions_count": 582,
     "first_phase_start": null,
@@ -477,9 +477,9 @@
     "description_zh": "一个基于混合信号数据集的协作3D目标检测挑战，该数据集是一个多样化的真实点云数据集，用于异构激光雷达V2X协作（3辆连接的车辆+配备双激光雷达的路侧单元）。融合多个智能体的点云，在鸟瞰图平面上检测车辆、自行车和行人，并在排行榜上攀升。",
     "created_by": "mixed-signals",
     "created_when": "2026-07-09T01:30:36.192294Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783560636/614edf812e36/logo.png?AWSAccessKeyId=codabench-prod&Signature=tZJNc%2BQTldYFcGc0r3G4vP%2FeFcU%3D&Expires=1786550334",
-    "participants_count": 32,
-    "submissions_count": 45,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783560636/614edf812e36/logo.png?AWSAccessKeyId=codabench-prod&Signature=kcD3pKujLx9WlAhscdPZYMRrVgM%3D&Expires=1786637003",
+    "participants_count": 33,
+    "submissions_count": 55,
     "first_phase_start": null,
     "phases": [
       {
@@ -525,9 +525,9 @@
     "description_zh": "This competition focuses on fine-grained understanding of urban-level building facade components, utilizing the City-Fac dataset.\n\nThe data is collected by vehicle-mounted mobile laser scanning systems, covering multiple types of typical urban street blocks in Xiamen, with a cumulative road length of approximately 60 km. The dataset includes fine-grained building facade element annotations such as walls, windows, doors, roofs, billboards, air conditioning units, canopies, and balconies, with both semantic-level and instance-level labels provided.\n\nParticipants need to identify independent building facade component instances in the test point cloud and output the corresponding semantic categories and instance numbers.\n\nThe competition adopts a result submission mode. Participants complete model training and inference locally and only submit prediction results to Codabench, where the platform automatically scores using hidden instance labels.",
     "created_by": "jianlongguan",
     "created_when": "2026-06-26T12:50:09.783065Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=qyD85EMV5vxeU9FF8HqYYZYuy3s%3D&Expires=1786550336",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=%2F%2F7jF7151%2BFERiMAKNtj6pNKVFA%3D&Expires=1786637003",
     "participants_count": 16,
-    "submissions_count": 62,
+    "submissions_count": 66,
     "first_phase_start": null,
     "phases": [
       {
@@ -554,8 +554,8 @@
     "description_zh": "欢迎来到首届\"重演化身视频中远程操作者身份验证\"国际竞赛。本竞赛将与[ACCV2026](https://https://accv2026.org/)联合举办。",
     "created_by": "allam",
     "created_when": "2026-07-27T05:47:11.519603Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=I7CSFVEFuw89sDpivWOL%2BjdTnmo%3D&Expires=1786550331",
-    "participants_count": 15,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=09rZ%2F%2FIT5goipIL2Dii%2BWF4EAUc%3D&Expires=1786636998",
+    "participants_count": 17,
     "submissions_count": 0,
     "first_phase_start": null,
     "phases": [
@@ -607,8 +607,8 @@
     "description_zh": "LiDAR-视觉-惯性SLAM赛道的纯翻译评估",
     "created_by": "yuhangxu",
     "created_when": "2026-07-26T09:51:43.642130Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059503/c4f5eea4397e/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=XVaYXRX11BzO2OP8fQEyxWxeses%3D&Expires=1786550331",
-    "participants_count": 4,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059503/c4f5eea4397e/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=L11qnGLBv4FXnQFK3ZTz%2BtYuF3k%3D&Expires=1786637000",
+    "participants_count": 5,
     "submissions_count": 3,
     "first_phase_start": null,
     "phases": [
@@ -648,9 +648,9 @@
     "description_zh": "LiDAR-惯性SLAM赛道的仅翻译评估。",
     "created_by": "yuhangxu",
     "created_when": "2026-07-26T09:50:41.414250Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059441/adc6bc07e4f0/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=R%2FCcjdI8p2X%2BxVv5vvAUnFDV544%3D&Expires=1786550333",
-    "participants_count": 10,
-    "submissions_count": 43,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059441/adc6bc07e4f0/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=HzhwHwiZz8R02DjIGuLWIy8eyPQ%3D&Expires=1786637001",
+    "participants_count": 11,
+    "submissions_count": 47,
     "first_phase_start": null,
     "phases": [
       {
