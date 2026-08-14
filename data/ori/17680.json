@@ -5,8 +5,8 @@
   "created_by": "allam",
   "owner_display_name": "D3-OU",
   "created_when": "2026-07-27T05:47:11.519603Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=09rZ%2F%2FIT5goipIL2Dii%2BWF4EAUc%3D&Expires=1786636998",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2_icon.png?AWSAccessKeyId=codabench-prod&Signature=EBxfyYFtznMRUhLlHUwWsOd2xQE%3D&Expires=1786636998",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=1Muq%2ByLcTfqHCvlMck3FW5T3lmw%3D&Expires=1786723698",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2_icon.png?AWSAccessKeyId=codabench-prod&Signature=488gBZuXrYbEuD09Y9JzLYCyVg8%3D&Expires=1786723698",
   "terms": "The competition is open to research teams. \n\nPlease  register and join the competition. \n\nNote: Please use your institutional email to register for the competition, do NOT use gmail.com or qq.com, otherwise the registration will not be approved.\n\nParticipants are required to sign the dataset license agreement and send the scanned PDF to alsherfawi@yy.d3c.osaka-u.ac.jp cc: allam@yy.d3c.osaka-u.ac.jp. You can download the agreement from [here](http://www.am.sanken.osaka-u.ac.jp/BiometricDB/dataset/Competition/WBA2026/WBA_ACCV_2026%20Competition_License%20Agreement.pdf).",
   "pages": [
     {
@@ -52,28 +52,28 @@
       "execution_time_limit": 30,
       "tasks": [
         {
-          "task": "52ce7840-5b50-4ae7-807e-e4f78d1fd945",
+          "task": "1684d3ee-1abb-4d39-a784-ab407787fb7a",
           "order_index": 0,
           "phase": 29491,
-          "id": 35240,
-          "value": "52ce7840-5b50-4ae7-807e-e4f78d1fd945",
-          "key": "52ce7840-5b50-4ae7-807e-e4f78d1fd945",
-          "created_when": "2026-07-27T05:47:11.383484Z",
-          "name": "Avatar Authentication",
+          "id": 35496,
+          "value": "1684d3ee-1abb-4d39-a784-ab407787fb7a",
+          "key": "1684d3ee-1abb-4d39-a784-ab407787fb7a",
+          "created_when": "2026-08-13T16:55:46.717655Z",
+          "name": "WBA2026",
           "solutions": [],
           "public_datasets": [
             {
-              "id": 907443,
-              "created_by": "allam",
-              "owner_display_name": "D3-OU",
-              "created_when": "2026-07-27T05:47:10.979398Z",
-              "name": "scoring_program @ '07-27-2026 05:47'",
-              "type": "scoring_program",
-              "description": null,
+              "id": 933005,
+              "created_by": "jasamsheja",
+              "owner_display_name": "Ammar",
+              "created_when": "2026-08-13T16:52:56.586668Z",
+              "name": "WBA2026-ref",
+              "type": "reference_data",
+              "description": "Deannonamized meta jsons",
               "is_public": false,
-              "key": "4adab478-774b-4a39-bde8-0893c2a3986f",
-              "value": "4adab478-774b-4a39-bde8-0893c2a3986f",
-              "was_created_by_competition": true,
+              "key": "0081ff88-734d-44f7-bd4e-d7faea732bc4",
+              "value": "0081ff88-734d-44f7-bd4e-d7faea732bc4",
+              "was_created_by_competition": false,
               "in_use": [
                 {
                   "pk": 17680,
@@ -81,15 +81,37 @@
                 }
               ],
               "competition": null,
-              "file_name": "",
-              "file_size": 2452.0
+              "file_name": "WBA2026-ref.zip",
+              "file_size": 252520.0
+            },
+            {
+              "id": 933036,
+              "created_by": "jasamsheja",
+              "owner_display_name": "Ammar",
+              "created_when": "2026-08-13T17:33:07.823291Z",
+              "name": "WBA2026-scroing-v2",
+              "type": "scoring_program",
+              "description": "",
+              "is_public": false,
+              "key": "fb194727-328f-4c5d-8548-fc777993189e",
+              "value": "fb194727-328f-4c5d-8548-fc777993189e",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 17680,
+                  "title": "Who is Behind the Avatar?  Verifying Teleoperator Identity in Reenacted Avatar Videos"
+                }
+              ],
+              "competition": null,
+              "file_name": "WBA2026-scroing.zip",
+              "file_size": 7473.0
             }
           ]
         }
       ],
       "has_max_submissions": true,
       "max_submissions_per_day": 2,
-      "max_submissions_per_person": 10,
+      "max_submissions_per_person": 50,
       "auto_migrate_to_this_phase": false,
       "hide_output": false,
       "hide_prediction_output": false,
@@ -109,35 +131,13 @@
       "key": "Teleoperator Authentication",
       "columns": [
         {
-          "id": 87045,
-          "computation": null,
-          "computation_indexes": null,
-          "title": "Spk→Spk",
-          "key": "Spk,Spk",
-          "sorting": "desc",
-          "index": 0,
-          "hidden": false,
-          "precision": 2
-        },
-        {
-          "id": 87338,
-          "computation": null,
-          "computation_indexes": null,
-          "title": "Sil→Sil",
-          "key": "Sil,Sil",
-          "sorting": "desc",
-          "index": 1,
-          "hidden": false,
-          "precision": 2
-        },
-        {
           "id": 87339,
           "computation": null,
           "computation_indexes": null,
-          "title": "Spk→Sil",
-          "key": "Spk,Sil",
+          "title": "Same Gen",
+          "key": "same",
           "sorting": "desc",
-          "index": 2,
+          "index": 0,
           "hidden": false,
           "precision": 2
         },
@@ -145,10 +145,10 @@
           "id": 87340,
           "computation": null,
           "computation_indexes": null,
-          "title": "Sil→Spk",
-          "key": "Sil,Spk",
+          "title": "Different Gen",
+          "key": "diff",
           "sorting": "desc",
-          "index": 3,
+          "index": 1,
           "hidden": false,
           "precision": 2
         },
@@ -159,7 +159,7 @@
           "title": "Average",
           "key": "AUC",
           "sorting": "desc",
-          "index": 4,
+          "index": 2,
           "hidden": false,
           "precision": 2
         }
@@ -178,16 +178,16 @@
   "registration_auto_approve": false,
   "description": "Welcome to the first International Competition on Verifying Teleoperator Identity in Reenacted Avatar Videos. The competition will be in conjunction with [ACCV2026](https://https://accv2026.org/])",
   "participants_count": 17,
-  "submissions_count": 0,
+  "submissions_count": 2,
   "queue": null,
-  "enable_detailed_results": false,
+  "enable_detailed_results": true,
   "show_detailed_results_in_submission_panel": true,
   "show_detailed_results_in_leaderboard": true,
   "auto_run_submissions": true,
   "can_participants_make_submissions_public": false,
   "make_programs_available": false,
   "make_input_data_available": false,
-  "docker_image": "codalab/codalab-legacy:py39",
+  "docker_image": "ammaralsherfawi/codabench-torch-blosc2:v1",
   "allow_robot_submissions": false,
   "competition_type": "competition",
   "fact_sheet": null,

@@ -5,8 +5,8 @@
   "created_by": "jumponthemoon",
   "owner_display_name": "jumponthemoon",
   "created_when": "2026-07-24T10:11:38.562965Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-24-1784887898/b3c2c760151c/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=DKmlp%2FMSRceLEhuFOxfVDUjgYK8%3D&Expires=1786636997",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-24-1784887898/b3c2c760151c/logo_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=E4X7EZVzsv0cd5sDDvQ2KEN8Pbg%3D&Expires=1786636997",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-24-1784887898/b3c2c760151c/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=z9mmvnLuhCio%2FDrtez71H3EUpog%3D&Expires=1786723697",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-24-1784887898/b3c2c760151c/logo_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=CDknFzAI%2BK2XHMEWwIdRqaB2XxM%3D&Expires=1786723697",
   "terms": "# Terms and Conditions\n\nBy participating in TwinWorld Challenge 2026, you agree to the following terms:\n\n1. **Data usage** — The provided TUM2TWIN dataset may only be used for the purposes of this challenge.\n2. **Submission limit** — Participants are limited to 3 submissions per day during the Development phase and 1 per day during the Final phase (max 10 total).\n3. **Code sharing** — Top-ranked participants may be required to share their code for verification before being listed on the final leaderboard.\n4. **Fair play** — Any attempt to manipulate the leaderboard or use external ground-truth data will result in disqualification.\n5. **Publication** — Results may be presented at the TwinWorld Workshop @ ECCV 2026 (8 Sep 2026, Malmö, Sweden).\n\nFor questions, contact the organizers at **okw24@cam.ac.uk**.",
   "pages": [
     {
@@ -290,8 +290,8 @@
   ],
   "registration_auto_approve": false,
   "description": "Large-Scale 3D Semantic Gaussian Splatting Reconstruction on drone imagery (TUM + Gold Coast). ECCV 2026 Workshop · 8 Sep 2026 · Malmö, Sweden.",
-  "participants_count": 32,
-  "submissions_count": 83,
+  "participants_count": 36,
+  "submissions_count": 101,
   "queue": {
     "name": "twinworld-local-3070",
     "vhost": "19ddee7b-25c7-4997-aac2-6db31df16b47",

@@ -5,8 +5,8 @@
   "description_zh": "在低空经济蓬勃发展的大背景下，无人机航拍视频已成为国土测绘、应急救援、精准农业等领域的核心数据源。然而，受限于载荷功耗和传输带宽的制约，原始视频常面临分辨率低、细节模糊等瓶颈问题，这严重影响了下游目标识别和场景分析的有效性。视频超分辨率重建作为突破硬件限制、增强数据价值的关键技术，是连接前端数据采集与后端智能应用的重要桥梁。为汇聚全球顶尖算法团队，探索时空信息挖掘的技术边界，攻克复杂动态场景中的细节恢复和纹理增强难题，我们荣幸举办无人机视频超分辨率重建竞赛。\n\n通过此次竞赛，我们旨在激发算法创新，提升真实无人机航拍场景中的高保真时间重建和精细纹理恢复能力——这些场景往往具有低分辨率、高压缩率和运动模糊的特点。该赛事不仅是对计算机视觉与时间信号处理交叉领域技术实力的全面考察，也为全天候智能监控、高精度地理信息更新和自动灾情评估等重大应用提供前瞻性探索。",
   "created_by": "cylwk",
   "created_when": "2026-06-16T08:59:05.171345Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-16-1781618288/37a77e473e98/420a6900-614b-4150-9684-87298260914.png?AWSAccessKeyId=codabench-prod&Signature=cGo6OLQwJnO4ddTD%2FT4JSk9kK9c%3D&Expires=1786637007",
-  "participants_count": 8,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-16-1781618288/37a77e473e98/420a6900-614b-4150-9684-87298260914.png?AWSAccessKeyId=codabench-prod&Signature=RE29DArOt5ouHNYB9GXNr%2BngkrQ%3D&Expires=1786723708",
+  "participants_count": 34,
   "submissions_count": 1,
   "first_phase_start": null,
   "phases": [
