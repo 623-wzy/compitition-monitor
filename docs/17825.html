@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Datathon@IndoML 2026 — Track 1: Noise Event Detection — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>Datathon@IndoML 2026 — Track 1: Noise Event Detection</h2>
+  <div class="detail-meta">
+    <span>ID: 17825</span>
+    <span>创建者: nagu_iitkgp</span>
+    <span>创建时间: 2026-08-14</span>
+    <span>参与人数: 17</span>
+    <span>提交次数: 0</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/17825/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">在 Vaani 语料库的真实印度语言语音录音中检测噪声事件（开始和结束时间戳）。参赛者必须利用多层注释的训练数据（黄金级/白银级/青铜级）来构建稳健的噪声事件检测系统，该系统将基于事件级 F1 和分段 Dice 进行评估。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-test'>测试</span> Final Submission</td><td>2026-08-15</td><td>2026-09-15</td><td>5</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Data</h3><div class='page-content'>&lt;h1&gt;数据集 — 赛道1：噪声事件检测&lt;/h1&gt;
+
+&lt;h2&gt;Vaani语料库&lt;/h2&gt;
+&lt;p&gt;
+  该数据集源自&lt;a href=&quot;https://vaani.iisc.ac.in/&quot; target=&quot;_blank&quot;&gt;Vaani语料库&lt;/a&gt;——一个大规模、公开发布的印度语言语音数据集，涵盖多种印度语言，收集范围遍及印度100多个地区。
+&lt;/p&gt;
+&lt;p&gt;
+  论文：&lt;a href=&quot;https://arxiv.org/abs/2603.28714&quot; target=&quot;_blank&quot;&gt;arxiv.org/abs/2603.28714&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;h2&gt;训练数据 — 三个标注层级（约150小时）&lt;/h2&gt;
+&lt;p&gt;
+  训练数据以三个不同标注质量级别提供。有效利用不同质量级别标注的数据是本竞赛的关键内容。
+&lt;/p&gt;
+
+&lt;table border=&quot;1&quot; cellpadding=&quot;6&quot;&gt;
+  &lt;tr&gt;
+    &lt;th&gt;#&lt;/th&gt;
+    &lt;th&gt;标注类型&lt;/th&gt;
+    &lt;th&gt;时长&lt;/th&gt;
+    &lt;th&gt;描述&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;1&lt;/td&gt;
+    &lt;td&gt;🥇 &lt;strong&gt;黄金级&lt;/strong&gt; — 清晰时间戳&lt;/td&gt;
+    &lt;td&gt;约20小时&lt;/td&gt;
+    &lt;td&gt;噪声事件具有精确的起止时间戳，已验证多个标注者之间的一致性。&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;2&lt;/td&gt;
+    &lt;td&gt;🥈 &lt;strong&gt;白银级&lt;/strong&gt; — 嘈杂时间戳&lt;/td&gt;
+    &lt;td&gt;约100小时&lt;/td&gt;
+    &lt;td&gt;标注的噪声事件具有时间戳，但标注者之间的一致性未经验证。&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;3&lt;/td&gt;
+    &lt;td&gt;🥉 &lt;strong&gt;青铜级&lt;/strong&gt; — 无时间戳&lt;/td&gt;
+    &lt;td&gt;约30小时&lt;/td&gt;
+    &lt;td&gt;只有转录文本中的噪声事件标签——不提供起止时间戳。&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td colspan=&quot;2&quot;&gt;&lt;strong&gt;训练总计&lt;/strong&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;strong&gt;约150小时&lt;/strong&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;h2&gt;评估数据（11小时，隐藏）&lt;/h2&gt;
+&lt;p&gt;
+  隐藏的测试集总计&lt;strong&gt;11小时&lt;/strong&gt;：&lt;strong&gt;7小时自然&lt;/strong&gt;（真实世界）音频片段和&lt;strong&gt;4小时合成&lt;/strong&gt;片段（干净语音加合成噪声）。
+  赛道1（检测）在&lt;strong&gt;完整的11小时测试集&lt;/strong&gt;上评分——自然和合成片段结合。
+  测试元数据中的&lt;code&gt;syntheticData&lt;/code&gt;字段指示片段属于哪个子集（仅用于自然/合成分类报告；不影响排序指标的计算方式）。
+&lt;/p&gt;
+&lt;table border=&quot;1&quot; cellpadding=&quot;6&quot;&gt;
+  &lt;tr&gt;&lt;th&gt;数据集&lt;/th&gt;&lt;th&gt;总计&lt;/th&gt;&lt;th&gt;自然&lt;/th&gt;&lt;th&gt;合成&lt;/th&gt;&lt;th&gt;可用性&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;训练集&lt;/td&gt;&lt;td&gt;20小时&lt;/td&gt;&lt;td&gt;20小时&lt;/td&gt;&lt;td&gt;—&lt;/td&gt;&lt;td&gt;开源&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;验证集&lt;/td&gt;&lt;td&gt;4小时&lt;/td&gt;&lt;td&gt;3小时&lt;/td&gt;&lt;td&gt;1小时&lt;/td&gt;&lt;td&gt;计划发布至Hugging Face&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;测试集&lt;/td&gt;&lt;td&gt;11小时&lt;/td&gt;&lt;td&gt;7小时&lt;/td&gt;&lt;td&gt;4小时&lt;/td&gt;&lt;td&gt;隐藏（盲测）&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;h2&gt;标注示例&lt;/h2&gt;
+
+&lt;h3&gt;🥇 黄金级 — 清晰时间戳&lt;/h3&gt;
+&lt;pre&gt;
+[ { &quot;category&quot;: &quot;vehicle_traffic&quot;, &quot;tag&quot;: &quot;&amp;lt;horn&amp;gt;&quot;, &quot;start&quot;: &quot;2.714&quot;, &quot;end&quot;: &quot;3.761&quot; },
+  { &quot;category&quot;: &quot;human_non_speech&quot;, &quot;tag&quot;: &quot;[breathing]&quot;, &quot;start&quot;: &quot;4.938&quot;, &quot;end&quot;: &quot;5.410&quot; },
+  { &quot;Verification_status&quot;: &quot;Verified&quot; } ]
+&lt;/pre&gt;
+
+&lt;h3&gt;🥈 白银级 — 嘈杂时间戳&lt;/h3&gt;
+&lt;pre&gt;
+[ { &quot;category&quot;: &quot;vehicle_traffic&quot;, &quot;tag&quot;: &quot;&amp;lt;horn&amp;gt;&quot;, &quot;start&quot;: &quot;2.714&quot;, &quot;end&quot;: &quot;3.761&quot; },
+  { &quot;category&quot;: &quot;human_non_speech&quot;, &quot;tag&quot;: &quot;[breathing]&quot;, &quot;start&quot;: &quot;4.938&quot;, &quot;end&quot;: &quot;5.410&quot; } ]
+&lt;/pre&gt;
+
+&lt;h3&gt;🥉 青铜级 — 无时间戳&lt;/h3&gt;
+&lt;pre&gt;
+&amp;lt;noise&amp;gt; सजावट के &amp;lt;horn&amp;gt; &amp;lt;/horn&amp;gt; लिए यहाँ एक गुलाब भी
+&amp;lt;horn&amp;gt; &amp;lt;/horn&amp;gt; लगाया गया है। &amp;lt;/noise&amp;gt;
+&lt;/pre&gt;
+
+&lt;h2&gt;数据访问&lt;/h2&gt;
+&lt;p&gt;
+  训练数据：&lt;a href=&quot;https://huggingface.co/datasets/ARTPARK-IISc/Vaani-Noise-Event-Dataset&quot; target=&quot;_blank&quot;&gt;ARTPARK-IISc/Vaani-Noise-Event-Dataset&lt;/a&gt;
+  （数据集下载代码包含在数据集页面上）。注意：&lt;strong&gt;不需要图像文件&lt;/strong&gt;，可以忽略——本赛道仅使用音频和元数据字段。&lt;br&gt;
+&lt;/p&gt;
+&lt;p&gt;
+  训练和评估数据将通过竞赛网站发布。&lt;br&gt;
+  示例预览：&lt;a href=&quot;https://huggingface.co/datasets/PavanKumarJ-ARTPARK/Vaani_Noise_Event_TimeStamp&quot; target=&quot;_blank&quot;&gt;HuggingFace数据集&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+  请访问竞赛网站获取下载说明</div></div><div class='section'><h3>Overview</h3><div class='page-content'># Datathon@IndoML 2026 — 赛道1：噪声事件检测
+
+## 关于本赛事
+
+**Datathon@IndoML 2026** 是与 [IndoML 2026](https://indoml.in) 联合举办的一项研究导向型数据科学竞赛。今年的数据马拉松挑战参赛者解决**印度语言真实语音中的噪声事件检测和消除** —— 这是实现跨印度语言包容性、稳健自动语音识别的关键问题。
+
+## 赛道1 — 检测
+
+在印度语言语音录音中检测噪声事件，精确标注起始/终止时间戳。有效利用在不同级别（金级/银级/铜级）标注的数据来构建稳健的噪声事件检测系统。
+
+保留的测试集（11小时）包含7小时的自然（真实）录音和4小时的合成录音（清晰语音加合成噪声）。赛道1基于全部11小时进行评分；自然/合成分解仅供透明性报告。训练数据（金级/银级/铜级共约150小时）可从Hugging Face获取：[ARTPARK-IISc/Vaani-Noise-Event-Dataset](https://huggingface.co/datasets/ARTPARK-IISc/Vaani-Noise-Event-Dataset)（下载代码包含其中；此赛道无需图像文件）。
+
+在真实印度环境中收集的语音录音主要包含非平稳背景事件 —— 汽车喇叭声、狗叫声、儿童哭声、门铃声、手机铃声、厨房电器声和宗教音乐。这些事件会降低下游自动语音识别性能。
+
+## 动机
+
+大多数学术语音增强基准围绕平稳噪声（白噪声、粉红噪声、咖啡厅嗡鸣声）或录音棚录制的混合音频构建。来自印度农村和半城市地区的现场录音包含突发性、语义丰富的事件 —— 经过的摩托车、母鸡、高压锅哨声、门铃、另一间房间的电视 —— 当前的去噪器要么会模糊处理，要么将其视为语音。
+
+由此产生两个后果：
+
+- 下游自动语音识别在这些环境中的使用者身上表现失效，加剧了高资源语言和低资源印度语言之间现有的性能差距。
+- 标准音频事件检测数据集（AudioSet、DESED、DCASE）代表性不足，既缺少印度声学背景，也缺少印度语言语音，使得从其迁移学习脆弱不堪。
+
+本挑赛直接针对这一差距。它要求参赛者将噪声视为第一级、带标签、时间局部化的对象。
+
+## 负责任AI对齐
+
+本挑赛在负责任AI赛道下定位，基于三个明确轴线：
+
+- **稳健性** —— 真实印度语言录音（非精心策划的录音棚混合音频）是评估分布。
+- **包容性** —— Vaani涵盖多种印度语言和多种说话者。评估集按语言和类别平衡进行监控。
+- **透明性** —— 前5名提交者必须公开代码并记录预训练依赖项。
+
+## 关键日期
+
+| 事件 | 日期 |
+|------|------|
+| 竞赛开放 | 2026年8月1日 |
+| 提交截止 | 2026年9月15日 |
+| 结果宣布 | 待定 |
+| IndoML 2026演讲 | 待定 |
+
+## 奖项
+
+- **现金奖励** —— 表现最佳团队的丰厚现金奖励（详情待定）。
+- **在IndoML 2026演讲** —— 邀请顶级团队向领先研究人员展示其解决方案。
+- **创新奖** —— 专家评审团授予最具原创性方法论贡献的奖项。
+
+## 组织者
+
+- Dr. Subhajit Datta —— 遗产技术研究所
+- Dr. Mahesh Mohan —— 印度理工学院哈拉格普尔</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'>&lt;h1&gt;评估 — 赛道 1：噪音事件检测&lt;/h1&gt;
+
+&lt;h2&gt;提交格式&lt;/h2&gt;
+&lt;p&gt;
+  提交一个包含单个文件 &lt;code&gt;predictions.jsonl&lt;/code&gt; 的 &lt;strong&gt;ZIP 文件&lt;/strong&gt;。
+&lt;/p&gt;
+&lt;p&gt;
+  JSONL 文件的每一行必须是具有以下结构的 JSON 对象：
+&lt;/p&gt;
+&lt;pre&gt;
+{&quot;clip_id&quot;: &quot;vaani_eval_001&quot;, &quot;events&quot;: [{&quot;onset&quot;: 1.24, &quot;offset&quot;: 3.81}, {&quot;onset&quot;: 5.10, &quot;offset&quot;: 6.55}]}
+{&quot;clip_id&quot;: &quot;vaani_eval_002&quot;, &quot;events&quot;: []}
+{&quot;clip_id&quot;: &quot;vaani_eval_003&quot;, &quot;events&quot;: [{&quot;onset&quot;: 0.20, &quot;offset&quot;: 0.85}, {&quot;onset&quot;: 3.44, &quot;offset&quot;: 4.11}]}
+&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;clip_id&lt;/strong&gt;（字符串）— 必须与评估集中的片段 ID 匹配。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;events&lt;/strong&gt;（列表）— 检测到的噪音事件，每个包含：
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;onset&lt;/strong&gt;（浮点数）— 开始时间（秒）。&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;offset&lt;/strong&gt;（浮点数）— 结束时间（秒）。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;对于没有检测到噪音事件的片段，使用空列表 &lt;code&gt;[]&lt;/code&gt;。&lt;/li&gt;
+  &lt;li&gt;每行一个 JSON 对象。每个评估片段必须恰好出现一次 — 这包括隐藏测试集中的&lt;strong&gt;自然和合成&lt;/strong&gt;片段（总共 11 小时：7 小时自然 + 4 小时合成）。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;评分范围&lt;/h2&gt;
+&lt;p&gt;
+  赛道 1（检测）在&lt;strong&gt;完整测试集&lt;/strong&gt;上评分 — 自然和合成片段合并。还会报告事件 F1 和分段 Dice 系数的自然/合成分组结果以供参考，但不影响排行榜排名。
+&lt;/p&gt;
+
+&lt;h2&gt;评估指标&lt;/h2&gt;
+
+&lt;h3&gt;1. 基于事件的 F1（±20% 容差）&lt;/h3&gt;
+&lt;p&gt;
+  当预测事件的开始时间和结束时间都在参考事件持续时间的 ±20% 范围内（最小 50 ms 容差）时，该预测事件被视为&lt;strong&gt;真正例&lt;/strong&gt;。
+&lt;/p&gt;
+&lt;p&gt;
+  形式上，对于持续时间为 &lt;em&gt;d = offset − onset&lt;/em&gt; 的参考事件：
+&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;容差：&lt;em&gt;tol = max(0.20 × d, 0.05)&lt;/em&gt; 秒&lt;/li&gt;
+  &lt;li&gt;匹配条件：|pred_onset − ref_onset| ≤ tol &lt;strong&gt;且&lt;/strong&gt; |pred_offset − ref_offset| ≤ tol&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+  事件按贪心匹配（最接近的优先）。计算微观平均 F1：
+&lt;/p&gt;
+&lt;pre&gt;
+  精准率 = TP / (TP + FP)
+  召回率 = TP / (TP + FN)
+  F1    = 2 × 精准率 × 召回率 / (精准率 + 召回率)
+&lt;/pre&gt;
+
+&lt;h3&gt;2. 分段级 Dice 系数&lt;/h3&gt;
+&lt;p&gt;
+  音频时间轴被分为 10 ms 的帧。对于每个片段，为参考和预测事件创建二进制帧级掩码。Dice 系数衡量时间重叠：
+&lt;/p&gt;
+&lt;pre&gt;
+  Dice = 2 × |P ∩ G| / (|P| + |G|)
+&lt;/pre&gt;
+&lt;p&gt;
+  其中 P = 预测的噪音帧，G = 地面真实噪音帧。
+  在所有评估片段上进行宏观平均。
+&lt;/p&gt;
+
+&lt;h3&gt;综合得分（排行榜排名）&lt;/h3&gt;
+&lt;p&gt;
+  用于排行榜排名的&lt;strong&gt;综合得分&lt;/strong&gt;为：
+&lt;/p&gt;
+&lt;pre&gt;
+  综合 = 事件 F1 + 分段 Dice
+&lt;/pre&gt;
+&lt;p&gt;
+  最高可能值：2.0（完美 F1 = 1.0 + 完美 Dice = 1.0）。
+&lt;/p&gt;
+
+&lt;h2&gt;创新性得分&lt;/h2&gt;
+&lt;p&gt;
+  在基于指标排名后，专家评审团对&lt;strong&gt;前 5 个参赛作品&lt;/strong&gt;应用&lt;strong&gt;创新性因子&lt;/strong&gt;以确定最终排名。这奖励原创贡献：新的架构、新颖的训练方案、原理性的事件条件设置或利用未标注 Vaani 音频的半监督方法。
+&lt;/p&gt;
+
+&lt;h2&gt;提交限制&lt;/h2&gt;
+&lt;table border=&quot;1&quot; cellpadding=&quot;6&quot;&gt;
+  &lt;tr&gt;&lt;td&gt;每天最大提交次数&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;最大总提交次数&lt;/td&gt;&lt;td&gt;100&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;执行时间限制&lt;/td&gt;&lt;td&gt;600 秒&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</div></div>
+
+</div>
+</body>
+</html>
