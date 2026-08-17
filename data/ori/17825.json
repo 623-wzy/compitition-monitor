@@ -5,8 +5,8 @@
   "created_by": "nagu_iitkgp",
   "owner_display_name": "nagu_iitkgp",
   "created_when": "2026-08-14T17:27:12.345457Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-14-1786728432/29a3bf95a91d/logo.png?AWSAccessKeyId=codabench-prod&Signature=sqw0WMgmdTpm5GtaFGvU%2FFyY7cU%3D&Expires=1786897215",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-14-1786728432/29a3bf95a91d/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=Satlqw3faDrDRIHu16YRPs6zYLg%3D&Expires=1786897215",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-14-1786728432/29a3bf95a91d/logo.png?AWSAccessKeyId=codabench-prod&Signature=SZWo7SONgyuvDDA9d6Ax%2FSqMwFM%3D&Expires=1786983923",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-14-1786728432/29a3bf95a91d/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=c1jmPJSCf5zKqulouCICVhlnr00%3D&Expires=1786983923",
   "terms": "<h1>Terms and Conditions</h1>\n\n<h2>Eligibility</h2>\n<ul>\n  <li>The competition is open to individuals and teams worldwide.</li>\n  <li>Participants must register and receive approval from the organizers before making submissions.</li>\n  <li>Each participant/team may maintain only one account on the platform.</li>\n</ul>\n\n<h2>Data Usage</h2>\n<ul>\n  <li>The dataset provided (a curated subset of the Vaani corpus) may only be used for the purposes of this competition.</li>\n  <li>Participants may not redistribute the dataset or use it for commercial purposes without explicit permission from the organizers.</li>\n  <li>Use of external data is permitted and must be disclosed in the system description.</li>\n  <li>Pre-trained models are permitted and must be documented.</li>\n</ul>\n\n<h2>Submissions</h2>\n<ul>\n  <li>Submissions must be the original work of the participant/team.</li>\n  <li>Submissions must not contain any malicious code.</li>\n  <li>Maximum 5 submissions per day, 100 submissions total.</li>\n  <li>The final submission on the leaderboard at the competition deadline will be used for ranking.</li>\n</ul>\n\n<h2>Code and Reproducibility</h2>\n<ul>\n  <li>Top-5 entries in each track <strong>must release training and inference code</strong> under a permissive open-source licence.</li>\n  <li>Top-5 entries must submit a short system description (≤4 pages).</li>\n  <li>All pre-trained dependencies must be documented for independent reproducibility.</li>\n</ul>\n\n<h2>Awards</h2>\n<ul>\n  <li>Prize-eligible participants must comply with all terms and conditions.</li>\n  <li>The organizers reserve the right to verify submissions and disqualify entries that violate the rules.</li>\n  <li>Top teams will be invited to present their solutions at IndoML 2026.</li>\n</ul>\n\n<h2>Responsible AI</h2>\n<p>\n  This competition is positioned under the Responsible AI theme. Participants are encouraged to\n  consider robustness across diverse acoustic environments, linguistic inclusivity across Indian\n  languages, and methodological transparency in their approaches.\n</p>\n\n<h2>Liability</h2>\n<p>\n  The organizers are not responsible for any expenses incurred by the participants.\n  The organizers reserve the right to modify these terms and conditions at any time.\n  Participants will be notified of any changes.\n</p>\n\n<h2>Contact</h2>\n<p>\n  For questions or clarifications, contact the organizers at\n  <a href=\"mailto:datathon@indoml.in\">datathon@indoml.in</a>.\n</p>",
   "pages": [
     {
@@ -192,8 +192,8 @@
   "collaborators": [],
   "registration_auto_approve": true,
   "description": "Detect noise events (onset and offset timestamps) in real-world Indic speech recordings from the Vaani corpus. Participants must leverage multi-tier annotated training data (Gold / Silver / Bronze) to build robust noise-event detection systems evaluated on Event-based F1 and Segment Dice.",
-  "participants_count": 28,
-  "submissions_count": 0,
+  "participants_count": 36,
+  "submissions_count": 2,
   "queue": null,
   "enable_detailed_results": false,
   "show_detailed_results_in_submission_panel": true,
