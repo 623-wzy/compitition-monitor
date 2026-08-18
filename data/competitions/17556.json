@@ -5,9 +5,9 @@
   "description_zh": "Optical Time-Sensitive Weak-Small Target Detection is an important research direction in intelligent visual perception and a key technical challenge in target detection and situation awareness in complex environments. Compared to conventional target detection tasks, weak-small targets typically exhibit characteristics such as small imaging scale, weak target energy, strong background interference, and unstable target morphology. The usable information in a single frame image is extremely limited, and algorithms are prone to issues such as missed detections, false detections, and discontinuous detection results in real-world scenarios.\n\nThis challenge competition, based on the CSIG2026 academic conference platform, focuses on key problems in optical time-sensitive weak-small target detection, and sets up two competition tracks: \"Infrared Video Satellite Airborne Moving Target Detection\" and \"Motion Small Target Detection Based on Event Camera\". It provides participating teams with a fair and reproducible algorithm validation platform, promoting advances in related data construction, method innovation, and technical exchange.",
   "created_by": "irnewbie",
   "created_when": "2026-07-16T16:05:17.810335Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217917/f590d1281393/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=mrSuQTybbvcFh%2F1MFIjQU8%2BCDCI%3D&Expires=1786983926",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217917/f590d1281393/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=wD%2FJQOqLPB9r3WEWSkCJlXJfy5Q%3D&Expires=1787070675",
   "participants_count": 76,
-  "submissions_count": 800,
+  "submissions_count": 843,
   "first_phase_start": null,
   "phases": [
     {

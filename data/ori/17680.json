@@ -5,8 +5,8 @@
   "created_by": "allam",
   "owner_display_name": "D3-OU",
   "created_when": "2026-07-27T05:47:11.519603Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=knk7CArNXqI6dPHI6r9bBL%2F5erY%3D&Expires=1786983923",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2_icon.png?AWSAccessKeyId=codabench-prod&Signature=S0%2FzD3CE%2BTo4qo7kBBbvEr%2BHCwY%3D&Expires=1786983923",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=kI3cSFOnyH8Il0%2FxMbVTTu0gxUc%3D&Expires=1787070667",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2_icon.png?AWSAccessKeyId=codabench-prod&Signature=cfX3Angfbv5WI4GcgAn0Y36bOLs%3D&Expires=1787070667",
   "terms": "The competition is open to research teams. \n\nPlease  register and join the competition. \n\nNote: Please use your institutional email to register for the competition, do NOT use gmail.com or qq.com, otherwise the registration will not be approved.\n\nParticipants are required to sign the dataset license agreement and send the scanned PDF to alsherfawi@yy.d3c.osaka-u.ac.jp cc: allam@yy.d3c.osaka-u.ac.jp. You can download the agreement from [here](http://www.am.sanken.osaka-u.ac.jp/BiometricDB/dataset/Competition/WBA2026/WBA_ACCV_2026%20Competition_License%20Agreement.pdf).",
   "pages": [
     {
@@ -178,7 +178,7 @@
   "registration_auto_approve": false,
   "description": "Welcome to the first International Competition on Verifying Teleoperator Identity in Reenacted Avatar Videos. The competition will be in conjunction with [ACCV2026](https://https://accv2026.org/])",
   "participants_count": 18,
-  "submissions_count": 6,
+  "submissions_count": 9,
   "queue": null,
   "enable_detailed_results": true,
   "show_detailed_results_in_submission_panel": true,

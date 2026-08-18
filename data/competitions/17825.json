@@ -5,9 +5,9 @@
   "description_zh": "在 Vaani 语料库的真实印度语言语音录音中检测噪声事件（开始和结束时间戳）。参赛者必须利用多层注释的训练数据（黄金级/白银级/青铜级）来构建稳健的噪声事件检测系统，该系统将基于事件级 F1 和分段 Dice 进行评估。",
   "created_by": "nagu_iitkgp",
   "created_when": "2026-08-14T17:27:12.345457Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-14-1786728432/29a3bf95a91d/logo.png?AWSAccessKeyId=codabench-prod&Signature=SZWo7SONgyuvDDA9d6Ax%2FSqMwFM%3D&Expires=1786983923",
-  "participants_count": 36,
-  "submissions_count": 2,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-14-1786728432/29a3bf95a91d/logo.png?AWSAccessKeyId=codabench-prod&Signature=hMZiXhE%2Bf56b7OaBJzlQUOKfEdI%3D&Expires=1787070666",
+  "participants_count": 45,
+  "submissions_count": 13,
   "first_phase_start": null,
   "phases": [
     {

@@ -1,0 +1,228 @@
+{
+  "id": 16257,
+  "title": "SUFE_DL_FinalProject_Vision",
+  "published": true,
+  "created_by": "ntulc",
+  "owner_display_name": "ntulc",
+  "created_when": "2026-05-11T19:42:24.060326Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-18-1779115404/081a3e46c671/Shanghai_University_of_Finance_and_.jpg?AWSAccessKeyId=codabench-prod&Signature=PZ3ihbnUX%2BdiW4JfyTi3oUTDDdw%3D&Expires=1787070693",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-18-1779115404/081a3e46c671/Shanghai_University_of_Finance_and__icon.jpg?AWSAccessKeyId=codabench-prod&Signature=lgFJL5i7XkH3yQ9bUpY0l3W%2BI0A%3D&Expires=1787070693",
+  "terms": "<p>MOSE and MOSEv2 is licensed under a <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\" target=\"_blank\">CC BY-NC-SA 4.0 License</a>. The data of MOSEv2 is released for non-commercial research purpose only.</p>\n\nCopyright 2026 SUFE SCAI. DO NOT COPY OR DISTRIBUTE",
+  "pages": [
+    {
+      "id": 81884,
+      "title": "Data",
+      "content": "# 文件下载 & Get Started\n\n## （百度云链接已更新）\n## 测试数据\n\n### 视频、初始帧Prompt\n\n你需要在这些视频上进行测试，并提交你的测试结果：\n\n* 百度云 : https://pan.baidu.com/s/1ICPivSrUEkj4v9ezjgzIvw?pwd=sufe 提取码: sufe \n* Google Drive: https://drive.google.com/file/d/12PLrZwDvpeO3n-IQbAMgA9FOM0xdOqRr/view?usp=sharing\n\n### 示例提交（Sample Submission）\n\n示例提交展示了正确的提交文件结构和格式，供你参考。你需要按照这个示例提交的文件结构来组织你的提交结果。\n\n你可以直接在Participate页面中提交下面这个文件，来尝试一下提交流程。\n\n你自己的提交结果应该与这个示例提交的文件结构完全相同（但是内容不同）。\n\n链接: https://pan.baidu.com/s/1U0MeDsSome0z6TJhVZEZZA?pwd=sufe 提取码: sufe \n\n\n## SAM2 Baseline 模型\n\nSAM2 Baseline 模型的代码和使用说明可以在以下链接找到：\n\n### 示例模型Notebook\n\n**你可以基于这个Notebook来运行SAM2 Baseline模型**，完成图像分割和视频分割的实验：\n\n* CloudStudio（测试版）： https://cloudstudio.net/a/35532653440442368?channel=share&sharetype=URL\n* Google Colab（推荐）：https://colab.research.google.com/drive/1-QmRMhS2VqCbxF4NC5PjhHjDgd-oV5Nw?usp=sharing\n\n其中Video prediction部分的视频（0d0030a7），可以从这里下载：\n\n* 百度云: https://pan.baidu.com/s/1YW7Ub4WN6tuIVDeMNpA0MQ?pwd=sufe 提取码: sufe \n* Google Drive: https://drive.google.com/file/d/1yCg8Stnnscl6MGGjCURS08eO_Fh30NdV/view?usp=sharing\n\n### 模型Checkpoint，示例数据\n\n在上面的Notebook中已经包含了下载SAM模型及测试数据的的链接等，但如果你由于网络问题难以下载，也以直接使用下面的链接来下载模型Checkpoint和示例数据：\n\n链接: https://pan.baidu.com/s/10gZqKWJttRzT1J_QR2M7VA?pwd=sufe 提取码: sufe \n\n\n# 计算机视觉大作业：基于 SAM 的视频目标分割\n\n## **作业目标**\n\n视频目标分割是计算机视觉中的重要任务，目标是在视频序列中对指定物体进行逐帧像素级分割。相比单张图像分割，视频分割还需要考虑目标运动、遮挡、尺度变化、出画与重现、相机运动、光照变化等问题。\n\n本次大作业要求同学使用 SAM 作为 baseline，完成图像分割、视频分割和 MOSE 数据集提交实验。重点不是训练大模型，而是跑通 baseline、完成平台提交，并分析模型在真实复杂场景中的优缺点。\n\n通过期末大作业，希望你能：\n\n1. 掌握当前主流图像分割大模型 SAM/SAM2 的推理使用；\n2. 理解视频对象分割（Video Object Segmentation, VOS）的基本任务设定与评价指标；\n3. 体验完整的学术 Benchmark 提交流程；\n4. （进阶）在复杂真实场景数据集 MOSE 上验证模型性能，并分析其优劣；\n5. （进阶）训练模型，理解分割与多模态分割的挑战。\n\n---\n\n## 模型介绍\n\nSegment Anything Model（SAM）是 Meta AI 提出的通用图像分割模型，能够根据点、框、文本等提示对图像中的目标进行分割。SAM 具有较强的泛化能力，不需要针对每个具体类别重新训练，就可以在许多新场景中生成较好的分割结果。近年来，SAM 及其后续版本 SAM2 也被广泛用于视频目标分割任务中，作为图像分割和视频分割实验的重要 baseline。\n\n本次作业推荐使用 SAM 2 或 SAM3 作为基础模型，重点关注其在真实图像、真实视频和数据集上的实际表现。通过实验，同学们需要观察 SAM 在简单场景中的优势，以及在复杂场景中的局限。\n\n---\n\n## **基础要求**\n\n### **单帧图像分割**\n\n完成以下内容：\n\n1. 跑通 SAM baseline 的单帧分割代码，在示例图片上成功分割出目标物体。\n2. **自行拍摄 5 张现实场景图片**，使用 SAM 分割其中的物体。\n\n---\n\n### **视频目标分割**\n\n完成以下内容：\n\n1. 跑通 SAM baseline 的视频分割代码，在示例视频上成功完成目标分割。\n2. **自行拍摄 2 段现实场景视频（每段至少 5s），**使用 SAM 分割其中的物体。\n\n- 提示：\n  - 推荐在云平台（如 Google Colab 或腾讯 CloudStudio）上进行实验。\n  - 若视频较长，可以抽帧处理，例如降为 5 fps，以加快推理速度。\n  - 现实场景内容不限，城市、学校、人物、车辆等等均可，创意（虚拟）场景也可。视频中应当有明显动作，避免静止场景的持续拍摄。\n  - 鼓励拍摄高复杂度、可以挑战模型性能的图片及视频。如果拍摄的图片或视频能够导致模型分割失败、且能反映出现有模型缺陷，可获额外加分。\n\n---\n\n### **Benchmark 提交**\n\n完成以下内容：\n\n1. 注册 Codabench 平台，SUFE_DeepLearning Benchmark： [https://www.codabench.org/competitions/16257/](https://www.codabench.org/competitions/16257/)\n2. 按平台文档下载数据，使用 SAM baseline 进行分割。\n3. 在平台提交测试结果，并记录分数。\n\n**（重要）：在报告开头请写明你的 Codabench 用户名！**\n\n---\n\n### **结果分析**\n\n报告中需要介绍并分析：\n\n1. SAM 在测试集上，以及在自行拍摄的图片和视频上的结果（包括原图与分割结果）。\n2. 总结哪些场景下 SAM 表现较好、哪些场景下 SAM 表现较差。思考模型在哪些方面还有进步空间。\n\n---\n\n## **进阶要求**\n\n进阶内容为选做，内容可自由发挥，可用于加分。\n\n### **MOSEv2 Benchmark**\n\n在正式的 MOSEv2 Benchmark 上完成有效提交。\n\n可以使用 SAM 进行推理，也可以直接提交比赛提供的示例结果（sample submission，具体可阅读 Benchmark 网站说明及相关文档），但需要记录成绩并分析结果。\n\nBenchmark ⽹站：[https://www.codabench.org/competitions/10062/](https://www.codabench.org/competitions/10062/)\n\n### **提高 Baseline 成绩**\n\n尝试提高成绩，例如更换性能更强的模型、进一步训练 SAM 等。\n\n需要在报告中说明改进方法，并与原 baseline 对比。\n\n### **多模态探索**\n\n探索多模态视频分割任务 MeViS v2，完成一次有效提交，并分析其与 MOSE 的区别。\n\nBenchmark ⽹站：[https://www.codabench.org/competitions/11420/](https://www.codabench.org/competitions/11420/)\n\n### 自由开拓\n\n任何你认为与作业相关的思考、探索、实验等，均可以包含在报告中。\n\n---\n\n## **报告要求**\n\n在报告中必须注明自己的姓名、学号等信息，**以及 Codabench 用户名。**\n\n报告格式不做强制要求，但可参考以下框架：\n\n1. 介绍\n\n   1. 作业概述\n   2. 实验环境\n2. 方法\n\n   1. SAM baseline 方法说明\n3. 实验结果\n\n   1. 单帧图像分割结果展示\n   2. 视频分割结果展示\n   3. Benchmark 提交结果\n   4. 结果与失败案例分析（改进方向）\n4. 进阶要求\n5. 总结\n\n报告中必须包含结果截图或可视化结果，不能只写文字描述。\n\n---\n\n## **提交内容**\n\n最终提交：\n\n1. 实验报告 PDF。\n2. 代码，或代码仓库链接。\n3. 拍摄的图片视频，及分割结果。\n4. Benchmark 提交截图和成绩截图。\n5. README 运行说明。\n\n---\n\n## **评分体系**\n\n总分 100 分。\n\n### 基础要求（85 分）\n\n达成基础要求，可获得基础分 85 分。\n\n<table>\n<tr>\n<td>基础要求 <br/></td><td>得分<br/></td></tr>\n<tr>\n<td>跑通 SAM 单帧分割（5 张现实图片分割）<br/></td><td>20<br/></td></tr>\n<tr>\n<td>跑通 SAM 视频分割（2 段现实视频分割）<br/></td><td>20<br/></td></tr>\n<tr>\n<td>Benchmark 注册与提交<br/></td><td>10<br/></td></tr>\n<tr>\n<td>结果分析与失败案例<br/></td><td>15<br/></td></tr>\n<tr>\n<td>报告与代码质量<br/></td><td>20<br/></td></tr>\n</table>\n\n### 进阶要求（额外 +25 分）\n\n达成额外要求，可在基础分上获得额外加分。最高加 25 分。\n\n（例如：基础分 70 分，额外 +25 分，则总分为 95 分）\n\n<table>\n<tr>\n<td>进阶要求（额外加分，最高加20分）<br/></td><td>最高加分<br/></td></tr>\n<tr>\n<td>拍摄高质量失败案例并分析<br/></td><td>+10<br/></td></tr>\n<tr>\n<td>MOSEv2 有效提交<br/></td><td>+10<br/></td></tr>\n<tr>\n<td>改进 baseline 并提升成绩<br/></td><td>+10<br/></td></tr>\n<tr>\n<td>MeViS v2 有效提交与分析<br/></td><td>+10<br/></td></tr>\n<tr>\n<td>自由开拓<br/></td><td>+10<br/></td></tr>\n</table>\n\n---\n\n## **注意事项**\n\n1. 图片和视频必须自行拍摄。\n2. 不强制要求训练模型，重点是跑通、提交和分析。\n3. 注明使用开源代码或预训练模型的来源。\n4. 若平台提交失败，需要说明原因和尝试过的解决方法。\n5. 鼓励展示失败案例，有价值的失败分析可以加分。",
+      "index": 0
+    },
+    {
+      "id": 77610,
+      "title": "Evaluation",
+      "content": "## Evaluation\nWe evaluate performance using multiple metrics: the Jaccard index (J), F-Measure (F), their mean (J&F), an improved F-Measure (Ḟ), and the mean of J and Ḟ (J&Ḟ). To better assess the complex scenarios in MOSEv2 where objects frequently disappear and reappear, we also report specialized metrics: J&Ḟ_disappear and J&Ḟ_reappear. \n\n**Note**: \n1. Ḟ (F with a dot above) adaptively computes boundary thresholds based on object size, providing fairer evaluation of boundary prediction quality across objects of different scales. For more information, please refer to the paper.\n2. The evaluation may take 20 minutes to finish because of the data size. If your submussion exceed the time limit (20min) during scoring, please check if your data meets the requirements and view your log. If the issue persists, please contact us.\n3. We also provide metrics for each individual object, which can be downloaded through the button \"Output from scoring step\".",
+      "index": 1
+    }
+  ],
+  "phases": [
+    {
+      "id": 26748,
+      "index": 0,
+      "start": "2026-05-10T16:00:00Z",
+      "end": "2026-09-30T16:00:00Z",
+      "name": "valid",
+      "description": "",
+      "status": "Current",
+      "execution_time_limit": 1500,
+      "tasks": [
+        {
+          "task": "8a7a13b9-5e52-40f5-ac6e-28f1bf9263f5",
+          "order_index": 0,
+          "phase": 26748,
+          "id": 32986,
+          "value": "8a7a13b9-5e52-40f5-ac6e-28f1bf9263f5",
+          "key": "8a7a13b9-5e52-40f5-ac6e-28f1bf9263f5",
+          "created_when": "2026-05-18T16:17:59.296783Z",
+          "name": "SUFE_dl_video",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 768073,
+              "created_by": "ntulc",
+              "owner_display_name": "ntulc",
+              "created_when": "2026-05-18T16:17:12.506609Z",
+              "name": "SUFE_dl_video_gt",
+              "type": "reference_data",
+              "description": "",
+              "is_public": false,
+              "key": "64f340e9-98d2-445f-aa4e-92f14669fba5",
+              "value": "64f340e9-98d2-445f-aa4e-92f14669fba5",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 16257,
+                  "title": "SUFE_DL_FinalProject_Vision"
+                },
+                {
+                  "pk": 16683,
+                  "title": "-------TEST BENCH---------"
+                }
+              ],
+              "competition": null,
+              "file_name": "sufe_dl_video_gt.zip",
+              "file_size": 6578017.0
+            },
+            {
+              "id": 768111,
+              "created_by": "ntulc",
+              "owner_display_name": "ntulc",
+              "created_when": "2026-05-18T16:40:48.874391Z",
+              "name": "SUFE_dl_video_script",
+              "type": "scoring_program",
+              "description": "",
+              "is_public": false,
+              "key": "a3c11f02-3c0f-44a5-bbc4-bf760f6327a6",
+              "value": "a3c11f02-3c0f-44a5-bbc4-bf760f6327a6",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 16257,
+                  "title": "SUFE_DL_FinalProject_Vision"
+                },
+                {
+                  "pk": 16683,
+                  "title": "-------TEST BENCH---------"
+                }
+              ],
+              "competition": null,
+              "file_name": "归档.zip",
+              "file_size": 10555.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 999,
+      "max_submissions_per_person": 999,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 17928,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "Results",
+      "columns": [
+        {
+          "id": 77210,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "J&Ḟ",
+          "key": "J&F_new",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 77211,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "J",
+          "key": "J",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 77212,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Ḟ",
+          "key": "F_new",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 77213,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "J&Ḟ_disappear",
+          "key": "disappear_J&F_new",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": true,
+          "precision": 2
+        },
+        {
+          "id": 77214,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "J&Ḟ_reappear",
+          "key": "reappear_J&F_new",
+          "sorting": "desc",
+          "index": 4,
+          "hidden": true,
+          "precision": 2
+        },
+        {
+          "id": 77215,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "F",
+          "key": "F",
+          "sorting": "desc",
+          "index": 5,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 77216,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "J&F",
+          "key": "J&F",
+          "sorting": "desc",
+          "index": 6,
+          "hidden": true,
+          "precision": 2
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Force_Best"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": true,
+  "description": "Final Project of SUFE Deep Learning Course - Computer Vision",
+  "participants_count": 49,
+  "submissions_count": 215,
+  "queue": null,
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": false,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "docker_image": "ntulc/codalab_mevis:v1",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": null,
+  "forum": 16003,
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "forum_enabled": true,
+  "enable_human_in_the_loop": false
+}

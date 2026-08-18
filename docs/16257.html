@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SUFE_DL_FinalProject_Vision — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>SUFE_DL_FinalProject_Vision</h2>
+  <div class="detail-meta">
+    <span>ID: 16257</span>
+    <span>创建者: ntulc</span>
+    <span>创建时间: 2026-05-11</span>
+    <span>参与人数: 49</span>
+    <span>提交次数: 215</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16257/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">上海财经大学深度学习课程 - 最终项目 - 计算机视觉</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-other'>其他</span> valid</td><td>2026-05-10</td><td>2026-09-30</td><td>999</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Data</h3><div class='page-content'>文件已提供，内容为中文，原样返回：
+
+# 文件下载 &amp; Get Started
+
+## （百度云链接已更新）
+## 测试数据
+
+### 视频、初始帧Prompt
+
+你需要在这些视频上进行测试，并提交你的测试结果：
+
+* 百度云 : https://pan.baidu.com/s/1ICPivSrUEkj4v9ezjgzIvw?pwd=sufe 提取码: sufe 
+* Google Drive: https://drive.google.com/file/d/12PLrZwDvpeO3n-IQbAMgA9FOM0xdOqRr/view?usp=sharing
+
+### 示例提交（Sample Submission）
+
+示例提交展示了正确的提交文件结构和格式，供你参考。你需要按照这个示例提交的文件结构来组织你的提交结果。
+
+你可以直接在Participate页面中提交下面这个文件，来尝试一下提交流程。
+
+你自己的提交结果应该与这个示例提交的文件结构完全相同（但是内容不同）。
+
+链接: https://pan.baidu.com/s/1U0MeDsSome0z6TJhVZEZZA?pwd=sufe 提取码: sufe 
+
+
+## SAM2 Baseline 模型
+
+SAM2 Baseline 模型的代码和使用说明可以在以下链接找到：
+
+### 示例模型Notebook
+
+**你可以基于这个Notebook来运行SAM2 Baseline模型**，完成图像分割和视频分割的实验：
+
+* CloudStudio（测试版）： https://cloudstudio.net/a/35532653440442368?channel=share&amp;sharetype=URL
+* Google Colab（推荐）：https://colab.research.google.com/drive/1-QmRMhS2VqCbxF4NC5PjhHjDgd-oV5Nw?usp=sharing
+
+其中Video prediction部分的视频（0d0030a7），可以从这里下载：
+
+* 百度云: https://pan.baidu.com/s/1YW7Ub4WN6tuIVDeMNpA0MQ?pwd=sufe 提取码: sufe 
+* Google Drive: https://drive.google.com/file/d/1yCg8Stnnscl6MGGjCURS08eO_Fh30NdV/view?usp=sharing
+
+### 模型Checkpoint，示例数据
+
+在上面的Notebook中已经包含了下载SAM模型及测试数据的的链接等，但如果你由于网络问题难以下载，也以直接使用下面的链接来下载模型Checkpoint和示例数据：
+
+链接: https://pan.baidu.com/s/10gZqKWJttRzT1J_QR2M7VA?pwd=sufe 提取码: sufe 
+
+
+# 计算机视觉大作业：基于 SAM 的视频目标分割
+
+## **作业目标**
+
+视频目标分割是计算机视觉中的重要任务，目标是在视频序列中对指定物体进行逐帧像素级分割。相比单张图像分割，视频分割还需要考虑目标运动、遮挡、尺度变化、出画与重现、相机运动、光照变化等问题。
+
+本次大作业要求同学使用 SAM 作为 baseline，完成图像分割、视频分割和 MOSE 数据集提交实验。重点不是训练大模型，而是跑通 baseline、完成平台提交，并分析模型在真实复杂场景中的优缺点。
+
+通过期末大作业，希望你能：
+
+1. 掌握当前主流图像分割大模型 SAM/SAM2 的推理使用；
+2. 理解视频对象分割（Video Object Segmentation, VOS）的基本任务设定与评价指标；
+3. 体验完整的学术 Benchmark 提交流程；
+4. （进阶）在复杂真实场景数据集 MOSE 上验证模型性能，并分析其优劣；
+5. （进阶）训练模型，理解分割与多模态分割的挑战。
+
+---
+
+## 模型介绍
+
+Segment Anything Model（SAM）是 Meta AI 提出的通用图像分割模型，能够根据点、框、文本等提示对图像中的目标进行分割。SAM 具有较强的泛化能力，不需要针对每个具体类别重新训练，就可以在许多新场景中生成较好的分割结果。近年来，SAM 及其后续版本 SAM2 也被广泛用于视频目标分割任务中，作为图像分割和视频分割实验的重要 baseline。
+
+本次作业推荐使用 SAM 2 或 SAM3 作为基础模型，重点关注其在真实图像、真实视频和数据集上的实际表现。通过实验，同学们需要观察 SAM 在简单场景中的优势，以及在复杂场景中的局限。
+
+---
+
+## **基础要求**
+
+### **单帧图像分割**
+
+完成以下内容：
+
+1. 跑通 SAM baseline 的单帧分割代码，在示例图片上成功分割出目标物体。
+2. **自行拍摄 5 张现实场景图片**，使用 SAM 分割其中的物体。
+
+---
+
+### **视频目标分割**
+
+完成以下内容：
+
+1. 跑通 SAM baseline 的视频分割代码，在示例视频上成功完成目标分割。
+2. **自行拍摄 2 段现实场景视频（每段至少 5s），**使用 SAM 分割其中的物体。
+
+- 提示：
+  - 推荐在云平台（如 Google Colab 或腾讯 CloudStudio）上进行实验。
+  - 若视频较长，可以抽帧处理，例如降为 5 fps，以加快推理速度。
+  - 现实场景内容不限，城市、学校、人物、车辆等等均可，创意（虚拟）场景也可。视频中应当有明显动作，避免静止场景的持续拍摄。
+  - 鼓励拍摄高复杂度、可以挑战模型性能的图片及视频。如果拍摄的图片或视频能够导致模型分割失败、且能反映出现有模型缺陷，可获额外加分。
+
+---
+
+### **Benchmark 提交**
+
+完成以下内容：
+
+1. 注册 Codabench 平台，SUFE_DeepLearning Benchmark： [https://www.codabench.org/competitions/16257/](https://www.codabench.org/competitions/16257/)
+2. 按平台文档下载数据，使用 SAM baseline 进行分割。
+3. 在平台提交测试结果，并记录分数。
+
+**（重要）：在报告开头请写明你的 Codabench 用户名！**
+
+---
+
+### **结果分析**
+
+报告中需要介绍并分析：
+
+1. SAM 在测试集上，以及在自行拍摄的图片和视频上的结果（包括原图与分割结果）。
+2. 总结哪些场景下 SAM 表现较好、哪些场景下 SAM 表现较差。思考模型在哪些方面还有进步空间。
+
+---
+
+## **进阶要求**
+
+进阶内容为选做，内容可自由发挥，可用于加分。
+
+### **MOSEv2 Benchmark**
+
+在正式的 MOSEv2 Benchmark 上完成有效提交。
+
+可以使用 SAM 进行推理，也可以直接提交比赛提供的示例结果（sample submission，具体可阅读 Benchmark 网站说明及相关文档），但需要记录成绩并分析结果。
+
+Benchmark ⽹站：[https://www.codabench.org/competitions/10062/](https://www.codabench.org/competitions/10062/)
+
+### **提高 Baseline 成绩**
+
+尝试提高成绩，例如更换性能更强的模型、进一步训练 SAM 等。
+
+需要在报告中说明改进方法，并与原 baseline 对比。
+
+### **多模态探索**
+
+探索多模态视频分割任务 MeViS v2，完成一次有效提交，并分析其与 MOSE 的区别。
+
+Benchmark ⽹站：[https://www.codabench.org/competitions/11420/](https://www.codabench.org/competitions/11420/)
+
+### 自由开拓
+
+任何你认为与作业相关的思考、探索、实验等，均可以包含在报告中。
+
+---
+
+## **报告要求**
+
+在报告中必须注明自己的姓名、学号等信息，**以及 Codabench 用户名。**
+
+报告格式不做强制要求，但可参考以下框架：
+
+1. 介绍
+
+   1. 作业概述
+   2. 实验环境
+2. 方法
+
+   1. SAM baseline 方法说明
+3. 实验结果
+
+   1. 单帧图像分割结果展示
+   2. 视频分割结果展示
+   3. Benchmark 提交结果
+   4. 结果与失败案例分析（改进方向）
+4. 进阶要求
+5. 总结
+
+报告中必须包含结果截图或可视化结果，不能只写文字描述。
+
+---
+
+## **提交内容**
+
+最终提交：
+
+1. 实验报告 PDF。
+2. 代码，或代码仓库链接。
+3. 拍摄的图片视频，及分割结果。
+4. Benchmark 提交截图和成绩截图。
+5. README 运行说明。
+
+---
+
+## **评分体系**
+
+总分 100 分。
+
+### 基础要求（85 分）
+
+达成基础要求，可获得基础分 85 分。
+
+| 基础要求 | 得分 |
+|---------|------|
+| 跑通 SAM 单帧分割（5 张现实图片分割） | 20 |</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'>## 评估
+
+我们使用多个指标评估性能：Jaccard指数（J）、F-Measure（F）、它们的平均值（J&amp;F）、改进的F-Measure（Ḟ）以及J和Ḟ的平均值（J&amp;Ḟ）。为了更好地评估MOSEv2中的复杂场景（其中对象频繁消失和重新出现），我们还报告专门的指标：J&amp;Ḟ_disappear和J&amp;Ḟ_reappear。
+
+**注意**：
+1. Ḟ（上方带点的F）基于对象大小自适应计算边界阈值，为不同尺度的对象提供更公平的边界预测质量评估。如需更多信息，请参考论文。
+2. 由于数据量较大，评估可能需要20分钟才能完成。如果您的提交在评分过程中超过时间限制（20分钟），请检查您的数据是否符合要求并查看您的日志。如果问题仍然存在，请与我们联系。
+3. 我们还为每个单独的对象提供指标，可以通过&quot;从评分步骤输出&quot;按钮下载。</div></div>
+
+</div>
+</body>
+</html>
