@@ -5,8 +5,8 @@
   "created_by": "irnewbie",
   "owner_display_name": "irnewbie",
   "created_when": "2026-07-16T16:05:17.810335Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217917/f590d1281393/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=wD%2FJQOqLPB9r3WEWSkCJlXJfy5Q%3D&Expires=1787070675",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217917/f590d1281393/logo2-1-no-grid1_icon.png?AWSAccessKeyId=codabench-prod&Signature=w%2BON702ydHyqNyJ2RXoeahb0N5Y%3D&Expires=1787070675",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217917/f590d1281393/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=A3KnMTCtKS29hdZJTrgoQEX6%2FU0%3D&Expires=1787108099",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217917/f590d1281393/logo2-1-no-grid1_icon.png?AWSAccessKeyId=codabench-prod&Signature=01oTtnBgSeYSc8Uua63bOe%2BITsE%3D&Expires=1787108099",
   "terms": "## 挑战赛参与者要求\n\n  自愿报名参赛的原则，参赛队伍和成员的组成可以为：\t\n\t\n  1. 各培养单位正式注册教师、在读本科生、研究生以及博士生；\t\n\t\n  2. 国内各研究团体、企事业单位。\n\n---\n\n## 结果提交要求\n\n  参赛队伍需在规定时间内提交测试结果，并在后续阶段提交算法代码、模型文件及算法报告。组委会将对各参赛队进行真实性审查。\n\t\n  为了避免参赛队伍滥用其他数据集或验证集标签信息用于算法训练，参赛队伍需提供算法训练时的相关参数，要求算法结果可复现。如发现违规使用数据信息或算法结果无法复现，组委会将按赛事规则处理。\n\t\n---\n\t\n## \t知识产权归属\n\n  参赛队伍提交的算法及可执行模型的知识产权归参赛团队所有，比赛数据集归主办方所有。\n\t\n  各参赛队伍需要承诺提交的结果可重复，组织方承诺履行保密义务，并不用于除本挑战赛外的任何其他用途。\n\t\n  参赛队伍应保证所提供的方案、算法属于自有知识产权。组织方对参赛队伍因使用本队提供完成的算法和结果而产生的任何实际侵权或者被任何第三方指控侵权概不负责。一旦上述情况和事件发生，参赛队伍必须承担一切相关法律责任和经济赔偿责任并保护组织方免于承担该等责任。",
   "pages": [
     {
