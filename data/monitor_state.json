@@ -6,9 +6,9 @@
     "description_zh": "通用超声图像和视频分析基准，用于B型超声、造影增强超声（CEUS）和心脏超声视频的多器官分类和分割。",
     "created_by": "uusivc2026",
     "created_when": "2026-06-26T07:10:19.780392Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782457819/2259d81709fc/Deep-Breath-logo.png?AWSAccessKeyId=codabench-prod&Signature=e6TIyiL%2BZDFxV0Raq7F8roTuYrk%3D&Expires=1787108102",
-    "participants_count": 80,
-    "submissions_count": 490,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782457819/2259d81709fc/Deep-Breath-logo.png?AWSAccessKeyId=codabench-prod&Signature=OK0XHVUbuTM%2BqCJrLk9k%2B2VWicY%3D&Expires=1787194733",
+    "participants_count": 85,
+    "submissions_count": 621,
     "first_phase_start": null,
     "phases": [
       {
@@ -53,9 +53,9 @@
     "description_zh": "我注意到你提供的文本已经是简体中文，我原样返回：\n\n详情请看比赛内部官网详情页",
     "created_by": "irnewbie",
     "created_when": "2026-07-20T06:11:10.993454Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784528469/7e8bf5c614cd/ScreenShot_2026-07-20_140940_018.png?AWSAccessKeyId=codabench-prod&Signature=OOPbUEmBeEe1TL408N0gkV9kUbU%3D&Expires=1787108094",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784528469/7e8bf5c614cd/ScreenShot_2026-07-20_140940_018.png?AWSAccessKeyId=codabench-prod&Signature=9FyqmRnYKTqLsb8lRr0gSI9xks8%3D&Expires=1787194728",
     "participants_count": 31,
-    "submissions_count": 307,
+    "submissions_count": 327,
     "first_phase_start": null,
     "phases": [
       {
@@ -89,9 +89,9 @@
     "description_zh": "Optical temporal-sensitive small target detection is an important research direction in intelligent visual perception and a key technical issue in target detection and situational awareness in complex environments. Compared with conventional target detection tasks, small targets typically exhibit characteristics such as small imaging scale, weak target energy, strong background interference, and unstable target morphology. The information available in a single frame is very limited, and algorithms are prone to missed detections, false positives, and discontinuous detection results in real-world scenarios.\n\nThis challenge competition, based on the CSIG2026 academic conference platform, focuses on key problems in optical temporal-sensitive small target detection, establishing two tracks: \"infrared video satellite aerial moving target detection\" and \"event camera-based moving small target detection.\" It provides participating teams with a fair and reproducible algorithm validation platform, promoting related data construction, method innovation, and technical exchange.",
     "created_by": "irnewbie",
     "created_when": "2026-07-16T15:58:17.338227Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217497/8cef6a724fb4/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=XboFyCoLxeQuxCe27PRN8yBAero%3D&Expires=1787108096",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217497/8cef6a724fb4/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=EqhyHcSlp1U6X8DIvkYu9bG9FhQ%3D&Expires=1787194728",
     "participants_count": 113,
-    "submissions_count": 992,
+    "submissions_count": 1029,
     "first_phase_start": null,
     "phases": [
       {
@@ -143,9 +143,9 @@
     "description_zh": "Optical Time-Sensitive Weak-Small Target Detection is an important research direction in intelligent visual perception and a key technical challenge in target detection and situation awareness in complex environments. Compared to conventional target detection tasks, weak-small targets typically exhibit characteristics such as small imaging scale, weak target energy, strong background interference, and unstable target morphology. The usable information in a single frame image is extremely limited, and algorithms are prone to issues such as missed detections, false detections, and discontinuous detection results in real-world scenarios.\n\nThis challenge competition, based on the CSIG2026 academic conference platform, focuses on key problems in optical time-sensitive weak-small target detection, and sets up two competition tracks: \"Infrared Video Satellite Airborne Moving Target Detection\" and \"Motion Small Target Detection Based on Event Camera\". It provides participating teams with a fair and reproducible algorithm validation platform, promoting advances in related data construction, method innovation, and technical exchange.",
     "created_by": "irnewbie",
     "created_when": "2026-07-16T16:05:17.810335Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217917/f590d1281393/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=A3KnMTCtKS29hdZJTrgoQEX6%2FU0%3D&Expires=1787108099",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217917/f590d1281393/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=gVv5A70APbIURScsPeweEZ9PXTw%3D&Expires=1787194729",
     "participants_count": 76,
-    "submissions_count": 843,
+    "submissions_count": 851,
     "first_phase_start": null,
     "phases": [
       {
@@ -197,9 +197,9 @@
     "description_zh": "MICCAI FLARE 2026 任务2：AutoMSC - 医学图像自动分割与分类",
     "created_by": "junma",
     "created_when": "2026-04-09T21:08:06.808342Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-23-1784773803/182fbbd79fab/automsc-logo-light-ring.png?AWSAccessKeyId=codabench-prod&Signature=Sa%2FWI55HA2q%2BZ76GVsyYz0cGkF8%3D&Expires=1787108129",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-23-1784773803/182fbbd79fab/automsc-logo-light-ring.png?AWSAccessKeyId=codabench-prod&Signature=0YbwTow9qF0%2FTjwPd0a%2FNYZ0q%2BE%3D&Expires=1787194756",
     "participants_count": 79,
-    "submissions_count": 79,
+    "submissions_count": 85,
     "first_phase_start": null,
     "phases": [
       {
@@ -268,9 +268,9 @@
     "description_zh": "无人机图像上的大规模3D语义高斯泼溅重建（TUM+黄金海岸）。ECCV 2026研讨会·2026年9月8日·瑞典马尔默。",
     "created_by": "jumponthemoon",
     "created_when": "2026-07-24T10:11:38.562965Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-24-1784887898/b3c2c760151c/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=V05sMoVHG%2B3LDdUlePR4M%2FJ1RJc%3D&Expires=1787108091",
-    "participants_count": 40,
-    "submissions_count": 198,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-24-1784887898/b3c2c760151c/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=ol5CVmIzRDiFwEZcr%2Bs0%2Bpbg5nI%3D&Expires=1787194727",
+    "participants_count": 41,
+    "submissions_count": 240,
     "first_phase_start": null,
     "phases": [
       {
@@ -322,7 +322,7 @@
     "description_zh": "该竞赛对近距离短波红外高光谱成像的×4超分辨率进行基准测试。\n参赛者将获得使用同一传感器和不同镜头采集的低分辨率HSI立方体数据，通过控制分辨率变化而不引入光谱偏差。任务是从×4下采样输入重建高分辨率短波红外高光谱图像。",
     "created_by": "rafariva",
     "created_when": "2025-12-30T16:14:49.840049Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-12-30-1767111468/edd5610f43a0/logo_HISR.png?AWSAccessKeyId=codabench-prod&Signature=XSvIixQB2FtGoVXxazkTkNYFur0%3D&Expires=1787108170",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-12-30-1767111468/edd5610f43a0/logo_HISR.png?AWSAccessKeyId=codabench-prod&Signature=9DmgmiONP6rjjefTJQGSLmZaj1E%3D&Expires=1787194810",
     "participants_count": 53,
     "submissions_count": 582,
     "first_phase_start": null,
@@ -381,9 +381,9 @@
     "description_zh": "一个基于混合信号数据集的协作3D目标检测挑战，该数据集是一个多样化的真实点云数据集，用于异构激光雷达V2X协作（3辆连接的车辆+配备双激光雷达的路侧单元）。融合多个智能体的点云，在鸟瞰图平面上检测车辆、自行车和行人，并在排行榜上攀升。",
     "created_by": "mixed-signals",
     "created_when": "2026-07-09T01:30:36.192294Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783560636/614edf812e36/logo.png?AWSAccessKeyId=codabench-prod&Signature=CNtwVWVoKiZ%2FsTg7bpcVquZO%2B%2FU%3D&Expires=1787108101",
-    "participants_count": 38,
-    "submissions_count": 127,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783560636/614edf812e36/logo.png?AWSAccessKeyId=codabench-prod&Signature=Qrrrul7tDbHFZXmwHX82Q0LDmtk%3D&Expires=1787194730",
+    "participants_count": 39,
+    "submissions_count": 153,
     "first_phase_start": null,
     "phases": [
       {
@@ -429,9 +429,9 @@
     "description_zh": "This competition focuses on fine-grained understanding of urban-level building facade components, utilizing the City-Fac dataset.\n\nThe data is collected by vehicle-mounted mobile laser scanning systems, covering multiple types of typical urban street blocks in Xiamen, with a cumulative road length of approximately 60 km. The dataset includes fine-grained building facade element annotations such as walls, windows, doors, roofs, billboards, air conditioning units, canopies, and balconies, with both semantic-level and instance-level labels provided.\n\nParticipants need to identify independent building facade component instances in the test point cloud and output the corresponding semantic categories and instance numbers.\n\nThe competition adopts a result submission mode. Participants complete model training and inference locally and only submit prediction results to Codabench, where the platform automatically scores using hidden instance labels.",
     "created_by": "jianlongguan",
     "created_when": "2026-06-26T12:50:09.783065Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=ATWqsr8OJFxCGWJ%2Bl4W%2F9cQv4kA%3D&Expires=1787108100",
-    "participants_count": 17,
-    "submissions_count": 95,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=frlisE4bK14Mf5lZ%2B6LwLbbOnCA%3D&Expires=1787194731",
+    "participants_count": 18,
+    "submissions_count": 113,
     "first_phase_start": null,
     "phases": [
       {
@@ -451,59 +451,6 @@
       }
     ]
   },
-  "17680": {
-    "id": 17680,
-    "title": "Who is Behind the Avatar?  Verifying Teleoperator Identity in Reenacted Avatar Videos",
-    "description": "Welcome to the first International Competition on Verifying Teleoperator Identity in Reenacted Avatar Videos. The competition will be in conjunction with [ACCV2026](https://https://accv2026.org/])",
-    "description_zh": "欢迎来到首届\"重演化身视频中远程操作者身份验证\"国际竞赛。本竞赛将与[ACCV2026](https://https://accv2026.org/)联合举办。",
-    "created_by": "allam",
-    "created_when": "2026-07-27T05:47:11.519603Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=7Ko50GlXAjB9HVPj9ZRjVBWJDPU%3D&Expires=1787108092",
-    "participants_count": 18,
-    "submissions_count": 9,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 29491,
-        "name": "Phase 1",
-        "start": "2026-08-02T23:59:00Z",
-        "end": "2026-09-13T23:59:00Z",
-        "max_submissions_per_day": 2
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Overview",
-        "content": "Welcome to the first International Competition on **Teleoperator Identity Verification in Reenacted Avatar Videos (Who Is Behind the Avatar?)— WBA2026 @ ACCV, Osaka, Japan**.\n\n## Motivation\n\nPhotorealistic avatars are increasingly used in telepresence, mixed reality, gaming, virtual environments, and AI-mediated video communication. In these settings, the visible face may be synthetic or may differ entirely from the person controlling it. Consequently, conventional face-recognition methods may not be sufficient to verify the identity of the underlying user.\n\n<strong>\n  <span style=\"color: purple;\">The **WBA** competition investigates whether behavioral information preserved in avatar videos can be used to authenticate the human teleoperator independently of the avatar’s visual appearance.</span>\n</strong> \n\nUnlike conventional DeepFake-detection challenges, **WBA** does not ask participants to determine whether a video is real or synthetic. Avatar-generated videos are treated as legitimate communication media. The objective is instead to verify **operator authenticity**: whether an avatar is controlled by the authorized person.\n\n## Challenge Task\n<div style=\"text-align:center;\">\n    <figure>\n        <img src=\"https://raw.githubusercontent.com/jasam-sheja/wba-starter/refs/heads/main/assets/Overview.png\" alt=\"WBA cross-avatar teleoperator verification pipeline\" width=\"750\"/>\n        <figcaption>\n            Figure 1: Overview of the WBA cross-avatar teleoperator verification pipeline. \n            Participants extract embeddings from two avatar videos and determine whether \n            they are driven by the same teleoperator.\n        </figcaption>\n    </figure>\n</div>\n\n**WBA** is a **cross-avatar teleoperator verification challenge**.\n\nFor each verification trial, participants are provided with:\n\n* A gallery avatar video driven by a known teleoperator\n \n* A probe avatar video driven by an unknown teleoperator.\n\nParticipants must determine whether the two avatar videos are driven by:\n\n*  **Same teleoperator**, representing a \n<strong>\n  <span style=\"color: green;\">genuine trial</span>\n</strong>\n* **Different teleoperators**, representing an\n<strong>\n  <span style=\"color: red;\">Imposter trial</span>\n</strong>\n\nThe gallery and probe videos may represent the same person through different avatar identities. Therefore, systems should focus on teleoperator-specific behavioral information rather than the visible appearance of the avatar.\n\nPotential behavioral cues include:\n\n* facial-motion dynamics\n* head movement and pose\n* expression timing\n* gaze behavior\n* speech-related facial movement\n* temporal motion patterns\n* other person-specific behavioral characteristics\n\nParticipants may develop systems using RGB video, facial landmarks, head-pose features, expression dynamics, temporal motion descriptors, video embeddings, or other suitable representations.\n\n## Dataset\n\nThe source driving videos were collected in Japan during controlled dyadic online first-meeting conversations. The selected sequences are taken from the self-introduction portion of the conversations and include both speaking and listening segments.\n\nThe original recordings were captured under controlled frontal-camera and lighting conditions. However, the original human videos are retained by the organizers and are not released to challenge participants.\n\nInstead, the motion and expression information from the original recordings are transferred to photorealistic avatar templates through a face-reenactment pipeline. The avatar appearances are selected from the publicly available **NVFAIR** dataset.\n\nThis design reduces the direct exposure of the original participants’ visual identities while preserving motion and behavioral information relevant to teleoperator verification.",
-        "content_zh": "欢迎来到首届**重演头像视频中的远程操作者身份验证国际竞赛——WBA 2026**。\n\n## 动机\n\n超逼真头像越来越多地被应用于远程呈现、混合现实、游戏、虚拟环境和人工智能中介的视频通信。在这些应用中，可见的面孔可能是合成的，或者可能与控制它的人完全不同。因此，传统的面部识别方法可能不足以验证底层用户的身份。\n\n**谁在头像后面？(WBA)** 挑战赛调查了头像视频中保留的行为信息是否可以用于独立于头像视觉外观的人类远程操作者身份认证。\n\n与传统的深伪检测挑战不同，WBA不要求参与者判断视频是否真实或合成。头像生成的视频被视为合法的通信媒介。目标是验证**操作者的真实性**：头像是否由授权人员控制。\n\n## 挑战任务\n\nWBA 2026是一项**跨头像远程操作者验证挑战**。\n\n对于每次验证试验，参与者获得：\n\n1. 由已知远程操作者驱动的图库头像视频；以及\n2. 由未知远程操作者驱动的探针头像视频。\n\n参与者必须确定这两个头像视频是否由以下任一情况驱动：\n\n* **相同的远程操作者**，代表真实试验；或\n* **不同的远程操作者**，代表冒充试验。\n\n图库和探针视频可能通过不同的头像身份代表同一个人。因此，系统应专注于远程操作者特定的行为信息，而不是头像的可见外观。\n\n潜在的行为线索包括：\n\n* 面部运动动态\n* 头部运动和姿态\n* 表情时序\n* 注视行为\n* 与语音相关的面部运动\n* 时间运动模式\n* 其他人员特定的行为特征\n\n参与者可以使用RGB视频、面部特征点、头部姿态特征、表情动态、时间运动描述符、视频嵌入或其他合适的表示方法开发系统。\n\n## 数据集\n\n源驱动视频是在日本进行的受控二人组在线首次会面对话期间收集的。所选序列取自对话的自我介绍部分，包括说话和聆听片段。\n\n原始录制是在受控的正面摄像头和照明条件下捕获的。但是，原始人类视频由组织者保留，不会向挑战参与者发布。\n\n相反，来自原始录制的运动和表情信息通过人脸重演管道转移到超逼真头像模板。头像外观选自公开可用的 **NVFAIR** 数据集，而重演视频使用 **GAGAvatar** 生成。\n\n这种设计减少了原始参与者视觉身份的直接暴露，同时保留了与远程操作者验证相关的运动和行为信息。\n\n所发布的数据集中不包含音频，评估期间也不使用音频。\n\n<div style=\"text-align:center;\">\n    <figure>\n        <img src=\"![images/Overview.png]\" alt=\"WBA跨头像远程操作者验证管道\" width=\"750\"/>\n        <figcaption>\n        图1：WBA跨头像远程操作者验证管道概览。参与者从两个头像视频中提取嵌入表示，并确定它们是否由同一远程操作者驱动。\n        </figcaption>\n    </figure>\n</div>"
-      },
-      {
-        "index": 1,
-        "title": "Participation",
-        "content": "### How to participate?\n<strong><span style=\"background-color: yellow;\">Please register using your institutional email. Registrations with gmail.com or qq.com email addresses will not be approved. As well, the Team Leader must sign the license aggreement. If you are student, your supervisor must sign</span></strong>.\n\n### How to get the dataset?\nParticipants are required to sign the dataset license agreement and send the scanned PDF to alsherfawi@yy.d3c.osaka-u.ac.jp cc: allam@yy.d3c.osaka-u.ac.jp. You can download the agreement from [here](http://www.am.sanken.osaka-u.ac.jp/BiometricDB/dataset/Competition/WBA2026/WBA_ACCV_2026%20Competition_License%20Agreement.pdf). \n\nAfter the organizers verify the signed agreement they will send a link to download the data.\n\n<strong><span style=\"background-color: yellow;\">Important: the dataset will be provided exclusively to registered participating teams and is strictly limited to use for the challenge.</span></strong>.\n\nIf you have any questions or need further assistance, please don’t hesitate to reach out to alsherfawi@yy.d3c.osaka-u.ac.jp and cc: allam@yy.d3c.osaka-u.ac.jp\n\n## Released Resources\n\nThe organizers plan to provide:\n\nData:\n* labeled training data (re-enacted videos and landmarks)\n* test data (for submission)\n* a sample submission\n\n[Starter kit](https://github.com/jasam-sheja/wba-starter)\n* evaluation code on validation subset\n* a submission-validation tool\n\nThe baseline system is intended to support reproducibility, reduce the entry barrier, and encourage participants to investigate stronger temporal and behavioral representations.\n\nFollow the instructions in the [starter kit](https://github.com/jasam-sheja/wba-starter) to prepare the data for training.\n\n\n## Data-Use Policy\n\nThe challenge data may only be used in accordance with the official WBA 2026 participation rules and the provided license agreement associated with the source datasets and avatar-generation resources.\n\nParticipants must not attempt to recover, identify, manually label, or disclose the identities of individuals represented in the hidden evaluation data. Access to hidden labels, avatar-template identities, or unauthorized annotations is prohibited.",
-        "content_zh": "本竞赛面向所有人开放。\n\n<strong><span style=\"background-color: yellow;\">重要提示：请使用机构邮箱进行注册。使用gmail.com或qq.com邮箱的注册将不被批准。此外，团队负责人必须签署许可协议。如果您是学生，您的指导老师必须签署</span></strong>。\n\n<strong><span style=\"background-color: orange;\">数据共享政策：在发布竞赛数据时，参与者需要同意仅将其用于\"学术用途\"。数据集将仅提供给已注册的参赛队伍，严格限制用于本竞赛</span></strong>。\n\n如有任何问题或需要进一步协助，请随时联系ammar@yy.d3c.osaka-u.ac.jp，并抄送allam@yy.d3c.osaka-u.ac.jp\n\n我们将提供\n\n您可以使用以下代码库来提取数据：[初始工具包](https://github.com/jasam-sheja/OUMVLP-OF-challenge)。\n\n## 发布的资源\n\n组织者计划提供：\n\n* 训练数据\n* 测试数据访问说明\n* 官方验证试验列表\n* 基准嵌入和相似度系统\n* 评估代码\n* 样本提交\n* 提交验证工具\n* 竞赛规则和文档\n\n基准系统旨在支持可重复性，降低参赛门槛，并鼓励参与者研究更强的时序和行为表示。\n\n## 数据使用政策\n\n竞赛数据的使用必须符合官方WBA 2026参赛规则以及源数据集和虚拟人生成资源相关的许可证。\n\n参与者不得试图恢复、识别、手动标记或泄露隐藏评估数据中所代表个人的身份。禁止访问隐藏标签、虚拟人模板身份或未授权的注释。\n\n参赛队伍使用的任何外部数据集、预训练模型或其他资源必须在技术报告中披露，并须符合其适用的许可证。"
-      },
-      {
-        "index": 2,
-        "title": "Submission",
-        "content": "## Training and Test Protocol\n\nThe training and test sets are disjoint with respect to both:\n\n* teleoperator identity; and\n* avatar appearance.\n\nNo teleoperator appearing in the test set is included in the training set. Similarly, the avatar templates used for testing are not included in the training data.\n\nThis protocol evaluates whether submitted systems can generalize to:\n\n* unseen teleoperators;\n* unseen avatar identities;\n* different speaking conditions;\n* variations in avatar geometry and motion response.\n\nThe challenge is designed to discourage reliance on avatar appearance and encourage the development of representations that capture persistent teleoperator-specific behavioral characteristics.\n\n## Submission\n<strong><span style=\"background-color: yellow;\">Important: For a submission to be considered valid, all models used must be trained exclusively on the provided training data. Submissions must not rely on external datasets, external models, pretrained models trained on other datasets, or any similar external resources. </span></strong>.\n\nParticipants are required to generate and submit an embedding for every test video.\n\nFor each verification pair, the submitted gallery and probe embeddings are compared using one of the following measures:\n\n* cosine similarity or cosine distance; or\n* Euclidean distance.\n\nParticipants specify the comparison method used by their system at submission time.\n\n## Evaluation\n\nThe official evaluation metrics is **Area Under the Receiver Operating Characteristic Curve — AUC**\n\nEER is reported as an additional reference metric and is not used to determine the final leaderboard ranking.\n\nPerformance is evaluated under three conditions:\n\n### Speaking Condition\n\nBoth the gallery and probe videos contain speaking sequences.\n\n### Non-Speaking Condition\n\nBoth the gallery and probe videos contain listening or non-speaking sequences.\n\n### Cross-Condition\n\nOne video contains a speaking sequence, while the other contains a non-speaking sequence.\n\nThe final leaderboard score is calculated as the **average AUC across the three evaluation conditions**.",
-        "content_zh": "## 训练和测试协议\n\n训练集和测试集在以下两个方面是互不相交的：\n\n* 遥操作员身份；以及\n* 虚拟形象外观。\n\n测试集中出现的任何遥操作员都不包含在训练集中。同样，用于测试的虚拟形象模板不包含在训练数据中。\n\n该协议评估提交的系统是否能够泛化到：\n\n* 未见过的遥操作员；\n* 未见过的虚拟形象身份；\n* 不同的说话条件；\n* 虚拟形象几何形状和运动响应的变化。\n\n该挑战旨在抑制对虚拟形象外观的依赖，并鼓励开发能够捕捉持久遥操作员特定行为特征的表示方法。\n\n## 提交\n\n参赛者需要为每个测试视频生成并提交一个嵌入向量。\n\n对于每对验证样本，提交的库嵌入和探针嵌入使用以下度量之一进行比较：\n\n* 余弦相似度或余弦距离；或\n* 欧几里得距离。\n\n参赛者在提交时指定其系统使用的比较方法。\n\nCodabench评估程序从提交的嵌入向量计算验证得分和相应的性能指标。\n\n## 评估\n\n官方评估指标包括：\n\n* **受试者工作特征曲线下面积 — AUC**\n* **等错误率 — EER**\n\n团队的排名仅根据 **AUC** 确定。\n\nEER作为附加参考指标报告，不用于确定最终排行榜排名。\n\n性能在三种条件下进行评估：\n\n### 说话条件\n\n库视频和探针视频都包含说话序列。\n\n### 非说话条件\n\n库视频和探针视频都包含聆听或非说话序列。\n\n### 交叉条件\n\n一个视频包含说话序列，另一个包含非说话序列。\n\n最终排行榜得分计算为**三种评估条件下的平均AUC**。"
-      },
-      {
-        "index": 3,
-        "title": "Prizes",
-        "content": "We are excited to recognize the outstanding achievements of **the top three teams**  in this competition with the following rewards:\n\n1. **Award Certificates**: All members of the winning teams will receive official certificates of achievement.\n2. **ACCV Workshop Paper Submission**:  Members of the 1st-, 2nd-, and 3rd-place teams will be eligible to prepare and submit papers to the competition’s associated ACCV workshop.\n\nThis is a unique opportunity to gain academic recognition, contribute to cutting-edge research, and enhance your professional profile.",
-        "content_zh": "我们荣幸地表彰本次竞赛**前三名团队**的杰出成就，并提供以下奖励：\n\n1. **获奖证书**：获奖团队的所有成员将获得官方成就证书。\n2. **ACCV研讨会论文投稿共同作者身份**：每支团队最多三名成员（来自第一、二、三名团队）将被邀请作为共同作者，参与竞赛相关论文的撰写，该论文将投稿至第18届亚洲计算机视觉大会（ACCV）。\n\n这是一个独特的机会，可以获得学术认可、为前沿研究做出贡献，并提升您的职业形象。"
-      },
-      {
-        "index": 4,
-        "title": "Organizing Committee",
-        "content": "<table style=\"width:100%; border-collapse:collapse;\">\n  <tr>\n    <td style=\"padding:6px 20px 6px 0;\"><strong>Ammar Alsherfawi</strong></td>\n    <td style=\"padding:6px 0;\">The University of Osaka, Japan</td>\n  </tr>\n  <tr>\n    <td style=\"padding:6px 20px 6px 0;\"><strong>Allam Shehata</strong></td>\n    <td style=\"padding:6px 0;\">The University of Osaka, Japan</td>\n  </tr>\n  <tr>\n    <td style=\"padding:6px 20px 6px 0;\"><strong>Yasushi Yagi</strong></td>\n    <td style=\"padding:6px 0;\">The University of Osaka, Japan</td>\n  </tr>\n  <tr>\n    <td style=\"padding:6px 20px 6px 0;\"><strong>Shunsuke Saito</strong></td>\n    <td style=\"padding:6px 0;\">Meta Codec Avatars Lab, USA</td>\n  </tr>\n  <tr>\n    <td style=\"padding:6px 20px 6px 0;\"><strong>Ruben Tolosana</strong></td>\n    <td style=\"padding:6px 0;\">Universidad Autónoma de Madrid, Spain</td>\n  </tr>\n  <tr>\n    <td style=\"padding:6px 20px 6px 0;\"><strong>Laura Pedrouzo-Rodriguez</strong></td>\n    <td style=\"padding:6px 0;\">Universidad Autónoma de Madrid, Spain</td>\n  </tr>\n  <tr>\n    <td style=\"padding:6px 20px 6px 0;\"><strong>Luis F. Gomez</strong></td>\n    <td style=\"padding:6px 0;\">Universidad Autónoma de Madrid, Spain</td>\n  </tr>\n  <tr>\n    <td style=\"padding:6px 20px 6px 0;\"><strong>Ruben Vera-Rodriguez</strong></td>\n    <td style=\"padding:6px 0;\">Universidad Autónoma de Madrid, Spain</td>\n  </tr>\n  <tr>\n    <td style=\"padding:6px 20px 6px 0;\"><strong>Masoumeh Chapariniya</strong></td>\n    <td style=\"padding:6px 0;\">University of Zurich, Switzerland</td>\n  </tr>\n  <tr>\n    <td style=\"padding:6px 20px 6px 0;\"><strong>Teodora Vuković</strong></td>\n    <td style=\"padding:6px 0;\">University of Zurich, Switzerland</td>\n  </tr>\n</table>",
-        "content_zh": "| 姓名 | 所属机构 |\n|------|---------|\n| **Ammar Alsherfawi** | 大阪大学，日本 |\n| **Allam Shehata** | 大阪大学，日本 |\n| **Yasushi Yagi** | 大阪大学，日本 |\n| **Shunsuke Saito** | Meta编码化身实验室，美国 |\n| **Ruben Tolosana** | 马德里自治大学，西班牙 |\n| **Laura Pedrouzo-Rodriguez** | 马德里自治大学，西班牙 |\n| **Luis F. Gomez** | 马德里自治大学，西班牙 |\n| **Ruben Vera-Rodriguez** | 马德里自治大学，西班牙 |\n| **Masoumeh Chapariniya** | 苏黎世大学，瑞士 |\n| **Teodora Vuković** | 苏黎世大学，瑞士 |"
-      }
-    ]
-  },
   "17825": {
     "id": 17825,
     "title": "Datathon@IndoML 2026 — Track 1: Noise Event Detection",
@@ -511,9 +458,9 @@
     "description_zh": "在 Vaani 语料库的真实印度语言语音录音中检测噪声事件（开始和结束时间戳）。参赛者必须利用多层注释的训练数据（黄金级/白银级/青铜级）来构建稳健的噪声事件检测系统，该系统将基于事件级 F1 和分段 Dice 进行评估。",
     "created_by": "nagu_iitkgp",
     "created_when": "2026-08-14T17:27:12.345457Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-14-1786728432/29a3bf95a91d/logo.png?AWSAccessKeyId=codabench-prod&Signature=eb23P6EeE4DXSdWUS%2FGH2zLkt6k%3D&Expires=1787108090",
-    "participants_count": 47,
-    "submissions_count": 22,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-14-1786728432/29a3bf95a91d/logo.png?AWSAccessKeyId=codabench-prod&Signature=qefQoPNfqrIKGa8tsi2gKjZjXVQ%3D&Expires=1787194725",
+    "participants_count": 53,
+    "submissions_count": 47,
     "first_phase_start": null,
     "phases": [
       {
@@ -552,7 +499,7 @@
     "description_zh": "LiDAR-视觉-惯性SLAM赛道的纯翻译评估",
     "created_by": "yuhangxu",
     "created_when": "2026-07-26T09:51:43.642130Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059503/c4f5eea4397e/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=WI5HUgcdFK0LLaXw%2FjnbjFiXrWE%3D&Expires=1787108091",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059503/c4f5eea4397e/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=dSetbrXQqMz2PMLRDyGmIURZogo%3D&Expires=1787194727",
     "participants_count": 6,
     "submissions_count": 9,
     "first_phase_start": null,
@@ -593,9 +540,9 @@
     "description_zh": "LiDAR-惯性SLAM赛道的仅翻译评估。",
     "created_by": "yuhangxu",
     "created_when": "2026-07-26T09:50:41.414250Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059441/adc6bc07e4f0/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=ipOd1JttHtvlagj3gbsB6HgVW2w%3D&Expires=1787108092",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059441/adc6bc07e4f0/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=hrDJ2oW9W13Na0RRn%2BezeeBUXjQ%3D&Expires=1787194727",
     "participants_count": 14,
-    "submissions_count": 61,
+    "submissions_count": 65,
     "first_phase_start": null,
     "phases": [
       {
@@ -634,7 +581,7 @@
     "description_zh": "上海财经大学深度学习课程 - 最终项目 - 计算机视觉",
     "created_by": "ntulc",
     "created_when": "2026-05-11T19:42:24.060326Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-18-1779115404/081a3e46c671/Shanghai_University_of_Finance_and_.jpg?AWSAccessKeyId=codabench-prod&Signature=z%2B8mR279uogUAjqKuA7FBG04ay4%3D&Expires=1787108117",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-18-1779115404/081a3e46c671/Shanghai_University_of_Finance_and_.jpg?AWSAccessKeyId=codabench-prod&Signature=wdS3kmnlT4UwJQue05V0GwBA34k%3D&Expires=1787194748",
     "participants_count": 49,
     "submissions_count": 215,
     "first_phase_start": null,
@@ -659,6 +606,59 @@
         "title": "Evaluation",
         "content": "## Evaluation\nWe evaluate performance using multiple metrics: the Jaccard index (J), F-Measure (F), their mean (J&F), an improved F-Measure (Ḟ), and the mean of J and Ḟ (J&Ḟ). To better assess the complex scenarios in MOSEv2 where objects frequently disappear and reappear, we also report specialized metrics: J&Ḟ_disappear and J&Ḟ_reappear. \n\n**Note**: \n1. Ḟ (F with a dot above) adaptively computes boundary thresholds based on object size, providing fairer evaluation of boundary prediction quality across objects of different scales. For more information, please refer to the paper.\n2. The evaluation may take 20 minutes to finish because of the data size. If your submussion exceed the time limit (20min) during scoring, please check if your data meets the requirements and view your log. If the issue persists, please contact us.\n3. We also provide metrics for each individual object, which can be downloaded through the button \"Output from scoring step\".",
         "content_zh": "## 评估\n\n我们使用多个指标评估性能：Jaccard指数（J）、F-Measure（F）、它们的平均值（J&F）、改进的F-Measure（Ḟ）以及J和Ḟ的平均值（J&Ḟ）。为了更好地评估MOSEv2中的复杂场景（其中对象频繁消失和重新出现），我们还报告专门的指标：J&Ḟ_disappear和J&Ḟ_reappear。\n\n**注意**：\n1. Ḟ（上方带点的F）基于对象大小自适应计算边界阈值，为不同尺度的对象提供更公平的边界预测质量评估。如需更多信息，请参考论文。\n2. 由于数据量较大，评估可能需要20分钟才能完成。如果您的提交在评分过程中超过时间限制（20分钟），请检查您的数据是否符合要求并查看您的日志。如果问题仍然存在，请与我们联系。\n3. 我们还为每个单独的对象提供指标，可以通过\"从评分步骤输出\"按钮下载。"
+      }
+    ]
+  },
+  "17680": {
+    "id": 17680,
+    "title": "Who is Behind the Avatar?  Verifying Teleoperator Identity in Reenacted Avatar Videos",
+    "description": "Welcome to the first International Competition on Verifying Teleoperator Identity in Reenacted Avatar Videos. The competition will be in conjunction with [ACCV2026](https://https://accv2026.org/])",
+    "description_zh": "欢迎来到首届\"重演化身视频中远程操作者身份验证\"国际竞赛。本竞赛将与[ACCV2026](https://https://accv2026.org/)联合举办。",
+    "created_by": "allam",
+    "created_when": "2026-07-27T05:47:11.519603Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=%2FMOsAaUPeAQrKya1dMSA%2Bny4MEc%3D&Expires=1787194726",
+    "participants_count": 18,
+    "submissions_count": 11,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 29491,
+        "name": "Phase 1",
+        "start": "2026-08-02T23:59:00Z",
+        "end": "2026-10-12T20:00:00Z",
+        "max_submissions_per_day": 2
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Overview",
+        "content": "Welcome to the first International Competition on **Teleoperator Identity Verification in Reenacted Avatar Videos (Who Is Behind the Avatar?)— WBA2026 @ ACCV, Osaka, Japan**.\n\n## Motivation\n\nPhotorealistic avatars are increasingly used in telepresence, mixed reality, gaming, virtual environments, and AI-mediated video communication. In these settings, the visible face may be synthetic or may differ entirely from the person controlling it. Consequently, conventional face-recognition methods may not be sufficient to verify the identity of the underlying user.\n\n<strong>\n  <span style=\"color: purple;\">The **WBA** competition investigates whether behavioral information preserved in avatar videos can be used to authenticate the human teleoperator independently of the avatar’s visual appearance.</span>\n</strong> \n\nUnlike conventional DeepFake-detection challenges, **WBA** does not ask participants to determine whether a video is real or synthetic. Avatar-generated videos are treated as legitimate communication media. The objective is instead to verify **operator authenticity**: whether an avatar is controlled by the authorized person.\n\n## Challenge Task\n<div style=\"text-align:center;\">\n    <figure>\n        <img src=\"https://raw.githubusercontent.com/jasam-sheja/wba-starter/refs/heads/main/assets/Overview.png\" alt=\"WBA cross-avatar teleoperator verification pipeline\" width=\"750\"/>\n        <figcaption>\n            Figure 1: Overview of the WBA cross-avatar teleoperator verification pipeline. \n            Participants extract embeddings from two avatar videos and determine whether \n            they are driven by the same teleoperator.\n        </figcaption>\n    </figure>\n</div>\n\n**WBA** is a **cross-avatar teleoperator verification challenge**.\n\nFor each verification trial, participants are provided with:\n\n* A gallery avatar video driven by a known teleoperator\n \n* A probe avatar video driven by an unknown teleoperator.\n\nParticipants must determine whether the two avatar videos are driven by:\n\n*  **Same teleoperator**, representing a \n<strong>\n  <span style=\"color: green;\">genuine trial</span>\n</strong>\n* **Different teleoperators**, representing an\n<strong>\n  <span style=\"color: red;\">Imposter trial</span>\n</strong>\n\nThe gallery and probe videos may represent the same person through different avatar identities. Therefore, systems should focus on teleoperator-specific behavioral information rather than the visible appearance of the avatar.\n\nPotential behavioral cues include:\n\n* facial-motion dynamics\n* head movement and pose\n* expression timing\n* gaze behavior\n* speech-related facial movement\n* temporal motion patterns\n* other person-specific behavioral characteristics\n\nParticipants may develop systems using RGB video, facial landmarks, head-pose features, expression dynamics, temporal motion descriptors, video embeddings, or other suitable representations.\n\n## Dataset\n\nThe source driving videos were collected in Japan during controlled dyadic online first-meeting conversations. The selected sequences are taken from the self-introduction portion of the conversations and include both speaking and listening segments.\n\nThe original recordings were captured under controlled frontal-camera and lighting conditions. However, the original human videos are retained by the organizers and are not released to challenge participants.\n\nInstead, the motion and expression information from the original recordings are transferred to photorealistic avatar templates through a face-reenactment pipeline. The avatar appearances are selected from the publicly available **NVFAIR** dataset.\n\nThis design reduces the direct exposure of the original participants’ visual identities while preserving motion and behavioral information relevant to teleoperator verification.",
+        "content_zh": "欢迎来到首届**重演头像视频中的远程操作者身份验证国际竞赛——WBA 2026**。\n\n## 动机\n\n超逼真头像越来越多地被应用于远程呈现、混合现实、游戏、虚拟环境和人工智能中介的视频通信。在这些应用中，可见的面孔可能是合成的，或者可能与控制它的人完全不同。因此，传统的面部识别方法可能不足以验证底层用户的身份。\n\n**谁在头像后面？(WBA)** 挑战赛调查了头像视频中保留的行为信息是否可以用于独立于头像视觉外观的人类远程操作者身份认证。\n\n与传统的深伪检测挑战不同，WBA不要求参与者判断视频是否真实或合成。头像生成的视频被视为合法的通信媒介。目标是验证**操作者的真实性**：头像是否由授权人员控制。\n\n## 挑战任务\n\nWBA 2026是一项**跨头像远程操作者验证挑战**。\n\n对于每次验证试验，参与者获得：\n\n1. 由已知远程操作者驱动的图库头像视频；以及\n2. 由未知远程操作者驱动的探针头像视频。\n\n参与者必须确定这两个头像视频是否由以下任一情况驱动：\n\n* **相同的远程操作者**，代表真实试验；或\n* **不同的远程操作者**，代表冒充试验。\n\n图库和探针视频可能通过不同的头像身份代表同一个人。因此，系统应专注于远程操作者特定的行为信息，而不是头像的可见外观。\n\n潜在的行为线索包括：\n\n* 面部运动动态\n* 头部运动和姿态\n* 表情时序\n* 注视行为\n* 与语音相关的面部运动\n* 时间运动模式\n* 其他人员特定的行为特征\n\n参与者可以使用RGB视频、面部特征点、头部姿态特征、表情动态、时间运动描述符、视频嵌入或其他合适的表示方法开发系统。\n\n## 数据集\n\n源驱动视频是在日本进行的受控二人组在线首次会面对话期间收集的。所选序列取自对话的自我介绍部分，包括说话和聆听片段。\n\n原始录制是在受控的正面摄像头和照明条件下捕获的。但是，原始人类视频由组织者保留，不会向挑战参与者发布。\n\n相反，来自原始录制的运动和表情信息通过人脸重演管道转移到超逼真头像模板。头像外观选自公开可用的 **NVFAIR** 数据集，而重演视频使用 **GAGAvatar** 生成。\n\n这种设计减少了原始参与者视觉身份的直接暴露，同时保留了与远程操作者验证相关的运动和行为信息。\n\n所发布的数据集中不包含音频，评估期间也不使用音频。\n\n<div style=\"text-align:center;\">\n    <figure>\n        <img src=\"![images/Overview.png]\" alt=\"WBA跨头像远程操作者验证管道\" width=\"750\"/>\n        <figcaption>\n        图1：WBA跨头像远程操作者验证管道概览。参与者从两个头像视频中提取嵌入表示，并确定它们是否由同一远程操作者驱动。\n        </figcaption>\n    </figure>\n</div>"
+      },
+      {
+        "index": 1,
+        "title": "Participation",
+        "content": "### How to participate?\n<strong><span style=\"background-color: yellow;\">Please register using your institutional email. Registrations with gmail.com or qq.com email addresses will not be approved. As well, the Team Leader must sign the license aggreement. If you are student, your supervisor must sign</span></strong>.\n\n### How to get the dataset?\nParticipants are required to sign the dataset license agreement and send the scanned PDF to alsherfawi@yy.d3c.osaka-u.ac.jp cc: allam@yy.d3c.osaka-u.ac.jp. You can download the agreement from [here](http://www.am.sanken.osaka-u.ac.jp/BiometricDB/dataset/Competition/WBA2026/WBA_ACCV_2026%20Competition_License%20Agreement.pdf). \n\nAfter the organizers verify the signed agreement they will send a link to download the data.\n\n<strong><span style=\"background-color: yellow;\">Important: the dataset will be provided exclusively to registered participating teams and is strictly limited to use for the challenge.</span></strong>.\n\nIf you have any questions or need further assistance, please don’t hesitate to reach out to alsherfawi@yy.d3c.osaka-u.ac.jp and cc: allam@yy.d3c.osaka-u.ac.jp\n\n## Released Resources\n\nThe organizers plan to provide:\n\nData:\n* labeled training data (re-enacted videos and landmarks)\n* test data (for submission)\n* a sample submission\n\n[Starter kit](https://github.com/jasam-sheja/wba-starter)\n* evaluation code on validation subset\n* a submission-validation tool\n\nThe baseline system is intended to support reproducibility, reduce the entry barrier, and encourage participants to investigate stronger temporal and behavioral representations.\n\nFollow the instructions in the [starter kit](https://github.com/jasam-sheja/wba-starter) to prepare the data for training.\n\n\n## Data-Use Policy\n\nThe challenge data may only be used in accordance with the official WBA 2026 participation rules and the provided license agreement associated with the source datasets and avatar-generation resources.\n\nParticipants must not attempt to recover, identify, manually label, or disclose the identities of individuals represented in the hidden evaluation data. Access to hidden labels, avatar-template identities, or unauthorized annotations is prohibited.",
+        "content_zh": "本竞赛面向所有人开放。\n\n<strong><span style=\"background-color: yellow;\">重要提示：请使用机构邮箱进行注册。使用gmail.com或qq.com邮箱的注册将不被批准。此外，团队负责人必须签署许可协议。如果您是学生，您的指导老师必须签署</span></strong>。\n\n<strong><span style=\"background-color: orange;\">数据共享政策：在发布竞赛数据时，参与者需要同意仅将其用于\"学术用途\"。数据集将仅提供给已注册的参赛队伍，严格限制用于本竞赛</span></strong>。\n\n如有任何问题或需要进一步协助，请随时联系ammar@yy.d3c.osaka-u.ac.jp，并抄送allam@yy.d3c.osaka-u.ac.jp\n\n我们将提供\n\n您可以使用以下代码库来提取数据：[初始工具包](https://github.com/jasam-sheja/OUMVLP-OF-challenge)。\n\n## 发布的资源\n\n组织者计划提供：\n\n* 训练数据\n* 测试数据访问说明\n* 官方验证试验列表\n* 基准嵌入和相似度系统\n* 评估代码\n* 样本提交\n* 提交验证工具\n* 竞赛规则和文档\n\n基准系统旨在支持可重复性，降低参赛门槛，并鼓励参与者研究更强的时序和行为表示。\n\n## 数据使用政策\n\n竞赛数据的使用必须符合官方WBA 2026参赛规则以及源数据集和虚拟人生成资源相关的许可证。\n\n参与者不得试图恢复、识别、手动标记或泄露隐藏评估数据中所代表个人的身份。禁止访问隐藏标签、虚拟人模板身份或未授权的注释。\n\n参赛队伍使用的任何外部数据集、预训练模型或其他资源必须在技术报告中披露，并须符合其适用的许可证。"
+      },
+      {
+        "index": 2,
+        "title": "Submission",
+        "content": "## Training and Test Protocol\n\nThe training and test sets are disjoint with respect to both:\n\n* teleoperator identity; and\n* avatar appearance.\n\nNo teleoperator appearing in the test set is included in the training set. Similarly, the avatar templates used for testing are not included in the training data.\n\nThis protocol evaluates whether submitted systems can generalize to:\n\n* unseen teleoperators;\n* unseen avatar identities;\n* different speaking conditions;\n* variations in avatar geometry and motion response.\n\nThe challenge is designed to discourage reliance on avatar appearance and encourage the development of representations that capture persistent teleoperator-specific behavioral characteristics.\n\n## Submission\n<strong><span style=\"background-color: yellow;\">Important: For a submission to be considered valid, all models used must be trained exclusively on the provided training data. Submissions must not rely on external datasets, external models, pretrained models trained on other datasets, or any similar external resources. </span></strong>.\n\nParticipants are required to generate and submit an embedding for every test video.\n\nFor each verification pair, the submitted gallery and probe embeddings are compared using one of the following measures:\n\n* cosine similarity or cosine distance; or\n* Euclidean distance.\n\nParticipants specify the comparison method used by their system at submission time.\n\n## Evaluation\n\nThe official evaluation metrics is **Area Under the Receiver Operating Characteristic Curve — AUC**\n\nEER is reported as an additional reference metric and is not used to determine the final leaderboard ranking.\n\nPerformance is evaluated under three conditions:\n\n### Speaking Condition\n\nBoth the gallery and probe videos contain speaking sequences.\n\n### Non-Speaking Condition\n\nBoth the gallery and probe videos contain listening or non-speaking sequences.\n\n### Cross-Condition\n\nOne video contains a speaking sequence, while the other contains a non-speaking sequence.\n\nThe final leaderboard score is calculated as the **average AUC across the three evaluation conditions**.",
+        "content_zh": "## 训练和测试协议\n\n训练集和测试集在以下两个方面是互不相交的：\n\n* 遥操作员身份；以及\n* 虚拟形象外观。\n\n测试集中出现的任何遥操作员都不包含在训练集中。同样，用于测试的虚拟形象模板不包含在训练数据中。\n\n该协议评估提交的系统是否能够泛化到：\n\n* 未见过的遥操作员；\n* 未见过的虚拟形象身份；\n* 不同的说话条件；\n* 虚拟形象几何形状和运动响应的变化。\n\n该挑战旨在抑制对虚拟形象外观的依赖，并鼓励开发能够捕捉持久遥操作员特定行为特征的表示方法。\n\n## 提交\n\n参赛者需要为每个测试视频生成并提交一个嵌入向量。\n\n对于每对验证样本，提交的库嵌入和探针嵌入使用以下度量之一进行比较：\n\n* 余弦相似度或余弦距离；或\n* 欧几里得距离。\n\n参赛者在提交时指定其系统使用的比较方法。\n\nCodabench评估程序从提交的嵌入向量计算验证得分和相应的性能指标。\n\n## 评估\n\n官方评估指标包括：\n\n* **受试者工作特征曲线下面积 — AUC**\n* **等错误率 — EER**\n\n团队的排名仅根据 **AUC** 确定。\n\nEER作为附加参考指标报告，不用于确定最终排行榜排名。\n\n性能在三种条件下进行评估：\n\n### 说话条件\n\n库视频和探针视频都包含说话序列。\n\n### 非说话条件\n\n库视频和探针视频都包含聆听或非说话序列。\n\n### 交叉条件\n\n一个视频包含说话序列，另一个包含非说话序列。\n\n最终排行榜得分计算为**三种评估条件下的平均AUC**。"
+      },
+      {
+        "index": 3,
+        "title": "Prizes",
+        "content": "We are excited to recognize the outstanding achievements of **the top three teams**  in this competition with the following rewards:\n\n1. **Award Certificates**: All members of the winning teams will receive official certificates of achievement.\n2. **ACCV Workshop Paper Submission**:  Members of the 1st-, 2nd-, and 3rd-place teams will be eligible to prepare and submit papers to the competition’s associated ACCV workshop.\n\nThis is a unique opportunity to gain academic recognition, contribute to cutting-edge research, and enhance your professional profile.",
+        "content_zh": "我们荣幸地表彰本次竞赛**前三名团队**的杰出成就，并提供以下奖励：\n\n1. **获奖证书**：获奖团队的所有成员将获得官方成就证书。\n2. **ACCV研讨会论文投稿共同作者身份**：每支团队最多三名成员（来自第一、二、三名团队）将被邀请作为共同作者，参与竞赛相关论文的撰写，该论文将投稿至第18届亚洲计算机视觉大会（ACCV）。\n\n这是一个独特的机会，可以获得学术认可、为前沿研究做出贡献，并提升您的职业形象。"
+      },
+      {
+        "index": 4,
+        "title": "Organizing Committee",
+        "content": "<table style=\"width:100%; border-collapse:collapse;\">\n  <tr>\n    <td style=\"padding:6px 20px 6px 0;\"><strong>Ammar Alsherfawi</strong></td>\n    <td style=\"padding:6px 0;\">The University of Osaka, Japan</td>\n  </tr>\n  <tr>\n    <td style=\"padding:6px 20px 6px 0;\"><strong>Allam Shehata</strong></td>\n    <td style=\"padding:6px 0;\">The University of Osaka, Japan</td>\n  </tr>\n  <tr>\n    <td style=\"padding:6px 20px 6px 0;\"><strong>Yasushi Yagi</strong></td>\n    <td style=\"padding:6px 0;\">The University of Osaka, Japan</td>\n  </tr>\n  <tr>\n    <td style=\"padding:6px 20px 6px 0;\"><strong>Shunsuke Saito</strong></td>\n    <td style=\"padding:6px 0;\">Meta Codec Avatars Lab, USA</td>\n  </tr>\n  <tr>\n    <td style=\"padding:6px 20px 6px 0;\"><strong>Ruben Tolosana</strong></td>\n    <td style=\"padding:6px 0;\">Universidad Autónoma de Madrid, Spain</td>\n  </tr>\n  <tr>\n    <td style=\"padding:6px 20px 6px 0;\"><strong>Laura Pedrouzo-Rodriguez</strong></td>\n    <td style=\"padding:6px 0;\">Universidad Autónoma de Madrid, Spain</td>\n  </tr>\n  <tr>\n    <td style=\"padding:6px 20px 6px 0;\"><strong>Luis F. Gomez</strong></td>\n    <td style=\"padding:6px 0;\">Universidad Autónoma de Madrid, Spain</td>\n  </tr>\n  <tr>\n    <td style=\"padding:6px 20px 6px 0;\"><strong>Ruben Vera-Rodriguez</strong></td>\n    <td style=\"padding:6px 0;\">Universidad Autónoma de Madrid, Spain</td>\n  </tr>\n  <tr>\n    <td style=\"padding:6px 20px 6px 0;\"><strong>Masoumeh Chapariniya</strong></td>\n    <td style=\"padding:6px 0;\">University of Zurich, Switzerland</td>\n  </tr>\n  <tr>\n    <td style=\"padding:6px 20px 6px 0;\"><strong>Teodora Vuković</strong></td>\n    <td style=\"padding:6px 0;\">University of Zurich, Switzerland</td>\n  </tr>\n</table>",
+        "content_zh": "| 姓名 | 所属机构 |\n|------|---------|\n| **Ammar Alsherfawi** | 大阪大学，日本 |\n| **Allam Shehata** | 大阪大学，日本 |\n| **Yasushi Yagi** | 大阪大学，日本 |\n| **Shunsuke Saito** | Meta编码化身实验室，美国 |\n| **Ruben Tolosana** | 马德里自治大学，西班牙 |\n| **Laura Pedrouzo-Rodriguez** | 马德里自治大学，西班牙 |\n| **Luis F. Gomez** | 马德里自治大学，西班牙 |\n| **Ruben Vera-Rodriguez** | 马德里自治大学，西班牙 |\n| **Masoumeh Chapariniya** | 苏黎世大学，瑞士 |\n| **Teodora Vuković** | 苏黎世大学，瑞士 |"
       }
     ]
   }
