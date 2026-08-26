@@ -5,8 +5,8 @@
   "created_by": "irnewbie",
   "owner_display_name": "irnewbie",
   "created_when": "2026-07-20T06:11:10.993454Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784528469/7e8bf5c614cd/ScreenShot_2026-07-20_140940_018.png?AWSAccessKeyId=codabench-prod&Signature=%2FlGlnOyE0XIAZwpdesHlZ1%2Flq%2Bc%3D&Expires=1787627791",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784528469/7e8bf5c614cd/ScreenShot_2026-07-20_140940_018_icon.png?AWSAccessKeyId=codabench-prod&Signature=Kl%2BSO5wPq%2B9gqTYbbG%2FxuOWTROI%3D&Expires=1787627791",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784528469/7e8bf5c614cd/ScreenShot_2026-07-20_140940_018.png?AWSAccessKeyId=codabench-prod&Signature=3UlwC8PPu8RfxH8vJ1Sk8W8Wyyg%3D&Expires=1787714417",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784528469/7e8bf5c614cd/ScreenShot_2026-07-20_140940_018_icon.png?AWSAccessKeyId=codabench-prod&Signature=%2Bikt8TxGtZM2g4m%2FdexQtqqNfLg%3D&Expires=1787714417",
   "terms": "详情请看比赛内部官网详情页",
   "pages": [
     {
@@ -120,28 +120,6 @@
           "solutions": [],
           "public_datasets": [
             {
-              "id": 897055,
-              "created_by": "irnewbie",
-              "owner_display_name": "irnewbie",
-              "created_when": "2026-07-20T06:42:02.151107Z",
-              "name": "scoring_program.zip",
-              "type": "scoring_program",
-              "description": null,
-              "is_public": false,
-              "key": "2474e54d-1054-4724-b61c-7bf30d0f6a7f",
-              "value": "2474e54d-1054-4724-b61c-7bf30d0f6a7f",
-              "was_created_by_competition": false,
-              "in_use": [
-                {
-                  "pk": 17590,
-                  "title": "2026年“新智砺剑”比赛-红外视频卫星空中动目标检测赛道"
-                }
-              ],
-              "competition": null,
-              "file_name": "",
-              "file_size": 6071.0
-            },
-            {
               "id": 897056,
               "created_by": "irnewbie",
               "owner_display_name": "irnewbie",
@@ -162,6 +140,36 @@
               "competition": null,
               "file_name": "",
               "file_size": 331441.0
+            },
+            {
+              "id": 946575,
+              "created_by": "irnewbie",
+              "owner_display_name": "irnewbie",
+              "created_when": "2026-08-24T15:40:51.543758Z",
+              "name": "scoring_program_privacy_safe.zip",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "8017a424-e185-46b8-b98c-de4213090222",
+              "value": "8017a424-e185-46b8-b98c-de4213090222",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 17555,
+                  "title": "2026 “金睛杯”光学时敏弱小目标探测挑战赛（赛道一：红外视频卫星空中动目标检测）"
+                },
+                {
+                  "pk": 17571,
+                  "title": "2026 “金睛杯”光学时敏弱小目标探测挑战赛（赛道一：红外视频卫星空中动目标检测）仅测试"
+                },
+                {
+                  "pk": 17590,
+                  "title": "2026年“新智砺剑”比赛-红外视频卫星空中动目标检测赛道"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 7813.0
             }
           ]
         }
@@ -246,7 +254,7 @@
   "registration_auto_approve": false,
   "description": "详情请看比赛内部官网详情页",
   "participants_count": 31,
-  "submissions_count": 399,
+  "submissions_count": 409,
   "queue": null,
   "enable_detailed_results": false,
   "show_detailed_results_in_submission_panel": false,
