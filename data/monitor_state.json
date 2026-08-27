@@ -6,9 +6,9 @@
     "description_zh": "我注意到你提供的文本已经是简体中文，我原样返回：\n\n详情请看比赛内部官网详情页",
     "created_by": "irnewbie",
     "created_when": "2026-07-20T06:11:10.993454Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784528469/7e8bf5c614cd/ScreenShot_2026-07-20_140940_018.png?AWSAccessKeyId=codabench-prod&Signature=3UlwC8PPu8RfxH8vJ1Sk8W8Wyyg%3D&Expires=1787714417",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-20-1784528469/7e8bf5c614cd/ScreenShot_2026-07-20_140940_018.png?AWSAccessKeyId=codabench-prod&Signature=ZDUUd3Hhlk8fkIYzbj%2FZx6jslQM%3D&Expires=1787801083",
     "participants_count": 31,
-    "submissions_count": 409,
+    "submissions_count": 420,
     "first_phase_start": null,
     "phases": [
       {
@@ -42,9 +42,9 @@
     "description_zh": "Optical Time-Sensitive Weak-Small Target Detection is an important research direction in intelligent visual perception and a key technical challenge in target detection and situation awareness in complex environments. Compared to conventional target detection tasks, weak-small targets typically exhibit characteristics such as small imaging scale, weak target energy, strong background interference, and unstable target morphology. The usable information in a single frame image is extremely limited, and algorithms are prone to issues such as missed detections, false detections, and discontinuous detection results in real-world scenarios.\n\nThis challenge competition, based on the CSIG2026 academic conference platform, focuses on key problems in optical time-sensitive weak-small target detection, and sets up two competition tracks: \"Infrared Video Satellite Airborne Moving Target Detection\" and \"Motion Small Target Detection Based on Event Camera\". It provides participating teams with a fair and reproducible algorithm validation platform, promoting advances in related data construction, method innovation, and technical exchange.",
     "created_by": "irnewbie",
     "created_when": "2026-07-16T16:05:17.810335Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217917/f590d1281393/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=c1wVJk0jNPJnY5J%2FTCPcIMuw5PE%3D&Expires=1787714417",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217917/f590d1281393/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=xkkpmp%2BhOjgrvN7fw00o6spQTbw%3D&Expires=1787801083",
     "participants_count": 76,
-    "submissions_count": 962,
+    "submissions_count": 987,
     "first_phase_start": null,
     "phases": [
       {
@@ -96,9 +96,9 @@
     "description_zh": "Optical temporal-sensitive small target detection is an important research direction in intelligent visual perception and a key technical issue in target detection and situational awareness in complex environments. Compared with conventional target detection tasks, small targets typically exhibit characteristics such as small imaging scale, weak target energy, strong background interference, and unstable target morphology. The information available in a single frame is very limited, and algorithms are prone to missed detections, false positives, and discontinuous detection results in real-world scenarios.\n\nThis challenge competition, based on the CSIG2026 academic conference platform, focuses on key problems in optical temporal-sensitive small target detection, establishing two tracks: \"infrared video satellite aerial moving target detection\" and \"event camera-based moving small target detection.\" It provides participating teams with a fair and reproducible algorithm validation platform, promoting related data construction, method innovation, and technical exchange.",
     "created_by": "irnewbie",
     "created_when": "2026-07-16T15:58:17.338227Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217497/8cef6a724fb4/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=wljGc0fQ8HGPIeB%2BRPjOemeQEVY%3D&Expires=1787714419",
-    "participants_count": 118,
-    "submissions_count": 1420,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-16-1784217497/8cef6a724fb4/logo2-1-no-grid1.png?AWSAccessKeyId=codabench-prod&Signature=%2FpFOMWnQrgIP2CcAsNMxh%2BpiIuw%3D&Expires=1787801083",
+    "participants_count": 119,
+    "submissions_count": 1535,
     "first_phase_start": null,
     "phases": [
       {
@@ -150,9 +150,9 @@
     "description_zh": "MICCAI FLARE 2026 任务2：AutoMSC - 医学图像自动分割与分类",
     "created_by": "junma",
     "created_when": "2026-04-09T21:08:06.808342Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-23-1784773803/182fbbd79fab/automsc-logo-light-ring.png?AWSAccessKeyId=codabench-prod&Signature=IApZiGJ%2BmikPJ6Hm%2Fvhs%2FB9z2Hw%3D&Expires=1787714455",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-23-1784773803/182fbbd79fab/automsc-logo-light-ring.png?AWSAccessKeyId=codabench-prod&Signature=yd3FS%2BncoENpzakSTE4r6K90mXY%3D&Expires=1787801106",
     "participants_count": 82,
-    "submissions_count": 103,
+    "submissions_count": 113,
     "first_phase_start": null,
     "phases": [
       {
@@ -221,7 +221,7 @@
     "description_zh": "该竞赛对近距离短波红外高光谱成像的×4超分辨率进行基准测试。\n参赛者将获得使用同一传感器和不同镜头采集的低分辨率HSI立方体数据，通过控制分辨率变化而不引入光谱偏差。任务是从×4下采样输入重建高分辨率短波红外高光谱图像。",
     "created_by": "rafariva",
     "created_when": "2025-12-30T16:14:49.840049Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-12-30-1767111468/edd5610f43a0/logo_HISR.png?AWSAccessKeyId=codabench-prod&Signature=v0iEvlL7%2FrF7SbfMoTxrpBbRslY%3D&Expires=1787714508",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2025-12-30-1767111468/edd5610f43a0/logo_HISR.png?AWSAccessKeyId=codabench-prod&Signature=YB9Gi9adEKcjRVIeN0LDdhmVLJY%3D&Expires=1787801145",
     "participants_count": 53,
     "submissions_count": 582,
     "first_phase_start": null,
@@ -280,9 +280,9 @@
     "description_zh": "一个基于混合信号数据集的协作3D目标检测挑战，该数据集是一个多样化的真实点云数据集，用于异构激光雷达V2X协作（3辆连接的车辆+配备双激光雷达的路侧单元）。融合多个智能体的点云，在鸟瞰图平面上检测车辆、自行车和行人，并在排行榜上攀升。",
     "created_by": "mixed-signals",
     "created_when": "2026-07-09T01:30:36.192294Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783560636/614edf812e36/logo.png?AWSAccessKeyId=codabench-prod&Signature=XG1POUIC%2BRwcsFlojjpKDfeO%2Fag%3D&Expires=1787714421",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-09-1783560636/614edf812e36/logo.png?AWSAccessKeyId=codabench-prod&Signature=ZtJRfTvpKkIkl%2F5bvzPK5tM9t0k%3D&Expires=1787801084",
     "participants_count": 48,
-    "submissions_count": 293,
+    "submissions_count": 315,
     "first_phase_start": null,
     "phases": [
       {
@@ -321,35 +321,6 @@
       }
     ]
   },
-  "17265": {
-    "id": 17265,
-    "title": "第十届全国激光雷达大会——City-Facade建筑立面点云实例分割大赛",
-    "description": "本比赛面向城市级建筑立面构件精细理解，采用City-Facade大规模三维点云数据集。\n\n数据由车载移动激光扫描系统采集，覆盖厦门市多类典型城市街区，累计道路长度约60 km。数据包含墙面、窗户、门、屋顶、广告牌、空调外机、雨棚和阳台等细粒度建筑立面要素标注，并提供语义级与实例级标签。\n\n参赛者需要识别测试点云中的独立建筑立面构件实例，并输出相应实例编号和语义类别。\n\n比赛采用结果提交模式。参赛者在本地完成模型训练和推理，仅向Codabench提交预测结果，平台使用隐藏实例标签进行自动评分。",
-    "description_zh": "This competition focuses on fine-grained understanding of urban-level building facade components, utilizing the City-Fac dataset.\n\nThe data is collected by vehicle-mounted mobile laser scanning systems, covering multiple types of typical urban street blocks in Xiamen, with a cumulative road length of approximately 60 km. The dataset includes fine-grained building facade element annotations such as walls, windows, doors, roofs, billboards, air conditioning units, canopies, and balconies, with both semantic-level and instance-level labels provided.\n\nParticipants need to identify independent building facade component instances in the test point cloud and output the corresponding semantic categories and instance numbers.\n\nThe competition adopts a result submission mode. Participants complete model training and inference locally and only submit prediction results to Codabench, where the platform automatically scores using hidden instance labels.",
-    "created_by": "jianlongguan",
-    "created_when": "2026-06-26T12:50:09.783065Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=GzXabMmh8UYmaWq4D6gsB%2Bc%2FQvY%3D&Expires=1787714421",
-    "participants_count": 21,
-    "submissions_count": 167,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 28803,
-        "name": "City-Facade建筑立面点云实例分割",
-        "start": "2026-06-05T00:00:00Z",
-        "end": "2026-09-07T23:59:00Z",
-        "max_submissions_per_day": 5
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "比赛说明",
-        "content": "# **建筑物立面点云语义/实例分割**\n\n## **Overview**\n\n本赛道采用 City-Facade 城市建筑立面点云数据集，开展建筑立面点云语义分割与实例分割。\n\n参赛者需要为测试集中的每个点预测语义类别，并进一步区分同一语义类别下不同建筑立面构件的实例编号。\n\nCity-Facade 数据由车载移动激光扫描系统采集，覆盖厦门市 6 类典型城市街区场景，累计道路长度约 60 km，包含约 2 亿个带标注点。\n\n语义类别如下：\n\n| **编号** | **英文类别**              | **中文类别** |\n| -------- | ------------------------- | ------------ |\n| 0        | Background / Unclassified | 背景或未分类 |\n| 1        | Wall                      | 墙面         |\n| 2        | Window                    | 窗户         |\n| 3        | Door                      | 门           |\n| 4        | Roof                      | 屋顶         |\n| 5        | Advertisement             | 广告牌       |\n| 6        | Air Conditioner           | 空调外机     |\n| 7        | Rain Shed                 | 雨棚         |\n| 8        | Balcony                   | 阳台         |\n\n参赛流程：\n\n1. 在训练数据集上开发三维点云语义分割与实例分割模型；\n2. 使用训练完成的模型预测测试数据；\n3. 为每个测试点生成语义标签和实例标签；\n4. 按指定目录结构压缩预测结果；\n5. 将结果上传至 Codabench；\n6. 平台自动评测并更新排行榜。\n\n数据集项目地址：\n\n```text\nhttps://github.com/Ting-Devin-Han/City-Facade\n```\n\n## **Evaluation**\n\n主排名指标为综合得分：\n\n```text\nScore = 0.5 × mIoU + 0.5 × AP50\n```\n\n其中：\n\n- mIoU 用于评价语义分割精度；\n- AP50 用于评价实例分割精度。\n\n辅助指标包括：\n\n- mIoU\n- OA\n- 各类别 IoU\n- AP\n- AP25\n- AP50\n\n所有指标均为越高越好。\n\n每支队伍每日最多提交 5 次。\n\n若综合得分相同，建议依次按照 AP50、mIoU、AP25 和提交时间确定排名。\n\n## **Submission Format**\n\n参赛者须为测试集中的每个点提供语义标签和实例标签，并提交一个 ZIP 压缩包。\n\n压缩包根目录必须包含`predictions/`文件夹：\n\n```text\nsubmission.zip\n└── predictions/\n    ├── CAR/\n    │   ├── CAR-30-003_000000.txt\n    │   ├── CAR-30-003_000001.txt\n    │   └── ...\n    ├── JMC/\n    ├── SGS/\n    ├── XHR/\n    └── YWR/\n```\n\n目录名称和预测文件名称必须与测试数据保持一致。例如：\n\n```text\ntest/JMC/JMC-1-013_000000.txt\npredictions/JMC/JMC-1-013_000000.txt\n```\n\n每个预测 `.txt` 文件为 `N x 7` 数组，字段顺序固定为：\n\n```text\nX Y Z intensity instance_id semantic_label instance_score\n```\n\n其中：\n\n- `N` 为点云点数；\n- `X Y Z` 为三维坐标；\n- `intensity` 为激光强度；\n- `instance_id` 为预测实例编号；\n- `semantic_label` 为预测语义类别；\n- `instance_score` 为预测实例置信度\n\n字段索引从 `0` 开始时：\n\n```text\nX=0, Y=1, Z=2, intensity=3, instance_id=4, semantic_label=5, instance_score=6\n```\n\n提交文件必须满足：\n\n1. 每个测试 `.txt` 文件都必须有对应预测文件；\n2. 预测文件的相对路径和文件名必须与测试集一致；\n3. 每个预测文件的点数必须与对应测试文件完全一致；\n4. 点顺序必须与测试文件完全一致；\n5. `X Y Z intensity` 四列应保持与测试文件一致；\n6. `semantic_label` 必须为整数，取值范围为 `0` 到 `8`；\n7. `instance_id` 必须为非负整数；\n8. `instance_score` 必须是 `[0,1]` 范围内的有限数值，不允许使用 `NaN` 或正负无穷。\n9. 对于语义类别 `1` 到 `8` 的前景构件，不同实例应使用不同的实例编号；\n10. 对于类别 `0` 的背景或未分类点，`instance_id` 可设为 `0`；\n11. ZIP 根目录必须包含 `predictions/` 文件夹，不要额外嵌套一层目录。\n\n## **Citation**\n\n使用 City-Facade 数据集开展研究或发表成果时，请引用：\n\n```bibtex\n@article{chen2026cityfacade,\n  title={City-Facade: A city-level large-scale point cloud building facade dataset for semantic \\& instance segmentation},\n  author={Chen, Yiping and Li, Jonathan and Han, Ting and Feng, Huifang and Chen, Jun and Wang, Cheng},\n  journal={ISPRS Journal of Photogrammetry and Remote Sensing},\n  volume={232},\n  pages={675--688},\n  year={2026},\n  doi={10.1016/j.isprsjprs.2026.01.003}\n}\n```",
-        "content_zh": "# **Building Facade Point Cloud Semantic/Instance Segmentation**\n\n## **Overview**\n\nThis track uses the City-Facade dataset to conduct semantic segmentation and instance segmentation of building facade point clouds.\n\nParticipants need to predict semantic categories for each point in the test set and further distinguish instance numbers of different building facade components within the same semantic category.\n\nThe City-Facade dataset is collected by vehicle-mounted mobile laser scanning systems, covering 6 typical urban street scene categories in Xiamen City, with a total road length of approximately 60 km and containing approximately 200 million annotated points.\n\nSemantic categories are as follows:\n\n| **ID** | **English Category**      | **Chinese Category** |\n| ------ | ------------------------- | -------------------- |\n| 0      | Background / Unclassified | Background/Unclassified |\n| 1      | Wall                      | Wall                 |\n| 2      | Window                    | Window               |\n| 3      | Door                      | Door                 |\n| 4      | Roof                      | Roof                 |\n| 5      | Advertisement             | Advertisement Board  |\n| 6      | Air Conditioner           | Air Conditioner Unit |\n| 7      | Rain Shed                 | Rain Shed            |\n| 8      | Balcony                   | Balcony              |\n\nCompetition workflow:\n\n1. Develop 3D point cloud semantic and instance segmentation models on the training dataset;\n2. Use the trained model to predict test data;\n3. Generate semantic labels and instance labels for each test point;\n4. Compress prediction results according to the specified directory structure;\n5. Upload results to Codabench;\n6. The platform automatically evaluates and updates the leaderboard.\n\nDataset project address:\n\n```text\nhttps://github.com/gorgeouseping/City-Facade\n```\n\n## **Evaluation**\n\nThe main ranking metric is the comprehensive score:\n\n```text\nScore = 0.5 × mIoU + 0.5 × AP50\n```\n\nWhere:\n\n- mIoU is used to evaluate semantic segmentation accuracy;\n- AP50 is used to evaluate instance segmentation accuracy.\n\nAuxiliary metrics include:\n\n- mIoU\n- OA\n- IoU for each category\n- AP\n- AP25\n- AP50\n\nAll metrics are higher the better.\n\nEach team can submit a maximum of 5 times per day.\n\nIf the comprehensive score is the same, it is recommended to determine rankings in order by AP50, mIoU, AP25, and submission time.\n\n## **Submission Format**\n\nParticipants must provide semantic labels and instance labels for each point in the test set and submit a ZIP compressed package.\n\n```text\nsubmission.zip\n└── predictions/\n    ├── CAR/\n    │   ├── CAR-30-003_000000.txt\n    │   ├── CAR-30-003_000001.txt\n    │   └── ...\n    ├── JMC/\n    ├── SGS/\n    └── ...\n```\n\nDirectory names and prediction file names must be consistent with the test data.\n\nEach TXT file contains 6 fields:\n\n```text\nX Y Z intensity semantic_label instance_id\n```\n\nArray dimensions are:\n\n```text\nN × 6\n```\n\nWhere:\n\n- `N` is the number of points in the point cloud;\n- `X Y Z` are 3D coordinates;\n- `intensity` is laser intensity;\n- `semantic_label` is the predicted semantic category;\n- `instance_id` is the predicted instance number.\n\nSubmitted files must satisfy:\n\n1. The number and order of points are completely consistent with the original test files;\n2. The 3D coordinates and intensity fields must not be modified;\n3. Semantic category ID range is 0-8;\n4. Instance IDs must be non-negative integers;\n5. Different instances use different instance IDs;\n6. Prediction file directories and file names must be consistent with the test set;\n7. The ZIP root directory must contain a `predictions` folder.\n\n## **Citation**\n\nWhen using the City-Facade dataset, please cite:\n\n```bibtex\n@article{chen2026cityfacade,\n  title={City-Facade: A city-level large-scale building facade point cloud dataset for semantic and instance segmentation},\n  author={Chen, Yiping and Li, Jonathan and Han, Ting and Feng, Huifang and Chen, Jun and Wang, Cheng},\n  journal={ISPRS Journal of Photogrammetry and Remote Sensing},\n  volume={232},\n  pages={675--688},\n  year={2026},\n  doi={10.1016/j.isprsjprs.2026.01.003}\n}\n```"
-      }
-    ]
-  },
   "17825": {
     "id": 17825,
     "title": "Datathon@IndoML 2026 — Track 1: Noise Event Detection",
@@ -357,9 +328,9 @@
     "description_zh": "在 Vaani 语料库的真实印度语言语音录音中检测噪声事件（开始和结束时间戳）。参赛者必须利用多层注释的训练数据（黄金级/白银级/青铜级）来构建稳健的噪声事件检测系统，该系统将基于事件级 F1 和分段 Dice 进行评估。",
     "created_by": "nagu_iitkgp",
     "created_when": "2026-08-14T17:27:12.345457Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-14-1786728432/29a3bf95a91d/logo.png?AWSAccessKeyId=codabench-prod&Signature=rWhTb1AWynV56egSFoC7LI8o0hQ%3D&Expires=1787714414",
-    "participants_count": 80,
-    "submissions_count": 184,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-14-1786728432/29a3bf95a91d/logo.png?AWSAccessKeyId=codabench-prod&Signature=cj2%2BJfA3Xlj3KBNoSmNNhFO4m%2BE%3D&Expires=1787801077",
+    "participants_count": 88,
+    "submissions_count": 202,
     "first_phase_start": null,
     "phases": [
       {
@@ -391,47 +362,6 @@
       }
     ]
   },
-  "17677": {
-    "id": 17677,
-    "title": "Multi-Sensor LiDAR SLAM Challenge 2026 - LiDAR-Inertial",
-    "description": "Translation-only evaluation for the LiDAR-inertial SLAM track.",
-    "description_zh": "LiDAR-惯性SLAM赛道的仅翻译评估。",
-    "created_by": "yuhangxu",
-    "created_when": "2026-07-26T09:50:41.414250Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059441/adc6bc07e4f0/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=wcUp6fHjxHhtBk%2B%2B3ighDQyhV40%3D&Expires=1787714415",
-    "participants_count": 19,
-    "submissions_count": 126,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 29486,
-        "name": "Official Evaluation",
-        "start": "2026-07-17T00:00:00Z",
-        "end": "2026-09-20T15:59:00Z",
-        "max_submissions_per_day": 5
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Overview",
-        "content": "# LiDAR-Inertial SLAM\n\nThis is the independent LiDAR-inertial track of the Multi-Sensor LiDAR SLAM Challenge 2026. Participants process the two released scenes locally and submit estimated trajectories only. Reliable ground truth and its timestamps remain private on Codabench.\n\nBoth `scene_0001` and `scene_0002` are required. Completion has no hard threshold; missing trajectory coverage reduces AUC recall and the final score.\n\nThe dataset was recorded with an Airy LiDAR and its built-in IMU. The following images are route-shape references only and contain no ground truth.\n\n![Scene 1 trajectory reference](images/scene_0001_trajectory_reference.png)\n\n![Scene 2 trajectory reference](images/scene_0002_trajectory_reference.png)",
-        "content_zh": "# LiDAR-惯性SLAM\n\n这是多传感器LiDAR SLAM挑战赛2026的独立LiDAR-惯性赛道。参与者在本地处理两个发布的场景，仅提交估计轨迹。可靠的地面真值及其时间戳保持隐私，存储在Codabench上。\n\n需要完成`scene_0001`和`scene_0002`两个场景。完成度没有硬性阈值；缺失轨迹覆盖会降低AUC召回率和最终得分。\n\n数据集采用Airy LiDAR及其内置IMU记录。以下图像仅作为路线形状参考，不包含地面真值。\n\n![场景1轨迹参考](images/scene_0001_trajectory_reference.png)\n\n![场景2轨迹参考](images/scene_0002_trajectory_reference.png)"
-      },
-      {
-        "index": 1,
-        "title": "Submission",
-        "content": "# Submission format\n\nUpload a ZIP whose root contains `README.md` and `trajectories/scene_0001.txt` plus `trajectories/scene_0002.txt`. Each trajectory uses TUM rows:\n\n```text\ntimestamp tx ty tz qx qy qz qw\n```\n\nTimestamps must be strictly increasing. Values must be finite and quaternions must be non-zero. There is no submission-count limit. Only the most recent valid submission is ranked.",
-        "content_zh": "# 提交格式\n\n上传一个ZIP文件，其根目录包含 `README.md` 和 `trajectories/scene_0001.txt` 以及 `trajectories/scene_0002.txt`。每个轨迹使用TUM格式的行：\n\n```text\ntimestamp tx ty tz qx qy qz qw\n```\n\n时间戳必须严格递增。数值必须是有限的，四元数必须非零。提交次数无限制。只有最新的有效提交才会被排名。"
-      },
-      {
-        "index": 2,
-        "title": "Evaluation",
-        "content": "# Evaluation\n\nScoring uses EVO time synchronization and one no-scale SE(3) alignment per scene against the private reference trajectory. Completion has no hard threshold and is published; missing pose pairs reduce AUC recall. Evaluation timestamps and ground truth are not published.\n\nATE is EVO translational APE RMSE. AUC uses EVO one-frame translational RPE and the F1-AUC protocol. RTE is the RMSE of EVO translational RPE normalized at 1 m, 5 m, and 10 m. Aggregate and per-scene RTE@1m, RTE@5m, and RTE@10m are all published alongside the combined RTE. Gaps over 0.3 s are never crossed.\n\nAUC and RTE use aligned world-frame positions with identity orientations, so a fixed participant body-axis convention does not affect translation scores. Every scene uses one scene-level SE(3) alignment.\n\nThe total score is `100 * (0.40 * AUC + 0.40 * exp(-ATE / tau_ate) + 0.20 * exp(-RTE / tau_rte))`. Reference result is the published reference: its aggregate ATE and RTE define `tau_ate` and `tau_rte` after the final scorer is frozen.\n\nResults publish the total score, aggregate and per-scene AUC/ATE/combined RTE/RTE@1m/RTE@5m/RTE@10m, normalized score components, completion, and match counts. Per-timestamp errors, associations, alignment transforms, and ground truth remain private.",
-        "content_zh": "# 评估\n\n评分使用EVO时间同步和每个场景一个无缩放SE(3)对齐，对标私有参考轨迹。完成度无硬阈值并公开发布；缺失的位姿对会降低AUC召回率。评估时间戳和真值不公开。\n\nATE是EVO平移APE均方根误差。AUC使用EVO单帧平移RPE和F1-AUC协议。RTE是EVO平移RPE的均方根误差，在1 m、5 m和10 m处归一化。总体和各场景的RTE@1m、RTE@5m和RTE@10m均与合并RTE一起公开发布。超过0.3 s的间隔不被跨越。\n\nAUC和RTE使用对齐的世界坐标系位置和单位方向，因此固定的参与者机体坐标系约定不影响平移得分。每个场景使用一个场景级SE(3)对齐。\n\n总分为`100 * (0.40 * AUC + 0.40 * exp(-ATE / tau_ate) + 0.20 * exp(-RTE / tau_rte))`。参考结果是已发布的参考值：其总体ATE和RTE在最终评分器冻结后定义`tau_ate`和`tau_rte`。\n\n结果公开发布总分、总体和各场景AUC/ATE/合并RTE/RTE@1m/RTE@5m/RTE@10m、归一化得分组件、完成度和匹配计数。单时间戳误差、关联、对齐变换和真值保持私有。"
-      }
-    ]
-  },
   "17678": {
     "id": 17678,
     "title": "Multi-Sensor LiDAR SLAM Challenge 2026 - LiDAR-Visual-Inertial",
@@ -439,9 +369,9 @@
     "description_zh": "LiDAR-视觉-惯性SLAM赛道的纯翻译评估",
     "created_by": "yuhangxu",
     "created_when": "2026-07-26T09:51:43.642130Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059503/c4f5eea4397e/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=2%2FXB1UE0%2FnRKdsXdT6pFv0NgfdA%3D&Expires=1787714416",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059503/c4f5eea4397e/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=9%2FK70EPjxUb9XErIongmpORTwws%3D&Expires=1787801077",
     "participants_count": 10,
-    "submissions_count": 20,
+    "submissions_count": 23,
     "first_phase_start": null,
     "phases": [
       {
@@ -473,6 +403,76 @@
       }
     ]
   },
+  "17677": {
+    "id": 17677,
+    "title": "Multi-Sensor LiDAR SLAM Challenge 2026 - LiDAR-Inertial",
+    "description": "Translation-only evaluation for the LiDAR-inertial SLAM track.",
+    "description_zh": "LiDAR-惯性SLAM赛道的仅翻译评估。",
+    "created_by": "yuhangxu",
+    "created_when": "2026-07-26T09:50:41.414250Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059441/adc6bc07e4f0/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=PuTJqlWZBybw4U1Y5VrhVhI3X%2Fc%3D&Expires=1787801078",
+    "participants_count": 19,
+    "submissions_count": 147,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 29486,
+        "name": "Official Evaluation",
+        "start": "2026-07-17T00:00:00Z",
+        "end": "2026-09-20T15:59:00Z",
+        "max_submissions_per_day": 5
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Overview",
+        "content": "# LiDAR-Inertial SLAM\n\nThis is the independent LiDAR-inertial track of the Multi-Sensor LiDAR SLAM Challenge 2026. Participants process the two released scenes locally and submit estimated trajectories only. Reliable ground truth and its timestamps remain private on Codabench.\n\nBoth `scene_0001` and `scene_0002` are required. Completion has no hard threshold; missing trajectory coverage reduces AUC recall and the final score.\n\nThe dataset was recorded with an Airy LiDAR and its built-in IMU. The following images are route-shape references only and contain no ground truth.\n\n![Scene 1 trajectory reference](images/scene_0001_trajectory_reference.png)\n\n![Scene 2 trajectory reference](images/scene_0002_trajectory_reference.png)",
+        "content_zh": "# LiDAR-惯性SLAM\n\n这是多传感器LiDAR SLAM挑战赛2026的独立LiDAR-惯性赛道。参与者在本地处理两个发布的场景，仅提交估计轨迹。可靠的地面真值及其时间戳保持隐私，存储在Codabench上。\n\n需要完成`scene_0001`和`scene_0002`两个场景。完成度没有硬性阈值；缺失轨迹覆盖会降低AUC召回率和最终得分。\n\n数据集采用Airy LiDAR及其内置IMU记录。以下图像仅作为路线形状参考，不包含地面真值。\n\n![场景1轨迹参考](images/scene_0001_trajectory_reference.png)\n\n![场景2轨迹参考](images/scene_0002_trajectory_reference.png)"
+      },
+      {
+        "index": 1,
+        "title": "Submission",
+        "content": "# Submission format\n\nUpload a ZIP whose root contains `README.md` and `trajectories/scene_0001.txt` plus `trajectories/scene_0002.txt`. Each trajectory uses TUM rows:\n\n```text\ntimestamp tx ty tz qx qy qz qw\n```\n\nTimestamps must be strictly increasing. Values must be finite and quaternions must be non-zero. There is no submission-count limit. Only the most recent valid submission is ranked.",
+        "content_zh": "# 提交格式\n\n上传一个ZIP文件，其根目录包含 `README.md` 和 `trajectories/scene_0001.txt` 以及 `trajectories/scene_0002.txt`。每个轨迹使用TUM格式的行：\n\n```text\ntimestamp tx ty tz qx qy qz qw\n```\n\n时间戳必须严格递增。数值必须是有限的，四元数必须非零。提交次数无限制。只有最新的有效提交才会被排名。"
+      },
+      {
+        "index": 2,
+        "title": "Evaluation",
+        "content": "# Evaluation\n\nScoring uses EVO time synchronization and one no-scale SE(3) alignment per scene against the private reference trajectory. Completion has no hard threshold and is published; missing pose pairs reduce AUC recall. Evaluation timestamps and ground truth are not published.\n\nATE is EVO translational APE RMSE. AUC uses EVO one-frame translational RPE and the F1-AUC protocol. RTE is the RMSE of EVO translational RPE normalized at 1 m, 5 m, and 10 m. Aggregate and per-scene RTE@1m, RTE@5m, and RTE@10m are all published alongside the combined RTE. Gaps over 0.3 s are never crossed.\n\nAUC and RTE use aligned world-frame positions with identity orientations, so a fixed participant body-axis convention does not affect translation scores. Every scene uses one scene-level SE(3) alignment.\n\nThe total score is `100 * (0.40 * AUC + 0.40 * exp(-ATE / tau_ate) + 0.20 * exp(-RTE / tau_rte))`. Reference result is the published reference: its aggregate ATE and RTE define `tau_ate` and `tau_rte` after the final scorer is frozen.\n\nResults publish the total score, aggregate and per-scene AUC/ATE/combined RTE/RTE@1m/RTE@5m/RTE@10m, normalized score components, completion, and match counts. Per-timestamp errors, associations, alignment transforms, and ground truth remain private.",
+        "content_zh": "# 评估\n\n评分使用EVO时间同步和每个场景一个无缩放SE(3)对齐，对标私有参考轨迹。完成度无硬阈值并公开发布；缺失的位姿对会降低AUC召回率。评估时间戳和真值不公开。\n\nATE是EVO平移APE均方根误差。AUC使用EVO单帧平移RPE和F1-AUC协议。RTE是EVO平移RPE的均方根误差，在1 m、5 m和10 m处归一化。总体和各场景的RTE@1m、RTE@5m和RTE@10m均与合并RTE一起公开发布。超过0.3 s的间隔不被跨越。\n\nAUC和RTE使用对齐的世界坐标系位置和单位方向，因此固定的参与者机体坐标系约定不影响平移得分。每个场景使用一个场景级SE(3)对齐。\n\n总分为`100 * (0.40 * AUC + 0.40 * exp(-ATE / tau_ate) + 0.20 * exp(-RTE / tau_rte))`。参考结果是已发布的参考值：其总体ATE和RTE在最终评分器冻结后定义`tau_ate`和`tau_rte`。\n\n结果公开发布总分、总体和各场景AUC/ATE/合并RTE/RTE@1m/RTE@5m/RTE@10m、归一化得分组件、完成度和匹配计数。单时间戳误差、关联、对齐变换和真值保持私有。"
+      }
+    ]
+  },
+  "17265": {
+    "id": 17265,
+    "title": "第十届全国激光雷达大会——City-Facade建筑立面点云实例分割大赛",
+    "description": "本比赛面向城市级建筑立面构件精细理解，采用City-Facade大规模三维点云数据集。\n\n数据由车载移动激光扫描系统采集，覆盖厦门市多类典型城市街区，累计道路长度约60 km。数据包含墙面、窗户、门、屋顶、广告牌、空调外机、雨棚和阳台等细粒度建筑立面要素标注，并提供语义级与实例级标签。\n\n参赛者需要识别测试点云中的独立建筑立面构件实例，并输出相应实例编号和语义类别。\n\n比赛采用结果提交模式。参赛者在本地完成模型训练和推理，仅向Codabench提交预测结果，平台使用隐藏实例标签进行自动评分。",
+    "description_zh": "This competition focuses on fine-grained understanding of urban-level building facade components, utilizing the City-Fac dataset.\n\nThe data is collected by vehicle-mounted mobile laser scanning systems, covering multiple types of typical urban street blocks in Xiamen, with a cumulative road length of approximately 60 km. The dataset includes fine-grained building facade element annotations such as walls, windows, doors, roofs, billboards, air conditioning units, canopies, and balconies, with both semantic-level and instance-level labels provided.\n\nParticipants need to identify independent building facade component instances in the test point cloud and output the corresponding semantic categories and instance numbers.\n\nThe competition adopts a result submission mode. Participants complete model training and inference locally and only submit prediction results to Codabench, where the platform automatically scores using hidden instance labels.",
+    "created_by": "jianlongguan",
+    "created_when": "2026-06-26T12:50:09.783065Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=mVM%2FMYEQZkhmTOF3kMMJbWP3bh0%3D&Expires=1787801086",
+    "participants_count": 21,
+    "submissions_count": 175,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 28803,
+        "name": "City-Facade建筑立面点云实例分割",
+        "start": "2026-06-05T00:00:00Z",
+        "end": "2026-09-20T23:59:00Z",
+        "max_submissions_per_day": 5
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "比赛说明",
+        "content": "# **建筑物立面点云语义/实例分割**\n\n## **Overview**\n\n本赛道采用 City-Facade 城市建筑立面点云数据集，开展建筑立面点云语义分割与实例分割。\n\n参赛者需要为测试集中的每个点预测语义类别，并进一步区分同一语义类别下不同建筑立面构件的实例编号。\n\nCity-Facade 数据由车载移动激光扫描系统采集，覆盖厦门市 6 类典型城市街区场景，累计道路长度约 60 km，包含约 2 亿个带标注点。\n\n语义类别如下：\n\n| **编号** | **英文类别**              | **中文类别** |\n| -------- | ------------------------- | ------------ |\n| 0        | Background / Unclassified | 背景或未分类 |\n| 1        | Wall                      | 墙面         |\n| 2        | Window                    | 窗户         |\n| 3        | Door                      | 门           |\n| 4        | Roof                      | 屋顶         |\n| 5        | Advertisement             | 广告牌       |\n| 6        | Air Conditioner           | 空调外机     |\n| 7        | Rain Shed                 | 雨棚         |\n| 8        | Balcony                   | 阳台         |\n\n参赛流程：\n\n1. 在训练数据集上开发三维点云语义分割与实例分割模型；\n2. 使用训练完成的模型预测测试数据；\n3. 为每个测试点生成语义标签和实例标签；\n4. 按指定目录结构压缩预测结果；\n5. 将结果上传至 Codabench；\n6. 平台自动评测并更新排行榜。\n\n数据集项目地址：\n\n```text\nhttps://github.com/Ting-Devin-Han/City-Facade\n```\n\n## **Evaluation**\n\n主排名指标为综合得分：\n\n```text\nScore = 0.5 × mIoU + 0.5 × AP50\n```\n\n其中：\n\n- mIoU 用于评价语义分割精度；\n- AP50 用于评价实例分割精度。\n\n辅助指标包括：\n\n- mIoU\n- OA\n- 各类别 IoU\n- AP\n- AP25\n- AP50\n\n所有指标均为越高越好。\n\n每支队伍每日最多提交 5 次。\n\n若综合得分相同，建议依次按照 AP50、mIoU、AP25 和提交时间确定排名。\n\n## **Submission Format**\n\n参赛者须为测试集中的每个点提供语义标签和实例标签，并提交一个 ZIP 压缩包。\n\n压缩包根目录必须包含`predictions/`文件夹：\n\n```text\nsubmission.zip\n└── predictions/\n    ├── CAR/\n    │   ├── CAR-30-003_000000.txt\n    │   ├── CAR-30-003_000001.txt\n    │   └── ...\n    ├── JMC/\n    ├── SGS/\n    ├── XHR/\n    └── YWR/\n```\n\n目录名称和预测文件名称必须与测试数据保持一致。例如：\n\n```text\ntest/JMC/JMC-1-013_000000.txt\npredictions/JMC/JMC-1-013_000000.txt\n```\n\n每个预测 `.txt` 文件为 `N x 7` 数组，字段顺序固定为：\n\n```text\nX Y Z intensity instance_id semantic_label instance_score\n```\n\n其中：\n\n- `N` 为点云点数；\n- `X Y Z` 为三维坐标；\n- `intensity` 为激光强度；\n- `instance_id` 为预测实例编号；\n- `semantic_label` 为预测语义类别；\n- `instance_score` 为预测实例置信度\n\n字段索引从 `0` 开始时：\n\n```text\nX=0, Y=1, Z=2, intensity=3, instance_id=4, semantic_label=5, instance_score=6\n```\n\n提交文件必须满足：\n\n1. 每个测试 `.txt` 文件都必须有对应预测文件；\n2. 预测文件的相对路径和文件名必须与测试集一致；\n3. 每个预测文件的点数必须与对应测试文件完全一致；\n4. 点顺序必须与测试文件完全一致；\n5. `X Y Z intensity` 四列应保持与测试文件一致；\n6. `semantic_label` 必须为整数，取值范围为 `0` 到 `8`；\n7. `instance_id` 必须为非负整数；\n8. `instance_score` 必须是 `[0,1]` 范围内的有限数值，不允许使用 `NaN` 或正负无穷。\n9. 对于语义类别 `1` 到 `8` 的前景构件，不同实例应使用不同的实例编号；\n10. 对于类别 `0` 的背景或未分类点，`instance_id` 可设为 `0`；\n11. ZIP 根目录必须包含 `predictions/` 文件夹，不要额外嵌套一层目录。\n\n## **Citation**\n\n使用 City-Facade 数据集开展研究或发表成果时，请引用：\n\n```bibtex\n@article{chen2026cityfacade,\n  title={City-Facade: A city-level large-scale point cloud building facade dataset for semantic \\& instance segmentation},\n  author={Chen, Yiping and Li, Jonathan and Han, Ting and Feng, Huifang and Chen, Jun and Wang, Cheng},\n  journal={ISPRS Journal of Photogrammetry and Remote Sensing},\n  volume={232},\n  pages={675--688},\n  year={2026},\n  doi={10.1016/j.isprsjprs.2026.01.003}\n}\n```",
+        "content_zh": "# **Building Facade Point Cloud Semantic/Instance Segmentation**\n\n## **Overview**\n\nThis track uses the City-Facade dataset to conduct semantic segmentation and instance segmentation of building facade point clouds.\n\nParticipants need to predict semantic categories for each point in the test set and further distinguish instance numbers of different building facade components within the same semantic category.\n\nThe City-Facade dataset is collected by vehicle-mounted mobile laser scanning systems, covering 6 typical urban street scene categories in Xiamen City, with a total road length of approximately 60 km and containing approximately 200 million annotated points.\n\nSemantic categories are as follows:\n\n| **ID** | **English Category**      | **Chinese Category** |\n| ------ | ------------------------- | -------------------- |\n| 0      | Background / Unclassified | Background/Unclassified |\n| 1      | Wall                      | Wall                 |\n| 2      | Window                    | Window               |\n| 3      | Door                      | Door                 |\n| 4      | Roof                      | Roof                 |\n| 5      | Advertisement             | Advertisement Board  |\n| 6      | Air Conditioner           | Air Conditioner Unit |\n| 7      | Rain Shed                 | Rain Shed            |\n| 8      | Balcony                   | Balcony              |\n\nCompetition workflow:\n\n1. Develop 3D point cloud semantic and instance segmentation models on the training dataset;\n2. Use the trained model to predict test data;\n3. Generate semantic labels and instance labels for each test point;\n4. Compress prediction results according to the specified directory structure;\n5. Upload results to Codabench;\n6. The platform automatically evaluates and updates the leaderboard.\n\nDataset project address:\n\n```text\nhttps://github.com/gorgeouseping/City-Facade\n```\n\n## **Evaluation**\n\nThe main ranking metric is the comprehensive score:\n\n```text\nScore = 0.5 × mIoU + 0.5 × AP50\n```\n\nWhere:\n\n- mIoU is used to evaluate semantic segmentation accuracy;\n- AP50 is used to evaluate instance segmentation accuracy.\n\nAuxiliary metrics include:\n\n- mIoU\n- OA\n- IoU for each category\n- AP\n- AP25\n- AP50\n\nAll metrics are higher the better.\n\nEach team can submit a maximum of 5 times per day.\n\nIf the comprehensive score is the same, it is recommended to determine rankings in order by AP50, mIoU, AP25, and submission time.\n\n## **Submission Format**\n\nParticipants must provide semantic labels and instance labels for each point in the test set and submit a ZIP compressed package.\n\n```text\nsubmission.zip\n└── predictions/\n    ├── CAR/\n    │   ├── CAR-30-003_000000.txt\n    │   ├── CAR-30-003_000001.txt\n    │   └── ...\n    ├── JMC/\n    ├── SGS/\n    └── ...\n```\n\nDirectory names and prediction file names must be consistent with the test data.\n\nEach TXT file contains 6 fields:\n\n```text\nX Y Z intensity semantic_label instance_id\n```\n\nArray dimensions are:\n\n```text\nN × 6\n```\n\nWhere:\n\n- `N` is the number of points in the point cloud;\n- `X Y Z` are 3D coordinates;\n- `intensity` is laser intensity;\n- `semantic_label` is the predicted semantic category;\n- `instance_id` is the predicted instance number.\n\nSubmitted files must satisfy:\n\n1. The number and order of points are completely consistent with the original test files;\n2. The 3D coordinates and intensity fields must not be modified;\n3. Semantic category ID range is 0-8;\n4. Instance IDs must be non-negative integers;\n5. Different instances use different instance IDs;\n6. Prediction file directories and file names must be consistent with the test set;\n7. The ZIP root directory must contain a `predictions` folder.\n\n## **Citation**\n\nWhen using the City-Facade dataset, please cite:\n\n```bibtex\n@article{chen2026cityfacade,\n  title={City-Facade: A city-level large-scale building facade point cloud dataset for semantic and instance segmentation},\n  author={Chen, Yiping and Li, Jonathan and Han, Ting and Feng, Huifang and Chen, Jun and Wang, Cheng},\n  journal={ISPRS Journal of Photogrammetry and Remote Sensing},\n  volume={232},\n  pages={675--688},\n  year={2026},\n  doi={10.1016/j.isprsjprs.2026.01.003}\n}\n```"
+      }
+    ]
+  },
   "16257": {
     "id": 16257,
     "title": "SUFE_DL_FinalProject_Vision",
@@ -480,7 +480,7 @@
     "description_zh": "上海财经大学深度学习课程 - 最终项目 - 计算机视觉",
     "created_by": "ntulc",
     "created_when": "2026-05-11T19:42:24.060326Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-18-1779115404/081a3e46c671/Shanghai_University_of_Finance_and_.jpg?AWSAccessKeyId=codabench-prod&Signature=%2BJHvA3FtHULDuvm8SrI5FnXl%2Fm0%3D&Expires=1787714444",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-18-1779115404/081a3e46c671/Shanghai_University_of_Finance_and_.jpg?AWSAccessKeyId=codabench-prod&Signature=2XV0rLI%2Fii9mC9y%2F5QAp6PFW4ew%3D&Expires=1787801098",
     "participants_count": 49,
     "submissions_count": 215,
     "first_phase_start": null,
@@ -515,9 +515,9 @@
     "description_zh": "欢迎来到首届\"重演化身视频中远程操作者身份验证\"国际竞赛。本竞赛将与[ACCV2026](https://https://accv2026.org/)联合举办。",
     "created_by": "allam",
     "created_when": "2026-07-27T05:47:11.519603Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=onoErVDT2evj5muJtuXbsRAf5cU%3D&Expires=1787714413",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=yvzo4NLiYRaForGQEwVLpJ8sKFU%3D&Expires=1787801077",
     "participants_count": 22,
-    "submissions_count": 13,
+    "submissions_count": 14,
     "first_phase_start": null,
     "phases": [
       {
