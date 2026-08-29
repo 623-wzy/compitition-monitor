@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>2026年“新智砺剑”比赛-红外视频卫星空中动目标检测赛道 — Codabench 竞赛监测</title>
+<title>NTU CE7454 — Codabench 竞赛监测</title>
 <style>
 :root {
     --bg: #0f1117;
@@ -99,34 +99,142 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
 </header>
 <div class="detail-wrap">
   <a class="back-link" href="index.html">← 返回竞赛目录</a>
-  <h2>2026年“新智砺剑”比赛-红外视频卫星空中动目标检测赛道</h2>
+  <h2>NTU CE7454</h2>
   <div class="detail-meta">
-    <span>ID: 17590</span>
-    <span>创建者: irnewbie</span>
-    <span>创建时间: 2026-07-20</span>
-    <span>参与人数: 31</span>
-    <span>提交次数: 439</span>
-    <a class="ext-link" href="https://www.codabench.org/competitions/17590/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+    <span>ID: 17931</span>
+    <span>创建者: weichen2383</span>
+    <span>创建时间: 2026-08-28</span>
+    <span>参与人数: 1</span>
+    <span>提交次数: 4</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/17931/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
   </div>
 
   <div class="section">
     <h3>竞赛描述</h3>
-    <div class="page-content">我注意到你提供的文本已经是简体中文，我原样返回：
-
-详情请看比赛内部官网详情页</div>
+    <div class="page-content">这个迷你挑战的目标是设计和训练一个用于虚假面部图像检测的网络。</div>
   </div>
 
   <div class="section">
     <h3>竞赛阶段</h3>
     <table class="phases-table">
       <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
-      <tbody><tr><td><span class='badge badge-dev'>开发</span> 模型训练与验证</td><td>2026-07-20</td><td>2026-08-28</td><td>30</td></tr><tr><td><span class='badge badge-test'>测试</span> 最终评测</td><td>2026-08-28</td><td>2026-08-31</td><td>2</td></tr></tbody>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development Phase</td><td>2026-08-31</td><td>2026-10-04</td><td>5</td></tr><tr><td><span class='badge badge-test'>测试</span> Final_Test_phase</td><td>2026-10-04</td><td>2026-10-05</td><td>5</td></tr></tbody>
     </table>
   </div>
 
-<div class='section'><h3>赛事结果</h3><div class='page-content'>这段文本已经是中文，原样返回：
+<div class='section'><h3>Overview</h3><div class='page-content'># AI生成图像检测与来源归属
 
-详情请看比赛内部官网详情页</div></div>
+最近的文本到图像生成系统能够产生高度逼真的图像，这些图像越来越难以与真实照片区分。本小挑战赛的目标是设计和训练一个图像分类网络，该网络可以判断图像是**真实还是AI生成**，以及对于AI生成的图像，识别其**源模型**。
+
+本挑战赛作为**NTU CE7454**课程的一部分组织。
+
+我们将问题定义为**三类图像分类任务**：
+
+* `0` — 真实图像
+* `1` — 由**模型A**生成的图像
+* `2` — 由**模型B**生成的图像
+
+模型A和模型B的身份和实现细节不会被披露。你的模型应该从提供的训练数据中学习可泛化的视觉特征，而不是依赖于对基础生成系统的了解。
+
+所有发布的图像都是分辨率为**512 × 512**的RGB JPEG文件。
+
+数据集包括：
+
+| 划分       |  真实 | 模型A | 模型B |  总计 | 标签已发布？ |
+| ----------- | ----: | ------: | ------: | -----: | ---------------- |
+| 训练集    | 5,000 |   5,000 |   5,000 | 15,000 | 是              |
+| 开发集 |   300 |     300 |     300 |    900 | 否               |
+| 测试集        |   500 |     500 |     500 |  1,500 | 否               |
+
+训练集图像遵循文件名格式：
+
+```text
+index_label.jpg
+```
+
+例如：
+
+```text
+128_2.jpg
+```
+
+表示训练图像`128`，类别标签为`2`。
+
+开发集和测试集图像遵循以下格式：
+
+```text
+index.jpg
+```
+
+它们的文件名不显示相应的类别标签。开发集和测试集的真实标签由教学团队保留。
+
+开发集可用于根据教学团队宣布的评估程序进行模型选择。**最终项目排名仅根据隐藏的测试集确定**。
+
+---
+
+### 🚨 重要提交通知
+
+测试集将发布于：
+
+**[DD Month YYYY]**
+
+最终提交截止时间为：
+
+**[DD Month YYYY, HH:MM]**
+
+所有时间遵循课程网站上公布的时区。
+
+⚠️ **请不要等到最后一刻再提交。** 参与者有责任确保他们的提交在截止日期前成功上传并格式正确。
+
+---
+
+### 评估
+
+最终评估指标是**分类准确率**：
+
+```text
+准确率 = 正确分类的测试图像数 / 测试图像总数
+```
+
+每个测试图像权重相等。
+
+预测必须是以下整数标签：
+
+```text
+{0, 1, 2}
+```
+
+测试集的真实标签**不会**被发布。
+
+解决方案将根据其在隐藏测试集上的准确率进行排名。
+
+---
+
+### 常见问题
+
+**在联系教学团队之前，请仔细阅读本部分。感谢！**
+
+* 这是一个**个人项目**。每个学生必须开发并提交自己的解决方案。
+
+* 你的模型必须包含**不超过12,300,000个可训练参数**。
+
+* 你的模型必须**从零开始训练**。
+
+* **不允许使用预训练权重**，包括ImageNet预训练初始化。
+
+* **不允许使用外部数据**。你只能使用提供的CE7454项目数据集进行训练。
+
+* 不允许外部图像数据、外部标签、从外部模型获得的伪标签以及额外生成的训练图像。
+
+* **不允许模型集成**。
+
+* 也不允许测试时模型集成和合并来自多个独立训练模型的预测。
+
+* **不允许来自外部或较大教师模型的知识蒸馏**。
+
+* 允许使用标准的数据增强和正则化技术，前提是它们仅应用于提供的训练图像。
+
+* 你不得尝试通过文件名、元数据、手动标签、信息泄露或其他方式恢复隐藏的开发或测试标签。</div></div>
 
 </div>
 </body>
