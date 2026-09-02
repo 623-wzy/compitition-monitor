@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Multi-Sensor LiDAR SLAM Challenge 2026 - LiDAR-Visual-Inertial — Codabench 竞赛监测</title>
+<title>NTU CE7454 — Codabench 竞赛监测</title>
 <style>
 :root {
     --bg: #0f1117;
@@ -99,58 +99,142 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
 </header>
 <div class="detail-wrap">
   <a class="back-link" href="index.html">← 返回竞赛目录</a>
-  <h2>Multi-Sensor LiDAR SLAM Challenge 2026 - LiDAR-Visual-Inertial</h2>
+  <h2>NTU CE7454</h2>
   <div class="detail-meta">
-    <span>ID: 17678</span>
-    <span>创建者: yuhangxu</span>
-    <span>创建时间: 2026-07-26</span>
-    <span>参与人数: 13</span>
-    <span>提交次数: 60</span>
-    <a class="ext-link" href="https://www.codabench.org/competitions/17678/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+    <span>ID: 17931</span>
+    <span>创建者: weichen2383</span>
+    <span>创建时间: 2026-08-28</span>
+    <span>参与人数: 9</span>
+    <span>提交次数: 4</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/17931/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
   </div>
 
   <div class="section">
     <h3>竞赛描述</h3>
-    <div class="page-content">LiDAR-视觉-惯性SLAM赛道的纯翻译评估</div>
+    <div class="page-content">这个迷你挑战的目标是设计和训练一个用于检测虚假面部图像的网络。</div>
   </div>
 
   <div class="section">
     <h3>竞赛阶段</h3>
     <table class="phases-table">
       <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
-      <tbody><tr><td><span class='badge badge-test'>测试</span> Official Evaluation</td><td>2026-07-17</td><td>2026-09-20</td><td>5</td></tr></tbody>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development Phase</td><td>2026-08-30</td><td>2026-10-11</td><td>5</td></tr><tr><td><span class='badge badge-test'>测试</span> Final_Test_phase</td><td>2026-10-11</td><td>2026-10-17</td><td>3</td></tr></tbody>
     </table>
   </div>
 
-<div class='section'><h3>Overview</h3><div class='page-content'># LiDAR视觉惯性SLAM
+<div class='section'><h3>Overview</h3><div class='page-content'># AI生成图像检测与来源识别
 
-这是多传感器LiDAR SLAM挑战赛2026的独立LiDAR视觉惯感融合赛道。参赛者本地处理两个发布场景并仅提交估计轨迹。可靠的地面真值及其时间戳在Codabench上保持私密。
+最近的文本到图像生成系统能够生成高度逼真的图像，这些图像越来越难以与真实照片区分。本小型挑战赛的目标是设计并训练一个图像分类网络，以确定图像是**真实图像还是AI生成**，以及对于AI生成的图像，**识别其源模型**。
 
-两个场景`scene_0001`和`scene_0002`为必需。完成没有硬性阈值；轨迹覆盖不足会降低AUC召回率和最终分数。
+本挑战赛是**NTU CE7454**课程的一部分。
 
-该数据集由Airy LiDAR及其内置IMU加上前左和前右Seeker鱼眼相机采集。以下图像仅为路线形状参考，不包含地面真值。
+我们将问题制定为**三类图像分类任务**：
 
-![场景1轨迹参考](images/scene_0001_trajectory_reference.png)
+* `0` — 真实图像
+* `1` — 由**模型A**生成的图像
+* `2` — 由**模型B**生成的图像
 
-![场景2轨迹参考](images/scene_0002_trajectory_reference.png)</div></div><div class='section'><h3>Submission</h3><div class='page-content'># 提交格式
+模型A和模型B的身份和实现细节将不会公开。您的模型应该从提供的训练数据中学习可泛化的视觉特征，而不是依赖于对底层生成系统的知识。
 
-上传一个ZIP文件，其根目录包含 `README.md` 和 `trajectories/scene_0001.txt` 以及 `trajectories/scene_0002.txt`。每个轨迹使用TUM格式：
+所有发布的图像均为RGB JPEG文件，分辨率为**512 × 512**。
+
+数据集包括：
+
+| 分组      | 真实 | 模型A | 模型B | 总计  | 标签已发布？ |
+| --------- | ---: | ----: | ----: | ----: | ---------- |
+| 训练集    | 5,000 | 5,000 | 5,000 | 15,000 | 是        |
+| 开发集    | 300   | 300   | 300   | 900    | 否        |
+| 测试集    | 500   | 500   | 500   | 1,500  | 否        |
+
+训练图像遵循文件名格式：
 
 ```text
-timestamp tx ty tz qx qy qz qw
+index_label.jpg
 ```
 
-时间戳必须严格递增。数值必须是有限的，四元数必须非零。提交次数无限制。仅最新的有效提交将参与排名。</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'># 评估方法
+例如：
 
-评分使用EVO时间同步和每个场景一个无缩放SE(3)对齐与私密参考轨迹进行对比。完成度没有硬阈值且公开发布；缺失的位姿对会降低AUC召回率。评估时间戳和真值不公开。
+```text
+128_2.jpg
+```
 
-ATE是EVO平移APE RMSE。AUC使用EVO单帧平移RPE和F1-AUC协议。RTE是EVO平移RPE的RMSE，在1m、5m和10m处进行归一化。总体和单场景RTE@1m、RTE@5m和RTE@10m均与合并RTE一起公开。超过0.3s的间隙永远不会跨越。
+表示训练图像`128`，类别标签为`2`。
 
-AUC和RTE使用对齐的世界坐标系位置（姿态为恒等）计算，因此固定的参与者机体坐标系约定不会影响平移分数。每个场景使用一个场景级SE(3)对齐。
+开发集和测试集图像遵循格式：
 
-总分数为`100 * (0.40 * AUC + 0.40 * exp(-ATE / tau_ate) + 0.20 * exp(-RTE / tau_rte))`。参考结果为发布的参考：其总体ATE和RTE在最终评分器冻结后定义`tau_ate`和`tau_rte`。
+```text
+index.jpg
+```
 
-结果公开总分、总体和单场景的AUC/ATE/合并RTE/RTE@1m/RTE@5m/RTE@10m、归一化分数分量、完成度和匹配计数。每个时间戳的误差、关联、对齐变换和真值保持私密。</div></div>
+其文件名不显示相应的类别标签。开发集和测试集的真实标签由教学团队保管。
+
+开发集可根据教学团队宣布的评估程序用于模型选择。**最终项目排名仅在隐藏测试集上确定**。
+
+---
+
+### 🚨 重要提交通知
+
+测试集将在以下时间发布：
+
+**[2026年10月11日 23:59]**
+
+最终提交截止时间为：
+
+**[2026年10月23日 23:59]**
+
+所有时间均遵循课程网站上宣布的时区。
+
+⚠️ **请勿等到最后一刻才提交。** 参与者有责任确保其提交在截止期限前成功上传并格式正确。
+
+---
+
+### 评估
+
+最终评估指标是**分类准确率**：
+
+```text
+准确率 = 正确分类的测试图像数 / 测试图像总数
+```
+
+每个测试图像的权重相等。
+
+预测必须为整数标签：
+
+```text
+{0, 1, 2}
+```
+
+测试集的真实标签**不会**被公开。
+
+解决方案将根据其在隐藏测试集上的准确率进行排名。
+
+---
+
+### 常见问题
+
+**请在联系教学团队前仔细阅读本部分。谢谢！**
+
+* 本项目为**个人项目**。每位学生必须独立开发并提交自己的解决方案。
+
+* 您的模型包含的可训练参数**不超过12,300,000个**。
+
+* 您的模型必须**从零开始训练**。
+
+* **不允许使用预训练权重**，包括ImageNet预训练初始化。
+
+* **不允许使用外部数据**。您只能使用提供的CE7454项目数据集进行训练。
+
+* **不允许**外部图像数据、外部标签、从外部模型获得的伪标签和额外的生成训练图像。
+
+* **不允许模型集成**。
+
+* **不允许测试时模型集成和合并来自多个独立训练模型的预测**。
+
+* **不允许从外部或更大的教师模型进行知识蒸馏**。
+
+* 允许标准数据增强和正则化技术，前提是仅将其应用于提供的训练图像。
+
+* 您不得尝试通过文件名、元数据、手动标注、信息泄露或其他非法方式恢复隐藏的开发或测试标签。</div></div>
 
 </div>
 </body>
