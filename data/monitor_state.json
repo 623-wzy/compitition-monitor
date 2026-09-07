@@ -6,7 +6,7 @@
     "description_zh": "LiDAR-视觉-惯性SLAM赛道的纯翻译评估",
     "created_by": "yuhangxu",
     "created_when": "2026-07-26T09:51:43.642130Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059503/c4f5eea4397e/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=iG%2ForsKpLj3XDXMKBVhbMsLaB%2Fk%3D&Expires=1788667727",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059503/c4f5eea4397e/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=s2wUDaouwZDUG0rvWWW43PU99Ao%3D&Expires=1788754377",
     "participants_count": 16,
     "submissions_count": 66,
     "first_phase_start": null,
@@ -47,9 +47,9 @@
     "description_zh": "LiDAR-惯性SLAM赛道的仅翻译评估。",
     "created_by": "yuhangxu",
     "created_when": "2026-07-26T09:50:41.414250Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059441/adc6bc07e4f0/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=2c7QaZDWYtCXj1sm7ZXGU8XlJHQ%3D&Expires=1788667728",
-    "participants_count": 26,
-    "submissions_count": 282,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059441/adc6bc07e4f0/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=H4qu4KKqx1FODrhROa8La8XdG%2Bk%3D&Expires=1788754377",
+    "participants_count": 29,
+    "submissions_count": 295,
     "first_phase_start": null,
     "phases": [
       {
@@ -88,9 +88,9 @@
     "description_zh": "This competition focuses on fine-grained understanding of urban-level building facade components, utilizing the City-Fac dataset.\n\nThe data is collected by vehicle-mounted mobile laser scanning systems, covering multiple types of typical urban street blocks in Xiamen, with a cumulative road length of approximately 60 km. The dataset includes fine-grained building facade element annotations such as walls, windows, doors, roofs, billboards, air conditioning units, canopies, and balconies, with both semantic-level and instance-level labels provided.\n\nParticipants need to identify independent building facade component instances in the test point cloud and output the corresponding semantic categories and instance numbers.\n\nThe competition adopts a result submission mode. Participants complete model training and inference locally and only submit prediction results to Codabench, where the platform automatically scores using hidden instance labels.",
     "created_by": "jianlongguan",
     "created_when": "2026-06-26T12:50:09.783065Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=QoJJdxr%2FiTHlUvgaZxY%2Bw5P1sws%3D&Expires=1788667734",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=wzpCZOILaDG4gD4botqG3ikICyc%3D&Expires=1788754393",
     "participants_count": 24,
-    "submissions_count": 285,
+    "submissions_count": 293,
     "first_phase_start": null,
     "phases": [
       {
@@ -117,7 +117,7 @@
     "description_zh": "上海财经大学深度学习课程 - 最终项目 - 计算机视觉",
     "created_by": "ntulc",
     "created_when": "2026-05-11T19:42:24.060326Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-18-1779115404/081a3e46c671/Shanghai_University_of_Finance_and_.jpg?AWSAccessKeyId=codabench-prod&Signature=LGF4OoBKx6scjHIm4W4AYkfRv%2B0%3D&Expires=1788667745",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-18-1779115404/081a3e46c671/Shanghai_University_of_Finance_and_.jpg?AWSAccessKeyId=codabench-prod&Signature=2sA2LWHq8TVJwQCzC5R%2Fa5IKH2Q%3D&Expires=1788754410",
     "participants_count": 49,
     "submissions_count": 215,
     "first_phase_start": null,
@@ -152,8 +152,8 @@
     "description_zh": "欢迎来到首届\"重演化身视频中远程操作者身份验证\"国际竞赛。本竞赛将与[ACCV2026](https://https://accv2026.org/)联合举办。",
     "created_by": "allam",
     "created_when": "2026-07-27T05:47:11.519603Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=BeHMfM%2Fzq%2BJxCLLDFZGGXWHZfCo%3D&Expires=1788667727",
-    "participants_count": 25,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=GbcQHPwP1dGRzIax41lT2O4g%2BU4%3D&Expires=1788754377",
+    "participants_count": 26,
     "submissions_count": 15,
     "first_phase_start": null,
     "phases": [
@@ -205,9 +205,9 @@
     "description_zh": "在 Vaani 语料库的真实印度语言语音录音中检测噪声事件（开始和结束时间戳）。参赛者必须利用多层注释的训练数据（黄金级/白银级/青铜级）来构建稳健的噪声事件检测系统，该系统将基于事件级 F1 和分段 Dice 进行评估。",
     "created_by": "nagu_iitkgp",
     "created_when": "2026-08-14T17:27:12.345457Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-14-1786728432/29a3bf95a91d/logo.png?AWSAccessKeyId=codabench-prod&Signature=Rg1MX4ctS0MsEJf6Er2a5fA9pB4%3D&Expires=1788667730",
-    "participants_count": 135,
-    "submissions_count": 439,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-14-1786728432/29a3bf95a91d/logo.png?AWSAccessKeyId=codabench-prod&Signature=eNa8qIuQJzEXIjHVSEujSf18rY4%3D&Expires=1788754376",
+    "participants_count": 141,
+    "submissions_count": 455,
     "first_phase_start": null,
     "phases": [
       {
@@ -246,9 +246,9 @@
     "description_zh": "这个迷你挑战的目标是设计和训练一个用于检测虚假面部图像的网络。",
     "created_by": "weichen2383",
     "created_when": "2026-08-28T08:38:04.000911Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-28-1787906284/99c1b887dc56/Screenshot_2026-08-28_at_15.17.27.png?AWSAccessKeyId=codabench-prod&Signature=VvMyYUFwfgCh%2BPs4t%2Bqgvmg9AxQ%3D&Expires=1788667726",
-    "participants_count": 53,
-    "submissions_count": 64,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-28-1787906284/99c1b887dc56/Screenshot_2026-08-28_at_15.17.27.png?AWSAccessKeyId=codabench-prod&Signature=nfjnbEZVliTeC3Cp9KVuGIc1yJM%3D&Expires=1788754369",
+    "participants_count": 71,
+    "submissions_count": 67,
     "first_phase_start": null,
     "phases": [
       {
