@@ -5,8 +5,8 @@
   "created_by": "allam",
   "owner_display_name": "D3-OU",
   "created_when": "2026-07-27T05:47:11.519603Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=LQ7DFMzBywrNywAAYocLpuKOMVo%3D&Expires=1788964075",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2_icon.png?AWSAccessKeyId=codabench-prod&Signature=mgiBvTiEEQLA%2BkWCEU1n6NFDehQ%3D&Expires=1788964075",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=%2F0PC%2FONAy1zfGZeWPjA7VtGiK6Q%3D&Expires=1789050790",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2_icon.png?AWSAccessKeyId=codabench-prod&Signature=goQncIJ8GfBeLf1MCNhe8B3m9Mg%3D&Expires=1789050790",
   "terms": "The competition is open to research teams. \n\nPlease  register and join the competition. \n\nNote: Please use your institutional email to register for the competition, do NOT use gmail.com or qq.com, otherwise the registration will not be approved.\n\nParticipants are required to sign the dataset license agreement and send the scanned PDF to alsherfawi@yy.d3c.osaka-u.ac.jp cc: allam@yy.d3c.osaka-u.ac.jp. You can download the agreement from [here](http://www.am.sanken.osaka-u.ac.jp/BiometricDB/dataset/Competition/WBA2026/WBA_ACCV_2026%20Competition_License%20Agreement.pdf).",
   "pages": [
     {
@@ -177,7 +177,7 @@
   ],
   "registration_auto_approve": false,
   "description": "Welcome to the first International Competition on Verifying Teleoperator Identity in Reenacted Avatar Videos. The competition will be in conjunction with [ACCV2026](https://https://accv2026.org/])",
-  "participants_count": 26,
+  "participants_count": 28,
   "submissions_count": 15,
   "queue": null,
   "enable_detailed_results": true,

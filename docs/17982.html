@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NTU CE7454 — Codabench 竞赛监测</title>
+<title>Neural Interfaces 2026 — Track 2: BCI Decoding — Codabench 竞赛监测</title>
 <style>
 :root {
     --bg: #0f1117;
@@ -99,142 +99,116 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
 </header>
 <div class="detail-wrap">
   <a class="back-link" href="index.html">← 返回竞赛目录</a>
-  <h2>NTU CE7454</h2>
+  <h2>Neural Interfaces 2026 — Track 2: BCI Decoding</h2>
   <div class="detail-meta">
-    <span>ID: 17931</span>
-    <span>创建者: weichen2383</span>
-    <span>创建时间: 2026-08-28</span>
-    <span>参与人数: 86</span>
-    <span>提交次数: 109</span>
-    <a class="ext-link" href="https://www.codabench.org/competitions/17931/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+    <span>ID: 17982</span>
+    <span>创建者: sylvchev</span>
+    <span>创建时间: 2026-09-07</span>
+    <span>参与人数: 6</span>
+    <span>提交次数: 4</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/17982/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
   </div>
 
   <div class="section">
     <h3>竞赛描述</h3>
-    <div class="page-content">这个迷你挑战的目标是设计和训练一个用于检测虚假面部图像的网络。</div>
+    <div class="page-content">从短EEG窗口解码提示的心理命令（运动想象）。提交内容包含已训练的模型（代码+权重）；平台在保留数据集上运行仅推理模式，并按平衡准确率进行排名。由benchopt+neuralbench提供支持。</div>
   </div>
 
   <div class="section">
     <h3>竞赛阶段</h3>
     <table class="phases-table">
       <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
-      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development Phase</td><td>2026-08-30</td><td>2026-10-11</td><td>5</td></tr><tr><td><span class='badge badge-test'>测试</span> Final_Test_phase</td><td>2026-10-11</td><td>2026-10-17</td><td>3</td></tr></tbody>
+      <tbody><tr><td><span class='badge badge-other'>其他</span> Warmup Phase</td><td>2026-08-31</td><td>2026-10-15</td><td>5</td></tr></tbody>
     </table>
   </div>
 
-<div class='section'><h3>Overview</h3><div class='page-content'># AI生成图像检测与来源识别
+<div class='section'><h3>Competition</h3><div class='page-content'>&lt;div class=&quot;ni26&quot;&gt;
+&lt;p class=&quot;ni26-eyebrow&quot;&gt;神经界面 2026 · 赛道 02 · 跨会话偏移&lt;/p&gt;
+&lt;h1&gt;脑机接口解码&lt;/h1&gt;
+&lt;p class=&quot;ni26-lede&quot;&gt;从短EEG窗口中解码提示的心智命令——运动想象、心算、词语联想。&lt;/p&gt;
 
-最近的文本到图像生成系统能够生成高度逼真的图像，这些图像越来越难以与真实照片区分。本小型挑战赛的目标是设计并训练一个图像分类网络，以确定图像是**真实图像还是AI生成**，以及对于AI生成的图像，**识别其源模型**。
+&lt;figure class=&quot;ni26-figure&quot;&gt;
+  &lt;img src=&quot;https://neural-interfaces26.github.io/assets/img/figures/bci-track.png&quot;
+       srcset=&quot;https://neural-interfaces26.github.io/assets/img/figures/bci-track.png 335w, https://neural-interfaces26.github.io/assets/img/figures/bci-track@2x.png 669w&quot;
+       sizes=&quot;(min-width: 768px) 640px, 100vw&quot; width=&quot;335&quot; height=&quot;218&quot;
+       alt=&quot;从同一受试者后续会话的EEG中解码提示的心智命令&quot; /&gt;
+  &lt;figcaption&gt;从同一受试者后续会话的EEG中解码提示的心智命令。&lt;/figcaption&gt;
+&lt;/figure&gt;
 
-本挑战赛是**NTU CE7454**课程的一部分。
+&lt;p&gt;控制性偏移为&lt;strong&gt;跨会话&lt;/strong&gt;：模型在早期会话上训练，在同一受试者的后续会话上进行评分。&lt;/p&gt;</div></div><div class='section'><h3>Participation</h3><div class='page-content'># 如何参与
 
-我们将问题制定为**三类图像分类任务**：
+您的提交是一个包含 `submission.py` 的文件夹，该文件定义一个 **benchopt 求解器**，以及您的模型所需的任何权重文件。竞赛服务器仅对其进行**推理评估**：您的模型必须已完全训练好。
 
-* `0` — 真实图像
-* `1` — 由**模型A**生成的图像
-* `2` — 由**模型B**生成的图像
+## 协议
 
-模型A和模型B的身份和实现细节将不会公开。您的模型应该从提供的训练数据中学习可泛化的视觉特征，而不是依赖于对底层生成系统的知识。
+继承 `CompetSolver`（来自捆绑的 `compet_core` 包）并实现：
 
-所有发布的图像均为RGB JPEG文件，分辨率为**512 × 512**。
+- `load_model(self, meta)` — 构建您的模型并从 `meta[&quot;weights_dir&quot;]` 加载您随附的权重，将其放在 `meta[&quot;device&quot;]` 上。返回一个暴露 `predict(X)` 的对象。
+- `predict(X)` 接收已在 `meta[&quot;device&quot;]` 上的 torch 批次 `X: (B, C, T)`；期望的输出形状取决于赛道（参见竞赛说明 — 例如类标签 `(B,)`、延迟 `(B,)`、嵌入 `(B, D)` 或关节角度序列 `(B, J, T)`）。
 
-数据集包括：
+`meta` 还包含 `sfreq, ch_names, chs_info, n_chans, n_times` 和赛道的输出大小（`n_classes` / `n_outputs` / `n_joints`）。
 
-| 分组      | 真实 | 模型A | 模型B | 总计  | 标签已发布？ |
-| --------- | ---: | ----: | ----: | ----: | ---------- |
-| 训练集    | 5,000 | 5,000 | 5,000 | 15,000 | 是        |
-| 开发集    | 300   | 300   | 300   | 900    | 否        |
-| 测试集    | 500   | 500   | 500   | 1,500  | 否        |
+可选地，实现 `fit(self, model, train_loader)` — 它仅在**本地**运行（从不在服务器上），让您通过起始工具包用确切的竞赛数据训练您的模型。
 
-训练图像遵循文件名格式：
+```python
+import torch
 
-```text
-index_label.jpg
+import benchmark_utils  # noqa: F401 — 定位 compet_core
+from compet_core.base_solver import CompetSolver
+
+
+class Solver(CompetSolver):
+    name = &quot;MyModel&quot;
+    requirements = CompetSolver.requirements + [&quot;pip::my-model-pkg&quot;]
+
+    def load_model(self, meta):
+        model = build_my_model(
+            n_chans=meta[&quot;n_chans&quot;], n_times=meta[&quot;n_times&quot;],
+        )
+        state = torch.load(meta[&quot;weights_dir&quot;] / &quot;weights.pt&quot;,
+                           map_location=meta[&quot;device&quot;])
+        model.load_state_dict(state)
+        return model.to(meta[&quot;device&quot;]).eval()
 ```
 
-例如：
+您的 `predict` 可以是返回模型的一个方法（纯 PyTorch — 模型内不需要任何 benchopt、neuralset 或 neuralbench 知识）。
 
-```text
-128_2.jpg
+## 本地测试
+
+起始工具包就是基准本身。从竞赛仓库运行（无需安装仓库 — `benchmark_utils` 定位共享的 `compet_core` 包）：
+
+```bash
+benchopt install tracks/&lt;track&gt;    # 求解器/数据集要求
+benchopt run tracks/&lt;track&gt; -d Simulated   # 零下载烟雾测试
 ```
 
-表示训练图像`128`，类别标签为`2`。
+在上传前迭代提交，将您的 `submission.py` 放入赛道的 `solvers/` 文件夹并运行同一命令；或用摄取程序精确镜像平台：
 
-开发集和测试集图像遵循格式：
-
-```text
-index.jpg
+```bash
+python codabench/ingestion_program/ingestion.py \
+    --submission-dir my_submission/ \
+    --benchmark-dir tracks/&lt;track&gt; --datasets Simulated
+python codabench/scoring_program/scoring.py \
+    --prediction-dir output/ --output-dir scores/
 ```
 
-其文件名不显示相应的类别标签。开发集和测试集的真实标签由教学团队保管。
+本地在真实数据上训练：`python tools/setup_data.py --track &lt;track&gt;` 一次性下载，然后将您求解器的 `fit` 与 `benchopt run tracks/&lt;track&gt;` 一起使用。
 
-开发集可根据教学团队宣布的评估程序用于模型选择。**最终项目排名仅在隐藏测试集上确定**。
+## 提交
 
----
+压缩提交文件夹（`submission.py` + 权重）并在*我的提交*选项卡上上传。基准和参考提交位于捆绑的 `solution/` 文件夹中。</div></div><div class='section'><h3>Timeline</h3><div class='page-content'># 时间表
 
-### 🚨 重要提交通知
+## 热身阶段 — 2026年9月16日至10月15日
 
-测试集将在以下时间发布：
+数据集、基线和启动工具包发布；每天最多可提交5次。在此阶段，使用公开数据集构建和调整你的模型。
 
-**[2026年10月11日 23:59]**
+## 密封最终阶段 — 2026年10月16日至11月16日（AoE）
 
-最终提交截止时间为：
+每天最多可提交2次；最终排名基于你最后五次密封提交中的最佳成绩，在保留的测试数据上进行评估。每个赛道的前3名将进行可重复性审计。
 
-**[2026年10月23日 23:59]**
+## 获奖者公布 — 2026年12月11-12日
 
-所有时间均遵循课程网站上宣布的时区。
-
-⚠️ **请勿等到最后一刻才提交。** 参与者有责任确保其提交在截止期限前成功上传并格式正确。
-
----
-
-### 评估
-
-最终评估指标是**分类准确率**：
-
-```text
-准确率 = 正确分类的测试图像数 / 测试图像总数
-```
-
-每个测试图像的权重相等。
-
-预测必须为整数标签：
-
-```text
-{0, 1, 2}
-```
-
-测试集的真实标签**不会**被公开。
-
-解决方案将根据其在隐藏测试集上的准确率进行排名。
-
----
-
-### 常见问题
-
-**请在联系教学团队前仔细阅读本部分。谢谢！**
-
-* 本项目为**个人项目**。每位学生必须独立开发并提交自己的解决方案。
-
-* 您的模型包含的可训练参数**不超过12,300,000个**。
-
-* 您的模型必须**从零开始训练**。
-
-* **不允许使用预训练权重**，包括ImageNet预训练初始化。
-
-* **不允许使用外部数据**。您只能使用提供的CE7454项目数据集进行训练。
-
-* **不允许**外部图像数据、外部标签、从外部模型获得的伪标签和额外的生成训练图像。
-
-* **不允许模型集成**。
-
-* **不允许测试时模型集成和合并来自多个独立训练模型的预测**。
-
-* **不允许从外部或更大的教师模型进行知识蒸馏**。
-
-* 允许标准数据增强和正则化技术，前提是仅将其应用于提供的训练图像。
-
-* 您不得尝试通过文件名、元数据、手动标注、信息泄露或其他非法方式恢复隐藏的开发或测试标签。</div></div>
+在悉尼举办的NeurIPS 2026竞赛工作坊上公布。</div></div>
 
 </div>
 </body>
