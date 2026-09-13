@@ -6,9 +6,9 @@
     "description_zh": "LiDAR-惯性SLAM赛道的仅翻译评估。",
     "created_by": "yuhangxu",
     "created_when": "2026-07-26T09:50:41.414250Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059441/adc6bc07e4f0/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=kutncCmw9TFDA87p5IIFr%2FfTuQU%3D&Expires=1789224223",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059441/adc6bc07e4f0/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=gdn8IKt0w3b7s8nGgbzpjCKzrrA%3D&Expires=1789310884",
     "participants_count": 35,
-    "submissions_count": 469,
+    "submissions_count": 484,
     "first_phase_start": null,
     "phases": [
       {
@@ -40,6 +40,35 @@
       }
     ]
   },
+  "17265": {
+    "id": 17265,
+    "title": "第十届全国激光雷达大会——City-Facade建筑立面点云实例分割大赛",
+    "description": "本比赛面向城市级建筑立面构件精细理解，采用City-Facade大规模三维点云数据集。\n\n数据由车载移动激光扫描系统采集，覆盖厦门市多类典型城市街区，累计道路长度约60 km。数据包含墙面、窗户、门、屋顶、广告牌、空调外机、雨棚和阳台等细粒度建筑立面要素标注，并提供语义级与实例级标签。\n\n参赛者需要识别测试点云中的独立建筑立面构件实例，并输出相应实例编号和语义类别。\n\n比赛采用结果提交模式。参赛者在本地完成模型训练和推理，仅向Codabench提交预测结果，平台使用隐藏实例标签进行自动评分。",
+    "description_zh": "This competition focuses on fine-grained understanding of urban-level building facade components, utilizing the City-Fac dataset.\n\nThe data is collected by vehicle-mounted mobile laser scanning systems, covering multiple types of typical urban street blocks in Xiamen, with a cumulative road length of approximately 60 km. The dataset includes fine-grained building facade element annotations such as walls, windows, doors, roofs, billboards, air conditioning units, canopies, and balconies, with both semantic-level and instance-level labels provided.\n\nParticipants need to identify independent building facade component instances in the test point cloud and output the corresponding semantic categories and instance numbers.\n\nThe competition adopts a result submission mode. Participants complete model training and inference locally and only submit prediction results to Codabench, where the platform automatically scores using hidden instance labels.",
+    "created_by": "jianlongguan",
+    "created_when": "2026-06-26T12:50:09.783065Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=hWCJqSwQNgSiLwTWP7%2BvjIqZL5k%3D&Expires=1789310895",
+    "participants_count": 34,
+    "submissions_count": 417,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 28803,
+        "name": "City-Facade建筑立面点云实例分割",
+        "start": "2026-06-05T00:00:00Z",
+        "end": "2026-09-20T23:59:00Z",
+        "max_submissions_per_day": 5
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "比赛说明",
+        "content": "# **建筑物立面点云语义/实例分割**\n\n## **Overview**\n\n本赛道采用 City-Facade 城市建筑立面点云数据集，开展建筑立面点云语义分割与实例分割。\n\n参赛者需要为测试集中的每个点预测语义类别，并进一步区分同一语义类别下不同建筑立面构件的实例编号。\n\nCity-Facade 数据由车载移动激光扫描系统采集，覆盖厦门市 6 类典型城市街区场景，累计道路长度约 60 km，包含约 2 亿个带标注点。\n\n语义类别如下：\n\n| **编号** | **英文类别**              | **中文类别** |\n| -------- | ------------------------- | ------------ |\n| 0        | Background / Unclassified | 背景或未分类 |\n| 1        | Wall                      | 墙面         |\n| 2        | Window                    | 窗户         |\n| 3        | Door                      | 门           |\n| 4        | Roof                      | 屋顶         |\n| 5        | Advertisement             | 广告牌       |\n| 6        | Air Conditioner           | 空调外机     |\n| 7        | Rain Shed                 | 雨棚         |\n| 8        | Balcony                   | 阳台         |\n\n参赛流程：\n\n1. 在训练数据集上开发三维点云语义分割与实例分割模型；\n2. 使用训练完成的模型预测测试数据；\n3. 为每个测试点生成语义标签和实例标签；\n4. 按指定目录结构压缩预测结果；\n5. 将结果上传至 Codabench；\n6. 平台自动评测并更新排行榜。\n\n数据集项目地址：\n\n```text\nhttps://github.com/Ting-Devin-Han/City-Facade\n```\n\n## **Evaluation**\n\n主排名指标为综合得分：\n\n```text\nScore = 0.5 × mIoU + 0.5 × AP50\n```\n\n其中：\n\n- mIoU 用于评价语义分割精度；\n- AP50 用于评价实例分割精度。\n\n辅助指标包括：\n\n- mIoU\n- OA\n- 各类别 IoU\n- AP\n- AP25\n- AP50\n\n所有指标均为越高越好。\n\n每支队伍每日最多提交 5 次。\n\n若综合得分相同，建议依次按照 AP50、mIoU、AP25 和提交时间确定排名。\n\n## **Submission Format**\n\n参赛者须为测试集中的每个点提供语义标签和实例标签，并提交一个 ZIP 压缩包。\n\n压缩包根目录必须包含`predictions/`文件夹：\n\n```text\nsubmission.zip\n└── predictions/\n    ├── CAR/\n    │   ├── CAR-30-003_000000.txt\n    │   ├── CAR-30-003_000001.txt\n    │   └── ...\n    ├── JMC/\n    ├── SGS/\n    ├── XHR/\n    └── YWR/\n```\n\n目录名称和预测文件名称必须与测试数据保持一致。例如：\n\n```text\ntest/JMC/JMC-1-013_000000.txt\npredictions/JMC/JMC-1-013_000000.txt\n```\n\n每个预测 `.txt` 文件为 `N x 7` 数组，字段顺序固定为：\n\n```text\nX Y Z intensity instance_id semantic_label instance_score\n```\n\n其中：\n\n- `N` 为点云点数；\n- `X Y Z` 为三维坐标；\n- `intensity` 为激光强度；\n- `instance_id` 为预测实例编号；\n- `semantic_label` 为预测语义类别；\n- `instance_score` 为预测实例置信度\n\n字段索引从 `0` 开始时：\n\n```text\nX=0, Y=1, Z=2, intensity=3, instance_id=4, semantic_label=5, instance_score=6\n```\n\n提交文件必须满足：\n\n1. 每个测试 `.txt` 文件都必须有对应预测文件；\n2. 预测文件的相对路径和文件名必须与测试集一致；\n3. 每个预测文件的点数必须与对应测试文件完全一致；\n4. 点顺序必须与测试文件完全一致；\n5. `X Y Z intensity` 四列应保持与测试文件一致；\n6. `semantic_label` 必须为整数，取值范围为 `0` 到 `8`；\n7. `instance_id` 必须为非负整数；\n8. `instance_score` 必须是 `[0,1]` 范围内的有限数值，不允许使用 `NaN` 或正负无穷。\n9. 对于语义类别 `1` 到 `8` 的前景构件，不同实例应使用不同的实例编号；\n10. 对于类别 `0` 的背景或未分类点，`instance_id` 可设为 `0`；\n11. ZIP 根目录必须包含 `predictions/` 文件夹，不要额外嵌套一层目录。\n\n## **Citation**\n\n使用 City-Facade 数据集开展研究或发表成果时，请引用：\n\n```bibtex\n@article{chen2026cityfacade,\n  title={City-Facade: A city-level large-scale point cloud building facade dataset for semantic \\& instance segmentation},\n  author={Chen, Yiping and Li, Jonathan and Han, Ting and Feng, Huifang and Chen, Jun and Wang, Cheng},\n  journal={ISPRS Journal of Photogrammetry and Remote Sensing},\n  volume={232},\n  pages={675--688},\n  year={2026},\n  doi={10.1016/j.isprsjprs.2026.01.003}\n}\n```",
+        "content_zh": "# **Building Facade Point Cloud Semantic/Instance Segmentation**\n\n## **Overview**\n\nThis track uses the City-Facade dataset to conduct semantic segmentation and instance segmentation of building facade point clouds.\n\nParticipants need to predict semantic categories for each point in the test set and further distinguish instance numbers of different building facade components within the same semantic category.\n\nThe City-Facade dataset is collected by vehicle-mounted mobile laser scanning systems, covering 6 typical urban street scene categories in Xiamen City, with a total road length of approximately 60 km and containing approximately 200 million annotated points.\n\nSemantic categories are as follows:\n\n| **ID** | **English Category**      | **Chinese Category** |\n| ------ | ------------------------- | -------------------- |\n| 0      | Background / Unclassified | Background/Unclassified |\n| 1      | Wall                      | Wall                 |\n| 2      | Window                    | Window               |\n| 3      | Door                      | Door                 |\n| 4      | Roof                      | Roof                 |\n| 5      | Advertisement             | Advertisement Board  |\n| 6      | Air Conditioner           | Air Conditioner Unit |\n| 7      | Rain Shed                 | Rain Shed            |\n| 8      | Balcony                   | Balcony              |\n\nCompetition workflow:\n\n1. Develop 3D point cloud semantic and instance segmentation models on the training dataset;\n2. Use the trained model to predict test data;\n3. Generate semantic labels and instance labels for each test point;\n4. Compress prediction results according to the specified directory structure;\n5. Upload results to Codabench;\n6. The platform automatically evaluates and updates the leaderboard.\n\nDataset project address:\n\n```text\nhttps://github.com/gorgeouseping/City-Facade\n```\n\n## **Evaluation**\n\nThe main ranking metric is the comprehensive score:\n\n```text\nScore = 0.5 × mIoU + 0.5 × AP50\n```\n\nWhere:\n\n- mIoU is used to evaluate semantic segmentation accuracy;\n- AP50 is used to evaluate instance segmentation accuracy.\n\nAuxiliary metrics include:\n\n- mIoU\n- OA\n- IoU for each category\n- AP\n- AP25\n- AP50\n\nAll metrics are higher the better.\n\nEach team can submit a maximum of 5 times per day.\n\nIf the comprehensive score is the same, it is recommended to determine rankings in order by AP50, mIoU, AP25, and submission time.\n\n## **Submission Format**\n\nParticipants must provide semantic labels and instance labels for each point in the test set and submit a ZIP compressed package.\n\n```text\nsubmission.zip\n└── predictions/\n    ├── CAR/\n    │   ├── CAR-30-003_000000.txt\n    │   ├── CAR-30-003_000001.txt\n    │   └── ...\n    ├── JMC/\n    ├── SGS/\n    └── ...\n```\n\nDirectory names and prediction file names must be consistent with the test data.\n\nEach TXT file contains 6 fields:\n\n```text\nX Y Z intensity semantic_label instance_id\n```\n\nArray dimensions are:\n\n```text\nN × 6\n```\n\nWhere:\n\n- `N` is the number of points in the point cloud;\n- `X Y Z` are 3D coordinates;\n- `intensity` is laser intensity;\n- `semantic_label` is the predicted semantic category;\n- `instance_id` is the predicted instance number.\n\nSubmitted files must satisfy:\n\n1. The number and order of points are completely consistent with the original test files;\n2. The 3D coordinates and intensity fields must not be modified;\n3. Semantic category ID range is 0-8;\n4. Instance IDs must be non-negative integers;\n5. Different instances use different instance IDs;\n6. Prediction file directories and file names must be consistent with the test set;\n7. The ZIP root directory must contain a `predictions` folder.\n\n## **Citation**\n\nWhen using the City-Facade dataset, please cite:\n\n```bibtex\n@article{chen2026cityfacade,\n  title={City-Facade: A city-level large-scale building facade point cloud dataset for semantic and instance segmentation},\n  author={Chen, Yiping and Li, Jonathan and Han, Ting and Feng, Huifang and Chen, Jun and Wang, Cheng},\n  journal={ISPRS Journal of Photogrammetry and Remote Sensing},\n  volume={232},\n  pages={675--688},\n  year={2026},\n  doi={10.1016/j.isprsjprs.2026.01.003}\n}\n```"
+      }
+    ]
+  },
   "17678": {
     "id": 17678,
     "title": "Multi-Sensor LiDAR SLAM Challenge 2026 - LiDAR-Visual-Inertial",
@@ -47,9 +76,9 @@
     "description_zh": "LiDAR-视觉-惯性SLAM赛道的纯翻译评估",
     "created_by": "yuhangxu",
     "created_when": "2026-07-26T09:51:43.642130Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059503/c4f5eea4397e/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=FC%2ByrjvHDorDAz6HAp8iKH9YUas%3D&Expires=1789224221",
-    "participants_count": 21,
-    "submissions_count": 119,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059503/c4f5eea4397e/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=aLiKwy6YlUVWX3AaOxXaJ9iqREE%3D&Expires=1789310884",
+    "participants_count": 22,
+    "submissions_count": 134,
     "first_phase_start": null,
     "phases": [
       {
@@ -81,35 +110,6 @@
       }
     ]
   },
-  "17265": {
-    "id": 17265,
-    "title": "第十届全国激光雷达大会——City-Facade建筑立面点云实例分割大赛",
-    "description": "本比赛面向城市级建筑立面构件精细理解，采用City-Facade大规模三维点云数据集。\n\n数据由车载移动激光扫描系统采集，覆盖厦门市多类典型城市街区，累计道路长度约60 km。数据包含墙面、窗户、门、屋顶、广告牌、空调外机、雨棚和阳台等细粒度建筑立面要素标注，并提供语义级与实例级标签。\n\n参赛者需要识别测试点云中的独立建筑立面构件实例，并输出相应实例编号和语义类别。\n\n比赛采用结果提交模式。参赛者在本地完成模型训练和推理，仅向Codabench提交预测结果，平台使用隐藏实例标签进行自动评分。",
-    "description_zh": "This competition focuses on fine-grained understanding of urban-level building facade components, utilizing the City-Fac dataset.\n\nThe data is collected by vehicle-mounted mobile laser scanning systems, covering multiple types of typical urban street blocks in Xiamen, with a cumulative road length of approximately 60 km. The dataset includes fine-grained building facade element annotations such as walls, windows, doors, roofs, billboards, air conditioning units, canopies, and balconies, with both semantic-level and instance-level labels provided.\n\nParticipants need to identify independent building facade component instances in the test point cloud and output the corresponding semantic categories and instance numbers.\n\nThe competition adopts a result submission mode. Participants complete model training and inference locally and only submit prediction results to Codabench, where the platform automatically scores using hidden instance labels.",
-    "created_by": "jianlongguan",
-    "created_when": "2026-06-26T12:50:09.783065Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=u%2BZ9BnIhU4XY%2B%2FNos6HfqNgdaqo%3D&Expires=1789224229",
-    "participants_count": 33,
-    "submissions_count": 398,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 28803,
-        "name": "City-Facade建筑立面点云实例分割",
-        "start": "2026-06-05T00:00:00Z",
-        "end": "2026-09-20T23:59:00Z",
-        "max_submissions_per_day": 5
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "比赛说明",
-        "content": "# **建筑物立面点云语义/实例分割**\n\n## **Overview**\n\n本赛道采用 City-Facade 城市建筑立面点云数据集，开展建筑立面点云语义分割与实例分割。\n\n参赛者需要为测试集中的每个点预测语义类别，并进一步区分同一语义类别下不同建筑立面构件的实例编号。\n\nCity-Facade 数据由车载移动激光扫描系统采集，覆盖厦门市 6 类典型城市街区场景，累计道路长度约 60 km，包含约 2 亿个带标注点。\n\n语义类别如下：\n\n| **编号** | **英文类别**              | **中文类别** |\n| -------- | ------------------------- | ------------ |\n| 0        | Background / Unclassified | 背景或未分类 |\n| 1        | Wall                      | 墙面         |\n| 2        | Window                    | 窗户         |\n| 3        | Door                      | 门           |\n| 4        | Roof                      | 屋顶         |\n| 5        | Advertisement             | 广告牌       |\n| 6        | Air Conditioner           | 空调外机     |\n| 7        | Rain Shed                 | 雨棚         |\n| 8        | Balcony                   | 阳台         |\n\n参赛流程：\n\n1. 在训练数据集上开发三维点云语义分割与实例分割模型；\n2. 使用训练完成的模型预测测试数据；\n3. 为每个测试点生成语义标签和实例标签；\n4. 按指定目录结构压缩预测结果；\n5. 将结果上传至 Codabench；\n6. 平台自动评测并更新排行榜。\n\n数据集项目地址：\n\n```text\nhttps://github.com/Ting-Devin-Han/City-Facade\n```\n\n## **Evaluation**\n\n主排名指标为综合得分：\n\n```text\nScore = 0.5 × mIoU + 0.5 × AP50\n```\n\n其中：\n\n- mIoU 用于评价语义分割精度；\n- AP50 用于评价实例分割精度。\n\n辅助指标包括：\n\n- mIoU\n- OA\n- 各类别 IoU\n- AP\n- AP25\n- AP50\n\n所有指标均为越高越好。\n\n每支队伍每日最多提交 5 次。\n\n若综合得分相同，建议依次按照 AP50、mIoU、AP25 和提交时间确定排名。\n\n## **Submission Format**\n\n参赛者须为测试集中的每个点提供语义标签和实例标签，并提交一个 ZIP 压缩包。\n\n压缩包根目录必须包含`predictions/`文件夹：\n\n```text\nsubmission.zip\n└── predictions/\n    ├── CAR/\n    │   ├── CAR-30-003_000000.txt\n    │   ├── CAR-30-003_000001.txt\n    │   └── ...\n    ├── JMC/\n    ├── SGS/\n    ├── XHR/\n    └── YWR/\n```\n\n目录名称和预测文件名称必须与测试数据保持一致。例如：\n\n```text\ntest/JMC/JMC-1-013_000000.txt\npredictions/JMC/JMC-1-013_000000.txt\n```\n\n每个预测 `.txt` 文件为 `N x 7` 数组，字段顺序固定为：\n\n```text\nX Y Z intensity instance_id semantic_label instance_score\n```\n\n其中：\n\n- `N` 为点云点数；\n- `X Y Z` 为三维坐标；\n- `intensity` 为激光强度；\n- `instance_id` 为预测实例编号；\n- `semantic_label` 为预测语义类别；\n- `instance_score` 为预测实例置信度\n\n字段索引从 `0` 开始时：\n\n```text\nX=0, Y=1, Z=2, intensity=3, instance_id=4, semantic_label=5, instance_score=6\n```\n\n提交文件必须满足：\n\n1. 每个测试 `.txt` 文件都必须有对应预测文件；\n2. 预测文件的相对路径和文件名必须与测试集一致；\n3. 每个预测文件的点数必须与对应测试文件完全一致；\n4. 点顺序必须与测试文件完全一致；\n5. `X Y Z intensity` 四列应保持与测试文件一致；\n6. `semantic_label` 必须为整数，取值范围为 `0` 到 `8`；\n7. `instance_id` 必须为非负整数；\n8. `instance_score` 必须是 `[0,1]` 范围内的有限数值，不允许使用 `NaN` 或正负无穷。\n9. 对于语义类别 `1` 到 `8` 的前景构件，不同实例应使用不同的实例编号；\n10. 对于类别 `0` 的背景或未分类点，`instance_id` 可设为 `0`；\n11. ZIP 根目录必须包含 `predictions/` 文件夹，不要额外嵌套一层目录。\n\n## **Citation**\n\n使用 City-Facade 数据集开展研究或发表成果时，请引用：\n\n```bibtex\n@article{chen2026cityfacade,\n  title={City-Facade: A city-level large-scale point cloud building facade dataset for semantic \\& instance segmentation},\n  author={Chen, Yiping and Li, Jonathan and Han, Ting and Feng, Huifang and Chen, Jun and Wang, Cheng},\n  journal={ISPRS Journal of Photogrammetry and Remote Sensing},\n  volume={232},\n  pages={675--688},\n  year={2026},\n  doi={10.1016/j.isprsjprs.2026.01.003}\n}\n```",
-        "content_zh": "# **Building Facade Point Cloud Semantic/Instance Segmentation**\n\n## **Overview**\n\nThis track uses the City-Facade dataset to conduct semantic segmentation and instance segmentation of building facade point clouds.\n\nParticipants need to predict semantic categories for each point in the test set and further distinguish instance numbers of different building facade components within the same semantic category.\n\nThe City-Facade dataset is collected by vehicle-mounted mobile laser scanning systems, covering 6 typical urban street scene categories in Xiamen City, with a total road length of approximately 60 km and containing approximately 200 million annotated points.\n\nSemantic categories are as follows:\n\n| **ID** | **English Category**      | **Chinese Category** |\n| ------ | ------------------------- | -------------------- |\n| 0      | Background / Unclassified | Background/Unclassified |\n| 1      | Wall                      | Wall                 |\n| 2      | Window                    | Window               |\n| 3      | Door                      | Door                 |\n| 4      | Roof                      | Roof                 |\n| 5      | Advertisement             | Advertisement Board  |\n| 6      | Air Conditioner           | Air Conditioner Unit |\n| 7      | Rain Shed                 | Rain Shed            |\n| 8      | Balcony                   | Balcony              |\n\nCompetition workflow:\n\n1. Develop 3D point cloud semantic and instance segmentation models on the training dataset;\n2. Use the trained model to predict test data;\n3. Generate semantic labels and instance labels for each test point;\n4. Compress prediction results according to the specified directory structure;\n5. Upload results to Codabench;\n6. The platform automatically evaluates and updates the leaderboard.\n\nDataset project address:\n\n```text\nhttps://github.com/gorgeouseping/City-Facade\n```\n\n## **Evaluation**\n\nThe main ranking metric is the comprehensive score:\n\n```text\nScore = 0.5 × mIoU + 0.5 × AP50\n```\n\nWhere:\n\n- mIoU is used to evaluate semantic segmentation accuracy;\n- AP50 is used to evaluate instance segmentation accuracy.\n\nAuxiliary metrics include:\n\n- mIoU\n- OA\n- IoU for each category\n- AP\n- AP25\n- AP50\n\nAll metrics are higher the better.\n\nEach team can submit a maximum of 5 times per day.\n\nIf the comprehensive score is the same, it is recommended to determine rankings in order by AP50, mIoU, AP25, and submission time.\n\n## **Submission Format**\n\nParticipants must provide semantic labels and instance labels for each point in the test set and submit a ZIP compressed package.\n\n```text\nsubmission.zip\n└── predictions/\n    ├── CAR/\n    │   ├── CAR-30-003_000000.txt\n    │   ├── CAR-30-003_000001.txt\n    │   └── ...\n    ├── JMC/\n    ├── SGS/\n    └── ...\n```\n\nDirectory names and prediction file names must be consistent with the test data.\n\nEach TXT file contains 6 fields:\n\n```text\nX Y Z intensity semantic_label instance_id\n```\n\nArray dimensions are:\n\n```text\nN × 6\n```\n\nWhere:\n\n- `N` is the number of points in the point cloud;\n- `X Y Z` are 3D coordinates;\n- `intensity` is laser intensity;\n- `semantic_label` is the predicted semantic category;\n- `instance_id` is the predicted instance number.\n\nSubmitted files must satisfy:\n\n1. The number and order of points are completely consistent with the original test files;\n2. The 3D coordinates and intensity fields must not be modified;\n3. Semantic category ID range is 0-8;\n4. Instance IDs must be non-negative integers;\n5. Different instances use different instance IDs;\n6. Prediction file directories and file names must be consistent with the test set;\n7. The ZIP root directory must contain a `predictions` folder.\n\n## **Citation**\n\nWhen using the City-Facade dataset, please cite:\n\n```bibtex\n@article{chen2026cityfacade,\n  title={City-Facade: A city-level large-scale building facade point cloud dataset for semantic and instance segmentation},\n  author={Chen, Yiping and Li, Jonathan and Han, Ting and Feng, Huifang and Chen, Jun and Wang, Cheng},\n  journal={ISPRS Journal of Photogrammetry and Remote Sensing},\n  volume={232},\n  pages={675--688},\n  year={2026},\n  doi={10.1016/j.isprsjprs.2026.01.003}\n}\n```"
-      }
-    ]
-  },
   "16257": {
     "id": 16257,
     "title": "SUFE_DL_FinalProject_Vision",
@@ -117,7 +117,7 @@
     "description_zh": "上海财经大学深度学习课程 - 最终项目 - 计算机视觉",
     "created_by": "ntulc",
     "created_when": "2026-05-11T19:42:24.060326Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-18-1779115404/081a3e46c671/Shanghai_University_of_Finance_and_.jpg?AWSAccessKeyId=codabench-prod&Signature=7gZk6ZIG5SFFTcQmCSEk8Cnt0Ik%3D&Expires=1789224245",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-18-1779115404/081a3e46c671/Shanghai_University_of_Finance_and_.jpg?AWSAccessKeyId=codabench-prod&Signature=ITj2KrauXqph32mKKe7ovPeyxwE%3D&Expires=1789310918",
     "participants_count": 49,
     "submissions_count": 215,
     "first_phase_start": null,
@@ -152,9 +152,9 @@
     "description_zh": "欢迎来到首届\"重演化身视频中远程操作者身份验证\"国际竞赛。本竞赛将与[ACCV2026](https://https://accv2026.org/)联合举办。",
     "created_by": "allam",
     "created_when": "2026-07-27T05:47:11.519603Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=eSp7y9%2Fct%2FCgI4OjZECIFlDL4JQ%3D&Expires=1789224221",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=tRdmXraART7NyC4tcra3oyoFsFI%3D&Expires=1789310884",
     "participants_count": 28,
-    "submissions_count": 20,
+    "submissions_count": 21,
     "first_phase_start": null,
     "phases": [
       {
@@ -205,9 +205,9 @@
     "description_zh": "在 Vaani 语料库的真实印度语言语音录音中检测噪声事件（开始和结束时间戳）。参赛者必须利用多层注释的训练数据（黄金级/白银级/青铜级）来构建稳健的噪声事件检测系统，该系统将基于事件级 F1 和分段 Dice 进行评估。",
     "created_by": "nagu_iitkgp",
     "created_when": "2026-08-14T17:27:12.345457Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-14-1786728432/29a3bf95a91d/logo.png?AWSAccessKeyId=codabench-prod&Signature=49xqb5YME4DLGLytmpqhbnbJOxI%3D&Expires=1789224218",
-    "participants_count": 158,
-    "submissions_count": 595,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-14-1786728432/29a3bf95a91d/logo.png?AWSAccessKeyId=codabench-prod&Signature=Gr1yE851C9PlvXhyWQtJF9IlPnA%3D&Expires=1789310883",
+    "participants_count": 159,
+    "submissions_count": 629,
     "first_phase_start": null,
     "phases": [
       {
@@ -246,9 +246,9 @@
     "description_zh": "这个迷你挑战的目标是设计和训练一个用于检测虚假面部图像的网络。",
     "created_by": "weichen2383",
     "created_when": "2026-08-28T08:38:04.000911Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-28-1787906284/99c1b887dc56/Screenshot_2026-08-28_at_15.17.27.png?AWSAccessKeyId=codabench-prod&Signature=fBw1caMPxJIWVKEaka1xutHPHZw%3D&Expires=1789224217",
-    "participants_count": 88,
-    "submissions_count": 126,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-28-1787906284/99c1b887dc56/Screenshot_2026-08-28_at_15.17.27.png?AWSAccessKeyId=codabench-prod&Signature=tb7dKiGiHH6EiBJ7Yfgtvejg7gw%3D&Expires=1789310888",
+    "participants_count": 89,
+    "submissions_count": 138,
     "first_phase_start": null,
     "phases": [
       {
