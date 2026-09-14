@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Multi-Sensor LiDAR SLAM Challenge 2026 - LiDAR-Visual-Inertial — Codabench 竞赛监测</title>
+<title>【第二届高光谱遥感数据处理与应用大赛】赛道三：高光谱高空间分辨率（双高）遥感影像精细分类 — Codabench 竞赛监测</title>
 <style>
 :root {
     --bg: #0f1117;
@@ -99,58 +99,61 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
 </header>
 <div class="detail-wrap">
   <a class="back-link" href="index.html">← 返回竞赛目录</a>
-  <h2>Multi-Sensor LiDAR SLAM Challenge 2026 - LiDAR-Visual-Inertial</h2>
+  <h2>【第二届高光谱遥感数据处理与应用大赛】赛道三：高光谱高空间分辨率（双高）遥感影像精细分类</h2>
   <div class="detail-meta">
-    <span>ID: 17678</span>
-    <span>创建者: yuhangxu</span>
-    <span>创建时间: 2026-07-26</span>
-    <span>参与人数: 22</span>
-    <span>提交次数: 144</span>
-    <a class="ext-link" href="https://www.codabench.org/competitions/17678/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+    <span>ID: 17617</span>
+    <span>创建者: zcg25</span>
+    <span>创建时间: 2026-07-22</span>
+    <span>参与人数: 76</span>
+    <span>提交次数: 1079</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/17617/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
   </div>
 
   <div class="section">
     <h3>竞赛描述</h3>
-    <div class="page-content">LiDAR-视觉-惯性SLAM赛道的纯翻译评估</div>
+    <div class="page-content">地表覆盖分类是遥感领域的核心研究内容，对生态环境保护、农业资源普查、城市可持续规划等具有不可替代的价值。本次比赛聚焦双高（高空间分辨率与高光谱分辨率）遥感影像，不仅具备数百个10nm级光谱分辨率的连续波段，还兼具0.6-5米精细的空间结构信息。本次比赛将打破传统框架，不仅考察算法在严格物理隔离设定下的泛化能力（训练测试场景分离），更考察其在开放环境中对未知类别的识别能力。期望通过本次比赛，推动高光谱精细分类技术向真实落地应用迈出坚实的一步。</div>
   </div>
 
   <div class="section">
     <h3>竞赛阶段</h3>
     <table class="phases-table">
       <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
-      <tbody><tr><td><span class='badge badge-test'>测试</span> Official Evaluation</td><td>2026-07-17</td><td>2026-11-03</td><td>5</td></tr></tbody>
+      <tbody><tr><td><span class='badge badge-test'>测试</span> Testing phase</td><td>2026-07-24</td><td>2026-09-22</td><td>10</td></tr></tbody>
     </table>
   </div>
 
-<div class='section'><h3>Overview</h3><div class='page-content'># LiDAR视觉惯性SLAM
+<div class='section'><h3>Overview</h3><div class='page-content'># 第二届高光谱遥感数据处理与应用大赛
 
-这是多传感器LiDAR SLAM挑战赛2026的独立LiDAR视觉惯感融合赛道。参赛者本地处理两个发布场景并仅提交估计轨迹。可靠的地面真值及其时间戳在Codabench上保持私密。
+## 赛道三：高光谱高空间分辨率（双高）遥感影像精细分类
 
-两个场景`scene_0001`和`scene_0002`为必需。完成没有硬性阈值；轨迹覆盖不足会降低AUC召回率和最终分数。
+地表覆盖分类是遥感领域的核心研究内容，对生态环境保护、农业资源普查、城市可持续规划等具有不可替代的价值。本次比赛聚焦双高（高空间分辨率与高光谱分辨率）遥感影像，不仅具备数百个10nm级光谱分辨率的连续波段，还兼具0.6-5米精细的空间结构信息。本次比赛将打破传统框架，不仅考察算法在严格物理隔离设定下的泛化能力（训练测试场景分离），更考察其在开放环境中对未知类别的识别能力。期望通过本次比赛，推动高光谱精细分类技术向真实落地应用迈出坚实的一步。
 
-该数据集由Airy LiDAR及其内置IMU加上前左和前右Seeker鱼眼相机采集。以下图像仅为路线形状参考，不包含地面真值。
+**任务：** 在开放环境下，基于高光谱影像对31个已知类别 + 1个&quot;未知类&quot;进行像元级分类。
 
-![场景1轨迹参考](images/scene_0001_trajectory_reference.png)
+**数据：** AVIRIS-Classic传感器数据（HyperFree预训练数据集子集），562张影像，224波段，400–2500 nm。
 
-![场景2轨迹参考](images/scene_0002_trajectory_reference.png)</div></div><div class='section'><h3>Submission</h3><div class='page-content'># 提交格式
+**评价指标：** 宏平均F1分数（主指标），总体精度（辅指标）。</div></div><div class='section'><h3>Team Registration</h3><div class='page-content'>组队要求：每队不超过5人（含队长1人），每人仅可加入一个团队，每队仅可选择一个赛道。
 
-上传一个ZIP文件，其根目录包含 `README.md` 和 `trajectories/scene_0001.txt` 以及 `trajectories/scene_0002.txt`。每个轨迹使用TUM格式：
+信息收集：所有参赛团队请将团队信息发送至所属赛道的指定邮箱zcg2025@whu.edu.cn。邮件主题请统一按&quot;赛道名称－团队名称－队长姓名&quot;格式填写，邮件正文中须注明全部队员姓名（含队长不超过5人）、所在单位及指导教师（如有）信息。
 
-```text
-timestamp tx ty tz qx qy qz qw
-```
+本竞赛允许跨单位、跨学校组队参赛。跨校组队团队须在报名邮件中完整注明每位队员的所在单位及指导教师信息；每名参赛者仅可加入一个团队。</div></div><div class='section'><h3>Data Citation</h3><div class='page-content'>&lt;h1&gt;数据链接 data link&lt;/h1&gt;
 
-时间戳必须严格递增。数值必须是有限的，四元数必须非零。提交次数无限制。仅最新的有效提交将参与排名。</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'># 评估方法
+训练影像标签、测试影像获取2种方式：
 
-评分使用EVO时间同步和每个场景一个无缩放SE(3)对齐与私密参考轨迹进行对比。完成度没有硬阈值且公开发布；缺失的位姿对会降低AUC召回率。评估时间戳和真值不公开。
+There are two ways to obtain the training image labels and test images:
 
-ATE是EVO平移APE RMSE。AUC使用EVO单帧平移RPE和F1-AUC协议。RTE是EVO平移RPE的RMSE，在1m、5m和10m处进行归一化。总体和单场景RTE@1m、RTE@5m和RTE@10m均与合并RTE一起公开。超过0.3s的间隙永远不会跨越。
+1、Google Drive Link:
 
-AUC和RTE使用对齐的世界坐标系位置（姿态为恒等）计算，因此固定的参与者机体坐标系约定不会影响平移分数。每个场景使用一个场景级SE(3)对齐。
+https://drive.google.com/drive/folders/1Pm9K0gQMPzDCK39yOSQ5wbW0jsxW2GhZ?usp=drive_link
 
-总分数为`100 * (0.40 * AUC + 0.40 * exp(-ATE / tau_ate) + 0.20 * exp(-RTE / tau_rte))`。参考结果为发布的参考：其总体ATE和RTE在最终评分器冻结后定义`tau_ate`和`tau_rte`。
+2、百度网盘链接：
 
-结果公开总分、总体和单场景的AUC/ATE/合并RTE/RTE@1m/RTE@5m/RTE@10m、归一化分数分量、完成度和匹配计数。每个时间戳的误差、关联、对齐变换和真值保持私密。</div></div>
+https://pan.baidu.com/s/1xwnIjtQkcOUAzItVJeCOQA?pwd=8wfn  提取码: 8wfn
+
+
+若使用本次数据发表论文，请注明引用：https://arxiv.org/abs/2607.21050
+
+如果您使用本竞赛的数据发表论文，请注明引用：https://arxiv.org/abs/2607.21050</div></div>
 
 </div>
 </body>
