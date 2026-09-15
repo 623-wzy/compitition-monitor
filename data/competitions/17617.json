@@ -5,9 +5,9 @@
   "description_zh": "地表覆盖分类是遥感领域的核心研究内容，对生态环境保护、农业资源普查、城市可持续规划等具有不可替代的价值。本次比赛聚焦双高（高空间分辨率与高光谱分辨率）遥感影像，不仅具备数百个10nm级光谱分辨率的连续波段，还兼具0.6-5米精细的空间结构信息。本次比赛将打破传统框架，不仅考察算法在严格物理隔离设定下的泛化能力（训练测试场景分离），更考察其在开放环境中对未知类别的识别能力。期望通过本次比赛，推动高光谱精细分类技术向真实落地应用迈出坚实的一步。",
   "created_by": "zcg25",
   "created_when": "2026-07-22T12:01:44.700572Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-22-1784721704/619b824984d5/image.png?AWSAccessKeyId=codabench-prod&Signature=Kenv9dOHNDaO9qE%2BzNT5DPQmE8Y%3D&Expires=1789397551",
-  "participants_count": 76,
-  "submissions_count": 1079,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-22-1784721704/619b824984d5/image.png?AWSAccessKeyId=codabench-prod&Signature=kwXkN0qKQ0uRUYkdWd%2FzcRaXe0s%3D&Expires=1789484250",
+  "participants_count": 78,
+  "submissions_count": 1106,
   "first_phase_start": null,
   "phases": [
     {
