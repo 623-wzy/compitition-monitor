@@ -1,0 +1,423 @@
+{
+  "id": 18132,
+  "title": "LongVQU-Eval Challenge:  Long-Term Video Quality Understanding Evaluation",
+  "published": true,
+  "created_by": "aarna",
+  "owner_display_name": "aarna",
+  "created_when": "2026-09-16T17:04:02.730340Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-16-1789578242/12eae3daa231/images/logo.png?AWSAccessKeyId=codabench-prod&Signature=OWgWZHFBPR1EyakO65Bwg4AEUZk%3D&Expires=1789657793",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-16-1789578242/12eae3daa231/images/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=5MxKZBKEw%2FLaovMTX2tFhYsmd9g%3D&Expires=1789657793",
+  "terms": "# Terms of Participation\n\nBy registering for the LongVQU-Eval Challenge you agree to:\n\n1. **Data use.** Use the videos, questions, and answers provided through\n   Hugging Face (`Aarna004/LongVQUBench`) and Codabench only for the\n   purposes of this challenge and any explicitly permitted downstream\n   research/publication. LongVQUBench is distributed under a\n   **CC BY-NC-SA 4.0** license and contains identifiers/derivatives of\n   video sources rather than redistributing those source videos outright,\n   so you are responsible for complying with any upstream licensing terms\n   that apply to the underlying video content as well.\n\n2. **No proprietary models.** A model is **proprietary** for the purposes\n   of this challenge if it meets **both** of the following:\n   - its trained weights are **not publicly released** (you cannot\n     download and run it outside a hosted service), **and/or**\n   - it is only accessible through a **paid API**.\n\n   Submissions built on proprietary models under this definition are\n   **not eligible** for the leaderboard. This means closed commercial\n   LVLM APIs (e.g. GPT-4o, Gemini, Claude, and similar) should not be used\n   to generate your predictions.\n\n   Disclose your base model in the fact sheet accompanying every\n   submission; misrepresenting a proprietary model as open-weight is\n   grounds for disqualification.\n\n3. **No answer reconstruction.** Do not attempt to scrape, guess, distribute and/or\n   otherwise reconstruct the hidden Test Phase ground-truth answers\n   outside the official scoring pipeline described on the Evaluation page.\n\n4. **Honest disclosure.** Accurately complete the fact sheet accompanying\n   each submission (base model, training data used, frame-sampling\n   strategy). Submissions with materially inaccurate fact sheets may be\n   disqualified.\n\n5. **Team eligibility.** You may participate individually or in a team of\n   **1 to 5 participants**. Both academic and industry participants are\n   welcome. Register at most one account/team per individual, multiple\n   accounts used to circumvent submission limits will be disqualified.\n   Team membership and affiliations submitted via the registration form\n   (due 15 Oct 2026) are **locked** once submitted and cannot be changed\n   afterward.\n\n6. **Methodology report - required for ALL participants.** Every team\n   with a scored Test Phase submission\n   must submit a **4-6 page write-up** describing the methodology and/or\n   architecture behind their submission, by the deadline on the Rules &\n   Timeline page. Submissions without an accompanying report will be\n   removed from the final published leaderboard.\n\n7. **Model weights - verification required for ALL participants, public release required for top-3.** Every\n   team must share the model weights used to produce their scored Test\n   Phase submission with organizers via a private link (e.g. a gated\n   Hugging Face repo or private cloud storage), included alongside your\n   methodology report, by the same deadline as the report. This applies\n   even if you used an unmodified open-weight base model, simply confirm\n   the same public checkpoint already disclosed under Model Eligibility.\n   Top-3 teams must additionally make their weights **fully public**,\n   alongside the open-source training/inference **code** already required\n   of top-3 teams only (see Rules & Timeline); neither the code nor the\n   public weight release is required of everyone.\n\n8. **No warranty.** Data, questions, and infrastructure are provided\n   \"as is\" for research purposes; organizers do not guarantee\n   uninterrupted availability of Codabench.",
+  "pages": [
+    {
+      "id": 87327,
+      "title": "Overview",
+      "content": "# LongVQU-Eval Challenge\n\n**Evaluating Long-Term Video Quality Understanding of Large Vision-Language Models**\n\nIEEE Signal Processing Society Challenge 2026\n\n## Motivation\n\nTraditional video quality assessment (VMAF, SSIM, PSNR, NR-VQA models) works well on\nshort clips but cannot reason over long temporal context and accumulate perceptual\ndegradations evidence across events.\n**LongVQU-Eval Challenge** aims to close this gap with a multiple-choice quuestion-answering assessment built on\n[LongVQUBench](https://huggingface.co/datasets/Aarna004/LongVQUBench).\n\n## Hierarchical evaluation\n\n| Level | Name | What models must do |\n|---|---|---|\n| 1 | **LQU** — Local Event Quality Understanding | Detect, localize, classify, and rate the severity of isolated distortion events |\n| 2 | **CQR** — Cross-Event Quality Reasoning | Compare and integrate perceptual evidence across multiple distortion events |\n| 3 | **GQU** — Global Quality Understanding | Synthesize a holistic quality judgment over the full video |\n\nWithin each level, questions are further grouped by `qa_category`\n(e.g. Comparison, Cumulative Effect) and `question_type`\n(yes-or-no, what, which, how).\n\n## How the challenge works\n\n- **Videos:** Development Phase videos are on\n  Hugging Face (`Aarna004/LongVQUBench`, `grouped_tars/<LEVEL>/<Category>/*.tar`);\n  Test Phase videos are a separate, currently-unpublished. Please check Data & Submission Format for details.\n- **Questions live on Codabench :**  Each phase publishes a `questions.json`\n  with the video reference, the question, and its multiple-choice options.\n- **Build your model :** Offline (on your own compute)\n- **Submit only your predictions :**  CSV format (`question_idx, predicted_option`). \n  See the Data & Submission Format page for the exact format.\n\nScoring is exact-match accuracy against the hidden ground truth, with no\nconstraints on your model, framework, or inference setup **(Proprietary,\npaid-API-only models are not eligible).**\n\n## Who can participate\n\nIndividuals or teams of 1-5. Both academic and industry participants are\nwelcome.\n\n\n\n## Organizers\n\nArpita Nema (Primary Contact): arpita004@e.ntu.edu.sg\n\nHanwei Zhu : hanwei.zhu@ntu.edu.sg\n\nWeisi Lin: WSLin@ntu.edu.sg\n\nNanyang Technological University, Singapore",
+      "index": 0
+    },
+    {
+      "id": 87322,
+      "title": "Data & Submission Format",
+      "content": "# Data & Submission Format\n\n## Data Batches\n\n| Batch | Size | Videos | Answers public? | Where |\n|---|---|---|---|---|\n| **Development (Train)** | 1,200 MCQs | on Hugging Face now | Yes | Codabench `public_data/train/questions.json` (WITH `answer`/`answer_idx`) |\n| **Test** | TBA | TBA | No, until challenge ends | Codabench `public_data/test_public/questions.json` (candidates only) |\n\nThese are two **independent** annotation batches with non-overlapping\n`question_idx` values. The Train batch's answers are public (it's on the\ngated Hugging Face repo, so anyone with Hub access can see them). Please treat\nany Dev-phase leaderboard score as your pipeline check. The **Test batch determines the final ranking**.\n\n## Where the data lives\n\n| What | Where |\n|---|---|\n| Train videos | Hugging Face: [`Aarna004/LongVQUBench`](https://huggingface.co/datasets/Aarna004/LongVQUBench) — `grouped_tars/<LEVEL>/<Category>/*.tar`. Requires accepting the dataset's terms + a Hub login. |\n| Test videos | **TBD — to be announced on 15 Oct 2026.** <This row will be replaced with the  link>. |\n| Train questions **with answers** | Codabench, Development Phase `public_data/train/questions.json` |\n| Test questions **without answers** | Codabench, Test Phase `public_data/test_public/questions.json` |\n\n\n\n## `questions.json` schema\n\nOne entry per question:\n\n```json\n{\n  \"question_idx\": 246,\n  \"video_idx\": 1212,\n  \"hierarchy_category\": \"CQR\",\n  \"question_type\": \"yes-or-no\",\n  \"qa_category\": \"Comparison\",\n  \"question\": \"Is the perceptual degradation in the first 30 seconds more severe than that between 138.37s and 153.35s?\",\n  \"candidates\": [\"Yes\", \"No\"],\n  \"answer\": \"No\",\n  \"answer_idx\": 2\n}\n```\n\n- `hierarchy_category`: `\"LQU\"` | `\"CQR\"` | `\"GQU\"`\n- `candidates`: 2–4 answer options\n- `answer` / `answer_idx`: **present in the Development Phase file only.**\n  The Test Phase file omits both — you're scored against a hidden copy.\n- `video_idx`: matches the video's identifier inside the Hugging Face\n  `grouped_tars` archives — use this to locate the right video.\n\n## What you submit\n\nA single **`predictions.csv`** at the root of your submission zip:\n\n```csv\nquestion_idx,predicted_option\n246,4\n422,2\n469,3\n```\n\n`predicted_option` is the **1-based index** into that question's\n`candidates` array (e.g. answering `\"No\"` for\n`[\"Yes\", \"No\"]` → `predicted_option = 2`).\n\n\n\n**Unanswered `question_idx` values are scored as incorrect, so partial\nsubmissions are allowed but will lower your accuracy.**",
+      "index": 1
+    },
+    {
+      "id": 87323,
+      "title": "Evaluation",
+      "content": "# Evaluation\n\n## Metric\n\n**Accuracy**: Exact match between your `predicted_option` and the hidden\n`answer_idx`, averaged over all questions in the phase. Unanswered\nquestions count as incorrect.\n\nThe leaderboard also reports accuracy broken out per hierarchy level\n(LQU / CQR / GQU) for diagnostic purposes, and the number of questions you\nprovided an answer for (`# Answered`), but ranking is by **Overall\nAccuracy**.\n\n## Leaderboard columns\n\n| Column | Key | Sort |\n|---|---|---|\n| Overall Accuracy | `accuracy` | desc |\n| LQU Accuracy | `lqu_accuracy` | desc |\n| CQR Accuracy | `cqr_accuracy` | desc |\n| GQU Accuracy | `gqu_accuracy` | desc |\n| # Answered | `num_answered` | desc |\n\nRanking uses `accuracy` as the primary sort key. Ties are broken, in order, by:\n\n1. **Inference time** (lower is better), as reported in the submitted methodology document\n2. **Parameter count** (lower is better), as reported in the submitted methodology document\n\n## Submission rule\n\nEach phase uses `Force_Last`: only your most recent successful submission\ncounts toward your leaderboard position, so resubmitting simply replaces\nyour prior score rather than stacking multiple ranked entries.",
+      "index": 2
+    },
+    {
+      "id": 87326,
+      "title": "Rules & Timeline",
+      "content": "# Rules & Timeline\n\n## Timeline\n\n| Date | Milestone |\n|---|---|\n| 20 Sep 2026 | Challenge Launch - training data released |\n| 15 Oct 2026 | **Registration deadline** - submit Codabench handle + team member names/affiliations (see Registration below) |\n| 15 Oct 2026 | Test set release |\n| 30 Oct 2026 | Test-set results submission deadline (on Codabench) |\n| 4 Nov 2026 | **Methodology report + open-source model weights due - all participants** (report format & weight-hosting instructions TBA) |\n| 20 Nov 2026 | Challenge results announcement |\n| 30 Nov 2026 | **Top-3 teams only:** camera-ready 4-6 page description of approach + open-source code due |\n  \nAll deadlines are 23:59 AoE unless stated otherwise.\n\n## Registration (due 15 Oct 2026)\n\nBefore the Test Phase submission starts, every participant/team must\nsubmit:\n- Codabench handle (username)\n- Team member name(s) and institutional affiliation(s)\n\n**via a separate registration form** (link to be added). Once submitted, **team membership and\naffiliations are locked** and cannot be changed afterward.\n\n## Who can participate\n\nIndividuals or teams of **1-5 participants**. Both academic and industry\nparticipants are welcome to register.\n\n## Submission limits (Codabench)\n\n- Development Phase: max 100 submissions total, up to 5 submissions/day \n- Test Phase: max 50 submissions total, up to 4/day. Your **last**\n  successful submission (`Force_Last`) is the one that counts for the\n  final ranking.\n\n## Model eligibility\n\nProprietary models (no open-source weights **or** accessed only via a\npaid/restricted API, e.g. GPT-4o, Gemini, Claude) are **not eligible**. \n\n## Methodology report - required for all participants (due 4 Nov)\n\nThis is separate from your Codabench prediction submission. Every team\nwith a scored Test Phase submission must submit a 4-6 page write-up\ndescribing their methodology/architecture. Format and the submission\nform/link will be published closer to the deadline. Submissions without\nan accompanying report will be removed from the final published\nleaderboard before results are archived.\n\n\n\n## Model weights\n\n- **All participants** must share the actual model weights used to produce their scored Test Phase predictions with organizers via a **private link** (e.g. a gated Hugging Face repo, private cloud storage, or similar) shared alongside your methodology report. This is for verification only -  confirming no proprietary/banned model was used and that results are reproducible.\n- This applies even if you used an unmodified base model; in that case, simply confirm the same public checkpoint already disclosed under Model Eligibility.\n- Submissions whose weights are not verifiably shared with organizers by this deadline are subject to the same removal-from-leaderboard consequence as a missing methodology report.\n\n\n## Additional - The top-3 teams (due 30 Nov)\n\nThe top-3-ranked teams additionally submit a **camera-ready** version of\ntheir 4-6 page description (polished for publication) alongside\n**open-source code** (training + inference).",
+      "index": 3
+    }
+  ],
+  "phases": [
+    {
+      "id": 30549,
+      "index": 0,
+      "start": "2026-09-16T08:00:00Z",
+      "end": "2026-10-13T08:00:00Z",
+      "name": "Development (Train) Phase",
+      "description": "All 1,200 currently-available videos/MCQs are released WITH answers (questions.json). Videos are downloaded separately from Hugging Face (Aarna004/LongVQUBench, grouped_tars/). Since answers are public here, Dev-phase submissions are a pipeline/format sanity check only. The official ranking happens in the Test Phase against a completely separate videos/MCQs. Registration (Codabench handle + team member names/affiliations, locked once submitted) is due 15 Oct 2026 via a separate registration form.",
+      "status": "Current",
+      "execution_time_limit": 300,
+      "tasks": [
+        {
+          "task": "47bf2c83-9bf3-41c0-88b8-b9f66c55a5a4",
+          "order_index": 0,
+          "phase": 30549,
+          "id": 36235,
+          "value": "47bf2c83-9bf3-41c0-88b8-b9f66c55a5a4",
+          "key": "47bf2c83-9bf3-41c0-88b8-b9f66c55a5a4",
+          "created_when": "2026-09-16T17:04:01.827371Z",
+          "name": "Dev Task — Practice Scoring",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 982126,
+              "created_by": "aarna",
+              "owner_display_name": "aarna",
+              "created_when": "2026-09-16T17:04:01.732083Z",
+              "name": "reference_data @ '09-16-2026 17:04'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "e69e24e2-3afd-4f8c-a253-b8df5574b28e",
+              "value": "e69e24e2-3afd-4f8c-a253-b8df5574b28e",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 18132,
+                  "title": "LongVQU-Eval Challenge:  Long-Term Video Quality Understanding Evaluation"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 57783.0
+            },
+            {
+              "id": 982392,
+              "created_by": "aarna",
+              "owner_display_name": "aarna",
+              "created_when": "2026-09-16T21:17:27.118017Z",
+              "name": "V2_Scoring_Fixed",
+              "type": "scoring_program",
+              "description": "Used to Score Dev and Test Phase",
+              "is_public": false,
+              "key": "c2c3d5d4-e00b-42b9-a723-02b84c7c73f0",
+              "value": "c2c3d5d4-e00b-42b9-a723-02b84c7c73f0",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 18132,
+                  "title": "LongVQU-Eval Challenge:  Long-Term Video Quality Understanding Evaluation"
+                }
+              ],
+              "competition": null,
+              "file_name": "scoring_program_fixed_2.zip",
+              "file_size": 2967.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": {
+        "id": 982130,
+        "created_by": "aarna",
+        "owner_display_name": "aarna",
+        "created_when": "2026-09-16T17:04:02.465156Z",
+        "name": "public_data @ '09-16-2026 17:04'",
+        "type": "public_data",
+        "description": null,
+        "is_public": false,
+        "key": "ff3130fc-fbac-4886-bead-56fa07dfe5aa",
+        "value": "ff3130fc-fbac-4886-bead-56fa07dfe5aa",
+        "was_created_by_competition": true,
+        "in_use": [
+          {
+            "pk": 18132,
+            "title": "LongVQU-Eval Challenge:  Long-Term Video Quality Understanding Evaluation"
+          }
+        ],
+        "competition": null,
+        "file_name": "",
+        "file_size": 57783.0
+      },
+      "starting_kit": {
+        "id": 982131,
+        "created_by": "aarna",
+        "owner_display_name": "aarna",
+        "created_when": "2026-09-16T17:04:02.562489Z",
+        "name": "starting_kit @ '09-16-2026 17:04'",
+        "type": "starting_kit",
+        "description": null,
+        "is_public": false,
+        "key": "c879344a-91d8-4524-bc4b-4bf476113c64",
+        "value": "c879344a-91d8-4524-bc4b-4bf476113c64",
+        "was_created_by_competition": true,
+        "in_use": [
+          {
+            "pk": 18132,
+            "title": "LongVQU-Eval Challenge:  Long-Term Video Quality Understanding Evaluation"
+          }
+        ],
+        "competition": null,
+        "file_name": "",
+        "file_size": 320.0
+      },
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    },
+    {
+      "id": 30550,
+      "index": 1,
+      "start": "2026-10-15T00:00:00Z",
+      "end": "2026-10-30T00:00:00Z",
+      "name": "Test Phase",
+      "description": "A separate, previously-unpublished batch of videos and MCQs is released WITHOUT answers (questions.json). This batch is disjoint from the Development Phase set. \nSubmit predictions for the official ranking.\n\nDeadline 30 Oct 2026, 23:59 AoE. \n\nEvery participant with a scored submission must also, by 4 Nov 2026: (a) submit a 4-6 page methodology report, and (b) publicly release the model weights used to produce their submitted predictions.",
+      "status": "Next",
+      "execution_time_limit": 300,
+      "tasks": [
+        {
+          "task": "6f63b75c-d689-45a1-80b6-ca58e722fc42",
+          "order_index": 0,
+          "phase": 30550,
+          "id": 36236,
+          "value": "6f63b75c-d689-45a1-80b6-ca58e722fc42",
+          "key": "6f63b75c-d689-45a1-80b6-ca58e722fc42",
+          "created_when": "2026-09-16T17:04:02.099031Z",
+          "name": "Hidden Test Evaluation — LQU / CQR / GQU",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 982127,
+              "created_by": "aarna",
+              "owner_display_name": "aarna",
+              "created_when": "2026-09-16T17:04:01.835763Z",
+              "name": "scoring_program @ '09-16-2026 17:04'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "3eeed505-3b87-4e54-980b-6c67c4f30d1f",
+              "value": "3eeed505-3b87-4e54-980b-6c67c4f30d1f",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 18132,
+                  "title": "LongVQU-Eval Challenge:  Long-Term Video Quality Understanding Evaluation"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 2118.0
+            },
+            {
+              "id": 982128,
+              "created_by": "aarna",
+              "owner_display_name": "aarna",
+              "created_when": "2026-09-16T17:04:01.891789Z",
+              "name": "reference_data @ '09-16-2026 17:04'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "e99980ea-40cf-4f56-8454-f2b0b019b2b2",
+              "value": "e99980ea-40cf-4f56-8454-f2b0b019b2b2",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 18132,
+                  "title": "LongVQU-Eval Challenge:  Long-Term Video Quality Understanding Evaluation"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 132.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 4,
+      "max_submissions_per_person": 50,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    },
+    {
+      "id": 30551,
+      "index": 2,
+      "start": "2026-11-20T00:00:00Z",
+      "end": null,
+      "name": "Post-Challenge Phase",
+      "description": "Official results are announced 20 Nov 2026. This phase keeps the benchmark open indefinitely afterwards as a standing leaderboard.",
+      "status": "Next",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "6f63b75c-d689-45a1-80b6-ca58e722fc42",
+          "order_index": 0,
+          "phase": 30551,
+          "id": 36236,
+          "value": "6f63b75c-d689-45a1-80b6-ca58e722fc42",
+          "key": "6f63b75c-d689-45a1-80b6-ca58e722fc42",
+          "created_when": "2026-09-16T17:04:02.099031Z",
+          "name": "Hidden Test Evaluation — LQU / CQR / GQU",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 982127,
+              "created_by": "aarna",
+              "owner_display_name": "aarna",
+              "created_when": "2026-09-16T17:04:01.835763Z",
+              "name": "scoring_program @ '09-16-2026 17:04'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "3eeed505-3b87-4e54-980b-6c67c4f30d1f",
+              "value": "3eeed505-3b87-4e54-980b-6c67c4f30d1f",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 18132,
+                  "title": "LongVQU-Eval Challenge:  Long-Term Video Quality Understanding Evaluation"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 2118.0
+            },
+            {
+              "id": 982128,
+              "created_by": "aarna",
+              "owner_display_name": "aarna",
+              "created_when": "2026-09-16T17:04:01.891789Z",
+              "name": "reference_data @ '09-16-2026 17:04'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "e99980ea-40cf-4f56-8454-f2b0b019b2b2",
+              "value": "e99980ea-40cf-4f56-8454-f2b0b019b2b2",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 18132,
+                  "title": "LongVQU-Eval Challenge:  Long-Term Video Quality Understanding Evaluation"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 132.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": true,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 20267,
+      "primary_index": 0,
+      "title": "LongVQU-Eval Leaderboard",
+      "key": "main",
+      "columns": [
+        {
+          "id": 90301,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Overall Accuracy",
+          "key": "accuracy",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 90302,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "LQU Accuracy",
+          "key": "lqu_accuracy",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 90303,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "CQR Accuracy",
+          "key": "cqr_accuracy",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 90304,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "GQU Accuracy",
+          "key": "gqu_accuracy",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 90305,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "# Answered",
+          "key": "num_answered",
+          "sorting": "desc",
+          "index": 4,
+          "hidden": false,
+          "precision": 2
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Force_Last"
+    }
+  ],
+  "collaborators": [],
+  "registration_auto_approve": false,
+  "description": "A multiple-choice benchmark for evaluating large vision-language models (LVLMs) on long-term video quality understanding (LVQU) across three hierarchical levels: Local Event Quality Understanding (LQU), Cross-Event Quality Reasoning (CQR), and Global Quality Understanding (GQU). Videos span feature films, documentaries, surveillance, egocentric, instructional, and animated content.",
+  "participants_count": 2,
+  "submissions_count": 8,
+  "queue": null,
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": false,
+  "show_detailed_results_in_leaderboard": false,
+  "auto_run_submissions": true,
+  "can_participants_make_submissions_public": false,
+  "make_programs_available": false,
+  "make_input_data_available": true,
+  "docker_image": "codalab/codalab-legacy:py39",
+  "allow_robot_submissions": false,
+  "competition_type": "competition",
+  "fact_sheet": {
+    "model_name": {
+      "key": "model_name",
+      "type": "text",
+      "title": "Base LVLM / model name ",
+      "selection": "",
+      "is_required": "true",
+      "is_on_leaderboard": "true"
+    }
+  },
+  "forum": 17822,
+  "reward": "",
+  "contact_email": "arpita004@e.ntu.edu.sg",
+  "report": "",
+  "forum_enabled": true,
+  "enable_human_in_the_loop": false
+}

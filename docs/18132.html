@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LongVQU-Eval Challenge:  Long-Term Video Quality Understanding Evaluation — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>LongVQU-Eval Challenge:  Long-Term Video Quality Understanding Evaluation</h2>
+  <div class="detail-meta">
+    <span>ID: 18132</span>
+    <span>创建者: aarna</span>
+    <span>创建时间: 2026-09-16</span>
+    <span>参与人数: 2</span>
+    <span>提交次数: 8</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/18132/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">一个多选基准，用于评估大型视觉-语言模型（LVLMs）在三个层级上的长期视频质量理解（LVQU）能力：局部事件质量理解（LQU）、跨事件质量推理（CQR）和全局质量理解（GQU）。视频涵盖故事片、纪录片、监控、自中心视角、教学和动画等内容。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development (Train) Phase</td><td>2026-09-16</td><td>2026-10-13</td><td>5</td></tr><tr><td><span class='badge badge-test'>测试</span> Test Phase</td><td>2026-10-15</td><td>2026-10-30</td><td>4</td></tr><tr><td><span class='badge badge-other'>其他</span> Post-Challenge Phase</td><td>2026-11-20</td><td>—</td><td>5</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'># LongVQU-Eval 挑战赛
+
+**评估大型视觉语言模型的长期视频质量理解能力**
+
+IEEE信号处理协会挑战赛 2026
+
+## 动机
+
+传统视频质量评估方法（VMAF、SSIM、PSNR、NR-VQA模型）在短视频上表现良好，但无法在长时间上下文上进行推理，也无法跨事件累积感知退化证据。
+**LongVQU-Eval挑战赛**旨在通过构建在[LongVQUBench](https://huggingface.co/datasets/Aarna004/LongVQUBench)基础上的多选问答评估来弥补这一差距。
+
+## 分层评估
+
+| 级别 | 名称 | 模型需要完成的任务 |
+|---|---|---|
+| 1 | **LQU** — 局部事件质量理解 | 检测、定位、分类和评定孤立失真事件的严重程度 |
+| 2 | **CQR** — 跨事件质量推理 | 比较和整合多个失真事件的感知证据 |
+| 3 | **GQU** — 全局质量理解 | 对完整视频进行整体质量判断 |
+
+在每个级别内，问题进一步按`qa_category`（如对比、累积效果）和`question_type`（是/否、什么、哪个、如何）分组。
+
+## 挑战赛运作流程
+
+- **视频：** 开发阶段视频位于Hugging Face（`Aarna004/LongVQUBench`、`grouped_tars/&lt;LEVEL&gt;/&lt;Category&gt;/*.tar`）；测试阶段视频为独立的未公开数据集。请查看数据和提交格式页面了解详情。
+- **问题发布在Codabench上：** 每个阶段发布一个`questions.json`文件，包含视频参考、问题和多选选项。
+- **构建您的模型：** 离线方式（在您自己的计算环境上）
+- **仅提交预测结果：** CSV格式（`question_idx, predicted_option`）。详见数据和提交格式页面的准确格式。
+
+评分为与隐藏真值的完全匹配准确度，对您的模型、框架或推理设置**没有限制**（不允许仅限专有和付费API的模型）。
+
+## 参赛资格
+
+1-5人的个人或团队。欢迎学术和行业参与者。
+
+## 组织者
+
+Arpita Nema（主要联系人）: arpita004@e.ntu.edu.sg
+
+Hanwei Zhu: hanwei.zhu@ntu.edu.sg
+
+Weisi Lin: WSLin@ntu.edu.sg
+
+新加坡南洋理工大学</div></div><div class='section'><h3>Data &amp; Submission Format</h3><div class='page-content'># 数据与提交格式
+
+## 数据批次
+
+| 批次 | 规模 | 视频 | 答案公开? | 位置 |
+|---|---|---|---|---|
+| **开发集(训练)** | 1,200道选择题 | 已在Hugging Face上 | 是 | Codabench `public_data/train/questions.json` (包含 `answer`/`answer_idx`) |
+| **测试集** | 待定 | 待定 | 否，至挑战结束 | Codabench `public_data/test_public/questions.json` (仅限参赛者) |
+
+这是两个**独立的**标注批次，`question_idx`值不重叠。训练批次的答案是公开的(位于受限制的Hugging Face仓库，因此任何拥有Hub访问权限的人都可以查看)。请将任何开发阶段的排行榜得分视为流程检查。**测试批次决定最终排名**。
+
+## 数据位置
+
+| 内容 | 位置 |
+|---|---|
+| 训练视频 | Hugging Face: [`Aarna004/LongVQUBench`](https://huggingface.co/datasets/Aarna004/LongVQUBench) — `grouped_tars/&lt;LEVEL&gt;/&lt;Category&gt;/*.tar`。需接受数据集条款并进行Hub登录。 |
+| 测试视频 | **待定 — 将于2026年10月15日公布。**&lt;此行将被替换为链接&gt;。 |
+| 包含答案的训练问题 | Codabench开发阶段 `public_data/train/questions.json` |
+| 不含答案的测试问题 | Codabench测试阶段 `public_data/test_public/questions.json` |
+
+## `questions.json`结构
+
+每个问题一条记录：
+
+```json
+{
+  &quot;question_idx&quot;: 246,
+  &quot;video_idx&quot;: 1212,
+  &quot;hierarchy_category&quot;: &quot;CQR&quot;,
+  &quot;question_type&quot;: &quot;yes-or-no&quot;,
+  &quot;qa_category&quot;: &quot;Comparison&quot;,
+  &quot;question&quot;: &quot;Is the perceptual degradation in the first 30 seconds more severe than that between 138.37s and 153.35s?&quot;,
+  &quot;candidates&quot;: [&quot;Yes&quot;, &quot;No&quot;],
+  &quot;answer&quot;: &quot;No&quot;,
+  &quot;answer_idx&quot;: 2
+}
+```
+
+- `hierarchy_category`: `&quot;LQU&quot;` | `&quot;CQR&quot;` | `&quot;GQU&quot;`
+- `candidates`: 2-4个答案选项
+- `answer` / `answer_idx`: **仅在开发阶段文件中出现**。测试阶段文件省略两者 — 您的得分将根据隐藏副本进行评估。
+- `video_idx`: 与Hugging Face `grouped_tars`存档中的视频标识符匹配 — 使用此项定位正确的视频。
+
+## 提交内容
+
+在提交zip文件的根目录中提交单个**`predictions.csv`**:
+
+```csv
+question_idx,predicted_option
+246,4
+422,2
+469,3
+```
+
+`predicted_option`是该问题`candidates`数组的**基于1的索引**(例如，对`[&quot;Yes&quot;, &quot;No&quot;]`回答`&quot;No&quot;` → `predicted_option = 2`)。
+
+**未回答的`question_idx`值将被评分为错误，因此允许部分提交但会降低您的准确率。**</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'># 评估
+
+## 指标
+
+**准确率**：您的`predicted_option`与隐藏的`answer_idx`的完全匹配，在该阶段的所有问题上求平均。未回答的问题计为错误。
+
+排行榜还报告按层级分类的准确率（LQU / CQR / GQU）用于诊断目的，以及您提供答案的问题数量（`# Answered`），但排名以**整体准确率**为准。
+
+## 排行榜列
+
+| 列 | 键 | 排序 |
+|---|---|---|
+| 整体准确率 | `accuracy` | 降序 |
+| LQU准确率 | `lqu_accuracy` | 降序 |
+| CQR准确率 | `cqr_accuracy` | 降序 |
+| GQU准确率 | `gqu_accuracy` | 降序 |
+| 已回答数 | `num_answered` | 降序 |
+
+排名使用`accuracy`作为主要排序键。同分情况按以下顺序打破：
+
+1. **推理时间**（越低越好），由提交的方法论文中报告
+2. **参数数量**（越低越好），由提交的方法论文中报告
+
+## 提交规则
+
+每个阶段使用`Force_Last`：仅您最近一次成功提交计入排行榜排名，因此重新提交将替换您之前的分数而非堆叠多个排名条目。</div></div><div class='section'><h3>Rules &amp; Timeline</h3><div class='page-content'># 规则与时间表
+
+## 时间表
+
+| 日期 | 里程碑 |
+|---|---|
+| 2026年9月20日 | 挑战赛启动 - 发布训练数据 |
+| 2026年10月15日 | **报名截止** - 提交Codabench用户名+团队成员名称/所属机构（详见报名部分） |
+| 2026年10月15日 | 发布测试集 |
+| 2026年10月30日 | 测试集结果提交截止（在Codabench上） |
+| 2026年11月4日 | **方法报告+开源模型权重截止 - 全部参赛者**（报告格式及权重托管说明另行通知） |
+| 2026年11月20日 | 挑战赛结果发布 |
+| 2026年11月30日 | **前3强队伍仅需：** 相机就绪版4-6页方案描述+开源代码截止 |
+
+所有截止时间均为23:59 AoE，除非另有说明。
+
+## 报名（截止2026年10月15日）
+
+在测试阶段提交开始前，每位参赛者/团队必须提交：
+- Codabench用户名
+- 团队成员名称及所属机构
+
+**通过单独的报名表**（链接后续添加）。提交后，**团队成员和所属机构将被锁定**，之后无法更改。
+
+## 参赛资格
+
+**1-5名参赛者**组成的个人或团队。欢迎学术界和产业界参赛者报名。
+
+## 提交限制（Codabench）
+
+- 开发阶段：最多100次提交总数，每天最多5次
+- 测试阶段：最多50次提交总数，每天最多4次。您的**最后一次**成功提交（`Force_Last`）将用于最终排名。
+
+## 模型资格要求
+
+专有模型（无开源权重**或**仅通过付费/受限API访问，例如GPT-4o、Gemini、Claude）**不符合资格**。
+
+## 方法报告 - 全部参赛者必需（截止11月4日）
+
+此项独立于您的Codabench预测提交。每支在测试阶段有评分提交的团队必须提交一份4-6页的说明文档，阐述其方法论/架构。格式及提交表单/链接将在截止前后公布。未附报告的提交将在结果公布前从最终排行榜中移除。
+
+## 模型权重
+
+- **全部参赛者**必须通过**私密链接**（例如受限制的Hugging Face仓库、私密云存储或类似方式）与组织者共享用于生成评分测试阶段预测的实际模型权重。这仅用于验证目的 - 确认未使用专有/禁用模型，且结果可复现。
+- 即使您使用了未修改的基础模型，也适用此要求；此情况下，仅需确认已在《模型资格要求》部分披露的相同公开检查点。
+- 未在此截止前与组织者可验证地共享权重的提交将面临与缺少方法报告相同的后果 - 从排行榜中移除。
+
+## 追加规定 - 前3强队伍（截止11月30日）
+
+排名前3的队伍需额外提交其4-6页方案描述的**相机就绪版**（已打磨可供发表），以及**开源代码**（训练+推理）。</div></div>
+
+</div>
+</body>
+</html>
