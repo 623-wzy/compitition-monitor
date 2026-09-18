@@ -5,8 +5,8 @@
   "created_by": "zcg25",
   "owner_display_name": "RSIDEA_Test",
   "created_when": "2026-07-22T12:01:44.700572Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-22-1784721704/619b824984d5/image.png?AWSAccessKeyId=codabench-prod&Signature=Que8hPV2w1FBkKnnT9ZiGageLpU%3D&Expires=1789657803",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-22-1784721704/619b824984d5/image_icon.png?AWSAccessKeyId=codabench-prod&Signature=ERZYIueAiGON2C2udG4r%2Bc6n8KQ%3D&Expires=1789657803",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-22-1784721704/619b824984d5/image.png?AWSAccessKeyId=codabench-prod&Signature=rPWUTrFm9exzT7Hz7%2BlIDaMTvtQ%3D&Expires=1789744453",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-22-1784721704/619b824984d5/image_icon.png?AWSAccessKeyId=codabench-prod&Signature=2e1HeY36zOOLffT1a9%2BQVwcsI70%3D&Expires=1789744453",
   "terms": "Hosted by: Wuhan University, Cambridge University\n\nSponsors: npj Geoinformatics, Organizing Committee of the 10th National Symposium on Imaging Spectroscopy for Earth Observation\n\nAll intellectual property rights of competition data belong to the data provider.\n\nThe data is only for use in this competition and is strictly prohibited from being published, disseminated, commercialized, or contaminated across channels without authorization from the data provider. It cannot be used for paper publication without authorization from the data provider.\n\nProhibit any form of manual forgery of annotations, external undeclared dataset pre training, attacks on evaluation systems, and other violations. Once discovered, the organizing committee has the right to cancel the eligibility and results for the competition.",
   "pages": [
     {
@@ -155,7 +155,7 @@
   "registration_auto_approve": true,
   "description": "Land cover classification is a core research topic in the field of remote sensing, offering indispensable value for ecological environment protection, agricultural resource inventory, and sustainable urban planning. This competition focuses on dual‑high (high spatial resolution and high hyperspectral resolution) remote sensing imagery, which features not only hundreds of continuous bands with ~10 nm spectral resolution but also fine spatial structural information at 0.6–5 meters. Breaking conventional frameworks, this competition evaluates not only the algorithm’s generalization capability under strictly isolated physical settings (with training and test scenes separated), but also its ability to recognize unknown categories in open environments. We hope that this competition will take a solid step forward in advancing hyperspectral fine classification technologies toward real‑world deployment.",
   "participants_count": 79,
-  "submissions_count": 1198,
+  "submissions_count": 1294,
   "queue": null,
   "enable_detailed_results": false,
   "show_detailed_results_in_submission_panel": false,
@@ -165,7 +165,6 @@
   "make_programs_available": false,
   "make_input_data_available": false,
   "docker_image": "codalab/codalab-legacy:py37",
-  "allow_robot_submissions": false,
   "competition_type": "competition",
   "fact_sheet": null,
   "forum": 17308,
