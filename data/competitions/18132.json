@@ -5,7 +5,7 @@
   "description_zh": "一个多选基准，用于评估大型视觉-语言模型（LVLMs）在三个层级上的长期视频质量理解（LVQU）能力：局部事件质量理解（LQU）、跨事件质量推理（CQR）和全局质量理解（GQU）。视频涵盖故事片、纪录片、监控、自中心视角、教学和动画等内容。",
   "created_by": "aarna",
   "created_when": "2026-09-16T17:04:02.730340Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-16-1789578242/12eae3daa231/images/logo.png?AWSAccessKeyId=codabench-prod&Signature=kGQTJsoZ5QvOdrDnNiUY14CLAe0%3D&Expires=1789917802",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-16-1789578242/12eae3daa231/images/logo.png?AWSAccessKeyId=codabench-prod&Signature=BHnN3I%2F6ic8bMJiqriI8s1mNHUE%3D&Expires=1790004416",
   "participants_count": 7,
   "submissions_count": 8,
   "first_phase_start": null,

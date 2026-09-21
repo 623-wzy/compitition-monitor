@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IEEE SPS Machine-oriented Image Quality Assessment Challenge — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>IEEE SPS Machine-oriented Image Quality Assessment Challenge</h2>
+  <div class="detail-meta">
+    <span>ID: 18194</span>
+    <span>创建者: pjlabeval</span>
+    <span>创建时间: 2026-09-21</span>
+    <span>参与人数: 3</span>
+    <span>提交次数: 1</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/18194/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">第二届面向机器的图像质量评估挑战赛，隶属于IEEE SPS挑战赛计划</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development Phase</td><td>2026-09-01</td><td>2026-10-31</td><td>14</td></tr><tr><td><span class='badge badge-test'>测试</span> Test Phase</td><td>2026-11-01</td><td>—</td><td>4</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'># 机器导向的图像质量评估（MoIQA）挑战赛
+
+欢迎参加**机器导向的图像质量评估（MoIQA）挑战赛**！这是**第2届** MoIQA挑战赛，隶属于**IEEE SPS挑战赛项目**。该竞赛聚焦于视觉媒体的机器导向感知质量。
+
+## 背景
+
+随着具身人工智能的发展，机器已取代人类成为视觉媒体的主要消费者，但现有的图像质量评估（IQA）指标仍然专注于人类，忽视了机器任务效用。为了解决这一问题，我们推出了机器导向的图像质量评估（MoIQA）挑战赛。该挑战赛旨在推进机器偏好的可靠图像理解，支持稳健的具身人工智能应用。
+
+---
+
+## 挑战赛内容
+
+数据集涵盖三种主要类型的视觉媒体：**AI生成图像（AIGI）**、**自然场景图像（NSI）**和**屏幕内容图像（SCI）**。数据集总共包含**100张参考图像**和**3,000张失真图像**，每张失真图像由一张参考图像通过应用**30种失真类型（T01–T30）**中的一种在**5个严重程度等级（S1–S5）**中的一个生成。
+
+参与者需要为每张失真图像预测一个**质量分数**。基准真值质量分数在**1–5分级**上标注，反映视觉内容的机器导向感知质量。训练集发布**时包含**基准真值标签，而验证集和测试集发布**时不包含**标签——参与者将预测结果提交到CodaBench平台进行评估。
+
+---
+
+## 竞赛阶段
+
+### 开发阶段
+* **目标**：在发布的训练集（包含基准真值质量标签和参考图像）上训练和优化模型，并预测验证集的质量分数（发布时不包含标签或参考图像）。预测结果提交到CodaBench进行实时排名。
+
+### 测试阶段
+* **目标**：预测保留的测试集的质量分数（发布时不包含标签或参考图像）。最终排名基于该阶段。在两个阶段中，预测都是直接在失真图像上进行的，提交结果可以是**连续分数**——不需要整数评分。
+
+---
+
+## 评估
+
+提交结果根据预测质量分数与基准真值之间的相关性进行评估：
+
+* **皮尔逊线性相关系数（PLCC）**：衡量预测分数与基准真值之间的线性关系。
+* **斯皮尔曼秩序相关系数（SRCC）**：衡量预测分数与基准真值之间的单调关系（排名一致性）。
+
+最终排名分数是**PLCC和SRCC的平均值**，这是排行榜上显示的唯一列。
+
+---
+
+## 联系方式
+
+如有任何疑问，请联系：
+
+* **邮箱**：lcysyzxdxc@sjtu.edu.cn</div></div><div class='section'><h3>Dataset</h3><div class='page-content'>## 1. 下载数据
+
+### **第A部分：训练数据集**
+
+* **内容**：2,100张失真图像（`dis/`）、70张参考图像（`ref/`）和地面真值`labels.csv`（`index`、`quality`）
+* **链接**：[链接](https://drive.google.com/file/d/19dpE3zHEdOyebAvdefXiubCX6Tu6O4lX/view?usp=drive_link)
+
+### **第B部分：验证数据集**
+* **内容**：600张失真图像。发布时**不包含**标签或参考图像。
+* **链接**：[链接](https://drive.google.com/file/d/1n2bOoESGAe08sThzRU5ZUdLbFwqzFRgo/view?usp=sharing)
+
+### **第C部分：测试数据集**
+* **内容**：300张失真图像。发布时**不包含**标签或参考图像。
+* **链接**：即将发布
+
+### **第D部分：启动工具包**
+* **内容**：提交模板（`submission.tsv`）和随机评分生成器
+* **链接**：[链接](https://www.codabench.org/datasets/download/714130ad-feea-4dfa-81aa-b432901c80a0/)
+&gt;
+&gt; **提交格式示例**
+&gt;
+&gt; 下载**提交模板**以查看提交结构的工作示例。
+
+---
+
+## 2. 数据集统计
+
+该数据集包含**100张参考图像**和**3,000张失真图像**，涵盖三种主要视觉媒体类型：**AI生成图像（AIGI）**、**自然场景图像（NSI）**和**屏幕内容图像（SCI）**。
+
+&lt;table style=&quot;width: 100%; border-collapse: collapse; text-align: center; font-family: Arial, sans-serif;&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&quot;background-color: #f2f2f2;&quot;&gt;
+      &lt;th style=&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 160px;&quot;&gt;类别&lt;/th&gt;
+      &lt;th style=&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 100px;&quot;&gt;参考图像&lt;/th&gt;
+      &lt;th style=&quot;padding: 12px 8px; border: 1px solid #ddd; min-width: 100px;&quot;&gt;失真图像&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;&lt;strong&gt;AIGI_DALLE3&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;8&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;240&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr style=&quot;background-color: #f9f9f9;&quot;&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;&lt;strong&gt;AIGI_MJ&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;60&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;&lt;strong&gt;AIGI_PG&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;60&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr style=&quot;background-color: #f9f9f9;&quot;&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;&lt;strong&gt;AIGI_Pixart&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;3&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;90&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;&lt;strong&gt;AIGI_SDXL&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;7&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;210&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr style=&quot;background-color: #f9f9f9;&quot;&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;&lt;strong&gt;AIGI_SSD&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;9&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;270&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;&lt;strong&gt;NSI_pgc&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;17&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;510&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr style=&quot;background-color: #f9f9f9;&quot;&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;&lt;strong&gt;NSI_ugc&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;14&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;420&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;&lt;strong&gt;SCI_game&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;padding: 10px 8px; border: 1px solid #ddd;&quot;&gt;</div></div><div class='section'><h3>Evaluation &amp; Submission</h3><div class='page-content'>## 1. 提交格式
+
+要参与初赛，您必须提交一个**ZIP文件**，其中包含一个名为**`submission.tsv`**的TSV文件。该文件必须遵循特定的格式和列要求。
+
+**文件结构：**
+
+* **压缩包**: `submission.zip`
+* **内容**: `submission.tsv` 
+
+**TSV表头要求：**
+TSV文件必须包含以下两列：
+
+1. **index**：每个失真图像的唯一标识符（图像文件名，包括`.png`扩展名）。
+2. **quality**：每个图像的预测质量分数（浮点数值）。
+
+**注意：** 预测值可以是任何**连续数值** — 不需要整数评分。
+
+**示例TSV内容：**
+
+| index | quality |
+|-------|---------|
+| AIGI_DALLE3_003_T01_S4.png | 3.1246 |
+| AIGI_DALLE3_003_T02_S4.png | 2.0327 |
+| AIGI_DALLE3_003_T03_S5.png | 2.9875 |
+| ... | ... |
+
+&gt; **测试阶段提交格式示例**
+&gt;
+&gt; 下载**测试提交模板**以查看**测试阶段**提交结构的工作示例。**（待发布 / Coming soon）**
+
+---
+
+## 2. 评估指标
+
+提交内容根据与基准真值（GT）分数的相关性进行评估。我们使用两个主要统计指标来评估预测的准确性：
+
+* **皮尔逊线性相关系数（PLCC）**：衡量预测分数与基准真值之间的线性关系。
+* **斯皮尔曼等级相关系数（SRCC）**：衡量预测分数与基准真值之间的单调关系（排名一致性）。
+
+---
+
+## 3. 排行榜排名
+
+竞赛采用单一排名赛道。
+
+* **质量分数（PLCC &amp; SRCC平均值）**
+* 计算为预测质量分数与基准真值之间PLCC和SRCC的平均值。这是排行榜上显示的唯一列。
+
+---
+
+## 4. 重要提示
+
+* **一致性**：确保`index`列与测试集完全匹配。任何缺失的行或不匹配的索引都将导致提交错误。
+* **编码**：不要在提交中包含图像数据；仅需要预测分数。
+* **精度**：建议提供至少4位小数的分数，以获得更好的排名精度。</div></div><div class='section'><h3>Important Dates</h3><div class='page-content'>### 竞赛时间表
+
+**待发布。**
+
+挑战正式启动时将发布详细的时间表。</div></div>
+
+</div>
+</body>
+</html>
