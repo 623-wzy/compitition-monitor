@@ -5,15 +5,15 @@
   "description_zh": "第二届面向机器的图像质量评估挑战赛，隶属于IEEE SPS挑战赛计划",
   "created_by": "pjlabeval",
   "created_when": "2026-09-21T07:27:36.520325Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=9s%2FDjcyAIUP4UwpR0ruk6iIwdSs%3D&Expires=1790004414",
-  "participants_count": 3,
-  "submissions_count": 1,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=351%2FYJtsFbuq%2F9vVZjodl9v6NAU%3D&Expires=1790091141",
+  "participants_count": 4,
+  "submissions_count": 3,
   "first_phase_start": null,
   "phases": [
     {
       "id": 30698,
       "name": "Development Phase",
-      "start": "2026-09-01T00:00:00Z",
+      "start": "2026-09-30T00:00:00Z",
       "end": "2026-10-31T00:00:00Z",
       "max_submissions_per_day": 14
     },
@@ -47,7 +47,7 @@
     {
       "index": 3,
       "title": "Important Dates",
-      "content": "### Competition Timeline\n\n**To be announced.**（待发布）\n\nThe detailed timeline will be released when the challenge officially starts.",
+      "content": "### Competition Timeline\n\n**To be announced.**\n\nThe detailed timeline will be released when the challenge officially starts.",
       "content_zh": "### 竞赛时间表\n\n**待发布。**\n\n挑战正式启动时将发布详细的时间表。"
     }
   ]

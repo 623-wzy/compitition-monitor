@@ -3,10 +3,10 @@
   "title": "Fine classification of high-resolution hyperspectral remote sensing images",
   "published": true,
   "created_by": "zcg25",
-  "owner_display_name": "RSIDEA_Test",
+  "owner_display_name": "RSIDEA",
   "created_when": "2026-07-22T12:01:44.700572Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-22-1784721704/619b824984d5/image.png?AWSAccessKeyId=codabench-prod&Signature=ZxXmxom4oNpGavHMV3ylMXdWoWk%3D&Expires=1790004420",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-22-1784721704/619b824984d5/image_icon.png?AWSAccessKeyId=codabench-prod&Signature=1i4qEnnMrxXo559Y4v3JlSq6%2FV4%3D&Expires=1790004420",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-22-1784721704/619b824984d5/image.png?AWSAccessKeyId=codabench-prod&Signature=ns3EcnLAXleSekWBoU%2FmqZu0RGc%3D&Expires=1790091152",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-22-1784721704/619b824984d5/image_icon.png?AWSAccessKeyId=codabench-prod&Signature=p44ihwS7aOHfe5WCZguHFJGUYo0%3D&Expires=1790091152",
   "terms": "Hosted by: Wuhan University, Cambridge University\n\nSponsors: npj Geoinformatics, Organizing Committee of the 10th National Symposium on Imaging Spectroscopy for Earth Observation\n\nAll intellectual property rights of competition data belong to the data provider.\n\nThe data is only for use in this competition and is strictly prohibited from being published, disseminated, commercialized, or contaminated across channels without authorization from the data provider. It cannot be used for paper publication without authorization from the data provider.\n\nProhibit any form of manual forgery of annotations, external undeclared dataset pre training, attacks on evaluation systems, and other violations. Once discovered, the organizing committee has the right to cancel the eligibility and results for the competition.",
   "pages": [
     {
@@ -28,9 +28,9 @@
       "index": 2
     },
     {
-      "id": 87374,
+      "id": 87842,
       "title": "Prizes & Awards",
-      "content": "Total $738",
+      "content": "Total prize pool: **RMB 5,000**\n\n\nFirst Prize: **RMB 2,500 (1 winner)**\n\n\nSecond Prize: **RMB 1,500 (1 winner)**\n\n\nThird Prize: **RMB 1,000 (1 winner)**\n\n\nExcellence Award: 3 winners\n\n\nAll winners will be awarded **certificates** of honor.",
       "index": 3
     }
   ],
@@ -39,7 +39,7 @@
       "id": 29392,
       "index": 0,
       "start": "2026-07-24T08:00:00Z",
-      "end": "2026-09-22T08:00:00Z",
+      "end": "2026-09-23T16:00:00Z",
       "name": "Testing phase",
       "description": "参赛团队请务必将团队信息发送至指定邮箱：**zcg2025@whu.edu.cn**。目前已经收到部分队伍的信息。未发送信息的队伍，其榜单成绩后续将按**无效处理**，无法获得比赛奖励。提交包含所有预测标签TIF的压缩包ZIP。**注意：不要有子文件夹，评测可能失败并占用提交次数**。\n\nParticipating teams must send their team information to the designated email: zcg2025@whu.edu.cn. We have received information from some teams so far. For teams that do not submit their information, their leaderboard scores will be treated as **INVALID**, and they will **NOT** be eligible for competition rewards. Submit a ZIP archive containing all predicted label TIF files. **Note: Do not include subfolders; otherwise, the evaluation may fail and it will consume one of your submission attempts.**",
       "status": "Current",
@@ -59,7 +59,7 @@
             {
               "id": 900362,
               "created_by": "zcg25",
-              "owner_display_name": "RSIDEA_Test",
+              "owner_display_name": "RSIDEA",
               "created_when": "2026-07-22T13:14:03.145928Z",
               "name": "X",
               "type": "reference_data",
@@ -81,7 +81,7 @@
             {
               "id": 908005,
               "created_by": "zcg25",
-              "owner_display_name": "RSIDEA_Test",
+              "owner_display_name": "RSIDEA",
               "created_when": "2026-07-27T11:29:23.765472Z",
               "name": "debug22",
               "type": "scoring_program",
@@ -154,8 +154,8 @@
   "collaborators": [],
   "registration_auto_approve": true,
   "description": "Land cover classification is a core research topic in the field of remote sensing, offering indispensable value for ecological environment protection, agricultural resource inventory, and sustainable urban planning. This competition focuses on dual‑high (high spatial resolution and high hyperspectral resolution) remote sensing imagery, which features not only hundreds of continuous bands with ~10 nm spectral resolution but also fine spatial structural information at 0.6–5 meters. Breaking conventional frameworks, this competition evaluates not only the algorithm’s generalization capability under strictly isolated physical settings (with training and test scenes separated), but also its ability to recognize unknown categories in open environments. We hope that this competition will take a solid step forward in advancing hyperspectral fine classification technologies toward real‑world deployment.",
-  "participants_count": 91,
-  "submissions_count": 1656,
+  "participants_count": 98,
+  "submissions_count": 1936,
   "queue": null,
   "enable_detailed_results": false,
   "show_detailed_results_in_submission_panel": false,

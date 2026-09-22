@@ -5,8 +5,8 @@
   "created_by": "pjlabeval",
   "owner_display_name": "pjlabeval",
   "created_when": "2026-09-21T07:27:36.520325Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=9s%2FDjcyAIUP4UwpR0ruk6iIwdSs%3D&Expires=1790004414",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=S0INgbmavjlDSXXITgDDuHI%2B5ms%3D&Expires=1790004414",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=351%2FYJtsFbuq%2F9vVZjodl9v6NAU%3D&Expires=1790091141",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=LzytxxvSlo9P1B1N%2FJIPzFYW2bI%3D&Expires=1790091141",
   "terms": "<h3>1. General Rules</h3>\n<ul>\n    <li><b>Eligibility:</b> This competition is open to all researchers, students, and developers worldwide.</li>\n    <li><b>One Account Per Team:</b> Participants may not sign up for multiple accounts to bypass submission limits. Doing so will result in disqualification.</li>\n    <li><b>No Private Sharing:</b> Private sharing of code or data outside of teams is not permitted.</li>\n</ul>\n\n<h3>2. Data Usage</h3>\n<ul>\n    <li>The datasets provided (distorted and reference images) are for <b>academic and research purposes only</b>.</li>\n    <li>Participants are not allowed to use the dataset for commercial products without permission.</li>\n</ul>\n\n<h3>3. Submission & Integrity</h3>\n<ul>\n    <li><b>Honor Code:</b> You agree not to attempt to reverse-engineer the ground truth labels or \"probe\" the leaderboard excessively.</li>\n    <li><b>Final Decision:</b> The organizers reserve the right to disqualify any team that violates these rules or the spirit of the competition.</li>\n</ul>",
   "pages": [
     {
@@ -28,9 +28,9 @@
       "index": 2
     },
     {
-      "id": 87755,
+      "id": 87821,
       "title": "Important Dates",
-      "content": "### Competition Timeline\n\n**To be announced.**（待发布）\n\nThe detailed timeline will be released when the challenge officially starts.",
+      "content": "### Competition Timeline\n\n**To be announced.**\n\nThe detailed timeline will be released when the challenge officially starts.",
       "index": 3
     }
   ],
@@ -38,11 +38,11 @@
     {
       "id": 30698,
       "index": 0,
-      "start": "2026-09-01T00:00:00Z",
+      "start": "2026-09-30T00:00:00Z",
       "end": "2026-10-31T00:00:00Z",
       "name": "Development Phase",
       "description": "Train and refine your model on the released training set, and predict the quality scores of the validation set.",
-      "status": "Current",
+      "status": "Next",
       "execution_time_limit": 600,
       "tasks": [
         {
@@ -57,17 +57,17 @@
           "solutions": [],
           "public_datasets": [
             {
-              "id": 990849,
+              "id": 990954,
               "created_by": "pjlabeval",
               "owner_display_name": "pjlabeval",
-              "created_when": "2026-09-21T07:27:35.881716Z",
-              "name": "scoring_program @ '09-21-2026 07:27'",
+              "created_when": "2026-09-21T08:07:00.525876Z",
+              "name": "ieee sps scoring program",
               "type": "scoring_program",
-              "description": null,
+              "description": "",
               "is_public": false,
-              "key": "3868f195-5377-45fd-8f2f-4d900b28f156",
-              "value": "3868f195-5377-45fd-8f2f-4d900b28f156",
-              "was_created_by_competition": true,
+              "key": "4246451a-6777-4d0e-9148-2145cb9db51a",
+              "value": "4246451a-6777-4d0e-9148-2145cb9db51a",
+              "was_created_by_competition": false,
               "in_use": [
                 {
                   "pk": 18194,
@@ -75,21 +75,21 @@
                 }
               ],
               "competition": null,
-              "file_name": "",
-              "file_size": 2685.0
+              "file_name": "scoring_program.zip",
+              "file_size": 3236.0
             },
             {
-              "id": 990850,
+              "id": 992163,
               "created_by": "pjlabeval",
               "owner_display_name": "pjlabeval",
-              "created_when": "2026-09-21T07:27:35.939517Z",
-              "name": "reference_data @ '09-21-2026 07:27'",
+              "created_when": "2026-09-21T15:55:58.639704Z",
+              "name": "ieee sps ref_val",
               "type": "reference_data",
-              "description": null,
+              "description": "ieee sps ref_val",
               "is_public": false,
-              "key": "e40cc8a2-ba1a-4aa3-9add-ebd2594c6425",
-              "value": "e40cc8a2-ba1a-4aa3-9add-ebd2594c6425",
-              "was_created_by_competition": true,
+              "key": "58507822-1828-49f2-a1a7-c52b041c3dac",
+              "value": "58507822-1828-49f2-a1a7-c52b041c3dac",
+              "was_created_by_competition": false,
               "in_use": [
                 {
                   "pk": 18194,
@@ -97,7 +97,7 @@
                 }
               ],
               "competition": null,
-              "file_name": "",
+              "file_name": "ref_val.zip",
               "file_size": 8017.0
             }
           ]
@@ -159,17 +159,17 @@
           "solutions": [],
           "public_datasets": [
             {
-              "id": 990851,
+              "id": 990954,
               "created_by": "pjlabeval",
               "owner_display_name": "pjlabeval",
-              "created_when": "2026-09-21T07:27:36.018454Z",
-              "name": "scoring_program @ '09-21-2026 07:27'",
+              "created_when": "2026-09-21T08:07:00.525876Z",
+              "name": "ieee sps scoring program",
               "type": "scoring_program",
-              "description": null,
+              "description": "",
               "is_public": false,
-              "key": "a986f53f-0ea7-4835-85df-4e98c1fe5c9e",
-              "value": "a986f53f-0ea7-4835-85df-4e98c1fe5c9e",
-              "was_created_by_competition": true,
+              "key": "4246451a-6777-4d0e-9148-2145cb9db51a",
+              "value": "4246451a-6777-4d0e-9148-2145cb9db51a",
+              "was_created_by_competition": false,
               "in_use": [
                 {
                   "pk": 18194,
@@ -177,21 +177,21 @@
                 }
               ],
               "competition": null,
-              "file_name": "",
-              "file_size": 2685.0
+              "file_name": "scoring_program.zip",
+              "file_size": 3236.0
             },
             {
-              "id": 990852,
+              "id": 992166,
               "created_by": "pjlabeval",
               "owner_display_name": "pjlabeval",
-              "created_when": "2026-09-21T07:27:36.077830Z",
-              "name": "reference_data @ '09-21-2026 07:27'",
+              "created_when": "2026-09-21T15:56:45.602183Z",
+              "name": "ieee sps test_val",
               "type": "reference_data",
-              "description": null,
+              "description": "ieee sps test_val",
               "is_public": false,
-              "key": "3abaaf58-3a60-4433-8a37-48590ab51c94",
-              "value": "3abaaf58-3a60-4433-8a37-48590ab51c94",
-              "was_created_by_competition": true,
+              "key": "c5af3a23-0620-4898-91e3-e83ba65b40aa",
+              "value": "c5af3a23-0620-4898-91e3-e83ba65b40aa",
+              "was_created_by_competition": false,
               "in_use": [
                 {
                   "pk": 18194,
@@ -199,7 +199,7 @@
                 }
               ],
               "competition": null,
-              "file_name": "",
+              "file_name": "ref_test.zip",
               "file_size": 4112.0
             }
           ]
@@ -245,8 +245,8 @@
   "collaborators": [],
   "registration_auto_approve": true,
   "description": "The 2nd Machine-oriented Image Quality Assessment Challenge, affiliated to the IEEE SPS Challenge Program",
-  "participants_count": 3,
-  "submissions_count": 1,
+  "participants_count": 4,
+  "submissions_count": 3,
   "queue": null,
   "enable_detailed_results": true,
   "show_detailed_results_in_submission_panel": true,
