@@ -5,8 +5,8 @@
   "created_by": "pjlabeval",
   "owner_display_name": "pjlabeval",
   "created_when": "2026-09-21T07:27:36.520325Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=351%2FYJtsFbuq%2F9vVZjodl9v6NAU%3D&Expires=1790091141",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=LzytxxvSlo9P1B1N%2FJIPzFYW2bI%3D&Expires=1790091141",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=%2B4QfmCS%2BJYQAE8O1E4D%2BWoJQ9%2FE%3D&Expires=1790177841",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=4%2B%2B52ODKE05%2BdOqVRwA4J5CeHbs%3D&Expires=1790177841",
   "terms": "<h3>1. General Rules</h3>\n<ul>\n    <li><b>Eligibility:</b> This competition is open to all researchers, students, and developers worldwide.</li>\n    <li><b>One Account Per Team:</b> Participants may not sign up for multiple accounts to bypass submission limits. Doing so will result in disqualification.</li>\n    <li><b>No Private Sharing:</b> Private sharing of code or data outside of teams is not permitted.</li>\n</ul>\n\n<h3>2. Data Usage</h3>\n<ul>\n    <li>The datasets provided (distorted and reference images) are for <b>academic and research purposes only</b>.</li>\n    <li>Participants are not allowed to use the dataset for commercial products without permission.</li>\n</ul>\n\n<h3>3. Submission & Integrity</h3>\n<ul>\n    <li><b>Honor Code:</b> You agree not to attempt to reverse-engineer the ground truth labels or \"probe\" the leaderboard excessively.</li>\n    <li><b>Final Decision:</b> The organizers reserve the right to disqualify any team that violates these rules or the spirit of the competition.</li>\n</ul>",
   "pages": [
     {
@@ -245,7 +245,7 @@
   "collaborators": [],
   "registration_auto_approve": true,
   "description": "The 2nd Machine-oriented Image Quality Assessment Challenge, affiliated to the IEEE SPS Challenge Program",
-  "participants_count": 4,
+  "participants_count": 5,
   "submissions_count": 3,
   "queue": null,
   "enable_detailed_results": true,
