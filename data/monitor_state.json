@@ -1,39 +1,4 @@
 {
-  "16257": {
-    "id": 16257,
-    "title": "SUFE_DL_FinalProject_Vision",
-    "description": "Final Project of SUFE Deep Learning Course - Computer Vision",
-    "description_zh": "上海财经大学深度学习课程期末项目 - 计算机视觉",
-    "created_by": "ntulc",
-    "created_when": "2026-05-11T19:42:24.060326Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-18-1779115404/081a3e46c671/Shanghai_University_of_Finance_and_.jpg?AWSAccessKeyId=codabench-prod&Signature=G9NnXiObkOWFh0nb3GMXlzdyrrc%3D&Expires=1790264627",
-    "participants_count": 49,
-    "submissions_count": 215,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 26748,
-        "name": "valid",
-        "start": "2026-05-10T16:00:00Z",
-        "end": "2026-09-30T16:00:00Z",
-        "max_submissions_per_day": 999
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Data",
-        "content": "# 文件下载 & Get Started\n\n## （百度云链接已更新）\n## 测试数据\n\n### 视频、初始帧Prompt\n\n你需要在这些视频上进行测试，并提交你的测试结果：\n\n* 百度云 : https://pan.baidu.com/s/1ICPivSrUEkj4v9ezjgzIvw?pwd=sufe 提取码: sufe \n* Google Drive: https://drive.google.com/file/d/12PLrZwDvpeO3n-IQbAMgA9FOM0xdOqRr/view?usp=sharing\n\n### 示例提交（Sample Submission）\n\n示例提交展示了正确的提交文件结构和格式，供你参考。你需要按照这个示例提交的文件结构来组织你的提交结果。\n\n你可以直接在Participate页面中提交下面这个文件，来尝试一下提交流程。\n\n你自己的提交结果应该与这个示例提交的文件结构完全相同（但是内容不同）。\n\n链接: https://pan.baidu.com/s/1U0MeDsSome0z6TJhVZEZZA?pwd=sufe 提取码: sufe \n\n\n## SAM2 Baseline 模型\n\nSAM2 Baseline 模型的代码和使用说明可以在以下链接找到：\n\n### 示例模型Notebook\n\n**你可以基于这个Notebook来运行SAM2 Baseline模型**，完成图像分割和视频分割的实验：\n\n* CloudStudio（测试版）： https://cloudstudio.net/a/35532653440442368?channel=share&sharetype=URL\n* Google Colab（推荐）：https://colab.research.google.com/drive/1-QmRMhS2VqCbxF4NC5PjhHjDgd-oV5Nw?usp=sharing\n\n其中Video prediction部分的视频（0d0030a7），可以从这里下载：\n\n* 百度云: https://pan.baidu.com/s/1YW7Ub4WN6tuIVDeMNpA0MQ?pwd=sufe 提取码: sufe \n* Google Drive: https://drive.google.com/file/d/1yCg8Stnnscl6MGGjCURS08eO_Fh30NdV/view?usp=sharing\n\n### 模型Checkpoint，示例数据\n\n在上面的Notebook中已经包含了下载SAM模型及测试数据的的链接等，但如果你由于网络问题难以下载，也以直接使用下面的链接来下载模型Checkpoint和示例数据：\n\n链接: https://pan.baidu.com/s/10gZqKWJttRzT1J_QR2M7VA?pwd=sufe 提取码: sufe \n\n\n# 计算机视觉大作业：基于 SAM 的视频目标分割\n\n## **作业目标**\n\n视频目标分割是计算机视觉中的重要任务，目标是在视频序列中对指定物体进行逐帧像素级分割。相比单张图像分割，视频分割还需要考虑目标运动、遮挡、尺度变化、出画与重现、相机运动、光照变化等问题。\n\n本次大作业要求同学使用 SAM 作为 baseline，完成图像分割、视频分割和 MOSE 数据集提交实验。重点不是训练大模型，而是跑通 baseline、完成平台提交，并分析模型在真实复杂场景中的优缺点。\n\n通过期末大作业，希望你能：\n\n1. 掌握当前主流图像分割大模型 SAM/SAM2 的推理使用；\n2. 理解视频对象分割（Video Object Segmentation, VOS）的基本任务设定与评价指标；\n3. 体验完整的学术 Benchmark 提交流程；\n4. （进阶）在复杂真实场景数据集 MOSE 上验证模型性能，并分析其优劣；\n5. （进阶）训练模型，理解分割与多模态分割的挑战。\n\n---\n\n## 模型介绍\n\nSegment Anything Model（SAM）是 Meta AI 提出的通用图像分割模型，能够根据点、框、文本等提示对图像中的目标进行分割。SAM 具有较强的泛化能力，不需要针对每个具体类别重新训练，就可以在许多新场景中生成较好的分割结果。近年来，SAM 及其后续版本 SAM2 也被广泛用于视频目标分割任务中，作为图像分割和视频分割实验的重要 baseline。\n\n本次作业推荐使用 SAM 2 或 SAM3 作为基础模型，重点关注其在真实图像、真实视频和数据集上的实际表现。通过实验，同学们需要观察 SAM 在简单场景中的优势，以及在复杂场景中的局限。\n\n---\n\n## **基础要求**\n\n### **单帧图像分割**\n\n完成以下内容：\n\n1. 跑通 SAM baseline 的单帧分割代码，在示例图片上成功分割出目标物体。\n2. **自行拍摄 5 张现实场景图片**，使用 SAM 分割其中的物体。\n\n---\n\n### **视频目标分割**\n\n完成以下内容：\n\n1. 跑通 SAM baseline 的视频分割代码，在示例视频上成功完成目标分割。\n2. **自行拍摄 2 段现实场景视频（每段至少 5s），**使用 SAM 分割其中的物体。\n\n- 提示：\n  - 推荐在云平台（如 Google Colab 或腾讯 CloudStudio）上进行实验。\n  - 若视频较长，可以抽帧处理，例如降为 5 fps，以加快推理速度。\n  - 现实场景内容不限，城市、学校、人物、车辆等等均可，创意（虚拟）场景也可。视频中应当有明显动作，避免静止场景的持续拍摄。\n  - 鼓励拍摄高复杂度、可以挑战模型性能的图片及视频。如果拍摄的图片或视频能够导致模型分割失败、且能反映出现有模型缺陷，可获额外加分。\n\n---\n\n### **Benchmark 提交**\n\n完成以下内容：\n\n1. 注册 Codabench 平台，SUFE_DeepLearning Benchmark： [https://www.codabench.org/competitions/16257/](https://www.codabench.org/competitions/16257/)\n2. 按平台文档下载数据，使用 SAM baseline 进行分割。\n3. 在平台提交测试结果，并记录分数。\n\n**（重要）：在报告开头请写明你的 Codabench 用户名！**\n\n---\n\n### **结果分析**\n\n报告中需要介绍并分析：\n\n1. SAM 在测试集上，以及在自行拍摄的图片和视频上的结果（包括原图与分割结果）。\n2. 总结哪些场景下 SAM 表现较好、哪些场景下 SAM 表现较差。思考模型在哪些方面还有进步空间。\n\n---\n\n## **进阶要求**\n\n进阶内容为选做，内容可自由发挥，可用于加分。\n\n### **MOSEv2 Benchmark**\n\n在正式的 MOSEv2 Benchmark 上完成有效提交。\n\n可以使用 SAM 进行推理，也可以直接提交比赛提供的示例结果（sample submission，具体可阅读 Benchmark 网站说明及相关文档），但需要记录成绩并分析结果。\n\nBenchmark ⽹站：[https://www.codabench.org/competitions/10062/](https://www.codabench.org/competitions/10062/)\n\n### **提高 Baseline 成绩**\n\n尝试提高成绩，例如更换性能更强的模型、进一步训练 SAM 等。\n\n需要在报告中说明改进方法，并与原 baseline 对比。\n\n### **多模态探索**\n\n探索多模态视频分割任务 MeViS v2，完成一次有效提交，并分析其与 MOSE 的区别。\n\nBenchmark ⽹站：[https://www.codabench.org/competitions/11420/](https://www.codabench.org/competitions/11420/)\n\n### 自由开拓\n\n任何你认为与作业相关的思考、探索、实验等，均可以包含在报告中。\n\n---\n\n## **报告要求**\n\n在报告中必须注明自己的姓名、学号等信息，**以及 Codabench 用户名。**\n\n报告格式不做强制要求，但可参考以下框架：\n\n1. 介绍\n\n   1. 作业概述\n   2. 实验环境\n2. 方法\n\n   1. SAM baseline 方法说明\n3. 实验结果\n\n   1. 单帧图像分割结果展示\n   2. 视频分割结果展示\n   3. Benchmark 提交结果\n   4. 结果与失败案例分析（改进方向）\n4. 进阶要求\n5. 总结\n\n报告中必须包含结果截图或可视化结果，不能只写文字描述。\n\n---\n\n## **提交内容**\n\n最终提交：\n\n1. 实验报告 PDF。\n2. 代码，或代码仓库链接。\n3. 拍摄的图片视频，及分割结果。\n4. Benchmark 提交截图和成绩截图。\n5. README 运行说明。\n\n---\n\n## **评分体系**\n\n总分 100 分。\n\n### 基础要求（85 分）\n\n达成基础要求，可获得基础分 85 分。\n\n<table>\n<tr>\n<td>基础要求 <br/></td><td>得分<br/></td></tr>\n<tr>\n<td>跑通 SAM 单帧分割（5 张现实图片分割）<br/></td><td>20<br/></td></tr>\n<tr>\n<td>跑通 SAM 视频分割（2 段现实视频分割）<br/></td><td>20<br/></td></tr>\n<tr>\n<td>Benchmark 注册与提交<br/></td><td>10<br/></td></tr>\n<tr>\n<td>结果分析与失败案例<br/></td><td>15<br/></td></tr>\n<tr>\n<td>报告与代码质量<br/></td><td>20<br/></td></tr>\n</table>\n\n### 进阶要求（额外 +25 分）\n\n达成额外要求，可在基础分上获得额外加分。最高加 25 分。\n\n（例如：基础分 70 分，额外 +25 分，则总分为 95 分）\n\n<table>\n<tr>\n<td>进阶要求（额外加分，最高加20分）<br/></td><td>最高加分<br/></td></tr>\n<tr>\n<td>拍摄高质量失败案例并分析<br/></td><td>+10<br/></td></tr>\n<tr>\n<td>MOSEv2 有效提交<br/></td><td>+10<br/></td></tr>\n<tr>\n<td>改进 baseline 并提升成绩<br/></td><td>+10<br/></td></tr>\n<tr>\n<td>MeViS v2 有效提交与分析<br/></td><td>+10<br/></td></tr>\n<tr>\n<td>自由开拓<br/></td><td>+10<br/></td></tr>\n</table>\n\n---\n\n## **注意事项**\n\n1. 图片和视频必须自行拍摄。\n2. 不强制要求训练模型，重点是跑通、提交和分析。\n3. 注明使用开源代码或预训练模型的来源。\n4. 若平台提交失败，需要说明原因和尝试过的解决方法。\n5. 鼓励展示失败案例，有价值的失败分析可以加分。",
-        "content_zh": "# 文件下载 & 快速开始\n\n## （百度云链接已更新）\n## 测试数据\n\n### 视频、初始帧Prompt\n\n你需要在这些视频上进行测试，并提交你的测试结果：\n\n* 百度云 : https://pan.baidu.com/s/1ICPivSrUEkj4v9ezjgzIvw?pwd=sufe 提取码: sufe \n* Google Drive: https://drive.google.com/file/d/12PLrZwDvpeO3n-IQbAMgA9FOM0xdOqRr/view?usp=sharing\n\n### 示例提交（Sample Submission）\n\n示例提交展示了正确的提交文件结构和格式，供你参考。你需要按照这个示例提交的文件结构来组织你的提交结果。\n\n你可以直接在Participate页面中提交下面这个文件，来尝试一下提交流程。\n\n你自己的提交结果应该与这个示例提交的文件结构完全相同（但是内容不同）。\n\n链接: https://pan.baidu.com/s/1U0MeDsSome0z6TJhVZEZZA?pwd=sufe 提取码: sufe \n\n\n## SAM2 Baseline 模型\n\nSAM2 Baseline 模型的代码和使用说明可以在以下链接找到：\n\n### 示例模型Notebook\n\n**你可以基于这个Notebook来运行SAM2 Baseline模型**，完成图像分割和视频分割的实验：\n\n* CloudStudio（测试版）： https://cloudstudio.net/a/35532653440442368?channel=share&sharetype=URL\n* Google Colab（推荐）：https://colab.research.google.com/drive/1-QmRMhS2VqCbxF4NC5PjhHjDgd-oV5Nw?usp=sharing\n\n其中Video prediction部分的视频（0d0030a7），可以从这里下载：\n\n* 百度云: https://pan.baidu.com/s/1YW7Ub4WN6tuIVDeMNpA0MQ?pwd=sufe 提取码: sufe \n* Google Drive: https://drive.google.com/file/d/1yCg8Stnnscl6MGGjCURS08eO_Fh30NdV/view?usp=sharing\n\n### 模型Checkpoint，示例数据\n\n在上面的Notebook中已经包含了下载SAM模型及测试数据的链接等，但如果你由于网络问题难以下载，也可以直接使用下面的链接来下载模型Checkpoint和示例数据：\n\n链接: https://pan.baidu.com/s/10gZqKWJttRzT1J_QR2M7VA?pwd=sufe 提取码: sufe \n\n\n# 计算机视觉大作业：基于 SAM 的视频目标分割\n\n## **作业目标**\n\n视频目标分割是计算机视觉中的重要任务，目标是在视频序列中对指定物体进行逐帧像素级分割。相比单张图像分割，视频分割还需要考虑目标运动、遮挡、尺度变化、出画与重现、相机运动、光照变化等问题。\n\n本次大作业要求同学使用 SAM 作为 baseline，完成图像分割、视频分割和 MOSE 数据集提交实验。重点不是训练大模型，而是跑通 baseline、完成平台提交，并分析模型在真实复杂场景中的优缺点。\n\n通过期末大作业，希望你能：\n\n1. 掌握当前主流图像分割大模型 SAM/SAM2 的推理使用；\n2. 理解视频对象分割（Video Object Segmentation, VOS）的基本任务设定与评价指标；\n3. 体验完整的学术 Benchmark 提交流程；\n4. （进阶）在复杂真实场景数据集 MOSE 上验证模型性能，并分析其优劣；\n5. （进阶）训练模型，理解分割与多模态分割的挑战。\n\n---\n\n## 模型介绍\n\nSegment Anything Model（SAM）是 Meta AI 提出的通用图像分割模型，能够根据点、框、文本等提示对图像中的目标进行分割。SAM 具有较强的泛化能力，不需要针对每个具体类别重新训练，就可以在许多新场景中生成较好的分割结果。近年来，SAM 及其后续版本 SAM2 也被广泛用于视频目标分割任务中，作为图像分割和视频分割实验的重要 baseline。\n\n本次作业推荐使用 SAM 2 或 SAM3 作为基础模型，重点关注其在真实图像、真实视频和数据集上的实际表现。通过实验，同学们需要观察 SAM 在简单场景中的优势，以及在复杂场景中的局限。\n\n---\n\n## **基础要求**\n\n### **单帧图像分割**\n\n完成以下内容：\n\n1. 跑通 SAM baseline 的单帧分割代码，在示例图片上成功分割出目标物体。\n2. **自行拍摄 5 张现实场景图片**，使用 SAM 分割其中的物体。\n\n---\n\n### **视频目标分割**\n\n完成以下内容：\n\n1. 跑通 SAM baseline 的视频分割代码，在示例视频上成功完成目标分割。\n2. **自行拍摄 2 段现实场景视频（每段至少 5 秒），** 使用 SAM 分割其中的物体。\n\n- 提示：\n  - 推荐在云平台（如 Google Colab 或腾讯 CloudStudio）上进行实验。\n  - 若视频较长，可以抽帧处理，例如降为 5 fps，以加快推理速度。\n  - 现实场景内容不限，城市、学校、人物、车辆等等均可，创意（虚拟）场景也可。视频中应当有明显动作，避免静止场景的持续拍摄。\n  - 鼓励拍摄高复杂度、可以挑战模型性能的图片及视频。如果拍摄的图片或视频能够导致模型分割失败、且能反映出现有模型缺陷，可获额外加分。\n\n---\n\n### **Benchmark 提交**\n\n完成以下内容：\n\n1. 注册 Codabench 平台，SUFE_DeepLearning Benchmark： [https://www.codabench.org/competitions/16257/](https://www.codabench.org/competitions/16257/)\n2. 按平台文档下载数据，使用 SAM baseline 进行分割。\n3. 在平台提交测试结果，并记录分数。\n\n**（重要）：在报告开头请写明你的 Codabench 用户名！**\n\n---\n\n### **结果分析**\n\n报告中需要介绍并分析：\n\n1. SAM 在测试集上，以及在自行拍摄的图片和视频上的结果（包括原图与分割结果）。\n2. 总结哪些场景下 SAM 表现较好、哪些场景下 SAM 表现较差。思考模型在哪些方面还有进步空间。\n\n---\n\n## **进阶要求**\n\n进阶内容为选做，内容可自由发挥，可用于加分。\n\n### **MOSEv2 Benchmark**\n\n在正式的 MOSEv2 Benchmark 上完成有效提交。\n\n可以使用 SAM 进行推理，也可以直接提交比赛提供的示例结果（样本提交，具体可阅读 Benchmark 网站说明及相关文档），但需要记录成绩并分析结果。\n\nBenchmark 网站：[https://www.codabench.org/competitions/10062/](https://www.codabench.org/competitions/10062/)\n\n### **提高 Baseline 成绩**\n\n尝试提高成绩，例如更换性能更强的模型、进一步训练 SAM 等。\n\n需要在报告中说明改进方法，并与原 baseline 对比。\n\n### **多模态探索**\n\n探索多模态视频分割任务 MeViS v2，完成一次有效提交，并分析其与 MOSE 的区别。\n\nBenchmark 网站：[https://www.codabench.org/competitions/11420/](https://www.codabench.org/competitions/11420/)\n\n### 自由开拓\n\n任何你认为与作业相关的思考、探索、实验等，均可以包含在报告中。\n\n---\n\n## **报告要求**\n\n在报告中必须注明自己的姓名、学号等信息，**以及 Codabench 用户名。**\n\n报告格式不做强制要求，但可参考以下框架：\n\n1. 介绍\n\n   1. 作业概述\n   2. 实验环境\n2. 方法\n\n   1. SAM baseline 方法说明\n3. 实验结果\n\n   1. 单帧图像分割结果展示\n   2. 视频分割结果展示\n   3. Benchmark 提交结果\n   4. 结果与失败案例分析（改进方向）\n4. 进阶要求\n5. 总结\n\n报告中必须包含结果截图或可视化结果，不能只写文字描述。\n\n---\n\n## **提交内容**\n\n最终提交：\n\n1. 实验报告 PDF。\n2. 代码，或代码仓库链接。\n3. 拍摄的图片视频，及分割结果。\n4. Benchmark 提交截图和成绩截图。\n5. README 运行说明。\n\n---\n\n## **评分体系**\n\n总分 100 分。\n\n### 基础要求（85 分）\n\n达成基础要求，可获得基础分 85 分。\n\n<table>\n<tr>\n<td>基础要求 <br/></td><td>得分<br/></td></tr>\n<tr>\n<td>跑通 SAM 单帧分割（5 张现实图片分割）<br/></td><td>20<br/></td></tr>\n</table>"
-      },
-      {
-        "index": 1,
-        "title": "Evaluation",
-        "content": "## Evaluation\nWe evaluate performance using multiple metrics: the Jaccard index (J), F-Measure (F), their mean (J&F), an improved F-Measure (Ḟ), and the mean of J and Ḟ (J&Ḟ). To better assess the complex scenarios in MOSEv2 where objects frequently disappear and reappear, we also report specialized metrics: J&Ḟ_disappear and J&Ḟ_reappear. \n\n**Note**: \n1. Ḟ (F with a dot above) adaptively computes boundary thresholds based on object size, providing fairer evaluation of boundary prediction quality across objects of different scales. For more information, please refer to the paper.\n2. The evaluation may take 20 minutes to finish because of the data size. If your submussion exceed the time limit (20min) during scoring, please check if your data meets the requirements and view your log. If the issue persists, please contact us.\n3. We also provide metrics for each individual object, which can be downloaded through the button \"Output from scoring step\".",
-        "content_zh": "## 评估\n\n我们使用多个指标来评估性能：杰卡德指数 (J)、F-Measure (F)、它们的平均值 (J&F)、改进型 F-Measure (Ḟ) 和 J 与 Ḟ 的平均值 (J&Ḟ)。为了更好地评估 MOSEv2 中物体频繁消失和重新出现的复杂场景，我们还报告专门指标：J&Ḟ_disappear 和 J&Ḟ_reappear。\n\n**说明**：\n1. Ḟ (上方带点的 F) 根据物体大小自适应地计算边界阈值，为不同尺度的物体边界预测质量提供更公平的评估。更多信息请参阅论文。\n2. 由于数据量大，评估可能需要 20 分钟才能完成。如果您的提交在评分期间超过时间限制（20 分钟），请检查您的数据是否符合要求并查看您的日志。如果问题仍然存在，请联系我们。\n3. 我们还提供每个单独物体的指标，可通过\"从评分步骤输出\"按钮下载。"
-      }
-    ]
-  },
   "17265": {
     "id": 17265,
     "title": "第十届全国激光雷达大会——City-Facade建筑立面点云实例分割大赛",
@@ -41,9 +6,9 @@
     "description_zh": "This competition focuses on fine-grained understanding of urban-level building facade components, utilizing the City-Fac dataset.\n\nThe data is collected by vehicle-mounted mobile laser scanning systems, covering multiple types of typical urban street blocks in Xiamen, with a cumulative road length of approximately 60 km. The dataset includes fine-grained building facade element annotations such as walls, windows, doors, roofs, billboards, air conditioning units, canopies, and balconies, with both semantic-level and instance-level labels provided.\n\nParticipants need to identify independent building facade component instances in the test point cloud and output the corresponding semantic categories and instance numbers.\n\nThe competition adopts a result submission mode. Participants complete model training and inference locally and only submit prediction results to Codabench, where the platform automatically scores using hidden instance labels.",
     "created_by": "jianlongguan",
     "created_when": "2026-06-26T12:50:09.783065Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=cHhs9YD2aIR0U6manLDctUlQtlw%3D&Expires=1790264594",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=QJ7A55oSZzJB0BRM%2FuRVjlxaAls%3D&Expires=1790351519",
     "participants_count": 48,
-    "submissions_count": 695,
+    "submissions_count": 708,
     "first_phase_start": null,
     "phases": [
       {
@@ -70,9 +35,9 @@
     "description_zh": "欢迎来到首届\"重演化身视频中远程操作者身份验证\"国际竞赛。本竞赛将与[ACCV2026](https://https://accv2026.org/)联合举办。",
     "created_by": "allam",
     "created_when": "2026-07-27T05:47:11.519603Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=Fe4EutLDb%2B0aKooTDR3Ldy4cMGE%3D&Expires=1790264563",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=teKNgvxG48osPED6NPrlGr%2FiiKM%3D&Expires=1790351469",
     "participants_count": 30,
-    "submissions_count": 35,
+    "submissions_count": 36,
     "first_phase_start": null,
     "phases": [
       {
@@ -123,9 +88,9 @@
     "description_zh": "这个迷你挑战的目标是设计和训练一个用于检测虚假面部图像的网络。",
     "created_by": "weichen2383",
     "created_when": "2026-08-28T08:38:04.000911Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-28-1787906284/99c1b887dc56/Screenshot_2026-08-28_at_15.17.27.png?AWSAccessKeyId=codabench-prod&Signature=x5lIIA%2BQ0eDGLqA4OUHU45Q%2Bhq4%3D&Expires=1790264558",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-28-1787906284/99c1b887dc56/Screenshot_2026-08-28_at_15.17.27.png?AWSAccessKeyId=codabench-prod&Signature=g7LYiscp62gC2%2FNTR7%2Fel9bHt7M%3D&Expires=1790351462",
     "participants_count": 111,
-    "submissions_count": 236,
+    "submissions_count": 249,
     "first_phase_start": null,
     "phases": [
       {
@@ -159,9 +124,9 @@
     "description_zh": "在 Vaani 语料库的真实印度语言语音录音中检测噪声事件（开始和结束时间戳）。参赛者必须利用多层注释的训练数据（黄金级/白银级/青铜级）来构建稳健的噪声事件检测系统，该系统将基于事件级 F1 和分段 Dice 进行评估。",
     "created_by": "nagu_iitkgp",
     "created_when": "2026-08-14T17:27:12.345457Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-14-1786728432/29a3bf95a91d/logo.png?AWSAccessKeyId=codabench-prod&Signature=jHcRfQlvFI2BXSf4byUzHP1ADc8%3D&Expires=1790264569",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-14-1786728432/29a3bf95a91d/logo.png?AWSAccessKeyId=codabench-prod&Signature=dcKjjfAZAGW7%2BNgyx6pOzJHJ%2BiQ%3D&Expires=1790351463",
     "participants_count": 184,
-    "submissions_count": 945,
+    "submissions_count": 956,
     "first_phase_start": null,
     "phases": [
       {
@@ -200,9 +165,9 @@
     "description_zh": "WACV 2027现实世界监控研讨会UPAR挑战赛第二赛道。在域偏移条件下，根据属性集合查询对行人图像库进行排序。代码提交：在隐藏测试集上运行模型。",
     "created_by": "spcke",
     "created_when": "2026-09-21T10:16:24.265612Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789989582/27d420ef5134/rws2027_orlando.png?AWSAccessKeyId=codabench-prod&Signature=wXrcyhVsB02U%2BHtbHwi4kagwAUQ%3D&Expires=1790264558",
-    "participants_count": 17,
-    "submissions_count": 16,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789989582/27d420ef5134/rws2027_orlando.png?AWSAccessKeyId=codabench-prod&Signature=WtsMC61YGSvRd4FAALqlcmAmm3g%3D&Expires=1790351477",
+    "participants_count": 18,
+    "submissions_count": 22,
     "first_phase_start": null,
     "phases": [
       {
@@ -247,7 +212,7 @@
     "description_zh": "一个多选基准，用于评估大型视觉-语言模型（LVLMs）在三个层级上的长期视频质量理解（LVQU）能力：局部事件质量理解（LQU）、跨事件质量推理（CQR）和全局质量理解（GQU）。视频涵盖故事片、纪录片、监控、自中心视角、教学和动画等内容。",
     "created_by": "aarna",
     "created_when": "2026-09-16T17:04:02.730340Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-16-1789578242/12eae3daa231/images/logo.png?AWSAccessKeyId=codabench-prod&Signature=CmawZyYdCF5bksV1kfKrZ1VNE4w%3D&Expires=1790264558",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-16-1789578242/12eae3daa231/images/logo.png?AWSAccessKeyId=codabench-prod&Signature=s9buKek900krq3KKDPzupxMALnc%3D&Expires=1790351460",
     "participants_count": 8,
     "submissions_count": 8,
     "first_phase_start": null,
@@ -308,8 +273,8 @@
     "description_zh": "第二届面向机器的图像质量评估挑战赛，隶属于IEEE SPS挑战赛计划",
     "created_by": "pjlabeval",
     "created_when": "2026-09-21T07:27:36.520325Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=tOc4S0wMd6myTbD4Xz9vfbt2O2U%3D&Expires=1790264563",
-    "participants_count": 5,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=bYN39kdPgj2mMjaL2MydifF7DXA%3D&Expires=1790351461",
+    "participants_count": 6,
     "submissions_count": 3,
     "first_phase_start": null,
     "phases": [
@@ -362,9 +327,9 @@
     "description_zh": "LiDAR-惯性SLAM赛道的仅翻译评估。",
     "created_by": "yuhangxu",
     "created_when": "2026-07-26T09:50:41.414250Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059441/adc6bc07e4f0/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=emcMqE8oesqTLWXIls9Ki2AB6QE%3D&Expires=1790264567",
-    "participants_count": 55,
-    "submissions_count": 1041,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059441/adc6bc07e4f0/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=%2FTsuEDaTJmv1uXPeIF93S16M6gc%3D&Expires=1790351472",
+    "participants_count": 57,
+    "submissions_count": 1051,
     "first_phase_start": null,
     "phases": [
       {
@@ -403,9 +368,9 @@
     "description_zh": "LiDAR-视觉-惯性SLAM赛道的纯翻译评估",
     "created_by": "yuhangxu",
     "created_when": "2026-07-26T09:51:43.642130Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059503/c4f5eea4397e/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=gifQ%2FuVoOMJzu7iCUY0st7V52H4%3D&Expires=1790264566",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059503/c4f5eea4397e/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=HZcDIBCn63gb%2BlXVUm9rU7DT2Y0%3D&Expires=1790351469",
     "participants_count": 31,
-    "submissions_count": 264,
+    "submissions_count": 270,
     "first_phase_start": null,
     "phases": [
       {
@@ -444,9 +409,9 @@
     "description_zh": "合成针对V2X-Real基础设施中心分布的LiDAR数据；在合成数据上训练，在真实V2X-Real-IC上评估。",
     "created_by": "mshahbazkharal",
     "created_when": "2026-05-26T18:29:21.535343Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833308/72b4ab690364/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=PLqt8X09kdAktvLIwH%2BhG%2B3xuqA%3D&Expires=1790264610",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833308/72b4ab690364/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=FP0cezKiCDYO6wfEgLIzQxJb6sM%3D&Expires=1790351544",
     "participants_count": 32,
-    "submissions_count": 98,
+    "submissions_count": 118,
     "first_phase_start": null,
     "phases": [
       {
@@ -510,9 +475,9 @@
     "description_zh": "合成针对LUMPI汉诺威路边交叉口分布的LiDAR数据；在合成数据上训练，在真实数据上评估。",
     "created_by": "mshahbazkharal",
     "created_when": "2026-05-26T18:23:55.992525Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833303/efab85de0a26/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=0eIAT9kvc0F%2BT0IBj2m1nlrKaUs%3D&Expires=1790264618",
-    "participants_count": 28,
-    "submissions_count": 99,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833303/efab85de0a26/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=4ZbXqg%2BPNIw5HTXNwNbSIKo0cjU%3D&Expires=1790351544",
+    "participants_count": 29,
+    "submissions_count": 119,
     "first_phase_start": null,
     "phases": [
       {
@@ -576,9 +541,9 @@
     "description_zh": "",
     "created_by": "sylvchev",
     "created_when": "2026-09-05T15:37:08.618788Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-11-1789137635/381e2fc7c674/competition-trophy.png?AWSAccessKeyId=codabench-prod&Signature=S7QMERIswr75pbw%2FA0KO7%2BBF23o%3D&Expires=1790264569",
-    "participants_count": 237,
-    "submissions_count": 74,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-11-1789137635/381e2fc7c674/competition-trophy.png?AWSAccessKeyId=codabench-prod&Signature=9AjrexzBCoIdIS8anuJryBUJUF0%3D&Expires=1790351460",
+    "participants_count": 252,
+    "submissions_count": 84,
     "first_phase_start": null,
     "phases": [
       {
