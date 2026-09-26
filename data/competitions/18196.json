@@ -5,9 +5,9 @@
   "description_zh": "WACV 2027现实世界监控研讨会UPAR挑战赛第二赛道。在域偏移条件下，根据属性集合查询对行人图像库进行排序。代码提交：在隐藏测试集上运行模型。",
   "created_by": "spcke",
   "created_when": "2026-09-21T10:16:24.265612Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789989582/27d420ef5134/rws2027_orlando.png?AWSAccessKeyId=codabench-prod&Signature=WtsMC61YGSvRd4FAALqlcmAmm3g%3D&Expires=1790351477",
-  "participants_count": 18,
-  "submissions_count": 22,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789989582/27d420ef5134/rws2027_orlando.png?AWSAccessKeyId=codabench-prod&Signature=7epKjcAzlVBvKVfGvIl6wCeR8Zk%3D&Expires=1790438089",
+  "participants_count": 19,
+  "submissions_count": 36,
   "first_phase_start": null,
   "phases": [
     {
