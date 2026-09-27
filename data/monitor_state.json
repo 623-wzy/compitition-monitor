@@ -6,7 +6,7 @@
     "description_zh": "",
     "created_by": "ntulc",
     "created_when": "2026-05-11T19:42:24.060326Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-18-1779115404/081a3e46c671/Shanghai_University_of_Finance_and_.jpg?AWSAccessKeyId=codabench-prod&Signature=nBl5d%2B67xv6YPwxnNex9mtVZov0%3D&Expires=1790438113",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-18-1779115404/081a3e46c671/Shanghai_University_of_Finance_and_.jpg?AWSAccessKeyId=codabench-prod&Signature=FJjuYhiDuQBOmdj5xXxJQkQxap4%3D&Expires=1790524791",
     "participants_count": 49,
     "submissions_count": 215,
     "first_phase_start": null,
@@ -41,9 +41,9 @@
     "description_zh": "This competition focuses on fine-grained understanding of urban-level building facade components, utilizing the City-Fac dataset.\n\nThe data is collected by vehicle-mounted mobile laser scanning systems, covering multiple types of typical urban street blocks in Xiamen, with a cumulative road length of approximately 60 km. The dataset includes fine-grained building facade element annotations such as walls, windows, doors, roofs, billboards, air conditioning units, canopies, and balconies, with both semantic-level and instance-level labels provided.\n\nParticipants need to identify independent building facade component instances in the test point cloud and output the corresponding semantic categories and instance numbers.\n\nThe competition adopts a result submission mode. Participants complete model training and inference locally and only submit prediction results to Codabench, where the platform automatically scores using hidden instance labels.",
     "created_by": "jianlongguan",
     "created_when": "2026-06-26T12:50:09.783065Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=7WOFkSHDNYeqWVzSZB78NTdx26I%3D&Expires=1790438098",
-    "participants_count": 48,
-    "submissions_count": 726,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=HwYZ89tkQJPAbV98oKEFMEZjTK8%3D&Expires=1790524772",
+    "participants_count": 49,
+    "submissions_count": 750,
     "first_phase_start": null,
     "phases": [
       {
@@ -70,9 +70,9 @@
     "description_zh": "欢迎来到首届\"重演化身视频中远程操作者身份验证\"国际竞赛。本竞赛将与[ACCV2026](https://https://accv2026.org/)联合举办。",
     "created_by": "allam",
     "created_when": "2026-07-27T05:47:11.519603Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=Nfl8AMURlSCTElajNnCWAmxTcMw%3D&Expires=1790438093",
-    "participants_count": 30,
-    "submissions_count": 36,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=l7bIhozleOVutgZRtrqIEc1j9MA%3D&Expires=1790524763",
+    "participants_count": 34,
+    "submissions_count": 37,
     "first_phase_start": null,
     "phases": [
       {
@@ -116,6 +116,42 @@
       }
     ]
   },
+  "17931": {
+    "id": 17931,
+    "title": "NTU CE7454",
+    "description": "The goal of this mini challenge is to design and train a network for fake facial image detection.",
+    "description_zh": "这个迷你挑战的目标是设计和训练一个用于检测虚假面部图像的网络。",
+    "created_by": "weichen2383",
+    "created_when": "2026-08-28T08:38:04.000911Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-28-1787906284/99c1b887dc56/Screenshot_2026-08-28_at_15.17.27.png?AWSAccessKeyId=codabench-prod&Signature=jVTsSB5Lu1ePGze2glZhgoqwgog%3D&Expires=1790524759",
+    "participants_count": 114,
+    "submissions_count": 290,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 29983,
+        "name": "Development Phase",
+        "start": "2026-08-30T16:00:00Z",
+        "end": "2026-10-11T15:55:00Z",
+        "max_submissions_per_day": 5
+      },
+      {
+        "id": 29991,
+        "name": "Final_Test_phase",
+        "start": "2026-10-11T15:55:00Z",
+        "end": "2026-10-17T15:55:00Z",
+        "max_submissions_per_day": 3
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Overview",
+        "content": "# AI-Generated Image Detection and Source Attribution\n\n**Make sure your \"Display Name\" is your  matric number, otherwise your score would be affected.**\n\nRecent text-to-image generation systems can produce highly realistic images that are increasingly difficult to distinguish from \nnatural photographs. The goal of this mini-challenge is to design and train an image classification network that can determine whether an image is **real or AI-generated**, and, for an AI-generated image, identify its **source model**.\n\nThis challenge is organized as part of **NTU CE7454**.\n\nWe formulate the problem as a **three-class image classification task**:\n\n* `0` — Real image\n* `1` — Image generated by **Model A**\n* `2` — Image generated by **Model B**\n\nThe identities and implementation details of Model A and Model B will not be disclosed. Your model should learn generalizable visual evidence from the provided training data rather than relying on knowledge of the underlying generation systems.\n\nAll released images are RGB JPEG files with a resolution of **512 × 512**.\n\nThe dataset consists of:\n\n| Split       |  Real | Model A | Model B |  Total | Labels Released? |\n| ----------- | ----: | ------: | ------: | -----: | ---------------- |\n| Training    | 5,000 |   5,000 |   5,000 | 15,000 | Yes              |\n| Development |   300 |     300 |     300 |    900 | No               |\n| Test        |   500 |     500 |     500 |  1,500 | No               |\n\nTraining images follow the filename format:\n\n```text\nindex_label.jpg\n```\n\nFor example:\n\n```text\n128_2.jpg\n```\n\nrepresents training image `128` with class label `2`.\n\nDevelopment and test images follow the format:\n\n```text\nindex.jpg\n```\n\nTheir filenames do not reveal the corresponding class labels. The development and test ground-truth labels are retained by the teaching team.\n\nThe development set may be used for model selection according to the evaluation procedure announced by the teaching team. The **final project ranking is determined only on the hidden test set**.\n\n---\n\n### 🚨 Important Submission Notice\n\nThe test set will be released on:\n\n**[11 Oct 2026 23:59]**\n\nThe final submission deadline is:\n\n**[23 Oct 2026, 23:59]**\n\nAll times follow the timezone announced on the course website.\n\n⚠️ **Please do not wait until the last minute to submit.** Participants are responsible for ensuring that their submission is successfully uploaded and correctly formatted before the deadline.\n\n---\n\n### Evaluation\n\nThe final evaluation metric is **classification accuracy**:\n\n```text\naccuracy = number of correctly classified test images / number of test images\n```\n\nEvery test image has equal weight.\n\nPredictions must be integer labels from:\n\n```text\n{0, 1, 2}\n```\n\nThe ground-truth labels of the test set will **NOT** be released.\n\nSolutions will be ranked according to their accuracy on the hidden test set.\n\n---\n\n### Frequently Asked Questions\n\n**PLEASE CAREFULLY READ THIS SECTION BEFORE CONTACTING THE TEACHING TEAM. THANK YOU!**\n\n* This is an **individual project**. Every student must develop and submit their own solution.\n\n* Your model must contain **no more than 12,300,000 trainable parameters**.\n\n* Your model must be **trained from scratch**.\n\n* **Pretrained weights are NOT allowed**, including ImageNet-pretrained initialization.\n\n* **No external data are allowed.** You may only use the provided CE7454 project dataset for training.\n\n* External image data, external labels, pseudo-labels obtained from external models, and additional generated training images are **NOT allowed**.\n\n* **Model ensembles are NOT allowed.**\n\n* Test-time model ensembles and combining predictions from multiple independently trained models are also **NOT allowed**.\n\n* **Knowledge distillation from an external or larger teacher model is NOT allowed.**\n\n* Standard data augmentation and regularization techniques are allowed, provided that they are applied only to the supplied training images.\n\n* You must not attempt to recover hidden development or test labels through filenames, metadata, manual labeling, information leakage, or other non-learning-based methods.\n\n* If you are unsure whether a particular technique, model component, library, or resource is permitted, please contact the teaching team **before the submission deadline**.\n\n---\n\n### CodaBench Submission\n\nThe competition benchmark will be hosted on **CodaBench**.\n\n**CE7454 AI-Generated Image Detection — CodaBench link to be announced**\n\nFor the test phase, submit **ONE JSON file only** to CodaBench.\n\nThe JSON object must map every test image filename to its predicted integer label.\n\nExample:\n\n```json\n{\n  \"0.jpg\": 2,\n  \"1.jpg\": 0,\n  \"2.jpg\": 1\n}\n```\n\n**🚨🚨Please carefully check the format of the example_dev_phase submission: https://www.codabench.org/datasets/959101/ 🚨🚨**\n\nYour submission must satisfy all of the following requirements:\n\n* Include **exactly one prediction for every test image**.\n* Use the exact test filename, including the `.jpg` extension, as each key.\n* Use only integer labels `0`, `1`, or `2`.\n* Do not include file paths.\n* Do not include probabilities or logits.\n* Do not include comments or additional fields.\n* Do not omit any test images.\n* Do not include filenames that are not part of the test set.\n* The file must be valid UTF-8 JSON and parseable using `json.load(...)`.\n\nThe order of the keys does not matter.\n\nDuplicate keys are not permitted.\n\n⚠️ **Incorrect formatting, missing predictions, extra predictions, or invalid labels may make the submission invalid and result in zero prediction points.**\n\n---\n\n\n### Restrictions\n\nTo maintain fairness:\n\n* Your submission must use a **single model with no more than 12,300,000 trainable parameters**.\n* Your model must be **trained from scratch**.\n* **No pretrained models or pretrained weights are allowed.**\n* **No external training data are allowed.**\n* External images, external labels, pseudo-labels from external models, and additional generated training images are prohibited.\n* **Model ensembles are not allowed.**\n* **Test-time model ensembles are not allowed.**\n* **Knowledge distillation from an external or larger teacher model is not allowed.**\n* Hidden labels must not be recovered through filenames, metadata, manual labeling, information leakage, or any other non-learning-based method.\n* All submitted predictions must be generated by your own compliant model.\n\nYou can count the number of trainable parameters in PyTorch using:\n\n```python\nnum_parameters = sum(\n    parameter.numel()\n    for parameter in model.parameters()\n    if parameter.requires_grad\n)\n```\n\nThe teaching team may request your source code or model checkpoint for verification.\n\nA solution that violates the parameter limit or any fairness rule may receive a score of zero, regardless of its test accuracy.\n\n---\n\n### Academic Integrity\n\nAll submitted predictions must be produced by your **own compliant model**.\n\nSharing any of the following between students is prohibited:\n\n* predictions;\n* hidden-label information;\n* trained model weights; or\n* private project code.\n\nPublic software libraries may be used, but you are responsible for ensuring that they do not introduce pretrained weights, external training data, model ensembling, or other prohibited components.\n\nQuestions about ambiguous cases should be raised with the teaching team **before the submission deadline**.",
+        "content_zh": "# AI生成图像检测与来源识别\n\n最近的文本到图像生成系统能够生成高度逼真的图像，这些图像越来越难以与真实照片区分。本小型挑战赛的目标是设计并训练一个图像分类网络，以确定图像是**真实图像还是AI生成**，以及对于AI生成的图像，**识别其源模型**。\n\n本挑战赛是**NTU CE7454**课程的一部分。\n\n我们将问题制定为**三类图像分类任务**：\n\n* `0` — 真实图像\n* `1` — 由**模型A**生成的图像\n* `2` — 由**模型B**生成的图像\n\n模型A和模型B的身份和实现细节将不会公开。您的模型应该从提供的训练数据中学习可泛化的视觉特征，而不是依赖于对底层生成系统的知识。\n\n所有发布的图像均为RGB JPEG文件，分辨率为**512 × 512**。\n\n数据集包括：\n\n| 分组      | 真实 | 模型A | 模型B | 总计  | 标签已发布？ |\n| --------- | ---: | ----: | ----: | ----: | ---------- |\n| 训练集    | 5,000 | 5,000 | 5,000 | 15,000 | 是        |\n| 开发集    | 300   | 300   | 300   | 900    | 否        |\n| 测试集    | 500   | 500   | 500   | 1,500  | 否        |\n\n训练图像遵循文件名格式：\n\n```text\nindex_label.jpg\n```\n\n例如：\n\n```text\n128_2.jpg\n```\n\n表示训练图像`128`，类别标签为`2`。\n\n开发集和测试集图像遵循格式：\n\n```text\nindex.jpg\n```\n\n其文件名不显示相应的类别标签。开发集和测试集的真实标签由教学团队保管。\n\n开发集可根据教学团队宣布的评估程序用于模型选择。**最终项目排名仅在隐藏测试集上确定**。\n\n---\n\n### 🚨 重要提交通知\n\n测试集将在以下时间发布：\n\n**[2026年10月11日 23:59]**\n\n最终提交截止时间为：\n\n**[2026年10月23日 23:59]**\n\n所有时间均遵循课程网站上宣布的时区。\n\n⚠️ **请勿等到最后一刻才提交。** 参与者有责任确保其提交在截止期限前成功上传并格式正确。\n\n---\n\n### 评估\n\n最终评估指标是**分类准确率**：\n\n```text\n准确率 = 正确分类的测试图像数 / 测试图像总数\n```\n\n每个测试图像的权重相等。\n\n预测必须为整数标签：\n\n```text\n{0, 1, 2}\n```\n\n测试集的真实标签**不会**被公开。\n\n解决方案将根据其在隐藏测试集上的准确率进行排名。\n\n---\n\n### 常见问题\n\n**请在联系教学团队前仔细阅读本部分。谢谢！**\n\n* 本项目为**个人项目**。每位学生必须独立开发并提交自己的解决方案。\n\n* 您的模型包含的可训练参数**不超过12,300,000个**。\n\n* 您的模型必须**从零开始训练**。\n\n* **不允许使用预训练权重**，包括ImageNet预训练初始化。\n\n* **不允许使用外部数据**。您只能使用提供的CE7454项目数据集进行训练。\n\n* **不允许**外部图像数据、外部标签、从外部模型获得的伪标签和额外的生成训练图像。\n\n* **不允许模型集成**。\n\n* **不允许测试时模型集成和合并来自多个独立训练模型的预测**。\n\n* **不允许从外部或更大的教师模型进行知识蒸馏**。\n\n* 允许标准数据增强和正则化技术，前提是仅将其应用于提供的训练图像。\n\n* 您不得尝试通过文件名、元数据、手动标注、信息泄露或其他非法方式恢复隐藏的开发或测试标签。"
+      }
+    ]
+  },
   "17825": {
     "id": 17825,
     "title": "Datathon@IndoML 2026 — Track 1: Noise Event Detection",
@@ -123,9 +159,9 @@
     "description_zh": "在 Vaani 语料库的真实印度语言语音录音中检测噪声事件（开始和结束时间戳）。参赛者必须利用多层注释的训练数据（黄金级/白银级/青铜级）来构建稳健的噪声事件检测系统，该系统将基于事件级 F1 和分段 Dice 进行评估。",
     "created_by": "nagu_iitkgp",
     "created_when": "2026-08-14T17:27:12.345457Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-14-1786728432/29a3bf95a91d/logo.png?AWSAccessKeyId=codabench-prod&Signature=rcsq4Qqvbo4G7zKc%2BndVN4UffXs%3D&Expires=1790438093",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-14-1786728432/29a3bf95a91d/logo.png?AWSAccessKeyId=codabench-prod&Signature=IztEMfkhPCfLOw5VtRyo7nfCvlI%3D&Expires=1790524761",
     "participants_count": 184,
-    "submissions_count": 977,
+    "submissions_count": 993,
     "first_phase_start": null,
     "phases": [
       {
@@ -157,42 +193,6 @@
       }
     ]
   },
-  "17931": {
-    "id": 17931,
-    "title": "NTU CE7454",
-    "description": "The goal of this mini challenge is to design and train a network for fake facial image detection.",
-    "description_zh": "这个迷你挑战的目标是设计和训练一个用于检测虚假面部图像的网络。",
-    "created_by": "weichen2383",
-    "created_when": "2026-08-28T08:38:04.000911Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-28-1787906284/99c1b887dc56/Screenshot_2026-08-28_at_15.17.27.png?AWSAccessKeyId=codabench-prod&Signature=wOETaWwvxmbGTeV4eo%2BD5U6Z02U%3D&Expires=1790438092",
-    "participants_count": 112,
-    "submissions_count": 272,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 29983,
-        "name": "Development Phase",
-        "start": "2026-08-30T16:00:00Z",
-        "end": "2026-10-11T15:55:00Z",
-        "max_submissions_per_day": 5
-      },
-      {
-        "id": 29991,
-        "name": "Final_Test_phase",
-        "start": "2026-10-11T15:55:00Z",
-        "end": "2026-10-17T15:55:00Z",
-        "max_submissions_per_day": 3
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Overview",
-        "content": "# AI-Generated Image Detection and Source Attribution\n\n**Make sure your \"Display Name\" is your  matric number, otherwise your score would be affected.**\n\nRecent text-to-image generation systems can produce highly realistic images that are increasingly difficult to distinguish from \nnatural photographs. The goal of this mini-challenge is to design and train an image classification network that can determine whether an image is **real or AI-generated**, and, for an AI-generated image, identify its **source model**.\n\nThis challenge is organized as part of **NTU CE7454**.\n\nWe formulate the problem as a **three-class image classification task**:\n\n* `0` — Real image\n* `1` — Image generated by **Model A**\n* `2` — Image generated by **Model B**\n\nThe identities and implementation details of Model A and Model B will not be disclosed. Your model should learn generalizable visual evidence from the provided training data rather than relying on knowledge of the underlying generation systems.\n\nAll released images are RGB JPEG files with a resolution of **512 × 512**.\n\nThe dataset consists of:\n\n| Split       |  Real | Model A | Model B |  Total | Labels Released? |\n| ----------- | ----: | ------: | ------: | -----: | ---------------- |\n| Training    | 5,000 |   5,000 |   5,000 | 15,000 | Yes              |\n| Development |   300 |     300 |     300 |    900 | No               |\n| Test        |   500 |     500 |     500 |  1,500 | No               |\n\nTraining images follow the filename format:\n\n```text\nindex_label.jpg\n```\n\nFor example:\n\n```text\n128_2.jpg\n```\n\nrepresents training image `128` with class label `2`.\n\nDevelopment and test images follow the format:\n\n```text\nindex.jpg\n```\n\nTheir filenames do not reveal the corresponding class labels. The development and test ground-truth labels are retained by the teaching team.\n\nThe development set may be used for model selection according to the evaluation procedure announced by the teaching team. The **final project ranking is determined only on the hidden test set**.\n\n---\n\n### 🚨 Important Submission Notice\n\nThe test set will be released on:\n\n**[11 Oct 2026 23:59]**\n\nThe final submission deadline is:\n\n**[23 Oct 2026, 23:59]**\n\nAll times follow the timezone announced on the course website.\n\n⚠️ **Please do not wait until the last minute to submit.** Participants are responsible for ensuring that their submission is successfully uploaded and correctly formatted before the deadline.\n\n---\n\n### Evaluation\n\nThe final evaluation metric is **classification accuracy**:\n\n```text\naccuracy = number of correctly classified test images / number of test images\n```\n\nEvery test image has equal weight.\n\nPredictions must be integer labels from:\n\n```text\n{0, 1, 2}\n```\n\nThe ground-truth labels of the test set will **NOT** be released.\n\nSolutions will be ranked according to their accuracy on the hidden test set.\n\n---\n\n### Frequently Asked Questions\n\n**PLEASE CAREFULLY READ THIS SECTION BEFORE CONTACTING THE TEACHING TEAM. THANK YOU!**\n\n* This is an **individual project**. Every student must develop and submit their own solution.\n\n* Your model must contain **no more than 12,300,000 trainable parameters**.\n\n* Your model must be **trained from scratch**.\n\n* **Pretrained weights are NOT allowed**, including ImageNet-pretrained initialization.\n\n* **No external data are allowed.** You may only use the provided CE7454 project dataset for training.\n\n* External image data, external labels, pseudo-labels obtained from external models, and additional generated training images are **NOT allowed**.\n\n* **Model ensembles are NOT allowed.**\n\n* Test-time model ensembles and combining predictions from multiple independently trained models are also **NOT allowed**.\n\n* **Knowledge distillation from an external or larger teacher model is NOT allowed.**\n\n* Standard data augmentation and regularization techniques are allowed, provided that they are applied only to the supplied training images.\n\n* You must not attempt to recover hidden development or test labels through filenames, metadata, manual labeling, information leakage, or other non-learning-based methods.\n\n* If you are unsure whether a particular technique, model component, library, or resource is permitted, please contact the teaching team **before the submission deadline**.\n\n---\n\n### CodaBench Submission\n\nThe competition benchmark will be hosted on **CodaBench**.\n\n**CE7454 AI-Generated Image Detection — CodaBench link to be announced**\n\nFor the test phase, submit **ONE JSON file only** to CodaBench.\n\nThe JSON object must map every test image filename to its predicted integer label.\n\nExample:\n\n```json\n{\n  \"0.jpg\": 2,\n  \"1.jpg\": 0,\n  \"2.jpg\": 1\n}\n```\n\n**🚨🚨Please carefully check the format of the example_dev_phase submission: https://www.codabench.org/datasets/959101/ 🚨🚨**\n\nYour submission must satisfy all of the following requirements:\n\n* Include **exactly one prediction for every test image**.\n* Use the exact test filename, including the `.jpg` extension, as each key.\n* Use only integer labels `0`, `1`, or `2`.\n* Do not include file paths.\n* Do not include probabilities or logits.\n* Do not include comments or additional fields.\n* Do not omit any test images.\n* Do not include filenames that are not part of the test set.\n* The file must be valid UTF-8 JSON and parseable using `json.load(...)`.\n\nThe order of the keys does not matter.\n\nDuplicate keys are not permitted.\n\n⚠️ **Incorrect formatting, missing predictions, extra predictions, or invalid labels may make the submission invalid and result in zero prediction points.**\n\n---\n\n\n### Restrictions\n\nTo maintain fairness:\n\n* Your submission must use a **single model with no more than 12,300,000 trainable parameters**.\n* Your model must be **trained from scratch**.\n* **No pretrained models or pretrained weights are allowed.**\n* **No external training data are allowed.**\n* External images, external labels, pseudo-labels from external models, and additional generated training images are prohibited.\n* **Model ensembles are not allowed.**\n* **Test-time model ensembles are not allowed.**\n* **Knowledge distillation from an external or larger teacher model is not allowed.**\n* Hidden labels must not be recovered through filenames, metadata, manual labeling, information leakage, or any other non-learning-based method.\n* All submitted predictions must be generated by your own compliant model.\n\nYou can count the number of trainable parameters in PyTorch using:\n\n```python\nnum_parameters = sum(\n    parameter.numel()\n    for parameter in model.parameters()\n    if parameter.requires_grad\n)\n```\n\nThe teaching team may request your source code or model checkpoint for verification.\n\nA solution that violates the parameter limit or any fairness rule may receive a score of zero, regardless of its test accuracy.\n\n---\n\n### Academic Integrity\n\nAll submitted predictions must be produced by your **own compliant model**.\n\nSharing any of the following between students is prohibited:\n\n* predictions;\n* hidden-label information;\n* trained model weights; or\n* private project code.\n\nPublic software libraries may be used, but you are responsible for ensuring that they do not introduce pretrained weights, external training data, model ensembling, or other prohibited components.\n\nQuestions about ambiguous cases should be raised with the teaching team **before the submission deadline**.",
-        "content_zh": "# AI生成图像检测与来源识别\n\n最近的文本到图像生成系统能够生成高度逼真的图像，这些图像越来越难以与真实照片区分。本小型挑战赛的目标是设计并训练一个图像分类网络，以确定图像是**真实图像还是AI生成**，以及对于AI生成的图像，**识别其源模型**。\n\n本挑战赛是**NTU CE7454**课程的一部分。\n\n我们将问题制定为**三类图像分类任务**：\n\n* `0` — 真实图像\n* `1` — 由**模型A**生成的图像\n* `2` — 由**模型B**生成的图像\n\n模型A和模型B的身份和实现细节将不会公开。您的模型应该从提供的训练数据中学习可泛化的视觉特征，而不是依赖于对底层生成系统的知识。\n\n所有发布的图像均为RGB JPEG文件，分辨率为**512 × 512**。\n\n数据集包括：\n\n| 分组      | 真实 | 模型A | 模型B | 总计  | 标签已发布？ |\n| --------- | ---: | ----: | ----: | ----: | ---------- |\n| 训练集    | 5,000 | 5,000 | 5,000 | 15,000 | 是        |\n| 开发集    | 300   | 300   | 300   | 900    | 否        |\n| 测试集    | 500   | 500   | 500   | 1,500  | 否        |\n\n训练图像遵循文件名格式：\n\n```text\nindex_label.jpg\n```\n\n例如：\n\n```text\n128_2.jpg\n```\n\n表示训练图像`128`，类别标签为`2`。\n\n开发集和测试集图像遵循格式：\n\n```text\nindex.jpg\n```\n\n其文件名不显示相应的类别标签。开发集和测试集的真实标签由教学团队保管。\n\n开发集可根据教学团队宣布的评估程序用于模型选择。**最终项目排名仅在隐藏测试集上确定**。\n\n---\n\n### 🚨 重要提交通知\n\n测试集将在以下时间发布：\n\n**[2026年10月11日 23:59]**\n\n最终提交截止时间为：\n\n**[2026年10月23日 23:59]**\n\n所有时间均遵循课程网站上宣布的时区。\n\n⚠️ **请勿等到最后一刻才提交。** 参与者有责任确保其提交在截止期限前成功上传并格式正确。\n\n---\n\n### 评估\n\n最终评估指标是**分类准确率**：\n\n```text\n准确率 = 正确分类的测试图像数 / 测试图像总数\n```\n\n每个测试图像的权重相等。\n\n预测必须为整数标签：\n\n```text\n{0, 1, 2}\n```\n\n测试集的真实标签**不会**被公开。\n\n解决方案将根据其在隐藏测试集上的准确率进行排名。\n\n---\n\n### 常见问题\n\n**请在联系教学团队前仔细阅读本部分。谢谢！**\n\n* 本项目为**个人项目**。每位学生必须独立开发并提交自己的解决方案。\n\n* 您的模型包含的可训练参数**不超过12,300,000个**。\n\n* 您的模型必须**从零开始训练**。\n\n* **不允许使用预训练权重**，包括ImageNet预训练初始化。\n\n* **不允许使用外部数据**。您只能使用提供的CE7454项目数据集进行训练。\n\n* **不允许**外部图像数据、外部标签、从外部模型获得的伪标签和额外的生成训练图像。\n\n* **不允许模型集成**。\n\n* **不允许测试时模型集成和合并来自多个独立训练模型的预测**。\n\n* **不允许从外部或更大的教师模型进行知识蒸馏**。\n\n* 允许标准数据增强和正则化技术，前提是仅将其应用于提供的训练图像。\n\n* 您不得尝试通过文件名、元数据、手动标注、信息泄露或其他非法方式恢复隐藏的开发或测试标签。"
-      }
-    ]
-  },
   "18196": {
     "id": 18196,
     "title": "RWS2027 - UPAR Challenge Track 2: Attribute-based Person Retrieval @ WACV2027",
@@ -200,9 +200,9 @@
     "description_zh": "WACV 2027现实世界监控研讨会UPAR挑战赛第二赛道。在域偏移条件下，根据属性集合查询对行人图像库进行排序。代码提交：在隐藏测试集上运行模型。",
     "created_by": "spcke",
     "created_when": "2026-09-21T10:16:24.265612Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789989582/27d420ef5134/rws2027_orlando.png?AWSAccessKeyId=codabench-prod&Signature=7epKjcAzlVBvKVfGvIl6wCeR8Zk%3D&Expires=1790438089",
-    "participants_count": 19,
-    "submissions_count": 36,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789989582/27d420ef5134/rws2027_orlando.png?AWSAccessKeyId=codabench-prod&Signature=QZO%2FtlCX06rC06M3WS3AQer21mk%3D&Expires=1790524758",
+    "participants_count": 21,
+    "submissions_count": 50,
     "first_phase_start": null,
     "phases": [
       {
@@ -247,9 +247,9 @@
     "description_zh": "一个多选基准，用于评估大型视觉-语言模型（LVLMs）在三个层级上的长期视频质量理解（LVQU）能力：局部事件质量理解（LQU）、跨事件质量推理（CQR）和全局质量理解（GQU）。视频涵盖故事片、纪录片、监控、自中心视角、教学和动画等内容。",
     "created_by": "aarna",
     "created_when": "2026-09-16T17:04:02.730340Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-16-1789578242/12eae3daa231/images/logo.png?AWSAccessKeyId=codabench-prod&Signature=%2FRNNFogdsFpKMr2aImpaD44WEPA%3D&Expires=1790438090",
-    "participants_count": 8,
-    "submissions_count": 8,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-16-1789578242/12eae3daa231/images/logo.png?AWSAccessKeyId=codabench-prod&Signature=OS9w2i4%2FhbbCgwQhrqAzoWPfIhw%3D&Expires=1790524761",
+    "participants_count": 9,
+    "submissions_count": 11,
     "first_phase_start": null,
     "phases": [
       {
@@ -308,8 +308,8 @@
     "description_zh": "第二届面向机器的图像质量评估挑战赛，隶属于IEEE SPS挑战赛计划",
     "created_by": "pjlabeval",
     "created_when": "2026-09-21T07:27:36.520325Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=5PqNOx3dZbL5OuvDsz4D1GIVg14%3D&Expires=1790438089",
-    "participants_count": 6,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=n%2F6F86yfYY4eWmL50o809LLRdp0%3D&Expires=1790524761",
+    "participants_count": 7,
     "submissions_count": 3,
     "first_phase_start": null,
     "phases": [
@@ -362,9 +362,9 @@
     "description_zh": "LiDAR-惯性SLAM赛道的仅翻译评估。",
     "created_by": "yuhangxu",
     "created_when": "2026-07-26T09:50:41.414250Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059441/adc6bc07e4f0/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=AHc1rcoXr28U5s2UbSZ9sFMhR2U%3D&Expires=1790438094",
-    "participants_count": 57,
-    "submissions_count": 1065,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059441/adc6bc07e4f0/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=nuPZ42peS%2B5VaqQG9pF5iF%2F8%2F1k%3D&Expires=1790524763",
+    "participants_count": 59,
+    "submissions_count": 1100,
     "first_phase_start": null,
     "phases": [
       {
@@ -403,9 +403,9 @@
     "description_zh": "LiDAR-视觉-惯性SLAM赛道的纯翻译评估",
     "created_by": "yuhangxu",
     "created_when": "2026-07-26T09:51:43.642130Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059503/c4f5eea4397e/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=UEjeAX8hvMDkOmkcMYZG7fMpLNk%3D&Expires=1790438094",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059503/c4f5eea4397e/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=cXExM%2BfRLDFIEZSarLdXte2VOwU%3D&Expires=1790524764",
     "participants_count": 31,
-    "submissions_count": 273,
+    "submissions_count": 281,
     "first_phase_start": null,
     "phases": [
       {
@@ -444,9 +444,9 @@
     "description_zh": "合成针对LUMPI汉诺威路边交叉口分布的LiDAR数据；在合成数据上训练，在真实数据上评估。",
     "created_by": "mshahbazkharal",
     "created_when": "2026-05-26T18:23:55.992525Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833303/efab85de0a26/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=KuTpAu2Au8S8endbFjxXLsVEHPw%3D&Expires=1790438107",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833303/efab85de0a26/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=mybqXUl2ljFdbLniPfrg84ABAQo%3D&Expires=1790524785",
     "participants_count": 29,
-    "submissions_count": 145,
+    "submissions_count": 165,
     "first_phase_start": null,
     "phases": [
       {
@@ -510,9 +510,9 @@
     "description_zh": "合成针对V2X-Real基础设施中心分布的LiDAR数据；在合成数据上训练，在真实V2X-Real-IC上评估。",
     "created_by": "mshahbazkharal",
     "created_when": "2026-05-26T18:29:21.535343Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833308/72b4ab690364/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=uwWS8E0p804%2BjJ5ierK4qAPkmPg%3D&Expires=1790438110",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833308/72b4ab690364/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=%2BDrHotvwHW2ajiQCQkcjA%2BB5Chk%3D&Expires=1790524789",
     "participants_count": 32,
-    "submissions_count": 144,
+    "submissions_count": 164,
     "first_phase_start": null,
     "phases": [
       {
@@ -576,9 +576,9 @@
     "description_zh": "",
     "created_by": "sylvchev",
     "created_when": "2026-09-05T15:37:08.618788Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-11-1789137635/381e2fc7c674/competition-trophy.png?AWSAccessKeyId=codabench-prod&Signature=Of%2F7xc1K9tRbvecTmxQxn%2BTxnxU%3D&Expires=1790438091",
-    "participants_count": 266,
-    "submissions_count": 95,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-11-1789137635/381e2fc7c674/competition-trophy.png?AWSAccessKeyId=codabench-prod&Signature=NcPi8AvgqviewAol2u0BjaGSrdI%3D&Expires=1790524760",
+    "participants_count": 272,
+    "submissions_count": 107,
     "first_phase_start": null,
     "phases": [
       {
