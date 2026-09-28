@@ -104,14 +104,14 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
     <span>ID: 17974</span>
     <span>创建者: sylvchev</span>
     <span>创建时间: 2026-09-05</span>
-    <span>参与人数: 272</span>
-    <span>提交次数: 107</span>
+    <span>参与人数: 287</span>
+    <span>提交次数: 116</span>
     <a class="ext-link" href="https://www.codabench.org/competitions/17974/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
   </div>
 
   <div class="section">
     <h3>竞赛描述</h3>
-    <div class="page-content">Decode a viewed natural image from a single EEG epoch by ranking candidates in frozen DINOv2-giant space. Submissions provide a trained model as code and weights. The platform runs inference-only evaluation on unseen images and ranks by top-5 retrieval accuracy. Powered by Benchopt and NeuralBench.</div>
+    <div class="page-content">通过在冻结的DINOv2-giant空间中对候选样本排序，从单段脑电信号中解码被观看的自然图像。参赛提交内容包括训练好的模型（含代码和权重）。平台在未见过的图像上运行纯推理评估，并按Top-5检索准确率排名。由Benchopt和NeuralBench提供支持。</div>
   </div>
 
   <div class="section">
@@ -122,160 +122,116 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
     </table>
   </div>
 
-<div class='section'><h3>Track description</h3><div class='page-content'># Registration
+<div class='section'><h3>Track description</h3><div class='page-content'># 注册
 
-&gt; You must **first register** for Track 01 - EEG-to-Image before you can participate. **Registration takes three steps.** Open **Get Started → Registration Guide** in the menu on the left. Follow the approval instructions and, if applicable, the additional setup required for teams.
-
----
-
-# Before building a submission
-
-&gt; To be evaluated successfully and appear on the leaderboard, every uploaded model must follow the **strict Codabench submission contract**. Before preparing and uploading your model, open **Get Started → Submission Guide** in the menu on the left. It defines the submission contract, including the required model architecture, trained weights, optional files, and validation workflow.
+&gt; 您必须先**注册**赛道01 - EEG-to-Image才能参与。**注册需三个步骤。**在左侧菜单中打开**开始→注册指南**。按照批准说明操作，如适用，完成团队所需的额外设置。
 
 ---
 
-# After uploading: when will my score appear?
+# 构建提交前
 
-&gt; **Your submission may remain queued before evaluation starts.** All four tracks share the same evaluation queue, so your score may not appear immediately. Once started, Track 01 normally needs 2–3 additional minutes to load and prepare the evaluation data, plus the model&#x27;s inference time. You can leave the page and return later; refreshing the Codabench webpage will not accelerate the evaluation process.
+&gt; 为了成功评估并出现在排行榜上，每个上传的模型必须遵循**严格的Codabench提交规范**。在准备和上传模型之前，请在左侧菜单中打开**开始→提交指南**。其中定义了提交规范，包括所需的模型架构、训练权重、可选文件和验证流程。
 
 ---
 
-# Track 01 · EEG-to-Image
+# 上传后：何时显示分数？
 
-&gt; **Sealed-phase specification.** The description, task contract, and ranking metric below define the final sealed phase. Warm-up uses a closely matched Top-5 retrieval proxy on public THINGS-EEG2 data. Its candidate set and aggregation are detailed below.
+&gt; **您的提交可能在评估开始前保持排队状态。**所有四个赛道共享同一个评估队列，因此您的分数可能不会立即出现。一旦开始，赛道01通常需要额外的2–3分钟来加载和准备评估数据，加上模型的推理时间。您可以离开页面稍后再返回；刷新Codabench网页不会加速评估过程。
 
-_Identify a viewed natural image from a single EEG response._
+---
 
-Given one multichannel EEG epoch recorded during natural-image viewing, predict a **1536-dimensional DINOv2-giant image embedding**. Codabench compares that prediction with the frozen embeddings of the candidate image gallery. The sealed split contains participants and images absent from training, testing cross-participant and cross-stimulus transfer rather than memorization of a fixed catalogue.
+# 赛道01 · EEG-to-Image
+
+&gt; **密封阶段规范。**下方的描述、任务规范和排名指标定义了最终的密封阶段。热身阶段使用在公共THINGS-EEG2数据上高度匹配的Top-5检索代理。其候选集和聚合方法详见下文。
+
+_从单次EEG响应中识别观看的自然图像。_
+
+给定在自然图像观看期间记录的一个多通道EEG时段，预测一个**1536维的DINOv2-giant图像嵌入**。Codabench会将该预测与候选图像库的冻结嵌入进行比较。密封划分包含训练中未出现的受试者和图像，测试跨受试者和跨刺激的迁移能力，而非对固定目录的记忆。
 
 &lt;p align=&quot;center&quot;&gt;
-  &lt;img src=&quot;https://neural-interfaces26.github.io/exports/eeg-to-image.gif&quot; alt=&quot;EEG response ranked against a gallery of candidate natural images&quot; width=&quot;640&quot; style=&quot;display:block;max-width:100%;height:auto;margin:1.25rem auto;&quot;&gt;
+  &lt;img src=&quot;https://neural-interfaces26.github.io/exports/eeg-to-image.gif&quot; alt=&quot;EEG响应在候选自然图像库中进行排序&quot; width=&quot;640&quot; style=&quot;display:block;max-width:100%;height:auto;margin:1.25rem auto;&quot;&gt;
 &lt;/p&gt;
 
-## Sealed-phase task contract
+## 密封阶段任务规范
 
 |                          |                                                               |
 | ------------------------ | ------------------------------------------------------------- |
-| **Input**                | One multichannel EEG epoch                                    |
-| **Prediction**           | One 1536-dimensional DINOv2-giant embedding                   |
-| **Objective**            | Retrieve the viewed image from the complete candidate gallery |
-| **Generalization shift** | New participants and images                                   |
-| **Sealed split**         | Evaluation participants and images are absent from training   |
+| **输入**                 | 一个多通道EEG时段                                             |
+| **预测**                 | 一个1536维的DINOv2-giant嵌入                                  |
+| **目标**                 | 从完整的候选库中检索观看的图像                                |
+| **泛化偏移**             | 新的受试者和图像                                              |
+| **密封划分**             | 评估使用的受试者和图像在训练中不存在                          |
 
-## Sealed-phase ranking metric
+## 密封阶段排名指标
 
-&gt; **Top-5 retrieval accuracy. Higher is better.**
+&gt; **Top-5检索准确率。越高越好。**
 
-For each EEG epoch, Codabench L2-normalizes the predicted embedding and the frozen DINOv2-giant embeddings in its held-out candidate gallery, then ranks their cosine similarities. A query is correct when the viewed image is among the five highest-ranked candidates. Predictions for repeated presentations of the same image are aggregated within each subject before retrieval, then the subject-level results are averaged so that every subject contributes equally. Top-1 accuracy is reported separately but does not determine the ranking.
+对于每个EEG时段，Codabench对预测的嵌入和保留候选库中的冻结DINOv2-giant嵌入进行L2归一化，然后对它们的余弦相似度进行排序。当观看的图像位于排名前五的候选中时，查询即被视为正确。同一图像重复呈现的预测在每个受试者内部进行聚合，然后再进行检索，随后对受试者级别的结果取平均，使每个受试者贡献相等。Top-1准确率单独报告，但不决定排名。
 
-## Development, warm-up, and sealed data
+## 开发、热身和密封数据
 
-**Development and training.** You may train your model on any of the organizer-recommended public datasets in the **[main website’s dataset directory](https://neural-interfaces26.github.io/tracks.html#datasets)** or other data permitted by the Terms.
+**开发和训练。**您可以在主办方推荐的公共数据集中的任何一个上训练您的模型，详见**[主网站的数据集目录](https://neural-interfaces26.github.io/tracks.html#datasets)**，或条款允许的其他数据。
 
-**Warm-up evaluation.** Warm-up submissions on Codabench are currently being evaluated on a subset of the public **THINGS-EEG2** dataset. This evaluation subset matches the test set in the [Track 01 NeuralBench start kit](https://facebookresearch.github.io/neuroai/neuralbench/auto_examples/biosignal_challenge_2026/plot_track1_eeg_to_image.html): timelines marked as test form the Codabench evaluation partition, while 20% of the training timelines are assigned to validation using random state 33. Codabench ranks each epoch against the unique target-image embeddings in that test partition and reports pooled Top-5 accuracy across all evaluation epochs. Unlike the sealed metric and NeuralBench&#x27;s headline `test/full_retrieval/top5_acc_subject-agg`, this temporary proxy does not aggregate repeated presentations within subjects. Top-1 accuracy is reported separately.
+**热身评估。**Codabench上的热身提交目前正在公共**THINGS-EEG2**数据集的子集上进行评估。该评估子集与[赛道01 Neural</div></div><div class='section'><h3>Registration Guide</h3><div class='page-content'># 三步注册
 
-THINGS-EEG2 also provides the **[reported public baseline scores](https://neural-interfaces26.github.io/participant-guide.html#baseline-track-1)**. Because the test data and labels are public, leakage is possible and warm-up scores are indicative only. Only the sealed phase determines the final ranking.
+**每位参赛者无论个人参赛还是作为团队成员，都必须完成以下步骤。注册在热身阶段期间持续开放至2026年10月24日。**
 
-**Sealed evaluation.** Codabench switches to the private 2026 Alljoined cohort described in the **[main website’s dataset directory](https://neural-interfaces26.github.io/tracks.html#dataset-track-1)**. This cohort is uploaded only for the sealed phase, and its participants, images, and labels remain hidden.
+1. 创建 **[Codabench 账户](https://www.codabench.org/accounts/signup)** 并登录。
+2. 为您希望参加的每个赛道打开 **我的提交** 页面：**[赛道 01](https://www.codabench.org/competitions/17974/#/participate-tab)**、**[赛道 02](https://www.codabench.org/competitions/17982/#/participate-tab)**、**[赛道 03](https://www.codabench.org/competitions/17983/#/participate-tab)** 或 **[赛道 04](https://www.codabench.org/competitions/17984/#/participate-tab)**。在每个页面上，接受条款和条件，然后点击 **注册**。您的请求将显示为 **待审核**。
+3. 提交 **[报名表](https://forms.gle/p3t2V25nuQtVXyj9A)**。如果您参加多个赛道，只需提交一次，并选择您已注册的所有赛道。
 
-## Track resources and next steps
+在表单中，请输入与您的 Codabench 账户关联的准确邮箱地址。您可以使用其他邮箱账户打开表单，但审批依据的是表单中填写的地址。
 
-**[Explore the full Track 01 description on the main website →](https://neural-interfaces26.github.io/tracks.html#track-1)** · **[Use the optional NeuralBench start kit and public baselines →](https://facebookresearch.github.io/neuroai/neuralbench/auto_examples/biosignal_challenge_2026/plot_track1_eeg_to_image.html)** · **[Review prizes and conditions →](https://neural-interfaces26.github.io/prizes.html#award-track-1)**
+返回每个赛道的 **我的提交** 页面以确认您的注册。如有需要，请刷新页面。
 
-For packaging and uploads, use **Get Started → Submission Guide**. For current dates and submission limits, use **Phases**. For eligibility, data use, and the reproducibility audit, use **Terms**.
+# 以团队形式参赛？
 
----
+**个人参赛者可跳过本节。**
 
-## Track partners
+1. 每位团队成员需单独完成上述三个注册步骤。（您无需在表单中声明您的团队。）
+2. 选择一位团队负责人创建一个 **[Codabench 组织](https://www.codabench.org/profiles/organization/create/)**，保存后编辑该组织以添加所有团队成员。
 
-### Sponsor and scientific institutions
+**备注 1：** 每位参赛者只能属于一个团队，不能加入或为多个团队提交作品。&lt;br&gt;
+**备注 2：** 提交和配额保持个人性质。每位成员通过自己的账户提交，而提交的作品归属于团队。&lt;br&gt;
+**备注 3：** 如果团队获胜，其负责人负责处理可复现性审计、研讨会展示和奖金分配。</div></div><div class='section'><h3>Submission Guide</h3><div class='page-content'># 如何提交你的模型
 
-&lt;a href=&quot;https://www.alljoined.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; title=&quot;Alljoined&quot;&gt;&lt;img src=&quot;https://neural-interfaces26.github.io/assets/img/logos/trim/alljoined.png&quot; alt=&quot;Alljoined&quot; height=&quot;34&quot; style=&quot;vertical-align:middle;&quot;&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;https://ai.meta.com/research/brain-ai/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; title=&quot;Meta FAIR Brain and AI&quot;&gt;&lt;img src=&quot;https://neural-interfaces26.github.io/assets/img/logos/trim/meta_brainai.png&quot; alt=&quot;Meta FAIR Brain and AI&quot; height=&quot;34&quot; style=&quot;vertical-align:middle;&quot;&gt;&lt;/a&gt;
+## 提交规则
 
-**Alljoined** sponsors Track 01 and provides its 2026 hidden evaluation cohort. **Meta FAIR Brain &amp; AI** leads the track’s scientific development.
+通过**我的提交**标签页上传一个**完全训练的模型ZIP文件**。
+Codabench会将解压后的文件以只读方式挂载，在推理模式下运行模型，计算赛道指标，并发布分数。它不会训练你的模型。
 
-### Organizing institutions
-
-&lt;a href=&quot;https://www.yneuro.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; title=&quot;Yneuro&quot;&gt;&lt;img src=&quot;https://neural-interfaces26.github.io/assets/img/logos/trim/yneuro.png&quot; alt=&quot;Yneuro&quot; height=&quot;28&quot; style=&quot;vertical-align:middle;&quot;&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;https://www.inria.fr/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; title=&quot;Inria&quot;&gt;&lt;img src=&quot;https://neural-interfaces26.github.io/assets/img/logos/trim/inria.png&quot; alt=&quot;Inria&quot; height=&quot;28&quot; style=&quot;vertical-align:middle;&quot;&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;https://sccn.ucsd.edu/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; title=&quot;UC San Diego&quot;&gt;&lt;img src=&quot;https://neural-interfaces26.github.io/assets/img/logos/ucsd.svg?v=2&quot; alt=&quot;UC San Diego&quot; height=&quot;28&quot; style=&quot;vertical-align:middle;&quot;&gt;&lt;/a&gt;</div></div><div class='section'><h3>Registration Guide</h3><div class='page-content'># Register in three steps
-
-**Every participant must complete these steps, whether entering individually or as part of a team. Registration remains open through October 24, 2026, during the warm-up phase.**
-
-1. Create a **[Codabench account](https://www.codabench.org/accounts/signup)** and sign in.
-2. Open **My Submissions** for every track you wish to enter: **[Track 01](https://www.codabench.org/competitions/17974/#/participate-tab)**, **[Track 02](https://www.codabench.org/competitions/17982/#/participate-tab)**, **[Track 03](https://www.codabench.org/competitions/17983/#/participate-tab)**, or **[Track 04](https://www.codabench.org/competitions/17984/#/participate-tab)**. On each page, accept the terms and conditions, then click **Register**. Your request will appear as **pending**.
-3. Submit the **[registration form](https://forms.gle/p3t2V25nuQtVXyj9A)**. If you are entering multiple tracks, submit it once and select every track for which you registered.
-
-In the form, enter the exact email address associated with your Codabench account. You may open the form using another email account, but approval uses the address entered in the form.
-
-Return to **My Submissions** for each track to confirm your registration. Refresh the page if needed.
-
-# Entering as a team?
-
-**Individual participants can skip this section.**
-
-1. Every team member completes the three registration steps above individually. (You will not need to declare your team in the form.)
-2. Choose one team leader to create one **[Codabench organization](https://www.codabench.org/profiles/organization/create/)**, save it, then edit it to add every team member.
-
-**Remark 1:** Each participant may belong to only one team and cannot join or submit for multiple teams.&lt;br&gt;
-**Remark 2:** Submissions and quotas remain individual. Each member submits through their own account, while submissions are attributed to the team.&lt;br&gt;
-**Remark 3:** If the team wins, its leader handles the reproducibility audit, workshop presentation, and prize distribution.</div></div><div class='section'><h3>Submission Guide</h3><div class='page-content'># How to submit your model
-
-## Submission rules
-
-Upload a **fully trained model as a ZIP** through the **My Submissions** tab.
-Codabench will mount the extracted files as read-only, run the model in inference
-mode, compute the track metric, and publish the score. It does not train
-your model.
-
-Your typical `my_submission.zip` contains:
+你典型的`my_submission.zip`包含：
 
 ```text
 my_submission.zip
-├── submission.py   # required: all Python inference code
-├── weights.pt      # trained parameters, with any name or format
-└── ...             # optional non-Python artifact like config.json
+├── submission.py   # 必需：所有Python推理代码
+├── weights.pt      # 训练参数，任何名称或格式均可
+└── ...             # 可选的非Python产物，如config.json
 ```
 
-- Put every file at the **root of the ZIP**.
-- `submission.py` must contain `class Solver(CompetSolver)`, the model
-  architecture, model-specific preprocessing, and all Python inference code.
-  Additional Python modules are not supported. See below for more details.
-- Include every weight and optional non-Python artifact the model needs. Read
-  them from `meta[&quot;submission_dir&quot;]` in `submission.py`.
+- 将所有文件放在**ZIP根目录**。
+- `submission.py`必须包含`class Solver(CompetSolver)`、模型架构、模型特定的预处理以及所有Python推理代码。不支持额外的Python模块。详见下文。
+- 包含模型所需的每个权重和可选的非Python产物。在`submission.py`中从`meta[&quot;submission_dir&quot;]`读取它们。
 
-Nothing is installed during evaluation, so `submission.py` may only import
-what the worker image already carries — `torch` and the rest of the stack
-pinned in
-[`requirements.txt`](https://github.com/neural-interfaces26/2026-competition/blob/main/requirements.txt).
-During `load_model` and `predict`, do not train, do not download competition
-data, and do not write into the submission directory.
+评估期间不会安装任何东西，因此`submission.py`只能导入工作镜像已携带的内容——`torch`以及固定在[`requirements.txt`](https://github.com/neural-interfaces26/2026-competition/blob/main/requirements.txt)中的其他软件栈。在`load_model`和`predict`期间，不要训练，不要下载竞赛数据，也不要写入提交目录。
 
-**Submission storage limit.** Codabench gives each profile 15 GB of submission
-storage shared across all tracks and uploads; it is not a separate 15 GB limit
-for each ZIP. This makes 15 GB the theoretical maximum for one submission,
-but the practical limit is the space remaining in your profile. If needed,
-delete unused archived submissions under **Profile → Resources**. A submission
-displayed on a leaderboard cannot be deleted.
+**提交存储限制。** Codabench为每个配置文件提供15 GB的提交存储空间，在所有赛道和上传之间共享；不是每个ZIP单独的15 GB限制。这使得15 GB成为一次提交的理论最大值，但实际限制是你配置文件中剩余的空间。如有需要，在**配置文件 → 资源**下删除未使用的已归档提交。显示在排行榜上的提交无法删除。
 
 ---
 
-## Submit in five steps
+## 五步提交
 
-1. **Train and validate locally** with an optional NeuralBench start kit,
-   directly through Benchopt, or with your own pipeline. Save the trained
-   weights. If your Benchopt solver implements the optional `fit` and
-   `save_model` methods described below, its training run writes the solver
-   and weights into a ready-to-upload submission folder for you.
-2. **Create `submission.py`** following the contract below.
-3. **Create the ZIP.** For the example above, run:
+1. **在本地训练和验证**，使用可选的NeuralBench启动套件、直接通过Benchopt或使用你自己的流程。保存训练好的权重。如果你的Benchopt求解器实现了下文描述的可选`fit`和`save_model`方法，其训练运行会将求解器和权重写入一个准备上传的提交文件夹中。
+2. **创建`submission.py`**，遵循下文合约。
+3. **创建ZIP。**对于上述示例，运行：
 
    ```bash
    zip -j my_submission.zip submission.py weights.pt
    ```
 
-   Add `config.json` or any other non-Python artifact your model needs.
+   添加`config.json`或模型需要的任何其他非Python产物。
 
-4. **Check it locally first.** A failed upload still costs you one of the
-   day&#x27;s submissions, and most failures are caught in seconds:
+4. **先在本地检查。**上传失败仍会消耗你当日提交次数中的一次，而且大多数失败会在几秒钟内被发现：
 
    ```bash
    cp my_submission/submission.py tracks/&lt;track&gt;/solvers/my_submission.py
@@ -283,30 +239,22 @@ displayed on a leaderboard cannot be deleted.
        benchopt run tracks/&lt;track&gt; -d Simulated -s MyModel
    ```
 
-   See [Test your submission locally](#test-your-submission-locally) for
-   what this does and does not cover.
+   有关这涵盖和不涵盖的内容，请参阅[在本地测试你的提交](#test-your-submission-locally)。
 
-5. **Upload.** In **My Submissions**, select the active phase, upload the
-   ZIP, and wait for **Finished**. If it fails, start with the first error
-   in the ingestion log.
+5. **上传。**在**我的提交**中，选择活跃阶段，上传ZIP，并等待**完成**。如果失败，从摄取日志中的第一个错误开始排查。
 
 ---
 
-## The `submission.py` contract
+## `submission.py`合约
 
-In `submission.py`, you write ordinary Python or PyTorch code. Benchopt
-provides the evaluation wrapper, but you do not need to understand its
-internals. Codabench expects two components:
+在`submission.py`中，你编写普通的Python或PyTorch代码。Benchopt提供评估包装器，但你不需要了解其内部机制。Codabench期望两个组件：
 
-1. A named `class Solver(CompetSolver)` implementing `load_model(meta)`.
-2. A model returned by `load_model` and exposing `predict(X)`.
+1. 一个命名了的`class Solver(CompetSolver)`，实现`load_model(meta)`。
+2. 一个由`load_model`返回并暴露`predict(X)`的模型。
 
-### Contract 1: `class Solver(CompetSolver)` loads the trained model
+### 合约1：`class Solver(CompetSolver)`加载训练好的模型
 
-In `class Solver(CompetSolver)`, **`load_model(self, meta) -&gt; model` is
-required**. It reconstructs the trained architecture, loads the shipped
-weights, moves the model to the evaluation device, and returns it in
-evaluation mode:
+在`class Solver(CompetSolver)`中，**`load_model(self, meta) -&gt; model`是必需的**。它重建训练好的架构，加载随附的权重，将模型移动到评估设备，并以评估模式返回：
 
 ```python
 import torch
@@ -317,317 +265,36 @@ class Solver(CompetSolver):
     name = &quot;MyModel&quot;
 
     def load_model(self, meta):
-        # MyModel must be defined in this submission.py file or imported
-        # from a dependency.
-        model = MyModel(
-            n_chans=meta[&quot;n_chans&quot;],
-            n_times=meta[&quot;n_times&quot;],
-        )
-        weights = meta[&quot;submission_dir&quot;] / &quot;weights.pt&quot;
-        state_dict = torch.load(
-            weights,
-            map_location=meta[&quot;device&quot;],
-            weights_only=True,
-        )
-        model.load_state_dict(state_dict)
-        return model.to(meta[&quot;device&quot;]).eval()
+        # MyModel必须在此submission.py文件中定义或从依赖项导入。
+```</div></div><div class='section'><h3>Timeline</h3><div class='page-content'># 时间线
 
-    # Optional local-training hooks. Codabench never calls them.
-    # See &quot;Practice 2: Train and package with Benchopt&quot; below.
-    def fit(self, model, train_loader):
-        ...
+## 热身阶段
 
-    def save_model(self, model, path):
-        ...
-```
+**2026年9月21日至10月25日**
 
-Each track&#x27;s [`solvers/`](https://github.com/neural-interfaces26/2026-competition/tree/main/tracks)
-directory holds working implementations of this contract on real data —
-the closest reference for your own `submission.py`.
+在热身阶段，Codabench 使用公开、特定赛道的测试数据评估提交。由于这些数据和标签是公开的，可能存在重叠或泄露。使用指示性排行榜验证提交流程并迭代优化模型。热身阶段分数不决定最终排名。
 
-Remark: `meta` is a plain Python dictionary created and passed to `load_model`
-automatically. You do not create or upload it. It provides:
+**提交限制：**每位参赛者每天最多五次提交。
 
-- `submission_dir`: read-only path to the files extracted from your ZIP
-- `device`: CPU or GPU used for the model and input batches
-- `n_chans`, `n_times`, `sfreq`, `ch_names`, `chs_info`: input description
-- `n_outputs`, `n_classes`, or `n_joints`: track-specific output size
+## 密封决赛阶段
 
-A fixed-size architecture normally uses `meta[&quot;n_chans&quot;]` and
-`meta[&quot;n_times&quot;]`. A shape-agnostic model may infer these dimensions from `X`.
+**2026年10月28日至11月21日（地球任何地点）**
 
-### Contract 2: The built model generates predictions
+Codabench 切换至2026年私有评估队列，这些数据仅为此阶段上传。其样本和标签保持隐藏。仅密封阶段分数决定最终排名，采用每支队伍最后五次密封提交中的最佳成绩。
 
-After `Solver.load_model(meta)` returns your model, Codabench calls that
-required model&#x27;s `predict(X)` method for every evaluation batch.
+**提交限制：**每位参赛者每天一次提交。
 
-`X` is a PyTorch tensor already on `meta[&quot;device&quot;]`, with shape `(B, C, T)`:
+## 可重复性审核
 
-- `B`: batch size
-- `C`: signal channels
-- `T`: time samples
+**2026年11月21日后**
 
-`predict(X)` must return the output required by the track:
+各赛道前三名队伍将接受可重复性审核。主办方将重新运行提交的训练流程，并在密封测试集上评估生成的模型权重。
 
-| Track             | `predict(X)` must return                   | Output-size key           | Final sealed metric      |
-| ----------------- | ------------------------------------------ | ------------------------- | ------------------------ |
-| 01 - EEG-to-Image | image embeddings `(B, D)`                  | `meta[&quot;n_outputs&quot;]` = `D` | top-5 retrieval accuracy |
-| 02 - BCI Decoding | one class index per window `(B,)`          | `meta[&quot;n_classes&quot;]`       | balanced accuracy        |
-| 03 - Sleep Onset  | seconds to sleep onset `(B,)` as floats    | `meta[&quot;n_outputs&quot;]` = `1` | weighted binned MAE      |
-| 04 - EMG-to-Pose  | joint angles `(B, n_joints, T)` in radians | `meta[&quot;n_joints&quot;]`        | mean angular MAE, reported in degrees |
+## 颁奖仪式
 
-**Track 04 unit contract:** `predict(X)` must return joint angles in radians.
-Do not convert predictions to degrees. Codabench computes the MAE from the
-radian predictions and targets, then converts only the final aggregate score
-to degrees for the leaderboard.
+**2026年12月11日至12日**
 
-Warm-up proxy metrics may differ. The **Track description** tab gives the
-active warm-up metric and the final sealed specification for each track.
-
-A PyTorch model can implement `predict` directly:
-
-```python
-class MyModel(torch.nn.Module):
-    @torch.inference_mode()
-    def predict(self, X):
-        self.eval()
-        return self(X)
-```
-
----
-
-## Behind the scenes: How Codabench and Benchopt evaluate your submission
-
-[Benchopt](https://benchopt.github.io) runs each public track benchmark and
-computes its metrics. Codabench manages uploads, workers, and leaderboards.
-
-Only the sealed evaluation data and labels are hidden. The submission
-contract remains stable, while the evaluation data and, for proxy warm-ups,
-the task or metric may differ by phase:
-
-|                                 | Warm-up phase                    | Sealed final phase                       |
-| ------------------------------- | -------------------------------- | ---------------------------------------- |
-| Evaluation data                 | development or public proxy data | held-out cohort, never released          |
-| Benchmark framework and worker image | public competition stack      | same competition stack                   |
-| Task and ranking metric         | public proxy; see Track description | final specification; see Track description |
-| `meta` keys and tensor contract | documented contract              | same contract, runtime values may differ |
-| Submission ZIP format           | same contract                     | same contract                            |
-
-Tracks 01–03 currently have phase-specific proxy details. Track 04 uses the
-same prediction task and metric in both phases, on different evaluation data.
-
-For portability, **use only `meta` and the provided batches**. Do not rely on
-undocumented dataset names, paths, subject identifiers, or fixed dimensions.
-
----
-
-## Get some practice
-
-The canonical worked implementations live in each track&#x27;s `solvers/`
-directory: [Track 01](https://github.com/neural-interfaces26/2026-competition/tree/main/tracks/image_decoding/solvers),
-[Track 02](https://github.com/neural-interfaces26/2026-competition/tree/main/tracks/bci_decoding/solvers),
-[Track 03](https://github.com/neural-interfaces26/2026-competition/tree/main/tracks/sleep_onset/solvers),
-and [Track 04](https://github.com/neural-interfaces26/2026-competition/tree/main/tracks/emg_pose/solvers).
-
-These files show the submission contract, but they are at different stages:
-each track has an uploadable dependency-light floor, while neural models need
-a trained checkpoint before they represent a baseline.
-The `examples/` directory is not stored in Git. It is created only inside a
-generated starting-kit archive by `tools/make_starting_kit.py`. The generator
-includes trained weights only when they already exist under the track&#x27;s
-`outputs/` directory; otherwise it warns that the example is untrained.
-
-Track 03 currently provides the most complete progression:
-
-| Baseline | Solver | What it shows |
-|---|---|---|
-| `Median` | `median_baseline.py` | the contract with no weights and no training |
-| `Mean-Ridge` | `mean_ridge.py` | a scikit-learn model, weights as a joblib dump |
-| `Torch-Linear` | `torch_linear.py` | the same model in PyTorch, with its own `fit` loop |
-| `EEGNet` | `eegnet_reg.py` | the NeuralBench-compatible architecture and inference wrapper; trained weights are published separately |
-
-### Practice 1: Check the platform with a constant baseline
-
-Start with the dependency-light floor for your track:
-
-- Track 01: `mean_embedding.py`
-- Track 02: `mean_logreg.py`
-- Track 03: `median_baseline.py`
-- Track 04: `mean_pose.py`
-
-Copy the selected file to `submission.py`, place it at the root of a ZIP,
-and upload it through **My Submissions**. A successful run confirms ZIP
-ingestion, inference, scoring, and leaderboard publication before you package
-your own model. Without weights, these examples deliberately return a trivial
-constant prediction. Train them through Practice 2 to save and reload a fitted
-floor instead.
-
-### Practice 2: Train and package with Benchopt
-
-Benchopt already evaluates your submission; it can package it too.
-Rather than assembling the ZIP by hand as in step 3 above, implement
-two optional methods and a local run writes it for you — `torch_linear.py`
-and `mean_ridge.py` are the worked examples. During that run:
-
-- `fit(model, train_loader)` trains the model
-- `save_model(model, path)` saves its weights
-- `CompetSolver` writes the solver and weights into a submission folder
-
-Codabench never calls `fit` or `save_model` — the server is
-inference-only — so they cost you nothing at evaluation time. If you
-train and package another way, omit both.
-
-Use these track and objective names:
-
-| Track | `&lt;track&gt;`        | `&lt;objective&gt;`    |
-| ----- | ---------------- | ---------------- |
-| 01    | `image_decoding` | `Image-decoding` |
-| 02    | `bci_decoding`   | `BCI-decoding`   |
-| 03    | `sleep_onset`    | `Sleep-onset`    |
-| 04    | `emg_pose`       | `EMG-pose`       |
-
-```bash
-benchopt prepare tracks/&lt;track&gt;   # prepare the data
-benchopt run tracks/&lt;track&gt; -s MyModel -o &quot;&lt;objective&gt;[training=True]&quot;
-```
-
-For a solver implementing `save_model`, the training run writes a
-ready-to-upload submission folder (`submission.py` plus its weights). Zip its
-contents to upload:
-
-```text
-tracks/&lt;track&gt;/outputs/&lt;model-name&gt;/
-```
-
-Benchopt does more than package: parameter sweeps, cached reruns, plots and
-SLURM execution are summarised in
-[Develop further with Benchopt](#develop-further-with-benchopt) at the end
-of this page.
-
-### Optional practice 3: Reproduce the NeuralBench start kit
-
-The EEGNet solver files currently provided for Tracks 01–03 show how an
-architecture and its inference preprocessing are exposed through the
-`Solver` contract. Track 04 still needs the equivalent wrapper for its
-NeuralBench reference model. The official trained checkpoints are not
-currently stored in this repository. Until they are published, an untrained
-or dummy checkpoint can test the worker, but it is not a reference baseline.
-
-To reproduce the baseline yourself, follow the corresponding NeuralBench
-guide. Each guide provides the task, public data pipeline, preprocessing, and
-reference model:
-
-| Track             | NeuralBench preparation guide                                                                                                                          |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 01 - EEG-to-Image | [Open the Track 01 guide](https://facebookresearch.github.io/neuroai/neuralbench/auto_examples/biosignal_challenge_2026/plot_track1_eeg_to_image.html) |
-| 02 - BCI Decoding | [Open the Track 02 guide](https://facebookresearch.github.io/neuroai/neuralbench/auto_examples/biosignal_challenge_2026/plot_track2_eeg_to_bci.html)   |
-| 03 - Sleep Onset  | [Open the Track 03 guide](https://facebookresearch.github.io/neuroai/neuralbench/auto_examples/biosignal_challenge_2026/plot_track3_sleep_onset.html)  |
-| 04 - EMG-to-Pose  | [Open the Track 04 guide](https://facebookresearch.github.io/neuroai/neuralbench/auto_examples/biosignal_challenge_2026/plot_track4_emg_to_pose.html)  |
-
-NeuralBench trains the model. Codabench can evaluate the result only after its
-architecture and inference preprocessing are exposed through the `Solver`
-contract and its trained weights are packaged in the ZIP.
-
-1. Follow the track guide and reproduce the baseline on permitted data.
-2. Package its `submission.py` and trained weights.
-3. Upload the ZIP through **My Submissions** and confirm that it finishes and
-   receives a score.
-
-## Test your submission locally
-
-Local testing is optional, but catches missing files, imports, and incorrect
-output shapes.
-
-Clone or download the
-[competition repository](https://github.com/neural-interfaces26/2026-competition).
-If a generated track starting kit is also provided, it uses the same
-`tracks/&lt;track&gt;/` layout and additionally contains derived submission ZIPs
-under `examples/`. From the repository or an extracted kit root:
-
-```bash
-benchopt install tracks/&lt;track&gt;  # add --gpu if your setup requires CUDA
-cp my_submission/submission.py tracks/&lt;track&gt;/solvers/my_submission.py
-COMPET_SUBMISSION_DIR=&quot;$PWD/my_submission&quot; \
-    benchopt run tracks/&lt;track&gt; -d Simulated -s MyModel
-```
-
-Replace `MyModel` with `Solver.name`. `COMPET_SUBMISSION_DIR` makes
-`meta[&quot;submission_dir&quot;]` point at the folder containing your weights and
-optional artifacts. `Simulated` requires no download.
-It is a quick contract check, not an official score. A fixed-size checkpoint
-trained for the real task may be incompatible with the smaller simulated
-dimensions; validate such a model on the public track data instead. Dropping
-your solver next to the track&#x27;s own baselines is also the easiest way to
-compare against them: selectors are case-insensitive globs, so
-`-s MyModel -s &quot;eegnet*&quot;` runs yours against every EEGNet baseline the
-track ships.
-
----
-
-## Common submission errors
-
-- `submission.py` or the weights are inside an extra directory in the ZIP
-- `class Solver` is missing, renamed, or cannot be imported
-- the filename loaded in `load_model` does not match the uploaded weight file
-- the model imports a package that is not available in the worker image
-- the model or input is placed on the wrong device
-- `predict(X)` returns the wrong shape, type, or unit for the track
-- the submission tries to train, download data, or write into its read-only
-  directory during server evaluation
-
-If ingestion fails, start with the **first error in the log**. Later messages
-such as a missing `results.parquet` usually mean that inference already
-failed and no results file could be created.
-
----
-
-## Optional: use a large pretrained EEG model
-
-`braindecode` ships pretrained models including BENDR, BIOT, CBraMod, and
-SignalJEPA. When a checkpoint is too large for the submission ZIP,
-`Model.from_pretrained(...)` can retrieve its published weights from the
-Hugging Face Hub. Prefer shipping weights when feasible because the download
-runs for every submission and counts against the one-hour evaluation limit.
-
----
-
-## Develop further with Benchopt
-
-Starting kits are standard [Benchopt](https://benchopt.github.io)
-benchmarks. Benchopt supports parameter sweeps, cached reruns, interactive
-reports with `benchopt plot`, reproducible YAML configurations, and local or
-SLURM execution. These features are optional. See the
-[starting-kit README](https://github.com/neural-interfaces26/2026-competition#develop--train-your-model-with-benchopt)
-for the full workflow. For AI tools, `benchopt sync-skills --global` installs
-Benchopt solver conventions.</div></div><div class='section'><h3>Timeline</h3><div class='page-content'># Timeline
-
-## Warm-up phase
-
-**Sep 21 to Oct 25, 2026**
-
-Codabench evaluates submissions on public, track-specific test data during warm-up. Because these data and labels are public, overlap or leakage is possible. Use the indicative leaderboard to validate the submission workflow and iterate on your model. Warm-up scores do not determine the final ranking.
-
-**Submission limit:** Up to five submissions per participant per day.
-
-## Sealed final phase
-
-**Oct 28 to Nov 21, 2026, Anywhere on Earth**
-
-Codabench switches to the private 2026 evaluation cohorts, which are uploaded only for this phase. Their examples and labels remain hidden. Only sealed-phase scores determine the final ranking, using the best of each team’s last five sealed submissions.
-
-**Submission limit:** One submission per participant per day.
-
-## Reproducibility audit
-
-**After Nov 21, 2026**
-
-The top three teams in each track undergo a reproducibility audit. Organizers rerun the submitted training pipeline and evaluate the resulting model weights on the sealed test set.
-
-## Winners’ ceremony
-
-**Dec 11 and 12, 2026**
-
-The winners will be announced during the Brain and Body Workshop at NeurIPS 2026 in Sydney.</div></div>
+获奖者将在悉尼举行的 NeurIPS 2026 大脑与身体研讨会期间公布。</div></div>
 
 </div>
 </body>
