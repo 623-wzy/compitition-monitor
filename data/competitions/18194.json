@@ -5,23 +5,23 @@
   "description_zh": "第二届面向机器的图像质量评估挑战赛，隶属于IEEE SPS挑战赛计划",
   "created_by": "pjlabeval",
   "created_when": "2026-09-21T07:27:36.520325Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=XFoq7czuxV5lHjHkLsWcQHjiLMU%3D&Expires=1790604171",
-  "participants_count": 9,
-  "submissions_count": 3,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=C0umJAnwfIEBCffNzGuZgUiEPcE%3D&Expires=1791534767",
+  "participants_count": 19,
+  "submissions_count": 35,
   "first_phase_start": null,
   "phases": [
     {
       "id": 30698,
       "name": "Development Phase",
-      "start": "2026-09-30T00:00:00Z",
-      "end": "2026-10-31T00:00:00Z",
+      "start": "2026-09-20T00:00:00Z",
+      "end": "2026-10-15T00:00:00Z",
       "max_submissions_per_day": 14
     },
     {
       "id": 30699,
       "name": "Test Phase",
-      "start": "2026-11-01T00:00:00Z",
-      "end": null,
+      "start": "2026-10-15T00:00:00Z",
+      "end": "2026-10-30T00:00:00Z",
       "max_submissions_per_day": 4
     }
   ],
@@ -47,7 +47,7 @@
     {
       "index": 3,
       "title": "Important Dates",
-      "content": "### Competition Timeline\n\n**To be announced.**\n\nThe detailed timeline will be released when the challenge officially starts.",
+      "content": "**Rules & Timeline**\n\n**Timeline**\n\n| Date | Milestone |\n|--------|--------|\n| 20 Sep 2026\t| Challenge Launch - training data released |\n| 15 Oct 2026\t| Registration deadline - submit Codabench handle + team member names/affiliations (see Registration below) |\n| 15 Oct 2026\t| Test set release |\n| 30 Oct 2026\t| Test-set results submission deadline (on Codabench) |\n| 4 Nov 2026\t| Methodology report + open-source model weights due - all participants (report format & weight-hosting instructions TBA) |\n| 20 Nov 2026 |\tChallenge results announcement |\n| 30 Nov 2026\t| Top-3 teams only: camera-ready 4-6 page description of approach + open-source code due |\n\nAll deadlines are 23:59 AoE unless stated otherwise.\n\n**Registration (due 15 Oct 2026)**\nBefore the Test Phase submission starts, every participant/team must submit:\n* Codabench handle (username)\n* Team member name(s) and institutional affiliation(s)\nvia a separate registration form (link to be added). Once submitted, team membership and affiliations are locked and cannot be changed afterward.\n\n**Who can participate**\nIndividuals or teams of 1-5 participants. Both academic and industry participants are welcome to register.\n\n**Submission limits (Codabench)**\nDevelopment Phase: max 100 submissions total\nTest Phase: max 20 submissions total, up to 2/day. Your last successful submission (Force_Last) is the one that counts for the final ranking.\n\n**Model eligibility**\nProprietary models (no open-source weights or accessed only via a paid/restricted API, e.g. GPT-4o, Gemini, Claude) are not eligible.\n\n**Methodology report - required for all participants (due 4 Nov)**\nThis is separate from your Codabench prediction submission. Every team with a scored Test Phase submission must submit a 4-6 page write-up describing their methodology/architecture. Format and the submission form/link will be published closer to the deadline. Submissions without an accompanying report will be removed from the final published leaderboard before results are archived.\n\n**Model weights**\n* All participants must share the actual model weights used to produce their scored Test Phase predictions with organizers via a private link (e.g. a gated Hugging Face repo, private cloud storage, or similar) shared alongside your methodology report. This is for verification only - confirming no proprietary/banned model was used and that results are reproducible.\n* This applies even if you used an unmodified base model; in that case, simply confirm the same public checkpoint already disclosed under Model Eligibility.\n* Submissions whose weights are not verifiably shared with organizers by this deadline are subject to the same removal-from-leaderboard consequence as a missing methodology report.\n\n**Additional - The top-3 teams (due 30 Nov)**\nThe top-3-ranked teams additionally submit a camera-ready version of their 4-6 page description (polished for publication) alongside open-source code (training + inference).",
       "content_zh": "### 竞赛时间表\n\n**待发布。**\n\n挑战正式启动时将发布详细的时间表。"
     }
   ]

@@ -5,8 +5,8 @@
   "created_by": "allam",
   "owner_display_name": "D3-OU",
   "created_when": "2026-07-27T05:47:11.519603Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=8jiP0QNwJINT8SLnGgiRnidUpK4%3D&Expires=1790604181",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2_icon.png?AWSAccessKeyId=codabench-prod&Signature=CqTTUHvZZoIn9ErICec8qgz%2FJcU%3D&Expires=1790604181",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=7KAQ3RicO8J2QrADvPS%2BOx5vPao%3D&Expires=1791534808",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2_icon.png?AWSAccessKeyId=codabench-prod&Signature=%2FQ2w27no2Jo2eynMlJHryxr97ms%3D&Expires=1791534808",
   "terms": "The competition is open to research teams. \n\nPlease  register and join the competition. \n\nNote: Please use your institutional email to register for the competition, do NOT use gmail.com or qq.com, otherwise the registration will not be approved.\n\nParticipants are required to sign the dataset license agreement and send the scanned PDF to alsherfawi@yy.d3c.osaka-u.ac.jp cc: allam@yy.d3c.osaka-u.ac.jp. You can download the agreement from [here](http://www.am.sanken.osaka-u.ac.jp/BiometricDB/dataset/Competition/WBA2026/WBA_ACCV_2026%20Competition_License%20Agreement.pdf).",
   "pages": [
     {
@@ -168,32 +168,12 @@
       "submission_rule": "Force_Latest_Multiple"
     }
   ],
-  "collaborators": [
-    {
-      "id": 17982,
-      "name": null,
-      "username": "jasamsheja"
-    }
-  ],
-  "registration_auto_approve": false,
   "description": "Welcome to the first International Competition on Verifying Teleoperator Identity in Reenacted Avatar Videos. The competition will be in conjunction with [ACCV2026](https://https://accv2026.org/])",
-  "participants_count": 34,
-  "submissions_count": 40,
-  "queue": null,
-  "enable_detailed_results": true,
-  "show_detailed_results_in_submission_panel": true,
-  "show_detailed_results_in_leaderboard": true,
-  "auto_run_submissions": true,
-  "can_participants_make_submissions_public": false,
-  "make_programs_available": false,
-  "make_input_data_available": false,
+  "participants_count": 38,
+  "submissions_count": 116,
   "docker_image": "ammaralsherfawi/codabench-torch-blosc2:v1",
   "competition_type": "competition",
-  "fact_sheet": null,
-  "forum": 17370,
   "reward": "Certificates & Paper publication",
   "contact_email": "alsherfawi@yy.d3c.osaka-u.ac.jp",
-  "report": "",
-  "forum_enabled": true,
-  "enable_human_in_the_loop": false
+  "report": ""
 }

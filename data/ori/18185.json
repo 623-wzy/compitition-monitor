@@ -1,0 +1,270 @@
+{
+  "id": 18185,
+  "title": "RoboWorld 2026 — Track 1: WorldNav",
+  "published": true,
+  "created_by": "yifeidong",
+  "owner_display_name": "yifeidong",
+  "created_when": "2026-09-19T07:46:40.332684Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791429899/6f72dc95718f/codabench_track1_icon.png?AWSAccessKeyId=codabench-prod&Signature=H1Cqtgib8G04e5PQZpXHpluPMsE%3D&Expires=1791534783",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791429899/6f72dc95718f/codabench_track1_icon_icon.png?AWSAccessKeyId=codabench-prod&Signature=qumE%2FQPILHU7vKKo0N8t8BST92s%3D&Expires=1791534783",
+  "terms": "# Terms & Conditions\n\nThis competition is made freely available to academic and non-academic entities for non-commercial purposes such as academic research, teaching, scientific publications, or personal experimentation. Permission is granted to use the data given that you agree:\n\n- That the data in this competition comes “AS IS”, without express or implied warranty. Although every effort has been made to ensure accuracy, we do not accept any responsibility for errors or omissions.\n- That you may not use the data in this competition or any derivative work for commercial purposes as, for example, licensing or selling the data, or using the data with a purpose to procure a commercial gain.\n- That you include a reference to RoboWorld 2026 (including the benchmark data and the specially generated data for academic challenges) in any work that makes use of the benchmark. For research papers, please cite our preferred publications as listed on our webpage.\n\nTo ensure a fair comparison among all participants, we require:\n\n- All participants must follow the exact same data configuration when training and evaluating their algorithms. Please do not use any public or private datasets other than those specified for model training.\n- The theme of this competition is open-loop language-conditioned visual navigation and trajectory prediction in continuous 3D environments. Therefore, any use of ground-truth test annotations or unreleased evaluation data is strictly prohibited.\n- To ensure the above two rules are followed, each participant is requested to submit the code with reproducible results before the final result is announced; the code is for examination purposes only and we will manually verify the training and evaluation of each participant's model.\n\nIf you have any questions or concerns, kindly get in touch with us at roboworld2026@gmail.com.",
+  "pages": [
+    {
+      "id": 88700,
+      "title": "Overview",
+      "content": "# RoboWorld 2026 Track 1: WorldNav\n\nWelcome to WorldNav, the language-conditioned visual navigation track of the RoboWorld 2026, affiliated with the RoboPAD Workshop at NeurIPS 2026.\n\nAn agent receives one initial egocentric RGB image and a natural-language instruction. It must predict a complete navigation action sequence without a goal image, an initial numeric pose, or further observations from the environment. World models, vision-language-action models, and policy-only methods are welcome.\n\n## Task Definition\n\nSubmit variable-length sequences of `[dx, dy, dyaw]` actions. `dx` means forward motion and `dy` means leftward motion in the agent's current local frame; `dyaw` changes heading in radians.\n\nThe private evaluator uses the recorded initial pose to reconstruct the predicted route. Test participants receive only the initial image and instruction, not the pose, goal, reference trajectory, or reference action sequence.\n\n## Phases\n\nPhase 1 is for development and validation. Final rankings and awards are based entirely on Phase 2; phase scores are not combined. Check the active phase dates on CodaBench before submitting.\n\n| Phase | &emsp; | Evaluation data | &emsp; | Ranking |\n|:--|:--:|:--|:--:|:--|\n| Phase 1: Validation | &emsp; | Released `val_seen` and `val_unseen` inputs | &emsp; | Mean of `val_seen` and `val_unseen` Scores (50% each) |\n| Phase 2: Final Evaluation | &emsp; | Held-out test inputs | &emsp; | Test Score |\n\n## Awards & Recognition\n\nOfficial challenge awards follow the [RoboWorld 2026 Awards & Recognition](https://roboworld2026.github.io/#awards) guidelines:\n\n- **Certificates of Recognition**: The **Top 5 teams in each track** will receive official certificates recognizing their achievements in the RoboWorld Challenge 2026. A **Best Innovative Solution** award will also recognize outstanding creativity and technical innovation.\n- **Oral Presentations**: Selected top-performing teams will be invited to give **oral presentations** at the **RoboPAD Workshop** at **NeurIPS 2026**, sharing their methods, results, and insights with the research community.\n\n## Resources and Contact\n\n| Resource | &emsp; | Link |\n|:--|:--:|:--|\n| Challenge Website | &emsp; | [RoboWorld 2026](https://roboworld2026.github.io) |\n| Official Track 1 Website | &emsp; | [RoboWorld 2026 — Track 1: WorldNav](https://roboworld2026.github.io/track1) |\n| Track 1 Repository | &emsp; | [worldnav-challenge](https://github.com/F1y1113/worldnav-challenge) |\n| Evaluation & Leaderboard | &emsp; | [CodaBench Competition #18185](https://www.codabench.org/competitions/18185/) |\n| Dataset | &emsp; | [LCVN on Hugging Face](https://huggingface.co/datasets/fly1113/LCVN) |\n| Baseline Implementation | &emsp; | [LCVN Repository](https://github.com/UWMILab/LCVN) |\n\nFor technical support, use [GitHub Issues](https://github.com/F1y1113/worldnav-challenge/issues).  \nFor event and registration questions, email [roboworld2026@gmail.com](mailto:roboworld2026@gmail.com).\n\n### 💬 Community & Discussion\n\n- **Discord:** [Join the RoboWorld Track 1 Discord](https://discord.gg/gv2yW3TaA)\n- **WeChat Group:** [Join the RoboWorld Track 1 WeChat Group](https://github.com/roboworld2026/roboworld2026.github.io/blob/main/wechat_track1.JPG)\n\n<a href=\"https://github.com/roboworld2026/roboworld2026.github.io/blob/main/wechat_track1.JPG\" target=\"_blank\"><img src=\"https://raw.githubusercontent.com/roboworld2026/roboworld2026.github.io/main/wechat_track1.JPG\" alt=\"Track 1 WeChat Group QR Code\" width=\"220\" /></a>",
+      "index": 0
+    },
+    {
+      "id": 88432,
+      "title": "Submission & Evaluation",
+      "content": "# Submission & Evaluation\n\nSubmit predicted action sequences in a ZIP archive, using only each episode's initial RGB image and instruction.\n\n## Action format\n\nEach action is [dx, dy, dyaw]: forward displacement, leftward displacement in the agent's **current local frame**, and yaw update in radians. Sequences may have different lengths; the JSON list ends the trajectory.\n\n\nLimits: at most 64 actions per episode; hypot(dx,dy) ≤ 2.46 dataset coordinate units and |dyaw| ≤ 6.29 rad per action (evaluated modulo 2π in [−π, π)).\n\n## ZIP layout\n\nPut the required JSON files at the archive root. The downloadable example ZIP shows the layout and Phase 1 episode IDs; replace its illustrative actions.\n\n| Phase | &emsp; | Required files |\n| :-- | :--: | :-- |\n| Phase 1 | &emsp; | val_seen.json, val_unseen.json |\n| Phase 2 | &emsp; | test.json |\n\n### JSON schema\n\nEach file contains split and episodes. Include every phase episode_id exactly once, with an actions list:\n\n    {\n      \"split\": \"val_unseen\",\n      \"episodes\": [\n        {\n          \"episode_id\": \"20210826_40_0001_02_0\",\n          \"actions\": [[0.25, 0.0, 0.0], [0.0, 0.0, 0.15], [0.12, -0.05, 0.0]]\n        }\n      ]\n    }\n\nThis abbreviated example is not a complete submission.\n\n## Evaluation metrics\n\nThe two fidelity metrics range from 0 to 1. See [demonstration.py](https://github.com/F1y1113/worldnav-challenge/blob/main/demonstration.py) for the five calculations.\n\n| Metric | &emsp; | Direction | &emsp; | Meaning |\n| :-- | :--: | :-- | :--: | :-- |\n| **Success Rate (SR)** | &emsp; | Higher | &emsp; | Fraction meeting the final-position success criterion. |\n| **Absolute Trajectory Error (ATE)** | &emsp; | Lower | &emsp; | Position error over the reference trajectory. |\n| **Relative Pose Error (RPE)** | &emsp; | Lower | &emsp; | Relative translation error between consecutive poses. |\n| **Full-route fidelity** | &emsp; | Higher | &emsp; | Agreement with the complete ordered recorded route, including a penalty for unnecessary travel. |\n| **Heading and turn fidelity** | &emsp; | Higher | &emsp; | Agreement of facing direction while moving and of the direction, position, and amount of turns. |\n\n## Composite Score\n\nEach episode is scored first, then the contributions are averaged:\n\n    Score = (100/N) × Σ_i { FullRouteFidelity_i × (1 + HeadingTurnFidelity_i)/2\n                          × [0.70 + 0.10 SR_i + 0.10/(1+ATE_i) + 0.10/(1+RPE_i)] }\n\nSR_i is binary success; ATE_i and RPE_i are per-episode errors in dataset coordinate units. Score averages episode contributions.\n\nPhase 1 ranks by `(Score_val_seen + Score_val_unseen) / 2`, with equal weight for each split. Both split files are required; a submission missing either file is rejected. Both split Scores are displayed. Phase 2 ranks by test Score.",
+      "index": 1
+    }
+  ],
+  "phases": [
+    {
+      "id": 30680,
+      "index": 0,
+      "start": "2026-10-15T00:00:00Z",
+      "end": "2026-10-30T23:59:00Z",
+      "name": "Phase 1: Validation",
+      "description": "Submit predicted action sequences for both validation seen and validation unseen splits. Phase 1 ranks by the mean of their Scores (50% each). Both JSON files are required. See Submission & Evaluation for the archive layout, action format, and metrics.",
+      "status": "Next",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "bde0874f-056d-46c0-9ec5-a53913e83c10",
+          "order_index": 0,
+          "phase": 30680,
+          "id": 36363,
+          "value": "bde0874f-056d-46c0-9ec5-a53913e83c10",
+          "key": "bde0874f-056d-46c0-9ec5-a53913e83c10",
+          "created_when": "2026-09-19T08:37:43.032271Z",
+          "name": "WorldNav Phase 1 Action Scoring",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 1013921,
+              "created_by": "yifeidong",
+              "owner_display_name": "yifeidong",
+              "created_when": "2026-10-03T07:26:28.401247Z",
+              "name": "PRIVATE WorldNav Phase 1 Mean Scorer 20261003",
+              "type": "scoring_program",
+              "description": "",
+              "is_public": false,
+              "key": "2270780e-fd75-4add-895b-ae00d44379e9",
+              "value": "2270780e-fd75-4add-895b-ae00d44379e9",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 18185,
+                  "title": "RoboWorld 2026 — Track 1: WorldNav"
+                }
+              ],
+              "competition": null,
+              "file_name": "PRIVATE_worldnav_phase1_mean_scoring_with_reference.zip",
+              "file_size": 1345116.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 100,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": {
+        "id": 1006830,
+        "created_by": "yifeidong",
+        "owner_display_name": "yifeidong",
+        "created_when": "2026-09-29T11:58:05.646931Z",
+        "name": "WorldNav Phase 1 Example Submission",
+        "type": "starting_kit",
+        "description": "Example submission ZIP: val_seen.json and val_unseen.json with body-relative [dx, dy, dyaw] actions. Contains no reference answers.",
+        "is_public": false,
+        "key": "76d7943f-0859-4f81-9f0a-7c22b531f0f4",
+        "value": "76d7943f-0859-4f81-9f0a-7c22b531f0f4",
+        "was_created_by_competition": false,
+        "in_use": [
+          {
+            "pk": 18185,
+            "title": "RoboWorld 2026 — Track 1: WorldNav"
+          }
+        ],
+        "competition": null,
+        "file_name": "worldnav_phase1_example_submission.zip",
+        "file_size": 50356.0
+      },
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 20322,
+      "primary_index": 0,
+      "title": "Phase 1 Ranking",
+      "key": "phase1_ranking",
+      "columns": [
+        {
+          "id": 90607,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Phase 1 Score",
+          "key": "score",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 6
+        },
+        {
+          "id": 90608,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Seen Score",
+          "key": "score_val_seen",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 6
+        },
+        {
+          "id": 90609,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Unseen Score",
+          "key": "score_val_unseen",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 6
+        },
+        {
+          "id": 90980,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Seen SR",
+          "key": "val_seen_sr",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": false,
+          "precision": 6
+        },
+        {
+          "id": 90978,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Seen ATE",
+          "key": "val_seen_ate",
+          "sorting": "asc",
+          "index": 4,
+          "hidden": false,
+          "precision": 6
+        },
+        {
+          "id": 90979,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Seen RPE",
+          "key": "val_seen_rpe",
+          "sorting": "asc",
+          "index": 5,
+          "hidden": false,
+          "precision": 6
+        },
+        {
+          "id": 90981,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Seen full-route fidelity",
+          "key": "val_seen_full_route_fidelity",
+          "sorting": "desc",
+          "index": 6,
+          "hidden": false,
+          "precision": 6
+        },
+        {
+          "id": 90982,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Seen heading and turn fidelity",
+          "key": "val_seen_heading_and_turn_fidelity",
+          "sorting": "desc",
+          "index": 7,
+          "hidden": false,
+          "precision": 6
+        },
+        {
+          "id": 90610,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Unseen SR",
+          "key": "val_unseen_sr",
+          "sorting": "desc",
+          "index": 8,
+          "hidden": false,
+          "precision": 6
+        },
+        {
+          "id": 90914,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Unseen ATE",
+          "key": "val_unseen_ate",
+          "sorting": "asc",
+          "index": 9,
+          "hidden": false,
+          "precision": 6
+        },
+        {
+          "id": 90931,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Unseen RPE",
+          "key": "val_unseen_rpe",
+          "sorting": "asc",
+          "index": 10,
+          "hidden": false,
+          "precision": 6
+        },
+        {
+          "id": 90975,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Unseen full-route fidelity",
+          "key": "val_unseen_full_route_fidelity",
+          "sorting": "desc",
+          "index": 11,
+          "hidden": false,
+          "precision": 6
+        },
+        {
+          "id": 90976,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Unseen heading and turn fidelity",
+          "key": "val_unseen_heading_and_turn_fidelity",
+          "sorting": "desc",
+          "index": 12,
+          "hidden": false,
+          "precision": 6
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Force_Best"
+    }
+  ],
+  "description": "Language-conditioned open-loop visual navigation and trajectory prediction in continuous 3D environments. The WorldNav track of the RoboWorld Challenge 2026, affiliated with the RoboPAD Workshop at NeurIPS 2026.",
+  "participants_count": 25,
+  "submissions_count": 30,
+  "docker_image": "codalab/codalab-legacy:py312",
+  "competition_type": "competition",
+  "reward": "Certificates for the top 5 teams; selected teams are invited to present at the RoboPAD Workshop at NeurIPS 2026",
+  "contact_email": "roboworld2026@gmail.com",
+  "report": ""
+}

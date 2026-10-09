@@ -5,17 +5,17 @@
   "description_zh": "LiDAR-惯性SLAM赛道的仅翻译评估。",
   "created_by": "yuhangxu",
   "created_when": "2026-07-26T09:50:41.414250Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059441/adc6bc07e4f0/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=%2FKDcpJANb4cZSFh9OHj5PKsnOpk%3D&Expires=1790604184",
-  "participants_count": 61,
-  "submissions_count": 1145,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059441/adc6bc07e4f0/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=d%2FlZKo3Gj4ThkkqREcX2SwCcWTc%3D&Expires=1791534808",
+  "participants_count": 74,
+  "submissions_count": 1864,
   "first_phase_start": null,
   "phases": [
     {
       "id": 29486,
       "name": "Official Evaluation",
       "start": "2026-07-17T00:00:00Z",
-      "end": "2026-11-02T15:59:00Z",
-      "max_submissions_per_day": 5
+      "end": "2026-10-09T16:00:00Z",
+      "max_submissions_per_day": 10
     }
   ],
   "pages": [

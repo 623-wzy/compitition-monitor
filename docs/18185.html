@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RoboWorld 2026 — Track 1: WorldNav — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>RoboWorld 2026 — Track 1: WorldNav</h2>
+  <div class="detail-meta">
+    <span>ID: 18185</span>
+    <span>创建者: yifeidong</span>
+    <span>创建时间: 2026-09-19</span>
+    <span>参与人数: 25</span>
+    <span>提交次数: 30</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/18185/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">连续三维环境中的语言条件化开环视觉导航与轨迹预测。RoboWorld Challenge 2026的WorldNav赛道，隶属于NeurIPS 2026的RoboPAD研讨会。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-other'>其他</span> Phase 1: Validation</td><td>2026-10-15</td><td>2026-10-30</td><td>100</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'># RoboWorld 2026 赛道1：WorldNav
+
+欢迎来到WorldNav，这是RoboWorld 2026的语言条件视觉导航赛道，隶属于NeurIPS 2026的RoboPAD研讨会。
+
+智能体接收一张初始的自我中心RGB图像和一条自然语言指令。它必须在没有目标图像、初始数值姿态或来自环境的进一步观测的情况下，预测完整的导航动作序列。欢迎使用世界模型、视觉-语言-动作模型以及纯策略方法。
+
+## 任务定义
+
+提交可变长度的`[dx, dy, dyaw]`动作序列。`dx`表示前向运动，`dy`表示智能体当前局部坐标系中的左向运动；`dyaw`以弧度改变朝向。
+
+私有评估器使用记录的初始姿态来重建预测路径。测试参与者仅接收初始图像和指令，而不接收姿态、目标、参考轨迹或参考动作序列。
+
+## 阶段
+
+第1阶段用于开发和验证。最终排名和奖项完全基于第2阶段；阶段分数不合并。提交前请在CodaBench上查看当前阶段日期。
+
+| 阶段 | &amp;emsp; | 评估数据 | &amp;emsp; | 排名 |
+|:--|:--:|:--|:--:|:--|
+| 第1阶段：验证 | &amp;emsp; | 发布的`val_seen`和`val_unseen`输入 | &amp;emsp; | `val_seen`和`val_unseen`分数的平均值（各占50%）|
+| 第2阶段：最终评估 | &amp;emsp; | 保留的测试输入 | &amp;emsp; | 测试分数 |
+
+## 奖项与认可
+
+官方竞赛奖项遵循[RoboWorld 2026奖项与认可](https://roboworld2026.github.io/#awards)指南：
+
+- **认可证书**：**每个赛道的前5名团队**将获得官方证书，以表彰他们在RoboWorld Challenge 2026中的成就。还将颁发**最佳创新解决方案**奖，以表彰杰出的创造力和技术创新。
+- **口头报告**：选出的顶尖团队将被邀请在**NeurIPS 2026**的**RoboPAD研讨会**上进行**口头报告**，与研究界分享他们的方法、结果和见解。
+
+## 资源与联系方式
+
+| 资源 | &amp;emsp; | 链接 |
+|:--|:--:|:--|
+| 竞赛网站 | &amp;emsp; | [RoboWorld 2026](https://roboworld2026.github.io) |
+| 赛道1官方网站 | &amp;emsp; | [RoboWorld 2026 — 赛道1：WorldNav](https://roboworld2026.github.io/track1) |
+| 赛道1代码库 | &amp;emsp; | [worldnav-challenge](https://github.com/F1y1113/worldnav-challenge) |
+| 评估与排行榜 | &amp;emsp; | [CodaBench竞赛 #18185](https://www.codabench.org/competitions/18185/) |
+| 数据集 | &amp;emsp; | [Hugging Face上的LCVN](https://huggingface.co/datasets/fly1113/LCVN) |
+| 基线实现 | &amp;emsp; | [LCVN代码库](https://github.com/UWMILab/LCVN) |
+
+如需技术支持，请使用[GitHub Issues](https://github.com/F1y1113/worldnav-challenge/issues)。  
+如有关于活动和注册的问题，请发送邮件至[roboworld2026@gmail.com](mailto:roboworld2026@gmail.com)。
+
+### 💬 社区与讨论
+
+- **Discord：**[加入RoboWorld赛道1 Discord](https://discord.gg/gv2yW3TaA)
+- **微信群：**[加入RoboWorld赛道1微信群](https://github.com/roboworld2026/roboworld2026.github.io/blob/main/wechat_track1.JPG)
+
+&lt;a href=&quot;https://github.com/roboworld2026/roboworld2026.github.io/blob/main/wechat_track1.JPG&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/roboworld2026/roboworld2026.github.io/main/wechat_track1.JPG&quot; alt=&quot;Track 1 WeChat Group QR Code&quot; width=&quot;220&quot; /&gt;&lt;/a&gt;</div></div><div class='section'><h3>Submission &amp; Evaluation</h3><div class='page-content'># 提交与评估
+
+将预测的动作序列提交至ZIP压缩包，仅使用每个片段的初始RGB图像和指令。
+
+## 动作格式
+
+每个动作为[dx, dy, dyaw]：前向位移、智能体**当前局部坐标系**中的左向位移，以及偏航角更新（弧度制）。序列长度可不同；JSON列表标记轨迹结束。
+
+限制：每个片段最多64个动作；单次动作的hypot(dx,dy) ≤ 2.46数据集坐标单位且|dyaw| ≤ 6.29弧度（在[−π, π)范围内对2π取模计算）。
+
+## ZIP文件结构
+
+将所需的JSON文件置于压缩包根目录。可下载的示例ZIP展示了文件结构和第一阶段片段ID；替换其中的示例动作。
+
+| 阶段 |   | 所需文件 |
+| :-- | :--: | :-- |
+| 第一阶段 |   | val_seen.json, val_unseen.json |
+| 第二阶段 |   | test.json |
+
+### JSON模式
+
+每个文件包含数据集划分和片段。每个阶段的episode_id必须且只能出现一次，附带动作列表：
+
+    {
+      &quot;split&quot;: &quot;val_unseen&quot;,
+      &quot;episodes&quot;: [
+        {
+          &quot;episode_id&quot;: &quot;20210826_40_0001_02_0&quot;,
+          &quot;actions&quot;: [[0.25, 0.0, 0.0], [0.0, 0.0, 0.15], [0.12, -0.05, 0.0]]
+        }
+      ]
+    }
+
+此简化示例并非完整提交。
+
+## 评估指标
+
+两个保真度指标范围为0到1。五种计算方法参见[demonstration.py](https://github.com/F1y1113/worldnav-challenge/blob/main/demonstration.py)。
+
+| 指标 |   | 方向 |   | 含义 |
+| :-- | :--: | :-- | :--: | :-- |
+| **成功率 (SR)** |   | 越高越好 |   | 满足最终位置成功标准的比例。 |
+| **绝对轨迹误差 (ATE)** |   | 越低越好 |   | 相对于参考轨迹的位置误差。 |
+| **相对位姿误差 (RPE)** |   | 越低越好 |   | 连续位姿之间的相对平移误差。 |
+| **全路径保真度** |   | 越高越好 |   | 与完整有序记录路径的一致性，包括对不必要移动的惩罚。 |
+| **航向与转向保真度** |   | 越高越好 |   | 移动时朝向以及转向方向、位置和幅度的一致性。 |
+
+## 综合得分
+
+首先对每个片段进行评分，然后取平均值：
+
+    Score = (100/N) × Σ_i { FullRouteFidelity_i × (1 + HeadingTurnFidelity_i)/2
+                          × [0.70 + 0.10 SR_i + 0.10/(1+ATE_i) + 0.10/(1+RPE_i)] }
+
+SR_i为二元成功标志；ATE_i和RPE_i为每个片段在数据集坐标单位下的误差。得分取各片段贡献的平均值。
+
+第一阶段按`(Score_val_seen + Score_val_unseen) / 2`排名，两个划分权重相等。两个划分的文件都必须提交；缺少任一文件的提交将被拒绝。两个划分的得分均会显示。第二阶段按测试集得分排名。</div></div>
+
+</div>
+</body>
+</html>

@@ -5,8 +5,8 @@
   "created_by": "yuhangxu",
   "owner_display_name": "yuhangxu",
   "created_when": "2026-07-26T09:51:43.642130Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059503/c4f5eea4397e/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=NqzOoP1zNgOjf7wW8LwTMqDv5gk%3D&Expires=1790604184",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059503/c4f5eea4397e/images/conference-banner_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=XuJGAEJmUjsZKpRqhUZxDwkg9Wk%3D&Expires=1790604184",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059503/c4f5eea4397e/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=perBlxfyf1PWjhaGQE8YdSDoDBY%3D&Expires=1791534808",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059503/c4f5eea4397e/images/conference-banner_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=SHAul6ByOBzKjiIahsv%2BqJk1EYI%3D&Expires=1791534808",
   "terms": "# Terms\n\nBy participating, teams agree to the challenge rules and dataset licence published by the organizers. Hidden ground truth, leaked evaluation material, manual truth-based correction, and unauthorized redistribution of challenge data are prohibited.",
   "pages": [
     {
@@ -33,7 +33,7 @@
       "id": 29487,
       "index": 0,
       "start": "2026-07-17T00:00:00Z",
-      "end": "2026-11-03T15:59:00Z",
+      "end": "2026-10-09T16:00:00Z",
       "name": "Official Evaluation",
       "description": "Submit one TUM trajectory ZIP containing both required scenes.",
       "status": "Current",
@@ -98,7 +98,7 @@
         }
       ],
       "has_max_submissions": true,
-      "max_submissions_per_day": 5,
+      "max_submissions_per_day": 10,
       "max_submissions_per_person": 100,
       "auto_migrate_to_this_phase": false,
       "hide_output": false,
@@ -364,26 +364,12 @@
       "submission_rule": "Force_Last"
     }
   ],
-  "collaborators": [],
-  "registration_auto_approve": true,
   "description": "Translation-only evaluation for the LiDAR-visual-inertial SLAM track.",
-  "participants_count": 33,
-  "submissions_count": 308,
-  "queue": null,
-  "enable_detailed_results": true,
-  "show_detailed_results_in_submission_panel": true,
-  "show_detailed_results_in_leaderboard": true,
-  "auto_run_submissions": true,
-  "can_participants_make_submissions_public": false,
-  "make_programs_available": false,
-  "make_input_data_available": false,
+  "participants_count": 39,
+  "submissions_count": 594,
   "docker_image": "yuhangxu/slam-codabench-eval:evo-1.28.0",
   "competition_type": "competition",
-  "fact_sheet": null,
-  "forum": 17368,
   "reward": "",
   "contact_email": "",
-  "report": "",
-  "forum_enabled": true,
-  "enable_human_in_the_loop": false
+  "report": ""
 }

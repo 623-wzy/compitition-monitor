@@ -5,8 +5,8 @@
   "created_by": "pjlabeval",
   "owner_display_name": "pjlabeval",
   "created_when": "2026-09-21T07:27:36.520325Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=XFoq7czuxV5lHjHkLsWcQHjiLMU%3D&Expires=1790604171",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=Ey%2Fo8Da74ZDt6VjBM9LgZRt4Mo0%3D&Expires=1790604171",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=C0umJAnwfIEBCffNzGuZgUiEPcE%3D&Expires=1791534767",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=4J95NuszneXqc0qWhn3PSOkmNlA%3D&Expires=1791534767",
   "terms": "<h3>1. General Rules</h3>\n<ul>\n    <li><b>Eligibility:</b> This competition is open to all researchers, students, and developers worldwide.</li>\n    <li><b>One Account Per Team:</b> Participants may not sign up for multiple accounts to bypass submission limits. Doing so will result in disqualification.</li>\n    <li><b>No Private Sharing:</b> Private sharing of code or data outside of teams is not permitted.</li>\n</ul>\n\n<h3>2. Data Usage</h3>\n<ul>\n    <li>The datasets provided (distorted and reference images) are for <b>academic and research purposes only</b>.</li>\n    <li>Participants are not allowed to use the dataset for commercial products without permission.</li>\n</ul>\n\n<h3>3. Submission & Integrity</h3>\n<ul>\n    <li><b>Honor Code:</b> You agree not to attempt to reverse-engineer the ground truth labels or \"probe\" the leaderboard excessively.</li>\n    <li><b>Final Decision:</b> The organizers reserve the right to disqualify any team that violates these rules or the spirit of the competition.</li>\n</ul>",
   "pages": [
     {
@@ -28,9 +28,9 @@
       "index": 2
     },
     {
-      "id": 87821,
+      "id": 88300,
       "title": "Important Dates",
-      "content": "### Competition Timeline\n\n**To be announced.**\n\nThe detailed timeline will be released when the challenge officially starts.",
+      "content": "**Rules & Timeline**\n\n**Timeline**\n\n| Date | Milestone |\n|--------|--------|\n| 20 Sep 2026\t| Challenge Launch - training data released |\n| 15 Oct 2026\t| Registration deadline - submit Codabench handle + team member names/affiliations (see Registration below) |\n| 15 Oct 2026\t| Test set release |\n| 30 Oct 2026\t| Test-set results submission deadline (on Codabench) |\n| 4 Nov 2026\t| Methodology report + open-source model weights due - all participants (report format & weight-hosting instructions TBA) |\n| 20 Nov 2026 |\tChallenge results announcement |\n| 30 Nov 2026\t| Top-3 teams only: camera-ready 4-6 page description of approach + open-source code due |\n\nAll deadlines are 23:59 AoE unless stated otherwise.\n\n**Registration (due 15 Oct 2026)**\nBefore the Test Phase submission starts, every participant/team must submit:\n* Codabench handle (username)\n* Team member name(s) and institutional affiliation(s)\nvia a separate registration form (link to be added). Once submitted, team membership and affiliations are locked and cannot be changed afterward.\n\n**Who can participate**\nIndividuals or teams of 1-5 participants. Both academic and industry participants are welcome to register.\n\n**Submission limits (Codabench)**\nDevelopment Phase: max 100 submissions total\nTest Phase: max 20 submissions total, up to 2/day. Your last successful submission (Force_Last) is the one that counts for the final ranking.\n\n**Model eligibility**\nProprietary models (no open-source weights or accessed only via a paid/restricted API, e.g. GPT-4o, Gemini, Claude) are not eligible.\n\n**Methodology report - required for all participants (due 4 Nov)**\nThis is separate from your Codabench prediction submission. Every team with a scored Test Phase submission must submit a 4-6 page write-up describing their methodology/architecture. Format and the submission form/link will be published closer to the deadline. Submissions without an accompanying report will be removed from the final published leaderboard before results are archived.\n\n**Model weights**\n* All participants must share the actual model weights used to produce their scored Test Phase predictions with organizers via a private link (e.g. a gated Hugging Face repo, private cloud storage, or similar) shared alongside your methodology report. This is for verification only - confirming no proprietary/banned model was used and that results are reproducible.\n* This applies even if you used an unmodified base model; in that case, simply confirm the same public checkpoint already disclosed under Model Eligibility.\n* Submissions whose weights are not verifiably shared with organizers by this deadline are subject to the same removal-from-leaderboard consequence as a missing methodology report.\n\n**Additional - The top-3 teams (due 30 Nov)**\nThe top-3-ranked teams additionally submit a camera-ready version of their 4-6 page description (polished for publication) alongside open-source code (training + inference).",
       "index": 3
     }
   ],
@@ -38,11 +38,11 @@
     {
       "id": 30698,
       "index": 0,
-      "start": "2026-09-30T00:00:00Z",
-      "end": "2026-10-31T00:00:00Z",
+      "start": "2026-09-20T00:00:00Z",
+      "end": "2026-10-15T00:00:00Z",
       "name": "Development Phase",
       "description": "Train and refine your model on the released training set, and predict the quality scores of the validation set.",
-      "status": "Next",
+      "status": "Current",
       "execution_time_limit": 600,
       "tasks": [
         {
@@ -140,8 +140,8 @@
     {
       "id": 30699,
       "index": 1,
-      "start": "2026-11-01T00:00:00Z",
-      "end": null,
+      "start": "2026-10-15T00:00:00Z",
+      "end": "2026-10-30T00:00:00Z",
       "name": "Test Phase",
       "description": "Submit your best predictions on the held-out test set for the final ranking.",
       "status": "Next",
@@ -242,35 +242,12 @@
       "submission_rule": "Force_Best"
     }
   ],
-  "collaborators": [],
-  "registration_auto_approve": true,
   "description": "The 2nd Machine-oriented Image Quality Assessment Challenge, affiliated to the IEEE SPS Challenge Program",
-  "participants_count": 9,
-  "submissions_count": 3,
-  "queue": null,
-  "enable_detailed_results": true,
-  "show_detailed_results_in_submission_panel": true,
-  "show_detailed_results_in_leaderboard": false,
-  "auto_run_submissions": true,
-  "can_participants_make_submissions_public": true,
-  "make_programs_available": false,
-  "make_input_data_available": false,
+  "participants_count": 19,
+  "submissions_count": 35,
   "docker_image": "codalab/codalab-legacy:py37",
   "competition_type": "competition",
-  "fact_sheet": {
-    "method_name": {
-      "key": "method_name",
-      "type": "text",
-      "title": "Method Name",
-      "selection": "",
-      "is_required": "true",
-      "is_on_leaderboard": "true"
-    }
-  },
-  "forum": 17884,
   "reward": "",
   "contact_email": "lcysyzxdxc@sjtu.edu.cn",
-  "report": "",
-  "forum_enabled": true,
-  "enable_human_in_the_loop": false
+  "report": ""
 }

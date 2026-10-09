@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RoboWorld 2026 — Track 2: HA-VLN — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>RoboWorld 2026 — Track 2: HA-VLN</h2>
+  <div class="detail-meta">
+    <span>ID: 18135</span>
+    <span>创建者: yifeidong</span>
+    <span>创建时间: 2026-09-17</span>
+    <span>参与人数: 18</span>
+    <span>提交次数: 40</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/18135/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">在包含动态人类的连续三维环境中进行人类感知的视觉语言导航。RoboWorld 2026 赛道2挑战，与 RoboPAD 2026 联合主办。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-other'>其他</span> Phase 1: Validation</td><td>2026-10-15</td><td>2026-10-30</td><td>5</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'>欢迎来到赛道2：HA-VLN
+
+**具人感知视觉语言导航（HA-VLN）**是 [RoboWorld 2026](https://roboworld2026.github.io/) 的赛道2，隶属于 [NeurIPS 2026 RoboPAD研讨会](https://robotpad2026.github.io/)。
+
+## 挑战赛概述
+
+本赛道要求参赛者开发**具人感知视觉语言导航智能体**，使其能够在动态人体环境中**安全、高效且符合社交规范**地遵循自然语言指令。
+
+尽管许多标准VLN基准测试假设场景是静态的，但真实世界空间与移动的人群共享，这些人既是语义地标也是动态障碍物。基于 [HA-VLN 2.0](https://arxiv.org/abs/2503.14229)，提交作品必须在部分可观测性和实时人体交互的条件下，平衡**指令遵循**与**社交合规性**。
+
+- **人参考接地**：解读同时参考场景地标和正在进行的人体活动的细粒度指令。
+- **社会规范遵守**：尊重个人空间，主动避免与人体碰撞，并安全地绕行移动旁观者。
+- **真实基准测试**：在HA-R2R和HAPS 2.0数据集中，在具有多人体交互的室内和室外区域进行导航。
+
+我们欢迎导航策略、路点和拓扑规划器、世界模型以及VLA（视觉语言动作）方法，以推动共享空间中安全、以人为中心的导航技术发展。
+
+## 任务定义
+
+- **输入**：自然语言指令和连续的以自我为中心的RGB-D观测。
+- **设置**：在具有动态人体的连续3D环境中进行**闭环交互式导航**。
+- **动作**：六个离散动作：`停止`、`前进`、`左转`、`右转`、`抬头`、`低头`。
+- **输出**：动作的有序序列（1到500步，以`停止`结束），提交至官方模拟器回放。
+- **目标**：安全到达指令目标，同时避免与人体碰撞。
+
+## 阶段
+
+- 第一阶段：在已发布的验证集已见（val_seen）和验证集未见（val_unseen）片段上进行开发。两个划分都会被报告；仅验证集未见的分数决定第一阶段排名。
+- 第一阶段覆盖范围：为全部778个验证集已见片段和全部1,839个验证集未见片段提交动作。
+- 第二阶段：在保留的测试评分数据上进行最终评估。测试分数决定最终排名和奖项。
+
+第一阶段分数不决定入围或奖项，也不与第二阶段分数合并。每天最多提交5次，每阶段最多提交100次；保留最佳分数。
+
+## 日程安排
+
+1. 报名开始：2026年10月08日。
+2. 第一阶段开放：2026年10月15日，截止：2026年10月30日。
+3. 第二阶段开放：2026年10月30日，截止：2026年11月30日。
+4. 奖项决定公布：2026年12月12日。
+
+## 奖项与认可
+
+1. **认可证书**：颁发给赛道2前5名团队的官方证书。
+2. **最佳创新解决方案**：表彰杰出创意和技术创新的证书。
+3. **口头报告**：精选的顶尖表现团队将被邀请在NeurIPS 2026 RoboPAD研讨会上进行口头报告。
+
+最终排名和奖项完全由第二阶段测试评估决定。
+
+## 资料与工具包
+
+- [挑战赛代码库和参赛工具包](https://github.com/roboworld2026/track2)：文档、数据下载脚本、基线设置和动作提交导出器。
+- [赛道网站](https://roboworld2026.github.io/track2)：官方赛道详情和公告。
+- [HA-VLN 2.0](https://uwmilab.github.io/HA-VLN-webpage/)：项目页面和[官方代码库](https://github.com/UWMILab/HA-VLN)。
+- 入门套件：下载附加于本次竞赛的第一阶段入门套件，获取官方片段清单、示例提交和本地验证器。
+
+## 报名
+
+通过 [Google表单](https://roboworld2026.github.io/#registration)
+（报名开放时间为2026年10月08日）注册您的团队，以获得排行榜、证书和参赛资格。</div></div><div class='section'><h3>Submission &amp; Evaluation</h3><div class='page-content'># 提交与评估
+
+两个阶段均接受包含所有所需回合预测动作序列的单个ZIP压缩包。
+
+## 提交内容
+
+提交一个ZIP压缩包，包含阶段清单中每个回合的动作序列。评估仅使用动作预测结果；无需提供模型权重、代码和外部环境资源。
+
+## 归档结构
+
+将预测JSON文件直接放在ZIP压缩包的根目录下：
+
+```text
+submission.zip
+|-- val_seen.json      # 778 episodes
+`-- val_unseen.json    # 1,839 episodes
+```
+
+第二阶段遵循相同的结构，在`submission_test.zip`中包含`test.json`。打包第一阶段预测结果：
+
+```bash
+zip -j submission.zip val_seen.json val_unseen.json
+```
+
+## 预测文件结构
+
+每个JSON文件必须包含`format_version`、`split`和`episodes`：
+
+```json
+{
+  &quot;format_version&quot;: 1,
+  &quot;split&quot;: &quot;val_unseen&quot;,
+  &quot;episodes&quot;: [
+    {
+      &quot;episode_id&quot;: &quot;synthetic-example-001&quot;,
+      &quot;actions&quot;: [&quot;MOVE_FORWARD&quot;, &quot;TURN_LEFT&quot;, &quot;LOOK_UP&quot;, &quot;LOOK_DOWN&quot;, &quot;STOP&quot;]
+    }
+  ]
+}
+```
+
+- `format_version`：设置为`1`。
+- `split`：`&quot;val_seen&quot;`、`&quot;val_unseen&quot;`或`&quot;test&quot;`，与对应阶段匹配。
+- `episodes`：包含清单中所有回合ID的预测列表。
+  - `episode_id`：与清单完全匹配的字符串标识符，每个回合只出现一次。
+  - `actions`：从`[&quot;STOP&quot;, &quot;MOVE_FORWARD&quot;, &quot;TURN_LEFT&quot;, &quot;TURN_RIGHT&quot;, &quot;LOOK_UP&quot;, &quot;LOOK_DOWN&quot;]`中选择的1至500个动作的有序列表。`&quot;STOP&quot;`只能作为最后一个动作出现；短于500个动作的序列必须以`&quot;STOP&quot;`结尾。
+
+## 评估与排行榜
+
+提交结果根据导航和社交合规性进行评估，并按综合挑战**分数**进行排名（越高越好）：
+
+- **SR**（越高越好）：到达目标的无碰撞导航成功率。
+- **NE**（越低越好）：智能体最终位置到目标的平均欧几里得距离（米）。
+- **CR**（越低越好）：碰撞回合与受人类影响回合的比率。
+- **TCR**（越低越好）：每回合的平均碰撞事件次数。
+
+```text
+NE utility  = 3 / (3 + NE)
+TCR utility = 1 / (1 + TCR)
+Navigation  = 0.80 * SR + 0.20 * NE utility
+Social      = 0.75 * (1 - CR) + 0.25 * TCR utility
+Score       = 100 * Navigation * (0.70 + 0.30 * Social)
+```
+
+第一阶段根据`val_unseen`分数对队伍进行排名（`val_seen`分数仅供参考）。第二阶段根据`test`分数对队伍进行排名以确定最终奖项。当分数相同时，按以下顺序打破平局：更高的SR、更低的NE、更低的CR、更低的TCR、更早的提交时间。
+
+## 提交限制
+
+每支队伍每天最多可提交5次，每个阶段最多可提交100次。排行榜保留队伍的最高分数。
+
+## 技术支持
+
+- **技术支持：** [GitHub Issues](https://github.com/roboworld2026/track2/issues)  
+- **赛事与注册：** [roboworld2026@gmail.com](mailto:roboworld2026@gmail.com)</div></div>
+
+</div>
+</body>
+</html>
