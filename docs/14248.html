@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Multi-Sensor LiDAR SLAM Challenge 2026 - LiDAR-Visual-Inertial — Codabench 竞赛监测</title>
+<title>OncoSegment - Breast Tumor Mapping — Codabench 竞赛监测</title>
 <style>
 :root {
     --bg: #0f1117;
@@ -99,58 +99,102 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
 </header>
 <div class="detail-wrap">
   <a class="back-link" href="index.html">← 返回竞赛目录</a>
-  <h2>Multi-Sensor LiDAR SLAM Challenge 2026 - LiDAR-Visual-Inertial</h2>
+  <h2>OncoSegment - Breast Tumor Mapping</h2>
   <div class="detail-meta">
-    <span>ID: 17678</span>
-    <span>创建者: yuhangxu</span>
-    <span>创建时间: 2026-07-26</span>
-    <span>参与人数: 39</span>
-    <span>提交次数: 594</span>
-    <a class="ext-link" href="https://www.codabench.org/competitions/17678/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+    <span>ID: 14248</span>
+    <span>创建者: thomas_dnil</span>
+    <span>创建时间: 2026-03-02</span>
+    <span>参与人数: 18</span>
+    <span>提交次数: 3</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/14248/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
   </div>
 
   <div class="section">
     <h3>竞赛描述</h3>
-    <div class="page-content">LiDAR-视觉-惯性SLAM赛道的纯翻译评估</div>
+    <div class="page-content">分割乳腺超声图像中的良性和恶性肿瘤。</div>
   </div>
 
   <div class="section">
     <h3>竞赛阶段</h3>
     <table class="phases-table">
       <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
-      <tbody><tr><td><span class='badge badge-test'>测试</span> Official Evaluation</td><td>2026-07-17</td><td>2026-10-09</td><td>10</td></tr></tbody>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development Phase</td><td>2026-03-02</td><td>2026-12-01</td><td>5</td></tr></tbody>
     </table>
   </div>
 
-<div class='section'><h3>Overview</h3><div class='page-content'># LiDAR视觉惯性SLAM
+<div class='section'><h3>Description</h3><div class='page-content'># 🩺 
+# **OncoSegment: 乳腺肿瘤分割挑战赛**
 
-这是多传感器LiDAR SLAM挑战赛2026的独立LiDAR视觉惯感融合赛道。参赛者本地处理两个发布场景并仅提交估计轨迹。可靠的地面真值及其时间戳在Codabench上保持私密。
+# 💡 
+## **该问题的研究价值**
 
-两个场景`scene_0001`和`scene_0002`为必需。完成没有硬性阈值；轨迹覆盖不足会降低AUC召回率和最终分数。
+乳腺癌仍是全球女性死亡的主要原因之一。通过超声进行早期和准确检测至关重要，但解读这些图像却 notoriously 困难。超声图像存在&quot;散斑噪声&quot;且对比度低。正如等离子体物理模拟中的&quot;团块&quot;一样，超声中的肿瘤呈间歇性分布，边界不规则，且容易与正常健康组织混淆。本挑战要求你开发能够精确勾勒肿瘤边界的人工智能，该任务可直接辅助放射科医生进行活检规划与治疗。
 
-该数据集由Airy LiDAR及其内置IMU加上前左和前右Seeker鱼眼相机采集。以下图像仅为路线形状参考，不包含地面真值。
+# 📊 
+## **数据**
 
-![场景1轨迹参考](images/scene_0001_trajectory_reference.png)
+数据集源自乳腺超声图像（BUSI）数据集，研究对象为25-75岁女性。包含高质量的PNG扫描图像，标准分辨率约为500×500像素。
 
-![场景2轨迹参考](images/scene_0002_trajectory_reference.png)</div></div><div class='section'><h3>Submission</h3><div class='page-content'># 提交格式
+数据集构成：
 
-上传一个ZIP文件，其根目录包含 `README.md` 和 `trajectories/scene_0001.txt` 以及 `trajectories/scene_0002.txt`。每个轨迹使用TUM格式：
+良性：通常为椭圆形或圆形、边缘光滑的肿瘤。
 
-```text
-timestamp tx ty tz qx qy qz qw
-```
+恶性：癌性肿瘤，通常以&quot;毛刺状&quot;（spiculated）或侵入周围组织的不规则边界为特征。
 
-时间戳必须严格递增。数值必须是有限的，四元数必须非零。提交次数无限制。仅最新的有效提交将参与排名。</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'># 评估方法
+正常：无肿瘤的扫描图像（用于测试模型避免假阳性的能力）。
 
-评分使用EVO时间同步和每个场景一个无缩放SE(3)对齐与私密参考轨迹进行对比。完成度没有硬阈值且公开发布；缺失的位姿对会降低AUC召回率。评估时间戳和真值不公开。
+入门套件包含：
+train_images：一系列显示乳腺组织的PIL图像（灰度）。
+train_masks：二值掩膜，其中1代表肿瘤，0代表背景。
+train_labels：元数据，用于识别肿瘤为良性或恶性。
+test_images：需要预测掩膜的图像。
 
-ATE是EVO平移APE RMSE。AUC使用EVO单帧平移RPE和F1-AUC协议。RTE是EVO平移RPE的RMSE，在1m、5m和10m处进行归一化。总体和单场景RTE@1m、RTE@5m和RTE@10m均与合并RTE一起公开。超过0.3s的间隙永远不会跨越。
+ # 📏 
+## **评估指标：精确度测量**
 
-AUC和RTE使用对齐的世界坐标系位置（姿态为恒等）计算，因此固定的参与者机体坐标系约定不会影响平移分数。每个场景使用一个场景级SE(3)对齐。
+在医学影像中，简单的&quot;框选&quot;是不够的。我们需要确切知道哪些像素是癌性的。我们采用两种互补的重叠指标：
+1. 主要指标：Dice系数（F1分数）
+Dice系数是医学分割领域的黄金标准。计算方法为预测与真实值重叠区域面积的两倍，除以预测与真实值的总像素数。
+$$Dice = \frac{2 \times |P \cap G|}{|P| + |G|}$$
+原因：该指标对掩膜内部的&quot;充实度&quot;高度敏感，能够奖励形状完全精确的模型。
+2. 次要指标：Jaccard指数（IoU）
+Jaccard指数是交集面积除以并集面积。
+$$Jaccard = \frac{|P \cap G|}{|P \cup G|}$$
+原因：
+相比Dice，它对微小错误更为&quot;严苛&quot;。
+有助于在排行榜上打破平局，突出显示具有最少杂散假阳性像素的模型。</div></div><div class='section'><h3>Seed</h3><div class='page-content'>种子
 
-总分数为`100 * (0.40 * AUC + 0.40 * exp(-ATE / tau_ate) + 0.20 * exp(-RTE / tau_rte))`。参考结果为发布的参考：其总体ATE和RTE在最终评分器冻结后定义`tau_ate`和`tau_rte`。
+初始 `submission.py` 代码结构：
 
-结果公开总分、总体和单场景的AUC/ATE/合并RTE/RTE@1m/RTE@5m/RTE@10m、归一化分数分量、完成度和匹配计数。每个时间戳的误差、关联、对齐变换和真值保持私密。</div></div>
+```python
+import cv2
+import numpy as np
+
+
+class Model:
+    def fit(self, train_images, train_masks, train_labels=None):
+        return self
+
+    def predict(self, test_images, sample_ids=None):
+        preds = []
+        for image in test_images:
+            img = np.array(image.convert(&quot;L&quot;))
+            blurred = cv2.GaussianBlur(img, (5, 5), 0)
+            _, mask = cv2.threshold(
+                blurred, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU
+            )
+            preds.append(mask)
+        return preds
+
+
+def get_model():
+    return Model()
+```</div></div><div class='section'><h3>Timeline</h3><div class='page-content'># 时间线
+
+## 开发阶段
+利用此阶段迭代乳腺超声图像的分割模型，并优化公开的 Dice/Jaccard 指标。
+
+私有分数在该阶段结束前保持隐藏。</div></div>
 
 </div>
 </body>

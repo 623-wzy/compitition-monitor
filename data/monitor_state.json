@@ -1,115 +1,4 @@
 {
-  "17677": {
-    "id": 17677,
-    "title": "Multi-Sensor LiDAR SLAM Challenge 2026 - LiDAR-Inertial",
-    "description": "Translation-only evaluation for the LiDAR-inertial SLAM track.",
-    "description_zh": "LiDAR-惯性SLAM赛道的仅翻译评估。",
-    "created_by": "yuhangxu",
-    "created_when": "2026-07-26T09:50:41.414250Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059441/adc6bc07e4f0/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=d%2FlZKo3Gj4ThkkqREcX2SwCcWTc%3D&Expires=1791534808",
-    "participants_count": 74,
-    "submissions_count": 1864,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 29486,
-        "name": "Official Evaluation",
-        "start": "2026-07-17T00:00:00Z",
-        "end": "2026-10-09T16:00:00Z",
-        "max_submissions_per_day": 10
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Overview",
-        "content": "# LiDAR-Inertial SLAM\n\nThis is the independent LiDAR-inertial track of the Multi-Sensor LiDAR SLAM Challenge 2026. Participants process the two released scenes locally and submit estimated trajectories only. Reliable ground truth and its timestamps remain private on Codabench.\n\nBoth `scene_0001` and `scene_0002` are required. Completion has no hard threshold; missing trajectory coverage reduces AUC recall and the final score.\n\nThe dataset was recorded with an Airy LiDAR and its built-in IMU. The following images are route-shape references only and contain no ground truth.\n\n![Scene 1 trajectory reference](images/scene_0001_trajectory_reference.png)\n\n![Scene 2 trajectory reference](images/scene_0002_trajectory_reference.png)",
-        "content_zh": "# LiDAR-惯性SLAM\n\n这是多传感器LiDAR SLAM挑战赛2026的独立LiDAR-惯性赛道。参与者在本地处理两个发布的场景，仅提交估计轨迹。可靠的地面真值及其时间戳保持隐私，存储在Codabench上。\n\n需要完成`scene_0001`和`scene_0002`两个场景。完成度没有硬性阈值；缺失轨迹覆盖会降低AUC召回率和最终得分。\n\n数据集采用Airy LiDAR及其内置IMU记录。以下图像仅作为路线形状参考，不包含地面真值。\n\n![场景1轨迹参考](images/scene_0001_trajectory_reference.png)\n\n![场景2轨迹参考](images/scene_0002_trajectory_reference.png)"
-      },
-      {
-        "index": 1,
-        "title": "Submission",
-        "content": "# Submission format\n\nUpload a ZIP whose root contains `README.md` and `trajectories/scene_0001.txt` plus `trajectories/scene_0002.txt`. Each trajectory uses TUM rows:\n\n```text\ntimestamp tx ty tz qx qy qz qw\n```\n\nTimestamps must be strictly increasing. Values must be finite and quaternions must be non-zero. There is no submission-count limit. Only the most recent valid submission is ranked.",
-        "content_zh": "# 提交格式\n\n上传一个ZIP文件，其根目录包含 `README.md` 和 `trajectories/scene_0001.txt` 以及 `trajectories/scene_0002.txt`。每个轨迹使用TUM格式的行：\n\n```text\ntimestamp tx ty tz qx qy qz qw\n```\n\n时间戳必须严格递增。数值必须是有限的，四元数必须非零。提交次数无限制。只有最新的有效提交才会被排名。"
-      },
-      {
-        "index": 2,
-        "title": "Evaluation",
-        "content": "# Evaluation\n\nScoring uses EVO time synchronization and one no-scale SE(3) alignment per scene against the private reference trajectory. Completion has no hard threshold and is published; missing pose pairs reduce AUC recall. Evaluation timestamps and ground truth are not published.\n\nATE is EVO translational APE RMSE. AUC uses EVO one-frame translational RPE and the F1-AUC protocol. RTE is the RMSE of EVO translational RPE normalized at 1 m, 5 m, and 10 m. Aggregate and per-scene RTE@1m, RTE@5m, and RTE@10m are all published alongside the combined RTE. Gaps over 0.3 s are never crossed.\n\nAUC and RTE use aligned world-frame positions with identity orientations, so a fixed participant body-axis convention does not affect translation scores. Every scene uses one scene-level SE(3) alignment.\n\nThe total score is `100 * (0.40 * AUC + 0.40 * exp(-ATE / tau_ate) + 0.20 * exp(-RTE / tau_rte))`. Reference result is the published reference: its aggregate ATE and RTE define `tau_ate` and `tau_rte` after the final scorer is frozen.\n\nResults publish the total score, aggregate and per-scene AUC/ATE/combined RTE/RTE@1m/RTE@5m/RTE@10m, normalized score components, completion, and match counts. Per-timestamp errors, associations, alignment transforms, and ground truth remain private.",
-        "content_zh": "# 评估\n\n评分使用EVO时间同步和每个场景一个无缩放SE(3)对齐，对标私有参考轨迹。完成度无硬阈值并公开发布；缺失的位姿对会降低AUC召回率。评估时间戳和真值不公开。\n\nATE是EVO平移APE均方根误差。AUC使用EVO单帧平移RPE和F1-AUC协议。RTE是EVO平移RPE的均方根误差，在1 m、5 m和10 m处归一化。总体和各场景的RTE@1m、RTE@5m和RTE@10m均与合并RTE一起公开发布。超过0.3 s的间隔不被跨越。\n\nAUC和RTE使用对齐的世界坐标系位置和单位方向，因此固定的参与者机体坐标系约定不影响平移得分。每个场景使用一个场景级SE(3)对齐。\n\n总分为`100 * (0.40 * AUC + 0.40 * exp(-ATE / tau_ate) + 0.20 * exp(-RTE / tau_rte))`。参考结果是已发布的参考值：其总体ATE和RTE在最终评分器冻结后定义`tau_ate`和`tau_rte`。\n\n结果公开发布总分、总体和各场景AUC/ATE/合并RTE/RTE@1m/RTE@5m/RTE@10m、归一化得分组件、完成度和匹配计数。单时间戳误差、关联、对齐变换和真值保持私有。"
-      }
-    ]
-  },
-  "17678": {
-    "id": 17678,
-    "title": "Multi-Sensor LiDAR SLAM Challenge 2026 - LiDAR-Visual-Inertial",
-    "description": "Translation-only evaluation for the LiDAR-visual-inertial SLAM track.",
-    "description_zh": "LiDAR-视觉-惯性SLAM赛道的纯翻译评估",
-    "created_by": "yuhangxu",
-    "created_when": "2026-07-26T09:51:43.642130Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-26-1785059503/c4f5eea4397e/images/conference-banner.jpg?AWSAccessKeyId=codabench-prod&Signature=perBlxfyf1PWjhaGQE8YdSDoDBY%3D&Expires=1791534808",
-    "participants_count": 39,
-    "submissions_count": 594,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 29487,
-        "name": "Official Evaluation",
-        "start": "2026-07-17T00:00:00Z",
-        "end": "2026-10-09T16:00:00Z",
-        "max_submissions_per_day": 10
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Overview",
-        "content": "# LiDAR-Visual-Inertial SLAM\n\nThis is the independent LiDAR-visual-inertial track of the Multi-Sensor LiDAR SLAM Challenge 2026. Participants process the two released scenes locally and submit estimated trajectories only. Reliable ground truth and its timestamps remain private on Codabench.\n\nBoth `scene_0001` and `scene_0002` are required. Completion has no hard threshold; missing trajectory coverage reduces AUC recall and the final score.\n\nThe dataset was recorded with an Airy LiDAR and its built-in IMU plus the front-left and front-right Seeker fisheye cameras. The following images are route-shape references only and contain no ground truth.\n\n![Scene 1 trajectory reference](images/scene_0001_trajectory_reference.png)\n\n![Scene 2 trajectory reference](images/scene_0002_trajectory_reference.png)",
-        "content_zh": "# LiDAR视觉惯性SLAM\n\n这是多传感器LiDAR SLAM挑战赛2026的独立LiDAR视觉惯感融合赛道。参赛者本地处理两个发布场景并仅提交估计轨迹。可靠的地面真值及其时间戳在Codabench上保持私密。\n\n两个场景`scene_0001`和`scene_0002`为必需。完成没有硬性阈值；轨迹覆盖不足会降低AUC召回率和最终分数。\n\n该数据集由Airy LiDAR及其内置IMU加上前左和前右Seeker鱼眼相机采集。以下图像仅为路线形状参考，不包含地面真值。\n\n![场景1轨迹参考](images/scene_0001_trajectory_reference.png)\n\n![场景2轨迹参考](images/scene_0002_trajectory_reference.png)"
-      },
-      {
-        "index": 1,
-        "title": "Submission",
-        "content": "# Submission format\n\nUpload a ZIP whose root contains `README.md` and `trajectories/scene_0001.txt` plus `trajectories/scene_0002.txt`. Each trajectory uses TUM rows:\n\n```text\ntimestamp tx ty tz qx qy qz qw\n```\n\nTimestamps must be strictly increasing. Values must be finite and quaternions must be non-zero. There is no submission-count limit. Only the most recent valid submission is ranked.",
-        "content_zh": "# 提交格式\n\n上传一个ZIP文件，其根目录包含 `README.md` 和 `trajectories/scene_0001.txt` 以及 `trajectories/scene_0002.txt`。每个轨迹使用TUM格式：\n\n```text\ntimestamp tx ty tz qx qy qz qw\n```\n\n时间戳必须严格递增。数值必须是有限的，四元数必须非零。提交次数无限制。仅最新的有效提交将参与排名。"
-      },
-      {
-        "index": 2,
-        "title": "Evaluation",
-        "content": "# Evaluation\n\nScoring uses EVO time synchronization and one no-scale SE(3) alignment per scene against the private reference trajectory. Completion has no hard threshold and is published; missing pose pairs reduce AUC recall. Evaluation timestamps and ground truth are not published.\n\nATE is EVO translational APE RMSE. AUC uses EVO one-frame translational RPE and the F1-AUC protocol. RTE is the RMSE of EVO translational RPE normalized at 1 m, 5 m, and 10 m. Aggregate and per-scene RTE@1m, RTE@5m, and RTE@10m are all published alongside the combined RTE. Gaps over 0.3 s are never crossed.\n\nAUC and RTE use aligned world-frame positions with identity orientations, so a fixed participant body-axis convention does not affect translation scores. Every scene uses one scene-level SE(3) alignment.\n\nThe total score is `100 * (0.40 * AUC + 0.40 * exp(-ATE / tau_ate) + 0.20 * exp(-RTE / tau_rte))`. Reference result is the published reference: its aggregate ATE and RTE define `tau_ate` and `tau_rte` after the final scorer is frozen.\n\nResults publish the total score, aggregate and per-scene AUC/ATE/combined RTE/RTE@1m/RTE@5m/RTE@10m, normalized score components, completion, and match counts. Per-timestamp errors, associations, alignment transforms, and ground truth remain private.",
-        "content_zh": "# 评估方法\n\n评分使用EVO时间同步和每个场景一个无缩放SE(3)对齐与私密参考轨迹进行对比。完成度没有硬阈值且公开发布；缺失的位姿对会降低AUC召回率。评估时间戳和真值不公开。\n\nATE是EVO平移APE RMSE。AUC使用EVO单帧平移RPE和F1-AUC协议。RTE是EVO平移RPE的RMSE，在1m、5m和10m处进行归一化。总体和单场景RTE@1m、RTE@5m和RTE@10m均与合并RTE一起公开。超过0.3s的间隙永远不会跨越。\n\nAUC和RTE使用对齐的世界坐标系位置（姿态为恒等）计算，因此固定的参与者机体坐标系约定不会影响平移分数。每个场景使用一个场景级SE(3)对齐。\n\n总分数为`100 * (0.40 * AUC + 0.40 * exp(-ATE / tau_ate) + 0.20 * exp(-RTE / tau_rte))`。参考结果为发布的参考：其总体ATE和RTE在最终评分器冻结后定义`tau_ate`和`tau_rte`。\n\n结果公开总分、总体和单场景的AUC/ATE/合并RTE/RTE@1m/RTE@5m/RTE@10m、归一化分数分量、完成度和匹配计数。每个时间戳的误差、关联、对齐变换和真值保持私密。"
-      }
-    ]
-  },
-  "17265": {
-    "id": 17265,
-    "title": "第十届全国激光雷达大会——City-Facade建筑立面点云实例分割大赛",
-    "description": "本比赛面向城市级建筑立面构件精细理解，采用City-Facade大规模三维点云数据集。\n\n数据由车载移动激光扫描系统采集，覆盖厦门市多类典型城市街区，累计道路长度约60 km。数据包含墙面、窗户、门、屋顶、广告牌、空调外机、雨棚和阳台等细粒度建筑立面要素标注，并提供语义级与实例级标签。\n\n参赛者需要识别测试点云中的独立建筑立面构件实例，并输出相应实例编号和语义类别。\n\n比赛采用结果提交模式。参赛者在本地完成模型训练和推理，仅向Codabench提交预测结果，平台使用隐藏实例标签进行自动评分。",
-    "description_zh": "本比赛面向城市级建筑立面构件精细理解，采用City-Facade大规模三维点云数据集。\n\n数据由车载移动激光扫描系统采集，覆盖厦门市多类典型城市街区，累计道路长度约60 km。数据包含墙面、窗户、门、屋顶、广告牌、空调外机、雨棚和阳台等细粒度建筑立面要素标注，并提供语义级与实例级标签。\n\n参赛者需要识别测试点云中的独立建筑立面构件实例，并输出相应实例编号和语义类别。\n\n比赛采用结果提交模式。参赛者在本地完成模型训练和推理，仅向Codabench提交预测结果，平台使用隐藏实例标签进行自动评分。",
-    "created_by": "jianlongguan",
-    "created_when": "2026-06-26T12:50:09.783065Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-06-26-1782478209/14ffe4be01d5/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260626190121_407_1381.png?AWSAccessKeyId=codabench-prod&Signature=TgcsOq5HtPuwU5LAW%2FPzUW2WlAw%3D&Expires=1791534852",
-    "participants_count": 57,
-    "submissions_count": 1083,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 28803,
-        "name": "City-Facade建筑立面点云实例分割",
-        "start": "2026-06-05T00:00:00Z",
-        "end": "2026-10-09T23:59:00Z",
-        "max_submissions_per_day": 5
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "比赛说明",
-        "content": "# **建筑物立面点云语义/实例分割**\n\n\n\n各参赛队伍：\n\n您好！\n\n为保障“第十届全国激光雷达大会——City-Facade 建筑立面点云实例分割大赛”的公平性与参赛结果的可信度，经大赛组委会讨论决定，现统一要求本赛道各参赛队伍提交与评估平台提交结果相对应的训练日志和推理日志，用于竞赛结果核验。具体要求如下：\n\n一、提交材料\n\n训练日志：提交用于生成相应预测结果的模型原始训练日志，包括训练时间、训练配置、训练轮次、损失变化及验证指标等已记录信息，并注明对应的基准模型。\n\n推理日志：提交生成评估平台对应预测结果的原始推理日志，包括推理时间、结果信息等已记录内容。\n\n对应关系说明：提供简要说明文件，注明队伍名称、平台账号、提交 ID、提交时间，以及榜单上提交记录对应的训练日志和推理日志。\n\n二、提交方式及时间\n\n请于**10月9日00:00**前，将上述材料打包为压缩文件，**以“队伍名称_训练与推理日志.zip”命名，并回复luoy583@mail2.sysu.edu.cn**提交。\n\n请确保材料真实、完整，保留日志原始内容。如未进行训练，或部分日志未记录、未完整保存，请在说明文件中如实说明相关情况及原因。\n\n三、核验安排\n\n本次核验适用于本赛道全部参赛队伍，组委会将按照统一标准开展审核。对于需要进一步核实的内容，组委会将联系相关队伍补充材料或作出说明。请各队伍妥善保存相关代码、模型权重及预测结果，以便配合后续核验。\n\n感谢各参赛队伍的理解与配合，共同维护公平、严谨的竞赛环境。\n\n此致\n敬礼！\n\n第十届全国激光雷达大会大赛组委会\nCity-Facade 建筑立面点云实例分割赛道\n2026年10月8日\n\n\n## **Overview**\n\n本赛道采用 City-Facade 城市建筑立面点云数据集，开展建筑立面点云语义分割与实例分割。\n\n参赛者需要为测试集中的每个点预测语义类别，并进一步区分同一语义类别下不同建筑立面构件的实例编号。\n\nCity-Facade 数据由车载移动激光扫描系统采集，覆盖厦门市 6 类典型城市街区场景，累计道路长度约 60 km，包含约 2 亿个带标注点。\n\n语义类别如下：\n\n| **编号** | **英文类别**              | **中文类别** |\n| -------- | ------------------------- | ------------ |\n| 0        | Background / Unclassified | 背景或未分类 |\n| 1        | Wall                      | 墙面         |\n| 2        | Window                    | 窗户         |\n| 3        | Door                      | 门           |\n| 4        | Roof                      | 屋顶         |\n| 5        | Advertisement             | 广告牌       |\n| 6        | Air Conditioner           | 空调外机     |\n| 7        | Rain Shed                 | 雨棚         |\n| 8        | Balcony                   | 阳台         |\n\n参赛流程：\n\n1. 在训练数据集上开发三维点云语义分割与实例分割模型；\n2. 使用训练完成的模型预测测试数据；\n3. 为每个测试点生成语义标签和实例标签；\n4. 按指定目录结构压缩预测结果；\n5. 将结果上传至 Codabench；\n6. 平台自动评测并更新排行榜。\n\n数据集项目地址：\n\n```text\nhttps://github.com/Ting-Devin-Han/City-Facade\n```\n\n## **Evaluation**\n\n主排名指标为综合得分：\n\n```text\nScore = 0.5 × mIoU + 0.5 × AP50\n```\n\n其中：\n\n- mIoU 用于评价语义分割精度；\n- AP50 用于评价实例分割精度。\n\n辅助指标包括：\n\n- mIoU\n- OA\n- 各类别 IoU\n- AP\n- AP25\n- AP50\n\n所有指标均为越高越好。\n\n每支队伍每日最多提交 5 次。\n\n若综合得分相同，依次按照 AP50、mIoU、AP25 和提交时间确定排名。\n\n## **Submission Format**\n\n参赛者须为测试集中的每个点提供语义标签和实例标签，并提交一个 ZIP 压缩包。\n\n压缩包根目录必须包含`predictions/`文件夹：\n\n```text\nsubmission.zip\n└── predictions/\n    ├── CAR/\n    │   ├── CAR-30-003_000000.txt\n    │   ├── CAR-30-003_000001.txt\n    │   └── ...\n    ├── JMC/\n    ├── SGS/\n    ├── XHR/\n    └── YWR/\n```\n\n目录名称和预测文件名称必须与测试数据保持一致。例如：\n\n```text\ntest/JMC/JMC-1-013_000000.txt\npredictions/JMC/JMC-1-013_000000.txt\n```\n\n每个预测 `.txt` 文件为 `N x 7` 数组，字段顺序固定为：\n\n```text\nX Y Z intensity instance_id semantic_label instance_score\n```\n\n其中：\n\n- `N` 为点云点数；\n- `X Y Z` 为三维坐标；\n- `intensity` 为激光强度；\n- `instance_id` 为预测实例编号；\n- `semantic_label` 为预测语义类别；\n- `instance_score` 为预测实例置信度\n\n字段索引从 `0` 开始时：\n\n```text\nX=0, Y=1, Z=2, intensity=3, instance_id=4, semantic_label=5, instance_score=6\n```\n\n提交文件必须满足：\n\n1. 每个测试 `.txt` 文件都必须有对应预测文件；\n2. 预测文件的相对路径和文件名必须与测试集一致；\n3. 每个预测文件的点数必须与对应测试文件完全一致；\n4. 点顺序必须与测试文件完全一致；\n5. `X Y Z intensity` 四列应保持与测试文件一致；\n6. `semantic_label` 必须为整数，取值范围为 `0` 到 `8`；\n7. `instance_id` 必须为非负整数；\n8. `instance_score` 必须是 `[0,1]` 范围内的有限数值，不允许使用 `NaN` 或正负无穷。\n9. 对于语义类别 `1` 到 `8` 的前景构件，不同实例应使用不同的实例编号；\n10. 对于类别 `0` 的背景或未分类点，`instance_id` 可设为 `0`；\n11. ZIP 根目录必须包含 `predictions/` 文件夹，不要额外嵌套一层目录。\n\n## **Citation**\n\n使用 City-Facade 数据集开展研究或发表成果时，请引用：\n\n```bibtex\n@article{chen2026cityfacade,\n  title={City-Facade: A city-level large-scale point cloud building facade dataset for semantic \\& instance segmentation},\n  author={Chen, Yiping and Li, Jonathan and Han, Ting and Feng, Huifang and Chen, Jun and Wang, Cheng},\n  journal={ISPRS Journal of Photogrammetry and Remote Sensing},\n  volume={232},\n  pages={675--688},\n  year={2026},\n  doi={10.1016/j.isprsjprs.2026.01.003}\n}\n```",
-        "content_zh": "# **建筑物立面点云语义/实例分割**\n\n\n\n各参赛队伍：\n\n您好！\n\n为保障“第十届全国激光雷达大会——City-Facade 建筑立面点云实例分割大赛”的公平性与参赛结果的可信度，经大赛组委会讨论决定，现统一要求本赛道各参赛队伍提交与评估平台提交结果相对应的训练日志和推理日志，用于竞赛结果核验。具体要求如下：\n\n一、提交材料\n\n训练日志：提交用于生成相应预测结果的模型原始训练日志，包括训练时间、训练配置、训练轮次、损失变化及验证指标等已记录信息，并注明对应的基准模型。\n\n推理日志：提交生成评估平台对应预测结果的原始推理日志，包括推理时间、结果信息等已记录内容。\n\n对应关系说明：提供简要说明文件，注明队伍名称、平台账号、提交 ID、提交时间，以及榜单上提交记录对应的训练日志和推理日志。\n\n二、提交方式及时间\n\n请于**10月9日00:00**前，将上述材料打包为压缩文件，**以“队伍名称_训练与推理日志.zip”命名，并回复luoy583@mail2.sysu.edu.cn**提交。\n\n请确保材料真实、完整，保留日志原始内容。如未进行训练，或部分日志未记录、未完整保存，请在说明文件中如实说明相关情况及原因。\n\n三、核验安排\n\n本次核验适用于本赛道全部参赛队伍，组委会将按照统一标准开展审核。对于需要进一步核实的内容，组委会将联系相关队伍补充材料或作出说明。请各队伍妥善保存相关代码、模型权重及预测结果，以便配合后续核验。\n\n感谢各参赛队伍的理解与配合，共同维护公平、严谨的竞赛环境。\n\n此致\n敬礼！\n\n第十届全国激光雷达大会大赛组委会\nCity-Facade 建筑立面点云实例分割赛道\n2026年10月8日\n\n\n## **Overview**\n\n本赛道采用 City-Facade 城市建筑立面点云数据集，开展建筑立面点云语义分割与实例分割。\n\n参赛者需要为测试集中的每个点预测语义类别，并进一步区分同一语义类别下不同建筑立面构件的实例编号。\n\nCity-Facade 数据由车载移动激光扫描系统采集，覆盖厦门市 6 类典型城市街区场景，累计道路长度约 60 km，包含约 2 亿个带标注点。\n\n语义类别如下：\n\n| **编号** | **英文类别**              | **中文类别** |\n| -------- | ------------------------- | ------------ |\n| 0        | Background / Unclassified | 背景或未分类 |\n| 1        | Wall                      | 墙面         |\n| 2        | Window                    | 窗户         |\n| 3        | Door                      | 门           |\n| 4        | Roof                      | 屋顶         |\n| 5        | Advertisement             | 广告牌       |\n| 6        | Air Conditioner           | 空调外机     |\n| 7        | Rain Shed                 | 雨棚         |\n| 8        | Balcony                   | 阳台         |\n\n参赛流程：\n\n1. 在训练数据集上开发三维点云语义分割与实例分割模型；\n2. 使用训练完成的模型预测测试数据；\n3. 为每个测试点生成语义标签和实例标签；\n4. 按指定目录结构压缩预测结果；\n5. 将结果上传至 Codabench；\n6. 平台自动评测并更新排行榜。\n\n数据集项目地址：\n\n```text\nhttps://github.com/Ting-Devin-Han/City-Facade\n```\n\n## **Evaluation**\n\n主排名指标为综合得分：\n\n```text\nScore = 0.5 × mIoU + 0.5 × AP50\n```\n\n其中：\n\n- mIoU 用于评价语义分割精度；\n- AP50 用于评价实例分割精度。\n\n辅助指标包括：\n\n- mIoU\n- OA\n- 各类别 IoU\n- AP\n- AP25\n- AP50\n\n所有指标均为越高越好。\n\n每支队伍每日最多提交 5 次。\n\n若综合得分相同，依次按照 AP50、mIoU、AP25 和提交时间确定排名。\n\n## **Submission Format**\n\n参赛者须为测试集中的每个点提供语义标签和实例标签，并提交一个 ZIP 压缩包。\n\n压缩包根目录必须包含`predictions/`文件夹：\n\n```text\nsubmission.zip\n└── predictions/\n    ├── CAR/\n    │   ├── CAR-30-003_000000.txt\n    │   ├── CAR-30-003_000001.txt\n    │   └── ...\n    ├── JMC/\n    ├── SGS/\n    ├── XHR/\n    └── YWR/\n```\n\n目录名称和预测文件名称必须与测试数据保持一致。例如：\n\n```text\ntest/JMC/JMC-1-013_000000.txt\npredictions/JMC/JMC-1-013_000000.txt\n```\n\n每个预测 `.txt` 文件为 `N x 7` 数组，字段顺序固定为：\n\n```text\nX Y Z intensity instance_id semantic_label instance_score\n```\n\n其中：\n\n- `N` 为点云点数；\n- `X Y Z` 为三维坐标；\n- `intensity` 为激光强度；\n- `instance_id` 为预测实例编号；\n- `semantic_label` 为预测语义类别；\n- `instance_score` 为预测实例置信度\n\n字段索引从 `0` 开始时：\n\n```text\nX=0, Y=1, Z=2, intensity=3, instance_id=4, semantic_label=5, instance_score=6\n```\n\n提交文件必须满足：\n\n1. 每个测试 `.txt` 文件都必须有对应预测文件；\n2. 预测文件的相对路径和文件名必须与测试集一致；\n3. 每个预测文件的点数必须与对应测试文件完全一致；\n4. 点顺序必须与测试文件完全一致；\n5. `X Y Z intensity` 四列应保持与测试文件一致；\n6. `semantic_label` 必须为整数，取值范围为 `0` 到 `8`；\n7. `instance_id` 必须为非负整数；\n8. `instance_score` 必须是 `[0,1]` 范围内的有限数值，不允许使用 `NaN` 或正负无穷。\n9. 对于语义类别 `1` 到 `8` 的前景构件，不同实例应使用不同的实例编号；\n10. 对于类别 `0` 的背景或未分类点，`instance_id` 可设为 `0`；\n11. ZIP 根目录必须包含 `predictions/` 文件夹，不要额外嵌套一层目录。\n\n## **Citation**\n\n使用 City-Facade 数据集开展研究或发表成果时，请引用：\n\n```bibtex\n@article{chen2026cityfacade,\n  title={City-Facade: A city-level large-scale point cloud building facade dataset for semantic \\& instance segmentation},\n  author={Chen, Yiping and Li, Jonathan and Han, Ting and Feng, Huifang and Chen, Jun and Wang, Cheng},\n  journal={ISPRS Journal of Photogrammetry and Remote Sensing},\n  volume={232},\n  pages={675--688},\n  year={2026},\n  doi={10.1016/j.isprsjprs.2026.01.003}\n}\n```"
-      }
-    ]
-  },
   "17680": {
     "id": 17680,
     "title": "Who is Behind the Avatar?  Verifying Teleoperator Identity in Reenacted Avatar Videos",
@@ -117,9 +6,9 @@
     "description_zh": "欢迎来到首届\"重演化身视频中远程操作者身份验证\"国际竞赛。本竞赛将与[ACCV2026](https://https://accv2026.org/)联合举办。",
     "created_by": "allam",
     "created_when": "2026-07-27T05:47:11.519603Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=7KAQ3RicO8J2QrADvPS%2BOx5vPao%3D&Expires=1791534808",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=BwaTxy4XUWGLAP4M%2B7PMeGx9jeg%3D&Expires=1791621950",
     "participants_count": 38,
-    "submissions_count": 116,
+    "submissions_count": 127,
     "first_phase_start": null,
     "phases": [
       {
@@ -170,9 +59,9 @@
     "description_zh": "这个迷你挑战的目标是设计和训练一个用于检测虚假面部图像的网络。",
     "created_by": "weichen2383",
     "created_when": "2026-08-28T08:38:04.000911Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-28-1787906284/99c1b887dc56/Screenshot_2026-08-28_at_15.17.27.png?AWSAccessKeyId=codabench-prod&Signature=ZlNyudmMkP%2BfKdiMVEzjik5leK4%3D&Expires=1791534789",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-28-1787906284/99c1b887dc56/Screenshot_2026-08-28_at_15.17.27.png?AWSAccessKeyId=codabench-prod&Signature=BePGFbNE4ik64Ji6Em%2Blq8Z136Y%3D&Expires=1791621948",
     "participants_count": 136,
-    "submissions_count": 807,
+    "submissions_count": 907,
     "first_phase_start": null,
     "phases": [
       {
@@ -206,9 +95,9 @@
     "description_zh": "在 Vaani 语料库的真实印度语言语音录音中检测噪声事件（开始和结束时间戳）。参赛者必须利用多层注释的训练数据（黄金级/白银级/青铜级）来构建稳健的噪声事件检测系统，该系统将基于事件级 F1 和分段 Dice 进行评估。",
     "created_by": "nagu_iitkgp",
     "created_when": "2026-08-14T17:27:12.345457Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-14-1786728432/29a3bf95a91d/logo.png?AWSAccessKeyId=codabench-prod&Signature=LkZEurC0waBa8wOfrw1i4qMsjOQ%3D&Expires=1791534803",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-14-1786728432/29a3bf95a91d/logo.png?AWSAccessKeyId=codabench-prod&Signature=KeDIhxES%2Bt6HNIIVMKMEXLMtybo%3D&Expires=1791621949",
     "participants_count": 185,
-    "submissions_count": 1126,
+    "submissions_count": 1144,
     "first_phase_start": null,
     "phases": [
       {
@@ -247,9 +136,9 @@
     "description_zh": "WACV 2027现实世界监控研讨会UPAR挑战赛第二赛道。在域偏移条件下，根据属性集合查询对行人图像库进行排序。代码提交：在隐藏测试集上运行模型。",
     "created_by": "spcke",
     "created_when": "2026-09-21T10:16:24.265612Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789989582/27d420ef5134/rws2027_orlando.png?AWSAccessKeyId=codabench-prod&Signature=7ohgmhXD2ELcVGgQjZaMZtTbkp4%3D&Expires=1791534767",
-    "participants_count": 47,
-    "submissions_count": 243,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789989582/27d420ef5134/rws2027_orlando.png?AWSAccessKeyId=codabench-prod&Signature=OQJ5svD3wG8Rnwd%2Fpu9fWXW9V8Q%3D&Expires=1791621944",
+    "participants_count": 51,
+    "submissions_count": 265,
     "first_phase_start": null,
     "phases": [
       {
@@ -287,6 +176,41 @@
       }
     ]
   },
+  "18185": {
+    "id": 18185,
+    "title": "RoboWorld 2026 — Track 1: WorldNav",
+    "description": "Language-conditioned open-loop visual navigation and trajectory prediction in continuous 3D environments. The WorldNav track of the RoboWorld Challenge 2026, affiliated with the RoboPAD Workshop at NeurIPS 2026.",
+    "description_zh": "连续三维环境中的语言条件化开环视觉导航与轨迹预测。RoboWorld Challenge 2026的WorldNav赛道，隶属于NeurIPS 2026的RoboPAD研讨会。",
+    "created_by": "yifeidong",
+    "created_when": "2026-09-19T07:46:40.332684Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791429899/6f72dc95718f/codabench_track1_icon.png?AWSAccessKeyId=codabench-prod&Signature=hwuRr9qlS9PAMMSgNSpjy9dXcmw%3D&Expires=1791621944",
+    "participants_count": 28,
+    "submissions_count": 30,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 30680,
+        "name": "Phase 1: Validation",
+        "start": "2026-10-15T00:00:00Z",
+        "end": "2026-10-30T23:59:00Z",
+        "max_submissions_per_day": 100
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Overview",
+        "content": "# RoboWorld 2026 Track 1: WorldNav\n\nWelcome to WorldNav, the language-conditioned visual navigation track of the RoboWorld 2026, affiliated with the RoboPAD Workshop at NeurIPS 2026.\n\nAn agent receives one initial egocentric RGB image and a natural-language instruction. It must predict a complete navigation action sequence without a goal image, an initial numeric pose, or further observations from the environment. World models, vision-language-action models, and policy-only methods are welcome.\n\n## Task Definition\n\nSubmit variable-length sequences of `[dx, dy, dyaw]` actions. `dx` means forward motion and `dy` means leftward motion in the agent's current local frame; `dyaw` changes heading in radians.\n\nThe private evaluator uses the recorded initial pose to reconstruct the predicted route. Test participants receive only the initial image and instruction, not the pose, goal, reference trajectory, or reference action sequence.\n\n## Phases\n\nPhase 1 is for development and validation. Final rankings and awards are based entirely on Phase 2; phase scores are not combined. Check the active phase dates on CodaBench before submitting.\n\n| Phase | &emsp; | Evaluation data | &emsp; | Ranking |\n|:--|:--:|:--|:--:|:--|\n| Phase 1: Validation | &emsp; | Released `val_seen` and `val_unseen` inputs | &emsp; | Mean of `val_seen` and `val_unseen` Scores (50% each) |\n| Phase 2: Final Evaluation | &emsp; | Held-out test inputs | &emsp; | Test Score |\n\n## Awards & Recognition\n\nOfficial challenge awards follow the [RoboWorld 2026 Awards & Recognition](https://roboworld2026.github.io/#awards) guidelines:\n\n- **Certificates of Recognition**: The **Top 5 teams in each track** will receive official certificates recognizing their achievements in the RoboWorld Challenge 2026. A **Best Innovative Solution** award will also recognize outstanding creativity and technical innovation.\n- **Oral Presentations**: Selected top-performing teams will be invited to give **oral presentations** at the **RoboPAD Workshop** at **NeurIPS 2026**, sharing their methods, results, and insights with the research community.\n\n## Resources and Contact\n\n| Resource | &emsp; | Link |\n|:--|:--:|:--|\n| Challenge Website | &emsp; | [RoboWorld 2026](https://roboworld2026.github.io) |\n| Official Track 1 Website | &emsp; | [RoboWorld 2026 — Track 1: WorldNav](https://roboworld2026.github.io/track1) |\n| Track 1 Repository | &emsp; | [worldnav-challenge](https://github.com/F1y1113/worldnav-challenge) |\n| Evaluation & Leaderboard | &emsp; | [CodaBench Competition #18185](https://www.codabench.org/competitions/18185/) |\n| Dataset | &emsp; | [LCVN on Hugging Face](https://huggingface.co/datasets/fly1113/LCVN) |\n| Baseline Implementation | &emsp; | [LCVN Repository](https://github.com/UWMILab/LCVN) |\n\nFor technical support, use [GitHub Issues](https://github.com/F1y1113/worldnav-challenge/issues).  \nFor event and registration questions, email [roboworld2026@gmail.com](mailto:roboworld2026@gmail.com).\n\n### 💬 Community & Discussion\n\n- **Discord:** [Join the RoboWorld Track 1 Discord](https://discord.gg/gv2yW3TaA)\n- **WeChat Group:** [Join the RoboWorld Track 1 WeChat Group](https://github.com/roboworld2026/roboworld2026.github.io/blob/main/wechat_track1.JPG)\n\n<a href=\"https://github.com/roboworld2026/roboworld2026.github.io/blob/main/wechat_track1.JPG\" target=\"_blank\"><img src=\"https://raw.githubusercontent.com/roboworld2026/roboworld2026.github.io/main/wechat_track1.JPG\" alt=\"Track 1 WeChat Group QR Code\" width=\"220\" /></a>",
+        "content_zh": "# RoboWorld 2026 赛道1：WorldNav\n\n欢迎来到WorldNav，这是RoboWorld 2026的语言条件视觉导航赛道，隶属于NeurIPS 2026的RoboPAD研讨会。\n\n智能体接收一张初始的自我中心RGB图像和一条自然语言指令。它必须在没有目标图像、初始数值姿态或来自环境的进一步观测的情况下，预测完整的导航动作序列。欢迎使用世界模型、视觉-语言-动作模型以及纯策略方法。\n\n## 任务定义\n\n提交可变长度的`[dx, dy, dyaw]`动作序列。`dx`表示前向运动，`dy`表示智能体当前局部坐标系中的左向运动；`dyaw`以弧度改变朝向。\n\n私有评估器使用记录的初始姿态来重建预测路径。测试参与者仅接收初始图像和指令，而不接收姿态、目标、参考轨迹或参考动作序列。\n\n## 阶段\n\n第1阶段用于开发和验证。最终排名和奖项完全基于第2阶段；阶段分数不合并。提交前请在CodaBench上查看当前阶段日期。\n\n| 阶段 | &emsp; | 评估数据 | &emsp; | 排名 |\n|:--|:--:|:--|:--:|:--|\n| 第1阶段：验证 | &emsp; | 发布的`val_seen`和`val_unseen`输入 | &emsp; | `val_seen`和`val_unseen`分数的平均值（各占50%）|\n| 第2阶段：最终评估 | &emsp; | 保留的测试输入 | &emsp; | 测试分数 |\n\n## 奖项与认可\n\n官方竞赛奖项遵循[RoboWorld 2026奖项与认可](https://roboworld2026.github.io/#awards)指南：\n\n- **认可证书**：**每个赛道的前5名团队**将获得官方证书，以表彰他们在RoboWorld Challenge 2026中的成就。还将颁发**最佳创新解决方案**奖，以表彰杰出的创造力和技术创新。\n- **口头报告**：选出的顶尖团队将被邀请在**NeurIPS 2026**的**RoboPAD研讨会**上进行**口头报告**，与研究界分享他们的方法、结果和见解。\n\n## 资源与联系方式\n\n| 资源 | &emsp; | 链接 |\n|:--|:--:|:--|\n| 竞赛网站 | &emsp; | [RoboWorld 2026](https://roboworld2026.github.io) |\n| 赛道1官方网站 | &emsp; | [RoboWorld 2026 — 赛道1：WorldNav](https://roboworld2026.github.io/track1) |\n| 赛道1代码库 | &emsp; | [worldnav-challenge](https://github.com/F1y1113/worldnav-challenge) |\n| 评估与排行榜 | &emsp; | [CodaBench竞赛 #18185](https://www.codabench.org/competitions/18185/) |\n| 数据集 | &emsp; | [Hugging Face上的LCVN](https://huggingface.co/datasets/fly1113/LCVN) |\n| 基线实现 | &emsp; | [LCVN代码库](https://github.com/UWMILab/LCVN) |\n\n如需技术支持，请使用[GitHub Issues](https://github.com/F1y1113/worldnav-challenge/issues)。  \n如有关于活动和注册的问题，请发送邮件至[roboworld2026@gmail.com](mailto:roboworld2026@gmail.com)。\n\n### 💬 社区与讨论\n\n- **Discord：**[加入RoboWorld赛道1 Discord](https://discord.gg/gv2yW3TaA)\n- **微信群：**[加入RoboWorld赛道1微信群](https://github.com/roboworld2026/roboworld2026.github.io/blob/main/wechat_track1.JPG)\n\n<a href=\"https://github.com/roboworld2026/roboworld2026.github.io/blob/main/wechat_track1.JPG\" target=\"_blank\"><img src=\"https://raw.githubusercontent.com/roboworld2026/roboworld2026.github.io/main/wechat_track1.JPG\" alt=\"Track 1 WeChat Group QR Code\" width=\"220\" /></a>"
+      },
+      {
+        "index": 1,
+        "title": "Submission & Evaluation",
+        "content": "# Submission & Evaluation\n\nSubmit predicted action sequences in a ZIP archive, using only each episode's initial RGB image and instruction.\n\n## Action format\n\nEach action is [dx, dy, dyaw]: forward displacement, leftward displacement in the agent's **current local frame**, and yaw update in radians. Sequences may have different lengths; the JSON list ends the trajectory.\n\n\nLimits: at most 64 actions per episode; hypot(dx,dy) ≤ 2.46 dataset coordinate units and |dyaw| ≤ 6.29 rad per action (evaluated modulo 2π in [−π, π)).\n\n## ZIP layout\n\nPut the required JSON files at the archive root. The downloadable example ZIP shows the layout and Phase 1 episode IDs; replace its illustrative actions.\n\n| Phase | &emsp; | Required files |\n| :-- | :--: | :-- |\n| Phase 1 | &emsp; | val_seen.json, val_unseen.json |\n| Phase 2 | &emsp; | test.json |\n\n### JSON schema\n\nEach file contains split and episodes. Include every phase episode_id exactly once, with an actions list:\n\n    {\n      \"split\": \"val_unseen\",\n      \"episodes\": [\n        {\n          \"episode_id\": \"20210826_40_0001_02_0\",\n          \"actions\": [[0.25, 0.0, 0.0], [0.0, 0.0, 0.15], [0.12, -0.05, 0.0]]\n        }\n      ]\n    }\n\nThis abbreviated example is not a complete submission.\n\n## Evaluation metrics\n\nThe two fidelity metrics range from 0 to 1. See [demonstration.py](https://github.com/F1y1113/worldnav-challenge/blob/main/demonstration.py) for the five calculations.\n\n| Metric | &emsp; | Direction | &emsp; | Meaning |\n| :-- | :--: | :-- | :--: | :-- |\n| **Success Rate (SR)** | &emsp; | Higher | &emsp; | Fraction meeting the final-position success criterion. |\n| **Absolute Trajectory Error (ATE)** | &emsp; | Lower | &emsp; | Position error over the reference trajectory. |\n| **Relative Pose Error (RPE)** | &emsp; | Lower | &emsp; | Relative translation error between consecutive poses. |\n| **Full-route fidelity** | &emsp; | Higher | &emsp; | Agreement with the complete ordered recorded route, including a penalty for unnecessary travel. |\n| **Heading and turn fidelity** | &emsp; | Higher | &emsp; | Agreement of facing direction while moving and of the direction, position, and amount of turns. |\n\n## Composite Score\n\nEach episode is scored first, then the contributions are averaged:\n\n    Score = (100/N) × Σ_i { FullRouteFidelity_i × (1 + HeadingTurnFidelity_i)/2\n                          × [0.70 + 0.10 SR_i + 0.10/(1+ATE_i) + 0.10/(1+RPE_i)] }\n\nSR_i is binary success; ATE_i and RPE_i are per-episode errors in dataset coordinate units. Score averages episode contributions.\n\nPhase 1 ranks by `(Score_val_seen + Score_val_unseen) / 2`, with equal weight for each split. Both split files are required; a submission missing either file is rejected. Both split Scores are displayed. Phase 2 ranks by test Score.",
+        "content_zh": "# 提交与评估\n\n将预测的动作序列提交至ZIP压缩包，仅使用每个片段的初始RGB图像和指令。\n\n## 动作格式\n\n每个动作为[dx, dy, dyaw]：前向位移、智能体**当前局部坐标系**中的左向位移，以及偏航角更新（弧度制）。序列长度可不同；JSON列表标记轨迹结束。\n\n限制：每个片段最多64个动作；单次动作的hypot(dx,dy) ≤ 2.46数据集坐标单位且|dyaw| ≤ 6.29弧度（在[−π, π)范围内对2π取模计算）。\n\n## ZIP文件结构\n\n将所需的JSON文件置于压缩包根目录。可下载的示例ZIP展示了文件结构和第一阶段片段ID；替换其中的示例动作。\n\n| 阶段 |   | 所需文件 |\n| :-- | :--: | :-- |\n| 第一阶段 |   | val_seen.json, val_unseen.json |\n| 第二阶段 |   | test.json |\n\n### JSON模式\n\n每个文件包含数据集划分和片段。每个阶段的episode_id必须且只能出现一次，附带动作列表：\n\n    {\n      \"split\": \"val_unseen\",\n      \"episodes\": [\n        {\n          \"episode_id\": \"20210826_40_0001_02_0\",\n          \"actions\": [[0.25, 0.0, 0.0], [0.0, 0.0, 0.15], [0.12, -0.05, 0.0]]\n        }\n      ]\n    }\n\n此简化示例并非完整提交。\n\n## 评估指标\n\n两个保真度指标范围为0到1。五种计算方法参见[demonstration.py](https://github.com/F1y1113/worldnav-challenge/blob/main/demonstration.py)。\n\n| 指标 |   | 方向 |   | 含义 |\n| :-- | :--: | :-- | :--: | :-- |\n| **成功率 (SR)** |   | 越高越好 |   | 满足最终位置成功标准的比例。 |\n| **绝对轨迹误差 (ATE)** |   | 越低越好 |   | 相对于参考轨迹的位置误差。 |\n| **相对位姿误差 (RPE)** |   | 越低越好 |   | 连续位姿之间的相对平移误差。 |\n| **全路径保真度** |   | 越高越好 |   | 与完整有序记录路径的一致性，包括对不必要移动的惩罚。 |\n| **航向与转向保真度** |   | 越高越好 |   | 移动时朝向以及转向方向、位置和幅度的一致性。 |\n\n## 综合得分\n\n首先对每个片段进行评分，然后取平均值：\n\n    Score = (100/N) × Σ_i { FullRouteFidelity_i × (1 + HeadingTurnFidelity_i)/2\n                          × [0.70 + 0.10 SR_i + 0.10/(1+ATE_i) + 0.10/(1+RPE_i)] }\n\nSR_i为二元成功标志；ATE_i和RPE_i为每个片段在数据集坐标单位下的误差。得分取各片段贡献的平均值。\n\n第一阶段按`(Score_val_seen + Score_val_unseen) / 2`排名，两个划分权重相等。两个划分的文件都必须提交；缺少任一文件的提交将被拒绝。两个划分的得分均会显示。第二阶段按测试集得分排名。"
+      }
+    ]
+  },
   "18194": {
     "id": 18194,
     "title": "IEEE SPS Machine-oriented Image Quality Assessment Challenge",
@@ -294,9 +218,9 @@
     "description_zh": "第二届面向机器的图像质量评估挑战赛，隶属于IEEE SPS挑战赛计划",
     "created_by": "pjlabeval",
     "created_when": "2026-09-21T07:27:36.520325Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=C0umJAnwfIEBCffNzGuZgUiEPcE%3D&Expires=1791534767",
-    "participants_count": 19,
-    "submissions_count": 35,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=A03zDQppDpUdorTYJbrAQoMbFZs%3D&Expires=1791621946",
+    "participants_count": 22,
+    "submissions_count": 40,
     "first_phase_start": null,
     "phases": [
       {
@@ -341,41 +265,6 @@
       }
     ]
   },
-  "18185": {
-    "id": 18185,
-    "title": "RoboWorld 2026 — Track 1: WorldNav",
-    "description": "Language-conditioned open-loop visual navigation and trajectory prediction in continuous 3D environments. The WorldNav track of the RoboWorld Challenge 2026, affiliated with the RoboPAD Workshop at NeurIPS 2026.",
-    "description_zh": "连续三维环境中的语言条件化开环视觉导航与轨迹预测。RoboWorld Challenge 2026的WorldNav赛道，隶属于NeurIPS 2026的RoboPAD研讨会。",
-    "created_by": "yifeidong",
-    "created_when": "2026-09-19T07:46:40.332684Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791429899/6f72dc95718f/codabench_track1_icon.png?AWSAccessKeyId=codabench-prod&Signature=H1Cqtgib8G04e5PQZpXHpluPMsE%3D&Expires=1791534783",
-    "participants_count": 25,
-    "submissions_count": 30,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 30680,
-        "name": "Phase 1: Validation",
-        "start": "2026-10-15T00:00:00Z",
-        "end": "2026-10-30T23:59:00Z",
-        "max_submissions_per_day": 100
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Overview",
-        "content": "# RoboWorld 2026 Track 1: WorldNav\n\nWelcome to WorldNav, the language-conditioned visual navigation track of the RoboWorld 2026, affiliated with the RoboPAD Workshop at NeurIPS 2026.\n\nAn agent receives one initial egocentric RGB image and a natural-language instruction. It must predict a complete navigation action sequence without a goal image, an initial numeric pose, or further observations from the environment. World models, vision-language-action models, and policy-only methods are welcome.\n\n## Task Definition\n\nSubmit variable-length sequences of `[dx, dy, dyaw]` actions. `dx` means forward motion and `dy` means leftward motion in the agent's current local frame; `dyaw` changes heading in radians.\n\nThe private evaluator uses the recorded initial pose to reconstruct the predicted route. Test participants receive only the initial image and instruction, not the pose, goal, reference trajectory, or reference action sequence.\n\n## Phases\n\nPhase 1 is for development and validation. Final rankings and awards are based entirely on Phase 2; phase scores are not combined. Check the active phase dates on CodaBench before submitting.\n\n| Phase | &emsp; | Evaluation data | &emsp; | Ranking |\n|:--|:--:|:--|:--:|:--|\n| Phase 1: Validation | &emsp; | Released `val_seen` and `val_unseen` inputs | &emsp; | Mean of `val_seen` and `val_unseen` Scores (50% each) |\n| Phase 2: Final Evaluation | &emsp; | Held-out test inputs | &emsp; | Test Score |\n\n## Awards & Recognition\n\nOfficial challenge awards follow the [RoboWorld 2026 Awards & Recognition](https://roboworld2026.github.io/#awards) guidelines:\n\n- **Certificates of Recognition**: The **Top 5 teams in each track** will receive official certificates recognizing their achievements in the RoboWorld Challenge 2026. A **Best Innovative Solution** award will also recognize outstanding creativity and technical innovation.\n- **Oral Presentations**: Selected top-performing teams will be invited to give **oral presentations** at the **RoboPAD Workshop** at **NeurIPS 2026**, sharing their methods, results, and insights with the research community.\n\n## Resources and Contact\n\n| Resource | &emsp; | Link |\n|:--|:--:|:--|\n| Challenge Website | &emsp; | [RoboWorld 2026](https://roboworld2026.github.io) |\n| Official Track 1 Website | &emsp; | [RoboWorld 2026 — Track 1: WorldNav](https://roboworld2026.github.io/track1) |\n| Track 1 Repository | &emsp; | [worldnav-challenge](https://github.com/F1y1113/worldnav-challenge) |\n| Evaluation & Leaderboard | &emsp; | [CodaBench Competition #18185](https://www.codabench.org/competitions/18185/) |\n| Dataset | &emsp; | [LCVN on Hugging Face](https://huggingface.co/datasets/fly1113/LCVN) |\n| Baseline Implementation | &emsp; | [LCVN Repository](https://github.com/UWMILab/LCVN) |\n\nFor technical support, use [GitHub Issues](https://github.com/F1y1113/worldnav-challenge/issues).  \nFor event and registration questions, email [roboworld2026@gmail.com](mailto:roboworld2026@gmail.com).\n\n### 💬 Community & Discussion\n\n- **Discord:** [Join the RoboWorld Track 1 Discord](https://discord.gg/gv2yW3TaA)\n- **WeChat Group:** [Join the RoboWorld Track 1 WeChat Group](https://github.com/roboworld2026/roboworld2026.github.io/blob/main/wechat_track1.JPG)\n\n<a href=\"https://github.com/roboworld2026/roboworld2026.github.io/blob/main/wechat_track1.JPG\" target=\"_blank\"><img src=\"https://raw.githubusercontent.com/roboworld2026/roboworld2026.github.io/main/wechat_track1.JPG\" alt=\"Track 1 WeChat Group QR Code\" width=\"220\" /></a>",
-        "content_zh": "# RoboWorld 2026 赛道1：WorldNav\n\n欢迎来到WorldNav，这是RoboWorld 2026的语言条件视觉导航赛道，隶属于NeurIPS 2026的RoboPAD研讨会。\n\n智能体接收一张初始的自我中心RGB图像和一条自然语言指令。它必须在没有目标图像、初始数值姿态或来自环境的进一步观测的情况下，预测完整的导航动作序列。欢迎使用世界模型、视觉-语言-动作模型以及纯策略方法。\n\n## 任务定义\n\n提交可变长度的`[dx, dy, dyaw]`动作序列。`dx`表示前向运动，`dy`表示智能体当前局部坐标系中的左向运动；`dyaw`以弧度改变朝向。\n\n私有评估器使用记录的初始姿态来重建预测路径。测试参与者仅接收初始图像和指令，而不接收姿态、目标、参考轨迹或参考动作序列。\n\n## 阶段\n\n第1阶段用于开发和验证。最终排名和奖项完全基于第2阶段；阶段分数不合并。提交前请在CodaBench上查看当前阶段日期。\n\n| 阶段 | &emsp; | 评估数据 | &emsp; | 排名 |\n|:--|:--:|:--|:--:|:--|\n| 第1阶段：验证 | &emsp; | 发布的`val_seen`和`val_unseen`输入 | &emsp; | `val_seen`和`val_unseen`分数的平均值（各占50%）|\n| 第2阶段：最终评估 | &emsp; | 保留的测试输入 | &emsp; | 测试分数 |\n\n## 奖项与认可\n\n官方竞赛奖项遵循[RoboWorld 2026奖项与认可](https://roboworld2026.github.io/#awards)指南：\n\n- **认可证书**：**每个赛道的前5名团队**将获得官方证书，以表彰他们在RoboWorld Challenge 2026中的成就。还将颁发**最佳创新解决方案**奖，以表彰杰出的创造力和技术创新。\n- **口头报告**：选出的顶尖团队将被邀请在**NeurIPS 2026**的**RoboPAD研讨会**上进行**口头报告**，与研究界分享他们的方法、结果和见解。\n\n## 资源与联系方式\n\n| 资源 | &emsp; | 链接 |\n|:--|:--:|:--|\n| 竞赛网站 | &emsp; | [RoboWorld 2026](https://roboworld2026.github.io) |\n| 赛道1官方网站 | &emsp; | [RoboWorld 2026 — 赛道1：WorldNav](https://roboworld2026.github.io/track1) |\n| 赛道1代码库 | &emsp; | [worldnav-challenge](https://github.com/F1y1113/worldnav-challenge) |\n| 评估与排行榜 | &emsp; | [CodaBench竞赛 #18185](https://www.codabench.org/competitions/18185/) |\n| 数据集 | &emsp; | [Hugging Face上的LCVN](https://huggingface.co/datasets/fly1113/LCVN) |\n| 基线实现 | &emsp; | [LCVN代码库](https://github.com/UWMILab/LCVN) |\n\n如需技术支持，请使用[GitHub Issues](https://github.com/F1y1113/worldnav-challenge/issues)。  \n如有关于活动和注册的问题，请发送邮件至[roboworld2026@gmail.com](mailto:roboworld2026@gmail.com)。\n\n### 💬 社区与讨论\n\n- **Discord：**[加入RoboWorld赛道1 Discord](https://discord.gg/gv2yW3TaA)\n- **微信群：**[加入RoboWorld赛道1微信群](https://github.com/roboworld2026/roboworld2026.github.io/blob/main/wechat_track1.JPG)\n\n<a href=\"https://github.com/roboworld2026/roboworld2026.github.io/blob/main/wechat_track1.JPG\" target=\"_blank\"><img src=\"https://raw.githubusercontent.com/roboworld2026/roboworld2026.github.io/main/wechat_track1.JPG\" alt=\"Track 1 WeChat Group QR Code\" width=\"220\" /></a>"
-      },
-      {
-        "index": 1,
-        "title": "Submission & Evaluation",
-        "content": "# Submission & Evaluation\n\nSubmit predicted action sequences in a ZIP archive, using only each episode's initial RGB image and instruction.\n\n## Action format\n\nEach action is [dx, dy, dyaw]: forward displacement, leftward displacement in the agent's **current local frame**, and yaw update in radians. Sequences may have different lengths; the JSON list ends the trajectory.\n\n\nLimits: at most 64 actions per episode; hypot(dx,dy) ≤ 2.46 dataset coordinate units and |dyaw| ≤ 6.29 rad per action (evaluated modulo 2π in [−π, π)).\n\n## ZIP layout\n\nPut the required JSON files at the archive root. The downloadable example ZIP shows the layout and Phase 1 episode IDs; replace its illustrative actions.\n\n| Phase | &emsp; | Required files |\n| :-- | :--: | :-- |\n| Phase 1 | &emsp; | val_seen.json, val_unseen.json |\n| Phase 2 | &emsp; | test.json |\n\n### JSON schema\n\nEach file contains split and episodes. Include every phase episode_id exactly once, with an actions list:\n\n    {\n      \"split\": \"val_unseen\",\n      \"episodes\": [\n        {\n          \"episode_id\": \"20210826_40_0001_02_0\",\n          \"actions\": [[0.25, 0.0, 0.0], [0.0, 0.0, 0.15], [0.12, -0.05, 0.0]]\n        }\n      ]\n    }\n\nThis abbreviated example is not a complete submission.\n\n## Evaluation metrics\n\nThe two fidelity metrics range from 0 to 1. See [demonstration.py](https://github.com/F1y1113/worldnav-challenge/blob/main/demonstration.py) for the five calculations.\n\n| Metric | &emsp; | Direction | &emsp; | Meaning |\n| :-- | :--: | :-- | :--: | :-- |\n| **Success Rate (SR)** | &emsp; | Higher | &emsp; | Fraction meeting the final-position success criterion. |\n| **Absolute Trajectory Error (ATE)** | &emsp; | Lower | &emsp; | Position error over the reference trajectory. |\n| **Relative Pose Error (RPE)** | &emsp; | Lower | &emsp; | Relative translation error between consecutive poses. |\n| **Full-route fidelity** | &emsp; | Higher | &emsp; | Agreement with the complete ordered recorded route, including a penalty for unnecessary travel. |\n| **Heading and turn fidelity** | &emsp; | Higher | &emsp; | Agreement of facing direction while moving and of the direction, position, and amount of turns. |\n\n## Composite Score\n\nEach episode is scored first, then the contributions are averaged:\n\n    Score = (100/N) × Σ_i { FullRouteFidelity_i × (1 + HeadingTurnFidelity_i)/2\n                          × [0.70 + 0.10 SR_i + 0.10/(1+ATE_i) + 0.10/(1+RPE_i)] }\n\nSR_i is binary success; ATE_i and RPE_i are per-episode errors in dataset coordinate units. Score averages episode contributions.\n\nPhase 1 ranks by `(Score_val_seen + Score_val_unseen) / 2`, with equal weight for each split. Both split files are required; a submission missing either file is rejected. Both split Scores are displayed. Phase 2 ranks by test Score.",
-        "content_zh": "# 提交与评估\n\n将预测的动作序列提交至ZIP压缩包，仅使用每个片段的初始RGB图像和指令。\n\n## 动作格式\n\n每个动作为[dx, dy, dyaw]：前向位移、智能体**当前局部坐标系**中的左向位移，以及偏航角更新（弧度制）。序列长度可不同；JSON列表标记轨迹结束。\n\n限制：每个片段最多64个动作；单次动作的hypot(dx,dy) ≤ 2.46数据集坐标单位且|dyaw| ≤ 6.29弧度（在[−π, π)范围内对2π取模计算）。\n\n## ZIP文件结构\n\n将所需的JSON文件置于压缩包根目录。可下载的示例ZIP展示了文件结构和第一阶段片段ID；替换其中的示例动作。\n\n| 阶段 |   | 所需文件 |\n| :-- | :--: | :-- |\n| 第一阶段 |   | val_seen.json, val_unseen.json |\n| 第二阶段 |   | test.json |\n\n### JSON模式\n\n每个文件包含数据集划分和片段。每个阶段的episode_id必须且只能出现一次，附带动作列表：\n\n    {\n      \"split\": \"val_unseen\",\n      \"episodes\": [\n        {\n          \"episode_id\": \"20210826_40_0001_02_0\",\n          \"actions\": [[0.25, 0.0, 0.0], [0.0, 0.0, 0.15], [0.12, -0.05, 0.0]]\n        }\n      ]\n    }\n\n此简化示例并非完整提交。\n\n## 评估指标\n\n两个保真度指标范围为0到1。五种计算方法参见[demonstration.py](https://github.com/F1y1113/worldnav-challenge/blob/main/demonstration.py)。\n\n| 指标 |   | 方向 |   | 含义 |\n| :-- | :--: | :-- | :--: | :-- |\n| **成功率 (SR)** |   | 越高越好 |   | 满足最终位置成功标准的比例。 |\n| **绝对轨迹误差 (ATE)** |   | 越低越好 |   | 相对于参考轨迹的位置误差。 |\n| **相对位姿误差 (RPE)** |   | 越低越好 |   | 连续位姿之间的相对平移误差。 |\n| **全路径保真度** |   | 越高越好 |   | 与完整有序记录路径的一致性，包括对不必要移动的惩罚。 |\n| **航向与转向保真度** |   | 越高越好 |   | 移动时朝向以及转向方向、位置和幅度的一致性。 |\n\n## 综合得分\n\n首先对每个片段进行评分，然后取平均值：\n\n    Score = (100/N) × Σ_i { FullRouteFidelity_i × (1 + HeadingTurnFidelity_i)/2\n                          × [0.70 + 0.10 SR_i + 0.10/(1+ATE_i) + 0.10/(1+RPE_i)] }\n\nSR_i为二元成功标志；ATE_i和RPE_i为每个片段在数据集坐标单位下的误差。得分取各片段贡献的平均值。\n\n第一阶段按`(Score_val_seen + Score_val_unseen) / 2`排名，两个划分权重相等。两个划分的文件都必须提交；缺少任一文件的提交将被拒绝。两个划分的得分均会显示。第二阶段按测试集得分排名。"
-      }
-    ]
-  },
   "18135": {
     "id": 18135,
     "title": "RoboWorld 2026 — Track 2: HA-VLN",
@@ -383,7 +272,7 @@
     "description_zh": "在包含动态人类的连续三维环境中进行人类感知的视觉语言导航。RoboWorld 2026 赛道2挑战，与 RoboPAD 2026 联合主办。",
     "created_by": "yifeidong",
     "created_when": "2026-09-17T02:16:03.034924Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791417704/03043570c5da/logo_track2.png?AWSAccessKeyId=codabench-prod&Signature=DeOAtUZUwT8gsxjKNuDKAysZBcs%3D&Expires=1791534783",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791417704/03043570c5da/logo_track2.png?AWSAccessKeyId=codabench-prod&Signature=n5quoF2AxHPrnOSODdCOyQCLZfI%3D&Expires=1791621946",
     "participants_count": 18,
     "submissions_count": 40,
     "first_phase_start": null,
@@ -418,9 +307,9 @@
     "description_zh": "一个多选基准，用于评估大型视觉-语言模型（LVLMs）在三个层级上的长期视频质量理解（LVQU）能力：局部事件质量理解（LQU）、跨事件质量推理（CQR）和全局质量理解（GQU）。视频涵盖故事片、纪录片、监控、自中心视角、教学和动画等内容。",
     "created_by": "aarna",
     "created_when": "2026-09-16T17:04:02.730340Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-16-1789578242/12eae3daa231/images/logo.png?AWSAccessKeyId=codabench-prod&Signature=aTPFHcbc6uaQEasZtD9GS9KT6%2Fw%3D&Expires=1791534787",
-    "participants_count": 10,
-    "submissions_count": 12,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-16-1789578242/12eae3daa231/images/logo.png?AWSAccessKeyId=codabench-prod&Signature=xbwaq7F%2BaC2w%2FwhA6vY873fI89I%3D&Expires=1791621947",
+    "participants_count": 11,
+    "submissions_count": 16,
     "first_phase_start": null,
     "phases": [
       {
@@ -479,9 +368,9 @@
     "description_zh": "针对V2X-Real路侧端分布合成LiDAR数据；基于合成数据训练，在真实V2X-Real-IC上评估。",
     "created_by": "mshahbazkharal",
     "created_when": "2026-05-26T18:29:21.535343Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833308/72b4ab690364/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=TtC8sxBKmUkNdRakHAHrAQzUT7Y%3D&Expires=1791534898",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833308/72b4ab690364/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=spGaYW4%2B6MPAM7ufNA3hHvIu0N8%3D&Expires=1791621984",
     "participants_count": 34,
-    "submissions_count": 177,
+    "submissions_count": 187,
     "first_phase_start": null,
     "phases": [
       {
@@ -545,7 +434,7 @@
     "description_zh": "针对LUMPI的汉诺威路边交叉口分布合成LiDAR数据；在合成数据上训练，在真实数据上评估。",
     "created_by": "mshahbazkharal",
     "created_when": "2026-05-26T18:23:55.992525Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833303/efab85de0a26/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=cvQPsoKc5wnWJNcDQEYjZ9zzdwA%3D&Expires=1791534902",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833303/efab85de0a26/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=tRg4q6KmpzYdtZHX0MDtAxuHxrk%3D&Expires=1791621984",
     "participants_count": 31,
     "submissions_count": 169,
     "first_phase_start": null,
@@ -611,9 +500,9 @@
     "description_zh": "通过在冻结的DINOv2-giant空间中对候选样本排序，从单段脑电信号中解码被观看的自然图像。参赛提交内容包括训练好的模型（含代码和权重）。平台在未见过的图像上运行纯推理评估，并按Top-5检索准确率排名。由Benchopt和NeuralBench提供支持。",
     "created_by": "sylvchev",
     "created_when": "2026-09-05T15:37:08.618788Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-11-1789137635/381e2fc7c674/competition-trophy.png?AWSAccessKeyId=codabench-prod&Signature=8ONv2nVAoxoYCIPzVn44pKNn9LU%3D&Expires=1791534787",
-    "participants_count": 407,
-    "submissions_count": 402,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-11-1789137635/381e2fc7c674/competition-trophy.png?AWSAccessKeyId=codabench-prod&Signature=2iYwchUCPVOVa25fI7QTgdN1mjc%3D&Expires=1791621947",
+    "participants_count": 411,
+    "submissions_count": 440,
     "first_phase_start": null,
     "phases": [
       {
@@ -655,6 +544,47 @@
         "title": "Timeline",
         "content": "# Timeline\n\n## Warm-up phase\n\n**Sep 21 to Oct 25, 2026**\n\nCodabench evaluates submissions on public, track-specific test data during warm-up. Because these data and labels are public, overlap or leakage is possible. Use the indicative leaderboard to validate the submission workflow and iterate on your model. Warm-up scores do not determine the final ranking.\n\n**Submission limit:** Up to five submissions per participant per day.\n\n## Sealed final phase\n\n**Oct 28 to Nov 21, 2026, Anywhere on Earth**\n\nCodabench switches to the private 2026 evaluation cohorts, which are uploaded only for this phase. Their examples and labels remain hidden. Only sealed-phase scores determine the final ranking, using the best of each team’s last five sealed submissions.\n\n**Submission limit:** One submission per participant per day.\n\n## Reproducibility audit\n\n**After Nov 21, 2026**\n\nThe top three teams in each track undergo a reproducibility audit. Organizers rerun the submitted training pipeline and evaluate the resulting model weights on the sealed test set.\n\n## Winners’ ceremony\n\n**Dec 11 and 12, 2026**\n\nThe winners will be announced during the Brain and Body Workshop at NeurIPS 2026 in Sydney.",
         "content_zh": "# 时间线\n\n## 热身阶段\n\n**2026年9月21日至10月25日**\n\n在热身阶段，Codabench 使用公开、特定赛道的测试数据评估提交。由于这些数据和标签是公开的，可能存在重叠或泄露。使用指示性排行榜验证提交流程并迭代优化模型。热身阶段分数不决定最终排名。\n\n**提交限制：**每位参赛者每天最多五次提交。\n\n## 密封决赛阶段\n\n**2026年10月28日至11月21日（地球任何地点）**\n\nCodabench 切换至2026年私有评估队列，这些数据仅为此阶段上传。其样本和标签保持隐藏。仅密封阶段分数决定最终排名，采用每支队伍最后五次密封提交中的最佳成绩。\n\n**提交限制：**每位参赛者每天一次提交。\n\n## 可重复性审核\n\n**2026年11月21日后**\n\n各赛道前三名队伍将接受可重复性审核。主办方将重新运行提交的训练流程，并在密封测试集上评估生成的模型权重。\n\n## 颁奖仪式\n\n**2026年12月11日至12日**\n\n获奖者将在悉尼举行的 NeurIPS 2026 大脑与身体研讨会期间公布。"
+      }
+    ]
+  },
+  "14248": {
+    "id": 14248,
+    "title": "OncoSegment - Breast Tumor Mapping",
+    "description": "Segment benign and malignant tumors in breast ultrasound images.",
+    "description_zh": "分割乳腺超声图像中的良性和恶性肿瘤。",
+    "created_by": "thomas_dnil",
+    "created_when": "2026-03-02T15:45:26.167445Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-03-02-1772466527/bd1a4506a767/sample_00000.png?AWSAccessKeyId=codabench-prod&Signature=B8GqQf0xmpUS0Jc7GRL2Mfuj5Ys%3D&Expires=1791622019",
+    "participants_count": 18,
+    "submissions_count": 3,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 23743,
+        "name": "Development Phase",
+        "start": "2026-03-02T00:00:00Z",
+        "end": "2026-12-01T00:00:00Z",
+        "max_submissions_per_day": 5
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Description",
+        "content": "# 🩺 \n# **OncoSegment: Breast Tumor Mapping Challenge**\n\n# 💡 \n## **Why this Problem is Interesting**\n\nBreast cancer remains one of the leading causes of death among women worldwide. Early and accurate detection through ultrasound is critical, but interpreting these images is notoriously difficult.Ultrasound images suffer from \"speckle noise\" and low contrast. Much like the \"blobs\" in plasma physics simulations, tumors in ultrasound are intermittent, have irregular boundaries, and can be easily confused with healthy tissue. This challenge asks you to develop an AI that can precisely outline tumor boundaries, a task that directly assists radiologists in biopsy planning and treatment.\n\n# 📊 \n## **The Data**\n\nThe dataset is derived from the Breast Ultrasound Images (BUSI) collection, featuring women aged 25–75. It consists of high-quality PNG scans with a standard resolution (approx. 500x500 px).\n\nDataset Breakdown:\n\nBenign: Tumors that are typically oval or round with smooth edges.\n\nMalignant: Cancerous tumors, often characterized by \"spiky\" (spiculated) or irregular borders that invade surrounding tissue.\n\nNormal: Scans with no tumors (used to test your model's ability to avoid False Positives).\n\nWhat you receive in the Starting Kit:\ntrain_images: A list of PIL images (Grayscale) showing the breast \ntissue.\ntrain_masks: Binary masks where 1 represents the tumor and 0 represents the background.\ntrain_labels: Metadata identifying the tumor as benign or malignant.\ntest_images: Images where you must predict the mask.\n\n # 📏 \n## **Metrics: Measuring Precision**\n\nIn medical imaging, a \"box\" is not enough. We need to know exactly which pixels are cancerous. We use two complementary overlap metrics:\n1. Primary Metric: Dice Coefficient (F1-Score)The Dice coefficient is the gold standard for medical segmentation. It is twice the area of overlap divided by the total number of pixels in both the prediction and the ground truth.\n$$Dice = \\frac{2 \\times |P \\cap G|}{|P| + |G|}$$\nWhy? It is highly sensitive to the internal \"fullness\" of the mask and rewards models that get the shape exactly right.\n2. Secondary Metric: Jaccard Index (IoU)\nThe Jaccard index is the area of intersection divided by the area of union.\n$$Jaccard = \\frac{|P \\cap G|}{|P \\cup G|}$$\nWhy? \nIt is more \"punishing\" than Dice for small errors.\nIt helps break ties on the leaderboard by highlighting models with the fewest stray False Positive pixels.",
+        "content_zh": "# 🩺 \n# **OncoSegment: 乳腺肿瘤分割挑战赛**\n\n# 💡 \n## **该问题的研究价值**\n\n乳腺癌仍是全球女性死亡的主要原因之一。通过超声进行早期和准确检测至关重要，但解读这些图像却 notoriously 困难。超声图像存在\"散斑噪声\"且对比度低。正如等离子体物理模拟中的\"团块\"一样，超声中的肿瘤呈间歇性分布，边界不规则，且容易与正常健康组织混淆。本挑战要求你开发能够精确勾勒肿瘤边界的人工智能，该任务可直接辅助放射科医生进行活检规划与治疗。\n\n# 📊 \n## **数据**\n\n数据集源自乳腺超声图像（BUSI）数据集，研究对象为25-75岁女性。包含高质量的PNG扫描图像，标准分辨率约为500×500像素。\n\n数据集构成：\n\n良性：通常为椭圆形或圆形、边缘光滑的肿瘤。\n\n恶性：癌性肿瘤，通常以\"毛刺状\"（spiculated）或侵入周围组织的不规则边界为特征。\n\n正常：无肿瘤的扫描图像（用于测试模型避免假阳性的能力）。\n\n入门套件包含：\ntrain_images：一系列显示乳腺组织的PIL图像（灰度）。\ntrain_masks：二值掩膜，其中1代表肿瘤，0代表背景。\ntrain_labels：元数据，用于识别肿瘤为良性或恶性。\ntest_images：需要预测掩膜的图像。\n\n # 📏 \n## **评估指标：精确度测量**\n\n在医学影像中，简单的\"框选\"是不够的。我们需要确切知道哪些像素是癌性的。我们采用两种互补的重叠指标：\n1. 主要指标：Dice系数（F1分数）\nDice系数是医学分割领域的黄金标准。计算方法为预测与真实值重叠区域面积的两倍，除以预测与真实值的总像素数。\n$$Dice = \\frac{2 \\times |P \\cap G|}{|P| + |G|}$$\n原因：该指标对掩膜内部的\"充实度\"高度敏感，能够奖励形状完全精确的模型。\n2. 次要指标：Jaccard指数（IoU）\nJaccard指数是交集面积除以并集面积。\n$$Jaccard = \\frac{|P \\cap G|}{|P \\cup G|}$$\n原因：\n相比Dice，它对微小错误更为\"严苛\"。\n有助于在排行榜上打破平局，突出显示具有最少杂散假阳性像素的模型。"
+      },
+      {
+        "index": 1,
+        "title": "Seed",
+        "content": "# Seed\n\nStarter `submission.py` shape:\n\n```python\nimport cv2\nimport numpy as np\n\n\nclass Model:\n    def fit(self, train_images, train_masks, train_labels=None):\n        return self\n\n    def predict(self, test_images, sample_ids=None):\n        preds = []\n        for image in test_images:\n            img = np.array(image.convert(\"L\"))\n            blurred = cv2.GaussianBlur(img, (5, 5), 0)\n            _, mask = cv2.threshold(\n                blurred, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU\n            )\n            preds.append(mask)\n        return preds\n\n\ndef get_model():\n    return Model()\n```",
+        "content_zh": "种子\n\n初始 `submission.py` 代码结构：\n\n```python\nimport cv2\nimport numpy as np\n\n\nclass Model:\n    def fit(self, train_images, train_masks, train_labels=None):\n        return self\n\n    def predict(self, test_images, sample_ids=None):\n        preds = []\n        for image in test_images:\n            img = np.array(image.convert(\"L\"))\n            blurred = cv2.GaussianBlur(img, (5, 5), 0)\n            _, mask = cv2.threshold(\n                blurred, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU\n            )\n            preds.append(mask)\n        return preds\n\n\ndef get_model():\n    return Model()\n```"
+      },
+      {
+        "index": 2,
+        "title": "Timeline",
+        "content": "# Timeline\n\n## Development phase\nUse this phase to iterate on segmentation models for breast ultrasound\nimages and optimize public Dice/Jaccard metrics.\n\nPrivate scores remain hidden until the phase closes.",
+        "content_zh": "# 时间线\n\n## 开发阶段\n利用此阶段迭代乳腺超声图像的分割模型，并优化公开的 Dice/Jaccard 指标。\n\n私有分数在该阶段结束前保持隐藏。"
       }
     ]
   }
