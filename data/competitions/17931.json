@@ -5,9 +5,9 @@
   "description_zh": "这个迷你挑战的目标是设计和训练一个用于检测虚假面部图像的网络。",
   "created_by": "weichen2383",
   "created_when": "2026-08-28T08:38:04.000911Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-28-1787906284/99c1b887dc56/Screenshot_2026-08-28_at_15.17.27.png?AWSAccessKeyId=codabench-prod&Signature=BePGFbNE4ik64Ji6Em%2Blq8Z136Y%3D&Expires=1791621948",
-  "participants_count": 136,
-  "submissions_count": 907,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-08-28-1787906284/99c1b887dc56/Screenshot_2026-08-28_at_15.17.27.png?AWSAccessKeyId=codabench-prod&Signature=tqgA00fYh1Pxn60LW1PJMmj7llY%3D&Expires=1791708731",
+  "participants_count": 138,
+  "submissions_count": 1023,
   "first_phase_start": null,
   "phases": [
     {
@@ -20,8 +20,8 @@
     {
       "id": 29991,
       "name": "Final_Test_phase",
-      "start": "2026-10-11T15:55:00Z",
-      "end": "2026-10-17T15:55:00Z",
+      "start": "2026-10-11T07:55:00Z",
+      "end": "2026-10-17T07:55:00Z",
       "max_submissions_per_day": 3
     }
   ],
