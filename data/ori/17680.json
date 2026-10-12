@@ -5,8 +5,8 @@
   "created_by": "allam",
   "owner_display_name": "D3-OU",
   "created_when": "2026-07-27T05:47:11.519603Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=2tc3bPSmuJOJRxEvu%2F48JYQudC0%3D&Expires=1791708739",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2_icon.png?AWSAccessKeyId=codabench-prod&Signature=0UvcKlFahlN2Kx3MNLJZ32mIghw%3D&Expires=1791708739",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2.png?AWSAccessKeyId=codabench-prod&Signature=mLHBh5ggntvWF9TMd8G9wfjbsUc%3D&Expires=1791798587",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-28-1785201028/6ae6fb3e8346/logo2_icon.png?AWSAccessKeyId=codabench-prod&Signature=ZSvHFqUrk0Q0M9PL2EFqHJrInPo%3D&Expires=1791798587",
   "terms": "The competition is open to research teams. \n\nPlease  register and join the competition. \n\nNote: Please use your institutional email to register for the competition, do NOT use gmail.com or qq.com, otherwise the registration will not be approved.\n\nParticipants are required to sign the dataset license agreement and send the scanned PDF to alsherfawi@yy.d3c.osaka-u.ac.jp cc: allam@yy.d3c.osaka-u.ac.jp. You can download the agreement from [here](http://www.am.sanken.osaka-u.ac.jp/BiometricDB/dataset/Competition/WBA2026/WBA_ACCV_2026%20Competition_License%20Agreement.pdf).",
   "pages": [
     {
@@ -45,11 +45,11 @@
       "id": 29491,
       "index": 0,
       "start": "2026-08-02T23:59:00Z",
-      "end": "2026-10-12T20:00:00Z",
+      "end": "2026-10-12T14:59:00Z",
       "name": "Phase 1",
       "description": "",
       "status": "Current",
-      "execution_time_limit": 30,
+      "execution_time_limit": 300,
       "tasks": [
         {
           "task": "1684d3ee-1abb-4d39-a784-ab407787fb7a",
@@ -170,7 +170,7 @@
   ],
   "description": "Welcome to the first International Competition on Verifying Teleoperator Identity in Reenacted Avatar Videos. The competition will be in conjunction with [ACCV2026](https://https://accv2026.org/])",
   "participants_count": 38,
-  "submissions_count": 133,
+  "submissions_count": 143,
   "docker_image": "ammaralsherfawi/codabench-torch-blosc2:v1",
   "competition_type": "competition",
   "reward": "Certificates & Paper publication",

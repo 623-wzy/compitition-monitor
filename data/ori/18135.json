@@ -5,8 +5,8 @@
   "created_by": "yifeidong",
   "owner_display_name": "yifeidong",
   "created_when": "2026-09-17T02:16:03.034924Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791417704/03043570c5da/logo_track2.png?AWSAccessKeyId=codabench-prod&Signature=VXUk5m%2FYgnA1C43yUKBlPPy%2FV5Y%3D&Expires=1791708722",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791417704/03043570c5da/logo_track2_icon.png?AWSAccessKeyId=codabench-prod&Signature=l44MxhYA%2FjKA%2FvMCICYvWB0ttzA%3D&Expires=1791708722",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791417704/03043570c5da/logo_track2.png?AWSAccessKeyId=codabench-prod&Signature=dwxbf68swrV1o5m%2FRAcY2iCjMp0%3D&Expires=1791798587",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791417704/03043570c5da/logo_track2_icon.png?AWSAccessKeyId=codabench-prod&Signature=vJgW0bT8PwQGpieNghShD4Xzixo%3D&Expires=1791798587",
   "terms": "# Terms & Conditions\n\nThis competition is made freely available to academic and non-academic entities for non-commercial purposes such as academic research, teaching, scientific publications, or personal experimentation. Permission is granted to use the data given that you agree:\n\n- That the data in this competition comes “AS IS”, without express or implied warranty. Although every effort has been made to ensure accuracy, we do not accept any responsibility for errors or omissions.\n- That you may not use the data in this competition or any derivative work for commercial purposes as, for example, licensing or selling the data, or using the data with a purpose to procure a commercial gain.\n- That you include a reference to RoboWorld 2026 and HA-VLN 2.0 (including the benchmark data and the specially generated data for academic challenges) in any work that makes use of the benchmark. For research papers, please cite our preferred publications as listed on our webpage.\n\nTo ensure a fair comparison among all participants, we require:\n\n- All participants must follow the exact same data configuration when training and evaluating their algorithms. Please do not use any public or private datasets other than those specified for model training.\n- The theme of this competition is human-aware vision-and-language navigation in continuous 3D environments with dynamic multi-human interactions. Therefore, any use of ground-truth test annotations or unreleased evaluation data is strictly prohibited.\n- To ensure the above two rules are followed, each participant is requested to submit the code with reproducible results before the final result is announced; the code is for examination purposes only and we will manually verify the training and evaluation of each participant's model.\n\nIf you have any questions or concerns, kindly get in touch with us at roboworld2026@gmail.com.",
   "pages": [
     {
@@ -194,7 +194,7 @@
     }
   ],
   "description": "Human-aware vision-and-language navigation in continuous 3D environments with dynamic humans. A RoboWorld 2026 Track 2 challenge jointly organized with RoboPAD 2026.",
-  "participants_count": 19,
+  "participants_count": 22,
   "submissions_count": 40,
   "docker_image": "ghcr.io/jostarxiong/havln-challenge-2026@sha256:243bb660d00b1dce57e82fc1486af2638404602eda3630af8458e9b6fa0b9c14",
   "competition_type": "competition",
