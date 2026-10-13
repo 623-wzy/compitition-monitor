@@ -5,9 +5,9 @@
   "description_zh": "通过在冻结的DINOv2-giant空间中对候选样本排序，从单段脑电信号中解码被观看的自然图像。参赛提交内容包括训练好的模型（含代码和权重）。平台在未见过的图像上运行纯推理评估，并按Top-5检索准确率排名。由Benchopt和NeuralBench提供支持。",
   "created_by": "sylvchev",
   "created_when": "2026-09-05T15:37:08.618788Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-11-1789137635/381e2fc7c674/competition-trophy.png?AWSAccessKeyId=codabench-prod&Signature=Pb9k%2FgBPkGZ9gHwW6K9BJhJn4Qo%3D&Expires=1791798585",
-  "participants_count": 448,
-  "submissions_count": 483,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-11-1789137635/381e2fc7c674/competition-trophy.png?AWSAccessKeyId=codabench-prod&Signature=yIq0u7wE2l9GnGxRESSOPOZy6M8%3D&Expires=1791885344",
+  "participants_count": 475,
+  "submissions_count": 520,
   "first_phase_start": null,
   "phases": [
     {
