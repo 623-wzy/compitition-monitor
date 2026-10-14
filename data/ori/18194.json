@@ -5,8 +5,8 @@
   "created_by": "pjlabeval",
   "owner_display_name": "pjlabeval",
   "created_when": "2026-09-21T07:27:36.520325Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=qZzQW4R0swH74397BaHCIARmfKQ%3D&Expires=1791885346",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=EhRA8CAQYR5U3uzLLRoWpMJc2iw%3D&Expires=1791885346",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo.jpg?AWSAccessKeyId=codabench-prod&Signature=Ffdd6q2dkho7vTDCVcCilrC6LGY%3D&Expires=1791972259",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789975656/c12f6d2e2901/logo_icon.jpg?AWSAccessKeyId=codabench-prod&Signature=34WfHzg1F2xHk0Q%2BnD5g3KyN5A4%3D&Expires=1791972259",
   "terms": "<h3>1. General Rules</h3>\n<ul>\n    <li><b>Eligibility:</b> This competition is open to all researchers, students, and developers worldwide.</li>\n    <li><b>One Account Per Team:</b> Participants may not sign up for multiple accounts to bypass submission limits. Doing so will result in disqualification.</li>\n    <li><b>No Private Sharing:</b> Private sharing of code or data outside of teams is not permitted.</li>\n</ul>\n\n<h3>2. Data Usage</h3>\n<ul>\n    <li>The datasets provided (distorted and reference images) are for <b>academic and research purposes only</b>.</li>\n    <li>Participants are not allowed to use the dataset for commercial products without permission.</li>\n</ul>\n\n<h3>3. Submission & Integrity</h3>\n<ul>\n    <li><b>Honor Code:</b> You agree not to attempt to reverse-engineer the ground truth labels or \"probe\" the leaderboard excessively.</li>\n    <li><b>Final Decision:</b> The organizers reserve the right to disqualify any team that violates these rules or the spirit of the competition.</li>\n</ul>",
   "pages": [
     {
@@ -244,10 +244,28 @@
   ],
   "description": "The 2nd Machine-oriented Image Quality Assessment Challenge, affiliated to the IEEE SPS Challenge Program",
   "participants_count": 32,
-  "submissions_count": 97,
+  "submissions_count": 108,
   "docker_image": "codalab/codalab-legacy:py37",
   "competition_type": "competition",
   "reward": "",
   "contact_email": "lcysyzxdxc@sjtu.edu.cn",
-  "report": ""
+  "report": "",
+  "enable_detailed_results": true,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": false,
+  "forum": 17884,
+  "forum_enabled": true,
+  "fact_sheet": {
+    "method_name": {
+      "key": "method_name",
+      "type": "text",
+      "title": "Method Name",
+      "selection": "",
+      "is_required": "true",
+      "is_on_leaderboard": "true"
+    }
+  },
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "registration_auto_approve": true
 }

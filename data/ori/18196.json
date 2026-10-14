@@ -5,8 +5,8 @@
   "created_by": "spcke",
   "owner_display_name": "spcke",
   "created_when": "2026-09-21T10:16:24.265612Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789989582/27d420ef5134/rws2027_orlando.png?AWSAccessKeyId=codabench-prod&Signature=C6gQrRQwaAvCVGUay6v%2BswkZDbY%3D&Expires=1791885342",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789989582/27d420ef5134/rws2027_orlando_icon.png?AWSAccessKeyId=codabench-prod&Signature=MFx%2Fn4SDx%2FcTFAGAHT2mb8y3pZU%3D&Expires=1791885342",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789989582/27d420ef5134/rws2027_orlando.png?AWSAccessKeyId=codabench-prod&Signature=zRR3Z9th0W6n6cFjP3yTLSRTQp8%3D&Expires=1791972267",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789989582/27d420ef5134/rws2027_orlando_icon.png?AWSAccessKeyId=codabench-prod&Signature=LeJR3hybv2hK31NdHi0m%2FWZs9Zw%3D&Expires=1791972267",
   "terms": "# Terms and Conditions\n\n## 1. The challenge\n\nThe UPAR Challenge at the Real-World Surveillance workshop, WACV 2027, is a\nskill-based contest with three independent tracks. These terms cover **Track 2:\nAttribute-Based Person Retrieval**. The challenge is run entirely on Codabench:\nthis benchmark page is the official source for the task description, data,\nevaluation, schedule, rules and announcements.\n\n## 2. Eligibility\n\n- Participation is open to everyone except the organizers and members of their\n  research groups.\n- You may participate alone or in a team. Each person may belong to one team\n  only, and each team may use one Codabench account only.\n- To be eligible for ranking and prizes you must register with your real\n  identity and affiliation.\n\n## 3. Training data, pre-training, and post-processing\n\n- Models must be trained **only on the training data provided by the\n  organizers**.\n- The use of external data to fine-tune PAR is not permitted. \n- Pre-trained models trained on common datasets such as ImageNet, \n  or foundation models/VLMs that were not specifically trained for PAR, are permitted.\n- **Any use of the test images is prohibited**, including training,\n  pseudo-labelling, manual annotation and hyper-parameter selection, and leads\n  to disqualification. Test images are never released. Attempts to extract them\n  from the evaluation container lead to disqualification.\n- The use of information about the structure of the hidden test set is not allowed. Using information, e.g., from the image directories to apply separate models/hyperparameters/post-processings to different subsets, leads to disqualification.\n- Automatic post-processing/refinement/re-ranking is allowed as long as no explicit knowledge about the hidden test set is mined or used.\n- It is allowed to use the provided validation data to train the final models.\n\n## 4. Submissions\n\n- Submissions are code submissions as described on the Submission page. The\n  submitted code must not access the network or tamper with the evaluation\n  environment.\n- Submission limits per day and in total are shown on the phase.\n- The ranking metric is `mADM`, see the Evaluation page. The **latest**\n  valid submission of a team counts.\n- To win, a submission must outperform the organizers' baseline.\n\n## 5. Verification and publication\n\n- The top-ranked teams must provide their training code and a short\n  description of the method (fact sheet) so the organizers can verify the\n  result and compliance with these terms. Teams that do not comply are removed\n  from the final ranking.\n- All participants are invited to submit papers to the RWS workshop by Oct 23, 2026\n  and to present their work at the workshop.\n\n## 6. Data licence\n\nThe UPAR annotations are published under the Creative Commons\nAttribution-NonCommercial-ShareAlike 3.0 licence. The underlying image datasets\nkeep their own licences and are for non-commercial research use only. If you\nuse the data, cite the UPAR paper and the papers of the sub-datasets.\n\n## 7. General conditions\n\n- The organizers may change the schedule, clarify the rules, or disqualify\n  participants who violate these terms or the spirit of the challenge.\n- The organizers' decisions on ranking and eligibility are final.\n- The data and the platform are provided as is, without warranty.\n\nBy registering you accept these terms.",
   "pages": [
     {
@@ -240,11 +240,20 @@
     }
   ],
   "description": "Track 2 of the UPAR Challenge at the Real-World Surveillance workshop, WACV 2027. Rank a gallery of pedestrian images for queries given as sets of attributes, under domain shift. Code submission: your model is run on a hidden test set.",
-  "participants_count": 58,
-  "submissions_count": 362,
+  "participants_count": 59,
+  "submissions_count": 400,
   "docker_image": "pytorch/pytorch:2.4.1-cuda12.1-cudnn9-runtime",
   "competition_type": "competition",
   "reward": "",
   "contact_email": "andreas.specker@iosb.fraunhofer.de",
-  "report": ""
+  "report": "",
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": false,
+  "show_detailed_results_in_leaderboard": false,
+  "forum": 17886,
+  "forum_enabled": false,
+  "fact_sheet": null,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "registration_auto_approve": true
 }
