@@ -6,9 +6,9 @@
     "description_zh": "WACV 2027现实世界监控研讨会UPAR挑战赛第二赛道。在域偏移条件下，根据属性集合查询对行人图像库进行排序。代码提交：在隐藏测试集上运行模型。",
     "created_by": "spcke",
     "created_when": "2026-09-21T10:16:24.265612Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789989582/27d420ef5134/rws2027_orlando.png?AWSAccessKeyId=codabench-prod&Signature=yQ32MjMe4mFwZpE2Qp8thaSGgnE%3D&Expires=1792405962",
-    "participants_count": 73,
-    "submissions_count": 589,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-21-1789989582/27d420ef5134/rws2027_orlando.png?AWSAccessKeyId=codabench-prod&Signature=SOrRupwHQfuS8dv0r8DkW99Y%2BEc%3D&Expires=1792492722",
+    "participants_count": 74,
+    "submissions_count": 635,
     "first_phase_start": null,
     "phases": [
       {
@@ -53,9 +53,9 @@
     "description_zh": "连续三维环境中的语言条件化开环视觉导航与轨迹预测。RoboWorld Challenge 2026的WorldNav赛道，隶属于NeurIPS 2026的RoboPAD研讨会。",
     "created_by": "yifeidong",
     "created_when": "2026-09-19T07:46:40.332684Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791429899/6f72dc95718f/codabench_track1_icon.png?AWSAccessKeyId=codabench-prod&Signature=ioy047w%2BHUQZCSWx2PJCsPbUm28%3D&Expires=1792405963",
-    "participants_count": 48,
-    "submissions_count": 43,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791429899/6f72dc95718f/codabench_track1_icon.png?AWSAccessKeyId=codabench-prod&Signature=8JkIfd9k6zrhiY%2Bm%2BQL1Mqi53no%3D&Expires=1792492721",
+    "participants_count": 51,
+    "submissions_count": 51,
     "first_phase_start": null,
     "phases": [
       {
@@ -88,9 +88,9 @@
     "description_zh": "在包含动态人类的连续三维环境中进行人类感知的视觉语言导航。RoboWorld 2026 赛道2挑战，与 RoboPAD 2026 联合主办。",
     "created_by": "yifeidong",
     "created_when": "2026-09-17T02:16:03.034924Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791417704/03043570c5da/logo_track2.png?AWSAccessKeyId=codabench-prod&Signature=a6qUqfQ%2FGnFeD%2B4WHjknjtGGwU8%3D&Expires=1792405964",
-    "participants_count": 32,
-    "submissions_count": 57,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791417704/03043570c5da/logo_track2.png?AWSAccessKeyId=codabench-prod&Signature=qjtvXSapQve30umwmM2YkKCb%2BAI%3D&Expires=1792492724",
+    "participants_count": 36,
+    "submissions_count": 59,
     "first_phase_start": null,
     "phases": [
       {
@@ -123,23 +123,23 @@
     "description_zh": "一个多选基准，用于评估大型视觉-语言模型（LVLMs）在三个层级上的长期视频质量理解（LVQU）能力：局部事件质量理解（LQU）、跨事件质量推理（CQR）和全局质量理解（GQU）。视频涵盖故事片、纪录片、监控、自中心视角、教学和动画等内容。",
     "created_by": "aarna",
     "created_when": "2026-09-16T17:04:02.730340Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-16-1789578242/12eae3daa231/images/logo.png?AWSAccessKeyId=codabench-prod&Signature=%2B99IrL93noCZfAr0dr88D23f2Ic%3D&Expires=1792405966",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-09-16-1789578242/12eae3daa231/images/logo.png?AWSAccessKeyId=codabench-prod&Signature=rYWtzQSS7Q2tEB1TU%2FOwLQKXnMY%3D&Expires=1792492725",
     "participants_count": 26,
-    "submissions_count": 26,
+    "submissions_count": 28,
     "first_phase_start": null,
     "phases": [
       {
         "id": 30549,
         "name": "Development (Train) Phase",
         "start": "2026-09-16T08:00:00Z",
-        "end": "2026-10-20T23:00:00Z",
+        "end": "2026-10-22T23:00:00Z",
         "max_submissions_per_day": 5
       },
       {
         "id": 30550,
         "name": "Test Phase",
-        "start": "2026-10-21T00:00:00Z",
-        "end": "2026-10-30T00:00:00Z",
+        "start": "2026-10-23T00:00:00Z",
+        "end": "2026-11-04T00:00:00Z",
         "max_submissions_per_day": 4
       },
       {
@@ -172,7 +172,7 @@
       {
         "index": 3,
         "title": "Rules & Timeline",
-        "content": "# Rules & Timeline\n\n## Timeline\n\n| Date | Milestone |\n|---|---|\n| 20 Sep 2026 | Challenge Launch - training data released |\n| 20 Oct 2026 | **Registration deadline** - submit Codabench handle + team member names/affiliations (see Registration below) |\n| 20 Oct 2026 | Test set release |\n| 4 Nov 2026 | Test-set results submission deadline (on Codabench) |\n| 4 Nov 2026 | **Methodology report + open-source model weights due - all participants** (report format & weight-hosting instructions TBA) |\n| 20 Nov 2026 | Challenge results announcement |\n| 30 Nov 2026 | **Top-3 teams only:** camera-ready 4-6 page description of approach + open-source code due |\n  \nAll deadlines are 23:59 AoE unless stated otherwise.\n\n## Registration (due 20 Oct 2026)\n \nBefore the Test Phase submissions open, every participant or team must register with:\n\n- Codabench handle (username)\n- Name(s) and institutional affiliation(s) of all team members\n\nRegistration is through a separate form using **registation link: https://forms.gle/RStD7Pe4wNzYjDf66**\n\nNOTE: Once you submit the form, your team membership and affiliations are locked and cannot be changed.\n\n\n## Who can participate\n\n- Individuals or teams of **1-5 participants**. Both academic and industry participants are welcome to register.\n\n- Participation in multiple teams is strictly prohibited, except for individuals serving solely in an advisory role (e.g., professors).\n\n\n## Submission limits (Codabench)\n\n- Development Phase: max 100 submissions total, up to 5 submissions/day \n- Test Phase: max 50 submissions total, up to 4/day. Your **last** successful submission (`Force_Last`) is the one that counts for the final ranking.\n \n## Model eligibility\n\nProprietary models (no open-source weights **or** accessed only via a paid/restricted API, e.g. GPT-4o, Gemini, Claude) are **not eligible**. \n\n## Methodology report - required for all participants (due 4 Nov)\n\nThis is separate from your Codabench prediction submission. Every team\nwith a scored Test Phase submission must submit a 4-6 page write-up\ndescribing their methodology/architecture. Format and the submission\nform/link will be published closer to the deadline. Submissions without\nan accompanying report will be removed from the final published\nleaderboard before results are archived.\n\n\n\n## Model weights\n\n- **All participants** must share the actual model weights used to produce their scored Test Phase predictions with organizers via a **private link** (e.g. a gated Hugging Face repo, private cloud storage, or similar) shared alongside your methodology report. This is for verification only -  confirming no proprietary/banned model was used and that results are reproducible.\n- This applies even if you used an unmodified base model; in that case, simply confirm the same public checkpoint already disclosed under Model Eligibility.\n- Submissions whose weights are not verifiably shared with organizers by this deadline are subject to the same removal-from-leaderboard consequence as a missing methodology report.\n\n\n## Additional - The top-3 teams (due 30 Nov)\n\nThe top-3-ranked teams additionally submit a **camera-ready** version of\ntheir 4-6 page description (polished for publication) alongside\n**open-source code** (training + inference).",
+        "content": "# Rules & Timeline\n\n## Timeline\n\n| Date | Milestone |\n|---|---|\n| 20 Sep 2026 | Challenge Launch - training data released |\n| 22 Oct 2026 | **Registration deadline** - submit Codabench handle + team member names/affiliations (see Registration below) |\n| 22 Oct 2026 | Test set release |\n| 4 Nov 2026 | Test-set results submission deadline (on Codabench) |\n| 4 Nov 2026 | **Methodology report + open-source model weights due - all participants** (report format & weight-hosting instructions TBA) |\n| 20 Nov 2026 | Challenge results announcement |\n| 30 Nov 2026 | **Top-3 teams only:** camera-ready 4-6 page description of approach + open-source code due |\n  \nAll deadlines are 23:59 AoE unless stated otherwise.\n\n## Registration (due 22 Oct 2026)\n \nBefore the Test Phase submissions open, every participant or team must register with:\n\n- Codabench handle (username)\n- Name(s) and institutional affiliation(s) of all team members\n\nRegistration is through a separate form using **registation link: https://forms.gle/RStD7Pe4wNzYjDf66**\n\nNOTE: Once you submit the form, your team membership and affiliations are locked and cannot be changed.\n\n\n## Who can participate\n\n- Individuals or teams of **1-5 participants**. Both academic and industry participants are welcome to register.\n\n- Participation in multiple teams is strictly prohibited, except for individuals serving solely in an advisory role (e.g., professors).\n\n\n## Submission limits (Codabench)\n\n- Development Phase: max 100 submissions total, up to 5 submissions/day \n- Test Phase: max 50 submissions total, up to 4/day. Your **last** successful submission (`Force_Last`) is the one that counts for the final ranking.\n \n## Model eligibility\n\nProprietary models (no open-source weights **or** accessed only via a paid/restricted API, e.g. GPT-4o, Gemini, Claude) are **not eligible**. \n\n## Methodology report - required for all participants (due 4 Nov)\n\nThis is separate from your Codabench prediction submission. Every team\nwith a scored Test Phase submission must submit a 4-6 page write-up\ndescribing their methodology/architecture. Format and the submission\nform/link will be published closer to the deadline. Submissions without\nan accompanying report will be removed from the final published\nleaderboard before results are archived.\n\n\n\n## Model weights\n\n- **All participants** must share the actual model weights used to produce their scored Test Phase predictions with organizers via a **private link** (e.g. a gated Hugging Face repo, private cloud storage, or similar) shared alongside your methodology report. This is for verification only -  confirming no proprietary/banned model was used and that results are reproducible.\n- This applies even if you used an unmodified base model; in that case, simply confirm the same public checkpoint already disclosed under Model Eligibility.\n- Submissions whose weights are not verifiably shared with organizers by this deadline are subject to the same removal-from-leaderboard consequence as a missing methodology report.\n\n\n## Additional - The top-3 teams (due 30 Nov)\n\nThe top-3-ranked teams additionally submit a **camera-ready** version of\ntheir 4-6 page description (polished for publication) alongside\n**open-source code** (training + inference).",
         "content_zh": "# 规则与时间表\n\n## 时间表\n\n| 日期 | 里程碑 |\n|---|---|\n| 2026年9月20日 | 挑战赛启动 - 发布训练数据 |\n| 2026年10月15日 | **报名截止** - 提交Codabench用户名+团队成员名称/所属机构（详见报名部分） |\n| 2026年10月15日 | 发布测试集 |\n| 2026年10月30日 | 测试集结果提交截止（在Codabench上） |\n| 2026年11月4日 | **方法报告+开源模型权重截止 - 全部参赛者**（报告格式及权重托管说明另行通知） |\n| 2026年11月20日 | 挑战赛结果发布 |\n| 2026年11月30日 | **前3强队伍仅需：** 相机就绪版4-6页方案描述+开源代码截止 |\n\n所有截止时间均为23:59 AoE，除非另有说明。\n\n## 报名（截止2026年10月15日）\n\n在测试阶段提交开始前，每位参赛者/团队必须提交：\n- Codabench用户名\n- 团队成员名称及所属机构\n\n**通过单独的报名表**（链接后续添加）。提交后，**团队成员和所属机构将被锁定**，之后无法更改。\n\n## 参赛资格\n\n**1-5名参赛者**组成的个人或团队。欢迎学术界和产业界参赛者报名。\n\n## 提交限制（Codabench）\n\n- 开发阶段：最多100次提交总数，每天最多5次\n- 测试阶段：最多50次提交总数，每天最多4次。您的**最后一次**成功提交（`Force_Last`）将用于最终排名。\n\n## 模型资格要求\n\n专有模型（无开源权重**或**仅通过付费/受限API访问，例如GPT-4o、Gemini、Claude）**不符合资格**。\n\n## 方法报告 - 全部参赛者必需（截止11月4日）\n\n此项独立于您的Codabench预测提交。每支在测试阶段有评分提交的团队必须提交一份4-6页的说明文档，阐述其方法论/架构。格式及提交表单/链接将在截止前后公布。未附报告的提交将在结果公布前从最终排行榜中移除。\n\n## 模型权重\n\n- **全部参赛者**必须通过**私密链接**（例如受限制的Hugging Face仓库、私密云存储或类似方式）与组织者共享用于生成评分测试阶段预测的实际模型权重。这仅用于验证目的 - 确认未使用专有/禁用模型，且结果可复现。\n- 即使您使用了未修改的基础模型，也适用此要求；此情况下，仅需确认已在《模型资格要求》部分披露的相同公开检查点。\n- 未在此截止前与组织者可验证地共享权重的提交将面临与缺少方法报告相同的后果 - 从排行榜中移除。\n\n## 追加规定 - 前3强队伍（截止11月30日）\n\n排名前3的队伍需额外提交其4-6页方案描述的**相机就绪版**（已打磨可供发表），以及**开源代码**（训练+推理）。"
       }
     ]
@@ -184,9 +184,9 @@
     "description_zh": "针对V2X-Real的路侧中心分布合成激光雷达数据；在合成数据上训练，在真实V2X-Real-IC上评估。",
     "created_by": "mshahbazkharal",
     "created_when": "2026-05-26T18:29:21.535343Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833308/72b4ab690364/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=s3jTWzWfFaAdJTu7nN1uiatV1UE%3D&Expires=1792406003",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833308/72b4ab690364/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=61rLj8i9vor%2BCThLaEcGOUrTKMc%3D&Expires=1792492750",
     "participants_count": 34,
-    "submissions_count": 395,
+    "submissions_count": 490,
     "first_phase_start": null,
     "phases": [
       {
@@ -250,9 +250,9 @@
     "description_zh": "合成针对LUMPI汉诺威路侧路口分布的激光雷达数据；使用合成数据训练，在真实数据上评估。",
     "created_by": "mshahbazkharal",
     "created_when": "2026-05-26T18:23:55.992525Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833303/efab85de0a26/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=WJtXZ%2B8jumUPWOoUgWvYi2C3ARI%3D&Expires=1792406003",
-    "participants_count": 32,
-    "submissions_count": 544,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-26-1779833303/efab85de0a26/round_logo.png?AWSAccessKeyId=codabench-prod&Signature=8Yo4qRDopqx6aJ%2F%2F4Bag%2BREXaw0%3D&Expires=1792492754",
+    "participants_count": 33,
+    "submissions_count": 642,
     "first_phase_start": null,
     "phases": [
       {
@@ -316,7 +316,7 @@
     "description_zh": "分割乳腺超声图像中的良性和恶性肿瘤。",
     "created_by": "thomas_dnil",
     "created_when": "2026-03-02T15:45:26.167445Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-03-02-1772466527/bd1a4506a767/sample_00000.png?AWSAccessKeyId=codabench-prod&Signature=wJ5be3xMg7h8Ej3mP2NZQIW1zMM%3D&Expires=1792406032",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-03-02-1772466527/bd1a4506a767/sample_00000.png?AWSAccessKeyId=codabench-prod&Signature=mA3886F4iekYpsONH9Uqv7I8CkY%3D&Expires=1792492772",
     "participants_count": 18,
     "submissions_count": 3,
     "first_phase_start": null,

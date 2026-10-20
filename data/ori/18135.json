@@ -5,8 +5,8 @@
   "created_by": "yifeidong",
   "owner_display_name": "yifeidong",
   "created_when": "2026-09-17T02:16:03.034924Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791417704/03043570c5da/logo_track2.png?AWSAccessKeyId=codabench-prod&Signature=a6qUqfQ%2FGnFeD%2B4WHjknjtGGwU8%3D&Expires=1792405964",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791417704/03043570c5da/logo_track2_icon.png?AWSAccessKeyId=codabench-prod&Signature=fVp4PyI60LUO%2FJYhM%2FmJW8QO6kY%3D&Expires=1792405964",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791417704/03043570c5da/logo_track2.png?AWSAccessKeyId=codabench-prod&Signature=qjtvXSapQve30umwmM2YkKCb%2BAI%3D&Expires=1792492724",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791417704/03043570c5da/logo_track2_icon.png?AWSAccessKeyId=codabench-prod&Signature=D3n%2BpJ3b1euuaWNDjMzJCl3rSDM%3D&Expires=1792492724",
   "terms": "# Terms & Conditions\n\nThis competition is made freely available to academic and non-academic entities for non-commercial purposes such as academic research, teaching, scientific publications, or personal experimentation. Permission is granted to use the data given that you agree:\n\n- That the data in this competition comes “AS IS”, without express or implied warranty. Although every effort has been made to ensure accuracy, we do not accept any responsibility for errors or omissions.\n- That you may not use the data in this competition or any derivative work for commercial purposes as, for example, licensing or selling the data, or using the data with a purpose to procure a commercial gain.\n- That you include a reference to RoboWorld 2026 and HA-VLN 2.0 (including the benchmark data and the specially generated data for academic challenges) in any work that makes use of the benchmark. For research papers, please cite our preferred publications as listed on our webpage.\n\nTo ensure fair comparison and scientific integrity among all participants, we require:\n\n- Publicly available pretrained models (including navigation policies trained on other VLN datasets, general vision and language models, and off-the-shelf perception models such as person detectors) and external training datasets are permitted. However, HA-R2R validation splits (val_seen, val_unseen) and test data must not be used for model training or fine-tuning.\n- Ground-truth human information from released training episodes may be used as privileged supervision during training. Directly reading human_motion.json or accessing ground-truth human states and trajectories for planning during validation or test inference is strictly prohibited; human positions and movements during evaluation must be inferred from camera observations.\n- Standard competition submissions require only action sequences in the specified archive format. To ensure fairness and reproducibility, teams qualifying for awards (Top 5 teams, Best Innovative Solution, or RoboPAD presentation invitations) will be required to submit a technical report describing their method and may be requested to provide code and model checkpoints for organizer verification before final award confirmation.\n\nIf you have any questions or concerns, kindly get in touch with us at [roboworld2026@gmail.com](mailto:roboworld2026@gmail.com).",
   "pages": [
     {
@@ -194,8 +194,8 @@
     }
   ],
   "description": "Human-aware vision-and-language navigation in continuous 3D environments with dynamic humans. A RoboWorld 2026 Track 2 challenge jointly organized with RoboPAD 2026.",
-  "participants_count": 32,
-  "submissions_count": 57,
+  "participants_count": 36,
+  "submissions_count": 59,
   "docker_image": "ghcr.io/jostarxiong/havln-challenge-2026@sha256:243bb660d00b1dce57e82fc1486af2638404602eda3630af8458e9b6fa0b9c14",
   "competition_type": "competition",
   "reward": "Certificates for the top 5 teams; selected teams are invited to present at the RoboPAD Workshop at NeurIPS 2026",
