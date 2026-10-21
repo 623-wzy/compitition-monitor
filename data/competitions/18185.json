@@ -5,9 +5,9 @@
   "description_zh": "连续三维环境中的语言条件化开环视觉导航与轨迹预测。RoboWorld Challenge 2026的WorldNav赛道，隶属于NeurIPS 2026的RoboPAD研讨会。",
   "created_by": "yifeidong",
   "created_when": "2026-09-19T07:46:40.332684Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791429899/6f72dc95718f/codabench_track1_icon.png?AWSAccessKeyId=codabench-prod&Signature=8JkIfd9k6zrhiY%2Bm%2BQL1Mqi53no%3D&Expires=1792492721",
-  "participants_count": 51,
-  "submissions_count": 51,
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791429899/6f72dc95718f/codabench_track1_icon.png?AWSAccessKeyId=codabench-prod&Signature=%2F6kbQnjmjziyPwabawWU1nV13DU%3D&Expires=1792579464",
+  "participants_count": 55,
+  "submissions_count": 113,
   "first_phase_start": null,
   "phases": [
     {
