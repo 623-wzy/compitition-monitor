@@ -1,0 +1,185 @@
+{
+  "id": 17652,
+  "title": "Pan-cancer Segmentation in CT Images: RECIST-to-3D Task2",
+  "published": true,
+  "created_by": "junma",
+  "owner_display_name": "Jun Ma",
+  "created_when": "2026-07-23T23:48:29.876032Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-23-1784850509/a8c79d87015f/logo-pan-cancer.png?AWSAccessKeyId=codabench-prod&Signature=Ln9kzPQjv3kxBGrOFd%2Fv422ZdvM%3D&Expires=1793784753",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-23-1784850509/a8c79d87015f/logo-pan-cancer_icon.png?AWSAccessKeyId=codabench-prod&Signature=TNfWJRJ7FvqUfOTKQN8I1mmDGPc%3D&Expires=1793784753",
+  "terms": "## Rules\n\n1. All participants should register for this challenge with their real names, affiliations (including department, full name of university/institute/company, country), and affiliation E-mails. Incomplete and redundant registrations will be removed without notice. Each team can have at most six people.\n2. All participants must submit a complete solution to this challenge during the validation and testing phase. A complete solution includes a Docker container (tar file) and a qualified methodology paper (at least 8 pages, LNCS format).\n3. All participants should agree that the submitted short papers can be publicly available to the community on the challenge website, and organizers can use the information provided by the participants, including scores, predicted labels, and papers.\n4. If registered participants do not make submissions (Docker container and methodology paper), they will be listed in the dishonest list.\n5. Participants are not allowed to register multiple teams and accounts. Participants from the same research group are also not allowed to register multiple teams. FLARE Organizers keep the right to disqualify such participants.\n6. Participants should develop fully automatic methods and any manual interventions (e.g., manually annotating the cases) are not allowed. For a fair comparison, participants can use public datasets and pre-trained models but need to post them on the forum before April 15, 2026.",
+  "pages": [
+    {
+      "id": 85621,
+      "title": "Overview",
+      "content": "## <center> Pan-cancer Segmentation in CT Images (Task2): RECIST to 3D </center>\n\n\n\n---\n\nOrgan and cancer segmentation in medical images, especially from 3D CT scans, is fundamentally important for accurate diagnosis, treatment planning, and monitoring the progression of diseases. This competition aims to facilitate the development of pan-cancer segmentation models in general CT scans with three main features:\n\n-  [RECIST](https://doi.org/10.3389/fonc.2021.800547) (2D diameter marker) to 3D segmentation on laptop (without using GPU during inference) \n- Dataset: 10,000+ CT scans, covering whole-body cancer types\n- Evaluation Metrics: segmentation accuracy (DSC, NSD) and segmentation efficiency (running time and GPU consumption with tolerance)\n\n<img src=\"https://s2.loli.net/2025/05/14/5RahsvVd4lxjAIN.png\" alt=\"01\" width=\"922\" height=\"640\" />\n\n---\n\n## 🚀 Join the challenge (2026.04.01-8.30)\n\n\n\n#### Step 1. Join the challenge and download the data\n\n* Register an account on this website and join the challenge\n* Fill out the [registration form](https://forms.gle/my1MimQ758oDyhWb9). Note: To change team information, please simply re-submit the form.\n* Request Dataset  [Subtask 2](https://huggingface.co/datasets/FLARE-MedFM/FLARE-Task1-PancancerRECIST-to-3D) \n* Submit the [Task2-baseline](https://drive.google.com/file/d/16nz_2UJLvsaVoqF1_oIWffu7J6UaU5UA/view?usp=drive_link) on [My Submission](https://www.codabench.org/competitions/7149/#/participate-tab) to test your account. \n\nNote:\n* Participants can join just one subtask or both tasks. \n* Public pre-trained models are allowed to use but please first post the model link in [forum](https://www.codabench.org/forums/7048/1161/) by April 1, 2026. \n\n\n---\n\n## 🏊‍ Validation submission (2026.4.20-8.30)\n\n* All teams can directly submit the segmentation results on the challenge page to get the segmentation accuracy metrics.\n* All teams can also make docker submissions. To avoid submission jams, each team can make one docker submission per month.\n* To make docker submissions, please send us (medseg20s@gmail.com): (Email subject: PanCancerSeg-YourTeamName-TeamLeaderName-Validation Submission)\n\n\t(1) a download link to your Docker container (teamname.tar.gz).\n\n\t(2) a sanity test video record. Please test your docker on validation cases and record the prediction process. For each case, the running time should be within 60s.\n\n* When the evaluation is finished, we will return back the metrics via email.\n\n### Baseline Repo:https://github.com/medfm-flare/MedSAM2-RECIST\n### Baseline result download [here](https://drive.google.com/file/d/16nz_2UJLvsaVoqF1_oIWffu7J6UaU5UA/view?usp=drive_link) (Same in step1)\n\n### Submission format\n\nSubmit a single ZIP whose contents sit in one flat directory (no sub-folders):\n\n```\nsubmission.zip\n├── Colon_001.npz            # one .npz per case\n├── Kidney_001.npz\n├── Liver_001.npz\n└── ...\n```\n\n**Segmentation masks** — one file per case, named `{identifier}.npz` (e.g. `Colon_001.npz`), stored under the array key `segs`, dtype `uint8`, with the same shape as the input `imgs` array `(D, H, W)`.\n\n```python\nnp.savez_compressed(\"Colon_001.npz\", segs=segs.astype(np.uint8))\n```\n\n**Instance labels must be preserved** — lesion `k` is labeled with id `k`, matching the id of its RECIST prompt in the input `recist` array:\n\n|   Input `recist` label   |   Your `segs` label   |   Scored against   |\n|---|---|---|\n| `1` | `1` | GT lesion `1` |\n| `2` | `2` | GT lesion `2` |\n| `3` | `3` | GT lesion `3` |\n\nMetrics are computed **per lesion**, so a mask that merges all lesions into label `1` scores near zero on multi-lesion cases.\n\n**Metrics:**\n\n|   Metric   |   Description   |\n|---|---|\n| `Lesion_DSC` | Dice, computed per lesion id |\n| `Lesion_NSD` | Normalized Surface Distance per lesion id, tolerance = 1.0 mm |\n\n\nNotes:\n\n* Do **not** wrap the files in a top-level folder — the scorer looks for `{identifier}.npz` directly, so a nested directory means every case is reported missing and the score is 0.\n* Filenames must match the test-set identifiers exactly (case-sensitive) so predictions can be paired with the ground truth; missing cases are scored 0.\n* A `segs` shape that differs from the reference volume scores the whole case 0.\n* Every lesion id present in the reference counts toward the case mean, so missed lesions are penalized rather than skipped. Extra ids not present in the reference are ignored.\n* Efficiency (runtime / memory) is not measured by the scoring program.\n\n\n---\n\n## 🏹 Testing submission (2026.9.1-9.7)\n\n* To avoid overfitting the testing set, **we only offer one successful submission opportunity on the testing set**.\n* The submission should include:  (Email subject: PanCancerSeg-YourTeamName-TeamLeaderName-Testing Submission)\n\n\t(1) a download link to your Docker container (teamname.tar.gz); \n\t\n\t(2) a sanity test video record (download [example](https://drive.google.com/file/d/1uwbvYaSDQSxUT-yzGvuVcn6Ed3zNV1B3/view)). Please test your docker on validation cases and record the prediction process. For each case, the running time should be within 60s. \n\t\n\t\n* The submitted Docker container will be evaluated with the following commands. If the Docker container does not work or the paper does not include all the necessary information to reproduce the method, we will return back the error information and review comments to participants.\n\n- Task 1\n\n<code>docker load -i teamname.tar.gz</code>    \n<code>docker container run --gpus \"device=1\" -m 28G --name teamname --rm -v \\$PWD/PanCancerSeg_Test/:/workspace/inputs/ -v \n\t\\$PWD/teamname_outputs/:/workspace/outputs/ teamname:latest /bin/bash -c \"sh predict.sh\"</code>\n\n- Task 2 (CPU Only)\n\n<code>docker load -i teamname.tar.gz</code>    \n<code>docker container run -m 8G --name teamname --rm -v \\$PWD/PanCancerSeg_Test/:/workspace/inputs/ -v \n\t\\$PWD/teamname_outputs/:/workspace/outputs/ teamname:latest /bin/bash -c \"sh predict.sh\"</code>\n\n\n\n## Paper Submission (Due on Sept.14)\n\nPlease follow the [template](https://www.overleaf.com/read/qcjybbkxtfyp#e3ce3b) to prepare the manuscript and submit it on [openreview](https://openreview.net/group?id=MICCAI.org/2026/Challenge/FLARE).\n\n---\n\t\n## 🏆 Awards\n\n\n- If there are more than 20 testing docker submissions, we will provide cash prizes for the top 3 teams (Amazon gift cards with 300/200/100 CAD, respectively) and souvenirs for the top 4-10 teams. Otherwise, only certificates will be provided. \n- The winning teams will be invited to give oral presentations.\n- The first author of the top 3 teams will be invited to contribute to a challenge summary paper.\n- A certificate will be awarded to the top 10 teams. (Top teams should make their code publicly available on GitHub for reproducibility.)\n- All teams have the opportunity to publish their methods in the challenge proceeding (Tentative LNCS, EI Index). [Here](https://link.springer.com/conference/flare) is an example of our previous Challenge.\n\n\nThe challenge summary paper will be submitted to top-tired journals. Here are some of our previous summaries:\n\n* \"[Fast and low-GPU-memory abdomen CT organ segmentation: the flare challenge.](https://doi.org/10.1016/j.media.2022.102616)\" Medical Image Analysis 82: 102616 (2022)\n* \"[Unleashing the strengths of unlabelled data in deep learning-assisted pan-cancer abdominal organ quantification: the FLARE22 challenge](https://doi.org/10.1016/S2589-7500(24)00154-7)\" The Lancet Digital Health, 6 (11), e815 - e826 (2024)\n* \"[The multimodality cell segmentation challenge: toward universal solutions.](https://doi.org/10.1038/s41592-024-02233-6)\" Nature Methods 21, 1103–1113 (2024).",
+      "index": 0
+    },
+    {
+      "id": 84861,
+      "title": "Organizers",
+      "content": "# Organizers\n## Leader\nJun Ma (University Health Network)\n\nZongwei Zhou (Johns Hopkins University)\n\nChenyu You (Stony Brook University)\n\nWenxuan Li (Johns Hopkins University)\n\nBenjamin Haibe-Kains (University of Toronto; University Health Network; Vector Institute)\n\nYuyin Zhou (UC Santa Cruz)\n\nBo Wang (University of Toronto; University Health Network; Vector Institute)\n\n## Coordinators\nKeishi Suzuki (University of Toronto)\n\nBaidu Li (University Health Network)\n\nYifei Fang (Stony Brook University)\n\n## Baseline Contributors\nIf you're willing to contribute baseline models, please reach out to jun.ma2@uhn.ca. We're willing to credit your contribution in the challenge website and summary paper.\n\n## Data Contributors\nIf you're willing to contribute data for hidden testing, please reach out to jun.ma2@uhn.ca. We're willing to credit your contribution in the challenge website and summary paper.\n\nPANORAMA\n\n* Natália Alves, Diagnostic Image Analysis Group, Department of Medical Imaging, Radboud University Medical Center, Nijmegen, the Netherlands\n* Megan Schuurmans, Diagnostic Image Analysis Group, Department of Medical Imaging, Radboud University Medical Center, Nijmegen, the Netherlands\n* Geert Litjens, Computational Pathology Group, Department of Pathology, Radboud University Medical Center, Nijmegen, the Netherlands\n* John Hermans, Department of Medical Imaging, Radboud University Medical Center, Nijmegen, the Netherlands\n* Henkjan Huisman, Diagnostic Image Analysis Group, Department of Medical Imaging, Radboud University Medical Center, Nijmegen, the Netherlands\n* Dawid Rutkowski, Department of Surgery and Oncology, Karolinska University Hospital, Stockholm, Sweden\n* J-Matthias Löhr, Department of Surgery and Oncology, Karolinska University Hospital, Stockholm, Sweden\n* Marjolein H Liedenbaum, Department of Radiology, Haukeland University Hospital, Bergen, Norway\n* Ingfrid S Haldorsen, Department of Radiology, Haukeland University Hospital, Bergen, Norway\n* Anders Molven, Department of Clinical Medicine, University of Bergen, Bergen, Norway\n* Derya Yakar, Department of Radiology, University Medical Center Groningen, Groningen, the Netherlands\n* Jeroen Geerdink, Ziekenhuisgroep Twente, Almelo, the Netherlands",
+      "index": 1
+    },
+    {
+      "id": 84862,
+      "title": "Dataset",
+      "content": "# Dataset\nThe data download link will be sent to approved teams via email. Please make sure that you can download large files from Google Drive or Baidu Netdisk and have enough space and computing resources to process them.\n\nTraining set: 10000+ CT scans\n\nValidation set: 100 CT scans with various cancer types\n\nTesting set: 500 CT scans with various cancer types\n\nFolder structure (download link will be sent to registered qualified participants):\n\nTrain-Labeled: This is a partially labeled dataset. Only the primary lesion is labeled in each case. The other lesions may not be labeled (e.g., metastatic lesions). In the final testing set, all the lesions are labeled. Participants can only use the image data for model development. Additional clinical data will not be provided.\n\nTrain-Unlabel (optional to use): only images are provided and the lesion annotations are not available. For the abdominal images, we also provide the pseudo labels, which are generated by the FLARE23 winning solution.\n\nValidation-Public: Both images and annotations are provided. Please do not use them for model training!\n\nValidation-Hidden: The labels of hidden validation set will not be released. Please submit the segmentation results on codabench to get the metrics.\n\nNote:\n\nPlease do not use the public validaiton set for model training!\nThe testing set will also contain healthy cases (no lesion). Please pay attention to the false positives.\nAll the hidden testing images are from new centers, which will not be released during the challenge. Please submit the docker container of your algorithm and organizers will evaluate it on the hidden testing set.\nPublic Datasets and Models\nPublic datasets and models are allowed to use in this challenge (e.g., CT-RATE, Merlin) . To make sure all participants can access the same public datasets and models, please post the dataset and model links in forum by July 31.",
+      "index": 2
+    },
+    {
+      "id": 87061,
+      "title": "Evaluation",
+      "content": "# Evaluation\nSegmentation accuracy metrics:\n\nDice Similarity Coefficient (DSC)\nNormalized Surface Distance (NSD)\nSegmentation efficiency metrics:\n\nRunning time (s). We give running time a tolerance of 45s (including the docker starting time). Moreover, the inference time for each case should be within 60s. Otherwise, the corresponding case will be regarded as a failed case (DSC=0, NSD=0).\nrunning time\n\nGPU memory consumption (area under GPU memory-time curve).\ngpu memory\n\nAll metrics will be used to compute the ranking. We give GPU memory consumption a 4GB tolerance, GPU Memory = max(0, Real GPU Memory-4096MB) because all the previous top teams (i.e., FLARE21-23) can achieve state-of-the-art segmentation accuracy within this tolerance. We also give running time a tolerance (the running time of the winning solution in FLARE 2023) because it satisfies the typical clinical requirements and the code has been publicly available.\n\nEvaluation code has been publicly available at: https://github.com/JunMa11/FLARE\n\n```\ndocker load -i teamname.tar.gz\ndocker container run -m 8G --name teamname --rm -v $PWD/PanCancerSeg_Test/:/workspace/inputs/ -v $PWD/teamname_outputs/:/workspace/outputs/ teamname:latest /bin/bash -c \"sh predict.sh\"\n```\n## Evaluation Platform\nThe submitted docker containers will be evaluated on a Ubuntu 20.04 desktop. Detailed information is listed as follows:\n\nCPU: Intel® Xeon(R) W-2133 CPU @ 3.60GHz × 12\nGPU: NVIDIA QUADRO RTX5000 (16G)\nRAM: 28G\nDriver Version: 510.39.01\nCUDA Version: 11.6\nDocker version 20.10.13\n## Ranking Scheme\nFollowing the recommendation in ChallengeR [1], the ranking scheme includes the following three steps:\n\nStep 1. For each testing case, we compute the four metrics;\n\nStep 2. Rank participants for each of the 500 testing cases and each metric; Thus, each participant will have 2000 (500x4) rankings.\n\nStep 3. Average all these rankings.\n\n[1] Wiesenfarth, M., Reinke, A., Landman, B.A. et al. Methods and open-source toolkit for analyzing and visualizing challenge results. Sci Rep 11, 2369 (2021).",
+      "index": 3
+    },
+    {
+      "id": 88008,
+      "title": "MICCAI Program",
+      "content": "<img src=\"https://files.catbox.moe/38sgxz.png\" alt=\"01\" width=\"922\" height=\"640\" />",
+      "index": 4
+    },
+    {
+      "id": 88547,
+      "title": "Awards",
+      "content": "## CVPR FLARE 2026 Awards\n\n<h3>🏆 AIDA RAO Mayo Clinic</h3>\n<p>\n  <a href=\"https://github.com/xinformatics/miccaiflare2026task1\" target=\"_blank\">💻 Code</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://openreview.net/forum?id=sbrp9WtYTl\" target=\"_blank\">📄 Paper</a>\n</p>\n<a href=\"https://raw.githubusercontent.com/Bardli/FLARE2026-images/main/FLARE26-awards/1.png\" target=\"_blank\">\n  <img src=\"https://raw.githubusercontent.com/Bardli/FLARE2026-images/main/FLARE26-awards/1.png\"\n       alt=\"FLARE2026 award certificate — AIDA RAO Mayo Clinic\"\n       style=\"width:100%; max-width:1000px; height:auto;\">\n</a>\n\n<br><br>\n\n<h3>🏆 RMH AI Hub</h3>\n<p>\n  <a href=\"https://github.com/antoniocandito/Recist2Seg_OsiriXgrpc/\" target=\"_blank\">💻 Code</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://openreview.net/forum?id=2E53svXdTe\" target=\"_blank\">📄 Paper</a>\n</p>\n<a href=\"https://raw.githubusercontent.com/Bardli/FLARE2026-images/main/FLARE26-awards/2.png\" target=\"_blank\">\n  <img src=\"https://raw.githubusercontent.com/Bardli/FLARE2026-images/main/FLARE26-awards/2.png\"\n       alt=\"FLARE2026 award certificate — RMH AI Hub\"\n       style=\"width:100%; max-width:1000px; height:auto;\">\n</a>\n\n<br><br>\n\n<h3>🏆 team214</h3>\n<p>\n  <a href=\"https://github.com/YaliShanda985/MICCAI-FLARE-2026-Task1-Subtask2\" target=\"_blank\">💻 Code</a>\n  &nbsp;|&nbsp;\n  <a href=\"https://openreview.net/forum?id=JYnUy4TNI5\" target=\"_blank\">📄 Paper</a>\n</p>\n<a href=\"https://raw.githubusercontent.com/Bardli/FLARE2026-images/main/FLARE26-awards/3.png\" target=\"_blank\">\n  <img src=\"https://raw.githubusercontent.com/Bardli/FLARE2026-images/main/FLARE26-awards/3.png\"\n       alt=\"FLARE2026 award certificate — team214\"\n       style=\"width:100%; max-width:1000px; height:auto;\">\n</a>",
+      "index": 5
+    }
+  ],
+  "phases": [
+    {
+      "id": 29443,
+      "index": 0,
+      "start": "2026-07-01T05:00:00Z",
+      "end": "2026-12-31T23:00:00Z",
+      "name": "Development Phase",
+      "description": "Development phase: tune your models.",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "f8fe90d3-a5c9-4166-b993-cb5ab4ff2800",
+          "order_index": 0,
+          "phase": 29443,
+          "id": 35249,
+          "value": "f8fe90d3-a5c9-4166-b993-cb5ab4ff2800",
+          "key": "f8fe90d3-a5c9-4166-b993-cb5ab4ff2800",
+          "created_when": "2026-07-27T14:11:38.947718Z",
+          "name": "Pan-cancer Segmentation in CT Images: RECIST-to-3D_eval_task",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 908203,
+              "created_by": "bard_li",
+              "owner_display_name": "bard_li",
+              "created_when": "2026-07-27T13:56:46.212830Z",
+              "name": "Pan-cancer Segmentation in CT Images: RECIST-to-3D_reference_data",
+              "type": "reference_data",
+              "description": "Pan-cancer Segmentation in CT Images: RECIST-to-3D_reference_data",
+              "is_public": false,
+              "key": "b1dfe22a-20b7-49d8-8d5d-99596a11433d",
+              "value": "b1dfe22a-20b7-49d8-8d5d-99596a11433d",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 17652,
+                  "title": "Pan-cancer Segmentation in CT Images: RECIST-to-3D Task2"
+                }
+              ],
+              "competition": null,
+              "file_name": "reference_data.zip",
+              "file_size": 1568240.0
+            },
+            {
+              "id": 1013214,
+              "created_by": "bard_li",
+              "owner_display_name": "bard_li",
+              "created_when": "2026-10-02T21:07:00.041127Z",
+              "name": "Pan-cancer Segmentation in CT Images: RECIST-to-3D_score_program",
+              "type": "scoring_program",
+              "description": "Pan-cancer Segmentation in CT Images: RECIST-to-3D_score_program",
+              "is_public": false,
+              "key": "08596028-4893-493c-9ea6-9627c820d324",
+              "value": "08596028-4893-493c-9ea6-9627c820d324",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 17652,
+                  "title": "Pan-cancer Segmentation in CT Images: RECIST-to-3D Task2"
+                }
+              ],
+              "competition": null,
+              "file_name": "scoring_program.zip",
+              "file_size": 4402.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0,
+      "is_parallel": false,
+      "is_locked_phase": false
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 19637,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "main",
+      "columns": [
+        {
+          "id": 86732,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Lesion DSC",
+          "key": "Lesion_DSC",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 87171,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Lesion NSD",
+          "key": "Lesion_NSD",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 4
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Add"
+    }
+  ],
+  "description": "Pan-cancer Segmentation in CT Images: RECIST-to-3D",
+  "participants_count": 25,
+  "submissions_count": 117,
+  "docker_image": "mrigroupopbg/mri-python3",
+  "competition_type": "competition",
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "forum": 17342,
+  "forum_enabled": true,
+  "fact_sheet": null,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "registration_auto_approve": true
+}

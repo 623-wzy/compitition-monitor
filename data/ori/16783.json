@@ -1,0 +1,194 @@
+{
+  "id": 16783,
+  "title": "Mini-MNIST Digit Classification",
+  "published": true,
+  "created_by": "njuwallspider",
+  "owner_display_name": "njuwallspider",
+  "created_when": "2026-05-30T09:06:38.492134Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-30-1780131998/18c01880de0c/logo.png?AWSAccessKeyId=codabench-prod&Signature=ZFN7Ia6l61DSJ5WVmosouqfls9U%3D&Expires=1793784807",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-30-1780131998/18c01880de0c/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=D8y%2B6tLV2OMFj%2BzPQXMmndbBOUk%3D&Expires=1793784807",
+  "terms": "# Terms and Conditions\n***\nThis competition is for educational and research purposes, and it is governed by the [<ins>General ChaLearn Contest Rules</ins>](http://www.causality.inf.ethz.ch/GeneralChalearnContestRuleTerms.html).",
+  "pages": [
+    {
+      "id": 79859,
+      "title": "Overview",
+      "content": "# 🏆 Mini-MNIST Digit Classification Challenge\n\nWelcome to the **Mini-MNIST Challenge!** This is a streamlined, lightweight version of the classic MNIST benchmark. \n\nWhether you are a beginner experimenting with your first computer vision models or an expert trying to squeeze maximum accuracy out of a tiny dataset, this challenge is designed to be accessible, fast, and fun!\n\n---\n\n## 🎯 Challenge Objective\nThe goal is simple: classify handwritten digits from **0 to 9**. \n\nHowever, there's a twist! Unlike the standard MNIST dataset which provides 60,000 training images, you are faced with a **few-shot learning** scenario. You will only have access to a severely restricted number of training samples. Your algorithm must learn generalized features from minimal data.\n\n---\n\n## 📊 Dataset Constraints\nWe have curated a perfectly balanced mini-dataset. While the backend handles images natively as PNGs formats, the ingestion system automatically loads them as NumPy arrays for your model:\n\n*   **Training Set:** Exactly **200 images** (20 images per digit).\n*   **Test Set:** Exactly **50 images** (5 images per digit) kept hidden for final scoring.\n*   **Image Format:** The ingestion program passes the data to your model as `(28, 28)` grayscale NumPy arrays\n\n---\n\n## 💻 How to Participate\n* Register to the competition\n* Follow the instructions below:\n\n### 1. Build Your Model\nCreate a single Python file named `model.py`. Inside this file, implement a `Model` class with two required methods:\n\n```python\nclass Model:\n    def __init__(self):\n        # Initialize your classifier here\n        pass\n\n    def fit(self, X_train, y_train):\n        # X_train shape: (N, 28, 28)\n        # y_train shape: (N,)\n        pass\n\n    def predict(self, X_test):\n        # X_test shape: (M, 28, 28)\n        # return prediction array of shape (M,)\n        pass\n```\n\n### 2. Submit to Codabench\nOnce your script is ready:\n1. Zip your `model.py` file into a `.zip` archive.\n2. Navigate to the **My Submissions** tab.\n3. Upload your archive and watch your score appear on the leaderboard!",
+      "index": 0
+    },
+    {
+      "id": 79860,
+      "title": "Evaluation",
+      "content": "# Evaluation\n\nSubmissions are evaluated based on their accuracy on the test set.\n\n## Metric\nAccuracy is calculated as:\n$Accuracy = \\frac{\\text{Correct Predictions}}{\\text{Total Images}}$\n\nThe leaderboard displays the accuracy score, where $1.0$ is a perfect score (100% correct).",
+      "index": 1
+    }
+  ],
+  "phases": [
+    {
+      "id": 27523,
+      "index": 0,
+      "start": "2026-01-01T00:00:00Z",
+      "end": "2027-01-01T00:00:00Z",
+      "name": "Competition Phase",
+      "description": "Train on 20 images/class and predict on 5 images/class.",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "6e1c7733-eddb-48de-acd8-1894047fdeee",
+          "order_index": 999,
+          "phase": 27523,
+          "id": 33591,
+          "value": "6e1c7733-eddb-48de-acd8-1894047fdeee",
+          "key": "6e1c7733-eddb-48de-acd8-1894047fdeee",
+          "created_when": "2026-05-30T09:06:38.299849Z",
+          "name": "MNIST Classification Task",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 799747,
+              "created_by": "njuwallspider",
+              "owner_display_name": "njuwallspider",
+              "created_when": "2026-05-30T09:06:37.068855Z",
+              "name": "ingestion_program @ '05-30-2026 09:06'",
+              "type": "ingestion_program",
+              "description": null,
+              "is_public": false,
+              "key": "f729bc0d-4c40-4cb7-bb3a-adb4787ec13e",
+              "value": "f729bc0d-4c40-4cb7-bb3a-adb4787ec13e",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16783,
+                  "title": "Mini-MNIST Digit Classification"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 2912.0
+            },
+            {
+              "id": 799748,
+              "created_by": "njuwallspider",
+              "owner_display_name": "njuwallspider",
+              "created_when": "2026-05-30T09:06:37.435335Z",
+              "name": "input_data @ '05-30-2026 09:06'",
+              "type": "input_data",
+              "description": null,
+              "is_public": false,
+              "key": "1d7a88af-e3b7-499d-8856-f4fc7d649861",
+              "value": "1d7a88af-e3b7-499d-8856-f4fc7d649861",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16783,
+                  "title": "Mini-MNIST Digit Classification"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 101362.0
+            },
+            {
+              "id": 799749,
+              "created_by": "njuwallspider",
+              "owner_display_name": "njuwallspider",
+              "created_when": "2026-05-30T09:06:37.590365Z",
+              "name": "scoring_program @ '05-30-2026 09:06'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "14cd8ff0-e38c-4e3a-b296-994bf362d4bf",
+              "value": "14cd8ff0-e38c-4e3a-b296-994bf362d4bf",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16783,
+                  "title": "Mini-MNIST Digit Classification"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 2752.0
+            },
+            {
+              "id": 799750,
+              "created_by": "njuwallspider",
+              "owner_display_name": "njuwallspider",
+              "created_when": "2026-05-30T09:06:37.689889Z",
+              "name": "reference_data @ '05-30-2026 09:06'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "adfddd9a-09a1-4f3b-950d-9805bb79597d",
+              "value": "adfddd9a-09a1-4f3b-950d-9805bb79597d",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 16783,
+                  "title": "Mini-MNIST Digit Classification"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 270.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 100,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0,
+      "is_parallel": false,
+      "is_locked_phase": false
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 18600,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "main_leaderboard",
+      "columns": [
+        {
+          "id": 80827,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Accuracy",
+          "key": "score",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 2
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Force_Latest_Multiple"
+    }
+  ],
+  "description": "A mini-MNIST challenge with 20 training images per class and 5 test images per class.",
+  "participants_count": 6,
+  "submissions_count": 17,
+  "docker_image": "codalab/codalab-legacy:py312",
+  "competition_type": "competition",
+  "reward": null,
+  "contact_email": null,
+  "report": null,
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "forum": 16508,
+  "forum_enabled": true,
+  "fact_sheet": null,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "registration_auto_approve": true
+}

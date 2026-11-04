@@ -3,22 +3,22 @@
   "title": "RoboWorld 2026 — Track 2: HA-VLN",
   "published": true,
   "created_by": "yifeidong",
-  "owner_display_name": "yifeidong",
+  "owner_display_name": "Yifei Dong",
   "created_when": "2026-09-17T02:16:03.034924Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791417704/03043570c5da/logo_track2.png?AWSAccessKeyId=codabench-prod&Signature=z5sxpehCXkwKO5CM3t1IVMwuHco%3D&Expires=1792579470",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791417704/03043570c5da/logo_track2_icon.png?AWSAccessKeyId=codabench-prod&Signature=Plc9Kl6rXlIfziPALpfNJGf0YR0%3D&Expires=1792579470",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791417704/03043570c5da/logo_track2.png?AWSAccessKeyId=codabench-prod&Signature=HQLvVkG47aXWyQHdB4X5rfv%2BGHI%3D&Expires=1793784743",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791417704/03043570c5da/logo_track2_icon.png?AWSAccessKeyId=codabench-prod&Signature=plnapjiWgr3iD1A1ga04v8pfAJQ%3D&Expires=1793784743",
   "terms": "# Terms & Conditions\n\nThis competition is made freely available to academic and non-academic entities for non-commercial purposes such as academic research, teaching, scientific publications, or personal experimentation. Permission is granted to use the data given that you agree:\n\n- That the data in this competition comes “AS IS”, without express or implied warranty. Although every effort has been made to ensure accuracy, we do not accept any responsibility for errors or omissions.\n- That you may not use the data in this competition or any derivative work for commercial purposes as, for example, licensing or selling the data, or using the data with a purpose to procure a commercial gain.\n- That you include a reference to RoboWorld 2026 and HA-VLN 2.0 (including the benchmark data and the specially generated data for academic challenges) in any work that makes use of the benchmark. For research papers, please cite our preferred publications as listed on our webpage.\n\nTo ensure fair comparison and scientific integrity among all participants, we require:\n\n- Publicly available pretrained models (including navigation policies trained on other VLN datasets, general vision and language models, and off-the-shelf perception models such as person detectors) and external training datasets are permitted. However, HA-R2R validation splits (val_seen, val_unseen) and test data must not be used for model training or fine-tuning.\n- Ground-truth human information from released training episodes may be used as privileged supervision during training. Directly reading human_motion.json or accessing ground-truth human states and trajectories for planning during validation or test inference is strictly prohibited; human positions and movements during evaluation must be inferred from camera observations.\n- Standard competition submissions require only action sequences in the specified archive format. To ensure fairness and reproducibility, teams qualifying for awards (Top 5 teams, Best Innovative Solution, or RoboPAD presentation invitations) will be required to submit a technical report describing their method and may be requested to provide code and model checkpoints for organizer verification before final award confirmation.\n\nIf you have any questions or concerns, kindly get in touch with us at [roboworld2026@gmail.com](mailto:roboworld2026@gmail.com).",
   "pages": [
     {
-      "id": 89193,
+      "id": 90314,
       "title": "Overview",
-      "content": "# Welcome to Track 2: HA-VLN\n\n**Human-Aware Vision-and-Language Navigation (HA-VLN)** is Track 2 of [RoboWorld 2026](https://roboworld2026.github.io/),\naffiliated with the [RoboPAD Workshop at NeurIPS 2026](https://robotpad2026.github.io/).\n\n## Challenge Overview\n\nThis track challenges participants to develop **human-aware vision-and-language\nnavigation agents** that follow natural-language instructions **safely,\nefficiently, and socially** in dynamic human environments.\n\nWhile many standard VLN benchmarks assume static scenes, real-world spaces are\nshared with moving people who serve as both semantic landmarks and dynamic\nobstacles. Built on [HA-VLN 2.0](https://arxiv.org/abs/2503.14229), submissions\nmust balance **instruction following** and **social compliance** under partial\nobservability and real-time human interactions.\n\n- **Human-Referenced Grounding**: Interpret fine-grained instructions that\n  reference both scene landmarks and ongoing human activities.\n- **Social Norm Compliance**: Respect personal space, proactively avoid human\n  collisions, and navigate safely around moving bystanders.\n- **Realistic Benchmarking**: Navigate indoor and outdoor areas with multi-human\n  interactions in the HA-R2R and HAPS 2.0 datasets.\n\nWe welcome navigation policies, waypoint and topological planners, world models,\nand VLA approaches that advance safe, human-centered navigation in shared spaces.\n\n## Task Definition\n\n- **Input:** A natural-language navigation instruction, initial pose and ongoing agent pose (position and heading from simulator state, GPS+compass), and sequential egocentric forward-facing RGB-D observations. Direct access to ground-truth human trajectories (`human_motion.json`) is strictly prohibited during inference.\n- **Sensor Setup:** One forward-facing RGB-D camera. Adding additional cameras is not permitted; panoramic views must be acquired by rotating in place (rotation actions count toward the action budget).\n- **Setting:** **Closed-loop interactive navigation** in continuous 3D environments with dynamic humans.\n- **Actions:** Six discrete actions: `STOP`, `MOVE_FORWARD`, `TURN_LEFT`, `TURN_RIGHT`, `LOOK_UP`, `LOOK_DOWN`.\n- **Output:** An ordered sequence of 1 to 500 discrete actions for each episode submitted for official simulator replay. Sequences shorter than 500 actions must end in `STOP`; sequences reaching the 500-action limit may omit `STOP`.\n- **Objective:** Reach the instructed goal safely while avoiding collisions with humans.\n\n## Phases\n\n- Phase 1: Development on released val_seen and val_unseen episodes. Both splits\n  are reported; only the val_unseen Score determines the Phase 1 ranking.\n- Phase 1 coverage: submit actions for all 778 val_seen episodes and all 1,839\n  val_unseen episodes.\n- Phase 2: Final evaluation on withheld test scoring data. The test Score\n  determines final rankings and awards.\n\nPhase 1 scores do not determine shortlisting or awards and are not combined with\nPhase 2 scores. Submit at most five times per day and 100 times per phase; the\nbest Score is retained.\n\n## Schedule\n\n1. Registration opens October 08, 2026.\n2. Phase 1 opens October 15, 2026, and closes October 30, 2026.\n3. Phase 2 opens October 30, 2026, and closes November 30, 2026.\n4. Award decisions are announced on December 12, 2026.\n\n## Awards & Recognition\n\n1. **Certificates of Recognition**: Official certificates awarded to the Top 5 teams in Track 2.\n2. **Best Innovative Solution**: Certificate recognizing outstanding creativity and technical innovation.\n3. **Oral Presentations**: Selected top-performing teams will be invited to give oral presentations at the RoboPAD Workshop at NeurIPS 2026.\n\nFinal rankings and awards are determined entirely by Phase 2 test evaluation.\n\n## Materials & Toolkit\n\n- [Challenge repository and participant toolkit](https://github.com/roboworld2026/track2): Documentation, data download scripts, baseline setup, and action submission exporter.\n- [Track website](https://roboworld2026.github.io/track2): Official track details and announcements.\n- [HA-VLN 2.0](https://uwmilab.github.io/HA-VLN-webpage/): Project page and [official repository](https://github.com/UWMILab/HA-VLN).\n- Starting kit: Download the Phase 1 starting kit attached to this competition for the official episode manifest, example submission, and local validator.\n\n## Registration\n\nRegister your team through the [Google Form](https://roboworld2026.github.io/#registration)\n(registration opens October 08, 2026) to be eligible for the leaderboard,\ncertificates, and awards.\n\n## Contact\n\n- **Frequently Asked Questions:** [Track 2 FAQ](https://github.com/roboworld2026/track2#-frequently-asked-questions) (please check the FAQ before emailing for common questions)\n- **Technical Support:** [GitHub Issues](https://github.com/roboworld2026/track2/issues)  \n- **Contact Email:** [roboworld2026@gmail.com](mailto:roboworld2026@gmail.com)  \n- **Discord:** [Join the RoboWorld Track 2 Discord](https://discord.gg/S8s8JcxtT)  \n- **WeChat Group:** [Join the RoboWorld Track 2 WeChat Group](https://github.com/roboworld2026/roboworld2026.github.io/blob/main/wechat_track2.JPG)\n\n<p align=\"center\">\n  <a href=\"https://github.com/roboworld2026/roboworld2026.github.io/blob/main/wechat_track2.JPG\" target=\"_blank\">\n    <img src=\"https://raw.githubusercontent.com/roboworld2026/roboworld2026.github.io/main/wechat_track2.JPG\" alt=\"Track 2 WeChat Group QR Code\" width=\"220\" />\n  </a>\n</p>",
+      "content": "# Welcome to Track 2: HA-VLN\n\n**Human-Aware Vision-and-Language Navigation (HA-VLN)** is Track 2 of [RoboWorld 2026](https://roboworld2026.github.io/), affiliated with the [RoboPAD Workshop at NeurIPS 2026](https://robotpad2026.github.io/).\n\n## Challenge Overview\n\nThis track challenges participants to develop **human-aware vision-and-language navigation agents** that follow natural-language instructions **safely, efficiently, and socially** in dynamic human environments.\n\nWhile many standard VLN benchmarks assume static scenes, real-world spaces are shared with moving people who serve as both semantic landmarks and dynamic obstacles. Built on [HA-VLN 2.0](https://arxiv.org/abs/2503.14229), submissions must balance **instruction following** and **social compliance** under partial observability and real-time human interactions.\n\n- **Human-Referenced Grounding**: Interpret fine-grained instructions that reference both scene landmarks and ongoing human activities.\n- **Social Norm Compliance**: Respect personal space, proactively avoid human collisions, and navigate safely around moving bystanders.\n- **Realistic Benchmarking**: Navigate indoor and outdoor areas with multi-human interactions in the HA-R2R and HAPS 2.0 datasets.\n\nWe welcome navigation policies, waypoint and topological planners, world models, and VLA approaches that advance safe, human-centered navigation in shared spaces.\n\n## Task Definition\n\n- **Input:** A natural-language navigation instruction, initial pose and ongoing agent pose (position and heading from simulator state, GPS+compass), and sequential egocentric forward-facing RGB-D observations. Direct access to ground-truth human trajectories (`human_motion.json`) is strictly prohibited during inference.\n- **Sensor Setup:** One forward-facing RGB-D camera. Adding additional cameras is not permitted; panoramic views must be acquired by rotating in place (rotation actions count toward the action budget).\n- **Setting:** **Closed-loop interactive navigation** in continuous 3D environments with dynamic humans.\n- **Actions:** Six discrete actions: `STOP`, `MOVE_FORWARD`, `TURN_LEFT`, `TURN_RIGHT`, `LOOK_UP`, `LOOK_DOWN`.\n- **Output:** An ordered sequence of 1 to 500 discrete actions for each episode submitted for official simulator replay. Sequences shorter than 500 actions must end in `STOP`; sequences reaching the 500-action limit may omit `STOP`.\n- **Objective:** Reach the instructed goal safely while avoiding collisions with humans.\n\n## Phases\n\n- **Phase 1 (Validation)**: Development on released `val_seen` (778 episodes) and `val_unseen` (1,839 episodes). Both splits are reported; only the `val_unseen` Score determines the Phase 1 ranking. Phase 1 is open until November 23, 2026 (Monday) solely for development and testing, and does not count towards final challenge rankings or awards.\n- **Phase 2 (Final Evaluation)**: Evaluation on withheld test scoring data (3,408 test episodes). The test Score determines final rankings and awards. All teams are eligible to participate in Phase 2 regardless of Phase 1 participation. [Download Phase 2 Test Dataset](https://drive.google.com/drive/folders/1HcSg3qCxriEjsgDLlPWBEz9TbgD5RA7W?usp=drive_link).\n\nPhase 1 scores do not determine shortlisting or awards and are not combined with Phase 2 scores. Submit at most five times per day and 100 times per phase; the best Score is retained.\n\n## Schedule\n\n1. Registration opens October 08, 2026.\n2. Phase 1 opens October 15, 2026, and closes November 23, 2026 (Monday) *(Extended from October 30)*.\n3. Phase 2 opens October 30, 2026, and closes November 30, 2026.\n4. Award decisions are announced on December 12, 2026.\n\n## Awards & Recognition\n\n1. **Certificates of Recognition**: Official certificates awarded to the Top 5 teams in Track 2.\n2. **Best Innovative Solution**: Certificate recognizing outstanding creativity and technical innovation.\n3. **Oral Presentations**: Selected top-performing teams will be invited to give oral presentations at the RoboPAD Workshop at NeurIPS 2026.\n\nFinal rankings and awards are determined entirely by Phase 2 final evaluation.\n\n## Materials & Toolkit\n\n- [Challenge repository and participant toolkit](https://github.com/roboworld2026/track2): Documentation, data download scripts, baseline setup, and action submission exporter.\n- [Phase 2 Official Test Dataset (Google Drive)](https://drive.google.com/drive/folders/1HcSg3qCxriEjsgDLlPWBEz9TbgD5RA7W?usp=drive_link): Official test instructions and human annotations for Phase 2 evaluation.\n- [Track website](https://roboworld2026.github.io/track2): Official track details and announcements.\n- [HA-VLN 2.0](https://uwmilab.github.io/HA-VLN-webpage/): Project page and [official repository](https://github.com/UWMILab/HA-VLN).\n- Starting kits: Download the Phase 2 starting kit attached to this competition for the official test episode manifest, example submission, and local validator (the Phase 1 starting kit remains available for validation development).\n\n## Registration\n\nRegister your team through the [Google Form](https://roboworld2026.github.io/#registration) (registration opens October 08, 2026) to be eligible for the leaderboard, certificates, and awards.\n\n## Contact\n\n- **Frequently Asked Questions:** [Track 2 FAQ](https://github.com/roboworld2026/track2#-frequently-asked-questions) (please check the FAQ before emailing for common questions)\n- **Technical Support:** [GitHub Issues](https://github.com/roboworld2026/track2/issues)  \n- **Contact Email:** [roboworld2026@gmail.com](mailto:roboworld2026@gmail.com)  \n- **Discord:** [Join the RoboWorld Track 2 Discord](https://discord.gg/S8s8JcxtT)  \n- **WeChat Group:** [Join the RoboWorld Track 2 WeChat Group](https://github.com/roboworld2026/roboworld2026.github.io/blob/main/wechat_track2.JPG)\n\n<p align=\"center\">\n  <a href=\"https://github.com/roboworld2026/roboworld2026.github.io/blob/main/wechat_track2.JPG\" target=\"_blank\">\n    <img src=\"https://raw.githubusercontent.com/roboworld2026/roboworld2026.github.io/main/wechat_track2.JPG\" alt=\"Track 2 WeChat Group QR Code\" width=\"220\" />\n  </a>\n</p>",
       "index": 0
     },
     {
-      "id": 89194,
+      "id": 90315,
       "title": "Submission & Evaluation",
-      "content": "# Submission & Evaluation\n\nBoth phases accept a single ZIP archive containing predicted action sequences for all required episodes.\n\n## What the Submission Contains\n\nSubmit one ZIP archive containing action sequences for every episode in the phase manifest. Only action predictions are used for evaluation; model weights, code, and external environment assets are not required.\n\n## Archive Layout\n\nPlace the prediction JSON files directly at the root of the ZIP archive:\n\n```text\nsubmission.zip\n|-- val_seen.json      # 778 episodes\n`-- val_unseen.json    # 1,839 episodes\n```\n\nPhase 2 follows the same layout with `test.json` in `submission_test.zip`. Package Phase 1 predictions:\n\n```bash\nzip -j submission.zip val_seen.json val_unseen.json\n```\n\n## Prediction File Structure\n\nEach JSON file must contain `format_version`, `split`, and `episodes`:\n\n```json\n{\n  \"format_version\": 1,\n  \"split\": \"val_unseen\",\n  \"episodes\": [\n    {\n      \"episode_id\": \"synthetic-example-001\",\n      \"actions\": [\"MOVE_FORWARD\", \"TURN_LEFT\", \"LOOK_UP\", \"LOOK_DOWN\", \"STOP\"]\n    }\n  ]\n}\n```\n\n- `format_version`: Set to `1`.\n- `split`: `\"val_seen\"`, `\"val_unseen\"`, or `\"test\"`, matching the corresponding phase.\n- `episodes`: A list of episode predictions covering all episode IDs in the manifest.\n  - `episode_id`: String identifier matching the manifest exactly once.\n  - `actions`: An ordered list of 1 to 500 actions chosen from `[\"STOP\", \"MOVE_FORWARD\", \"TURN_LEFT\", \"TURN_RIGHT\", \"LOOK_UP\", \"LOOK_DOWN\"]`. `\"STOP\"` may only appear as the final action. Sequences shorter than 500 actions must end with `\"STOP\"`; sequences reaching the 500-action limit may omit `\"STOP\"` if terminated by the step limit.\n\n## Evaluation & Leaderboard\n\nSubmissions are evaluated on navigation and social compliance, and ranked by the composite challenge **Score** (higher is better):\n\n- **SR** (higher is better): Collision-free navigation success rate to the target goal.\n- **NE** (lower is better): Mean Euclidean distance in metres from final agent position to goal.\n- **CR** (lower is better): Ratio of collision episodes over human-influenced episodes.\n- **TCR** (lower is better): Mean number of collision events per episode.\n\n```text\nNE utility  = 3 / (3 + NE)\nTCR utility = 1 / (1 + TCR)\nNavigation  = 0.80 * SR + 0.20 * NE utility\nSocial      = 0.75 * (1 - CR) + 0.25 * TCR utility\nScore       = 100 * Navigation * (0.70 + 0.30 * Social)\n```\n\nPhase 1 ranks teams by `val_unseen` Score (`val_seen` is reported for reference). Phase 2 ranks teams by `test` Score to determine final awards. When Scores are tied, rankings are broken in order: higher SR, lower NE, lower CR, lower TCR, and earlier submission time.\n\nOfficial evaluation replays submitted action sequences in the organizer-controlled CodaBench environment under standardized conditions. Human animations advance with wall-clock time according to the configured motion FPS (rather than advancing one frame per action). Official CodaBench replay results determine official competition rankings.\n\n## Submission Limits\n\nEach team may submit up to 5 times per day and 100 times per phase. The leaderboard retains the team's highest Score.\n\n## Support\n\n- **Frequently Asked Questions:** [Track 2 FAQ](https://github.com/roboworld2026/track2#-frequently-asked-questions) (please check the FAQ before emailing for common questions)\n- **Technical Support:** [GitHub Issues](https://github.com/roboworld2026/track2/issues)  \n- **Contact Email:** [roboworld2026@gmail.com](mailto:roboworld2026@gmail.com)",
+      "content": "# Submission & Evaluation\n\nBoth phases accept a single ZIP archive containing predicted action sequences for all required episodes.\n\n## What the Submission Contains\n\nSubmit one ZIP archive containing the action sequences for every episode in the phase manifest.\n\n> [!NOTE]\n> - **Phase 1 (Validation)** is open until **November 23, 2026 (Monday)** solely for development and validation testing, and does not determine final challenge awards.\n> - **Phase 2 (Final Evaluation)** alone determines final rankings and awards. All teams are eligible to participate in Phase 2 regardless of Phase 1 participation.\n\n## Archive Layout\n\n### Phase 2 (Final Evaluation)\n\nPlace the prediction JSON file directly at the root of the ZIP archive:\n\n```text\nsubmission.zip\n`-- test.json          # 3,408 test episodes\n```\n\nPackage Phase 2 predictions:\n\n```bash\nzip -j submission.zip test.json\n```\n\n<details>\n<summary><b>Phase 1 (Validation) Archive Layout (Click to expand)</b></summary>\n\nFor Phase 1 validation development, place both validation split predictions at the archive root:\n\n```text\nsubmission.zip\n|-- val_seen.json      # 778 episodes\n`-- val_unseen.json    # 1,839 episodes\n```\n\nPackage Phase 1 predictions:\n\n```bash\nzip -j submission.zip val_seen.json val_unseen.json\n```\n\n</details>\n\n## Prediction File Structure\n\nEach JSON file must contain `format_version`, `split`, and `episodes`:\n\n```json\n{\n  \"format_version\": 1,\n  \"split\": \"test\",\n  \"episodes\": [\n    {\n      \"episode_id\": \"1\",\n      \"actions\": [\"MOVE_FORWARD\", \"TURN_LEFT\", \"LOOK_UP\", \"LOOK_DOWN\", \"STOP\"]\n    }\n  ]\n}\n```\n\n- `format_version`: Set to `1`.\n- `split`: Set to `\"test\"` for Phase 2 (3,408 episodes). For Phase 1 validation, use `\"val_seen\"` (778 episodes) and `\"val_unseen\"` (1,839 episodes).\n- `episodes`: A list of episode predictions covering all required episode IDs in the phase manifest.\n  - `episode_id`: String identifier matching the manifest exactly once.\n  - `actions`: An ordered list of 1 to 500 actions chosen from `[\"STOP\", \"MOVE_FORWARD\", \"TURN_LEFT\", \"TURN_RIGHT\", \"LOOK_UP\", \"LOOK_DOWN\"]`. `\"STOP\"` may only appear as the final action. Sequences shorter than 500 actions must end with `\"STOP\"`; sequences reaching the 500-action limit may omit `\"STOP\"` if terminated by the step limit.\n\n## Pre-upload Verification\n\nBefore submitting to CodaBench, verify your archive using `check_submission.py` provided in the Starting Kit:\n\n```bash\npython3 check_submission.py submission.zip\n```\n\nThe checker validates archive integrity, JSON schema, action vocabulary, STOP placement, and episode coverage without requiring a GPU or simulator.\n\n## Evaluation & Leaderboard\n\nSubmissions are evaluated on navigation and social compliance, and ranked by the composite challenge **Score** (higher is better):\n\n- **SR** (higher is better): Collision-free navigation success rate to the target goal.\n- **NE** (lower is better): Mean Euclidean distance in metres from final agent position to goal.\n- **CR** (lower is better): Ratio of collision episodes over human-influenced episodes.\n- **TCR** (lower is better): Mean number of collision events per episode.\n\n```text\nNE utility  = 3 / (3 + NE)\nTCR utility = 1 / (1 + TCR)\nNavigation  = 0.80 * SR + 0.20 * NE utility\nSocial      = 0.75 * (1 - CR) + 0.25 * TCR utility\nScore       = 100 * Navigation * (0.70 + 0.30 * Social)\n```\n\nPhase 1 ranks teams by `val_unseen` Score (`val_seen` is reported for reference). Phase 2 ranks teams by `test` Score to determine final awards. When Scores are tied, rankings are broken in order: higher SR, lower NE, lower CR, lower TCR, and earlier submission time.\n\nOfficial evaluation replays submitted action sequences in the organizer-controlled CodaBench environment under standardized conditions. Human animations advance with wall-clock time according to the configured motion FPS (rather than advancing one frame per action). Official CodaBench replay results determine official competition rankings.\n\n## Submission Limits\n\nEach team may submit up to 5 times per day and 100 times per phase. The leaderboard retains the team's highest Score.\n\n## Support\n\n- **Frequently Asked Questions:** [Track 2 FAQ](https://github.com/roboworld2026/track2#-frequently-asked-questions) (please check the FAQ before emailing for common questions)\n- **Technical Support:** [GitHub Issues](https://github.com/roboworld2026/track2/issues)  \n- **Contact Email:** [roboworld2026@gmail.com](mailto:roboworld2026@gmail.com)",
       "index": 1
     }
   ],
@@ -26,8 +26,8 @@
     {
       "id": 30554,
       "index": 0,
-      "start": "2026-10-15T00:00:00Z",
-      "end": "2026-10-30T23:59:00Z",
+      "start": "2026-10-15T07:00:00Z",
+      "end": "2026-11-23T07:59:00Z",
       "name": "Phase 1: Validation",
       "description": "Submit complete action sequences for validation seen and validation unseen.",
       "status": "Current",
@@ -47,7 +47,7 @@
             {
               "id": 1016625,
               "created_by": "yifeidong",
-              "owner_display_name": "yifeidong",
+              "owner_display_name": "Yifei Dong",
               "created_when": "2026-10-04T16:30:36.087570Z",
               "name": "havln-phase1-replay-v3",
               "type": "scoring_program",
@@ -69,7 +69,7 @@
             {
               "id": 1017362,
               "created_by": "yifeidong",
-              "owner_display_name": "yifeidong",
+              "owner_display_name": "Yifei Dong",
               "created_when": "2026-10-05T05:05:25.554151Z",
               "name": "havln-phase1-replay-v3.1",
               "type": "reference_data",
@@ -102,7 +102,7 @@
       "starting_kit": {
         "id": 1003025,
         "created_by": "yifeidong",
-        "owner_display_name": "yifeidong",
+        "owner_display_name": "Yifei Dong",
         "created_when": "2026-09-27T11:01:01.621167Z",
         "name": "havln-phase1-startingKit",
         "type": "starting_kit",
@@ -123,14 +123,120 @@
       },
       "is_final_phase": true,
       "used_submissions_per_day": 0,
-      "used_submissions_per_person": 0
+      "used_submissions_per_person": 0,
+      "is_parallel": true,
+      "is_locked_phase": false
+    },
+    {
+      "id": 31178,
+      "index": 1,
+      "start": "2026-10-30T17:00:00Z",
+      "end": "2026-11-30T23:59:00Z",
+      "name": "Phase 2: Final Evaluation",
+      "description": "Submit one JSON file with split: \"test\" covering all 3,408 test episodes.",
+      "status": "Current",
+      "execution_time_limit": 3600,
+      "tasks": [
+        {
+          "task": "c2bc8acc-89a8-492d-85b4-3029209bf932",
+          "order_index": 0,
+          "phase": 31178,
+          "id": 36881,
+          "value": "c2bc8acc-89a8-492d-85b4-3029209bf932",
+          "key": "c2bc8acc-89a8-492d-85b4-3029209bf932",
+          "created_when": "2026-10-30T00:29:39.808372Z",
+          "name": "HA-VLN Phase 2 Scoring",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 1074728,
+              "created_by": "yifeidong",
+              "owner_display_name": "Yifei Dong",
+              "created_when": "2026-10-30T06:43:25.542446Z",
+              "name": "phase2_havln2_reference_v2",
+              "type": "reference_data",
+              "description": "phase2_havln2_reference_v2",
+              "is_public": false,
+              "key": "ae4b62fe-7174-4f21-abcc-e325d80c0952",
+              "value": "ae4b62fe-7174-4f21-abcc-e325d80c0952",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 18135,
+                  "title": "RoboWorld 2026 — Track 2: HA-VLN"
+                }
+              ],
+              "competition": null,
+              "file_name": "phase2_roboworld26_reference.zip",
+              "file_size": 8536.0
+            },
+            {
+              "id": 1074730,
+              "created_by": "yifeidong",
+              "owner_display_name": "Yifei Dong",
+              "created_when": "2026-10-30T06:43:48.498188Z",
+              "name": "phase2_havln2_program_v2",
+              "type": "scoring_program",
+              "description": "phase2_havln2_program_v2",
+              "is_public": false,
+              "key": "8d70b6b9-2ce1-4bad-842b-a43cbf6572cb",
+              "value": "8d70b6b9-2ce1-4bad-842b-a43cbf6572cb",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 18135,
+                  "title": "RoboWorld 2026 — Track 2: HA-VLN"
+                }
+              ],
+              "competition": null,
+              "file_name": "phase2_roboworld26_program.zip",
+              "file_size": 44894.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 200,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": {
+        "id": 1074049,
+        "created_by": "yifeidong",
+        "owner_display_name": "Yifei Dong",
+        "created_when": "2026-10-30T00:25:17.333526Z",
+        "name": "phase2_havln2_starting_kit",
+        "type": "starting_kit",
+        "description": "phase2_havln2_starting_kit",
+        "is_public": false,
+        "key": "d38c43f7-6d76-4aab-a915-58d290dbbbff",
+        "value": "d38c43f7-6d76-4aab-a915-58d290dbbbff",
+        "was_created_by_competition": false,
+        "in_use": [
+          {
+            "pk": 18135,
+            "title": "RoboWorld 2026 — Track 2: HA-VLN"
+          }
+        ],
+        "competition": null,
+        "file_name": "phase2_roboworld26_starting_kit.zip",
+        "file_size": 25261.0
+      },
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0,
+      "is_parallel": false,
+      "is_locked_phase": false
     }
   ],
   "leaderboards": [
     {
       "id": 20270,
       "primary_index": 0,
-      "title": "Phase 1 Ranking",
+      "title": "Ranking",
       "key": "phase1_ranking",
       "columns": [
         {
@@ -194,8 +300,8 @@
     }
   ],
   "description": "Human-aware vision-and-language navigation in continuous 3D environments with dynamic humans. A RoboWorld 2026 Track 2 challenge jointly organized with RoboPAD 2026.",
-  "participants_count": 40,
-  "submissions_count": 68,
+  "participants_count": 57,
+  "submissions_count": 139,
   "docker_image": "ghcr.io/jostarxiong/havln-challenge-2026@sha256:243bb660d00b1dce57e82fc1486af2638404602eda3630af8458e9b6fa0b9c14",
   "competition_type": "competition",
   "reward": "Certificates for the top 5 teams; selected teams are invited to present at the RoboPAD Workshop at NeurIPS 2026",

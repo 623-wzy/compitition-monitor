@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NTIRE 2026 3D Content Super-Resolution Challenge  - Track 1 Bicubic Degradation — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>NTIRE 2026 3D Content Super-Resolution Challenge  - Track 1 Bicubic Degradation</h2>
+  <div class="detail-meta">
+    <span>ID: 12891</span>
+    <span>创建者: yi_wang</span>
+    <span>创建时间: 2026-01-18</span>
+    <span>参与人数: 102</span>
+    <span>提交次数: 278</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/12891/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">暂无描述</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development</td><td>2026-01-14</td><td>2026-12-31</td><td>10</td></tr><tr><td><span class='badge badge-test'>测试</span> Testing</td><td>2027-01-01</td><td>2027-01-01</td><td>3</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'>&lt;h1 align=&quot;center&quot;&gt;&lt;b&gt;NTIRE 2026：3D内容超分辨率挑战赛&lt;/b&gt;&lt;/h1&gt;
+
+&lt;h2&gt;重要日期&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;2026-01-15：训练集和验证集数据发布；&lt;br&gt;&lt;/li&gt;
+    &lt;li&gt;2026-01-30：验证服务器上线；&lt;br&gt;&lt;/li&gt;
+    &lt;li&gt;2026-03-10：最终测试数据发布，验证服务器关闭；&lt;br&gt;&lt;/li&gt;
+    &lt;li&gt;2026-03-17：测试结果提交截止日期；&lt;br&gt;&lt;/li&gt;
+    &lt;li&gt;2026-03-17：技术说明书/代码/模型提交截止日期；&lt;br&gt;&lt;/li&gt;
+    &lt;li&gt;2026-03-19：向参赛者公布初步测试成绩；&lt;br&gt;&lt;/li&gt;
+    &lt;li&gt;2026-03-22：挑战赛论文提交截止日期；&lt;br&gt;&lt;/li&gt;
+    &lt;li&gt;2026-03-24：论文录用通知；&lt;br&gt;&lt;/li&gt;
+    &lt;li&gt;2026-04-08：论文定稿提交；&lt;br&gt;&lt;/li&gt;
+    &lt;li&gt;2026-06-18（待定）：研讨会日期；&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;赛事简介&lt;/h2&gt;
+
+除传统的图像和视频外，3D内容因其能够提供场景的外观与几何信息而获得了极大的普及。近年来，得益于3D生成与重建技术的进步，3D内容数量呈指数级增长。然而，当前的3D生成模型仍然存在质量相对较低的问题。对于3D重建任务而言，由于现实世界中的各种限制条件，观测到的多视图图像通常分辨率较低，最终导致重建出的3D内容质量下降。在AR/VR等应用中，提高这些3D内容的分辨率对于提供沉浸式体验以及帮助解析现实世界有着迫切需求。&lt;br&gt;
+
+近年来，图像超分辨率（SR）领域取得了显著进展，用于提升图像的视觉质量。为提升3D内容质量，一种直接的方法是采用现成的图像超分辨率模型对渲染图像进行超分处理。然而，这种方法忽略了几何信息与外观信息之间紧密耦合的关系，导致多视图不一致性和闪烁伪影等问题。&lt;br&gt;
+ 
+在本次挑战赛中，我们旨在建立3D内容超分辨率的基准评测。我们希望突出3D内容超分辨率所面临的具体挑战和研究问题。我们期待本次挑战赛能够激励学术界探索底层视觉与3D视觉的交叉领域，并最终推动AR/VR等新兴应用的技术进步。&lt;br&gt;&lt;br&gt;
+
+&lt;h2&gt;赛事说明&lt;/h2&gt;
+
+&lt;a href=&quot;https://www.cvlai.net/ntire/2026/&quot;&gt;第八届NTIRE：图像恢复与增强新趋势研讨会&lt;/a&gt;将于2026年6月与CVPR 2026联合举办。&lt;br&gt;
+
+本次挑战赛的目标是从低分辨率（LR）3D内容重建高分辨率（HR）3D内容。在开发阶段，将发布验证集。参赛者可通过将结果提交至验证服务器来评估其模型在验证集上的表现。具体而言，需要在给定相机内参和外参的条件下渲染超分辨率图像，然后提交至服务器进行在线评估。
+在测试阶段，将发布测试集，其中仅包含低分辨率3D内容。挑战赛参赛者需将训练好的模型应用于低分辨率3D内容以生成超分辨率结果。随后，将这些结果提交至服务器，由组织者进行评估。&lt;br&gt;
+
+本次挑战赛设有两个赛道：
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href=&quot;https://www.codabench.org/competitions/12891/&quot;&gt;赛道1：双三次退化&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
+	本赛道的目标是在双三次退化（Matlab中的$imresize$函数，采用双三次模式）条件下获得超分辨率3D内容。
+	&lt;li&gt;&lt;a href=&quot;https://www.codabench.org/competitions/12894/&quot;&gt;赛道2：真实场景退化&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
+	本赛道的目标是在真实场景退化条件下获得超分辨率3D内容。
+&lt;/ul&gt;
+
+&lt;h2&gt;组织者&lt;/h2&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href=&quot;https://longguangwang.github.io/&quot;&gt;王龙光&lt;/a&gt;（wanglg9@mail.sysu.edu.cn），中山大学&lt;br&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://yulanguo.me/&quot;&gt;郭裕兰&lt;/a&gt;（guoyulan@sysu.edu.cn），中山大学&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;</div></div><div class='section'><h3>Data</h3><div class='page-content'>&lt;h1 align=&quot;center&quot;&gt;&lt;b&gt;NTIRE 2026：三维内容超分辨率挑战赛&lt;/b&gt;&lt;/h1&gt;
+
+
+&lt;h2&gt;赛道1：双立方退化&lt;/h2&gt;
+
+&lt;b&gt;(1) 训练集&lt;/b&gt;&lt;br&gt;
+
+本挑战赛不提供训练集，鼓励参赛者使用多样化的外部数据集，包括但不限于图像超分辨率数据集、深度图超分辨率数据集、多视角数据集和三维重建数据集，以提升三维内容的质量。&lt;br&gt;&lt;br&gt;
+
+&lt;b&gt;(2) 验证集&lt;/b&gt;&lt;br&gt;
+	
+验证集包含低分辨率三维内容（使用分辨率为342×228的图像训练得到，&lt;a href=&quot;https://www.jianguoyun.com/p/DTTUxjwQ1Zb_DRiz9JoGIAA&quot;&gt;第1部分&lt;/a&gt;和&lt;a href=&quot;https://www.jianguoyun.com/p/DUH4tpMQ1Zb_DRi19JoGIAA&quot;&gt;第2部分&lt;/a&gt;）以及高分辨率图像/深度图（1368×912）及其对应的&lt;a href=&quot;https://www.jianguoyun.com/p/DVZDB1gQ1Zb_DRiU9JoGIAA&quot;&gt;相机位姿&lt;/a&gt;。参赛者可以下载验证集，通过将其超分辨率重建后的图像/深度图与高分辨率图像/深度图进行对比，来评估所开发模型的性能。鼓励参赛者撰写论文描述其方法，并使用发布的验证集进行性能评估。&lt;br&gt;&lt;br&gt;
+
+&lt;b&gt;(3) 测试集&lt;/b&gt;&lt;br&gt;
+
+为对提交的模型进行排名，提供了包含两个三维场景的测试集。与验证集不同，测试集仅发布&lt;a href=&quot;https://www.jianguoyun.com/p/DU4aPaYQ18WLDhjXg54GIAA&quot;&gt;低分辨率三维内容&lt;/a&gt;（使用分辨率为342×228的图像训练得到）和一组&lt;a href=&quot;https://www.jianguoyun.com/p/Daju7F0Q1Zb_DRiJ9JoGIAA&quot;&gt;相机位姿&lt;/a&gt;。参赛者必须将模型应用于发布的低分辨率三维内容，并将给定相机位姿处的超分辨率图像/深度图（1368×912）提交至服务器。&lt;br&gt;&lt;br&gt;
+
+&lt;h2&gt;赛道2：真实场景退化&lt;/h2&gt;
+
+&lt;b&gt;(1) 训练集&lt;/b&gt;&lt;br&gt;
+
+本挑战赛不提供训练集，鼓励参赛者使用多样化的外部数据集，包括但不限于图像超分辨率数据集、深度图超分辨率数据集、多视角数据集和三维重建数据集，以提升三维内容的质量。&lt;br&gt;&lt;br&gt;
+
+&lt;b&gt;(2) 验证集&lt;/b&gt;&lt;br&gt;
+
+验证集包含&lt;a href=&quot;https://www.jianguoyun.com/p/DSNkhv0Q1Zb_DRih9JoGIAA&quot;&gt;低分辨率三维内容&lt;/a&gt;（使用分辨率为342×228的图像训练得到）以及高分辨率图像/深度图（1368×912）及其对应的&lt;a href=&quot;https://www.jianguoyun.com/p/DVZDB1gQ1Zb_DRiU9JoGIAA&quot;&gt;相机位姿&lt;/a&gt;。参赛者可以下载验证集，通过将其超分辨率重建后的图像/深度图与高分辨率图像/深度图进行对比，来评估所开发模型的性能。鼓励参赛者撰写论文描述其方法，并使用发布的验证集进行性能评估。&lt;br&gt;&lt;br&gt;
+
+&lt;b&gt;(3) 测试集&lt;/b&gt;&lt;br&gt;
+
+为对提交的模型进行排名，提供了包含两个三维场景的测试集。与验证集不同，测试集仅发布&lt;a href=&quot;https://www.jianguoyun.com/p/DaVm3REQ18WLDhjfg54GIAA&quot;&gt;低分辨率三维内容&lt;/a&gt;（使用分辨率为342×228的图像训练得到）和一组&lt;a href=&quot;https://www.jianguoyun.com/p/Daju7F0Q1Zb_DRiJ9JoGIAA&quot;&gt;相机位姿&lt;/a&gt;。参赛者必须将模型应用于发布的低分辨率三维内容，并将给定相机位姿处的超分辨率图像/深度图（1368×912）提交至服务器。&lt;br&gt;&lt;br&gt;</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'>&lt;h1 align=&quot;center&quot;&gt;&lt;b&gt;NTIRE 2026：3D内容超分辨率挑战赛&lt;/b&gt;&lt;/h1&gt;
+&lt;h2&gt;评估&lt;/h2&gt;
+
+本挑战赛的目标是从低分辨率（LR）对应样本重建高分辨率（HR）3D内容。在开发和测试阶段，参赛选手将提交超分辨率结果。计算评估指标的示例代码可在&lt;a href=&quot;https://drive.google.com/file/d/1cYcP898xBpNWR-bGKKyFECymZkieN11a/view?usp=drive_link&quot;&gt;此处&lt;/a&gt;找到。&lt;br&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;b&gt;赛道1：双三次退化解&lt;/b&gt;&lt;br&gt;&lt;/li&gt;
+    给定场景的多视角图像，使用双三次退化（Matlab双三次模式下的$imresize$函数）生成低分辨率图像。&lt;/ul&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;b&gt;赛道2：真实感退化解&lt;/b&gt;&lt;br&gt;&lt;/li&gt;
+    给定场景的多视角图像，采用包含随机模糊、下采样、噪声和压缩的真实感退化模型来合成低分辨率图像。
+&lt;/ul&gt;
+对于定量评估，我们为每个测试3D内容选择M个相机位姿来渲染M张图像及相应的深度图。随后，使用PSNR评估视觉质量，使用EPE评估几何精度。用于排名的最终得分计算公式如下：
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;https://pic1.imgdb.cn/item/6958eed2da3df73ea1bca10e.png&quot;, width=&quot;50%&quot;&gt;&lt;/div&gt;
+
+&lt;h2&gt;提交&lt;/h2&gt;
+
+在开发阶段，参赛选手可以在验证集上提交结果，以从Codabench服务器获得反馈。在测试阶段，参赛选手将提交测试集的完整结果。该结果应与最后一次提交到Codabench的内容一致。&lt;br&gt;
+
+提交的结果应包含在给定相机内参和外参下，从超分辨率3D内容渲染的图像和深度图（1368x912）。请注意，内参和外参文件可在此处获取（&lt;a href=&quot;https://www.jianguoyun.com/p/DVZDB1gQ1Zb_DRiU9JoGIAA&quot;&gt;验证集位姿&lt;/a&gt;和&lt;a href=&quot;https://www.jianguoyun.com/p/Daju7F0Q1Zb_DRiJ9JoGIAA&quot;&gt;测试集位姿&lt;/a&gt;），并且应使用以下示例代码中的相机索引进行渲染。
+&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;https://i.imgs.ovh/2026/01/19/ybyjfa.png&quot;, width=&quot;100%&quot;&gt;&lt;/div&gt;
+&lt;br&gt;
+
+提交结果时，创建一个包含所有结果图像和深度图的ZIP压缩包。渲染图像和深度图的命名方式应与验证集和测试集中的相机内参和外参文件保持一致。有效的示例虚拟提交文件可在&lt;a href=&quot;https://www.jianguoyun.com/p/DS7pUnsQleb6DRiD4ZoGIAA&quot;&gt;此处&lt;/a&gt;找到。&lt;br&gt;
+
+&lt;div style=&quot;background-color: #DDD; border: 5pt&quot;&gt;
+
+测试阶段结束后，参赛选手需要1）填写&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLSdx7w348lLapHfupaHDwkSRXIhN8Lxzksat1nUIlNtK9v6cnQ/viewform&quot;&gt;在线表格&lt;/a&gt;，2）通过电子邮件向官方提交账户（&lt;strong&gt;ntire.3dsr@outlook.com&lt;/strong&gt;）发送一个压缩包（包含事实说明书、源码和最终结果，事实说明书示例可在&lt;a href=&quot;https://www.jianguoyun.com/p/DbxH8hgQleb6DRi_6pgGIAA&quot;&gt;此处&lt;/a&gt;找到）。最终提交应遵循以下规则：&lt;br&gt;
+&lt;ul&gt;
+	&lt;li&gt;提交的结果必须与最后一次提交到Codabench的方法相同。我们将检查一致性。否则，该提交无效。&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;
+	
+&lt;ul&gt;
+	&lt;li&gt;必须同时提交测试源代码（或可执行文件）和训练代码。可复现性是必要条件。&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;
+	
+&lt;ul&gt;
+    &lt;li&gt;应一并提交描述方法细节的事实说明书。数据集中提供了事实说明书格式。参赛选手必须提交编译后的pdf文件和tex源文件。我们鼓励参赛选手提供详细说明并附上图像源文件。这有助于撰写挑战赛总结报告。&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+
+最终测试阶段的每个参赛团队应使用提供的事实说明书模板来描述他们的解决方案。&lt;br&gt;
+
+&lt;h3&gt;电子邮件&lt;/h3&gt;</div></div>
+
+</div>
+</body>
+</html>

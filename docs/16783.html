@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mini-MNIST Digit Classification — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>Mini-MNIST Digit Classification</h2>
+  <div class="detail-meta">
+    <span>ID: 16783</span>
+    <span>创建者: njuwallspider</span>
+    <span>创建时间: 2026-05-30</span>
+    <span>参与人数: 6</span>
+    <span>提交次数: 17</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/16783/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">一个每类20张训练图像和5张测试图像的迷你MNIST挑战。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-other'>其他</span> Competition Phase</td><td>2026-01-01</td><td>2027-01-01</td><td>5</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'># 🏆 Mini-MNIST 数字分类挑战赛
+
+欢迎参加 **Mini-MNIST 挑战赛！** 这是经典 MNIST 基准测试的精简轻量版本。
+
+无论您是初次尝试计算机视觉模型的初学者，还是试图从微小数据集中榨取最高精度的专家，本挑战赛都设计得易于上手、快速且有趣！
+
+---
+
+## 🎯 挑战目标
+目标很简单：对 **0 到 9** 的手写数字进行分类。
+
+然而，这里有个转折！与提供 60,000 张训练图像的标准 MNIST 数据集不同，您面临的是一个**小样本学习**场景。您只能访问数量严格受限的训练样本。您的算法必须从极少的数据中学习泛化特征。
+
+---
+
+## 📊 数据集限制
+我们精心策划了一个完美平衡的迷你数据集。虽然后端原生以 PNG 格式处理图像，但数据摄取系统会自动将它们作为 NumPy 数组加载到您的模型中：
+
+*   **训练集：** 恰好 **200 张图像**（每个数字 20 张）。
+*   **测试集：** 恰好 **50 张图像**（每个数字 5 张），隐藏用于最终评分。
+*   **图像格式：** 摄取程序将数据以 `(28, 28)` 灰度 NumPy 数组的形式传递给您的模型
+
+---
+
+## 💻 如何参与
+* 注册参加比赛
+* 按照以下说明操作：
+
+### 1. 构建您的模型
+创建一个名为 `model.py` 的单一 Python 文件。在此文件中，实现一个包含两个必需方法的 `Model` 类：
+
+```python
+class Model:
+    def __init__(self):
+        # 在此初始化您的分类器
+        pass
+
+    def fit(self, X_train, y_train):
+        # X_train 形状：(N, 28, 28)
+        # y_train 形状：(N,)
+        pass
+
+    def predict(self, X_test):
+        # X_test 形状：(M, 28, 28)
+        # 返回形状为 (M,) 的预测数组
+        pass
+```
+
+### 2. 提交到 Codabench
+当您的脚本准备好后：
+1. 将您的 `model.py` 文件压缩成 `.zip` 归档文件。
+2. 导航到 **我的提交** 标签页。
+3. 上传您的归档文件，并观看您的分数出现在排行榜上！</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'># 评估
+
+提交结果将根据其在测试集上的准确率进行评估。
+
+## 评估指标
+准确率的计算方式为：
+$Accuracy = \frac{\text{正确预测数}}{\text{总图像数}}$
+
+排行榜将显示准确率得分，其中 $1.0$ 表示满分（100% 正确）。</div></div>
+
+</div>
+</body>
+</html>

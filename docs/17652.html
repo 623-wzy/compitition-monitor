@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pan-cancer Segmentation in CT Images: RECIST-to-3D Task2 — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>Pan-cancer Segmentation in CT Images: RECIST-to-3D Task2</h2>
+  <div class="detail-meta">
+    <span>ID: 17652</span>
+    <span>创建者: junma</span>
+    <span>创建时间: 2026-07-23</span>
+    <span>参与人数: 25</span>
+    <span>提交次数: 117</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/17652/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">CT影像中的泛癌分割：RECIST-to-3D</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> Development Phase</td><td>2026-07-01</td><td>2026-12-31</td><td>5</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'>## &lt;center&gt; CT影像中的泛癌分割（任务2）：从RECIST到三维 &lt;/center&gt;
+
+
+
+---
+
+医学影像中的器官和肿瘤分割，特别是基于三维CT扫描的分割，对于准确诊断、治疗规划和监测疾病进展至关重要。本竞赛旨在促进通用CT扫描中泛癌分割模型的发展，具有以下三个主要特点：
+
+- 在笔记本电脑上实现从[RECIST](https://doi.org/10.3389/fonc.2021.800547)（二维直径标记）到三维分割（推理时不使用GPU） 
+- 数据集：10,000+个CT扫描，覆盖全身各部位癌种
+- 评估指标：分割精度（DSC、NSD）和分割效率（运行时间及可容忍的GPU消耗）
+
+&lt;img src=&quot;https://s2.loli.net/2025/05/14/5RahsvVd4lxjAIN.png&quot; alt=&quot;01&quot; width=&quot;922&quot; height=&quot;640&quot; /&gt;
+
+---
+
+## 🚀 加入挑战（2026.04.01-8.30）
+
+
+
+#### 第一步：加入挑战并下载数据
+
+* 在本网站注册账户并加入挑战
+* 填写[报名表](https://forms.gle/my1MimQ758oDyhWb9)。注意：如需更改团队信息，请直接重新提交表单。
+* 申请数据集[子任务2](https://huggingface.co/datasets/FLARE-MedFM/FLARE-Task1-PancancerRECIST-to-3D) 
+* 在[我的提交](https://www.codabench.org/competitions/7149/#/participate-tab)页面提交[任务2基线模型](https://drive.google.com/file/d/16nz_2UJLvsaVoqF1_oIWffu7J6UaU5UA/view?usp=drive_link)以测试您的账户。 
+
+注意事项：
+* 参与者可以只参加一个子任务，也可以同时参加两个任务。 
+* 允许使用公开预训练模型，但请在2026年4月1日前先在[论坛](https://www.codabench.org/forums/7048/1161/)发布模型链接。 
+
+
+---
+
+## 🏊‍ 验证提交（2026.4.20-8.30）
+
+* 所有团队均可直接在竞赛页面提交分割结果以获取分割精度指标。
+* 所有团队也可以提交Docker镜像。为避免提交拥堵，每队每月可提交一次Docker镜像。
+* 如需提交Docker镜像，请发送邮件至（medseg20s@gmail.com）：（邮件主题：PanCancerSeg-您的团队名称-团队负责人姓名-验证提交）
+
+	(1) Docker容器的下载链接（teamname.tar.gz）。
+
+	(2) 合理性测试视频记录。请在验证集上测试您的Docker镜像并录制预测过程。对每个病例，运行时间应在60秒内。
+
+* 评估完成后，我们将通过邮件返回指标。
+
+### 基线模型仓库：https://github.com/medfm-flare/MedSAM2-RECIST
+### 基线模型结果下载[点击此处](https://drive.google.com/file/d/16nz_2UJLvsaVoqF1_oIWffu7J6UaU5UA/view?usp=drive_link)（与步骤1相同）
+
+### 提交格式
+
+提交单个ZIP文件，其内容位于一个扁平目录中（无子文件夹）：
+
+```
+submission.zip
+├── Colon_001.npz            # 每个病例一个.npz文件
+├── Kidney_001.npz
+├── Liver_001.npz
+└── ...
+```
+
+**分割掩膜**——每个病例一个文件，命名为`{标识符}.npz`（例如`Colon_001.npz`），以数组键`segs`存储，数据类型为`uint8`，形状与输入`imgs`数组`(D, H, W)`相同。
+
+```python
+np.savez_compressed(&quot;Colon_001.npz&quot;, segs=segs.astype(np.uint8))
+```
+
+**必须保留实例标签**——病灶`k`标记为id`k`，与其RECIST提示在输入`recist`数组中的id匹配：
+
+| 输入`recist`标签 | 您的`segs`标签 | 与以下对比评分 |
+|---|---|---|
+| `1` | `1` | 真实病灶`1` |
+| `2` | `2` | 真实病灶`2` |
+| `3` | `3` | 真实病灶`3` |
+
+指标按**每个病灶**计算，因此将所有病灶合并为标签`1`的掩膜在多病灶病例中得分将接近于零。
+
+**指标：**
+
+| 指标 | 描述 |
+|---|---|
+| `Lesion_DSC` | Dice相似系数，按病灶id计算 |
+| `Lesion_NSD` | 归一化表面距离，按病灶id计算，容差=1.0毫米 |
+
+
+注意事项：
+
+* 请勿将文件包装在顶层文件夹中——评分器直接查找`{identifier}.npz`，因此嵌套目录会导致每个病例都被报告为缺失，评分</div></div><div class='section'><h3>Organizers</h3><div class='page-content'># 组织者
+## 负责人
+Jun Ma（大学健康网络）
+
+Zongwei Zhou（约翰霍普金斯大学）
+
+Chenyu You（纽约州立大学石溪分校）
+
+Wenxuan Li（约翰霍普金斯大学）
+
+Benjamin Haibe-Kains（多伦多大学；大学健康网络；Vector 研究所）
+
+Yuyin Zhou（加州大学圣克鲁兹分校）
+
+Bo Wang（多伦多大学；大学健康网络；Vector 研究所）
+
+## 协调员
+Keishi Suzuki（多伦多大学）
+
+Baidu Li（大学健康网络）
+
+Yifei Fang（纽约州立大学石溪分校）
+
+## 基线模型贡献者
+如果您愿意为基线模型做出贡献，请联系 jun.ma2@uhn.ca。我们愿意在竞赛网站和总结论文中致谢您的贡献。
+
+## 数据贡献者
+如果您愿意为隐藏测试贡献数据，请联系 jun.ma2@uhn.ca。我们愿意在竞赛网站和总结论文中致谢您的贡献。
+
+PANORAMA
+
+* Natália Alves，诊断图像分析组，医学影像科，拉德堡德大学医学中心，荷兰奈梅亨
+* Megan Schuurmans，诊断图像分析组，医学影像科，拉德堡德大学医学中心，荷兰奈梅亨
+* Geert Litjens，计算病理学组，病理科，拉德堡德大学医学中心，荷兰奈梅亨
+* John Hermans，医学影像科，拉德堡德大学医学中心，荷兰奈梅亨
+* Henkjan Huisman，诊断图像分析组，医学影像科，拉德堡德大学医学中心，荷兰奈梅亨
+* Dawid Rutkowski，外科与肿瘤科，卡罗林斯卡大学医院，瑞典斯德哥尔摩
+* J-Matthias Löhr，外科与肿瘤科，卡罗林斯卡大学医院，瑞典斯德哥尔摩
+* Marjolein H Liedenbaum，放射科，豪克兰大学医院，挪威卑尔根
+* Ingfrid S Haldorsen，放射科，豪克兰大学医院，挪威卑尔根
+* Anders Molven，临床医学系，卑尔根大学，挪威卑尔根
+* Derya Yakar，放射科，格罗宁根大学医学中心，荷兰格罗宁根
+* Jeroen Geerdink，特温特医院集团，荷兰阿尔梅洛</div></div><div class='section'><h3>Dataset</h3><div class='page-content'># 数据集
+
+数据下载链接将通过邮件发送给获批团队。请确保您能够从 Google Drive 或百度网盘下载大文件，并有足够的存储空间和计算资源来处理这些数据。
+
+训练集：10000+ CT 扫描
+
+验证集：100 例包含多种癌症类型的 CT 扫描
+
+测试集：500 例包含多种癌症类型的 CT 扫描
+
+文件夹结构（下载链接将发送给注册通过的合格参赛者）：
+
+Train-Labeled：这是一个部分标注的数据集。每个病例仅标注了原发病灶，其他病灶可能未被标注（例如转移性病灶）。在最终测试集中，所有病灶均已标注。参赛者只能使用影像数据进行模型开发，不提供额外的临床数据。
+
+Train-Unlabel（可选使用）：仅提供影像，病灶标注不可用。对于腹部影像，我们还提供了伪标签，这些标签由 FLARE23 获胜方案生成。
+
+Validation-Public：同时提供影像和标注。请勿将其用于模型训练！
+
+Validation-Hidden：隐藏验证集的标注将不会公开。请在 codabench 上提交分割结果以获取评估指标。
+
+注意事项：
+
+请勿将公开验证集用于模型训练！
+
+测试集还将包含健康病例（无病灶）。请注意假阳性问题。
+
+所有隐藏测试影像均来自新的医疗中心，这些数据在竞赛期间不会公开。请提交算法的 Docker 容器，主办方将在隐藏测试集上进行评估。
+
+公开数据集和模型
+
+本竞赛允许使用公开数据集和模型（例如 CT-RATE、Merlin）。为确保所有参赛者都能访问相同的公开数据集和模型，请在 7 月 31 日前在论坛发布数据集和模型链接。</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'># 评估
+
+分割准确率指标：
+
+Dice相似系数（DSC）
+归一化表面距离（NSD）
+
+分割效率指标：
+
+运行时间（秒）。我们给予运行时间45秒的容差（包括Docker启动时间）。此外，每个病例的推理时间应在60秒内。否则，相应病例将被视为失败病例（DSC=0，NSD=0）。
+运行时间
+
+GPU内存消耗（GPU内存-时间曲线下面积）。
+GPU内存
+
+所有指标将用于计算排名。我们给予GPU内存消耗4GB的容差，GPU内存 = max(0, 实际GPU内存-4096MB)，因为所有之前的顶尖队伍（即FLARE21-23）都能在此容差内达到最先进的分割准确率。我们还给予运行时间容差（FLARE 2023获胜方案的运行时间），因为它满足典型临床需求且代码已公开。
+
+评估代码已公开于：https://github.com/JunMa11/FLARE
+
+```
+docker load -i teamname.tar.gz
+docker container run -m 8G --name teamname --rm -v $PWD/PanCancerSeg_Test/:/workspace/inputs/ -v $PWD/teamname_outputs/:/workspace/outputs/ teamname:latest /bin/bash -c &quot;sh predict.sh&quot;
+```
+
+## 评估平台
+
+提交的Docker容器将在Ubuntu 20.04台式机上进行评估。详细信息如下：
+
+CPU：Intel® Xeon(R) W-2133 CPU @ 3.60GHz × 12
+GPU：NVIDIA QUADRO RTX5000 (16G)
+内存：28G
+驱动版本：510.39.01
+CUDA版本：11.6
+Docker版本 20.10.13
+
+## 排名方案
+
+遵循ChallengeR [1]中的建议，排名方案包括以下三个步骤：
+
+步骤1：对于每个测试病例，我们计算四个指标；
+
+步骤2：针对500个测试病例中的每一个以及每个指标对参赛者进行排名；因此，每位参赛者将有2000个（500×4）排名。
+
+步骤3：对所有这些排名取平均值。
+
+[1] Wiesenfarth, M., Reinke, A., Landman, B.A. et al. Methods and open-source toolkit for analyzing and visualizing challenge results. Sci Rep 11, 2369 (2021).</div></div><div class='section'><h3>MICCAI Program</h3><div class='page-content'>无法直接访问外部图片链接。请提供图片中的英文文本内容，或粘贴可复制的文字，我将为您准确翻译成简体中文。</div></div><div class='section'><h3>Awards</h3><div class='page-content'>## CVPR FLARE 2026 获奖名单
+
+&lt;h3&gt;🏆 AIDA RAO Mayo Clinic&lt;/h3&gt;
+&lt;p&gt;
+  &lt;a href=&quot;https://github.com/xinformatics/miccaiflare2026task1&quot; target=&quot;_blank&quot;&gt;💻 代码&lt;/a&gt;
+  &amp;nbsp;|&amp;nbsp;
+  &lt;a href=&quot;https://openreview.net/forum?id=sbrp9WtYTl&quot; target=&quot;_blank&quot;&gt;📄 论文&lt;/a&gt;
+&lt;/p&gt;
+&lt;a href=&quot;https://raw.githubusercontent.com/Bardli/FLARE2026-images/main/FLARE26-awards/1.png&quot; target=&quot;_blank&quot;&gt;
+  &lt;img src=&quot;https://raw.githubusercontent.com/Bardli/FLARE2026-images/main/FLARE26-awards/1.png&quot;
+       alt=&quot;FLARE2026 获奖证书 — AIDA RAO Mayo Clinic&quot;
+       style=&quot;width:100%; max-width:1000px; height:auto;&quot;&gt;
+&lt;/a&gt;
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;h3&gt;🏆 RMH AI Hub&lt;/h3&gt;
+&lt;p&gt;
+  &lt;a href=&quot;https://github.com/antoniocandito/Recist2Seg_OsiriXgrpc/&quot; target=&quot;_blank&quot;&gt;💻 代码&lt;/a&gt;
+  &amp;nbsp;|&amp;nbsp;
+  &lt;a href=&quot;https://openreview.net/forum?id=2E53svXdTe&quot; target=&quot;_blank&quot;&gt;📄 论文&lt;/a&gt;
+&lt;/p&gt;
+&lt;a href=&quot;https://raw.githubusercontent.com/Bardli/FLARE2026-images/main/FLARE26-awards/2.png&quot; target=&quot;_blank&quot;&gt;
+  &lt;img src=&quot;https://raw.githubusercontent.com/Bardli/FLARE2026-images/main/FLARE26-awards/2.png&quot;
+       alt=&quot;FLARE2026 获奖证书 — RMH AI Hub&quot;
+       style=&quot;width:100%; max-width:1000px; height:auto;&quot;&gt;
+&lt;/a&gt;
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;h3&gt;🏆 team214&lt;/h3&gt;
+&lt;p&gt;
+  &lt;a href=&quot;https://github.com/YaliShanda985/MICCAI-FLARE-2026-Task1-Subtask2&quot; target=&quot;_blank&quot;&gt;💻 代码&lt;/a&gt;
+  &amp;nbsp;|&amp;nbsp;
+  &lt;a href=&quot;https://openreview.net/forum?id=JYnUy4TNI5&quot; target=&quot;_blank&quot;&gt;📄 论文&lt;/a&gt;
+&lt;/p&gt;
+&lt;a href=&quot;https://raw.githubusercontent.com/Bardli/FLARE2026-images/main/FLARE26-awards/3.png&quot; target=&quot;_blank&quot;&gt;
+  &lt;img src=&quot;https://raw.githubusercontent.com/Bardli/FLARE2026-images/main/FLARE26-awards/3.png&quot;
+       alt=&quot;FLARE2026 获奖证书 — team214&quot;
+       style=&quot;width:100%; max-width:1000px; height:auto;&quot;&gt;
+&lt;/a&gt;</div></div>
+
+</div>
+</body>
+</html>

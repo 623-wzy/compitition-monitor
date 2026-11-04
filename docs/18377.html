@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ego-IRG Challenge: Egocentric Interaction Reasoning and Pixel Grounding — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>Ego-IRG Challenge: Egocentric Interaction Reasoning and Pixel Grounding</h2>
+  <div class="detail-meta">
+    <span>ID: 18377</span>
+    <span>创建者: yuggie</span>
+    <span>创建时间: 2026-10-15</span>
+    <span>参与人数: 1</span>
+    <span>提交次数: 3</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/18377/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">一个第一人称视角交互理解基准，要求模型从第一人称图像和交互查询中生成连贯的文本分析和细粒度像素级定位掩码。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-test'>测试</span> Evaluation Phase</td><td>2026-01-01</td><td>2026-12-31</td><td>20</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Participation</h3><div class='page-content'># 如何参与
+
+## 步骤1：创建Codabench账户
+
+访问 Codabench.org 并点击右上角的&quot;注册&quot;。您需要提供姓名和有效的电子邮件地址。注册完成后，您可以浏览并加入任何公开的基准测试。
+
+## 步骤2：注册Ego-IRGBench
+
+前往 Ego-IRG Challenge 竞赛页面，点击&quot;我的提交&quot;标签。系统将提示您接受竞赛的条款和条件。由于这是一个启用了自动批准的公开挑战赛，您在接受规则后即可立即参与。
+
+## 步骤3：下载数据集并准备模型
+
+Ego-IRGBench 数据集托管在 [Hugging Face](https://huggingface.co/datasets/yuki3585/Ego-IEGBench) 上。请根据官方 [ANNEXE 仓库](https://yuggiehk.github.io/annexe/) 中的说明下载并准备数据。该数据集包含超过 2 万张第一人称视角图像，带有 160 万个查询-答案-掩码对，分为训练集、验证集和测试集。
+
+在训练集上训练您的模型，并在测试集上生成预测结果。
+
+## 步骤4：准备提交的ZIP文件
+
+您的提交必须是单个 ZIP 文件（.zip），结构如下：
+
+```text
+submission/
+├── results.json            # 主要结果文件（必需）
+├── mask/                   # 预测的像素级定位掩码（必需）
+│   ├── &lt;query_id&gt;.png
+│   └── ...
+├── depth/                  # 预测的深度图（可选）
+│   └── &lt;image_id&gt;.png
+└── README.md               # 方法摘要（可选）
+```
+
+### results.json 格式
+
+JSON 提交格式由单个 JSON 数组组成，包含测试集中所有图像的每个查询条目。具体而言，JSON 文件应包含一个对象列表，每个对象具有以下属性：
+- *id* 属性，报告查询的唯一标识符（例如，36331）。
+- *image_id* 属性，报告输入的第一人称视角图像的文件名（例如，ZY20210800002_H2_C5_N14_S121_s02_T3_00010.png）。同一图像上的多个查询共享相同的 image_id。
+- *query* 属性，报告输入的视觉问答（VQA）查询，从测试集中逐字复制（例如，&quot;Please analyze the interaction in the image and segment the active objects.&quot;）。
+- *answer_vqa* 属性，报告对 VQA 查询的预测答案（回答子任务）。这应该识别需要分割哪些对象，使用 &lt;MSK&gt;、&lt;MSK_0&gt;、&lt;MSK_1&gt;、... 等占位符（例如，&quot;The mask of the active toy car is &lt;MSK&gt;.&quot;）。对于无目标查询，答案应表明未找到合适的结果。
+- *answer_caption* 属性，报告预测的交互描述（分析子任务）。这是对图像中所描绘交互的流畅自然语言总结（例如，&quot;A toy car is held by the right hand of the person in this image.&quot;）。
+- *mask* 属性，报告相对于 mask/ 目录的预测掩码文件路径（例如，&quot;mask/36331.png&quot;）。对于具有 N 个掩码的多目标查询，提供逗号分隔的路径列表或单个合并的掩码文件。对于无目标查询（with_mask: 0），设置为 null。
+- *with_mask* 属性，报告掩码存在指示符，为整数（&#x27;0&#x27; 或 &#x27;1&#x27;）。如果查询涉及图像中至少一个对象，则为 &#x27;1&#x27;；否则为 &#x27;0&#x27;。
+
+results.json 示例：
+```
+{[
+  &quot;id&quot;: 36331,
+  &quot;image_id&quot;: &quot;ZY20210800002_H2_C5_N14_S121_s02_T3_00010.png&quot;,
+  &quot;query&quot;: &quot;Please analyze the interaction in the image and segment the active objects.&quot;,
+  &quot;answer_vqa&quot;: &quot;The mask of the active toy car is &lt;MSK&gt;.&quot;,
+  &quot;answer_caption&quot;: &quot;A toy car is held by the right hand of the person in this image.&quot;,
+  &quot;mask&quot;: &quot;mask/36331.png&quot;,
+  &quot;with_mask&quot;: 1]
+}
+```
+
+### 重要说明
+
+对于具有 N 个掩码的多目标查询，请提供单个合并的掩码文件。
+对于无目标查询（with_mask: 0），将 mask 设置为 null。
+query 字段必须从测试集中逐字复制——不要改写。
+掩码文件必须是放置在 mask/ 目录下的 PNG 图像</div></div><div class='section'><h3>Timeline</h3><div class='page-content'># 时间安排
+
+## 评测阶段
+
+在此阶段内可随时提交结果。公开排行榜可见，每次提交将针对测试集进行评估。
+
+- **开始**：2026-03-01
+- **结束**：2027-12-31
+- **提交限制**：每天20次，总计100次
+- **执行时间限制**：1800秒
+
+最终排名由最佳提交决定。</div></div>
+
+</div>
+</body>
+</html>

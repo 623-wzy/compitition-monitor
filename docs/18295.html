@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FOR-wood Competition — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>FOR-wood Competition</h2>
+  <div class="detail-meta">
+    <span>ID: 18295</span>
+    <span>创建者: philiphlundberg</span>
+    <span>创建时间: 2026-10-01</span>
+    <span>参与人数: 15</span>
+    <span>提交次数: 35</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/18295/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">与传感器和平台无关的树木点云枝轮及其位置检测，以及树干轮廓估计。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-other'>其他</span> Benchmark Phase</td><td>2026-09-28</td><td>2026-12-31</td><td>2</td></tr><tr><td><span class='badge badge-other'>其他</span> Review Phase</td><td>2027-01-01</td><td>2027-01-02</td><td>5</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Participation</h3><div class='page-content'>&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;https://github.com/philiphlundberg/FOR-wood-assets/raw/main/ST PRINCIPAL COLOR.png&quot; width=&quot;500&quot;&gt;
+&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+## SingleTree项目
+
+SingleTree项目旨在通过关注单株树木来创建更智能的林业系统。这种方法将帮助森林适应气候变化、变得更具韧性，并实现木材资源的更可持续利用。SingleTree将开发基于人工智能和遥感的先进森林监测方法、自适应单株级管理解决方案、用于实施单株作业的智能机械，以及在价值链早期提高可追溯性和预测木材质量的能力，作为优化生物质供应的基础。
+
+欲了解更多信息，请访问 https://singletree.eu/
+
+
+&lt;br&gt;
+
+# 基准测试目标
+本基准测试的目标是收集和评估传感器与平台无关的节疤检测和干形算法的性能。结果将为SingleTree项目提供可在项目链下游使用的方法。
+
+# 奖项
+排名前五的参与者将有机会共同撰写一篇关于本基准测试的论文。每个团队可提名最多两人作为共同作者注册。
+
+# 如何参与
+
+## 阅读参赛条款
+进入&quot;开始使用&quot;下的条款选项卡，阅读参赛条款。如果您未能遵守这些条款，将被取消参赛资格。
+在您的提交材料中，**必须**提供姓名、所属机构（含联系信息）以及方法的简短描述，并附上GitHub仓库链接。
+
+## 下载数据集
+数据集 **FOR-wood** 可从Zenodo下载：https://doi.org/10.5281/zenodo.23012506
+
+## 基准测试
+为进行评估，参与者应使用其模型对下载的测试集进行预测，预测相对于地面的节疤位置、干形直径，或两者兼而有之，并输出两个包含测试数据集中所有树木预测的表格（*.csv）。
+
+对于节疤检测任务，提交包含以下列及大小写的 `branch_references.csv` 表格：
+
+`TreeID`、`Z`、`whorl_number`
+
+评分器使用 `TreeID` 和 `Z` 进行预测匹配，其中 `Z` 为节疤高度（米），`whorl_number` 标识节疤序号。
+
+|TreeID|Z|whorl_number|
+|---|---|---|
+|221|10.8434|1|
+|221|11.2577|2|
+|221|11.5477|3|
+|n|...|...|
+
+
+对于干形预测任务，提交包含以下列及大小写的 `stem_references.csv` 表格：
+
+`TreeID`、`Z`、`D`
+
+`Z` 为高度（米），`D` 为预测的树干直径（米）。
+请在 0.6 米、1.3 米、2 米处提供数值，然后沿树高每米提供一个数值。如果未在评估高度处精确提供数值，评分器将对提交的轮廓进行线性插值。
+
+|TreeID|Z|D|
+|---|---|---|
+|313|0.4903|0.30539|
+|313|1.1375|0.29004|
+|313|1.8426|0.27856|
+|313|4.8407|0.25084|
+|n|...|...|
+
+确保列名与此处所述完全一致。zip压缩包本身可以任意命名，但可以包含一个或两个CSV文件，且每个包含的文件必须使用其确切对应的文件名：
+
+```text
+your_submission.zip
+├── branch_references.csv
+└── stem_references.csv
+```
+
+## 提交限制
+您每天最多可提交 2 次（本阶段共 20 次）。每日限制设为 2 次而非 1 次，是为了防止提交出错（如命名或列不匹配）时，您仍有机会在当天修复并重新提交。
+
+## 查看结果
+提交后，从您的提交面板将结果发布到排行榜。排行榜默认按 F1（节疤检测）排序——如果您仅提交了干形预测，请点击干形列标题（如 RMSE（树干））以按该指标排序排行榜并查看您的排名。
+
+&lt;br&gt;
+&lt;br&gt;
+
+&lt;p align=&quot;left&quot;&gt;
+  &lt;img src=&quot;https://github.com/</div></div><div class='section'><h3>Dataset</h3><div class='page-content'># 数据集
+针对本基准测试，我们构建了一个包含单株树木点云的数据集，并附有描述树干上轮生枝位置及树干削度的标注。数据汇集自瑞典、芬兰和挪威，主要由欧洲赤松组成，并包含少量挪威云杉。
+
+该数据集**FOR-wood**可从Zenodo下载：https://doi.org/10.5281/zenodo.23012506
+
+数据组成包括：
+* **训练数据**：树木点云（laz格式文件）以及轮生枝和削度标注（`branch_references.csv`、`stem_references.csv`）
+* **测试数据**：仅包含树木点云（laz格式文件），无标注
+
+**许可证：** [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)（署名-相同方式共享）。您可以共享和改编该数据集，包括用于商业用途，但须给予适当的署名，并以相同条款许可任何衍生数据集。</div></div><div class='section'><h3>Terms</h3><div class='page-content'># 条款与条件
+
+1. 所有参赛者应使用真实姓名、所属机构（包括院系、大学/研究所/公司全称、国家）及机构邮箱注册本基准测试。不完整和重复的注册将被删除，恕不另行通知。每支队伍最多可有六人。
+
+2. 所有参赛者必须提供GitHub仓库。如果无法通过该仓库复现您的方法，将被移除。
+
+3. 所有参赛者同意将基准测试结果公开。
+
+4. 数据集采用知识共享署名-相同方式共享4.0国际许可协议（CC BY-SA 4.0）共享。下载数据集时可在LICENSE.md中阅读完整许可证。
+
+如竞赛管理员怀疑作弊，该参赛者将被移除出竞赛。</div></div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "id": 16783,
+  "title": "Mini-MNIST Digit Classification",
+  "description": "A mini-MNIST challenge with 20 training images per class and 5 test images per class.",
+  "description_zh": "一个每类20张训练图像和5张测试图像的迷你MNIST挑战。",
+  "created_by": "njuwallspider",
+  "created_when": "2026-05-30T09:06:38.492134Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-30-1780131998/18c01880de0c/logo.png?AWSAccessKeyId=codabench-prod&Signature=ZFN7Ia6l61DSJ5WVmosouqfls9U%3D&Expires=1793784807",
+  "participants_count": 6,
+  "submissions_count": 17,
+  "first_phase_start": null,
+  "phases": [
+    {
+      "id": 27523,
+      "name": "Competition Phase",
+      "start": "2026-01-01T00:00:00Z",
+      "end": "2027-01-01T00:00:00Z",
+      "max_submissions_per_day": 5
+    }
+  ],
+  "pages": [
+    {
+      "index": 0,
+      "title": "Overview",
+      "content": "# 🏆 Mini-MNIST Digit Classification Challenge\n\nWelcome to the **Mini-MNIST Challenge!** This is a streamlined, lightweight version of the classic MNIST benchmark. \n\nWhether you are a beginner experimenting with your first computer vision models or an expert trying to squeeze maximum accuracy out of a tiny dataset, this challenge is designed to be accessible, fast, and fun!\n\n---\n\n## 🎯 Challenge Objective\nThe goal is simple: classify handwritten digits from **0 to 9**. \n\nHowever, there's a twist! Unlike the standard MNIST dataset which provides 60,000 training images, you are faced with a **few-shot learning** scenario. You will only have access to a severely restricted number of training samples. Your algorithm must learn generalized features from minimal data.\n\n---\n\n## 📊 Dataset Constraints\nWe have curated a perfectly balanced mini-dataset. While the backend handles images natively as PNGs formats, the ingestion system automatically loads them as NumPy arrays for your model:\n\n*   **Training Set:** Exactly **200 images** (20 images per digit).\n*   **Test Set:** Exactly **50 images** (5 images per digit) kept hidden for final scoring.\n*   **Image Format:** The ingestion program passes the data to your model as `(28, 28)` grayscale NumPy arrays\n\n---\n\n## 💻 How to Participate\n* Register to the competition\n* Follow the instructions below:\n\n### 1. Build Your Model\nCreate a single Python file named `model.py`. Inside this file, implement a `Model` class with two required methods:\n\n```python\nclass Model:\n    def __init__(self):\n        # Initialize your classifier here\n        pass\n\n    def fit(self, X_train, y_train):\n        # X_train shape: (N, 28, 28)\n        # y_train shape: (N,)\n        pass\n\n    def predict(self, X_test):\n        # X_test shape: (M, 28, 28)\n        # return prediction array of shape (M,)\n        pass\n```\n\n### 2. Submit to Codabench\nOnce your script is ready:\n1. Zip your `model.py` file into a `.zip` archive.\n2. Navigate to the **My Submissions** tab.\n3. Upload your archive and watch your score appear on the leaderboard!",
+      "content_zh": "# 🏆 Mini-MNIST 数字分类挑战赛\n\n欢迎参加 **Mini-MNIST 挑战赛！** 这是经典 MNIST 基准测试的精简轻量版本。\n\n无论您是初次尝试计算机视觉模型的初学者，还是试图从微小数据集中榨取最高精度的专家，本挑战赛都设计得易于上手、快速且有趣！\n\n---\n\n## 🎯 挑战目标\n目标很简单：对 **0 到 9** 的手写数字进行分类。\n\n然而，这里有个转折！与提供 60,000 张训练图像的标准 MNIST 数据集不同，您面临的是一个**小样本学习**场景。您只能访问数量严格受限的训练样本。您的算法必须从极少的数据中学习泛化特征。\n\n---\n\n## 📊 数据集限制\n我们精心策划了一个完美平衡的迷你数据集。虽然后端原生以 PNG 格式处理图像，但数据摄取系统会自动将它们作为 NumPy 数组加载到您的模型中：\n\n*   **训练集：** 恰好 **200 张图像**（每个数字 20 张）。\n*   **测试集：** 恰好 **50 张图像**（每个数字 5 张），隐藏用于最终评分。\n*   **图像格式：** 摄取程序将数据以 `(28, 28)` 灰度 NumPy 数组的形式传递给您的模型\n\n---\n\n## 💻 如何参与\n* 注册参加比赛\n* 按照以下说明操作：\n\n### 1. 构建您的模型\n创建一个名为 `model.py` 的单一 Python 文件。在此文件中，实现一个包含两个必需方法的 `Model` 类：\n\n```python\nclass Model:\n    def __init__(self):\n        # 在此初始化您的分类器\n        pass\n\n    def fit(self, X_train, y_train):\n        # X_train 形状：(N, 28, 28)\n        # y_train 形状：(N,)\n        pass\n\n    def predict(self, X_test):\n        # X_test 形状：(M, 28, 28)\n        # 返回形状为 (M,) 的预测数组\n        pass\n```\n\n### 2. 提交到 Codabench\n当您的脚本准备好后：\n1. 将您的 `model.py` 文件压缩成 `.zip` 归档文件。\n2. 导航到 **我的提交** 标签页。\n3. 上传您的归档文件，并观看您的分数出现在排行榜上！"
+    },
+    {
+      "index": 1,
+      "title": "Evaluation",
+      "content": "# Evaluation\n\nSubmissions are evaluated based on their accuracy on the test set.\n\n## Metric\nAccuracy is calculated as:\n$Accuracy = \\frac{\\text{Correct Predictions}}{\\text{Total Images}}$\n\nThe leaderboard displays the accuracy score, where $1.0$ is a perfect score (100% correct).",
+      "content_zh": "# 评估\n\n提交结果将根据其在测试集上的准确率进行评估。\n\n## 评估指标\n准确率的计算方式为：\n$Accuracy = \\frac{\\text{正确预测数}}{\\text{总图像数}}$\n\n排行榜将显示准确率得分，其中 $1.0$ 表示满分（100% 正确）。"
+    }
+  ]
+}
