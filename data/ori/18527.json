@@ -1,0 +1,358 @@
+{
+  "id": 18527,
+  "title": "Developing Digital Biomarkers: Food Image Benchmark",
+  "published": true,
+  "created_by": "qjin-unisg",
+  "owner_display_name": "qjin-unisg",
+  "created_when": "2026-11-04T12:02:36.678722Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-04-1793793756/9aa24271fce4/logo.png?AWSAccessKeyId=codabench-prod&Signature=d5BXNFY%2BRxj1bEAkMqMeHLPTgz4%3D&Expires=1793872421",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-04-1793793756/9aa24271fce4/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=HLcfj0DHwNTJYD9GI0zKVCbWQ7M%3D&Expires=1793872421",
+  "terms": "# Rules\n\n1. **No validation labels.** Both source datasets are public. Don't look up,\n   match or retrieve the validation photos or their labels from the original\n   releases or anywhere else.\n2. **Models.** Gemini through the Google AI Studio free tier, open-weight\n   vision-language models (e.g. Gemma 3, Qwen-VL) and any method you train on\n   the training set are allowed. Your report must name the model, its version\n   and the dates of the calls.\n3. **One account per group.** Submit under your group's account only.\n4. **Reproducibility.** Your GitHub repository must reproduce your leaderboard\n   result: scripts plus cached model outputs.\n5. **Data use.** Use the data only for this course, and cite Nutrition5k and the\n   January Food Benchmark.",
+  "pages": [
+    {
+      "id": 90637,
+      "title": "Overview",
+      "content": "# Food Image Benchmark: Developing Digital Biomarkers (363-1163-00L)\n\nFrom **one photo of a meal**, can a model tell what is on the plate, how much of\neach food there is, and what that means for health?\n\nThis is the common benchmark of the group biomarker project. Every group takes\npart in **Task 1**. Each group also takes part in **one Task 2 target**.\n\n| | What you predict per meal | Leaderboard metrics |\n|---|---|---|\n| **Task 1: ingredients and portions** | a dict of free-text ingredient names and grams | food-group F1, ingredient F1, total-weight wMAPE |\n| **Task 2: carbohydrate** | carbohydrate (g) | MAE |\n| **Task 2: protein** | protein (g) | MAE |\n| **Task 2: diet quality** | HEI-FG diet-quality score (0–100) | HEI-FG |\n\nAll results share one leaderboard table. Look at the columns for your task.\n\n## Timeline\n\n| Date | |\n|---|---|\n| 04.11 | Benchmark opens |\n| 25.11 | Class data released (scored by you with the course scoring code) |\n| 16.12 | Benchmark closes; report and presentations |\n\n## How it works\n\n1. Download the data on the **Files** tab: 2,923 training meals with labels\n   and 974 validation meals without labels.\n2. Build your method on the training set.\n3. Predict the 974 validation meals: fill in `validation_template.csv` (one row\n   per meal), zip it and upload it under **My Submissions**.\n4. The platform scores your file against the hidden labels. Your latest scored\n   submission appears on the leaderboard, next to the three references.\n\nYou can submit up to 5 times a day. Spend model calls wisely: the free tiers are\nlimited.\n\n## References on the leaderboard\n\n| | T1 · group F1 | T1 · ingredient F1 | T1 · weight wMAPE | Carb MAE | Protein MAE | HEI-FG |\n|---|---:|---:|---:|---:|---:|---:|\n| No-skill baseline | 0.27 | 0.19 | 49.8 % | 13.7 g | 14.6 g | 11.5 |\n| Zero-shot Gemini 3 Flash | 0.65 | 0.52 | 34.2 % | 9.0 g | 7.4 g | 9.2 |\n| NutriLens (Gemini 3 Flash, optimised prompt) | 0.70 | 0.52 | 29.5 % | 7.9 g | 7.3 g | 8.7 |\n\nThe **no-skill baseline** uses only the training data. For each source it\npredicts the most common components and the average values.\n**Zero-shot Gemini 3 Flash** is a single prompt with no examples. It returns\ningredient names, a total weight and nutrient totals, but no grams per\ningredient, so its weight was split equally across its ingredients. Its HEI-FG was\ncomputed from its ingredients with `diet_quality.py`.\n**NutriLens** is the nutrition-estimation module of the NutriLens study: the same\nmodel with a prompt optimised for this task. It returns each ingredient with its\ngrams, and its HEI-FG was computed the same way. Its prompt was tuned on 100\nmeals, 24 of which are in the validation set, so its score here is slightly\noptimistic.",
+      "index": 0
+    },
+    {
+      "id": 90626,
+      "title": "Data",
+      "content": "# Data\n\n**Download:** `food_benchmark.zip` in the **Files** tab, about 300 MB.\n\n3,897 meal photos from two public datasets, cleaned as in the NutriLens study:\n**Nutrition5k** (overhead photos of cafeteria plates, with weighed ingredients) and\nthe **January Food Benchmark** (everyday phone photos, with human-validated\nannotations).\n\n| | Nutrition5k | January | Total |\n|---|---:|---:|---:|\n| Training set (labels given) | 2,271 | 652 | 2,923 |\n| Validation set (labels hidden) | 757 | 217 | 974 |\n\nEach source was split 75/25, stratified by main macronutrient, number of\ningredients and meal-weight quartile, so both sets look alike. Images are JPEGs\nwith a long side of at most 1024 px and no metadata. Meal IDs are random.\n\n## Files\n\n```\ntraining/images/TR-XXXX.jpg   training photos\ntraining_meals.csv             one row per training meal: totals and targets\ntraining_components.csv        one row per component of each training meal\nvalidation/images/VAL-XXXX.jpg    validation photos\nvalidation_template.csv           the file you fill in and upload: one row per validation meal\nsample_submission.csv             a complete, valid example (the no-skill baseline)\nfood_groups.csv                   the course food-group taxonomy (33 groups)\nground_truth_names.csv            training-set ingredient names and their food groups\ndiet_quality.py                   computes the HEI-FG score from ingredients and grams\n```\n\n### `training_components.csv`\n\n| Column | Meaning |\n|---|---|\n| `meal_id` | meal ID |\n| `component` | component name (cleaned) |\n| `food_group` | group from `food_groups.csv` |\n| `grams` | weight of the component |\n| `energy_kcal`, `carb_g`, `protein_g`, `fat_g` | nutrients of this component |\n| `original_name` | name in the source dataset |\n\n### `training_meals.csv`\n\n| Column | Meaning |\n|---|---|\n| `meal_id`, `source` | meal ID; `n5k` or `january` |\n| `ingredients` | the true ingredients and grams, in the same dict format you submit |\n| `total_mass_g` | total weight (sum of component grams) |\n| `carb_g`, `protein_g` | Task 2 targets (g) |\n| `hei_fg` | Task 2 diet-quality target (0–100; blank for meals under 100 kcal) |\n| `hei_total_fruit` … `hei_refined_grain` | the 9 HEI-FG component points that add up to `hei_fg` |\n| `energy_kcal`, `fat_g`, `fiber_g`, `n_components` | extra labels, not scored |\n\n## Diet quality: HEI-FG\n\nThe **HEI-FG** is the food-group part of the **Healthy Eating Index-2020**, the\nUSDA/NCI index that measures how well food choices follow the Dietary Guidelines.\nThe HEI scores food-group **density per 1,000 kcal**. A meal's score depends on\nits composition, not its size, so it can be applied to a single meal.\n\n| Component | Max points | Full points at (per 1,000 kcal) |\n|---|---:|---|\n| Total fruits | 5 | ≥ 0.8 cup-eq |\n| Whole fruits | 5 | ≥ 0.4 cup-eq |\n| Total vegetables | 5 | ≥ 1.1 cup-eq |\n| Greens and beans | 5 | ≥ 0.2 cup-eq |\n| Whole grains | 10 | ≥ 1.5 oz-eq |\n| Dairy | 10 | ≥ 1.3 cup-eq |\n| Total protein foods | 5 | ≥ 2.5 oz-eq |\n| Seafood and plant proteins | 5 | ≥ 0.8 oz-eq |\n| Refined grains (limit) | 10 | ≤ 1.8 oz-eq (0 points at ≥ 4.3) |\n\nPoints are linear between the standards, and HEI-FG = 100 × points / 60. The\nfour HEI nutrient components (added sugars, sodium, saturated fat, fatty-acid\nratio) are left out, because the labels have no data for them. Meals under\n100 kcal get no score and are not scored on the leaderboard.\n\nGrams are converted to cup- and ounce-equivalents with fixed factors based on\nthe USDA Food Patterns Equivalents Database (for example, fruit 150 g, raw\nleafy greens 60 g, cooked rice or pasta 80 g per oz-eq, meat 28 g per oz-eq).\nCommon composite dishes such as pizza and Caesar salad are split with fixed\nrecipes. Everything is in `diet_quality.py`, so you can compute HEI-FG from your\nown Task 1 output: `hei_fg([(name, food_group, grams), ...], kcal)`. Get the\nfood groups for your names with the evaluator's mapper (`group_mapper.py`).\n\n## Notes on the ground truth\n\n- Ground truth includes small, invisible items such as salt, pepper, oil and\n  herbs, and they all count. Nutrition5k lists them often.\n- A few meals in the source data have an unusable ingredient label. That label\n  is not scored, but its grams still count toward total weight.\n\n## Credits\n\nNutrition5k: Thames et al., CVPR 2021 (CC BY 4.0). January Food Benchmark:\nHosseinian et al., arXiv:2508.09966 (2025). HEI-2020: Shams-White et al.,\nJ Acad Nutr Diet 2023. Label cleaning, January ingredient masses and the split:\nthe NutriLens study (ETH Zurich / CDHI). Use the data for this course only.",
+      "index": 1
+    },
+    {
+      "id": 90627,
+      "title": "Evaluation",
+      "content": "# Evaluation and submission format\n\n## One file, one row per meal\n\nFill in `validation_template.csv`: one row for each of the 974 validation meals.\nZip it and upload the zip (`zip submission.zip predictions.csv`). The file name\ndoesn't matter, but the zip must contain exactly one CSV.\n\n```\nmeal_id,source,ingredients,carb_g,protein_g,hei_fg\nVAL-0001,january,\"{\"\"white rice\"\": 180, \"\"grilled chicken breast\"\": 120, \"\"steamed broccoli\"\": 80}\",,41.5,\nVAL-0002,n5k,\"{\"\"margherita pizza\"\": 150}\",,12.0,\n```\n\n| Column | Task | What to write |\n|---|---|---|\n| `ingredients` | Task 1 | a dict of **free-text ingredient names → estimated grams**, as JSON (`{\"rice\": 150, \"chicken\": 100}`). Write `{}` for a plate with no ingredients. |\n| `carb_g` | Task 2 | carbohydrate (g) |\n| `protein_g` | Task 2 | protein (g) |\n| `hei_fg` | Task 2 | HEI-FG diet-quality score, 0–100 (see **Data**) |\n\nFill `ingredients` and **your group's Task 2 column**; leave the other columns\nblank. A blank column is \"not submitted\". A column you fill must have a value\nfor every meal. Numbers must be ≥ 0. With pandas, writing the dict with\n`json.dumps(...)` and saving with `to_csv` produces the right quoting.\n\n## Task 1 scores\n\nYou give only names and grams. The evaluator does the rest:\n\n| Column | Definition |\n|---|---|\n| **Food-group F1** | The evaluator maps each of your ingredient names to a course food group (see below). For each meal it compares the set of true food groups with your set: F1 = 2·TP / (2·TP + FN + FP). Averaged over meals. Higher is better. |\n| **Ingredient F1** | The same calculation on the ingredients themselves, with no grouping: each of your names is matched to at most one true ingredient. Higher is better. |\n| Missed / Hallucinated | Totals over all meals: true ingredients you didn't list (FN), and listed ingredients that aren't in the meal (FP) |\n| Unmapped names | How many of your names the evaluator couldn't place in a food group. They're left out of the food-group F1 (no credit, no penalty) but still count for ingredient F1. |\n| **Total weight wMAPE** | 100 × Σ\\|M − M̂\\| / Σ M, where M is a meal's total weight (the sum of its grams). Lower is better. |\n| Weight MAE / bias | mean \\|M − M̂\\| and mean (M̂ − M), in grams |\n| Matched-ingredient wMAPE | the grams error on the ingredients you identified correctly |\n\n### How a name is matched to a true ingredient (ingredient F1)\n\n1. **Normalising.** Names are lower-cased, plurals made singular, and common\n   synonyms unified (\"aubergine\" = \"eggplant\", \"scallion\" = \"green onion\",\n   \"yam\" = \"sweet potato\"). Preparation and cut words are removed (\"grilled\",\n   \"sliced\", \"breast\", \"fillet\"). Words that change the food are kept (\"fried\n   rice\", \"brown rice\", \"sweet potato\").\n2. **Matching.** Two names match if they're equal, or if one contains all words\n   of the other and they share the main food word (\"rice\" = \"white rice\",\n   \"chicken\" = \"grilled chicken breast\"). A modifier that makes a different food\n   blocks the match (\"peanut butter\" ≠ \"butter\", \"almond milk\" ≠ \"milk\").\n3. **Generic names and typos.** A generic name matches the specific foods it\n   covers (\"berries\" = \"strawberries\", \"herbs\" = \"parsley\", \"fish\" = \"salmon\").\n   Small spelling errors are tolerated (\"brocoli\").\n4. **One-to-one.** Within a meal, each true ingredient can be matched once.\n\n### How a name is mapped to a food group (food-group F1)\n\n1. If the name (after normalising) appears in `ground_truth_names.csv`, its\n   group is used.\n2. Otherwise the course taxonomy's keyword rules are applied (for example, a\n   name containing \"chicken\" → poultry, \"lentil\" → legumes_soy).\n3. Otherwise the matching rules above are tried against the known names.\n4. Otherwise the name is \"not mapped\".\n\nOn held-out names, this mapping agrees with the curated ground truth for 99.98%\nof ingredients. The code is `matching.py`, `group_mapper.py` and `taxonomy.py` in\nthe starting kit.\n\n## Task 2 scores\n\nEach filled column shows the **MAE**, which ranks the groups, and the **bias**\n(mean of prediction − truth; positive means you over-estimate). For `hei_fg`,\nmeals under 100 kcal have no true score and are skipped, so give them any value.\n\n## Columns you didn't submit\n\nThey show **0** (F1) or **999** (errors and counts), so they sort to the bottom.\nThis means \"not submitted\", not a real score.\n\n## Check before you upload\n\n`score_local.py` in the starting kit runs the same scoring program on\ntraining meals you held out. If an upload fails, the error log on\n**My Submissions** says why (for example, a missing meal, a value that isn't a\nnumber, or an `ingredients` cell that isn't a dict).",
+      "index": 2
+    },
+    {
+      "id": 90628,
+      "title": "Rules",
+      "content": "# Rules\n\n1. **No validation labels.** Both source datasets are public. Don't look up,\n   match or retrieve the validation photos or their labels from the original\n   releases or anywhere else.\n2. **Models.** Gemini through the Google AI Studio free tier, open-weight\n   vision-language models (e.g. Gemma 3, Qwen-VL) and any method you train on\n   the training set are allowed. Your report must name the model, its version\n   and the dates of the calls.\n3. **One account per group.** Submit under your group's account only.\n4. **Reproducibility.** Your GitHub repository must reproduce your leaderboard\n   result: scripts plus cached model outputs.\n5. **Data use.** Use the data only for this course, and cite Nutrition5k and the\n   January Food Benchmark.",
+      "index": 3
+    }
+  ],
+  "phases": [
+    {
+      "id": 31252,
+      "index": 0,
+      "start": "2026-11-04T00:00:00Z",
+      "end": "2026-12-16T00:00:00Z",
+      "name": "Validation",
+      "description": "Upload a zip with one CSV (validation_template.csv filled in). Scored on the 974 validation meals.",
+      "status": "Current",
+      "execution_time_limit": 600,
+      "tasks": [
+        {
+          "task": "e49118a6-559e-476c-9d14-58e70a79a78f",
+          "order_index": 0,
+          "phase": 31252,
+          "id": 36942,
+          "value": "e49118a6-559e-476c-9d14-58e70a79a78f",
+          "key": "e49118a6-559e-476c-9d14-58e70a79a78f",
+          "created_when": "2026-11-04T12:02:22.044742Z",
+          "name": "Validation meals",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 1087409,
+              "created_by": "qjin-unisg",
+              "owner_display_name": "qjin-unisg",
+              "created_when": "2026-11-04T12:02:21.813876Z",
+              "name": "scoring_program @ '11-04-2026 12:02'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "6fa93d5d-a8ed-476c-ba9a-447317ed3d94",
+              "value": "6fa93d5d-a8ed-476c-ba9a-447317ed3d94",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 18527,
+                  "title": "Developing Digital Biomarkers: Food Image Benchmark"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 16809.0
+            },
+            {
+              "id": 1087411,
+              "created_by": "qjin-unisg",
+              "owner_display_name": "qjin-unisg",
+              "created_when": "2026-11-04T12:02:21.902476Z",
+              "name": "reference_data @ '11-04-2026 12:02'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "aa3deedd-96f6-4748-b9e9-5664ad98794e",
+              "value": "aa3deedd-96f6-4748-b9e9-5664ad98794e",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 18527,
+                  "title": "Developing Digital Biomarkers: Food Image Benchmark"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 126254.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 150,
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": {
+        "id": 1087414,
+        "created_by": "qjin-unisg",
+        "owner_display_name": "qjin-unisg",
+        "created_when": "2026-11-04T12:02:22.105982Z",
+        "name": "public_data @ '11-04-2026 12:02'",
+        "type": "public_data",
+        "description": null,
+        "is_public": false,
+        "key": "604ea361-d0dd-42b8-8c21-ccadee5e7689",
+        "value": "604ea361-d0dd-42b8-8c21-ccadee5e7689",
+        "was_created_by_competition": true,
+        "in_use": [
+          {
+            "pk": 18527,
+            "title": "Developing Digital Biomarkers: Food Image Benchmark"
+          }
+        ],
+        "competition": null,
+        "file_name": "",
+        "file_size": 297763451.0
+      },
+      "starting_kit": {
+        "id": 1087415,
+        "created_by": "qjin-unisg",
+        "owner_display_name": "qjin-unisg",
+        "created_when": "2026-11-04T12:02:36.573302Z",
+        "name": "starting_kit @ '11-04-2026 12:02'",
+        "type": "starting_kit",
+        "description": null,
+        "is_public": false,
+        "key": "2b2cb3b2-1b04-45ab-94c6-7c89639681ca",
+        "value": "2b2cb3b2-1b04-45ab-94c6-7c89639681ca",
+        "was_created_by_competition": true,
+        "in_use": [
+          {
+            "pk": 18527,
+            "title": "Developing Digital Biomarkers: Food Image Benchmark"
+          }
+        ],
+        "competition": null,
+        "file_name": "",
+        "file_size": 25293.0
+      },
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0,
+      "is_parallel": false,
+      "is_locked_phase": false
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 20698,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "results",
+      "columns": [
+        {
+          "id": 92702,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "T1 · Food-group F1",
+          "key": "a_group_f1",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 3
+        },
+        {
+          "id": 92703,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "T1 · Ingredient F1",
+          "key": "a_ingredient_f1",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 3
+        },
+        {
+          "id": 92704,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "T1 · Total weight wMAPE %",
+          "key": "a_weight_wmape",
+          "sorting": "asc",
+          "index": 2,
+          "hidden": false,
+          "precision": 1
+        },
+        {
+          "id": 92705,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "T1 · Missed",
+          "key": "a_missed",
+          "sorting": "asc",
+          "index": 3,
+          "hidden": false,
+          "precision": 0
+        },
+        {
+          "id": 92706,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "T1 · Hallucinated",
+          "key": "a_hallucinated",
+          "sorting": "asc",
+          "index": 4,
+          "hidden": false,
+          "precision": 0
+        },
+        {
+          "id": 92707,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "T1 · Unmapped names",
+          "key": "a_unmapped",
+          "sorting": "asc",
+          "index": 5,
+          "hidden": false,
+          "precision": 0
+        },
+        {
+          "id": 92708,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "T1 · Weight MAE g",
+          "key": "a_weight_mae_g",
+          "sorting": "asc",
+          "index": 6,
+          "hidden": false,
+          "precision": 1
+        },
+        {
+          "id": 92709,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "T1 · Weight bias g",
+          "key": "a_weight_bias_g",
+          "sorting": "asc",
+          "index": 7,
+          "hidden": false,
+          "precision": 1
+        },
+        {
+          "id": 92710,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "T1 · Matched-component wMAPE %",
+          "key": "a_matched_wmape",
+          "sorting": "asc",
+          "index": 8,
+          "hidden": false,
+          "precision": 1
+        },
+        {
+          "id": 92711,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "T2 · Carb MAE g",
+          "key": "b_carb_g_mae",
+          "sorting": "asc",
+          "index": 9,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 92712,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "T2 · Carb bias g",
+          "key": "b_carb_g_bias",
+          "sorting": "asc",
+          "index": 10,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 92713,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "T2 · Protein MAE g",
+          "key": "b_protein_g_mae",
+          "sorting": "asc",
+          "index": 11,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 92714,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "T2 · Protein bias g",
+          "key": "b_protein_g_bias",
+          "sorting": "asc",
+          "index": 12,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 92715,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "T2 · Diet quality (HEI-FG) MAE",
+          "key": "b_hei_fg_mae",
+          "sorting": "asc",
+          "index": 13,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 92716,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "T2 · Diet quality (HEI-FG) bias",
+          "key": "b_hei_fg_bias",
+          "sorting": "asc",
+          "index": 14,
+          "hidden": false,
+          "precision": 2
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Force_Last"
+    }
+  ],
+  "description": "From one meal photo, identify the food components and their grams (Task 1) and estimate carbohydrate, protein or a diet-quality score (Task 2). 2,923 training and 974 validation meals from Nutrition5k and the January Food Benchmark.",
+  "participants_count": 7,
+  "submissions_count": 0,
+  "docker_image": "codalab/codalab-legacy:py37",
+  "competition_type": "competition",
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "forum": 18215,
+  "forum_enabled": true,
+  "fact_sheet": null,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "registration_auto_approve": false
+}

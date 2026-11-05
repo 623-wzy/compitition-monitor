@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Developing Digital Biomarkers: Food Image Benchmark — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>Developing Digital Biomarkers: Food Image Benchmark</h2>
+  <div class="detail-meta">
+    <span>ID: 18527</span>
+    <span>创建者: qjin-unisg</span>
+    <span>创建时间: 2026-11-04</span>
+    <span>参与人数: 7</span>
+    <span>提交次数: 0</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/18527/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">从单张餐食照片识别食物成分及其克数（任务1），并估算碳水化合物、蛋白质含量或饮食质量评分（任务2）。使用来自Nutrition5k和January Food Benchmark的2923个训练餐食和974个验证餐食。</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-other'>其他</span> Validation</td><td>2026-11-04</td><td>2026-12-16</td><td>5</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'>食物图像基准测试：开发数字生物标志物 (363-1163-00L)
+
+仅凭**一张餐食照片**，模型能否识别盘中的食物、每种食物的分量，以及这对健康意味着什么？
+
+这是生物标志物小组项目的共同基准测试。每个小组都参与**任务1**。每个小组还需参与**一个任务2目标**。
+
+| | 每餐预测内容 | 排行榜指标 |
+|---|---|---|
+| **任务1：食材与分量** | 食材名称（自由文本）及克数的字典 | 食物组F1、食材F1、总重量wMAPE |
+| **任务2：碳水化合物** | 碳水化合物（克） | MAE |
+| **任务2：蛋白质** | 蛋白质（克） | MAE |
+| **任务2：膳食质量** | HEI-FG膳食质量评分（0–100） | HEI-FG |
+
+所有结果共享一张排行榜表格。请查看您对应任务的列。
+
+## 时间线
+
+| 日期 | |
+|---|---|
+| 11月04日 | 基准测试开放 |
+| 11月25日 | 发布课程数据（由您使用课程评分代码进行评分） |
+| 12月16日 | 基准测试截止；提交报告和演示 |
+
+## 运行方式
+
+1. 在**文件**标签页下载数据：2,923份带标签的训练餐食和974份无标签的验证餐食。
+2. 在训练集上构建您的方法。
+3. 预测974份验证餐食：填写`validation_template.csv`（每餐一行），压缩后上传至**我的提交**。
+4. 平台将根据隐藏标签为您的文件评分。您最新的已评分提交将显示在排行榜上，与三个参考模型并列。
+
+每天最多可提交5次。请明智地使用模型调用：免费额度有限。
+
+## 排行榜参考
+
+| | T1 · 食物组F1 | T1 · 食材F1 | T1 · 重量wMAPE | 碳水MAE | 蛋白质MAE | HEI-FG |
+|---|---:|---:|---:|---:|---:|---:|
+| 无技能基线 | 0.27 | 0.19 | 49.8 % | 13.7 g | 14.6 g | 11.5 |
+| 零样本Gemini 3 Flash | 0.65 | 0.52 | 34.2 % | 9.0 g | 7.4 g | 9.2 |
+| NutriLens（Gemini 3 Flash，优化提示词） | 0.70 | 0.52 | 29.5 % | 7.9 g | 7.3 g | 8.7 |
+
+**无技能基线**仅使用训练数据。对每个来源，它预测最常见的成分和平均值。
+**零样本Gemini 3 Flash**是一个无示例的单条提示词。它返回食材名称、总重量和营养素总量，但不返回每种食材的克数，因此其重量被平均分配给各食材。其HEI-FG通过`diet_quality.py`从其食材计算得出。
+**NutriLens**是NutriLens研究的营养估算模块：同一模型搭配为此任务优化的提示词。它返回每种食材及其克数，其HEI-FG以相同方式计算。其提示词在100份餐食上进行了调优，其中24份在验证集中，因此此处的分数略为乐观。</div></div><div class='section'><h3>Data</h3><div class='page-content'># 数据
+
+**下载：** 在 **Files** 标签页中的 `food_benchmark.zip`，约 300 MB。
+
+3,897 张餐食照片，来自两个公开数据集，按照 NutriLens 研究中的方式进行清洗：**Nutrition5k**（食堂餐盘的俯视照片，含称重配料）和 **January Food Benchmark**（日常手机拍摄照片，含人工验证的标注）。
+
+| | Nutrition5k | January | 总计 |
+|---|---:|---:|---:|
+| 训练集（提供标签） | 2,271 | 652 | 2,923 |
+| 验证集（隐藏标签） | 757 | 217 | 974 |
+
+每个数据源按 75/25 的比例划分，按照主要宏量营养素、配料数量和餐食重量四分位数进行分层，因此两组数据分布相似。图像为 JPEG 格式，长边最大 1024 像素，无元数据。餐食 ID 为随机生成。
+
+## 文件
+
+```
+training/images/TR-XXXX.jpg   训练照片
+training_meals.csv             每行对应一餐训练数据：总计值和目标值
+training_components.csv        每行对应训练餐食的一个组成部分
+validation/images/VAL-XXXX.jpg    验证照片
+validation_template.csv           你填写并上传的文件：每行对应一餐验证数据
+sample_submission.csv             一个完整有效的示例（无技能基线）
+food_groups.csv                   食物组分类体系（33 个组）
+ground_truth_names.csv            训练集中的配料名称及其所属食物组
+diet_quality.py                   根据配料和克数计算 HEI-FG 分数
+```
+
+### `training_components.csv`
+
+| 列名 | 含义 |
+|---|---|
+| `meal_id` | 餐食 ID |
+| `component` | 组成部分名称（已清洗） |
+| `food_group` | 来自 `food_groups.csv` 的组别 |
+| `grams` | 组成部分的重量 |
+| `energy_kcal`, `carb_g`, `protein_g`, `fat_g` | 该组成部分的营养素 |
+| `original_name` | 源数据集中的名称 |
+
+### `training_meals.csv`
+
+| 列名 | 含义 |
+|---|---|
+| `meal_id`, `source` | 餐食 ID；`n5k` 或 `january` |
+| `ingredients` | 真实的配料和克数，采用与你提交格式相同的字典格式 |
+| `total_mass_g` | 总重量（组成部分克数之和） |
+| `carb_g`, `protein_g` | 任务 2 的目标值（克） |
+| `hei_fg` | 任务 2 的饮食质量目标值（0–100；低于 100 千卡的餐食留空） |
+| `hei_total_fruit` … `hei_refined_grain` | 9 个 HEI-FG 组成部分分数，相加等于 `hei_fg` |
+| `energy_kcal`, `fat_g`, `fiber_g`, `n_components` | 额外标签，不计分 |
+
+## 饮食质量：HEI-FG
+
+**HEI-FG** 是 **Healthy Eating Index-2020（健康饮食指数-2020）** 的食物组部分，是由 USDA/NCI 制定的指数，用于衡量食物选择在多大程度上遵循膳食指南。HEI 对食物组按**每 1,000 千卡的密度**进行评分。餐食的分数取决于其组成，而非份量大小，因此可应用于单餐。
+
+| 组成部分 | 最高分数 | 满分标准（每 1,000 千卡） |
+|---|---:|---|
+| 总水果 | 5 | ≥ 0.8 cup-eq（杯当量） |
+| 完整水果 | 5 | ≥ 0.4 cup-eq |
+| 总蔬菜 | 5 | ≥ 1.1 cup-eq |
+| 深色蔬菜和豆类 | 5 | ≥ 0.2 cup-eq |
+| 全谷物 | 10 | ≥ 1.5 oz-eq（盎司当量） |
+| 乳制品 | 10 | ≥ 1.3 cup-eq |
+| 总蛋白质食物 | 5 | ≥ 2.5 oz-eq |
+| 海鲜和植物蛋白 | 5 | ≥ 0.8 oz-eq |
+| 精制谷物（限制） | 10 | ≤ 1.8 oz-eq（≥ 4.3 时得 0 分） |
+
+分数在标准之间呈线性变化，HEI-FG = 100 × 分数 / 60。四个 HEI 营养素组成部分（添加糖、钠、饱和脂肪、脂肪酸比例）被省略，因为标签中没有这些数据。低于 100 千卡的餐食无分数，且在排行榜上不予计分。
+
+克数依据 USDA 食物模式当量数据库通过固定系数转换为杯和盎司当量（例如，水果 150 克，生叶类蔬菜 60 克，熟米饭或面食 80 克每 oz-eq，肉类 28 克每 oz-eq）。常见的复合菜肴（如披萨和凯撒沙拉）按固定配方拆分。所有逻辑均在 `diet_quality.py` 中，因此你可以根据自己的任务 1 输出计算 HEI-FG：`hei_fg([(name, food_group, grams), ...], kcal)`。使用评估器的映射器（`group_mapper.py`）获取配料名称对应的食物组。
+
+## 关于真实标签的说明
+
+- Ground</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'># 评估与提交格式
+
+## 一个文件，每餐一行
+
+填写 `validation_template.csv`：974份验证餐食每餐一行。
+将其压缩并上传压缩包（`zip submission.zip predictions.csv`）。文件名
+无关紧要，但压缩包必须恰好包含一个CSV文件。
+
+```
+meal_id,source,ingredients,carb_g,protein_g,hei_fg
+VAL-0001,january,&quot;{&quot;&quot;white rice&quot;&quot;: 180, &quot;&quot;grilled chicken breast&quot;&quot;: 120, &quot;&quot;steamed broccoli&quot;&quot;: 80}&quot;,,41.5,
+VAL-0002,n5k,&quot;{&quot;&quot;margherita pizza&quot;&quot;: 150}&quot;,,12.0,
+```
+
+| 列 | 任务 | 填写内容 |
+|---|---|---|
+| `ingredients` | 任务1 | 一个字典，内容为**自由文本食材名称 → 估计克数**，JSON格式（`{&quot;rice&quot;: 150, &quot;chicken&quot;: 100}`）。空盘填写 `{}`。 |
+| `carb_g` | 任务2 | 碳水化合物（克） |
+| `protein_g` | 任务2 | 蛋白质（克） |
+| `hei_fg` | 任务2 | HEI-FG饮食质量评分，0–100（见**数据**） |
+
+填写 `ingredients` 和**您小组的任务2对应列**；其他列留空。
+留空表示&quot;未提交&quot;。填写的列必须为每餐都提供数值。数字必须 ≥ 0。
+使用pandas时，用 `json.dumps(...)` 写入字典并用 `to_csv` 保存可生成正确的引号。
+
+## 任务1评分
+
+您只需提供名称和克数。评估器完成其余工作：
+
+| 列 | 定义 |
+|---|---|
+| **食物组F1** | 评估器将您的每个食材名称映射到课程食物组（见下文）。对每餐比较真实食物组集合与您的集合：F1 = 2·TP / (2·TP + FN + FP)。取每餐平均值。越高越好。 |
+| **食材F1** | 对食材本身进行相同计算，不分组：您的每个名称最多匹配一个真实食材。越高越好。 |
+| 遗漏/虚构 | 所有餐食总计：您未列出的真实食材（FN），以及您列出但餐食中不存在的食材（FP） |
+| 未映射名称 | 评估器无法归入食物组的您的名称数量。这些不计入食物组F1（无加分，无惩罚），但仍计入食材F1。 |
+| **总重量wMAPE** | 100 × Σ\|M − M̂\| / Σ M，其中M为餐食总重量（克数之和）。越低越好。 |
+| 重量MAE/偏差 | 平均 \|M − M̂\| 和平均 (M̂ − M)，单位为克 |
+| 已匹配食材wMAPE | 您正确识别的食材的克数误差 |
+
+### 名称如何匹配到真实食材（食材F1）
+
+1. **规范化。** 名称转为小写，复数变单数，统一常见同义词（&quot;aubergine&quot; = &quot;eggplant&quot;，&quot;scallion&quot; = &quot;green onion&quot;，&quot;yam&quot; = &quot;sweet potato&quot;）。去除制备和切割词汇（&quot;grilled&quot;、&quot;sliced&quot;、&quot;breast&quot;、&quot;fillet&quot;）。保留改变食物的词汇（&quot;fried rice&quot;、&quot;brown rice&quot;、&quot;sweet potato&quot;）。
+2. **匹配。** 两个名称相等则匹配，或若一方包含另一方的所有词汇且共享主要食物词汇则匹配（&quot;rice&quot; = &quot;white rice&quot;，&quot;chicken&quot; = &quot;grilled chicken breast&quot;）。产生不同食物的修饰词会阻止匹配（&quot;peanut butter&quot; ≠ &quot;butter&quot;，&quot;almond milk&quot; ≠ &quot;milk&quot;）。
+3. **通用名称和拼写错误。** 通用名称匹配其涵盖的具体食物（&quot;berries&quot; = &quot;strawberries&quot;，&quot;herbs&quot; = &quot;parsley&quot;，&quot;fish&quot; = &quot;salmon&quot;）。允许轻微拼写错误（&quot;brocoli&quot;）。
+4. **一对一。** 每餐内，每个真实食材只能匹配一次。
+
+### 名称如何映射到食物组（食物组F1）
+
+1. 若名称（规范化后）出现在 `ground_truth_names.csv` 中，使用其所属组。
+2. 否则应用课程分类法的关键词规则（例如，含&quot;chicken&quot;的名称 → 禽肉，&quot;lentil&quot; → 豆类_大豆）。
+3. 否则尝试用上述匹配规则对照已知名称。
+4. 否则该名称为&quot;未映射&quot;。
+
+在保留名称上，此映射与人工整理的真实值一致率达99.98%。
+代码位于起始工具包的 `matching.py`、`group_mapper.py` 和 `taxonomy.py` 中。
+
+## 任务2评分
+
+每个填写列显示**MAE**（平均绝对误差），用于排名。</div></div><div class='section'><h3>Rules</h3><div class='page-content'>1. **不得使用验证集标签。** 两个源数据集均为公开数据。禁止从原始发布版本或其他任何地方查找、匹配或检索验证照片或其标签。
+2. **模型。** 允许使用 Google AI Studio 免费版的 Gemini、开源权重视觉-语言模型（例如 Gemma 3、Qwen-VL）以及在训练集上训练的任何方法。报告必须注明模型名称、版本及调用日期。
+3. **每组一个账号。** 仅可使用本组账号提交。
+4. **可复现性。** 你的 GitHub 仓库必须能复现排行榜结果：包括脚本及缓存的模型输出。
+5. **数据使用。** 数据仅限用于本课程，并须引用 Nutrition5k 和 January Food Benchmark。</div></div>
+
+</div>
+</body>
+</html>
