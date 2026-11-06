@@ -5,8 +5,8 @@
   "created_by": "njuwallspider",
   "owner_display_name": "njuwallspider",
   "created_when": "2026-05-30T09:06:38.492134Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-30-1780131998/18c01880de0c/logo.png?AWSAccessKeyId=codabench-prod&Signature=xkn13JRjaH8pfhTbax760YviQ9w%3D&Expires=1793872553",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-30-1780131998/18c01880de0c/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=cLdXomV8zdrnz4Gjv7rYyluKSdw%3D&Expires=1793872553",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-30-1780131998/18c01880de0c/logo.png?AWSAccessKeyId=codabench-prod&Signature=3OHSnLS5bspF44%2Fhn0CUJmTFZbw%3D&Expires=1793959764",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-30-1780131998/18c01880de0c/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=%2Foy0wF%2BRhOU77N%2ButUIw1JRqV%2Bg%3D&Expires=1793959764",
   "terms": "# Terms and Conditions\n***\nThis competition is for educational and research purposes, and it is governed by the [<ins>General ChaLearn Contest Rules</ins>](http://www.causality.inf.ethz.ch/GeneralChalearnContestRuleTerms.html).",
   "pages": [
     {
@@ -138,6 +138,7 @@
       "has_max_submissions": true,
       "max_submissions_per_day": 5,
       "max_submissions_per_person": 100,
+      "max_submissions_scope": "participant",
       "auto_migrate_to_this_phase": false,
       "hide_output": false,
       "hide_prediction_output": false,

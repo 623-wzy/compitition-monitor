@@ -5,8 +5,8 @@
   "created_by": "qjin-unisg",
   "owner_display_name": "qjin-unisg",
   "created_when": "2026-11-04T12:02:36.678722Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-04-1793793756/9aa24271fce4/logo.png?AWSAccessKeyId=codabench-prod&Signature=d5BXNFY%2BRxj1bEAkMqMeHLPTgz4%3D&Expires=1793872421",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-04-1793793756/9aa24271fce4/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=HLcfj0DHwNTJYD9GI0zKVCbWQ7M%3D&Expires=1793872421",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-04-1793793756/9aa24271fce4/logo.png?AWSAccessKeyId=codabench-prod&Signature=LpN8cyCtHuvcB6%2FNftvE3X2HdcA%3D&Expires=1793959669",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-04-1793793756/9aa24271fce4/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=bJy8QwzHECpk%2Fqm9HgbKcg8kWW8%3D&Expires=1793959669",
   "terms": "# Rules\n\n1. **No validation labels.** Both source datasets are public. Don't look up,\n   match or retrieve the validation photos or their labels from the original\n   releases or anywhere else.\n2. **Models.** Gemini through the Google AI Studio free tier, open-weight\n   vision-language models (e.g. Gemma 3, Qwen-VL) and any method you train on\n   the training set are allowed. Your report must name the model, its version\n   and the dates of the calls.\n3. **One account per group.** Submit under your group's account only.\n4. **Reproducibility.** Your GitHub repository must reproduce your leaderboard\n   result: scripts plus cached model outputs.\n5. **Data use.** Use the data only for this course, and cite Nutrition5k and the\n   January Food Benchmark.",
   "pages": [
     {
@@ -106,6 +106,7 @@
       "has_max_submissions": true,
       "max_submissions_per_day": 5,
       "max_submissions_per_person": 150,
+      "max_submissions_scope": "participant",
       "auto_migrate_to_this_phase": false,
       "hide_output": false,
       "hide_prediction_output": false,
