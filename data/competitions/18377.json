@@ -5,7 +5,7 @@
   "description_zh": "一个第一人称视角交互理解基准，要求模型从第一人称图像和交互查询中生成连贯的文本分析和细粒度像素级定位掩码。",
   "created_by": "yuggie",
   "created_when": "2026-10-15T07:00:56.003732Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-15-1792047656/84bafd5e11ad/Picture_1.png?AWSAccessKeyId=codabench-prod&Signature=5aY%2BBrhbLNAoBmtxJUHM3LusxnA%3D&Expires=1793959676",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-15-1792047656/84bafd5e11ad/Picture_1.png?AWSAccessKeyId=codabench-prod&Signature=xkCx9%2FdKfe8Fe5BSQP%2F5ZU%2BR3OI%3D&Expires=1794046965",
   "participants_count": 2,
   "submissions_count": 3,
   "first_phase_start": null,
