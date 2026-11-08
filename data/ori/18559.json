@@ -1,0 +1,359 @@
+{
+  "id": 18559,
+  "title": "Double Agent Dilemma (IOAI 2026 practice)",
+  "published": true,
+  "created_by": "ngjabach",
+  "owner_display_name": "ngjabach",
+  "created_when": "2026-11-07T18:42:38.265467Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-07-1794076958/7aa87e329618/logo.png?AWSAccessKeyId=codabench-prod&Signature=UAnwhPNyVf6u8tiAzh5L2Tr9jL4%3D&Expires=1794134649",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-07-1794076958/7aa87e329618/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=EzgrUhHAnWKEdIvai9%2B0dwJB4LA%3D&Expires=1794134649",
+  "terms": "# Terms\n\n* This is a practice contest. Use only your own work; you may use any public library.\n* Use only the two models named on the Overview page.\n* Do not share your submissions with others during the contest.\n* The images are IOAI 2026's (from ImageNet-1K), CC BY 4.0. Keep the credit if you share them.",
+  "pages": [
+    {
+      "id": 90833,
+      "title": "Overview",
+      "content": "# Double Agent Dilemma (IOAI 2026 practice)\n\nTwo pretrained image classifiers look at the same photo: **Model R**, a ResNet-18 (a CNN), and\n**Model V**, a ViT-Tiny (a Transformer). On every image given here both are 100% correct and\nthey agree. To test how differently they see, add a **small perturbation** to each image so\nthat they stop agreeing. For every image you make two:\n\n* **Type A**: Model R still classifies the image correctly, Model V gets it wrong.\n* **Type B**: Model V still classifies the image correctly, Model R gets it wrong.\n\nSmaller perturbations score higher. Perturbations are added to the **raw image** (at its\noriginal resolution), pixels are clipped to [0, 1], and then the fixed transform runs:\nResize(256), CenterCrop(224), Normalize.\n\n## Where this comes from\n\nThis is a practice version of **IOAI 2026 Individual Contest, Task 4 \"Double Agent Dilemma\"**,\nrun on the official images that IOAI published (extracted from ImageNet-1K, CC BY 4.0, credits\non the Data page). The original graded a notebook under a 12-minute GPU budget. Here you\n**submit the perturbation files**, so no time budget is enforced. To practise under the original\nrules, keep to them yourself.\n\n| Reference point | Score |\n|---|---|\n| The baseline (constant noise) | 0.00 |\n| IOAI Scientific Committee (as reported by IOAI) | 96.99 |\n\nThe public test ranks 100 images, the private test a different 100. The maximum is 100.\nThe full original statement, in English and Vietnamese, is in `statement/` of the data download.\n\n## Allowed\n\nOnly `torchvision.models.resnet18` (ImageNet weights) and timm's `vit_tiny_patch16_224`\n(default pretrained weights), and no other pretrained model. Both are what the scorer uses.",
+      "index": 0
+    },
+    {
+      "id": 90834,
+      "title": "Data",
+      "content": "# Data\n\nDownload from the **Files** tab:\n\n| Download | Phase | Holds |\n|---|---|---|\n| `double_agent_dilemma_public_test_data.zip` | Public test | `training_set/`, `public_test/`, `statement/` |\n| `double_agent_dilemma_baseline.zip` | Public test | `baseline.ipynb`, `sample_submission.zip` |\n| `double_agent_dilemma_private_test_data.zip` | Private test | `training_set/`, `private_test/`, `statement/` |\n\n| File | What it is |\n|---|---|\n| `training_set/images/0000.png` ... | 100 training images (varying resolution) |\n| `training_set/labels.json` | `{\"0\": 65, ...}`: image index to ImageNet-1K class |\n| `public_test/images/`, `public_test/labels.json` | the 100 images ranked in the Public test phase, with their classes (this task gives test labels, as in the original) |\n| `private_test/images/`, `private_test/labels.json` | the 100 images ranked in the Private test phase |\n| `statement/` | IOAI's original statement, English and Vietnamese, unchanged |\n\nData: IOAI 2026 \"Double Agent Dilemma\", proposed by Tao\nDajiang, developed by Tao Dajiang, Zhuldyz-Zhan Sagimbayev and Kamalkhan Artykbayev, published\nby the IOAI 2026 Scientific Committee under CC BY 4.0. The images come from ImageNet-1K.\n\n## How to submit\n\nUpload a **zip** with, for every test image `{index}` (0, 1, 2, ...), two files at the **top\nlevel** of the zip (no folder inside):\n\n```\n0_a.pt   0_b.pt   1_a.pt   1_b.pt   ...\n```\n\nEach file is one tensor saved with `torch.save`, shape `3 x H x W` where `H` and `W` are the\n**original** size of that image (not 224 x 224). Float32 or float16 are both accepted. Compress\nthe zip: a full float32 submission is about 0.5 GB uncompressed, float16 halves it.\n\nA file that is missing, has the wrong shape, is not a floating-point tensor or contains NaN or\nInf is treated as a zero perturbation: it fools nothing and costs no norm. The scoring log lists\nthe first ones it zeroed.",
+      "index": 1
+    },
+    {
+      "id": 90835,
+      "title": "Evaluation",
+      "content": "# Evaluation\n\nLet `M` be the number of images, `Score_A` the number of successful type A perturbations and\n`Score_B` the number of successful type B perturbations.\n\n    pure  = (Score_A + Score_B) / (2M)\n    score = pure x PF\n\nThe penalty factor PF lies between 0.5 and 1 and punishes large perturbations:\n\n    PF = 1.5 - sigmoid(50000 x mean over images of (||delta_a|| + ||delta_b||) / n)\n\nwhere `||.||` is the L2 norm and `n = 3 x H x W` is the number of values of that image. An\nempty perturbation gives PF = 1, and it is very sensitive near the top. The **Score** (pure\ntimes PF, on a 0 to 100 scale) ranks. The leaderboard also shows the pure score, the two\nsuccess rates, PF and the mean norm per pixel.\n\nScoring runs on CPU inside the platform; it uses `antialias=True` in the resize. A score you\ncompute elsewhere can differ in the last decimals.",
+      "index": 2
+    }
+  ],
+  "phases": [
+    {
+      "id": 31316,
+      "index": 0,
+      "start": "2026-11-08T07:05:00Z",
+      "end": "2026-11-08T12:05:00Z",
+      "name": "Public test",
+      "description": "Open practice. 100 images, feedback on every submission.",
+      "status": "Current",
+      "execution_time_limit": 900,
+      "tasks": [
+        {
+          "task": "9f5dae42-1ebf-4c8d-b291-e0ce815dd2fb",
+          "order_index": 0,
+          "phase": 31316,
+          "id": 37011,
+          "value": "9f5dae42-1ebf-4c8d-b291-e0ce815dd2fb",
+          "key": "9f5dae42-1ebf-4c8d-b291-e0ce815dd2fb",
+          "created_when": "2026-11-07T18:42:27.662365Z",
+          "name": "Public test",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 1096230,
+              "created_by": "ngjabach",
+              "owner_display_name": "ngjabach",
+              "created_when": "2026-11-07T18:42:19.575890Z",
+              "name": "Double Agent Dilemma - scoring program (public test)",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "fd26023d-51f5-4592-bb73-bf3b3a08e30d",
+              "value": "fd26023d-51f5-4592-bb73-bf3b3a08e30d",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 18559,
+                  "title": "Double Agent Dilemma (IOAI 2026 practice)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 64698198.0
+            },
+            {
+              "id": 1096231,
+              "created_by": "ngjabach",
+              "owner_display_name": "ngjabach",
+              "created_when": "2026-11-07T18:42:25.503003Z",
+              "name": "Double Agent Dilemma - public test answers",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "8316cf12-8294-4a73-8d71-2453d4af6a39",
+              "value": "8316cf12-8294-4a73-8d71-2453d4af6a39",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 18559,
+                  "title": "Double Agent Dilemma (IOAI 2026 practice)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 31367469.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 20,
+      "max_submissions_per_person": 500,
+      "max_submissions_scope": "participant",
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": {
+        "id": 1096234,
+        "created_by": "ngjabach",
+        "owner_display_name": "ngjabach",
+        "created_when": "2026-11-07T18:42:35.840256Z",
+        "name": "Double Agent Dilemma - public test data",
+        "type": "public_data",
+        "description": null,
+        "is_public": false,
+        "key": "dd23aba7-389e-4834-aa6f-3df3defe3b77",
+        "value": "dd23aba7-389e-4834-aa6f-3df3defe3b77",
+        "was_created_by_competition": true,
+        "in_use": [
+          {
+            "pk": 18559,
+            "title": "Double Agent Dilemma (IOAI 2026 practice)"
+          }
+        ],
+        "competition": null,
+        "file_name": "",
+        "file_size": 72007238.0
+      },
+      "starting_kit": {
+        "id": 1096235,
+        "created_by": "ngjabach",
+        "owner_display_name": "ngjabach",
+        "created_when": "2026-11-07T18:42:36.937853Z",
+        "name": "Double Agent Dilemma - baseline",
+        "type": "starting_kit",
+        "description": null,
+        "is_public": false,
+        "key": "d0b55159-135b-4b53-b232-b0bfaf622db4",
+        "value": "d0b55159-135b-4b53-b232-b0bfaf622db4",
+        "was_created_by_competition": true,
+        "in_use": [
+          {
+            "pk": 18559,
+            "title": "Double Agent Dilemma (IOAI 2026 practice)"
+          }
+        ],
+        "competition": null,
+        "file_name": "",
+        "file_size": 153317.0
+      },
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0,
+      "is_parallel": false,
+      "is_locked_phase": false
+    },
+    {
+      "id": 31317,
+      "index": 1,
+      "start": "2026-11-08T12:05:00Z",
+      "end": "2026-12-11T00:00:00Z",
+      "name": "Private test",
+      "description": "A different 100 images. Nobody has scored against these.",
+      "status": "Next",
+      "execution_time_limit": 900,
+      "tasks": [
+        {
+          "task": "ca25e7d5-77be-4ab1-8a57-54f06a1b559f",
+          "order_index": 0,
+          "phase": 31317,
+          "id": 37012,
+          "value": "ca25e7d5-77be-4ab1-8a57-54f06a1b559f",
+          "key": "ca25e7d5-77be-4ab1-8a57-54f06a1b559f",
+          "created_when": "2026-11-07T18:42:35.805426Z",
+          "name": "Private test",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 1096232,
+              "created_by": "ngjabach",
+              "owner_display_name": "ngjabach",
+              "created_when": "2026-11-07T18:42:27.666762Z",
+              "name": "Double Agent Dilemma - scoring program (private test)",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "9cd97ec9-3474-4a4a-9de6-87711e3b84f5",
+              "value": "9cd97ec9-3474-4a4a-9de6-87711e3b84f5",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 18559,
+                  "title": "Double Agent Dilemma (IOAI 2026 practice)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 64698198.0
+            },
+            {
+              "id": 1096233,
+              "created_by": "ngjabach",
+              "owner_display_name": "ngjabach",
+              "created_when": "2026-11-07T18:42:33.646780Z",
+              "name": "Double Agent Dilemma - private test answers",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "9d18ef35-9131-4ab6-a7af-5d3b2d9229e3",
+              "value": "9d18ef35-9131-4ab6-a7af-5d3b2d9229e3",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 18559,
+                  "title": "Double Agent Dilemma (IOAI 2026 practice)"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 31889223.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 3,
+      "max_submissions_per_person": 10,
+      "max_submissions_scope": "participant",
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": {
+        "id": 1096236,
+        "created_by": "ngjabach",
+        "owner_display_name": "ngjabach",
+        "created_when": "2026-11-07T18:42:37.039517Z",
+        "name": "Double Agent Dilemma - private test data",
+        "type": "public_data",
+        "description": null,
+        "is_public": false,
+        "key": "d0011fdd-7ff5-4be1-bb4c-7068da7d9e35",
+        "value": "d0011fdd-7ff5-4be1-bb4c-7068da7d9e35",
+        "was_created_by_competition": true,
+        "in_use": [
+          {
+            "pk": 18559,
+            "title": "Double Agent Dilemma (IOAI 2026 practice)"
+          }
+        ],
+        "competition": null,
+        "file_name": "",
+        "file_size": 72529194.0
+      },
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0,
+      "is_parallel": false,
+      "is_locked_phase": false
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 20730,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "main",
+      "columns": [
+        {
+          "id": 92897,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Score",
+          "key": "score",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 92898,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Pure score (%)",
+          "key": "pure",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 92899,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Type A (%)",
+          "key": "type_a",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 92900,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Type B (%)",
+          "key": "type_b",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 92901,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Penalty factor",
+          "key": "penalty",
+          "sorting": "desc",
+          "index": 4,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 92902,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Mean L2 per pixel (x1e-6)",
+          "key": "l2_per_pixel_e6",
+          "sorting": "asc",
+          "index": 5,
+          "hidden": false,
+          "precision": 2
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Force_Last"
+    }
+  ],
+  "description": "Add a small perturbation to each image so that ResNet18 and ViT-Tiny disagree: once with the CNN right and the Transformer wrong, once the other way round. Smaller is better.",
+  "participants_count": 3,
+  "submissions_count": 4,
+  "docker_image": "pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime",
+  "competition_type": "competition",
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "forum": 18247,
+  "forum_enabled": true,
+  "fact_sheet": null,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "registration_auto_approve": false
+}

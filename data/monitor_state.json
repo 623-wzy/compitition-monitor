@@ -1,46 +1,4 @@
 {
-  "18185": {
-    "id": 18185,
-    "title": "RoboWorld 2026 — Track 1: WorldNav",
-    "description": "Language-conditioned open-loop visual navigation and trajectory prediction in continuous 3D environments. The WorldNav track of the RoboWorld Challenge 2026, affiliated with the RoboPAD Workshop at NeurIPS 2026.",
-    "description_zh": "连续三维环境中的语言条件化开环视觉导航与轨迹预测。RoboWorld Challenge 2026的WorldNav赛道，隶属于NeurIPS 2026的RoboPAD研讨会。",
-    "created_by": "yifeidong",
-    "created_when": "2026-09-19T07:46:40.332684Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791429899/6f72dc95718f/codabench_track1_icon.png?AWSAccessKeyId=codabench-prod&Signature=mvlDJTsTuXtL9LI8aJ5dp9HkaBU%3D&Expires=1794046985",
-    "participants_count": 84,
-    "submissions_count": 406,
-    "first_phase_start": null,
-    "phases": [
-      {
-        "id": 30680,
-        "name": "Phase 1: Validation",
-        "start": "2026-10-15T00:00:00Z",
-        "end": "2026-11-30T23:59:00Z",
-        "max_submissions_per_day": 5
-      },
-      {
-        "id": 31157,
-        "name": "Phase 2: Final Evaluation",
-        "start": "2026-10-31T00:00:00Z",
-        "end": "2026-11-30T23:59:00Z",
-        "max_submissions_per_day": 200
-      }
-    ],
-    "pages": [
-      {
-        "index": 0,
-        "title": "Overview",
-        "content": "# RoboWorld 2026 Track 1: WorldNav\n\nWelcome to WorldNav, the language-conditioned visual navigation track of the RoboWorld 2026, affiliated with the RoboPAD Workshop at NeurIPS 2026.\n\nAn agent receives one initial egocentric RGB image and a natural-language instruction. It must predict a complete navigation action sequence without a goal image, an initial numeric pose, or further observations from the environment. World models, vision-language-action models, and policy-only methods are welcome.\n\n**Important:** To be eligible for the final award ranking, please register your team at https://forms.gle/P2jH3c2VoGsNNWXG8 and make sure to enter the CodaBench team name you use for your submissions.\n\n## Task Definition\n\nSubmit variable-length sequences of `[dx, dy, dyaw]` actions. `dx` means forward motion and `dy` means leftward motion in the agent's current local frame; `dyaw` changes heading in radians.\n\nThe private evaluator uses the recorded initial pose to reconstruct the predicted route. Test participants receive only the initial image and instruction, not the pose, goal, reference trajectory, or reference action sequence.\n\n## Phases\n\nPhase 1 is for development and validation. Final rankings and awards are based entirely on Phase 2; phase scores are not combined. Phase 1 remains open for validation submissions during Phase 2.\n\n| Phase | &emsp; | Evaluation data | &emsp; | Ranking |\n|:--|:--:|:--|:--:|:--|\n| Phase 1: Validation | &emsp; | Released `val_seen` and `val_unseen` inputs | &emsp; | Mean of `val_seen` and `val_unseen` Scores (50% each) |\n| Phase 2: Final Evaluation | &emsp; | Held-out test inputs | &emsp; | Test Score |\n\n[Download Phase 2 Test Dataset](https://drive.google.com/drive/folders/1QWGsRBB8KlS_v9Jf0S51C3SpKltL_ZPL?usp=sharing).\n\n## Awards & Recognition\n\nOfficial challenge awards follow the [RoboWorld 2026 Awards & Recognition](https://roboworld2026.github.io/#awards) guidelines:\n\n- **Certificates of Recognition**: The **Top 5 teams in each track** will receive official certificates recognizing their achievements in the RoboWorld Challenge 2026. A **Best Innovative Solution** award will also recognize outstanding creativity and technical innovation.\n- **Oral Presentations**: Selected top-performing teams will be invited to give **oral presentations** at the **RoboPAD Workshop** at **NeurIPS 2026**, sharing their methods, results, and insights with the research community.\n\n## Resources and Contact\n\n| Resource | &emsp; | Link |\n|:--|:--:|:--|\n| Challenge Website | &emsp; | [RoboWorld 2026](https://roboworld2026.github.io) |\n| Official Track 1 Website | &emsp; | [RoboWorld 2026 — Track 1: WorldNav](https://roboworld2026.github.io/track1) |\n| Track 1 Repository | &emsp; | [WorldNav Track 1](https://github.com/roboworld2026/track1) |\n| Evaluation & Leaderboard | &emsp; | [CodaBench Competition #18185](https://www.codabench.org/competitions/18185/) |\n| Dataset | &emsp; | [LCVN on Hugging Face](https://huggingface.co/datasets/fly1113/LCVN) |\n| Baseline Implementation | &emsp; | [LCVN Repository](https://github.com/UWMILab/LCVN) |\n\nFor technical support, use [GitHub Issues](https://github.com/roboworld2026/track1/issues).  \nFor event and registration questions, email [roboworld2026@gmail.com](mailto:roboworld2026@gmail.com).\n\n### 💬 Community & Discussion\n\n- **Discord:** [Join the RoboWorld Track 1 Discord](https://discord.gg/gv2yW3TaA)\n- **WeChat Group:** [Join the RoboWorld Track 1 WeChat Group](https://github.com/roboworld2026/roboworld2026.github.io/blob/main/wechat_track1.JPG)\n\n<a href=\"https://github.com/roboworld2026/roboworld2026.github.io/blob/main/wechat_track1.JPG\" target=\"_blank\"><img src=\"https://raw.githubusercontent.com/roboworld2026/roboworld2026.github.io/main/wechat_track1.JPG\" alt=\"Track 1 WeChat Group QR Code\" width=\"220\" /></a>\n\n<div id=\"worldnav-leaderboard-display\">\n<style>\n.results-tab #leaderboardTable:has(a[href=\"/api/competitions/18185/results.csv?phase=30680\"]):has(thead > tr:last-child > th:nth-child(22):last-child) > thead > tr:last-child > th:nth-child(n+18):nth-child(-n+22),\n.results-tab #leaderboardTable:has(a[href=\"/api/competitions/18185/results.csv?phase=30680\"]):has(thead > tr:last-child > th:nth-child(22):last-child) > tbody > tr > td:nth-child(n+18):nth-child(-n+22) { display: none; }\n.results-tab #leaderboardTable:has(a[href=\"/api/competitions/18185/results.csv?phase=30680\"]):has(thead > tr:last-child > th:nth-child(23):last-child) > thead > tr:last-child > th:nth-child(n+19):nth-child(-n+23),\n.results-tab #leaderboardTable:has(a[href=\"/api/competitions/18185/results.csv?phase=30680\"]):has(thead > tr:last-child > th:nth-child(23):last-child) > tbody > tr > td:nth-child(n+19):nth-child(-n+23) { display: none; }\n.results-tab #leaderboardTable:has(a[href=\"/api/competitions/18185/results.csv?phase=31157\"]):has(thead > tr:last-child > th:nth-child(22):last-child) > thead > tr:last-child > th:nth-child(n+6):nth-child(-n+17),\n.results-tab #leaderboardTable:has(a[href=\"/api/competitions/18185/results.csv?phase=31157\"]):has(thead > tr:last-child > th:nth-child(22):last-child) > tbody > tr > td:nth-child(n+6):nth-child(-n+17) { display: none; }\n.results-tab #leaderboardTable:has(a[href=\"/api/competitions/18185/results.csv?phase=31157\"]):has(thead > tr:last-child > th:nth-child(23):last-child) > thead > tr:last-child > th:nth-child(n+7):nth-child(-n+18),\n.results-tab #leaderboardTable:has(a[href=\"/api/competitions/18185/results.csv?phase=31157\"]):has(thead > tr:last-child > th:nth-child(23):last-child) > tbody > tr > td:nth-child(n+7):nth-child(-n+18) { display: none; }\n</style>\n</div>",
-        "content_zh": "# RoboWorld 2026 赛道1：WorldNav\n\n欢迎来到WorldNav，这是RoboWorld 2026的语言条件视觉导航赛道，隶属于NeurIPS 2026的RoboPAD研讨会。\n\n智能体接收一张初始的自我中心RGB图像和一条自然语言指令。它必须在没有目标图像、初始数值姿态或来自环境的进一步观测的情况下，预测完整的导航动作序列。欢迎使用世界模型、视觉-语言-动作模型以及纯策略方法。\n\n## 任务定义\n\n提交可变长度的`[dx, dy, dyaw]`动作序列。`dx`表示前向运动，`dy`表示智能体当前局部坐标系中的左向运动；`dyaw`以弧度改变朝向。\n\n私有评估器使用记录的初始姿态来重建预测路径。测试参与者仅接收初始图像和指令，而不接收姿态、目标、参考轨迹或参考动作序列。\n\n## 阶段\n\n第1阶段用于开发和验证。最终排名和奖项完全基于第2阶段；阶段分数不合并。提交前请在CodaBench上查看当前阶段日期。\n\n| 阶段 | &emsp; | 评估数据 | &emsp; | 排名 |\n|:--|:--:|:--|:--:|:--|\n| 第1阶段：验证 | &emsp; | 发布的`val_seen`和`val_unseen`输入 | &emsp; | `val_seen`和`val_unseen`分数的平均值（各占50%）|\n| 第2阶段：最终评估 | &emsp; | 保留的测试输入 | &emsp; | 测试分数 |\n\n## 奖项与认可\n\n官方竞赛奖项遵循[RoboWorld 2026奖项与认可](https://roboworld2026.github.io/#awards)指南：\n\n- **认可证书**：**每个赛道的前5名团队**将获得官方证书，以表彰他们在RoboWorld Challenge 2026中的成就。还将颁发**最佳创新解决方案**奖，以表彰杰出的创造力和技术创新。\n- **口头报告**：选出的顶尖团队将被邀请在**NeurIPS 2026**的**RoboPAD研讨会**上进行**口头报告**，与研究界分享他们的方法、结果和见解。\n\n## 资源与联系方式\n\n| 资源 | &emsp; | 链接 |\n|:--|:--:|:--|\n| 竞赛网站 | &emsp; | [RoboWorld 2026](https://roboworld2026.github.io) |\n| 赛道1官方网站 | &emsp; | [RoboWorld 2026 — 赛道1：WorldNav](https://roboworld2026.github.io/track1) |\n| 赛道1代码库 | &emsp; | [worldnav-challenge](https://github.com/F1y1113/worldnav-challenge) |\n| 评估与排行榜 | &emsp; | [CodaBench竞赛 #18185](https://www.codabench.org/competitions/18185/) |\n| 数据集 | &emsp; | [Hugging Face上的LCVN](https://huggingface.co/datasets/fly1113/LCVN) |\n| 基线实现 | &emsp; | [LCVN代码库](https://github.com/UWMILab/LCVN) |\n\n如需技术支持，请使用[GitHub Issues](https://github.com/F1y1113/worldnav-challenge/issues)。  \n如有关于活动和注册的问题，请发送邮件至[roboworld2026@gmail.com](mailto:roboworld2026@gmail.com)。\n\n### 💬 社区与讨论\n\n- **Discord：**[加入RoboWorld赛道1 Discord](https://discord.gg/gv2yW3TaA)\n- **微信群：**[加入RoboWorld赛道1微信群](https://github.com/roboworld2026/roboworld2026.github.io/blob/main/wechat_track1.JPG)\n\n<a href=\"https://github.com/roboworld2026/roboworld2026.github.io/blob/main/wechat_track1.JPG\" target=\"_blank\"><img src=\"https://raw.githubusercontent.com/roboworld2026/roboworld2026.github.io/main/wechat_track1.JPG\" alt=\"Track 1 WeChat Group QR Code\" width=\"220\" /></a>"
-      },
-      {
-        "index": 1,
-        "title": "Submission & Evaluation",
-        "content": "# Submission & Evaluation\n\nSubmit predicted action sequences in a ZIP archive, using only each episode's initial RGB image and instruction.\n\nEach phase allows **5 submissions per day and 200 in total per participant**.\n\n## Action format\n\nEach action is [dx, dy, dyaw]: forward displacement, leftward displacement in the agent's **current local frame**, and yaw update in radians. Sequences may have different lengths; the JSON list ends the trajectory.\n\n\nLimits: at most 64 actions per episode; hypot(dx,dy) ≤ 2.46 dataset coordinate units and |dyaw| ≤ 6.29 rad per action (evaluated modulo 2π in [−π, π)).\n\n## ZIP layout\n\n### Phase 2: Final Evaluation\n\nPut `test.json` directly at the archive root and include all 15,303 test episodes:\n\n```text\nsubmission.zip\n└── test.json\n```\n\n```bash\nzip -j submission.zip test.json\n```\n\nDownload the Phase 2 example ZIP from **Files** and replace its illustrative actions.\n\n<details>\n<summary><b>Phase 1: Validation archive layout (click to expand)</b></summary>\n\nBoth `val_seen.json` and `val_unseen.json` are required at the archive root:\n\n```text\nsubmission.zip\n├── val_seen.json\n└── val_unseen.json\n```\n\n```bash\nzip -j submission.zip val_seen.json val_unseen.json\n```\n\n</details>\n\n### JSON schema\n\nEach file contains split and episodes. Include every phase episode_id exactly once, with an actions list:\n\n    {\n      \"split\": \"test\",\n      \"episodes\": [\n        {\n          \"episode_id\": \"LCVN_test_00001\",\n          \"actions\": [[0.25, 0.0, 0.0], [0.0, 0.0, 0.15], [0.12, -0.05, 0.0]]\n        }\n      ]\n    }\n\nThis abbreviated example is not a complete submission. Phase 1 uses the corresponding validation split name and its original episode IDs.\n\n## Evaluation metrics\n\nThe two fidelity metrics range from 0 to 1. See [demonstration.py](https://github.com/roboworld2026/track1/blob/main/demonstration.py) for the five calculations.\n\n| Metric | &emsp; | Direction | &emsp; | Meaning |\n| :-- | :--: | :-- | :--: | :-- |\n| **Success Rate (SR)** | &emsp; | Higher | &emsp; | Fraction meeting the final-position success criterion. |\n| **Absolute Trajectory Error (ATE)** | &emsp; | Lower | &emsp; | Position error over the reference trajectory. |\n| **Relative Pose Error (RPE)** | &emsp; | Lower | &emsp; | Relative translation error between consecutive poses. |\n| **Full-route fidelity** | &emsp; | Higher | &emsp; | Agreement with the complete ordered recorded route, including a penalty for unnecessary travel. |\n| **Heading and turn fidelity** | &emsp; | Higher | &emsp; | Agreement of facing direction while moving and of the direction, position, and amount of turns. |\n\n## Composite Score\n\nEach episode is scored first, then the contributions are averaged:\n\n    Score = (100/N) × Σ_i { FullRouteFidelity_i × (1 + HeadingTurnFidelity_i)/2\n                          × [0.70 + 0.10 SR_i + 0.10/(1+ATE_i) + 0.10/(1+RPE_i)] }\n\nSR_i is binary success; ATE_i and RPE_i are per-episode errors in dataset coordinate units. Score averages episode contributions.\n\nPhase 1 ranks by `(Score_val_seen + Score_val_unseen) / 2`, with equal weight for each split. Both split files are required; a submission missing either file is rejected. Both split Scores are displayed. Phase 2 ranks by test Score.",
-        "content_zh": "# 提交与评估\n\n将预测的动作序列提交至ZIP压缩包，仅使用每个片段的初始RGB图像和指令。\n\n## 动作格式\n\n每个动作为[dx, dy, dyaw]：前向位移、智能体**当前局部坐标系**中的左向位移，以及偏航角更新（弧度制）。序列长度可不同；JSON列表标记轨迹结束。\n\n限制：每个片段最多64个动作；单次动作的hypot(dx,dy) ≤ 2.46数据集坐标单位且|dyaw| ≤ 6.29弧度（在[−π, π)范围内对2π取模计算）。\n\n## ZIP文件结构\n\n将所需的JSON文件置于压缩包根目录。可下载的示例ZIP展示了文件结构和第一阶段片段ID；替换其中的示例动作。\n\n| 阶段 |   | 所需文件 |\n| :-- | :--: | :-- |\n| 第一阶段 |   | val_seen.json, val_unseen.json |\n| 第二阶段 |   | test.json |\n\n### JSON模式\n\n每个文件包含数据集划分和片段。每个阶段的episode_id必须且只能出现一次，附带动作列表：\n\n    {\n      \"split\": \"val_unseen\",\n      \"episodes\": [\n        {\n          \"episode_id\": \"20210826_40_0001_02_0\",\n          \"actions\": [[0.25, 0.0, 0.0], [0.0, 0.0, 0.15], [0.12, -0.05, 0.0]]\n        }\n      ]\n    }\n\n此简化示例并非完整提交。\n\n## 评估指标\n\n两个保真度指标范围为0到1。五种计算方法参见[demonstration.py](https://github.com/F1y1113/worldnav-challenge/blob/main/demonstration.py)。\n\n| 指标 |   | 方向 |   | 含义 |\n| :-- | :--: | :-- | :--: | :-- |\n| **成功率 (SR)** |   | 越高越好 |   | 满足最终位置成功标准的比例。 |\n| **绝对轨迹误差 (ATE)** |   | 越低越好 |   | 相对于参考轨迹的位置误差。 |\n| **相对位姿误差 (RPE)** |   | 越低越好 |   | 连续位姿之间的相对平移误差。 |\n| **全路径保真度** |   | 越高越好 |   | 与完整有序记录路径的一致性，包括对不必要移动的惩罚。 |\n| **航向与转向保真度** |   | 越高越好 |   | 移动时朝向以及转向方向、位置和幅度的一致性。 |\n\n## 综合得分\n\n首先对每个片段进行评分，然后取平均值：\n\n    Score = (100/N) × Σ_i { FullRouteFidelity_i × (1 + HeadingTurnFidelity_i)/2\n                          × [0.70 + 0.10 SR_i + 0.10/(1+ATE_i) + 0.10/(1+RPE_i)] }\n\nSR_i为二元成功标志；ATE_i和RPE_i为每个片段在数据集坐标单位下的误差。得分取各片段贡献的平均值。\n\n第一阶段按`(Score_val_seen + Score_val_unseen) / 2`排名，两个划分权重相等。两个划分的文件都必须提交；缺少任一文件的提交将被拒绝。两个划分的得分均会显示。第二阶段按测试集得分排名。"
-      }
-    ]
-  },
   "18135": {
     "id": 18135,
     "title": "RoboWorld 2026 — Track 2: HA-VLN",
@@ -48,9 +6,9 @@
     "description_zh": "在包含动态人类的连续三维环境中进行人类感知的视觉语言导航。RoboWorld 2026 赛道2挑战，与 RoboPAD 2026 联合主办。",
     "created_by": "yifeidong",
     "created_when": "2026-09-17T02:16:03.034924Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791417704/03043570c5da/logo_track2.png?AWSAccessKeyId=codabench-prod&Signature=MG0OBm%2BftsycPi6dzyE%2Bw2PRvOA%3D&Expires=1794046984",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791417704/03043570c5da/logo_track2.png?AWSAccessKeyId=codabench-prod&Signature=z%2FNi%2FyCB6A7IYAH7dk79zBLDvAM%3D&Expires=1794134659",
     "participants_count": 61,
-    "submissions_count": 207,
+    "submissions_count": 292,
     "first_phase_start": null,
     "phases": [
       {
@@ -83,6 +41,48 @@
       }
     ]
   },
+  "18185": {
+    "id": 18185,
+    "title": "RoboWorld 2026 — Track 1: WorldNav",
+    "description": "Language-conditioned open-loop visual navigation and trajectory prediction in continuous 3D environments. The WorldNav track of the RoboWorld Challenge 2026, affiliated with the RoboPAD Workshop at NeurIPS 2026.",
+    "description_zh": "连续三维环境中的语言条件化开环视觉导航与轨迹预测。RoboWorld Challenge 2026的WorldNav赛道，隶属于NeurIPS 2026的RoboPAD研讨会。",
+    "created_by": "yifeidong",
+    "created_when": "2026-09-19T07:46:40.332684Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-08-1791429899/6f72dc95718f/codabench_track1_icon.png?AWSAccessKeyId=codabench-prod&Signature=59nPHfFrY67tiEqg%2Bb5LD%2BfV5bU%3D&Expires=1794134659",
+    "participants_count": 88,
+    "submissions_count": 468,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 30680,
+        "name": "Phase 1: Validation",
+        "start": "2026-10-15T00:00:00Z",
+        "end": "2026-11-30T23:59:00Z",
+        "max_submissions_per_day": 5
+      },
+      {
+        "id": 31157,
+        "name": "Phase 2: Final Evaluation",
+        "start": "2026-10-31T00:00:00Z",
+        "end": "2026-11-30T23:59:00Z",
+        "max_submissions_per_day": 200
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Overview",
+        "content": "# RoboWorld 2026 Track 1: WorldNav\n\nWelcome to WorldNav, the language-conditioned visual navigation track of the RoboWorld 2026, affiliated with the RoboPAD Workshop at NeurIPS 2026.\n\nAn agent receives one initial egocentric RGB image and a natural-language instruction. It must predict a complete navigation action sequence without a goal image, an initial numeric pose, or further observations from the environment. World models, vision-language-action models, and policy-only methods are welcome.\n\n**Important:** To be eligible for the final award ranking, please register your team at https://forms.gle/P2jH3c2VoGsNNWXG8 and make sure to enter the CodaBench team name you use for your submissions.\n\n## Task Definition\n\nSubmit variable-length sequences of `[dx, dy, dyaw]` actions. `dx` means forward motion and `dy` means leftward motion in the agent's current local frame; `dyaw` changes heading in radians.\n\nThe private evaluator uses the recorded initial pose to reconstruct the predicted route. Test participants receive only the initial image and instruction, not the pose, goal, reference trajectory, or reference action sequence.\n\n## Phases\n\nPhase 1 is for development and validation. Final rankings and awards are based entirely on Phase 2; phase scores are not combined. Phase 1 remains open for validation submissions during Phase 2.\n\n| Phase | &emsp; | Evaluation data | &emsp; | Ranking |\n|:--|:--:|:--|:--:|:--|\n| Phase 1: Validation | &emsp; | Released `val_seen` and `val_unseen` inputs | &emsp; | Mean of `val_seen` and `val_unseen` Scores (50% each) |\n| Phase 2: Final Evaluation | &emsp; | Held-out test inputs | &emsp; | Test Score |\n\n[Download Phase 2 Test Dataset](https://drive.google.com/drive/folders/1QWGsRBB8KlS_v9Jf0S51C3SpKltL_ZPL?usp=sharing).\n\n## Awards & Recognition\n\nOfficial challenge awards follow the [RoboWorld 2026 Awards & Recognition](https://roboworld2026.github.io/#awards) guidelines:\n\n- **Certificates of Recognition**: The **Top 5 teams in each track** will receive official certificates recognizing their achievements in the RoboWorld Challenge 2026. A **Best Innovative Solution** award will also recognize outstanding creativity and technical innovation.\n- **Oral Presentations**: Selected top-performing teams will be invited to give **oral presentations** at the **RoboPAD Workshop** at **NeurIPS 2026**, sharing their methods, results, and insights with the research community.\n\n## Resources and Contact\n\n| Resource | &emsp; | Link |\n|:--|:--:|:--|\n| Challenge Website | &emsp; | [RoboWorld 2026](https://roboworld2026.github.io) |\n| Official Track 1 Website | &emsp; | [RoboWorld 2026 — Track 1: WorldNav](https://roboworld2026.github.io/track1) |\n| Track 1 Repository | &emsp; | [WorldNav Track 1](https://github.com/roboworld2026/track1) |\n| Evaluation & Leaderboard | &emsp; | [CodaBench Competition #18185](https://www.codabench.org/competitions/18185/) |\n| Dataset | &emsp; | [LCVN on Hugging Face](https://huggingface.co/datasets/fly1113/LCVN) |\n| Baseline Implementation | &emsp; | [LCVN Repository](https://github.com/UWMILab/LCVN) |\n\nFor technical support, use [GitHub Issues](https://github.com/roboworld2026/track1/issues).  \nFor event and registration questions, email [roboworld2026@gmail.com](mailto:roboworld2026@gmail.com).\n\n### 💬 Community & Discussion\n\n- **Discord:** [Join the RoboWorld Track 1 Discord](https://discord.gg/gv2yW3TaA)\n- **WeChat Group:** [Join the RoboWorld Track 1 WeChat Group](https://github.com/roboworld2026/roboworld2026.github.io/blob/main/wechat_track1.JPG)\n\n<a href=\"https://github.com/roboworld2026/roboworld2026.github.io/blob/main/wechat_track1.JPG\" target=\"_blank\"><img src=\"https://raw.githubusercontent.com/roboworld2026/roboworld2026.github.io/main/wechat_track1.JPG\" alt=\"Track 1 WeChat Group QR Code\" width=\"220\" /></a>\n\n<div id=\"worldnav-leaderboard-display\">\n<style>\n.results-tab #leaderboardTable:has(a[href=\"/api/competitions/18185/results.csv?phase=30680\"]):has(thead > tr:last-child > th:nth-child(22):last-child) > thead > tr:last-child > th:nth-child(n+18):nth-child(-n+22),\n.results-tab #leaderboardTable:has(a[href=\"/api/competitions/18185/results.csv?phase=30680\"]):has(thead > tr:last-child > th:nth-child(22):last-child) > tbody > tr > td:nth-child(n+18):nth-child(-n+22) { display: none; }\n.results-tab #leaderboardTable:has(a[href=\"/api/competitions/18185/results.csv?phase=30680\"]):has(thead > tr:last-child > th:nth-child(23):last-child) > thead > tr:last-child > th:nth-child(n+19):nth-child(-n+23),\n.results-tab #leaderboardTable:has(a[href=\"/api/competitions/18185/results.csv?phase=30680\"]):has(thead > tr:last-child > th:nth-child(23):last-child) > tbody > tr > td:nth-child(n+19):nth-child(-n+23) { display: none; }\n.results-tab #leaderboardTable:has(a[href=\"/api/competitions/18185/results.csv?phase=31157\"]):has(thead > tr:last-child > th:nth-child(22):last-child) > thead > tr:last-child > th:nth-child(n+6):nth-child(-n+17),\n.results-tab #leaderboardTable:has(a[href=\"/api/competitions/18185/results.csv?phase=31157\"]):has(thead > tr:last-child > th:nth-child(22):last-child) > tbody > tr > td:nth-child(n+6):nth-child(-n+17) { display: none; }\n.results-tab #leaderboardTable:has(a[href=\"/api/competitions/18185/results.csv?phase=31157\"]):has(thead > tr:last-child > th:nth-child(23):last-child) > thead > tr:last-child > th:nth-child(n+7):nth-child(-n+18),\n.results-tab #leaderboardTable:has(a[href=\"/api/competitions/18185/results.csv?phase=31157\"]):has(thead > tr:last-child > th:nth-child(23):last-child) > tbody > tr > td:nth-child(n+7):nth-child(-n+18) { display: none; }\n</style>\n</div>",
+        "content_zh": "# RoboWorld 2026 赛道1：WorldNav\n\n欢迎来到WorldNav，这是RoboWorld 2026的语言条件视觉导航赛道，隶属于NeurIPS 2026的RoboPAD研讨会。\n\n智能体接收一张初始的自我中心RGB图像和一条自然语言指令。它必须在没有目标图像、初始数值姿态或来自环境的进一步观测的情况下，预测完整的导航动作序列。欢迎使用世界模型、视觉-语言-动作模型以及纯策略方法。\n\n## 任务定义\n\n提交可变长度的`[dx, dy, dyaw]`动作序列。`dx`表示前向运动，`dy`表示智能体当前局部坐标系中的左向运动；`dyaw`以弧度改变朝向。\n\n私有评估器使用记录的初始姿态来重建预测路径。测试参与者仅接收初始图像和指令，而不接收姿态、目标、参考轨迹或参考动作序列。\n\n## 阶段\n\n第1阶段用于开发和验证。最终排名和奖项完全基于第2阶段；阶段分数不合并。提交前请在CodaBench上查看当前阶段日期。\n\n| 阶段 | &emsp; | 评估数据 | &emsp; | 排名 |\n|:--|:--:|:--|:--:|:--|\n| 第1阶段：验证 | &emsp; | 发布的`val_seen`和`val_unseen`输入 | &emsp; | `val_seen`和`val_unseen`分数的平均值（各占50%）|\n| 第2阶段：最终评估 | &emsp; | 保留的测试输入 | &emsp; | 测试分数 |\n\n## 奖项与认可\n\n官方竞赛奖项遵循[RoboWorld 2026奖项与认可](https://roboworld2026.github.io/#awards)指南：\n\n- **认可证书**：**每个赛道的前5名团队**将获得官方证书，以表彰他们在RoboWorld Challenge 2026中的成就。还将颁发**最佳创新解决方案**奖，以表彰杰出的创造力和技术创新。\n- **口头报告**：选出的顶尖团队将被邀请在**NeurIPS 2026**的**RoboPAD研讨会**上进行**口头报告**，与研究界分享他们的方法、结果和见解。\n\n## 资源与联系方式\n\n| 资源 | &emsp; | 链接 |\n|:--|:--:|:--|\n| 竞赛网站 | &emsp; | [RoboWorld 2026](https://roboworld2026.github.io) |\n| 赛道1官方网站 | &emsp; | [RoboWorld 2026 — 赛道1：WorldNav](https://roboworld2026.github.io/track1) |\n| 赛道1代码库 | &emsp; | [worldnav-challenge](https://github.com/F1y1113/worldnav-challenge) |\n| 评估与排行榜 | &emsp; | [CodaBench竞赛 #18185](https://www.codabench.org/competitions/18185/) |\n| 数据集 | &emsp; | [Hugging Face上的LCVN](https://huggingface.co/datasets/fly1113/LCVN) |\n| 基线实现 | &emsp; | [LCVN代码库](https://github.com/UWMILab/LCVN) |\n\n如需技术支持，请使用[GitHub Issues](https://github.com/F1y1113/worldnav-challenge/issues)。  \n如有关于活动和注册的问题，请发送邮件至[roboworld2026@gmail.com](mailto:roboworld2026@gmail.com)。\n\n### 💬 社区与讨论\n\n- **Discord：**[加入RoboWorld赛道1 Discord](https://discord.gg/gv2yW3TaA)\n- **微信群：**[加入RoboWorld赛道1微信群](https://github.com/roboworld2026/roboworld2026.github.io/blob/main/wechat_track1.JPG)\n\n<a href=\"https://github.com/roboworld2026/roboworld2026.github.io/blob/main/wechat_track1.JPG\" target=\"_blank\"><img src=\"https://raw.githubusercontent.com/roboworld2026/roboworld2026.github.io/main/wechat_track1.JPG\" alt=\"Track 1 WeChat Group QR Code\" width=\"220\" /></a>"
+      },
+      {
+        "index": 1,
+        "title": "Submission & Evaluation",
+        "content": "# Submission & Evaluation\n\nSubmit predicted action sequences in a ZIP archive, using only each episode's initial RGB image and instruction.\n\nEach phase allows **5 submissions per day and 200 in total per participant**.\n\n## Action format\n\nEach action is [dx, dy, dyaw]: forward displacement, leftward displacement in the agent's **current local frame**, and yaw update in radians. Sequences may have different lengths; the JSON list ends the trajectory.\n\n\nLimits: at most 64 actions per episode; hypot(dx,dy) ≤ 2.46 dataset coordinate units and |dyaw| ≤ 6.29 rad per action (evaluated modulo 2π in [−π, π)).\n\n## ZIP layout\n\n### Phase 2: Final Evaluation\n\nPut `test.json` directly at the archive root and include all 15,303 test episodes:\n\n```text\nsubmission.zip\n└── test.json\n```\n\n```bash\nzip -j submission.zip test.json\n```\n\nDownload the Phase 2 example ZIP from **Files** and replace its illustrative actions.\n\n<details>\n<summary><b>Phase 1: Validation archive layout (click to expand)</b></summary>\n\nBoth `val_seen.json` and `val_unseen.json` are required at the archive root:\n\n```text\nsubmission.zip\n├── val_seen.json\n└── val_unseen.json\n```\n\n```bash\nzip -j submission.zip val_seen.json val_unseen.json\n```\n\n</details>\n\n### JSON schema\n\nEach file contains split and episodes. Include every phase episode_id exactly once, with an actions list:\n\n    {\n      \"split\": \"test\",\n      \"episodes\": [\n        {\n          \"episode_id\": \"LCVN_test_00001\",\n          \"actions\": [[0.25, 0.0, 0.0], [0.0, 0.0, 0.15], [0.12, -0.05, 0.0]]\n        }\n      ]\n    }\n\nThis abbreviated example is not a complete submission. Phase 1 uses the corresponding validation split name and its original episode IDs.\n\n## Evaluation metrics\n\nThe two fidelity metrics range from 0 to 1. See [demonstration.py](https://github.com/roboworld2026/track1/blob/main/demonstration.py) for the five calculations.\n\n| Metric | &emsp; | Direction | &emsp; | Meaning |\n| :-- | :--: | :-- | :--: | :-- |\n| **Success Rate (SR)** | &emsp; | Higher | &emsp; | Fraction meeting the final-position success criterion. |\n| **Absolute Trajectory Error (ATE)** | &emsp; | Lower | &emsp; | Position error over the reference trajectory. |\n| **Relative Pose Error (RPE)** | &emsp; | Lower | &emsp; | Relative translation error between consecutive poses. |\n| **Full-route fidelity** | &emsp; | Higher | &emsp; | Agreement with the complete ordered recorded route, including a penalty for unnecessary travel. |\n| **Heading and turn fidelity** | &emsp; | Higher | &emsp; | Agreement of facing direction while moving and of the direction, position, and amount of turns. |\n\n## Composite Score\n\nEach episode is scored first, then the contributions are averaged:\n\n    Score = (100/N) × Σ_i { FullRouteFidelity_i × (1 + HeadingTurnFidelity_i)/2\n                          × [0.70 + 0.10 SR_i + 0.10/(1+ATE_i) + 0.10/(1+RPE_i)] }\n\nSR_i is binary success; ATE_i and RPE_i are per-episode errors in dataset coordinate units. Score averages episode contributions.\n\nPhase 1 ranks by `(Score_val_seen + Score_val_unseen) / 2`, with equal weight for each split. Both split files are required; a submission missing either file is rejected. Both split Scores are displayed. Phase 2 ranks by test Score.",
+        "content_zh": "# 提交与评估\n\n将预测的动作序列提交至ZIP压缩包，仅使用每个片段的初始RGB图像和指令。\n\n## 动作格式\n\n每个动作为[dx, dy, dyaw]：前向位移、智能体**当前局部坐标系**中的左向位移，以及偏航角更新（弧度制）。序列长度可不同；JSON列表标记轨迹结束。\n\n限制：每个片段最多64个动作；单次动作的hypot(dx,dy) ≤ 2.46数据集坐标单位且|dyaw| ≤ 6.29弧度（在[−π, π)范围内对2π取模计算）。\n\n## ZIP文件结构\n\n将所需的JSON文件置于压缩包根目录。可下载的示例ZIP展示了文件结构和第一阶段片段ID；替换其中的示例动作。\n\n| 阶段 |   | 所需文件 |\n| :-- | :--: | :-- |\n| 第一阶段 |   | val_seen.json, val_unseen.json |\n| 第二阶段 |   | test.json |\n\n### JSON模式\n\n每个文件包含数据集划分和片段。每个阶段的episode_id必须且只能出现一次，附带动作列表：\n\n    {\n      \"split\": \"val_unseen\",\n      \"episodes\": [\n        {\n          \"episode_id\": \"20210826_40_0001_02_0\",\n          \"actions\": [[0.25, 0.0, 0.0], [0.0, 0.0, 0.15], [0.12, -0.05, 0.0]]\n        }\n      ]\n    }\n\n此简化示例并非完整提交。\n\n## 评估指标\n\n两个保真度指标范围为0到1。五种计算方法参见[demonstration.py](https://github.com/F1y1113/worldnav-challenge/blob/main/demonstration.py)。\n\n| 指标 |   | 方向 |   | 含义 |\n| :-- | :--: | :-- | :--: | :-- |\n| **成功率 (SR)** |   | 越高越好 |   | 满足最终位置成功标准的比例。 |\n| **绝对轨迹误差 (ATE)** |   | 越低越好 |   | 相对于参考轨迹的位置误差。 |\n| **相对位姿误差 (RPE)** |   | 越低越好 |   | 连续位姿之间的相对平移误差。 |\n| **全路径保真度** |   | 越高越好 |   | 与完整有序记录路径的一致性，包括对不必要移动的惩罚。 |\n| **航向与转向保真度** |   | 越高越好 |   | 移动时朝向以及转向方向、位置和幅度的一致性。 |\n\n## 综合得分\n\n首先对每个片段进行评分，然后取平均值：\n\n    Score = (100/N) × Σ_i { FullRouteFidelity_i × (1 + HeadingTurnFidelity_i)/2\n                          × [0.70 + 0.10 SR_i + 0.10/(1+ATE_i) + 0.10/(1+RPE_i)] }\n\nSR_i为二元成功标志；ATE_i和RPE_i为每个片段在数据集坐标单位下的误差。得分取各片段贡献的平均值。\n\n第一阶段按`(Score_val_seen + Score_val_unseen) / 2`排名，两个划分权重相等。两个划分的文件都必须提交；缺少任一文件的提交将被拒绝。两个划分的得分均会显示。第二阶段按测试集得分排名。"
+      }
+    ]
+  },
   "14248": {
     "id": 14248,
     "title": "OncoSegment - Breast Tumor Mapping",
@@ -90,7 +90,7 @@
     "description_zh": "分割乳腺超声图像中的良性和恶性肿瘤。",
     "created_by": "thomas_dnil",
     "created_when": "2026-03-02T15:45:26.167445Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-03-02-1772466527/bd1a4506a767/sample_00000.png?AWSAccessKeyId=codabench-prod&Signature=I52PK%2Bz0RqYIQYU2tVyyotQp8yE%3D&Expires=1794047308",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-03-02-1772466527/bd1a4506a767/sample_00000.png?AWSAccessKeyId=codabench-prod&Signature=eD2mSMvpLvEghHUw%2FdLK3BAmMLc%3D&Expires=1794134766",
     "participants_count": 18,
     "submissions_count": 3,
     "first_phase_start": null,
@@ -124,6 +124,54 @@
       }
     ]
   },
+  "18559": {
+    "id": 18559,
+    "title": "Double Agent Dilemma (IOAI 2026 practice)",
+    "description": "Add a small perturbation to each image so that ResNet18 and ViT-Tiny disagree: once with the CNN right and the Transformer wrong, once the other way round. Smaller is better.",
+    "description_zh": "为每张图像添加微小扰动，使ResNet18与ViT-Tiny产生分歧：一次让CNN正确而Transformer错误，一次反过来。扰动越小越好。",
+    "created_by": "ngjabach",
+    "created_when": "2026-11-07T18:42:38.265467Z",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-07-1794076958/7aa87e329618/logo.png?AWSAccessKeyId=codabench-prod&Signature=UAnwhPNyVf6u8tiAzh5L2Tr9jL4%3D&Expires=1794134649",
+    "participants_count": 3,
+    "submissions_count": 4,
+    "first_phase_start": null,
+    "phases": [
+      {
+        "id": 31316,
+        "name": "Public test",
+        "start": "2026-11-08T07:05:00Z",
+        "end": "2026-11-08T12:05:00Z",
+        "max_submissions_per_day": 20
+      },
+      {
+        "id": 31317,
+        "name": "Private test",
+        "start": "2026-11-08T12:05:00Z",
+        "end": "2026-12-11T00:00:00Z",
+        "max_submissions_per_day": 3
+      }
+    ],
+    "pages": [
+      {
+        "index": 0,
+        "title": "Overview",
+        "content": "# Double Agent Dilemma (IOAI 2026 practice)\n\nTwo pretrained image classifiers look at the same photo: **Model R**, a ResNet-18 (a CNN), and\n**Model V**, a ViT-Tiny (a Transformer). On every image given here both are 100% correct and\nthey agree. To test how differently they see, add a **small perturbation** to each image so\nthat they stop agreeing. For every image you make two:\n\n* **Type A**: Model R still classifies the image correctly, Model V gets it wrong.\n* **Type B**: Model V still classifies the image correctly, Model R gets it wrong.\n\nSmaller perturbations score higher. Perturbations are added to the **raw image** (at its\noriginal resolution), pixels are clipped to [0, 1], and then the fixed transform runs:\nResize(256), CenterCrop(224), Normalize.\n\n## Where this comes from\n\nThis is a practice version of **IOAI 2026 Individual Contest, Task 4 \"Double Agent Dilemma\"**,\nrun on the official images that IOAI published (extracted from ImageNet-1K, CC BY 4.0, credits\non the Data page). The original graded a notebook under a 12-minute GPU budget. Here you\n**submit the perturbation files**, so no time budget is enforced. To practise under the original\nrules, keep to them yourself.\n\n| Reference point | Score |\n|---|---|\n| The baseline (constant noise) | 0.00 |\n| IOAI Scientific Committee (as reported by IOAI) | 96.99 |\n\nThe public test ranks 100 images, the private test a different 100. The maximum is 100.\nThe full original statement, in English and Vietnamese, is in `statement/` of the data download.\n\n## Allowed\n\nOnly `torchvision.models.resnet18` (ImageNet weights) and timm's `vit_tiny_patch16_224`\n(default pretrained weights), and no other pretrained model. Both are what the scorer uses.",
+        "content_zh": "双重特工困境（IOAI 2026 练习赛）\n\n两个预训练的图像分类器看着同一张照片：**模型 R**，一个 ResNet-18（CNN），以及**模型 V**，一个 ViT-Tiny（Transformer）。对于这里给出的每一张图像，两者都是 100% 正确且判断一致。为了测试它们观察方式的不同，向每张图像添加一个**小扰动**，使它们不再一致。对于你处理的每张图像，你生成两个：\n\n* **A 类型**：模型 R 仍然正确分类图像，模型 V 分类错误。\n* **B 类型**：模型 V 仍然正确分类图像，模型 R 分类错误。\n\n扰动越小得分越高。扰动被添加到**原始图像**（以其原始分辨率），像素被裁剪到 [0, 1] 区间，然后运行固定的预处理流程：Resize(256)、CenterCrop(224)、Normalize。\n\n## 题目来源\n\n这是**IOAI 2026 个人赛第 4 题\"双重特工困境\"**的练习版本，在 IOAI 发布的官方图像上运行（从 ImageNet-1K 提取，CC BY 4.0 许可，致谢见数据页面）。原比赛在 12 分钟 GPU 预算下对笔记本进行评分。这里你**提交扰动文件**，因此不强制执行时间预算。若要按照原始规则练习，请自行遵守。\n\n| 参考点 | 分数 |\n|---|---|\n| 基线（恒定噪声） | 0.00 |\n| IOAI 科学委员会（据 IOAI 报告） | 96.99 |\n\n公开测试排名 100 张图像，私有测试排名另外 100 张。满分是 100 分。完整的原始赛题陈述（英文和越南文）在数据下载包的 `statement/` 文件夹中。\n\n## 允许使用\n\n仅允许使用 `torchvision.models.resnet18`（ImageNet 权重）和 timm 的 `vit_tiny_patch16_224`（默认预训练权重），不允许使用其他预训练模型。评分器使用的正是这两个模型。"
+      },
+      {
+        "index": 1,
+        "title": "Data",
+        "content": "# Data\n\nDownload from the **Files** tab:\n\n| Download | Phase | Holds |\n|---|---|---|\n| `double_agent_dilemma_public_test_data.zip` | Public test | `training_set/`, `public_test/`, `statement/` |\n| `double_agent_dilemma_baseline.zip` | Public test | `baseline.ipynb`, `sample_submission.zip` |\n| `double_agent_dilemma_private_test_data.zip` | Private test | `training_set/`, `private_test/`, `statement/` |\n\n| File | What it is |\n|---|---|\n| `training_set/images/0000.png` ... | 100 training images (varying resolution) |\n| `training_set/labels.json` | `{\"0\": 65, ...}`: image index to ImageNet-1K class |\n| `public_test/images/`, `public_test/labels.json` | the 100 images ranked in the Public test phase, with their classes (this task gives test labels, as in the original) |\n| `private_test/images/`, `private_test/labels.json` | the 100 images ranked in the Private test phase |\n| `statement/` | IOAI's original statement, English and Vietnamese, unchanged |\n\nData: IOAI 2026 \"Double Agent Dilemma\", proposed by Tao\nDajiang, developed by Tao Dajiang, Zhuldyz-Zhan Sagimbayev and Kamalkhan Artykbayev, published\nby the IOAI 2026 Scientific Committee under CC BY 4.0. The images come from ImageNet-1K.\n\n## How to submit\n\nUpload a **zip** with, for every test image `{index}` (0, 1, 2, ...), two files at the **top\nlevel** of the zip (no folder inside):\n\n```\n0_a.pt   0_b.pt   1_a.pt   1_b.pt   ...\n```\n\nEach file is one tensor saved with `torch.save`, shape `3 x H x W` where `H` and `W` are the\n**original** size of that image (not 224 x 224). Float32 or float16 are both accepted. Compress\nthe zip: a full float32 submission is about 0.5 GB uncompressed, float16 halves it.\n\nA file that is missing, has the wrong shape, is not a floating-point tensor or contains NaN or\nInf is treated as a zero perturbation: it fools nothing and costs no norm. The scoring log lists\nthe first ones it zeroed.",
+        "content_zh": "# 数据\n\n从 **Files** 标签页下载：\n\n| 下载 | 阶段 | 包含 |\n|---|---|---|\n| `double_agent_dilemma_public_test_data.zip` | 公开测试 | `training_set/`、`public_test/`、`statement/` |\n| `double_agent_dilemma_baseline.zip` | 公开测试 | `baseline.ipynb`、`sample_submission.zip` |\n| `double_agent_dilemma_private_test_data.zip` | 私有测试 | `training_set/`、`private_test/`、`statement/` |\n\n| 文件 | 说明 |\n|---|---|\n| `training_set/images/0000.png` ... | 100 张训练图像（分辨率不一） |\n| `training_set/labels.json` | `{\"0\": 65, ...}`：图像索引到 ImageNet-1K 类别的映射 |\n| `public_test/images/`、`public_test/labels.json` | 公开测试阶段的 100 张待排名图像及其类别（如原始设定，本任务提供测试标签） |\n| `private_test/images/`、`private_test/labels.json` | 私有测试阶段的 100 张待排名图像 |\n| `statement/` | IOAI 原始赛题陈述，英文和越南文，未作更改 |\n\n数据来源：IOAI 2026 \"Double Agent Dilemma\"，由 Tao Dajiang 提出，Tao Dajiang、Zhuldyz-Zhan Sagimbayev 和 Kamalkhan Artykbayev 开发，由 IOAI 2026 科学委员会以 CC BY 4.0 许可发布。图像来自 ImageNet-1K。\n\n## 提交方式\n\n上传一个 **zip** 文件，对于每个测试图像 `{index}`（0、1、2、...），在 zip 的**顶层**（内部无文件夹）放置两个文件：\n\n```\n0_a.pt   0_b.pt   1_a.pt   1_b.pt   ...\n```\n\n每个文件是用 `torch.save` 保存的张量，形状为 `3 x H x W`，其中 `H` 和 `W` 为该图像的**原始**尺寸（而非 224 x 224）。接受 Float32 或 float16。压缩 zip：完整的 float32 提交约 0.5 GB（未压缩），float16 可减半。\n\n缺失、形状错误、非浮点张量或包含 NaN 或 Inf 的文件将被视为零扰动：它不会欺骗任何模型且不消耗范数。评分日志会列出首批被置零的文件。"
+      },
+      {
+        "index": 2,
+        "title": "Evaluation",
+        "content": "# Evaluation\n\nLet `M` be the number of images, `Score_A` the number of successful type A perturbations and\n`Score_B` the number of successful type B perturbations.\n\n    pure  = (Score_A + Score_B) / (2M)\n    score = pure x PF\n\nThe penalty factor PF lies between 0.5 and 1 and punishes large perturbations:\n\n    PF = 1.5 - sigmoid(50000 x mean over images of (||delta_a|| + ||delta_b||) / n)\n\nwhere `||.||` is the L2 norm and `n = 3 x H x W` is the number of values of that image. An\nempty perturbation gives PF = 1, and it is very sensitive near the top. The **Score** (pure\ntimes PF, on a 0 to 100 scale) ranks. The leaderboard also shows the pure score, the two\nsuccess rates, PF and the mean norm per pixel.\n\nScoring runs on CPU inside the platform; it uses `antialias=True` in the resize. A score you\ncompute elsewhere can differ in the last decimals.",
+        "content_zh": "# 评估\n\n设 `M` 为图像数量，`Score_A` 为成功的A类扰动数量，`Score_B` 为成功的B类扰动数量。\n\n    pure  = (Score_A + Score_B) / (2M)\n    score = pure × PF\n\n惩罚因子PF介于0.5和1之间，用于惩罚较大的扰动：\n\n    PF = 1.5 - sigmoid(50000 × 各图像的(||delta_a|| + ||delta_b||)均值 / n)\n\n其中 `||.||` 表示L2范数，`n = 3 × H × W` 为图像的数值总数。空扰动对应的PF值为1，且该值在接近上限时非常敏感。总分（pure乘以PF，范围为0到100）用于排名。排行榜同时显示纯分数、两种成功率、PF以及每像素的平均范数。\n\n评分在平台内部的CPU上运行；调整大小时使用 `antialias=True`。在其他地方计算的分数可能在最后几位小数上存在差异。"
+      }
+    ]
+  },
   "18527": {
     "id": 18527,
     "title": "Developing Digital Biomarkers: Food Image Benchmark",
@@ -131,8 +179,8 @@
     "description_zh": "从单张餐食照片识别食物成分及其克数（任务1），并估算碳水化合物、蛋白质含量或饮食质量评分（任务2）。使用来自Nutrition5k和January Food Benchmark的2923个训练餐食和974个验证餐食。",
     "created_by": "qjin-unisg",
     "created_when": "2026-11-04T12:02:36.678722Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-04-1793793756/9aa24271fce4/logo.png?AWSAccessKeyId=codabench-prod&Signature=JNetqz24vAdM0W9aIHUAUMZ13wg%3D&Expires=1794046978",
-    "participants_count": 10,
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-04-1793793756/9aa24271fce4/logo.png?AWSAccessKeyId=codabench-prod&Signature=LyIcqof%2BtrIMyxljOH%2BuGzPHTP4%3D&Expires=1794134650",
+    "participants_count": 11,
     "submissions_count": 0,
     "first_phase_start": null,
     "phases": [
@@ -178,7 +226,7 @@
     "description_zh": "一个第一人称视角交互理解基准，要求模型从第一人称图像和交互查询中生成连贯的文本分析和细粒度像素级定位掩码。",
     "created_by": "yuggie",
     "created_when": "2026-10-15T07:00:56.003732Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-15-1792047656/84bafd5e11ad/Picture_1.png?AWSAccessKeyId=codabench-prod&Signature=xkCx9%2FdKfe8Fe5BSQP%2F5ZU%2BR3OI%3D&Expires=1794046965",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-15-1792047656/84bafd5e11ad/Picture_1.png?AWSAccessKeyId=codabench-prod&Signature=%2B%2Bzu3a0akJNsrGXyQeUfV56JILc%3D&Expires=1794134653",
     "participants_count": 2,
     "submissions_count": 3,
     "first_phase_start": null,
@@ -213,7 +261,7 @@
     "description_zh": "CT影像中的泛癌分割：RECIST-to-3D",
     "created_by": "junma",
     "created_when": "2026-07-23T23:48:29.876032Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-23-1784850509/a8c79d87015f/logo-pan-cancer.png?AWSAccessKeyId=codabench-prod&Signature=G6cYq%2BGL6F3NM7PoG9Ktk2Ih%2B7A%3D&Expires=1794047045",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-07-23-1784850509/a8c79d87015f/logo-pan-cancer.png?AWSAccessKeyId=codabench-prod&Signature=VkIvVTXj9B01LnOBJaoL8k1MV0g%3D&Expires=1794134669",
     "participants_count": 25,
     "submissions_count": 117,
     "first_phase_start": null,
@@ -272,7 +320,7 @@
     "description_zh": "一个每类20张训练图像和5张测试图像的迷你MNIST挑战。",
     "created_by": "njuwallspider",
     "created_when": "2026-05-30T09:06:38.492134Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-30-1780131998/18c01880de0c/logo.png?AWSAccessKeyId=codabench-prod&Signature=qzzqMR2U1eLSJ9dej79rXiLHkUE%3D&Expires=1794047103",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-05-30-1780131998/18c01880de0c/logo.png?AWSAccessKeyId=codabench-prod&Signature=bg2ZcDEdE2JAux7XhNWF41VTICw%3D&Expires=1794134712",
     "participants_count": 6,
     "submissions_count": 17,
     "first_phase_start": null,
@@ -307,7 +355,7 @@
     "description_zh": null,
     "created_by": "yi_wang",
     "created_when": "2026-01-18T11:54:22.128818Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-01-18-1768737262/c0eaaa3d0732/logo.png?AWSAccessKeyId=codabench-prod&Signature=S%2FV%2FviZo8wiQ%2F1o2%2B%2BsRYeSmfXg%3D&Expires=1794047586",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-01-18-1768737262/c0eaaa3d0732/logo.png?AWSAccessKeyId=codabench-prod&Signature=uMBOpA9ZRPGuJfr8Cgo4DciB07o%3D&Expires=1794134903",
     "participants_count": 102,
     "submissions_count": 278,
     "first_phase_start": null,
@@ -355,7 +403,7 @@
     "description_zh": null,
     "created_by": "yi_wang",
     "created_when": "2026-01-18T12:37:00.098380Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-01-18-1768739820/5c3c3fc18e26/logo.png?AWSAccessKeyId=codabench-prod&Signature=exbg7de4PNTmXzAcqELmICn4o%2B8%3D&Expires=1794047653",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-01-18-1768739820/5c3c3fc18e26/logo.png?AWSAccessKeyId=codabench-prod&Signature=UBfpKPQEwNZK%2FwUQb3%2FCP5kO%2BUs%3D&Expires=1794134914",
     "participants_count": 101,
     "submissions_count": 664,
     "first_phase_start": null,
@@ -403,9 +451,9 @@
     "description_zh": "与传感器和平台无关的树木点云枝轮及其位置检测，以及树干轮廓估计。",
     "created_by": "philiphlundberg",
     "created_when": "2026-10-01T08:34:40.806624Z",
-    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-01-1790843680/12b54e67550f/whorl_logo.png?AWSAccessKeyId=codabench-prod&Signature=p1WJ2QQcvF36z5oXsisoFhYzGf4%3D&Expires=1794046969",
+    "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-01-1790843680/12b54e67550f/whorl_logo.png?AWSAccessKeyId=codabench-prod&Signature=wmw8Xessa4St0Tb5QZNTWHXQp3U%3D&Expires=1794134656",
     "participants_count": 15,
-    "submissions_count": 39,
+    "submissions_count": 41,
     "first_phase_start": null,
     "phases": [
       {
