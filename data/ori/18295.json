@@ -5,26 +5,26 @@
   "created_by": "philiphlundberg",
   "owner_display_name": "philiphlundberg",
   "created_when": "2026-10-01T08:34:40.806624Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-01-1790843680/12b54e67550f/whorl_logo.png?AWSAccessKeyId=codabench-prod&Signature=%2B1FLF7QvkV4R7iA8neEAoVz%2FYKk%3D&Expires=1794221647",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-01-1790843680/12b54e67550f/whorl_logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=SoZU1enVwi%2B2lF8PvYrLVwbZY5w%3D&Expires=1794221647",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-01-1790843680/12b54e67550f/whorl_logo.png?AWSAccessKeyId=codabench-prod&Signature=90t6Mr6fVVW%2FHRFRL1FrOGsmUV0%3D&Expires=1794308929",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-01-1790843680/12b54e67550f/whorl_logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=iiJprOkz%2FubiMVIsj3jLkrTi1YY%3D&Expires=1794308929",
   "terms": "# Terms and Conditions\n\n1. All participants should register for this benchmark with their real names, affiliations (including department, full name of university/institute/company, country), and affiliation E-mails. Incomplete and redundant registrations will be removed without notice. Each team can have at most six people.\n\n2. All participant must provide a GitHub repository. If your method isn't possible to replicate using the repository it will be removed. \n\n3. All participants agree to make the results of the benchmark public.\n\n4. The dataset is shared under the Creative Common Attribution-ShareAlike 4.0 International License. You can read the full license in the LICENSE.md when downloading the dataset.\n\nIf the competition manager suspect cheating, the participant will be removed from the competition.",
   "pages": [
     {
-      "id": 89224,
+      "id": 90937,
       "title": "Participation",
-      "content": "<p align=\"center\">\n  <img src=\"https://github.com/philiphlundberg/FOR-wood-assets/raw/main/ST PRINCIPAL COLOR.png\" width=\"500\">\n</p>\n<br>\n<br>\n\n## SingleTree Project\n\nThe SingleTree project aims to create a smarter forestry system by focusing \non individual trees. This approach will help forests adapt to climate change, \nbecome more resilient, and allow for more sustainable use of wood resources. \nSingleTree will develop advanced methods to monitor forests based on artificial \nintelligence and remote sensing, adaptive single-tree level management solutions, \nintelligent machines for implementing single-tree operations, and improved \ntraceability and ability to predict wood quality early in the value chain as a \nfoundation for optimised biomass supply.\n\nTo read more, visit https://singletree.eu/\n\n\n<br>\n\n# Objective of the benchmark\nThe objective of this benchmark is to gather and evaluate the performance \nof sensor- and platform-agnostic whorl detection and stem profile algorithms. \nThe result will provide the SingleTree project with methods that can be used \nfurther down the project chain.\n\n# Prize\nThe top five participants will have the opportunity to co-author an article \nabout this benchmark. Each team can nominate up to two people who will \nbe registered as co-authors. \n\n# How to participate\n\n## Read the terms for entering\nGo to the terms tab under Get Started and read the terms for entering. \nIf you fail to follow these terms, you will be removed from the competition.\nIn your submission, you MUST provide name, affiliation (with contact information) \nand a short description of the method with a link to a GitHub repository. \n\n## Download the dataset\nThe dataset, **FOR-wood**, is available for download from \nZenodo: https://doi.org/10.5281/zenodo.23012506\n\n## Benchmarking\nFor evaluation the participant should use their model on the downloaded test set \nto predict either whorl-positions relative to the ground, the stem profile diameter, \nor both and output two tables \n(*.csv) containing predictions for all trees in the test data set.\n\nFor the whorl detection task, submit a `branch_references.csv` table with the\nfollowing columns and capitalization:\n\n`TreeID`, `Z`, `whorl_number`\n\nThe scorer matches predictions using `TreeID` and `Z`, where `Z` is the whorl height in\nmetres and `whorl_number` identifies the whorl order.\n\n|TreeID|Z|whorl_number|\n|---|---|---|\n|221|10.8434|1|\n|221|11.2577|2|\n|221|11.5477|3|\n|n|...|...|\n\n\nFor the stem profile prediction task, submit a `stem_references.csv` table with the\nfollowing columns and capitalization:\n\n`TreeID`, `Z`, `D`\n\n`Z` is the height in metres and `D` is the predicted stem diameter in metres.\nProvide values at 0.6 m, 1.3 m, 2 m, and then every metre up the length of the\ntree. If values are not provided exactly at the evaluation heights, the scorer\nlinearly interpolates the submitted profile. \n\n|TreeID|Z|D|\n|---|---|---|\n|313|0.4903|0.30539|\n|313|1.1375|0.29004|\n|313|1.8426|0.27856|\n|313|4.8407|0.25084|\n|n|...|...|\n\nMake sure that the column names are exactly the same as stated here. The zip\narchive itself can be named anything, but it may contain either or both CSV\nfiles, and each included file must use its exact corresponding filename:\n\n```text\nyour_submission.zip\n├── branch_references.csv\n└── stem_references.csv\n```\n\n## Submission limits\nYou may submit up to 2 times per day (20 total for the phase). The daily\nlimit is set to 2 rather than 1 so that if a submission errors out (e.g. a\nnaming or column mismatch), you still have a same-day chance to fix it and\nresubmit.\n\n## Viewing your results\nAfter submitting, publish your result to the leaderboard from your submissions\npanel. The leaderboard is sorted by F1 (whorl detection) by default - if you\nonly submitted stem profile predictions, click on a stem profile column\nheader (e.g. RMSE (Stem)) to sort the leaderboard by that metric instead and\nsee where your submission ranks.\n\n<br>\n<br>\n\n<p align=\"left\">\n  <img src=\"https://github.com/philiphlundberg/FOR-wood-assets/raw/main/Picture6.png\" width=\"600\">\n</p>\n\nFunded by the European Union. Views and opinions expressed are however those \nof the author(s) only and do not necessarily reflect those of the European Union \nor CBE JU. Neither the European Union nor the CBE JU can be held responsible \nfor them. Grant agreement N.º 101157488.",
+      "content": "<p align=\"center\">\n  <img src=\"https://github.com/philiphlundberg/FOR-wood-assets/raw/main/ST PRINCIPAL COLOR.png\" width=\"500\">\n</p>\n<br>\n<br>\n\n## SingleTree Project\n\nThe SingleTree project aims to create a smarter forestry system by focusing \non individual trees. This approach will help forests adapt to climate change, \nbecome more resilient, and allow for more sustainable use of wood resources. \nSingleTree will develop advanced methods to monitor forests based on artificial \nintelligence and remote sensing, adaptive single-tree level management solutions, \nintelligent machines for implementing single-tree operations, and improved \ntraceability and ability to predict wood quality early in the value chain as a \nfoundation for optimised biomass supply.\n\nTo read more, visit https://singletree.eu/\n\n\n<br>\n\n## Update 2026-11-09\nParticipants reported errors in the reference labels, and we have updated the competition in accordance. Thank you for the report!\n\n* **New dataset version:** FOR-wood v2 is on Zenodo (https://doi.org/10.5281/zenodo.24083541) with corrected whorl and stem labels. The trees, the train/test split and the point clouds are unchanged, so you only need the new training labels. Re-train if you used the v1 labels.\n* **New scoring rules:** whorl detection is now ranked by **Skill**, and both tasks have stricter rules for missing trees and heights. See [Evaluation](#evaluation) below.\n* **Leaderboard rescored:** all existing submissions have been rerun on the corrected test labels with the new scorer, so scores and ranks may have changed. You don't need to resubmit.\n* **Co-authorship:** the top 2 by whorl Skill and the top 2 by stem RMSE are invited and one more team is invited depending on the task with the most unique team submissions, ranked separately. See [Prize](#prize).\n* **More submissions:** because of this update, we decided to increase the number of submissions per day to **4** and the total number of submissions to **50**. \n\n# Objective of the benchmark\nThe objective of this benchmark is to gather and evaluate the performance \nof sensor- and platform-agnostic whorl detection and stem profile algorithms. \nThe result will provide the SingleTree project with methods that can be used \nfurther down the project chain.\n\n# Prize\nFive teams will have the opportunity to co-author an article about this benchmark. Each team can nominate up to two people as co-authors. The places are given per task:\n\n* the **top 2** teams by **Skill** (whorl detection), and\n* the **top 2** teams by **RMSE (Stem)** (stem profile estimation).\n* one more team from the task that gets the most unique team submissions\n\nThe two tasks are ranked separately, so you can compete in one or both. A team that places in both counts once, and the next team on the stem ranking moves up. Ranks are taken from the leaderboard at the end of the Benchmark Phase, among submissions that follow the terms. Teams in co-authorship positions will be contacted at the start of the Review Phase and asked to provide a GitHub repository for their method (see Terms).\n\n# How to participate\n\n## Read the terms for entering\nGo to the terms tab under Get Started and read the terms for entering. \nIf you fail to follow these terms, you will be removed from the competition.\nIn your submission, you MUST provide name, affiliation (with contact information) \nand a short description of the method with a link to a GitHub repository. \n\n## Download the dataset\nThe dataset, **FOR-wood**, is available for download from \nZenodo: https://doi.org/10.5281/zenodo.24083541\n\nThe dataset were updated on 2026-11-09 to version 2.0\n\n## Benchmarking\nFor evaluation the participant should use their model on the downloaded test set \nto predict either whorl-positions relative to the ground, the stem profile diameter, \nor both and output two tables \n(*.csv) containing predictions for all trees in the test data set.\n\nFor the whorl detection task, submit a `branch_references.csv` table with the\nfollowing columns and capitalization:\n\n`TreeID`, `Z`, `whorl_number`\n\nThe scorer matches predictions using `TreeID` and `Z`, where `Z` is the whorl height in\nmetres and `whorl_number` identifies the whorl order.\n\n|TreeID|Z|whorl_number|\n|---|---|---|\n|221|10.8434|1|\n|221|11.2577|2|\n|221|11.5477|3|\n|n|...|...|\n\n\nFor the stem profile prediction task, submit a `stem_references.csv` table with the\nfollowing columns and capitalization:\n\n`TreeID`, `Z`, `D`\n\n`Z` is the height in metres and `D` is the predicted stem diameter in metres.\nProvide values at 0.6 m, 1.3 m, 2 m, and then every metre up the length of the\ntree. If values are not provided exactly at the evaluation heights, the scorer\nlinearly interpolates the submitted profile. \n\n|TreeID|Z|D|\n|---|---|---|\n|313|0.4903|0.30539|\n|313|1.1375|0.29004|\n|313|1.8426|0.27856|\n|313|4.8407|0.25084|\n|n|...|...|\n\nMake sure that the column names are exactly the same as stated here. The zip\narchive itself can be named anything, but it may contain either or both CSV\nfiles, and each included file must use its exact corresponding filename:\n\n```text\nyour_submission.zip\n├── branch_references.csv\n└── stem_references.csv\n```\n\n# Evaluation\n\nEvery tree in the test set is scored, in both tasks. A tree that is missing from your submission counts as a complete miss, so submit predictions for all test trees.\n\n## Whorl detection\nFor each tree, your predicted whorl heights (`Z`) are matched one-to-one with the reference whorls. A prediction counts as correct (a true positive) if it lies within **±5 cm** of a reference whorl; the matching finds the largest possible number of such pairs. From this, each tree gets a precision, recall and F1 score. When several pairings are possible, the scorer first finds the largest number of pairs within ±5 cm, and among those the one with the smallest total height error, so adding or removing one prediction cannot shift the other pairs.\n\n* **Above the tree's top label:** predictions more than 5 cm above a tree's highest reference whorl are ignored, because the trees are only labelled up to that height.\n* **Below:** there is no lower limit, so predictions below the lowest reference whorl count as false positives.\n\nThe leaderboard ranks whorl detection by **Skill**, the improvement over a blind baseline:\n\nSkill = (F1 − F1<sub>comb</sub>) / (1 − F1<sub>comb</sub>)\n\n* **The comb** is a guess that ignores the point cloud: whorls evenly spaced from a fixed start height to the top of the tree, with the spacing and start height tuned per source on the training data.\n* **What Skill means:** a comb scores **0**, a perfect submission scores **1**, and a submission worse than the comb is negative. It shows how much better than guessing a method is, independent of how easy a source is to guess.\n* **Per source:** Skill is computed for each data source (**FI**, **NO**, **SE**) from the mean F1 over that source's trees. The leaderboard's **Skill** is the mean of the three, so each source counts equally however many trees it has. You can tell the source from the tree ID: numbers only = FI, `plot…` = NO, all others = SE.\n\n**Precision**, **Recall** and **MAE** (mean absolute height error of the matched whorls, in meters) are shown for information. They are averages over all test trees.\n\n## Stem profile\nDiameters are compared at **0.6 m, 1.3 m, 2 m, 3 m, …**, every meter, within the height range of each tree's reference profile. Your profile is linearly interpolated to these heights, but it is **not extended** beyond your lowest and highest submitted values: at an evaluation height your profile doesn't cover, your diameter counts as **0**, so the error is the full reference diameter. Submit profiles from the ground up to the top of the stem.\n\n* **RMSE (Stem)** is the root mean square diameter error (m) over all evaluation heights of all trees. It ranks the stem task.\n* **Bias (Stem)** is the mean of predicted minus reference diameter (m). A positive value means too thick. It is shown for information, and 0 is ideal.\n\n\n## Submission limits\nYou may submit up to 4 times per day (50 total for the phase). This limit is increased in the new update. from the original 2 per day and 20 total.\n\n## Viewing your results\nAfter submitting, publish your result to the leaderboard from your submissions\npanel. The leaderboard is sorted by Skill (whorl detection) by default - if you\nonly submitted stem profile predictions, click on a stem profile column\nheader (e.g. RMSE (Stem)) to sort the leaderboard by that metric instead and\nsee where your submission ranks.\n\n<br>\n<br>\n\n<p align=\"left\">\n  <img src=\"https://github.com/philiphlundberg/FOR-wood-assets/raw/main/Picture6.png\" width=\"600\">\n</p>\n\nFunded by the European Union. Views and opinions expressed are however those \nof the author(s) only and do not necessarily reflect those of the European Union \nor CBE JU. Neither the European Union nor the CBE JU can be held responsible \nfor them. Grant agreement N.º 101157488.",
       "index": 0
     },
     {
-      "id": 88383,
+      "id": 90934,
       "title": "Dataset",
-      "content": "# Dataset\nFor this benchmark, we have assembled a dataset consisting of indivdual tree point clouds together with annotations describing whorl positions along the stem as well as stem taper. The data has been pooled from Sweden, Finland and Norway and consists mainly of Scott's Pine trees with a smaller proportion Norway Spruce. \n\nThe dataset, **FOR-wood**, is available for download from Zenodo: https://doi.org/10.5281/zenodo.23012506\n\nThe data consist of:\n* **Training data**: tree point clouds (laz files) with whorl and taper annotations (`branch_references.csv`, `stem_references.csv`)\n* **Test data**: only tree point clouds (laz files), no annotations\n\n**License:** [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) (Attribution-ShareAlike). You may share and adapt the dataset, even commercially, as long as you give appropriate credit and license any derivative datasets under the same terms.",
+      "content": "# Dataset\nFor this benchmark, we have assembled a dataset consisting of indivdual tree point clouds together with annotations describing whorl positions along the stem as well as stem taper. The data has been pooled from Sweden, Finland and Norway and consists mainly of Scott's Pine trees with a smaller proportion Norway Spruce. \n\nThe dataset, **FOR-wood**, is available for download from Zenodo: https://doi.org/10.5281/zenodo.24083541\n\nThe data consist of:\n* **Training data**: tree point clouds (laz files) with whorl and taper annotations (`branch_references.csv`, `stem_references.csv`)\n* **Test data**: only tree point clouds (laz files), no annotations\n\n**License:** [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) (Attribution-ShareAlike). You may share and adapt the dataset, even commercially, as long as you give appropriate credit and license any derivative datasets under the same terms.",
       "index": 1
     },
     {
-      "id": 88384,
+      "id": 90935,
       "title": "Terms",
-      "content": "# Terms and Conditions\n\n1. All participants should register for this benchmark with their real names, affiliations (including department, full name of university/institute/company, country), and affiliation E-mails. Incomplete and redundant registrations will be removed without notice. Each team can have at most six people.\n\n2. All participant must provide a GitHub repository. If your method isn't possible to replicate using the repository it will be removed. \n\n3. All participants agree to make the results of the benchmark public.\n\n4. The dataset is shared under the Creative Common Attribution-ShareAlike 4.0 International License. You can read the full license in the LICENSE.md when downloading the dataset.\n\nIf the competition manager suspect cheating, the participant will be removed from the competition.",
+      "content": "# Terms and Conditions\n\n1. All participants should register for this benchmark with their real names, affiliations (including department, full name of university/institute/company, country), and affiliation E-mails. Incomplete and redundant registrations will be removed without notice. Each team can have at most six people.\n\n2. All participant must provide a GitHub repository at the beginning of the Review phase. If your method isn't possible to replicate using the repository it will not be eligible for co-authorship. \n\n3. All participants agree to make the results of the benchmark public.\n\n4. The dataset is shared under the Creative Common Attribution-ShareAlike 4.0 International License. You can read the full license in the LICENSE.md when downloading the dataset.\n\nIf the competition manager suspect cheating, the participant will be removed from the competition.",
       "index": 2
     }
   ],
@@ -51,17 +51,17 @@
           "solutions": [],
           "public_datasets": [
             {
-              "id": 1010348,
+              "id": 1099866,
               "created_by": "philiphlundberg",
               "owner_display_name": "philiphlundberg",
-              "created_when": "2026-10-01T08:34:34.093006Z",
-              "name": "scoring_program @ '10-01-2026 08:34'",
+              "created_when": "2026-11-09T13:33:49.356939Z",
+              "name": "scoring_program_v2",
               "type": "scoring_program",
-              "description": null,
+              "description": "",
               "is_public": false,
-              "key": "e89398f9-0cab-4fea-81e9-c763e4180eab",
-              "value": "e89398f9-0cab-4fea-81e9-c763e4180eab",
-              "was_created_by_competition": true,
+              "key": "461b0220-a7b3-4335-bd65-6ab600609bc8",
+              "value": "461b0220-a7b3-4335-bd65-6ab600609bc8",
+              "was_created_by_competition": false,
               "in_use": [
                 {
                   "pk": 18295,
@@ -69,21 +69,21 @@
                 }
               ],
               "competition": null,
-              "file_name": "",
-              "file_size": 304001.0
+              "file_name": "scoring_program_v2.zip",
+              "file_size": 307118.0
             },
             {
-              "id": 1010349,
+              "id": 1099867,
               "created_by": "philiphlundberg",
               "owner_display_name": "philiphlundberg",
-              "created_when": "2026-10-01T08:34:34.287413Z",
-              "name": "reference_data @ '10-01-2026 08:34'",
+              "created_when": "2026-11-09T13:34:54.207042Z",
+              "name": "reference_data_v2",
               "type": "reference_data",
-              "description": null,
+              "description": "",
               "is_public": false,
-              "key": "0f49a9b4-b5f8-42f4-abc2-63f8cf709597",
-              "value": "0f49a9b4-b5f8-42f4-abc2-63f8cf709597",
-              "was_created_by_competition": true,
+              "key": "d2b8c3aa-1f0c-4eed-869a-3d23c5b41c29",
+              "value": "d2b8c3aa-1f0c-4eed-869a-3d23c5b41c29",
+              "was_created_by_competition": false,
               "in_use": [
                 {
                   "pk": 18295,
@@ -91,15 +91,15 @@
                 }
               ],
               "competition": null,
-              "file_name": "",
-              "file_size": 12634278.0
+              "file_name": "reference_data_v2.zip",
+              "file_size": 12914735.0
             }
           ]
         }
       ],
       "has_max_submissions": true,
-      "max_submissions_per_day": 2,
-      "max_submissions_per_person": 20,
+      "max_submissions_per_day": 4,
+      "max_submissions_per_person": 50,
       "max_submissions_scope": "participant",
       "auto_migrate_to_this_phase": false,
       "hide_output": false,
@@ -135,17 +135,17 @@
           "solutions": [],
           "public_datasets": [
             {
-              "id": 1010348,
+              "id": 1099866,
               "created_by": "philiphlundberg",
               "owner_display_name": "philiphlundberg",
-              "created_when": "2026-10-01T08:34:34.093006Z",
-              "name": "scoring_program @ '10-01-2026 08:34'",
+              "created_when": "2026-11-09T13:33:49.356939Z",
+              "name": "scoring_program_v2",
               "type": "scoring_program",
-              "description": null,
+              "description": "",
               "is_public": false,
-              "key": "e89398f9-0cab-4fea-81e9-c763e4180eab",
-              "value": "e89398f9-0cab-4fea-81e9-c763e4180eab",
-              "was_created_by_competition": true,
+              "key": "461b0220-a7b3-4335-bd65-6ab600609bc8",
+              "value": "461b0220-a7b3-4335-bd65-6ab600609bc8",
+              "was_created_by_competition": false,
               "in_use": [
                 {
                   "pk": 18295,
@@ -153,21 +153,21 @@
                 }
               ],
               "competition": null,
-              "file_name": "",
-              "file_size": 304001.0
+              "file_name": "scoring_program_v2.zip",
+              "file_size": 307118.0
             },
             {
-              "id": 1010349,
+              "id": 1099867,
               "created_by": "philiphlundberg",
               "owner_display_name": "philiphlundberg",
-              "created_when": "2026-10-01T08:34:34.287413Z",
-              "name": "reference_data @ '10-01-2026 08:34'",
+              "created_when": "2026-11-09T13:34:54.207042Z",
+              "name": "reference_data_v2",
               "type": "reference_data",
-              "description": null,
+              "description": "",
               "is_public": false,
-              "key": "0f49a9b4-b5f8-42f4-abc2-63f8cf709597",
-              "value": "0f49a9b4-b5f8-42f4-abc2-63f8cf709597",
-              "was_created_by_competition": true,
+              "key": "d2b8c3aa-1f0c-4eed-869a-3d23c5b41c29",
+              "value": "d2b8c3aa-1f0c-4eed-869a-3d23c5b41c29",
+              "was_created_by_competition": false,
               "in_use": [
                 {
                   "pk": 18295,
@@ -175,8 +175,8 @@
                 }
               ],
               "competition": null,
-              "file_name": "",
-              "file_size": 12634278.0
+              "file_name": "reference_data_v2.zip",
+              "file_size": 12914735.0
             }
           ]
         }
@@ -209,8 +209,8 @@
           "id": 91065,
           "computation": null,
           "computation_indexes": null,
-          "title": "F1",
-          "key": "f1",
+          "title": "Skill",
+          "key": "skill",
           "sorting": "desc",
           "index": 0,
           "hidden": false,
@@ -220,8 +220,8 @@
           "id": 91066,
           "computation": null,
           "computation_indexes": null,
-          "title": "Precision",
-          "key": "precision",
+          "title": "Skill FI",
+          "key": "skill_FI",
           "sorting": "desc",
           "index": 1,
           "hidden": false,
@@ -231,8 +231,8 @@
           "id": 91067,
           "computation": null,
           "computation_indexes": null,
-          "title": "Recall",
-          "key": "recall",
+          "title": "Skill NO",
+          "key": "skill_NO",
           "sorting": "desc",
           "index": 2,
           "hidden": false,
@@ -242,9 +242,9 @@
           "id": 91068,
           "computation": null,
           "computation_indexes": null,
-          "title": "MAE",
-          "key": "mae",
-          "sorting": "asc",
+          "title": "Skill SE",
+          "key": "skill_SE",
+          "sorting": "desc",
           "index": 3,
           "hidden": false,
           "precision": 3
@@ -253,9 +253,9 @@
           "id": 91069,
           "computation": null,
           "computation_indexes": null,
-          "title": "RMSE",
-          "key": "rmse",
-          "sorting": "asc",
+          "title": "Precision",
+          "key": "precision",
+          "sorting": "desc",
           "index": 4,
           "hidden": false,
           "precision": 3
@@ -264,9 +264,9 @@
           "id": 91070,
           "computation": null,
           "computation_indexes": null,
-          "title": "Median Error",
-          "key": "median_error",
-          "sorting": "asc",
+          "title": "Recall",
+          "key": "recall",
+          "sorting": "desc",
           "index": 5,
           "hidden": false,
           "precision": 3
@@ -275,8 +275,8 @@
           "id": 91071,
           "computation": null,
           "computation_indexes": null,
-          "title": "RMSE (Stem)",
-          "key": "rmse_stem_profile",
+          "title": "MAE",
+          "key": "mae",
           "sorting": "asc",
           "index": 6,
           "hidden": false,
@@ -286,8 +286,8 @@
           "id": 91072,
           "computation": null,
           "computation_indexes": null,
-          "title": "MAE (Stem)",
-          "key": "mae_stem_profile",
+          "title": "RMSE (Stem)",
+          "key": "rmse_stem_profile",
           "sorting": "asc",
           "index": 7,
           "hidden": false,
@@ -310,8 +310,8 @@
     }
   ],
   "description": "Sensor and platform agnostic detection of whorls and their positions from tree point clouds as well as stem profile estimation.",
-  "participants_count": 15,
-  "submissions_count": 41,
+  "participants_count": 16,
+  "submissions_count": 47,
   "docker_image": "codalab/codalab-legacy:py39",
   "competition_type": "competition",
   "reward": "",
