@@ -1,0 +1,323 @@
+{
+  "id": 18584,
+  "title": "VQA Datathon — BITS F459",
+  "published": true,
+  "created_by": "amukherjee",
+  "owner_display_name": "amukherjee",
+  "created_when": "2026-11-10T10:05:43.383627Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-10-1794305143/0a0942b73288/logo.png?AWSAccessKeyId=codabench-prod&Signature=qNeVGx0vAl%2FXJCugONbq85qh6nU%3D&Expires=1794396640",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-10-1794305143/0a0942b73288/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=IxyEyV%2F181aDaOVAm%2B944CTu7F0%3D&Expires=1794396640",
+  "terms": "# Terms and conditions\n\nBy registering for and taking part in the VQA Datathon (BITS F459), you agree to the following:\n\n1. **Course use only.** The data (VQAv2 questions and annotations, CC BY 4.0, © VQA Consortium; COCO images, © their Flickr owners under the COCO terms of use) is provided for this course. Do not redistribute the student package or any part of it.\n2. **Rules.** You follow the rules on the *Rules* page. In particular: train only on the provided data, use no models trained for visual question answering, make no network calls at inference, and make no attempt to read, store, transmit, hard-code or look up test data.\n3. **Your submissions.** Your code and checkpoint are run on the hidden test set on Codabench, and may be downloaded and run again by the instructor (including on test day) to verify results.\n4. **Verification and penalties.** The submission on the leaderboard (zip + SHA256) is your frozen entry. Results that cannot be reproduced from it, or rule violations, may be penalized or disqualified at the instructor's discretion.\n5. **Accounts.** One Codabench account per team. Registration is approved by the instructor.\n6. **Academic integrity.** The BITS Pilani academic integrity policy applies. Work only with your own team.",
+  "pages": [
+    {
+      "id": 90970,
+      "title": "Overview",
+      "content": "# VQA Datathon — BITS F459\n\nBuild a **small, fast** visual question answering model. Given a 224×224 COCO image and a question, return a short answer.\n\n- Train on our **train** split (15,000 images, 79,676 questions) and tune on **val** (2,000 images, 10,388 questions). Both come with ground truth and are in the student package.\n- Submit **code + checkpoint**. Codabench runs your model on a **hidden test set** (2,000 images, 10,405 questions) and measures accuracy, parameters and FLOPs itself.\n- **Leaderboard:** during the competition it shows the **public** subset of test (500 images). The final ranking uses the **private** subset (the other 1,500 images), revealed after the deadline.\n- **Baseline to beat** (frozen ResNet-18 + GRU + attention): 46.24 test accuracy, 18.15 M params, 3.69 GFLOPs, so its composite score is 46.24.\n\nSee *Evaluation* for the score formula, *Submission* for the zip format and *Rules* for what is allowed.",
+      "index": 0
+    },
+    {
+      "id": 91006,
+      "title": "Data",
+      "content": "# Data\n\n| Split | Images | Questions | Ground truth | Where |\n|---|---|---|---|---|\n| train | 15,000 | 79,676 | yes | student package |\n| val | 2,000 | 10,388 | yes | student package |\n| test | 2,000 (no overlap with train or val) | 10,405 | hidden | only on Codabench |\n\n- Images are COCO photos resized to 224×224 (bilinear, JPEG q90), file name `<image_id>.jpg`.\n- Each question has 10 human answers. Questions and answers come from VQAv2 (CC BY 4.0).\n- `answers.txt` holds the 1,000 most frequent normalized answers in train. They cover 86.5% of val majority answers. You may use another answer space.",
+      "index": 1
+    },
+    {
+      "id": 90972,
+      "title": "Evaluation",
+      "content": "# Evaluation\n\n**Accuracy** is the official VQA accuracy, in percent. Answers are normalized as in the official VQA evaluation code (punctuation, number words → digits, articles, contractions). Each question's score is the average, over the 10 leave-one-out subsets of the 10 human answers, of `min(#matches / 3, 1)`.\n\n> Output **lowercase** answers. As in the official code, when all 10 human answers are identical no normalization is applied, so `\"Yes\"` does not match `\"yes\"`.\n\n**Complexity**, measured by Codabench on your submission (torch 2.14.1, CPU):\n- **Params:** `sum(p.numel() for p in model.parameters())`. All parameters count, frozen pretrained backbones included.\n- **FLOPs:** `torch.utils.flop_counter.FlopCounterMode` around one `predict()` call with batch size 1, on a fixed dummy image (constant 0.5) and a fixed dummy question. **One multiply-add = 2 FLOPs.** Matmul, convolution and attention ops are counted; elementwise ops are not.\n\n**Composite score** (leaderboard ranking):\n\n`Score = Acc − 2·log2(Params / 18,154,866) − 2·log2(FLOPs / 3,688,267,776)`\n\nThe reference values are the baseline's. Each doubling of params costs 2 points, and so does each doubling of FLOPs. Halving either gains 2 points.\n\n**Status column:** 0 = ok, 1 = files missing, 2 = import / `build_model()` failed, 3 = `load_state_dict` failed, 4 = `predict()` failed on the dummy input or did not return `list[str]`, 5 = `predict()` crashed on test data, 6 = wrong number or type of answers. A run that exceeds the time limit fails with no status. Codabench does not show logs, so debug with `eval/check_submission.py`, which runs the same program locally and prints the full error.",
+      "index": 2
+    },
+    {
+      "id": 91014,
+      "title": "Rules",
+      "content": "# Rules\n\n1. **Inputs.** Your model receives only the image tensor and the question text, through the interface on the *Submission* page.\n2. **Training data.** Train and tune only on the provided **train** and **val** sets. Do not use any other image question–answer annotations.\n3. **Pretrained models.** Generic pretrained backbones are allowed, for example ImageNet classifiers, CLIP-style image/text encoders and BERT-family language models. Their parameters and FLOPs count toward your score. Models or checkpoints that were trained or fine-tuned for visual question answering, or on any image question–answer data, are **not** allowed.\n4. **Offline inference.** No network access, external APIs or downloads at inference. All weights must be in your checkpoint.\n5. **No shortcuts.** Do not try to read, store or transmit test data, and do not hard-code or look up answers. The model must answer from the image and the question.\n6. **Teams.** Your course project team. One Codabench account per team.\n7. **Frozen entry.** The submission you put on the leaderboard (zip + SHA256) is your frozen entry. On **test day** it is run **offline** from that same zip (SHA256 checked) on **new images and questions**. Results that cannot be reproduced, or rule violations, are penalized or disqualified.\n8. **Attribution.** Questions and answers: VQAv2 (© VQA Consortium, CC BY 4.0). Images: COCO (© their Flickr owners, see cocodataset.org terms of use).",
+      "index": 3
+    },
+    {
+      "id": 90973,
+      "title": "Submission",
+      "content": "# Submission\n\nUpload a **zip** containing, at the top level:\n\n- `model.py`, which defines `build_model()` returning a `torch.nn.Module` with a `predict(images, questions)` method\n- `checkpoint.pt`, the `state_dict` to load (`torch.save(model.state_dict(), \"checkpoint.pt\")`)\n- any helper files your `model.py` reads (vocabularies, extra modules), loaded relative to `model.py`\n\nCodabench runs exactly:\n\n```python\nmodel = build_model()\nmodel.load_state_dict(torch.load(\"checkpoint.pt\", map_location=\"cpu\", weights_only=True))\nanswers = model.predict(images, questions)   # images: FloatTensor[B,3,224,224] in [0,1], RGB, not normalized\n                                             # questions: list[str]  ->  answers: list[str]\n```\n\n- Runs on **CPU** inside a Docker image with python 3.10, torch 2.14.1, torchvision 0.29.1, transformers 5.20.2, pillow 12.3.0, numpy 2.2.6, pyyaml. **No other packages, and no downloads at run time.** All weights must be in `checkpoint.pt`.\n- **Time limit:** the whole test set (10,405 questions) must finish within the phase's time limit. The baseline needs ~6 min on 2 CPU threads.\n- Before uploading, run `notebooks/make_submission.ipynb` (or `python eval/check_submission.py ...`). It builds the zip, runs the same ingestion program on val and reports your val score, params, FLOPs and the estimated test runtime.\n- At most 3 submissions per day. Choose which submission appears on the leaderboard; that one is ranked on the private subset.",
+      "index": 4
+    }
+  ],
+  "phases": [
+    {
+      "id": 31356,
+      "index": 0,
+      "start": "2026-11-11T18:30:00Z",
+      "end": "2026-11-26T18:29:00Z",
+      "name": "Competition",
+      "description": "Leaderboard shows the public subset; final ranking uses the private subset (revealed after the deadline).",
+      "status": "Next",
+      "execution_time_limit": 7200,
+      "tasks": [
+        {
+          "task": "155cac14-9416-40a4-8847-a6e0466f9ff1",
+          "order_index": 0,
+          "phase": 31356,
+          "id": 37051,
+          "value": "155cac14-9416-40a4-8847-a6e0466f9ff1",
+          "key": "155cac14-9416-40a4-8847-a6e0466f9ff1",
+          "created_when": "2026-11-10T10:05:43.321794Z",
+          "name": "VQA test",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 1101418,
+              "created_by": "amukherjee",
+              "owner_display_name": "amukherjee",
+              "created_when": "2026-11-10T10:05:41.056972Z",
+              "name": "input_data @ '11-10-2026 10:05'",
+              "type": "input_data",
+              "description": null,
+              "is_public": false,
+              "key": "9424fb59-d763-4027-95db-8bdf9a7edf88",
+              "value": "9424fb59-d763-4027-95db-8bdf9a7edf88",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 18584,
+                  "title": "VQA Datathon — BITS F459"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 33150443.0
+            },
+            {
+              "id": 1101419,
+              "created_by": "amukherjee",
+              "owner_display_name": "amukherjee",
+              "created_when": "2026-11-10T10:05:43.107178Z",
+              "name": "scoring_program @ '11-10-2026 10:05'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "fecbb336-0c79-49f7-b655-78db7dca1bc3",
+              "value": "fecbb336-0c79-49f7-b655-78db7dca1bc3",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 18584,
+                  "title": "VQA Datathon — BITS F459"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 11922.0
+            },
+            {
+              "id": 1101420,
+              "created_by": "amukherjee",
+              "owner_display_name": "amukherjee",
+              "created_when": "2026-11-10T10:05:43.182202Z",
+              "name": "reference_data @ '11-10-2026 10:05'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "029a788a-c28e-47b4-8ad8-0b29e0480fca",
+              "value": "029a788a-c28e-47b4-8ad8-0b29e0480fca",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 18584,
+                  "title": "VQA Datathon — BITS F459"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 264516.0
+            },
+            {
+              "id": 1103330,
+              "created_by": "amukherjee",
+              "owner_display_name": "amukherjee",
+              "created_when": "2026-11-11T08:49:20.442158Z",
+              "name": "ingestion",
+              "type": "ingestion_program",
+              "description": "Datathon_CV_26",
+              "is_public": false,
+              "key": "892d8d0f-1257-430d-b333-f7bcb7247eaa",
+              "value": "892d8d0f-1257-430d-b333-f7bcb7247eaa",
+              "was_created_by_competition": false,
+              "in_use": [
+                {
+                  "pk": 18584,
+                  "title": "VQA Datathon — BITS F459"
+                }
+              ],
+              "competition": null,
+              "file_name": "ingestion_program.zip",
+              "file_size": 14094.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 3,
+      "max_submissions_per_person": 30,
+      "max_submissions_scope": "participant",
+      "auto_migrate_to_this_phase": false,
+      "hide_output": true,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": true,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0,
+      "is_parallel": false,
+      "is_locked_phase": false
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 20755,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "main",
+      "columns": [
+        {
+          "id": 92992,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Score (public)",
+          "key": "score_public",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 92993,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Accuracy (public)",
+          "key": "acc_public",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 92994,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Params (M)",
+          "key": "params_m",
+          "sorting": "asc",
+          "index": 2,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 92995,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "GFLOPs",
+          "key": "gflops",
+          "sorting": "asc",
+          "index": 3,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 92996,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Status (0 = ok)",
+          "key": "status",
+          "sorting": "asc",
+          "index": 4,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 92997,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Runtime (s)",
+          "key": "runtime_sec",
+          "sorting": "asc",
+          "index": 5,
+          "hidden": false,
+          "precision": 2
+        },
+        {
+          "id": 92998,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Score (private)",
+          "key": "score_private",
+          "sorting": "desc",
+          "index": 6,
+          "hidden": true,
+          "precision": 2
+        },
+        {
+          "id": 92999,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Accuracy (private)",
+          "key": "acc_private",
+          "sorting": "desc",
+          "index": 7,
+          "hidden": true,
+          "precision": 2
+        },
+        {
+          "id": 93000,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "CPUs",
+          "key": "n_cpus",
+          "sorting": "desc",
+          "index": 8,
+          "hidden": true,
+          "precision": 2
+        },
+        {
+          "id": 93001,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "RAM (GB)",
+          "key": "ram_gb",
+          "sorting": "desc",
+          "index": 9,
+          "hidden": true,
+          "precision": 2
+        },
+        {
+          "id": 93002,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Network",
+          "key": "network",
+          "sorting": "desc",
+          "index": 10,
+          "hidden": true,
+          "precision": 2
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Add_And_Delete"
+    }
+  ],
+  "description": "Efficient visual question answering on VQAv2/COCO. Code submission: your model is run on a hidden test set; ranking combines accuracy, parameters and FLOPs.",
+  "participants_count": 3,
+  "submissions_count": 0,
+  "docker_image": "amukherjee1989/vqa-datathon:torch2.14.1-cpu",
+  "competition_type": "competition",
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "forum": 18272,
+  "forum_enabled": true,
+  "fact_sheet": null,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "registration_auto_approve": false
+}

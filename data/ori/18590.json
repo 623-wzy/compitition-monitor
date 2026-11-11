@@ -1,0 +1,383 @@
+{
+  "id": 18590,
+  "title": "V&L - H. pylori Challenge",
+  "published": true,
+  "created_by": "gerardbadia",
+  "owner_display_name": "gerardbadia",
+  "created_when": "2026-11-10T15:22:04.774214Z",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-10-1794324124/953bdc2a136b/logo.png?AWSAccessKeyId=codabench-prod&Signature=yPQ22U3qILqA083AwqTzEvIovf4%3D&Expires=1794396636",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-10-1794324124/953bdc2a136b/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=hCaemOOVcsfYbKT1cyz65LOHJG0%3D&Expires=1794396636",
+  "terms": "1. Purpose and reward\nThis is a private UAB competition. The best-ranked teams on the final Codabench leaderboard earn up to +1 point on their final grade in Vision & Learning. Participation is voluntary and does not affect the regular course assessment.\n\nFinal ranking\nLast Vision & Learning grade:\n1st place\n+1.0\n2nd place\n+0.75\n3rd place\n+0.5\n\n• Every member of a team receives the same points.\n• Ties in F1-score are broken by ROC AUC.\n\n2. Data\nThe hidden test patches come from clinical data of the Quiron dataset. They must not be downloaded, shared or reconstructed in any way. Any attempt to access them disqualifies the team.",
+  "pages": [
+    {
+      "id": 91035,
+      "title": "Overview",
+      "content": "# H. pylori Detection Challenge\n\n**This is a private UAB competition. Non UAB participants will not be accepted. **\nWelcome! Your goal is to build a system that **detects *Helicobacter pylori*** in histology images: given a 256×256 patch of an immunohistochemically stained gastric biopsy, your model must return the **probability that the patch contains H. pylori**.\n\n## How it works\n\n- You train your model on your own computer using the **public data of the course** (the HoldOut set of the Quiron dataset, with patient-level diagnosis only).\n- You submit your **code and trained weights**. The platform runs your model on a **hidden test set of patches annotated by an expert pathologist**, that you never see, and gives you a score.\n- The best scores appear on the **leaderboard**.\n\n## Calendar\n\n| Phase | Dates | Data | Submissions |\n|---|---|---|---|\n| **Development** | 10/11/2026 – 30/11/2026 (23:59) | Hidden test set, **50%** of the patches | 5 per day |\n| **Final** | 01/12/2026 (09:00) – 02/12/2026 (09:00) | Hidden test set, **100%** of the patches | 1 in total |\n\n- **Development**: use this phase to check that your submission works and to compare ideas. You are scored on **half** of the hidden patches.\n- **Final**: this is the one that counts. You are scored on **all** the hidden patches (the Development half + the other half, which nobody has seen). The final ranking is based on your **only** Final submission.\n\nThe two halves are split **by patient**: all the patches of a patient are in the same half.\n\n## Rules\n\n- Work in teams of your class group.\n- You may use any method: classical computer vision, CNNs, autoencoders / anomaly detection, pretrained models, etc.\n- The hidden patches are not available to participants in any form. Do not try to obtain them.",
+      "index": 0
+    },
+    {
+      "id": 91033,
+      "title": "Evaluation",
+      "content": "# Evaluation\n\nEach patch has a ground-truth label given by the pathologist: **1** = H. pylori present, **0** = no H. pylori.\nYour model returns a **score in [0, 1]** for every patch.\n\n## Ranking metric: F1-score\n\nYour score is converted into a decision with a fixed threshold:\n\n**score ≥ 0.5 → positive (H. pylori)**, **score < 0.5 → negative**\n\nThen the F1-score of the **positive class** is computed:\n\n- **Precision** = TP / (TP + FP) — of the patches you flagged, how many really have H. pylori\n- **Recall** = TP / (TP + FN) — of the patches with H. pylori, how many you found\n- **F1 = 2 · Precision · Recall / (Precision + Recall)**\n\nThe leaderboard is ranked by **F1**. Positive patches are a minority, so predicting \"always negative\" gives F1 = 0, and predicting \"always positive\" gives a low F1 too.\n\n> Tip: if your model outputs something that is not a calibrated probability (e.g. an autoencoder reconstruction error), choose your own threshold on your validation data and **map it to 0.5** inside `predict()`.\n\n## Tie-break: ROC AUC\n\nIf two teams have the same F1 (4 decimals), the **ROC AUC** decides. It is computed on your **raw scores** (no threshold), so it measures how well your scores rank positive patches above negative ones. Returning only 0/1 gives a poor AUC.\n\n## Other columns\n\n**Precision** and **Recall** are shown for feedback only. They do not affect the ranking.\n\n## Example\n\n| Patch | Truth | Score | Decision |\n|---|---|---|---|\n| a | 1 | 0.91 | 1 ✅ TP |\n| b | 1 | 0.32 | 0 ❌ FN |\n| c | 0 | 0.64 | 1 ❌ FP |\n| d | 0 | 0.05 | 0 ✅ TN |\n\nPrecision = 1/2 · Recall = 1/2 · **F1 = 0.50** · AUC = 0.75\n\n## Errors\n\n- If your model **crashes on a patch**, or returns something that is not a number, that patch gets score 0 (negative). The rest of your patches are still evaluated.\n- Scores outside [0, 1] are clipped to [0, 1].\n- If your submission **crashes completely** or exceeds the **time limit**, it fails and gets no score.",
+      "index": 1
+    },
+    {
+      "id": 91034,
+      "title": "Submission",
+      "content": "# How to submit\n\nYou submit a **.zip file** containing your code and your trained weights. The platform loads your model and runs it on the hidden patches.\n\n## 1. Zip structure\n\nThe files must be at the **root** of the zip (not inside a folder):\n\n```\nmy_submission.zip\n├── model.py        ← required\n└── weights/        ← your trained model files (any format)\n```\n\nYou can add other `.py` files if `model.py` imports them.\n\n## 2. The `Model` interface\n\n`model.py` must define a class called `Model` with exactly this interface:\n\n```python\nclass Model:\n    def __init__(self, weights_dir: str):\n        # Load your model here.\n        # weights_dir is the path to your \"weights/\" folder.\n        ...\n\n    def predict(self, image_path: str) -> float:\n        # Read the patch at image_path and return the PROBABILITY (0..1)\n        # that it contains H. pylori, e.g. 0.87\n        ...\n```\n\n- `predict` is called **once per patch**.\n- Inputs are **256×256 PNG patches** of immunohistochemically stained gastric tissue, like the ones in the course dataset. File names are anonymous (`00001.png`, ...): they carry no patient information.\n- Always return a **float**. If you are unsure, return your best guess, not an error.\n- Scores ≥ 0.5 count as positive (see the **Evaluation** page).\n\n## 3. Environment\n\nYour code runs in a fixed environment. You **cannot install extra packages**.\n\n- Python 3.11\n- `torch`, `torchvision` (CPU only)\n- `opencv-python-headless`, `numpy`, `pillow`\n- `scikit-learn`, `scikit-image`\n\nImportant limits:\n\n- **No GPU**: run your model on CPU (`device=\"cpu\"`).\n- **No internet**: all weights must be inside your zip. Do not download anything at runtime.\n- **Time limit**: 15 minutes in Development (~700 patches) and 30 minutes in Final (~1,400 patches). Aim for **< 0.5 s per patch** on a laptop CPU.\n- Keep your zip reasonably small (**under 300 MB**).\n\n## 4. Test locally first!\n\nYou **will not see the logs** of your Final submission, so if something fails you won't know why. Always test with the provided `run_local.py` script (in the **starting kit**) before submitting.\n\nPut some patches you did **not** train on in a folder:\n\n```\nmy_val/\n├── images/        ← .png patches\n└── labels.csv     ← optional: ground truth (filename,label)\n```\n\n`labels.csv` (optional) must have a header and one row per image, with `1` = H. pylori and `0` = no:\n\n```\nfilename,label\n00001.png,1\n00002.png,0\n```\n\nWithout `labels.csv` the script only checks that your model runs on every patch, returns valid scores and is fast enough.\n\n### Run it\n\n```bash\npython run_local.py --submission my_submission.zip --data my_val/\n```\n\nIt checks your zip structure, loads your model exactly like the platform does, and prints F1, ROC AUC, precision and recall (if labels are available) and the time per patch.\n\nThe starting kit also contains `example_submission/`, a minimal submission template that runs (it returns 0.5 for every patch: replace it with your model).\n\n## 5. Submit\n\n1. Go to the **My Submissions** tab.\n2. Select the phase (**Development** or **Final**).\n3. Upload your `.zip`.\n4. Wait a few minutes and check your score on the **Results** tab.",
+      "index": 2
+    }
+  ],
+  "phases": [
+    {
+      "id": 31364,
+      "index": 0,
+      "start": "2026-11-10T00:00:00Z",
+      "end": "2026-11-30T22:59:00Z",
+      "name": "HP - Dev - Phase",
+      "description": "Development phase. Scored on 50% of the hidden test patches. 5 submissions per day.",
+      "status": "Current",
+      "execution_time_limit": 900,
+      "tasks": [
+        {
+          "task": "e6d149f5-d741-4747-aa81-bb8dc026babd",
+          "order_index": 0,
+          "phase": 31364,
+          "id": 37060,
+          "value": "e6d149f5-d741-4747-aa81-bb8dc026babd",
+          "key": "e6d149f5-d741-4747-aa81-bb8dc026babd",
+          "created_when": "2026-11-10T15:21:55.400967Z",
+          "name": "HP - Dev (50%)",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 1101986,
+              "created_by": "gerardbadia",
+              "owner_display_name": "gerardbadia",
+              "created_when": "2026-11-10T15:21:51.018693Z",
+              "name": "ingestion_program @ '11-10-2026 15:21'",
+              "type": "ingestion_program",
+              "description": null,
+              "is_public": false,
+              "key": "d963221e-d3e7-4cb1-8357-e5e5c6ed2b8a",
+              "value": "d963221e-d3e7-4cb1-8357-e5e5c6ed2b8a",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 18590,
+                  "title": "V&L - H. pylori Challenge"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 1075.0
+            },
+            {
+              "id": 1101987,
+              "created_by": "gerardbadia",
+              "owner_display_name": "gerardbadia",
+              "created_when": "2026-11-10T15:21:51.116329Z",
+              "name": "input_data @ '11-10-2026 15:21'",
+              "type": "input_data",
+              "description": null,
+              "is_public": false,
+              "key": "91923a88-80d9-4d68-926f-a2c6a4b5cc12",
+              "value": "91923a88-80d9-4d68-926f-a2c6a4b5cc12",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 18590,
+                  "title": "V&L - H. pylori Challenge"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 72247833.0
+            },
+            {
+              "id": 1101988,
+              "created_by": "gerardbadia",
+              "owner_display_name": "gerardbadia",
+              "created_when": "2026-11-10T15:21:55.277900Z",
+              "name": "scoring_program @ '11-10-2026 15:21'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "8e0be33a-3ff4-4f38-9290-09b587343322",
+              "value": "8e0be33a-3ff4-4f38-9290-09b587343322",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 18590,
+                  "title": "V&L - H. pylori Challenge"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 1136.0
+            },
+            {
+              "id": 1101989,
+              "created_by": "gerardbadia",
+              "owner_display_name": "gerardbadia",
+              "created_when": "2026-11-10T15:21:55.329663Z",
+              "name": "reference_data @ '11-10-2026 15:21'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "5c15b1d2-b09e-4939-a316-9a6624bee82b",
+              "value": "5c15b1d2-b09e-4939-a316-9a6624bee82b",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 18590,
+                  "title": "V&L - H. pylori Challenge"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 1610.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 5,
+      "max_submissions_per_person": 200,
+      "max_submissions_scope": "participant",
+      "auto_migrate_to_this_phase": false,
+      "hide_output": false,
+      "hide_prediction_output": false,
+      "hide_score_output": false,
+      "public_data": null,
+      "starting_kit": {
+        "id": 1101994,
+        "created_by": "gerardbadia",
+        "owner_display_name": "gerardbadia",
+        "created_when": "2026-11-10T15:22:04.690122Z",
+        "name": "starting_kit @ '11-10-2026 15:22'",
+        "type": "starting_kit",
+        "description": null,
+        "is_public": false,
+        "key": "75a352d6-f697-49ac-b987-3f9c8b6b21f5",
+        "value": "75a352d6-f697-49ac-b987-3f9c8b6b21f5",
+        "was_created_by_competition": true,
+        "in_use": [
+          {
+            "pk": 18590,
+            "title": "V&L - H. pylori Challenge"
+          }
+        ],
+        "competition": null,
+        "file_name": "",
+        "file_size": 4419.0
+      },
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0,
+      "is_parallel": false,
+      "is_locked_phase": false
+    },
+    {
+      "id": 31365,
+      "index": 1,
+      "start": "2026-12-01T08:00:00Z",
+      "end": "2026-12-02T08:00:00Z",
+      "name": "HP - Final - Phase",
+      "description": "Final phase. Scored on 100% of the hidden test patches. Only 1 submission.",
+      "status": "Next",
+      "execution_time_limit": 1800,
+      "tasks": [
+        {
+          "task": "e5cc95d9-47fd-4b04-b3d3-f6762cafdd01",
+          "order_index": 0,
+          "phase": 31365,
+          "id": 37061,
+          "value": "e5cc95d9-47fd-4b04-b3d3-f6762cafdd01",
+          "key": "e5cc95d9-47fd-4b04-b3d3-f6762cafdd01",
+          "created_when": "2026-11-10T15:22:04.665976Z",
+          "name": "HP - Final (100%)",
+          "solutions": [],
+          "public_datasets": [
+            {
+              "id": 1101990,
+              "created_by": "gerardbadia",
+              "owner_display_name": "gerardbadia",
+              "created_when": "2026-11-10T15:21:55.407696Z",
+              "name": "ingestion_program @ '11-10-2026 15:21'",
+              "type": "ingestion_program",
+              "description": null,
+              "is_public": false,
+              "key": "42d6d826-f5c5-4e70-b658-21e1ee975b5e",
+              "value": "42d6d826-f5c5-4e70-b658-21e1ee975b5e",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 18590,
+                  "title": "V&L - H. pylori Challenge"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 1075.0
+            },
+            {
+              "id": 1101991,
+              "created_by": "gerardbadia",
+              "owner_display_name": "gerardbadia",
+              "created_when": "2026-11-10T15:21:55.478928Z",
+              "name": "input_data @ '11-10-2026 15:21'",
+              "type": "input_data",
+              "description": null,
+              "is_public": false,
+              "key": "b24cc051-1293-46cd-b73b-133c0cd288f2",
+              "value": "b24cc051-1293-46cd-b73b-133c0cd288f2",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 18590,
+                  "title": "V&L - H. pylori Challenge"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 139940977.0
+            },
+            {
+              "id": 1101992,
+              "created_by": "gerardbadia",
+              "owner_display_name": "gerardbadia",
+              "created_when": "2026-11-10T15:22:04.336198Z",
+              "name": "scoring_program @ '11-10-2026 15:22'",
+              "type": "scoring_program",
+              "description": null,
+              "is_public": false,
+              "key": "f53e3e3e-f197-4039-9ad9-03bb88e7b5a7",
+              "value": "f53e3e3e-f197-4039-9ad9-03bb88e7b5a7",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 18590,
+                  "title": "V&L - H. pylori Challenge"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 1136.0
+            },
+            {
+              "id": 1101993,
+              "created_by": "gerardbadia",
+              "owner_display_name": "gerardbadia",
+              "created_when": "2026-11-10T15:22:04.411896Z",
+              "name": "reference_data @ '11-10-2026 15:22'",
+              "type": "reference_data",
+              "description": null,
+              "is_public": false,
+              "key": "e13d9a11-e85e-4457-8793-9d8e9ec1b666",
+              "value": "e13d9a11-e85e-4457-8793-9d8e9ec1b666",
+              "was_created_by_competition": true,
+              "in_use": [
+                {
+                  "pk": 18590,
+                  "title": "V&L - H. pylori Challenge"
+                }
+              ],
+              "competition": null,
+              "file_name": "",
+              "file_size": 3256.0
+            }
+          ]
+        }
+      ],
+      "has_max_submissions": true,
+      "max_submissions_per_day": 1,
+      "max_submissions_per_person": 1,
+      "max_submissions_scope": "participant",
+      "auto_migrate_to_this_phase": true,
+      "hide_output": true,
+      "hide_prediction_output": true,
+      "hide_score_output": true,
+      "public_data": null,
+      "starting_kit": null,
+      "is_final_phase": false,
+      "used_submissions_per_day": 0,
+      "used_submissions_per_person": 0,
+      "is_parallel": false,
+      "is_locked_phase": false
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": 20761,
+      "primary_index": 0,
+      "title": "Results",
+      "key": "main",
+      "columns": [
+        {
+          "id": 93032,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "F1-score",
+          "key": "f1",
+          "sorting": "desc",
+          "index": 0,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 93033,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "ROC AUC (tie-break)",
+          "key": "auc",
+          "sorting": "desc",
+          "index": 1,
+          "hidden": false,
+          "precision": 4
+        },
+        {
+          "id": 93034,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Precision",
+          "key": "precision",
+          "sorting": "desc",
+          "index": 2,
+          "hidden": false,
+          "precision": 3
+        },
+        {
+          "id": 93035,
+          "computation": null,
+          "computation_indexes": null,
+          "title": "Recall",
+          "key": "recall",
+          "sorting": "desc",
+          "index": 3,
+          "hidden": false,
+          "precision": 3
+        }
+      ],
+      "hidden": false,
+      "submission_rule": "Force_Best"
+    }
+  ],
+  "description": "H. pylori detection competition for additional points (Vision & Learning)",
+  "participants_count": 2,
+  "submissions_count": 1,
+  "docker_image": "gerardbadia/codabench:v1",
+  "competition_type": "competition",
+  "reward": "",
+  "contact_email": "",
+  "report": "",
+  "enable_detailed_results": false,
+  "show_detailed_results_in_submission_panel": true,
+  "show_detailed_results_in_leaderboard": true,
+  "forum": 18278,
+  "forum_enabled": false,
+  "fact_sheet": null,
+  "make_programs_available": false,
+  "make_input_data_available": false,
+  "registration_auto_approve": false
+}

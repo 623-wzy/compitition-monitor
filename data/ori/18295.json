@@ -5,8 +5,8 @@
   "created_by": "philiphlundberg",
   "owner_display_name": "philiphlundberg",
   "created_when": "2026-10-01T08:34:40.806624Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-01-1790843680/12b54e67550f/whorl_logo.png?AWSAccessKeyId=codabench-prod&Signature=90t6Mr6fVVW%2FHRFRL1FrOGsmUV0%3D&Expires=1794308929",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-01-1790843680/12b54e67550f/whorl_logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=iiJprOkz%2FubiMVIsj3jLkrTi1YY%3D&Expires=1794308929",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-01-1790843680/12b54e67550f/whorl_logo.png?AWSAccessKeyId=codabench-prod&Signature=1JC%2FqZ1stDrzUey4alh4LYe1aZc%3D&Expires=1794396646",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-10-01-1790843680/12b54e67550f/whorl_logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=wJzn9D1xq4CENFgYO8SD8V%2FJmKE%3D&Expires=1794396646",
   "terms": "# Terms and Conditions\n\n1. All participants should register for this benchmark with their real names, affiliations (including department, full name of university/institute/company, country), and affiliation E-mails. Incomplete and redundant registrations will be removed without notice. Each team can have at most six people.\n\n2. All participant must provide a GitHub repository. If your method isn't possible to replicate using the repository it will be removed. \n\n3. All participants agree to make the results of the benchmark public.\n\n4. The dataset is shared under the Creative Common Attribution-ShareAlike 4.0 International License. You can read the full license in the LICENSE.md when downloading the dataset.\n\nIf the competition manager suspect cheating, the participant will be removed from the competition.",
   "pages": [
     {
@@ -311,7 +311,7 @@
   ],
   "description": "Sensor and platform agnostic detection of whorls and their positions from tree point clouds as well as stem profile estimation.",
   "participants_count": 16,
-  "submissions_count": 47,
+  "submissions_count": 49,
   "docker_image": "codalab/codalab-legacy:py39",
   "competition_type": "competition",
   "reward": "",

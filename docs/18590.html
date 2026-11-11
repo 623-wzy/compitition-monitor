@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>V&amp;L - H. pylori Challenge — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>V&amp;L - H. pylori Challenge</h2>
+  <div class="detail-meta">
+    <span>ID: 18590</span>
+    <span>创建者: gerardbadia</span>
+    <span>创建时间: 2026-11-10</span>
+    <span>参与人数: 2</span>
+    <span>提交次数: 1</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/18590/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">幽门螺杆菌检测竞赛（附加分）（视觉与学习）</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> HP - Dev - Phase</td><td>2026-11-10</td><td>2026-11-30</td><td>5</td></tr><tr><td><span class='badge badge-test'>测试</span> HP - Final - Phase</td><td>2026-12-01</td><td>2026-12-02</td><td>1</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'># 幽门螺杆菌检测挑战赛
+
+**这是UAB内部竞赛。非UAB参与者不予接受。**
+
+欢迎！你的目标是构建一个**检测*幽门螺杆菌***的系统：给定一张256×256的免疫组化染色胃活检组织图像块，你的模型必须返回**该图像块包含幽门螺杆菌的概率**。
+
+## 运作方式
+
+- 使用**课程公开数据**（Quiron数据集的留出集，仅含患者级诊断）在你自己的计算机上训练模型。
+- 提交**代码和训练好的权重**。平台在**专家病理学家标注的隐藏测试集图像块**（你永远看不到）上运行你的模型并给出分数。
+- 最高分数将显示在**排行榜**上。
+
+## 日程安排
+
+| 阶段 | 日期 | 数据 | 提交次数 |
+|---|---|---|---|
+| **开发阶段** | 2026年10月11日 – 2026年11月30日（23:59） | 隐藏测试集，**50%**的图像块 | 每天5次 |
+| **决赛阶段** | 2026年12月1日（09:00） – 2026年12月2日（09:00） | 隐藏测试集，**100%**的图像块 | 总共1次 |
+
+- **开发阶段**：用于检查提交是否正常工作以及比较不同想法。基于**一半**隐藏图像块进行评分。
+- **决赛阶段**：以此为准。基于**全部**隐藏图像块（开发阶段的一半 + 另一半无人看过的数据）进行评分。最终排名依据你的**唯一一次**决赛提交。
+
+两半数据**按患者**划分：同一患者的所有图像块位于同一半。
+
+## 规则
+
+- 以班级小组为单位组队参赛。
+- 可以使用任何方法：经典计算机视觉、卷积神经网络、自编码器/异常检测、预训练模型等。
+- 隐藏图像块不以任何形式提供给参与者。请勿试图获取。</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'># 评估
+
+每个切片由病理学家给出真实标签：**1** = 存在幽门螺杆菌，**0** = 无幽门螺杆菌。
+您的模型为每个切片返回一个 **[0, 1] 范围内的分数**。
+
+## 排名指标：F1分数
+
+您的分数通过固定阈值转换为决策：
+**分数 ≥ 0.5 → 阳性（幽门螺杆菌）**，**分数 &lt; 0.5 → 阴性**
+
+然后计算**阳性类别**的F1分数：
+
+- **精确率** = TP / (TP + FP) — 在您标记的切片中，真正含有幽门螺杆菌的比例
+- **召回率** = TP / (TP + FN) — 在含有幽门螺杆菌的切片中，被您发现的比例
+- **F1 = 2 · 精确率 · 召回率 / (精确率 + 召回率)**
+
+排行榜按**F1分数**排名。阳性切片属于少数类别，因此预测&quot;全为阴性&quot;会得到 F1 = 0，预测&quot;全为阳性&quot;也会得到较低的F1。
+
+&gt; 提示：如果您的模型输出的不是校准概率（例如自编码器重构误差），请在验证数据上选择您自己的阈值，并在 `predict()` 内部**将其映射到0.5**。
+
+## 平局决胜：ROC AUC
+
+如果两支队伍的F1分数相同（保留4位小数），则通过**ROC AUC**决出胜负。它基于您的**原始分数**计算（无需阈值），因此它衡量的是您的分数将阳性切片排在阴性切片之上的能力。仅返回0/1会得到很低的AUC。
+
+## 其他列
+
+**精确率**和**召回率**仅用于反馈展示，不影响排名。
+
+## 示例
+
+| 切片 | 真实值 | 分数 | 决策 |
+|---|---|---|---|
+| a | 1 | 0.91 | 1 ✅ 真阳性 |
+| b | 1 | 0.32 | 0 ❌ 假阴性 |
+| c | 0 | 0.64 | 1 ❌ 假阳性 |
+| d | 0 | 0.05 | 0 ✅ 真阴性 |
+
+精确率 = 1/2 · 召回率 = 1/2 · **F1 = 0.50** · AUC = 0.75
+
+## 错误处理
+
+- 如果您的模型在某个切片上**崩溃**，或返回非数字结果，该切片得分为0（阴性）。其余切片仍会被评估。
+- [0, 1] 范围外的分数将被截断至 [0, 1]。
+- 如果您的提交**完全崩溃**或超出**时间限制**，则提交失败，没有分数。</div></div><div class='section'><h3>Submission</h3><div class='page-content'># How to submit
+
+You submit a **.zip file** containing your code and your trained weights. The platform loads your model and runs it on the hidden patches.
+
+## 1. Zip structure
+
+The files must be at the **root** of the zip (not inside a folder):
+
+```
+my_submission.zip
+├── model.py        ← required
+└── weights/        ← your trained model files (any format)
+```
+
+You can add other `.py` files if `model.py` imports them.
+
+## 2. The `Model` interface
+
+`model.py` must define a class called `Model` with exactly this interface:
+
+```python
+class Model:
+    def __init__(self, weights_dir: str):
+        # Load your model here.
+        # weights_dir is the path to your &quot;weights/&quot; folder.
+        ...
+
+    def predict(self, image_path: str) -&gt; float:
+        # Read the patch at image_path and return the PROBABILITY (0..1)
+        # that it contains H. pylori, e.g. 0.87
+        ...
+```
+
+- `predict` is called **once per patch**.
+- Inputs are **256×256 PNG patches** of immunohistochemically stained gastric tissue, like the ones in the course dataset. File names are anonymous (`00001.png`, ...): they carry no patient information.
+- Always return a **float**. If you are unsure, return your best guess, not an error.
+- Scores ≥ 0.5 count as positive (see the **Evaluation** page).
+
+## 3. Environment
+
+Your code runs in a fixed environment. You **cannot install extra packages**.
+
+- Python 3.11
+- `torch`, `torchvision` (CPU only)
+- `opencv-python-headless`, `numpy`, `pillow`
+- `scikit-learn`, `scikit-image`
+
+Important limits:
+
+- **No GPU**: run your model on CPU (`device=&quot;cpu&quot;`).
+- **No internet**: all weights must be inside your zip. Do not download anything at runtime.
+- **Time limit**: 15 minutes in Development (~700 patches) and 30 minutes in Final (~1,400 patches). Aim for **&lt; 0.5 s per patch** on a laptop CPU.
+- Keep your zip reasonably small (**under 300 MB**).
+
+## 4. Test locally first!
+
+You **will not see the logs** of your Final submission, so if something fails you won&#x27;t know why. Always test with the provided `run_local.py` script (in the **starting kit**) before submitting.
+
+Put some patches you did **not** train on in a folder:
+
+```
+my_val/
+├── images/        ← .png patches
+└── labels.csv     ← optional: ground truth (filename,label)
+```
+
+`labels.csv` (optional) must have a header and one row per image, with `1` = H. pylori and `0` = no:
+
+```
+filename,label
+00001.png,1
+00002.png,0
+```
+
+Without `labels.csv` the script only checks that your model runs on every patch, returns valid scores and is fast enough.
+
+### Run it
+
+```bash
+python run_local.py --submission my_submission.zip --data my_val/
+```
+
+It checks your zip structure, loads your model exactly like the platform does, and prints F1, ROC AUC, precision and recall (if labels are available) and the time per patch.
+
+The starting kit also contains `example_submission/`, a minimal submission template that runs (it returns 0.5 for every patch: replace it with your model).
+
+## 5. Submit
+
+1. Go to the **My Submissions** tab.
+2. Select the phase (**Development** or **Final**).
+3. Upload your `.zip`.
+4. Wait a few minutes and check your score on the **Results** tab.</div></div>
+
+</div>
+</body>
+</html>

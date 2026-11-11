@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VQA Datathon — BITS F459 — Codabench 竞赛监测</title>
+<style>
+:root {
+    --bg: #0f1117;
+    --card-bg: #1a1d2e;
+    --border: #2d3152;
+    --accent: #6c8fff;
+    --accent2: #a78bfa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --dev: #34d399;
+    --test: #f59e0b;
+    --other: #94a3b8;
+    --ended: #ef4444;
+    --urgent: #f59e0b;
+    --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+.site-header { background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.site-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.site-header .meta { color: var(--muted); font-size: .875rem; }
+
+/* ── Grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; padding: 32px; max-width: 1600px; margin: 0 auto; }
+
+/* ── Card ── */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-title { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.card-title a { color: var(--text); }
+.card-title a:hover { color: var(--accent); text-decoration: none; }
+.card-id { font-size: .75rem; color: var(--muted); white-space: nowrap; }
+.card-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-phases { display: flex; flex-direction: column; gap: 6px; }
+.phase-row { display: flex; align-items: center; gap: 8px; font-size: .8rem; }
+.phase-label { font-weight: 600; width: 38px; }
+.phase-dates { color: var(--muted); }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); font-size: .8rem; }
+.participants { color: var(--muted); }
+.participants span { color: var(--text); font-weight: 600; }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+.badge-dev { background: rgba(52,211,153,.15); color: var(--dev); }
+.badge-test { background: rgba(245,158,11,.15); color: var(--test); }
+.badge-other { background: rgba(148,163,184,.1); color: var(--other); }
+
+/* ── Status labels ── */
+.ended { color: var(--ended); font-size: .75rem; }
+.urgent { color: var(--urgent); font-size: .75rem; }
+.normal { color: var(--dev); font-size: .75rem; }
+
+/* ── Detail page ── */
+.detail-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.detail-wrap h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+.detail-meta { color: var(--muted); font-size: .875rem; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+.section { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+.section h3 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+table.phases-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+table.phases-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,82,.5); }
+.page-content { font-size: .875rem; line-height: 1.8; color: var(--muted); white-space: pre-wrap; word-break: break-word; }
+.kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: .875rem; }
+.kv-key { color: var(--muted); }
+.kv-val { color: var(--text); }
+.no-data { color: var(--muted); font-size: .85rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: .875rem; }
+.back-link:hover { color: var(--accent); }
+.ext-link { font-size: .8rem; color: var(--accent); }
+
+/* ── Update page ── */
+.update-wrap { max-width: 960px; margin: 0 auto; padding: 32px; }
+.update-section { margin-bottom: 32px; }
+.update-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.update-section h2.new { color: #34d399; }
+.update-section h2.changed { color: #f59e0b; }
+.update-section h2.expired { color: #ef4444; }
+.update-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; }
+.update-item .item-title { font-weight: 600; margin-bottom: 4px; }
+.update-item .item-detail { font-size: .85rem; color: var(--muted); }
+.update-empty { color: var(--muted); font-size: .875rem; font-style: italic; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>Codabench 竞赛监测</h1>
+  <div class="meta"><a href="index.html" style="color:var(--muted)">← 返回目录</a></div>
+</header>
+<div class="detail-wrap">
+  <a class="back-link" href="index.html">← 返回竞赛目录</a>
+  <h2>VQA Datathon — BITS F459</h2>
+  <div class="detail-meta">
+    <span>ID: 18584</span>
+    <span>创建者: amukherjee</span>
+    <span>创建时间: 2026-11-10</span>
+    <span>参与人数: 3</span>
+    <span>提交次数: 0</span>
+    <a class="ext-link" href="https://www.codabench.org/competitions/18584/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
+  </div>
+
+  <div class="section">
+    <h3>竞赛描述</h3>
+    <div class="page-content">Efficient visual question answering on VQAv2/COCO. Code submission: your model is run on a hidden test set; ranking combines accuracy, parameters and FLOPs.</div>
+  </div>
+
+  <div class="section">
+    <h3>竞赛阶段</h3>
+    <table class="phases-table">
+      <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
+      <tbody><tr><td><span class='badge badge-other'>其他</span> Competition</td><td>2026-11-11</td><td>2026-11-26</td><td>3</td></tr></tbody>
+    </table>
+  </div>
+
+<div class='section'><h3>Overview</h3><div class='page-content'>构建一个**小而快**的视觉问答模型。给定一张224×224的COCO图像和一个问题，返回答案。
+
+- 在**训练**集（15,000张图像，79,676个问题）上训练，在**验证**集（2,000张图像，10,388个问题）上调优。两者都带有真实标签，包含在学生包中。
+- 提交**代码+检查点**。Codabench会在**隐藏测试集**（2,000张图像，10,405个问题）上运行你的模型，并自行测量准确率、参数量和FLOPs。
+- **排行榜：**比赛期间显示测试集的**公开**子集（500张图像）。最终排名使用**私有**子集（另外1,500张图像），在截止日期后揭晓。
+- **待超越的基线**（冻结ResNet-18 + GRU + 注意力机制）：测试准确率46.24，18.15 M参数量，3.69 GFLOPs，因此其综合得分为46.24。
+
+评分公式详见*Evaluation*，zip格式要求详见*Submission*，允许事项详见*Rules*。</div></div><div class='section'><h3>Data</h3><div class='page-content'># 数据
+
+| 划分 | 图像 | 问题 | 真实标签 | 位置 |
+|---|---|---|---|---|
+| 训练集 | 15,000 | 79,676 | 有 | 学生包 |
+| 验证集 | 2,000 | 10,388 | 有 | 学生包 |
+| 测试集 | 2,000（与训练集或验证集无重叠） | 10,405 | 隐藏 | 仅在Codabench |
+
+- 图像为COCO照片，缩放至224×224（双线性插值，JPEG质量90），文件名为`&lt;image_id&gt;.jpg`。
+- 每个问题有10个人工答案。问题和答案来自VQAv2（CC BY 4.0）。
+- `answers.txt`包含训练集中1,000个最常见的规范化答案。它们覆盖了验证集86.5%的多数答案。你可以使用其他答案空间。</div></div><div class='section'><h3>Evaluation</h3><div class='page-content'># 评估
+
+**准确率（Accuracy）**是官方VQA准确率，以百分比表示。答案按照官方VQA评估代码进行归一化处理（标点符号、数字单词转为数字、冠词、缩略形式）。每个问题的得分是：在10个人类答案的10个留一法子集上，取 `min(#matches / 3, 1)` 的平均值。
+
+&gt; 输出**小写**答案。如在官方代码中，当所有10个人类答案完全相同时，不应用归一化，因此 `&quot;Yes&quot;` 与 `&quot;yes&quot;` 不匹配。
+
+**复杂度**，由Codabench在您的提交上测量（torch 2.14.1，CPU）：
+- **参数量：** `sum(p.numel() for p in model.parameters())`。所有参数都计入，包括冻结的预训练骨干网络。
+- **FLOPs：** 在批量大小为1、使用固定虚拟图像（常数0.5）和固定虚拟问题上，围绕一次 `predict()` 调用使用 `torch.utils.flop_counter.FlopCounterMode` 测量。**一次乘加运算 = 2 FLOPs。** 矩阵乘法、卷积和注意力操作被计入；逐元素操作不计入。
+
+**综合得分**（排行榜排名）：
+
+`Score = Acc − 2·log2(Params / 18,154,866) − 2·log2(FLOPs / 3,688,267,776)`
+
+参考值是基线模型的。参数量每翻倍扣2分，FLOPs每翻倍也扣2分。减半则加2分。
+
+**状态列：** 0 = 正常，1 = 文件缺失，2 = 导入/`build_model()`失败，3 = `load_state_dict`失败，4 = `predict()`在虚拟输入上失败或未返回`list[str]`，5 = `predict()`在测试数据上崩溃，6 = 答案数量或类型错误。超时的运行无状态码失败。Codabench不显示日志，因此请使用`eval/check_submission.py`进行调试，该脚本在本地运行相同程序并打印完整错误。</div></div><div class='section'><h3>Rules</h3><div class='page-content'>1. **输入。** 您的模型仅通过*提交*页面上的接口接收图像张量和问题文本。
+2. **训练数据。** 仅在提供的**训练集**和**验证集**上进行训练和调优。不要使用任何其他图像问答标注。
+3. **预训练模型。** 允许使用通用的预训练骨干网络，例如 ImageNet 分类器、CLIP 风格的图像/文本编码器和 BERT 系列语言模型。它们的参数和 FLOPs 计入您的得分。禁止使用为视觉问答或在任何图像问答数据上训练或微调的模型或检查点。
+4. **离线推理。** 推理时禁止网络访问、外部 API 或下载。所有权重必须包含在您的检查点中。
+5. **禁止捷径。** 不要试图读取、存储或传输测试数据，也不要硬编码或查找答案。模型必须根据图像和问题作答。
+6. **团队。** 您的课程项目团队。每个团队一个 Codabench 账户。
+7. **冻结提交。** 您在排行榜上的提交（zip + SHA256）即为您的冻结提交。在**测试日**，将使用该 zip（SHA256 校验）**离线**在**新图像和问题**上运行。无法复现的结果或违反规则的行为将受到处罚或取消资格。
+8. **来源说明。** 问答：VQAv2（© VQA 联盟，CC BY 4.0）。图像：COCO（© 其 Flickr 所有者，参见 cocodataset.org 使用条款）。</div></div><div class='section'><h3>Submission</h3><div class='page-content'># 提交
+
+上传一个**zip**文件，顶层包含：
+
+- `model.py`，定义 `build_model()` 返回带有 `predict(images, questions)` 方法的 `torch.nn.Module`
+- `checkpoint.pt`，要加载的 `state_dict`（`torch.save(model.state_dict(), &quot;checkpoint.pt&quot;)`）
+- `model.py` 读取的任何辅助文件（词汇表、额外模块），相对于 `model.py` 加载
+
+Codabench 精确运行：
+
+```python
+model = build_model()
+model.load_state_dict(torch.load(&quot;checkpoint.pt&quot;, map_location=&quot;cpu&quot;, weights_only=True))
+answers = model.predict(images, questions)   # images: FloatTensor[B,3,224,224]，范围 [0,1]，RGB，未归一化
+                                             # questions: list[str]  -&gt;  answers: list[str]
+```
+
+- 在 Docker 镜像内的 **CPU** 上运行，环境包含 python 3.10、torch 2.14.1、torchvision 0.29.1、transformers 5.20.2、pillow 12.3.0、numpy 2.2.6、pyyaml。**不允许其他包，且运行时禁止下载。**所有权重必须包含在 `checkpoint.pt` 中。
+- **时间限制：** 整个测试集（10,405 个问题）必须在阶段时间限制内完成。基线在 2 个 CPU 线程上需要约 6 分钟。
+- 上传前，运行 `notebooks/make_submission.ipynb`（或 `python eval/check_submission.py ...`）。它会构建 zip 文件，在验证集上运行相同的 ingestion 程序，并报告你的验证分数、参数量、FLOPs 和估计的测试运行时间。
+- 每天最多提交 3 次。选择哪个提交显示在排行榜上；该提交将在私有子集上进行排名。</div></div>
+
+</div>
+</body>
+</html>
