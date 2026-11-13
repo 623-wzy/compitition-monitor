@@ -5,8 +5,8 @@
   "created_by": "amukherjee",
   "owner_display_name": "amukherjee",
   "created_when": "2026-11-10T10:05:43.383627Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-10-1794305143/0a0942b73288/logo.png?AWSAccessKeyId=codabench-prod&Signature=qNeVGx0vAl%2FXJCugONbq85qh6nU%3D&Expires=1794396640",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-10-1794305143/0a0942b73288/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=IxyEyV%2F181aDaOVAm%2B944CTu7F0%3D&Expires=1794396640",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-10-1794305143/0a0942b73288/logo.png?AWSAccessKeyId=codabench-prod&Signature=BsSB%2By1iY1rx84nReicjaL7TcyQ%3D&Expires=1794581222",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-10-1794305143/0a0942b73288/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=TdWTSckkLQ%2Bvfa8wl3EX1zTIEkM%3D&Expires=1794581222",
   "terms": "# Terms and conditions\n\nBy registering for and taking part in the VQA Datathon (BITS F459), you agree to the following:\n\n1. **Course use only.** The data (VQAv2 questions and annotations, CC BY 4.0, © VQA Consortium; COCO images, © their Flickr owners under the COCO terms of use) is provided for this course. Do not redistribute the student package or any part of it.\n2. **Rules.** You follow the rules on the *Rules* page. In particular: train only on the provided data, use no models trained for visual question answering, make no network calls at inference, and make no attempt to read, store, transmit, hard-code or look up test data.\n3. **Your submissions.** Your code and checkpoint are run on the hidden test set on Codabench, and may be downloaded and run again by the instructor (including on test day) to verify results.\n4. **Verification and penalties.** The submission on the leaderboard (zip + SHA256) is your frozen entry. Results that cannot be reproduced from it, or rule violations, may be penalized or disqualified at the instructor's discretion.\n5. **Accounts.** One Codabench account per team. Registration is approved by the instructor.\n6. **Academic integrity.** The BITS Pilani academic integrity policy applies. Work only with your own team.",
   "pages": [
     {
@@ -48,7 +48,7 @@
       "end": "2026-11-26T18:29:00Z",
       "name": "Competition",
       "description": "Leaderboard shows the public subset; final ranking uses the private subset (revealed after the deadline).",
-      "status": "Next",
+      "status": "Current",
       "execution_time_limit": 7200,
       "tasks": [
         {
@@ -304,7 +304,7 @@
     }
   ],
   "description": "Efficient visual question answering on VQAv2/COCO. Code submission: your model is run on a hidden test set; ranking combines accuracy, parameters and FLOPs.",
-  "participants_count": 3,
+  "participants_count": 12,
   "submissions_count": 0,
   "docker_image": "amukherjee1989/vqa-datathon:torch2.14.1-cpu",
   "competition_type": "competition",

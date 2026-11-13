@@ -5,7 +5,7 @@
   "description_zh": "从单张餐食照片识别食物成分及其克数（任务1），并估算碳水化合物、蛋白质含量或饮食质量评分（任务2）。使用来自Nutrition5k和January Food Benchmark的2923个训练餐食和974个验证餐食。",
   "created_by": "qjin-unisg",
   "created_when": "2026-11-04T12:02:36.678722Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-04-1793793756/9aa24271fce4/logo.png?AWSAccessKeyId=codabench-prod&Signature=3qqLLllPq9PFVzBTE1PJMPT%2Bl9s%3D&Expires=1794396644",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-04-1793793756/9aa24271fce4/logo.png?AWSAccessKeyId=codabench-prod&Signature=50h06K0rK%2ByPfGS78Yim7ZidFjY%3D&Expires=1794581216",
   "participants_count": 11,
   "submissions_count": 0,
   "first_phase_start": null,

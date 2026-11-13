@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>V&amp;L - H. pylori Challenge — Codabench 竞赛监测</title>
+<title>V&amp;L - Helicobacter Diagnosis Challenge — Codabench 竞赛监测</title>
 <style>
 :root {
     --bg: #0f1117;
@@ -99,13 +99,13 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
 </header>
 <div class="detail-wrap">
   <a class="back-link" href="index.html">← 返回竞赛目录</a>
-  <h2>V&amp;L - H. pylori Challenge</h2>
+  <h2>V&amp;L - Helicobacter Diagnosis Challenge</h2>
   <div class="detail-meta">
     <span>ID: 18590</span>
     <span>创建者: gerardbadia</span>
     <span>创建时间: 2026-11-10</span>
-    <span>参与人数: 2</span>
-    <span>提交次数: 1</span>
+    <span>参与人数: 3</span>
+    <span>提交次数: 4</span>
     <a class="ext-link" href="https://www.codabench.org/competitions/18590/" target="_blank" rel="noopener">在 Codabench 查看 ↗</a>
   </div>
 
@@ -118,7 +118,7 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
     <h3>竞赛阶段</h3>
     <table class="phases-table">
       <thead><tr><th>阶段</th><th>开始</th><th>截止</th><th>每日提交上限</th></tr></thead>
-      <tbody><tr><td><span class='badge badge-dev'>开发</span> HP - Dev - Phase</td><td>2026-11-10</td><td>2026-11-30</td><td>5</td></tr><tr><td><span class='badge badge-test'>测试</span> HP - Final - Phase</td><td>2026-12-01</td><td>2026-12-02</td><td>1</td></tr></tbody>
+      <tbody><tr><td><span class='badge badge-dev'>开发</span> HP - Dev - Phase</td><td>2026-11-10</td><td>2026-11-18</td><td>5</td></tr><tr><td><span class='badge badge-test'>测试</span> HP - Final - Phase</td><td>2026-11-18</td><td>2026-11-20</td><td>1</td></tr></tbody>
     </table>
   </div>
 
@@ -193,98 +193,92 @@ table.phases-table td { padding: 8px 10px; border-bottom: 1px solid rgba(45,49,8
 
 - 如果您的模型在某个切片上**崩溃**，或返回非数字结果，该切片得分为0（阴性）。其余切片仍会被评估。
 - [0, 1] 范围外的分数将被截断至 [0, 1]。
-- 如果您的提交**完全崩溃**或超出**时间限制**，则提交失败，没有分数。</div></div><div class='section'><h3>Submission</h3><div class='page-content'># How to submit
+- 如果您的提交**完全崩溃**或超出**时间限制**，则提交失败，没有分数。</div></div><div class='section'><h3>Submission</h3><div class='page-content'># 如何提交
 
-You submit a **.zip file** containing your code and your trained weights. The platform loads your model and runs it on the hidden patches.
+您提交一个包含代码和训练权重的 **.zip 文件**。平台会加载您的模型并在隐藏患者数据上运行。
 
-## 1. Zip structure
+## 1. Zip 文件结构
 
-The files must be at the **root** of the zip (not inside a folder):
+文件必须位于 zip 文件的**根目录**下（不能在文件夹内）：
 
 ```
 my_submission.zip
-├── model.py        ← required
-└── weights/        ← your trained model files (any format)
+├── model.py        ← 必需
+└── weights/        ← 训练好的模型文件（任意格式）
 ```
 
-You can add other `.py` files if `model.py` imports them.
+如果 `model.py` 需要导入其他 `.py` 文件，可以一并添加。
 
-## 2. The `Model` interface
+## 2. `Model` 接口
 
-`model.py` must define a class called `Model` with exactly this interface:
+`model.py` 必须定义一个名为 `Model` 的类，严格遵循以下接口：
 
 ```python
 class Model:
     def __init__(self, weights_dir: str):
-        # Load your model here.
-        # weights_dir is the path to your &quot;weights/&quot; folder.
+        # 在此处加载模型（特征提取器 + ABMIL）。
+        # weights_dir 是 &quot;weights/&quot; 文件夹的路径。
         ...
 
-    def predict(self, image_path: str) -&gt; float:
-        # Read the patch at image_path and return the PROBABILITY (0..1)
-        # that it contains H. pylori, e.g. 0.87
+    def predict(self, patch_paths: list) -&gt; float:
+        # patch_paths：包含某位患者所有 .png 图像块路径的列表
+        # 返回患者为阳性的概率（0..1），例如 0.87
         ...
 ```
 
-- `predict` is called **once per patch**.
-- Inputs are **256×256 PNG patches** of immunohistochemically stained gastric tissue, like the ones in the course dataset. File names are anonymous (`00001.png`, ...): they carry no patient information.
-- Always return a **float**. If you are unsure, return your best guess, not an error.
-- Scores ≥ 0.5 count as positive (see the **Evaluation** page).
+- `predict` 对每个患者调用**一次**，传入该患者的全部图像块集合。
+- 图像块是与课程数据集中类似的 **PNG** 图像。每位患者有**数百个图像块**（不同患者的数量差异很大）。
+- **并非所有图像块尺寸相同**：大多数是 256×256，但有些不是。**在将图像块堆叠成批次之前，需将每个图像块调整大小（或填充）至固定尺寸**：`np.stack` / `torch.stack` 在处理混合尺寸时会崩溃，而崩溃会导致该患者被判定为阴性。启动套件中的模板（`load_patch`）已包含此功能。
+- 在隐藏数据集中，患者文件夹使用**匿名名称**（`P001`、`P002`、…），图像块命名为 `00001.png`、`00002.png`、…
+- 务必返回 **float** 类型。如果不确定，返回最佳猜测值，而非报错。
+- 分数 ≥ 0.5 视为阳性诊断（参见**评估**页面）。
 
-## 3. Environment
+## 3. 环境
 
-Your code runs in a fixed environment. You **cannot install extra packages**.
+您的代码在固定环境中运行。**无法安装额外包**。
 
 - Python 3.11
-- `torch`, `torchvision` (CPU only)
-- `opencv-python-headless`, `numpy`, `pillow`
-- `scikit-learn`, `scikit-image`
+- `torch`、`torchvision`（仅 CPU）
+- `opencv-python-headless`、`numpy`、`pillow`
+- `scikit-learn`、`scikit-image`
 
-Important limits:
+重要限制：
 
-- **No GPU**: run your model on CPU (`device=&quot;cpu&quot;`).
-- **No internet**: all weights must be inside your zip. Do not download anything at runtime.
-- **Time limit**: 15 minutes in Development (~700 patches) and 30 minutes in Final (~1,400 patches). Aim for **&lt; 0.5 s per patch** on a laptop CPU.
-- Keep your zip reasonably small (**under 300 MB**).
+- **无 GPU**：在 CPU 上运行模型（`device=&quot;cpu&quot;`）。使用 `torch.no_grad()`，并将患者的图像块分批通过特征提取器处理。
+- **无网络连接**：所有权重必须包含在 zip 文件内。运行时请勿下载任何内容（例如不要使用 `pretrained=True`：将预训练权重保存在 `weights/` 中）。
+- **时间限制**：开发阶段为**3小时**，最终阶段为**4小时**，用于处理整个隐藏数据集（开发阶段：58位患者，约38,000个图像块；最终阶段：58位患者，约50,000个图像块；每位患者约130至7,400个图像块）。作为参考，ResNet18 编码器 + ABMIL 在平台 CPU 上每个图像块耗时约50毫秒（开发阶段约30分钟）。目标是在笔记本电脑 CPU 上**每个图像块耗时&lt;200毫秒**（包括读取图像）。
+- **内存**：部分患者有超过7,000个图像块。请勿将患者的所有图像加载到一个张量中：分批（例如64个图像块）读取和编码，仅保留特征。
+- 将 zip 文件大小控制在**600 MB以内**（代码+权重）。较小的 zip 文件上传和启动更快。
 
-## 4. Test locally first!
+## 4. 先进行本地测试！
 
-You **will not see the logs** of your Final submission, so if something fails you won&#x27;t know why. Always test with the provided `run_local.py` script (in the **starting kit**) before submitting.
+您**无法查看**最终提交的日志，因此如果出错，您将无法得知原因。提交前务必使用提供的 `run_local.py` 脚本（在**启动套件**中）进行测试。
 
-Put some patches you did **not** train on in a folder:
+将一些**未用于训练**的患者数据放入一个文件夹中，每位患者一个子文件夹：
 
 ```
 my_val/
-├── images/        ← .png patches
-└── labels.csv     ← optional: ground truth (filename,label)
+├── B22-25_0/      ← 该患者的 .png 图像块
+├── B22-31_0/
+├── ...
+└── labels.csv     ← 可选：真实标签（患者,标签）
 ```
 
-`labels.csv` (optional) must have a header and one row per image, with `1` = H. pylori and `0` = no:
+`labels.csv`（可选）必须有表头，每行一位患者，`1` 表示阳性，`0` 表示阴性：
 
 ```
-filename,label
-00001.png,1
-00002.png,0
+patient,label
+B22-25_0,1
+B22-31_0,0
 ```
 
-Without `labels.csv` the script only checks that your model runs on every patch, returns valid scores and is fast enough.
-
-### Run it
+### 运行
 
 ```bash
 python run_local.py --submission my_submission.zip --data my_val/
 ```
 
-It checks your zip structure, loads your model exactly like the platform does, and prints F1, ROC AUC, precision and recall (if labels are available) and the time per patch.
-
-The starting kit also contains `example_submission/`, a minimal submission template that runs (it returns 0.5 for every patch: replace it with your model).
-
-## 5. Submit
-
-1. Go to the **My Submissions** tab.
-2. Select the phase (**Development** or **Final**).
-3. Upload your `.zip`.
-4. Wait a few minutes and check your score on the **Results** tab.</div></div>
+它会检查您的 zip 文件结构，像平台一样加载模型，并输出 F1（10次采样及所有患者上的均值±标准差）、ROC AUC、精确率、召回率以及每位患者的耗时。</div></div>
 
 </div>
 </body>
