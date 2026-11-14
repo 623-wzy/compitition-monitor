@@ -5,8 +5,8 @@
   "created_by": "gerardbadia",
   "owner_display_name": "gerardbadia",
   "created_when": "2026-11-10T15:22:04.774214Z",
-  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-10-1794324124/953bdc2a136b/logo.png?AWSAccessKeyId=codabench-prod&Signature=RGDbwIESm1wkJjyCHwPb8pSax0o%3D&Expires=1794581216",
-  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-10-1794324124/953bdc2a136b/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=S7Qu%2FVgmlu6ULsBp4pPKj6ZzmNc%3D&Expires=1794581216",
+  "logo": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-10-1794324124/953bdc2a136b/logo.png?AWSAccessKeyId=codabench-prod&Signature=8xFH9mvMx5OPfOOSccfg98AwHJc%3D&Expires=1794668197",
+  "logo_icon": "https://miniodis-rproxy.lisn.upsaclay.fr/coda-v2-prod-public/logos/2026-11-10-1794324124/953bdc2a136b/logo_icon.png?AWSAccessKeyId=codabench-prod&Signature=QLfWXdNFMNzfI6S3VqmXKMbRSh8%3D&Expires=1794668197",
   "terms": "1. Purpose and reward\nThis is a private UAB competition. The best-ranked teams on the final Codabench leaderboard earn up to +1 point on their final grade of the course. Participation is voluntary and does not affect the regular course assessment.\n\nFinal ranking distribution of extra points:\n1st place\n+1.0\n2nd place\n+0.75\n3rd place\n+0.5\n\n• Every member of a team receives the same points.\n• Ties in F1-score are broken by Sensitivity (recall), then by ROC AUC.\n\n2. Data\nThe hidden patients and their patches come from clinical data of the Quiron dataset. They must not be downloaded, shared or reconstructed in any way. Any attempt to access them disqualifies the team.",
   "pages": [
     {
@@ -386,7 +386,7 @@
   ],
   "description": "Helicobacter pylori diagnosis (patient level, MIL) competition for additional points (Vision & Learning)",
   "participants_count": 3,
-  "submissions_count": 4,
+  "submissions_count": 6,
   "docker_image": "gerardbadia/codabench:v1",
   "competition_type": "competition",
   "reward": "",
